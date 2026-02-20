@@ -1,8 +1,6 @@
 // src/components/ForceGraphWrapper.tsx
 // UI COMPACT v1 - 2026-02-16
-// - Allow external control of lockTheme (header) + keep internal fallback
-// - Allow hiding overlay controls (period buttons moved to header)
-// - Preserve existing graph rendering / tooltips / edge mapping
+// - Allow external control of lockTheme (header)
 
 "use client";
 
@@ -95,6 +93,9 @@ type Props = {
 
   // ✅ overlay controls on/off (default true)
   showOverlayControls?: boolean;
+
+  // ✅ focus node highlight (from search)
+  focusId?: string | null;
 };
 
 function normType(t?: string) {
@@ -289,6 +290,7 @@ export default function ForceGraphWrapper({
   lockTheme: lockThemeProp,
   onChangeLockTheme,
   showOverlayControls = true,
+  focusId,
 }: Props) {
   const fgRef = useRef<any>(null);
   const wrapRef = useRef<HTMLDivElement | null>(null);
@@ -431,6 +433,21 @@ export default function ForceGraphWrapper({
     }
   }, [graphData.nodes, size.w, size.h, themeNodeId, lockTheme]);
 
+  // ✅ focus: center & zoom to searched node
+  useEffect(() => {
+    if (!focusId) return;
+    if (!fgRef.current) return;
+    const n = (graphData.nodes as any[]).find((x) => x?.id === focusId);
+    if (!n || typeof n.x !== "number" || typeof n.y !== "number") return;
+
+    try {
+      fgRef.current.centerAt(n.x, n.y, 450);
+      // mild zoom-in so highlight is obvious
+      const z = Math.min(4, Math.max(2.2, fgRef.current.zoom?.() ?? 2.2));
+      fgRef.current.zoom(z, 450);
+    } catch {}
+  }, [focusId, graphData.nodes]);
+
   useEffect(() => {
     if (!fgRef.current) return;
     const fg = fgRef.current;
@@ -463,7 +480,9 @@ export default function ForceGraphWrapper({
 
   const drawNode = (node: any, ctx: CanvasRenderingContext2D) => {
     const isTheme = node.id === themeNodeId;
-    const r = nodeRadius(node, isTheme);
+    const isFocus = !!focusId && node.id === focusId;
+    const baseR = nodeRadius(node, isTheme);
+    const r = isFocus ? baseR + 6 : baseR;
 
     const label = resolveLabel(node, themeName) || node.id;
 
@@ -480,11 +499,20 @@ export default function ForceGraphWrapper({
     ctx.fillStyle = fill;
     ctx.fill();
 
-    const fontSize = isTheme ? 11 : t === "ASSET" ? 10 : 9;
+    if (isFocus) {
+      // highlight ring
+      ctx.beginPath();
+      ctx.arc(node.x, node.y, r + 5, 0, 2 * Math.PI, false);
+      ctx.strokeStyle = "rgba(255,255,255,0.95)";
+      ctx.lineWidth = 2;
+      ctx.stroke();
+    }
+
+    const fontSize = isFocus ? 12 : isTheme ? 11 : t === "ASSET" ? 10 : 9;
     ctx.font = `${fontSize}px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial`;
     ctx.textAlign = "left";
     ctx.textBaseline = "middle";
-    ctx.fillStyle = "rgba(255,255,255,0.92)";
+    ctx.fillStyle = isFocus ? "rgba(255,255,255,0.98)" : "rgba(255,255,255,0.92)";
     ctx.fillText(label, node.x + r + 8, node.y);
   };
 

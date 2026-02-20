@@ -6,25 +6,34 @@ import { loadSearchIndex, searchByKeyword, SearchIndexV3 } from "@/lib/searchInd
 type Tab = "ASSET" | "THEME" | "BUSINESS_FIELD" | "MACRO";
 
 export default function SearchBar({
-  indexUrl,
+  indexUrl, // 🔸 들어와도 무시(안전 고정)
   onGoTheme,
+  onGoThemeFocus,
 }: {
   indexUrl: string;
   onGoTheme: (themeId: string) => void;
+  onGoThemeFocus?: (themeId: string, focusId: string) => void;
 }) {
   const [idx, setIdx] = useState<SearchIndexV3 | null>(null);
   const [kw, setKw] = useState("");
   const [tab, setTab] = useState<Tab>("ASSET");
   const [open, setOpen] = useState(false);
 
+  // ✅ Next.js에서는 URL에 /public 이 절대 붙지 않는다.
+  // ✅ indexUrl이 어떤 값이 오든, 실제 서빙되는 경로(/data/...)로 고정해서 404를 원천 차단.
+  const safeIndexUrl = useMemo(() => {
+    // 캐시 버스트(개발 중 파일 갱신 강제 반영)
+    return `/data/search/search_index.json?v=${Date.now()}`;
+  }, []);
+
   useEffect(() => {
-    loadSearchIndex(indexUrl)
+    loadSearchIndex(safeIndexUrl)
       .then(setIdx)
       .catch((e) => {
-        console.error(e);
+        console.error("[SearchBar] loadSearchIndex failed:", e);
         setIdx(null);
       });
-  }, [indexUrl]);
+  }, [safeIndexUrl]);
 
   const result = useMemo(() => {
     if (!idx) return { assets: [], themes: [], businessFields: [], macros: [] };
@@ -41,7 +50,6 @@ export default function SearchBar({
       : result.macros;
 
   const renderRow = (item: any) => {
-    // THEME: 바로 이동
     if (tab === "THEME") {
       return (
         <button
@@ -61,13 +69,30 @@ export default function SearchBar({
       );
     }
 
-    // ASSET / BF / MACRO: 연결된 테마 칩으로 점프
-    const themeIds: string[] =
-      tab === "ASSET" ? item.themes ?? [] : tab === "BUSINESS_FIELD" ? item.themes ?? [] : item.themes ?? [];
+    const themeIds: string[] = item.themes ?? [];
 
     return (
       <div key={item.id} style={rowDivStyle}>
-        <div style={{ fontWeight: 700 }}>{item.name}</div>
+        <button
+          type="button"
+          onClick={() => {
+            if (tab !== "ASSET") return;
+            const ids = item.themes ?? [];
+            if (!ids.length) return;
+
+            const tid = String(ids[0]).trim();
+            if (!tid) return;
+
+            if (onGoThemeFocus) onGoThemeFocus(tid, item.id);
+            else onGoTheme(tid);
+
+            setOpen(false);
+          }}
+          style={{ ...nameBtnStyle, cursor: tab === "ASSET" ? "pointer" : "default" }}
+          title={tab === "ASSET" ? "첫 번째 연결 테마로 이동 (focus)" : undefined}
+        >
+          <div style={{ fontWeight: 700 }}>{item.name}</div>
+        </button>
 
         {tab === "ASSET" ? (
           <div style={subStyle}>
@@ -92,10 +117,11 @@ export default function SearchBar({
                 key={t}
                 onClick={() => {
                   setOpen(false);
-                  onGoTheme(t);
+                  if (tab === "ASSET" && onGoThemeFocus) onGoThemeFocus(t, item.id);
+                  else onGoTheme(t);
                 }}
-                style={chipStyle}
-                title="테마로 이동"
+                style={chipBtnStyle}
+                title={t}
               >
                 {t}
               </button>
@@ -107,142 +133,97 @@ export default function SearchBar({
   };
 
   return (
-    <div style={{ position: "relative", width: "100%", maxWidth: 520 }}>
-      <input
-        value={kw}
-        onChange={(e) => {
-          setKw(e.target.value);
-          setOpen(true);
-        }}
-        onFocus={() => setOpen(true)}
-        onBlur={() => {
-          // 클릭 이벤트가 먼저 발생하도록 약간 지연
-          setTimeout(() => setOpen(false), 150);
-        }}
-        placeholder={idx ? "자산/테마/사업분야/매크로 검색" : "검색 인덱스 로딩중..."}
-        style={inputStyle}
-      />
+    <div style={wrapStyle}>
+      <div style={topRowStyle}>
+        <input
+          value={kw}
+          onChange={(e) => {
+            setKw(e.target.value);
+            setOpen(true);
+          }}
+          onFocus={() => setOpen(true)}
+          placeholder="Search (자산/티커/테마/산업/매크로)"
+          style={inputStyle}
+        />
 
-      {open && kw.trim() && (
+        <div style={tabRowStyle}>
+          <button type="button" onClick={() => setTab("ASSET")} style={tab === "ASSET" ? tabOnStyle : tabOffStyle}>
+            ASSET
+          </button>
+          <button type="button" onClick={() => setTab("THEME")} style={tab === "THEME" ? tabOnStyle : tabOffStyle}>
+            THEME
+          </button>
+          <button
+            type="button"
+            onClick={() => setTab("BUSINESS_FIELD")}
+            style={tab === "BUSINESS_FIELD" ? tabOnStyle : tabOffStyle}
+          >
+            BF
+          </button>
+          <button type="button" onClick={() => setTab("MACRO")} style={tab === "MACRO" ? tabOnStyle : tabOffStyle}>
+            MACRO
+          </button>
+        </div>
+      </div>
+
+      {open && kw.trim().length > 0 && (
         <div style={panelStyle}>
-          <div style={tabBarStyle}>
-            <button type="button" onMouseDown={() => setTab("ASSET")} style={tab === "ASSET" ? tabOn : tabOff}>
-              자산
-            </button>
-            <button type="button" onMouseDown={() => setTab("THEME")} style={tab === "THEME" ? tabOn : tabOff}>
-              테마
-            </button>
-            <button
-              type="button"
-              onMouseDown={() => setTab("BUSINESS_FIELD")}
-              style={tab === "BUSINESS_FIELD" ? tabOn : tabOff}
-            >
-              사업분야
-            </button>
-            <button type="button" onMouseDown={() => setTab("MACRO")} style={tab === "MACRO" ? tabOn : tabOff}>
-              매크로
-            </button>
-          </div>
-
-          <div style={{ maxHeight: 380, overflow: "auto" }}>
-            {list.length === 0 ? <div style={emptyStyle}>검색 결과 없음</div> : list.map(renderRow)}
-          </div>
+          {list.length === 0 ? <div style={emptyStyle}>No results</div> : <div style={listWrapStyle}>{list.map(renderRow)}</div>}
         </div>
       )}
     </div>
   );
 }
 
+/* styles */
+const wrapStyle: React.CSSProperties = { position: "relative", width: "100%" };
+const topRowStyle: React.CSSProperties = { display: "flex", gap: 10, alignItems: "center", width: "100%" };
 const inputStyle: React.CSSProperties = {
-  width: "100%",
-  height: 38,
+  flex: 1,
+  height: 36,
   borderRadius: 10,
-  border: "1px solid rgba(0,0,0,0.15)",
+  border: "1px solid rgba(255,255,255,0.15)",
+  background: "rgba(0,0,0,0.25)",
+  color: "#fff",
   padding: "0 12px",
   outline: "none",
-  background: "rgba(255,255,255,0.95)",
 };
-
+const tabRowStyle: React.CSSProperties = { display: "flex", gap: 6, alignItems: "center" };
+const tabBaseStyle: React.CSSProperties = {
+  height: 30,
+  borderRadius: 10,
+  border: "1px solid rgba(255,255,255,0.15)",
+  padding: "0 10px",
+  fontSize: 12,
+  cursor: "pointer",
+};
+const tabOnStyle: React.CSSProperties = { ...tabBaseStyle, background: "rgba(255,255,255,0.18)", color: "#fff" };
+const tabOffStyle: React.CSSProperties = { ...tabBaseStyle, background: "rgba(0,0,0,0.18)", color: "rgba(255,255,255,0.75)" };
 const panelStyle: React.CSSProperties = {
   position: "absolute",
   top: 44,
   left: 0,
   right: 0,
   zIndex: 50,
-  background: "#fff",
-  border: "1px solid rgba(0,0,0,0.12)",
-  borderRadius: 12,
-  boxShadow: "0 10px 24px rgba(0,0,0,0.12)",
+  borderRadius: 14,
+  border: "1px solid rgba(255,255,255,0.12)",
+  background: "rgba(20,20,20,0.92)",
+  boxShadow: "0 10px 30px rgba(0,0,0,0.45)",
   overflow: "hidden",
 };
-
-const tabBarStyle: React.CSSProperties = {
-  display: "flex",
-  gap: 6,
-  padding: 8,
-  borderBottom: "1px solid rgba(0,0,0,0.08)",
-};
-
-const tabOn: React.CSSProperties = {
-  padding: "6px 10px",
-  borderRadius: 10,
-  border: "1px solid rgba(0,0,0,0.15)",
-  background: "rgba(0,0,0,0.06)",
-  fontWeight: 800,
-  cursor: "pointer",
-};
-
-const tabOff: React.CSSProperties = {
-  padding: "6px 10px",
-  borderRadius: 10,
-  border: "1px solid rgba(0,0,0,0.12)",
-  background: "transparent",
-  fontWeight: 700,
-  opacity: 0.85,
-  cursor: "pointer",
-};
-
-const rowBtnStyle: React.CSSProperties = {
-  width: "100%",
-  textAlign: "left",
-  padding: 12,
-  border: "none",
-  borderBottom: "1px solid rgba(0,0,0,0.06)",
-  background: "transparent",
-  cursor: "pointer",
-};
-
-const rowDivStyle: React.CSSProperties = {
-  width: "100%",
-  textAlign: "left",
-  padding: 12,
-  borderBottom: "1px solid rgba(0,0,0,0.06)",
-  background: "transparent",
-};
-
-const subStyle: React.CSSProperties = {
-  marginTop: 3,
-  fontSize: 12,
-  opacity: 0.7,
-};
-
-const chipWrapStyle: React.CSSProperties = {
-  marginTop: 8,
-  display: "flex",
-  flexWrap: "wrap",
-  gap: 6,
-};
-
-const chipStyle: React.CSSProperties = {
-  fontSize: 12,
-  padding: "4px 8px",
+const listWrapStyle: React.CSSProperties = { maxHeight: 420, overflowY: "auto" };
+const emptyStyle: React.CSSProperties = { padding: 14, color: "rgba(255,255,255,0.65)", fontSize: 13 };
+const rowBtnStyle: React.CSSProperties = { width: "100%", textAlign: "left", padding: "10px 12px", border: "none", background: "transparent", color: "#fff", cursor: "pointer" };
+const rowDivStyle: React.CSSProperties = { padding: "10px 12px", borderTop: "1px solid rgba(255,255,255,0.08)", color: "#fff" };
+const nameBtnStyle: React.CSSProperties = { width: "100%", textAlign: "left", border: "none", background: "transparent", padding: 0, color: "#fff" };
+const subStyle: React.CSSProperties = { marginTop: 4, fontSize: 12, color: "rgba(255,255,255,0.65)" };
+const chipWrapStyle: React.CSSProperties = { display: "flex", flexWrap: "wrap", gap: 6, marginTop: 8 };
+const chipBtnStyle: React.CSSProperties = {
   borderRadius: 999,
-  border: "1px solid rgba(0,0,0,0.14)",
-  background: "rgba(0,0,0,0.04)",
+  border: "1px solid rgba(255,255,255,0.15)",
+  background: "rgba(255,255,255,0.10)",
+  color: "rgba(255,255,255,0.85)",
+  fontSize: 11,
+  padding: "3px 8px",
   cursor: "pointer",
-};
-
-const emptyStyle: React.CSSProperties = {
-  padding: 12,
-  opacity: 0.7,
 };

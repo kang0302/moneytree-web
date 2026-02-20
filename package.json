@@ -2,14 +2,17 @@
   "name": "moneytree-web",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint",
-    "build:search": "node scripts/build_search_index.mjs",
-    "refresh:search": "node scripts/refresh_search.mjs"
-  },
+ "scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "eslint",
+  "build:search": "node scripts/build_search_index.mjs",
+  "refresh:search": "node scripts/refresh_search.mjs",
+  "mt:update": "powershell -ExecutionPolicy Bypass -File scripts\\mt_update.ps1",
+  "mt:push": "powershell -ExecutionPolicy Bypass -File scripts\\mt_push.ps1",
+  "mt:deploy": "powershell -ExecutionPolicy Bypass -File scripts\\mt_deploy.ps1"
+ },
   "dependencies": {
     "d3-force": "^3.0.0",
     "next": "16.1.1",

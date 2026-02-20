@@ -11,7 +11,7 @@
 "use client";
 
 import React, { useMemo, useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 import ForceGraphWrapper from "@/components/ForceGraphWrapper";
 import GraphRightPanel, { ResearchLinkT, CompareThemeOptionT } from "@/components/GraphRightPanel";
@@ -49,156 +49,136 @@ type NodeT = {
 };
 
 type EdgeT = {
-  from: string;
-  to: string;
+  from?: string;
+  to?: string;
+  source?: string;
+  target?: string;
   type?: string;
   label?: string;
+  relType?: string;
+  relation?: string;
   [k: string]: any;
 };
 
-type Props = {
+type ThemeJsonT = {
+  schemaVersion?: string;
   themeId: string;
   themeName: string;
-  nodes: NodeT[];
-  edges: EdgeT[];
-  researchLinks?: ResearchLinkT[];
-};
-
-type ThemeJsonT = {
-  themeId?: string;
-  themeName?: string;
+  meta?: any;
   nodes?: NodeT[];
   edges?: EdgeT[];
-  researchLinks?: ResearchLinkT[];
 };
 
 type RecentItem = { themeId: string; themeName: string; at: number };
-const LS_RECENT = "mt_recentThemes";
 
-function safeArray<T>(v: any): T[] {
-  return Array.isArray(v) ? (v as T[]) : [];
+const LS_RECENT = "mt_recent_themes_v1";
+
+// ✅ Search index URL (GitHub raw)
+const RAW_BASE = "https://raw.githubusercontent.com/kang0302/import_MT/main";
+const SEARCH_INDEX_URL = `${RAW_BASE}/data/search/search_index.json`;
+
+// ✅ Resolver master SSOT URLs
+const ASSET_MASTER_URLS = [
+  `${RAW_BASE}/data/ssot/asset_ssot.csv`,
+  `${RAW_BASE}/data/master/asset.csv`,
+];
+const BF_MASTER_URLS = [
+  `${RAW_BASE}/data/ssot/business_field_ssot.csv`,
+  `${RAW_BASE}/data/master/business_field.csv`,
+];
+
+type AssetMasterItem = {
+  ko?: string;
+  en?: string;
+  ticker?: string;
+  exchange?: string;
+  country?: string;
+};
+
+type BfMasterItem = {
+  ko?: string;
+  en?: string;
+};
+
+/* =========================
+   ✅ Helpers
+   ========================= */
+function safeArray<T>(x: any): T[] {
+  return Array.isArray(x) ? (x as T[]) : [];
 }
-function safeJsonParse<T>(raw: string | null, fallback: T): T {
+
+function safeJsonParse<T>(s: string | null, fallback: T): T {
   try {
-    if (!raw) return fallback;
-    return JSON.parse(raw) as T;
+    const v = JSON.parse(s ?? "");
+    return (v ?? fallback) as T;
   } catch {
     return fallback;
   }
 }
+
+function isThemeNode(n: NodeT, themeId: string) {
+  return (n?.type ?? "").toUpperCase() === "THEME" || n?.id === themeId;
+}
+
 function isAsset(n: NodeT) {
-  return (n?.type ?? "").toUpperCase() === "ASSET";
+  return (n?.type ?? "").toUpperCase() === "ASSET" || /^A_\d+$/i.test(n?.id ?? "");
 }
 
-/* =========================
-   ✅ Resolver (SSOT 우선)
-   ========================= */
+function isBusinessField(n: NodeT) {
+  const t = (n?.type ?? "").toUpperCase();
+  return t.includes("BUSINESS_FIELD") || t.includes("FIELD") || /^BF_\d+$/i.test(n?.id ?? "");
+}
 
-// 1) local: public/data/ssot/*
-const LOCAL_SSOT_BASE = "/data/ssot";
-// 2) GitHub raw fallback
-const RAW_BASE = "https://raw.githubusercontent.com/kang0302/import_MT/main";
-const RAW_SSOT_BASE = `${RAW_BASE}/data/ssot`;
-
-const ASSET_MASTER_URLS = [`${LOCAL_SSOT_BASE}/asset_ssot.csv`, `${RAW_SSOT_BASE}/asset_ssot.csv`];
-const BF_MASTER_URLS = [
-  `${LOCAL_SSOT_BASE}/business_field_ssot.csv`,
-  `${RAW_SSOT_BASE}/business_field_ssot.csv`,
-];
-
-// ✅ Search index URL (옵션 A: import_MT repo raw)
-const SEARCH_INDEX_URL = "/data/search/search_index.json";
-
-function splitCsvLine(line: string): string[] {
-  const out: string[] = [];
-  let cur = "";
-  let inQuotes = false;
-
-  for (let i = 0; i < line.length; i++) {
-    const ch = line[i];
-
-    if (ch === '"') {
-      if (inQuotes && line[i + 1] === '"') {
-        cur += '"';
-        i++;
-      } else {
-        inQuotes = !inQuotes;
-      }
-      continue;
-    }
-
-    if (ch === "," && !inQuotes) {
-      out.push(cur);
-      cur = "";
-      continue;
-    }
-    cur += ch;
+async function fetchFirstOk(urls: string[]) {
+  for (const u of urls) {
+    try {
+      const res = await fetch(u, { cache: "no-store" });
+      if (res.ok) return await res.text();
+    } catch {}
   }
-  out.push(cur);
-  return out;
+  return "";
 }
 
-function parseCsv(text: string): Record<string, string>[] {
-  const lines = text
-    .replace(/\r/g, "")
-    .split("\n")
-    .map((l) => l.trim())
-    .filter(Boolean);
-
-  if (lines.length < 2) return [];
-  const header = splitCsvLine(lines[0]).map((x) => x.trim());
-  const rows: Record<string, string>[] = [];
-
+function parseCsv(text: string) {
+  const lines = (text ?? "").split(/\r?\n/).filter(Boolean);
+  if (!lines.length) return [];
+  const header = lines[0].split(",").map((x) => x.trim());
+  const rows = [];
   for (let i = 1; i < lines.length; i++) {
-    const cols = splitCsvLine(lines[i]);
-    const obj: Record<string, string> = {};
-    header.forEach((h, idx) => {
-      obj[h] = (cols[idx] ?? "").trim();
-    });
+    const cols = lines[i].split(",");
+    const obj: any = {};
+    header.forEach((h, idx) => (obj[h] = (cols[idx] ?? "").trim()));
     rows.push(obj);
   }
   return rows;
 }
 
-async function fetchFirstOk(urls: string[]): Promise<string | null> {
-  for (const url of urls) {
-    try {
-      const res = await fetch(url, { cache: "no-store" });
-      if (!res.ok) continue;
-      const t = await res.text();
-      if (t && t.length > 20) return t;
-    } catch {}
-  }
-  return null;
-}
-
-type AssetMasterItem = { ko?: string; en?: string; ticker?: string; exchange?: string; country?: string };
-type BfMasterItem = { ko?: string; en?: string };
-
-function isBusinessField(n: NodeT) {
-  const t = (n?.type ?? "").toUpperCase();
-  return t === "BUSINESS_FIELD" || t.includes("BUSINESS_FIELD") || t === "FIELD";
-}
-function isThemeNode(n: NodeT, themeId: string) {
-  const t = (n?.type ?? "").toUpperCase();
-  return t === "THEME" || n.id === themeId;
-}
-
-export default function GraphClient({ themeId, themeName, nodes, edges, researchLinks = [] }: Props) {
+export default function GraphClient({
+  themeId,
+  themeName,
+  nodes,
+  edges,
+  researchLinks,
+}: {
+  themeId: string;
+  themeName: string;
+  nodes: NodeT[];
+  edges: EdgeT[];
+  researchLinks: ResearchLinkT[];
+}) {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const focusId = searchParams.get("focus");
 
-  const [selectedNode, setSelectedNode] = useState<NodeT | null>(null);
-
-  // ✅ 기간 상태 “단일 관리”
+  // ✅ period (header control)
   const [period, setPeriod] = useState<PeriodKey>("7D");
 
-  // ✅ 비교 대상 테마 선택 상태(기존 유지: RightPanel Compare)
-  const [compareThemeId, setCompareThemeId] = useState<string>("");
+  // ✅ right panel selected node
+  const [selectedNode, setSelectedNode] = useState<NodeT | null>(null);
 
-  // ✅ index.json 기반 목록(재사용: Move to theme dropdown에도 활용)
+  // ✅ compare
   const [compareOptions, setCompareOptions] = useState<CompareThemeOptionT[]>([]);
-
-  // ✅ 비교 테마 fetch 상태
+  const [compareThemeId, setCompareThemeId] = useState<string>("");
   const [compareLoading, setCompareLoading] = useState(false);
   const [compareError, setCompareError] = useState<string>("");
   const [compareData, setCompareData] = useState<{ themeId: string; themeName?: string; nodes: NodeT[] } | null>(
@@ -551,6 +531,7 @@ export default function GraphClient({ themeId, themeName, nodes, edges, research
           <SearchBar
             indexUrl={SEARCH_INDEX_URL}
             onGoTheme={(tid) => router.push(`/graph/${tid}`)}
+            onGoThemeFocus={(tid, fid) => router.push(`/graph/${tid}?focus=${encodeURIComponent(fid)}`)}
           />
         </div>
 
@@ -558,11 +539,7 @@ export default function GraphClient({ themeId, themeName, nodes, edges, research
         <div className="flex items-center gap-2">
           {/* 1) Theme fixation */}
           <label className="flex items-center gap-2 rounded-lg border border-white/10 bg-black/30 px-2 py-1 text-[11px] text-white/80">
-            <input
-              type="checkbox"
-              checked={lockTheme}
-              onChange={(e) => setLockTheme(e.target.checked)}
-            />
+            <input type="checkbox" checked={lockTheme} onChange={(e) => setLockTheme(e.target.checked)} />
             <span className="font-semibold">THEME 고정</span>
           </label>
 
@@ -641,8 +618,9 @@ export default function GraphClient({ themeId, themeName, nodes, edges, research
               period={period}
               onChangePeriod={(p) => setPeriod(p)}
               showPeriodButtons={false} // ✅ 헤더로 이동
-              lockTheme={lockTheme}      // ✅ 헤더의 THEME 고정과 연동
+              lockTheme={lockTheme} // ✅ 헤더의 THEME 고정과 연동
               onChangeLockTheme={setLockTheme}
+              focusId={focusId}
             />
           </div>
 
