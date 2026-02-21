@@ -64,7 +64,6 @@ jobs:
 
           count = 0
           for t in themes:
-              # t가 dict일 수도 있고, 문자열일 수도 있으니 방어
               tid = None
               if isinstance(t, dict):
                   tid = t.get("themeId") or t.get("themeID") or t.get("id")
@@ -81,6 +80,13 @@ jobs:
 
           print(f"[OK] downloaded themes: {count}")
           PY
+
+      # ✅ build_search_index.mjs가 기대하는 폴더(import_MT/data/theme)를 Actions에서 만들어준다
+      - name: Mirror themes into import_MT/data/theme for search builder
+        run: |
+          mkdir -p import_MT/data/theme
+          cp public/data/theme/index.json import_MT/data/theme/index.json
+          cp public/data/theme/T_*.json import_MT/data/theme/
 
       - name: Build search index (search_index.json)
         run: |
