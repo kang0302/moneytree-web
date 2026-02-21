@@ -3,9 +3,16 @@
   "themeId": "T_025",
   "themeName": "글로벌 메모리 스토리지 HW",
   "meta": {
-    "periodDefault": "7d",
-    "periodOptions": ["7d", "30d", "90d"],
-    "dataAsOf": "2026-02-13T09:00:00+09:00",
+    "periodDefault": "3d",
+    "periodOptions": [
+      "3d",
+      "7d",
+      "1m",
+      "ytd",
+      "1y",
+      "3y"
+    ],
+    "dataAsOf": "2026-02-21T16:00:00+09:00",
     "notes": "g25 누적 import 기반 T_025 freeze (BF 포함, metrics 포함)",
     "sources": []
   },
@@ -15,7 +22,6 @@
       "type": "THEME",
       "name": "글로벌 메모리 스토리지 HW"
     },
-
     {
       "id": "BF_050",
       "type": "BUSINESS_FIELD",
@@ -31,7 +37,6 @@
       "type": "BUSINESS_FIELD",
       "name": "HDD"
     },
-
     {
       "id": "A_217",
       "type": "ASSET",
@@ -52,7 +57,12 @@
         "return_30d": null,
         "return_90d": null,
         "per": null,
-        "market_cap": null
+        "market_cap": null,
+        "close": 0,
+        "marketCap": 0,
+        "pe_ttm": 0.0,
+        "valuationAsOf": "2026-02-21",
+        "valuationSource": "PYKRX"
       }
     },
     {
@@ -75,7 +85,12 @@
         "return_30d": null,
         "return_90d": null,
         "per": null,
-        "market_cap": null
+        "market_cap": null,
+        "close": 0,
+        "marketCap": 0,
+        "pe_ttm": 0.0,
+        "valuationAsOf": "2026-02-21",
+        "valuationSource": "PYKRX"
       }
     },
     {
@@ -121,7 +136,12 @@
         "return_30d": null,
         "return_90d": null,
         "per": null,
-        "market_cap": null
+        "market_cap": null,
+        "close": 0,
+        "marketCap": 0,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-02-21",
+        "valuationSource": "PYKRX"
       }
     },
     {
@@ -287,33 +307,130 @@
     }
   ],
   "edges": [
-    { "from": "A_217", "to": "T_025", "type": "THEMED_AS" },
-    { "from": "A_088", "to": "T_025", "type": "THEMED_AS" },
-    { "from": "A_218", "to": "T_025", "type": "THEMED_AS" },
-    { "from": "A_219", "to": "T_025", "type": "THEMED_AS" },
-    { "from": "A_220", "to": "T_025", "type": "THEMED_AS" },
-    { "from": "A_221", "to": "T_025", "type": "THEMED_AS" },
-    { "from": "A_222", "to": "T_025", "type": "THEMED_AS" },
-    { "from": "A_223", "to": "T_025", "type": "THEMED_AS" },
-    { "from": "A_224", "to": "T_025", "type": "THEMED_AS" },
-    { "from": "A_225", "to": "T_025", "type": "THEMED_AS" },
-    { "from": "A_192", "to": "T_025", "type": "THEMED_AS" },
-
-    { "from": "A_217", "to": "BF_053", "type": "OPERATES" },
-    { "from": "A_088", "to": "BF_053", "type": "OPERATES" },
-    { "from": "A_218", "to": "BF_053", "type": "OPERATES" },
-
-    { "from": "A_088", "to": "BF_054", "type": "OPERATES" },
-    { "from": "A_218", "to": "BF_054", "type": "OPERATES" },
-    { "from": "A_219", "to": "BF_054", "type": "OPERATES" },
-    { "from": "A_220", "to": "BF_054", "type": "OPERATES" },
-    { "from": "A_221", "to": "BF_054", "type": "OPERATES" },
-    { "from": "A_222", "to": "BF_054", "type": "OPERATES" },
-    { "from": "A_192", "to": "BF_054", "type": "OPERATES" },
-
-    { "from": "A_221", "to": "BF_055", "type": "OPERATES" },
-    { "from": "A_223", "to": "BF_055", "type": "OPERATES" },
-    { "from": "A_224", "to": "BF_055", "type": "OPERATES" },
-    { "from": "A_225", "to": "BF_055", "type": "OPERATES" }
+    {
+      "from": "A_217",
+      "to": "T_025",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_088",
+      "to": "T_025",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_218",
+      "to": "T_025",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_219",
+      "to": "T_025",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_220",
+      "to": "T_025",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_221",
+      "to": "T_025",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_222",
+      "to": "T_025",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_223",
+      "to": "T_025",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_224",
+      "to": "T_025",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_225",
+      "to": "T_025",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_192",
+      "to": "T_025",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_217",
+      "to": "BF_053",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_088",
+      "to": "BF_053",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_218",
+      "to": "BF_053",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_088",
+      "to": "BF_054",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_218",
+      "to": "BF_054",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_219",
+      "to": "BF_054",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_220",
+      "to": "BF_054",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_221",
+      "to": "BF_054",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_222",
+      "to": "BF_054",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_192",
+      "to": "BF_054",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_221",
+      "to": "BF_055",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_223",
+      "to": "BF_055",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_224",
+      "to": "BF_055",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_225",
+      "to": "BF_055",
+      "type": "OPERATES"
+    }
   ]
 }

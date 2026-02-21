@@ -3,15 +3,25 @@
   "themeId": "T_026",
   "themeName": "딥시크 모멘텀 수혜주",
   "meta": {
-    "periodDefault": "7d",
-    "periodOptions": ["7d", "30d", "90d"],
-    "dataAsOf": "2026-02-13T09:00:00+09:00",
+    "periodDefault": "3d",
+    "periodOptions": [
+      "3d",
+      "7d",
+      "1m",
+      "ytd",
+      "1y",
+      "3y"
+    ],
+    "dataAsOf": "2026-02-21T16:00:00+09:00",
     "notes": "g26 기준 T_026 freeze (T_025 포맷 준용)",
     "sources": []
   },
   "nodes": [
-    { "id": "T_026", "type": "THEME", "name": "딥시크 모멘텀 수혜주" },
-
+    {
+      "id": "T_026",
+      "type": "THEME",
+      "name": "딥시크 모멘텀 수혜주"
+    },
     {
       "id": "A_217",
       "type": "ASSET",
@@ -32,7 +42,12 @@
         "return_30d": null,
         "return_90d": null,
         "per": null,
-        "market_cap": null
+        "market_cap": null,
+        "close": 0,
+        "marketCap": 0,
+        "pe_ttm": 0.0,
+        "valuationAsOf": "2026-02-21",
+        "valuationSource": "PYKRX"
       }
     },
     {
@@ -55,7 +70,12 @@
         "return_30d": null,
         "return_90d": null,
         "per": null,
-        "market_cap": null
+        "market_cap": null,
+        "close": 0,
+        "marketCap": 0,
+        "pe_ttm": 0.0,
+        "valuationAsOf": "2026-02-21",
+        "valuationSource": "PYKRX"
       }
     },
     {
@@ -313,18 +333,70 @@
     }
   ],
   "edges": [
-    { "from": "A_217", "to": "T_026", "type": "THEMED_AS" },
-    { "from": "A_088", "to": "T_026", "type": "THEMED_AS" },
-    { "from": "A_232", "to": "T_026", "type": "THEMED_AS" },
-    { "from": "A_055", "to": "T_026", "type": "THEMED_AS" },
-    { "from": "A_051", "to": "T_026", "type": "THEMED_AS" },
-    { "from": "A_052", "to": "T_026", "type": "THEMED_AS" },
-    { "from": "A_049", "to": "T_026", "type": "THEMED_AS" },
-    { "from": "A_226", "to": "T_026", "type": "THEMED_AS" },
-    { "from": "A_227", "to": "T_026", "type": "THEMED_AS" },
-    { "from": "A_228", "to": "T_026", "type": "THEMED_AS" },
-    { "from": "A_229", "to": "T_026", "type": "THEMED_AS" },
-    { "from": "A_230", "to": "T_026", "type": "THEMED_AS" },
-    { "from": "A_231", "to": "T_026", "type": "THEMED_AS" }
+    {
+      "from": "A_217",
+      "to": "T_026",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_088",
+      "to": "T_026",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_232",
+      "to": "T_026",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_055",
+      "to": "T_026",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_051",
+      "to": "T_026",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_052",
+      "to": "T_026",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_049",
+      "to": "T_026",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_226",
+      "to": "T_026",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_227",
+      "to": "T_026",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_228",
+      "to": "T_026",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_229",
+      "to": "T_026",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_230",
+      "to": "T_026",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_231",
+      "to": "T_026",
+      "type": "THEMED_AS"
+    }
   ]
 }

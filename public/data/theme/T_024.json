@@ -3,15 +3,25 @@
   "themeId": "T_024",
   "themeName": "IPO스타_엔트로픽수혜주",
   "meta": {
-    "periodDefault": "7d",
-    "periodOptions": ["7d", "30d", "90d"],
-    "dataAsOf": "2026-02-12T09:00:00+09:00",
+    "periodDefault": "3d",
+    "periodOptions": [
+      "3d",
+      "7d",
+      "1m",
+      "ytd",
+      "1y",
+      "3y"
+    ],
+    "dataAsOf": "2026-02-21T16:00:00+09:00",
     "notes": "g24 누적 import 기반 T_024 freeze",
     "sources": []
   },
   "nodes": [
-    { "id": "T_024", "type": "THEME", "name": "IPO스타_엔트로픽수혜주" },
-
+    {
+      "id": "T_024",
+      "type": "THEME",
+      "name": "IPO스타_엔트로픽수혜주"
+    },
     {
       "id": "A_046",
       "type": "ASSET",
@@ -193,7 +203,12 @@
         "return_30d": null,
         "return_90d": null,
         "per": null,
-        "market_cap": null
+        "market_cap": null,
+        "close": 0,
+        "marketCap": 0,
+        "pe_ttm": 0.0,
+        "valuationAsOf": "2026-02-21",
+        "valuationSource": "PYKRX"
       }
     },
     {
@@ -216,7 +231,12 @@
         "return_30d": null,
         "return_90d": null,
         "per": null,
-        "market_cap": null
+        "market_cap": null,
+        "close": 0,
+        "marketCap": 0,
+        "pe_ttm": 0.0,
+        "valuationAsOf": "2026-02-21",
+        "valuationSource": "PYKRX"
       }
     },
     {
@@ -242,25 +262,82 @@
         "market_cap": null
       }
     },
-
-    { "id": "C_045", "type": "CHARACTER", "name": "엔트로픽지분투자" }
+    {
+      "id": "C_045",
+      "type": "CHARACTER",
+      "name": "엔트로픽지분투자"
+    }
   ],
   "edges": [
-    { "from": "A_046", "to": "T_024", "type": "THEMED_AS" },
-    { "from": "A_050", "to": "T_024", "type": "THEMED_AS" },
-    { "from": "A_055", "to": "T_024", "type": "THEMED_AS" },
-    { "from": "A_210", "to": "T_024", "type": "THEMED_AS" },
-    { "from": "A_211", "to": "T_024", "type": "THEMED_AS" },
-    { "from": "A_212", "to": "T_024", "type": "THEMED_AS" },
-    { "from": "A_213", "to": "T_024", "type": "THEMED_AS" },
-    { "from": "A_214", "to": "T_024", "type": "THEMED_AS" },
-    { "from": "A_215", "to": "T_024", "type": "THEMED_AS" },
-    { "from": "A_216", "to": "T_024", "type": "THEMED_AS" },
-
-    { "from": "A_050", "to": "C_045", "type": "HAS_TRAIT" },
-    { "from": "A_055", "to": "C_045", "type": "HAS_TRAIT" },
-    { "from": "A_211", "to": "C_045", "type": "HAS_TRAIT" },
-    { "from": "A_214", "to": "C_045", "type": "HAS_TRAIT" }
+    {
+      "from": "A_046",
+      "to": "T_024",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_050",
+      "to": "T_024",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_055",
+      "to": "T_024",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_210",
+      "to": "T_024",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_211",
+      "to": "T_024",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_212",
+      "to": "T_024",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_213",
+      "to": "T_024",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_214",
+      "to": "T_024",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_215",
+      "to": "T_024",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_216",
+      "to": "T_024",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_050",
+      "to": "C_045",
+      "type": "HAS_TRAIT"
+    },
+    {
+      "from": "A_055",
+      "to": "C_045",
+      "type": "HAS_TRAIT"
+    },
+    {
+      "from": "A_211",
+      "to": "C_045",
+      "type": "HAS_TRAIT"
+    },
+    {
+      "from": "A_214",
+      "to": "C_045",
+      "type": "HAS_TRAIT"
+    }
   ]
 }
-

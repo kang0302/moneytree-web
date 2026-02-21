@@ -3,9 +3,16 @@
   "themeId": "T_023",
   "themeName": "미국 위성통신 부품",
   "meta": {
-    "periodDefault": "7d",
-    "periodOptions": ["7d", "30d", "90d"],
-    "dataAsOf": "2026-02-11T09:00:00+09:00",
+    "periodDefault": "3d",
+    "periodOptions": [
+      "3d",
+      "7d",
+      "1m",
+      "ytd",
+      "1y",
+      "3y"
+    ],
+    "dataAsOf": "2026-02-21T16:00:00+09:00",
     "notes": "g23 누적 import 기반 T_023 freeze",
     "sources": []
   },
@@ -15,7 +22,6 @@
       "type": "THEME",
       "name": "미국 위성통신 부품"
     },
-
     {
       "id": "A_206",
       "type": "ASSET",
@@ -131,7 +137,6 @@
         "market_cap": null
       }
     },
-
     {
       "id": "BF_050",
       "type": "BUSINESS_FIELD",
@@ -147,7 +152,6 @@
       "type": "BUSINESS_FIELD",
       "name": "항공우주 구동·액추에이션 시스템"
     },
-
     {
       "id": "C_044",
       "type": "CHARACTER",
@@ -155,18 +159,60 @@
     }
   ],
   "edges": [
-    { "from": "A_206", "to": "T_023", "type": "THEMED_AS" },
-    { "from": "A_207", "to": "T_023", "type": "THEMED_AS" },
-    { "from": "A_208", "to": "T_023", "type": "THEMED_AS" },
-    { "from": "A_191", "to": "T_023", "type": "THEMED_AS" },
-    { "from": "A_209", "to": "T_023", "type": "THEMED_AS" },
-
-    { "from": "A_206", "to": "BF_050", "type": "OPERATES" },
-    { "from": "A_207", "to": "BF_051", "type": "OPERATES" },
-    { "from": "A_208", "to": "BF_051", "type": "OPERATES" },
-    { "from": "A_191", "to": "BF_051", "type": "OPERATES" },
-    { "from": "A_209", "to": "BF_052", "type": "OPERATES" },
-
-    { "from": "T_023", "to": "C_044", "type": "HAS_TRAIT" }
+    {
+      "from": "A_206",
+      "to": "T_023",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_207",
+      "to": "T_023",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_208",
+      "to": "T_023",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_191",
+      "to": "T_023",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_209",
+      "to": "T_023",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_206",
+      "to": "BF_050",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_207",
+      "to": "BF_051",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_208",
+      "to": "BF_051",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_191",
+      "to": "BF_051",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_209",
+      "to": "BF_052",
+      "type": "OPERATES"
+    },
+    {
+      "from": "T_023",
+      "to": "C_044",
+      "type": "HAS_TRAIT"
+    }
   ]
 }
