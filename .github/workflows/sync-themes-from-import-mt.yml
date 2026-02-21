@@ -43,7 +43,16 @@ jobs:
           with open(INDEX_PATH, "r", encoding="utf-8") as f:
               idx = json.load(f)
 
-          themes = idx.get("themes", [])
+          # index.json 포맷 호환:
+          # 1) {"themes":[...]} (object)
+          # 2) [...]           (list)
+          if isinstance(idx, dict):
+              themes = idx.get("themes", [])
+          elif isinstance(idx, list):
+              themes = idx
+          else:
+              raise SystemExit(f"index.json format unexpected: {type(idx)}")
+
           if not themes:
               raise SystemExit("index.json에 themes가 비어있습니다.")
 
@@ -55,9 +64,16 @@ jobs:
 
           count = 0
           for t in themes:
-              tid = t.get("themeId")
+              # t가 dict일 수도 있고, 문자열일 수도 있으니 방어
+              tid = None
+              if isinstance(t, dict):
+                  tid = t.get("themeId") or t.get("themeID") or t.get("id")
+              elif isinstance(t, str):
+                  tid = t
+
               if not tid:
                   continue
+
               url = f"https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/{tid}.json"
               out_path = os.path.join(OUT_DIR, f"{tid}.json")
               dl(url, out_path)
