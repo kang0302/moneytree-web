@@ -1,0 +1,77 @@
+name: Sync Freeze Themes from import_MT
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    # 16:10 KST = 07:10 UTC (매일) : import_MT(16:00) 끝난 뒤 10분 여유
+    - cron: "10 7 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout moneytree-web
+        uses: actions/checkout@v4
+
+      - name: Prepare folders
+        run: |
+          mkdir -p public/data/theme
+
+      - name: Download index.json from import_MT
+        run: |
+          curl -L -o /tmp/index.json "https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/index.json"
+          cp /tmp/index.json public/data/theme/index.json
+
+      - name: Download T_*.json listed in index.json
+        run: |
+          python - << 'PY'
+          import json, os, urllib.request
+
+          INDEX_PATH = "public/data/theme/index.json"
+          OUT_DIR = "public/data/theme"
+
+          with open(INDEX_PATH, "r", encoding="utf-8") as f:
+            idx = json.load(f)
+
+          themes = idx.get("themes", [])
+          if not themes:
+            raise SystemExit("index.json에 themes가 비어있습니다.")
+
+          def dl(url, out_path):
+            with urllib.request.urlopen(url) as r:
+              data = r.read()
+            with open(out_path, "wb") as f:
+              f.write(data)
+
+          count = 0
+          for t in themes:
+            tid = t.get("themeId")
+            if not tid:
+              continue
+            url = f"https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/{tid}.json"
+            out_path = os.path.join(OUT_DIR, f"{tid}.json")
+            dl(url, out_path)
+            count += 1
+
+          print(f"[OK] downloaded themes: {count}")
+          PY
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git add public/data/theme/index.json
+          git add public/data/theme/T_*.json
+
+          git commit -m "chore: sync freeze themes from import_MT"
+          git push
