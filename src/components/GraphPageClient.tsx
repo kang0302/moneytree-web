@@ -72,7 +72,11 @@ export default function GraphPageClient({
 
         {/* RIGHT: Panel */}
         <div className="col-span-12 lg:col-span-4">
-          <GraphRightPanel themeName={themeName} selectedNode={selectedNode} />
+          <GraphRightPanel
+            themeId={themeId}
+            themeName={themeName}
+            selectedNode={selectedNode}
+          />
         </div>
       </div>
     </div>

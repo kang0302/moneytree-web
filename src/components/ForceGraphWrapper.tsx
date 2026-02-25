@@ -1,6 +1,15 @@
 // src/components/ForceGraphWrapper.tsx
 // UI COMPACT v1 - 2026-02-16
 // - Allow external control of lockTheme (header)
+// PATCH 2026-02-23
+// - Text size x1.5 for all graph labels
+// - Tuning to reduce overlap: stronger collide, slightly longer links, slightly stronger charge
+// PATCH 2026-02-23 (Bloomberg Hover)
+// - Remove old 3 lines (type~PER block) in node hover
+// - Show only return (top), divider, 2x2 grid, footer meta
+// PATCH 2026-02-23 (FOCUS)
+// - Read ?focus=NODE_ID from URL if focusId prop is not provided
+// - Auto center/zoom & highlight the focused node
 
 "use client";
 
@@ -31,6 +40,19 @@ type MetricsT = {
   return1y?: number;
   return3y?: number;
 
+  // ✅ Bloomberg hover: optional value fields (if present)
+  last_price?: number;
+  close?: number;
+  market_cap?: number;
+  marketCap?: number;
+  valuationAsOf?: string;
+  val_date?: string;
+  asof?: string;
+
+  ticker?: string;
+  exchange?: string;
+  country?: string;
+
   [key: string]: any;
 };
 
@@ -55,6 +77,11 @@ type NodeT = {
   name_en?: string;
   label_ko?: string;
   label_en?: string;
+
+  // optional meta (some datasets put these on node instead of metrics)
+  ticker?: string;
+  exchange?: string;
+  country?: string;
 
   [key: string]: any;
 };
@@ -94,9 +121,22 @@ type Props = {
   // ✅ overlay controls on/off (default true)
   showOverlayControls?: boolean;
 
-  // ✅ focus node highlight (from search)
+  // ✅ focus node highlight (from search or external)
   focusId?: string | null;
 };
+
+// =========================
+// TEXT SCALE + OVERLAP TUNING
+// =========================
+const TEXT_SCALE = 1.5; // ✅ 요청: 모든 그래프 텍스트 1.5배
+const LABEL_GAP_BASE = 8;
+const LABEL_GAP = Math.round(LABEL_GAP_BASE * TEXT_SCALE); // label x-offset gap
+
+// Overlap tuning (physics)
+const LINK_DIST_SCALE = 1.12; // 링크 거리 약 +12%
+const CHARGE_STRENGTH = -620; // -520 -> -620 (약간 더 분산)
+const COLLIDE_PAD_BASE = 22;
+const COLLIDE_PAD = Math.round(COLLIDE_PAD_BASE * TEXT_SCALE); // 22 -> 33
 
 function normType(t?: string) {
   const x = (t ?? "").toUpperCase();
@@ -167,19 +207,6 @@ function pickNum(v: any): number | undefined {
   return typeof v === "number" && Number.isFinite(v) ? v : undefined;
 }
 
-function getFwdPer(n: NodeT) {
-  const m = n.metrics ?? {};
-  return (
-    pickNum(m.perFwd12m) ??
-    pickNum(m.per_forward_12m) ??
-    pickNum(m.forwardPER12m) ??
-    pickNum(m.fwdPer12m) ??
-    pickNum(m.fwd_per_12m) ??
-    pickNum(m["per_fwd_12m"]) ??
-    pickNum(m["perFwd12M"])
-  );
-}
-
 function getTrailingPer(n: NodeT) {
   const m = n.metrics ?? {};
   return pickNum(m.per) ?? pickNum(m.pe) ?? pickNum(m.trailingPER) ?? pickNum(m.trailing_per) ?? pickNum(m.per_ttm);
@@ -231,8 +258,10 @@ function colorFromReturn(r?: number) {
   const t = Math.abs(v) / 60;
 
   const base = { r: 148, g: 163, b: 184 };
-  const pos = { r: 59, g: 130, b: 246 };
-  const neg = { r: 239, g: 68, b: 68 };
+
+  // ✅ [COLOR RULE] UP = RED, DOWN = BLUE (반전 적용)
+  const pos = { r: 239, g: 68, b: 68 }; // + return => RED
+  const neg = { r: 59, g: 130, b: 246 }; // - return => BLUE
 
   const mix = (a: any, b: any, tt: number) => ({
     r: Math.round(a.r + (b.r - a.r) * tt),
@@ -309,6 +338,29 @@ export default function ForceGraphWrapper({
   const [hoverNode, setHoverNode] = useState<NodeT | null>(null);
   const [hoverLink, setHoverLink] = useState<any | null>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  // ✅ URL ?focus=NODE_ID fallback (props가 없을 때만 사용)
+  const [focusFromUrl, setFocusFromUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const read = () => {
+      try {
+        const sp = new URLSearchParams(window.location.search);
+        const f = sp.get("focus");
+        setFocusFromUrl(f && f.trim() ? f.trim() : null);
+      } catch {
+        setFocusFromUrl(null);
+      }
+    };
+
+    read();
+    window.addEventListener("popstate", read);
+    return () => window.removeEventListener("popstate", read);
+  }, []);
+
+  const effectiveFocusId = (typeof focusId === "string" && focusId.trim()) ? focusId.trim() : focusFromUrl;
 
   useEffect(() => {
     if (!wrapRef.current) return;
@@ -435,18 +487,24 @@ export default function ForceGraphWrapper({
 
   // ✅ focus: center & zoom to searched node
   useEffect(() => {
-    if (!focusId) return;
+    if (!effectiveFocusId) return;
     if (!fgRef.current) return;
-    const n = (graphData.nodes as any[]).find((x) => x?.id === focusId);
+
+    const n = (graphData.nodes as any[]).find((x) => x?.id === effectiveFocusId);
     if (!n || typeof n.x !== "number" || typeof n.y !== "number") return;
 
     try {
       fgRef.current.centerAt(n.x, n.y, 450);
+
       // mild zoom-in so highlight is obvious
-      const z = Math.min(4, Math.max(2.2, fgRef.current.zoom?.() ?? 2.2));
+      const currentZ = typeof fgRef.current.zoom === "function" ? fgRef.current.zoom() : 2.2;
+      const z = Math.min(4, Math.max(2.2, currentZ ?? 2.2));
       fgRef.current.zoom(z, 450);
+
+      // optional: also notify selection
+      onSelectNode?.(n as NodeT);
     } catch {}
-  }, [focusId, graphData.nodes]);
+  }, [effectiveFocusId, graphData.nodes, onSelectNode]);
 
   useEffect(() => {
     if (!fgRef.current) return;
@@ -462,16 +520,20 @@ export default function ForceGraphWrapper({
       const st = normType(sn?.type);
       const tt = normType(tn?.type);
 
-      if (s === themeNodeId || t === themeNodeId) return 200;
-      if ((st === "ASSET" && tt === "FIELD") || (st === "FIELD" && tt === "ASSET")) return 155;
-      if (st === "ASSET" && tt === "ASSET") return 120;
-      return 105;
+      // 기존 값을 살짝 늘려 텍스트 확대에 따른 겹침 완화
+      if (s === themeNodeId || t === themeNodeId) return Math.round(200 * LINK_DIST_SCALE); // 224
+      if ((st === "ASSET" && tt === "FIELD") || (st === "FIELD" && tt === "ASSET"))
+        return Math.round(155 * LINK_DIST_SCALE); // 174
+      if (st === "ASSET" && tt === "ASSET") return Math.round(120 * LINK_DIST_SCALE); // 134
+      return Math.round(105 * LINK_DIST_SCALE); // 118
     });
 
-    fg.d3Force("charge")?.strength(-520);
+    fg.d3Force("charge")?.strength(CHARGE_STRENGTH);
+
     fg.d3Force("collide")?.radius((n: any) => {
       const isTheme = n?.id === themeNodeId;
-      return nodeRadius(n, isTheme) + 22;
+      // 텍스트 확대에 맞춰 충돌 반경도 확대
+      return nodeRadius(n, isTheme) + COLLIDE_PAD;
     });
 
     fg.d3Force("center")?.strength?.(0.06);
@@ -480,7 +542,7 @@ export default function ForceGraphWrapper({
 
   const drawNode = (node: any, ctx: CanvasRenderingContext2D) => {
     const isTheme = node.id === themeNodeId;
-    const isFocus = !!focusId && node.id === focusId;
+    const isFocus = !!effectiveFocusId && node.id === effectiveFocusId;
     const baseR = nodeRadius(node, isTheme);
     const r = isFocus ? baseR + 6 : baseR;
 
@@ -508,12 +570,20 @@ export default function ForceGraphWrapper({
       ctx.stroke();
     }
 
-    const fontSize = isFocus ? 12 : isTheme ? 11 : t === "ASSET" ? 10 : 9;
+    // ✅ 폰트 크기 1.5배
+    const baseFont = isFocus ? 12 : isTheme ? 11 : t === "ASSET" ? 10 : 9;
+    const fontSize = Math.max(9, Math.round(baseFont * TEXT_SCALE));
+
     ctx.font = `${fontSize}px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial`;
     ctx.textAlign = "left";
     ctx.textBaseline = "middle";
     ctx.fillStyle = isFocus ? "rgba(255,255,255,0.98)" : "rgba(255,255,255,0.92)";
-    ctx.fillText(label, node.x + r + 8, node.y);
+
+    // ✅ 텍스트 확대에 맞춰 x 오프셋도 증가
+    const x = node.x + r + LABEL_GAP;
+    const y = node.y;
+
+    ctx.fillText(label, x, y);
   };
 
   const periods: { key: PeriodKey; label: string }[] = [
@@ -536,9 +606,63 @@ export default function ForceGraphWrapper({
     return v.toFixed(2);
   };
 
+  // ✅ Bloomberg hover helpers
+  const fmtNum = (v?: number) => {
+    if (typeof v !== "number" || !Number.isFinite(v)) return "—";
+    return v.toLocaleString();
+  };
+
+  const fmtDate = (s?: string) => {
+    if (!s) return "—";
+    return String(s).slice(0, 10);
+  };
+
+  const ellipsis = (s?: string, max = 18) => {
+    if (!s) return "—";
+    const x = String(s);
+    return x.length > max ? x.slice(0, max - 1) + "…" : x;
+  };
+
+  const getClose = (n: NodeT): number | undefined => {
+    const m = n.metrics ?? {};
+    return pickNum(m.last_price) ?? pickNum(m.close) ?? pickNum((m as any).price) ?? pickNum((m as any).lastPrice) ?? pickNum(m["Close"]) ?? pickNum(m["close"]);
+  };
+
+  const getMarketCap = (n: NodeT): number | undefined => {
+    const m = n.metrics ?? {};
+    return pickNum(m.market_cap) ?? pickNum(m.marketCap) ?? pickNum((m as any).mktcap) ?? pickNum((m as any).marketcap);
+  };
+
+  const getValDate = (n: NodeT): string | undefined => {
+    const m = n.metrics ?? {};
+    const s =
+      (typeof m.valuationAsOf === "string" && m.valuationAsOf) ||
+      (typeof (m as any).asof === "string" && (m as any).asof) ||
+      (typeof (m as any).val_date === "string" && (m as any).val_date) ||
+      (typeof (m as any).valuation_date === "string" && (m as any).valuation_date) ||
+      (typeof (m as any).valuationDate === "string" && (m as any).valuationDate) ||
+      undefined;
+    return s;
+  };
+
+  const getTicker = (n: NodeT): string | undefined => {
+    const m = n.metrics ?? {};
+    return (typeof m.ticker === "string" && m.ticker) || (typeof n.ticker === "string" && n.ticker) || undefined;
+  };
+
+  const getExchange = (n: NodeT): string | undefined => {
+    const m = n.metrics ?? {};
+    return (typeof m.exchange === "string" && m.exchange) || (typeof n.exchange === "string" && n.exchange) || undefined;
+  };
+
+  const getCountry = (n: NodeT): string | undefined => {
+    const m = n.metrics ?? {};
+    return (typeof m.country === "string" && m.country) || (typeof n.country === "string" && n.country) || undefined;
+  };
+
   const handleSelect = (n: NodeT | null) => onSelectNode?.(n);
 
-  const tooltipStyle = (W = 260, H = 155) => {
+  const tooltipStyle = (W = 290, H = 215) => {
     const pad = 14;
     let left = mousePos.x + pad;
     let top = mousePos.y + pad;
@@ -562,7 +686,7 @@ export default function ForceGraphWrapper({
       {/* ✅ Overlay controls (optional) */}
       {showOverlayControls && (
         <div className="absolute right-3 top-3 z-30 flex items-center gap-3">
-          {/* Theme pin (if you still want to allow in-graph) */}
+          {/* Theme pin */}
           <label className="flex items-center gap-2 rounded-lg border border-white/10 bg-black/40 px-3 py-2 text-xs text-white/80">
             <input type="checkbox" checked={lockTheme} onChange={(e) => setLockTheme(e.target.checked)} />
             <span className="font-semibold">THEME 고정</span>
@@ -592,25 +716,60 @@ export default function ForceGraphWrapper({
         </div>
       )}
 
-      {/* Node tooltip */}
+      {/* ✅ Node tooltip (Bloomberg style) */}
       {hoverNode && (
         <div
-          className="pointer-events-none absolute z-40 rounded-lg border border-white/10 bg-black/70 px-3 py-2 text-xs text-white/90"
-          style={tooltipStyle(260, 155)}
+          className="pointer-events-none absolute z-40 rounded-xl border border-white/10 bg-black/80 px-4 py-3 text-xs text-white/90 backdrop-blur"
+          style={tooltipStyle(290, 215)}
         >
-          <div className="font-semibold">{hoverLabel || hoverNode.id}</div>
-          <div className="mt-1 text-white/60">type: {normType(hoverNode.type)}</div>
+          {/* Title */}
+          <div className="text-sm font-bold">{hoverLabel || hoverNode.id}</div>
 
+          {/* ✅ 기존 3줄(type~PER) 제거: return만 상단에 표시 */}
+          {isAssetHover && (
+            <div className="mt-2 text-[13px] font-semibold text-white/95">
+              {period} return: <span className="text-white">{fmtReturn(getReturnByPeriod(hoverNode, period))}</span>
+            </div>
+          )}
+
+          <div className="my-3 h-px bg-white/10" />
+
+          {/* 2x2 grid */}
           {isAssetHover && (
             <>
-              <div className="mt-2 text-white/80">
-                PER (12M Fwd): <span className="text-white">{fmtPer(getFwdPer(hoverNode))}</span>
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <div className="text-white/60">Close</div>
+                  <div className="text-sm font-semibold">{fmtNum(getClose(hoverNode))}</div>
+                </div>
+
+                <div>
+                  <div className="text-white/60">MKT CAP</div>
+                  <div className="text-sm font-semibold">{fmtNum(getMarketCap(hoverNode))}</div>
+                </div>
+
+                <div>
+                  <div className="text-white/60">PER (Trailing)</div>
+                  <div className="text-sm font-semibold">{fmtPer(getTrailingPer(hoverNode))}</div>
+                </div>
+
+                <div>
+                  <div className="text-white/60">VAL DATE</div>
+                  <div className="text-sm font-semibold">{fmtDate(getValDate(hoverNode))}</div>
+                </div>
               </div>
-              <div className="mt-1 text-white/80">
-                PER (Trailing): <span className="text-white">{fmtPer(getTrailingPer(hoverNode))}</span>
-              </div>
-              <div className="mt-2 text-white/80">
-                {period} return: <span className="text-white">{fmtReturn(getReturnByPeriod(hoverNode, period))}</span>
+
+              {/* Footer */}
+              <div className="mt-3 space-y-1 text-white/80">
+                <div>
+                  Ticker : <span className="text-white">{ellipsis(getTicker(hoverNode))}</span>
+                </div>
+                <div>
+                  Exchange : <span className="text-white">{ellipsis(getExchange(hoverNode))}</span>
+                </div>
+                <div>
+                  Country : <span className="text-white">{ellipsis(getCountry(hoverNode))}</span>
+                </div>
               </div>
             </>
           )}

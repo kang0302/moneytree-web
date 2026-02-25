@@ -7,6 +7,10 @@
 // ✅ 2026-02-17 (Search v3)
 // - Add SearchBar (ASSET/THEME/BF/MACRO) in header
 // - Use GitHub raw search index: RAW_BASE + /data/search/search_index.json
+//
+// ✅ 2026-02-24 (Fix Barometer/Top movers)
+// - Normalize node.type for ASSET/THEME/BUSINESS_FIELD (some theme JSONs may omit type)
+// - Coerce metrics numeric fields (returns/valuation fields may be strings -> number)
 
 "use client";
 
@@ -153,6 +157,66 @@ function parseCsv(text: string) {
   return rows;
 }
 
+/**
+ * ✅ Some theme JSONs contain numeric-like fields as strings.
+ *    Coerce known metrics fields (returns/valuation) into numbers where possible.
+ */
+function toNumberOrKeep(v: any) {
+  if (v === null || v === undefined) return v;
+  if (typeof v === "number") return Number.isFinite(v) ? v : v;
+  if (typeof v === "string") {
+    const s = v.trim();
+    if (s === "") return v;
+    const n = Number(s);
+    if (Number.isFinite(n)) return n;
+  }
+  return v;
+}
+
+function coerceMetrics(metrics: any) {
+  if (!metrics || typeof metrics !== "object") return metrics;
+
+  const out: any = { ...metrics };
+
+  // common valuation keys
+  const valuationKeys = [
+    "close",
+    "marketCap",
+    "market_cap",
+    "mktCap",
+    "mkt_cap",
+    "pe_ttm",
+    "per",
+    "pe",
+    "perFwd12m",
+    "per_fwd12m",
+  ];
+
+  for (const k of valuationKeys) {
+    if (k in out) out[k] = toNumberOrKeep(out[k]);
+  }
+
+  // return keys: ret7d, ret_7d, return_7d, return7d, ret1m, return_30d, etc.
+  for (const k of Object.keys(out)) {
+    const key = k.toLowerCase();
+    const looksReturn =
+      key.startsWith("ret") ||
+      key.startsWith("return") ||
+      key.includes("ret_") ||
+      key.includes("return_") ||
+      key.endsWith("d") ||
+      key.endsWith("m") ||
+      key.endsWith("y") ||
+      key.includes("ytd");
+
+    if (looksReturn) {
+      out[k] = toNumberOrKeep(out[k]);
+    }
+  }
+
+  return out;
+}
+
 export default function GraphClient({
   themeId,
   themeName,
@@ -260,18 +324,34 @@ export default function GraphClient({
     const ns = safeArray<NodeT>(nodes);
 
     return ns.map((n) => {
+      // ✅ Always coerce metrics to stable numeric form (important for barometer)
+      const metricsCoerced = coerceMetrics(n.metrics);
+
       if (isThemeNode(n, themeId)) {
-        return { ...n, name: themeName };
+        return {
+          ...n,
+          type: "THEME", // ✅ ensure THEME type
+          name: themeName,
+          metrics: metricsCoerced,
+        };
       }
 
       if (isAsset(n)) {
         const m = assetMap[n.id];
-        if (!m) return n;
-        const ko = m.ko;
-        const en = m.en;
+        const ko = m?.ko;
+        const en = m?.en;
+
+        // even if master not found, still normalize type/metrics
+        const base = {
+          ...n,
+          type: "ASSET", // ✅ ensure ASSET type (critical)
+          metrics: metricsCoerced,
+        };
+
+        if (!m) return base;
 
         return {
-          ...n,
+          ...base,
           asset_name_ko: ko ?? n.asset_name_ko,
           asset_name_en: en ?? n.asset_name_en,
           name: ko ?? n.name,
@@ -296,13 +376,15 @@ export default function GraphClient({
 
         return {
           ...n,
+          type: n.type ?? "BUSINESS_FIELD", // ✅ best-effort normalize
+          metrics: metricsCoerced,
           business_field_ko: n.business_field_ko ?? ko,
           business_field_en: n.business_field_en ?? en,
           name: finalName,
         };
       }
 
-      return n;
+      return { ...n, metrics: metricsCoerced };
     });
   }, [nodes, assetMap, bfMap, themeId, themeName]);
 
@@ -314,14 +396,23 @@ export default function GraphClient({
     if (!cn.length) return cn;
 
     return cn.map((n) => {
+      const metricsCoerced = coerceMetrics(n.metrics);
+
       if (isAsset(n)) {
         const m = assetMap[n.id];
-        if (!m) return n;
-        const ko = m.ko;
-        const en = m.en;
+        const ko = m?.ko;
+        const en = m?.en;
+
+        const base = {
+          ...n,
+          type: "ASSET", // ✅ ensure ASSET type
+          metrics: metricsCoerced,
+        };
+
+        if (!m) return base;
 
         return {
-          ...n,
+          ...base,
           asset_name_ko: ko ?? n.asset_name_ko,
           asset_name_en: en ?? n.asset_name_en,
           name: ko ?? n.name,
@@ -345,13 +436,15 @@ export default function GraphClient({
 
         return {
           ...n,
+          type: n.type ?? "BUSINESS_FIELD",
+          metrics: metricsCoerced,
           business_field_ko: n.business_field_ko ?? ko,
           business_field_en: n.business_field_en ?? en,
           name: finalName,
         };
       }
 
-      return n;
+      return { ...n, metrics: metricsCoerced };
     });
   }, [compareData?.nodes, assetMap, bfMap]);
 

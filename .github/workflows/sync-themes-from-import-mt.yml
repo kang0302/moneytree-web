@@ -3,11 +3,15 @@ name: Sync Freeze Themes from import_MT (+ Search Index)
 on:
   workflow_dispatch: {}
   schedule:
-    # 16:10 KST = 07:10 UTC (매일)
+    # 16:10 KST = 07:10 UTC
     - cron: "10 7 * * *"
 
 permissions:
   contents: write
+
+concurrency:
+  group: sync-theme-json
+  cancel-in-progress: true
 
 jobs:
   sync:
@@ -16,36 +20,57 @@ jobs:
     steps:
       - name: Checkout moneytree-web
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.MT_PUSH_TOKEN }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
+      - name: Install jq
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq
+
       - name: Prepare folders
         run: |
           mkdir -p public/data/theme
           mkdir -p public/data/search
 
-      - name: Download index.json from import_MT
+      - name: Download index.json from import_MT (raw)
         run: |
-          curl -L -o /tmp/index.json "https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/index.json"
-          cp /tmp/index.json public/data/theme/index.json
+          set -e
+          curl -L --fail -o public/data/theme/index.json \
+            "https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/index.json?cb=$(date +%s)"
+
+      - name: Validate index.json (JSON + LOCK schema)
+        run: |
+          set -e
+          jq . public/data/theme/index.json > /dev/null
+
+          # LOCK: each item must have 6 keys
+          jq -e '
+            all(.[]; has("themeId") and has("themeName") and has("nodeCount") and has("edgeCount") and has("source") and has("updatedAt"))
+          ' public/data/theme/index.json > /dev/null
+
+      - name: Clean old theme files (recommended)
+        run: |
+          rm -f public/data/theme/T_*.json || true
 
       - name: Download T_*.json listed in index.json
         run: |
           python - << 'PY'
-          import json, os, urllib.request
+          import json, os, urllib.request, time
 
           INDEX_PATH = "public/data/theme/index.json"
           OUT_DIR = "public/data/theme"
+          os.makedirs(OUT_DIR, exist_ok=True)
 
           with open(INDEX_PATH, "r", encoding="utf-8") as f:
               idx = json.load(f)
 
-          # index.json 포맷 호환:
-          # 1) {"themes":[...]} (object)
-          # 2) [...]           (list)
+          # index.json is expected to be a list (LOCK)
           if isinstance(idx, dict):
               themes = idx.get("themes", [])
           elif isinstance(idx, list):
@@ -62,6 +87,7 @@ jobs:
               with open(out_path, "wb") as f:
                   f.write(data)
 
+          cb = int(time.time())
           count = 0
           for t in themes:
               tid = None
@@ -73,7 +99,7 @@ jobs:
               if not tid:
                   continue
 
-              url = f"https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/{tid}.json"
+              url = f"https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/{tid}.json?cb={cb}"
               out_path = os.path.join(OUT_DIR, f"{tid}.json")
               dl(url, out_path)
               count += 1
@@ -81,7 +107,7 @@ jobs:
           print(f"[OK] downloaded themes: {count}")
           PY
 
-      # ✅ build_search_index.mjs가 기대하는 폴더(import_MT/data/theme)를 Actions에서 만들어준다
+      # build_search_index.mjs가 기대하는 경로를 맞추기 위한 미러
       - name: Mirror themes into import_MT/data/theme for search builder
         run: |
           mkdir -p import_MT/data/theme
@@ -94,17 +120,17 @@ jobs:
 
       - name: Commit & push if changed
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
-          if git diff --quiet; then
+          set -e
+          if [ -z "$(git status --porcelain)" ]; then
             echo "No changes to commit."
             exit 0
           fi
 
-          git add public/data/theme/index.json
-          git add public/data/theme/T_*.json
+          git config user.name "moneytree-bot"
+          git config user.email "actions@users.noreply.github.com"
+
+          git add -A public/data/theme
           git add public/data/search/search_index.json
 
           git commit -m "chore: sync themes + rebuild search index"
-          git push
+          git push origin main
