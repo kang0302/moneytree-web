@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "v5",
+  "themeId": "T_092",
+  "themeName": "K-RNA치료제",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "3d",
+      "7d",
+      "1m",
+      "ytd",
+      "1y",
+      "3y"
+    ],
+    "dataAsOf": "2026-04-01T00:00:00+09:00",
+    "notes": "g92 누적 import 기반 K-RNA치료제 테마",
+    "sources": []
+  },
+  "nodes": [
+    {
+      "id": "T_092",
+      "type": "THEME",
+      "name": "K-RNA치료제"
+    },
+    {
+      "id": "A_712",
+      "type": "ASSET",
+      "name": "올릭스",
+      "exposure": {
+        "ticker": "226950",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": 5.30351437699681,
+        "return_7d": -17.805486284289273,
+        "return_1m": -8.799114554510234,
+        "return_ytd": 17.88268955650929,
+        "return_1y": 275.8266818700114,
+        "return_3y": 662.9629629629629,
+        "returnsAsOf": "2026-04-10",
+        "returnsSource": "PYKRX"
+      }
+    },
+    {
+      "id": "A_713",
+      "type": "ASSET",
+      "name": "알지노믹스",
+      "exposure": {
+        "ticker": "",
+        "exchange": "",
+        "country": ""
+      },
+      "metrics": {
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": null,
+        "return_7d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": null,
+        "returnsSource": null
+      }
+    },
+    {
+      "id": "A_714",
+      "type": "ASSET",
+      "name": "에스티팜",
+      "exposure": {
+        "ticker": "237690",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": 4.598540145985397,
+        "return_7d": -6.217277486911,
+        "return_1m": -8.958068614993643,
+        "return_ytd": 24.608695652173918,
+        "return_1y": 93.38731443994601,
+        "return_3y": 83.71794871794872,
+        "returnsAsOf": "2026-04-10",
+        "returnsSource": "PYKRX"
+      }
+    },
+    {
+      "id": "A_715",
+      "type": "ASSET",
+      "name": "부광약품",
+      "exposure": {
+        "ticker": "003000",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": 0.13280212483399723,
+        "return_7d": -2.204928664072636,
+        "return_1m": 30.67590987868285,
+        "return_ytd": 96.8668407310705,
+        "return_1y": 111.56004489337823,
+        "return_3y": -0.7241606319947302,
+        "returnsAsOf": "2026-04-10",
+        "returnsSource": "PYKRX"
+      }
+    },
+    {
+      "id": "A_244",
+      "type": "ASSET",
+      "name": "일라이릴리",
+      "exposure": {
+        "ticker": "LLY",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "close": 955.54,
+        "marketCap": 902812347260,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-04-09",
+        "valuationSource": "FMP",
+        "return_3d": null,
+        "return_7d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": "2026-04-09",
+        "returnsSource": "FMP"
+      }
+    },
+    {
+      "id": "BF_064",
+      "type": "BUSINESS_FIELD",
+      "name": "CDMO"
+    }
+  ],
+  "edges": [
+    {
+      "from": "A_712",
+      "to": "T_092",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_713",
+      "to": "T_092",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_714",
+      "to": "T_092",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_715",
+      "to": "T_092",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_714",
+      "to": "BF_064",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_712",
+      "to": "A_244",
+      "type": "PARTNERS"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_712",
+      "to": "T_092",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_713",
+      "to": "T_092",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_714",
+      "to": "T_092",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_715",
+      "to": "T_092",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_714",
+      "to": "BF_064",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_712",
+      "to": "A_244",
+      "type": "PARTNERS"
+    }
+  ]
+}
