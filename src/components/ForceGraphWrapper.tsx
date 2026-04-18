@@ -452,6 +452,66 @@ export default function ForceGraphWrapper({
   const [hoverLink, setHoverLink] = useState<any | null>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
+  // ──────────────────────────────────────────────────────────────
+  // 🎬 Entrance animation: staggered by node type (theme → macro → asset → field → character)
+  // ──────────────────────────────────────────────────────────────
+  const REVEAL_DELAY_MS: Record<string, number> = {
+    THEME: 0,
+    MACRO: 300,
+    ASSET: 600,
+    FIELD: 900, // Business_Field normType
+    CHARACTER: 1200,
+  };
+  const NODE_ANIM_DUR_MS = 300;
+  const EDGE_ANIM_DUR_MS = 200;
+  const MAX_JITTER_MS = 100;
+  const animStartRef = useRef<number | null>(null);
+  const jitterMapRef = useRef<Map<string, number>>(new Map());
+  const rafRef = useRef<number | null>(null);
+  const [animTick, setAnimTick] = useState(0);
+
+  const getJitter = (id: string) => {
+    const m = jitterMapRef.current;
+    if (!m.has(id)) m.set(id, Math.random() * MAX_JITTER_MS);
+    return m.get(id)!;
+  };
+
+  const getNodeReveal = (node: any): number => {
+    const base = animStartRef.current ?? 0;
+    const nt = normType(node?.type);
+    const delay = REVEAL_DELAY_MS[nt] ?? 600;
+    return base + delay + getJitter(node?.id ?? "");
+  };
+
+  // easeOutBack: 0 → ~1.1 overshoot → 1.0 (gives the "pop" feel the user asked for)
+  const easeOutBack = (t: number): number => {
+    const c1 = 1.70158;
+    const c3 = c1 + 1;
+    const x = Math.max(0, Math.min(1, t));
+    return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2);
+  };
+
+  const getNodeAnimState = (node: any): { scale: number; opacity: number; visible: boolean } => {
+    if (animStartRef.current === null) return { scale: 1, opacity: 1, visible: true };
+    const elapsed = performance.now() - getNodeReveal(node);
+    if (elapsed < 0) return { scale: 0, opacity: 0, visible: false };
+    if (elapsed >= NODE_ANIM_DUR_MS) return { scale: 1, opacity: 1, visible: true };
+    const p = elapsed / NODE_ANIM_DUR_MS;
+    return { scale: easeOutBack(p), opacity: p, visible: true };
+  };
+
+  const getEdgeOpacity = (link: any): number => {
+    if (animStartRef.current === null) return 1;
+    const s = typeof link?.source === "object" ? link.source : null;
+    const t = typeof link?.target === "object" ? link.target : null;
+    if (!s || !t) return 1;
+    const revealAt = Math.max(getNodeReveal(s), getNodeReveal(t));
+    const elapsed = performance.now() - revealAt;
+    if (elapsed < 0) return 0;
+    if (elapsed >= EDGE_ANIM_DUR_MS) return 1;
+    return elapsed / EDGE_ANIM_DUR_MS;
+  };
+
   // ✅ URL ?focus=NODE_ID fallback (props가 없을 때만 사용)
   const [focusFromUrl, setFocusFromUrl] = useState<string | null>(null);
 
@@ -474,6 +534,41 @@ export default function ForceGraphWrapper({
   }, []);
 
   const effectiveFocusId = typeof focusId === "string" && focusId.trim() ? focusId.trim() : focusFromUrl;
+
+  // 🎬 Start/restart entrance animation when the theme changes (first load + navigation).
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    animStartRef.current = performance.now();
+    jitterMapRef.current.clear();
+
+    const END_MS = Math.max(...Object.values(REVEAL_DELAY_MS)) + NODE_ANIM_DUR_MS + MAX_JITTER_MS + EDGE_ANIM_DUR_MS;
+
+    const loop = () => {
+      const elapsed = performance.now() - (animStartRef.current ?? 0);
+      if (elapsed >= END_MS) {
+        rafRef.current = null;
+        // one final refresh so any last easing frame lands on its end state
+        setAnimTick((t) => t + 1);
+        fgRef.current?.refresh?.();
+        return;
+      }
+      setAnimTick((t) => t + 1);
+      fgRef.current?.refresh?.();
+      rafRef.current = requestAnimationFrame(loop);
+    };
+
+    rafRef.current = requestAnimationFrame(loop);
+
+    return () => {
+      if (rafRef.current !== null) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
+    };
+    // themeId drives it; we intentionally ignore the other helper constants (stable).
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [themeId]);
 
   useEffect(() => {
     if (!wrapRef.current) return;
@@ -654,6 +749,10 @@ export default function ForceGraphWrapper({
   }, [graphData.nodes, themeNodeId]);
 
   const drawNode = (node: any, ctx: CanvasRenderingContext2D) => {
+    // 🎬 entrance animation gate
+    const anim = getNodeAnimState(node);
+    if (!anim.visible) return;
+
     const isTheme = node.id === themeNodeId;
     const isFocus = !!effectiveFocusId && node.id === effectiveFocusId;
     const baseR = nodeRadius(node, isTheme);
@@ -667,6 +766,14 @@ export default function ForceGraphWrapper({
     if (t === "ASSET") {
       const rr = getReturnByPeriod(node, period);
       fill = colorFromReturn(rr);
+    }
+
+    ctx.save();
+    ctx.globalAlpha = anim.opacity;
+    if (anim.scale !== 1) {
+      ctx.translate(node.x, node.y);
+      ctx.scale(anim.scale, anim.scale);
+      ctx.translate(-node.x, -node.y);
     }
 
     ctx.beginPath();
@@ -697,6 +804,8 @@ export default function ForceGraphWrapper({
     const y = node.y;
 
     ctx.fillText(label, x, y);
+
+    ctx.restore();
   };
 
   const periods: { key: PeriodKey; label: string }[] = [
@@ -1012,12 +1121,15 @@ export default function ForceGraphWrapper({
         graphData={graphData}
         backgroundColor="rgba(0,0,0,0)"
         nodeRelSize={4}
-        linkColor={() => "rgba(255,255,255,0.45)"}
+        linkColor={(l: any) => {
+          const a = getEdgeOpacity(l);
+          return `rgba(255,255,255,${(0.45 * a).toFixed(3)})`;
+        }}
         linkWidth={0.8}
         linkHoverPrecision={8}
         linkLabel={(l: any) => (l?.type ?? l?.label ?? "").toString()}
         nodeCanvasObject={drawNode}
-        nodeCanvasObjectMode={() => "after"}
+        nodeCanvasObjectMode={() => "replace"}
         onNodeHover={(n: any) => {
           setHoverNode(n ? (n as NodeT) : null);
           if (n) setHoverLink(null);
