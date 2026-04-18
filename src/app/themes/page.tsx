@@ -115,7 +115,7 @@ function safeJsonParse<T>(s: string | null, fallback: T): T {
   }
 }
 
-function clamp(n: number, a = 0, b = 100) {
+function clamp(n: number, a = 0, b = 1000) {
   return Math.max(a, Math.min(b, n));
 }
 

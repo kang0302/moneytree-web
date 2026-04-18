@@ -822,13 +822,19 @@ export default function ForceGraphWrapper({
   const isCharacterHover = hoverType === "CHARACTER" || (hoverNode?.id ?? "").startsWith("C_");
   const hoverLabel = hoverNode ? resolveLabel(hoverNode, themeName) : "";
 
+  // ✅ 0~1000 scale, 10-tier (matches themeReturn.ts tempByScore)
   const tempByScore = (s: number) => {
-    const v = Math.max(0, Math.min(100, s));
-    if (v >= 80) return { name: "HOT", color: "#b11226" };
-    if (v >= 60) return { name: "WARM", color: "#ef476f" };
-    if (v >= 40) return { name: "NEUTRAL", color: "#6b7280" };
-    if (v >= 20) return { name: "COOL", color: "#4d96ff" };
-    return { name: "COLD", color: "#1f3c88" };
+    const v = Math.max(0, Math.min(1000, s));
+    if (v >= 900) return { name: "BLAZING", color: "#7a0119" };
+    if (v >= 800) return { name: "HOT", color: "#b11226" };
+    if (v >= 700) return { name: "WARM+", color: "#d72638" };
+    if (v >= 600) return { name: "WARM", color: "#ef476f" };
+    if (v >= 500) return { name: "NEUTRAL+", color: "#ff9e5e" };
+    if (v >= 400) return { name: "NEUTRAL", color: "#6b7280" };
+    if (v >= 300) return { name: "COOL", color: "#4d96ff" };
+    if (v >= 200) return { name: "COOL-", color: "#3a68c9" };
+    if (v >= 100) return { name: "COLD", color: "#1f3c88" };
+    return { name: "FROZEN", color: "#0a1f5c" };
   };
 
   const hoverLinkLabel = hoverLink?.type?.toString?.() || hoverLink?.label?.toString?.() || "";

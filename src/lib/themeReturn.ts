@@ -8,7 +8,7 @@
 // - Period same rule everywhere
 // ✅ NEW (BAROMETER v1):
 // - avgReturnPct, tailPct(±15%), gapPct, topMovers
-// - healthScore/momentumScore/divScore (0~100)
+// - healthScore/momentumScore/divScore (0~1000)
 // - note: sentence 기반
 
 export type PeriodKey = "3D" | "7D" | "1M" | "YTD" | "1Y" | "3Y";
@@ -34,11 +34,11 @@ export type ThemeReturnSummary =
       // ✅ BAROMETER fields (Right Panel expects)
       note: string; // show in panel
       avgReturn: number; // mean return (%)
-      healthScore: number; // 0~100
-      momentumScore: number; // 0~100
-      divScore: number; // 0~100
-      riskScore: number; // 0~100 (tail 반영, 높을수록 안정)
-      overallScore: number; // 0~100 (Health/Momentum/Div/Risk 종합)
+      healthScore: number; // 0~1000
+      momentumScore: number; // 0~1000
+      divScore: number; // 0~1000
+      riskScore: number; // 0~1000 (tail 반영, 높을수록 안정)
+      overallScore: number; // 0~1000 (Health/Momentum/Div/Risk 종합)
       tailPct: number; // 0~100 (% of assets with |ret| >= 15)
       gapPct: number; // (top bucket mean - bottom bucket mean)
       topMovers: TopMover[]; // top N assets by return
@@ -174,42 +174,45 @@ export function extractReturnByPeriod(metrics: MetricsT | undefined, periodRaw: 
   }
 }
 
+// ✅ BAROMETER v2 — 0~1000 scale, 10-tier temperature grading
+// Saturation points preserved from v1: avgReturn ±16.67%, breadth 0~100%, tail 0~100.
+
 function scoreAvgReturn(avgReturn: number): number {
-  // v1: 0% => 50, +10% => 80, +20% => 100, -10% => 20
-  const s = 50 + avgReturn * 3;
-  return clamp(s, 0, 100);
+  // 0% => 500, +10% => 800, +16.67% => 1000, -10% => 200
+  const s = 500 + avgReturn * 30;
+  return clamp(s, 0, 1000);
 }
 
 function scoreBreadthPct(breadthPct: number): number {
-  // breadth 50% => 50, 80% => 80, 20% => 20
-  return clamp(breadthPct, 0, 100);
+  // 50% => 500, 80% => 800, 20% => 200
+  return clamp(breadthPct * 10, 0, 1000);
 }
 
 function scoreMomentumPct(momentumTopPct: number): number {
-  // v1: 0% => 50, +10% => 80, +20% => 100, -10% => 20
-  const s = 50 + momentumTopPct * 3;
-  return clamp(s, 0, 100);
+  // 0% => 500, +10% => 800, +16.67% => 1000, -10% => 200
+  const s = 500 + momentumTopPct * 30;
+  return clamp(s, 0, 1000);
 }
 
 function scoreDiversification(breadthPct: number, tailPct: number): number {
-  // v1: breadth가 높고 tail이 낮으면 좋음
+  // breadth 높고 tail 낮으면 좋음. max: 100*7 + 100*3 = 1000
   const b = clamp(breadthPct, 0, 100);
   const t = clamp(tailPct, 0, 100);
-  const s = b * 0.7 + (100 - t) * 0.3;
-  return clamp(s, 0, 100);
+  const s = b * 7 + (100 - t) * 3;
+  return clamp(s, 0, 1000);
 }
 
 /**
- * Risk score (0~100): tailPct가 높을수록 변동성/꼬리위험이 크다고 보고 감점.
- * - v1 가정: riskScore = 100 - tailPct
+ * Risk score (0~1000): tailPct가 높을수록 변동성/꼬리위험이 크다고 보고 감점.
+ * tailPct 0 => 1000, tailPct 100 => 0
  */
 function scoreRiskFromTailPct(tailPct: number): number {
-  return clamp(100 - tailPct, 0, 100);
+  return clamp(1000 - tailPct * 10, 0, 1000);
 }
 
 /**
- * Overall Barometer Score (0~100)
- * - v1 가정(추정): Health 35% + Momentum 35% + Diversification 20% + Risk 10%
+ * Overall Barometer Score (0~1000)
+ * - Weighted: Health 35% + Momentum 35% + Diversification 20% + Risk 10%
  */
 export function calcOverallBarometerScore(input: {
   healthScore: number;
@@ -221,23 +224,31 @@ export function calcOverallBarometerScore(input: {
   const overallScore = clamp(
     input.healthScore * 0.35 + input.momentumScore * 0.35 + input.divScore * 0.2 + riskScore * 0.1,
     0,
-    100
+    1000
   );
   return { overallScore: Math.round(overallScore), riskScore: Math.round(riskScore) };
 }
 
-export type TempBadgeMeta = { name: "HOT" | "WARM" | "NEUTRAL" | "COOL" | "COLD"; color: string };
+export type TempBadgeMeta = {
+  name: "BLAZING" | "HOT" | "WARM+" | "WARM" | "NEUTRAL+" | "NEUTRAL" | "COOL" | "COOL-" | "COLD" | "FROZEN";
+  color: string;
+};
 
 /**
- * Temperature badge by score (0~100)
+ * Temperature badge by score (0~1000), 10 tiers at 100-point intervals.
  */
 export function tempByScore(score: number): TempBadgeMeta {
-  const s = clamp(score, 0, 100);
-  if (s >= 80) return { name: "HOT", color: "#b11226" };
-  if (s >= 60) return { name: "WARM", color: "#ef476f" };
-  if (s >= 40) return { name: "NEUTRAL", color: "#6b7280" };
-  if (s >= 20) return { name: "COOL", color: "#4d96ff" };
-  return { name: "COLD", color: "#1f3c88" };
+  const s = clamp(score, 0, 1000);
+  if (s >= 900) return { name: "BLAZING", color: "#7a0119" };
+  if (s >= 800) return { name: "HOT", color: "#b11226" };
+  if (s >= 700) return { name: "WARM+", color: "#d72638" };
+  if (s >= 600) return { name: "WARM", color: "#ef476f" };
+  if (s >= 500) return { name: "NEUTRAL+", color: "#ff9e5e" };
+  if (s >= 400) return { name: "NEUTRAL", color: "#6b7280" };
+  if (s >= 300) return { name: "COOL", color: "#4d96ff" };
+  if (s >= 200) return { name: "COOL-", color: "#3a68c9" };
+  if (s >= 100) return { name: "COLD", color: "#1f3c88" };
+  return { name: "FROZEN", color: "#0a1f5c" };
 }
 
 function computeGapPct(returns: number[]) {
@@ -333,7 +344,7 @@ export function computeThemeReturnSummary(args: {
   const breadthScore = scoreBreadthPct(breadthPct);
 
   // Health: 평균(60) + breadth(40)
-  const healthScore = clamp(avgScore * 0.6 + breadthScore * 0.4, 0, 100);
+  const healthScore = clamp(avgScore * 0.6 + breadthScore * 0.4, 0, 1000);
 
   // Momentum
   const momentumScore = scoreMomentumPct(momentumTopPct);
