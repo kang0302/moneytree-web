@@ -5,6 +5,20 @@ import { loadSearchIndex, searchByKeyword, SearchIndexV3 } from "@/lib/searchInd
 
 type Tab = "ASSET" | "THEME" | "BUSINESS_FIELD" | "MACRO";
 
+const TYPE_LABEL: Record<Tab, string> = {
+  ASSET: "ASSET",
+  THEME: "THEME",
+  BUSINESS_FIELD: "BF",
+  MACRO: "MACRO",
+};
+
+const TYPE_COLOR: Record<Tab, string> = {
+  ASSET: "#22d3ee",
+  THEME: "#f59e0b",
+  BUSINESS_FIELD: "#a78bfa",
+  MACRO: "#34d399",
+};
+
 export default function SearchBar({
   indexUrl, // 🔸 들어와도 무시(안전 고정)
   onGoTheme,
@@ -49,6 +63,25 @@ export default function SearchBar({
       ? result.businessFields
       : result.macros;
 
+  const TypeBadge = ({ t }: { t: Tab }) => (
+    <span
+      style={{
+        display: "inline-block",
+        padding: "1px 6px",
+        borderRadius: 6,
+        fontSize: 10,
+        fontWeight: 800,
+        letterSpacing: 0.4,
+        color: "#0a0a0a",
+        background: TYPE_COLOR[t],
+        marginRight: 8,
+        verticalAlign: "middle",
+      }}
+    >
+      {TYPE_LABEL[t]}
+    </span>
+  );
+
   const renderRow = (item: any) => {
     if (tab === "THEME") {
       return (
@@ -60,7 +93,10 @@ export default function SearchBar({
           }}
           style={rowBtnStyle}
         >
-          <div style={{ fontWeight: 700 }}>{item.name}</div>
+          <div style={{ fontWeight: 700 }}>
+            <TypeBadge t="THEME" />
+            {item.name}
+          </div>
           <div style={subStyle}>
             {item.id} · assets {item.assets?.length ?? 0} · bfs {item.businessFields?.length ?? 0} · macros{" "}
             {item.macros?.length ?? 0}
@@ -70,28 +106,36 @@ export default function SearchBar({
     }
 
     const themeIds: string[] = item.themes ?? [];
+    const clickable = themeIds.length > 0;
 
     return (
       <div key={item.id} style={rowDivStyle}>
         <button
           type="button"
           onClick={() => {
-            if (tab !== "ASSET") return;
             const ids = item.themes ?? [];
             if (!ids.length) return;
-
             const tid = String(ids[0]).trim();
             if (!tid) return;
 
-            if (onGoThemeFocus) onGoThemeFocus(tid, item.id);
+            if (tab === "ASSET" && onGoThemeFocus) onGoThemeFocus(tid, item.id);
             else onGoTheme(tid);
 
             setOpen(false);
           }}
-          style={{ ...nameBtnStyle, cursor: tab === "ASSET" ? "pointer" : "default" }}
-          title={tab === "ASSET" ? "첫 번째 연결 테마로 이동 (focus)" : undefined}
+          style={{ ...nameBtnStyle, cursor: clickable ? "pointer" : "default" }}
+          title={
+            tab === "ASSET"
+              ? "첫 번째 연결 테마로 이동 (focus)"
+              : themeIds.length > 0
+              ? "첫 번째 연결 테마로 이동"
+              : undefined
+          }
         >
-          <div style={{ fontWeight: 700 }}>{item.name}</div>
+          <div style={{ fontWeight: 700 }}>
+            <TypeBadge t={tab} />
+            {item.name}
+          </div>
         </button>
 
         {tab === "ASSET" ? (
@@ -142,7 +186,7 @@ export default function SearchBar({
             setOpen(true);
           }}
           onFocus={() => setOpen(true)}
-          placeholder="Search (자산/티커/테마/산업/매크로)"
+          placeholder="Search (자산/티커/테마/산업/매크로/캐릭터)"
           style={inputStyle}
         />
 

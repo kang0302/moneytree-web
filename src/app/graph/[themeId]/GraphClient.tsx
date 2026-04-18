@@ -1,6 +1,6 @@
 // src/app/graph/[themeId]/GraphClient.tsx
 // UI COMPACT v1 - 2026-02-16
-// - Header: THEME 고정 / Period toggle / Move to theme dropdown / Full theme map / Main home (small, far right)
+// - Header: Period toggle / Move to theme dropdown / Full theme map / Main home (small, far right)
 // - Reduce margins, maximize graph area (flex layout, no 100vh calc)
 // - Preserve existing compare logic, resolver logic, right panel props
 //
@@ -18,14 +18,14 @@ import React, { useMemo, useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import ForceGraphWrapper from "@/components/ForceGraphWrapper";
-import GraphRightPanel, { ResearchLinkT, CompareThemeOptionT } from "@/components/GraphRightPanel";
+import GraphRightPanel, { CompareThemeOptionT } from "@/components/GraphRightPanel";
 
-// ✅ Search
+// ✅ Search import
 import SearchBar from "@/components/SearchBar";
 
-import { computeThemeReturnSummary, PeriodKey, ThemeReturnSummary } from "@/lib/themeReturn";
+import { computeThemeReturnSummary, extractReturnByPeriod, PeriodKey, ThemeReturnSummary } from "@/lib/themeReturn";
 import { getThemeJsonUrl } from "@/lib/getThemeJsonUrl";
-import { fetchThemeIndex } from "@/lib/themeIndex";
+import { fetchThemeIndex, resolvePlaceholderThemeNames } from "@/lib/themeIndex";
 
 type NodeT = {
   id: string;
@@ -82,10 +82,7 @@ const RAW_BASE = "https://raw.githubusercontent.com/kang0302/import_MT/main";
 const SEARCH_INDEX_URL = `${RAW_BASE}/data/search/search_index.json`;
 
 // ✅ Resolver master SSOT URLs
-const ASSET_MASTER_URLS = [
-  `${RAW_BASE}/data/ssot/asset_ssot.csv`,
-  `${RAW_BASE}/data/master/asset.csv`,
-];
+const ASSET_MASTER_URLS = [`${RAW_BASE}/data/ssot/asset_ssot.csv`, `${RAW_BASE}/data/master/asset.csv`];
 const BF_MASTER_URLS = [
   `${RAW_BASE}/data/ssot/business_field_ssot.csv`,
   `${RAW_BASE}/data/master/business_field.csv`,
@@ -167,7 +164,8 @@ function toNumberOrKeep(v: any) {
   if (typeof v === "string") {
     const s = v.trim();
     if (s === "") return v;
-    const n = Number(s);
+    // ✅ PATCH: "117,121,442,152,000" 같은 콤마 숫자도 파싱
+    const n = Number(s.replace(/,/g, ""));
     if (Number.isFinite(n)) return n;
   }
   return v;
@@ -217,18 +215,50 @@ function coerceMetrics(metrics: any) {
   return out;
 }
 
+/**
+ * ✅ PATCH(핵심):
+ * 일부 theme json에서 return_7d 등이 node.metrics 안이 아니라 "노드 루트"에 들어있음.
+ * -> UI/Barometer/Top movers가 전부 '데이터 없음'으로 떨어지는 원인.
+ * 해결: 노드 루트의 return/ret 키를 metrics로 승격(hoist)해서 통일.
+ */
+function hoistReturnKeysIntoMetrics(node: any, metrics: any) {
+  const base: any = metrics && typeof metrics === "object" ? { ...metrics } : {};
+  if (!node || typeof node !== "object") return base;
+
+  for (const k of Object.keys(node)) {
+    const key = k.toLowerCase();
+    const looksReturn =
+      key.startsWith("ret") ||
+      key.startsWith("return") ||
+      key.includes("ret_") ||
+      key.includes("return_") ||
+      key.includes("ytd") ||
+      key.endsWith("d") ||
+      key.endsWith("m") ||
+      key.endsWith("y");
+
+    if (!looksReturn) continue;
+    if (k in base) continue;
+
+    const v = node[k];
+    if (typeof v === "number" || typeof v === "string") {
+      base[k] = v;
+    }
+  }
+
+  return base;
+}
+
 export default function GraphClient({
   themeId,
   themeName,
   nodes,
   edges,
-  researchLinks,
 }: {
   themeId: string;
   themeName: string;
   nodes: NodeT[];
   edges: EdgeT[];
-  researchLinks: ResearchLinkT[];
 }) {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -245,30 +275,14 @@ export default function GraphClient({
   const [compareThemeId, setCompareThemeId] = useState<string>("");
   const [compareLoading, setCompareLoading] = useState(false);
   const [compareError, setCompareError] = useState<string>("");
-  const [compareData, setCompareData] = useState<{ themeId: string; themeName?: string; nodes: NodeT[] } | null>(
-    null
-  );
+  const [compareData, setCompareData] = useState<{ themeId: string; themeName?: string; nodes: NodeT[] } | null>(null);
 
   // ✅ Resolver master maps (SSOT 기반)
   const [assetMap, setAssetMap] = useState<Record<string, AssetMasterItem>>({});
   const [bfMap, setBfMap] = useState<Record<string, BfMasterItem>>({});
 
   // ✅ Header controls
-  const [lockTheme, setLockTheme] = useState<boolean>(false);
   const [moveThemeId, setMoveThemeId] = useState<string>("");
-
-  const safeResearchLinks = useMemo(() => {
-    const arr = safeArray<ResearchLinkT>(researchLinks);
-    return arr
-      .filter((x) => x?.url)
-      .map((x) => ({
-        url: x.url,
-        title: x.title,
-        publishedAt: x.publishedAt,
-        source: x.source,
-        oneLine: (x as any).oneLine,
-      }));
-  }, [researchLinks]);
 
   /* =========================
      ✅ 1) Resolver SSOT CSV load
@@ -324,8 +338,8 @@ export default function GraphClient({
     const ns = safeArray<NodeT>(nodes);
 
     return ns.map((n) => {
-      // ✅ Always coerce metrics to stable numeric form (important for barometer)
-      const metricsCoerced = coerceMetrics(n.metrics);
+      // ✅ PATCH: metrics 밖에 있는 return/ret 키를 metrics로 승격 후 coercion
+      const metricsCoerced = coerceMetrics(hoistReturnKeysIntoMetrics(n, n.metrics));
 
       if (isThemeNode(n, themeId)) {
         return {
@@ -396,7 +410,8 @@ export default function GraphClient({
     if (!cn.length) return cn;
 
     return cn.map((n) => {
-      const metricsCoerced = coerceMetrics(n.metrics);
+      // ✅ PATCH: compare도 동일하게 승격 + coercion
+      const metricsCoerced = coerceMetrics(hoistReturnKeysIntoMetrics(n, n.metrics));
 
       if (isAsset(n)) {
         const m = assetMap[n.id];
@@ -448,14 +463,95 @@ export default function GraphClient({
     });
   }, [compareData?.nodes, assetMap, bfMap]);
 
+  // ✅ Live return fetch (Yahoo Finance) for nodes with null return_*.
+  //    Keyed as "PERIOD:TICKER" so period switches don't lose previously-fetched values.
+  const [liveReturnMap, setLiveReturnMap] = useState<Record<string, number>>({});
+
+  useEffect(() => {
+    let cancelled = false;
+
+    // Find ASSET nodes whose extractReturnByPeriod is null for the active period
+    // and that expose a ticker+exchange we can query Yahoo Finance with.
+    const nullAssets: Array<{ ticker: string; exchange: string }> = [];
+    for (const n of resolvedNodes) {
+      if ((n.type ?? "").toUpperCase() !== "ASSET") continue;
+      const ticker = (n.exposure?.ticker ?? "").trim();
+      const exchange = (n.exposure?.exchange ?? "").trim();
+      if (!ticker || !exchange) continue;
+
+      // Skip if already cached for this period+ticker
+      const cacheKey = `${period}:${ticker}`;
+      if (cacheKey in liveReturnMap) continue;
+
+      // Only fetch if the JSON has no usable return for this period
+      const existing = extractReturnByPeriod(n.metrics as any, period);
+      if (existing !== null) continue;
+
+      nullAssets.push({ ticker, exchange });
+    }
+
+    if (!nullAssets.length) return;
+
+    const tickersParam = nullAssets.map((p) => `${p.ticker}:${p.exchange}`).join(",");
+    const url = `/api/stock-returns?tickers=${encodeURIComponent(tickersParam)}&period=${encodeURIComponent(period)}`;
+
+    fetch(url, { cache: "no-store" })
+      .then((r) => (r.ok ? r.json() : {}))
+      .then((data: Record<string, number | null>) => {
+        if (cancelled) return;
+        const additions: Record<string, number> = {};
+        for (const [ticker, ret] of Object.entries(data ?? {})) {
+          if (typeof ret === "number" && Number.isFinite(ret)) {
+            additions[`${period}:${ticker}`] = ret;
+          }
+        }
+        if (Object.keys(additions).length) {
+          setLiveReturnMap((prev) => ({ ...prev, ...additions }));
+        }
+      })
+      .catch(() => {
+        // silent; UI will continue showing "—"
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [resolvedNodes, period, liveReturnMap]);
+
+  // ✅ Merge liveReturnMap into nodes via the special `_liveReturn` metrics key.
+  //    Downstream extractors (extractReturnByPeriod / getReturnByPeriodFromMetrics)
+  //    check `_liveReturn` first, bypassing the decimal-heuristic used for string/number fields.
+  const enrichedNodes = useMemo(() => {
+    if (!Object.keys(liveReturnMap).length) return resolvedNodes;
+
+    return resolvedNodes.map((n) => {
+      if ((n.type ?? "").toUpperCase() !== "ASSET") return n;
+      const ticker = (n.exposure?.ticker ?? "").trim();
+      if (!ticker) return n;
+
+      const live = liveReturnMap[`${period}:${ticker}`];
+      if (typeof live !== "number" || !Number.isFinite(live)) return n;
+
+      return {
+        ...n,
+        metrics: {
+          ...(n.metrics ?? {}),
+          _liveReturn: live,
+          _liveReturnSource: "Yahoo Finance",
+          _liveReturnPeriod: period,
+        },
+      };
+    });
+  }, [resolvedNodes, liveReturnMap, period]);
+
   // ✅ Theme Return Summary
   const themeReturn = useMemo(() => {
     return computeThemeReturnSummary({
-      nodes: safeArray<NodeT>(resolvedNodes),
+      nodes: safeArray<NodeT>(enrichedNodes),
       period,
       minAssets: 5,
     });
-  }, [resolvedNodes, period]);
+  }, [enrichedNodes, period]);
 
   // 페이지 진입 시
   useEffect(() => {
@@ -487,8 +583,18 @@ export default function GraphClient({
       if (cancelled) return;
 
       if (list && list.length) {
+        // 1차: index.json 그대로 즉시 표시 (placeholder 포함)
+        const initial = list
+          .filter((x) => x?.themeId && x?.themeName)
+          .map((x) => ({ themeId: String(x.themeId).trim(), themeName: String(x.themeName).trim() }))
+          .filter((x) => x.themeId && x.themeName);
+        setCompareOptions(initial);
+
+        // 2차: placeholder("T_006" 같은 themeName) 항목을 개별 JSON에서 보정
+        const resolved = await resolvePlaceholderThemeNames(list);
+        if (cancelled) return;
         setCompareOptions(
-          list
+          resolved
             .filter((x) => x?.themeId && x?.themeName)
             .map((x) => ({ themeId: String(x.themeId).trim(), themeName: String(x.themeName).trim() }))
             .filter((x) => x.themeId && x.themeName)
@@ -628,15 +734,9 @@ export default function GraphClient({
           />
         </div>
 
-        {/* Controls in order: Theme fixation -> Period -> Move -> Full map */}
+        {/* Controls in order: Period -> Move -> Full map */}
         <div className="flex items-center gap-2">
-          {/* 1) Theme fixation */}
-          <label className="flex items-center gap-2 rounded-lg border border-white/10 bg-black/30 px-2 py-1 text-[11px] text-white/80">
-            <input type="checkbox" checked={lockTheme} onChange={(e) => setLockTheme(e.target.checked)} />
-            <span className="font-semibold">THEME 고정</span>
-          </label>
-
-          {/* 2) Period toggle */}
+          {/* 1) Period toggle */}
           <div className="flex items-center gap-1 rounded-lg border border-white/10 bg-black/30 p-1">
             {periods.map((p) => {
               const active = p.key === period;
@@ -657,7 +757,7 @@ export default function GraphClient({
             })}
           </div>
 
-          {/* 3) Move to theme dropdown (index.json 기반) */}
+          {/* 2) Move to theme dropdown (index.json 기반) */}
           <select
             className="h-9 w-[260px] rounded-lg border border-white/10 bg-black/30 px-2 text-[12px] text-white/85 outline-none focus:border-white/20"
             value={moveThemeId}
@@ -676,7 +776,7 @@ export default function GraphClient({
             ))}
           </select>
 
-          {/* 4) Full theme map */}
+          {/* 3) Full theme map */}
           <a
             href="/themes"
             className="flex h-9 items-center rounded-lg border border-white/15 bg-black/30 px-3 text-[11px] text-white/80 transition hover:bg-black/40 hover:text-white"
@@ -705,15 +805,14 @@ export default function GraphClient({
             <ForceGraphWrapper
               themeId={themeId}
               themeName={themeName}
-              nodes={resolvedNodes}
+              nodes={enrichedNodes}
               edges={edges}
               onSelectNode={(n) => setSelectedNode(n)}
               period={period}
               onChangePeriod={(p) => setPeriod(p)}
               showPeriodButtons={false} // ✅ 헤더로 이동
-              lockTheme={lockTheme} // ✅ 헤더의 THEME 고정과 연동
-              onChangeLockTheme={setLockTheme}
               focusId={focusId}
+              themeReturn={themeReturn} // ✅ THEME 노드 hover에 Barometer 점수 표시
             />
           </div>
 
@@ -722,10 +821,14 @@ export default function GraphClient({
             <GraphRightPanel
               themeName={themeName}
               currentThemeId={themeId}
-              selectedNode={selectedNode}
-              nodes={safeArray<NodeT>(resolvedNodes)}
+              selectedNode={(() => {
+                // Keep selectedNode's metrics in sync with the enriched (live-return-injected) version.
+                if (!selectedNode) return selectedNode;
+                const enriched = enrichedNodes.find((n) => n.id === selectedNode.id);
+                return enriched ?? selectedNode;
+              })()}
+              nodes={safeArray<NodeT>(enrichedNodes)}
               compareNodes={compareNodes}
-              researchLinks={safeResearchLinks}
               period={period}
               onChangePeriod={setPeriod}
               themeReturn={themeReturn}

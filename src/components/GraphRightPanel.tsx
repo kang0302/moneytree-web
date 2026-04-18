@@ -1,9 +1,147 @@
-// src/components/GraphRightPanel.tsx
 "use client";
 
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import type { PeriodKey, ThemeReturnSummary } from "@/lib/themeReturn";
 import { tempByScore as tempByScoreFn } from "@/lib/themeReturn";
+
+/* ─────────────────────────────────────────
+   테마 인사이트 노트 (로컬 전용)
+───────────────────────────────────────── */
+type NoteItem = { id: string; date: string; content: string; themeId: string };
+
+function noteLsKey(themeId: string) {
+  return `mt_notes_${themeId}`;
+}
+function noteLoad(themeId: string): NoteItem[] {
+  try {
+    const raw = localStorage.getItem(noteLsKey(themeId));
+    const parsed = JSON.parse(raw ?? "");
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+function noteSave(themeId: string, notes: NoteItem[]) {
+  try {
+    localStorage.setItem(noteLsKey(themeId), JSON.stringify(notes));
+  } catch {}
+}
+function noteFmtDate(iso: string) {
+  return new Date(iso).toLocaleString("ko-KR", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+}
+
+function ThemeNotes({ themeId }: { themeId: string }) {
+  const [notes, setNotes] = useState<NoteItem[]>([]);
+  const [draft, setDraft] = useState("");
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    setNotes(noteLoad(themeId));
+  }, [themeId]);
+
+  function handleSave() {
+    const content = draft.trim();
+    if (!content) return;
+    const note: NoteItem = {
+      id: `${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+      date: new Date().toISOString(),
+      content,
+      themeId,
+    };
+    const next = [note, ...notes];
+    setNotes(next);
+    noteSave(themeId, next);
+    setDraft("");
+    textareaRef.current?.focus();
+  }
+
+  function handleDelete(id: string) {
+    const next = notes.filter((n) => n.id !== id);
+    setNotes(next);
+    noteSave(themeId, next);
+  }
+
+  function handleKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {
+    if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) {
+      e.preventDefault();
+      handleSave();
+    }
+  }
+
+  return (
+    <div className="mt-3">
+      {/* 섹션 헤더 */}
+      <div className="flex items-center gap-2">
+        <div className="text-base font-extrabold text-white">인사이트 노트</div>
+        {notes.length > 0 && (
+          <span className="rounded-full bg-white/10 px-2 py-0.5 text-[11px] font-semibold text-white/50">
+            {notes.length}
+          </span>
+        )}
+      </div>
+
+      {/* 입력 영역 */}
+      <div className="mt-2 flex flex-col gap-2">
+        <textarea
+          ref={textareaRef}
+          value={draft}
+          onChange={(e) => setDraft(e.target.value)}
+          onKeyDown={handleKeyDown}
+          placeholder="이 테마에 대한 인사이트를 기록하세요... (Ctrl+Enter로 저장)"
+          rows={3}
+          className="w-full resize-y rounded-xl border border-white/10 bg-black/20 px-3 py-2 text-[13px] leading-relaxed text-white/90 placeholder:text-white/30 outline-none focus:border-white/20"
+        />
+        <div className="flex justify-end">
+          <button
+            type="button"
+            onClick={handleSave}
+            disabled={!draft.trim()}
+            className="rounded-lg border border-white/10 bg-black/20 px-4 py-1.5 text-[12px] font-bold text-white/80 transition hover:bg-black/30 disabled:cursor-not-allowed disabled:text-white/25"
+          >
+            저장
+          </button>
+        </div>
+      </div>
+
+      {/* 노트 리스트 */}
+      {notes.length === 0 ? (
+        <div className="mt-2 rounded-xl border border-white/10 bg-black/20 p-3 text-sm text-white/40 text-center">
+          저장된 노트가 없습니다.
+        </div>
+      ) : (
+        <div className="mt-2 flex flex-col gap-2">
+          {notes.map((note) => (
+            <div
+              key={note.id}
+              className="rounded-xl border border-white/10 bg-black/20 p-3"
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-[11px] text-white/35">{noteFmtDate(note.date)}</span>
+                <button
+                  type="button"
+                  onClick={() => handleDelete(note.id)}
+                  className="rounded px-1.5 py-0.5 text-[11px] text-white/25 transition hover:text-[#ef476f]"
+                  title="노트 삭제"
+                >
+                  ✕
+                </button>
+              </div>
+              <p className="mt-1.5 whitespace-pre-wrap break-words text-[13px] leading-relaxed text-white/80">
+                {note.content}
+              </p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 type NodeT = {
   id: string;
@@ -25,31 +163,29 @@ type NodeT = {
   [k: string]: any;
 };
 
-export type ResearchLinkT = {
-  url: string;
-  title?: string;
-  publishedAt?: string;
-  source?: string;
-  oneLine?: string;
-};
-
-type LinkPreviewT = {
-  url: string;
-  finalUrl?: string;
-  title?: string;
-  description?: string;
-  image?: string;
-  siteName?: string;
-};
+// ✅ GraphClient.tsx에서 import 하고 있으므로 반드시 export
+export type CompareThemeOptionT = { themeId: string; themeName: string };
 
 type Props = {
-  themeId: string;
+  // ✅ GraphClient가 넘기는 스펙(현재 실제 사용)
+  currentThemeId: string;
   themeName: string;
+
   selectedNode?: NodeT | null;
   period?: PeriodKey;
+  onChangePeriod?: (p: PeriodKey) => void;
 
-  themeReturnSummary?: ThemeReturnSummary | null;
-  researchLinks?: ResearchLinkT[];
+  nodes?: NodeT[]; // 필요 시 확장용
+  compareNodes?: NodeT[] | undefined;
+
+  themeReturn?: ThemeReturnSummary | null; // ✅ GraphClient에서 계산된 값
+  compareThemeReturn?: ThemeReturnSummary | undefined;
+
+  // compare UI는 지금 화면에서 필수는 아니지만, GraphClient props와 타입 일치 위해 수용
+  compareOptions?: CompareThemeOptionT[];
+  compareThemeId?: string;
+  onChangeCompareThemeId?: (v: string) => void;
+  compareThemeName?: string;
 };
 
 function pickNum(v: any): number | null {
@@ -83,16 +219,39 @@ function fmtMarketCapKRW(mcap: number | null | undefined): string {
   return n.toLocaleString();
 }
 
-function normalizePct(v?: number | null): number | null {
-  if (v === undefined || v === null) return null;
-  if (!Number.isFinite(v)) return null;
-  return v;
-}
-
 function getTrailingPER(metrics?: Record<string, any>): number | null {
   if (!metrics) return null;
   const m = metrics as Record<string, any>;
   return pickNum(m.per) ?? pickNum(m.pe) ?? pickNum(m.pe_ttm) ?? null;
+}
+
+// PER 표시: trailing 우선, 없으면 forward(perFwd12m). 종류도 함께 반환.
+function getDisplayPER(metrics?: Record<string, any>): { value: number | null; kind: "Trailing" | "Fwd" | null } {
+  if (!metrics) return { value: null, kind: null };
+  const m = metrics as Record<string, any>;
+  const t = pickNum(m.per) ?? pickNum(m.pe) ?? pickNum(m.pe_ttm);
+  if (t !== null) return { value: t, kind: "Trailing" };
+  const f = pickNum(m.perFwd12m) ?? pickNum(m.per_fwd12m) ?? pickNum(m.forwardPE);
+  if (f !== null) return { value: f, kind: "Fwd" };
+  return { value: null, kind: null };
+}
+
+function getOptionalNum(metrics: Record<string, any> | undefined, ...keys: string[]): number | null {
+  if (!metrics) return null;
+  for (const k of keys) {
+    const v = pickNum((metrics as any)[k]);
+    if (v !== null) return v;
+  }
+  return null;
+}
+
+function getOptionalStr(metrics: Record<string, any> | undefined, ...keys: string[]): string | null {
+  if (!metrics) return null;
+  for (const k of keys) {
+    const v = (metrics as any)[k];
+    if (typeof v === "string" && v.trim()) return v.trim();
+  }
+  return null;
 }
 
 function getClose(metrics?: Record<string, any>): number | null {
@@ -107,113 +266,80 @@ function getMarketCap(metrics?: Record<string, any>): number | null {
   return pickNum(m.marketCap) ?? pickNum(m.market_cap) ?? pickNum(m.mktCap) ?? null;
 }
 
+// ✅ 수익률 키 후보를 "모든 컴포넌트에서 동일하게" (대문자 return_7D도 포함)
 function getReturnByPeriodFromMetrics(metrics?: Record<string, any>, period?: PeriodKey): number | null {
   if (!metrics || !period) return null;
-  const m = metrics as Record<string, any>;
 
-  let v: number | null = null;
-  switch (period) {
-    case "3D":
-      v =
-        pickNum(m.ret3d) ??
-        pickNum(m.ret_3d) ??
-        pickNum(m.return3d) ??
-        pickNum(m.return_3d) ??
-        pickNum(m.return_3D);
-      break;
-    case "7D":
-      v =
-        pickNum(m.ret7d) ??
-        pickNum(m.ret_7d) ??
-        pickNum(m.return7d) ??
-        pickNum(m.return_7d) ??
-        pickNum(m.return_7D);
-      break;
-    case "1M":
-      v =
-        pickNum(m.ret1m) ??
-        pickNum(m.ret_1m) ??
-        pickNum(m.ret30d) ??
-        pickNum(m.ret_30d) ??
-        pickNum(m.return1m) ??
-        pickNum(m.return_1m) ??
-        pickNum(m.return30d) ??
-        pickNum(m.return_30d) ??
-        pickNum(m.return_30D);
-      break;
-    case "YTD":
-      v =
-        pickNum(m.retYtd) ??
-        pickNum(m.ret_ytd) ??
-        pickNum(m.returnYtd) ??
-        pickNum(m.return_ytd) ??
-        pickNum(m.return_YTD);
-      break;
-    case "1Y":
-      v =
-        pickNum(m.ret1y) ??
-        pickNum(m.ret_1y) ??
-        pickNum(m.return1y) ??
-        pickNum(m.return_1y) ??
-        pickNum(m.return_1Y);
-      break;
-    case "3Y":
-      v =
-        pickNum(m.ret3y) ??
-        pickNum(m.ret_3y) ??
-        pickNum(m.return3y) ??
-        pickNum(m.return_3y) ??
-        pickNum(m.return_3Y);
-      break;
-    default:
-      v = null;
+  // ✅ Live-fetched return (Yahoo Finance) takes absolute priority.
+  const live = (metrics as any)._liveReturn;
+  if (typeof live === "number" && Number.isFinite(live)) return live;
+
+  const P = String(period).toUpperCase() as PeriodKey;
+  const pLower = P.toLowerCase();
+
+  // ✅ Priority: return_* (new pipeline) BEFORE ret* (stale old pipeline).
+  const candidates: string[] = (() => {
+    switch (P) {
+      case "3D":
+        return ["return_3d", "return_3D", "return3d", "ret_3d", "ret3d", "r3d", "3d", "3D"];
+      case "7D":
+        return ["return_7d", "return_7D", "return7d", "ret_7d", "ret7d", "r7d", "7d", "7D"];
+      case "1M":
+        return ["return_1m", "return_1M", "return1m", "return_30d", "ret_1m", "ret1m", "r1m", "1m", "1M", "ret30d"];
+      case "YTD":
+        return ["return_ytd", "return_YTD", "returnYtd", "ret_ytd", "retYtd", "ytd", "YTD"];
+      case "1Y":
+        return ["return_1y", "return_1Y", "return1y", "ret_1y", "ret1y", "1y", "1Y"];
+      case "3Y":
+        return ["return_3y", "return_3Y", "return3y", "ret_3y", "ret3y", "3y", "3Y"];
+      default:
+        return [pLower, P];
+    }
+  })();
+
+  const tryPick = (obj: any): number | null => {
+    if (!obj || typeof obj !== "object") return null;
+    for (const k of candidates) {
+      const vv = obj[k];
+      if (typeof vv === "number" && Number.isFinite(vv)) return vv;
+      if (typeof vv === "string") {
+        const n = Number(vv);
+        if (Number.isFinite(n)) return n;
+      }
+    }
+    return null;
+  };
+
+  // 1) direct
+  let v = tryPick(metrics);
+
+  // 2) nested
+  if (v == null) v = tryPick((metrics as any).returns);
+  if (v == null) v = tryPick((metrics as any).return);
+  if (v == null) v = tryPick((metrics as any).performance);
+  if (v == null) v = tryPick((metrics as any).performance?.returns);
+  if (v == null) v = tryPick((metrics as any).performance?.return);
+
+  // 3) metrics.returns[pLower]
+  if (v == null && (metrics as any)?.returns && typeof (metrics as any).returns === "object") {
+    const vv =
+      (metrics as any).returns[pLower] ??
+      (metrics as any).returns[P] ??
+      (metrics as any).returns[pLower.toUpperCase()];
+    if (typeof vv === "number" && Number.isFinite(vv)) v = vv;
+    if (v == null && typeof vv === "string") {
+      const n = Number(vv);
+      if (Number.isFinite(n)) v = n;
+    }
   }
 
-  return normalizePct(v);
-}
+  if (v == null) return null;
 
-function uniqByUrl(items: ResearchLinkT[]): ResearchLinkT[] {
-  const seen = new Set<string>();
-  const out: ResearchLinkT[] = [];
-  for (const it of items) {
-    const u = (it.url ?? "").trim();
-    if (!u) continue;
-    if (seen.has(u)) continue;
-    seen.add(u);
-    out.push({ ...it, url: u });
-  }
-  return out;
-}
+  // heuristic: decimal -> percent
+  const abs = Math.abs(v);
+  if (abs > 0 && abs < 1 && abs * 100 >= 1) return v * 100;
 
-function PreviewCard({ item, preview }: { item: ResearchLinkT; preview: LinkPreviewT | null }) {
-  const title = item.title ?? preview?.title ?? item.url;
-  const desc = item.oneLine ?? preview?.description ?? "";
-  const meta = [item.source, item.publishedAt].filter(Boolean).join(" · ");
-
-  return (
-    <a
-      href={item.url}
-      target="_blank"
-      rel="noreferrer"
-      className="block rounded-2xl border border-white/10 bg-black/20 p-3 hover:bg-black/30"
-      title={item.url}
-    >
-      <div className="flex gap-3">
-        {preview?.image ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={preview.image} alt="" className="h-14 w-14 flex-none rounded-xl object-cover" />
-        ) : (
-          <div className="h-14 w-14 flex-none rounded-xl border border-white/10 bg-white/5" />
-        )}
-
-        <div className="min-w-0 flex-1">
-          <div className="truncate text-sm font-semibold text-white">{title}</div>
-          {meta ? <div className="mt-0.5 truncate text-[11px] text-white/55">{meta}</div> : null}
-          {desc ? <div className="mt-2 line-clamp-2 text-[12px] text-white/70">{desc}</div> : null}
-        </div>
-      </div>
-    </a>
-  );
+  return v;
 }
 
 function fmtScore(v: number | null | undefined): string {
@@ -268,51 +394,38 @@ function TempBadge({ score }: { score: number }) {
 }
 
 export default function GraphRightPanel({
-  themeId,
+  currentThemeId,
   themeName,
   selectedNode,
   period = "7D",
-  themeReturnSummary,
-  researchLinks = [],
+  themeReturn,
+  nodes = [],
 }: Props) {
-  const [previewMap, setPreviewMap] = useState<Record<string, LinkPreviewT | null>>({});
-  const [openLinks, setOpenLinks] = useState(false);
-
-  const uniqueLinks = useMemo(() => uniqByUrl(researchLinks), [researchLinks]);
-  const linksToShow = useMemo(() => (openLinks ? uniqueLinks : uniqueLinks.slice(0, 2)), [uniqueLinks, openLinks]);
-
-  useEffect(() => {
-    let alive = true;
-
-    async function run() {
-      const need = uniqueLinks.filter((x) => !(x.url in previewMap));
-      if (need.length === 0) return;
-
-      for (const it of need.slice(0, 6)) {
-        try {
-          const res = await fetch(`/api/link-preview?url=${encodeURIComponent(it.url)}`, { cache: "no-store" });
-          const data = res.ok ? ((await res.json()) as LinkPreviewT) : null;
-          if (!alive) return;
-          setPreviewMap((prev) => ({ ...prev, [it.url]: data }));
-        } catch {
-          if (!alive) return;
-          setPreviewMap((prev) => ({ ...prev, [it.url]: null }));
-        }
-      }
-    }
-
-    run();
-    return () => {
-      alive = false;
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [uniqueLinks]);
-
   const nodeType = (selectedNode?.type ?? "").toUpperCase();
 
-  const perTtm = getTrailingPER(selectedNode?.metrics);
+  const perDisp = getDisplayPER(selectedNode?.metrics);
+  const perTtm = perDisp.value;
+  const perKind = perDisp.kind;
   const close = getClose(selectedNode?.metrics);
   const mcap = getMarketCap(selectedNode?.metrics);
+
+  // 옵셔널 필드 (데이터 있을 때만 표시)
+  const fiftyTwoHigh = getOptionalNum(
+    selectedNode?.metrics as any,
+    "fiftyTwoWeekHigh",
+    "fifty_two_week_high",
+    "high52w",
+    "week52High",
+  );
+  const fiftyTwoLow = getOptionalNum(
+    selectedNode?.metrics as any,
+    "fiftyTwoWeekLow",
+    "fifty_two_week_low",
+    "low52w",
+    "week52Low",
+  );
+  const sector = getOptionalStr(selectedNode?.metrics as any, "sector", "sectorName");
+  const industry = getOptionalStr(selectedNode?.metrics as any, "industry", "industryName");
 
   const ret = nodeType === "ASSET" ? getReturnByPeriodFromMetrics(selectedNode?.metrics, period) : null;
 
@@ -322,7 +435,7 @@ export default function GraphRightPanel({
 
   const gfUrl = googleFinanceUrl(ticker, exchange);
 
-  const themeSummary = themeReturnSummary;
+  const themeSummary = themeReturn;
   const ok = !!themeSummary && (themeSummary as any).ok === true;
 
   const healthScore = ok ? ((themeSummary as any).healthScore as number) : null;
@@ -338,6 +451,30 @@ export default function GraphRightPanel({
 
   const assetCount = ok ? ((themeSummary as any).assetCount as number) : ((themeSummary as any)?.assetCount ?? 0);
 
+  // ─── 수익률 데이터 출처 파악 ───
+  const assetNodes = (nodes ?? []).filter((n) => (n.type ?? "").toUpperCase() === "ASSET");
+  const sampleMetrics = assetNodes[0]?.metrics as any;
+  const returnsSource: string | null = sampleMetrics?.returnsSource ?? null;
+  const returnsAsOf: string | null = sampleMetrics?.returnsAsOf ?? null;
+
+  // 수익률 없음 이유 설명 메시지
+  const noReturnNote = useMemo(() => {
+    if (ok) return null;
+    const reason = (themeSummary as any)?.reason;
+    if (reason === "MIN_ASSET_NOT_MET") return null; // note 필드에 이미 메시지 있음
+    if (returnsSource === "FMP")
+      return "FMP(글로벌/미국) 수익률 데이터 수집 중입니다. 한국 주식(PYKRX) 테마에서 수익률을 확인하세요.";
+    if (returnsSource === "PYKRX")
+      return `PYKRX 수익률 데이터가 없습니다. (기준일: ${returnsAsOf ?? "—"})`;
+    return "수익률 데이터가 없습니다.";
+  }, [ok, themeSummary, returnsSource, returnsAsOf]);
+
+  // 선택 노드 반환일 표시
+  const selectedReturnsAsOf: string | null =
+    (selectedNode?.metrics as any)?.returnsAsOf ?? null;
+  const selectedReturnsSource: string | null =
+    (selectedNode?.metrics as any)?.returnsSource ?? null;
+
   return (
     <aside className="h-full w-full overflow-auto rounded-2xl border border-white/10 bg-black/30 p-4">
       {/* Title + Overall Badge */}
@@ -345,7 +482,7 @@ export default function GraphRightPanel({
         <div className="min-w-0">
           <div className="text-xs text-white/55">THEME BAROMETER</div>
           <div className="mt-1 text-base font-extrabold text-white truncate">
-            {themeName} <span className="text-white/50">({themeId})</span>
+            {themeName} <span className="text-white/50">({currentThemeId})</span>
           </div>
         </div>
 
@@ -356,6 +493,18 @@ export default function GraphRightPanel({
       <div className="mt-2 text-[12px] text-white/60">
         {(themeSummary as any)?.note ?? (ok ? "테마 상태 요약이 준비되어 있습니다." : "아직 테마 수익률/지표 데이터가 없습니다.")}
       </div>
+
+      {/* 수익률 없음 안내 (FMP/PYKRX 구분) */}
+      {noReturnNote && (
+        <div className="mt-1.5 rounded-lg border border-white/8 bg-white/5 px-2.5 py-1.5 text-[11px] text-white/50">
+          ⚠ {noReturnNote}
+          {returnsSource && (
+            <span className="ml-1 text-white/35">
+              [{returnsSource}{returnsAsOf ? ` · ${returnsAsOf}` : ""}]
+            </span>
+          )}
+        </div>
+      )}
 
       {/* KPI */}
       <div className="mt-3 grid grid-cols-2 gap-2 lg:grid-cols-4">
@@ -394,7 +543,7 @@ export default function GraphRightPanel({
         </div>
       </div>
 
-      {/* SELECTED (컴팩트: mt-3 / p-3 / gap-3) */}
+      {/* SELECTED */}
       <div className="mt-3 text-xs text-white/55">SELECTED</div>
 
       {!selectedNode ? (
@@ -405,17 +554,27 @@ export default function GraphRightPanel({
       ) : (
         <div className="mt-2 rounded-2xl border border-white/10 bg-black/20 p-3">
           <div className="flex items-start justify-between gap-3">
-            {/* LEFT */}
             <div className="min-w-0 flex-1">
               <div className="truncate text-lg font-extrabold text-white">{selectedNode.name ?? selectedNode.id}</div>
               <div className="mt-1 text-sm text-white/60">type: {nodeType || "-"}</div>
 
               {nodeType === "ASSET" ? (
                 <div className="mt-3 space-y-1 text-sm text-white/80">
-                  <div>
+                  <div className="flex items-baseline gap-2">
                     <span className="text-white/55">{period} Return :</span>{" "}
-                    <span className="font-bold text-white">{fmtPct(ret, 2)}</span>
+                    <span className="font-bold" style={{ color: ret === null ? "rgba(255,255,255,0.4)" : ret > 0 ? "#FF4444" : ret < 0 ? "#4444FF" : "#ffffff" }}>
+                      {fmtPct(ret, 2)}
+                    </span>
+                    {ret === null && selectedReturnsSource === "FMP" && (
+                      <span className="text-[10px] text-white/35">FMP 수집중</span>
+                    )}
                   </div>
+                  {selectedReturnsAsOf && (
+                    <div className="text-[11px] text-white/35">
+                      기준일: {selectedReturnsAsOf}
+                      {selectedReturnsSource ? ` (${selectedReturnsSource})` : ""}
+                    </div>
+                  )}
                   <div>
                     <span className="text-white/55">Ticker :</span>{" "}
                     <span className="font-semibold text-white">{ticker ?? "—"}</span>
@@ -434,7 +593,6 @@ export default function GraphRightPanel({
               )}
             </div>
 
-            {/* RIGHT compact box (컴팩트: mt-2) */}
             <div className="w-[260px] shrink-0 rounded-2xl border border-white/10 bg-black/20 p-3">
               <div className="text-[11px] leading-snug text-white/70 break-all">
                 {gfUrl ? (
@@ -466,16 +624,46 @@ export default function GraphRightPanel({
                   <div className="text-sm font-bold text-white">{selectedNode?.metrics?.valuationAsOf ?? "—"}</div>
                 </div>
                 <div>
-                  <div className="text-[11px] text-white/45">PER (Trailing)</div>
+                  <div className="text-[11px] text-white/45">PER ({perKind ?? "Trailing"})</div>
                   <div className="text-sm font-bold text-white">{perTtm === null ? "—" : perTtm.toFixed(2)}</div>
                 </div>
               </div>
+
+              {/* ✅ Optional extras (데이터 있을 때만) */}
+              {(fiftyTwoHigh !== null || fiftyTwoLow !== null || sector || industry) && (
+                <div className="mt-3 grid grid-cols-2 gap-3 text-sm">
+                  {fiftyTwoHigh !== null && (
+                    <div>
+                      <div className="text-[11px] text-white/45">52W HIGH</div>
+                      <div className="text-sm font-bold text-white">{fmtInt(fiftyTwoHigh)}</div>
+                    </div>
+                  )}
+                  {fiftyTwoLow !== null && (
+                    <div>
+                      <div className="text-[11px] text-white/45">52W LOW</div>
+                      <div className="text-sm font-bold text-white">{fmtInt(fiftyTwoLow)}</div>
+                    </div>
+                  )}
+                  {sector && (
+                    <div className="col-span-2">
+                      <div className="text-[11px] text-white/45">SECTOR</div>
+                      <div className="text-sm font-bold text-white truncate" title={sector}>{sector}</div>
+                    </div>
+                  )}
+                  {industry && (
+                    <div className="col-span-2">
+                      <div className="text-[11px] text-white/45">INDUSTRY</div>
+                      <div className="text-sm font-bold text-white truncate" title={industry}>{industry}</div>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           </div>
         </div>
       )}
 
-      {/* TOP MOVERS (컴팩트: mt-3 / p-3) */}
+      {/* TOP MOVERS */}
       <div className="mt-3 flex items-center justify-between">
         <div className="text-xs text-white/55">TOP MOVERS</div>
         <div className="text-xs text-white/55">
@@ -485,45 +673,58 @@ export default function GraphRightPanel({
 
       <div className="mt-2 rounded-2xl border border-white/10 bg-black/20 p-3 text-sm text-white/55">
         {(themeSummary as any)?.topMovers && (themeSummary as any).topMovers.length > 0 ? (
-          <div className="grid grid-cols-1 gap-2 md:grid-cols-2">
-            {(themeSummary as any).topMovers.slice(0, 8).map((m: any) => (
-              <div key={m.id} className="flex items-center justify-between gap-3">
-                <div className="min-w-0 truncate">{m.name ?? m.id}</div>
-                <div className="flex-none font-semibold text-white">{fmtPct(m.ret ?? null, 2)}</div>
+          (() => {
+            const movers = (themeSummary as any).topMovers.slice(0, 8) as Array<{
+              id: string;
+              name?: string;
+              ret: number;
+            }>;
+            // 바 길이 비율 기준: 현재 목록의 절대값 최대치 (0으로 나눔 방지)
+            const maxAbs = Math.max(
+              ...movers.map((m) => (Number.isFinite(m.ret) ? Math.abs(m.ret) : 0)),
+              0.0001,
+            );
+            return (
+              <div className="flex flex-col gap-2.5">
+                {movers.map((m) => {
+                  const ret = Number.isFinite(m.ret) ? m.ret : 0;
+                  const pct = Math.max(0, Math.min(100, (Math.abs(ret) / maxAbs) * 100));
+                  const up = ret >= 0;
+                  return (
+                    <div key={m.id} className="flex flex-col gap-1">
+                      <div className="min-w-0 truncate text-[12px] text-white/80" title={m.name ?? m.id}>
+                        {m.name ?? m.id}
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="h-1 flex-1 overflow-hidden rounded-full bg-white/5">
+                          <div
+                            className="h-full rounded-full transition-[width]"
+                            style={{
+                              width: `${pct}%`,
+                              backgroundColor: up ? "#FF4444" : "#4444FF",
+                            }}
+                          />
+                        </div>
+                        <div
+                          className="w-16 shrink-0 text-right text-[12px] font-semibold tabular-nums"
+                          style={{ color: up ? "#FF4444" : "#4444FF" }}
+                        >
+                          {fmtPct(ret, 2)}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
-            ))}
-          </div>
+            );
+          })()
         ) : (
           <div>아직 {period} 수익률이 없습니다.</div>
         )}
       </div>
 
-      {/* Research Links (컴팩트: mt-3 / mt-2) */}
-      <div className="mt-3 flex items-center justify-between">
-        <div className="text-base font-extrabold text-white">Research Links</div>
-        <div className="flex items-center gap-2">
-          {uniqueLinks.length > 2 ? (
-            <button
-              type="button"
-              onClick={() => setOpenLinks((v) => !v)}
-              className="rounded-lg border border-white/10 bg-black/20 px-2 py-1 text-[11px] text-white/75 hover:bg-black/30"
-              title="링크 더보기/접기"
-            >
-              {openLinks ? "접기" : `더보기 +${uniqueLinks.length - 2}`}
-            </button>
-          ) : null}
-        </div>
-      </div>
-
-      {uniqueLinks.length === 0 ? (
-        <div className="mt-2 rounded-xl border border-white/10 bg-black/20 p-3 text-sm text-white/55">아직 링크가 없습니다.</div>
-      ) : (
-        <div className="mt-2 space-y-2">
-          {linksToShow.map((item) => (
-            <PreviewCard key={item.url} item={item} preview={previewMap[item.url] ?? null} />
-          ))}
-        </div>
-      )}
+      {/* 테마 인사이트 노트 */}
+      <ThemeNotes themeId={currentThemeId} />
 
       <div className="mt-3 text-[11px] text-white/45">
         * PER 표시는 <b>Trailing PER</b>만 사용합니다.

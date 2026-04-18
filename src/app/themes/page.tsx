@@ -2,6 +2,7 @@
 
 import React, { useEffect, useMemo, useState } from "react";
 import { computeThemeReturnSummary, PeriodKey, normalizeToPct } from "@/lib/themeReturn";
+import { resolvePlaceholderThemeNames } from "@/lib/themeIndex";
 
 type ThemeIndexItem = {
   themeId: string;
@@ -38,7 +39,72 @@ const LS_FAV = "mt_favorite_themes_v1";
 type RecentItem = { themeId: string; themeName: string; at: number };
 type FavItem = { themeId: string; themeName: string; at: number };
 
-const INDEX_URL = "/data/theme/index.json";
+const INDEX_URL_REMOTE = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/index.json";
+const INDEX_URL_LOCAL  = "/data/theme/index.json";
+
+/**
+ * GitHub raw index.json이 JSON 문법 오류를 포함할 수 있으므로
+ * text 레벨에서 line-by-line으로 추출한다.
+ */
+function extractThemesFromText(text: string): ThemeIndexItem[] {
+  const seen = new Set<string>();
+  const out: ThemeIndexItem[] = [];
+  const lines = text.split(/\r?\n/);
+  for (const line of lines) {
+    const idM = line.match(/"themeId"\s*:\s*"([^"]+)"/);
+    const nmM = line.match(/"themeName"\s*:\s*"([^"]+)"/);
+    if (!idM || !nmM) continue;
+    const themeId = idM[1].trim();
+    const themeName = nmM[1].trim();
+    if (!themeId || !themeName) continue;
+    if (seen.has(themeId)) continue;
+    seen.add(themeId);
+    const ncM = line.match(/"nodeCount"\s*:\s*(\d+)/);
+    const ecM = line.match(/"edgeCount"\s*:\s*(\d+)/);
+    const srcM = line.match(/"source"\s*:\s*"([^"]+)"/);
+    const updM = line.match(/"updatedAt"\s*:\s*"([^"]+)"/);
+    out.push({
+      themeId,
+      themeName,
+      nodeCount: ncM ? parseInt(ncM[1]) : undefined,
+      edgeCount: ecM ? parseInt(ecM[1]) : undefined,
+      source: srcM ? srcM[1] : undefined,
+      updatedAt: updM ? updM[1] : undefined,
+    });
+  }
+  return out;
+}
+
+async function fetchIndexWithFallback(): Promise<ThemeIndexItem[]> {
+  // 1) GitHub raw 시도
+  try {
+    const res = await fetch(INDEX_URL_REMOTE, { cache: "no-store" });
+    if (res.ok) {
+      const text = await res.text();
+      // JSON 파싱 시도
+      try {
+        const json = JSON.parse(text);
+        const list = toThemeIndexList(json);
+        if (list.length > 0) return list;
+      } catch {
+        // JSON 오류 → text fallback
+      }
+      const list = extractThemesFromText(text);
+      if (list.length > 0) return list;
+    }
+  } catch {}
+
+  // 2) 로컬 fallback
+  try {
+    const res = await fetch(INDEX_URL_LOCAL, { cache: "no-store" });
+    if (res.ok) {
+      const json = await res.json();
+      return toThemeIndexList(json);
+    }
+  } catch {}
+
+  return [];
+}
 
 function safeJsonParse<T>(s: string | null, fallback: T): T {
   try {
@@ -97,15 +163,20 @@ function toThemeIndexList(idx: any): ThemeIndexItem[] {
   const list = idx?.themes ?? (Array.isArray(idx) ? idx : []);
   if (!Array.isArray(list)) return [];
   return list
-    .map((t: any) => ({
-      themeId: String(t?.themeId ?? ""),
-      themeName: String(t?.themeName ?? ""),
-      nodeCount: typeof t?.nodeCount === "number" ? t.nodeCount : undefined,
-      edgeCount: typeof t?.edgeCount === "number" ? t.edgeCount : undefined,
-      source: typeof t?.source === "string" ? t.source : undefined,
-      updatedAt: typeof t?.updatedAt === "string" ? t.updatedAt : undefined,
-    }))
-    .filter((t: ThemeIndexItem) => t.themeId && t.themeName);
+    .map((t: any) => {
+      const themeId = String(t?.themeId ?? "").trim();
+      // ✅ themeName이 비어 있어도 themeId만 있으면 일단 placeholder로 보존 (이후 resolvePlaceholderThemeNames에서 보정).
+      const themeName = String(t?.themeName ?? "").trim() || themeId;
+      return {
+        themeId,
+        themeName,
+        nodeCount: typeof t?.nodeCount === "number" ? t.nodeCount : undefined,
+        edgeCount: typeof t?.edgeCount === "number" ? t.edgeCount : undefined,
+        source: typeof t?.source === "string" ? t.source : undefined,
+        updatedAt: typeof t?.updatedAt === "string" ? t.updatedAt : undefined,
+      };
+    })
+    .filter((t: ThemeIndexItem) => t.themeId);
 }
 
 function computeOverallFromSummary(summary: any): number | null {
@@ -189,21 +260,21 @@ export default function ThemesPage() {
       setLoading(true);
       setLoadError(null);
 
-      const idx = await fetchJson<ThemeIndexFile | ThemeIndexItem[]>(INDEX_URL);
+      let list = await fetchIndexWithFallback();
       if (!alive) return;
 
-      const list = toThemeIndexList(idx);
+      // ✅ index.json placeholder(themeName=themeId) 항목을 개별 JSON에서 보정
+      list = await resolvePlaceholderThemeNames(list);
+      if (!alive) return;
 
       if (!list.length) {
-        // 여기서 실패를 “숨기지 말고” 바로 노출
         setThemes([]);
         setLoading(false);
         setLoadError(
-          `테마 목록을 불러오지 못했습니다. (${INDEX_URL})\n` +
-            `- index.json이 비어있거나(JSON 파싱 실패 포함)\n` +
-            `- 포맷이 예상과 다르거나\n` +
-            `- public 경로에 파일이 없을 수 있습니다.\n\n` +
-            `브라우저에서 직접 열어 확인: ${INDEX_URL}`
+          `테마 목록을 불러오지 못했습니다.\n` +
+            `- GitHub raw: ${INDEX_URL_REMOTE}\n` +
+            `- Local fallback: ${INDEX_URL_LOCAL}\n` +
+            `두 경로 모두 실패했습니다. 네트워크 상태와 파일 경로를 확인하세요.`
         );
         return;
       }
@@ -224,7 +295,10 @@ export default function ThemesPage() {
       const period: PeriodKey = "7D";
 
       const enriched = await mapLimit(base, 6, async (row) => {
-        const tj = await fetchJson<ThemeJson>(`/data/theme/${row.themeId}.json`);
+        // 로컬 우선, 없으면 GitHub raw fallback
+        const localUrl = `/data/theme/${row.themeId}.json`;
+        const remoteUrl = `https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/${row.themeId}.json`;
+        const tj = await fetchJson<ThemeJson>(localUrl) ?? await fetchJson<ThemeJson>(remoteUrl);
         if (!tj?.nodes) {
           return {
             ...row,
@@ -332,7 +406,7 @@ export default function ThemesPage() {
             <div className="text-3xl font-extrabold text-white">Full Theme Map</div>
             <div className="mt-2 text-sm text-white/60">전체 테마 목록을 검색하고, Barometer(7D) 점수로 정렬할 수 있습니다.</div>
             <div className="mt-2 text-xs text-white/45">
-              source: <span className="text-white/70">{INDEX_URL}</span> · count:{" "}
+              source: <span className="text-white/70">GitHub raw → local</span> · count:{" "}
               <span className="text-white/70">{themes.length}</span>
               {loading ? <span className="ml-2 text-white/50">loading…</span> : null}
               {lastLoadedAt ? <span className="ml-2 text-white/40">loadedAt: {lastLoadedAt}</span> : null}
@@ -450,7 +524,7 @@ export default function ThemesPage() {
 
         {sorted.length === 0 ? (
           <div className="px-4 py-10 text-sm text-white/55">
-            테마가 없습니다. (index.json 로드 실패면 경로/JSON 문법을 확인하세요: <b>{INDEX_URL}</b>)
+            테마가 없습니다. (GitHub raw 및 로컬 index.json 로드 실패)
           </div>
         ) : (
           <div className="divide-y divide-white/10">

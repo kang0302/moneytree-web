@@ -40,7 +40,7 @@ export type ThemeReturnSummary =
       riskScore: number; // 0~100 (tail 반영, 높을수록 안정)
       overallScore: number; // 0~100 (Health/Momentum/Div/Risk 종합)
       tailPct: number; // 0~100 (% of assets with |ret| >= 15)
-      gapPct: number; // 0~100-ish (top bucket mean - bottom bucket mean)
+      gapPct: number; // (top bucket mean - bottom bucket mean)
       topMovers: TopMover[]; // top N assets by return
     }
   | {
@@ -72,15 +72,69 @@ function median(arr: number[]) {
   return s.length % 2 ? s[mid] : (s[mid - 1] + s[mid]) / 2;
 }
 
-// Convert return to pct points (already pct in data)
-export function normalizeToPct(v: unknown): number | null {
-  if (typeof v !== "number") return null;
-  if (!Number.isFinite(v)) return null;
-  return v;
+/**
+ * ✅ Period 정규화:
+ * UI에서 "7d", "7D ", "7일" 등으로 와도 여기서 PeriodKey로 통일한다.
+ */
+export function normalizePeriodKey(p: unknown): PeriodKey | null {
+  if (p === null || p === undefined) return null;
+  const raw = String(p).trim();
+
+  // 한글 라벨/축약 대응
+  if (raw === "3" || raw.toLowerCase() === "3d" || raw === "3일") return "3D";
+  if (raw === "7" || raw.toLowerCase() === "7d" || raw === "7일") return "7D";
+  if (raw.toLowerCase() === "1m" || raw === "1개월" || raw === "1달") return "1M";
+  if (raw.toLowerCase() === "ytd" || raw === "연초" || raw === "올해") return "YTD";
+  if (raw.toLowerCase() === "1y" || raw === "1년") return "1Y";
+  if (raw.toLowerCase() === "3y" || raw === "3년") return "3Y";
+
+  // 대문자 표준값 직접 매칭
+  const up = raw.toUpperCase();
+  if (up === "3D" || up === "7D" || up === "1M" || up === "YTD" || up === "1Y" || up === "3Y") {
+    return up as PeriodKey;
+  }
+  return null;
 }
 
-export function extractReturnByPeriod(metrics: MetricsT | undefined, period: PeriodKey): number | null {
+/**
+ * ✅ return 값을 "퍼센트 포인트"로 정규화
+ * - 숫자/문자열 모두 허용
+ * - 0.0321 같은 소수 수익률이면 3.21로 자동 변환(가정: |v|<=1이면 소수일 가능성 높음)
+ */
+export function normalizeToPct(v: unknown): number | null {
+  if (v === null || v === undefined) return null;
+
+  let n: number;
+  if (typeof v === "number") {
+    n = v;
+  } else if (typeof v === "string") {
+    const cleaned = v.trim().replace(/,/g, "");
+    if (!cleaned) return null;
+    n = Number(cleaned);
+  } else {
+    return null;
+  }
+
+  if (!Number.isFinite(n)) return null;
+
+  // 소수 수익률 자동 변환(선택적이지만 실전에서 매우 자주 필요)
+  // 예: 0.0321 => 3.21(%)
+  if (Math.abs(n) > 0 && Math.abs(n) <= 1) {
+    n = n * 100;
+  }
+  return n;
+}
+
+export function extractReturnByPeriod(metrics: MetricsT | undefined, periodRaw: unknown): number | null {
   if (!metrics) return null;
+
+  // ✅ Live-fetched return (Yahoo Finance) takes absolute priority.
+  // Already in percentage points, bypasses normalizeToPct heuristic.
+  const live = (metrics as any)._liveReturn;
+  if (typeof live === "number" && Number.isFinite(live)) return live;
+
+  const period = normalizePeriodKey(periodRaw);
+  if (!period) return null;
 
   const pick = (...keys: string[]) => {
     for (const k of keys) {
@@ -90,29 +144,31 @@ export function extractReturnByPeriod(metrics: MetricsT | undefined, period: Per
     return null;
   };
 
+  // ✅ Priority: return_7d (new pipeline) BEFORE ret7d (stale old pipeline).
+  // Some theme JSONs (e.g. T_006) carry both; the newer return_* field is authoritative.
   switch (period) {
     case "3D":
-      return pick("ret3d", "ret_3d", "return3d", "return_3d", "return_3D");
+      return pick("return_3d", "return_3D", "return3d", "ret_3d", "ret3d");
     case "7D":
-      return pick("ret7d", "ret_7d", "return7d", "return_7d", "return_7D");
+      return pick("return_7d", "return_7D", "return7d", "ret_7d", "ret7d");
     case "1M":
       return pick(
-        "ret1m",
-        "ret_1m",
-        "ret30d",
-        "ret_30d",
-        "return1m",
         "return_1m",
-        "return30d",
         "return_30d",
-        "return_30D"
+        "return_30D",
+        "return1m",
+        "return30d",
+        "ret_1m",
+        "ret_30d",
+        "ret1m",
+        "ret30d"
       );
     case "YTD":
-      return pick("retYtd", "ret_ytd", "returnYtd", "return_ytd", "return_YTD");
+      return pick("return_ytd", "return_YTD", "returnYtd", "ret_ytd", "retYtd");
     case "1Y":
-      return pick("ret1y", "ret_1y", "return1y", "return_1y", "return_1Y");
+      return pick("return_1y", "return_1Y", "return1y", "ret_1y", "ret1y");
     case "3Y":
-      return pick("ret3y", "ret_3y", "return3y", "return_3y", "return_3Y");
+      return pick("return_3y", "return_3Y", "return3y", "ret_3y", "ret3y");
     default:
       return null;
   }
@@ -137,8 +193,6 @@ function scoreMomentumPct(momentumTopPct: number): number {
 
 function scoreDiversification(breadthPct: number, tailPct: number): number {
   // v1: breadth가 높고 tail이 낮으면 좋음
-  // - breadth 60% 이상 가점
-  // - tail 20% 이상 감점
   const b = clamp(breadthPct, 0, 100);
   const t = clamp(tailPct, 0, 100);
   const s = b * 0.7 + (100 - t) * 0.3;
@@ -156,7 +210,6 @@ function scoreRiskFromTailPct(tailPct: number): number {
 /**
  * Overall Barometer Score (0~100)
  * - v1 가정(추정): Health 35% + Momentum 35% + Diversification 20% + Risk 10%
- * - FULL THEME MAP과 동일 로직이 있으면, 추후 이 함수를 SSOT로 삼아 양쪽에서 재사용.
  */
 export function calcOverallBarometerScore(input: {
   healthScore: number;
@@ -201,7 +254,7 @@ function computeGapPct(returns: number[]) {
 
 export function computeThemeReturnSummary(args: {
   nodes: Array<{ id: string; name?: string; type?: string; metrics?: MetricsT }>;
-  period: PeriodKey;
+  period: any; // ✅ 여기 intentionally any: UI에서 뭐가 와도 normalizePeriodKey가 처리
   minAssets?: number; // default 5
   topMoversN?: number; // default 7 (panel uses 5)
 }): ThemeReturnSummary {
@@ -209,10 +262,7 @@ export function computeThemeReturnSummary(args: {
   const minAssets = args.minAssets ?? 5;
   const topMoversN = args.topMoversN ?? 7;
 
-  const assets = (Array.isArray(nodes) ? nodes : []).filter(
-    (n) => (n.type ?? "").toUpperCase() === "ASSET"
-  );
-
+  const assets = (Array.isArray(nodes) ? nodes : []).filter((n) => (n.type ?? "").toUpperCase() === "ASSET");
   const assetCount = assets.length;
 
   // ✅ returns with identity
@@ -221,11 +271,7 @@ export function computeThemeReturnSummary(args: {
       const ret = extractReturnByPeriod(a.metrics, period);
       return { id: a.id, name: a.name, ret };
     })
-    .filter((x) => typeof x.ret === "number" && Number.isFinite(x.ret)) as Array<{
-    id: string;
-    name?: string;
-    ret: number;
-  }>;
+    .filter((x) => typeof x.ret === "number" && Number.isFinite(x.ret)) as Array<{ id: string; name?: string; ret: number }>;
 
   const returns = withRet.map((x) => x.ret);
   const validN = returns.length;
@@ -244,12 +290,13 @@ export function computeThemeReturnSummary(args: {
 
   // ✅ NEW: 수익률 데이터가 "0개"면 0%로 계산하지 말고 '데이터 없음' 처리
   if (validN === 0) {
+    const p = normalizePeriodKey(period) ?? String(period ?? "").trim();
     return {
       ok: false,
       assetCount,
       validReturnCount: 0,
       reason: "NO_RETURN_DATA",
-      sentence: `(${period} 기준) ASSET은 ${assetCount}개지만, 수익률(ret) 데이터가 없어 계산할 수 없습니다.`,
+      sentence: `(${p} 기준) ASSET은 ${assetCount}개지만, 수익률(ret) 데이터가 없어 계산할 수 없습니다.`,
       note: "데이터 없음",
     };
   }
@@ -270,17 +317,16 @@ export function computeThemeReturnSummary(args: {
 
   const gapPct = computeGapPct(returns);
 
-  // ✅ 고정 문장 템플릿 (설명 가능)
+  // ✅ 고정 문장 템플릿
   let tone = "중립";
   if (breadthPct >= 70 && coreMedianPct > 0) tone = "확산형 강세";
   else if (breadthPct < 45 && momentumTopPct > Math.max(5, coreMedianPct + 5)) tone = "소수 주도형";
   else if (coreMedianPct < 0 && breadthPct < 50) tone = "전반 약세";
 
-  const sentence = `(${period} 기준) 이 테마는 ${tone} 흐름입니다. 중간 수익률(Median) ${coreMedianPct.toFixed(
+  const p = normalizePeriodKey(period) ?? String(period ?? "").trim();
+  const sentence = `(${p} 기준) 이 테마는 ${tone} 흐름입니다. 중간 수익률(Median) ${coreMedianPct.toFixed(
     2
-  )}% / 상위 구간(Momentum) ${momentumTopPct.toFixed(2)}% / 상승 비율(Breadth) ${breadthPct.toFixed(
-    0
-  )}%.`;
+  )}% / 상위 구간(Momentum) ${momentumTopPct.toFixed(2)}% / 상승 비율(Breadth) ${breadthPct.toFixed(0)}%.`;
 
   // ✅ BAROMETER scores (v1)
   const avgScore = scoreAvgReturn(avgReturn);
@@ -289,7 +335,7 @@ export function computeThemeReturnSummary(args: {
   // Health: 평균(60) + breadth(40)
   const healthScore = clamp(avgScore * 0.6 + breadthScore * 0.4, 0, 100);
 
-  // Momentum (v1: 현재 period의 momentumTopPct 점수화)
+  // Momentum
   const momentumScore = scoreMomentumPct(momentumTopPct);
 
   // Diversification

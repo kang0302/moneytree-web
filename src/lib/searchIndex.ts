@@ -38,6 +38,14 @@ export type SearchMacro = {
   searchTokens: string[];
 };
 
+export type SearchCharacter = {
+  id: string;
+  name: string;
+  themes: string[];
+  assets: string[];
+  searchTokens: string[];
+};
+
 export type SearchIndexV3 = {
   schemaVersion: "search_v3";
   generatedAt: string;
@@ -46,17 +54,21 @@ export type SearchIndexV3 = {
     themes: number;
     businessFields: number;
     macros: number;
+    characters?: number;
   };
   assets: SearchAsset[];
   themes: SearchTheme[];
   businessFields: SearchBF[];
   macros: SearchMacro[];
+  characters?: SearchCharacter[];
 };
 
-let cached: SearchIndexV3 | null = null;
+// URL 기준 캐시: 캐시버스트 쿼리(?v=...)가 바뀌면 자동으로 재요청되도록 한다.
+const cacheByUrl = new Map<string, SearchIndexV3>();
 
 export async function loadSearchIndex(url: string): Promise<SearchIndexV3> {
-  if (cached) return cached;
+  const hit = cacheByUrl.get(url);
+  if (hit) return hit;
 
   // no-store로 최신 강제 (dev에서 특히 중요)
   const res = await fetch(url, { cache: "no-store" });
@@ -69,7 +81,7 @@ export async function loadSearchIndex(url: string): Promise<SearchIndexV3> {
     throw new Error(`Invalid search index schemaVersion: ${json?.schemaVersion}`);
   }
 
-  cached = json;
+  cacheByUrl.set(url, json);
   return json;
 }
 
@@ -94,7 +106,7 @@ function tokensHit(tokens: unknown, kw: string): boolean {
 
 export function searchByKeyword(idx: SearchIndexV3, keywordRaw: string) {
   const kw = norm(keywordRaw);
-  if (!kw) return { assets: [], themes: [], businessFields: [], macros: [] };
+  if (!kw) return { assets: [], themes: [], businessFields: [], macros: [], characters: [] };
 
   // ✅ 핵심: searchTokens가 깨져도, id/name/ticker로는 반드시 검색되게 “이중 매칭”
   const assetMatch = (a: SearchAsset) =>
@@ -121,10 +133,16 @@ export function searchByKeyword(idx: SearchIndexV3, keywordRaw: string) {
     includesKw(m.macro_type, kw) ||
     tokensHit(m.searchTokens, kw);
 
+  const characterMatch = (c: SearchCharacter) =>
+    includesKw(c.id, kw) ||
+    includesKw(c.name, kw) ||
+    tokensHit(c.searchTokens, kw);
+
   const assets = idx.assets.filter(assetMatch).slice(0, 30);
   const themes = idx.themes.filter(themeMatch).slice(0, 30);
   const businessFields = idx.businessFields.filter(bfMatch).slice(0, 30);
   const macros = idx.macros.filter(macroMatch).slice(0, 30);
+  const characters = (idx.characters ?? []).filter(characterMatch).slice(0, 30);
 
-  return { assets, themes, businessFields, macros };
+  return { assets, themes, businessFields, macros, characters };
 }

@@ -123,6 +123,9 @@ type Props = {
 
   // ✅ focus node highlight (from search or external)
   focusId?: string | null;
+
+  // ✅ hover에 표시할 테마 바로미터 요약 (선택). GraphClient에서 computeThemeReturnSummary 결과를 그대로 전달.
+  themeReturn?: any;
 };
 
 // =========================
@@ -203,8 +206,16 @@ function nodeRadius(n: NodeT, isTheme: boolean) {
   return 8;
 }
 
+// ✅ PATCH: 문자열 숫자도 파싱
 function pickNum(v: any): number | undefined {
-  return typeof v === "number" && Number.isFinite(v) ? v : undefined;
+  if (typeof v === "number" && Number.isFinite(v)) return v;
+  if (typeof v === "string") {
+    const s = v.trim().replace(/,/g, "");
+    if (!s) return undefined;
+    const n = Number(s);
+    if (Number.isFinite(n)) return n;
+  }
+  return undefined;
 }
 
 function getTrailingPer(n: NodeT) {
@@ -212,66 +223,167 @@ function getTrailingPer(n: NodeT) {
   return pickNum(m.per) ?? pickNum(m.pe) ?? pickNum(m.trailingPER) ?? pickNum(m.trailing_per) ?? pickNum(m.per_ttm);
 }
 
+// PER 표시용: trailing 우선, 없으면 forward(perFwd12m)로 fallback. 어떤 종류인지 같이 반환.
+function getDisplayPer(n: NodeT): { value: number | undefined; kind: "Trailing" | "Fwd" | null } {
+  const m: any = n.metrics ?? {};
+  const t = pickNum(m.per) ?? pickNum(m.pe) ?? pickNum(m.trailingPER) ?? pickNum(m.trailing_per) ?? pickNum(m.per_ttm);
+  if (typeof t === "number") return { value: t, kind: "Trailing" };
+  const f = pickNum(m.perFwd12m) ?? pickNum(m.per_fwd12m) ?? pickNum(m.forwardPE);
+  if (typeof f === "number") return { value: f, kind: "Fwd" };
+  return { value: undefined, kind: null };
+}
+
 function normalizePct(v: number) {
   return Math.abs(v) <= 1.5 ? v * 100 : v;
 }
 
 function getReturnByPeriod(n: NodeT, p: PeriodKey): number | undefined {
-  const m = n.metrics ?? {};
-  let v: number | undefined;
+  const m: any = (n as any).metrics ?? {};
 
-  switch (p) {
-    case "3D":
-      v = pickNum(m.ret3d) ?? pickNum(m.return3d) ?? pickNum(m.return_3d) ?? pickNum(m["3d"]);
-      break;
-    case "7D":
-      v = pickNum(m.ret7d) ?? pickNum(m.return7d) ?? pickNum(m.return_7d) ?? pickNum(m["7d"]);
-      break;
-    case "1M":
-      v =
-        pickNum(m.ret1m) ??
-        pickNum(m.return1m) ??
-        pickNum(m.return30d) ??
-        pickNum(m.return_30d) ??
-        pickNum(m["30d"]);
-      break;
-    case "YTD":
-      v = pickNum(m.retYtd) ?? pickNum(m.returnYtd) ?? pickNum(m.return_ytd) ?? pickNum(m["ytd"]);
-      break;
-    case "1Y":
-      v = pickNum(m.ret1y) ?? pickNum(m.return1y) ?? pickNum(m.return_1y) ?? pickNum(m["1y"]);
-      break;
-    case "3Y":
-      v = pickNum(m.ret3y) ?? pickNum(m.return3y) ?? pickNum(m.return_3y) ?? pickNum(m["3y"]);
-      break;
+  // ✅ Yahoo Finance 실시간 폴백 값(GraphClient에서 주입)이 있으면 절대 우선.
+  const live = m._liveReturn;
+  if (typeof live === "number" && Number.isFinite(live)) return live;
+
+  const P = String(p).toUpperCase() as PeriodKey;
+  const pLower = P.toLowerCase();
+
+  // ✅ PATCH: return_7D / return_3D / return_1M / return_YTD / return_1Y / return_3Y 대응 추가
+  const candidates: string[] = (() => {
+    switch (P) {
+      case "3D":
+        return [
+          "ret3d",
+          "r3d",
+          "return3d",
+          "return_3d",
+          "return_3D", // ✅ 추가
+          "ret_3d",
+          "3d",
+          "3D",
+          "d3",
+          "3day",
+          "3days",
+        ];
+      case "7D":
+        return [
+          "ret7d",
+          "r7d",
+          "return7d",
+          "return_7d",
+          "return_7D", // ✅ 추가
+          "ret_7d",
+          "7d",
+          "7D",
+          "d7",
+          "7day",
+          "7days",
+        ];
+      case "1M":
+        return [
+          "ret1m",
+          "r1m",
+          "return1m",
+          "return_1m",
+          "return_1M", // ✅ 추가
+          "ret_1m",
+          "1m",
+          "1M",
+          "m1",
+          "30d",
+          "1mo",
+          "1month",
+        ];
+      case "YTD":
+        return [
+          "retYtd", // ✅ 추가(대소문자 혼재 대응)
+          "retytd",
+          "rytd",
+          "returnYtd",
+          "returnytd",
+          "return_ytd",
+          "return_YTD", // ✅ 추가
+          "ret_ytd",
+          "ytd",
+          "YTD",
+        ];
+      case "1Y":
+        return [
+          "ret1y",
+          "r1y",
+          "return1y",
+          "return_1y",
+          "return_1Y", // ✅ 추가
+          "ret_1y",
+          "1y",
+          "1Y",
+          "y1",
+          "1yr",
+          "1year",
+        ];
+      case "3Y":
+        return [
+          "ret3y",
+          "r3y",
+          "return3y",
+          "return_3y",
+          "return_3Y", // ✅ 추가
+          "ret_3y",
+          "3y",
+          "3Y",
+          "y3",
+          "3yr",
+          "3year",
+        ];
+      default:
+        return [pLower, P];
+    }
+  })();
+
+  const tryPick = (obj: any): number | undefined => {
+    if (!obj || typeof obj !== "object") return undefined;
+    for (const k of candidates) {
+      const v = pickNum(obj[k]);
+      if (v !== undefined) return v;
+    }
+    return undefined;
+  };
+
+  // 1) direct keys on metrics
+  let v = tryPick(m);
+
+  // 2) common nested shapes
+  if (v === undefined) v = tryPick(m.returns);
+  if (v === undefined) v = tryPick(m.return);
+  if (v === undefined) v = tryPick(m.performance);
+  if (v === undefined) v = tryPick(m.performance?.returns);
+  if (v === undefined) v = tryPick(m.performance?.return);
+
+  // 3) metrics.returns[pLower] style
+  if (v === undefined && m?.returns && typeof m.returns === "object") {
+    v = pickNum(m.returns[pLower] ?? m.returns[P] ?? m.returns[pLower.toUpperCase()]);
   }
 
-  if (typeof v !== "number") return undefined;
-  return normalizePct(v);
+  if (v === undefined) return undefined;
+
+  // MoneyTree expectation: percent points (2.31 = +2.31%).
+  // Heuristic: if a source gives decimals (0.0231), convert to percent.
+  const abs = Math.abs(v);
+  if (abs > 0 && abs < 1 && abs * 100 >= 1) return v * 100;
+
+  return v;
 }
 
 function colorFromReturn(r?: number) {
-  if (typeof r !== "number" || !Number.isFinite(r)) return "rgba(96,165,250,0.90)";
+  if (typeof r !== "number" || !Number.isFinite(r)) return "#888888"; // 수익률 없음 → 회색
 
-  const clamp = (x: number, a: number, b: number) => Math.max(a, Math.min(b, x));
-  const v = clamp(r, -60, 60);
-  const t = Math.abs(v) / 60;
-
-  const base = { r: 148, g: 163, b: 184 };
-
-  // ✅ [COLOR RULE] UP = RED, DOWN = BLUE (반전 적용)
-  const pos = { r: 239, g: 68, b: 68 }; // + return => RED
-  const neg = { r: 59, g: 130, b: 246 }; // - return => BLUE
-
-  const mix = (a: any, b: any, tt: number) => ({
-    r: Math.round(a.r + (b.r - a.r) * tt),
-    g: Math.round(a.g + (b.g - a.g) * tt),
-    b: Math.round(a.b + (b.b - a.b) * tt),
-  });
-
-  const target = v >= 0 ? pos : neg;
-  const c = mix(base, target, t);
-  return `rgba(${c.r},${c.g},${c.b},0.92)`;
+  // ✅ 한국 주식 시장 관행: 빨강 = 상승, 파랑 = 하락 (수익률 크기별 농도 차등)
+  if (r >= 50) return "#FF0000";   // +50% 이상 → 진한 빨강
+  if (r >= 20) return "#FF4444";   // +20~50%   → 중간 빨강
+  if (r >= 5)  return "#FF8888";   // +5~20%    → 연한 빨강
+  if (r >= 0)  return "#FFCCCC";   // 0~+5%     → 아주 연한 빨강
+  if (r >= -5) return "#CCCCFF";   // 0~-5%     → 아주 연한 파랑
+  if (r >= -20) return "#8888FF";  // -5~-20%   → 연한 파랑
+  return "#0000FF";                // -20% 이하 → 진한 파랑
 }
 
 function nodeBaseColor(n: NodeT, isTheme: boolean) {
@@ -320,6 +432,7 @@ export default function ForceGraphWrapper({
   onChangeLockTheme,
   showOverlayControls = true,
   focusId,
+  themeReturn,
 }: Props) {
   const fgRef = useRef<any>(null);
   const wrapRef = useRef<HTMLDivElement | null>(null);
@@ -360,7 +473,7 @@ export default function ForceGraphWrapper({
     return () => window.removeEventListener("popstate", read);
   }, []);
 
-  const effectiveFocusId = (typeof focusId === "string" && focusId.trim()) ? focusId.trim() : focusFromUrl;
+  const effectiveFocusId = typeof focusId === "string" && focusId.trim() ? focusId.trim() : focusFromUrl;
 
   useEffect(() => {
     if (!wrapRef.current) return;
@@ -625,7 +738,14 @@ export default function ForceGraphWrapper({
 
   const getClose = (n: NodeT): number | undefined => {
     const m = n.metrics ?? {};
-    return pickNum(m.last_price) ?? pickNum(m.close) ?? pickNum((m as any).price) ?? pickNum((m as any).lastPrice) ?? pickNum(m["Close"]) ?? pickNum(m["close"]);
+    return (
+      pickNum(m.last_price) ??
+      pickNum(m.close) ??
+      pickNum((m as any).price) ??
+      pickNum((m as any).lastPrice) ??
+      pickNum(m["Close"]) ??
+      pickNum(m["close"])
+    );
   };
 
   const getMarketCap = (n: NodeT): number | undefined => {
@@ -646,18 +766,36 @@ export default function ForceGraphWrapper({
   };
 
   const getTicker = (n: NodeT): string | undefined => {
-    const m = n.metrics ?? {};
-    return (typeof m.ticker === "string" && m.ticker) || (typeof n.ticker === "string" && n.ticker) || undefined;
+    const m: any = n.metrics ?? {};
+    const e: any = (n as any).exposure ?? {};
+    return (
+      (typeof e.ticker === "string" && e.ticker) ||
+      (typeof m.ticker === "string" && m.ticker) ||
+      (typeof n.ticker === "string" && n.ticker) ||
+      undefined
+    );
   };
 
   const getExchange = (n: NodeT): string | undefined => {
-    const m = n.metrics ?? {};
-    return (typeof m.exchange === "string" && m.exchange) || (typeof n.exchange === "string" && n.exchange) || undefined;
+    const m: any = n.metrics ?? {};
+    const e: any = (n as any).exposure ?? {};
+    return (
+      (typeof e.exchange === "string" && e.exchange) ||
+      (typeof m.exchange === "string" && m.exchange) ||
+      (typeof n.exchange === "string" && n.exchange) ||
+      undefined
+    );
   };
 
   const getCountry = (n: NodeT): string | undefined => {
-    const m = n.metrics ?? {};
-    return (typeof m.country === "string" && m.country) || (typeof n.country === "string" && n.country) || undefined;
+    const m: any = n.metrics ?? {};
+    const e: any = (n as any).exposure ?? {};
+    return (
+      (typeof e.country === "string" && e.country) ||
+      (typeof m.country === "string" && m.country) ||
+      (typeof n.country === "string" && n.country) ||
+      undefined
+    );
   };
 
   const handleSelect = (n: NodeT | null) => onSelectNode?.(n);
@@ -676,105 +814,179 @@ export default function ForceGraphWrapper({
     return { left, top, width: W };
   };
 
-  const isAssetHover = hoverNode && normType(hoverNode.type) === "ASSET";
+  const hoverType = hoverNode ? normType(hoverNode.type) : "";
+  const isAssetHover = hoverType === "ASSET";
+  const isThemeHover = hoverType === "THEME";
+  const isFieldHover = hoverType === "FIELD";
+  const isMacroHover = hoverType === "MACRO" || (hoverNode?.id ?? "").startsWith("M_");
+  const isCharacterHover = hoverType === "CHARACTER" || (hoverNode?.id ?? "").startsWith("C_");
   const hoverLabel = hoverNode ? resolveLabel(hoverNode, themeName) : "";
+
+  const tempByScore = (s: number) => {
+    const v = Math.max(0, Math.min(100, s));
+    if (v >= 80) return { name: "HOT", color: "#b11226" };
+    if (v >= 60) return { name: "WARM", color: "#ef476f" };
+    if (v >= 40) return { name: "NEUTRAL", color: "#6b7280" };
+    if (v >= 20) return { name: "COOL", color: "#4d96ff" };
+    return { name: "COLD", color: "#1f3c88" };
+  };
 
   const hoverLinkLabel = hoverLink?.type?.toString?.() || hoverLink?.label?.toString?.() || "";
 
   return (
     <div ref={wrapRef} className="relative h-full w-full">
-      {/* ✅ Overlay controls (optional) */}
-      {showOverlayControls && (
+      {/* ✅ Overlay controls (period 버튼만, 필요 시 표시) */}
+      {showOverlayControls && showPeriodButtons && (
         <div className="absolute right-3 top-3 z-30 flex items-center gap-3">
-          {/* Theme pin */}
-          <label className="flex items-center gap-2 rounded-lg border border-white/10 bg-black/40 px-3 py-2 text-xs text-white/80">
-            <input type="checkbox" checked={lockTheme} onChange={(e) => setLockTheme(e.target.checked)} />
-            <span className="font-semibold">THEME 고정</span>
-          </label>
-
-          {showPeriodButtons && (
-            <div className="flex items-center gap-1 rounded-xl border border-white/10 bg-black/40 p-1">
-              {periods.map((p) => {
-                const active = p.key === period;
-                return (
-                  <button
-                    key={p.key}
-                    type="button"
-                    onClick={() => onChangePeriod(p.key)}
-                    className={[
-                      "rounded-lg px-2.5 py-1 text-[11px] transition",
-                      active ? "bg-white/15 text-white" : "text-white/70 hover:bg-white/10 hover:text-white",
-                    ].join(" ")}
-                    title={`수익률 기간: ${p.label}`}
-                  >
-                    {p.label}
-                  </button>
-                );
-              })}
-            </div>
-          )}
+          <div className="flex items-center gap-1 rounded-xl border border-white/10 bg-black/40 p-1">
+            {periods.map((p) => {
+              const active = p.key === period;
+              return (
+                <button
+                  key={p.key}
+                  type="button"
+                  onClick={() => onChangePeriod(p.key)}
+                  className={[
+                    "rounded-lg px-2.5 py-1 text-[11px] transition",
+                    active ? "bg-white/15 text-white" : "text-white/70 hover:bg-white/10 hover:text-white",
+                  ].join(" ")}
+                  title={`수익률 기간: ${p.label}`}
+                >
+                  {p.label}
+                </button>
+              );
+            })}
+          </div>
         </div>
       )}
 
-      {/* ✅ Node tooltip (Bloomberg style) */}
-      {hoverNode && (
-        <div
-          className="pointer-events-none absolute z-40 rounded-xl border border-white/10 bg-black/80 px-4 py-3 text-xs text-white/90 backdrop-blur"
-          style={tooltipStyle(290, 215)}
-        >
-          {/* Title */}
-          <div className="text-sm font-bold">{hoverLabel || hoverNode.id}</div>
+      {/* ✅ Node tooltip (Bloomberg style) — per-type */}
+      {hoverNode && (() => {
+        const W = isAssetHover ? 290 : 240;
+        const H = isAssetHover ? 220 : 110;
+        const typeLabel =
+          isAssetHover ? "ASSET"
+          : isThemeHover ? "THEME"
+          : isFieldHover ? "BUSINESS FIELD"
+          : isMacroHover ? "MACRO"
+          : isCharacterHover ? "CHARACTER"
+          : (hoverNode.type ?? "NODE");
 
-          {/* ✅ 기존 3줄(type~PER) 제거: return만 상단에 표시 */}
-          {isAssetHover && (
-            <div className="mt-2 text-[13px] font-semibold text-white/95">
-              {period} return: <span className="text-white">{fmtReturn(getReturnByPeriod(hoverNode, period))}</span>
+        const perDisp = isAssetHover ? getDisplayPer(hoverNode) : { value: undefined, kind: null };
+
+        // THEME hover: barometer score
+        const overall =
+          themeReturn && (themeReturn as any).ok === true
+            ? Number((themeReturn as any).overallScore)
+            : NaN;
+        const temp = Number.isFinite(overall) ? tempByScore(overall) : null;
+
+        return (
+          <div
+            className="pointer-events-none absolute z-40 rounded-xl border border-white/10 bg-black/80 px-4 py-3 text-xs text-white/90 backdrop-blur"
+            style={tooltipStyle(W, H)}
+          >
+            {/* Title row: TYPE badge + label */}
+            <div className="flex items-center gap-2">
+              <span className="rounded bg-white/10 px-1.5 py-0.5 text-[10px] font-bold tracking-wide text-white/80">
+                {typeLabel}
+              </span>
+              <div className="text-sm font-bold">{hoverLabel || hoverNode.id}</div>
             </div>
-          )}
 
-          <div className="my-3 h-px bg-white/10" />
-
-          {/* 2x2 grid */}
-          {isAssetHover && (
-            <>
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <div className="text-white/60">Close</div>
-                  <div className="text-sm font-semibold">{fmtNum(getClose(hoverNode))}</div>
+            {isAssetHover && (
+              <>
+                <div className="mt-2 text-[13px] font-semibold text-white/95">
+                  {period} return:{" "}
+                  <span style={{ color: (() => {
+                    const rv = getReturnByPeriod(hoverNode, period);
+                    if (typeof rv !== "number" || !Number.isFinite(rv)) return "#ffffff";
+                    return rv > 0 ? "#FF4444" : rv < 0 ? "#4444FF" : "#ffffff";
+                  })() }}>
+                    {fmtReturn(getReturnByPeriod(hoverNode, period))}
+                  </span>
                 </div>
 
-                <div>
-                  <div className="text-white/60">MKT CAP</div>
-                  <div className="text-sm font-semibold">{fmtNum(getMarketCap(hoverNode))}</div>
+                <div className="my-3 h-px bg-white/10" />
+
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <div className="text-white/60">Close</div>
+                    <div className="text-sm font-semibold">{fmtNum(getClose(hoverNode))}</div>
+                  </div>
+
+                  <div>
+                    <div className="text-white/60">MKT CAP</div>
+                    <div className="text-sm font-semibold">{fmtNum(getMarketCap(hoverNode))}</div>
+                  </div>
+
+                  <div>
+                    <div className="text-white/60">PER ({perDisp.kind ?? "Trailing"})</div>
+                    <div className="text-sm font-semibold">{fmtPer(perDisp.value)}</div>
+                  </div>
+
+                  <div>
+                    <div className="text-white/60">VAL DATE</div>
+                    <div className="text-sm font-semibold">{fmtDate(getValDate(hoverNode))}</div>
+                  </div>
                 </div>
 
-                <div>
-                  <div className="text-white/60">PER (Trailing)</div>
-                  <div className="text-sm font-semibold">{fmtPer(getTrailingPer(hoverNode))}</div>
+                <div className="mt-3 space-y-1 text-white/80">
+                  <div>
+                    Ticker : <span className="text-white">{ellipsis(getTicker(hoverNode))}</span>
+                  </div>
+                  <div>
+                    Exchange : <span className="text-white">{ellipsis(getExchange(hoverNode))}</span>
+                  </div>
+                  <div>
+                    Country : <span className="text-white">{ellipsis(getCountry(hoverNode))}</span>
+                  </div>
                 </div>
+              </>
+            )}
 
-                <div>
-                  <div className="text-white/60">VAL DATE</div>
-                  <div className="text-sm font-semibold">{fmtDate(getValDate(hoverNode))}</div>
-                </div>
+            {isThemeHover && (
+              <div className="mt-2 space-y-1.5">
+                {temp ? (
+                  <div className="flex items-center gap-2">
+                    <span
+                      className="rounded px-1.5 py-0.5 text-[10px] font-extrabold text-black"
+                      style={{ background: temp.color, color: "#fff" }}
+                    >
+                      {temp.name}
+                    </span>
+                    <span className="text-sm font-bold text-white">{Math.round(overall)}</span>
+                    <span className="text-white/60">/ 100</span>
+                  </div>
+                ) : (
+                  <div className="text-white/60">Barometer 데이터 없음</div>
+                )}
+                <div className="text-white/60">{hoverNode.id}</div>
               </div>
+            )}
 
-              {/* Footer */}
-              <div className="mt-3 space-y-1 text-white/80">
+            {isMacroHover && (
+              <div className="mt-2 space-y-1 text-white/80">
                 <div>
-                  Ticker : <span className="text-white">{ellipsis(getTicker(hoverNode))}</span>
+                  Type :{" "}
+                  <span className="text-white">
+                    {(hoverNode as any)?.macro_type ?? (hoverNode as any)?.macroType ?? "—"}
+                  </span>
                 </div>
-                <div>
-                  Exchange : <span className="text-white">{ellipsis(getExchange(hoverNode))}</span>
-                </div>
-                <div>
-                  Country : <span className="text-white">{ellipsis(getCountry(hoverNode))}</span>
-                </div>
+                <div className="text-white/60">{hoverNode.id}</div>
               </div>
-            </>
-          )}
-        </div>
-      )}
+            )}
+
+            {isFieldHover && (
+              <div className="mt-2 text-white/60">{hoverNode.id}</div>
+            )}
+
+            {isCharacterHover && (
+              <div className="mt-2 text-white/60">{hoverNode.id}</div>
+            )}
+          </div>
+        );
+      })()}
 
       {/* Edge tooltip */}
       {hoverLink && hoverLinkLabel && (
