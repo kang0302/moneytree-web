@@ -351,6 +351,21 @@
       "id": "C_078",
       "type": "CHARACTER",
       "name": "외산제한정책민감"
+    },
+    {
+      "id": "A_1048",
+      "type": "ASSET",
+      "name": "AEVEX Aerospace",
+      "exposure": {
+        "ticker": "AVEX",
+        "exchange": "NYSE",
+        "country": "US",
+        "assetType": "STOCK"
+      },
+      "display": {
+        "name_ko": "AEVEX에어로스페이스"
+      },
+      "metrics": {}
     }
   ],
   "edges": [
@@ -468,6 +483,18 @@
       "from": "T_084",
       "to": "C_078",
       "type": "HAS_TRAIT"
+    },
+    {
+      "from": "A_1048",
+      "to": "T_084",
+      "type": "THEMED_AS",
+      "description": "드론 관련 미국 상장 기업"
+    },
+    {
+      "from": "A_1048",
+      "to": "BF_152",
+      "type": "OPERATES",
+      "description": "드론 기체 및 플랫폼 사업 영위"
     }
   ],
   "links": [
@@ -585,6 +612,18 @@
       "from": "T_084",
       "to": "C_078",
       "type": "HAS_TRAIT"
+    },
+    {
+      "from": "A_1048",
+      "to": "T_084",
+      "type": "THEMED_AS",
+      "description": "드론 관련 미국 상장 기업"
+    },
+    {
+      "from": "A_1048",
+      "to": "BF_152",
+      "type": "OPERATES",
+      "description": "드론 기체 및 플랫폼 사업 영위"
     }
   ]
 }
