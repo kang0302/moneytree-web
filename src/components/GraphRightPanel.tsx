@@ -36,6 +36,119 @@ function noteFmtDate(iso: string) {
   });
 }
 
+/* ─────────────────────────────────────────
+   Barometer Sparkline — 최근 7일 점수 추이
+   public/data/history/ 의 일별 스냅샷을 fetch.
+───────────────────────────────────────── */
+type SparkPoint = { date: string; score: number };
+
+function BarometerSparkline({ themeId }: { themeId: string }) {
+  const [points, setPoints] = useState<SparkPoint[]>([]);
+
+  useEffect(() => {
+    let aborted = false;
+    setPoints([]);
+
+    (async () => {
+      try {
+        const idxRes = await fetch("/data/history/index.json", { cache: "no-store" });
+        if (!idxRes.ok) return;
+        const dates: unknown = await idxRes.json();
+        if (!Array.isArray(dates) || dates.length === 0) return;
+
+        const last30 = (dates as string[]).slice(0, 30); // index.json은 desc 정렬
+
+        const results = await Promise.all(
+          last30.map(async (d) => {
+            const stamp = String(d).replace(/-/g, "");
+            try {
+              const r = await fetch(`/data/history/barometer_${stamp}.json`, { cache: "no-store" });
+              if (!r.ok) return null;
+              const body = await r.json();
+              const hit = (body?.themes ?? []).find((t: any) => t?.themeId === themeId);
+              if (!hit || typeof hit.score !== "number") return null;
+              return { date: d, score: hit.score } as SparkPoint;
+            } catch {
+              return null;
+            }
+          })
+        );
+
+        if (aborted) return;
+        const clean = results
+          .filter((x): x is SparkPoint => !!x)
+          .sort((a, b) => a.date.localeCompare(b.date));
+        setPoints(clean);
+      } catch {
+        // silent — 히스토리 아직 없음
+      }
+    })();
+
+    return () => {
+      aborted = true;
+    };
+  }, [themeId]);
+
+  if (points.length < 2) return null;
+
+  // 오늘 포함 최근 7개 포인트만 표시
+  const win = points.slice(-7);
+  const values = win.map((p) => p.score);
+  const minV = Math.min(...values);
+  const maxV = Math.max(...values);
+
+  const W = 200;
+  const H = 40;
+  const PAD = 3;
+
+  const xFor = (i: number) =>
+    win.length === 1 ? W / 2 : (i / (win.length - 1)) * (W - 2 * PAD) + PAD;
+  const yFor = (v: number) => {
+    if (maxV === minV) return H / 2;
+    return H - ((v - minV) / (maxV - minV)) * (H - 2 * PAD) - PAD;
+  };
+
+  const d = win
+    .map((p, i) => `${i === 0 ? "M" : "L"} ${xFor(i).toFixed(1)} ${yFor(p.score).toFixed(1)}`)
+    .join(" ");
+
+  const rising = values[values.length - 1] >= values[0];
+  const color = rising ? "#FF4444" : "#4488FF";
+  const last = win[win.length - 1];
+  const delta = last.score - win[0].score;
+  const deltaLabel = (delta >= 0 ? "+" : "") + delta;
+
+  return (
+    <div className="mt-3 rounded-2xl border border-white/10 bg-black/20 px-3 py-2">
+      <div className="mb-1 flex items-baseline justify-between text-[11px]">
+        <span className="font-semibold tracking-wide text-white/55">
+          SCORE TREND · last {win.length}d
+        </span>
+        <span className="font-black" style={{ color }}>
+          {last.score} <span className="text-white/45 font-medium">({deltaLabel})</span>
+        </span>
+      </div>
+      <svg
+        viewBox={`0 0 ${W} ${H}`}
+        preserveAspectRatio="none"
+        style={{ display: "block", width: "100%", height: 40 }}
+        role="img"
+        aria-label={`score trend ${win[0].date}~${last.date}`}
+      >
+        <path
+          d={d}
+          fill="none"
+          stroke={color}
+          strokeWidth={1.5}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <circle cx={xFor(win.length - 1)} cy={yFor(last.score)} r={2.5} fill={color} />
+      </svg>
+    </div>
+  );
+}
+
 function ThemeNotes({ themeId }: { themeId: string }) {
   const [notes, setNotes] = useState<NoteItem[]>([]);
   const [draft, setDraft] = useState("");
@@ -542,6 +655,9 @@ export default function GraphRightPanel({
           <div className="mt-1 truncate text-[11px] text-white/60">Gap {fmtPct(gapPct, 1)}</div>
         </div>
       </div>
+
+      {/* Score Trend Sparkline (최근 7일 점수 추이) */}
+      <BarometerSparkline themeId={currentThemeId} />
 
       {/* SELECTED */}
       <div className="mt-3 text-xs text-white/55">SELECTED</div>

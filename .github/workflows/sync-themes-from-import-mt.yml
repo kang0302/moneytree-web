@@ -118,6 +118,10 @@ jobs:
         run: |
           node scripts/build_search_index.mjs
 
+      - name: Save barometer history (+ prune older than 90d)
+        run: |
+          node scripts/save_barometer_history.mjs
+
       - name: Commit & push if changed
         run: |
           set -e
@@ -131,6 +135,7 @@ jobs:
 
           git add -A public/data/theme
           git add public/data/search/search_index.json
+          git add -A public/data/history
 
-          git commit -m "chore: sync themes + rebuild search index"
+          git commit -m "chore: sync themes + rebuild search index + barometer snapshot"
           git push origin main
