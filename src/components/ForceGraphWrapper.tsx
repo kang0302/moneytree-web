@@ -15,6 +15,7 @@
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import dynamic from "next/dynamic";
+import { forceRadial } from "d3-force";
 
 const ForceGraph2D = dynamic(() => import("react-force-graph-2d"), { ssr: false });
 
@@ -136,10 +137,23 @@ const LABEL_GAP_BASE = 8;
 const LABEL_GAP = Math.round(LABEL_GAP_BASE * TEXT_SCALE); // label x-offset gap
 
 // Overlap tuning (physics)
-const LINK_DIST_SCALE = 1.12; // 링크 거리 약 +12%
-const CHARGE_STRENGTH = -620; // -520 -> -620 (약간 더 분산)
-const COLLIDE_PAD_BASE = 22;
-const COLLIDE_PAD = Math.round(COLLIDE_PAD_BASE * TEXT_SCALE); // 22 -> 33
+const CHARGE_STRENGTH = -300; // radial 레이어가 주도 → charge는 적당히
+const COLLIDE_PAD_BASE = 26;
+const COLLIDE_PAD = Math.round(COLLIDE_PAD_BASE * TEXT_SCALE); // 26 -> 39
+
+// 🎯 Radial layering (absolute px) — forceRadial이 타입별 반경으로 노드를 강제 배치
+const RADIAL_BY_TYPE: Record<string, number> = {
+  THEME: 0,
+  MACRO: 80,
+  ASSET: 180,
+  FIELD: 260, // Business_Field
+  CHARACTER: 320,
+};
+const RADIAL_DEFAULT = 220;
+const getRadialR = (n: any): number => {
+  const t = normType(n?.type);
+  return RADIAL_BY_TYPE[t] ?? RADIAL_DEFAULT;
+};
 
 function normType(t?: string) {
   const x = (t ?? "").toUpperCase();
@@ -457,18 +471,25 @@ export default function ForceGraphWrapper({
   // ──────────────────────────────────────────────────────────────
   const REVEAL_DELAY_MS: Record<string, number> = {
     THEME: 0,
-    MACRO: 300,
-    ASSET: 600,
-    FIELD: 900, // Business_Field normType
-    CHARACTER: 1200,
+    MACRO: 1200,
+    ASSET: 2400,
+    FIELD: 3600, // Business_Field normType
+    CHARACTER: 4800,
   };
-  const NODE_ANIM_DUR_MS = 300;
-  const EDGE_ANIM_DUR_MS = 200;
-  const MAX_JITTER_MS = 100;
+  const NODE_ANIM_DUR_MS = 350;
+  const EDGE_ANIM_DUR_MS = 250;
+  const MAX_JITTER_MS = 120;
+  const EXTRA_ASSET_STAGGER_MS = 120; // 확장 시 추가 asset 노드 간 간격
+  const DEFAULT_ASSET_LIMIT = 10;
   const animStartRef = useRef<number | null>(null);
   const jitterMapRef = useRef<Map<string, number>>(new Map());
   const rafRef = useRef<number | null>(null);
   const [animTick, setAnimTick] = useState(0);
+
+  // 🎯 Full Asset toggle — 기본은 상위 10개만 (return_7d desc), 클릭 시 전체 표시
+  const [expanded, setExpanded] = useState(false);
+  const expandStartRef = useRef<number | null>(null);
+  const rafExpandRef = useRef<number | null>(null);
 
   const getJitter = (id: string) => {
     const m = jitterMapRef.current;
@@ -479,6 +500,16 @@ export default function ForceGraphWrapper({
   const getNodeReveal = (node: any): number => {
     const base = animStartRef.current ?? 0;
     const nt = normType(node?.type);
+    // Extra assets (top 10 밖)은 expand 클릭 시점부터 순차 등장
+    if (nt === "ASSET" && !assetRankInfo.topAssetIds.has(node?.id)) {
+      const expandBase = expandStartRef.current;
+      if (expandBase == null) {
+        // 아직 펼치기 전이면 기본 ASSET 타이밍 (필터링되어 렌더 안 되지만 안전망)
+        return base + (REVEAL_DELAY_MS.ASSET ?? 0) + getJitter(node?.id ?? "");
+      }
+      const order = assetRankInfo.extraAssetOrderMap.get(node?.id) ?? 0;
+      return expandBase + order * EXTRA_ASSET_STAGGER_MS + getJitter(node?.id ?? "");
+    }
     const delay = REVEAL_DELAY_MS[nt] ?? 600;
     return base + delay + getJitter(node?.id ?? "");
   };
@@ -542,6 +573,10 @@ export default function ForceGraphWrapper({
     animStartRef.current = performance.now();
     jitterMapRef.current.clear();
 
+    // 테마 전환 시 확장 상태 리셋 (기본=상위10 모드로 돌아감)
+    expandStartRef.current = null;
+    setExpanded(false);
+
     const END_MS = Math.max(...Object.values(REVEAL_DELAY_MS)) + NODE_ANIM_DUR_MS + MAX_JITTER_MS + EDGE_ANIM_DUR_MS;
 
     const loop = () => {
@@ -570,6 +605,42 @@ export default function ForceGraphWrapper({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [themeId]);
 
+  // 🎬 Expand animation: 숨겨진 asset 들이 순차 등장
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (!expanded) return;
+
+    expandStartRef.current = performance.now();
+    const extraCount = assetRankInfo.extraAssetOrderMap.size;
+    if (extraCount === 0) return;
+
+    const END_MS =
+      extraCount * EXTRA_ASSET_STAGGER_MS + NODE_ANIM_DUR_MS + MAX_JITTER_MS + EDGE_ANIM_DUR_MS;
+
+    const loop = () => {
+      const elapsed = performance.now() - (expandStartRef.current ?? 0);
+      if (elapsed >= END_MS) {
+        rafExpandRef.current = null;
+        setAnimTick((t) => t + 1);
+        fgRef.current?.refresh?.();
+        return;
+      }
+      setAnimTick((t) => t + 1);
+      fgRef.current?.refresh?.();
+      rafExpandRef.current = requestAnimationFrame(loop);
+    };
+
+    rafExpandRef.current = requestAnimationFrame(loop);
+
+    return () => {
+      if (rafExpandRef.current !== null) {
+        cancelAnimationFrame(rafExpandRef.current);
+        rafExpandRef.current = null;
+      }
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [expanded]);
+
   useEffect(() => {
     if (!wrapRef.current) return;
     const el = wrapRef.current;
@@ -586,24 +657,98 @@ export default function ForceGraphWrapper({
     return () => ro.disconnect();
   }, []);
 
-  const graphData = useMemo(() => {
+  // 🎯 Asset 순위 계산 (return_7d desc) → 상위 10개 vs 나머지 분리
+  const assetRankInfo = useMemo(() => {
     const safeNodes = Array.isArray(nodes) ? nodes : [];
-    const safeEdges = Array.isArray(edges) ? edges : [];
+    const assetNodes = safeNodes.filter((n) => normType(n.type) === "ASSET");
+    const sorted = [...assetNodes].sort((a, b) => {
+      const ar = getReturnByPeriod(a as NodeT, "7D");
+      const br = getReturnByPeriod(b as NodeT, "7D");
+      const av = typeof ar === "number" && Number.isFinite(ar) ? ar : -Infinity;
+      const bv = typeof br === "number" && Number.isFinite(br) ? br : -Infinity;
+      return bv - av;
+    });
+    const topAssetIds = new Set<string>();
+    const extraAssetOrderMap = new Map<string, number>();
+    sorted.forEach((n, i) => {
+      if (i < DEFAULT_ASSET_LIMIT) topAssetIds.add(n.id);
+      else extraAssetOrderMap.set(n.id, i - DEFAULT_ASSET_LIMIT);
+    });
+    return {
+      topAssetIds,
+      extraAssetOrderMap,
+      totalAssets: assetNodes.length,
+      hiddenAssetCount: Math.max(0, assetNodes.length - DEFAULT_ASSET_LIMIT),
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [nodes]);
 
-    const clonedNodes: NodeT[] = safeNodes.map((n) => ({
+  // Clone nodes only when `nodes` prop identity changes, so x/y positions
+  // persist across expand toggles.
+  const allClonedNodes = useMemo<NodeT[]>(() => {
+    const safeNodes = Array.isArray(nodes) ? nodes : [];
+    return safeNodes.map((n) => ({
       ...n,
       metrics: n.metrics ? { ...n.metrics } : n.metrics,
     }));
+  }, [nodes]);
+
+  const graphData = useMemo(() => {
+    const safeEdges = Array.isArray(edges) ? edges : [];
+    const { topAssetIds } = assetRankInfo;
+
+    const clonedNodes: NodeT[] = expanded
+      ? allClonedNodes
+      : allClonedNodes.filter((n) => {
+          if (normType(n.type) !== "ASSET") return true;
+          return topAssetIds.has(n.id);
+        });
+    const visibleIds = new Set(clonedNodes.map((n) => n.id));
 
     const links = safeEdges
       .map((e) => {
         const { s, t } = pickEdgeEndpoints(e);
         if (!s || !t) return null;
+        if (!visibleIds.has(s) || !visibleIds.has(t)) return null;
 
         const rel = pickRelType(e);
-        return { source: s, target: t, type: rel, label: rel };
+        return { source: s, target: t, type: rel, label: rel, curvature: 0 };
       })
       .filter(Boolean) as any[];
+
+    // 🌀 Spread curvature among edges that share a source or target so parallel
+    // lines fan out instead of overlapping. Key by unordered endpoints so pairs
+    // of parallel edges (A→B and B→A) still separate.
+    const pairCount = new Map<string, any[]>();
+    const sourceBuckets = new Map<string, any[]>();
+    for (const l of links) {
+      const a = String(l.source);
+      const b = String(l.target);
+      const key = a < b ? `${a}\u0001${b}` : `${b}\u0001${a}`;
+      if (!pairCount.has(key)) pairCount.set(key, []);
+      pairCount.get(key)!.push(l);
+      if (!sourceBuckets.has(a)) sourceBuckets.set(a, []);
+      sourceBuckets.get(a)!.push(l);
+    }
+    // multi-edges between same pair: symmetric split
+    pairCount.forEach((arr) => {
+      if (arr.length <= 1) return;
+      const step = 0.18;
+      arr.forEach((l, i) => {
+        const offset = i - (arr.length - 1) / 2;
+        l.curvature = offset * step;
+      });
+    });
+    // siblings from same source: fan out if no pair-curvature already set
+    sourceBuckets.forEach((arr) => {
+      if (arr.length <= 1) return;
+      const maxCurve = Math.min(0.28, 0.06 + arr.length * 0.025);
+      arr.forEach((l, i) => {
+        if (l.curvature !== 0) return; // already set by multi-edge logic
+        const t = arr.length === 1 ? 0 : i / (arr.length - 1);
+        l.curvature = -maxCurve + t * 2 * maxCurve;
+      });
+    });
 
     if (typeof window !== "undefined") {
       // eslint-disable-next-line no-console
@@ -618,7 +763,7 @@ export default function ForceGraphWrapper({
     }
 
     return { nodes: clonedNodes, links };
-  }, [nodes, edges]);
+  }, [allClonedNodes, edges, expanded, assetRankInfo]);
 
   const themeNodeId = useMemo(() => {
     const ns = graphData.nodes;
@@ -649,38 +794,44 @@ export default function ForceGraphWrapper({
     theme.vx = 0;
     theme.vy = 0;
 
-    theme.fx = lockTheme ? cx : null;
-    theme.fy = lockTheme ? cy : null;
+    // Theme은 항상 중앙 고정 (radial 레이어 체계의 원점)
+    theme.fx = cx;
+    theme.fy = cy;
 
     const rest = ns.filter((n) => n.id !== theme.id);
-    const assets = rest.filter((n) => normType(n.type) === "ASSET");
-    const fields = rest.filter((n) => normType(n.type) === "FIELD");
-    const others = rest.filter((n) => {
+    const byType = (type: string) => rest.filter((n) => normType(n.type) === type);
+    const macros = byType("MACRO");
+    const assets = byType("ASSET");
+    const fields = byType("FIELD");
+    const characters = byType("CHARACTER");
+    const unknowns = rest.filter((n) => {
       const t = normType(n.type);
-      return t !== "ASSET" && t !== "FIELD";
+      return t !== "MACRO" && t !== "ASSET" && t !== "FIELD" && t !== "CHARACTER";
     });
 
-    const base = Math.min(size.w, size.h);
-    const r1 = base * 0.30;
-    const r2 = base * 0.46;
-    const r3 = base * 0.36;
-
+    // 🎯 Radial layers (absolute px). 링 반경은 RADIAL_BY_TYPE와 일치해야 forceRadial과 정합.
+    // 기존 위치가 있는 노드는 건드리지 않음 (expand 토글 시 점프 방지).
     const placeRing = (arr: NodeT[], radius: number, phase: number) => {
       if (!arr.length) return;
-      arr.forEach((n, i) => {
-        const a = phase + (i / arr.length) * Math.PI * 2;
-        n.x = cx + Math.cos(a) * radius;
-        n.y = cy + Math.sin(a) * radius;
-        n.vx = 0;
-        n.vy = 0;
-        n.fx = null;
-        n.fy = null;
+      const n = arr.length;
+      arr.forEach((node, i) => {
+        if (typeof node.x === "number" && typeof node.y === "number") return;
+        const a = phase + (i / n) * Math.PI * 2;
+        node.x = cx + Math.cos(a) * radius;
+        node.y = cy + Math.sin(a) * radius;
+        node.vx = 0;
+        node.vy = 0;
+        node.fx = null;
+        node.fy = null;
       });
     };
 
-    placeRing(assets, r1, -Math.PI / 10);
-    placeRing(fields, r2, Math.PI / 7);
-    placeRing(others, r3, Math.PI / 3);
+    // 위상(phase)을 링마다 다르게 주어 방사형 스포크 정렬(같은 각도 겹침) 방지
+    placeRing(macros, RADIAL_BY_TYPE.MACRO, 0);
+    placeRing(assets, RADIAL_BY_TYPE.ASSET, Math.PI / 8);
+    placeRing(fields, RADIAL_BY_TYPE.FIELD, Math.PI / 5);
+    placeRing(characters, RADIAL_BY_TYPE.CHARACTER, Math.PI / 3);
+    placeRing(unknowns, RADIAL_DEFAULT, Math.PI / 2);
 
     if (fgRef.current) {
       fgRef.current.d3ReheatSimulation();
@@ -718,35 +869,48 @@ export default function ForceGraphWrapper({
     if (!fgRef.current) return;
     const fg = fgRef.current;
 
+    const cx = size.w * 0.5;
+    const cy = size.h * 0.52;
+
+    // 🔗 Link distance: 타입별 반경 차이(= 링 간 거리)에 맞춰 산정
+    // 이 값은 forceRadial이 이미 노드를 해당 반경으로 끌어당기므로 보조 역할만.
     fg.d3Force("link")?.distance((l: any) => {
       const s = l.source?.id ?? l.source;
       const t = l.target?.id ?? l.target;
-
       const sn = graphData.nodes.find((n) => n.id === s);
       const tn = graphData.nodes.find((n) => n.id === t);
-
-      const st = normType(sn?.type);
-      const tt = normType(tn?.type);
-
-      // 기존 값을 살짝 늘려 텍스트 확대에 따른 겹침 완화
-      if (s === themeNodeId || t === themeNodeId) return Math.round(200 * LINK_DIST_SCALE); // 224
-      if ((st === "ASSET" && tt === "FIELD") || (st === "FIELD" && tt === "ASSET"))
-        return Math.round(155 * LINK_DIST_SCALE); // 174
-      if (st === "ASSET" && tt === "ASSET") return Math.round(120 * LINK_DIST_SCALE); // 134
-      return Math.round(105 * LINK_DIST_SCALE); // 118
+      const sr = sn ? getRadialR(sn) : RADIAL_DEFAULT;
+      const tr = tn ? getRadialR(tn) : RADIAL_DEFAULT;
+      // 링 간 거리 |r_s - r_t|, 같은 링이면 탄젠셜 간격(링 둘레/노드수)에 가까운 값
+      const delta = Math.abs(sr - tr);
+      return delta > 0 ? delta : 90;
     });
+    // 링크가 강하면 radial을 왜곡 → strength 낮춤
+    fg.d3Force("link")?.strength?.(0.15);
 
+    // 🧲 Charge: 탄젠셜 간격 확보용 약한 반발
     fg.d3Force("charge")?.strength(CHARGE_STRENGTH);
+    fg.d3Force("charge")?.distanceMax?.(260);
 
+    // 🎯 Radial: 각 노드를 타입별 반경으로 강제
+    fg.d3Force(
+      "radial",
+      forceRadial((n: any) => getRadialR(n), cx, cy).strength(0.95)
+    );
+
+    // 🧱 Collide: 노드 타입별 여유 반경
     fg.d3Force("collide")?.radius((n: any) => {
       const isTheme = n?.id === themeNodeId;
-      // 텍스트 확대에 맞춰 충돌 반경도 확대
-      return nodeRadius(n, isTheme) + COLLIDE_PAD;
+      const t = normType(n?.type);
+      const extra = isTheme ? 6 : t === "ASSET" ? 14 : t === "FIELD" ? 4 : 2;
+      return nodeRadius(n, isTheme) + COLLIDE_PAD + extra;
     });
 
-    fg.d3Force("center")?.strength?.(0.06);
+    // ⛔ Center force 제거 — radial이 중앙 정렬 역할까지 담당
+    fg.d3Force("center", null as any);
+
     fg.d3ReheatSimulation();
-  }, [graphData.nodes, themeNodeId]);
+  }, [graphData.nodes, themeNodeId, size.w, size.h]);
 
   const drawNode = (node: any, ctx: CanvasRenderingContext2D) => {
     // 🎬 entrance animation gate
@@ -950,6 +1114,25 @@ export default function ForceGraphWrapper({
 
   return (
     <div ref={wrapRef} className="relative h-full w-full">
+      {/* 🎯 Full Asset toggle — 숨겨진 자산이 있을 때만 표시 */}
+      {assetRankInfo.hiddenAssetCount > 0 && (
+        <button
+          type="button"
+          onClick={() => setExpanded((e) => !e)}
+          className="absolute bottom-3 right-3 z-30 rounded-lg px-3 py-1.5 text-[11px] font-medium transition hover:brightness-125"
+          style={{
+            background: "#1A3450",
+            color: "#60A5FA",
+            border: "1px solid #3B82F6",
+          }}
+          title={expanded ? "상위 10개만 보기" : "전체 종목 보기"}
+        >
+          {expanded
+            ? "접기 ▲"
+            : `전체 종목 보기 (+ ${assetRankInfo.hiddenAssetCount}개) ▼`}
+        </button>
+      )}
+
       {/* ✅ Overlay controls (period 버튼만, 필요 시 표시) */}
       {showOverlayControls && showPeriodButtons && (
         <div className="absolute right-3 top-3 z-30 flex items-center gap-3">
@@ -1126,6 +1309,13 @@ export default function ForceGraphWrapper({
           return `rgba(255,255,255,${(0.45 * a).toFixed(3)})`;
         }}
         linkWidth={0.8}
+        linkCurvature={(l: any) => l?.curvature ?? 0}
+        linkDirectionalArrowLength={6}
+        linkDirectionalArrowRelPos={0.92}
+        linkDirectionalArrowColor={(l: any) => {
+          const a = getEdgeOpacity(l);
+          return `rgba(255,255,255,${(0.8 * a).toFixed(3)})`;
+        }}
         linkHoverPrecision={8}
         linkLabel={(l: any) => (l?.type ?? l?.label ?? "").toString()}
         nodeCanvasObject={drawNode}
@@ -1167,8 +1357,10 @@ export default function ForceGraphWrapper({
 
           setMousePos({ x: 0, y: 0 });
         }}
-        cooldownTicks={0}
-        warmupTicks={70}
+        cooldownTicks={120}
+        warmupTicks={120}
+        d3AlphaDecay={0.08}
+        d3VelocityDecay={0.6}
       />
     </div>
   );
