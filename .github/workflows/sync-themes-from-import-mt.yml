@@ -61,10 +61,11 @@ jobs:
       - name: Download T_*.json listed in index.json
         run: |
           python - << 'PY'
-          import json, os, urllib.request, time
+          import json, os, urllib.request, urllib.error, time
 
           INDEX_PATH = "public/data/theme/index.json"
           OUT_DIR = "public/data/theme"
+          MISSING_LOG = "public/data/theme/_missing_themes.txt"
           os.makedirs(OUT_DIR, exist_ok=True)
 
           with open(INDEX_PATH, "r", encoding="utf-8") as f:
@@ -88,7 +89,9 @@ jobs:
                   f.write(data)
 
           cb = int(time.time())
-          count = 0
+          ok_count = 0
+          missing = []
+          errors = []
           for t in themes:
               tid = None
               if isinstance(t, dict):
@@ -101,10 +104,38 @@ jobs:
 
               url = f"https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/{tid}.json?cb={cb}"
               out_path = os.path.join(OUT_DIR, f"{tid}.json")
-              dl(url, out_path)
-              count += 1
 
-          print(f"[OK] downloaded themes: {count}")
+              # Tolerate 404 (file missing in remote import_MT) and keep going.
+              # Hard-fail only on unexpected network/HTTP errors so we don't
+              # silently ship stale data.
+              try:
+                  dl(url, out_path)
+                  ok_count += 1
+              except urllib.error.HTTPError as e:
+                  if e.code == 404:
+                      missing.append(tid)
+                      print(f"[MISSING] {tid}: 404 (index entry has no remote file)")
+                  else:
+                      errors.append((tid, f"HTTP {e.code}"))
+                      print(f"[ERR] {tid}: HTTP {e.code}")
+              except Exception as e:
+                  errors.append((tid, str(e)))
+                  print(f"[ERR] {tid}: {e}")
+
+          print(f"[OK] downloaded: {ok_count}  missing: {len(missing)}  errors: {len(errors)}")
+
+          if missing:
+              with open(MISSING_LOG, "w", encoding="utf-8") as f:
+                  f.write("\n".join(missing) + "\n")
+              print(f"[INFO] missing list written to {MISSING_LOG}")
+
+          # Hard-fail only on non-404 errors — a healthy run can coexist with
+          # index entries that haven't been populated upstream yet.
+          if errors:
+              raise SystemExit(f"non-404 errors: {errors}")
+
+          if ok_count == 0:
+              raise SystemExit("no themes downloaded — aborting to avoid wiping all T_*.json")
           PY
 
       # build_search_index.mjs가 기대하는 경로를 맞추기 위한 미러
