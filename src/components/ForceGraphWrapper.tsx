@@ -16,6 +16,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { forceRadial } from "d3-force";
+import { staleLevel, staleLabel } from "@/components/GraphRightPanel";
 
 const ForceGraph2D = dynamic(() => import("react-force-graph-2d"), { ssr: false });
 
@@ -1225,7 +1226,20 @@ export default function ForceGraphWrapper({
 
                   <div>
                     <div className="text-white/60">VAL DATE</div>
-                    <div className="text-sm font-semibold">{fmtDate(getValDate(hoverNode))}</div>
+                    {(() => {
+                      const raw = getValDate(hoverNode);
+                      const s = staleLevel(raw);
+                      const color = s === 0 ? "" : s === 1 ? "text-amber-300" : "text-red-400";
+                      const badge = s === 0 ? null : staleLabel(raw);
+                      return (
+                        <div className={`text-sm font-semibold ${color}`}>
+                          {fmtDate(raw)}
+                          {badge ? (
+                            <span className="ml-1 text-[10px] font-medium opacity-80">⚠ {badge}</span>
+                          ) : null}
+                        </div>
+                      );
+                    })()}
                   </div>
                 </div>
 

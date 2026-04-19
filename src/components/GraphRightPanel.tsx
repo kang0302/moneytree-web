@@ -5,6 +5,31 @@ import type { PeriodKey, ThemeReturnSummary } from "@/lib/themeReturn";
 import { tempByScore as tempByScoreFn } from "@/lib/themeReturn";
 
 /* ─────────────────────────────────────────
+   데이터 신선도 판정 (valuationAsOf/returnsAsOf 공용)
+   0=fresh (≤7d), 1=warn (≤30d), 2=critical (>30d)
+───────────────────────────────────────── */
+export function staleLevel(asOf?: string | null, now: Date = new Date()): 0 | 1 | 2 {
+  if (!asOf || typeof asOf !== "string") return 0;
+  const t = Date.parse(asOf.length === 10 ? asOf + "T00:00:00Z" : asOf);
+  if (!Number.isFinite(t)) return 0;
+  const days = Math.floor((now.getTime() - t) / 86_400_000);
+  if (days <= 7) return 0;
+  if (days <= 30) return 1;
+  return 2;
+}
+
+export function staleLabel(asOf?: string | null, now: Date = new Date()): string | null {
+  if (!asOf || typeof asOf !== "string") return null;
+  const t = Date.parse(asOf.length === 10 ? asOf + "T00:00:00Z" : asOf);
+  if (!Number.isFinite(t)) return null;
+  const days = Math.floor((now.getTime() - t) / 86_400_000);
+  if (days <= 7) return null;
+  if (days < 30) return `${days}일 전`;
+  const months = Math.floor(days / 30);
+  return `${months}개월 이상`;
+}
+
+/* ─────────────────────────────────────────
    테마 인사이트 노트 (로컬 전용)
 ───────────────────────────────────────── */
 type NoteItem = { id: string; date: string; content: string; themeId: string };
@@ -737,7 +762,20 @@ export default function GraphRightPanel({
                 </div>
                 <div>
                   <div className="text-[11px] text-white/45">VAL DATE</div>
-                  <div className="text-sm font-bold text-white">{selectedNode?.metrics?.valuationAsOf ?? "—"}</div>
+                  {(() => {
+                    const v = selectedNode?.metrics?.valuationAsOf;
+                    const s = staleLevel(v);
+                    const color = s === 0 ? "text-white" : s === 1 ? "text-amber-300" : "text-red-400";
+                    const label = s === 0 ? null : staleLabel(v);
+                    return (
+                      <div className={`text-sm font-bold ${color}`}>
+                        {v ?? "—"}
+                        {label ? (
+                          <span className="ml-1 text-[10px] font-medium opacity-80">⚠ {label}</span>
+                        ) : null}
+                      </div>
+                    );
+                  })()}
                 </div>
                 <div>
                   <div className="text-[11px] text-white/45">PER ({perKind ?? "Trailing"})</div>
