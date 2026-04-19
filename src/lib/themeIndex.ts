@@ -50,29 +50,38 @@ function normalizeItem(x: any): ThemeIndexItem | null {
 }
 
 /**
- * GitHub raw index.json의 JSON 문법 오류(점 오타, 중복 항목 등)에 대비해
- * 텍스트 레벨 regex fallback으로 테마 목록을 추출한다.
+ * GitHub raw index.json의 JSON 문법 오류(예: 배열을 두 번 닫는 trailing `]`,
+ * pretty-printed와 compact object 혼합 등)에 대비해 텍스트 레벨 fallback으로
+ * 테마 목록을 추출한다.
+ *
+ * 구현: 중첩 없는 object body({ ... })를 정규식으로 매칭해 각각에서 필드 추출.
+ * 이렇게 하면 pretty-printed(`themeId`·`themeName`이 서로 다른 줄) 과 compact
+ * (한 줄에 모두) 어떤 포맷이든 동일하게 동작한다.
  */
 function extractThemesFromRawText(text: string): ThemeIndexItem[] {
   const seen = new Set<string>();
   const out: ThemeIndexItem[] = [];
-  const lines = text.split(/\r?\n/);
 
-  for (const line of lines) {
-    const idM = line.match(/"themeId"\s*:\s*"([^"]+)"/);
-    const nmM = line.match(/"themeName"\s*:\s*"([^"]+)"/);
-    if (!idM || !nmM) continue;
+  // Match each flat object body `{ ... }` (no nested braces — theme items are flat).
+  // Multiline-dotall via [\s\S], so object spanning multiple lines works.
+  const objRe = /\{([^{}]*)\}/g;
+  let m: RegExpExecArray | null;
+  while ((m = objRe.exec(text)) !== null) {
+    const body = m[1];
 
+    const idM = body.match(/"themeId"\s*:\s*"([^"]+)"/);
+    if (!idM) continue;
     const themeId = idM[1].trim();
-    const themeName = nmM[1].trim();
-    if (!themeId || !themeName) continue;
-    if (seen.has(themeId)) continue; // deduplicate
+    if (!themeId || seen.has(themeId)) continue;
     seen.add(themeId);
 
-    const ncM = line.match(/"nodeCount"\s*:\s*(\d+)/);
-    const ecM = line.match(/"edgeCount"\s*:\s*(\d+)/);
-    const srcM = line.match(/"source"\s*:\s*"([^"]+)"/);
-    const updM = line.match(/"updatedAt"\s*:\s*"([^"]+)"/);
+    const nmM = body.match(/"themeName"\s*:\s*"([^"]+)"/);
+    const themeName = (nmM ? nmM[1].trim() : "") || themeId;
+
+    const ncM = body.match(/"nodeCount"\s*:\s*(\d+)/);
+    const ecM = body.match(/"edgeCount"\s*:\s*(\d+)/);
+    const srcM = body.match(/"source"\s*:\s*"([^"]+)"/);
+    const updM = body.match(/"updatedAt"\s*:\s*"([^"]+)"/);
 
     out.push({
       themeId,
@@ -85,6 +94,26 @@ function extractThemesFromRawText(text: string): ThemeIndexItem[] {
   }
 
   return out;
+}
+
+/**
+ * JSON.parse("[...]...") 와 같이 trailing garbage(double closing brackets 등)
+ * 때문에 실패한 경우, 앞쪽 유효 JSON 배열만 잘라 다시 파싱을 시도한다.
+ * 성공하면 정상 결과, 실패하면 null 반환.
+ */
+function tryParseTruncated(text: string): unknown | null {
+  const first = text.indexOf("[");
+  if (first < 0) return null;
+  // 마지막 `]`부터 역순으로 뒤집으며 valid JSON이 되는 prefix를 찾는다.
+  for (let end = text.length; end > first; end--) {
+    if (text[end - 1] !== "]") continue;
+    try {
+      return JSON.parse(text.slice(first, end));
+    } catch {
+      // keep shrinking
+    }
+  }
+  return null;
 }
 
 /**
@@ -106,13 +135,24 @@ async function tryFetchFromUrl(url: string, label: string): Promise<ThemeIndexIt
 
     const text = await res.text();
 
-    // 1차: JSON 파싱
+    // 1차: JSON.parse
+    let parsed: unknown | null = null;
     try {
-      const json = JSON.parse(text);
-      const arr = Array.isArray(json)
-        ? json
-        : Array.isArray((json as any)?.themes)
-          ? (json as any).themes
+      parsed = JSON.parse(text);
+    } catch {
+      // 2차: "Extra data" 같이 trailing garbage로 깨진 경우, 유효한 앞부분만 자르고 재시도
+      parsed = tryParseTruncated(text);
+      if (parsed !== null) {
+        // eslint-disable-next-line no-console
+        console.warn(`[fetchThemeIndex] ${label} recovered via truncated-parse`);
+      }
+    }
+
+    if (parsed !== null) {
+      const arr = Array.isArray(parsed)
+        ? parsed
+        : Array.isArray((parsed as any)?.themes)
+          ? (parsed as any).themes
           : [];
 
       const out: ThemeIndexItem[] = [];
@@ -126,12 +166,12 @@ async function tryFetchFromUrl(url: string, label: string): Promise<ThemeIndexIt
         console.log(`[fetchThemeIndex] ok (${label} json):`, out.length, "items");
         return out;
       }
-    } catch {
+    } else {
       // eslint-disable-next-line no-console
-      console.warn(`[fetchThemeIndex] ${label} JSON.parse failed, falling back to text`);
+      console.warn(`[fetchThemeIndex] ${label} JSON.parse failed, falling back to regex`);
     }
 
-    // 2차: text regex
+    // 3차: text regex (object-block 기반, pretty/compact 혼재 모두 커버)
     const out = extractThemesFromRawText(text);
     if (out.length > 0) {
       // eslint-disable-next-line no-console
