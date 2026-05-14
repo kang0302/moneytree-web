@@ -1,16 +1,21 @@
 # Daily Brief Generator
 
-매일 아침 4개 소스를 자동으로 fetch → Anthropic API로 한국어 데일리 브리프 MD 생성 → repo commit.
+매일 아침 4개 소스를 자동으로 fetch → SSOT 테마 인덱스 컨텍스트 주입 → Anthropic API로
+**테마 매핑 분석** MD 생성 → repo commit.
 
 ## 소스
 1. **Bloomberg Technology** (YouTube) — 최신 영상 transcript
 2. **CNBC's Closing Bell** (YouTube) — 최신 영상 transcript
-3. **한국경제 증권** (RSS) — top 5 articles
+3. **한국경제 증권** (RSS) — top 10 articles
 4. **한경 컨센서스** (HTML) — latest 5 analyst reports
 
 ## 출력
 - `public/data/daily_briefs/YYYY-MM-DD.md` (KST 기준 날짜)
-- 구조: 매크로 / Bloomberg 요약 / Closing Bell 요약 / 한경 헤드라인 / 컨센서스 / SSOT 제안
+- 구조:
+  1. 오늘의 핫 테마 TOP 5 (T_xxx 매핑 + 신호 강도 + 트리거 소스 + 근거)
+  2. 신규 테마 후보 (SSOT 인덱스에 없는 시그널)
+  3. 기존 테마 보강 후보 (T_xxx에 추가할 자산/관계)
+  4. 소스별 핵심 요약 (Bloomberg / CNBC / 한경 10건 / 컨센서스 5건)
 
 ## 스케줄
 - **GitHub Actions cron**: `0 0 * * *` UTC = 매일 KST 09:00

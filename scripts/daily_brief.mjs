@@ -1,10 +1,11 @@
 // scripts/daily_brief.mjs
-// 매일 아침 4개 소스를 fetch → Anthropic API로 데일리 브리프 MD 생성.
+// 매일 아침 4개 소스를 fetch → SSOT 테마 인덱스 컨텍스트 주입 → Anthropic API로
+// 테마 매핑 분석 MD 생성.
 //
 // Sources:
 //   1. Bloomberg Technology YouTube (latest video transcript)
 //   2. CNBC Closing Bell YouTube (latest video transcript)
-//   3. 한국경제 증권 RSS (top 5 articles)
+//   3. 한국경제 증권 RSS (top 10 articles)
 //   4. 한경 컨센서스 (latest 5 analyst reports)
 //
 // Output: public/data/daily_briefs/YYYY-MM-DD.md
@@ -33,7 +34,7 @@ const SOURCES = {
     type: "rss",
     name: "한국경제 증권",
     url: "https://www.hankyung.com/feed/finance",
-    limit: 5,
+    limit: 10,
   },
   consensus: {
     type: "consensus",
@@ -44,7 +45,7 @@ const SOURCES = {
 };
 
 const MODEL = "claude-sonnet-4-6";
-const MAX_TOKENS = 8000;
+const MAX_TOKENS = 12000; // 테마 매핑 테이블 + 10개 헤드라인 + 신규 후보 섹션 확장 대비
 const TRANSCRIPT_HARD_LIMIT_CHARS = 30000; // 종목당 transcript 토큰 폭주 방지
 
 // ---------- Source fetchers ----------
@@ -164,42 +165,88 @@ async function fetchConsensusLatest({ name, url, limit }) {
   }
 }
 
+// ---------- SSOT theme index ----------
+
+async function loadThemeIndex() {
+  try {
+    const text = await fs.readFile("public/data/theme/index.json", "utf-8");
+    const arr = JSON.parse(text);
+    if (!Array.isArray(arr)) return [];
+    return arr
+      .map((x) => ({
+        themeId: String(x?.themeId ?? "").trim(),
+        themeName: String(x?.themeName ?? "").trim(),
+      }))
+      .filter((x) => x.themeId && x.themeName);
+  } catch (e) {
+    console.warn("[loadThemeIndex] failed:", e.message);
+    return [];
+  }
+}
+
+function formatThemeIndexForPrompt(themes) {
+  if (!themes.length) return "(테마 인덱스 로드 실패 — 일반 지식 기반 매핑)";
+  return themes.map((t) => `- ${t.themeId}: ${t.themeName}`).join("\n");
+}
+
 // ---------- Anthropic prompt ----------
 
-const SYSTEM_PROMPT = `당신은 한국 주식·글로벌 시장 데일리 브리프 작성자입니다.
-moneytree-web의 SSOT 온톨로지(테마/자산/사업영역/매크로/캐릭터)를 알고 있다는 가정 하에,
-4개 소스를 받아 다음 구조의 한국어 마크다운 브리프를 작성하세요.
-간결하고 정보 밀도 높게, 추측 표시는 명확히. 출처는 반드시 링크로.
+const SYSTEM_PROMPT = `당신은 머니트리 SSOT 테마 분석 도구입니다.
+4개 소스(영상 transcript / 증권 헤드라인 / 애널리스트 리포트)를 입력받아,
+moneytree-web의 기존 SSOT 테마 인덱스에 매핑하고, 신규 테마/자산 후보를 추출합니다.
 
-# 머니트리 데일리 브리프 — {DATE}
+핵심 작업:
+1. 각 소스에서 종목·산업·매크로 시그널을 추출
+2. 기존 테마 인덱스(아래 SSOT) 중 가장 강하게 매칭되는 테마를 선택 — 반드시 T_xxx ID 명시
+3. 기존 테마로 안 잡히는 시그널은 신규 테마/자산 후보로 분리
+4. 모든 매핑은 원문 인용(소스 종류 + 한 줄 quote)으로 근거 제시
 
-## 1. 오늘의 매크로 이슈
-- 3-5개 bullet, US/EU/CN/KR 횡단 (Fed/ECB/PBoC/BoK 정책, 주요 지표, 지정학 이벤트)
+# SSOT 테마 인덱스 (총 {THEME_COUNT}개)
+{THEME_INDEX}
 
-## 2. Bloomberg Technology 요약
-**원문**: [{title}]({link}) ({published_kst})
-- 핵심 인사이트 3-5개 (종목·테마 cross-reference)
+# 출력 포맷 (한국어 마크다운, 간결·정보밀도 우선)
 
-## 3. CNBC Closing Bell 요약
-**원문**: [{title}]({link}) ({published_kst})
-- 핵심 인사이트 3-5개 (시장 마감 상황·섹터 흐름·종목 mover)
+# 머니트리 데일리 테마 매핑 — {DATE}
 
-## 4. 한국경제 증권 헤드라인
-1. **[{title}]({link})** — 한 줄 요약 (관련 종목·테마 명시)
+## 1. 오늘의 핫 테마 TOP 5
+| 순위 | 테마 ID | 테마명 | 신호 강도 | 트리거 소스 | 한 줄 근거 |
+|---|---|---|---|---|---|
+| 1 | T_xxx | ... | ★★★ | Bloomberg / 한경 / 컨센서스 | "..." |
+
+신호 강도: ★★★(다중 소스 교차) / ★★(단일 강한 시그널) / ★(약한 시사)
+
+## 2. 신규 테마 후보
+기존 인덱스에 없는 시그널만. 없으면 "해당 없음".
+- **{제안 테마명}** — 근거: {소스} "{quote}"
+  - 영향 자산 후보: {ticker1}/{exchange1}, {ticker2}/{exchange2}
+
+## 3. 기존 테마 보강 후보
+기존 T_xxx에 추가할 자산·관계.
+- **T_xxx ({테마명})** ← 추가: {ticker}/{exchange} — 근거: {소스} "{quote}"
+
+## 4. 소스별 핵심 요약
+### Bloomberg Technology
+**[{title}]({link})** ({published_kst})
+- 핵심 시그널 3개 (테마 ID cross-ref)
+
+### CNBC Closing Bell
+**[{title}]({link})** ({published_kst})
+- 핵심 시그널 3개 (테마 ID cross-ref)
+
+### 한국경제 증권 헤드라인 (top 10)
+1. **[{title}]({link})** — 한 줄 + 매핑 테마 T_xxx
+... (10개)
+
+### 한경 컨센서스 (latest 5)
+1. **[{title}]({link})** — {broker} {analyst} — 핵심 thesis + 매핑 테마 T_xxx
 ... (5개)
 
-## 5. 한경 컨센서스 애널리스트 리포트
-1. **[{title}]({link})** — {broker} {analyst} — 핵심 thesis 한 줄
-... (5개)
+---
 
-## 6. 테마/자산 제안 (SSOT 관점)
-오늘 콘텐츠에서 추출한 머니트리 SSOT 보강 후보:
-- **신규 테마 후보**: {theme_name} — 근거 (어느 소스의 어떤 시그널인지)
-- **기존 테마 보강**: T_xxx에 {asset/관계} 추가 제안
-- **신규 자산 후보**: {ticker}/{exchange} — 어느 테마에 속할지
-- **신규 관계**: {asset_a} → {asset_b} {PARTNERS|SUPPLIES|IMPACTS} — 출처 인용
-
-빈 항목은 "해당 없음"으로 표기. 추측은 "추정:" 접두어로 명시.
+규칙:
+- 매핑은 반드시 SSOT 인덱스의 실제 T_xxx ID만 사용. 인덱스에 없는 ID 생성 금지.
+- 추측은 "추정:" 접두어. 출처 인용은 짧은 직접 quote 권장.
+- 빈 섹션은 "해당 없음"으로 명시 (섹션 생략 금지).
 
 ---
 _생성: github-actions[bot] · {NOW_UTC}_`;
@@ -241,7 +288,7 @@ function buildUserMessage(sources) {
   }
 
   // Hankyung
-  parts.push(`\n## [3] 한국경제 증권 RSS (top 5)\n`);
+  parts.push(`\n## [3] 한국경제 증권 RSS (top 10)\n`);
   if (sources.hankyung?.error) {
     parts.push(`ERROR: ${sources.hankyung.error}\n`);
   } else {
@@ -275,13 +322,15 @@ async function main() {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) throw new Error("ANTHROPIC_API_KEY env var missing");
 
-  console.log("Fetching sources in parallel...");
-  const [bloomberg, closingBell, hankyung, consensus] = await Promise.all([
+  console.log("Loading SSOT theme index + fetching sources in parallel...");
+  const [themes, bloomberg, closingBell, hankyung, consensus] = await Promise.all([
+    loadThemeIndex(),
     fetchYouTubeLatest(SOURCES.bloomberg),
     fetchYouTubeLatest(SOURCES.closingBell),
     fetchHankyungRSS(SOURCES.hankyung),
     fetchConsensusLatest(SOURCES.consensus),
   ]);
+  console.log(`SSOT themes loaded: ${themes.length}`);
 
   const sources = { bloomberg, closingBell, hankyung, consensus };
   console.log(
@@ -309,10 +358,11 @@ async function main() {
   const dateStr = kst.toISOString().slice(0, 10);
   const nowUtc = today.toISOString();
 
-  const systemPrompt = SYSTEM_PROMPT.replaceAll("{DATE}", dateStr).replaceAll(
-    "{NOW_UTC}",
-    nowUtc
-  );
+  const systemPrompt = SYSTEM_PROMPT
+    .replaceAll("{DATE}", dateStr)
+    .replaceAll("{NOW_UTC}", nowUtc)
+    .replaceAll("{THEME_COUNT}", String(themes.length))
+    .replaceAll("{THEME_INDEX}", formatThemeIndexForPrompt(themes));
   const userMsg = buildUserMessage(sources);
 
   console.log(`User message size: ${userMsg.length} chars`);
