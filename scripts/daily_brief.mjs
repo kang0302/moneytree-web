@@ -4,7 +4,7 @@
 //
 // Sources:
 //   1. Bloomberg Technology YouTube (latest video transcript)
-//   2. CNBC Closing Bell YouTube (latest video transcript)
+//   2. Bloomberg: The China Show YouTube playlist (latest video transcript)
 //   3. 한국경제 증권 RSS (top 10 articles)
 //   4. 한경 컨센서스 (latest 5 analyst reports)
 //
@@ -25,10 +25,10 @@ const SOURCES = {
     name: "Bloomberg Technology",
     channelId: "UCrM7B7SL_g1edFOnmj-SDKg",
   },
-  closingBell: {
+  chinaShow: {
     type: "youtube",
-    name: "CNBC's Closing Bell",
-    channelId: "UCsCECHfjJQUH-JKQDozHwZA",
+    name: "Bloomberg: The China Show",
+    playlistId: "PLGaYlBJIOoa94hnb-z2i64eVPcGZPUvo9",
   },
   hankyung: {
     type: "rss",
@@ -50,8 +50,10 @@ const TRANSCRIPT_HARD_LIMIT_CHARS = 30000; // 종목당 transcript 토큰 폭주
 
 // ---------- Source fetchers ----------
 
-async function fetchYouTubeLatest({ name, channelId }) {
-  const feedUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
+async function fetchYouTubeLatest({ name, channelId, playlistId }) {
+  const feedUrl = channelId
+    ? `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`
+    : `https://www.youtube.com/feeds/videos.xml?playlist_id=${playlistId}`;
   let xml;
   try {
     const res = await fetch(feedUrl);
@@ -229,9 +231,9 @@ moneytree-web의 기존 SSOT 테마 인덱스에 매핑하고, 신규 테마/자
 **[{title}]({link})** ({published_kst})
 - 핵심 시그널 3개 (테마 ID cross-ref)
 
-### CNBC Closing Bell
+### Bloomberg: The China Show
 **[{title}]({link})** ({published_kst})
-- 핵심 시그널 3개 (테마 ID cross-ref)
+- 핵심 시그널 3개 (테마 ID cross-ref) — 중국 거시·미·중 관계·HK/CN 종목 중심
 
 ### 한국경제 증권 헤드라인 (top 10)
 1. **[{title}]({link})** — 한 줄 + 매핑 테마 T_xxx
@@ -271,18 +273,18 @@ function buildUserMessage(sources) {
     );
   }
 
-  // Closing Bell
-  parts.push(`\n## [2] CNBC Closing Bell\n`);
-  if (sources.closingBell?.error) {
-    parts.push(`ERROR: ${sources.closingBell.error}\n`);
+  // China Show
+  parts.push(`\n## [2] Bloomberg: The China Show\n`);
+  if (sources.chinaShow?.error) {
+    parts.push(`ERROR: ${sources.chinaShow.error}\n`);
   } else {
     parts.push(
-      `Title: ${sources.closingBell.title}\nLink: ${sources.closingBell.link}\n` +
-        `Published: ${sources.closingBell.published}\n` +
-        `Description: ${sources.closingBell.description}\n` +
+      `Title: ${sources.chinaShow.title}\nLink: ${sources.chinaShow.link}\n` +
+        `Published: ${sources.chinaShow.published}\n` +
+        `Description: ${sources.chinaShow.description}\n` +
         `Transcript: ${
-          sources.closingBell.transcript ||
-          `[unavailable: ${sources.closingBell.transcriptError}]`
+          sources.chinaShow.transcript ||
+          `[unavailable: ${sources.chinaShow.transcriptError}]`
         }\n`
     );
   }
@@ -323,25 +325,25 @@ async function main() {
   if (!apiKey) throw new Error("ANTHROPIC_API_KEY env var missing");
 
   console.log("Loading SSOT theme index + fetching sources in parallel...");
-  const [themes, bloomberg, closingBell, hankyung, consensus] = await Promise.all([
+  const [themes, bloomberg, chinaShow, hankyung, consensus] = await Promise.all([
     loadThemeIndex(),
     fetchYouTubeLatest(SOURCES.bloomberg),
-    fetchYouTubeLatest(SOURCES.closingBell),
+    fetchYouTubeLatest(SOURCES.chinaShow),
     fetchHankyungRSS(SOURCES.hankyung),
     fetchConsensusLatest(SOURCES.consensus),
   ]);
   console.log(`SSOT themes loaded: ${themes.length}`);
 
-  const sources = { bloomberg, closingBell, hankyung, consensus };
+  const sources = { bloomberg, chinaShow, hankyung, consensus };
   console.log(
     JSON.stringify(
       {
         bloomberg: bloomberg.error
           ? { error: bloomberg.error }
           : { title: bloomberg.title, hasTranscript: !!bloomberg.transcript },
-        closingBell: closingBell.error
-          ? { error: closingBell.error }
-          : { title: closingBell.title, hasTranscript: !!closingBell.transcript },
+        chinaShow: chinaShow.error
+          ? { error: chinaShow.error }
+          : { title: chinaShow.title, hasTranscript: !!chinaShow.transcript },
         hankyung: hankyung.error ? { error: hankyung.error } : { count: hankyung.items.length },
         consensus: consensus.error
           ? { error: consensus.error }

@@ -4,8 +4,8 @@
 **테마 매핑 분석** MD 생성 → repo commit.
 
 ## 소스
-1. **Bloomberg Technology** (YouTube) — 최신 영상 transcript
-2. **CNBC's Closing Bell** (YouTube) — 최신 영상 transcript
+1. **Bloomberg Technology** (YouTube channel) — 최신 영상 transcript
+2. **Bloomberg: The China Show** (YouTube playlist) — 최신 영상 transcript
 3. **한국경제 증권** (RSS) — top 10 articles
 4. **한경 컨센서스** (HTML) — latest 5 analyst reports
 
