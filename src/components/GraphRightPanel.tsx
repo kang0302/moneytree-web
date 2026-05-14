@@ -2,7 +2,7 @@
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import type { PeriodKey, ThemeReturnSummary } from "@/lib/themeReturn";
-import { tempByScore as tempByScoreFn } from "@/lib/themeReturn";
+import { tempByScore as tempByScoreFn, computeThemeReturnSummary } from "@/lib/themeReturn";
 
 /* ─────────────────────────────────────────
    데이터 신선도 판정 (valuationAsOf/returnsAsOf 공용)
@@ -27,6 +27,339 @@ export function staleLabel(asOf?: string | null, now: Date = new Date()): string
   if (days < 30) return `${days}일 전`;
   const months = Math.floor(days / 30);
   return `${months}개월 이상`;
+}
+
+/* ─────────────────────────────────────────
+   BAROMETER 추세 차트 — 기간별(3Y/1Y/YTD/1M/7D/3D) overall score 시계열
+───────────────────────────────────────── */
+const TREND_PERIODS: PeriodKey[] = ["3Y", "1Y", "YTD", "1M", "7D", "3D"];
+const TREND_LABELS: Record<PeriodKey, string> = {
+  "3Y": "3년", "1Y": "1년", "YTD": "YTD", "1M": "1개월", "7D": "7일", "3D": "3일",
+};
+
+/** Catmull-Rom 기반 cubic-bezier smooth path. tension 0.2 ~ 0.3이 자연스러움. */
+function smoothPath(points: Array<{ x: number; y: number }>, tension = 0.22): string {
+  if (points.length === 0) return "";
+  if (points.length === 1) return `M ${points[0].x} ${points[0].y}`;
+  let d = `M ${points[0].x.toFixed(2)} ${points[0].y.toFixed(2)}`;
+  for (let i = 0; i < points.length - 1; i++) {
+    const p0 = points[i - 1] ?? points[i];
+    const p1 = points[i];
+    const p2 = points[i + 1];
+    const p3 = points[i + 2] ?? p2;
+    const cp1x = p1.x + (p2.x - p0.x) * tension;
+    const cp1y = p1.y + (p2.y - p0.y) * tension;
+    const cp2x = p2.x - (p3.x - p1.x) * tension;
+    const cp2y = p2.y - (p3.y - p1.y) * tension;
+    d += ` C ${cp1x.toFixed(2)} ${cp1y.toFixed(2)}, ${cp2x.toFixed(2)} ${cp2y.toFixed(2)}, ${p2.x.toFixed(2)} ${p2.y.toFixed(2)}`;
+  }
+  return d;
+}
+
+function BarometerTrendChart({
+  nodes,
+  period,
+  onChangePeriod,
+}: {
+  nodes: NodeT[] | undefined;
+  period: PeriodKey;
+  onChangePeriod?: (p: PeriodKey) => void;
+}) {
+  // 6개 기간에 대한 overall score + EW(동일가중) 수익률 동시 계산
+  const data = useMemo(() => {
+    const safe = Array.isArray(nodes) ? nodes : [];
+    return TREND_PERIODS.map((p) => {
+      const s = computeThemeReturnSummary({ nodes: safe as any, period: p, minAssets: 5 });
+      const score = s.ok ? Math.round(s.overallScore) : null;
+      const ewReturn = s.ok && Number.isFinite((s as any).avgReturn) ? ((s as any).avgReturn as number) : null;
+      return { period: p, label: TREND_LABELS[p], score, ewReturn, ok: s.ok };
+    });
+  }, [nodes]);
+
+  const W = 520;
+  const H = 220;
+  // 우측에 EW 수익률 축 라벨 공간 확보 (18 → 42)
+  const pad = { top: 36, right: 42, bottom: 38, left: 30 };
+  const innerW = W - pad.left - pad.right;
+  const innerH = H - pad.top - pad.bottom;
+  const xAt = (i: number) => pad.left + (i / (TREND_PERIODS.length - 1)) * innerW;
+  const yAt = (s: number) => pad.top + (1 - s / 1000) * innerH;
+
+  // 유효 포인트만 path로 잇기 (null인 기간은 스킵하고 양 옆 점을 직접 연결)
+  const validPoints = data
+    .map((d, i) => ({ ...d, x: xAt(i), y: d.score === null ? null : yAt(d.score), idx: i }))
+    .filter((p) => p.y !== null) as Array<{ period: PeriodKey; label: string; score: number; ewReturn: number | null; ok: boolean; x: number; y: number; idx: number }>;
+
+  const pathD = smoothPath(validPoints.map(({ x, y }) => ({ x, y })));
+
+  // ─── EW 수익률 Y-스케일 (우측 축, 0% 항상 포함하여 동적 스케일) ───
+  const ewValid = data
+    .map((d, i) => ({ ...d, x: xAt(i), idx: i }))
+    .filter((p) => p.ewReturn != null) as Array<{ period: PeriodKey; label: string; ewReturn: number; x: number; idx: number }>;
+  const ewVals = ewValid.map((p) => p.ewReturn);
+  const ewRaw = ewVals.length ? { min: Math.min(...ewVals), max: Math.max(...ewVals) } : null;
+  // 0% 항상 시야 + 10% padding (최소 ±5% 보장)
+  const retMin = ewRaw ? Math.min(0, ewRaw.min) : -5;
+  const retMax = ewRaw ? Math.max(0, ewRaw.max) : 5;
+  const retRange = Math.max(retMax - retMin, 10);
+  const retPad = retRange * 0.1;
+  const retLo = retMin - retPad;
+  const retHi = retMax + retPad;
+  const yAtRet = (v: number) => pad.top + (1 - (v - retLo) / (retHi - retLo)) * innerH;
+  const ewPathD = smoothPath(ewValid.map((p) => ({ x: p.x, y: yAtRet(p.ewReturn) })));
+
+  // 우측 Y축 tick — 4개 균등 분할 + 0% 강조
+  const retTicks = [retLo, retLo + (retHi - retLo) * 0.25, (retLo + retHi) / 2, retLo + (retHi - retLo) * 0.75, retHi];
+
+  // gradient stop도 score → temperature color로
+  const yGrid = [0, 200, 400, 500, 600, 800, 1000];
+
+  const [hoverIdx, setHoverIdx] = useState<number | null>(null);
+
+  const allNull = validPoints.length === 0;
+
+  return (
+    <div className="mt-2 rounded-2xl border border-white/10 bg-black/20 p-3">
+      <div className="mb-1 flex items-baseline justify-between">
+        <div className="text-sm font-semibold text-white/85">기간별 BAROMETER 추세</div>
+        <div className="flex items-center gap-3 text-[10px] text-white/40">
+          <span className="flex items-center gap-1">
+            <span className="inline-block h-[2px] w-3 bg-white/55" /> 점수
+          </span>
+          <span className="flex items-center gap-1">
+            <svg width="14" height="2" className="inline-block">
+              <line x1="0" y1="1" x2="14" y2="1" stroke="#22d3ee" strokeWidth="1.5" strokeDasharray="3 2" />
+            </svg>
+            EW 수익률
+          </span>
+          <span>기간 라벨 클릭으로 전환</span>
+        </div>
+      </div>
+
+      {allNull ? (
+        <div className="py-8 text-center text-sm text-white/40">표본 부족 — 데이터 없음</div>
+      ) : (
+        <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto" preserveAspectRatio="xMidYMid meet">
+          {/* y-axis grid + ticks */}
+          {yGrid.map((s) => (
+            <g key={`grid-${s}`}>
+              <line
+                x1={pad.left}
+                x2={W - pad.right}
+                y1={yAt(s)}
+                y2={yAt(s)}
+                stroke="rgba(255,255,255,0.06)"
+                strokeWidth={1}
+                strokeDasharray={s === 500 ? "2 3" : undefined}
+              />
+              <text x={pad.left - 6} y={yAt(s) + 3} textAnchor="end" fontSize={9} fill="rgba(255,255,255,0.35)">
+                {s}
+              </text>
+            </g>
+          ))}
+
+          {/* area fill under line (subtle) */}
+          {pathD && (
+            <path
+              d={`${pathD} L ${validPoints[validPoints.length - 1].x} ${pad.top + innerH} L ${validPoints[0].x} ${pad.top + innerH} Z`}
+              fill="url(#barometerArea)"
+              opacity={0.15}
+            />
+          )}
+          <defs>
+            <linearGradient id="barometerArea" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#ef476f" stopOpacity={0.7} />
+              <stop offset="100%" stopColor="#ef476f" stopOpacity={0} />
+            </linearGradient>
+          </defs>
+
+          {/* main line (BAROMETER 점수) */}
+          <path d={pathD} fill="none" stroke="rgba(255,255,255,0.55)" strokeWidth={2} />
+
+          {/* ─── 우측 Y축: EW 수익률 (점선 라인용 동적 스케일) ─── */}
+          {ewValid.length > 0 && (
+            <g>
+              {/* 0% 기준선 (회색 점선, 좌→우 가로) */}
+              {retLo <= 0 && retHi >= 0 && (
+                <>
+                  <line
+                    x1={pad.left}
+                    x2={W - pad.right}
+                    y1={yAtRet(0)}
+                    y2={yAtRet(0)}
+                    stroke="rgba(34,211,238,0.18)"
+                    strokeWidth={1}
+                    strokeDasharray="1 3"
+                  />
+                  <text
+                    x={W - pad.right + 3}
+                    y={yAtRet(0) + 3}
+                    fontSize={9}
+                    fill="rgba(34,211,238,0.5)"
+                  >
+                    0%
+                  </text>
+                </>
+              )}
+              {/* 우측 축 tick 라벨 (0% 외) */}
+              {retTicks.map((v, i) => {
+                if (Math.abs(v) < 0.05) return null; // 0% 은 위에서 별도 처리
+                return (
+                  <text
+                    key={`rtick-${i}`}
+                    x={W - pad.right + 3}
+                    y={yAtRet(v) + 3}
+                    fontSize={9}
+                    fill="rgba(34,211,238,0.35)"
+                  >
+                    {v >= 0 ? "+" : ""}{v.toFixed(0)}%
+                  </text>
+                );
+              })}
+              {/* EW 점선 라인 */}
+              <path
+                d={ewPathD}
+                fill="none"
+                stroke="#22d3ee"
+                strokeWidth={1.6}
+                strokeDasharray="4 3"
+                strokeLinecap="round"
+              />
+              {/* EW 포인트 (작은 원) */}
+              {ewValid.map((p) => (
+                <circle
+                  key={`ew-${p.period}`}
+                  cx={p.x}
+                  cy={yAtRet(p.ewReturn)}
+                  r={3}
+                  fill="#0f172a"
+                  stroke="#22d3ee"
+                  strokeWidth={1.4}
+                />
+              ))}
+            </g>
+          )}
+
+          {/* current period vertical guide */}
+          {(() => {
+            const i = TREND_PERIODS.indexOf(period);
+            if (i < 0) return null;
+            return (
+              <line
+                x1={xAt(i)}
+                x2={xAt(i)}
+                y1={pad.top}
+                y2={pad.top + innerH}
+                stroke="rgba(255,255,255,0.18)"
+                strokeWidth={1}
+              />
+            );
+          })()}
+
+          {/* points + badges */}
+          {data.map((d, i) => {
+            const x = xAt(i);
+            const isCurrent = d.period === period;
+            const isHover = hoverIdx === i;
+            if (d.score === null) {
+              return (
+                <text key={`np-${d.period}`} x={x} y={pad.top + innerH / 2} textAnchor="middle" fontSize={9} fill="rgba(255,255,255,0.3)">
+                  N/A
+                </text>
+              );
+            }
+            const y = yAt(d.score);
+            const meta = tempByScoreFn(d.score);
+            const r = isCurrent || isHover ? 7 : 5;
+            return (
+              <g key={`pt-${d.period}`}>
+                <circle cx={x} cy={y} r={r + 3} fill={meta.color} opacity={isCurrent ? 0.25 : 0} />
+                <circle
+                  cx={x}
+                  cy={y}
+                  r={r}
+                  fill={meta.color}
+                  stroke={isCurrent ? "#fff" : "rgba(255,255,255,0.35)"}
+                  strokeWidth={isCurrent ? 2 : 1}
+                />
+                {/* score above point */}
+                <text x={x} y={y - r - 6} textAnchor="middle" fontSize={11} fontWeight={700} fill="white">
+                  {d.score}
+                </text>
+                {/* badge name (only current or hover, to avoid clutter) */}
+                {(isCurrent || isHover) && (
+                  <text x={x} y={y - r - 18} textAnchor="middle" fontSize={9} fontWeight={700} fill={meta.color}>
+                    {meta.name}
+                  </text>
+                )}
+                {/* hit area */}
+                <rect
+                  x={x - innerW / TREND_PERIODS.length / 2}
+                  y={pad.top}
+                  width={innerW / TREND_PERIODS.length}
+                  height={innerH}
+                  fill="transparent"
+                  style={{ cursor: "pointer" }}
+                  onMouseEnter={() => setHoverIdx(i)}
+                  onMouseLeave={() => setHoverIdx((h) => (h === i ? null : h))}
+                  onClick={() => onChangePeriod?.(d.period)}
+                />
+              </g>
+            );
+          })}
+
+          {/* x-axis labels */}
+          {data.map((d, i) => {
+            const isCurrent = d.period === period;
+            return (
+              <text
+                key={`lbl-${d.period}`}
+                x={xAt(i)}
+                y={H - 14}
+                textAnchor="middle"
+                fontSize={11}
+                fontWeight={isCurrent ? 700 : 500}
+                fill={isCurrent ? "white" : "rgba(255,255,255,0.55)"}
+                style={{ cursor: "pointer" }}
+                onClick={() => onChangePeriod?.(d.period)}
+              >
+                {d.label}
+              </text>
+            );
+          })}
+        </svg>
+      )}
+
+      {/* current period summary line */}
+      {(() => {
+        const cur = data.find((d) => d.period === period);
+        if (!cur || cur.score === null) return null;
+        const meta = tempByScoreFn(cur.score);
+        const ew = cur.ewReturn;
+        return (
+          <div className="mt-1 flex items-center justify-between text-[11px]">
+            <span className="text-white/55">현재 ({cur.label})</span>
+            <span className="flex items-center gap-2">
+              {typeof ew === "number" && Number.isFinite(ew) && (
+                <span className="flex items-center gap-1 font-semibold" style={{ color: "#22d3ee" }}>
+                  EW {ew >= 0 ? "+" : ""}{ew.toFixed(2)}%
+                </span>
+              )}
+              <span className="flex items-center gap-1.5">
+                <span
+                  className="rounded px-1.5 py-0.5 text-[10px] font-extrabold text-black"
+                  style={{ background: meta.color }}
+                >
+                  {meta.name}
+                </span>
+                <span className="font-bold text-white">{cur.score}</span>
+              </span>
+            </span>
+          </div>
+        );
+      })()}
+    </div>
+  );
 }
 
 /* ─────────────────────────────────────────
@@ -61,118 +394,6 @@ function noteFmtDate(iso: string) {
   });
 }
 
-/* ─────────────────────────────────────────
-   Barometer Sparkline — 최근 7일 점수 추이
-   public/data/history/ 의 일별 스냅샷을 fetch.
-───────────────────────────────────────── */
-type SparkPoint = { date: string; score: number };
-
-function BarometerSparkline({ themeId }: { themeId: string }) {
-  const [points, setPoints] = useState<SparkPoint[]>([]);
-
-  useEffect(() => {
-    let aborted = false;
-    setPoints([]);
-
-    (async () => {
-      try {
-        const idxRes = await fetch("/data/history/index.json", { cache: "no-store" });
-        if (!idxRes.ok) return;
-        const dates: unknown = await idxRes.json();
-        if (!Array.isArray(dates) || dates.length === 0) return;
-
-        const last30 = (dates as string[]).slice(0, 30); // index.json은 desc 정렬
-
-        const results = await Promise.all(
-          last30.map(async (d) => {
-            const stamp = String(d).replace(/-/g, "");
-            try {
-              const r = await fetch(`/data/history/barometer_${stamp}.json`, { cache: "no-store" });
-              if (!r.ok) return null;
-              const body = await r.json();
-              const hit = (body?.themes ?? []).find((t: any) => t?.themeId === themeId);
-              if (!hit || typeof hit.score !== "number") return null;
-              return { date: d, score: hit.score } as SparkPoint;
-            } catch {
-              return null;
-            }
-          })
-        );
-
-        if (aborted) return;
-        const clean = results
-          .filter((x): x is SparkPoint => !!x)
-          .sort((a, b) => a.date.localeCompare(b.date));
-        setPoints(clean);
-      } catch {
-        // silent — 히스토리 아직 없음
-      }
-    })();
-
-    return () => {
-      aborted = true;
-    };
-  }, [themeId]);
-
-  if (points.length < 2) return null;
-
-  // 오늘 포함 최근 7개 포인트만 표시
-  const win = points.slice(-7);
-  const values = win.map((p) => p.score);
-  const minV = Math.min(...values);
-  const maxV = Math.max(...values);
-
-  const W = 200;
-  const H = 40;
-  const PAD = 3;
-
-  const xFor = (i: number) =>
-    win.length === 1 ? W / 2 : (i / (win.length - 1)) * (W - 2 * PAD) + PAD;
-  const yFor = (v: number) => {
-    if (maxV === minV) return H / 2;
-    return H - ((v - minV) / (maxV - minV)) * (H - 2 * PAD) - PAD;
-  };
-
-  const d = win
-    .map((p, i) => `${i === 0 ? "M" : "L"} ${xFor(i).toFixed(1)} ${yFor(p.score).toFixed(1)}`)
-    .join(" ");
-
-  const rising = values[values.length - 1] >= values[0];
-  const color = rising ? "#FF4444" : "#4488FF";
-  const last = win[win.length - 1];
-  const delta = last.score - win[0].score;
-  const deltaLabel = (delta >= 0 ? "+" : "") + delta;
-
-  return (
-    <div className="mt-3 rounded-2xl border border-white/10 bg-black/20 px-3 py-2">
-      <div className="mb-1 flex items-baseline justify-between text-[11px]">
-        <span className="font-semibold tracking-wide text-white/55">
-          SCORE TREND · last {win.length}d
-        </span>
-        <span className="font-black" style={{ color }}>
-          {last.score} <span className="text-white/45 font-medium">({deltaLabel})</span>
-        </span>
-      </div>
-      <svg
-        viewBox={`0 0 ${W} ${H}`}
-        preserveAspectRatio="none"
-        style={{ display: "block", width: "100%", height: 40 }}
-        role="img"
-        aria-label={`score trend ${win[0].date}~${last.date}`}
-      >
-        <path
-          d={d}
-          fill="none"
-          stroke={color}
-          strokeWidth={1.5}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <circle cx={xFor(win.length - 1)} cy={yFor(last.score)} r={2.5} fill={color} />
-      </svg>
-    </div>
-  );
-}
 
 function ThemeNotes({ themeId }: { themeId: string }) {
   const [notes, setNotes] = useState<NoteItem[]>([]);
@@ -326,12 +547,6 @@ type Props = {
   compareThemeName?: string;
 };
 
-function pickNum(v: any): number | null {
-  if (typeof v !== "number") return null;
-  if (!Number.isFinite(v)) return null;
-  return v;
-}
-
 function fmtPct(v: number | null | undefined, digits = 2): string {
   if (v === null || v === undefined) return "—";
   if (!Number.isFinite(v)) return "—";
@@ -339,180 +554,10 @@ function fmtPct(v: number | null | undefined, digits = 2): string {
   return `${sign}${v.toFixed(digits)}%`;
 }
 
-function fmtInt(v: number | null | undefined): string {
-  if (v === null || v === undefined) return "—";
-  if (!Number.isFinite(v)) return "—";
-  return Math.round(v).toLocaleString();
-}
-
-function fmtMarketCapKRW(mcap: number | null | undefined): string {
-  if (mcap === null || mcap === undefined) return "—";
-  if (!Number.isFinite(mcap)) return "—";
-  const n = mcap;
-  const trillion = 1_000_000_000_000;
-  const hundredMillion = 100_000_000;
-
-  if (n >= trillion) return `${(n / trillion).toFixed(2)}조`;
-  if (n >= hundredMillion) return `${(n / hundredMillion).toFixed(0)}억`;
-  return n.toLocaleString();
-}
-
-function getTrailingPER(metrics?: Record<string, any>): number | null {
-  if (!metrics) return null;
-  const m = metrics as Record<string, any>;
-  return pickNum(m.per) ?? pickNum(m.pe) ?? pickNum(m.pe_ttm) ?? null;
-}
-
-// PER 표시: trailing 우선, 없으면 forward(perFwd12m). 종류도 함께 반환.
-function getDisplayPER(metrics?: Record<string, any>): { value: number | null; kind: "Trailing" | "Fwd" | null } {
-  if (!metrics) return { value: null, kind: null };
-  const m = metrics as Record<string, any>;
-  const t = pickNum(m.per) ?? pickNum(m.pe) ?? pickNum(m.pe_ttm);
-  if (t !== null) return { value: t, kind: "Trailing" };
-  const f = pickNum(m.perFwd12m) ?? pickNum(m.per_fwd12m) ?? pickNum(m.forwardPE);
-  if (f !== null) return { value: f, kind: "Fwd" };
-  return { value: null, kind: null };
-}
-
-function getOptionalNum(metrics: Record<string, any> | undefined, ...keys: string[]): number | null {
-  if (!metrics) return null;
-  for (const k of keys) {
-    const v = pickNum((metrics as any)[k]);
-    if (v !== null) return v;
-  }
-  return null;
-}
-
-function getOptionalStr(metrics: Record<string, any> | undefined, ...keys: string[]): string | null {
-  if (!metrics) return null;
-  for (const k of keys) {
-    const v = (metrics as any)[k];
-    if (typeof v === "string" && v.trim()) return v.trim();
-  }
-  return null;
-}
-
-function getClose(metrics?: Record<string, any>): number | null {
-  if (!metrics) return null;
-  const m = metrics as Record<string, any>;
-  return pickNum(m.close) ?? pickNum(m.last_price) ?? pickNum(m.lastPrice) ?? null;
-}
-
-function getMarketCap(metrics?: Record<string, any>): number | null {
-  if (!metrics) return null;
-  const m = metrics as Record<string, any>;
-  return pickNum(m.marketCap) ?? pickNum(m.market_cap) ?? pickNum(m.mktCap) ?? null;
-}
-
-// ✅ 수익률 키 후보를 "모든 컴포넌트에서 동일하게" (대문자 return_7D도 포함)
-function getReturnByPeriodFromMetrics(metrics?: Record<string, any>, period?: PeriodKey): number | null {
-  if (!metrics || !period) return null;
-
-  // ✅ Live-fetched return (Yahoo Finance) takes absolute priority.
-  const live = (metrics as any)._liveReturn;
-  if (typeof live === "number" && Number.isFinite(live)) return live;
-
-  const P = String(period).toUpperCase() as PeriodKey;
-  const pLower = P.toLowerCase();
-
-  // ✅ Priority: return_* (new pipeline) BEFORE ret* (stale old pipeline).
-  const candidates: string[] = (() => {
-    switch (P) {
-      case "3D":
-        return ["return_3d", "return_3D", "return3d", "ret_3d", "ret3d", "r3d", "3d", "3D"];
-      case "7D":
-        return ["return_7d", "return_7D", "return7d", "ret_7d", "ret7d", "r7d", "7d", "7D"];
-      case "1M":
-        return ["return_1m", "return_1M", "return1m", "return_30d", "ret_1m", "ret1m", "r1m", "1m", "1M", "ret30d"];
-      case "YTD":
-        return ["return_ytd", "return_YTD", "returnYtd", "ret_ytd", "retYtd", "ytd", "YTD"];
-      case "1Y":
-        return ["return_1y", "return_1Y", "return1y", "ret_1y", "ret1y", "1y", "1Y"];
-      case "3Y":
-        return ["return_3y", "return_3Y", "return3y", "ret_3y", "ret3y", "3y", "3Y"];
-      default:
-        return [pLower, P];
-    }
-  })();
-
-  const tryPick = (obj: any): number | null => {
-    if (!obj || typeof obj !== "object") return null;
-    for (const k of candidates) {
-      const vv = obj[k];
-      if (typeof vv === "number" && Number.isFinite(vv)) return vv;
-      if (typeof vv === "string") {
-        const n = Number(vv);
-        if (Number.isFinite(n)) return n;
-      }
-    }
-    return null;
-  };
-
-  // 1) direct
-  let v = tryPick(metrics);
-
-  // 2) nested
-  if (v == null) v = tryPick((metrics as any).returns);
-  if (v == null) v = tryPick((metrics as any).return);
-  if (v == null) v = tryPick((metrics as any).performance);
-  if (v == null) v = tryPick((metrics as any).performance?.returns);
-  if (v == null) v = tryPick((metrics as any).performance?.return);
-
-  // 3) metrics.returns[pLower]
-  if (v == null && (metrics as any)?.returns && typeof (metrics as any).returns === "object") {
-    const vv =
-      (metrics as any).returns[pLower] ??
-      (metrics as any).returns[P] ??
-      (metrics as any).returns[pLower.toUpperCase()];
-    if (typeof vv === "number" && Number.isFinite(vv)) v = vv;
-    if (v == null && typeof vv === "string") {
-      const n = Number(vv);
-      if (Number.isFinite(n)) v = n;
-    }
-  }
-
-  if (v == null) return null;
-
-  // heuristic: decimal -> percent
-  const abs = Math.abs(v);
-  if (abs > 0 && abs < 1 && abs * 100 >= 1) return v * 100;
-
-  return v;
-}
-
 function fmtScore(v: number | null | undefined): string {
   if (v === null || v === undefined) return "—";
   if (!Number.isFinite(v)) return "—";
   return Math.round(v).toString();
-}
-
-/** Google Finance URL */
-function googleFinanceSymbol(ticker?: string, exchange?: string): string | null {
-  const t = (ticker ?? "").trim();
-  if (!t) return null;
-  if (t.includes(":")) return t;
-
-  const ex = (exchange ?? "").trim().toUpperCase();
-  if (!ex) return null;
-
-  if (ex === "KOSDAQ") return `${t}:KOSDAQ`;
-  if (ex === "KOSPI") return `${t}:KRX`;
-  if (ex === "KRX") return `${t}:KRX`;
-
-  if (ex === "NASDAQ") return `${t}:NASDAQ`;
-  if (ex === "NYSE") return `${t}:NYSE`;
-  if (ex === "AMEX") return `${t}:AMEX`;
-
-  return null;
-}
-
-function googleFinanceUrl(ticker?: string, exchange?: string): string | null {
-  const sym = googleFinanceSymbol(ticker, exchange);
-  if (sym) return `https://www.google.com/finance/quote/${encodeURIComponent(sym)}`;
-
-  const t = (ticker ?? "").trim();
-  if (!t) return null;
-  return `https://www.google.com/finance/search?q=${encodeURIComponent(t)}`;
 }
 
 function TempBadge({ score }: { score: number }) {
@@ -534,45 +579,11 @@ function TempBadge({ score }: { score: number }) {
 export default function GraphRightPanel({
   currentThemeId,
   themeName,
-  selectedNode,
   period = "7D",
+  onChangePeriod,
   themeReturn,
   nodes = [],
 }: Props) {
-  const nodeType = (selectedNode?.type ?? "").toUpperCase();
-
-  const perDisp = getDisplayPER(selectedNode?.metrics);
-  const perTtm = perDisp.value;
-  const perKind = perDisp.kind;
-  const close = getClose(selectedNode?.metrics);
-  const mcap = getMarketCap(selectedNode?.metrics);
-
-  // 옵셔널 필드 (데이터 있을 때만 표시)
-  const fiftyTwoHigh = getOptionalNum(
-    selectedNode?.metrics as any,
-    "fiftyTwoWeekHigh",
-    "fifty_two_week_high",
-    "high52w",
-    "week52High",
-  );
-  const fiftyTwoLow = getOptionalNum(
-    selectedNode?.metrics as any,
-    "fiftyTwoWeekLow",
-    "fifty_two_week_low",
-    "low52w",
-    "week52Low",
-  );
-  const sector = getOptionalStr(selectedNode?.metrics as any, "sector", "sectorName");
-  const industry = getOptionalStr(selectedNode?.metrics as any, "industry", "industryName");
-
-  const ret = nodeType === "ASSET" ? getReturnByPeriodFromMetrics(selectedNode?.metrics, period) : null;
-
-  const ticker = selectedNode?.exposure?.ticker;
-  const exchange = selectedNode?.exposure?.exchange;
-  const country = selectedNode?.exposure?.country;
-
-  const gfUrl = googleFinanceUrl(ticker, exchange);
-
   const themeSummary = themeReturn;
   const ok = !!themeSummary && (themeSummary as any).ok === true;
 
@@ -607,12 +618,6 @@ export default function GraphRightPanel({
     return "수익률 데이터가 없습니다.";
   }, [ok, themeSummary, returnsSource, returnsAsOf]);
 
-  // 선택 노드 반환일 표시
-  const selectedReturnsAsOf: string | null =
-    (selectedNode?.metrics as any)?.returnsAsOf ?? null;
-  const selectedReturnsSource: string | null =
-    (selectedNode?.metrics as any)?.returnsSource ?? null;
-
   return (
     <aside className="h-full w-full overflow-auto rounded-2xl border border-white/10 bg-black/30 p-4">
       {/* Title + Overall Badge */}
@@ -631,6 +636,43 @@ export default function GraphRightPanel({
       <div className="mt-2 text-[12px] text-white/60">
         {(themeSummary as any)?.note ?? (ok ? "테마 상태 요약이 준비되어 있습니다." : "아직 테마 수익률/지표 데이터가 없습니다.")}
       </div>
+
+      {/* EW (Equal-Weighted Virtual ETF) — period 수익률 prominent pill */}
+      {typeof avgReturn === "number" && Number.isFinite(avgReturn) ? (
+        <div className="mt-2 flex items-center gap-2">
+          <span
+            className="inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-semibold"
+            style={{
+              borderColor:
+                avgReturn > 0
+                  ? "rgba(248,113,113,0.4)"
+                  : avgReturn < 0
+                    ? "rgba(96,165,250,0.4)"
+                    : "rgba(255,255,255,0.18)",
+              backgroundColor:
+                avgReturn > 0
+                  ? "rgba(248,113,113,0.08)"
+                  : avgReturn < 0
+                    ? "rgba(96,165,250,0.08)"
+                    : "rgba(255,255,255,0.04)",
+              color:
+                avgReturn > 0
+                  ? "#fca5a5"
+                  : avgReturn < 0
+                    ? "#93c5fd"
+                    : "rgba(255,255,255,0.7)",
+            }}
+            title={`Equal-Weighted 가상 포트폴리오 — 모든 자산 동일가중 단순평균 (n=${assetCount})`}
+          >
+            <span className="text-white/55">EW {period ?? "7D"}</span>
+            <span className="font-extrabold">
+              {avgReturn >= 0 ? "+" : ""}
+              {avgReturn.toFixed(2)}%
+            </span>
+            <span className="text-white/40">· n={assetCount}</span>
+          </span>
+        </div>
+      ) : null}
 
       {/* 수익률 없음 안내 (FMP/PYKRX 구분) */}
       {noReturnNote && (
@@ -674,148 +716,20 @@ export default function GraphRightPanel({
 
         <div className="rounded-2xl border border-white/10 bg-black/20 px-3 py-2">
           <div className="flex items-baseline justify-between gap-2">
-            <div className="text-[11px] font-semibold tracking-wide text-white/55">TAIL (±15%)</div>
+            <div className="text-[11px] font-semibold tracking-wide text-white/55">TAIL (≤-15%)</div>
             <div className="text-[20px] font-black leading-none text-white">{fmtPct(tailPct, 0)}</div>
           </div>
           <div className="mt-1 truncate text-[11px] text-white/60">Gap {fmtPct(gapPct, 1)}</div>
         </div>
       </div>
 
-      {/* Score Trend Sparkline (최근 7일 점수 추이) */}
-      <BarometerSparkline themeId={currentThemeId} />
-
-      {/* SELECTED */}
-      <div className="mt-3 text-xs text-white/55">SELECTED</div>
-
-      {!selectedNode ? (
-        <div className="mt-2 rounded-2xl border border-white/10 bg-black/20 p-3">
-          <div className="text-lg font-extrabold text-white">노드를 클릭하세요</div>
-          <div className="mt-1 text-sm text-white/55">type: -</div>
-        </div>
-      ) : (
-        <div className="mt-2 rounded-2xl border border-white/10 bg-black/20 p-3">
-          <div className="flex items-start justify-between gap-3">
-            <div className="min-w-0 flex-1">
-              <div className="truncate text-lg font-extrabold text-white">{selectedNode.name ?? selectedNode.id}</div>
-              <div className="mt-1 text-sm text-white/60">type: {nodeType || "-"}</div>
-
-              {nodeType === "ASSET" ? (
-                <div className="mt-3 space-y-1 text-sm text-white/80">
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-white/55">{period} Return :</span>{" "}
-                    <span className="font-bold" style={{ color: ret === null ? "rgba(255,255,255,0.4)" : ret > 0 ? "#FF4444" : ret < 0 ? "#4444FF" : "#ffffff" }}>
-                      {fmtPct(ret, 2)}
-                    </span>
-                    {ret === null && selectedReturnsSource === "FMP" && (
-                      <span className="text-[10px] text-white/35">FMP 수집중</span>
-                    )}
-                  </div>
-                  {selectedReturnsAsOf && (
-                    <div className="text-[11px] text-white/35">
-                      기준일: {selectedReturnsAsOf}
-                      {selectedReturnsSource ? ` (${selectedReturnsSource})` : ""}
-                    </div>
-                  )}
-                  <div>
-                    <span className="text-white/55">Ticker :</span>{" "}
-                    <span className="font-semibold text-white">{ticker ?? "—"}</span>
-                  </div>
-                  <div>
-                    <span className="text-white/55">Exchange :</span>{" "}
-                    <span className="text-white/80">{exchange ?? "—"}</span>
-                  </div>
-                  <div>
-                    <span className="text-white/55">Country :</span>{" "}
-                    <span className="text-white/80">{country ?? "—"}</span>
-                  </div>
-                </div>
-              ) : (
-                <div className="mt-3 text-sm text-white/70">선택된 노드는 ASSET이 아닙니다.</div>
-              )}
-            </div>
-
-            <div className="w-[260px] shrink-0 rounded-2xl border border-white/10 bg-black/20 p-3">
-              <div className="text-[11px] leading-snug text-white/70 break-all">
-                {gfUrl ? (
-                  <a
-                    href={gfUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="underline underline-offset-2 hover:text-white"
-                    title="Google Finance"
-                  >
-                    {gfUrl}
-                  </a>
-                ) : (
-                  <span className="text-white/40">Google Finance</span>
-                )}
-              </div>
-
-              <div className="mt-2 grid grid-cols-2 gap-3 text-sm">
-                <div>
-                  <div className="text-[11px] text-white/45">MKT CAP</div>
-                  <div className="text-sm font-bold text-white">{fmtMarketCapKRW(mcap)}</div>
-                </div>
-                <div>
-                  <div className="text-[11px] text-white/45">Close</div>
-                  <div className="text-sm font-bold text-white">{fmtInt(close)}</div>
-                </div>
-                <div>
-                  <div className="text-[11px] text-white/45">VAL DATE</div>
-                  {(() => {
-                    const v = selectedNode?.metrics?.valuationAsOf;
-                    const s = staleLevel(v);
-                    const color = s === 0 ? "text-white" : s === 1 ? "text-amber-300" : "text-red-400";
-                    const label = s === 0 ? null : staleLabel(v);
-                    return (
-                      <div className={`text-sm font-bold ${color}`}>
-                        {v ?? "—"}
-                        {label ? (
-                          <span className="ml-1 text-[10px] font-medium opacity-80">⚠ {label}</span>
-                        ) : null}
-                      </div>
-                    );
-                  })()}
-                </div>
-                <div>
-                  <div className="text-[11px] text-white/45">PER ({perKind ?? "Trailing"})</div>
-                  <div className="text-sm font-bold text-white">{perTtm === null ? "—" : perTtm.toFixed(2)}</div>
-                </div>
-              </div>
-
-              {/* ✅ Optional extras (데이터 있을 때만) */}
-              {(fiftyTwoHigh !== null || fiftyTwoLow !== null || sector || industry) && (
-                <div className="mt-3 grid grid-cols-2 gap-3 text-sm">
-                  {fiftyTwoHigh !== null && (
-                    <div>
-                      <div className="text-[11px] text-white/45">52W HIGH</div>
-                      <div className="text-sm font-bold text-white">{fmtInt(fiftyTwoHigh)}</div>
-                    </div>
-                  )}
-                  {fiftyTwoLow !== null && (
-                    <div>
-                      <div className="text-[11px] text-white/45">52W LOW</div>
-                      <div className="text-sm font-bold text-white">{fmtInt(fiftyTwoLow)}</div>
-                    </div>
-                  )}
-                  {sector && (
-                    <div className="col-span-2">
-                      <div className="text-[11px] text-white/45">SECTOR</div>
-                      <div className="text-sm font-bold text-white truncate" title={sector}>{sector}</div>
-                    </div>
-                  )}
-                  {industry && (
-                    <div className="col-span-2">
-                      <div className="text-[11px] text-white/45">INDUSTRY</div>
-                      <div className="text-sm font-bold text-white truncate" title={industry}>{industry}</div>
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
+      {/* BAROMETER 추세 — 6개 기간 시계열 (항상 표시, selection과 무관) */}
+      <div className="mt-3 text-xs text-white/55">BAROMETER 추세</div>
+      <BarometerTrendChart
+        nodes={nodes}
+        period={(period ?? "7D") as PeriodKey}
+        onChangePeriod={onChangePeriod}
+      />
 
       {/* TOP MOVERS */}
       <div className="mt-3 flex items-center justify-between">
