@@ -41,7 +41,22 @@ jobs:
         run: |
           node scripts/daily_brief.mjs
 
+      - name: Compute brief metadata
+        id: brief
+        shell: bash
+        run: |
+          DATE=$(TZ=Asia/Seoul date +%Y-%m-%d)
+          BRIEF_PATH="public/data/daily_briefs/${DATE}.md"
+          echo "date=${DATE}" >> "$GITHUB_OUTPUT"
+          echo "path=${BRIEF_PATH}" >> "$GITHUB_OUTPUT"
+          if [ -f "$BRIEF_PATH" ]; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Commit & push if new brief generated
+        if: steps.brief.outputs.exists == 'true'
         shell: bash
         run: |
           set -e
@@ -67,6 +82,26 @@ jobs:
           fi
 
           git add public/data/daily_briefs/
-          DATE=$(TZ=Asia/Seoul date +%Y-%m-%d)
+          DATE=${{ steps.brief.outputs.date }}
           git commit -m "chore(brief): daily ${DATE}"
           git push origin HEAD:main
+
+      # ─────────────────────────────────────────────────────────────
+      # Email delivery — Gmail SMTP + App Password.
+      # 본문은 MD inline. 성공(MD 파일 존재) 시에만 발송.
+      # 필요 secret: GMAIL_USER (보낸이 = 받는이 주소), GMAIL_APP_PASSWORD (Google App Password).
+      # ─────────────────────────────────────────────────────────────
+      - name: Send brief via Gmail
+        if: steps.brief.outputs.exists == 'true'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.GMAIL_USER }}
+          password: ${{ secrets.GMAIL_APP_PASSWORD }}
+          from: Moneytree Daily Brief <${{ secrets.GMAIL_USER }}>
+          to: ${{ secrets.GMAIL_USER }}
+          subject: "[머니트리] 데일리 테마 매핑 — ${{ steps.brief.outputs.date }}"
+          body: file://${{ steps.brief.outputs.path }}
+          convert_markdown: true
