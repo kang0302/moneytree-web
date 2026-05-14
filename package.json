@@ -2,33 +2,42 @@
   "name": "moneytree-web",
   "version": "0.1.0",
   "private": true,
- "scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "start": "next start",
-  "lint": "eslint",
-  "build:search": "node scripts/build_search_index.mjs",
-  "refresh:search": "node scripts/refresh_search.mjs",
-  "mt:update": "powershell -ExecutionPolicy Bypass -File scripts\\mt_update.ps1",
-  "mt:push": "powershell -ExecutionPolicy Bypass -File scripts\\mt_push.ps1",
-  "mt:deploy": "powershell -ExecutionPolicy Bypass -File scripts\\mt_deploy.ps1"
- },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "build:search": "node scripts/build_search_index.mjs",
+    "refresh:search": "node scripts/refresh_search.mjs",
+    "brief:daily": "node scripts/daily_brief.mjs",
+    "mt:update": "powershell -ExecutionPolicy Bypass -File scripts\\mt_update.ps1",
+    "mt:push": "powershell -ExecutionPolicy Bypass -File scripts\\mt_push.ps1",
+    "mt:deploy": "powershell -ExecutionPolicy Bypass -File scripts\\mt_deploy.ps1"
+  },
   "dependencies": {
     "d3-force": "^3.0.0",
     "next": "16.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "react-force-graph-2d": "^1.29.0"
+    "react-force-graph-2d": "^1.29.0",
+    "react-markdown": "^10.1.0",
+    "recharts": "^3.8.1",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^0.32.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
+    "cheerio": "^1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
+    "fast-xml-parser": "^4.5.0",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "youtube-transcript": "^1.2.1"
   }
 }

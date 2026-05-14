@@ -1,0 +1,72 @@
+name: Daily Brief Generator
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    # KST 09:00 = UTC 00:00 (US 마감 + Closing Bell + Bloomberg Tech 방영 후, 한국 개장 전)
+    - cron: "0 0 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mt-daily-brief
+  cancel-in-progress: false
+
+jobs:
+  brief:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install runtime deps (no-save, CI only)
+        run: |
+          npm install --no-save \
+            @anthropic-ai/sdk@^0.32.1 \
+            cheerio@^1.0.0 \
+            fast-xml-parser@^4.5.0 \
+            youtube-transcript@^1.2.1
+
+      - name: Generate daily brief
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          node scripts/daily_brief.mjs
+
+      - name: Commit & push if new brief generated
+        shell: bash
+        run: |
+          set -e
+          if [ -z "$(git status --porcelain public/data/daily_briefs/)" ]; then
+            echo "No new brief to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git pull --rebase --autostash origin main
+
+          # ✅ 다른 워크플로우와 동일한 conflict-marker guard
+          if [ -n "$(git ls-files -u)" ]; then
+            echo "❌ Unmerged paths after rebase:"
+            git status --short
+            exit 1
+          fi
+          if grep -rlE '^(<<<<<<< |=======$|>>>>>>> )' public/data/daily_briefs/ 2>/dev/null; then
+            echo "❌ Conflict markers in brief output. Aborting."
+            exit 1
+          fi
+
+          git add public/data/daily_briefs/
+          DATE=$(TZ=Asia/Seoul date +%Y-%m-%d)
+          git commit -m "chore(brief): daily ${DATE}"
+          git push origin HEAD:main
