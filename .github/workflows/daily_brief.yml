@@ -3,8 +3,9 @@ name: Daily Brief Generator
 on:
   workflow_dispatch: {}
   schedule:
-    # KST 09:00 = UTC 00:00 (US 마감 + Closing Bell + Bloomberg Tech 방영 후, 한국 개장 전)
-    - cron: "0 0 * * *"
+    # KST 08:15 = UTC 23:15 (US 마감·Bloomberg Tech·Closing Bell 방영 완료 후, KR 개장 45분 전)
+    # 00:00 UTC 정각 슬롯은 GitHub Actions 부하 폭주로 지연·스킵 빈번 — 23:15 로 회피.
+    - cron: "15 23 * * *"
 
 permissions:
   contents: write
