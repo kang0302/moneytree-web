@@ -1,13 +1,14 @@
 # Daily Brief Generator
 
-매일 아침 4개 소스를 자동으로 fetch → SSOT 테마 인덱스 컨텍스트 주입 → Anthropic API로
-**테마 매핑 분석** MD 생성 → repo commit.
+매일 아침 5개 소스를 자동으로 fetch → SSOT 테마 인덱스 컨텍스트 주입 → Anthropic API로
+**테마 매핑 분석** MD 생성 → repo commit + Gmail 발송.
 
 ## 소스
 1. **Bloomberg Technology** (YouTube channel) — 최신 영상 transcript
 2. **Bloomberg: The China Show** (YouTube playlist) — 최신 영상 transcript
 3. **한국경제 증권** (RSS) — top 10 articles
-4. **한경 컨센서스** (HTML) — latest 5 analyst reports
+4. **매일경제 증권** (RSS) — top 10 articles
+5. **한경 컨센서스** (HTML) — latest 5 analyst reports
 
 ## 출력
 - `public/data/daily_briefs/YYYY-MM-DD.md` (KST 기준 날짜)
@@ -15,11 +16,12 @@
   1. 오늘의 핫 테마 TOP 5 (T_xxx 매핑 + 신호 강도 + 트리거 소스 + 근거)
   2. 신규 테마 후보 (SSOT 인덱스에 없는 시그널)
   3. 기존 테마 보강 후보 (T_xxx에 추가할 자산/관계)
-  4. 소스별 핵심 요약 (Bloomberg / CNBC / 한경 10건 / 컨센서스 5건)
+  4. 소스별 핵심 요약 (Bloomberg Tech / China Show / 한경 10건 / 매경 10건 / 컨센서스 5건)
 
 ## 스케줄
-- **GitHub Actions cron**: `0 0 * * *` UTC = 매일 KST 09:00
-- US 마감 + Closing Bell + Bloomberg Tech 방영 후, 한국 시장 개장 전 시점
+- **GitHub Actions cron**: `15 23 * * *` UTC = 매일 KST 08:15
+- US 마감 + Bloomberg Tech / China Show 방영 후, 한국 시장 개장(09:00) 45분 전
+- 정각·00:00 UTC 슬롯 회피 (지연·스킵 빈번)
 
 ## 셋업 (1회만)
 

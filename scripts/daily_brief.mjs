@@ -1,12 +1,13 @@
 // scripts/daily_brief.mjs
-// 매일 아침 4개 소스를 fetch → SSOT 테마 인덱스 컨텍스트 주입 → Anthropic API로
+// 매일 아침 5개 소스를 fetch → SSOT 테마 인덱스 컨텍스트 주입 → Anthropic API로
 // 테마 매핑 분석 MD 생성.
 //
 // Sources:
 //   1. Bloomberg Technology YouTube (latest video transcript)
 //   2. Bloomberg: The China Show YouTube playlist (latest video transcript)
 //   3. 한국경제 증권 RSS (top 10 articles)
-//   4. 한경 컨센서스 (latest 5 analyst reports)
+//   4. 매일경제 증권 RSS (top 10 articles)
+//   5. 한경 컨센서스 (latest 5 analyst reports)
 //
 // Output: public/data/daily_briefs/YYYY-MM-DD.md
 //
@@ -36,6 +37,12 @@ const SOURCES = {
     url: "https://www.hankyung.com/feed/finance",
     limit: 10,
   },
+  maekyung: {
+    type: "rss",
+    name: "매일경제 증권",
+    url: "https://www.mk.co.kr/rss/50200011/",
+    limit: 10,
+  },
   consensus: {
     type: "consensus",
     name: "한경 컨센서스",
@@ -45,7 +52,7 @@ const SOURCES = {
 };
 
 const MODEL = "claude-sonnet-4-6";
-const MAX_TOKENS = 12000; // 테마 매핑 테이블 + 10개 헤드라인 + 신규 후보 섹션 확장 대비
+const MAX_TOKENS = 14000; // 테마 매핑 테이블 + 20개 헤드라인(한경 10 + 매경 10) + 컨센서스 5 + 신규 후보 섹션 대비
 const TRANSCRIPT_HARD_LIMIT_CHARS = 30000; // 종목당 transcript 토큰 폭주 방지
 
 // ---------- Source fetchers ----------
@@ -243,6 +250,10 @@ moneytree-web의 기존 SSOT 테마 인덱스에 매핑하고, 신규 테마/자
 1. **[{title}]({link})** — 한 줄 요약 → **T_xxx {테마명}**
 ... (10개)
 
+### 매일경제 증권 헤드라인 (top 10)
+1. **[{title}]({link})** — 한 줄 요약 → **T_xxx {테마명}**
+... (10개)
+
 ### 한경 컨센서스 (latest 5)
 1. **[{title}]({link})** — {broker} {analyst} — 핵심 thesis → **T_xxx {테마명}**
 ... (5개)
@@ -306,8 +317,20 @@ function buildUserMessage(sources) {
     });
   }
 
+  // Maekyung
+  parts.push(`\n## [4] 매일경제 증권 RSS (top 10)\n`);
+  if (sources.maekyung?.error) {
+    parts.push(`ERROR: ${sources.maekyung.error}\n`);
+  } else {
+    sources.maekyung.items.forEach((it, i) => {
+      parts.push(
+        `${i + 1}. ${it.title}\n   Link: ${it.link}\n   Date: ${it.pubDate}\n   Desc: ${it.description}\n`
+      );
+    });
+  }
+
   // Consensus
-  parts.push(`\n## [4] 한경 컨센서스 (latest 5)\n`);
+  parts.push(`\n## [5] 한경 컨센서스 (latest 5)\n`);
   if (sources.consensus?.error) {
     parts.push(`ERROR: ${sources.consensus.error}\n`);
   } else if (!sources.consensus.items.length) {
@@ -330,16 +353,17 @@ async function main() {
   if (!apiKey) throw new Error("ANTHROPIC_API_KEY env var missing");
 
   console.log("Loading SSOT theme index + fetching sources in parallel...");
-  const [themes, bloomberg, chinaShow, hankyung, consensus] = await Promise.all([
+  const [themes, bloomberg, chinaShow, hankyung, maekyung, consensus] = await Promise.all([
     loadThemeIndex(),
     fetchYouTubeLatest(SOURCES.bloomberg),
     fetchYouTubeLatest(SOURCES.chinaShow),
     fetchHankyungRSS(SOURCES.hankyung),
+    fetchHankyungRSS(SOURCES.maekyung), // 같은 RSS 2.0 포맷 → 동일 fetcher 재사용
     fetchConsensusLatest(SOURCES.consensus),
   ]);
   console.log(`SSOT themes loaded: ${themes.length}`);
 
-  const sources = { bloomberg, chinaShow, hankyung, consensus };
+  const sources = { bloomberg, chinaShow, hankyung, maekyung, consensus };
   console.log(
     JSON.stringify(
       {
@@ -350,6 +374,7 @@ async function main() {
           ? { error: chinaShow.error }
           : { title: chinaShow.title, hasTranscript: !!chinaShow.transcript },
         hankyung: hankyung.error ? { error: hankyung.error } : { count: hankyung.items.length },
+        maekyung: maekyung.error ? { error: maekyung.error } : { count: maekyung.items.length },
         consensus: consensus.error
           ? { error: consensus.error }
           : { count: consensus.items.length },
