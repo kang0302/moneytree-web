@@ -495,18 +495,44 @@ export default function ForceGraphWrapper({
   const [hoverNode, setHoverNode] = useState<NodeT | null>(null);
   const [hoverLink, setHoverLink] = useState<any | null>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  // 브리핑 테이블이 viewport 진입 시 좌측 상단 테마 설명 패널 자동 숨김 (겹침 방지)
+  // 브리핑 테이블이 viewport 진입 시 좌측 상단 테마 설명 패널 자동 숨김 (겹침 방지).
+  // ThemeBriefing 은 비동기 fetch 후 렌더라 mount 시점에 DOM 에 없을 수 있음 →
+  // MutationObserver 로 element 등장 감지 후 IntersectionObserver 부착.
   const [briefingVisible, setBriefingVisible] = useState(false);
   useEffect(() => {
     if (typeof document === "undefined") return;
-    const el = document.querySelector<HTMLElement>("[data-briefing-section]");
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      (entries) => setBriefingVisible(!!entries[0]?.isIntersecting),
-      { threshold: 0.05 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
+
+    let intersectionObs: IntersectionObserver | null = null;
+
+    const attachIntersection = (el: HTMLElement) => {
+      intersectionObs = new IntersectionObserver(
+        (entries) => setBriefingVisible(!!entries[0]?.isIntersecting),
+        { threshold: 0.05 }
+      );
+      intersectionObs.observe(el);
+    };
+
+    // 이미 DOM 에 있으면 즉시 부착
+    const existing = document.querySelector<HTMLElement>("[data-briefing-section]");
+    if (existing) {
+      attachIntersection(existing);
+      return () => intersectionObs?.disconnect();
+    }
+
+    // 없으면 등장 대기 (ThemeBriefing 의 비동기 fetch 완료 후)
+    const mutationObs = new MutationObserver(() => {
+      const el = document.querySelector<HTMLElement>("[data-briefing-section]");
+      if (el) {
+        mutationObs.disconnect();
+        attachIntersection(el);
+      }
+    });
+    mutationObs.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      mutationObs.disconnect();
+      intersectionObs?.disconnect();
+    };
   }, []);
 
   // ──────────────────────────────────────────────────────────────
