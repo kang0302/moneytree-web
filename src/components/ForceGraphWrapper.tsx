@@ -176,6 +176,12 @@ const GRAPH_CONFIG = {
   zoom: {
     initial: 1.0,
   },
+  // 중심 노드 위치 — viewport 의 비율 (0.5 = 정중앙).
+  // L1 (12시 sector) 은 1궤도만 차지하고 L2/L3 (6시 sector) 는 다궤도라
+  // 정중앙이면 아래쪽이 잘림 → 중심을 위로 올려 아래 공간 확보 (2026-05-19 사용자 결정).
+  center: {
+    yRatio: 0.38,
+  },
 } as const;
 
 // 비스펙 튜닝값 (구조적 파라미터, GRAPH_CONFIG와 분리)
@@ -1150,7 +1156,7 @@ export default function ForceGraphWrapper({
     if (!ns.length) return;
 
     const cx = size.w * 0.5;
-    const cy = size.h * 0.5;
+    const cy = size.h * GRAPH_CONFIG.center.yRatio;
 
     const theme = ns.find((n) => n.id === themeNodeId) ?? ns[0];
     if (!theme) return;
@@ -1361,7 +1367,7 @@ export default function ForceGraphWrapper({
     const fg = fgRef.current;
 
     const cx = size.w * 0.5;
-    const cy = size.h * 0.5;
+    const cy = size.h * GRAPH_CONFIG.center.yRatio;
 
     const radiusFor = (n: any): number => {
       const id = n?.id as string | undefined;
