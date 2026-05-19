@@ -804,7 +804,7 @@ export default function GraphClient({
         {/* ✅ Right panel ratio ~ 60/40 유지 */}
         <div className="grid h-full min-h-0 grid-cols-1 gap-2 lg:grid-cols-[3fr_2fr]">
           {/* Graph */}
-          <div className="relative min-h-0 rounded-xl border border-white/10 bg-black/25 p-1">
+          <div data-graph-area className="relative min-h-0 rounded-xl border border-white/10 bg-black/25 p-1">
             <ForceGraphWrapper
               themeId={themeId}
               themeName={themeName}

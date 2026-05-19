@@ -111,9 +111,10 @@ function ReturnCell({ value }: { value: number | null | undefined }) {
 export default function ThemeBriefing({ themeId, nodes }: Props) {
   const [md, setMd] = useState<string | null>(null);
   const [state, setState] = useState<State>("loading");
-  // 플로팅 단서: briefing 이 viewport 밖에 있을 때만 표시
+  // 플로팅 단서: briefing 이 viewport 밖에 있을 때만 표시 — 그래프 영역 하단 정중앙
   const [showCue, setShowCue] = useState(false);
   const [portalTarget, setPortalTarget] = useState<HTMLElement | null>(null);
+  const [cuePos, setCuePos] = useState<{ left: number; top: number } | null>(null);
   const sectionRef = useRef<HTMLElement | null>(null);
 
   const showReturnColumns = !!nodes;
@@ -183,6 +184,34 @@ export default function ThemeBriefing({ themeId, nodes }: Props) {
     obs.observe(el);
     return () => obs.disconnect();
   }, [state]);
+
+  // Cue 위치 = 그래프 영역(data-graph-area) 의 bottom-center. 리사이즈·스크롤 시 추적.
+  useEffect(() => {
+    if (!showCue || typeof document === "undefined") return;
+    const update = () => {
+      const el = document.querySelector<HTMLElement>("[data-graph-area]");
+      if (!el) {
+        setCuePos(null);
+        return;
+      }
+      const r = el.getBoundingClientRect();
+      // 그래프 영역의 bottom 안쪽 16px, center-x. viewport 밖이면 viewport 안쪽 16px 로 클램프.
+      const left = r.left + r.width / 2;
+      const top = Math.min(window.innerHeight - 60, Math.max(60, r.bottom - 50));
+      setCuePos({ left, top });
+    };
+    update();
+    const ro = new ResizeObserver(update);
+    const el = document.querySelector<HTMLElement>("[data-graph-area]");
+    if (el) ro.observe(el);
+    window.addEventListener("resize", update);
+    window.addEventListener("scroll", update, true);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", update);
+      window.removeEventListener("scroll", update, true);
+    };
+  }, [showCue]);
 
   const scrollToBriefing = () => {
     const el = sectionRef.current;
@@ -288,14 +317,15 @@ export default function ThemeBriefing({ themeId, nodes }: Props) {
       </article>
     </section>
 
-    {/* 플로팅 단서: briefing 존재 + viewport 밖일 때만 표시 — 클릭/스크롤 시 사라짐 */}
-    {showCue && portalTarget &&
+    {/* 플로팅 단서: briefing 존재 + viewport 밖일 때만 표시. 그래프 영역 bottom-center 에 고정. */}
+    {showCue && portalTarget && cuePos &&
       createPortal(
         <button
           type="button"
           onClick={scrollToBriefing}
           title="아래 브리핑 테이블로 이동"
-          className="fixed bottom-4 left-1/2 z-100 flex min-w-100 -translate-x-1/2 items-center justify-center gap-3 rounded-full border border-white/20 bg-black/80 px-10 py-3 text-[13px] font-medium text-white/90 shadow-xl backdrop-blur transition hover:scale-105 hover:bg-black/90 hover:text-white"
+          style={{ left: `${cuePos.left}px`, top: `${cuePos.top}px` }}
+          className="fixed z-100 flex min-w-50 -translate-x-1/2 items-center justify-center gap-3 rounded-full border border-white/20 bg-black/80 px-8 py-3 text-[13px] font-medium text-white/90 shadow-xl backdrop-blur transition hover:scale-105 hover:bg-black/90 hover:text-white"
         >
           <span className="inline-block animate-bounce text-[14px] leading-none">↓</span>
           <span>브리핑 테이블</span>

@@ -1076,18 +1076,10 @@ export default function ForceGraphWrapper({
 
   const handleSelect = (n: NodeT | null) => onSelectNode?.(n);
 
-  const tooltipStyle = (W = 290, H = 215) => {
-    const pad = 14;
-    let left = mousePos.x + pad;
-    let top = mousePos.y + pad;
-
-    if (left + W + 10 > size.w) left = mousePos.x - W - pad;
-    if (top + H + 10 > size.h) top = mousePos.y - H - pad;
-
-    left = Math.max(12, Math.min(size.w - W - 12, left));
-    top = Math.max(12, Math.min(size.h - H - 12, top));
-
-    return { left, top, width: W };
+  // hover 툴팁은 그래프 영역 우측 상단 고정 (사용자 결정 2026-05-19).
+  // 마우스 추적 X — 화면 흔들림·시각적 피로 감소 + 좌측 테마 설명 패널과 충돌 방지.
+  const tooltipStyle = (W = 290 /* eslint-disable-line @typescript-eslint/no-unused-vars */, _H = 215) => {
+    return { right: 12, top: 12, width: W };
   };
 
   const hoverType = hoverNode ? normType(hoverNode.type) : "";
@@ -1117,8 +1109,8 @@ export default function ForceGraphWrapper({
 
   return (
     <div ref={wrapRef} className="relative h-full w-full">
-      {/* ✅ 좌측 상단 테마 정보 패널 (이름·점수·ID·큐레이션 설명) */}
-      <div className="pointer-events-none absolute left-3 top-3 z-20 max-w-70 rounded-xl border border-white/10 bg-black/40 px-3 py-2 backdrop-blur">
+      {/* ✅ 좌측 상단 테마 정보 패널 (이름·점수·ID·큐레이션 설명) — fixed: 스크롤해도 같은 위치 유지 */}
+      <div className="pointer-events-none fixed left-5 top-20 z-30 max-w-70 rounded-xl border border-white/10 bg-black/60 px-3 py-2 backdrop-blur">
         <div className="text-[10px] font-semibold tracking-wide text-white/55">THEME</div>
         <div className="mt-0.5 text-[14px] font-bold text-white/95">{themeName}</div>
         {(() => {
