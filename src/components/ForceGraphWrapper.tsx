@@ -15,8 +15,9 @@
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import dynamic from "next/dynamic";
-import { forceRadial } from "d3-force";
+import { forceRadial, forceY } from "d3-force";
 import { staleLevel, staleLabel } from "@/components/GraphRightPanel";
+// import { getLogoUrl, getInitials } from "@/lib/logoMap"; // CompanyLogo 미구현 (logoMap 파일 부재)
 
 const ForceGraph2D = dynamic(() => import("react-force-graph-2d"), { ssr: false });
 
@@ -107,7 +108,6 @@ type EdgeT = {
 type Props = {
   themeId: string;
   themeName: string;
-  themeDescription?: string;
   nodes: NodeT[];
   edges: EdgeT[];
 
@@ -129,33 +129,75 @@ type Props = {
 
   // ✅ hover에 표시할 테마 바로미터 요약 (선택). GraphClient에서 computeThemeReturnSummary 결과를 그대로 전달.
   themeReturn?: any;
+
+  // ✅ THEME hover 박스에 표시할 테마 설명 (meta.notes 기반). 비어 있으면 설명 영역 미표시.
+  themeDescription?: string;
 };
+
+// ─────────────────────────────────────────────
+// 🏢 Company logo (hover box top-left, 40x40 round)
+// ─────────────────────────────────────────────
+// CompanyLogo 컴포넌트는 logoMap 의존 — 미구현이라 제거 (hover 박스에서 로고 영역 생략).
 
 // =========================
-// TEXT SCALE + OVERLAP TUNING
+// 🛰 Orbit layout (4 layered radial)
+//   1궤도(180): Theme에 직접 연결된 Macro(IMPACTS) / Character(HAS_TRAIT) / BusinessField / EXPOSED_TO Asset(ETF)  → 11시~1시
+//   2궤도(300): THEMED_AS Asset                                                                                     → 2시~10시
+//   3궤도(440): (A) SUPPLIES/OPERATES/INVESTS/PARTNERS/COMPETES로 layer2 Asset에 연결된 Asset
+//               (B) IMPACTS / HAS_TRAIT로 layer2 Asset에 연결된 Macro / Character                                    → layer2 이웃 각도 기준
+//   4궤도(560): layer3 Asset에 연결된 Macro / Character                                                              → layer3 이웃 각도 그대로
 // =========================
-const TEXT_SCALE = 1.5; // ✅ 요청: 모든 그래프 텍스트 1.5배
-const LABEL_GAP_BASE = 8;
-const LABEL_GAP = Math.round(LABEL_GAP_BASE * TEXT_SCALE); // label x-offset gap
+// 🎯 Graph layout config — 앞으로 레이아웃 조정은 이 객체만 수정
+const GRAPH_CONFIG = {
+  nodeRadius: {
+    theme: 11,   // 중앙 Theme 노드
+    asset: 19,   // 일반 Asset 노드
+    small: 8,    // Macro / BusinessField / Character 노드
+  },
+  orbitRadius: {
+    l1: 200,     // Macro / BF / Character / EXPOSED_TO ETF
+    l2: 300,     // THEMED_AS Asset
+    l3: 400,     // 연결 Asset / IMPACTS·HAS_TRAIT → L2 Macro·Character
+    l4: 500,     // IMPACTS·HAS_TRAIT → L3 Asset Macro·Character
+  },
+  force: {
+    charge: -200,
+    // collide은 노드별 반경 + 타입별 패딩 (원이 1/2로 작아진 만큼 패딩도 같이 축소).
+    collidePad: { theme: 10, asset: 38, smallL1: 8, smallOuter: 18 },
+    linkDistance: {
+      themeL1: 200,
+      themeL2: 300,
+      l2l3:    110,
+      l3l4:    100,
+    },
+    velocityDecay: 0.55,
+    alphaDecay:    0.04,
+  },
+  zoom: {
+    initial: 1.0,
+  },
+} as const;
 
-// Overlap tuning (physics)
-const CHARGE_STRENGTH = -300; // radial 레이어가 주도 → charge는 적당히
-const COLLIDE_PAD_BASE = 26;
-const COLLIDE_PAD = Math.round(COLLIDE_PAD_BASE * TEXT_SCALE); // 26 -> 39
+// 비스펙 튜닝값 (구조적 파라미터, GRAPH_CONFIG와 분리)
+const LINK_STRENGTH          = 0.3;
+const TOWARD_PARENT_STRENGTH = 0.18; // L3/L4 → parent 각도 방향성 force (약하게: 형제 노드들이 collide로 펼쳐지게 둠)
 
-// 🎯 Radial layering (absolute px) — forceRadial이 타입별 반경으로 노드를 강제 배치
-const RADIAL_BY_TYPE: Record<string, number> = {
-  THEME: 0,
-  MACRO: 80,
-  ASSET: 180,
-  FIELD: 260, // Business_Field
-  CHARACTER: 320,
-};
-const RADIAL_DEFAULT = 220;
-const getRadialR = (n: any): number => {
-  const t = normType(n?.type);
-  return RADIAL_BY_TYPE[t] ?? RADIAL_DEFAULT;
-};
+// Angular sectors (canvas coords: -π/2 = 12시, +π/2 = 6시)
+// Layer1 (Theme 직접 연결 Macro/Character/BF/EXPOSED_TO Asset): 12시 중심, 10~2시 부채꼴
+const LAYER1_CENTER_ANGLE = -Math.PI / 2;        // -90°  (12시)
+const LAYER1_HALF_SPAN    =  Math.PI / 3;        //  60°  → 10~2시 (총 120°)
+const LAYER1_ANGLE_START = LAYER1_CENTER_ANGLE - LAYER1_HALF_SPAN; // -150°  (10시)
+const LAYER1_ANGLE_END   = LAYER1_CENTER_ANGLE + LAYER1_HALF_SPAN; //  -30°  ( 2시)
+const LAYER1_STACK_STEP  = Math.PI / 18;         //  10°  (적을 때 12시 주변에 모이도록)
+// Layer2 (Theme 직접 연결 THEMED_AS Asset): 6시 중심, 2시01분~9시59분 (top L1 sector 제외)
+const LAYER2_CENTER_ANGLE = Math.PI / 2;         //  90°  (6시)
+const LAYER2_HALF_SPAN    = Math.PI * 2 / 3 - 0.04; // ~115.7° → 2시01분~9시59분 (총 ~231°)
+const LAYER2_STACK_STEP   = Math.PI / 10;        //  18°  (인접 노드 간 자연 간격, 많아지면 자동 축소)
+const LAYER3_ASSET_JITTER = Math.PI / 6;         // Asset: layer2 이웃 각도 ±30°
+const L3_L4_STACK_STEP   = Math.PI / 7;          // Macro/Character/BF 같은 이웃에 여러 개: ±25.7°
+
+// Asset ↔ Asset relations
+const ASSET_LINK_RELS = new Set(["SUPPLIES", "OPERATES", "INVESTS", "PARTNERS", "COMPETES"]);
 
 function normType(t?: string) {
   const x = (t ?? "").toUpperCase();
@@ -215,11 +257,10 @@ function resolveLabel(n: any, fallbackThemeName?: string) {
 }
 
 function nodeRadius(n: NodeT, isTheme: boolean) {
+  if (isTheme) return GRAPH_CONFIG.nodeRadius.theme;
   const t = normType(n.type);
-  if (t === "ASSET") return 22;
-  if (isTheme) return 10;
-  if (t === "FIELD") return 8;
-  return 8;
+  if (t === "ASSET") return GRAPH_CONFIG.nodeRadius.asset;
+  return GRAPH_CONFIG.nodeRadius.small; // BusinessField / Macro / Character 등 작은 노드
 }
 
 // ✅ PATCH: 문자열 숫자도 파싱
@@ -232,21 +273,6 @@ function pickNum(v: any): number | undefined {
     if (Number.isFinite(n)) return n;
   }
   return undefined;
-}
-
-function getTrailingPer(n: NodeT) {
-  const m = n.metrics ?? {};
-  return pickNum(m.per) ?? pickNum(m.pe) ?? pickNum(m.trailingPER) ?? pickNum(m.trailing_per) ?? pickNum(m.per_ttm);
-}
-
-// PER 표시용: trailing 우선, 없으면 forward(perFwd12m)로 fallback. 어떤 종류인지 같이 반환.
-function getDisplayPer(n: NodeT): { value: number | undefined; kind: "Trailing" | "Fwd" | null } {
-  const m: any = n.metrics ?? {};
-  const t = pickNum(m.per) ?? pickNum(m.pe) ?? pickNum(m.trailingPER) ?? pickNum(m.trailing_per) ?? pickNum(m.per_ttm);
-  if (typeof t === "number") return { value: t, kind: "Trailing" };
-  const f = pickNum(m.perFwd12m) ?? pickNum(m.per_fwd12m) ?? pickNum(m.forwardPE);
-  if (typeof f === "number") return { value: f, kind: "Fwd" };
-  return { value: undefined, kind: null };
 }
 
 function normalizePct(v: number) {
@@ -403,10 +429,11 @@ function colorFromReturn(r?: number) {
 }
 
 function nodeBaseColor(n: NodeT, isTheme: boolean) {
-  if (isTheme) return "#F2C94C";
+  if (isTheme) return "#F2C94C";          // theme: yellow
   const t = normType(n.type);
-  if (t === "FIELD") return "#34D399";
-  return "#9CA3AF";
+  if (t === "FIELD") return "#D946EF";    // BF: magenta
+  if (t === "MACRO") return "#FB923C";    // macro: orange (BF/character와 모두 구분)
+  return "#9CA3AF";                       // character/기타: gray
 }
 
 function pickEdgeEndpoints(e: EdgeT): { s?: string; t?: string } {
@@ -438,7 +465,6 @@ function pickRelType(e: EdgeT): string {
 export default function ForceGraphWrapper({
   themeId,
   themeName,
-  themeDescription,
   nodes,
   edges,
   period,
@@ -450,6 +476,7 @@ export default function ForceGraphWrapper({
   showOverlayControls = true,
   focusId,
   themeReturn,
+  themeDescription,
 }: Props) {
   const fgRef = useRef<any>(null);
   const wrapRef = useRef<HTMLDivElement | null>(null);
@@ -468,7 +495,7 @@ export default function ForceGraphWrapper({
   const [hoverNode, setHoverNode] = useState<NodeT | null>(null);
   const [hoverLink, setHoverLink] = useState<any | null>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  // 브리핑 테이블이 viewport 안에 들어오면 좌측 상단 테마 설명 패널 자동 숨김 (겹침 방지)
+  // 브리핑 테이블이 viewport 진입 시 좌측 상단 테마 설명 패널 자동 숨김 (겹침 방지)
   const [briefingVisible, setBriefingVisible] = useState(false);
   useEffect(() => {
     if (typeof document === "undefined") return;
@@ -483,51 +510,64 @@ export default function ForceGraphWrapper({
   }, []);
 
   // ──────────────────────────────────────────────────────────────
-  // 🎬 Entrance animation: staggered by node type (theme → macro → asset → field → character)
+  // 🎬 Entrance animation: staggered by orbit layer
+  //   0ms    → Theme
+  //   600ms  → layer1 (Theme에 직접 연결된 Macro / Character / BF / EXPOSED_TO ETF)
+  //   1200ms → layer2 (THEMED_AS Asset)
+  //   1800ms → layer3 (layer2 Asset에 연결된 Asset / Macro / Character)
+  //   2400ms → layer4 (layer3 Asset에 연결된 Macro / Character)
+  //   같은 레이어 내: 0~200ms 랜덤 jitter
   // ──────────────────────────────────────────────────────────────
-  const REVEAL_DELAY_MS: Record<string, number> = {
-    THEME: 0,
-    MACRO: 1200,
-    ASSET: 2400,
-    FIELD: 3600, // Business_Field normType
-    CHARACTER: 4800,
-  };
+  const LAYER_DELAY_MS = {
+    theme:  0,
+    layer1: 600,
+    layer2: 1200,
+    layer3: 1800,
+    layer4: 2400,
+  } as const;
+  type LayerKey = keyof typeof LAYER_DELAY_MS;
+  const INTRA_LAYER_JITTER_MAX_MS = 900;
   const NODE_ANIM_DUR_MS = 350;
   const EDGE_ANIM_DUR_MS = 250;
-  const MAX_JITTER_MS = 120;
-  const EXTRA_ASSET_STAGGER_MS = 120; // 확장 시 추가 asset 노드 간 간격
+  const EXTRA_ASSET_STAGGER_MS = 120; // 확장 시 추가 layer2 asset 노드 간 간격
   const DEFAULT_ASSET_LIMIT = 10;
   const animStartRef = useRef<number | null>(null);
-  const jitterMapRef = useRef<Map<string, number>>(new Map());
+  // ✅ 첫 렌더 시점에 animStart를 즉시 셋팅. useEffect보다 먼저 실행되므로
+  //   초기 paint에서 노드들이 "no animation, fully visible"로 깜빡 노출되는 현상 방지.
+  if (animStartRef.current === null && typeof performance !== "undefined") {
+    animStartRef.current = performance.now();
+  }
   const rafRef = useRef<number | null>(null);
-  const [animTick, setAnimTick] = useState(0);
+  const [, setAnimTick] = useState(0);
 
   // 🎯 Full Asset toggle — 기본은 상위 10개만 (return_7d desc), 클릭 시 전체 표시
   const [expanded, setExpanded] = useState(false);
   const expandStartRef = useRef<number | null>(null);
   const rafExpandRef = useRef<number | null>(null);
 
-  const getJitter = (id: string) => {
-    const m = jitterMapRef.current;
-    if (!m.has(id)) m.set(id, Math.random() * MAX_JITTER_MS);
-    return m.get(id)!;
+  const getNodeLayer = (id?: string): LayerKey => {
+    if (!id) return "layer3";
+    if (id === themeNodeId) return "theme";
+    if (layerInfo.layer1.has(id)) return "layer1";
+    if (layerInfo.layer2.has(id)) return "layer2";
+    if (layerInfo.layer3.has(id)) return "layer3";
+    if (layerInfo.layer4.has(id)) return "layer4";
+    return "layer3";
   };
 
   const getNodeReveal = (node: any): number => {
     const base = animStartRef.current ?? 0;
-    const nt = normType(node?.type);
-    // Extra assets (top 10 밖)은 expand 클릭 시점부터 순차 등장
-    if (nt === "ASSET" && !assetRankInfo.topAssetIds.has(node?.id)) {
+    const id = node?.id as string | undefined;
+    // 숨겨진 layer2 asset(상위 10 밖)은 expand 클릭 시점부터 순차 등장
+    if (id && layerInfo.layer2.has(id) && !assetRankInfo.topAssetIds.has(id)) {
       const expandBase = expandStartRef.current;
-      if (expandBase == null) {
-        // 아직 펼치기 전이면 기본 ASSET 타이밍 (필터링되어 렌더 안 되지만 안전망)
-        return base + (REVEAL_DELAY_MS.ASSET ?? 0) + getJitter(node?.id ?? "");
-      }
-      const order = assetRankInfo.extraAssetOrderMap.get(node?.id) ?? 0;
-      return expandBase + order * EXTRA_ASSET_STAGGER_MS + getJitter(node?.id ?? "");
+      if (expandBase == null) return base + LAYER_DELAY_MS.layer2;
+      const order = assetRankInfo.extraAssetOrderMap.get(id) ?? 0;
+      return expandBase + order * EXTRA_ASSET_STAGGER_MS;
     }
-    const delay = REVEAL_DELAY_MS[nt] ?? 600;
-    return base + delay + getJitter(node?.id ?? "");
+    const delay = LAYER_DELAY_MS[getNodeLayer(id)];
+    const jitter = intraDelayMap.get(id ?? "") ?? 0;
+    return base + delay + jitter;
   };
 
   // easeOutBack: 0 → ~1.1 overshoot → 1.0 (gives the "pop" feel the user asked for)
@@ -587,19 +627,25 @@ export default function ForceGraphWrapper({
     if (typeof window === "undefined") return;
 
     animStartRef.current = performance.now();
-    jitterMapRef.current.clear();
 
     // 테마 전환 시 확장 상태 리셋 (기본=상위10 모드로 돌아감)
     expandStartRef.current = null;
     setExpanded(false);
 
-    const END_MS = Math.max(...Object.values(REVEAL_DELAY_MS)) + NODE_ANIM_DUR_MS + MAX_JITTER_MS + EDGE_ANIM_DUR_MS;
+    const END_MS =
+      Math.max(...Object.values(LAYER_DELAY_MS)) +
+      INTRA_LAYER_JITTER_MAX_MS +
+      NODE_ANIM_DUR_MS +
+      EDGE_ANIM_DUR_MS;
+
+    // 애니메이션 시작 시 시뮬레이션을 데워서 자연스러운 tick 기반 redraw 확보
+    // (refresh()가 환경에 따라 no-op일 수 있어 이중 안전망)
+    try { fgRef.current?.d3ReheatSimulation?.(); } catch {}
 
     const loop = () => {
       const elapsed = performance.now() - (animStartRef.current ?? 0);
       if (elapsed >= END_MS) {
         rafRef.current = null;
-        // one final refresh so any last easing frame lands on its end state
         setAnimTick((t) => t + 1);
         fgRef.current?.refresh?.();
         return;
@@ -630,8 +676,7 @@ export default function ForceGraphWrapper({
     const extraCount = assetRankInfo.extraAssetOrderMap.size;
     if (extraCount === 0) return;
 
-    const END_MS =
-      extraCount * EXTRA_ASSET_STAGGER_MS + NODE_ANIM_DUR_MS + MAX_JITTER_MS + EDGE_ANIM_DUR_MS;
+    const END_MS = extraCount * EXTRA_ASSET_STAGGER_MS + NODE_ANIM_DUR_MS + EDGE_ANIM_DUR_MS;
 
     const loop = () => {
       const elapsed = performance.now() - (expandStartRef.current ?? 0);
@@ -673,11 +718,344 @@ export default function ForceGraphWrapper({
     return () => ro.disconnect();
   }, []);
 
-  // 🎯 Asset 순위 계산 (return_7d desc) → 상위 10개 vs 나머지 분리
-  const assetRankInfo = useMemo(() => {
+  // Clone nodes only when `nodes` prop identity changes, so x/y positions
+  // persist across expand toggles.
+  const allClonedNodes = useMemo<NodeT[]>(() => {
     const safeNodes = Array.isArray(nodes) ? nodes : [];
-    const assetNodes = safeNodes.filter((n) => normType(n.type) === "ASSET");
-    const sorted = [...assetNodes].sort((a, b) => {
+    return safeNodes.map((n) => ({
+      ...n,
+      metrics: n.metrics ? { ...n.metrics } : n.metrics,
+    }));
+  }, [nodes]);
+
+  // Theme (center) node id — resolved once over the full node set.
+  const themeNodeId = useMemo(() => {
+    const ns = allClonedNodes;
+    const byType = ns.find((n) => normType(n.type) === "THEME");
+    if (byType) return byType.id;
+    const byId = ns.find((n) => n.id === themeId);
+    if (byId) return byId.id;
+    const byName = ns.find((n) => n.name === themeName);
+    if (byName) return byName.id;
+    return ns[0]?.id;
+  }, [allClonedNodes, themeId, themeName]);
+
+  // 🛰 4-layer classification
+  //   layer1: Theme 직접 연결 노드 (IMPACTS→theme Macro, HAS_TRAIT→theme Character, BF, EXPOSED_TO Asset)
+  //   layer2: THEMED_AS Asset
+  //   layer3: (A) asset-asset rel(SUPPLIES/OPERATES/INVESTS/PARTNERS/COMPETES)로 layer2에 연결된 Asset
+  //            (B) IMPACTS로 layer2 Asset에 연결된 Macro
+  //            (C) HAS_TRAIT로 layer2 Asset에 연결된 Character
+  //   layer4: IMPACTS/HAS_TRAIT로 layer3 Asset에 연결된 Macro/Character
+  //   neighborMap: layer3/4 노드 → 초기 각도 계산용 이웃 id
+  const layerInfo = useMemo(() => {
+    const safeEdges = Array.isArray(edges) ? edges : [];
+    const tId = themeNodeId;
+    const nodeById = new Map<string, NodeT>();
+    for (const n of allClonedNodes) nodeById.set(n.id, n);
+
+    const themeRels         = new Map<string, Set<string>>(); // 각 노드 → Theme과의 rel 집합
+    const assetAdj          = new Map<string, Set<string>>(); // asset ↔ asset 인접 (ASSET_LINK_RELS)
+    const macroImpactsAsset = new Map<string, Set<string>>(); // macroId → asset ids
+    const charHasTraitAsset = new Map<string, Set<string>>(); // charId  → asset ids
+    const bfAssetAdj        = new Map<string, Set<string>>(); // bfId    → asset ids (OPERATES 등 asset↔BF)
+    const assetEtfAdj       = new Map<string, Set<string>>(); // asset ↔ asset (IN_ETF), 양방향
+    const assetHasMicroEdge = new Set<string>();              // CHARACTER HAS_TRAIT or MACRO IMPACTS 연결 가진 asset
+    const macroBfAdj        = new Map<string, Set<string>>(); // macroId → bf ids (macro ↔ BF, 임의 rel)
+    const charBfAdj         = new Map<string, Set<string>>(); // charId  → bf ids
+
+    for (const e of safeEdges) {
+      const { s, t } = pickEdgeEndpoints(e);
+      if (!s || !t) continue;
+      const rel = pickRelType(e).toUpperCase();
+      const sT = normType(nodeById.get(s)?.type);
+      const tT = normType(nodeById.get(t)?.type);
+
+      if (s === tId || t === tId) {
+        const other = s === tId ? t : s;
+        if (!themeRels.has(other)) themeRels.set(other, new Set());
+        themeRels.get(other)!.add(rel);
+      }
+      if (ASSET_LINK_RELS.has(rel) && sT === "ASSET" && tT === "ASSET") {
+        if (!assetAdj.has(s)) assetAdj.set(s, new Set());
+        if (!assetAdj.has(t)) assetAdj.set(t, new Set());
+        assetAdj.get(s)!.add(t);
+        assetAdj.get(t)!.add(s);
+      }
+      if (rel === "IMPACTS") {
+        let mId: string | null = null;
+        let aId: string | null = null;
+        if (sT === "MACRO" && tT === "ASSET") { mId = s; aId = t; }
+        else if (tT === "MACRO" && sT === "ASSET") { mId = t; aId = s; }
+        if (mId && aId) {
+          if (!macroImpactsAsset.has(mId)) macroImpactsAsset.set(mId, new Set());
+          macroImpactsAsset.get(mId)!.add(aId);
+          assetHasMicroEdge.add(aId);
+        }
+      }
+      if (rel === "HAS_TRAIT") {
+        let cId: string | null = null;
+        let aId: string | null = null;
+        if (sT === "CHARACTER" && tT === "ASSET") { cId = s; aId = t; }
+        else if (tT === "CHARACTER" && sT === "ASSET") { cId = t; aId = s; }
+        if (cId && aId) {
+          if (!charHasTraitAsset.has(cId)) charHasTraitAsset.set(cId, new Set());
+          charHasTraitAsset.get(cId)!.add(aId);
+          assetHasMicroEdge.add(aId);
+        }
+      }
+      // BF ↔ asset (OPERATES 등 모든 BF-asset 관계)
+      {
+        let bfId: string | null = null;
+        let aId: string | null = null;
+        if (sT === "FIELD" && tT === "ASSET") { bfId = s; aId = t; }
+        else if (tT === "FIELD" && sT === "ASSET") { bfId = t; aId = s; }
+        if (bfId && aId) {
+          if (!bfAssetAdj.has(bfId)) bfAssetAdj.set(bfId, new Set());
+          bfAssetAdj.get(bfId)!.add(aId);
+        }
+      }
+      // BF ↔ macro (어떤 rel이든)
+      {
+        let bfId: string | null = null;
+        let mId: string | null = null;
+        if (sT === "FIELD" && tT === "MACRO") { bfId = s; mId = t; }
+        else if (tT === "FIELD" && sT === "MACRO") { bfId = t; mId = s; }
+        if (bfId && mId) {
+          if (!macroBfAdj.has(mId)) macroBfAdj.set(mId, new Set());
+          macroBfAdj.get(mId)!.add(bfId);
+        }
+      }
+      // BF ↔ character (어떤 rel이든)
+      {
+        let bfId: string | null = null;
+        let cId: string | null = null;
+        if (sT === "FIELD" && tT === "CHARACTER") { bfId = s; cId = t; }
+        else if (tT === "FIELD" && sT === "CHARACTER") { bfId = t; cId = s; }
+        if (bfId && cId) {
+          if (!charBfAdj.has(cId)) charBfAdj.set(cId, new Set());
+          charBfAdj.get(cId)!.add(bfId);
+        }
+      }
+      // IN_ETF (asset ↔ asset) — 양방향으로 인접 기록.
+      //   convention이 테마마다 다를 수 있어(member→ETF or ETF→member) 양쪽 모두 저장.
+      if (rel === "IN_ETF" && sT === "ASSET" && tT === "ASSET") {
+        if (!assetEtfAdj.has(s)) assetEtfAdj.set(s, new Set());
+        if (!assetEtfAdj.has(t)) assetEtfAdj.set(t, new Set());
+        assetEtfAdj.get(s)!.add(t);
+        assetEtfAdj.get(t)!.add(s);
+      }
+    }
+
+    const layer1 = new Set<string>();
+    const layer2 = new Set<string>();
+    const layer3 = new Set<string>();
+    const layer4 = new Set<string>();
+    const neighborMap = new Map<string, string>();
+
+    // L1: BF — Theme에 직접 연결된 경우만 (asset에만 연결된 BF는 L3로 내려감)
+    for (const n of allClonedNodes) {
+      if (n.id === tId) continue;
+      if (normType(n.type) !== "FIELD") continue;
+      if (themeRels.get(n.id)?.size) layer1.add(n.id);
+    }
+    // L1/L2: Asset (EXPOSED_TO → L1, THEMED_AS → L2)
+    for (const n of allClonedNodes) {
+      if (n.id === tId) continue;
+      if (normType(n.type) !== "ASSET") continue;
+      const rels = themeRels.get(n.id);
+      if (rels?.has("EXPOSED_TO")) layer1.add(n.id);
+      else if (rels?.has("THEMED_AS")) layer2.add(n.id);
+    }
+    // L2 augmentation (조건부): IN_ETF로 L2 자산과 연결된 자산을 L2로 승격하는 건
+    //   해당 자산에 character/macro가 매달려 있을 때만 (그래야 그것들이 L4 대신 L3로 갈 수 있음).
+    //   - T_124: GDX/SGDM/GOEX/GOAU는 HAS_TRAIT chars 보유 → L2로 승격
+    //   - T_041: EFAS/IPD/PEJ는 char/macro 없음 → L2 승격 안 함, 아래 L3(A) 폴백에서 L3로 분류
+    for (const n of allClonedNodes) {
+      if (n.id === tId) continue;
+      if (normType(n.type) !== "ASSET") continue;
+      if (layer1.has(n.id) || layer2.has(n.id)) continue;
+      if (!assetHasMicroEdge.has(n.id)) continue;
+      const adj = assetEtfAdj.get(n.id);
+      if (!adj) continue;
+      for (const other of adj) {
+        if (layer2.has(other)) { layer2.add(n.id); break; }
+      }
+    }
+    // L1: Macro/Character directly connected to Theme
+    for (const n of allClonedNodes) {
+      if (n.id === tId) continue;
+      const nt = normType(n.type);
+      if (nt === "MACRO" && themeRels.get(n.id)?.has("IMPACTS")) layer1.add(n.id);
+      if (nt === "CHARACTER" && themeRels.get(n.id)?.has("HAS_TRAIT")) layer1.add(n.id);
+    }
+
+    // L3 (A): Asset connected to L2 Asset.
+    //   먼저 ASSET_LINK_RELS (SUPPLIES/OPERATES/INVESTS/PARTNERS/COMPETES) 시도,
+    //   없으면 IN_ETF (위 L2 augmentation에서 승격되지 않은 ETF 자산이 여기로 떨어짐).
+    for (const n of allClonedNodes) {
+      if (n.id === tId) continue;
+      if (normType(n.type) !== "ASSET") continue;
+      if (layer1.has(n.id) || layer2.has(n.id)) continue;
+      let placed = false;
+      for (const adjMap of [assetAdj.get(n.id), assetEtfAdj.get(n.id)]) {
+        if (placed || !adjMap) continue;
+        for (const other of adjMap) {
+          if (layer2.has(other)) {
+            layer3.add(n.id);
+            neighborMap.set(n.id, other);
+            placed = true;
+            break;
+          }
+        }
+      }
+    }
+    // L3 (B): Macro IMPACTS → L2 Asset (not already L1)
+    for (const [mId, assets] of macroImpactsAsset) {
+      if (layer1.has(mId)) continue;
+      for (const aid of assets) {
+        if (layer2.has(aid)) { layer3.add(mId); neighborMap.set(mId, aid); break; }
+      }
+    }
+    // L3 (C): Character HAS_TRAIT → L2 Asset
+    for (const [cId, assets] of charHasTraitAsset) {
+      if (layer1.has(cId)) continue;
+      for (const aid of assets) {
+        if (layer2.has(aid)) { layer3.add(cId); neighborMap.set(cId, aid); break; }
+      }
+    }
+    // L3 (D): BF connected to L2 Asset (e.g., OPERATES) — parent의 각도 방향으로 배치
+    for (const [bfId, assets] of bfAssetAdj) {
+      if (layer1.has(bfId)) continue;
+      for (const aid of assets) {
+        if (layer2.has(aid)) { layer3.add(bfId); neighborMap.set(bfId, aid); break; }
+      }
+    }
+
+    // L4: Macro IMPACTS → L3 Asset
+    for (const [mId, assets] of macroImpactsAsset) {
+      if (layer1.has(mId) || layer3.has(mId)) continue;
+      for (const aid of assets) {
+        if (layer3.has(aid)) { layer4.add(mId); neighborMap.set(mId, aid); break; }
+      }
+    }
+    // L4: Character HAS_TRAIT → L3 Asset
+    for (const [cId, assets] of charHasTraitAsset) {
+      if (layer1.has(cId) || layer3.has(cId)) continue;
+      for (const aid of assets) {
+        if (layer3.has(aid)) { layer4.add(cId); neighborMap.set(cId, aid); break; }
+      }
+    }
+    // L4: Macro connected to L3 BF (BF가 L3에 있을 때 그에 매달린 macro도 한 궤도 더 바깥)
+    for (const [mId, bfs] of macroBfAdj) {
+      if (layer1.has(mId) || layer3.has(mId) || layer4.has(mId)) continue;
+      for (const bfId of bfs) {
+        if (layer3.has(bfId)) { layer4.add(mId); neighborMap.set(mId, bfId); break; }
+      }
+    }
+    // L4: Character connected to L3 BF
+    for (const [cId, bfs] of charBfAdj) {
+      if (layer1.has(cId) || layer3.has(cId) || layer4.has(cId)) continue;
+      for (const bfId of bfs) {
+        if (layer3.has(bfId)) { layer4.add(cId); neighborMap.set(cId, bfId); break; }
+      }
+    }
+    // L4: BF connected to L3 Asset
+    for (const [bfId, assets] of bfAssetAdj) {
+      if (layer1.has(bfId) || layer3.has(bfId)) continue;
+      for (const aid of assets) {
+        if (layer3.has(aid)) { layer4.add(bfId); neighborMap.set(bfId, aid); break; }
+      }
+    }
+
+    // Fallback — 어디에도 못 들어간 노드는 렌더 누락 방지 차원에서
+    //   Asset: layer3, Macro/Character/기타: layer1
+    for (const n of allClonedNodes) {
+      if (n.id === tId) continue;
+      if (layer1.has(n.id) || layer2.has(n.id) || layer3.has(n.id) || layer4.has(n.id)) continue;
+      if (normType(n.type) === "ASSET") layer3.add(n.id);
+      else layer1.add(n.id);
+    }
+
+    return { layer1, layer2, layer3, layer4, neighborMap };
+  }, [allClonedNodes, edges, themeNodeId]);
+
+  // 같은 레이어 안에서 등장 시 0~INTRA_LAYER_JITTER_MAX_MS 만큼 staggered delay.
+  // 순서는 12시 기준 시계방향. 각 layer의 placement 각도(공식 기반)를 시계방향으로 정렬해
+  // 첫 노드 = 0ms, 마지막 노드 = MAX 가 되도록 선형 분배.
+  const intraDelayMap = useMemo(() => {
+    const map = new Map<string, number>();
+    const TWO_PI = 2 * Math.PI;
+    // 12시(=LAYER1_CENTER_ANGLE) 기준으로 시계방향 [0, 2π)
+    const cwFromTwelve = (a: number) => (((a - LAYER1_CENTER_ANGLE) % TWO_PI) + TWO_PI) % TWO_PI;
+
+    const assignByAngle = (ids: string[], angleOf: (id: string, idx: number) => number) => {
+      if (!ids.length) return;
+      const items = ids.map((id, i) => ({ id, cw: cwFromTwelve(angleOf(id, i)) }));
+      items.sort((a, b) => a.cw - b.cw);
+      const n = items.length;
+      items.forEach((it, idx) => {
+        const t = n > 1 ? idx / (n - 1) : 0;
+        map.set(it.id, t * INTRA_LAYER_JITTER_MAX_MS);
+      });
+    };
+
+    // Layer1 (top sector, 12시 중심) — placeOnSector 공식 그대로 각도 계산
+    const l1Ids = allClonedNodes
+      .filter((n) => n.id !== themeNodeId && layerInfo.layer1.has(n.id))
+      .map((n) => n.id);
+    const l1Step = l1Ids.length > 1
+      ? Math.min(LAYER1_STACK_STEP, (2 * LAYER1_HALF_SPAN) / l1Ids.length)
+      : 0;
+    assignByAngle(l1Ids, (_id, i) => LAYER1_CENTER_ANGLE + (i - (l1Ids.length - 1) / 2) * l1Step);
+
+    // Layer2 (bottom sector, 6시 중심)
+    const l2Ids = allClonedNodes
+      .filter((n) => layerInfo.layer2.has(n.id))
+      .map((n) => n.id);
+    const l2Step = l2Ids.length > 1
+      ? Math.min(LAYER2_STACK_STEP, (2 * LAYER2_HALF_SPAN) / l2Ids.length)
+      : 0;
+    assignByAngle(l2Ids, (_id, i) => LAYER2_CENTER_ANGLE + (i - (l2Ids.length - 1) / 2) * l2Step);
+
+    // L2 각도 lookup (L3/L4 자식의 각도 추정용 — placeOnSector에서 자식은 부모 각도 기준)
+    const l2AngleById = new Map<string, number>();
+    l2Ids.forEach((id, i) => {
+      l2AngleById.set(id, LAYER2_CENTER_ANGLE + (i - (l2Ids.length - 1) / 2) * l2Step);
+    });
+
+    // Layer3: parent(L2) 각도를 그대로 사용
+    const l3Ids = allClonedNodes
+      .filter((n) => layerInfo.layer3.has(n.id))
+      .map((n) => n.id);
+    assignByAngle(l3Ids, (id) => {
+      const parent = layerInfo.neighborMap.get(id);
+      if (!parent) return LAYER2_CENTER_ANGLE;
+      const a = l2AngleById.get(parent);
+      return typeof a === "number" ? a : LAYER2_CENTER_ANGLE;
+    });
+
+    // Layer4: parent(L3 자산) → grandparent(L2)의 각도로 추정
+    const l4Ids = allClonedNodes
+      .filter((n) => layerInfo.layer4.has(n.id))
+      .map((n) => n.id);
+    assignByAngle(l4Ids, (id) => {
+      const parent = layerInfo.neighborMap.get(id);
+      if (!parent) return LAYER2_CENTER_ANGLE;
+      const grandparent = layerInfo.neighborMap.get(parent);
+      if (!grandparent) return LAYER2_CENTER_ANGLE;
+      const a = l2AngleById.get(grandparent);
+      return typeof a === "number" ? a : LAYER2_CENTER_ANGLE;
+    });
+
+    return map;
+  }, [allClonedNodes, layerInfo, themeNodeId]);
+
+  // 🎯 Asset 순위 — layer2(THEMED_AS) Asset만 상위 10/나머지 분리.
+  //    layer1(ETF) / layer3(연결 Asset)은 항상 전체 표시.
+  const assetRankInfo = useMemo(() => {
+    const l2Assets = allClonedNodes.filter((n) => layerInfo.layer2.has(n.id));
+    const sorted = [...l2Assets].sort((a, b) => {
       const ar = getReturnByPeriod(a as NodeT, "7D");
       const br = getReturnByPeriod(b as NodeT, "7D");
       const av = typeof ar === "number" && Number.isFinite(ar) ? ar : -Infinity;
@@ -693,30 +1071,20 @@ export default function ForceGraphWrapper({
     return {
       topAssetIds,
       extraAssetOrderMap,
-      totalAssets: assetNodes.length,
-      hiddenAssetCount: Math.max(0, assetNodes.length - DEFAULT_ASSET_LIMIT),
+      totalAssets: l2Assets.length,
+      hiddenAssetCount: Math.max(0, l2Assets.length - DEFAULT_ASSET_LIMIT),
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [nodes]);
-
-  // Clone nodes only when `nodes` prop identity changes, so x/y positions
-  // persist across expand toggles.
-  const allClonedNodes = useMemo<NodeT[]>(() => {
-    const safeNodes = Array.isArray(nodes) ? nodes : [];
-    return safeNodes.map((n) => ({
-      ...n,
-      metrics: n.metrics ? { ...n.metrics } : n.metrics,
-    }));
-  }, [nodes]);
+  }, [allClonedNodes, layerInfo]);
 
   const graphData = useMemo(() => {
     const safeEdges = Array.isArray(edges) ? edges : [];
     const { topAssetIds } = assetRankInfo;
 
+    // 2궤도 Asset 중 상위 10 밖만 숨김. 1/3궤도는 항상 표시.
     const clonedNodes: NodeT[] = expanded
       ? allClonedNodes
       : allClonedNodes.filter((n) => {
-          if (normType(n.type) !== "ASSET") return true;
+          if (!layerInfo.layer2.has(n.id)) return true;
           return topAssetIds.has(n.id);
         });
     const visibleIds = new Set(clonedNodes.map((n) => n.id));
@@ -726,45 +1094,10 @@ export default function ForceGraphWrapper({
         const { s, t } = pickEdgeEndpoints(e);
         if (!s || !t) return null;
         if (!visibleIds.has(s) || !visibleIds.has(t)) return null;
-
         const rel = pickRelType(e);
-        return { source: s, target: t, type: rel, label: rel, curvature: 0 };
+        return { source: s, target: t, type: rel, label: rel };
       })
       .filter(Boolean) as any[];
-
-    // 🌀 Spread curvature among edges that share a source or target so parallel
-    // lines fan out instead of overlapping. Key by unordered endpoints so pairs
-    // of parallel edges (A→B and B→A) still separate.
-    const pairCount = new Map<string, any[]>();
-    const sourceBuckets = new Map<string, any[]>();
-    for (const l of links) {
-      const a = String(l.source);
-      const b = String(l.target);
-      const key = a < b ? `${a}\u0001${b}` : `${b}\u0001${a}`;
-      if (!pairCount.has(key)) pairCount.set(key, []);
-      pairCount.get(key)!.push(l);
-      if (!sourceBuckets.has(a)) sourceBuckets.set(a, []);
-      sourceBuckets.get(a)!.push(l);
-    }
-    // multi-edges between same pair: symmetric split
-    pairCount.forEach((arr) => {
-      if (arr.length <= 1) return;
-      const step = 0.18;
-      arr.forEach((l, i) => {
-        const offset = i - (arr.length - 1) / 2;
-        l.curvature = offset * step;
-      });
-    });
-    // siblings from same source: fan out if no pair-curvature already set
-    sourceBuckets.forEach((arr) => {
-      if (arr.length <= 1) return;
-      const maxCurve = Math.min(0.28, 0.06 + arr.length * 0.025);
-      arr.forEach((l, i) => {
-        if (l.curvature !== 0) return; // already set by multi-edge logic
-        const t = arr.length === 1 ? 0 : i / (arr.length - 1);
-        l.curvature = -maxCurve + t * 2 * maxCurve;
-      });
-    });
 
     if (typeof window !== "undefined") {
       // eslint-disable-next-line no-console
@@ -774,33 +1107,24 @@ export default function ForceGraphWrapper({
         "edges(raw):",
         safeEdges.length,
         "links(mapped):",
-        links.length
+        links.length,
+        "L1/L2/L3/L4:",
+        layerInfo.layer1.size,
+        layerInfo.layer2.size,
+        layerInfo.layer3.size,
+        layerInfo.layer4.size,
       );
     }
 
     return { nodes: clonedNodes, links };
-  }, [allClonedNodes, edges, expanded, assetRankInfo]);
-
-  const themeNodeId = useMemo(() => {
-    const ns = graphData.nodes;
-    const byType = ns.find((n) => normType(n.type) === "THEME");
-    if (byType) return byType.id;
-
-    const byId = ns.find((n) => n.id === themeId);
-    if (byId) return byId.id;
-
-    const byName = ns.find((n) => n.name === themeName);
-    if (byName) return byName.id;
-
-    return ns[0]?.id;
-  }, [graphData.nodes, themeId, themeName]);
+  }, [allClonedNodes, edges, expanded, assetRankInfo, layerInfo]);
 
   useEffect(() => {
     const ns = graphData.nodes;
     if (!ns.length) return;
 
     const cx = size.w * 0.5;
-    const cy = size.h * 0.52;
+    const cy = size.h * 0.5;
 
     const theme = ns.find((n) => n.id === themeNodeId) ?? ns[0];
     if (!theme) return;
@@ -809,30 +1133,28 @@ export default function ForceGraphWrapper({
     theme.y = cy;
     theme.vx = 0;
     theme.vy = 0;
-
-    // Theme은 항상 중앙 고정 (radial 레이어 체계의 원점)
+    // Theme은 항상 중앙 고정 (궤도 원점)
     theme.fx = cx;
     theme.fy = cy;
 
-    const rest = ns.filter((n) => n.id !== theme.id);
-    const byType = (type: string) => rest.filter((n) => normType(n.type) === type);
-    const macros = byType("MACRO");
-    const assets = byType("ASSET");
-    const fields = byType("FIELD");
-    const characters = byType("CHARACTER");
-    const unknowns = rest.filter((n) => {
-      const t = normType(n.type);
-      return t !== "MACRO" && t !== "ASSET" && t !== "FIELD" && t !== "CHARACTER";
-    });
-
-    // 🎯 Radial layers (absolute px). 링 반경은 RADIAL_BY_TYPE와 일치해야 forceRadial과 정합.
-    // 기존 위치가 있는 노드는 건드리지 않음 (expand 토글 시 점프 방지).
-    const placeRing = (arr: NodeT[], radius: number, phase: number) => {
-      if (!arr.length) return;
-      const n = arr.length;
+    // 기존 위치가 있으면 유지 (expand 시 점프 방지).
+    // sector center에서 좌우로 대칭 stack (1개면 정중앙, 짝수면 중앙 살짝 옆에 가까이 배치).
+    const placeOnSector = (
+      ids: Set<string>,
+      radius: number,
+      centerAngle: number,
+      halfSpan: number,
+      naturalStep: number,
+    ) => {
+      const arr = ns.filter((n) => n.id !== theme.id && ids.has(n.id));
+      const count = arr.length;
+      if (count === 0) return;
+      const span = 2 * halfSpan;
+      // 노드가 많아져 sector를 넘치면 step을 자동 축소
+      const step = count > 1 ? Math.min(naturalStep, span / count) : 0;
       arr.forEach((node, i) => {
         if (typeof node.x === "number" && typeof node.y === "number") return;
-        const a = phase + (i / n) * Math.PI * 2;
+        const a = centerAngle + (i - (count - 1) / 2) * step;
         node.x = cx + Math.cos(a) * radius;
         node.y = cy + Math.sin(a) * radius;
         node.vx = 0;
@@ -842,23 +1164,150 @@ export default function ForceGraphWrapper({
       });
     };
 
-    // 위상(phase)을 링마다 다르게 주어 방사형 스포크 정렬(같은 각도 겹침) 방지
-    placeRing(macros, RADIAL_BY_TYPE.MACRO, 0);
-    placeRing(assets, RADIAL_BY_TYPE.ASSET, Math.PI / 8);
-    placeRing(fields, RADIAL_BY_TYPE.FIELD, Math.PI / 5);
-    placeRing(characters, RADIAL_BY_TYPE.CHARACTER, Math.PI / 3);
-    placeRing(unknowns, RADIAL_DEFAULT, Math.PI / 2);
+    // 1궤도: 12시 중심, 11~1시 부채꼴 안에서 좌우로 펼침
+    placeOnSector(
+      layerInfo.layer1,
+      GRAPH_CONFIG.orbitRadius.l1,
+      LAYER1_CENTER_ANGLE,
+      LAYER1_HALF_SPAN,
+      LAYER1_STACK_STEP,
+    );
+
+    // 2궤도: 6시 중심, 1시01분~10시59분 안에서 좌우로 펼침
+    placeOnSector(
+      layerInfo.layer2,
+      GRAPH_CONFIG.orbitRadius.l2,
+      LAYER2_CENTER_ANGLE,
+      LAYER2_HALF_SPAN,
+      LAYER2_STACK_STEP,
+    );
+
+    const angleOf = (id: string): number | null => {
+      const nb = ns.find((m) => m.id === id);
+      if (!nb || typeof nb.x !== "number" || typeof nb.y !== "number") return null;
+      return Math.atan2((nb.y as number) - cy, (nb.x as number) - cx);
+    };
+
+    // 3궤도 Asset: 같은 부모(L2 asset)에 매달린 자식들을 한 그룹으로 묶어
+    // ±LAYER3_ASSET_JITTER 폭 안에서 균등 stack (이전 random jitter는 우연한 중첩 발생).
+    //   - 자산은 큰 노드라 라벨까지 고려해 stack step을 동적 계산
+    const l3Assets = ns.filter(
+      (n) => n.id !== theme.id && layerInfo.layer3.has(n.id) && normType(n.type) === "ASSET",
+    );
+    const l3AssetGroupByNb = new Map<string, NodeT[]>();
+    for (const node of l3Assets) {
+      const nbId = layerInfo.neighborMap.get(node.id) ?? "__orphan__";
+      if (!l3AssetGroupByNb.has(nbId)) l3AssetGroupByNb.set(nbId, []);
+      l3AssetGroupByNb.get(nbId)!.push(node);
+    }
+    // 라벨 포함 인접 자산 간 최소 호(arc) 간격 (px). 19px 노드 + 라벨 80~120px 고려.
+    const L3_ASSET_MIN_ARC_PX = 135;
+    // 부모 ±JITTER 한계와 radius 확장 한계.
+    //   ±90° = 부모 각도 기준 반원(180° span). 자식 다수일 때 거의 bottom 반원 전체 사용.
+    const L3_ASSET_MAX_JITTER = Math.PI / 2;        // ±90° (총 180°)
+    const L3_ASSET_MAX_RADIUS = 720;                // 화면 밖으로 너무 벗어나지 않도록 cap
+
+    for (const [nbId, group] of l3AssetGroupByNb) {
+      const baseAngle =
+        nbId !== "__orphan__" ? (angleOf(nbId) ?? Math.random() * Math.PI * 2) : Math.random() * Math.PI * 2;
+      const count = group.length;
+
+      // 1) 자연 step (기본 jitter, 기본 radius) 계산.
+      let jitter = LAYER3_ASSET_JITTER;
+      let radius: number = GRAPH_CONFIG.orbitRadius.l3;
+      let step   = count > 1 ? (2 * jitter) / count : 0;
+      let arc    = step * radius;
+
+      // 2) 자식 수가 많아 라벨이 겹치면, 우선 jitter를 확장 (최대 ±60°).
+      if (count > 1 && arc < L3_ASSET_MIN_ARC_PX) {
+        const wantJitter = (L3_ASSET_MIN_ARC_PX * count) / (2 * radius);
+        jitter = Math.min(L3_ASSET_MAX_JITTER, wantJitter);
+        step   = (2 * jitter) / count;
+        arc    = step * radius;
+      }
+
+      // 3) 그래도 부족하면 radius를 바깥으로 밀기 (최대 720px).
+      if (count > 1 && arc < L3_ASSET_MIN_ARC_PX) {
+        const wantRadius = (L3_ASSET_MIN_ARC_PX * count) / (2 * jitter);
+        radius = Math.min(L3_ASSET_MAX_RADIUS, wantRadius);
+        step   = (2 * jitter) / count;
+      }
+
+      group.forEach((node, i) => {
+        // 동적 radius를 노드에 박아둠 → forceRadial이 default l3=400 대신 이 값 사용.
+        (node as any).__layoutRadius = radius;
+        if (typeof node.x === "number" && typeof node.y === "number") return;
+        const offset = (i - (count - 1) / 2) * step;
+        const a = baseAngle + offset;
+        node.x = cx + Math.cos(a) * radius;
+        node.y = cy + Math.sin(a) * radius;
+        node.vx = 0; node.vy = 0; node.fx = null; node.fy = null;
+      });
+    }
+
+    // 3궤도 Macro/Character/BF: 이웃 각도 그대로, 같은 이웃 공유 시 ±15° stack
+    const l3NonAssets = ns.filter((n) => {
+      if (n.id === theme.id) return false;
+      if (!layerInfo.layer3.has(n.id)) return false;
+      const t = normType(n.type);
+      return t === "MACRO" || t === "CHARACTER" || t === "FIELD";
+    });
+    const l3GroupByNb = new Map<string, NodeT[]>();
+    for (const node of l3NonAssets) {
+      const nbId = layerInfo.neighborMap.get(node.id) ?? "__orphan__";
+      if (!l3GroupByNb.has(nbId)) l3GroupByNb.set(nbId, []);
+      l3GroupByNb.get(nbId)!.push(node);
+    }
+    for (const [nbId, group] of l3GroupByNb) {
+      const baseAngle =
+        nbId !== "__orphan__" ? (angleOf(nbId) ?? Math.random() * Math.PI * 2) : Math.random() * Math.PI * 2;
+      const count = group.length;
+      group.forEach((node, i) => {
+        if (typeof node.x === "number" && typeof node.y === "number") return;
+        const offset = (i - (count - 1) / 2) * L3_L4_STACK_STEP;
+        const a = baseAngle + offset;
+        node.x = cx + Math.cos(a) * GRAPH_CONFIG.orbitRadius.l3;
+        node.y = cy + Math.sin(a) * GRAPH_CONFIG.orbitRadius.l3;
+        node.vx = 0; node.vy = 0; node.fx = null; node.fy = null;
+      });
+    }
+
+    // 4궤도 Macro/Character: layer3 이웃 각도 그대로 + 같은 이웃 공유 시 ±15° stack
+    const l4Arr = ns.filter((n) => n.id !== theme.id && layerInfo.layer4.has(n.id));
+    const l4GroupByNb = new Map<string, NodeT[]>();
+    for (const node of l4Arr) {
+      const nbId = layerInfo.neighborMap.get(node.id) ?? "__orphan__";
+      if (!l4GroupByNb.has(nbId)) l4GroupByNb.set(nbId, []);
+      l4GroupByNb.get(nbId)!.push(node);
+    }
+    for (const [nbId, group] of l4GroupByNb) {
+      const baseAngle =
+        nbId !== "__orphan__" ? (angleOf(nbId) ?? Math.random() * Math.PI * 2) : Math.random() * Math.PI * 2;
+      const count = group.length;
+      group.forEach((node, i) => {
+        if (typeof node.x === "number" && typeof node.y === "number") return;
+        const offset = count > 1 ? (i - (count - 1) / 2) * L3_L4_STACK_STEP : 0;
+        const a = baseAngle + offset;
+        node.x = cx + Math.cos(a) * GRAPH_CONFIG.orbitRadius.l4;
+        node.y = cy + Math.sin(a) * GRAPH_CONFIG.orbitRadius.l4;
+        node.vx = 0; node.vy = 0; node.fx = null; node.fy = null;
+      });
+    }
 
     if (fgRef.current) {
       fgRef.current.d3ReheatSimulation();
       setTimeout(() => {
         try {
-          fgRef.current.centerAt(cx, cy, 0);
-          fgRef.current.zoomToFit(420, 90);
+          // 카메라 중심을 theme(cy)보다 살짝 아래로 — theme이 화면 상단 ~38% 지점에
+          // 자리잡도록. L1(상단, r=200) · L4(하단, r=500) 반경 비대칭 때문에 정중앙
+          // 정렬 시 윗공간이 비어 보였음. zoom 보정 포함.
+          const camOffsetY = (size.h * 0.12) / GRAPH_CONFIG.zoom.initial;
+          fgRef.current.centerAt(cx, cy + camOffsetY, 0);
+          fgRef.current.zoom(GRAPH_CONFIG.zoom.initial, 0);
         } catch {}
       }, 120);
     }
-  }, [graphData.nodes, size.w, size.h, themeNodeId, lockTheme]);
+  }, [graphData.nodes, size.w, size.h, themeNodeId, lockTheme, layerInfo]);
 
   // ✅ focus: center & zoom to searched node
   useEffect(() => {
@@ -886,47 +1335,252 @@ export default function ForceGraphWrapper({
     const fg = fgRef.current;
 
     const cx = size.w * 0.5;
-    const cy = size.h * 0.52;
+    const cy = size.h * 0.5;
 
-    // 🔗 Link distance: 타입별 반경 차이(= 링 간 거리)에 맞춰 산정
-    // 이 값은 forceRadial이 이미 노드를 해당 반경으로 끌어당기므로 보조 역할만.
-    fg.d3Force("link")?.distance((l: any) => {
-      const s = l.source?.id ?? l.source;
-      const t = l.target?.id ?? l.target;
-      const sn = graphData.nodes.find((n) => n.id === s);
-      const tn = graphData.nodes.find((n) => n.id === t);
-      const sr = sn ? getRadialR(sn) : RADIAL_DEFAULT;
-      const tr = tn ? getRadialR(tn) : RADIAL_DEFAULT;
-      // 링 간 거리 |r_s - r_t|, 같은 링이면 탄젠셜 간격(링 둘레/노드수)에 가까운 값
-      const delta = Math.abs(sr - tr);
-      return delta > 0 ? delta : 90;
-    });
-    // 링크가 강하면 radial을 왜곡 → strength 낮춤
-    fg.d3Force("link")?.strength?.(0.15);
+    const radiusFor = (n: any): number => {
+      const id = n?.id as string | undefined;
+      if (!id || id === themeNodeId) return 0;
+      // 노드에 동적 layout radius가 박혀 있으면 그걸 우선 (L3 자산 동적 확장용).
+      const dyn = (n as any)?.__layoutRadius;
+      if (typeof dyn === "number" && dyn > 0) return dyn;
+      if (layerInfo.layer1.has(id)) return GRAPH_CONFIG.orbitRadius.l1;
+      if (layerInfo.layer2.has(id)) return GRAPH_CONFIG.orbitRadius.l2;
+      if (layerInfo.layer3.has(id)) return GRAPH_CONFIG.orbitRadius.l3;
+      if (layerInfo.layer4.has(id)) return GRAPH_CONFIG.orbitRadius.l4;
+      return GRAPH_CONFIG.orbitRadius.l3;
+    };
+    const radialStrength = (n: any): number => {
+      const id = n?.id as string | undefined;
+      if (!id || id === themeNodeId) return 0;
+      if (layerInfo.layer1.has(id)) return 1.0;
+      if (layerInfo.layer2.has(id)) return 1.0;
+      if (layerInfo.layer3.has(id)) return 1.0;
+      if (layerInfo.layer4.has(id)) return 0.9;
+      return 0.9;
+    };
 
-    // 🧲 Charge: 탄젠셜 간격 확보용 약한 반발
-    fg.d3Force("charge")?.strength(CHARGE_STRENGTH);
-    fg.d3Force("charge")?.distanceMax?.(260);
-
-    // 🎯 Radial: 각 노드를 타입별 반경으로 강제
+    // 🎯 Radial: 레이어별 반경으로 끌어당김 (L1 1.0 · L2 0.9 · L3 0.8 · L4 0.7)
     fg.d3Force(
       "radial",
-      forceRadial((n: any) => getRadialR(n), cx, cy).strength(0.95)
+      forceRadial((n: any) => radiusFor(n), cx, cy).strength((n: any) => radialStrength(n)),
     );
 
-    // 🧱 Collide: 노드 타입별 여유 반경
-    fg.d3Force("collide")?.radius((n: any) => {
-      const isTheme = n?.id === themeNodeId;
-      const t = normType(n?.type);
-      const extra = isTheme ? 6 : t === "ASSET" ? 14 : t === "FIELD" ? 4 : 2;
-      return nodeRadius(n, isTheme) + COLLIDE_PAD + extra;
+    // 🧭 forceY: L1은 위(궤도 반경만큼), L2는 아래로 부드럽게.
+    fg.d3Force(
+      "ySector",
+      forceY((n: any) => {
+        const id = n?.id as string | undefined;
+        if (id && layerInfo.layer1.has(id)) return cy - GRAPH_CONFIG.orbitRadius.l1 * 0.6;
+        if (id && layerInfo.layer2.has(id)) return cy + GRAPH_CONFIG.orbitRadius.l2 * 0.2;
+        return cy;
+      }).strength((n: any) => {
+        const id = n?.id as string | undefined;
+        if (id && layerInfo.layer1.has(id)) return 0.4;
+        if (id && layerInfo.layer2.has(id)) return 0.1;
+        return 0;
+      }),
+    );
+
+    // 🔗 Link distance —
+    //   BF endpoint  → 기본 거리 × 1.2  (시각적 분리감)
+    //   MACRO endpoint → 기본 거리 × 1.32 (= BF × 1.1, 가장 멀리)
+    const BF_DISTANCE_BOOST    = 1.2;
+    const MACRO_DISTANCE_BOOST = 1.2 * 1.1; // = 1.32, "bf 관계선보다 1.1배"
+    const nodeTypeById = new Map<string, string>();
+    for (const n of graphData.nodes as any[]) {
+      if (n?.id) nodeTypeById.set(n.id, normType(n.type));
+    }
+    const endpointType = (endpoint: any): string | undefined => {
+      if (!endpoint) return undefined;
+      if (typeof endpoint === "object") return normType(endpoint.type);
+      return nodeTypeById.get(endpoint);
+    };
+    fg.d3Force("link")?.distance((l: any) => {
+      const sid = typeof l.source === "object" ? l.source?.id : l.source;
+      const tid = typeof l.target === "object" ? l.target?.id : l.target;
+      const isTheme = (id: string) => id === themeNodeId;
+      let dist: number = GRAPH_CONFIG.force.linkDistance.themeL1; // default
+      if (isTheme(sid) || isTheme(tid)) {
+        const other = isTheme(sid) ? tid : sid;
+        if (layerInfo.layer1.has(other)) dist = GRAPH_CONFIG.force.linkDistance.themeL1;
+        else if (layerInfo.layer2.has(other)) dist = GRAPH_CONFIG.force.linkDistance.themeL2;
+      } else if (
+        (layerInfo.layer3.has(sid) && layerInfo.layer2.has(tid)) ||
+        (layerInfo.layer3.has(tid) && layerInfo.layer2.has(sid))
+      ) {
+        dist = GRAPH_CONFIG.force.linkDistance.l2l3;
+      } else if (
+        (layerInfo.layer4.has(sid) && layerInfo.layer3.has(tid)) ||
+        (layerInfo.layer4.has(tid) && layerInfo.layer3.has(sid))
+      ) {
+        dist = GRAPH_CONFIG.force.linkDistance.l3l4;
+      }
+      const sType = endpointType(l.source);
+      const tType = endpointType(l.target);
+      if (sType === "MACRO" || tType === "MACRO") dist *= MACRO_DISTANCE_BOOST;
+      else if (sType === "FIELD" || tType === "FIELD") dist *= BF_DISTANCE_BOOST;
+      return dist;
+    });
+    // 링크 장력 — Theme↔L1, Theme↔L2 (스켈레톤)만 강하게, 그 외 부속 링크는 약하게.
+    //   - L2↔L2 (IN_ETF 등): 0.04  → 한 ETF에 묶인 종목들이 한쪽으로 몰리는 것 방지
+    //   - L2↔L3 (asset↔BF/Macro/Char): 0.05  → 여러 asset이 같은 BF를 공유할 때 asset들이 묶여서 같이 끌려오는 클러스터링 방지
+    //   - L3↔L4: 0.05  → 같은 이유
+    //   - 기타: LINK_STRENGTH
+    fg.d3Force("link")?.strength?.((l: any) => {
+      const sid = typeof l.source === "object" ? l.source?.id : l.source;
+      const tid = typeof l.target === "object" ? l.target?.id : l.target;
+      if (!sid || !tid) return LINK_STRENGTH;
+      const sL1 = layerInfo.layer1.has(sid), tL1 = layerInfo.layer1.has(tid);
+      const sL2 = layerInfo.layer2.has(sid), tL2 = layerInfo.layer2.has(tid);
+      const sL3 = layerInfo.layer3.has(sid), tL3 = layerInfo.layer3.has(tid);
+      const sL4 = layerInfo.layer4.has(sid), tL4 = layerInfo.layer4.has(tid);
+      if (sL2 && tL2) return 0.04;
+      if ((sL2 && tL3) || (sL3 && tL2)) return 0.05;
+      if ((sL3 && tL4) || (sL4 && tL3)) return 0.05;
+      // L1 끼리 / L1↔L3 등 드문 케이스도 안전하게 약하게
+      if ((sL1 && tL3) || (sL3 && tL1)) return 0.05;
+      return LINK_STRENGTH;
     });
 
-    // ⛔ Center force 제거 — radial이 중앙 정렬 역할까지 담당
+    // 🧲 Charge
+    fg.d3Force("charge")?.strength(GRAPH_CONFIG.force.charge);
+    fg.d3Force("charge")?.distanceMax?.(220);
+
+    // 🧱 Collide: 노드별 시각 반경 + 타입별 패딩.
+    //   - asset: 큰 패딩 (라벨 + 동그라미)
+    //   - small in L3/L4: 큰 패딩 (외궤도라 sector 넓음, 라벨 겹침 방지)
+    //   - small in L1: 작은 패딩 (11~1시 좁은 sector)
+    fg.d3Force("collide")?.radius((n: any) => {
+      const isTheme = n?.id === themeNodeId;
+      const baseR = nodeRadius(n as NodeT, isTheme);
+      const pads = GRAPH_CONFIG.force.collidePad;
+      if (isTheme) return baseR + pads.theme;
+      if (normType((n as NodeT).type) === "ASSET") return baseR + pads.asset;
+      const id = n?.id as string | undefined;
+      if (id && (layerInfo.layer3.has(id) || layerInfo.layer4.has(id))) {
+        return baseR + pads.smallOuter;
+      }
+      return baseR + pads.smallL1;
+    });
+
+    // ⛔ Center force 제거 — radial이 정렬 담당
     fg.d3Force("center", null as any);
 
+    // 🧭 커스텀 towardParent: L3/L4 노드를 각각 연결된 L2/L3 parent 각도 쪽으로 당김
+    const towardParent = function (alpha: number) {
+      const linkForce = fg.d3Force("link") as any;
+      const ls: any[] | undefined = typeof linkForce?.links === "function" ? linkForce.links() : undefined;
+      if (!ls || ls.length === 0) return;
+      for (const l of ls) {
+        const src = typeof l.source === "object" ? l.source : null;
+        const tgt = typeof l.target === "object" ? l.target : null;
+        if (!src || !tgt) continue;
+        const sid: string | undefined = src?.id;
+        const tid: string | undefined = tgt?.id;
+        if (!sid || !tid) continue;
+
+        // parent / child 판별: L2→L3 또는 L3→L4 방향만 의미 있음
+        let parent: any = null;
+        let child: any = null;
+        if (layerInfo.layer2.has(sid) && layerInfo.layer3.has(tid)) { parent = src; child = tgt; }
+        else if (layerInfo.layer2.has(tid) && layerInfo.layer3.has(sid)) { parent = tgt; child = src; }
+        else if (layerInfo.layer3.has(sid) && layerInfo.layer4.has(tid)) { parent = src; child = tgt; }
+        else if (layerInfo.layer3.has(tid) && layerInfo.layer4.has(sid)) { parent = tgt; child = src; }
+        else continue;
+
+        if (typeof parent.x !== "number" || typeof parent.y !== "number") continue;
+        if (typeof child.x  !== "number" || typeof child.y  !== "number") continue;
+
+        const pxRel = parent.x - cx;
+        const pyRel = parent.y - cy;
+        if (pxRel === 0 && pyRel === 0) continue;
+        const parentAngle = Math.atan2(pyRel, pxRel);
+
+        const cxRel = child.x - cx;
+        const cyRel = child.y - cy;
+        const targetR = Math.sqrt(cxRel * cxRel + cyRel * cyRel);
+
+        const desiredX = cx + Math.cos(parentAngle) * targetR;
+        const desiredY = cy + Math.sin(parentAngle) * targetR;
+
+        child.vx = (child.vx ?? 0) + (desiredX - child.x) * alpha * TOWARD_PARENT_STRENGTH;
+        child.vy = (child.vy ?? 0) + (desiredY - child.y) * alpha * TOWARD_PARENT_STRENGTH;
+      }
+    };
+    (towardParent as any).initialize = () => {}; // d3-force 규약: nodes 주입 불필요
+    fg.d3Force("towardParent", towardParent as any);
+
+    // 🧭 sectorCenterPull: L1은 12시, L2는 6시 방향으로 접선 방향 당김
+    //    → collide/charge에 의한 좌우 드리프트를 상쇄해 가운데가 비지 않게 유지.
+    let sectorNodes: any[] = [];
+    const sectorCenterPull = function (alpha: number) {
+      for (const node of sectorNodes) {
+        if (!node || node.id === themeNodeId) continue;
+        if (typeof node.x !== "number" || typeof node.y !== "number") continue;
+        const dx = node.x - cx;
+        const dy = node.y - cy;
+        const r = Math.sqrt(dx * dx + dy * dy);
+        if (r < 1) continue;
+
+        let centerAngle: number | null = null;
+        let strength = 0;
+        if (layerInfo.layer1.has(node.id)) {
+          centerAngle = LAYER1_CENTER_ANGLE;
+          strength = 0.08; // 약하게 — collide가 노드를 충분히 벌릴 수 있게
+        } else if (layerInfo.layer2.has(node.id)) {
+          centerAngle = LAYER2_CENTER_ANGLE;
+          strength = 0.04; // 매우 약하게 — collide 우선
+        }
+        if (centerAngle === null) continue;
+
+        const targetX = cx + Math.cos(centerAngle) * r;
+        const targetY = cy + Math.sin(centerAngle) * r;
+        node.vx = (node.vx ?? 0) + (targetX - node.x) * alpha * strength;
+        node.vy = (node.vy ?? 0) + (targetY - node.y) * alpha * strength;
+      }
+    };
+    const initSectorNodes = (nodes: any[]) => {
+      sectorNodes = nodes ?? [];
+    };
+    (sectorCenterPull as any).initialize = initSectorNodes;
+    fg.d3Force("sectorCenterPull", sectorCenterPull as any);
+
+    // 🚧 sectorClamp: 허용 sector 밖으로 나간 노드를 sector 내부로 강하게 밀어넣음.
+    //    L1은 [11시, 1시] 안쪽만 허용, L2는 [11시, 1시] 안쪽이 금지(나머지 270°만 허용).
+    const sectorClamp = function (alpha: number) {
+      for (const node of sectorNodes) {
+        if (!node || node.id === themeNodeId) continue;
+        if (typeof node.x !== "number" || typeof node.y !== "number") continue;
+        const dx = node.x - cx;
+        const dy = node.y - cy;
+        const r = Math.sqrt(dx * dx + dy * dy);
+        if (r < 1) continue;
+        const angle = Math.atan2(dy, dx); // -π ~ π
+
+        if (layerInfo.layer1.has(node.id)) {
+          // 허용: [LAYER1_ANGLE_START, LAYER1_ANGLE_END]
+          if (angle < LAYER1_ANGLE_START || angle > LAYER1_ANGLE_END) {
+            const targetX = cx + Math.cos(LAYER1_CENTER_ANGLE) * r;
+            const targetY = cy + Math.sin(LAYER1_CENTER_ANGLE) * r;
+            node.vx = (node.vx ?? 0) + (targetX - node.x) * alpha * 1.0;
+            node.vy = (node.vy ?? 0) + (targetY - node.y) * alpha * 1.0;
+          }
+        } else if (layerInfo.layer2.has(node.id)) {
+          // 금지: (LAYER1_ANGLE_START, LAYER1_ANGLE_END) — top sector 안쪽이면 6시로 밀기
+          if (angle > LAYER1_ANGLE_START && angle < LAYER1_ANGLE_END) {
+            const targetX = cx + Math.cos(LAYER2_CENTER_ANGLE) * r;
+            const targetY = cy + Math.sin(LAYER2_CENTER_ANGLE) * r;
+            node.vx = (node.vx ?? 0) + (targetX - node.x) * alpha * 1.0;
+            node.vy = (node.vy ?? 0) + (targetY - node.y) * alpha * 1.0;
+          }
+        }
+      }
+    };
+    (sectorClamp as any).initialize = initSectorNodes; // sectorNodes 공유
+    fg.d3Force("sectorClamp", sectorClamp as any);
+
     fg.d3ReheatSimulation();
-  }, [graphData.nodes, themeNodeId, size.w, size.h]);
+  }, [graphData.nodes, themeNodeId, size.w, size.h, layerInfo]);
 
   const drawNode = (node: any, ctx: CanvasRenderingContext2D) => {
     // 🎬 entrance animation gate
@@ -970,20 +1624,15 @@ export default function ForceGraphWrapper({
       ctx.stroke();
     }
 
-    // ✅ 폰트 크기 1.5배
-    const baseFont = isFocus ? 12 : isTheme ? 11 : t === "ASSET" ? 10 : 9;
-    const fontSize = Math.max(9, Math.round(baseFont * TEXT_SCALE));
-
-    ctx.font = `${fontSize}px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial`;
-    ctx.textAlign = "left";
-    ctx.textBaseline = "middle";
+    // 노드 원 안은 비움(색상만). 원 바깥 아래에 이름 한 줄만 (truncate 없이 전체).
+    // ASSET / THEME 은 15px, BF / Macro / Character 등 작은 노드는 70%(11px).
+    const FONT_FAMILY = "ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial";
+    const fontPx = (isTheme || t === "ASSET") ? 15 : 11;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "top";
     ctx.fillStyle = isFocus ? "rgba(255,255,255,0.98)" : "rgba(255,255,255,0.92)";
-
-    // ✅ 텍스트 확대에 맞춰 x 오프셋도 증가
-    const x = node.x + r + LABEL_GAP;
-    const y = node.y;
-
-    ctx.fillText(label, x, y);
+    ctx.font = `${fontPx}px ${FONT_FAMILY}`;
+    ctx.fillText(label, node.x, node.y + r + 6);
 
     ctx.restore();
   };
@@ -1001,11 +1650,6 @@ export default function ForceGraphWrapper({
     if (typeof v !== "number" || !Number.isFinite(v)) return "—";
     const sign = v > 0 ? "+" : "";
     return `${sign}${v.toFixed(2)}%`;
-  };
-
-  const fmtPer = (v?: number) => {
-    if (typeof v !== "number" || !Number.isFinite(v)) return "—";
-    return v.toFixed(2);
   };
 
   // ✅ Bloomberg hover helpers
@@ -1035,11 +1679,6 @@ export default function ForceGraphWrapper({
       pickNum(m["Close"]) ??
       pickNum(m["close"])
     );
-  };
-
-  const getMarketCap = (n: NodeT): number | undefined => {
-    const m = n.metrics ?? {};
-    return pickNum(m.market_cap) ?? pickNum(m.marketCap) ?? pickNum((m as any).mktcap) ?? pickNum((m as any).marketcap);
   };
 
   const getValDate = (n: NodeT): string | undefined => {
@@ -1089,9 +1728,9 @@ export default function ForceGraphWrapper({
 
   const handleSelect = (n: NodeT | null) => onSelectNode?.(n);
 
-  // hover 툴팁은 그래프 영역 우측 상단 고정 (사용자 결정 2026-05-19).
-  // 마우스 추적 X — 화면 흔들림·시각적 피로 감소 + 좌측 테마 설명 패널과 충돌 방지.
-  const tooltipStyle = (W = 290 /* eslint-disable-line @typescript-eslint/no-unused-vars */, _H = 215) => {
+  // 호버 박스 일괄 그래프 영역 **우측 상단 고정** (2026-05-19 사용자 결정).
+  // 좌측은 영구 테마 설명 패널 영역 — 충돌 방지. kind 매개변수는 stash 호환성용, 무시.
+  const tooltipStyle = (_kind: "theme" | "other", W = 290): React.CSSProperties => {
     return { right: 12, top: 12, width: W };
   };
 
@@ -1120,43 +1759,52 @@ export default function ForceGraphWrapper({
 
   const hoverLinkLabel = hoverLink?.type?.toString?.() || hoverLink?.label?.toString?.() || "";
 
+  // ─ THEME 카드 (좌측 상단 고정 표시용) — 페이지 진입 시 즉시 보이도록 hover와 무관하게 렌더 ─
+  const themeOverallScore =
+    themeReturn && (themeReturn as any).ok === true
+      ? Number((themeReturn as any).overallScore)
+      : NaN;
+  const themeTemp = Number.isFinite(themeOverallScore) ? tempByScore(themeOverallScore) : null;
+
   return (
     <div ref={wrapRef} className="relative h-full w-full">
-      {/* ✅ 좌측 상단 테마 정보 패널 — fixed (스크롤해도 유지), 단 브리핑이 viewport 진입 시 자동 숨김 (겹침 방지) */}
+      {/* ✅ THEME 고정 카드 — fixed (스크롤해도 유지) + 브리핑 진입 시 자동 fade-out (겹침 방지) */}
       <div
-        className={`pointer-events-none fixed left-5 top-20 z-30 max-w-70 rounded-xl border border-white/10 bg-black/60 px-3 py-2 backdrop-blur transition-opacity duration-300 ${
-          briefingVisible ? "pointer-events-none opacity-0" : "opacity-100"
+        className={`pointer-events-none fixed z-30 rounded-xl border border-white/10 bg-black/80 px-4 py-3 text-xs text-white/90 backdrop-blur transition-opacity duration-300 ${
+          briefingVisible ? "opacity-0" : "opacity-100"
         }`}
+        style={{ left: 20, top: 80, width: 300 }}
         aria-hidden={briefingVisible}
       >
-        <div className="text-[10px] font-semibold tracking-wide text-white/55">THEME</div>
-        <div className="mt-0.5 text-[14px] font-bold text-white/95">{themeName}</div>
-        {(() => {
-          const overall =
-            themeReturn && (themeReturn as any).ok === true
-              ? Number((themeReturn as any).overallScore)
-              : NaN;
-          if (!Number.isFinite(overall)) return null;
-          const temp = tempByScore(overall);
-          return (
-            <div className="mt-1 flex items-center gap-1.5">
+        <div className="flex items-center gap-2">
+          <span className="rounded bg-white/10 px-1.5 py-0.5 text-[10px] font-bold tracking-wide text-white/80">
+            THEME
+          </span>
+          <div className="text-sm font-bold">{themeName || themeId}</div>
+        </div>
+
+        <div className="mt-2 space-y-1.5">
+          {themeTemp ? (
+            <div className="flex items-center gap-2">
               <span
-                className="rounded px-1.5 py-0.5 text-[10px] font-extrabold text-white"
-                style={{ background: temp.color }}
+                className="rounded px-1.5 py-0.5 text-[10px] font-extrabold"
+                style={{ background: themeTemp.color, color: "#fff" }}
               >
-                {temp.name}
+                {themeTemp.name}
               </span>
-              <span className="text-sm font-bold text-white">{Math.round(overall)}</span>
-              <span className="text-[10px] text-white/55">/ 100</span>
+              <span className="text-sm font-bold text-white">{Math.round(themeOverallScore)}</span>
+              <span className="text-white/60">/ 100</span>
             </div>
-          );
-        })()}
-        <div className="mt-1 text-[10px] text-white/45">{themeId}</div>
-        {themeDescription ? (
-          <div className="mt-2 text-[11px] leading-relaxed text-white/75">
-            {themeDescription}
-          </div>
-        ) : null}
+          ) : (
+            <div className="text-white/60">Barometer 데이터 없음</div>
+          )}
+          <div className="text-white/60">{themeId}</div>
+          {themeDescription ? (
+            <div className="mt-2 border-t border-white/10 pt-2 text-[11px] leading-relaxed text-white/75">
+              {themeDescription}
+            </div>
+          ) : null}
+        </div>
       </div>
 
       {/* 🎯 Full Asset toggle — 숨겨진 자산이 있을 때만 표시 */}
@@ -1203,39 +1851,44 @@ export default function ForceGraphWrapper({
         </div>
       )}
 
-      {/* ✅ Node tooltip (Bloomberg style) — per-type */}
-      {hoverNode && (() => {
+      {/* ✅ Node tooltip (Bloomberg style) — per-type
+            • THEME → 좌측 상단 고정 카드로 별도 표시 (hover 미사용)
+            • ASSET / BF / MACRO / CHARACTER → 우측 상단 고정 호버 */}
+      {hoverNode && !isThemeHover && (() => {
         const W = isAssetHover ? 290 : 240;
-        const H = isAssetHover ? 220 : 110;
         const typeLabel =
           isAssetHover ? "ASSET"
-          : isThemeHover ? "THEME"
           : isFieldHover ? "BUSINESS FIELD"
           : isMacroHover ? "MACRO"
           : isCharacterHover ? "CHARACTER"
           : (hoverNode.type ?? "NODE");
 
-        const perDisp = isAssetHover ? getDisplayPer(hoverNode) : { value: undefined, kind: null };
-
-        // THEME hover: barometer score
-        const overall =
-          themeReturn && (themeReturn as any).ok === true
-            ? Number((themeReturn as any).overallScore)
-            : NaN;
-        const temp = Number.isFinite(overall) ? tempByScore(overall) : null;
-
+        // (logoFallbackColor 제거 — CompanyLogo 미구현)
         return (
           <div
             className="pointer-events-none absolute z-40 rounded-xl border border-white/10 bg-black/80 px-4 py-3 text-xs text-white/90 backdrop-blur"
-            style={tooltipStyle(W, H)}
+            style={tooltipStyle("other", W)}
           >
-            {/* Title row: TYPE badge + label */}
-            <div className="flex items-center gap-2">
-              <span className="rounded bg-white/10 px-1.5 py-0.5 text-[10px] font-bold tracking-wide text-white/80">
-                {typeLabel}
-              </span>
-              <div className="text-sm font-bold">{hoverLabel || hoverNode.id}</div>
-            </div>
+            {/* Title row: TYPE badge + label (logo 영역 제거 — logoMap 미구현) */}
+            {isAssetHover ? (
+              <div className="flex items-center gap-3">
+                <div className="flex min-w-0 flex-1 flex-col">
+                  <span className="self-start rounded bg-white/10 px-1.5 py-0.5 text-[10px] font-bold tracking-wide text-white/80">
+                    {typeLabel}
+                  </span>
+                  <div className="mt-1 truncate text-sm font-bold" title={hoverLabel || hoverNode.id}>
+                    {hoverLabel || hoverNode.id}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="flex items-center gap-2">
+                <span className="rounded bg-white/10 px-1.5 py-0.5 text-[10px] font-bold tracking-wide text-white/80">
+                  {typeLabel}
+                </span>
+                <div className="text-sm font-bold">{hoverLabel || hoverNode.id}</div>
+              </div>
+            )}
 
             {isAssetHover && (
               <>
@@ -1256,16 +1909,6 @@ export default function ForceGraphWrapper({
                   <div>
                     <div className="text-white/60">Close</div>
                     <div className="text-sm font-semibold">{fmtNum(getClose(hoverNode))}</div>
-                  </div>
-
-                  <div>
-                    <div className="text-white/60">MKT CAP</div>
-                    <div className="text-sm font-semibold">{fmtNum(getMarketCap(hoverNode))}</div>
-                  </div>
-
-                  <div>
-                    <div className="text-white/60">PER ({perDisp.kind ?? "Trailing"})</div>
-                    <div className="text-sm font-semibold">{fmtPer(perDisp.value)}</div>
                   </div>
 
                   <div>
@@ -1301,25 +1944,7 @@ export default function ForceGraphWrapper({
               </>
             )}
 
-            {isThemeHover && (
-              <div className="mt-2 space-y-1.5">
-                {temp ? (
-                  <div className="flex items-center gap-2">
-                    <span
-                      className="rounded px-1.5 py-0.5 text-[10px] font-extrabold text-black"
-                      style={{ background: temp.color, color: "#fff" }}
-                    >
-                      {temp.name}
-                    </span>
-                    <span className="text-sm font-bold text-white">{Math.round(overall)}</span>
-                    <span className="text-white/60">/ 100</span>
-                  </div>
-                ) : (
-                  <div className="text-white/60">Barometer 데이터 없음</div>
-                )}
-                <div className="text-white/60">{hoverNode.id}</div>
-              </div>
-            )}
+            {/* THEME hover는 좌측 상단 고정 카드로 별도 표시되므로 여기서는 미렌더 */}
 
             {isMacroHover && (
               <div className="mt-2 space-y-1 text-white/80">
@@ -1344,11 +1969,11 @@ export default function ForceGraphWrapper({
         );
       })()}
 
-      {/* Edge tooltip */}
+      {/* Edge tooltip — 노드 호버와 일관성 유지를 위해 우측 상단에 고정 */}
       {hoverLink && hoverLinkLabel && (
         <div
           className="pointer-events-none absolute z-40 rounded-lg border border-white/10 bg-black/75 px-3 py-2 text-xs text-white/90"
-          style={tooltipStyle(240, 60)}
+          style={tooltipStyle("other", 240)}
         >
           <div className="font-semibold">관계</div>
           <div className="mt-1 text-white/80">{hoverLinkLabel}</div>
@@ -1364,15 +1989,14 @@ export default function ForceGraphWrapper({
         nodeRelSize={4}
         linkColor={(l: any) => {
           const a = getEdgeOpacity(l);
-          return `rgba(255,255,255,${(0.62 * a).toFixed(3)})`;
+          return `rgba(255,255,255,${(0.45 * a).toFixed(3)})`;
         }}
         linkWidth={1.4}
-        linkCurvature={(l: any) => l?.curvature ?? 0}
         linkDirectionalArrowLength={10}
         linkDirectionalArrowRelPos={0.92}
         linkDirectionalArrowColor={(l: any) => {
           const a = getEdgeOpacity(l);
-          return `rgba(255,255,255,${(0.95 * a).toFixed(3)})`;
+          return `rgba(255,255,255,${(0.8 * a).toFixed(3)})`;
         }}
         linkHoverPrecision={8}
         linkLabel={(l: any) => (l?.type ?? l?.label ?? "").toString()}
@@ -1417,8 +2041,16 @@ export default function ForceGraphWrapper({
         }}
         cooldownTicks={120}
         warmupTicks={120}
-        d3AlphaDecay={0.08}
-        d3VelocityDecay={0.6}
+        d3AlphaDecay={GRAPH_CONFIG.force.alphaDecay}
+        d3VelocityDecay={GRAPH_CONFIG.force.velocityDecay}
+        linkCurvature={0}
+        onNodeDragEnd={(n: any) => {
+          // 드래그 끝나면 즉시 고정 → 재튕김 방지
+          if (n) {
+            n.fx = n.x;
+            n.fy = n.y;
+          }
+        }}
       />
     </div>
   );
