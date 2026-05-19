@@ -226,7 +226,7 @@ export default function ThemeBriefing({ themeId, nodes }: Props) {
 
   return (
     <>
-    <section ref={sectionRef} className="mt-3 rounded-xl border border-white/10 bg-black/25 p-4">
+    <section ref={sectionRef} data-briefing-section className="mt-3 rounded-xl border border-white/10 bg-black/25 p-4">
       <div className="mb-3 flex items-baseline gap-2">
         <h3 className="text-[14px] font-semibold text-white/90">
           브리핑 테이블 <span className="text-white/55">(Briefing Table)</span>

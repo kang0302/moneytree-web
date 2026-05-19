@@ -468,6 +468,19 @@ export default function ForceGraphWrapper({
   const [hoverNode, setHoverNode] = useState<NodeT | null>(null);
   const [hoverLink, setHoverLink] = useState<any | null>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  // 브리핑 테이블이 viewport 안에 들어오면 좌측 상단 테마 설명 패널 자동 숨김 (겹침 방지)
+  const [briefingVisible, setBriefingVisible] = useState(false);
+  useEffect(() => {
+    if (typeof document === "undefined") return;
+    const el = document.querySelector<HTMLElement>("[data-briefing-section]");
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      (entries) => setBriefingVisible(!!entries[0]?.isIntersecting),
+      { threshold: 0.05 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   // ──────────────────────────────────────────────────────────────
   // 🎬 Entrance animation: staggered by node type (theme → macro → asset → field → character)
@@ -1109,8 +1122,13 @@ export default function ForceGraphWrapper({
 
   return (
     <div ref={wrapRef} className="relative h-full w-full">
-      {/* ✅ 좌측 상단 테마 정보 패널 (이름·점수·ID·큐레이션 설명) — fixed: 스크롤해도 같은 위치 유지 */}
-      <div className="pointer-events-none fixed left-5 top-20 z-30 max-w-70 rounded-xl border border-white/10 bg-black/60 px-3 py-2 backdrop-blur">
+      {/* ✅ 좌측 상단 테마 정보 패널 — fixed (스크롤해도 유지), 단 브리핑이 viewport 진입 시 자동 숨김 (겹침 방지) */}
+      <div
+        className={`pointer-events-none fixed left-5 top-20 z-30 max-w-70 rounded-xl border border-white/10 bg-black/60 px-3 py-2 backdrop-blur transition-opacity duration-300 ${
+          briefingVisible ? "pointer-events-none opacity-0" : "opacity-100"
+        }`}
+        aria-hidden={briefingVisible}
+      >
         <div className="text-[10px] font-semibold tracking-wide text-white/55">THEME</div>
         <div className="mt-0.5 text-[14px] font-bold text-white/95">{themeName}</div>
         {(() => {
