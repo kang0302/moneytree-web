@@ -6,7 +6,8 @@
 // 없으면 조용히 숨김 (그래프만 표시).
 // briefing 의 본문 표 각 행에서 첫 셀의 ticker 를 추출 → 6개 기간 수익률 컬럼(3년/1년/YTD/1개월/7일/3일) 자동 부착.
 
-import { Children, Fragment, ReactNode, useEffect, useMemo, useState } from "react";
+import { Children, Fragment, ReactNode, useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { getBriefingUrl, getBriefingFallbackUrl } from "@/lib/getBriefingUrl";
@@ -110,6 +111,10 @@ function ReturnCell({ value }: { value: number | null | undefined }) {
 export default function ThemeBriefing({ themeId, nodes }: Props) {
   const [md, setMd] = useState<string | null>(null);
   const [state, setState] = useState<State>("loading");
+  // 플로팅 단서: briefing 이 viewport 밖에 있을 때만 표시
+  const [showCue, setShowCue] = useState(false);
+  const [portalTarget, setPortalTarget] = useState<HTMLElement | null>(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
 
   const showReturnColumns = !!nodes;
 
@@ -158,11 +163,41 @@ export default function ThemeBriefing({ themeId, nodes }: Props) {
     };
   }, [themeId]);
 
+  // SSR-safe portal mount
+  useEffect(() => {
+    setPortalTarget(typeof document !== "undefined" ? document.body : null);
+  }, []);
+
+  // Briefing 이 viewport 안에 들어왔는지 관찰 — 표가 보이면 cue 숨김
+  useEffect(() => {
+    if (state !== "ok") {
+      setShowCue(false);
+      return;
+    }
+    const el = sectionRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      (entries) => setShowCue(!entries[0]?.isIntersecting),
+      { threshold: 0.15 },
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [state]);
+
+  const scrollToBriefing = () => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const y = window.scrollY + rect.top - 24;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
   // 파일 없으면 섹션 자체를 숨김
   if (state === "missing" || state === "error" || !md) return null;
 
   return (
-    <section className="mt-3 rounded-xl border border-white/10 bg-black/25 p-4">
+    <>
+    <section ref={sectionRef} className="mt-3 rounded-xl border border-white/10 bg-black/25 p-4">
       <div className="mb-3 flex items-baseline gap-2">
         <h3 className="text-[14px] font-semibold text-white/90">
           브리핑 테이블 <span className="text-white/55">(Briefing Table)</span>
@@ -252,5 +287,21 @@ export default function ThemeBriefing({ themeId, nodes }: Props) {
         </ReactMarkdown>
       </article>
     </section>
+
+    {/* 플로팅 단서: briefing 존재 + viewport 밖일 때만 표시 — 클릭/스크롤 시 사라짐 */}
+    {showCue && portalTarget &&
+      createPortal(
+        <button
+          type="button"
+          onClick={scrollToBriefing}
+          title="아래 브리핑 테이블로 이동"
+          className="fixed bottom-4 left-1/2 z-100 flex min-w-100 -translate-x-1/2 items-center justify-center gap-3 rounded-full border border-white/20 bg-black/80 px-10 py-3 text-[13px] font-medium text-white/90 shadow-xl backdrop-blur transition hover:scale-105 hover:bg-black/90 hover:text-white"
+        >
+          <span className="inline-block animate-bounce text-[14px] leading-none">↓</span>
+          <span>브리핑 테이블</span>
+        </button>,
+        portalTarget,
+      )}
+    </>
   );
 }

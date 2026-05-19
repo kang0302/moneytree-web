@@ -1354,15 +1354,15 @@ export default function ForceGraphWrapper({
         nodeRelSize={4}
         linkColor={(l: any) => {
           const a = getEdgeOpacity(l);
-          return `rgba(255,255,255,${(0.45 * a).toFixed(3)})`;
+          return `rgba(255,255,255,${(0.62 * a).toFixed(3)})`;
         }}
-        linkWidth={0.8}
+        linkWidth={1.4}
         linkCurvature={(l: any) => l?.curvature ?? 0}
-        linkDirectionalArrowLength={6}
+        linkDirectionalArrowLength={10}
         linkDirectionalArrowRelPos={0.92}
         linkDirectionalArrowColor={(l: any) => {
           const a = getEdgeOpacity(l);
-          return `rgba(255,255,255,${(0.8 * a).toFixed(3)})`;
+          return `rgba(255,255,255,${(0.95 * a).toFixed(3)})`;
         }}
         linkHoverPrecision={8}
         linkLabel={(l: any) => (l?.type ?? l?.label ?? "").toString()}
