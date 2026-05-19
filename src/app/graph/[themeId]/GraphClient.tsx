@@ -19,6 +19,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 import ForceGraphWrapper from "@/components/ForceGraphWrapper";
 import GraphRightPanel, { CompareThemeOptionT } from "@/components/GraphRightPanel";
+import ThemeBriefing from "@/components/ThemeBriefing";
 
 // ✅ Search import
 import SearchBar from "@/components/SearchBar";
@@ -252,11 +253,13 @@ function hoistReturnKeysIntoMetrics(node: any, metrics: any) {
 export default function GraphClient({
   themeId,
   themeName,
+  themeDescription,
   nodes,
   edges,
 }: {
   themeId: string;
   themeName: string;
+  themeDescription?: string;
   nodes: NodeT[];
   edges: EdgeT[];
 }) {
@@ -712,7 +715,7 @@ export default function GraphClient({
   };
 
   return (
-    <div className="flex h-full min-h-0 flex-col">
+    <div className="flex flex-col">
       {/* ✅ Compact Top Header (single-line) */}
       <header className="mb-2 flex h-12 items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-2 py-1">
         {/* Left: ThemeId badge + Theme name */}
@@ -796,8 +799,8 @@ export default function GraphClient({
         </a>
       </header>
 
-      {/* ✅ Graph area maximized (flex-1, min-h-0) */}
-      <div className="min-h-0 flex-1">
+      {/* ✅ Graph area: viewport 높이 - 헤더(48) - 여백 — 브리핑이 아래로 자연 흐름 */}
+      <div className="h-[calc(100vh-72px)] min-h-[520px]">
         {/* ✅ Right panel ratio ~ 60/40 유지 */}
         <div className="grid h-full min-h-0 grid-cols-1 gap-2 lg:grid-cols-[3fr_2fr]">
           {/* Graph */}
@@ -805,6 +808,7 @@ export default function GraphClient({
             <ForceGraphWrapper
               themeId={themeId}
               themeName={themeName}
+              themeDescription={themeDescription}
               nodes={enrichedNodes}
               edges={edges}
               onSelectNode={(n) => setSelectedNode(n)}
@@ -840,6 +844,11 @@ export default function GraphClient({
             />
           </div>
         </div>
+      </div>
+
+      {/* ✅ 그래프 하단: 브리핑 테이블 — 마크다운 4컬럼 + 6 수익률 컬럼 자동 부착 */}
+      <div className="w-full">
+        <ThemeBriefing themeId={themeId} nodes={enrichedNodes as any} />
       </div>
     </div>
   );

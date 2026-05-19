@@ -107,6 +107,7 @@ type EdgeT = {
 type Props = {
   themeId: string;
   themeName: string;
+  themeDescription?: string;
   nodes: NodeT[];
   edges: EdgeT[];
 
@@ -437,6 +438,7 @@ function pickRelType(e: EdgeT): string {
 export default function ForceGraphWrapper({
   themeId,
   themeName,
+  themeDescription,
   nodes,
   edges,
   period,
@@ -1115,6 +1117,38 @@ export default function ForceGraphWrapper({
 
   return (
     <div ref={wrapRef} className="relative h-full w-full">
+      {/* ✅ 좌측 상단 테마 정보 패널 (이름·점수·ID·큐레이션 설명) */}
+      <div className="pointer-events-none absolute left-3 top-3 z-20 max-w-70 rounded-xl border border-white/10 bg-black/40 px-3 py-2 backdrop-blur">
+        <div className="text-[10px] font-semibold tracking-wide text-white/55">THEME</div>
+        <div className="mt-0.5 text-[14px] font-bold text-white/95">{themeName}</div>
+        {(() => {
+          const overall =
+            themeReturn && (themeReturn as any).ok === true
+              ? Number((themeReturn as any).overallScore)
+              : NaN;
+          if (!Number.isFinite(overall)) return null;
+          const temp = tempByScore(overall);
+          return (
+            <div className="mt-1 flex items-center gap-1.5">
+              <span
+                className="rounded px-1.5 py-0.5 text-[10px] font-extrabold text-white"
+                style={{ background: temp.color }}
+              >
+                {temp.name}
+              </span>
+              <span className="text-sm font-bold text-white">{Math.round(overall)}</span>
+              <span className="text-[10px] text-white/55">/ 100</span>
+            </div>
+          );
+        })()}
+        <div className="mt-1 text-[10px] text-white/45">{themeId}</div>
+        {themeDescription ? (
+          <div className="mt-2 text-[11px] leading-relaxed text-white/75">
+            {themeDescription}
+          </div>
+        ) : null}
+      </div>
+
       {/* 🎯 Full Asset toggle — 숨겨진 자산이 있을 때만 표시 */}
       {assetRankInfo.hiddenAssetCount > 0 && (
         <button

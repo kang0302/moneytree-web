@@ -48,10 +48,27 @@ type EdgeT = {
 type ThemeJsonT = {
   themeId?: string;
   themeName?: string;
+  meta?: {
+    description?: string;
+    notes?: string;
+    [k: string]: any;
+  };
   nodes?: NodeT[];
   edges?: EdgeT[];
   links?: EdgeT[];
 };
+
+/** public/data/theme_descriptions.json 의 themeId → 큐레이션 설명. 매 요청 fresh read. */
+function getCuratedDescription(themeId: string): string {
+  try {
+    const filePath = path.join(process.cwd(), "public", "data", "theme_descriptions.json");
+    const text = fs.readFileSync(filePath, "utf8");
+    const dict = JSON.parse(text) as Record<string, string>;
+    return (dict?.[themeId] ?? "").trim();
+  } catch {
+    return "";
+  }
+}
 
 async function tryFetchThemeJson(url: string, themeId: string): Promise<ThemeJsonT | null> {
   try {
@@ -126,6 +143,9 @@ export default async function GraphPage({
   }
 
   const themeName = (data.themeName ?? data.themeId ?? themeId).trim();
+  // description 우선순위: meta.description (정식) > theme_descriptions.json (큐레이션). meta.notes 는 내부 메모라 제외.
+  const themeDescription =
+    (data.meta?.description ?? "").trim() || getCuratedDescription(themeId);
   const nodes = Array.isArray(data.nodes) ? data.nodes : [];
 
   // edges 없고 links만 있는 파일도 흡수
@@ -153,16 +173,15 @@ export default async function GraphPage({
   );
 
   return (
-    <main className="h-screen w-full bg-black text-white">
-      <div className="flex h-full w-full flex-col px-2 py-2">
-        <div className="min-h-0 flex-1">
-          <GraphClient
-            themeId={themeId}
-            themeName={themeName}
-            nodes={nodes}
-            edges={edges}
-          />
-        </div>
+    <main className="min-h-screen w-full bg-black text-white">
+      <div className="flex w-full flex-col px-2 py-2">
+        <GraphClient
+          themeId={themeId}
+          themeName={themeName}
+          themeDescription={themeDescription}
+          nodes={nodes}
+          edges={edges}
+        />
       </div>
     </main>
   );
