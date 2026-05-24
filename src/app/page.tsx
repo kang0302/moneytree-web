@@ -1,102 +1,483 @@
+"use client";
+
+import React, { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+
+import AmbientNetwork from "@/components/AmbientNetwork";
+import SearchBar from "@/components/SearchBar";
+import { computeThemeReturnSummary, PeriodKey, normalizeToPct } from "@/lib/themeReturn";
+import { resolvePlaceholderThemeNames } from "@/lib/themeIndex";
+
+type ThemeIndexItem = {
+  themeId: string;
+  themeName: string;
+};
+
+type ThemeJson = {
+  themeId: string;
+  themeName: string;
+  nodes: any[];
+  edges: any[];
+};
+
+type ThemeRow = ThemeIndexItem & {
+  score: number | null;
+  note: string | null;
+  topMover: { name: string; ret?: number } | null;
+};
+
+type RecentItem = { themeId: string; themeName: string; at: number };
+type FavItem = { themeId: string; themeName: string; at: number };
+
+const LS_RECENT = "mt_recent_themes_v1";
+const LS_FAV = "mt_favorite_themes_v1";
+
+const INDEX_URL_REMOTE = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/index.json";
+const INDEX_URL_LOCAL = "/data/theme/index.json";
+
+function safeJsonParse<T>(s: string | null, fallback: T): T {
+  try {
+    const v = JSON.parse(s ?? "");
+    return (v ?? fallback) as T;
+  } catch {
+    return fallback;
+  }
+}
+
+function clamp(n: number, a = 0, b = 1000) {
+  return Math.max(a, Math.min(b, n));
+}
+
+function extractThemesFromText(text: string): ThemeIndexItem[] {
+  const seen = new Set<string>();
+  const out: ThemeIndexItem[] = [];
+  for (const line of text.split(/\r?\n/)) {
+    const idM = line.match(/"themeId"\s*:\s*"([^"]+)"/);
+    const nmM = line.match(/"themeName"\s*:\s*"([^"]+)"/);
+    if (!idM || !nmM) continue;
+    const themeId = idM[1].trim();
+    const themeName = nmM[1].trim();
+    if (!themeId || !themeName || seen.has(themeId)) continue;
+    seen.add(themeId);
+    out.push({ themeId, themeName });
+  }
+  return out;
+}
+
+function toThemeIndexList(idx: any): ThemeIndexItem[] {
+  const list = idx?.themes ?? (Array.isArray(idx) ? idx : []);
+  if (!Array.isArray(list)) return [];
+  return list
+    .map((t: any) => {
+      const themeId = String(t?.themeId ?? "").trim();
+      const themeName = String(t?.themeName ?? "").trim() || themeId;
+      return { themeId, themeName };
+    })
+    .filter((t: ThemeIndexItem) => t.themeId);
+}
+
+async function fetchIndexWithFallback(): Promise<ThemeIndexItem[]> {
+  try {
+    const res = await fetch(INDEX_URL_REMOTE, { cache: "no-store" });
+    if (res.ok) {
+      const text = await res.text();
+      try {
+        const json = JSON.parse(text);
+        const list = toThemeIndexList(json);
+        if (list.length) return list;
+      } catch {}
+      const list = extractThemesFromText(text);
+      if (list.length) return list;
+    }
+  } catch {}
+  try {
+    const res = await fetch(INDEX_URL_LOCAL, { cache: "no-store" });
+    if (res.ok) return toThemeIndexList(await res.json());
+  } catch {}
+  return [];
+}
+
+async function fetchJson<T>(url: string): Promise<T | null> {
+  try {
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) return null;
+    return (await res.json()) as T;
+  } catch {
+    return null;
+  }
+}
+
+async function mapLimit<T, R>(items: T[], limit: number, fn: (x: T) => Promise<R>): Promise<R[]> {
+  const out: R[] = new Array(items.length);
+  let i = 0;
+  async function worker() {
+    while (i < items.length) {
+      const idx = i++;
+      out[idx] = await fn(items[idx]);
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, () => worker()));
+  return out;
+}
+
+function computeOverall(summary: any): number | null {
+  if (typeof summary?.overallScore === "number") return clamp(summary.overallScore);
+  const h = typeof summary?.healthScore === "number" ? summary.healthScore : null;
+  const m = typeof summary?.momentumScore === "number" ? summary.momentumScore : null;
+  if (h === null || m === null) return null;
+  return clamp(h * 0.6 + m * 0.4);
+}
+
+function scoreBadgeColor(score: number | null): string {
+  if (score === null) return "rgba(255,255,255,0.45)";
+  if (score >= 800) return "#b11226";
+  if (score >= 600) return "#ef476f";
+  if (score >= 400) return "#aaaaaa";
+  if (score >= 200) return "#4d96ff";
+  return "#1f3c88";
+}
+
+function scoreLabel(score: number | null): string {
+  if (score === null) return "—";
+  if (score >= 800) return "WARM+";
+  if (score >= 600) return "WARM";
+  if (score >= 400) return "NEUT";
+  if (score >= 200) return "COLD";
+  return "COLD-";
+}
 
 export default function HomePage() {
+  const router = useRouter();
+  const [themes, setThemes] = useState<ThemeRow[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [recent, setRecent] = useState<RecentItem[]>([]);
+  const [favs, setFavs] = useState<FavItem[]>([]);
+
+  useEffect(() => {
+    setRecent(safeJsonParse<RecentItem[]>(localStorage.getItem(LS_RECENT), []));
+    setFavs(safeJsonParse<FavItem[]>(localStorage.getItem(LS_FAV), []));
+  }, []);
+
+  useEffect(() => {
+    let alive = true;
+
+    async function run() {
+      setLoading(true);
+      let list = await fetchIndexWithFallback();
+      if (!alive) return;
+      list = await resolvePlaceholderThemeNames(list);
+      if (!alive) return;
+
+      const period: PeriodKey = "7D";
+      const enriched = await mapLimit(list, 6, async (row) => {
+        const localUrl = `/data/theme/${row.themeId}.json`;
+        const remoteUrl = `https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/${row.themeId}.json`;
+        const tj = (await fetchJson<ThemeJson>(localUrl)) ?? (await fetchJson<ThemeJson>(remoteUrl));
+        if (!tj?.nodes) {
+          return { ...row, score: null, note: null, topMover: null } as ThemeRow;
+        }
+        const summary: any = computeThemeReturnSummary({
+          nodes: tj.nodes,
+          period,
+          minAssets: 5,
+          topMoversN: 1,
+        });
+        if (!summary || summary.ok === false) {
+          return { ...row, score: null, note: summary?.sentence ?? null, topMover: null } as ThemeRow;
+        }
+        const score = computeOverall(summary);
+        const tm = (summary.topMovers ?? [])[0];
+        const topMover = tm
+          ? { name: String(tm.name || tm.id || ""), ret: normalizeToPct(tm.ret) ?? undefined }
+          : null;
+        return { ...row, score, note: summary.note ?? null, topMover } as ThemeRow;
+      });
+
+      if (!alive) return;
+      setThemes(enriched);
+      setLoading(false);
+    }
+
+    run();
+    return () => {
+      alive = false;
+    };
+  }, []);
+
+  const { warmTop, coldTop } = useMemo(() => {
+    const scored = themes.filter((t): t is ThemeRow & { score: number } => typeof t.score === "number");
+    const sortedDesc = [...scored].sort((a, b) => b.score - a.score);
+    return {
+      warmTop: sortedDesc.slice(0, 5),
+      coldTop: [...sortedDesc].reverse().slice(0, 5),
+    };
+  }, [themes]);
+
+  const toggleFav = (themeId: string, themeName: string) => {
+    const now = Date.now();
+    const exists = favs.some((x) => x.themeId === themeId);
+    const next = exists
+      ? favs.filter((x) => x.themeId !== themeId)
+      : [{ themeId, themeName, at: now }, ...favs].slice(0, 60);
+    setFavs(next);
+    localStorage.setItem(LS_FAV, JSON.stringify(next));
+  };
+  const isFav = (themeId: string) => favs.some((x) => x.themeId === themeId);
+
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        padding: 24,
-        fontFamily:
-          'ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial',
-      }}
-    >
-      {/* 상단 메뉴 */}
-      <header
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          borderBottom: "1px solid #e5e7eb",
-          paddingBottom: 12,
-          marginBottom: 24,
-        }}
-      >
-        <div style={{ fontWeight: 800, letterSpacing: -0.2 }}>MoneyTree</div>
-
-        <nav style={{ display: "flex", gap: 12 }}>
-          <Link href="/" style={linkStyle}>
-            Home
-          </Link>
-          <Link href="/themes" style={linkStyle}>
-            All Themes
-          </Link>
-          <Link href="/graph" style={linkStyle}>
-            Graph Explorer
-          </Link>
-        </nav>
-      </header>
-
-      {/* 메인 */}
-      <section style={{ maxWidth: 840 }}>
-        <h1 style={{ fontSize: 32, margin: "0 0 10px", letterSpacing: -0.5 }}>
-          MoneyTree Home
-        </h1>
-
-        <p style={{ margin: "0 0 18px", color: "#4b5563", lineHeight: 1.6 }}>
-          투자 인사이트를 <b>테마</b>와 <b>그래프</b>로 탐색하는 하이브리드 웹서비스.
-          <br />
-          오늘은 라우팅(페이지 뼈대)부터 고정합니다.
-        </p>
-
-        <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-          <Link href="/themes" style={buttonStyle}>
-            All Themes 보기 →
-          </Link>
-          <Link href="/graph" style={buttonStyle}>
-            Graph Explorer →
-          </Link>
-        </div>
-
+    <main className="relative min-h-screen w-full overflow-hidden bg-black text-white">
+      {/* Ambient background */}
+      <div className="pointer-events-none fixed inset-0 z-0">
+        <AmbientNetwork className="h-full w-full" />
         <div
+          className="absolute inset-0"
           style={{
-            marginTop: 24,
-            padding: 16,
-            border: "1px solid #e5e7eb",
-            borderRadius: 12,
-            background: "#fafafa",
+            background:
+              "radial-gradient(ellipse at 50% 35%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 75%, rgba(0,0,0,0.55) 100%)",
           }}
-        >
-          <h3 style={{ margin: 0 }}>오늘의 상태</h3>
-          <ul style={{ margin: "10px 0 0", color: "#374151", lineHeight: 1.7 }}>
-            <li>홈(/) 페이지 ✅</li>
-            <li>테마(/themes) 페이지 ✅</li>
-            <li>그래프(/graph) 페이지 ✅</li>
-          </ul>
-        </div>
-      </section>
+        />
+      </div>
+
+      {/* Foreground */}
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col px-4 py-6">
+        {/* Header */}
+        <header className="mb-6 flex h-12 items-center justify-between rounded-xl border border-white/10 bg-white/[0.03] px-3 backdrop-blur">
+          <div className="text-[15px] font-extrabold tracking-tight">MoneyTree</div>
+          <nav className="flex items-center gap-2 text-[12px]">
+            <Link
+              href="/themes"
+              className="rounded-lg border border-white/10 bg-black/30 px-3 py-1.5 text-white/85 transition hover:bg-black/45"
+            >
+              ⤴ Full Theme Map
+            </Link>
+          </nav>
+        </header>
+
+        {/* Hero Search */}
+        <section className="mb-6 py-10 text-center sm:py-14">
+          <div className="text-[28px] font-extrabold leading-tight tracking-tight text-white sm:text-[40px]">
+            오늘, 어떤 시장을 들여다볼까요?
+          </div>
+          <div className="mt-2 text-[12px] text-white/55 sm:text-[14px]">
+            종목 · 티커 · 테마 · 산업 · 매크로 — 한 번에 검색
+          </div>
+          <div className="mx-auto mt-6 w-full max-w-2xl rounded-2xl border border-white/15 bg-black/55 p-2 shadow-[0_8px_40px_rgba(0,0,0,0.5)] backdrop-blur-md">
+            <SearchBar
+              indexUrl="/data/search/search_index.json"
+              onGoTheme={(tid) => router.push(`/graph/${tid}`)}
+              onGoThemeFocus={(tid, fid) => router.push(`/graph/${tid}?focus=${encodeURIComponent(fid)}`)}
+            />
+          </div>
+        </section>
+
+        {/* Daily Brief (placeholder) */}
+        <section className="mb-4 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 backdrop-blur">
+          <div className="mb-1 text-[11px] uppercase tracking-wider text-white/45">Daily Brief</div>
+          <div className="text-[14px] text-white/75">
+            오늘의 헤드라인 매핑은 곧 연결됩니다. (Bloomberg · 한경 · 매경 · 컨센서스)
+          </div>
+        </section>
+
+        {/* Markets by Region (placeholder counts; TBD click → region analysis) */}
+        <section className="mb-4 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4 backdrop-blur">
+          <div className="mb-3 flex items-end justify-between">
+            <div>
+              <div className="text-[11px] uppercase tracking-wider text-white/45">Markets by Region</div>
+              <div className="text-[18px] font-bold">지역별 시장</div>
+            </div>
+            <div className="text-[11px] text-white/45">click TBD</div>
+          </div>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+            {[
+              { code: "KR", flag: "🇰🇷", name: "한국" },
+              { code: "US", flag: "🇺🇸", name: "미국" },
+              { code: "JP", flag: "🇯🇵", name: "일본" },
+              { code: "CN", flag: "🇨🇳", name: "중국" },
+              { code: "EU", flag: "🇪🇺", name: "유럽" },
+              { code: "GLOBAL", flag: "🌍", name: "글로벌" },
+            ].map((r) => (
+              <button
+                key={r.code}
+                type="button"
+                disabled
+                className="group flex flex-col items-center justify-center gap-1 rounded-xl border border-white/10 bg-white/4 px-3 py-4 text-center transition hover:border-white/25 hover:bg-white/[0.07] disabled:cursor-not-allowed disabled:opacity-90"
+                title="국가별 테마 분석 (TBD)"
+              >
+                <div className="text-[32px] leading-none">{r.flag}</div>
+                <div className="mt-1 text-[13px] font-semibold text-white/90">{r.name}</div>
+                <div className="text-[10px] text-white/45">— themes</div>
+                <div className="text-[10px] text-white/45">— assets</div>
+              </button>
+            ))}
+          </div>
+        </section>
+
+        {/* Today's Pulse */}
+        <section className="mb-4 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4 backdrop-blur">
+          <div className="mb-3 flex items-end justify-between">
+            <div>
+              <div className="text-[11px] uppercase tracking-wider text-white/45">Today&apos;s Pulse</div>
+              <div className="text-[18px] font-bold">시장의 온도</div>
+            </div>
+            <div className="text-[11px] text-white/45">
+              {loading ? "loading…" : `7D · ${themes.length} themes`}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+            <PulseColumn title="🔥 WARM Top 5" rows={warmTop} loading={loading} accent="warm" />
+            <PulseColumn title="❄️ COLD Top 5" rows={coldTop} loading={loading} accent="cold" />
+          </div>
+        </section>
+
+        {/* Recent / Favorites */}
+        <section className="mb-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 backdrop-blur">
+            <div className="mb-2 text-[11px] uppercase tracking-wider text-white/45">Recently Viewed</div>
+            {recent.length ? (
+              <div className="flex flex-wrap gap-2">
+                {recent.slice(0, 8).map((r) => (
+                  <Chip
+                    key={r.themeId}
+                    themeId={r.themeId}
+                    themeName={r.themeName}
+                    starred={isFav(r.themeId)}
+                    onStar={() => toggleFav(r.themeId, r.themeName)}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="text-[12px] text-white/45">최근 방문한 테마가 없습니다.</div>
+            )}
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 backdrop-blur">
+            <div className="mb-2 text-[11px] uppercase tracking-wider text-white/45">Favorites</div>
+            {favs.length ? (
+              <div className="flex flex-wrap gap-2">
+                {favs
+                  .slice()
+                  .sort((a, b) => (b.at ?? 0) - (a.at ?? 0))
+                  .slice(0, 8)
+                  .map((f) => (
+                    <Chip
+                      key={f.themeId}
+                      themeId={f.themeId}
+                      themeName={f.themeName}
+                      starred
+                      onStar={() => toggleFav(f.themeId, f.themeName)}
+                    />
+                  ))}
+              </div>
+            ) : (
+              <div className="text-[12px] text-white/45">☆ 버튼으로 즐겨찾기를 추가할 수 있습니다.</div>
+            )}
+          </div>
+        </section>
+
+        {/* Constellation CTA */}
+        <section className="mt-2 mb-6">
+          <Link
+            href="/themes"
+            className="group block rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-5 text-center backdrop-blur transition hover:bg-white/[0.06]"
+            title="Theme Constellation (별도 라우트 예정)"
+          >
+            <div className="text-[11px] uppercase tracking-wider text-white/45">Explore</div>
+            <div className="mt-1 text-[18px] font-bold">
+              ▶ Full Theme Constellation 보기
+            </div>
+            <div className="mt-1 text-[12px] text-white/55">
+              245개 테마를 한 화면에서 — (현재는 Full Theme Map 으로 이동)
+            </div>
+          </Link>
+        </section>
+      </div>
     </main>
   );
 }
 
-const linkStyle: React.CSSProperties = {
-  textDecoration: "none",
-  color: "#111827",
-  padding: "8px 10px",
-  borderRadius: 8,
-  border: "1px solid #e5e7eb",
-  background: "white",
-  fontSize: 14,
-};
+function PulseColumn({
+  title,
+  rows,
+  loading,
+  accent,
+}: {
+  title: string;
+  rows: ThemeRow[];
+  loading: boolean;
+  accent: "warm" | "cold";
+}) {
+  return (
+    <div className="rounded-xl border border-white/10 bg-black/25 px-3 py-3">
+      <div className="mb-2 text-[12px] font-semibold text-white/80">{title}</div>
+      {loading && rows.length === 0 ? (
+        <div className="space-y-2">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <div key={i} className="h-9 animate-pulse rounded-lg bg-white/[0.04]" />
+          ))}
+        </div>
+      ) : rows.length === 0 ? (
+        <div className="text-[12px] text-white/45">데이터 없음</div>
+      ) : (
+        <div className="space-y-1">
+          {rows.map((t) => (
+            <Link
+              key={t.themeId}
+              href={`/graph/${t.themeId}`}
+              className="grid grid-cols-[64px_1fr_auto] items-center gap-2 rounded-lg px-2 py-1.5 transition hover:bg-white/[0.05]"
+            >
+              <span className="text-[11px] font-mono text-white/55">{t.themeId}</span>
+              <span className="min-w-0 truncate text-[13px] text-white/90" title={t.themeName}>
+                {t.themeName}
+              </span>
+              <span
+                className="text-[13px] font-extrabold tabular-nums"
+                style={{ color: scoreBadgeColor(t.score) }}
+                title={scoreLabel(t.score)}
+              >
+                {t.score === null ? "—" : Math.round(t.score)}
+              </span>
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
-const buttonStyle: React.CSSProperties = {
-  textDecoration: "none",
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  padding: "10px 14px",
-  borderRadius: 10,
-  background: "#111827",
-  color: "white",
-  fontWeight: 700,
-  fontSize: 14,
-};
+function Chip({
+  themeId,
+  themeName,
+  starred,
+  onStar,
+}: {
+  themeId: string;
+  themeName: string;
+  starred?: boolean;
+  onStar?: () => void;
+}) {
+  return (
+    <div className="flex items-center gap-1.5">
+      <Link
+        href={`/graph/${themeId}`}
+        className="inline-flex items-center rounded-full border border-white/10 bg-black/30 px-3 py-1 text-[11px] text-white/80 hover:bg-black/45"
+        title={themeName}
+      >
+        <span className="max-w-[240px] truncate">
+          {themeName} ({themeId})
+        </span>
+      </Link>
+      {onStar ? (
+        <button
+          type="button"
+          onClick={onStar}
+          className="rounded-full border border-white/10 bg-black/30 px-2 py-1 text-[11px] text-white/75 hover:bg-black/45"
+          title={starred ? "즐겨찾기 해제" : "즐겨찾기 추가"}
+        >
+          {starred ? "★" : "☆"}
+        </button>
+      ) : null}
+    </div>
+  );
+}
