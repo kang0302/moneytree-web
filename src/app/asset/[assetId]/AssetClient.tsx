@@ -11,8 +11,15 @@ import ForceGraphWrapper from "@/components/ForceGraphWrapper";
 import SearchBar from "@/components/SearchBar";
 import type { PeriodKey } from "@/lib/themeReturn";
 
-type ThemeRel = { themeId: string; themeName: string; relation: string };
+type ThemeRel = { themeId: string; themeName: string; relation: string; score7d?: number | null };
 type AssetRel = { assetId: string; name: string; relation: string; direction: "in" | "out"; themeId: string; themeName: string };
+type BriefingInfo = {
+  gFinanceUrl?: string | null;
+  coreBiz?: string;
+  ecosystem?: string;
+  driver?: string;
+  sourceTheme?: string;
+};
 
 type AssetEntry = {
   id: string;
@@ -24,10 +31,43 @@ type AssetEntry = {
   asset_type: string;
   themes: ThemeRel[];
   relatedAssets: AssetRel[];
+  info?: BriefingInfo;
 };
 
 const INDEX_URL_LOCAL = "/data/asset/index.json";
 const INDEX_URL_REMOTE = "https://raw.githubusercontent.com/kang0302/moneytree-web/main/public/data/asset/index.json";
+
+/** briefing 셀 — <br> 개행 + 들여쓰기 - 처리 */
+function BriefingCell({ title, body }: { title: string; body?: string }) {
+  if (!body) return null;
+  const lines = body.split(/<br\s*\/?>/i).map((s) => s.trim()).filter(Boolean);
+  return (
+    <div>
+      <div className="mb-0.5 text-[10px] font-semibold uppercase tracking-wider text-white/55">{title}</div>
+      <ul className="ml-1 list-disc space-y-0.5 pl-3 text-[11.5px] leading-relaxed text-white/80">
+        {lines.map((l, i) => (
+          <li key={i}>{l.replace(/^[-·]\s*/, "")}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+/** 7D EW 수익률 배지 — 양수=빨강, 음수=파랑, null=dash */
+function ScoreBadge({ value }: { value?: number | null }) {
+  if (value == null || !Number.isFinite(value)) {
+    return <span className="shrink-0 text-[10px] text-white/35">—</span>;
+  }
+  const up = value >= 0;
+  const cls = up ? "text-red-400" : "text-sky-400";
+  const sign = up ? "+" : "";
+  return (
+    <span className={`shrink-0 font-mono text-[10.5px] font-semibold tabular-nums ${cls}`}>
+      {sign}
+      {value.toFixed(2)}%
+    </span>
+  );
+}
 
 export default function AssetClient({ assetId }: { assetId: string }) {
   const router = useRouter();
@@ -179,7 +219,39 @@ export default function AssetClient({ assetId }: { assetId: string }) {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-3 lg:grid-cols-[1fr_280px]">
+        <div className="grid grid-cols-1 gap-3 lg:grid-cols-[260px_1fr_300px]">
+          {/* 좌측 — 회사 정보 (briefing 기반) */}
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 backdrop-blur">
+            <div className="mb-2 flex items-center justify-between">
+              <div className="text-[11px] uppercase tracking-wider text-white/45">회사 정보</div>
+              {entry.info?.gFinanceUrl ? (
+                <a
+                  href={entry.info.gFinanceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[11px] text-cyan-400 hover:underline"
+                  title="Google Finance"
+                >
+                  Google Finance ↗
+                </a>
+              ) : null}
+            </div>
+            {entry.info ? (
+              <div className="flex flex-col gap-3 text-[12px] text-white/85">
+                <BriefingCell title="핵심 사업" body={entry.info.coreBiz} />
+                <BriefingCell title="사업 생태계" body={entry.info.ecosystem} />
+                <BriefingCell title="주가 핵심 동인" body={entry.info.driver} />
+                {entry.info.sourceTheme ? (
+                  <div className="mt-1 text-[10px] text-white/35">
+                    출처: {entry.info.sourceTheme} briefing
+                  </div>
+                ) : null}
+              </div>
+            ) : (
+              <div className="text-[12px] text-white/55">briefing 정보 미연결.</div>
+            )}
+          </div>
+
           {/* 그래프 */}
           <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-2" style={{ minHeight: 560 }}>
             <ForceGraphWrapper
@@ -200,9 +272,9 @@ export default function AssetClient({ assetId }: { assetId: string }) {
             />
           </div>
 
-          {/* 사이드 — 관계별 테마 리스트 */}
+          {/* 우측 — 관계별 테마 + 점수 */}
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 backdrop-blur">
-            <div className="mb-2 text-[11px] uppercase tracking-wider text-white/45">테마 (관계별)</div>
+            <div className="mb-2 text-[11px] uppercase tracking-wider text-white/45">테마 (관계별 · 7D EW)</div>
             {entry.themes.length === 0 ? (
               <div className="text-[12px] text-white/55">아직 어떤 테마에도 속하지 않습니다.</div>
             ) : (
@@ -216,11 +288,14 @@ export default function AssetClient({ assetId }: { assetId: string }) {
                       <Link
                         key={t.themeId + rel}
                         href={`/graph/${t.themeId}`}
-                        className="rounded-md px-2 py-1.5 text-[12px] text-white/85 hover:bg-white/10 hover:text-white"
+                        className="flex items-center justify-between gap-2 rounded-md px-2 py-1.5 text-[12px] text-white/85 hover:bg-white/10 hover:text-white"
                         title={t.themeName}
                       >
-                        <span className="mr-1.5 font-mono text-[10px] text-white/45">{t.themeId}</span>
-                        {t.themeName}
+                        <span className="min-w-0 flex-1 truncate">
+                          <span className="mr-1.5 font-mono text-[10px] text-white/45">{t.themeId}</span>
+                          {t.themeName}
+                        </span>
+                        <ScoreBadge value={t.score7d} />
                       </Link>
                     ))}
                   </div>

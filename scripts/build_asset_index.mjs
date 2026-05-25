@@ -38,6 +38,7 @@ function pickExistingDir(...candidates) {
 
 const THEME_DIR = pickExistingDir(path.join(PUBLIC_DATA, "theme"), path.join(LEGACY_DATA, "theme"));
 const SSOT_DIR = pickExistingDir(path.join(PUBLIC_DATA, "ssot"), path.join(LEGACY_DATA, "ssot"));
+const BRIEFING_DIR = pickExistingDir(path.join(PUBLIC_DATA, "briefing"), path.join(LEGACY_DATA, "briefing"));
 const OUT_FILE = path.join(PUBLIC_DATA, "asset", "index.json");
 
 // 자산-테마 관계로 분류할 type (자산 → 테마 또는 테마 → 자산 어디든)
@@ -100,10 +101,68 @@ function loadThemeFiles() {
   return themes;
 }
 
+/** 테마별 EW 7D 수익률 (asset 평균) 계산. null 인 자산은 제외. */
+function computeThemeScore7d(theme) {
+  const rets = [];
+  for (const n of theme?.nodes ?? []) {
+    if (n?.type !== "ASSET") continue;
+    const v = n?.metrics?.return_7d;
+    if (Number.isFinite(v)) rets.push(v);
+  }
+  if (!rets.length) return null;
+  return rets.reduce((a, b) => a + b, 0) / rets.length;
+}
+
+/** briefing MD 표 파싱 — ticker 기준 자산별 4컬럼 정보 추출.
+ *  각 ticker 가 여러 briefing 에 등장하면 첫 발견 사용. */
+function loadBriefingInfo() {
+  const result = new Map(); // ticker → { gFinanceUrl, coreBiz, ecosystem, driver, sourceTheme }
+  if (!fs.existsSync(BRIEFING_DIR)) {
+    console.warn(`⚠️  briefing dir not found: ${BRIEFING_DIR}`);
+    return result;
+  }
+  const files = fs.readdirSync(BRIEFING_DIR).filter((f) => /^T_\d+\.md$/.test(f));
+  const TICKER_RE = /\(([A-Za-z][A-Za-z0-9.]*|\d{3,7})(?:\s+[A-Z]+)*\)/;
+  const URL_RE = /\((https?:\/\/[^)]+)\)/;
+  for (const f of files) {
+    const themeId = f.replace(/\.md$/, "");
+    const md = fs.readFileSync(path.join(BRIEFING_DIR, f), "utf-8");
+    for (const line of md.split(/\r?\n/)) {
+      if (!line.startsWith("|")) continue;
+      if (/^\|\s*-+\s*\|/.test(line)) continue; // separator
+      // |.*|.*|.*|.*| 형태 (4 컬럼)
+      const cells = line.split("|").map((c) => c.trim());
+      if (cells.length < 5) continue; // [empty, c1, c2, c3, c4, empty]
+      const nameCell = cells[1];
+      if (!nameCell || /^\s*종목\s*$/.test(nameCell)) continue; // header
+      const tm = nameCell.match(TICKER_RE);
+      if (!tm) continue;
+      const ticker = tm[1];
+      if (result.has(ticker)) continue; // 첫 발견 사용
+      const urlM = nameCell.match(URL_RE);
+      result.set(ticker, {
+        gFinanceUrl: urlM ? urlM[1] : null,
+        coreBiz: cells[2] || "",
+        ecosystem: cells[3] || "",
+        driver: cells[4] || "",
+        sourceTheme: themeId,
+      });
+    }
+  }
+  return result;
+}
+
 function main() {
   const ssot = loadAssetSsot();
   const themes = loadThemeFiles();
-  console.log(`Loaded: ${ssot.size} assets in SSOT, ${themes.length} theme files`);
+  const briefingByTicker = loadBriefingInfo();
+  console.log(`Loaded: ${ssot.size} assets in SSOT, ${themes.length} theme files, ${briefingByTicker.size} ticker→briefing entries`);
+
+  // 테마별 점수 (EW 7D)
+  const themeScore7d = new Map();
+  for (const t of themes) {
+    if (t?.themeId) themeScore7d.set(t.themeId, computeThemeScore7d(t));
+  }
 
   // 자산별 집계 결과
   const index = new Map(); // assetId → entry
@@ -147,7 +206,12 @@ function main() {
         if (assetId) {
           const entry = ensureEntry(assetId);
           if (!entry.themes.some((x) => x.themeId === themeId && x.relation === type)) {
-            entry.themes.push({ themeId, themeName, relation: type });
+            entry.themes.push({
+              themeId,
+              themeName,
+              relation: type,
+              score7d: themeScore7d.get(themeId) ?? null,
+            });
           }
         }
       }
@@ -195,13 +259,23 @@ function main() {
   for (const [aid, entry] of index.entries()) {
     if (!out[aid]) out[aid] = entry;
   }
+  // briefing info 매칭 — ticker 기준
+  let infoMatched = 0;
+  for (const entry of Object.values(out)) {
+    if (!entry.ticker) continue;
+    const info = briefingByTicker.get(entry.ticker);
+    if (info) {
+      entry.info = info;
+      infoMatched++;
+    }
+  }
 
   // 통계
   const totalAssets = Object.keys(out).length;
   const assetsWithThemes = Object.values(out).filter((e) => e.themes.length > 0).length;
   const maxThemes = Math.max(...Object.values(out).map((e) => e.themes.length));
   const totalEdges = Object.values(out).reduce((s, e) => s + e.themes.length + e.relatedAssets.length, 0);
-  console.log(`Asset index: ${totalAssets} assets, ${assetsWithThemes} with at least 1 theme, max themes per asset = ${maxThemes}, total edges = ${totalEdges}`);
+  console.log(`Asset index: ${totalAssets} assets, ${assetsWithThemes} with at least 1 theme, max themes per asset = ${maxThemes}, total edges = ${totalEdges}, ${infoMatched} with briefing info`);
 
   // top 10 다중 노출 자산 — 검증용
   const top = Object.values(out)
