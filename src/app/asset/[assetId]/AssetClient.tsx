@@ -178,7 +178,7 @@ export default function AssetClient({ assetId }: { assetId: string }) {
           <Link href="/" className="text-[12px] text-white/55 hover:text-white">
             ← Home
           </Link>
-          <div className="flex-1 min-w-[200px]">
+          <div className="flex-1 min-w-50">
             <SearchBar
               indexUrl="/data/search/search_index.json"
               onGoTheme={(tid) => router.push(`/graph/${tid}`)}
@@ -192,7 +192,7 @@ export default function AssetClient({ assetId }: { assetId: string }) {
         </div>
 
         {/* 자산 정보 */}
-        <div className="mb-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 backdrop-blur">
+        <div className="mb-3 rounded-2xl border border-white/10 bg-white/3 px-4 py-3 backdrop-blur">
           <div className="text-[11px] uppercase tracking-wider text-white/45">ASSET</div>
           <div className="mt-1 flex flex-wrap items-baseline gap-x-3 gap-y-1">
             <div className="text-[20px] font-bold">{entry.name}</div>
@@ -247,7 +247,7 @@ export default function AssetClient({ assetId }: { assetId: string }) {
 
         <div className="grid grid-cols-1 gap-3 lg:grid-cols-[260px_1fr_300px]">
           {/* 좌측 — 회사 정보 (briefing 기반) */}
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 backdrop-blur">
+          <div className="rounded-2xl border border-white/10 bg-white/3 px-4 py-3 backdrop-blur">
             <div className="mb-2 flex items-center justify-between">
               <div className="text-[11px] uppercase tracking-wider text-white/45">회사 정보</div>
               {entry.info?.gFinanceUrl ? (
@@ -279,7 +279,7 @@ export default function AssetClient({ assetId }: { assetId: string }) {
           </div>
 
           {/* 그래프 */}
-          <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-2" style={{ minHeight: 560 }}>
+          <div className="rounded-2xl border border-white/10 bg-white/2 p-2" style={{ minHeight: 560 }}>
             <ForceGraphWrapper
               themeId={entry.id}
               themeName={entry.name}
@@ -300,7 +300,7 @@ export default function AssetClient({ assetId }: { assetId: string }) {
           </div>
 
           {/* 우측 — 관계별 테마 + 점수 */}
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 backdrop-blur">
+          <div className="rounded-2xl border border-white/10 bg-white/3 px-4 py-3 backdrop-blur">
             <div className="mb-2 text-[11px] uppercase tracking-wider text-white/45">테마 (관계별 · 7D EW)</div>
             {entry.themes.length === 0 ? (
               <div className="text-[12px] text-white/55">아직 어떤 테마에도 속하지 않습니다.</div>
