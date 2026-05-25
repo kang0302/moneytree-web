@@ -74,6 +74,8 @@ export default function AssetClient({ assetId }: { assetId: string }) {
   const [data, setData] = useState<Record<string, AssetEntry> | null>(null);
   const [period, setPeriod] = useState<PeriodKey>("7D");
   const [showRelated, setShowRelated] = useState(false);
+  const [showAllThemes, setShowAllThemes] = useState(false);
+  const THEME_LIMIT = 8;
 
   useEffect(() => {
     let cancelled = false;
@@ -117,8 +119,9 @@ export default function AssetClient({ assetId }: { assetId: string }) {
       },
     });
 
-    // 2) 테마 노드 + 자산→테마 엣지
-    for (const t of entry.themes) {
+    // 2) 테마 노드 + 자산→테마 엣지 (default: 첫 THEME_LIMIT 개만, 토글 시 전체)
+    const themesToRender = showAllThemes ? entry.themes : entry.themes.slice(0, THEME_LIMIT);
+    for (const t of themesToRender) {
       nodes.push({ id: t.themeId, type: "THEME", name: t.themeName });
       edges.push({ from: entry.id, to: t.themeId, type: t.relation });
     }
@@ -138,7 +141,7 @@ export default function AssetClient({ assetId }: { assetId: string }) {
     }
 
     return { nodes, edges };
-  }, [entry, showRelated]);
+  }, [entry, showRelated, showAllThemes]);
 
   // grouped themes by relation type (사이드 패널용)
   const themesByRel = useMemo(() => {
@@ -207,15 +210,28 @@ export default function AssetClient({ assetId }: { assetId: string }) {
             <span>
               관련 자산: <span className="font-semibold text-white">{entry.relatedAssets.length}</span>
             </span>
-            <label className="ml-auto flex cursor-pointer items-center gap-1.5 text-[12px] text-white/65">
-              <input
-                type="checkbox"
-                checked={showRelated}
-                onChange={(e) => setShowRelated(e.target.checked)}
-                className="cursor-pointer"
-              />
-              관련 자산 함께 보기 (2궤도)
-            </label>
+            <div className="ml-auto flex flex-wrap items-center gap-3">
+              {entry.themes.length > THEME_LIMIT ? (
+                <label className="flex cursor-pointer items-center gap-1.5 text-[12px] text-white/65">
+                  <input
+                    type="checkbox"
+                    checked={showAllThemes}
+                    onChange={(e) => setShowAllThemes(e.target.checked)}
+                    className="cursor-pointer"
+                  />
+                  전체 테마 보기 ({entry.themes.length})
+                </label>
+              ) : null}
+              <label className="flex cursor-pointer items-center gap-1.5 text-[12px] text-white/65">
+                <input
+                  type="checkbox"
+                  checked={showRelated}
+                  onChange={(e) => setShowRelated(e.target.checked)}
+                  className="cursor-pointer"
+                />
+                관련 자산 함께 보기 (2궤도)
+              </label>
+            </div>
           </div>
         </div>
 
