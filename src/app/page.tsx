@@ -262,7 +262,7 @@ export default function HomePage() {
           <div className="mt-2 text-[12px] text-white/55 sm:text-[14px]">
             종목 · 티커 · 테마 · 산업 · 매크로 — 한 번에 검색
           </div>
-          <div className="mx-auto mt-6 w-full max-w-2xl rounded-2xl border border-white/15 bg-black/55 p-2 shadow-[0_8px_40px_rgba(0,0,0,0.5)] backdrop-blur-md">
+          <div className="relative z-50 mx-auto mt-6 w-full max-w-2xl rounded-2xl border border-white/15 bg-black/55 p-2 shadow-[0_8px_40px_rgba(0,0,0,0.5)] backdrop-blur-md">
             <SearchBar
               indexUrl="/data/search/search_index.json"
               onGoTheme={(tid) => router.push(`/graph/${tid}`)}
