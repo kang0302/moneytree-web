@@ -3,13 +3,14 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { loadSearchIndex, searchByKeyword, SearchIndexV3 } from "@/lib/searchIndex";
 
-type Tab = "ASSET" | "THEME" | "BUSINESS_FIELD" | "MACRO";
+type Tab = "ASSET" | "THEME" | "BUSINESS_FIELD" | "MACRO" | "CHARACTER";
 
 const TYPE_LABEL: Record<Tab, string> = {
   ASSET: "ASSET",
   THEME: "THEME",
   BUSINESS_FIELD: "BF",
   MACRO: "MACRO",
+  CHARACTER: "CHAR",
 };
 
 const TYPE_COLOR: Record<Tab, string> = {
@@ -17,16 +18,19 @@ const TYPE_COLOR: Record<Tab, string> = {
   THEME: "#f59e0b",
   BUSINESS_FIELD: "#a78bfa",
   MACRO: "#34d399",
+  CHARACTER: "#f472b6",
 };
 
 export default function SearchBar({
   indexUrl, // 🔸 들어와도 무시(안전 고정)
   onGoTheme,
   onGoThemeFocus,
+  onGoAsset,
 }: {
   indexUrl: string;
   onGoTheme: (themeId: string) => void;
   onGoThemeFocus?: (themeId: string, focusId: string) => void;
+  onGoAsset?: (assetId: string) => void;
 }) {
   const [idx, setIdx] = useState<SearchIndexV3 | null>(null);
   const [kw, setKw] = useState("");
@@ -50,7 +54,7 @@ export default function SearchBar({
   }, [safeIndexUrl]);
 
   const result = useMemo(() => {
-    if (!idx) return { assets: [], themes: [], businessFields: [], macros: [] };
+    if (!idx) return { assets: [], themes: [], businessFields: [], macros: [], characters: [] };
     return searchByKeyword(idx, kw);
   }, [idx, kw]);
 
@@ -61,7 +65,9 @@ export default function SearchBar({
       ? result.themes
       : tab === "BUSINESS_FIELD"
       ? result.businessFields
-      : result.macros;
+      : tab === "MACRO"
+      ? result.macros
+      : (result.characters ?? []);
 
   const TypeBadge = ({ t }: { t: Tab }) => (
     <span
@@ -113,19 +119,28 @@ export default function SearchBar({
         <button
           type="button"
           onClick={() => {
+            // ASSET tab: 자산 중심 그래프 (/asset/[assetId]) 로 이동 — onGoAsset 제공 시
+            if (tab === "ASSET" && onGoAsset) {
+              onGoAsset(item.id);
+              setOpen(false);
+              return;
+            }
+
             const ids = item.themes ?? [];
             if (!ids.length) return;
             const tid = String(ids[0]).trim();
             if (!tid) return;
 
-            if (tab === "ASSET" && onGoThemeFocus) onGoThemeFocus(tid, item.id);
+            if ((tab === "ASSET" || tab === "CHARACTER") && onGoThemeFocus) onGoThemeFocus(tid, item.id);
             else onGoTheme(tid);
 
             setOpen(false);
           }}
-          style={{ ...nameBtnStyle, cursor: clickable ? "pointer" : "default" }}
+          style={{ ...nameBtnStyle, cursor: clickable || (tab === "ASSET" && onGoAsset) ? "pointer" : "default" }}
           title={
-            tab === "ASSET"
+            tab === "ASSET" && onGoAsset
+              ? "자산 중심 그래프로 이동"
+              : tab === "ASSET"
               ? "첫 번째 연결 테마로 이동 (focus)"
               : themeIds.length > 0
               ? "첫 번째 연결 테마로 이동"
@@ -147,10 +162,14 @@ export default function SearchBar({
           <div style={subStyle}>
             {item.id} · themes {themeIds.length} · assets {item.assets?.length ?? 0}
           </div>
-        ) : (
+        ) : tab === "MACRO" ? (
           <div style={subStyle}>
             {item.id} · type {(item.macro_type || "-").toString()} · themes {themeIds.length} · assets{" "}
             {item.assets?.length ?? 0}
+          </div>
+        ) : (
+          <div style={subStyle}>
+            {item.id} · themes {themeIds.length} · assets {item.assets?.length ?? 0}
           </div>
         )}
 
@@ -161,7 +180,7 @@ export default function SearchBar({
                 key={t}
                 onClick={() => {
                   setOpen(false);
-                  if (tab === "ASSET" && onGoThemeFocus) onGoThemeFocus(t, item.id);
+                  if ((tab === "ASSET" || tab === "CHARACTER") && onGoThemeFocus) onGoThemeFocus(t, item.id);
                   else onGoTheme(t);
                 }}
                 style={chipBtnStyle}
@@ -206,6 +225,13 @@ export default function SearchBar({
           </button>
           <button type="button" onClick={() => setTab("MACRO")} style={tab === "MACRO" ? tabOnStyle : tabOffStyle}>
             MACRO
+          </button>
+          <button
+            type="button"
+            onClick={() => setTab("CHARACTER")}
+            style={tab === "CHARACTER" ? tabOnStyle : tabOffStyle}
+          >
+            CHAR
           </button>
         </div>
       </div>

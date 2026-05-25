@@ -734,6 +734,7 @@ export default function GraphClient({
             indexUrl={SEARCH_INDEX_URL}
             onGoTheme={(tid) => router.push(`/graph/${tid}`)}
             onGoThemeFocus={(tid, fid) => router.push(`/graph/${tid}?focus=${encodeURIComponent(fid)}`)}
+            onGoAsset={(aid) => router.push(`/asset/${aid}`)}
           />
         </div>
 

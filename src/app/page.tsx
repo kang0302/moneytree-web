@@ -267,6 +267,7 @@ export default function HomePage() {
               indexUrl="/data/search/search_index.json"
               onGoTheme={(tid) => router.push(`/graph/${tid}`)}
               onGoThemeFocus={(tid, fid) => router.push(`/graph/${tid}?focus=${encodeURIComponent(fid)}`)}
+              onGoAsset={(aid) => router.push(`/asset/${aid}`)}
             />
           </div>
         </section>

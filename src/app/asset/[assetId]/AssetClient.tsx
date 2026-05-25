@@ -1,0 +1,235 @@
+"use client";
+
+// src/app/asset/[assetId]/AssetClient.tsx
+// 자산 중심 그래프 — public/data/asset/index.json 에서 entry fetch → 자산 + 연결 테마들 ForceGraph 시각화.
+
+import React, { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+
+import ForceGraphWrapper from "@/components/ForceGraphWrapper";
+import SearchBar from "@/components/SearchBar";
+import type { PeriodKey } from "@/lib/themeReturn";
+
+type ThemeRel = { themeId: string; themeName: string; relation: string };
+type AssetRel = { assetId: string; name: string; relation: string; direction: "in" | "out"; themeId: string; themeName: string };
+
+type AssetEntry = {
+  id: string;
+  name: string;
+  name_en?: string;
+  ticker: string;
+  exchange: string;
+  country: string;
+  asset_type: string;
+  themes: ThemeRel[];
+  relatedAssets: AssetRel[];
+};
+
+const INDEX_URL_LOCAL = "/data/asset/index.json";
+const INDEX_URL_REMOTE = "https://raw.githubusercontent.com/kang0302/moneytree-web/main/public/data/asset/index.json";
+
+export default function AssetClient({ assetId }: { assetId: string }) {
+  const router = useRouter();
+  const [data, setData] = useState<Record<string, AssetEntry> | null>(null);
+  const [period, setPeriod] = useState<PeriodKey>("7D");
+  const [showRelated, setShowRelated] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        let res = await fetch(INDEX_URL_LOCAL, { cache: "no-store" });
+        if (!res.ok) res = await fetch(INDEX_URL_REMOTE, { cache: "no-store" });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const j = await res.json();
+        if (!cancelled) setData(j);
+      } catch (e) {
+        console.error("asset index fetch failed", e);
+        if (!cancelled) setData({});
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const entry: AssetEntry | null = useMemo(() => {
+    if (!data) return null;
+    return data[assetId] ?? null;
+  }, [data, assetId]);
+
+  // ForceGraph 입력용 nodes/edges 구성
+  const { nodes, edges } = useMemo(() => {
+    if (!entry) return { nodes: [], edges: [] };
+    const nodes: any[] = [];
+    const edges: any[] = [];
+
+    // 1) 중심 자산 노드
+    nodes.push({
+      id: entry.id,
+      type: "ASSET",
+      name: entry.name,
+      exposure: {
+        ticker: entry.ticker,
+        exchange: entry.exchange,
+        country: entry.country,
+      },
+    });
+
+    // 2) 테마 노드 + 자산→테마 엣지
+    for (const t of entry.themes) {
+      nodes.push({ id: t.themeId, type: "THEME", name: t.themeName });
+      edges.push({ from: entry.id, to: t.themeId, type: t.relation });
+    }
+
+    // 3) (옵션) 관련 자산 노드 + 자산간 엣지
+    if (showRelated) {
+      const seenAssets = new Set<string>([entry.id]);
+      for (const r of entry.relatedAssets) {
+        if (!seenAssets.has(r.assetId)) {
+          nodes.push({ id: r.assetId, type: "ASSET", name: r.name });
+          seenAssets.add(r.assetId);
+        }
+        const from = r.direction === "out" ? entry.id : r.assetId;
+        const to = r.direction === "out" ? r.assetId : entry.id;
+        edges.push({ from, to, type: r.relation });
+      }
+    }
+
+    return { nodes, edges };
+  }, [entry, showRelated]);
+
+  // grouped themes by relation type (사이드 패널용)
+  const themesByRel = useMemo(() => {
+    if (!entry) return {} as Record<string, ThemeRel[]>;
+    const m: Record<string, ThemeRel[]> = {};
+    for (const t of entry.themes) {
+      (m[t.relation] ??= []).push(t);
+    }
+    return m;
+  }, [entry]);
+
+  if (!data) {
+    return <div className="p-6 text-white/70">자산 인덱스 로딩 중…</div>;
+  }
+  if (!entry) {
+    return (
+      <div className="p-6 text-white/70">
+        자산을 찾을 수 없습니다: <span className="font-mono">{assetId}</span>
+        <div className="mt-4">
+          <Link href="/" className="text-cyan-400 underline">
+            홈으로
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-black text-white">
+      <div className="mx-auto max-w-7xl px-4 py-4">
+        {/* 헤더 */}
+        <div className="mb-3 flex flex-wrap items-center gap-3">
+          <Link href="/" className="text-[12px] text-white/55 hover:text-white">
+            ← Home
+          </Link>
+          <div className="flex-1 min-w-[200px]">
+            <SearchBar
+              indexUrl="/data/search/search_index.json"
+              onGoTheme={(tid) => router.push(`/graph/${tid}`)}
+              onGoThemeFocus={(tid, fid) => router.push(`/graph/${tid}?focus=${encodeURIComponent(fid)}`)}
+              onGoAsset={(aid) => router.push(`/asset/${aid}`)}
+            />
+          </div>
+          <Link href="/themes" className="text-[12px] text-white/55 hover:text-white">
+            Full Theme Map ↗
+          </Link>
+        </div>
+
+        {/* 자산 정보 */}
+        <div className="mb-3 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 backdrop-blur">
+          <div className="text-[11px] uppercase tracking-wider text-white/45">ASSET</div>
+          <div className="mt-1 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <div className="text-[20px] font-bold">{entry.name}</div>
+            <div className="text-[13px] text-white/55">
+              {entry.id}
+              {entry.ticker ? ` · ${entry.ticker}` : ""}
+              {entry.exchange ? ` · ${entry.exchange}` : ""}
+              {entry.country ? ` (${entry.country})` : ""}
+              {entry.asset_type ? ` · ${entry.asset_type}` : ""}
+            </div>
+          </div>
+          <div className="mt-2 flex flex-wrap items-center gap-3 text-[12px] text-white/65">
+            <span>
+              연결 테마: <span className="font-semibold text-white">{entry.themes.length}</span>
+            </span>
+            <span>
+              관련 자산: <span className="font-semibold text-white">{entry.relatedAssets.length}</span>
+            </span>
+            <label className="ml-auto flex cursor-pointer items-center gap-1.5 text-[12px] text-white/65">
+              <input
+                type="checkbox"
+                checked={showRelated}
+                onChange={(e) => setShowRelated(e.target.checked)}
+                className="cursor-pointer"
+              />
+              관련 자산 함께 보기 (2궤도)
+            </label>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-3 lg:grid-cols-[1fr_280px]">
+          {/* 그래프 */}
+          <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-2" style={{ minHeight: 560 }}>
+            <ForceGraphWrapper
+              themeId={entry.id}
+              themeName={entry.name}
+              nodes={nodes as any}
+              edges={edges as any}
+              period={period}
+              onChangePeriod={setPeriod}
+              onSelectNode={(n) => {
+                if (!n) return;
+                if (n.type === "THEME") router.push(`/graph/${n.id}`);
+                else if (n.type === "ASSET" && n.id !== entry.id) router.push(`/asset/${n.id}`);
+              }}
+              showPeriodButtons={false}
+              showOverlayControls={false}
+              themeDescription={`${entry.name} 가 속한 테마 ${entry.themes.length}개 · 관련 자산 ${entry.relatedAssets.length}개`}
+            />
+          </div>
+
+          {/* 사이드 — 관계별 테마 리스트 */}
+          <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 backdrop-blur">
+            <div className="mb-2 text-[11px] uppercase tracking-wider text-white/45">테마 (관계별)</div>
+            {entry.themes.length === 0 ? (
+              <div className="text-[12px] text-white/55">아직 어떤 테마에도 속하지 않습니다.</div>
+            ) : (
+              Object.entries(themesByRel).map(([rel, list]) => (
+                <div key={rel} className="mb-3 last:mb-0">
+                  <div className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-cyan-400/80">
+                    {rel} · {list.length}
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    {list.map((t) => (
+                      <Link
+                        key={t.themeId + rel}
+                        href={`/graph/${t.themeId}`}
+                        className="rounded-md px-2 py-1.5 text-[12px] text-white/85 hover:bg-white/10 hover:text-white"
+                        title={t.themeName}
+                      >
+                        <span className="mr-1.5 font-mono text-[10px] text-white/45">{t.themeId}</span>
+                        {t.themeName}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
