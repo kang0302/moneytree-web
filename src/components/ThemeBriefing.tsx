@@ -56,10 +56,11 @@ function extractText(node: any): string {
   return "";
 }
 
-/** "[Name (TICKER)](url)" / "(062040)" / "(0027)" / "(RR.)" 등에서 티커 추출.
- *  비상장 "(비)"는 한글이라 매칭 안 됨 → null 반환 → 수익률 dash. */
+/** "[Name (TICKER)](url)" / "(062040)" / "(0027)" / "(RR.)" / "(008370 KOSPI)" / "(NVDA US)" / "(ADDYY OTC US)" 등에서 티커 추출.
+ *  비상장 "(비)"는 한글이라 매칭 안 됨 → null 반환 → 수익률 dash.
+ *  ticker 뒤 공백+대문자 단어(거래소·국가 표기)는 옵셔널 — 표준 형식 + 레거시 형식 모두 수용. */
 function extractTickerFromCell(text: string): string | null {
-  const m = text.match(/\(([A-Za-z][A-Za-z0-9.]*|\d{3,7})\)/);
+  const m = text.match(/\(([A-Za-z][A-Za-z0-9.]*|\d{3,7})(?:\s+[A-Z]+)*\)/);
   return m ? m[1] : null;
 }
 
