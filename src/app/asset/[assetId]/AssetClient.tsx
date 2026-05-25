@@ -75,6 +75,7 @@ export default function AssetClient({ assetId }: { assetId: string }) {
   const [period, setPeriod] = useState<PeriodKey>("7D");
   const [showRelated, setShowRelated] = useState(false);
   const [showAllThemes, setShowAllThemes] = useState(false);
+  const [colorByReturn, setColorByReturn] = useState(false);
   const THEME_LIMIT = 8;
 
   useEffect(() => {
@@ -231,6 +232,15 @@ export default function AssetClient({ assetId }: { assetId: string }) {
                 />
                 관련 자산 함께 보기 (2궤도)
               </label>
+              <label className="flex cursor-pointer items-center gap-1.5 text-[12px] text-white/65">
+                <input
+                  type="checkbox"
+                  checked={colorByReturn}
+                  onChange={(e) => setColorByReturn(e.target.checked)}
+                  className="cursor-pointer"
+                />
+                자산 수익률 색 표시
+              </label>
             </div>
           </div>
         </div>
@@ -285,6 +295,7 @@ export default function AssetClient({ assetId }: { assetId: string }) {
               showPeriodButtons={false}
               showOverlayControls={false}
               themeDescription={`${entry.name} 가 속한 테마 ${entry.themes.length}개 · 관련 자산 ${entry.relatedAssets.length}개`}
+              assetColorMode={colorByReturn ? "return" : "type"}
             />
           </div>
 

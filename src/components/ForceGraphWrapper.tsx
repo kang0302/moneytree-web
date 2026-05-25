@@ -132,6 +132,10 @@ type Props = {
 
   // ✅ THEME hover 박스에 표시할 테마 설명 (meta.notes 기반). 비어 있으면 설명 영역 미표시.
   themeDescription?: string;
+
+  // ✅ ASSET 노드 색상 결정 모드 (default "return": 수익률 색깔, "type": 타입 base 색).
+  //    asset view (/asset/[assetId]) 에서 metrics 없는 노드들이 모두 회색으로 보이는 문제 해결용.
+  assetColorMode?: "return" | "type";
 };
 
 // ─────────────────────────────────────────────
@@ -180,7 +184,7 @@ const GRAPH_CONFIG = {
   // L1 (12시 sector) 은 1궤도만 차지하고 L2/L3 (6시 sector) 는 다궤도라
   // 정중앙이면 아래쪽이 잘림 → 중심을 위로 올려 아래 공간 확보 (2026-05-19 사용자 결정).
   center: {
-    yRatio: 0.38,
+    yRatio: 0.28,
   },
 } as const;
 
@@ -435,11 +439,14 @@ function colorFromReturn(r?: number) {
 }
 
 function nodeBaseColor(n: NodeT, isTheme: boolean) {
-  if (isTheme) return "#F2C94C";          // theme: yellow
+  if (isTheme) return "#F2C94C";          // theme(main): yellow
   const t = normType(n.type);
+  if (t === "THEME") return "#F2C94C";    // theme(non-main, e.g. asset view 의 주변 테마들): yellow
+  if (t === "ASSET") return "#22d3ee";    // asset: cyan (base — return color 가 override 안 할 때)
   if (t === "FIELD") return "#D946EF";    // BF: magenta
-  if (t === "MACRO") return "#FB923C";    // macro: orange (BF/character와 모두 구분)
-  return "#9CA3AF";                       // character/기타: gray
+  if (t === "MACRO") return "#FB923C";    // macro: orange
+  if (t === "CHARACTER") return "#f472b6"; // character: pink
+  return "#9CA3AF";                       // 기타: gray
 }
 
 function pickEdgeEndpoints(e: EdgeT): { s?: string; t?: string } {
@@ -483,6 +490,7 @@ export default function ForceGraphWrapper({
   focusId,
   themeReturn,
   themeDescription,
+  assetColorMode = "return",
 }: Props) {
   const fgRef = useRef<any>(null);
   const wrapRef = useRef<HTMLDivElement | null>(null);
@@ -1326,6 +1334,49 @@ export default function ForceGraphWrapper({
       });
     }
 
+    // 🎯 동적 L1 반경 조정 — L2 자산이 많은 L3 자식 (IN_ETF 등) 또는 L3 radius 자체 push 가
+    //    크면 L1 도 비례 외부로 push 해 상하 균형 회복 (예: T_003 SoftBank 처럼 L2 1 개에
+    //    L3 7 개 매달리는 케이스).
+    {
+      let maxL3GroupSize = 0;
+      for (const [, group] of l3AssetGroupByNb) {
+        if (group.length > maxL3GroupSize) maxL3GroupSize = group.length;
+      }
+      let maxL3Radius = GRAPH_CONFIG.orbitRadius.l3; // default 400
+      for (const n of l3Assets) {
+        const r = (n as any).__layoutRadius;
+        if (typeof r === "number" && r > maxL3Radius) maxL3Radius = r;
+      }
+
+      // signal A: L3 group size — 3 children=0.17, 9+=1.0
+      const sizeFactor = maxL3GroupSize >= 3
+        ? Math.min(1, (maxL3GroupSize - 2) / 6)
+        : 0;
+      // signal B: L3 radius push — l3 default 400 → max L3_ASSET_MAX_RADIUS 720
+      const radiusFactor = maxL3Radius > GRAPH_CONFIG.orbitRadius.l3
+        ? Math.min(1, (maxL3Radius - GRAPH_CONFIG.orbitRadius.l3) /
+            (L3_ASSET_MAX_RADIUS - GRAPH_CONFIG.orbitRadius.l3))
+        : 0;
+      const factor = Math.max(sizeFactor, radiusFactor);
+
+      if (factor > 0) {
+        // L1 radius 를 l1(200) → l2(300) 사이 full range scale (최대 newL1 = 300)
+        const baseL1 = GRAPH_CONFIG.orbitRadius.l1;
+        const newL1 = baseL1 + (GRAPH_CONFIG.orbitRadius.l2 - baseL1) * factor;
+        for (const n of ns) {
+          if (n.id === theme.id) continue;
+          if (!layerInfo.layer1.has(n.id)) continue;
+          const cur = (n as any).__layoutRadius ?? baseL1;
+          const scale = newL1 / cur;
+          if (typeof n.x === "number" && typeof n.y === "number") {
+            n.x = cx + (n.x - cx) * scale;
+            n.y = cy + (n.y - cy) * scale;
+          }
+          (n as any).__layoutRadius = newL1;
+        }
+      }
+    }
+
     if (fgRef.current) {
       fgRef.current.d3ReheatSimulation();
       setTimeout(() => {
@@ -1398,11 +1449,16 @@ export default function ForceGraphWrapper({
     );
 
     // 🧭 forceY: L1은 위(궤도 반경만큼), L2는 아래로 부드럽게.
+    //    ✅ dynamic L1 반경 (__layoutRadius) 가 박혀 있으면 그 값 사용 — 그렇지 않으면
+    //       L1 노드가 항상 같은 y 위치로 끌려가 dynamic radius 가 무효화됨.
     fg.d3Force(
       "ySector",
       forceY((n: any) => {
         const id = n?.id as string | undefined;
-        if (id && layerInfo.layer1.has(id)) return cy - GRAPH_CONFIG.orbitRadius.l1 * 0.6;
+        if (id && layerInfo.layer1.has(id)) {
+          const r = (n as any).__layoutRadius ?? GRAPH_CONFIG.orbitRadius.l1;
+          return cy - r * 0.6;
+        }
         if (id && layerInfo.layer2.has(id)) return cy + GRAPH_CONFIG.orbitRadius.l2 * 0.2;
         return cy;
       }).strength((n: any) => {
@@ -1449,6 +1505,9 @@ export default function ForceGraphWrapper({
       }
       const sType = endpointType(l.source);
       const tType = endpointType(l.target);
+      // ✅ 2026-05-22 재조정: L2 가 많아 멀리 밀려날 때 L1 macro 가 너무 가까이 붙어 보임 →
+      //    theme↔macro 도 일반 macro boost (1.32) 그대로 적용. L1 distance ≈ 264 으로 L2 base 300 과 비율 맞춤.
+      //    이전 (2026-05-21) × 2/3 단축은 L2 sparse 케이스에 한정해 적합 → 일관성 위해 revert.
       if (sType === "MACRO" || tType === "MACRO") dist *= MACRO_DISTANCE_BOOST;
       else if (sType === "FIELD" || tType === "FIELD") dist *= BF_DISTANCE_BOOST;
       return dist;
@@ -1629,7 +1688,7 @@ export default function ForceGraphWrapper({
     const t = normType(node.type);
     let fill = nodeBaseColor(node, isTheme);
 
-    if (t === "ASSET") {
+    if (t === "ASSET" && assetColorMode === "return") {
       const rr = getReturnByPeriod(node, period);
       fill = colorFromReturn(rr);
     }
