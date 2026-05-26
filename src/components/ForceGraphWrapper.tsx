@@ -286,7 +286,9 @@ function pickNum(v: any): number | undefined {
 }
 
 function normalizePct(v: number) {
-  return Math.abs(v) <= 1.5 ? v * 100 : v;
+  // heuristic 제거 (2026-05-26): 원천 데이터를 % 단위로 신뢰.
+  // 이전 `|v| ≤ 1.5 면 ×100` 는 정상 작은 변동(-0.51%·+0.64%)을 -51%·+64% 로 둔갑시키던 bug 원인.
+  return v;
 }
 
 function getReturnByPeriod(n: NodeT, p: PeriodKey): number | undefined {

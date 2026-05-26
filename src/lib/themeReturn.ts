@@ -97,9 +97,11 @@ export function normalizePeriodKey(p: unknown): PeriodKey | null {
 }
 
 /**
- * ✅ return 값을 "퍼센트 포인트"로 정규화
+ * ✅ return 값을 "퍼센트 포인트"로 정규화 — 원천 데이터를 % 단위로 신뢰.
  * - 숫자/문자열 모두 허용
- * - 0.0321 같은 소수 수익률이면 3.21로 자동 변환(가정: |v|<=1이면 소수일 가능성 높음)
+ * - heuristic 제거 (2026-05-26): 이전엔 |v|≤1 이면 자동 ×100 했으나,
+ *   정상 작은 변동(-0.5%·+0.6%)을 소수로 오인하여 -50%·+60% 같은 비정상 값으로 둔갑하던
+ *   bug 의 원인. 모든 update_*.py 스크립트가 *100 적용해 % 단위로 저장하므로 안전.
  */
 export function normalizeToPct(v: unknown): number | null {
   if (v === null || v === undefined) return null;
@@ -116,12 +118,6 @@ export function normalizeToPct(v: unknown): number | null {
   }
 
   if (!Number.isFinite(n)) return null;
-
-  // 소수 수익률 자동 변환(선택적이지만 실전에서 매우 자주 필요)
-  // 예: 0.0321 => 3.21(%)
-  if (Math.abs(n) > 0 && Math.abs(n) <= 1) {
-    n = n * 100;
-  }
   return n;
 }
 
