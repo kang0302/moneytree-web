@@ -420,11 +420,10 @@ function getReturnByPeriod(n: NodeT, p: PeriodKey): number | undefined {
 
   if (v === undefined) return undefined;
 
-  // MoneyTree expectation: percent points (2.31 = +2.31%).
-  // Heuristic: if a source gives decimals (0.0231), convert to percent.
-  const abs = Math.abs(v);
-  if (abs > 0 && abs < 1 && abs * 100 >= 1) return v * 100;
-
+  // MoneyTree 원천 데이터는 모두 % 단위 (2.31 = +2.31%).
+  // 과거 '|v|<1 이면 ×100' heuristic 은 작은 정상 변동(0.79% 등) 을 79% 로
+  // 오변환시켜 commit ebbaaea 에서 두 곳 제거. 여기 getReturnByPeriod 도
+  // 동일 원칙 — 원천 신뢰, 변환 없이 그대로 반환.
   return v;
 }
 
