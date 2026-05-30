@@ -17,6 +17,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { forceRadial, forceY } from "d3-force";
 import { staleLevel, staleLabel } from "@/components/GraphRightPanel";
+import { getBriefingUrl } from "@/lib/getBriefingUrl";
 // import { getLogoUrl, getInitials } from "@/lib/logoMap"; // CompanyLogo 미구현 (logoMap 파일 부재)
 
 const ForceGraph2D = dynamic(() => import("react-force-graph-2d"), { ssr: false });
@@ -510,6 +511,40 @@ export default function ForceGraphWrapper({
 
   const [hoverNode, setHoverNode] = useState<NodeT | null>(null);
   const [hoverLink, setHoverLink] = useState<any | null>(null);
+
+  // 브리핑 핵심사업 매핑 (ticker → 핵심사업 텍스트, <br> 보존)
+  const [coreBizMap, setCoreBizMap] = useState<Map<string, string>>(new Map());
+  useEffect(() => {
+    if (!themeId) {
+      setCoreBizMap(new Map());
+      return;
+    }
+    let cancelled = false;
+    (async () => {
+      try {
+        const r = await fetch(getBriefingUrl(themeId), { cache: "no-store" });
+        if (!r.ok) return;
+        const text = await r.text();
+        const map = new Map<string, string>();
+        for (const line of text.split(/\r?\n/)) {
+          if (!line.trim().startsWith("|")) continue;
+          if (line.includes("---")) continue;
+          if (line.includes("종목") && line.includes("핵심")) continue;
+          const cells = line.split("|").slice(1, -1).map((c) => c.trim());
+          if (cells.length < 2) continue;
+          const m = cells[0].match(/\(([A-Za-z][A-Za-z0-9.]*|\d{3,7})(?:\s+[A-Z]+)*\)/);
+          if (!m) continue;
+          if (cells[1]) map.set(m[1], cells[1]);
+        }
+        if (!cancelled) setCoreBizMap(map);
+      } catch {
+        // briefing 없으면 조용히 무시
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [themeId]);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   // 브리핑 테이블이 viewport 진입 시 좌측 상단 테마 설명 패널 자동 숨김 (겹침 방지).
   // ThemeBriefing 은 비동기 fetch 후 렌더라 mount 시점에 DOM 에 없을 수 있음 →
@@ -1962,15 +1997,29 @@ export default function ForceGraphWrapper({
             className="pointer-events-none absolute z-40 rounded-xl border border-white/10 bg-black/80 px-4 py-3 text-xs text-white/90 backdrop-blur"
             style={tooltipStyle("other", W)}
           >
-            {/* Title row: TYPE badge + label (logo 영역 제거 — logoMap 미구현) */}
+            {/* Title row: TYPE badge + label. ASSET: 같은 줄에 7D return 인라인 표시 */}
             {isAssetHover ? (
               <div className="flex items-center gap-3">
                 <div className="flex min-w-0 flex-1 flex-col">
                   <span className="self-start rounded bg-white/10 px-1.5 py-0.5 text-[10px] font-bold tracking-wide text-white/80">
                     {typeLabel}
                   </span>
-                  <div className="mt-1 truncate text-sm font-bold" title={hoverLabel || hoverNode.id}>
-                    {hoverLabel || hoverNode.id}
+                  <div className="mt-1 flex items-baseline gap-2 truncate">
+                    <span className="truncate text-sm font-bold" title={hoverLabel || hoverNode.id}>
+                      {hoverLabel || hoverNode.id}
+                    </span>
+                    <span
+                      className="shrink-0 text-[13px] font-semibold"
+                      style={{
+                        color: (() => {
+                          const rv = getReturnByPeriod(hoverNode, period);
+                          if (typeof rv !== "number" || !Number.isFinite(rv)) return "#ffffff";
+                          return rv > 0 ? "#FF4444" : rv < 0 ? "#4444FF" : "#ffffff";
+                        })(),
+                      }}
+                    >
+                      {period} {fmtReturn(getReturnByPeriod(hoverNode, period))}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -1985,20 +2034,10 @@ export default function ForceGraphWrapper({
 
             {isAssetHover && (
               <>
-                <div className="mt-2 text-[13px] font-semibold text-white/95">
-                  {period} return:{" "}
-                  <span style={{ color: (() => {
-                    const rv = getReturnByPeriod(hoverNode, period);
-                    if (typeof rv !== "number" || !Number.isFinite(rv)) return "#ffffff";
-                    return rv > 0 ? "#FF4444" : rv < 0 ? "#4444FF" : "#ffffff";
-                  })() }}>
-                    {fmtReturn(getReturnByPeriod(hoverNode, period))}
-                  </span>
-                </div>
+                {/* 7D return 인라인 이동: 별도 블록 제거 */}
+                {/* Close + VAL DATE 사이 줄간격 축소 (divider 제거, mt-2) */}
 
-                <div className="my-3 h-px bg-white/10" />
-
-                <div className="grid grid-cols-2 gap-3">
+                <div className="mt-2 grid grid-cols-2 gap-3">
                   <div>
                     <div className="text-white/60">Close</div>
                     <div className="text-sm font-semibold">{fmtNum(getClose(hoverNode))}</div>
@@ -2023,17 +2062,37 @@ export default function ForceGraphWrapper({
                   </div>
                 </div>
 
-                <div className="mt-3 space-y-1 text-white/80">
+                <div className="mt-2 space-y-1 text-white/80">
                   <div>
                     Ticker : <span className="text-white">{ellipsis(getTicker(hoverNode))}</span>
                   </div>
                   <div>
-                    Exchange : <span className="text-white">{ellipsis(getExchange(hoverNode))}</span>
-                  </div>
-                  <div>
-                    Country : <span className="text-white">{ellipsis(getCountry(hoverNode))}</span>
+                    거래소/국가 :{" "}
+                    <span className="text-white">
+                      {ellipsis(getExchange(hoverNode))}/{ellipsis(getCountry(hoverNode))}
+                    </span>
                   </div>
                 </div>
+
+                {/* 핵심사업 — briefing 표에서 ticker 매칭 */}
+                {(() => {
+                  const tk = getTicker(hoverNode);
+                  const cb = tk ? coreBizMap.get(tk) : undefined;
+                  if (!cb) return null;
+                  const lines = cb.split(/<br\s*\/?>/i).map((s) => s.trim()).filter(Boolean);
+                  return (
+                    <div className="mt-3 border-t border-white/10 pt-2">
+                      <div className="text-[10px] font-semibold uppercase tracking-wide text-white/50">
+                        핵심 사업
+                      </div>
+                      <div className="mt-1 space-y-0.5 text-[12px] leading-snug text-white/85">
+                        {lines.map((s, i) => (
+                          <div key={i}>{s}</div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })()}
               </>
             )}
 
