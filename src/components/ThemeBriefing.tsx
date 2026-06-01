@@ -241,7 +241,21 @@ export default function ThemeBriefing({ themeId, nodes }: Props) {
           components={{
             table: ({ children }) => (
               <div className="my-3 overflow-x-auto">
-                <table className="w-full border-collapse border border-white/40 text-[13px] [&_tbody_tr:nth-child(even)]:bg-white/4 [&_tbody_tr:hover]:bg-white/7">
+                <table className="w-full table-fixed border-collapse border border-white/40 text-[13px] [&_tbody_tr:nth-child(even)]:bg-white/4 [&_tbody_tr:hover]:bg-white/7">
+                  {showReturnColumns ? (
+                    <colgroup>
+                      <col style={{ width: "12%" }} />
+                      <col style={{ width: "18%" }} />
+                      <col style={{ width: "18%" }} />
+                      <col style={{ width: "12%" }} />
+                      <col style={{ width: "6.667%" }} />
+                      <col style={{ width: "6.667%" }} />
+                      <col style={{ width: "6.667%" }} />
+                      <col style={{ width: "6.667%" }} />
+                      <col style={{ width: "6.667%" }} />
+                      <col style={{ width: "6.667%" }} />
+                    </colgroup>
+                  ) : null}
                   {children}
                 </table>
               </div>
