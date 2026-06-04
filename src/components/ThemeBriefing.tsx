@@ -4,7 +4,7 @@
 // 테마 그래프 하단에 붙는 markdown briefing 섹션.
 // 데이터 소스: GitHub raw — kang0302/import_MT/main/data/briefing/{themeId}.md
 // 없으면 조용히 숨김 (그래프만 표시).
-// briefing 의 본문 표 각 행에서 첫 셀의 ticker 를 추출 → 7개 기간 수익률 컬럼(3년/1년/YTD/1개월/7일/3일/1일) 자동 부착.
+// briefing 의 본문 표 각 행에서 첫 셀의 ticker 를 추출 → 8개 기간 수익률 컬럼(3년/1년/YTD/1개월/15일/7일/3일/1일) 자동 부착.
 
 import { Children, Fragment, ReactNode, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
@@ -74,7 +74,7 @@ type AssetNode = {
 
 type Props = {
   themeId: string;
-  /** ASSET 노드 배열 — 행별 수익률 7개 컬럼(3Y/1Y/YTD/1M/7D/3D/1D) 자동 append 용. 미제공 시 수익률 컬럼 숨김. */
+  /** ASSET 노드 배열 — 행별 수익률 8개 컬럼(3Y/1Y/YTD/1M/15D/7D/3D/1D) 자동 append 용. 미제공 시 수익률 컬럼 숨김. */
   nodes?: AssetNode[];
 };
 
@@ -84,6 +84,7 @@ const RETURN_COLUMNS: Array<{ periodKey: PeriodKey; label: string }> = [
   { periodKey: "1Y", label: "1년" },
   { periodKey: "YTD", label: "YTD" },
   { periodKey: "1M", label: "1개월" },
+  { periodKey: "15D", label: "15일" },
   { periodKey: "7D", label: "7일" },
   { periodKey: "3D", label: "3일" },
   { periodKey: "1D", label: "1일" },
@@ -249,13 +250,14 @@ export default function ThemeBriefing({ themeId, nodes }: Props) {
                       <col style={{ width: "18%" }} />
                       <col style={{ width: "18%" }} />
                       <col style={{ width: "12%" }} />
-                      <col style={{ width: "5.714%" }} />
-                      <col style={{ width: "5.714%" }} />
-                      <col style={{ width: "5.714%" }} />
-                      <col style={{ width: "5.714%" }} />
-                      <col style={{ width: "5.714%" }} />
-                      <col style={{ width: "5.714%" }} />
-                      <col style={{ width: "5.716%" }} />
+                      <col style={{ width: "5%" }} />
+                      <col style={{ width: "5%" }} />
+                      <col style={{ width: "5%" }} />
+                      <col style={{ width: "5%" }} />
+                      <col style={{ width: "5%" }} />
+                      <col style={{ width: "5%" }} />
+                      <col style={{ width: "5%" }} />
+                      <col style={{ width: "5%" }} />
                     </colgroup>
                   ) : null}
                   {children}

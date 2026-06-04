@@ -703,6 +703,7 @@ export default function GraphClient({
     { key: "1D", label: "1일" },
     { key: "3D", label: "3일" },
     { key: "7D", label: "7일" },
+    { key: "15D", label: "15일" },
     { key: "1M", label: "1개월" },
     { key: "YTD", label: "YTD" },
     { key: "1Y", label: "1년" },
