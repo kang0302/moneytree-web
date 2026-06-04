@@ -45,6 +45,7 @@ type PeriodInfo = { yRange: string; calendarDays: number; isYtd: boolean };
 
 function getPeriodInfo(period: string): PeriodInfo {
   switch (period.toUpperCase()) {
+    case "1D":  return { yRange: "5d",   calendarDays: 1,    isYtd: false };
     case "3D":  return { yRange: "10d",  calendarDays: 3,    isYtd: false };
     case "7D":  return { yRange: "15d",  calendarDays: 7,    isYtd: false };
     case "1M":  return { yRange: "60d",  calendarDays: 30,   isYtd: false };

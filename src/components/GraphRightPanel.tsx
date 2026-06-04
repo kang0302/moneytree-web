@@ -30,11 +30,11 @@ export function staleLabel(asOf?: string | null, now: Date = new Date()): string
 }
 
 /* ─────────────────────────────────────────
-   BAROMETER 추세 차트 — 기간별(3Y/1Y/YTD/1M/7D/3D) overall score 시계열
+   BAROMETER 추세 차트 — 기간별(3Y/1Y/YTD/1M/7D/3D/1D) overall score 시계열
 ───────────────────────────────────────── */
-const TREND_PERIODS: PeriodKey[] = ["3Y", "1Y", "YTD", "1M", "7D", "3D"];
+const TREND_PERIODS: PeriodKey[] = ["3Y", "1Y", "YTD", "1M", "7D", "3D", "1D"];
 const TREND_LABELS: Record<PeriodKey, string> = {
-  "3Y": "3년", "1Y": "1년", "YTD": "YTD", "1M": "1개월", "7D": "7일", "3D": "3일",
+  "3Y": "3년", "1Y": "1년", "YTD": "YTD", "1M": "1개월", "7D": "7일", "3D": "3일", "1D": "1일",
 };
 
 /** Catmull-Rom 기반 cubic-bezier smooth path. tension 0.2 ~ 0.3이 자연스러움. */

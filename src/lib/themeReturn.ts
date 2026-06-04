@@ -11,7 +11,7 @@
 // - healthScore/momentumScore/divScore (0~1000)
 // - note: sentence 기반
 
-export type PeriodKey = "3D" | "7D" | "1M" | "YTD" | "1Y" | "3Y";
+export type PeriodKey = "1D" | "3D" | "7D" | "1M" | "YTD" | "1Y" | "3Y";
 
 export type TopMover = {
   id: string;
@@ -81,6 +81,7 @@ export function normalizePeriodKey(p: unknown): PeriodKey | null {
   const raw = String(p).trim();
 
   // 한글 라벨/축약 대응
+  if (raw === "1" || raw.toLowerCase() === "1d" || raw === "1일") return "1D";
   if (raw === "3" || raw.toLowerCase() === "3d" || raw === "3일") return "3D";
   if (raw === "7" || raw.toLowerCase() === "7d" || raw === "7일") return "7D";
   if (raw.toLowerCase() === "1m" || raw === "1개월" || raw === "1달") return "1M";
@@ -90,7 +91,7 @@ export function normalizePeriodKey(p: unknown): PeriodKey | null {
 
   // 대문자 표준값 직접 매칭
   const up = raw.toUpperCase();
-  if (up === "3D" || up === "7D" || up === "1M" || up === "YTD" || up === "1Y" || up === "3Y") {
+  if (up === "1D" || up === "3D" || up === "7D" || up === "1M" || up === "YTD" || up === "1Y" || up === "3Y") {
     return up as PeriodKey;
   }
   return null;
@@ -143,6 +144,8 @@ export function extractReturnByPeriod(metrics: MetricsT | undefined, periodRaw: 
   // ✅ Priority: return_7d (new pipeline) BEFORE ret7d (stale old pipeline).
   // Some theme JSONs (e.g. T_006) carry both; the newer return_* field is authoritative.
   switch (period) {
+    case "1D":
+      return pick("return_1d", "return_1D", "return1d", "ret_1d", "ret1d");
     case "3D":
       return pick("return_3d", "return_3D", "return3d", "ret_3d", "ret3d");
     case "7D":

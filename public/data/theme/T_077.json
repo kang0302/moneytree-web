@@ -1,0 +1,256 @@
+{
+  "schemaVersion": "v5",
+  "themeId": "T_077",
+  "themeName": "중동/이스라엘마켓",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "1m",
+      "ytd",
+      "1y",
+      "3y"
+    ],
+    "dataAsOf": "2026-03-26T00:00:00+09:00",
+    "notes": "g77 누적 import 기반 중동/이스라엘 ETF 테마",
+    "sources": []
+  },
+  "nodes": [
+    {
+      "id": "T_077",
+      "type": "THEME",
+      "name": "중동/이스라엘마켓"
+    },
+    {
+      "id": "A_648",
+      "type": "ASSET",
+      "name": "TUR",
+      "exposure": {
+        "ticker": "TUR",
+        "exchange": "NASDAQ",
+        "country": "TR"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": 40.43,
+        "marketCap": 182408233,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-05-20",
+        "valuationSource": "FMP",
+        "return_3d": -2.0353767870123662,
+        "return_7d": -7.567443987197075,
+        "return_1m": -4.443393996691092,
+        "return_ytd": 15.778923253150046,
+        "return_1y": 24.43828870421667,
+        "return_3y": 36.17379589087235,
+        "returnsAsOf": "2026-05-20",
+        "returnsSource": "FMP"
+      }
+    },
+    {
+      "id": "A_650",
+      "type": "ASSET",
+      "name": "KSA",
+      "exposure": {
+        "ticker": "KSA",
+        "exchange": "NYSEARCA",
+        "country": "SA"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": 38.33,
+        "marketCap": 550113425,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-05-20",
+        "valuationSource": "FMP",
+        "return_3d": 0.10446591799424532,
+        "return_7d": -2.0945083014048516,
+        "return_1m": -3.402217741935487,
+        "return_ytd": 4.242589067174318,
+        "return_1y": -3.9589075419694253,
+        "return_3y": -6.55777669429548,
+        "returnsAsOf": "2026-05-20",
+        "returnsSource": "FMP"
+      }
+    },
+    {
+      "id": "A_651",
+      "type": "ASSET",
+      "name": "QAT",
+      "exposure": {
+        "ticker": "QAT",
+        "exchange": "NASDAQ",
+        "country": "QA"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": 18.595,
+        "marketCap": 93086886,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-05-20",
+        "valuationSource": "FMP",
+        "return_3d": -0.4282655246252598,
+        "return_7d": -2.617801047120416,
+        "return_1m": -3.023983315954115,
+        "return_ytd": -1.2214551248008299,
+        "return_1y": -2.3622047244094446,
+        "return_3y": -2.413431269674693,
+        "returnsAsOf": "2026-05-20",
+        "returnsSource": "FMP"
+      }
+    },
+    {
+      "id": "A_652",
+      "type": "ASSET",
+      "name": "UAE",
+      "exposure": {
+        "ticker": "UAE",
+        "exchange": "NASDAQ",
+        "country": "AE"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": 18.88,
+        "marketCap": 209623092,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-05-20",
+        "valuationSource": "FMP",
+        "return_3d": -0.21141649048627142,
+        "return_7d": -1.6666666666666718,
+        "return_1m": -3.229113275243478,
+        "return_ytd": -1.768990634755463,
+        "return_1y": 1.2332439678284235,
+        "return_3y": 29.581331503088528,
+        "returnsAsOf": "2026-05-20",
+        "returnsSource": "FMP"
+      }
+    },
+    {
+      "id": "A_134",
+      "type": "ASSET",
+      "name": "EIS",
+      "exposure": {
+        "ticker": "EIS",
+        "exchange": "NYSEARCA",
+        "country": "IL"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": 132.2,
+        "marketCap": 991504098,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-05-20",
+        "valuationSource": "FMP",
+        "return_3d": 1.6923076923076819,
+        "return_7d": -2.8940796239165567,
+        "return_1m": 4.605159044152551,
+        "return_ytd": 18.035714285714267,
+        "return_1y": 58.53219810528838,
+        "return_3y": 142.34647112740606,
+        "returnsAsOf": "2026-05-20",
+        "returnsSource": "FMP"
+      }
+    },
+    {
+      "id": "M_059",
+      "type": "MACRO",
+      "name": "유가상승"
+    },
+    {
+      "id": "M_060",
+      "type": "MACRO",
+      "name": "천연가스가격상승"
+    },
+    {
+      "id": "M_084",
+      "type": "MACRO",
+      "name": "중동전쟁"
+    }
+  ],
+  "edges": [
+    {
+      "from": "A_648",
+      "to": "T_077",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_650",
+      "to": "T_077",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_651",
+      "to": "T_077",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_652",
+      "to": "T_077",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_134",
+      "to": "T_077",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "M_059",
+      "to": "T_077",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_060",
+      "to": "T_077",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_084",
+      "to": "T_077",
+      "type": "IMPACTS"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_648",
+      "to": "T_077",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_650",
+      "to": "T_077",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_651",
+      "to": "T_077",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_652",
+      "to": "T_077",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_134",
+      "to": "T_077",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "M_059",
+      "to": "T_077",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_060",
+      "to": "T_077",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_084",
+      "to": "T_077",
+      "type": "IMPACTS"
+    }
+  ]
+}

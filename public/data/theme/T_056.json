@@ -5,6 +5,7 @@
   "meta": {
     "periodDefault": "3d",
     "periodOptions": [
+      "1d",
       "3d",
       "7d",
       "1m",
@@ -32,6 +33,7 @@
         "country": "TW"
       },
       "metrics": {
+        "return_1d": null,
         "close": 848.0,
         "marketCap": 547948332976,
         "pe_ttm": null,
@@ -57,6 +59,7 @@
         "country": "TW"
       },
       "metrics": {
+        "return_1d": null,
         "close": 729.0,
         "marketCap": 383948330526,
         "pe_ttm": null,
@@ -82,6 +85,7 @@
         "country": "TW"
       },
       "metrics": {
+        "return_1d": null,
         "close": 1055.0,
         "marketCap": 1661117821410,
         "pe_ttm": null,
@@ -107,6 +111,7 @@
         "country": "JP"
       },
       "metrics": {
+        "return_1d": null,
         "close": 23000.0,
         "marketCap": 6422647328000,
         "pe_ttm": null,
@@ -132,6 +137,7 @@
         "country": "KR"
       },
       "metrics": {
+        "return_1d": null,
         "close": 1000000,
         "marketCap": 7549807133000,
         "pe_ttm": 16.8,
@@ -157,6 +163,7 @@
         "country": "KR"
       },
       "metrics": {
+        "return_1d": null,
         "close": 89100,
         "marketCap": null,
         "pe_ttm": null,
@@ -182,6 +189,7 @@
         "country": "KR"
       },
       "metrics": {
+        "return_1d": null,
         "close": 1000000,
         "marketCap": 33500122656000,
         "pe_ttm": 49.9,
@@ -207,6 +215,7 @@
         "country": "KR"
       },
       "metrics": {
+        "return_1d": null,
         "close": 119300,
         "marketCap": null,
         "pe_ttm": null,
@@ -232,6 +241,7 @@
         "country": "KR"
       },
       "metrics": {
+        "return_1d": null,
         "close": 112800,
         "marketCap": null,
         "pe_ttm": null,
@@ -257,6 +267,7 @@
         "country": "KR"
       },
       "metrics": {
+        "return_1d": null,
         "close": 118100,
         "marketCap": null,
         "pe_ttm": null,
@@ -282,6 +293,7 @@
         "country": "KR"
       },
       "metrics": {
+        "return_1d": null,
         "close": 190900,
         "marketCap": null,
         "pe_ttm": null,
@@ -307,6 +319,7 @@
         "country": "KR"
       },
       "metrics": {
+        "return_1d": null,
         "close": 129200,
         "marketCap": null,
         "pe_ttm": null,
@@ -322,11 +335,31 @@
         "returnsSource": "PYKRX"
       }
     },
-    { "id": "M_202", "type": "MACRO", "name": "고집적화" },
-    { "id": "M_055", "type": "MACRO", "name": "AI확산" },
-    { "id": "M_255", "type": "MACRO", "name": "데이터센터확산" },
-    { "id": "BF_231", "type": "BUSINESS_FIELD", "name": "고밀도PCB" },
-    { "id": "BF_513", "type": "BUSINESS_FIELD", "name": "반도체패키지기판ABF_FCBGA" }
+    {
+      "id": "M_202",
+      "type": "MACRO",
+      "name": "고집적화"
+    },
+    {
+      "id": "M_055",
+      "type": "MACRO",
+      "name": "AI확산"
+    },
+    {
+      "id": "M_255",
+      "type": "MACRO",
+      "name": "데이터센터확산"
+    },
+    {
+      "id": "BF_231",
+      "type": "BUSINESS_FIELD",
+      "name": "고밀도PCB"
+    },
+    {
+      "id": "BF_513",
+      "type": "BUSINESS_FIELD",
+      "name": "반도체패키지기판ABF_FCBGA"
+    }
   ],
   "edges": [
     {
@@ -389,21 +422,81 @@
       "to": "T_056",
       "type": "THEMED_AS"
     },
-    { "from": "M_202", "to": "T_056", "type": "IMPACTS" },
-    { "from": "M_055", "to": "T_056", "type": "IMPACTS" },
-    { "from": "M_255", "to": "T_056", "type": "IMPACTS" },
-    { "from": "A_454", "to": "BF_231", "type": "OPERATES" },
-    { "from": "A_455", "to": "BF_231", "type": "OPERATES" },
-    { "from": "A_459", "to": "BF_231", "type": "OPERATES" },
-    { "from": "A_460", "to": "BF_231", "type": "OPERATES" },
-    { "from": "A_463", "to": "BF_231", "type": "OPERATES" },
-    { "from": "A_456", "to": "BF_513", "type": "OPERATES" },
-    { "from": "A_457", "to": "BF_513", "type": "OPERATES" },
-    { "from": "A_080", "to": "BF_513", "type": "OPERATES" },
-    { "from": "A_458", "to": "BF_513", "type": "OPERATES" },
-    { "from": "A_085", "to": "BF_513", "type": "OPERATES" },
-    { "from": "A_461", "to": "BF_513", "type": "OPERATES" },
-    { "from": "A_462", "to": "BF_513", "type": "OPERATES" }
+    {
+      "from": "M_202",
+      "to": "T_056",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_055",
+      "to": "T_056",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_255",
+      "to": "T_056",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "A_454",
+      "to": "BF_231",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_455",
+      "to": "BF_231",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_459",
+      "to": "BF_231",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_460",
+      "to": "BF_231",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_463",
+      "to": "BF_231",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_456",
+      "to": "BF_513",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_457",
+      "to": "BF_513",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_080",
+      "to": "BF_513",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_458",
+      "to": "BF_513",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_085",
+      "to": "BF_513",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_461",
+      "to": "BF_513",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_462",
+      "to": "BF_513",
+      "type": "OPERATES"
+    }
   ],
   "links": [
     {
@@ -466,20 +559,80 @@
       "to": "T_056",
       "type": "THEMED_AS"
     },
-    { "from": "M_202", "to": "T_056", "type": "IMPACTS" },
-    { "from": "M_055", "to": "T_056", "type": "IMPACTS" },
-    { "from": "M_255", "to": "T_056", "type": "IMPACTS" },
-    { "from": "A_454", "to": "BF_231", "type": "OPERATES" },
-    { "from": "A_455", "to": "BF_231", "type": "OPERATES" },
-    { "from": "A_459", "to": "BF_231", "type": "OPERATES" },
-    { "from": "A_460", "to": "BF_231", "type": "OPERATES" },
-    { "from": "A_463", "to": "BF_231", "type": "OPERATES" },
-    { "from": "A_456", "to": "BF_513", "type": "OPERATES" },
-    { "from": "A_457", "to": "BF_513", "type": "OPERATES" },
-    { "from": "A_080", "to": "BF_513", "type": "OPERATES" },
-    { "from": "A_458", "to": "BF_513", "type": "OPERATES" },
-    { "from": "A_085", "to": "BF_513", "type": "OPERATES" },
-    { "from": "A_461", "to": "BF_513", "type": "OPERATES" },
-    { "from": "A_462", "to": "BF_513", "type": "OPERATES" }
+    {
+      "from": "M_202",
+      "to": "T_056",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_055",
+      "to": "T_056",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_255",
+      "to": "T_056",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "A_454",
+      "to": "BF_231",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_455",
+      "to": "BF_231",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_459",
+      "to": "BF_231",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_460",
+      "to": "BF_231",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_463",
+      "to": "BF_231",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_456",
+      "to": "BF_513",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_457",
+      "to": "BF_513",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_080",
+      "to": "BF_513",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_458",
+      "to": "BF_513",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_085",
+      "to": "BF_513",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_461",
+      "to": "BF_513",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_462",
+      "to": "BF_513",
+      "type": "OPERATES"
+    }
   ]
 }

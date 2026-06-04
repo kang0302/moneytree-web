@@ -5,6 +5,7 @@
   "meta": {
     "periodDefault": "3d",
     "periodOptions": [
+      "1d",
       "3d",
       "7d",
       "1m",
@@ -36,6 +37,7 @@
         "theme_status": "Core"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -64,6 +66,7 @@
         "theme_status": "Support"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -92,6 +95,7 @@
         "theme_status": "Core"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -120,6 +124,7 @@
         "theme_status": "Core"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -148,6 +153,7 @@
         "theme_status": "Support"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -176,6 +182,7 @@
         "theme_status": "Support"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -204,6 +211,7 @@
         "theme_status": "Support"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -241,29 +249,117 @@
     }
   ],
   "edges": [
-    { "from": "A_1321", "to": "T_271", "type": "THEMED_AS" },
-    { "from": "A_1715", "to": "T_271", "type": "THEMED_AS" },
-    { "from": "A_1450", "to": "T_271", "type": "THEMED_AS" },
-    { "from": "A_369",  "to": "T_271", "type": "THEMED_AS" },
-    { "from": "A_368",  "to": "T_271", "type": "THEMED_AS" },
-    { "from": "A_1716", "to": "T_271", "type": "THEMED_AS" },
-    { "from": "A_1717", "to": "T_271", "type": "THEMED_AS" },
-    { "from": "M_246",  "to": "T_271", "type": "IMPACTS" },
-    { "from": "M_277",  "to": "T_271", "type": "IMPACTS" },
-    { "from": "M_278",  "to": "T_271", "type": "IMPACTS" },
-    { "from": "M_279",  "to": "T_271", "type": "IMPACTS" }
+    {
+      "from": "A_1321",
+      "to": "T_271",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1715",
+      "to": "T_271",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1450",
+      "to": "T_271",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_369",
+      "to": "T_271",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_368",
+      "to": "T_271",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1716",
+      "to": "T_271",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1717",
+      "to": "T_271",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "M_246",
+      "to": "T_271",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_277",
+      "to": "T_271",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_278",
+      "to": "T_271",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_279",
+      "to": "T_271",
+      "type": "IMPACTS"
+    }
   ],
   "links": [
-    { "from": "A_1321", "to": "T_271", "type": "THEMED_AS" },
-    { "from": "A_1715", "to": "T_271", "type": "THEMED_AS" },
-    { "from": "A_1450", "to": "T_271", "type": "THEMED_AS" },
-    { "from": "A_369",  "to": "T_271", "type": "THEMED_AS" },
-    { "from": "A_368",  "to": "T_271", "type": "THEMED_AS" },
-    { "from": "A_1716", "to": "T_271", "type": "THEMED_AS" },
-    { "from": "A_1717", "to": "T_271", "type": "THEMED_AS" },
-    { "from": "M_246",  "to": "T_271", "type": "IMPACTS" },
-    { "from": "M_277",  "to": "T_271", "type": "IMPACTS" },
-    { "from": "M_278",  "to": "T_271", "type": "IMPACTS" },
-    { "from": "M_279",  "to": "T_271", "type": "IMPACTS" }
+    {
+      "from": "A_1321",
+      "to": "T_271",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1715",
+      "to": "T_271",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1450",
+      "to": "T_271",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_369",
+      "to": "T_271",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_368",
+      "to": "T_271",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1716",
+      "to": "T_271",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1717",
+      "to": "T_271",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "M_246",
+      "to": "T_271",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_277",
+      "to": "T_271",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_278",
+      "to": "T_271",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_279",
+      "to": "T_271",
+      "type": "IMPACTS"
+    }
   ]
 }

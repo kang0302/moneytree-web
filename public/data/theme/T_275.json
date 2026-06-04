@@ -5,6 +5,7 @@
   "meta": {
     "periodDefault": "3d",
     "periodOptions": [
+      "1d",
       "3d",
       "7d",
       "1m",
@@ -36,6 +37,7 @@
         "theme_status": "Core"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -64,6 +66,7 @@
         "theme_status": "Core"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -92,6 +95,7 @@
         "theme_status": "Core"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -120,6 +124,7 @@
         "theme_status": "Core"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -148,6 +153,7 @@
         "theme_status": "Core"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -176,6 +182,7 @@
         "theme_status": "Core"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -204,6 +211,7 @@
         "theme_status": "Support"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -256,45 +264,197 @@
     }
   ],
   "edges": [
-    { "from": "A_1737", "to": "T_275", "type": "THEMED_AS" },
-    { "from": "A_1738", "to": "T_275", "type": "THEMED_AS" },
-    { "from": "A_1739", "to": "T_275", "type": "THEMED_AS" },
-    { "from": "A_1740", "to": "T_275", "type": "THEMED_AS" },
-    { "from": "A_1359", "to": "T_275", "type": "THEMED_AS" },
-    { "from": "A_1360", "to": "T_275", "type": "THEMED_AS" },
-    { "from": "A_1741", "to": "T_275", "type": "THEMED_AS" },
-    { "from": "A_1737", "to": "BF_017", "type": "OPERATES" },
-    { "from": "A_1738", "to": "BF_017", "type": "OPERATES" },
-    { "from": "A_1739", "to": "BF_017", "type": "OPERATES" },
-    { "from": "A_1740", "to": "BF_043", "type": "OPERATES" },
-    { "from": "A_1359", "to": "BF_043", "type": "OPERATES" },
-    { "from": "A_1360", "to": "BF_043", "type": "OPERATES" },
-    { "from": "A_1741", "to": "BF_043", "type": "OPERATES" },
-    { "from": "M_030", "to": "T_275", "type": "IMPACTS" },
-    { "from": "M_141", "to": "T_275", "type": "IMPACTS" },
-    { "from": "M_051", "to": "T_275", "type": "IMPACTS" },
-    { "from": "M_161", "to": "T_275", "type": "IMPACTS" },
-    { "from": "M_105", "to": "T_275", "type": "IMPACTS" }
+    {
+      "from": "A_1737",
+      "to": "T_275",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1738",
+      "to": "T_275",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1739",
+      "to": "T_275",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1740",
+      "to": "T_275",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1359",
+      "to": "T_275",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1360",
+      "to": "T_275",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1741",
+      "to": "T_275",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1737",
+      "to": "BF_017",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_1738",
+      "to": "BF_017",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_1739",
+      "to": "BF_017",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_1740",
+      "to": "BF_043",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_1359",
+      "to": "BF_043",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_1360",
+      "to": "BF_043",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_1741",
+      "to": "BF_043",
+      "type": "OPERATES"
+    },
+    {
+      "from": "M_030",
+      "to": "T_275",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_141",
+      "to": "T_275",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_051",
+      "to": "T_275",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_161",
+      "to": "T_275",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_105",
+      "to": "T_275",
+      "type": "IMPACTS"
+    }
   ],
   "links": [
-    { "from": "A_1737", "to": "T_275", "type": "THEMED_AS" },
-    { "from": "A_1738", "to": "T_275", "type": "THEMED_AS" },
-    { "from": "A_1739", "to": "T_275", "type": "THEMED_AS" },
-    { "from": "A_1740", "to": "T_275", "type": "THEMED_AS" },
-    { "from": "A_1359", "to": "T_275", "type": "THEMED_AS" },
-    { "from": "A_1360", "to": "T_275", "type": "THEMED_AS" },
-    { "from": "A_1741", "to": "T_275", "type": "THEMED_AS" },
-    { "from": "A_1737", "to": "BF_017", "type": "OPERATES" },
-    { "from": "A_1738", "to": "BF_017", "type": "OPERATES" },
-    { "from": "A_1739", "to": "BF_017", "type": "OPERATES" },
-    { "from": "A_1740", "to": "BF_043", "type": "OPERATES" },
-    { "from": "A_1359", "to": "BF_043", "type": "OPERATES" },
-    { "from": "A_1360", "to": "BF_043", "type": "OPERATES" },
-    { "from": "A_1741", "to": "BF_043", "type": "OPERATES" },
-    { "from": "M_030", "to": "T_275", "type": "IMPACTS" },
-    { "from": "M_141", "to": "T_275", "type": "IMPACTS" },
-    { "from": "M_051", "to": "T_275", "type": "IMPACTS" },
-    { "from": "M_161", "to": "T_275", "type": "IMPACTS" },
-    { "from": "M_105", "to": "T_275", "type": "IMPACTS" }
+    {
+      "from": "A_1737",
+      "to": "T_275",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1738",
+      "to": "T_275",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1739",
+      "to": "T_275",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1740",
+      "to": "T_275",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1359",
+      "to": "T_275",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1360",
+      "to": "T_275",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1741",
+      "to": "T_275",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1737",
+      "to": "BF_017",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_1738",
+      "to": "BF_017",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_1739",
+      "to": "BF_017",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_1740",
+      "to": "BF_043",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_1359",
+      "to": "BF_043",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_1360",
+      "to": "BF_043",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_1741",
+      "to": "BF_043",
+      "type": "OPERATES"
+    },
+    {
+      "from": "M_030",
+      "to": "T_275",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_141",
+      "to": "T_275",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_051",
+      "to": "T_275",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_161",
+      "to": "T_275",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_105",
+      "to": "T_275",
+      "type": "IMPACTS"
+    }
   ]
 }

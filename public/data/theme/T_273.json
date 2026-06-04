@@ -5,6 +5,7 @@
   "meta": {
     "periodDefault": "3d",
     "periodOptions": [
+      "1d",
       "3d",
       "7d",
       "1m",
@@ -36,6 +37,7 @@
         "theme_status": "Core"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -64,6 +66,7 @@
         "theme_status": "Core"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -92,6 +95,7 @@
         "theme_status": "Core"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -120,6 +124,7 @@
         "theme_status": "Core"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -148,6 +153,7 @@
         "theme_status": "Core"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -176,6 +182,7 @@
         "theme_status": "Core"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -204,6 +211,7 @@
         "theme_status": "Support"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -232,6 +240,7 @@
         "theme_status": "Core"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -260,6 +269,7 @@
         "theme_status": "Core"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -288,6 +298,7 @@
         "theme_status": "Core"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -316,6 +327,7 @@
         "theme_status": "Support"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -344,6 +356,7 @@
         "theme_status": "Support"
       },
       "metrics": {
+        "return_1d": null,
         "close": null,
         "marketCap": null,
         "pe_ttm": null,
@@ -406,49 +419,217 @@
     }
   ],
   "edges": [
-    { "from": "A_214",  "to": "T_273", "type": "THEMED_AS" },
-    { "from": "A_217",  "to": "T_273", "type": "THEMED_AS" },
-    { "from": "A_949",  "to": "T_273", "type": "THEMED_AS" },
-    { "from": "A_901",  "to": "T_273", "type": "THEMED_AS" },
-    { "from": "A_103",  "to": "T_273", "type": "THEMED_AS" },
-    { "from": "A_1027", "to": "T_273", "type": "THEMED_AS" },
-    { "from": "A_1328", "to": "T_273", "type": "THEMED_AS" },
-    { "from": "A_1725", "to": "T_273", "type": "THEMED_AS" },
-    { "from": "A_1726", "to": "T_273", "type": "THEMED_AS" },
-    { "from": "A_1727", "to": "T_273", "type": "THEMED_AS" },
-    { "from": "A_1728", "to": "T_273", "type": "THEMED_AS" },
-    { "from": "A_1729", "to": "T_273", "type": "THEMED_AS" },
-    { "from": "A_901",  "to": "BF_319", "type": "OPERATES" },
-    { "from": "A_1027", "to": "BF_447", "type": "OPERATES" },
-    { "from": "A_103",  "to": "BF_064", "type": "OPERATES" },
-    { "from": "A_1725", "to": "BF_488", "type": "OPERATES" },
-    { "from": "A_1726", "to": "BF_063", "type": "OPERATES" },
-    { "from": "M_055", "to": "T_273", "type": "IMPACTS" },
-    { "from": "M_161", "to": "T_273", "type": "IMPACTS" },
-    { "from": "M_020", "to": "T_273", "type": "IMPACTS" },
-    { "from": "M_185", "to": "T_273", "type": "IMPACTS" }
+    {
+      "from": "A_214",
+      "to": "T_273",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_217",
+      "to": "T_273",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_949",
+      "to": "T_273",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_901",
+      "to": "T_273",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_103",
+      "to": "T_273",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1027",
+      "to": "T_273",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1328",
+      "to": "T_273",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1725",
+      "to": "T_273",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1726",
+      "to": "T_273",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1727",
+      "to": "T_273",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1728",
+      "to": "T_273",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1729",
+      "to": "T_273",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_901",
+      "to": "BF_319",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_1027",
+      "to": "BF_447",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_103",
+      "to": "BF_064",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_1725",
+      "to": "BF_488",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_1726",
+      "to": "BF_063",
+      "type": "OPERATES"
+    },
+    {
+      "from": "M_055",
+      "to": "T_273",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_161",
+      "to": "T_273",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_020",
+      "to": "T_273",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_185",
+      "to": "T_273",
+      "type": "IMPACTS"
+    }
   ],
   "links": [
-    { "from": "A_214",  "to": "T_273", "type": "THEMED_AS" },
-    { "from": "A_217",  "to": "T_273", "type": "THEMED_AS" },
-    { "from": "A_949",  "to": "T_273", "type": "THEMED_AS" },
-    { "from": "A_901",  "to": "T_273", "type": "THEMED_AS" },
-    { "from": "A_103",  "to": "T_273", "type": "THEMED_AS" },
-    { "from": "A_1027", "to": "T_273", "type": "THEMED_AS" },
-    { "from": "A_1328", "to": "T_273", "type": "THEMED_AS" },
-    { "from": "A_1725", "to": "T_273", "type": "THEMED_AS" },
-    { "from": "A_1726", "to": "T_273", "type": "THEMED_AS" },
-    { "from": "A_1727", "to": "T_273", "type": "THEMED_AS" },
-    { "from": "A_1728", "to": "T_273", "type": "THEMED_AS" },
-    { "from": "A_1729", "to": "T_273", "type": "THEMED_AS" },
-    { "from": "A_901",  "to": "BF_319", "type": "OPERATES" },
-    { "from": "A_1027", "to": "BF_447", "type": "OPERATES" },
-    { "from": "A_103",  "to": "BF_064", "type": "OPERATES" },
-    { "from": "A_1725", "to": "BF_488", "type": "OPERATES" },
-    { "from": "A_1726", "to": "BF_063", "type": "OPERATES" },
-    { "from": "M_055", "to": "T_273", "type": "IMPACTS" },
-    { "from": "M_161", "to": "T_273", "type": "IMPACTS" },
-    { "from": "M_020", "to": "T_273", "type": "IMPACTS" },
-    { "from": "M_185", "to": "T_273", "type": "IMPACTS" }
+    {
+      "from": "A_214",
+      "to": "T_273",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_217",
+      "to": "T_273",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_949",
+      "to": "T_273",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_901",
+      "to": "T_273",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_103",
+      "to": "T_273",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1027",
+      "to": "T_273",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1328",
+      "to": "T_273",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1725",
+      "to": "T_273",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1726",
+      "to": "T_273",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1727",
+      "to": "T_273",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1728",
+      "to": "T_273",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1729",
+      "to": "T_273",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_901",
+      "to": "BF_319",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_1027",
+      "to": "BF_447",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_103",
+      "to": "BF_064",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_1725",
+      "to": "BF_488",
+      "type": "OPERATES"
+    },
+    {
+      "from": "A_1726",
+      "to": "BF_063",
+      "type": "OPERATES"
+    },
+    {
+      "from": "M_055",
+      "to": "T_273",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_161",
+      "to": "T_273",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_020",
+      "to": "T_273",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_185",
+      "to": "T_273",
+      "type": "IMPACTS"
+    }
   ]
 }
