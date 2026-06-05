@@ -707,6 +707,7 @@ export default function GraphClient({
     { key: "1M", label: "1개월" },
     { key: "YTD", label: "YTD" },
     { key: "1Y", label: "1년" },
+    { key: "2Y", label: "2년" },
     { key: "3Y", label: "3년" },
   ];
 

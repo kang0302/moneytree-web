@@ -52,6 +52,7 @@ function getPeriodInfo(period: string): PeriodInfo {
     case "1M":  return { yRange: "60d",  calendarDays: 30,   isYtd: false };
     case "YTD": return { yRange: "ytd",  calendarDays: 0,    isYtd: true  };
     case "1Y":  return { yRange: "13mo", calendarDays: 365,  isYtd: false };
+    case "2Y":  return { yRange: "25mo", calendarDays: 730,  isYtd: false };
     case "3Y":  return { yRange: "4y",   calendarDays: 1095, isYtd: false };
     default:    return { yRange: "15d",  calendarDays: 7,    isYtd: false };
   }

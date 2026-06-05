@@ -11,7 +11,7 @@
 // - healthScore/momentumScore/divScore (0~1000)
 // - note: sentence 기반
 
-export type PeriodKey = "1D" | "3D" | "7D" | "15D" | "1M" | "YTD" | "1Y" | "3Y";
+export type PeriodKey = "1D" | "3D" | "7D" | "15D" | "1M" | "YTD" | "1Y" | "2Y" | "3Y";
 
 export type TopMover = {
   id: string;
@@ -88,11 +88,12 @@ export function normalizePeriodKey(p: unknown): PeriodKey | null {
   if (raw.toLowerCase() === "1m" || raw === "1개월" || raw === "1달") return "1M";
   if (raw.toLowerCase() === "ytd" || raw === "연초" || raw === "올해") return "YTD";
   if (raw.toLowerCase() === "1y" || raw === "1년") return "1Y";
+  if (raw.toLowerCase() === "2y" || raw === "2년") return "2Y";
   if (raw.toLowerCase() === "3y" || raw === "3년") return "3Y";
 
   // 대문자 표준값 직접 매칭
   const up = raw.toUpperCase();
-  if (up === "1D" || up === "3D" || up === "7D" || up === "15D" || up === "1M" || up === "YTD" || up === "1Y" || up === "3Y") {
+  if (up === "1D" || up === "3D" || up === "7D" || up === "15D" || up === "1M" || up === "YTD" || up === "1Y" || up === "2Y" || up === "3Y") {
     return up as PeriodKey;
   }
   return null;
@@ -169,6 +170,8 @@ export function extractReturnByPeriod(metrics: MetricsT | undefined, periodRaw: 
       return pick("return_ytd", "return_YTD", "returnYtd", "ret_ytd", "retYtd");
     case "1Y":
       return pick("return_1y", "return_1Y", "return1y", "ret_1y", "ret1y");
+    case "2Y":
+      return pick("return_2y", "return_2Y", "return2y", "ret_2y", "ret2y");
     case "3Y":
       return pick("return_3y", "return_3Y", "return3y", "ret_3y", "ret3y");
     default:
