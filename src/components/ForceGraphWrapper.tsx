@@ -1908,6 +1908,7 @@ export default function ForceGraphWrapper({
             THEME
           </span>
           <div className="text-sm font-bold">{themeName || themeId}</div>
+          <span className="text-[10px] text-white/50">{themeId}</span>
         </div>
 
         <div className="mt-2 space-y-1.5">
@@ -1920,14 +1921,13 @@ export default function ForceGraphWrapper({
                 {themeTemp.name}
               </span>
               <span className="text-sm font-bold text-white">{Math.round(themeOverallScore)}</span>
-              <span className="text-white/60">/ 100</span>
+              <span className="text-white/60">/ 1000</span>
             </div>
           ) : (
             <div className="text-white/60">Barometer 데이터 없음</div>
           )}
-          <div className="text-white/60">{themeId}</div>
           {themeDescription ? (
-            <div className="mt-2 border-t border-white/10 pt-2 text-[11px] leading-relaxed text-white/75">
+            <div className="mt-2 border-t border-white/10 pt-2 text-[22px] leading-relaxed text-white/75">
               {themeDescription}
             </div>
           ) : null}
