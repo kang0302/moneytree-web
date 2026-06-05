@@ -95,7 +95,7 @@ const RETURN_COLUMNS: Array<{ periodKey: PeriodKey; label: string }> = [
 function ReturnCell({ value }: { value: number | null | undefined }) {
   if (value == null || !Number.isFinite(value)) {
     return (
-      <td className="border border-white/30 px-2 py-2 text-right align-middle text-[12px] text-white/35">
+      <td className="border border-white/30 px-2 py-2 text-right align-middle text-[18px] text-white/35">
         —
       </td>
     );
@@ -105,7 +105,7 @@ function ReturnCell({ value }: { value: number | null | undefined }) {
   const sign = isUp ? "+" : "";
   return (
     <td
-      className={`border border-white/30 px-2 py-2 text-right align-middle text-[12px] tabular-nums font-semibold ${color}`}
+      className={`border border-white/30 px-2 py-2 text-right align-middle text-[18px] tabular-nums font-semibold ${color}`}
     >
       {`${sign}${value.toFixed(2)}%`}
     </td>
@@ -282,7 +282,7 @@ export default function ThemeBriefing({ themeId, nodes }: Props) {
                     {RETURN_COLUMNS.map((c) => (
                       <th
                         key={c.label}
-                        className="w-16 border border-white/40 px-2 py-2 text-right align-middle text-[12px] font-semibold text-white"
+                        className="w-16 border border-white/40 px-2 py-2 text-right align-middle text-[18px] font-semibold text-white"
                       >
                         {c.label}
                       </th>
