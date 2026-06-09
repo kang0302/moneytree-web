@@ -20,6 +20,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import ForceGraphWrapper from "@/components/ForceGraphWrapper";
 import GraphRightPanel, { CompareThemeOptionT } from "@/components/GraphRightPanel";
 import ThemeBriefing from "@/components/ThemeBriefing";
+import ThemeInsights from "@/components/ThemeInsights";
 
 // ✅ Search import
 import SearchBar from "@/components/SearchBar";
@@ -269,6 +270,9 @@ export default function GraphClient({
 
   // ✅ period (header control)
   const [period, setPeriod] = useState<PeriodKey>("7D");
+
+  // ✅ 투자 인사이트 24h 내 신규 개수 (헤더 NEW 배지 + 클릭 시 섹션으로 스크롤)
+  const [insightNewCount, setInsightNewCount] = useState(0);
 
   // ✅ right panel selected node
   const [selectedNode, setSelectedNode] = useState<NodeT | null>(null);
@@ -721,7 +725,7 @@ export default function GraphClient({
     <div className="flex flex-col">
       {/* ✅ Compact Top Header (single-line) */}
       <header className="mb-2 flex h-12 items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-2 py-1">
-        {/* Left: ThemeId badge + Theme name */}
+        {/* Left: ThemeId badge + Theme name + (선택) 투자 인사이트 NEW 배지 */}
         <div className="flex min-w-0 items-center gap-2">
           <div className="shrink-0 rounded-lg border border-white/15 bg-black/30 px-2 py-1 text-[11px] font-semibold text-white/85">
             {themeId}
@@ -729,6 +733,16 @@ export default function GraphClient({
           <div className="min-w-0 truncate text-[13px] font-semibold text-white/90" title={themeName}>
             {themeName}
           </div>
+          {insightNewCount > 0 && (
+            <button
+              type="button"
+              onClick={() => document.getElementById("theme-insights")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+              title={`24시간 이내 신규 인사이트 ${insightNewCount}건 — 클릭하여 이동`}
+              className="shrink-0 animate-pulse rounded-full bg-red-600 px-2 py-0.5 text-[10px] font-bold text-white hover:bg-red-500"
+            >
+              💡 NEW {insightNewCount}
+            </button>
+          )}
         </div>
 
         {/* ✅ SearchBar (ASSET/THEME/BF/MACRO) */}
@@ -853,6 +867,18 @@ export default function GraphClient({
       {/* ✅ 그래프 하단: 브리핑 테이블 — 마크다운 4컬럼 + 6 수익률 컬럼 자동 부착 */}
       <div className="w-full">
         <ThemeBriefing themeId={themeId} nodes={enrichedNodes as any} />
+      </div>
+
+      {/* ✅ 브리핑 아래: 투자 인사이트 — 테마 + 자산별 Claude 리서치 표시 */}
+      <div className="w-full">
+        <ThemeInsights
+          themeId={themeId}
+          themeName={themeName}
+          assets={(enrichedNodes as any[])
+            .filter((n) => n?.type === "ASSET" && typeof n?.id === "string")
+            .map((n) => ({ id: n.id, name: n.name }))}
+          onNewCount={setInsightNewCount}
+        />
       </div>
     </div>
   );
