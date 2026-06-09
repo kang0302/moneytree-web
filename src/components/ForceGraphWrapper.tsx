@@ -1060,6 +1060,61 @@ export default function ForceGraphWrapper({
     return { layer1, layer2, layer3, layer4, neighborMap };
   }, [allClonedNodes, edges, themeNodeId]);
 
+  // 🧲 Layer2 자산을 "trait signature" 기준으로 정렬 — 같은 BF/MACRO/CHARACTER 를 공유하는
+  //    자산들이 sector 안에서 인접 배치되도록. (사용자 요청 2026-06-09)
+  //    signature = sorted(연결된 BF + MACRO + CHARACTER ID).join("|")
+  //    같은 signature → 같은 그룹으로 인접 배치 → 시각적 clustering.
+  const layer2OrderById = useMemo(() => {
+    const safeEdges = Array.isArray(edges) ? edges : [];
+    const nodeTypeById = new Map<string, string>();
+    for (const n of allClonedNodes) nodeTypeById.set(n.id, normType(n.type));
+
+    const traitsByAsset = new Map<string, Set<string>>();
+    for (const e of safeEdges) {
+      const { s, t } = pickEdgeEndpoints(e);
+      if (!s || !t) continue;
+      const sT = nodeTypeById.get(s);
+      const tT = nodeTypeById.get(t);
+      let assetId: string | null = null;
+      let traitId: string | null = null;
+      if (sT === "ASSET" && (tT === "FIELD" || tT === "MACRO" || tT === "CHARACTER")) {
+        assetId = s; traitId = t;
+      } else if (tT === "ASSET" && (sT === "FIELD" || sT === "MACRO" || sT === "CHARACTER")) {
+        assetId = t; traitId = s;
+      }
+      if (assetId && traitId && layerInfo.layer2.has(assetId)) {
+        if (!traitsByAsset.has(assetId)) traitsByAsset.set(assetId, new Set());
+        traitsByAsset.get(assetId)!.add(traitId);
+      }
+    }
+
+    // signature 별로 그룹화 + 그룹 크기 큰 순으로 정렬 (대중적 trait → 중앙에 큰 sector)
+    const l2Ids = allClonedNodes.filter((n) => layerInfo.layer2.has(n.id)).map((n) => n.id);
+    const sigByAsset = new Map<string, string>();
+    for (const aid of l2Ids) {
+      const s = traitsByAsset.get(aid);
+      sigByAsset.set(aid, s ? [...s].sort().join("|") : "");
+    }
+    const sigToAssets = new Map<string, string[]>();
+    for (const aid of l2Ids) {
+      const sig = sigByAsset.get(aid) || "";
+      if (!sigToAssets.has(sig)) sigToAssets.set(sig, []);
+      sigToAssets.get(sig)!.push(aid);
+    }
+    // 그룹 크기 내림차순 (큰 그룹 우선) → 같은 크기면 signature 알파벳순 → 그룹 내 자산 ID 알파벳순
+    const sortedGroups = [...sigToAssets.entries()].sort((a, b) => {
+      if (a[1].length !== b[1].length) return b[1].length - a[1].length;
+      return a[0].localeCompare(b[0]);
+    });
+    const orderMap = new Map<string, number>();
+    let idx = 0;
+    for (const [, assets] of sortedGroups) {
+      assets.sort((a, b) => a.localeCompare(b));
+      for (const aid of assets) orderMap.set(aid, idx++);
+    }
+    return orderMap;
+  }, [allClonedNodes, edges, layerInfo]);
+
   // 같은 레이어 안에서 등장 시 0~INTRA_LAYER_JITTER_MAX_MS 만큼 staggered delay.
   // 순서는 12시 기준 시계방향. 각 layer의 placement 각도(공식 기반)를 시계방향으로 정렬해
   // 첫 노드 = 0ms, 마지막 노드 = MAX 가 되도록 선형 분배.
@@ -1089,10 +1144,15 @@ export default function ForceGraphWrapper({
       : 0;
     assignByAngle(l1Ids, (_id, i) => LAYER1_CENTER_ANGLE + (i - (l1Ids.length - 1) / 2) * l1Step);
 
-    // Layer2 (bottom sector, 6시 중심)
+    // Layer2 (bottom sector, 6시 중심) — trait signature 정렬 적용 (placeOnSector 와 동일 순서)
     const l2Ids = allClonedNodes
       .filter((n) => layerInfo.layer2.has(n.id))
-      .map((n) => n.id);
+      .map((n) => n.id)
+      .sort((a, b) => {
+        const oa = layer2OrderById.get(a) ?? Number.POSITIVE_INFINITY;
+        const ob = layer2OrderById.get(b) ?? Number.POSITIVE_INFINITY;
+        return oa - ob;
+      });
     const l2Step = l2Ids.length > 1
       ? Math.min(LAYER2_STACK_STEP, (2 * LAYER2_HALF_SPAN) / l2Ids.length)
       : 0;
@@ -1129,7 +1189,7 @@ export default function ForceGraphWrapper({
     });
 
     return map;
-  }, [allClonedNodes, layerInfo, themeNodeId]);
+  }, [allClonedNodes, layerInfo, themeNodeId, layer2OrderById]);
 
   // 🎯 Asset 순위 — layer2(THEMED_AS) Asset만 상위 10/나머지 분리.
   //    layer1(ETF) / layer3(연결 Asset)은 항상 전체 표시.
@@ -1225,8 +1285,16 @@ export default function ForceGraphWrapper({
       centerAngle: number,
       halfSpan: number,
       naturalStep: number,
+      customOrder?: Map<string, number>,
     ) => {
       const arr = ns.filter((n) => n.id !== theme.id && ids.has(n.id));
+      if (customOrder) {
+        arr.sort((a, b) => {
+          const oa = customOrder.get(a.id) ?? Number.POSITIVE_INFINITY;
+          const ob = customOrder.get(b.id) ?? Number.POSITIVE_INFINITY;
+          return oa - ob;
+        });
+      }
       const count = arr.length;
       if (count === 0) return;
       const span = 2 * halfSpan;
@@ -1254,12 +1322,14 @@ export default function ForceGraphWrapper({
     );
 
     // 2궤도: 6시 중심, 1시01분~10시59분 안에서 좌우로 펼침
+    //   ✅ 같은 trait signature (공유 BF/MACRO/CHARACTER) 자산이 인접 배치
     placeOnSector(
       layerInfo.layer2,
       GRAPH_CONFIG.orbitRadius.l2,
       LAYER2_CENTER_ANGLE,
       LAYER2_HALF_SPAN,
       LAYER2_STACK_STEP,
+      layer2OrderById,
     );
 
     const angleOf = (id: string): number | null => {
@@ -1430,7 +1500,7 @@ export default function ForceGraphWrapper({
         } catch {}
       }, 120);
     }
-  }, [graphData.nodes, size.w, size.h, themeNodeId, lockTheme, layerInfo]);
+  }, [graphData.nodes, size.w, size.h, themeNodeId, lockTheme, layerInfo, layer2OrderById]);
 
   // ✅ focus: center & zoom to searched node
   useEffect(() => {
