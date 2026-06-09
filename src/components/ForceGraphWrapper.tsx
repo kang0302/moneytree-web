@@ -137,6 +137,9 @@ type Props = {
   // ✅ ASSET 노드 색상 결정 모드 (default "return": 수익률 색깔, "type": 타입 base 색).
   //    asset view (/asset/[assetId]) 에서 metrics 없는 노드들이 모두 회색으로 보이는 문제 해결용.
   assetColorMode?: "return" | "type";
+
+  // ✅ 24h 이내 갱신된 인사이트 보유 노드 ID set (T_xxx / A_xxx) — hover 박스에 NEW 배지 표시용.
+  freshInsightIds?: Set<string>;
 };
 
 // ─────────────────────────────────────────────
@@ -493,6 +496,7 @@ export default function ForceGraphWrapper({
   themeReturn,
   themeDescription,
   assetColorMode = "return",
+  freshInsightIds,
 }: Props) {
   const fgRef = useRef<any>(null);
   const wrapRef = useRef<HTMLDivElement | null>(null);
@@ -2000,9 +2004,19 @@ export default function ForceGraphWrapper({
             {isAssetHover ? (
               <div className="flex items-center gap-3">
                 <div className="flex min-w-0 flex-1 flex-col">
-                  <span className="self-start rounded bg-white/10 px-1.5 py-0.5 text-[10px] font-bold tracking-wide text-white/80">
-                    {typeLabel}
-                  </span>
+                  <div className="flex items-center gap-1.5">
+                    <span className="rounded bg-white/10 px-1.5 py-0.5 text-[10px] font-bold tracking-wide text-white/80">
+                      {typeLabel}
+                    </span>
+                    {freshInsightIds?.has(hoverNode.id) && (
+                      <span
+                        className="rounded bg-red-600 px-1.5 py-0.5 text-[10px] font-bold text-white"
+                        title="24시간 이내 인사이트 갱신"
+                      >
+                        💡 NEW
+                      </span>
+                    )}
+                  </div>
                   <div className="mt-1 flex items-baseline gap-2 truncate">
                     <span className="truncate text-sm font-bold" title={hoverLabel || hoverNode.id}>
                       {hoverLabel || hoverNode.id}

@@ -273,6 +273,8 @@ export default function GraphClient({
 
   // ✅ 투자 인사이트 24h 내 신규 개수 (헤더 NEW 배지 + 클릭 시 섹션으로 스크롤)
   const [insightNewCount, setInsightNewCount] = useState(0);
+  // ✅ 24h 내 신규 인사이트 ID set (T_xxx / A_xxx) — 브리핑 행 + 그래프 hover 박스 NEW 배지 표시용
+  const [insightFreshIds, setInsightFreshIds] = useState<Set<string>>(() => new Set());
 
   // ✅ right panel selected node
   const [selectedNode, setSelectedNode] = useState<NodeT | null>(null);
@@ -835,6 +837,7 @@ export default function GraphClient({
               showPeriodButtons={false} // ✅ 헤더로 이동
               focusId={focusId}
               themeReturn={themeReturn} // ✅ THEME 노드 hover에 Barometer 점수 표시
+              freshInsightIds={insightFreshIds} // ✅ hover 박스 NEW 배지용
             />
           </div>
 
@@ -866,7 +869,7 @@ export default function GraphClient({
 
       {/* ✅ 그래프 하단: 브리핑 테이블 — 마크다운 4컬럼 + 6 수익률 컬럼 자동 부착 */}
       <div className="w-full">
-        <ThemeBriefing themeId={themeId} nodes={enrichedNodes as any} />
+        <ThemeBriefing themeId={themeId} nodes={enrichedNodes as any} freshInsightIds={insightFreshIds} />
       </div>
 
       {/* ✅ 브리핑 아래: 투자 인사이트 — 테마 + 자산별 Claude 리서치 표시 */}
@@ -878,6 +881,7 @@ export default function GraphClient({
             .filter((n) => n?.type === "ASSET" && typeof n?.id === "string")
             .map((n) => ({ id: n.id, name: n.name }))}
           onNewCount={setInsightNewCount}
+          onFreshIds={setInsightFreshIds}
         />
       </div>
     </div>

@@ -29,6 +29,8 @@ type Props = {
   assets?: Array<{ id: string; name?: string }>;
   /** 24h 내 인사이트 개수가 변할 때 호출 — 헤더 배지 동기화용. */
   onNewCount?: (count: number) => void;
+  /** 24h 내 신선한 인사이트의 ID set 통보 — 브리핑/hover 의 NEW 배지 표시용. */
+  onFreshIds?: (ids: Set<string>) => void;
 };
 
 const ONE_DAY_MS = 24 * 60 * 60 * 1000;
@@ -74,7 +76,7 @@ function fmtDate(d?: Date): string {
   return d.toISOString().slice(0, 10);
 }
 
-export default function ThemeInsights({ themeId, themeName, assets, onNewCount }: Props) {
+export default function ThemeInsights({ themeId, themeName, assets, onNewCount, onFreshIds }: Props) {
   const [docs, setDocs] = useState<InsightDoc[] | null>(null);
   const [collapsed, setCollapsed] = useState<Record<string, boolean>>({});
 
@@ -99,11 +101,12 @@ export default function ThemeInsights({ themeId, themeName, assets, onNewCount }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [assetIds]);
 
-  // docs 변경될 때 새 NEW count 부모에 통보
+  // docs 변경될 때 새 NEW count + fresh ID set 부모에 통보
   useEffect(() => {
-    if (!onNewCount) return;
-    onNewCount(docs ? docs.filter((d) => d.isNew).length : 0);
-  }, [docs, onNewCount]);
+    const fresh = docs ? docs.filter((d) => d.isNew) : [];
+    if (onNewCount) onNewCount(fresh.length);
+    if (onFreshIds) onFreshIds(new Set(fresh.map((d) => d.id)));
+  }, [docs, onNewCount, onFreshIds]);
 
   useEffect(() => {
     let cancelled = false;

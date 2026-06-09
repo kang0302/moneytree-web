@@ -6,7 +6,7 @@
 // 없으면 조용히 숨김 (그래프만 표시).
 // briefing 의 본문 표 각 행에서 첫 셀의 ticker 를 추출 → 9개 기간 수익률 컬럼(3년/2년/1년/YTD/1개월/15일/7일/3일/1일) 자동 부착.
 
-import { Children, Fragment, ReactNode, useEffect, useMemo, useRef, useState } from "react";
+import React, { Children, Fragment, ReactNode, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -76,6 +76,8 @@ type Props = {
   themeId: string;
   /** ASSET 노드 배열 — 행별 수익률 9개 컬럼(3Y/2Y/1Y/YTD/1M/15D/7D/3D/1D) 자동 append 용. 미제공 시 수익률 컬럼 숨김. */
   nodes?: AssetNode[];
+  /** 24h 이내 갱신된 인사이트의 자산 ID set — 해당 행의 종목 셀에 NEW 배지 표시. */
+  freshInsightIds?: Set<string>;
 };
 
 // 왼쪽=가장 긴 기간, 오른쪽=가장 짧은 기간 (BAROMETER 추세 차트와 동일).
@@ -112,7 +114,7 @@ function ReturnCell({ value }: { value: number | null | undefined }) {
   );
 }
 
-export default function ThemeBriefing({ themeId, nodes }: Props) {
+export default function ThemeBriefing({ themeId, nodes, freshInsightIds }: Props) {
   const [md, setMd] = useState<string | null>(null);
   const [state, setState] = useState<State>("loading");
   // 플로팅 단서: briefing 이 viewport 밖에 있을 때만 표시 — 그래프 영역 하단 정중앙
@@ -293,9 +295,26 @@ export default function ThemeBriefing({ themeId, nodes }: Props) {
               const first = arr[0] as any;
               const ticker = extractTickerFromCell(extractText(first));
               const assetNode = ticker ? tickerToNode.get(ticker) : null;
+              const isFreshInsight = !!(assetNode?.id && freshInsightIds?.has(assetNode.id));
+              const firstCell = isFreshInsight && React.isValidElement(first)
+                ? React.cloneElement(
+                    first as React.ReactElement<any>,
+                    undefined,
+                    <>
+                      <span
+                        className="mr-1.5 inline-block rounded bg-red-600 px-1.5 py-0.5 align-middle text-[10px] font-bold text-white"
+                        title="24시간 이내 인사이트 갱신"
+                      >
+                        NEW
+                      </span>
+                      {(first as React.ReactElement<any>).props.children}
+                    </>,
+                  )
+                : first;
               return (
                 <tr {...(rest as any)}>
-                  {arr}
+                  {firstCell}
+                  {arr.slice(1)}
                   {RETURN_COLUMNS.map((c) => (
                     <ReturnCell
                       key={c.label}
