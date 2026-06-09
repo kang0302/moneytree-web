@@ -5,7 +5,7 @@
 // import_MT/data/insights/{T_xxx,A_xxx}.md 를 GitHub raw 에서 fetch 해 표시.
 // frontmatter (updated_at·title·tags) 파싱 + 24h 내 인사이트는 NEW 배지.
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -78,6 +78,27 @@ export default function ThemeInsights({ themeId, themeName, assets, onNewCount }
   const [docs, setDocs] = useState<InsightDoc[] | null>(null);
   const [collapsed, setCollapsed] = useState<Record<string, boolean>>({});
 
+  // assets 배열은 부모가 매 렌더마다 새로 만들어 prop 으로 넘김 → useEffect 무한 트리거 방지
+  // stable string key + displayName 매핑은 별도 useMemo 로 안정화
+  const assetIds = useMemo(
+    () =>
+      (assets || [])
+        .filter((a) => typeof a.id === "string" && a.id.startsWith("A_"))
+        .map((a) => a.id)
+        .sort()
+        .join(","),
+    [assets],
+  );
+  const assetNameMap = useMemo(() => {
+    const m: Record<string, string> = {};
+    (assets || []).forEach((a) => {
+      if (typeof a.id === "string") m[a.id] = a.name || a.id;
+    });
+    return m;
+    // assetIds 가 바뀔 때만 다시 만들면 됨 (assets 자체 의존 안 함)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [assetIds]);
+
   // docs 변경될 때 새 NEW count 부모에 통보
   useEffect(() => {
     if (!onNewCount) return;
@@ -92,10 +113,8 @@ export default function ThemeInsights({ themeId, themeName, assets, onNewCount }
       const targets: Array<{ id: string; kind: "theme" | "asset"; displayName: string }> = [
         { id: themeId, kind: "theme", displayName: themeName || themeId },
       ];
-      (assets || []).forEach((a) => {
-        if (a.id?.startsWith("A_")) {
-          targets.push({ id: a.id, kind: "asset", displayName: a.name || a.id });
-        }
+      assetIds.split(",").filter(Boolean).forEach((id) => {
+        targets.push({ id, kind: "asset", displayName: assetNameMap[id] || id });
       });
 
       const now = Date.now();
@@ -135,7 +154,7 @@ export default function ThemeInsights({ themeId, themeName, assets, onNewCount }
     return () => {
       cancelled = true;
     };
-  }, [themeId, themeName, assets]);
+  }, [themeId, themeName, assetIds, assetNameMap]);
 
   if (!docs) {
     return (
