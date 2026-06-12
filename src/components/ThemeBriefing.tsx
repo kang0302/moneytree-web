@@ -97,7 +97,7 @@ const RETURN_COLUMNS: Array<{ periodKey: PeriodKey; label: string }> = [
 function ReturnCell({ value }: { value: number | null | undefined }) {
   if (value == null || !Number.isFinite(value)) {
     return (
-      <td className="border border-white/30 px-2 py-2 text-right align-middle text-[18px] text-white/35">
+      <td className="border border-white/30 px-2 py-2 text-right align-middle text-[22px] text-white/35">
         —
       </td>
     );
@@ -107,7 +107,7 @@ function ReturnCell({ value }: { value: number | null | undefined }) {
   const sign = isUp ? "+" : "";
   return (
     <td
-      className={`border border-white/30 px-2 py-2 text-right align-middle text-[18px] tabular-nums font-semibold ${color}`}
+      className={`border border-white/30 px-2 py-2 text-right align-middle text-[22px] tabular-nums font-semibold ${color}`}
     >
       {`${sign}${value.toFixed(2)}%`}
     </td>
@@ -246,7 +246,7 @@ export default function ThemeBriefing({ themeId, nodes, freshInsightIds }: Props
           components={{
             table: ({ children }) => (
               <div className="my-3 overflow-x-auto">
-                <table className="w-full table-fixed border-collapse border border-white/40 text-[13px] [&_tbody_tr:nth-child(even)]:bg-white/4 [&_tbody_tr:hover]:bg-white/7">
+                <table className="w-full table-fixed border-collapse border border-white/40 text-[16px] [&_tbody_tr:nth-child(even)]:bg-white/4 [&_tbody_tr:hover]:bg-white/7">
                   {showReturnColumns ? (
                     <colgroup>
                       <col style={{ width: "12%" }} />
@@ -284,7 +284,7 @@ export default function ThemeBriefing({ themeId, nodes, freshInsightIds }: Props
                     {RETURN_COLUMNS.map((c) => (
                       <th
                         key={c.label}
-                        className="w-16 border border-white/40 px-2 py-2 text-right align-middle text-[18px] font-semibold text-white"
+                        className="w-16 border border-white/40 px-2 py-2 text-right align-middle text-[22px] font-semibold text-white"
                       >
                         {c.label}
                       </th>
@@ -325,12 +325,12 @@ export default function ThemeBriefing({ themeId, nodes, freshInsightIds }: Props
               );
             },
             th: ({ children }) => (
-              <th className="border border-white/40 px-3 py-2 text-left align-top text-[13px] font-semibold text-white">
+              <th className="border border-white/40 px-3 py-2 text-left align-top text-[16px] font-semibold text-white">
                 {renderWithBrs(children)}
               </th>
             ),
             td: ({ children }) => (
-              <td className="border border-white/30 px-3 py-2 align-top text-[13px] text-white/85">
+              <td className="border border-white/30 px-3 py-2 align-top text-[16px] text-white/85">
                 {renderWithBrs(children)}
               </td>
             ),
