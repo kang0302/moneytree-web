@@ -147,12 +147,48 @@ function scoreLabel(score: number | null): string {
   return "COLD-";
 }
 
+function useCountUp(target: number, duration = 1500) {
+  const [value, setValue] = useState(0);
+  useEffect(() => {
+    if (target <= 0) {
+      setValue(0);
+      return;
+    }
+    const start = performance.now();
+    let raf = 0;
+    const tick = (now: number) => {
+      const t = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - t, 3);
+      setValue(Math.round(eased * target));
+      if (t < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [target, duration]);
+  return value;
+}
+
+function StatCounter({ label, value }: { label: string; value: number }) {
+  const display = useCountUp(value);
+  return (
+    <div className="flex flex-col items-center">
+      <div className="font-mono text-[24px] font-extrabold tabular-nums text-white sm:text-[32px]">
+        {display.toLocaleString()}
+      </div>
+      <div className="mt-0.5 text-[10px] uppercase tracking-wider text-white/50 sm:text-[11px]">
+        {label}
+      </div>
+    </div>
+  );
+}
+
 export default function HomePage() {
   const router = useRouter();
   const [themes, setThemes] = useState<ThemeRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [recent, setRecent] = useState<RecentItem[]>([]);
   const [favs, setFavs] = useState<FavItem[]>([]);
+  const [counts, setCounts] = useState({ themes: 0, assets: 0, macros: 0 });
 
   useEffect(() => {
     setRecent(safeJsonParse<RecentItem[]>(localStorage.getItem(LS_RECENT), []));
@@ -169,6 +205,9 @@ export default function HomePage() {
       list = await resolvePlaceholderThemeNames(list);
       if (!alive) return;
 
+      const assetIds = new Set<string>();
+      const macroIds = new Set<string>();
+
       const period: PeriodKey = "7D";
       const enriched = await mapLimit(list, 6, async (row) => {
         const localUrl = `/data/theme/${row.themeId}.json`;
@@ -176,6 +215,13 @@ export default function HomePage() {
         const tj = (await fetchJson<ThemeJson>(localUrl)) ?? (await fetchJson<ThemeJson>(remoteUrl));
         if (!tj?.nodes) {
           return { ...row, score: null, note: null, topMover: null } as ThemeRow;
+        }
+        for (const n of tj.nodes) {
+          const id = (n as any)?.id;
+          const tp = (n as any)?.type;
+          if (!id) continue;
+          if (tp === "ASSET") assetIds.add(id);
+          else if (tp === "MACRO") macroIds.add(id);
         }
         const summary: any = computeThemeReturnSummary({
           nodes: tj.nodes,
@@ -196,6 +242,7 @@ export default function HomePage() {
 
       if (!alive) return;
       setThemes(enriched);
+      setCounts({ themes: list.length, assets: assetIds.size, macros: macroIds.size });
       setLoading(false);
     }
 
@@ -243,7 +290,7 @@ export default function HomePage() {
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col px-4 py-6">
         {/* Header */}
         <header className="mb-6 flex h-12 items-center justify-between rounded-xl border border-white/10 bg-white/[0.03] px-3 backdrop-blur">
-          <div className="text-[15px] font-extrabold tracking-tight">MoneyTree</div>
+          <div className="text-[15px] font-extrabold tracking-tight">Know_vest</div>
           <nav className="flex items-center gap-2 text-[12px]">
             <Link
               href="/themes"
@@ -261,6 +308,13 @@ export default function HomePage() {
           </div>
           <div className="mt-2 text-[12px] text-white/55 sm:text-[14px]">
             종목 · 티커 · 테마 · 산업 · 매크로 — 한 번에 검색
+          </div>
+          <div className="mx-auto mt-6 flex w-full max-w-2xl items-end justify-center gap-8 sm:gap-12">
+            <StatCounter label="Themes" value={counts.themes} />
+            <div className="h-8 w-px bg-white/15 sm:h-10" />
+            <StatCounter label="Assets" value={counts.assets} />
+            <div className="h-8 w-px bg-white/15 sm:h-10" />
+            <StatCounter label="Macros" value={counts.macros} />
           </div>
           <div className="relative z-50 mx-auto mt-6 w-full max-w-2xl rounded-2xl border border-white/15 bg-black/55 p-2 shadow-[0_8px_40px_rgba(0,0,0,0.5)] backdrop-blur-md">
             <SearchBar
