@@ -407,7 +407,7 @@ async function main() {
   if (!apiKey) throw new Error("ANTHROPIC_API_KEY env var missing");
 
   console.log("Loading SSOT theme index + fetching sources in parallel...");
-  const [themes, bloomberg, chinaShow, hankyung, maekyung, consensus, wsj] = await Promise.all([
+  const [themes, bloomberg, chinaShow, hankyung, maekyung, consensus, reuters] = await Promise.all([
     loadThemeIndex(),
     fetchYouTubeLatest(SOURCES.bloomberg),
     fetchYouTubeLatest(SOURCES.chinaShow),
@@ -418,7 +418,7 @@ async function main() {
   ]);
   console.log(`SSOT themes loaded: ${themes.length}`);
 
-  const sources = { bloomberg, chinaShow, hankyung, maekyung, consensus, wsj };
+  const sources = { bloomberg, chinaShow, hankyung, maekyung, consensus, reuters };
   console.log(
     JSON.stringify(
       {
@@ -433,7 +433,7 @@ async function main() {
         consensus: consensus.error
           ? { error: consensus.error }
           : { count: consensus.items.length },
-        wsj: wsj.error ? { error: wsj.error } : { count: wsj.items.length },
+        reuters: reuters.error ? { error: reuters.error } : { count: reuters.items.length },
       },
       null,
       2
