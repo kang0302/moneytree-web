@@ -49,10 +49,16 @@ const SOURCES = {
     url: "https://consensus.hankyung.com/",
     limit: 5,
   },
+  wsj: {
+    type: "rss",
+    name: "WSJ Business",
+    url: "https://feeds.a.dj.com/rss/WSJcomUSBusiness.xml",
+    limit: 10,
+  },
 };
 
 const MODEL = "claude-sonnet-4-6";
-const MAX_TOKENS = 14000; // 테마 매핑 테이블 + 20개 헤드라인(한경 10 + 매경 10) + 컨센서스 5 + 신규 후보 섹션 대비
+const MAX_TOKENS = 18000; // 매크로 요약 + TOP 5 + 신규/보강 (자동 제안 강화) + 30개 헤드라인(한경 10·매경 10·WSJ 10) + 컨센서스 5 — 전 섹션 테이블화 대비
 const TRANSCRIPT_HARD_LIMIT_CHARS = 30000; // 종목당 transcript 토큰 폭주 방지
 
 // ---------- Source fetchers ----------
@@ -201,68 +207,102 @@ function formatThemeIndexForPrompt(themes) {
 // ---------- Anthropic prompt ----------
 
 const SYSTEM_PROMPT = `당신은 머니트리 SSOT 테마 분석 도구입니다.
-4개 소스(영상 transcript / 증권 헤드라인 / 애널리스트 리포트)를 입력받아,
+6개 소스(영상 transcript / 글로벌·국내 증권 헤드라인 / 애널리스트 리포트)를 입력받아,
 moneytree-web의 기존 SSOT 테마 인덱스에 매핑하고, 신규 테마/자산 후보를 추출합니다.
 
 핵심 작업:
-1. 각 소스에서 종목·산업·매크로 시그널을 추출
-2. 기존 테마 인덱스(아래 SSOT) 중 가장 강하게 매칭되는 테마를 선택 — 반드시 \`T_xxx 테마명\` 형식으로 ID와 테마명 함께 표기 (테마명만 또는 ID만 단독 사용 금지)
-3. 기존 테마로 안 잡히는 시그널은 신규 테마/자산 후보로 분리
-4. 모든 매핑은 원문 인용(소스 종류 + 한 줄 quote)으로 근거 제시
+1. 매크로 환경(금리·환율·유가·지수·외국인 수급)을 1-3 문장으로 요약
+2. 각 소스에서 종목·산업·매크로 시그널을 추출
+3. 기존 테마 인덱스(아래 SSOT) 중 가장 강하게 매칭되는 테마를 선택 — 반드시 \`T_xxx 테마명\` 형식으로 ID와 테마명 함께 표기
+4. 기존 테마로 안 잡히는 시그널은 신규 테마/자산 후보로 분리 — 자동 제안 강화 (자산·매크로·CHR 후보까지 명시)
+5. 모든 매핑은 원문 인용(소스 종류 + 한 줄 quote)으로 근거 제시
 
 # SSOT 테마 인덱스 (총 {THEME_COUNT}개)
 {THEME_INDEX}
 
-# 출력 포맷 (한국어 마크다운, 간결·정보밀도 우선)
+# 출력 포맷 (한국어 마크다운, 모든 섹션 테이블 + URL 필수)
 
 # 머니트리 데일리 테마 매핑 — {DATE}
 
+## 0. 매크로 한 줄 요약
+| 카테고리 | 상태 | 한 줄 설명 | 트리거 소스 |
+|---|---|---|---|
+| 미국 지수·금리 | up / down / mixed | ... | Bloomberg / WSJ |
+| 한국 지수·환율 | ... | ... | 한경 / 매경 |
+| 중국·EM | ... | ... | Bloomberg China |
+| 유가·원자재 | ... | ... | ... |
+| 외국인 수급·sentiment | RISK_ON / RISK_OFF / mixed | ... | ... |
+
 ## 1. 오늘의 핫 테마 TOP 5
-| 순위 | 테마 ID | 테마명 | 신호 강도 | 트리거 소스 | 한 줄 근거 |
+| 순위 | 테마 ID | 테마명 | 신호 강도 | 트리거 소스 | 한 줄 근거 + 원문 URL |
 |---|---|---|---|---|---|
-| 1 | T_xxx | ... | ★★★ | Bloomberg / 한경 / 컨센서스 | "..." |
+| 1 | T_xxx | ... | ★★★ | Bloomberg / 한경 / 컨센서스 | "..." [원문](URL) |
 
 신호 강도: ★★★(다중 소스 교차) / ★★(단일 강한 시그널) / ★(약한 시사)
 
-## 2. 신규 테마 후보
+## 2. 신규 테마 후보 (자동 제안 강화)
 기존 인덱스에 없는 시그널만. 없으면 "해당 없음".
-- **{제안 테마명}** — 근거: {소스} "{quote}"
-  - 영향 자산 후보: {ticker1}/{exchange1}, {ticker2}/{exchange2}
+
+| 제안 테마명 | 자산 후보 (ticker/exchange) | 매크로 후보 | CHR 후보 (특징) | 근거 + 원문 URL |
+|---|---|---|---|---|
+| {테마명} | T1/EX1·T2/EX2·T3/EX3 | M_xxx 또는 신규명 | C_xxx 또는 신규명 | "..." [원문](URL) |
 
 ## 3. 기존 테마 보강 후보
-기존 T_xxx에 추가할 자산·관계.
-- **T_xxx ({테마명})** ← 추가: {ticker}/{exchange} — 근거: {소스} "{quote}"
+| 테마 ID | 테마명 | 추가 자산 (ticker/exchange) | 관계 (THEMED_AS·OPERATES·SUPPLIES 등) | 근거 + 원문 URL |
+|---|---|---|---|---|
+| T_xxx | ... | T1/EX1 | THEMED_AS | "..." [원문](URL) |
 
-## 4. 소스별 핵심 요약
-### Bloomberg Technology
+## 4. 소스별 핵심 요약 (모두 테이블)
+
+### 4-1. Bloomberg Technology
 **[{title}]({link})** ({published_kst})
-- **시그널 1 — T_xxx {테마명}**: 한 줄 설명
-- **시그널 2 — T_xxx {테마명}**: 한 줄 설명
-- **시그널 3 — T_xxx {테마명}**: 한 줄 설명
 
-### Bloomberg: The China Show
+| 시그널 | 매핑 테마 | 한 줄 설명 |
+|---|---|---|
+| 1 | T_xxx {테마명} | ... |
+| 2 | T_xxx {테마명} | ... |
+| 3 | T_xxx {테마명} | ... |
+
+### 4-2. Bloomberg: The China Show
 **[{title}]({link})** ({published_kst})
-- **시그널 1 — T_xxx {테마명}**: 한 줄 설명 — 중국 거시·미·중 관계·HK/CN 종목 중심
-- **시그널 2 — T_xxx {테마명}**: 한 줄 설명
-- **시그널 3 — T_xxx {테마명}**: 한 줄 설명
 
-### 한국경제 증권 헤드라인 (top 10)
-1. **[{title}]({link})** — 한 줄 요약 → **T_xxx {테마명}**
+| 시그널 | 매핑 테마 | 한 줄 설명 |
+|---|---|---|
+| 1 | T_xxx {테마명} | ... |
+| 2 | T_xxx {테마명} | ... |
+| 3 | T_xxx {테마명} | ... |
+
+### 4-3. WSJ Business (top 10)
+| # | 제목 (원문 링크) | 한 줄 요약 | 매핑 테마 |
+|---|---|---|---|
+| 1 | [{title}]({link}) | ... | T_xxx {테마명} |
 ... (10개)
 
-### 매일경제 증권 헤드라인 (top 10)
-1. **[{title}]({link})** — 한 줄 요약 → **T_xxx {테마명}**
+### 4-4. 한국경제 증권 (top 10)
+| # | 제목 (원문 링크) | 한 줄 요약 | 매핑 테마 |
+|---|---|---|---|
+| 1 | [{title}]({link}) | ... | T_xxx {테마명} |
 ... (10개)
 
-### 한경 컨센서스 (latest 5)
-1. **[{title}]({link})** — {broker} {analyst} — 핵심 thesis → **T_xxx {테마명}**
+### 4-5. 매일경제 증권 (top 10)
+| # | 제목 (원문 링크) | 한 줄 요약 | 매핑 테마 |
+|---|---|---|---|
+| 1 | [{title}]({link}) | ... | T_xxx {테마명} |
+... (10개)
+
+### 4-6. 한경 컨센서스 (latest 5)
+| # | 제목 (원문 링크) | 종목 / 브로커·애널 | 핵심 thesis | 매핑 테마 |
+|---|---|---|---|---|
+| 1 | [{title}]({link}) | {security} / {broker} {analyst} | ... | T_xxx {테마명} |
 ... (5개)
 
 ---
 
 규칙:
 - 매핑은 반드시 SSOT 인덱스의 실제 T_xxx ID만 사용. 인덱스에 없는 ID 생성 금지.
-- **모든 T_xxx 참조는 반드시 "T_xxx 테마명" 형식으로 표기** (예: \`T_024 IPO스타_엔트로픽수혜주\`). ID만 또는 이름만 단독 사용 금지. 같은 줄에 여러 번 등장해도 매 회 함께 표기.
+- **모든 T_xxx 참조는 반드시 "T_xxx 테마명" 형식으로 표기** (예: \`T_024 IPO스타_엔트로픽수혜주\`).
+- **모든 섹션의 핵심 정보는 테이블로 정리하고, 원문 URL 을 반드시 마크다운 링크로 포함**.
+- 신규 테마 후보 (섹션 2) 는 ticker/exchange + macro + CHR 후보까지 명시 — Workflow 자동 batch 생성 가능 수준.
 - 추측은 "추정:" 접두어. 출처 인용은 짧은 직접 quote 권장.
 - 빈 섹션은 "해당 없음"으로 명시 (섹션 생략 금지).
 
@@ -329,8 +369,20 @@ function buildUserMessage(sources) {
     });
   }
 
+  // WSJ Business
+  parts.push(`\n## [5] WSJ Business RSS (top 10)\n`);
+  if (sources.wsj?.error) {
+    parts.push(`ERROR: ${sources.wsj.error}\n`);
+  } else {
+    sources.wsj.items.forEach((it, i) => {
+      parts.push(
+        `${i + 1}. ${it.title}\n   Link: ${it.link}\n   Date: ${it.pubDate}\n   Desc: ${it.description}\n`
+      );
+    });
+  }
+
   // Consensus
-  parts.push(`\n## [5] 한경 컨센서스 (latest 5)\n`);
+  parts.push(`\n## [6] 한경 컨센서스 (latest 5)\n`);
   if (sources.consensus?.error) {
     parts.push(`ERROR: ${sources.consensus.error}\n`);
   } else if (!sources.consensus.items.length) {
@@ -353,17 +405,18 @@ async function main() {
   if (!apiKey) throw new Error("ANTHROPIC_API_KEY env var missing");
 
   console.log("Loading SSOT theme index + fetching sources in parallel...");
-  const [themes, bloomberg, chinaShow, hankyung, maekyung, consensus] = await Promise.all([
+  const [themes, bloomberg, chinaShow, hankyung, maekyung, consensus, wsj] = await Promise.all([
     loadThemeIndex(),
     fetchYouTubeLatest(SOURCES.bloomberg),
     fetchYouTubeLatest(SOURCES.chinaShow),
     fetchHankyungRSS(SOURCES.hankyung),
     fetchHankyungRSS(SOURCES.maekyung), // 같은 RSS 2.0 포맷 → 동일 fetcher 재사용
     fetchConsensusLatest(SOURCES.consensus),
+    fetchHankyungRSS(SOURCES.wsj), // RSS 2.0 호환
   ]);
   console.log(`SSOT themes loaded: ${themes.length}`);
 
-  const sources = { bloomberg, chinaShow, hankyung, maekyung, consensus };
+  const sources = { bloomberg, chinaShow, hankyung, maekyung, consensus, wsj };
   console.log(
     JSON.stringify(
       {
@@ -378,6 +431,7 @@ async function main() {
         consensus: consensus.error
           ? { error: consensus.error }
           : { count: consensus.items.length },
+        wsj: wsj.error ? { error: wsj.error } : { count: wsj.items.length },
       },
       null,
       2
