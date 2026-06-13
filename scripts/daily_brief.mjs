@@ -49,10 +49,11 @@ const SOURCES = {
     url: "https://consensus.hankyung.com/",
     limit: 5,
   },
-  wsj: {
+  reuters: {
     type: "rss",
-    name: "WSJ Business",
-    url: "https://feeds.a.dj.com/rss/WSJcomUSBusiness.xml",
+    name: "Reuters Business",
+    // Google News RSS — Reuters 비즈니스 도메인 필터 (24h within). 공식 reuters RSS 는 2020 이후 deprecated.
+    url: "https://news.google.com/rss/search?q=when:1d+site:reuters.com&hl=en-US&gl=US&ceid=US:en",
     limit: 10,
   },
 };
@@ -227,7 +228,7 @@ moneytree-web의 기존 SSOT 테마 인덱스에 매핑하고, 신규 테마/자
 ## 0. 매크로 한 줄 요약
 | 카테고리 | 상태 | 한 줄 설명 | 트리거 소스 |
 |---|---|---|---|
-| 미국 지수·금리 | up / down / mixed | ... | Bloomberg / WSJ |
+| 미국 지수·금리 | up / down / mixed | ... | Bloomberg / Reuters |
 | 한국 지수·환율 | ... | ... | 한경 / 매경 |
 | 중국·EM | ... | ... | Bloomberg China |
 | 유가·원자재 | ... | ... | ... |
@@ -272,7 +273,7 @@ moneytree-web의 기존 SSOT 테마 인덱스에 매핑하고, 신규 테마/자
 | 2 | T_xxx {테마명} | ... |
 | 3 | T_xxx {테마명} | ... |
 
-### 4-3. WSJ Business (top 10)
+### 4-3. Reuters Business (top 10)
 | # | 제목 (원문 링크) | 한 줄 요약 | 매핑 테마 |
 |---|---|---|---|
 | 1 | [{title}]({link}) | ... | T_xxx {테마명} |
@@ -302,6 +303,7 @@ moneytree-web의 기존 SSOT 테마 인덱스에 매핑하고, 신규 테마/자
 - 매핑은 반드시 SSOT 인덱스의 실제 T_xxx ID만 사용. 인덱스에 없는 ID 생성 금지.
 - **모든 T_xxx 참조는 반드시 "T_xxx 테마명" 형식으로 표기** (예: \`T_024 IPO스타_엔트로픽수혜주\`).
 - **모든 섹션의 핵심 정보는 테이블로 정리하고, 원문 URL 을 반드시 마크다운 링크로 포함**.
+- **섹션 0 (매크로)**: 5행 모두 채울 것. 각 행의 "한 줄 설명" 은 가능한 구체 수치(지수·%변동·환율·금리 bps·유가 USD/bbl) 를 포함. 원문에 수치가 없으면 정성 묘사 (방향+규모+원인). 단순 "혼조" 한 단어 금지.
 - 신규 테마 후보 (섹션 2) 는 ticker/exchange + macro + CHR 후보까지 명시 — Workflow 자동 batch 생성 가능 수준.
 - 추측은 "추정:" 접두어. 출처 인용은 짧은 직접 quote 권장.
 - 빈 섹션은 "해당 없음"으로 명시 (섹션 생략 금지).
@@ -369,12 +371,12 @@ function buildUserMessage(sources) {
     });
   }
 
-  // WSJ Business
-  parts.push(`\n## [5] WSJ Business RSS (top 10)\n`);
-  if (sources.wsj?.error) {
-    parts.push(`ERROR: ${sources.wsj.error}\n`);
+  // Reuters Business
+  parts.push(`\n## [5] Reuters Business RSS (top 10)\n`);
+  if (sources.reuters?.error) {
+    parts.push(`ERROR: ${sources.reuters.error}\n`);
   } else {
-    sources.wsj.items.forEach((it, i) => {
+    sources.reuters.items.forEach((it, i) => {
       parts.push(
         `${i + 1}. ${it.title}\n   Link: ${it.link}\n   Date: ${it.pubDate}\n   Desc: ${it.description}\n`
       );
