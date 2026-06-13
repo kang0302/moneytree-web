@@ -414,7 +414,7 @@ async function main() {
     fetchHankyungRSS(SOURCES.hankyung),
     fetchHankyungRSS(SOURCES.maekyung), // 같은 RSS 2.0 포맷 → 동일 fetcher 재사용
     fetchConsensusLatest(SOURCES.consensus),
-    fetchHankyungRSS(SOURCES.wsj), // RSS 2.0 호환
+    fetchHankyungRSS(SOURCES.reuters), // RSS 2.0 호환 (Google News feed)
   ]);
   console.log(`SSOT themes loaded: ${themes.length}`);
 
