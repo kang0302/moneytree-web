@@ -227,6 +227,17 @@ export default function ThemeBriefing({ themeId, nodes, freshInsightIds }: Props
     window.scrollTo({ top: y, behavior: "smooth" });
   };
 
+  const scrollToEventDb = () => {
+    const el = typeof document !== "undefined" ? document.getElementById("event-db-section") : null;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const y = window.scrollY + rect.top - 24;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
+  // 이벤트 DB 섹션 존재 여부 (md 본문에 헤딩이 있는지로 판단)
+  const hasEventDb = !!md && /이벤트\s*[×x]\s*테마\s*DB/i.test(md);
+
   // 파일 없으면 섹션 자체를 숨김
   if (state === "missing" || state === "error" || !md) return null;
 
@@ -335,7 +346,18 @@ export default function ThemeBriefing({ themeId, nodes, freshInsightIds }: Props
               </td>
             ),
             h1: ({ children }) => <h1 className="mt-3 mb-2 text-[16px] font-semibold text-white/95">{children}</h1>,
-            h2: ({ children }) => <h2 className="mt-3 mb-2 text-[14px] font-semibold text-white/90">{children}</h2>,
+            h2: ({ children }) => {
+              const txt = Children.toArray(children).map((c) => (typeof c === "string" ? c : "")).join("");
+              const isEventDb = /이벤트\s*[×x]\s*테마\s*DB/i.test(txt);
+              return (
+                <h2
+                  id={isEventDb ? "event-db-section" : undefined}
+                  className="mt-3 mb-2 text-[14px] font-semibold text-white/90"
+                >
+                  {children}
+                </h2>
+              );
+            },
             h3: ({ children }) => <h3 className="mt-2 mb-1 text-[13px] font-semibold text-white/85">{children}</h3>,
             p: ({ children }) => <p className="my-1.5">{children}</p>,
             ul: ({ children }) => <ul className="my-1 list-disc pl-5">{children}</ul>,
@@ -360,16 +382,31 @@ export default function ThemeBriefing({ themeId, nodes, freshInsightIds }: Props
     {/* 플로팅 단서: briefing 존재 + viewport 밖일 때만 표시. 그래프 영역 bottom-center 에 고정. */}
     {showCue && portalTarget && cuePos &&
       createPortal(
-        <button
-          type="button"
-          onClick={scrollToBriefing}
-          title="아래 브리핑 테이블로 이동"
+        <div
           style={{ left: `${cuePos.left}px`, top: `${cuePos.top}px` }}
-          className="fixed z-100 flex min-w-50 -translate-x-1/2 items-center justify-center gap-3 rounded-full border border-white/20 bg-black/80 px-8 py-3 text-[13px] font-medium text-white/90 shadow-xl backdrop-blur transition hover:scale-105 hover:bg-black/90 hover:text-white"
+          className="fixed z-100 flex -translate-x-1/2 items-center gap-2"
         >
-          <span className="inline-block animate-bounce text-[14px] leading-none">↓</span>
-          <span>브리핑 테이블</span>
-        </button>,
+          <button
+            type="button"
+            onClick={scrollToBriefing}
+            title="아래 브리핑 테이블로 이동"
+            className="flex min-w-50 items-center justify-center gap-3 rounded-full border border-white/20 bg-black/80 px-8 py-3 text-[13px] font-medium text-white/90 shadow-xl backdrop-blur transition hover:scale-105 hover:bg-black/90 hover:text-white"
+          >
+            <span className="inline-block animate-bounce text-[14px] leading-none">↓</span>
+            <span>브리핑 테이블</span>
+          </button>
+          {hasEventDb && (
+            <button
+              type="button"
+              onClick={scrollToEventDb}
+              title="아래 이벤트 × 테마 DB 로 이동"
+              className="flex min-w-50 items-center justify-center gap-3 rounded-full border border-amber-400/40 bg-black/80 px-8 py-3 text-[13px] font-medium text-amber-200 shadow-xl backdrop-blur transition hover:scale-105 hover:bg-black/90 hover:text-amber-100"
+            >
+              <span className="inline-block animate-bounce text-[14px] leading-none">↓</span>
+              <span>이벤트 × 테마 DB</span>
+            </button>
+          )}
+        </div>,
         portalTarget,
       )}
     </>
