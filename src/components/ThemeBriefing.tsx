@@ -72,6 +72,221 @@ const DIR_COLORS = {
   진행중: { bar: "#EF9F27", badgeBg: "#FAEEDA", badgeFg: "#8A5A0E" },
 } as const;
 
+// ---------- Briefing 표 카드형 파싱 ----------
+
+type DriverTag = { text: string; kind: "수혜" | "리스크" | "중립" };
+type BriefingRow = {
+  name: string;
+  ticker: string;
+  exchange: string;
+  country: string;
+  externalUrl: string;
+  position: string;
+  drivers: DriverTag[];
+  threeYear: number | null;
+  metrics: Record<string, number | null | undefined> | undefined;
+};
+
+const RISK_KEYS = /리스크|규제|경쟁|위협|하락|감소|압박|우려|역풍|악화|부담|cash burn|적자|폭락|위기|취소|분쟁|소송|위협|침투|손실|쇼크/i;
+const POS_KEYS = /수요|성장|확대|증가|상승|회복|반등|호황|이익|매출|시너지|launch|침투|capex|ramp|폭발|폭증|승인|FDA|개선|확보|진출|호재|반영|수혜|sales|투자/i;
+
+function classifyDriver(text: string): DriverTag["kind"] {
+  if (RISK_KEYS.test(text)) return "리스크";
+  if (POS_KEYS.test(text)) return "수혜";
+  return "중립";
+}
+
+function shortenDriver(text: string): string {
+  // 1) prefix 제거 + 30자 컷
+  let s = text.replace(/^\d+\)\s*/, "").replace(/\*\*/g, "").trim();
+  if (s.length > 28) s = s.slice(0, 27) + "…";
+  return s;
+}
+
+function extractAssetUrl(ticker: string, exchange: string, country: string): string {
+  const ko = /KOSPI|KOSDAQ|KRX/i.test(exchange) || country === "KR";
+  if (ko && /^\d{6}$/.test(ticker)) {
+    return `https://finance.naver.com/item/main.nhn?code=${ticker}`;
+  }
+  // 해외 — yahoo 형식 (간단)
+  return `https://finance.yahoo.com/quote/${ticker}`;
+}
+
+function parseBriefingTable(
+  briefingMd: string,
+  tickerToNode: Map<string, AssetNode>,
+): BriefingRow[] {
+  if (!briefingMd) return [];
+  const lines = briefingMd.split("\n");
+  const rows: BriefingRow[] = [];
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed.startsWith("|")) continue;
+    if (/^\|[\s:|-]+\|$/.test(trimmed)) continue;
+    if (/종목.*핵심 사업/.test(trimmed)) continue;
+    const cells = trimmed.split("|").slice(1, -1).map((c) => c.trim());
+    if (cells.length < 4) continue;
+
+    const firstCell = cells[0];
+    // [Name (TICKER)](URL) 형식
+    const nameMatch = firstCell.match(/\[([^\]]+)\]/);
+    if (!nameMatch) continue;
+    const nameWithTicker = nameMatch[1];
+    const ticker = extractTickerFromCell(nameWithTicker);
+    if (!ticker) continue;
+
+    const assetNode = tickerToNode.get(ticker);
+    const m = assetNode?.metrics;
+
+    // 핵심 사업 셀의 첫 줄 = 포지션
+    const bizCell = cells[1] || "";
+    const positionMatch = bizCell.match(/-\s*([^<]+)/);
+    const position = (positionMatch ? positionMatch[1] : bizCell.replace(/<br\s*\/?>/gi, " "))
+      .trim()
+      .slice(0, 80);
+
+    // 동인 셀 (마지막) — "1) ...<br>2) ..." 형식
+    const driverCell = cells[cells.length - 1] || "";
+    const driverParts = driverCell.split(/<br\s*\/?>/i).map((s) => s.trim()).filter(Boolean);
+    const drivers: DriverTag[] = driverParts.slice(0, 4).map((p) => ({
+      text: shortenDriver(p),
+      kind: classifyDriver(p),
+    }));
+
+    const exposure = assetNode?.exposure;
+    const exchange = exposure?.exchange ?? "";
+    const country = exposure?.country ?? "";
+    const externalUrl = extractAssetUrl(ticker, exchange, country);
+
+    const threeYear =
+      typeof m?.return_3y === "number" && Number.isFinite(m.return_3y) ? m.return_3y : null;
+
+    rows.push({
+      name: nameWithTicker.replace(/\s*\([^)]+\)\s*$/, "").trim(),
+      ticker,
+      exchange,
+      country,
+      externalUrl,
+      position,
+      drivers,
+      threeYear,
+      metrics: m,
+    });
+  }
+  return rows;
+}
+
+function fmtPct(v: number | null | undefined): string {
+  if (v == null || !Number.isFinite(v)) return "—";
+  const sign = v >= 0 ? "+" : "";
+  return `${sign}${v.toFixed(1)}%`;
+}
+
+function colorForPct(v: number | null | undefined): string {
+  if (v == null || !Number.isFinite(v)) return "#9CA3AF";
+  return v >= 0 ? "#1D9E75" : "#E24B4A";
+}
+
+const DRIVER_COLORS = {
+  수혜: { bg: "#E1F5EE", fg: "#0F6E56" },
+  리스크: { bg: "#FCEBEB", fg: "#A32D2D" },
+  중립: { bg: "rgba(255,255,255,0.06)", fg: "rgba(255,255,255,0.7)" },
+} as const;
+
+function BriefingCards({ rows }: { rows: BriefingRow[] }) {
+  return (
+    <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+      {rows.map((r, i) => (
+        <BriefingCard key={i} row={r} />
+      ))}
+    </div>
+  );
+}
+
+function BriefingCard({ row }: { row: BriefingRow }) {
+  const { metrics: m } = row;
+  return (
+    <div className="rounded-xl border border-white/10 bg-white/3 p-4 backdrop-blur">
+      {/* 상단: 종목명·티커 + 3년 수익률 */}
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0 flex-1">
+          <a
+            href={row.externalUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[16px] font-bold text-white hover:text-cyan-300 hover:underline"
+          >
+            {row.name}
+          </a>
+          <div className="mt-0.5 text-[11px] text-white/55">
+            {row.ticker} {row.exchange}
+          </div>
+        </div>
+        <div className="shrink-0 text-right">
+          <div
+            className="text-[16px] font-bold tabular-nums"
+            style={{ color: colorForPct(row.threeYear) }}
+          >
+            {fmtPct(row.threeYear)}
+          </div>
+          <div className="text-[10px] text-white/50">3년</div>
+        </div>
+      </div>
+
+      {/* 포지션 박스 */}
+      <div className="mt-3 rounded-md bg-white/4 px-3 py-2 text-[12px] leading-snug text-white/80">
+        {row.position}
+      </div>
+
+      {/* 주요 동인 태그 */}
+      {row.drivers.length > 0 && (
+        <div className="mt-3">
+          <div className="mb-1.5 text-[10px] font-semibold uppercase tracking-wide text-white/50">
+            주요 동인
+          </div>
+          <div className="flex flex-wrap gap-1.5">
+            {row.drivers.map((d, idx) => {
+              const c = DRIVER_COLORS[d.kind];
+              return (
+                <span
+                  key={idx}
+                  className="rounded-md px-2 py-0.5 text-[11px] font-medium"
+                  style={{ backgroundColor: c.bg, color: c.fg }}
+                >
+                  {d.text}
+                </span>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* 수익률 4개: 1년 / YTD / 1개월 / 7일 */}
+      <div className="mt-3 grid grid-cols-4 gap-2 border-t border-white/8 pt-3">
+        {[
+          { label: "1년", key: "return_1y" },
+          { label: "YTD", key: "return_ytd" },
+          { label: "1개월", key: "return_1m" },
+          { label: "7일", key: "return_7d" },
+        ].map((p) => {
+          const v = m?.[p.key];
+          return (
+            <div key={p.key} className="text-center">
+              <div className="text-[10px] text-white/50">{p.label}</div>
+              <div
+                className="mt-0.5 text-[13px] font-semibold tabular-nums"
+                style={{ color: colorForPct(v as number | null | undefined) }}
+              >
+                {fmtPct(v as number | null | undefined)}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function EventDbCards({ rows }: { rows: EventDbRow[] }) {
   return (
     <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
@@ -381,20 +596,41 @@ export default function ThemeBriefing({ themeId, nodes, freshInsightIds }: Props
   const { briefingMd, eventDbRows } = useMemo(() => parseEventDb(md), [md]);
   const hasEventDb = eventDbRows.length > 0;
 
+  // 브리핑 표 카드형 파싱 (수익률 데이터 부착)
+  const briefingRows = useMemo(
+    () => (briefingMd ? parseBriefingTable(briefingMd, tickerToNode) : []),
+    [briefingMd, tickerToNode],
+  );
+  const [showFullTable, setShowFullTable] = useState(false);
+
   // 파일 없으면 섹션 자체를 숨김
   if (state === "missing" || state === "error" || !md) return null;
 
   return (
     <>
     <section ref={sectionRef} data-briefing-section className="mt-3 rounded-xl border border-white/10 bg-black/25 p-4">
-      <div className="mb-3 flex items-baseline gap-2">
-        <h3 className="text-[14px] font-semibold text-white/90">
-          브리핑 테이블 <span className="text-white/55">(Briefing Table)</span>
-        </h3>
-        <span className="text-[10px] text-white/40">data/briefing/{themeId}.md</span>
+      <div className="mb-3 flex items-baseline justify-between gap-2">
+        <div className="flex items-baseline gap-2">
+          <h3 className="text-[14px] font-semibold text-white/90">
+            브리핑 카드 <span className="text-white/55">(Briefing Cards)</span>
+          </h3>
+          <span className="text-[10px] text-white/40">data/briefing/{themeId}.md</span>
+        </div>
+        {briefingRows.length > 0 && (
+          <button
+            type="button"
+            onClick={() => setShowFullTable((v) => !v)}
+            className="rounded-md border border-white/15 bg-white/3 px-3 py-1 text-[11px] text-white/75 transition hover:bg-white/8 hover:text-white"
+          >
+            {showFullTable ? "전체 테이블 접기 ↑" : "Full Table 보기 →"}
+          </button>
+        )}
       </div>
 
-      <article className="text-[14px] leading-relaxed text-white/85">
+      {/* 카드 그리드 */}
+      {briefingRows.length > 0 && <BriefingCards rows={briefingRows} />}
+
+      <article className={`mt-4 text-[14px] leading-relaxed text-white/85 ${showFullTable || briefingRows.length === 0 ? "" : "hidden"}`}>
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{
@@ -519,18 +755,19 @@ export default function ThemeBriefing({ themeId, nodes, freshInsightIds }: Props
         >
           {briefingMd}
         </ReactMarkdown>
-        {hasEventDb && (
-          <div id="event-db-section" className="mt-6 border-t border-white/10 pt-5">
-            <h2 className="mb-4 text-[16px] font-semibold text-white/90">
-              이벤트 × 테마 DB
-              <span className="ml-2 text-[12px] font-normal text-white/55">
-                (지난 5년 핵심 변동요인)
-              </span>
-            </h2>
-            <EventDbCards rows={eventDbRows} />
-          </div>
-        )}
       </article>
+
+      {hasEventDb && (
+        <div id="event-db-section" className="mt-6 border-t border-white/10 pt-5">
+          <h2 className="mb-4 text-[16px] font-semibold text-white/90">
+            이벤트 × 테마 DB
+            <span className="ml-2 text-[12px] font-normal text-white/55">
+              (지난 5년 핵심 변동요인)
+            </span>
+          </h2>
+          <EventDbCards rows={eventDbRows} />
+        </div>
+      )}
     </section>
 
     {/* 플로팅 단서: briefing 존재 + viewport 밖일 때만 표시. 그래프 영역 bottom-center 에 고정. */}
