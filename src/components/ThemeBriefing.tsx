@@ -66,9 +66,10 @@ function parseEventDb(md: string | null): { briefingMd: string; eventDbRows: Eve
   return { briefingMd: before, eventDbRows: rows };
 }
 
+// 한국 시장 컨벤션 (BAROMETER 우측 패널과 동일): 수혜/상승=적색, 타격/하락=청색.
 const DIR_COLORS = {
-  수혜: { bar: "#1D9E75", badgeBg: "#E1F5EE", badgeFg: "#0F5A41" },
-  타격: { bar: "#E24B4A", badgeBg: "#FCEBEB", badgeFg: "#922A2A" },
+  수혜: { bar: "#E24B4A", badgeBg: "#FCEBEB", badgeFg: "#922A2A" },
+  타격: { bar: "#2F80ED", badgeBg: "#E7F0FC", badgeFg: "#1B4F8A" },
   진행중: { bar: "#EF9F27", badgeBg: "#FAEEDA", badgeFg: "#8A5A0E" },
 } as const;
 
@@ -184,12 +185,14 @@ function fmtPct(v: number | null | undefined): string {
 
 function colorForPct(v: number | null | undefined): string {
   if (v == null || !Number.isFinite(v)) return "#9CA3AF";
-  return v >= 0 ? "#1D9E75" : "#E24B4A";
+  // 한국 시장 컨벤션: 양수(상승)=적색, 음수(하락)=청색.
+  return v >= 0 ? "#E24B4A" : "#2F80ED";
 }
 
+// 한국 시장 컨벤션: 수혜(긍정 동인)=적색, 리스크(부정 동인)=청색.
 const DRIVER_COLORS = {
-  수혜: { bg: "#E1F5EE", fg: "#0F6E56" },
-  리스크: { bg: "#FCEBEB", fg: "#A32D2D" },
+  수혜: { bg: "#FCEBEB", fg: "#A32D2D" },
+  리스크: { bg: "#E7F0FC", fg: "#1B4F8A" },
   중립: { bg: "rgba(255,255,255,0.06)", fg: "rgba(255,255,255,0.7)" },
 } as const;
 
