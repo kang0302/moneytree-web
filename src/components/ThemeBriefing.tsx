@@ -7,6 +7,148 @@
 // briefing 의 본문 표 각 행에서 첫 셀의 ticker 를 추출 → 9개 기간 수익률 컬럼(3년/2년/1년/YTD/1개월/15일/7일/3일/1일) 자동 부착.
 
 import React, { Children, Fragment, ReactNode, useEffect, useMemo, useRef, useState } from "react";
+
+type EventDbRow = {
+  name: string;
+  period: string;
+  direction: "수혜" | "타격" | "진행중";
+  rawDirection: string;
+  mechanism: string;
+  duration: string;
+  recovery: string;
+  intensity: 1 | 2 | 3; // 1=중, 2=강, 3=매우강
+};
+
+function classifyDirection(s: string): EventDbRow["direction"] {
+  if (/⚠|진행중|양면|미정/.test(s)) return "진행중";
+  if (/📉|타격|하락|폭락/.test(s)) return "타격";
+  if (/📈|수혜|상승|급등/.test(s)) return "수혜";
+  return "진행중";
+}
+
+function classifyIntensity(directionCell: string, mechanism: string): EventDbRow["intensity"] {
+  const text = `${directionCell} ${mechanism}`;
+  if (/매우 강|강력|메가|폭증|사상 최대|폭락|폭등/.test(text)) return 3;
+  if (/단기|일부|부분|미미|중립/.test(text)) return 1;
+  return 2;
+}
+
+function parseEventDb(md: string | null): { briefingMd: string; eventDbRows: EventDbRow[] } {
+  if (!md) return { briefingMd: "", eventDbRows: [] };
+  const headingRe = /^---\s*\n\s*##\s*이벤트\s*[×x]\s*테마\s*DB.*$/im;
+  const m = md.match(headingRe);
+  if (!m) return { briefingMd: md, eventDbRows: [] };
+  const idx = md.indexOf(m[0]);
+  const before = md.slice(0, idx).trimEnd();
+  const after = md.slice(idx + m[0].length);
+
+  // table 행 파싱 — 헤더 + separator + 7 데이터 행
+  const lines = after.split("\n").map((l) => l.trim()).filter(Boolean);
+  const dataLines = lines.filter(
+    (l) => l.startsWith("|") && !/^\|[\s:|-]+\|$/.test(l) && !/이벤트명/.test(l),
+  );
+  const rows: EventDbRow[] = [];
+  for (const line of dataLines) {
+    const cells = line.split("|").slice(1, -1).map((c) => c.trim());
+    if (cells.length < 6) continue;
+    const [name, period, dirRaw, mechanism, duration, recovery] = cells;
+    rows.push({
+      name,
+      period,
+      direction: classifyDirection(dirRaw),
+      rawDirection: dirRaw,
+      mechanism,
+      duration,
+      recovery,
+      intensity: classifyIntensity(dirRaw, mechanism),
+    });
+  }
+  return { briefingMd: before, eventDbRows: rows };
+}
+
+const DIR_COLORS = {
+  수혜: { bar: "#1D9E75", badgeBg: "#E1F5EE", badgeFg: "#0F5A41" },
+  타격: { bar: "#E24B4A", badgeBg: "#FCEBEB", badgeFg: "#922A2A" },
+  진행중: { bar: "#EF9F27", badgeBg: "#FAEEDA", badgeFg: "#8A5A0E" },
+} as const;
+
+function EventDbCards({ rows }: { rows: EventDbRow[] }) {
+  return (
+    <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
+      {rows.map((r, i) => (
+        <EventCard key={i} row={r} />
+      ))}
+    </div>
+  );
+}
+
+function EventCard({ row }: { row: EventDbRow }) {
+  const c = DIR_COLORS[row.direction];
+  const barPct = row.intensity === 3 ? 95 : row.intensity === 2 ? 65 : 35;
+  const intensityLabel = row.intensity === 3 ? "매우 강" : row.intensity === 2 ? "강" : "중";
+  const dirIcon = row.direction === "수혜" ? "📈" : row.direction === "타격" ? "📉" : "⚠️";
+  const recoveryClean = row.recovery.replace(/[✅⚠️]/g, "").trim();
+  const isRecovered = /완전|✅/.test(row.recovery);
+  const isOngoing = /진행/.test(row.recovery);
+
+  return (
+    <div className="flex flex-col gap-3 rounded-xl border border-white/10 bg-white/3 p-4 backdrop-blur">
+      {/* 상단: 시기 + 이벤트명 + 방향 뱃지 */}
+      <div className="flex items-start justify-between gap-2">
+        <div className="min-w-0 flex-1">
+          <div className="text-[11px] text-white/55">{row.period}</div>
+          <div className="mt-0.5 text-[14px] font-bold leading-snug text-white">
+            {row.name}
+          </div>
+        </div>
+        <span
+          className="shrink-0 rounded-md px-2 py-1 text-[11px] font-semibold"
+          style={{ backgroundColor: c.badgeBg, color: c.badgeFg }}
+        >
+          {dirIcon} {row.direction}
+        </span>
+      </div>
+
+      {/* 중단: 충격 세기 바 */}
+      <div>
+        <div className="mb-1 flex items-center justify-between text-[11px] text-white/55">
+          <span>충격 세기</span>
+          <span className="text-white/75">{intensityLabel}</span>
+        </div>
+        <div className="h-2 w-full overflow-hidden rounded-full bg-white/10">
+          <div
+            className="h-full rounded-full transition-all"
+            style={{ width: `${barPct}%`, backgroundColor: c.bar }}
+          />
+        </div>
+      </div>
+
+      {/* 하단: 메커니즘 + 태그 */}
+      <div className="flex flex-col gap-2">
+        <div className="text-[12px] leading-relaxed text-white/80">
+          {row.mechanism.replace(/<br\s*\/?>/gi, " · ")}
+        </div>
+        <div className="flex flex-wrap gap-1.5">
+          <span className="rounded-md bg-white/6 px-2 py-0.5 text-[10px] text-white/70">
+            {row.duration}
+          </span>
+          <span
+            className="rounded-md px-2 py-0.5 text-[10px] font-medium"
+            style={
+              isRecovered
+                ? { backgroundColor: "#E1F5EE", color: "#0F5A41" }
+                : isOngoing
+                  ? { backgroundColor: "#FAEEDA", color: "#8A5A0E" }
+                  : { backgroundColor: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.7)" }
+            }
+          >
+            {recoveryClean || "—"}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
 import { createPortal } from "react-dom";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -235,8 +377,9 @@ export default function ThemeBriefing({ themeId, nodes, freshInsightIds }: Props
     window.scrollTo({ top: y, behavior: "smooth" });
   };
 
-  // 이벤트 DB 섹션 존재 여부 (md 본문에 헤딩이 있는지로 판단)
-  const hasEventDb = !!md && /이벤트\s*[×x]\s*테마\s*DB/i.test(md);
+  // 이벤트 DB 섹션 존재 여부 + md 본문/이벤트 DB 분리
+  const { briefingMd, eventDbRows } = useMemo(() => parseEventDb(md), [md]);
+  const hasEventDb = eventDbRows.length > 0;
 
   // 파일 없으면 섹션 자체를 숨김
   if (state === "missing" || state === "error" || !md) return null;
@@ -374,8 +517,19 @@ export default function ThemeBriefing({ themeId, nodes, freshInsightIds }: Props
             ),
           }}
         >
-          {md}
+          {briefingMd}
         </ReactMarkdown>
+        {hasEventDb && (
+          <div id="event-db-section" className="mt-6 border-t border-white/10 pt-5">
+            <h2 className="mb-4 text-[16px] font-semibold text-white/90">
+              이벤트 × 테마 DB
+              <span className="ml-2 text-[12px] font-normal text-white/55">
+                (지난 5년 핵심 변동요인)
+              </span>
+            </h2>
+            <EventDbCards rows={eventDbRows} />
+          </div>
+        )}
       </article>
     </section>
 
