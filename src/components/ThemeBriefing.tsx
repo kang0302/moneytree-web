@@ -198,7 +198,7 @@ const DRIVER_COLORS = {
 
 function BriefingCards({ rows }: { rows: BriefingRow[] }) {
   return (
-    <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
       {rows.map((r, i) => (
         <BriefingCard key={i} row={r} />
       ))}
@@ -209,25 +209,25 @@ function BriefingCards({ rows }: { rows: BriefingRow[] }) {
 function BriefingCard({ row }: { row: BriefingRow }) {
   const { metrics: m } = row;
   return (
-    <div className="rounded-xl border border-white/10 bg-white/3 p-4 backdrop-blur">
+    <div className="rounded-xl border border-white/10 bg-white/3 p-3 backdrop-blur">
       {/* 상단: 종목명·티커 + 3년 수익률 */}
-      <div className="flex items-start justify-between gap-3">
+      <div className="flex items-start justify-between gap-2">
         <div className="min-w-0 flex-1">
           <a
             href={row.externalUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[16px] font-bold text-white hover:text-cyan-300 hover:underline"
+            className="text-[14px] font-bold text-white hover:text-cyan-300 hover:underline"
           >
             {row.name}
           </a>
-          <div className="mt-0.5 text-[11px] text-white/55">
+          <div className="mt-0.5 text-[10px] text-white/55">
             {row.ticker} {row.exchange}
           </div>
         </div>
         <div className="shrink-0 text-right">
           <div
-            className="text-[16px] font-bold tabular-nums"
+            className="text-[14px] font-bold tabular-nums"
             style={{ color: colorForPct(row.threeYear) }}
           >
             {fmtPct(row.threeYear)}
@@ -237,13 +237,13 @@ function BriefingCard({ row }: { row: BriefingRow }) {
       </div>
 
       {/* 포지션 박스 */}
-      <div className="mt-3 rounded-md bg-white/4 px-3 py-2 text-[12px] leading-snug text-white/80">
+      <div className="mt-2 rounded-md bg-white/4 px-2.5 py-1.5 text-[11.5px] leading-snug text-white/80">
         {row.position}
       </div>
 
       {/* 주요 동인 태그 */}
       {row.drivers.length > 0 && (
-        <div className="mt-3">
+        <div className="mt-2">
           <div className="mb-1.5 text-[10px] font-semibold uppercase tracking-wide text-white/50">
             주요 동인
           </div>
@@ -265,7 +265,7 @@ function BriefingCard({ row }: { row: BriefingRow }) {
       )}
 
       {/* 수익률 4개: 1년 / YTD / 1개월 / 7일 */}
-      <div className="mt-3 grid grid-cols-4 gap-2 border-t border-white/8 pt-3">
+      <div className="mt-2.5 grid grid-cols-4 gap-1.5 border-t border-white/8 pt-2.5">
         {[
           { label: "1년", key: "return_1y" },
           { label: "YTD", key: "return_ytd" },
