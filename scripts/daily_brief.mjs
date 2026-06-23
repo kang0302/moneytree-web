@@ -455,13 +455,27 @@ async function main() {
 
   console.log(`User message size: ${userMsg.length} chars`);
   console.log("Calling Anthropic...");
-  const client = new Anthropic({ apiKey });
-  const resp = await client.messages.create({
-    model: MODEL,
-    max_tokens: MAX_TOKENS,
-    system: systemPrompt,
-    messages: [{ role: "user", content: userMsg }],
-  });
+  // maxRetries/timeout: SDK가 연결오류·429·5xx 자동 재시도. + 수동 백오프로 일시적 ECONNRESET 등 추가 방어.
+  const client = new Anthropic({ apiKey, maxRetries: 5, timeout: 10 * 60 * 1000 });
+  let resp;
+  for (let attempt = 1; attempt <= 4; attempt++) {
+    try {
+      resp = await client.messages.create({
+        model: MODEL,
+        max_tokens: MAX_TOKENS,
+        system: systemPrompt,
+        messages: [{ role: "user", content: userMsg }],
+      });
+      break;
+    } catch (e) {
+      const msg = String(e?.message || e);
+      const transient = /ECONNRESET|ETIMEDOUT|EAI_AGAIN|ENOTFOUND|Connection error|fetch failed|socket hang up|overloaded|\b429\b|\b50[023]\b|\b529\b/i.test(msg);
+      if (attempt === 4 || !transient) throw e;
+      const wait = 2000 * 2 ** attempt; // 4s, 8s, 16s
+      console.warn(`Anthropic 호출 실패 (시도 ${attempt}/4): ${msg} — ${wait}ms 후 재시도`);
+      await new Promise((r) => setTimeout(r, wait));
+    }
+  }
 
   const md = resp.content
     .map((b) => (b.type === "text" ? b.text : ""))
