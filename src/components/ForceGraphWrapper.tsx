@@ -515,6 +515,10 @@ export default function ForceGraphWrapper({
   const [hoverNode, setHoverNode] = useState<NodeT | null>(null);
   const [hoverLink, setHoverLink] = useState<any | null>(null);
 
+  // ✅ 출처(provenance): 중앙 evidence 저장소 + 클릭된 엣지 디테일 패널
+  const [evidenceMap, setEvidenceMap] = useState<Record<string, any>>({});
+  const [selectedEdge, setSelectedEdge] = useState<any | null>(null);
+
   // 브리핑 핵심사업 매핑 (ticker → 핵심사업 텍스트, <br> 보존)
   const [coreBizMap, setCoreBizMap] = useState<Map<string, string>>(new Map());
   useEffect(() => {
@@ -548,6 +552,33 @@ export default function ForceGraphWrapper({
       cancelled = true;
     };
   }, [themeId]);
+  // ✅ 출처 저장소 로드 (import_MT/data/ssot/evidence_ssot.jsonl, GitHub raw main)
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const url =
+          "https://raw.githubusercontent.com/kang0302/import_MT/main/data/ssot/evidence_ssot.jsonl";
+        const r = await fetch(url, { cache: "no-store" });
+        if (!r.ok) return;
+        const text = await r.text();
+        const map: Record<string, any> = {};
+        for (const line of text.split(/\r?\n/)) {
+          const s = line.trim();
+          if (!s) continue;
+          try {
+            const rec = JSON.parse(s);
+            if (rec?.evidence_id) map[rec.evidence_id] = rec;
+          } catch {}
+        }
+        if (!cancelled) setEvidenceMap(map);
+      } catch {}
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   // 브리핑 테이블이 viewport 진입 시 좌측 상단 테마 설명 패널 자동 숨김 (겹침 방지).
   // ThemeBriefing 은 비동기 fetch 후 렌더라 mount 시점에 DOM 에 없을 수 있음 →
@@ -1235,7 +1266,16 @@ export default function ForceGraphWrapper({
         if (!s || !t) return null;
         if (!visibleIds.has(s) || !visibleIds.has(t)) return null;
         const rel = pickRelType(e);
-        return { source: s, target: t, type: rel, label: rel };
+        return {
+          source: s,
+          target: t,
+          type: rel,
+          label: rel,
+          // ✅ 출처(provenance) 필드 보존 — 엣지 클릭 시 디테일 패널에서 사용
+          evidence: (e as any).evidence,
+          confidence: (e as any).confidence,
+          status: (e as any).status,
+        };
       })
       .filter(Boolean) as any[];
 
@@ -2212,6 +2252,122 @@ export default function ForceGraphWrapper({
         >
           <div className="font-semibold">관계</div>
           <div className="mt-1 text-white/80">{hoverLinkLabel}</div>
+          {(() => {
+            const evs = Array.isArray(hoverLink?.evidence) ? hoverLink.evidence : [];
+            return (
+              <div className="mt-1 text-[10px] text-white/55">
+                {evs.length > 0 ? `📎 출처 ${evs.length}건 · 클릭하여 보기` : "출처 미기록 · 클릭"}
+              </div>
+            );
+          })()}
+        </div>
+      )}
+
+      {/* ✅ 출처 디테일 패널 — 엣지 클릭 시 (interactive, pointer-events 허용) */}
+      {selectedEdge && (
+        <div className="absolute left-1/2 top-3 z-50 w-[340px] -translate-x-1/2 rounded-xl border border-white/15 bg-black/90 px-4 py-3 text-xs text-white/90 shadow-xl">
+          {(() => {
+            const endName = (x: any) => {
+              if (!x) return "";
+              if (typeof x === "object") return x.name || x.id || "";
+              const n = (nodes as any[])?.find?.((nn) => nn?.id === x);
+              return n?.name || x;
+            };
+            const from = endName(selectedEdge.source);
+            const to = endName(selectedEdge.target);
+            const evs: string[] = Array.isArray(selectedEdge.evidence) ? selectedEdge.evidence : [];
+            const conf = selectedEdge.confidence;
+            const STATUS_LABEL: Record<string, string> = {
+              verified: "검증됨",
+              proposed: "제안(미검수)",
+              legacy: "출처 미기록",
+            };
+            const STATUS_COLOR: Record<string, string> = {
+              verified: "#3FB950",
+              proposed: "#EF9F27",
+              legacy: "#8B949E",
+            };
+            const st =
+              selectedEdge.status && STATUS_LABEL[selectedEdge.status] ? selectedEdge.status : "legacy";
+            return (
+              <>
+                <div className="flex items-center justify-between">
+                  <div className="font-semibold">관계 출처</div>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedEdge(null)}
+                    className="rounded px-1.5 text-white/60 hover:text-white"
+                    aria-label="닫기"
+                  >
+                    ✕
+                  </button>
+                </div>
+                <div className="mt-1.5 text-white/85">
+                  <span className="font-medium">{from}</span>
+                  <span className="mx-1 text-white/50">
+                    —{(selectedEdge.type || selectedEdge.label || "").toString()}→
+                  </span>
+                  <span className="font-medium">{to}</span>
+                </div>
+                <div className="mt-2 flex items-center gap-2">
+                  <span
+                    className="rounded-full px-2 py-0.5 text-[10px] font-bold"
+                    style={{ backgroundColor: STATUS_COLOR[st] + "33", color: STATUS_COLOR[st] }}
+                  >
+                    {STATUS_LABEL[st]}
+                  </span>
+                  {typeof conf === "number" && (
+                    <span className="text-[11px] text-white/60">신뢰도 {Math.round(conf * 100)}%</span>
+                  )}
+                </div>
+                {evs.length === 0 ? (
+                  <div className="mt-2 text-white/55">아직 출처가 기록되지 않은 연결입니다 (legacy).</div>
+                ) : (
+                  <div className="mt-2 space-y-2">
+                    {evs.map((eid) => {
+                      const r = evidenceMap[eid];
+                      if (!r)
+                        return (
+                          <div key={eid} className="text-white/55">
+                            근거 {eid} (로딩 중 / 미발견)
+                          </div>
+                        );
+                      return (
+                        <div
+                          key={eid}
+                          className="rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-2"
+                        >
+                          <div className="text-white/80">
+                            {r.publisher}
+                            {r.published ? ` · ${r.published}` : ""}
+                          </div>
+                          <div className="mt-1 text-white/70">“{r.quote}”</div>
+                          <div className="mt-1 flex items-center gap-2 text-[10px] text-white/45">
+                            <span>{eid}</span>
+                            <span>·</span>
+                            <span>{r.kind}</span>
+                            {r.url && (
+                              <>
+                                <span>·</span>
+                                <a
+                                  href={r.url}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="text-sky-400 hover:underline"
+                                >
+                                  출처 링크 ↗
+                                </a>
+                              </>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </>
+            );
+          })()}
         </div>
       )}
 
@@ -2248,9 +2404,14 @@ export default function ForceGraphWrapper({
         onBackgroundClick={() => {
           setHoverNode(null);
           setHoverLink(null);
+          setSelectedEdge(null);
           handleSelect(null);
         }}
-        onNodeClick={(n: any) => handleSelect(n ? (n as NodeT) : null)}
+        onNodeClick={(n: any) => {
+          setSelectedEdge(null);
+          handleSelect(n ? (n as NodeT) : null);
+        }}
+        onLinkClick={(l: any) => setSelectedEdge(l || null)}
         onMouseMove={(ev: any) => {
           const ox = ev?.offsetX;
           const oy = ev?.offsetY;
