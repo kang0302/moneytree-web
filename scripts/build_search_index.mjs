@@ -217,6 +217,21 @@ function main() {
         const m = macroMap.get(n.id);
         if (!m.themes.includes(themeId)) m.themes.push(themeId);
       }
+
+      // CHARACTER
+      if (n.type === "CHARACTER") {
+        if (!characterMap.has(n.id)) {
+          characterMap.set(n.id, {
+            id: n.id,
+            name: n.name ?? n.id,
+            themes: [],
+            assets: [],
+            searchTokens: [],
+          });
+        }
+        const c = characterMap.get(n.id);
+        if (!c.themes.includes(themeId)) c.themes.push(themeId);
+      }
     }
 
     // edges로 연결 보강
@@ -271,6 +286,32 @@ function main() {
         const a = assetMap.get(from);
         if (m && !m.assets.includes(from)) m.assets.push(from);
         if (a && !a.macros.includes(to)) a.macros.push(to);
+      }
+
+      // Character <-> Asset (HAS_TRAIT)
+      if (from.startsWith("A_") && to.startsWith("C_")) {
+        const c = characterMap.get(to);
+        if (c) {
+          if (!c.assets.includes(from)) c.assets.push(from);
+          if (!c.themes.includes(themeId)) c.themes.push(themeId);
+        }
+      }
+      if (to.startsWith("A_") && from.startsWith("C_")) {
+        const c = characterMap.get(from);
+        if (c) {
+          if (!c.assets.includes(to)) c.assets.push(to);
+          if (!c.themes.includes(themeId)) c.themes.push(themeId);
+        }
+      }
+
+      // Character <-> Theme (HAS_TRAIT direct)
+      if (from === themeId && to.startsWith("C_")) {
+        const c = characterMap.get(to);
+        if (c && !c.themes.includes(themeId)) c.themes.push(themeId);
+      }
+      if (to === themeId && from.startsWith("C_")) {
+        const c = characterMap.get(from);
+        if (c && !c.themes.includes(themeId)) c.themes.push(themeId);
       }
     }
   }
@@ -361,10 +402,15 @@ function main() {
     });
   }
 
-  // character_ssot.csv → characterMap (theme JSON에는 보통 없음, SSOT가 유일 소스)
+  // character_ssot.csv → characterMap 보충 (theme JSON 에 있는 character 의 themes/assets 보존)
   for (const r of loadCsvIfExists("character_ssot.csv")) {
     const id = (r.character_id || r.id || "").trim();
     if (!id) continue;
+    if (characterMap.has(id)) {
+      const cur = characterMap.get(id);
+      if (!cur.name || cur.name === id) cur.name = r.character_name_kr || r.character_name_ko || r.character_name_en || cur.name;
+      continue;
+    }
     characterMap.set(id, {
       id,
       name: r.character_name_kr || r.character_name_ko || r.character_name_en || id,
