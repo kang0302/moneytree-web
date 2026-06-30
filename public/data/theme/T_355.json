@@ -34,6 +34,24 @@
         "ticker": "VNM",
         "exchange": "NYSEARCA",
         "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.02723311546840579,
+        "return_3d": -0.08165487207403288,
+        "return_7d": 2.7140458869613804,
+        "return_15d": 2.0289049471929,
+        "return_1m": -1.7398286937901464,
+        "return_ytd": -3.9508110936682272,
+        "return_1y": 34.86407053637033,
+        "return_2y": 50.08176614881439,
+        "return_3y": 35.46125461254612,
+        "close": 18.44,
+        "marketCap": 567682481,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-06-29",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-06-29",
+        "returnsSource": "FMP"
       }
     },
     {
@@ -44,6 +62,24 @@
         "ticker": "VNAM",
         "exchange": "NYSEARCA",
         "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.04030632809349788,
+        "return_3d": -2.208201892744477,
+        "return_7d": 1.3485901103392095,
+        "return_15d": 0.44552450384771625,
+        "return_1m": -2.8974158183241894,
+        "return_ytd": -1.9762845849802368,
+        "return_1y": 43.51851851851851,
+        "return_2y": 53.94165114835508,
+        "return_3y": 47.00652045050384,
+        "close": 25.1,
+        "marketCap": 36258406,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-06-29",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-06-29",
+        "returnsSource": "FMP"
       }
     },
     {
@@ -54,6 +90,24 @@
         "ticker": "VFS",
         "exchange": "NASDAQ",
         "country": "VN"
+      },
+      "metrics": {
+        "return_1d": -1.1551155115511413,
+        "return_3d": -4.313099041533541,
+        "return_7d": -1.4802631578947345,
+        "return_15d": -6.697819314641739,
+        "return_1m": -15.87078651685393,
+        "return_ytd": -11.390532544378695,
+        "return_1y": -14.91477272727273,
+        "return_2y": -25.866336633663366,
+        "return_3y": -71.00677637947726,
+        "close": 3.03,
+        "marketCap": 7088794080,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-06-29",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-06-29",
+        "returnsSource": "FMP"
       }
     },
     {
@@ -69,6 +123,24 @@
         "ticker": "",
         "exchange": "KRX",
         "country": "KR"
+      },
+      "metrics": {
+        "return_1d": null,
+        "return_3d": null,
+        "return_7d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_2y": null,
+        "return_3y": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "returnsAsOf": null,
+        "returnsSource": null
       }
     },
     {
@@ -79,7 +151,40 @@
         "ticker": "245710",
         "exchange": "KRX",
         "country": "KR"
+      },
+      "metrics": {
+        "return_1d": null,
+        "return_3d": 0.3684372121584234,
+        "return_7d": 3.777777777777769,
+        "return_15d": null,
+        "return_1m": 2.524698133918779,
+        "return_ytd": 4.324238072442954,
+        "return_1y": 56.351129473337224,
+        "return_2y": null,
+        "return_3y": null,
+        "close": 32690,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-06-29",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-06-29",
+        "returnsSource": "EODHD"
       }
+    },
+    {
+      "id": "M_358",
+      "type": "MACRO",
+      "name": "신흥국GDP성장"
+    },
+    {
+      "id": "M_138",
+      "type": "MACRO",
+      "name": "미중갈등"
+    },
+    {
+      "id": "M_357",
+      "type": "MACRO",
+      "name": "미국달러약세EM자금유입"
     }
   ],
   "edges": [
@@ -112,6 +217,21 @@
       "from": "A_1997",
       "to": "T_355",
       "type": "THEMED_AS"
+    },
+    {
+      "from": "M_358",
+      "to": "T_355",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_138",
+      "to": "T_355",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_357",
+      "to": "T_355",
+      "type": "IMPACTS"
     }
   ],
   "links": [
@@ -144,6 +264,21 @@
       "from": "A_1997",
       "to": "T_355",
       "type": "THEMED_AS"
+    },
+    {
+      "from": "M_358",
+      "to": "T_355",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_138",
+      "to": "T_355",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_357",
+      "to": "T_355",
+      "type": "IMPACTS"
     }
   ]
 }

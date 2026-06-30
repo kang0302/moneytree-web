@@ -4,44 +4,395 @@
   "themeName": "글로벌컨테이너해운",
   "meta": {
     "periodDefault": "3d",
-    "periodOptions": ["1d", "3d", "7d", "15d", "1m", "ytd", "1y", "2y", "3y"],
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
     "dataAsOf": "2026-06-10T00:00:00+09:00",
     "description": "글로벌 컨테이너 해운 8축 — Maersk·MSC(비)·CMA CGM(비)·COSCO·Hapag-Lloyd·ONE(비)·Evergreen·ZIM·HMM. 홍해 위기 (Red Sea diversion) + 미·중 관세 격화 + 항만 노조 파업 + 신규 선박 공급 과잉 vs 수요 cyclicality. SCFI·BDI 운임 지수 동인.",
     "notes": "T_352 신규 — 글로벌 컨테이너 해운 8사",
     "sources": []
   },
   "nodes": [
-    { "id": "T_352", "type": "THEME", "name": "글로벌컨테이너해운" },
-    { "id": "A_1976", "type": "ASSET", "name": "머스크",             "exposure": { "ticker": "MAERSK-B","exchange": "CSE","country": "DK" } },
-    { "id": "A_1981", "type": "ASSET", "name": "MSC(비)",            "exposure": { "ticker": "",      "exchange": "PRIVATE","country": "CH" } },
-    { "id": "A_1977", "type": "ASSET", "name": "COSCO쉬핑홀딩스",     "exposure": { "ticker": "1919",  "exchange": "HKEX","country": "CN" } },
-    { "id": "A_1978", "type": "ASSET", "name": "하파그로이드",         "exposure": { "ticker": "HLAG",  "exchange": "XETRA","country": "DE" } },
-    { "id": "A_1982", "type": "ASSET", "name": "ONE(비)",            "exposure": { "ticker": "",      "exchange": "PRIVATE","country": "JP" } },
-    { "id": "A_1980", "type": "ASSET", "name": "에버그린마린",         "exposure": { "ticker": "2603",  "exchange": "TWSE","country": "TW" } },
-    { "id": "A_1979", "type": "ASSET", "name": "짐인테그레이티드",      "exposure": { "ticker": "ZIM",   "exchange": "NYSE","country": "IL" } },
-    { "id": "A_509",  "type": "ASSET", "name": "HMM",                "exposure": { "ticker": "011200","exchange": "KOSPI","country": "KR" } },
-    { "id": "C_318", "type": "CHARACTER", "name": "글로벌해운사이클" }
+    {
+      "id": "T_352",
+      "type": "THEME",
+      "name": "글로벌컨테이너해운"
+    },
+    {
+      "id": "A_1976",
+      "type": "ASSET",
+      "name": "머스크",
+      "exposure": {
+        "ticker": "MAERSK-B",
+        "exchange": "CSE",
+        "country": "DK"
+      },
+      "metrics": {
+        "return_1d": null,
+        "return_3d": null,
+        "return_7d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_2y": null,
+        "return_3y": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "returnsAsOf": "2026-06-29",
+        "returnsSource": "FMP"
+      }
+    },
+    {
+      "id": "A_1981",
+      "type": "ASSET",
+      "name": "MSC(비)",
+      "exposure": {
+        "ticker": "",
+        "exchange": "PRIVATE",
+        "country": "CH"
+      },
+      "metrics": {
+        "return_1d": null,
+        "return_3d": null,
+        "return_7d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_2y": null,
+        "return_3y": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "returnsAsOf": null,
+        "returnsSource": null
+      }
+    },
+    {
+      "id": "A_1977",
+      "type": "ASSET",
+      "name": "COSCO쉬핑홀딩스",
+      "exposure": {
+        "ticker": "1919",
+        "exchange": "HKEX",
+        "country": "CN"
+      },
+      "metrics": {
+        "return_1d": -0.3039513677811634,
+        "return_3d": -1.2048192771084376,
+        "return_7d": -4.9275362318840665,
+        "return_15d": -12.649800266311583,
+        "return_1m": -6.685633001422486,
+        "return_ytd": -5.611510791366914,
+        "return_1y": -3.8123167155425297,
+        "return_2y": -12.765957446808507,
+        "return_3y": 45.87628865979383,
+        "close": 13.12,
+        "marketCap": 202913486961,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-06-29",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-06-29",
+        "returnsSource": "FMP"
+      }
+    },
+    {
+      "id": "A_1978",
+      "type": "ASSET",
+      "name": "하파그로이드",
+      "exposure": {
+        "ticker": "HLAG",
+        "exchange": "XETRA",
+        "country": "DE"
+      },
+      "metrics": {
+        "return_1d": -1.3321492007104752,
+        "return_3d": -4.141501294219163,
+        "return_7d": 0.0,
+        "return_15d": -5.123825789923142,
+        "return_1m": 0.09009009009008917,
+        "return_ytd": -5.3662691652470285,
+        "return_1y": -12.519685039370088,
+        "return_2y": -35.444509006391634,
+        "return_3y": -42.255717255717265,
+        "close": 110.7,
+        "marketCap": 19456632000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-06-29",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-06-29",
+        "returnsSource": "FMP"
+      }
+    },
+    {
+      "id": "A_1982",
+      "type": "ASSET",
+      "name": "ONE(비)",
+      "exposure": {
+        "ticker": "",
+        "exchange": "PRIVATE",
+        "country": "JP"
+      },
+      "metrics": {
+        "return_1d": null,
+        "return_3d": null,
+        "return_7d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_2y": null,
+        "return_3y": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "returnsAsOf": null,
+        "returnsSource": null
+      }
+    },
+    {
+      "id": "A_1980",
+      "type": "ASSET",
+      "name": "에버그린마린",
+      "exposure": {
+        "ticker": "2603",
+        "exchange": "TWSE",
+        "country": "TW"
+      },
+      "metrics": {
+        "return_1d": 1.6574585635359185,
+        "return_3d": -1.3404825737265424,
+        "return_7d": -5.154639175257736,
+        "return_15d": -20.68965517241379,
+        "return_1m": -12.796208530805686,
+        "return_ytd": -4.6632124352331665,
+        "return_1y": -23.966942148760328,
+        "return_2y": -15.596330275229352,
+        "return_3y": null,
+        "close": 184.0,
+        "marketCap": 398367912000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-06-29",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-06-29",
+        "returnsSource": "FMP"
+      }
+    },
+    {
+      "id": "A_1979",
+      "type": "ASSET",
+      "name": "짐인테그레이티드",
+      "exposure": {
+        "ticker": "ZIM",
+        "exchange": "NYSE",
+        "country": "IL"
+      },
+      "metrics": {
+        "return_1d": -1.7787333854573872,
+        "return_3d": -1.7787333854573872,
+        "return_7d": 4.774812343619672,
+        "return_15d": -0.45562599049128183,
+        "return_1m": 3.8652335675898986,
+        "return_ytd": 14.673664993153812,
+        "return_1y": 60.33822590938098,
+        "return_2y": 24.07407407407407,
+        "return_3y": 106.11156685808041,
+        "close": 25.91,
+        "marketCap": 3122664546,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-06-29",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-06-29",
+        "returnsSource": "FMP"
+      }
+    },
+    {
+      "id": "A_509",
+      "type": "ASSET",
+      "name": "HMM",
+      "exposure": {
+        "ticker": "011200",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": null,
+        "return_3d": 1.4783526927138357,
+        "return_7d": -6.014669926650362,
+        "return_15d": null,
+        "return_1m": -1.988781234064252,
+        "return_ytd": -1.9238384107163053,
+        "return_1y": -13.863545012222412,
+        "return_2y": null,
+        "return_3y": null,
+        "close": 19220,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-06-29",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-06-29",
+        "returnsSource": "EODHD"
+      }
+    },
+    {
+      "id": "C_318",
+      "type": "CHARACTER",
+      "name": "글로벌해운사이클"
+    },
+    {
+      "id": "M_423",
+      "type": "MACRO",
+      "name": "해운운임_VLCC_BDI"
+    },
+    {
+      "id": "M_077",
+      "type": "MACRO",
+      "name": "해상운송리스크"
+    },
+    {
+      "id": "M_372",
+      "type": "MACRO",
+      "name": "글로벌e커머스무역량"
+    }
   ],
   "edges": [
-    { "from": "A_1976", "to": "T_352", "type": "THEMED_AS" },
-    { "from": "A_1981", "to": "T_352", "type": "THEMED_AS" },
-    { "from": "A_1977", "to": "T_352", "type": "THEMED_AS" },
-    { "from": "A_1978", "to": "T_352", "type": "THEMED_AS" },
-    { "from": "A_1982", "to": "T_352", "type": "THEMED_AS" },
-    { "from": "A_1980", "to": "T_352", "type": "THEMED_AS" },
-    { "from": "A_1979", "to": "T_352", "type": "THEMED_AS" },
-    { "from": "A_509",  "to": "T_352", "type": "THEMED_AS" },
-    { "from": "T_352", "to": "C_318", "type": "HAS_TRAIT" }
+    {
+      "from": "A_1976",
+      "to": "T_352",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1981",
+      "to": "T_352",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1977",
+      "to": "T_352",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1978",
+      "to": "T_352",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1982",
+      "to": "T_352",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1980",
+      "to": "T_352",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1979",
+      "to": "T_352",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_509",
+      "to": "T_352",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "T_352",
+      "to": "C_318",
+      "type": "HAS_TRAIT"
+    },
+    {
+      "from": "M_423",
+      "to": "T_352",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_077",
+      "to": "T_352",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_372",
+      "to": "T_352",
+      "type": "IMPACTS"
+    }
   ],
   "links": [
-    { "from": "A_1976", "to": "T_352", "type": "THEMED_AS" },
-    { "from": "A_1981", "to": "T_352", "type": "THEMED_AS" },
-    { "from": "A_1977", "to": "T_352", "type": "THEMED_AS" },
-    { "from": "A_1978", "to": "T_352", "type": "THEMED_AS" },
-    { "from": "A_1982", "to": "T_352", "type": "THEMED_AS" },
-    { "from": "A_1980", "to": "T_352", "type": "THEMED_AS" },
-    { "from": "A_1979", "to": "T_352", "type": "THEMED_AS" },
-    { "from": "A_509",  "to": "T_352", "type": "THEMED_AS" },
-    { "from": "T_352", "to": "C_318", "type": "HAS_TRAIT" }
+    {
+      "from": "A_1976",
+      "to": "T_352",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1981",
+      "to": "T_352",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1977",
+      "to": "T_352",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1978",
+      "to": "T_352",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1982",
+      "to": "T_352",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1980",
+      "to": "T_352",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_1979",
+      "to": "T_352",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "A_509",
+      "to": "T_352",
+      "type": "THEMED_AS"
+    },
+    {
+      "from": "T_352",
+      "to": "C_318",
+      "type": "HAS_TRAIT"
+    },
+    {
+      "from": "M_423",
+      "to": "T_352",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_077",
+      "to": "T_352",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_372",
+      "to": "T_352",
+      "type": "IMPACTS"
+    }
   ]
 }

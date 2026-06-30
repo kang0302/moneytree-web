@@ -34,6 +34,24 @@
         "ticker": "ET",
         "exchange": "NYSE",
         "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.9389671361502483,
+        "return_3d": 0.263991552270304,
+        "return_7d": 1.2799999999999923,
+        "return_15d": -2.0629190304280676,
+        "return_1m": -2.214212152420203,
+        "return_ytd": 14.46654611211573,
+        "return_1y": 4.455445544554459,
+        "return_2y": 19.35889377749842,
+        "return_3y": 49.88161010260457,
+        "close": 19.06,
+        "marketCap": 65588495820,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-06-29",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-06-29",
+        "returnsSource": "FMP"
       }
     },
     {
@@ -44,6 +62,24 @@
         "ticker": "LNG",
         "exchange": "NYSE",
         "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.47177619599405585,
+        "return_3d": 5.163302434375816,
+        "return_7d": 4.913357244717176,
+        "return_15d": 1.6581525835357214,
+        "return_1m": 5.7542361806856235,
+        "return_ytd": 22.740141557128403,
+        "return_1y": 0.2850179685240928,
+        "return_2y": 46.28826223186309,
+        "return_3y": 62.394648829431446,
+        "close": 243.97,
+        "marketCap": 51124401440,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-06-29",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-06-29",
+        "returnsSource": "FMP"
       }
     },
     {
@@ -54,6 +90,24 @@
         "ticker": "VRT",
         "exchange": "NYSE",
         "country": "US"
+      },
+      "metrics": {
+        "return_1d": -2.602401710807689,
+        "return_3d": -6.443763233574562,
+        "return_7d": -6.782542981296036,
+        "return_15d": -1.4874712987920424,
+        "return_1m": -5.773760264816341,
+        "return_ytd": 68.57809919708444,
+        "return_1y": 139.12762520193863,
+        "return_2y": 232.10679829481714,
+        "return_3y": 1170.01287001287,
+        "close": 306.97,
+        "marketCap": 117909883248,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-06-29",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-06-29",
+        "returnsSource": "FMP"
       }
     },
     {
@@ -64,6 +118,24 @@
         "ticker": "LBTYK",
         "exchange": "NASDAQ",
         "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.8298261665141924,
+        "return_3d": 3.824626865671643,
+        "return_7d": 2.016498625114571,
+        "return_15d": -1.7652250661959301,
+        "return_1m": -6.234203875315913,
+        "return_ytd": 2.865064695009245,
+        "return_1y": 10.307234886025785,
+        "return_2y": 19.548872180451138,
+        "return_3y": 23.11946902654869,
+        "close": 11.08,
+        "marketCap": 3746119668,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-06-29",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-06-29",
+        "returnsSource": "FMP"
       }
     },
     {
@@ -74,12 +146,45 @@
         "ticker": "BRK-B",
         "exchange": "NYSE",
         "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.04413829061886698,
+        "return_3d": 0.8225581536347226,
+        "return_7d": 1.5469996743201486,
+        "return_15d": 2.202302665273592,
+        "return_1m": 4.495014871601533,
+        "return_ytd": 0.4085941431015483,
+        "return_1y": 2.851273064632509,
+        "return_2y": 20.50826126866032,
+        "return_3y": 48.05321106362774,
+        "close": 495.95,
+        "marketCap": 1069691650045,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-06-29",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-06-29",
+        "returnsSource": "FMP"
       }
     },
     {
       "id": "C_310",
       "type": "CHARACTER",
       "name": "단일거장가치투자"
+    },
+    {
+      "id": "M_312",
+      "type": "MACRO",
+      "name": "가치주투자심리확산"
+    },
+    {
+      "id": "M_173",
+      "type": "MACRO",
+      "name": "주주환원정책"
+    },
+    {
+      "id": "M_145",
+      "type": "MACRO",
+      "name": "금리인하"
     }
   ],
   "edges": [
@@ -112,6 +217,21 @@
       "from": "T_339",
       "to": "C_310",
       "type": "HAS_TRAIT"
+    },
+    {
+      "from": "M_312",
+      "to": "T_339",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_173",
+      "to": "T_339",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_145",
+      "to": "T_339",
+      "type": "IMPACTS"
     }
   ],
   "links": [
@@ -144,6 +264,21 @@
       "from": "T_339",
       "to": "C_310",
       "type": "HAS_TRAIT"
+    },
+    {
+      "from": "M_312",
+      "to": "T_339",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_173",
+      "to": "T_339",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_145",
+      "to": "T_339",
+      "type": "IMPACTS"
     }
   ]
 }

@@ -34,6 +34,24 @@
         "ticker": "EQIX",
         "exchange": "NASDAQ",
         "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.096114725556673,
+        "return_3d": -0.4336894977169048,
+        "return_7d": 0.15903244772719205,
+        "return_15d": 0.8604560802997208,
+        "return_1m": 1.9459810742070482,
+        "return_ytd": 42.68248027116515,
+        "return_1y": 46.23839416254207,
+        "return_2y": 44.941651156607264,
+        "return_3y": 45.952569646179995,
+        "close": 1085.17,
+        "marketCap": 107024023114,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-06-29",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-06-29",
+        "returnsSource": "FMP"
       }
     },
     {
@@ -44,6 +62,24 @@
         "ticker": "DLR",
         "exchange": "NYSE",
         "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.051813471502594,
+        "return_3d": -1.062066107139159,
+        "return_7d": 2.0793243532178707,
+        "return_15d": 2.2378071631243612,
+        "return_1m": -0.24029671420362497,
+        "return_ytd": 23.18260981745468,
+        "return_1y": 12.606875405389474,
+        "return_2y": 29.902727705598274,
+        "return_3y": 81.06570588793022,
+        "close": 190.58,
+        "marketCap": 66970955480,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-06-29",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-06-29",
+        "returnsSource": "FMP"
       }
     },
     {
@@ -54,6 +90,24 @@
         "ticker": "IRM",
         "exchange": "NYSE",
         "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.1325883418906724,
+        "return_3d": 0.2680143962018544,
+        "return_7d": 4.3845663265306145,
+        "return_15d": 5.037702550938561,
+        "return_1m": 3.2405582275486955,
+        "return_ytd": 57.30418068236425,
+        "return_1y": 29.759191358636407,
+        "return_2y": 46.974969132338074,
+        "return_3y": 138.72379216043754,
+        "close": 129.97,
+        "marketCap": 38669282790,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-06-29",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-06-29",
+        "returnsSource": "FMP"
       }
     },
     {
@@ -64,12 +118,45 @@
         "ticker": "AMT",
         "exchange": "NYSE",
         "country": "US"
+      },
+      "metrics": {
+        "return_1d": -2.1470470983541268,
+        "return_3d": -1.513240857503162,
+        "return_7d": -5.119001601413665,
+        "return_15d": -11.487739542551001,
+        "return_1m": -7.960145703878297,
+        "return_ytd": -1.7048054919908573,
+        "return_1y": -21.009562339095268,
+        "return_2y": -12.51082030653292,
+        "return_3y": -7.836721557689219,
+        "close": 168.67,
+        "marketCap": 78582172310,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-06-29",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-06-29",
+        "returnsSource": "FMP"
       }
     },
     {
       "id": "C_331",
       "type": "CHARACTER",
       "name": "AIDC부동산REIT"
+    },
+    {
+      "id": "M_377",
+      "type": "MACRO",
+      "name": "글로벌DC_capex폭증"
+    },
+    {
+      "id": "M_071",
+      "type": "MACRO",
+      "name": "AI데이터센터"
+    },
+    {
+      "id": "M_091",
+      "type": "MACRO",
+      "name": "전력수요확대"
     }
   ],
   "edges": [
@@ -97,6 +184,21 @@
       "from": "T_360",
       "to": "C_331",
       "type": "HAS_TRAIT"
+    },
+    {
+      "from": "M_377",
+      "to": "T_360",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_071",
+      "to": "T_360",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_091",
+      "to": "T_360",
+      "type": "IMPACTS"
     }
   ],
   "links": [
@@ -124,6 +226,21 @@
       "from": "T_360",
       "to": "C_331",
       "type": "HAS_TRAIT"
+    },
+    {
+      "from": "M_377",
+      "to": "T_360",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_071",
+      "to": "T_360",
+      "type": "IMPACTS"
+    },
+    {
+      "from": "M_091",
+      "to": "T_360",
+      "type": "IMPACTS"
     }
   ]
 }
