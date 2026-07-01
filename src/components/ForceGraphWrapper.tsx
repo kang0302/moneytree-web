@@ -2244,8 +2244,9 @@ export default function ForceGraphWrapper({
         );
       })()}
 
-      {/* Edge tooltip — 노드 호버와 일관성 유지를 위해 우측 상단에 고정 */}
-      {hoverLink && hoverLinkLabel && (
+      {/* Edge tooltip — 노드 호버와 일관성 유지를 위해 우측 상단에 고정.
+          ✅ 클릭 디테일 패널(selectedEdge)이 열려 있으면 툴팁은 숨겨 이중 표시 방지 */}
+      {hoverLink && hoverLinkLabel && !selectedEdge && (
         <div
           className="pointer-events-none absolute z-40 rounded-lg border border-white/10 bg-black/75 px-3 py-2 text-xs text-white/90"
           style={tooltipStyle("other", 240)}
@@ -2337,11 +2338,25 @@ export default function ForceGraphWrapper({
                           key={eid}
                           className="rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-2"
                         >
-                          <div className="text-white/80">
-                            {r.publisher}
-                            {r.published ? ` · ${r.published}` : ""}
+                          <div className="flex items-center gap-1.5">
+                            {r.source_type && (
+                              <span className="rounded bg-sky-400/15 px-1.5 py-0.5 text-[10px] font-semibold text-sky-300">
+                                {r.source_type}
+                              </span>
+                            )}
+                            <span className="min-w-0 flex-1 truncate text-white/80">
+                              {r.publisher}
+                            </span>
+                            {(r.as_of || r.published) && (
+                              <span className="shrink-0 text-[10px] text-white/45">
+                                as of {r.as_of || r.published}
+                              </span>
+                            )}
                           </div>
                           <div className="mt-1 text-white/70">“{r.quote}”</div>
+                          {r.source_ref && (
+                            <div className="mt-1 text-[10px] text-white/50">📄 {r.source_ref}</div>
+                          )}
                           <div className="mt-1 flex items-center gap-2 text-[10px] text-white/45">
                             <span>{eid}</span>
                             <span>·</span>
