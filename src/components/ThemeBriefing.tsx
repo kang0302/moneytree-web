@@ -367,6 +367,99 @@ function EventCard({ row }: { row: EventDbRow }) {
     </div>
   );
 }
+
+// ---------- 이벤트 DB: 시계열 타임라인(축 + 카드 리본, 왼쪽=최신) ----------
+
+/** "2024.06~진행중" / "2025.01" / "2022.02~2023.06" → 시작 시점 파싱 */
+function parseEventStart(period: string): { year: number; ym: number; ongoing: boolean } {
+  const ongoing = /진행|~\s*$|현재/.test(period);
+  const m = period.match(/(\d{4})[.\-/]?\s*(\d{1,2})?/);
+  if (!m) return { year: 0, ym: 0, ongoing };
+  const year = parseInt(m[1], 10);
+  const month = m[2] ? Math.min(12, Math.max(1, parseInt(m[2], 10))) : 1;
+  return { year, ym: year * 100 + month, ongoing };
+}
+
+function EventDbView({ rows }: { rows: EventDbRow[] }) {
+  const [view, setView] = useState<"timeline" | "grid">("timeline");
+  return (
+    <div>
+      <div className="mb-3 flex items-center justify-end gap-1">
+        {(["timeline", "grid"] as const).map((v) => (
+          <button
+            key={v}
+            type="button"
+            onClick={() => setView(v)}
+            className={`rounded-md px-2.5 py-1 text-[11px] font-medium transition ${
+              view === v
+                ? "bg-white/15 text-white"
+                : "bg-white/5 text-white/55 hover:bg-white/10"
+            }`}
+          >
+            {v === "timeline" ? "⟵ 타임라인" : "▦ 그리드"}
+          </button>
+        ))}
+      </div>
+      {view === "timeline" ? <EventDbTimeline rows={rows} /> : <EventDbCards rows={rows} />}
+    </div>
+  );
+}
+
+function EventDbTimeline({ rows }: { rows: EventDbRow[] }) {
+  // 시작 시점 내림차순(최신 먼저 = 왼쪽) 정렬 후 연도별 그룹
+  const groups = useMemo(() => {
+    const enriched = rows.map((r) => ({ row: r, ...parseEventStart(r.period) }));
+    enriched.sort((a, b) => (b.ongoing === a.ongoing ? b.ym - a.ym : b.ongoing ? 1 : -1));
+    const byYear = new Map<number, typeof enriched>();
+    for (const e of enriched) {
+      const y = e.year || 0;
+      if (!byYear.has(y)) byYear.set(y, []);
+      byYear.get(y)!.push(e);
+    }
+    return Array.from(byYear.entries()).sort((a, b) => b[0] - a[0]); // 연도 내림차순
+  }, [rows]);
+
+  return (
+    <div>
+      {/* 방향 안내 */}
+      <div className="mb-1 flex items-center justify-between text-[10px] text-white/40">
+        <span>◀ 최근</span>
+        <span>과거 ▶</span>
+      </div>
+      {/* 가로 스크롤: 연도 컬럼(왼=최신) */}
+      <div className="flex gap-3 overflow-x-auto pb-2">
+        {groups.map(([year, items]) => (
+          <div key={year} className="flex min-w-[248px] shrink-0 flex-col">
+            {/* 연도 축 눈금 */}
+            <div className="mb-2 flex items-center gap-2">
+              <span className="rounded-md bg-white/10 px-2 py-0.5 text-[12px] font-bold tabular-nums text-white/85">
+                {year || "—"}
+              </span>
+              <span className="h-px flex-1 bg-white/10" />
+              <span className="text-[10px] text-white/40">{items.length}건</span>
+            </div>
+            {/* 해당 연도 이벤트 카드들 (세로 스택) */}
+            <div className="flex flex-col gap-2.5">
+              {items.map(({ row, ongoing }, i) => (
+                <div key={i} className="relative">
+                  {ongoing && (
+                    <span
+                      className="absolute -left-1 top-3 z-10 h-2 w-2 rounded-full ring-2 ring-black/40"
+                      style={{ backgroundColor: DIR_COLORS[row.direction].bar }}
+                      title="진행중 (현재까지)"
+                    />
+                  )}
+                  <EventCard row={row} />
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 import { createPortal } from "react-dom";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -768,7 +861,7 @@ export default function ThemeBriefing({ themeId, nodes, freshInsightIds }: Props
               (지난 5년 핵심 변동요인)
             </span>
           </h2>
-          <EventDbCards rows={eventDbRows} />
+          <EventDbView rows={eventDbRows} />
         </div>
       )}
     </section>
