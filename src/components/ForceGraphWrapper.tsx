@@ -2370,22 +2370,31 @@ export default function ForceGraphWrapper({
                             {pub && <span className="text-white/80">{pub}</span>}
                           </div>
                           <div className="mt-1 leading-snug text-white/70">“{r.quote}”</div>
-                          {/* 마지막 줄: as of 2026 May · 출처 링크 */}
-                          {(asof || r.url) && (
-                            <div className="mt-1 flex items-center gap-2 text-[10px] text-white/45">
-                              {asof && <span>as of {asof}</span>}
-                              {r.url && (
-                                <a
-                                  href={r.url}
-                                  target="_blank"
-                                  rel="noreferrer"
-                                  className="text-sky-400 hover:underline"
-                                >
-                                  출처 링크 ↗
-                                </a>
-                              )}
-                            </div>
-                          )}
+                          {/* 마지막 줄: as of 2026 May · 대표 출처 링크 */}
+                          {(() => {
+                            const q = (r.source_ref || pub || (r.quote || "").slice(0, 60)).trim();
+                            const srcUrl = r.url
+                              ? r.url
+                              : q
+                                ? `https://www.google.com/search?q=${encodeURIComponent(q)}`
+                                : "";
+                            if (!asof && !srcUrl) return null;
+                            return (
+                              <div className="mt-1 flex items-center gap-2 text-[10px] text-white/45">
+                                {asof && <span>as of {asof}</span>}
+                                {srcUrl && (
+                                  <a
+                                    href={srcUrl}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="text-sky-400 hover:underline"
+                                  >
+                                    {r.url ? "출처 링크 ↗" : "대표 출처 검색 ↗"}
+                                  </a>
+                                )}
+                              </div>
+                            );
+                          })()}
                         </div>
                       );
                     })}
