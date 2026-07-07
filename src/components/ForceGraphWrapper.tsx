@@ -2266,7 +2266,7 @@ export default function ForceGraphWrapper({
 
       {/* ✅ 출처 디테일 패널 — 엣지 클릭 시 (interactive, pointer-events 허용) */}
       {selectedEdge && (
-        <div className="absolute left-1/2 top-3 z-50 w-[340px] -translate-x-1/2 rounded-xl border border-white/15 bg-black/90 px-4 py-3 text-xs text-white/90 shadow-xl">
+        <div className="absolute left-1/2 top-3 z-50 w-[300px] max-w-[92vw] -translate-x-1/2 rounded-xl border border-white/15 bg-black/90 px-3 py-2 text-xs text-white/90 shadow-xl">
           {(() => {
             const endName = (x: any) => {
               if (!x) return "";
@@ -2303,14 +2303,14 @@ export default function ForceGraphWrapper({
                     ✕
                   </button>
                 </div>
-                <div className="mt-1.5 text-white/85">
+                <div className="mt-1 text-white/85">
                   <span className="font-medium">{from}</span>
                   <span className="mx-1 text-white/50">
                     —{(selectedEdge.type || selectedEdge.label || "").toString()}→
                   </span>
                   <span className="font-medium">{to}</span>
                 </div>
-                <div className="mt-2 flex items-center gap-2">
+                <div className="mt-1.5 flex items-center gap-2">
                   <span
                     className="rounded-full px-2 py-0.5 text-[10px] font-bold"
                     style={{ backgroundColor: STATUS_COLOR[st] + "33", color: STATUS_COLOR[st] }}
@@ -2322,9 +2322,9 @@ export default function ForceGraphWrapper({
                   )}
                 </div>
                 {evs.length === 0 ? (
-                  <div className="mt-2 text-white/55">아직 출처가 기록되지 않은 연결입니다 (legacy).</div>
+                  <div className="mt-1.5 text-white/55">아직 출처가 기록되지 않은 연결입니다 (legacy).</div>
                 ) : (
-                  <div className="mt-2 space-y-2">
+                  <div className="mt-1.5 space-y-1.5">
                     {evs.map((eid) => {
                       const r = evidenceMap[eid];
                       if (!r)
@@ -2333,10 +2333,15 @@ export default function ForceGraphWrapper({
                             근거 {eid} (로딩 중 / 미발견)
                           </div>
                         );
-                      return (
+                      return (() => {
+                          const pub = (r.publisher || "").trim();
+                          const ref = (r.source_ref || "").trim();
+                          // publisher 와 source_ref 가 같으면 중복이므로 한 번만.
+                          const showRef = ref && ref !== pub;
+                          return (
                         <div
                           key={eid}
-                          className="rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-2"
+                          className="rounded-lg border border-white/10 bg-white/[0.03] px-2 py-1.5"
                         >
                           <div className="flex items-center gap-1.5">
                             {r.source_type && (
@@ -2344,39 +2349,34 @@ export default function ForceGraphWrapper({
                                 {r.source_type}
                               </span>
                             )}
-                            <span className="min-w-0 flex-1 truncate text-white/80">
-                              {r.publisher}
-                            </span>
+                            {pub && (
+                              <span className="min-w-0 flex-1 truncate text-white/80">{pub}</span>
+                            )}
                             {(r.as_of || r.published) && (
                               <span className="shrink-0 text-[10px] text-white/45">
-                                as of {r.as_of || r.published}
+                                {r.as_of || r.published}
                               </span>
                             )}
                           </div>
-                          <div className="mt-1 text-white/70">“{r.quote}”</div>
-                          {r.source_ref && (
-                            <div className="mt-1 text-[10px] text-white/50">📄 {r.source_ref}</div>
-                          )}
-                          <div className="mt-1 flex items-center gap-2 text-[10px] text-white/45">
-                            <span>{eid}</span>
-                            <span>·</span>
-                            <span>{r.kind}</span>
-                            {r.url && (
-                              <>
-                                <span>·</span>
+                          <div className="mt-1 leading-snug text-white/70">“{r.quote}”</div>
+                          {(showRef || r.url) && (
+                            <div className="mt-1 flex items-center gap-1.5 text-[10px] text-white/40">
+                              {showRef && <span className="min-w-0 truncate">📄 {ref}</span>}
+                              {r.url && (
                                 <a
                                   href={r.url}
                                   target="_blank"
                                   rel="noreferrer"
-                                  className="text-sky-400 hover:underline"
+                                  className="shrink-0 text-sky-400 hover:underline"
                                 >
                                   출처 링크 ↗
                                 </a>
-                              </>
-                            )}
-                          </div>
+                              )}
+                            </div>
+                          )}
                         </div>
-                      );
+                          );
+                        })();
                     })}
                   </div>
                 )}
