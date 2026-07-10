@@ -21,6 +21,7 @@ import ForceGraphWrapper from "@/components/ForceGraphWrapper";
 import GraphRightPanel, { CompareThemeOptionT } from "@/components/GraphRightPanel";
 import ThemeBriefing from "@/components/ThemeBriefing";
 import ThemeInsights from "@/components/ThemeInsights";
+import ThemeChangelog, { ChangelogEntry, latestChangeDays } from "@/components/ThemeChangelog";
 
 // ✅ Search import
 import SearchBar from "@/components/SearchBar";
@@ -255,12 +256,14 @@ export default function GraphClient({
   themeId,
   themeName,
   themeDescription,
+  changelog,
   nodes,
   edges,
 }: {
   themeId: string;
   themeName: string;
   themeDescription?: string;
+  changelog?: ChangelogEntry[];
   nodes: NodeT[];
   edges: EdgeT[];
 }) {
@@ -270,6 +273,10 @@ export default function GraphClient({
 
   // ✅ period (header control)
   const [period, setPeriod] = useState<PeriodKey>("7D");
+
+  // ✅ 테마 큐레이션 로그: 최근 변경(7일 이내) 여부 → 헤더 하이라이트 배지
+  const changeDays = useMemo(() => latestChangeDays(changelog), [changelog]);
+  const recentlyUpdated = changeDays !== null && changeDays <= 7;
 
   // ✅ 투자 인사이트 24h 내 신규 개수 (헤더 NEW 배지 + 클릭 시 섹션으로 스크롤)
   const [insightNewCount, setInsightNewCount] = useState(0);
@@ -745,6 +752,16 @@ export default function GraphClient({
               💡 NEW {insightNewCount}
             </button>
           )}
+          {recentlyUpdated && (
+            <button
+              type="button"
+              onClick={() => document.getElementById("theme-changelog")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+              title={`최근 ${changeDays === 0 ? "오늘" : `${changeDays}일 전`} 테마 큐레이션 변경 — 클릭하여 로그로 이동`}
+              className="shrink-0 animate-pulse rounded-full border border-emerald-400/40 bg-emerald-500/20 px-2 py-0.5 text-[10px] font-bold text-emerald-200 hover:bg-emerald-500/30"
+            >
+              🆕 업데이트 {changeDays === 0 ? "오늘" : `${changeDays}일 전`}
+            </button>
+          )}
         </div>
 
         {/* ✅ SearchBar (ASSET/THEME/BF/MACRO) */}
@@ -870,6 +887,11 @@ export default function GraphClient({
       {/* ✅ 그래프 하단: 브리핑 테이블 — 마크다운 4컬럼 + 6 수익률 컬럼 자동 부착 */}
       <div className="w-full">
         <ThemeBriefing themeId={themeId} nodes={enrichedNodes as any} freshInsightIds={insightFreshIds} />
+      </div>
+
+      {/* ✅ 테마 큐레이션 로그 — 신규/보강/변경/분할/수정 이력 (7일 이내 HIGHLIGHT) */}
+      <div className="w-full">
+        <ThemeChangelog changelog={changelog} />
       </div>
 
       {/* ✅ 브리핑 아래: 투자 인사이트 — 테마 + 자산별 Claude 리서치 표시 */}

@@ -146,6 +146,8 @@ export default async function GraphPage({
   // description 우선순위: meta.description (정식) > theme_descriptions.json (큐레이션). meta.notes 는 내부 메모라 제외.
   const themeDescription =
     (data.meta?.description ?? "").trim() || getCuratedDescription(themeId);
+  // ✅ 테마 큐레이션 로그 (meta.changelog[])
+  const changelog = Array.isArray(data.meta?.changelog) ? data.meta.changelog : [];
   const nodes = Array.isArray(data.nodes) ? data.nodes : [];
 
   // edges 없고 links만 있는 파일도 흡수
@@ -179,6 +181,7 @@ export default async function GraphPage({
           themeId={themeId}
           themeName={themeName}
           themeDescription={themeDescription}
+          changelog={changelog}
           nodes={nodes}
           edges={edges}
         />
