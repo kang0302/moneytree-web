@@ -712,6 +712,16 @@ export default function GraphClient({
     return safeArray<NodeT>(resolvedCompareNodes);
   }, [compareThemeId, compareLoading, compareError, compareData, resolvedCompareNodes]);
 
+  // ✅ 이전/다음 테마 (index.json 순서 기반)
+  const { prevTheme, nextTheme } = useMemo(() => {
+    const list = compareOptions ?? [];
+    const idx = list.findIndex((o) => o.themeId === themeId);
+    return {
+      prevTheme: idx > 0 ? list[idx - 1] : null,
+      nextTheme: idx >= 0 && idx < list.length - 1 ? list[idx + 1] : null,
+    };
+  }, [compareOptions, themeId]);
+
   const periods: { key: PeriodKey; label: string }[] = [
     { key: "1D", label: "1일" },
     { key: "3D", label: "3일" },
@@ -826,14 +836,34 @@ export default function GraphClient({
           </a>
         </div>
 
-        {/* Far right: Main Home small */}
-        <a
-          href="/"
-          className="flex h-9 items-center rounded-lg border border-white/15 bg-black/25 px-2.5 text-[11px] text-white/75 transition hover:bg-black/35 hover:text-white"
-          title="Main Home"
-        >
-          Home
-        </a>
+        {/* Far right: Prev / Next theme + Main Home */}
+        <div className="flex items-center gap-1">
+          <button
+            type="button"
+            onClick={() => prevTheme && router.push(`/graph/${prevTheme.themeId}`)}
+            disabled={!prevTheme}
+            title={prevTheme ? `이전 테마: ${prevTheme.themeId} · ${prevTheme.themeName}` : "이전 테마 없음"}
+            className="flex h-9 items-center rounded-lg border border-white/15 bg-black/25 px-2 text-[11px] text-white/80 transition hover:bg-black/40 hover:text-white disabled:cursor-not-allowed disabled:opacity-35"
+          >
+            ◀ 이전
+          </button>
+          <button
+            type="button"
+            onClick={() => nextTheme && router.push(`/graph/${nextTheme.themeId}`)}
+            disabled={!nextTheme}
+            title={nextTheme ? `다음 테마: ${nextTheme.themeId} · ${nextTheme.themeName}` : "다음 테마 없음"}
+            className="flex h-9 items-center rounded-lg border border-white/15 bg-black/25 px-2 text-[11px] text-white/80 transition hover:bg-black/40 hover:text-white disabled:cursor-not-allowed disabled:opacity-35"
+          >
+            다음 ▶
+          </button>
+          <a
+            href="/"
+            className="flex h-9 items-center rounded-lg border border-white/15 bg-black/25 px-2.5 text-[11px] text-white/75 transition hover:bg-black/35 hover:text-white"
+            title="Main Home"
+          >
+            Home
+          </a>
+        </div>
       </header>
 
       {/* ✅ Graph area: viewport 높이 - 헤더(48) - 여백 — 브리핑이 아래로 자연 흐름 */}
