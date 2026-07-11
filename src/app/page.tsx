@@ -226,7 +226,7 @@ export default function HomePage() {
   const [loading, setLoading] = useState(true);
   const [recent, setRecent] = useState<RecentItem[]>([]);
   const [favs, setFavs] = useState<FavItem[]>([]);
-  const [counts, setCounts] = useState({ themes: 0, assets: 0, macros: 0 });
+  const [counts, setCounts] = useState({ themes: 0, assets: 0, macros: 0, edges: 0 });
   const [updates, setUpdates] = useState<UpdateItem[]>([]);
 
   useEffect(() => {
@@ -246,6 +246,7 @@ export default function HomePage() {
 
       const assetIds = new Set<string>();
       const macroIds = new Set<string>();
+      let totalEdges = 0;
       const collectedUpdates: UpdateItem[] = [];
 
       const period: PeriodKey = "7D";
@@ -271,6 +272,7 @@ export default function HomePage() {
           if (tp === "ASSET") assetIds.add(id);
           else if (tp === "MACRO") macroIds.add(id);
         }
+        totalEdges += Array.isArray(tj.edges) ? tj.edges.length : 0;
         const summary: any = computeThemeReturnSummary({
           nodes: tj.nodes,
           period,
@@ -290,7 +292,7 @@ export default function HomePage() {
 
       if (!alive) return;
       setThemes(enriched);
-      setCounts({ themes: list.length, assets: assetIds.size, macros: macroIds.size });
+      setCounts({ themes: list.length, assets: assetIds.size, macros: macroIds.size, edges: totalEdges });
       collectedUpdates.sort((a, b) => (parseDay(b.date) ?? 0) - (parseDay(a.date) ?? 0));
       setUpdates(collectedUpdates);
       setLoading(false);
@@ -359,12 +361,14 @@ export default function HomePage() {
           <div className="mt-2 text-[12px] text-white/55 sm:text-[14px]">
             종목 · 티커 · 테마 · 산업 · 매크로 — 한 번에 검색
           </div>
-          <div className="mx-auto mt-6 flex w-full max-w-2xl items-end justify-center gap-8 sm:gap-12">
+          <div className="mx-auto mt-6 flex w-full max-w-3xl flex-wrap items-end justify-center gap-6 sm:gap-10">
             <StatCounter label="Themes" value={counts.themes} />
             <div className="h-8 w-px bg-white/15 sm:h-10" />
             <StatCounter label="Assets" value={counts.assets} />
             <div className="h-8 w-px bg-white/15 sm:h-10" />
             <StatCounter label="Macros" value={counts.macros} />
+            <div className="h-8 w-px bg-white/15 sm:h-10" />
+            <StatCounter label="인텔리전스 엣지" value={counts.edges} />
           </div>
           <div className="relative z-50 mx-auto mt-6 w-full max-w-2xl rounded-2xl border border-white/15 bg-black/55 p-2 shadow-[0_8px_40px_rgba(0,0,0,0.5)] backdrop-blur-md">
             <SearchBar
