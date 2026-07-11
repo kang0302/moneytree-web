@@ -8,6 +8,14 @@ import AmbientNetwork from "@/components/AmbientNetwork";
 import SearchBar from "@/components/SearchBar";
 import { computeThemeReturnSummary, PeriodKey, normalizeToPct } from "@/lib/themeReturn";
 import { resolvePlaceholderThemeNames } from "@/lib/themeIndex";
+import {
+  TEMP_BANDS,
+  TempBand,
+  bandOf,
+  computeOverall,
+  scoreBadgeColor,
+  scoreLabel,
+} from "@/lib/marketTemp";
 
 type ThemeIndexItem = {
   themeId: string;
@@ -83,10 +91,6 @@ function safeJsonParse<T>(s: string | null, fallback: T): T {
   }
 }
 
-function clamp(n: number, a = 0, b = 1000) {
-  return Math.max(a, Math.min(b, n));
-}
-
 function extractThemesFromText(text: string): ThemeIndexItem[] {
   const seen = new Set<string>();
   const out: ThemeIndexItem[] = [];
@@ -157,42 +161,6 @@ async function mapLimit<T, R>(items: T[], limit: number, fn: (x: T) => Promise<R
   }
   await Promise.all(Array.from({ length: Math.min(limit, items.length) }, () => worker()));
   return out;
-}
-
-function computeOverall(summary: any): number | null {
-  if (typeof summary?.overallScore === "number") return clamp(summary.overallScore);
-  const h = typeof summary?.healthScore === "number" ? summary.healthScore : null;
-  const m = typeof summary?.momentumScore === "number" ? summary.momentumScore : null;
-  if (h === null || m === null) return null;
-  return clamp(h * 0.6 + m * 0.4);
-}
-
-type TempBand = { key: string; label: string; min: number; color: string; emoji: string };
-
-// 시장의 온도 6단계 (점수 0~1000 → Blazing/Hot/Warm/Neutral/Cool/Cold)
-const TEMP_BANDS: TempBand[] = [
-  { key: "blazing", label: "Blazing", min: 850, color: "#b11226", emoji: "🔥" },
-  { key: "hot", label: "Hot", min: 700, color: "#ef476f", emoji: "🌶️" },
-  { key: "warm", label: "Warm", min: 550, color: "#ff9f45", emoji: "☀️" },
-  { key: "neutral", label: "Neutral", min: 420, color: "#a3a3a3", emoji: "⚖️" },
-  { key: "cool", label: "Cool", min: 280, color: "#4d96ff", emoji: "💧" },
-  { key: "cold", label: "Cold", min: 0, color: "#1f3c88", emoji: "❄️" },
-];
-
-function bandOf(score: number | null): TempBand | null {
-  if (score === null) return null;
-  for (const b of TEMP_BANDS) {
-    if (score >= b.min) return b;
-  }
-  return TEMP_BANDS[TEMP_BANDS.length - 1];
-}
-
-function scoreBadgeColor(score: number | null): string {
-  return bandOf(score)?.color ?? "rgba(255,255,255,0.45)";
-}
-
-function scoreLabel(score: number | null): string {
-  return bandOf(score)?.label ?? "—";
 }
 
 function useCountUp(target: number, duration = 1500) {
@@ -314,30 +282,28 @@ export default function HomePage() {
     };
   }, []);
 
-  const { warmTop, coldTop } = useMemo(() => {
-    const scored = themes.filter((t): t is ThemeRow & { score: number } => typeof t.score === "number");
-    const sortedDesc = [...scored].sort((a, b) => b.score - a.score);
-    return {
-      warmTop: sortedDesc.slice(0, 5),
-      coldTop: [...sortedDesc].reverse().slice(0, 5),
-    };
-  }, [themes]);
-
-  // ✅ 시장의 온도 6단계 분포
-  const tempDist = useMemo(() => {
-    const counts: Record<string, number> = {};
-    for (const b of TEMP_BANDS) counts[b.key] = 0;
-    let scoredTotal = 0;
+  // ✅ 시장의 온도 6단계: 밴드별 정렬 목록 + 분포
+  const { perBand, bandCounts, scoredTotal } = useMemo(() => {
+    const map: Record<string, (ThemeRow & { score: number })[]> = {};
+    const cnt: Record<string, number> = {};
+    for (const b of TEMP_BANDS) {
+      map[b.key] = [];
+      cnt[b.key] = 0;
+    }
+    let total = 0;
     for (const t of themes) {
       if (typeof t.score !== "number") continue;
       const b = bandOf(t.score);
-      if (b) {
-        counts[b.key]++;
-        scoredTotal++;
-      }
+      if (!b) continue;
+      map[b.key].push(t as ThemeRow & { score: number });
+      cnt[b.key]++;
+      total++;
     }
-    return { counts, scoredTotal };
+    for (const k of Object.keys(map)) map[k].sort((a, b) => b.score - a.score);
+    return { perBand: map, bandCounts: cnt, scoredTotal: total };
   }, [themes]);
+
+  const openBand = (key: string) => router.push(`/temperature/${key}`);
 
   const toggleFav = (themeId: string, themeName: string) => {
     const now = Date.now();
@@ -529,17 +495,18 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* 6단계 온도 분포 스트립 */}
+          {/* 6단계 온도 분포 스트립 (더블클릭 → 상세) */}
           <div className="mb-3 grid grid-cols-3 gap-2 sm:grid-cols-6">
             {TEMP_BANDS.map((b) => {
-              const n = tempDist.counts[b.key] ?? 0;
-              const pct = tempDist.scoredTotal > 0 ? Math.round((n / tempDist.scoredTotal) * 100) : 0;
+              const n = bandCounts[b.key] ?? 0;
+              const pct = scoredTotal > 0 ? Math.round((n / scoredTotal) * 100) : 0;
               return (
                 <div
                   key={b.key}
-                  className="flex flex-col rounded-xl border px-2.5 py-2"
+                  onDoubleClick={() => openBand(b.key)}
+                  className="flex cursor-pointer flex-col rounded-xl border px-2.5 py-2 transition hover:brightness-125"
                   style={{ borderColor: `${b.color}55`, background: `${b.color}14` }}
-                  title={`${b.label}: ${n}개 테마 (${pct}%)`}
+                  title={`${b.label}: ${n}개 테마 (${pct}%) — 더블클릭 시 상세 맵`}
                 >
                   <div className="flex items-center gap-1 text-[11px] font-semibold" style={{ color: b.color }}>
                     <span>{b.emoji}</span>
@@ -559,9 +526,18 @@ export default function HomePage() {
             })}
           </div>
 
-          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-            <PulseColumn title="🔥 Blazing/Hot Top 5" rows={warmTop} loading={loading} accent="warm" />
-            <PulseColumn title="❄️ Cool/Cold Top 5" rows={coldTop} loading={loading} accent="cold" />
+          {/* 6단계 밴드별 Top 5 (밴드명 더블클릭 → 상세 맵) */}
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
+            {TEMP_BANDS.map((b) => (
+              <BandColumn
+                key={b.key}
+                band={b}
+                rows={perBand[b.key] ?? []}
+                total={bandCounts[b.key] ?? 0}
+                loading={loading}
+                onOpen={() => openBand(b.key)}
+              />
+            ))}
           </div>
         </section>
 
@@ -631,42 +607,56 @@ export default function HomePage() {
   );
 }
 
-function PulseColumn({
-  title,
+function BandColumn({
+  band,
   rows,
+  total,
   loading,
-  accent,
+  onOpen,
 }: {
-  title: string;
+  band: TempBand;
   rows: ThemeRow[];
+  total: number;
   loading: boolean;
-  accent: "warm" | "cold";
+  onOpen: () => void;
 }) {
+  const top = rows.slice(0, 5);
   return (
-    <div className="rounded-xl border border-white/10 bg-black/25 px-3 py-3">
-      <div className="mb-2 text-[12px] font-semibold text-white/80">{title}</div>
-      {loading && rows.length === 0 ? (
+    <div className="rounded-xl border bg-black/25 px-3 py-3" style={{ borderColor: `${band.color}33` }}>
+      <div
+        onDoubleClick={onOpen}
+        className="mb-2 flex cursor-pointer items-center justify-between select-none"
+        title={`${band.label} 구간 — 더블클릭 시 상세 맵으로 이동`}
+      >
+        <div className="flex items-center gap-1.5 text-[12px] font-semibold" style={{ color: band.color }}>
+          <span>{band.emoji}</span>
+          <span>{band.label}</span>
+          <span className="text-white/40">Top 5</span>
+        </div>
+        <span className="text-[10px] text-white/40">{total}개 · 상세 ↗</span>
+      </div>
+      {loading && top.length === 0 ? (
         <div className="space-y-2">
           {Array.from({ length: 5 }).map((_, i) => (
-            <div key={i} className="h-9 animate-pulse rounded-lg bg-white/[0.04]" />
+            <div key={i} className="h-8 animate-pulse rounded-lg bg-white/[0.04]" />
           ))}
         </div>
-      ) : rows.length === 0 ? (
-        <div className="text-[12px] text-white/45">데이터 없음</div>
+      ) : top.length === 0 ? (
+        <div className="py-2 text-[12px] text-white/40">해당 구간 테마 없음</div>
       ) : (
         <div className="space-y-1">
-          {rows.map((t) => (
+          {top.map((t) => (
             <Link
               key={t.themeId}
               href={`/graph/${t.themeId}`}
-              className="grid grid-cols-[64px_1fr_auto] items-center gap-2 rounded-lg px-2 py-1.5 transition hover:bg-white/[0.05]"
+              className="grid grid-cols-[56px_1fr_auto] items-center gap-2 rounded-lg px-2 py-1.5 transition hover:bg-white/[0.05]"
             >
-              <span className="text-[11px] font-mono text-white/55">{t.themeId}</span>
-              <span className="min-w-0 truncate text-[13px] text-white/90" title={t.themeName}>
+              <span className="font-mono text-[10.5px] text-white/55">{t.themeId}</span>
+              <span className="min-w-0 truncate text-[12.5px] text-white/90" title={t.themeName}>
                 {t.themeName}
               </span>
               <span
-                className="text-[13px] font-extrabold tabular-nums"
+                className="text-[12.5px] font-extrabold tabular-nums"
                 style={{ color: scoreBadgeColor(t.score) }}
                 title={scoreLabel(t.score)}
               >
