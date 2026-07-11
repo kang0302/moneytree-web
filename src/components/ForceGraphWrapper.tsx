@@ -450,7 +450,7 @@ function nodeBaseColor(n: NodeT, isTheme: boolean) {
   if (t === "ASSET") return "#22d3ee";    // asset: cyan (base — return color 가 override 안 할 때)
   if (t === "FIELD") return "#D946EF";    // BF: magenta
   if (t === "MACRO") return "#FB923C";    // macro: orange
-  if (t === "CHARACTER") return "#f472b6"; // character: pink
+  if (t === "CHARACTER") return "#34d399"; // character: emerald green (BF 마젠타와 명확히 구분)
   return "#9CA3AF";                       // 기타: gray
 }
 
