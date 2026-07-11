@@ -11,6 +11,9 @@ export type ScoredTheme = {
   score: number | null;
   note: string | null;
   topMover: { name: string; ret?: number } | null;
+  nodeCount: number;
+  edgeCount: number;
+  assetCount: number;
 };
 
 type ThemeIndexItem = { themeId: string; themeName: string };
@@ -96,14 +99,19 @@ export async function loadScoredThemes(period: PeriodKey = "7D"): Promise<Scored
     const localUrl = `/data/theme/${row.themeId}.json`;
     const remoteUrl = `https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/${row.themeId}.json`;
     const tj = (await fetchJson<any>(localUrl)) ?? (await fetchJson<any>(remoteUrl));
-    if (!tj?.nodes) return { ...row, score: null, note: null, topMover: null };
+    if (!tj?.nodes) return { ...row, score: null, note: null, topMover: null, nodeCount: 0, edgeCount: 0, assetCount: 0 };
+    const nodeCount = Array.isArray(tj.nodes) ? tj.nodes.length : 0;
+    const edgeCount = Array.isArray(tj.edges) ? tj.edges.length : Array.isArray(tj.links) ? tj.links.length : 0;
+    const assetCount = Array.isArray(tj.nodes)
+      ? tj.nodes.filter((n: any) => (n?.type ?? "").toUpperCase() === "ASSET").length
+      : 0;
     const summary: any = computeThemeReturnSummary({ nodes: tj.nodes, period, minAssets: 5, topMoversN: 1 });
     if (!summary || summary.ok === false) {
-      return { ...row, score: null, note: summary?.sentence ?? null, topMover: null };
+      return { ...row, score: null, note: summary?.sentence ?? null, topMover: null, nodeCount, edgeCount, assetCount };
     }
     const score = computeOverall(summary);
     const tm = (summary.topMovers ?? [])[0];
     const topMover = tm ? { name: String(tm.name || tm.id || ""), ret: normalizeToPct(tm.ret) ?? undefined } : null;
-    return { ...row, score, note: summary.note ?? null, topMover };
+    return { ...row, score, note: summary.note ?? null, topMover, nodeCount, edgeCount, assetCount };
   });
 }

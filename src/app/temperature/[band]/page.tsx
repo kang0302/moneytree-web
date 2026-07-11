@@ -4,6 +4,7 @@ import React, { use, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { bandByKey, bandOf, scoreBadgeColor, scoreLabel, TEMP_BANDS } from "@/lib/marketTemp";
 import { loadScoredThemes, ScoredTheme } from "@/lib/loadThemes";
+import MiniThemeGraph from "@/components/MiniThemeGraph";
 
 export default function TemperatureBandPage({
   params,
@@ -121,33 +122,58 @@ export default function TemperatureBandPage({
             현재 이 온도 구간에 속한 테마가 없습니다.
           </div>
         ) : (
-          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {inBand.map((t) => (
               <Link
                 key={t.themeId}
                 href={`/graph/${t.themeId}`}
-                className="group rounded-xl border bg-black/25 px-3 py-2.5 transition hover:bg-white/[0.05]"
+                className="group flex flex-col overflow-hidden rounded-2xl border bg-white/[0.02] transition hover:bg-white/[0.05]"
                 style={{ borderColor: `${band.color}33` }}
               >
-                <div className="flex items-center justify-between gap-2">
-                  <span className="font-mono text-[10.5px] text-white/50">{t.themeId}</span>
+                {/* 그래프 모델 썸네일 */}
+                <div
+                  className="relative h-[132px] w-full border-b"
+                  style={{
+                    borderColor: `${band.color}22`,
+                    background: `radial-gradient(ellipse at 50% 40%, ${band.color}14 0%, rgba(255,255,255,0.02) 70%)`,
+                  }}
+                >
+                  <MiniThemeGraph
+                    seed={t.themeId}
+                    nodes={t.nodeCount}
+                    edges={t.edgeCount}
+                    color={band.color}
+                  />
+                  <span className="absolute left-2 top-2 rounded-md bg-black/40 px-1.5 py-0.5 font-mono text-[9.5px] text-white/60 backdrop-blur">
+                    {t.themeId}
+                  </span>
                   <span
-                    className="text-[14px] font-extrabold tabular-nums"
-                    style={{ color: scoreBadgeColor(t.score) }}
+                    className="absolute right-2 top-2 rounded-md px-1.5 py-0.5 text-[11px] font-extrabold tabular-nums backdrop-blur"
+                    style={{ color: scoreBadgeColor(t.score), background: "rgba(0,0,0,0.4)" }}
                     title={scoreLabel(t.score)}
                   >
                     {t.score === null ? "—" : Math.round(t.score)}
                   </span>
                 </div>
-                <div className="mt-0.5 truncate text-[13px] font-semibold text-white/90" title={t.themeName}>
-                  {t.themeName}
-                </div>
-                {t.topMover?.name ? (
-                  <div className="mt-0.5 truncate text-[10.5px] text-white/45">
-                    Top: {t.topMover.name}
-                    {typeof t.topMover.ret === "number" ? ` (${t.topMover.ret.toFixed(1)}%)` : ""}
+                {/* 하단 정보 */}
+                <div className="px-3 py-2.5">
+                  <div className="truncate text-[13px] font-semibold text-white/90" title={t.themeName}>
+                    {t.themeName}
                   </div>
-                ) : null}
+                  <div className="mt-0.5 flex items-center gap-2 text-[10px] text-white/40">
+                    <span>자산 {t.assetCount}</span>
+                    <span>·</span>
+                    <span>노드 {t.nodeCount}</span>
+                    <span>·</span>
+                    <span>엣지 {t.edgeCount}</span>
+                    {t.topMover?.name ? (
+                      <span className="ml-auto truncate text-white/45">
+                        ▲ {t.topMover.name}
+                        {typeof t.topMover.ret === "number" ? ` ${t.topMover.ret.toFixed(1)}%` : ""}
+                      </span>
+                    ) : null}
+                  </div>
+                </div>
               </Link>
             ))}
           </div>
