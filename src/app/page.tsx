@@ -14,11 +14,14 @@ type ThemeIndexItem = {
   themeName: string;
 };
 
+type ChangelogEntry = { date?: string; kind?: string; title?: string; detail?: string };
+
 type ThemeJson = {
   themeId: string;
   themeName: string;
   nodes: any[];
   edges: any[];
+  meta?: { changelog?: ChangelogEntry[] };
 };
 
 type ThemeRow = ThemeIndexItem & {
@@ -26,6 +29,41 @@ type ThemeRow = ThemeIndexItem & {
   note: string | null;
   topMover: { name: string; ret?: number } | null;
 };
+
+type UpdateItem = ChangelogEntry & { themeId: string; themeName: string };
+
+const RECENT_DAYS = 7;
+const KIND_COLOR: Record<string, string> = {
+  신규: "#34d399",
+  보강: "#38bdf8",
+  변경: "#fbbf24",
+  분할: "#e879f9",
+  수정: "#94a3b8",
+};
+
+function parseDay(s?: string): number | null {
+  if (!s) return null;
+  const t = Date.parse(s);
+  return Number.isNaN(t) ? null : t;
+}
+function daysSince(s?: string): number | null {
+  const t = parseDay(s);
+  return t === null ? null : Math.floor((Date.now() - t) / 86_400_000);
+}
+function fmtDay(s?: string): string {
+  const t = parseDay(s);
+  if (t === null) return s ?? "";
+  const d = new Date(t);
+  return `${d.getMonth() + 1}/${d.getDate()}`;
+}
+function relLabel(d: number | null): string {
+  if (d === null) return "";
+  if (d <= 0) return "오늘";
+  if (d === 1) return "어제";
+  if (d < 7) return `${d}일 전`;
+  if (d < 30) return `${Math.floor(d / 7)}주 전`;
+  return `${Math.floor(d / 30)}개월 전`;
+}
 
 type RecentItem = { themeId: string; themeName: string; at: number };
 type FavItem = { themeId: string; themeName: string; at: number };
@@ -189,6 +227,7 @@ export default function HomePage() {
   const [recent, setRecent] = useState<RecentItem[]>([]);
   const [favs, setFavs] = useState<FavItem[]>([]);
   const [counts, setCounts] = useState({ themes: 0, assets: 0, macros: 0 });
+  const [updates, setUpdates] = useState<UpdateItem[]>([]);
 
   useEffect(() => {
     setRecent(safeJsonParse<RecentItem[]>(localStorage.getItem(LS_RECENT), []));
@@ -207,6 +246,7 @@ export default function HomePage() {
 
       const assetIds = new Set<string>();
       const macroIds = new Set<string>();
+      const collectedUpdates: UpdateItem[] = [];
 
       const period: PeriodKey = "7D";
       const enriched = await mapLimit(list, 6, async (row) => {
@@ -215,6 +255,14 @@ export default function HomePage() {
         const tj = (await fetchJson<ThemeJson>(localUrl)) ?? (await fetchJson<ThemeJson>(remoteUrl));
         if (!tj?.nodes) {
           return { ...row, score: null, note: null, topMover: null } as ThemeRow;
+        }
+        const cl = tj.meta?.changelog;
+        if (Array.isArray(cl)) {
+          for (const e of cl) {
+            if (e && (e.title || e.detail)) {
+              collectedUpdates.push({ ...e, themeId: row.themeId, themeName: tj.themeName || row.themeName });
+            }
+          }
         }
         for (const n of tj.nodes) {
           const id = (n as any)?.id;
@@ -243,6 +291,8 @@ export default function HomePage() {
       if (!alive) return;
       setThemes(enriched);
       setCounts({ themes: list.length, assets: assetIds.size, macros: macroIds.size });
+      collectedUpdates.sort((a, b) => (parseDay(b.date) ?? 0) - (parseDay(a.date) ?? 0));
+      setUpdates(collectedUpdates);
       setLoading(false);
     }
 
@@ -333,6 +383,75 @@ export default function HomePage() {
             오늘의 헤드라인 매핑은 곧 연결됩니다. (Bloomberg · 한경 · 매경 · 컨센서스)
           </div>
         </section>
+
+        {/* Theme Curation Updates */}
+        {updates.length > 0 && (
+          <section className="mb-4 rounded-2xl border border-emerald-400/25 bg-emerald-500/[0.04] px-4 py-4 backdrop-blur">
+            <div className="mb-3 flex items-end justify-between">
+              <div>
+                <div className="text-[11px] uppercase tracking-wider text-emerald-300/70">Curation Updates</div>
+                <div className="flex items-center gap-2 text-[18px] font-bold">
+                  🗒 테마 큐레이션 업데이트
+                  {(() => {
+                    const fresh = updates.filter((u) => {
+                      const d = daysSince(u.date);
+                      return d !== null && d <= RECENT_DAYS;
+                    }).length;
+                    return fresh > 0 ? (
+                      <span className="animate-pulse rounded-full border border-emerald-400/40 bg-emerald-500/20 px-2 py-0.5 text-[10px] font-bold text-emerald-200">
+                        최근 {fresh}건
+                      </span>
+                    ) : null;
+                  })()}
+                </div>
+              </div>
+              <Link href="/themes" className="text-[11px] text-white/45 hover:text-white/70">
+                전체 테마 →
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
+              {updates.slice(0, 10).map((u, i) => {
+                const d = daysSince(u.date);
+                const recent = d !== null && d <= RECENT_DAYS;
+                const clr = (u.kind && KIND_COLOR[u.kind]) || "#94a3b8";
+                return (
+                  <Link
+                    key={`${u.themeId}-${i}`}
+                    href={`/graph/${u.themeId}#theme-changelog`}
+                    className={[
+                      "group flex items-center gap-2 rounded-xl border px-3 py-2 transition",
+                      recent
+                        ? "border-emerald-400/30 bg-emerald-500/[0.06] hover:bg-emerald-500/[0.1]"
+                        : "border-white/10 bg-black/25 hover:bg-white/[0.05]",
+                    ].join(" ")}
+                    title={u.detail || u.title}
+                  >
+                    <span
+                      className="shrink-0 rounded border px-1.5 py-0.5 text-[10px] font-semibold"
+                      style={{ color: clr, borderColor: `${clr}55`, background: `${clr}1a` }}
+                    >
+                      {u.kind || "변경"}
+                    </span>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-1.5">
+                        <span className="truncate text-[12.5px] font-semibold text-white/90">{u.title || u.themeName}</span>
+                      </div>
+                      <div className="truncate text-[10.5px] text-white/45">
+                        {u.themeName} · {u.themeId}
+                      </div>
+                    </div>
+                    <div className="shrink-0 text-right">
+                      <div className="text-[10px] text-white/40">{fmtDay(u.date)}</div>
+                      {recent && (
+                        <div className="text-[9.5px] font-bold text-emerald-300">{relLabel(d)}</div>
+                      )}
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </section>
+        )}
 
         {/* Markets by Region (placeholder counts; TBD click → region analysis) */}
         <section className="mb-4 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4 backdrop-blur">
