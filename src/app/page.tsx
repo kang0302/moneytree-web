@@ -167,22 +167,32 @@ function computeOverall(summary: any): number | null {
   return clamp(h * 0.6 + m * 0.4);
 }
 
+type TempBand = { key: string; label: string; min: number; color: string; emoji: string };
+
+// 시장의 온도 6단계 (점수 0~1000 → Blazing/Hot/Warm/Neutral/Cool/Cold)
+const TEMP_BANDS: TempBand[] = [
+  { key: "blazing", label: "Blazing", min: 850, color: "#b11226", emoji: "🔥" },
+  { key: "hot", label: "Hot", min: 700, color: "#ef476f", emoji: "🌶️" },
+  { key: "warm", label: "Warm", min: 550, color: "#ff9f45", emoji: "☀️" },
+  { key: "neutral", label: "Neutral", min: 420, color: "#a3a3a3", emoji: "⚖️" },
+  { key: "cool", label: "Cool", min: 280, color: "#4d96ff", emoji: "💧" },
+  { key: "cold", label: "Cold", min: 0, color: "#1f3c88", emoji: "❄️" },
+];
+
+function bandOf(score: number | null): TempBand | null {
+  if (score === null) return null;
+  for (const b of TEMP_BANDS) {
+    if (score >= b.min) return b;
+  }
+  return TEMP_BANDS[TEMP_BANDS.length - 1];
+}
+
 function scoreBadgeColor(score: number | null): string {
-  if (score === null) return "rgba(255,255,255,0.45)";
-  if (score >= 800) return "#b11226";
-  if (score >= 600) return "#ef476f";
-  if (score >= 400) return "#aaaaaa";
-  if (score >= 200) return "#4d96ff";
-  return "#1f3c88";
+  return bandOf(score)?.color ?? "rgba(255,255,255,0.45)";
 }
 
 function scoreLabel(score: number | null): string {
-  if (score === null) return "—";
-  if (score >= 800) return "WARM+";
-  if (score >= 600) return "WARM";
-  if (score >= 400) return "NEUT";
-  if (score >= 200) return "COLD";
-  return "COLD-";
+  return bandOf(score)?.label ?? "—";
 }
 
 function useCountUp(target: number, duration = 1500) {
@@ -311,6 +321,22 @@ export default function HomePage() {
       warmTop: sortedDesc.slice(0, 5),
       coldTop: [...sortedDesc].reverse().slice(0, 5),
     };
+  }, [themes]);
+
+  // ✅ 시장의 온도 6단계 분포
+  const tempDist = useMemo(() => {
+    const counts: Record<string, number> = {};
+    for (const b of TEMP_BANDS) counts[b.key] = 0;
+    let scoredTotal = 0;
+    for (const t of themes) {
+      if (typeof t.score !== "number") continue;
+      const b = bandOf(t.score);
+      if (b) {
+        counts[b.key]++;
+        scoredTotal++;
+      }
+    }
+    return { counts, scoredTotal };
   }, [themes]);
 
   const toggleFav = (themeId: string, themeName: string) => {
@@ -503,9 +529,39 @@ export default function HomePage() {
             </div>
           </div>
 
+          {/* 6단계 온도 분포 스트립 */}
+          <div className="mb-3 grid grid-cols-3 gap-2 sm:grid-cols-6">
+            {TEMP_BANDS.map((b) => {
+              const n = tempDist.counts[b.key] ?? 0;
+              const pct = tempDist.scoredTotal > 0 ? Math.round((n / tempDist.scoredTotal) * 100) : 0;
+              return (
+                <div
+                  key={b.key}
+                  className="flex flex-col rounded-xl border px-2.5 py-2"
+                  style={{ borderColor: `${b.color}55`, background: `${b.color}14` }}
+                  title={`${b.label}: ${n}개 테마 (${pct}%)`}
+                >
+                  <div className="flex items-center gap-1 text-[11px] font-semibold" style={{ color: b.color }}>
+                    <span>{b.emoji}</span>
+                    <span>{b.label}</span>
+                  </div>
+                  <div className="mt-0.5 flex items-end justify-between">
+                    <span className="font-mono text-[18px] font-extrabold tabular-nums text-white/90">
+                      {loading ? "—" : n}
+                    </span>
+                    <span className="text-[10px] text-white/40">{loading ? "" : `${pct}%`}</span>
+                  </div>
+                  <div className="mt-1 h-1 w-full overflow-hidden rounded-full bg-white/[0.06]">
+                    <div className="h-full rounded-full" style={{ width: `${pct}%`, background: b.color }} />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-            <PulseColumn title="🔥 WARM Top 5" rows={warmTop} loading={loading} accent="warm" />
-            <PulseColumn title="❄️ COLD Top 5" rows={coldTop} loading={loading} accent="cold" />
+            <PulseColumn title="🔥 Blazing/Hot Top 5" rows={warmTop} loading={loading} accent="warm" />
+            <PulseColumn title="❄️ Cool/Cold Top 5" rows={coldTop} loading={loading} accent="cold" />
           </div>
         </section>
 
