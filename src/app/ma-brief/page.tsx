@@ -3,12 +3,29 @@
 // 관심종목 이동평균선(30/60/120일) 데일리 브리핑 뷰어.
 // 데이터: kang0302/import_MT/main/data/ma_brief/latest.md (매일 GitHub Actions 로 갱신)
 
-import React, { useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 const BRIEF_URL =
   "https://raw.githubusercontent.com/kang0302/import_MT/main/data/ma_brief/latest.md";
+
+// 상승 ▲=적색 / 하락 ▼=청색 (한국식). 문자열 자식에서 화살표만 색 span 으로 감싼다.
+function colorArrows(node: ReactNode): ReactNode {
+  if (typeof node === "string") {
+    return node.split(/([▲▼])/).map((p, i) =>
+      p === "▲" ? (
+        <span key={i} style={{ color: "#dc2626" }}>▲</span>
+      ) : p === "▼" ? (
+        <span key={i} style={{ color: "#2563eb" }}>▼</span>
+      ) : (
+        <React.Fragment key={i}>{p}</React.Fragment>
+      )
+    );
+  }
+  if (Array.isArray(node)) return node.map((n, i) => <React.Fragment key={i}>{colorArrows(n)}</React.Fragment>);
+  return node;
+}
 
 export default function MaBriefPage() {
   const [md, setMd] = useState<string>("");
@@ -62,7 +79,14 @@ export default function MaBriefPage() {
         )}
         {state === "ok" && (
           <article className="ma-brief-prose">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>{md}</ReactMarkdown>
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={{
+                td: ({ children }) => <td>{colorArrows(children as ReactNode)}</td>,
+              }}
+            >
+              {md}
+            </ReactMarkdown>
           </article>
         )}
       </div>
