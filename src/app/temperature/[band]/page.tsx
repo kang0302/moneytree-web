@@ -138,12 +138,7 @@ export default function TemperatureBandPage({
                     background: `radial-gradient(ellipse at 50% 40%, ${band.color}14 0%, rgba(255,255,255,0.02) 70%)`,
                   }}
                 >
-                  <MiniThemeGraph
-                    seed={t.themeId}
-                    nodes={t.nodeCount}
-                    edges={t.edgeCount}
-                    color={band.color}
-                  />
+                  <MiniThemeGraph seed={t.themeId} graph={t.graph} />
                   <span className="absolute left-2 top-2 rounded-md bg-black/40 px-1.5 py-0.5 font-mono text-[9.5px] text-white/60 backdrop-blur">
                     {t.themeId}
                   </span>

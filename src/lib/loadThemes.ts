@@ -5,6 +5,9 @@ import { computeThemeReturnSummary, normalizeToPct, PeriodKey } from "./themeRet
 import { resolvePlaceholderThemeNames } from "./themeIndex";
 import { computeOverall } from "./marketTemp";
 
+export type MiniNode = { id: string; t: string };
+export type MiniGraph = { nodes: MiniNode[]; edges: [string, string][] };
+
 export type ScoredTheme = {
   themeId: string;
   themeName: string;
@@ -14,7 +17,43 @@ export type ScoredTheme = {
   nodeCount: number;
   edgeCount: number;
   assetCount: number;
+  graph: MiniGraph | null;
 };
+
+// 노드 타입 정규화 → THEME/ASSET/FIELD/MACRO/CHARACTER
+function normType(rawType: any, id: string): string {
+  const t = String(rawType ?? "").toUpperCase();
+  if (t.includes("BUSINESS") || t.includes("FIELD")) return "FIELD";
+  if (t === "THEME" || t === "ASSET" || t === "MACRO" || t === "CHARACTER") return t;
+  const p = String(id ?? "");
+  if (/^A_/i.test(p)) return "ASSET";
+  if (/^M_/i.test(p)) return "MACRO";
+  if (/^BF_/i.test(p)) return "FIELD";
+  if (/^C_/i.test(p)) return "CHARACTER";
+  if (/^T_/i.test(p)) return "THEME";
+  return "OTHER";
+}
+
+function buildMiniGraph(tj: any): MiniGraph | null {
+  const rawNodes = Array.isArray(tj?.nodes) ? tj.nodes : [];
+  if (!rawNodes.length) return null;
+  const NODE_CAP = 52;
+  const EDGE_CAP = 130;
+  const nodes: MiniNode[] = rawNodes.slice(0, NODE_CAP).map((n: any) => ({
+    id: String(n?.id ?? ""),
+    t: normType(n?.type, n?.id),
+  }));
+  const idset = new Set(nodes.map((n) => n.id));
+  const rawEdges = Array.isArray(tj?.edges) ? tj.edges : Array.isArray(tj?.links) ? tj.links : [];
+  const edges: [string, string][] = [];
+  for (const e of rawEdges) {
+    const a = String(e?.from ?? e?.source ?? "");
+    const b = String(e?.to ?? e?.target ?? "");
+    if (a && b && idset.has(a) && idset.has(b)) edges.push([a, b]);
+    if (edges.length >= EDGE_CAP) break;
+  }
+  return { nodes, edges };
+}
 
 type ThemeIndexItem = { themeId: string; themeName: string };
 
@@ -99,19 +138,21 @@ export async function loadScoredThemes(period: PeriodKey = "7D"): Promise<Scored
     const localUrl = `/data/theme/${row.themeId}.json`;
     const remoteUrl = `https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/${row.themeId}.json`;
     const tj = (await fetchJson<any>(localUrl)) ?? (await fetchJson<any>(remoteUrl));
-    if (!tj?.nodes) return { ...row, score: null, note: null, topMover: null, nodeCount: 0, edgeCount: 0, assetCount: 0 };
+    if (!tj?.nodes)
+      return { ...row, score: null, note: null, topMover: null, nodeCount: 0, edgeCount: 0, assetCount: 0, graph: null };
     const nodeCount = Array.isArray(tj.nodes) ? tj.nodes.length : 0;
     const edgeCount = Array.isArray(tj.edges) ? tj.edges.length : Array.isArray(tj.links) ? tj.links.length : 0;
     const assetCount = Array.isArray(tj.nodes)
       ? tj.nodes.filter((n: any) => (n?.type ?? "").toUpperCase() === "ASSET").length
       : 0;
+    const graph = buildMiniGraph(tj);
     const summary: any = computeThemeReturnSummary({ nodes: tj.nodes, period, minAssets: 5, topMoversN: 1 });
     if (!summary || summary.ok === false) {
-      return { ...row, score: null, note: summary?.sentence ?? null, topMover: null, nodeCount, edgeCount, assetCount };
+      return { ...row, score: null, note: summary?.sentence ?? null, topMover: null, nodeCount, edgeCount, assetCount, graph };
     }
     const score = computeOverall(summary);
     const tm = (summary.topMovers ?? [])[0];
     const topMover = tm ? { name: String(tm.name || tm.id || ""), ret: normalizeToPct(tm.ret) ?? undefined } : null;
-    return { ...row, score, note: summary.note ?? null, topMover, nodeCount, edgeCount, assetCount };
+    return { ...row, score, note: summary.note ?? null, topMover, nodeCount, edgeCount, assetCount, graph };
   });
 }
