@@ -7,8 +7,9 @@ import React, { ReactNode, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-const BRIEF_URL =
-  "https://raw.githubusercontent.com/kang0302/import_MT/main/data/ma_brief/latest.md";
+const BASE_DIR =
+  "https://raw.githubusercontent.com/kang0302/import_MT/main/data/ma_brief";
+const INDEX_URL = `${BASE_DIR}/index.json`;
 
 // 상승 ▲=적색 / 하락 ▼=청색 (한국식). 문자열 자식에서 화살표만 색 span 으로 감싼다.
 function colorArrows(node: ReactNode): ReactNode {
@@ -27,15 +28,38 @@ function colorArrows(node: ReactNode): ReactNode {
   return node;
 }
 
+type ArchiveEntry = { date: string; asof?: string; bull?: number; bear?: number };
+
 export default function MaBriefPage() {
   const [md, setMd] = useState<string>("");
   const [state, setState] = useState<"loading" | "ok" | "empty" | "error">("loading");
+  const [dates, setDates] = useState<ArchiveEntry[]>([]);
+  const [sel, setSel] = useState<string>("latest"); // "latest" 또는 YYYY-MM-DD
+  const [nonce, setNonce] = useState(0);
 
+  // 아카이브 인덱스(날짜 목록) 로드
   useEffect(() => {
-    let cancelled = false;
     (async () => {
       try {
-        const r = await fetch(`${BRIEF_URL}?_cb=${Date.now()}`, { cache: "no-store" });
+        const r = await fetch(`${INDEX_URL}?_cb=${Date.now()}`, { cache: "no-store" });
+        if (r.ok) {
+          const j = await r.json();
+          if (Array.isArray(j)) setDates(j);
+        }
+      } catch {
+        /* index 없으면 최신만 */
+      }
+    })();
+  }, []);
+
+  // 선택된 날짜(또는 최신) 브리핑 로드
+  useEffect(() => {
+    let cancelled = false;
+    setState("loading");
+    const url = sel === "latest" ? `${BASE_DIR}/latest.md` : `${BASE_DIR}/${sel}.md`;
+    (async () => {
+      try {
+        const r = await fetch(`${url}?_cb=${Date.now()}`, { cache: "no-store" });
         if (!r.ok) {
           if (!cancelled) setState(r.status === 404 ? "empty" : "error");
           return;
@@ -52,20 +76,39 @@ export default function MaBriefPage() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [sel, nonce]);
 
   return (
     <main className="min-h-screen w-full bg-black text-white">
       <div className="mx-auto w-full max-w-3xl px-4 py-6">
-        <div className="mb-4 flex items-center justify-between">
+        <div className="mb-4 flex items-center justify-between gap-2">
           <h1 className="text-lg font-semibold text-white/90">이동평균선 브리핑</h1>
-          <button
-            onClick={() => window.location.reload()}
-            className="rounded-lg border border-white/15 bg-white/[0.04] px-3 py-1 text-xs text-white/70 hover:bg-white/10"
-          >
-            새로고침
-          </button>
+          <div className="flex items-center gap-2">
+            <select
+              value={sel}
+              onChange={(e) => setSel(e.target.value)}
+              className="rounded-lg border border-white/15 bg-black/40 px-2 py-1 text-xs text-white/80 outline-none"
+              title="날짜 선택 (지난 브리핑 다시보기)"
+            >
+              <option value="latest">최신</option>
+              {dates.map((d) => (
+                <option key={d.date} value={d.date}>
+                  {d.date}
+                  {typeof d.bull === "number" ? ` · 정${d.bull}/역${d.bear ?? 0}` : ""}
+                </option>
+              ))}
+            </select>
+            <button
+              onClick={() => setNonce((n) => n + 1)}
+              className="rounded-lg border border-white/15 bg-white/[0.04] px-3 py-1 text-xs text-white/70 hover:bg-white/10"
+            >
+              새로고침
+            </button>
+          </div>
         </div>
+        {sel !== "latest" && (
+          <div className="mb-2 text-xs text-amber-300/80">📅 {sel} 지난 브리핑을 보고 있습니다.</div>
+        )}
 
         {state === "loading" && <div className="text-white/50">불러오는 중…</div>}
         {state === "error" && (
