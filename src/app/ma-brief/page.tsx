@@ -80,7 +80,7 @@ export default function MaBriefPage() {
 
   return (
     <main className="min-h-screen w-full bg-black text-white">
-      <div className="mx-auto w-full max-w-3xl px-4 py-6">
+      <div className="mx-auto w-full max-w-[1600px] px-3 py-6">
         <div className="mb-4 flex items-center justify-between gap-2">
           <h1 className="text-lg font-semibold text-white/90">이동평균선 브리핑</h1>
           <div className="flex items-center gap-2">
@@ -141,8 +141,8 @@ export default function MaBriefPage() {
         .ma-brief-prose li { color: rgba(255,255,255,0.8); font-size: 0.9rem; margin: 0.15rem 0; }
         .ma-brief-prose strong { color: #fff; }
         .ma-brief-prose blockquote { border-left: 3px solid rgba(255,255,255,0.15); padding-left: 0.8rem; color: rgba(255,255,255,0.5); font-size: 0.8rem; margin: 0.8rem 0; }
-        .ma-brief-prose table { width: 100%; border-collapse: collapse; margin: 0.6rem 0; font-size: 0.85rem; display: block; overflow-x: auto; }
-        .ma-brief-prose th, .ma-brief-prose td { border: 1px solid rgba(255,255,255,0.1); padding: 0.4rem 0.6rem; text-align: left; white-space: nowrap; }
+        .ma-brief-prose table { width: 100%; border-collapse: collapse; margin: 0.6rem 0; font-size: 0.8rem; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .ma-brief-prose th, .ma-brief-prose td { border: 1px solid rgba(255,255,255,0.1); padding: 0.3rem 0.45rem; text-align: left; white-space: nowrap; }
         .ma-brief-prose th { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.85); font-weight: 600; }
         .ma-brief-prose code { background: rgba(255,255,255,0.08); padding: 0.05rem 0.3rem; border-radius: 0.25rem; font-size: 0.8em; }
       `}</style>
