@@ -1,151 +1,251 @@
 "use client";
 
-// 관심종목 이동평균선(30/60/120일) 데일리 브리핑 뷰어.
-// 데이터: kang0302/import_MT/main/data/ma_brief/latest.md (매일 GitHub Actions 로 갱신)
+// 관심종목 이동평균선 데일리 브리핑 — 인터랙티브 뷰어.
+// 데이터: kang0302/import_MT/main/data/ma_brief/latest.json (매일 GitHub Actions 로 갱신)
+// 기능: 이평선 격차/52주高 정렬, 버킷·섹터·배열 필터, 날짜 아카이브.
 
-import React, { ReactNode, useEffect, useState } from "react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import React, { useEffect, useMemo, useState } from "react";
 
 const BASE_DIR =
   "https://raw.githubusercontent.com/kang0302/import_MT/main/data/ma_brief";
 const INDEX_URL = `${BASE_DIR}/index.json`;
 
-// 상승 ▲=적색 / 하락 ▼=청색 (한국식). 문자열 자식에서 화살표만 색 span 으로 감싼다.
-function colorArrows(node: ReactNode): ReactNode {
-  if (typeof node === "string") {
-    return node.split(/([▲▼])/).map((p, i) =>
-      p === "▲" ? (
-        <span key={i} style={{ color: "#dc2626" }}>▲</span>
-      ) : p === "▼" ? (
-        <span key={i} style={{ color: "#2563eb" }}>▼</span>
-      ) : (
-        <React.Fragment key={i}>{p}</React.Fragment>
-      )
-    );
-  }
-  if (Array.isArray(node)) return node.map((n, i) => <React.Fragment key={i}>{colorArrows(n)}</React.Fragment>);
-  return node;
+type Row = {
+  sector: string; name: string; ticker: string; country: string; link: string;
+  close: number | null; g5: number | null; g20: number | null; g60: number | null;
+  g120: number | null; hg: number | null; align: string; above: number;
+  bucket: string; bucketLabel: string; seq7: string; signal: string; interp: string;
+};
+type Payload = {
+  asof: string; generated: string; count: number;
+  summary: { bull: number; flat: number; bear: number; up: number; dn: number; break: number; lose: number };
+  buckets: Record<string, string>; items: Row[];
+};
+type ArchiveEntry = { date: string };
+
+const BUCKET_ORDER = ["b1", "b2", "b3", "b4", "b5", "b6", "na"];
+const ALIGN_LABEL: Record<string, string> = { bull: "🟢 정배열", flat: "⚪ 혼조", bear: "🔴 역배열", na: "—" };
+
+function gapColor(v: number | null): string {
+  if (v == null) return "#94a3b8";
+  return v >= 0 ? "#f87171" : "#60a5fa"; // 상승/상회=적, 하락/하회=청
+}
+function fmtGap(v: number | null): string {
+  if (v == null) return "—";
+  const arrow = v >= 0 ? "▲" : "▼";
+  const sign = v >= 0 ? "+" : "";
+  return `${arrow} ${sign}${v.toFixed(1)}%`;
+}
+function highColor(v: number | null): string {
+  if (v == null) return "#94a3b8";
+  if (v >= -3) return "#f87171";
+  if (v <= -20) return "#60a5fa";
+  return "#cbd5e1";
+}
+function Seq7({ s }: { s: string }) {
+  return (
+    <span>
+      {s.split("").map((c, i) =>
+        c === "▲" ? <span key={i} style={{ color: "#f87171" }}>▲</span> :
+        c === "▼" ? <span key={i} style={{ color: "#60a5fa" }}>▼</span> :
+        <span key={i} style={{ color: "#64748b" }}>{c}</span>
+      )}
+    </span>
+  );
 }
 
-type ArchiveEntry = { date: string; asof?: string; bull?: number; bear?: number };
+type SortKey = "bucket" | "close" | "g5" | "g20" | "g60" | "g120" | "hg" | "name" | "sector";
 
 export default function MaBriefPage() {
-  const [md, setMd] = useState<string>("");
+  const [data, setData] = useState<Payload | null>(null);
   const [state, setState] = useState<"loading" | "ok" | "empty" | "error">("loading");
   const [dates, setDates] = useState<ArchiveEntry[]>([]);
-  const [sel, setSel] = useState<string>("latest"); // "latest" 또는 YYYY-MM-DD
+  const [sel, setSel] = useState<string>("latest");
   const [nonce, setNonce] = useState(0);
 
-  // 아카이브 인덱스(날짜 목록) 로드
+  const [bucketF, setBucketF] = useState<string>("all");
+  const [sectorF, setSectorF] = useState<string>("all");
+  const [alignF, setAlignF] = useState<string>("all");
+  const [q, setQ] = useState<string>("");
+  const [sortKey, setSortKey] = useState<SortKey>("bucket");
+  const [sortDir, setSortDir] = useState<"asc" | "desc">("asc");
+
   useEffect(() => {
     (async () => {
       try {
         const r = await fetch(`${INDEX_URL}?_cb=${Date.now()}`, { cache: "no-store" });
-        if (r.ok) {
-          const j = await r.json();
-          if (Array.isArray(j)) setDates(j);
-        }
-      } catch {
-        /* index 없으면 최신만 */
-      }
+        if (r.ok) { const j = await r.json(); if (Array.isArray(j)) setDates(j); }
+      } catch { /* index 없으면 최신만 */ }
     })();
   }, []);
 
-  // 선택된 날짜(또는 최신) 브리핑 로드
   useEffect(() => {
     let cancelled = false;
     setState("loading");
-    const url = sel === "latest" ? `${BASE_DIR}/latest.md` : `${BASE_DIR}/${sel}.md`;
+    const url = sel === "latest" ? `${BASE_DIR}/latest.json` : `${BASE_DIR}/${sel}.json`;
     (async () => {
       try {
         const r = await fetch(`${url}?_cb=${Date.now()}`, { cache: "no-store" });
-        if (!r.ok) {
-          if (!cancelled) setState(r.status === 404 ? "empty" : "error");
-          return;
-        }
-        const t = await r.text();
-        if (!cancelled) {
-          setMd(t);
-          setState(t.trim() ? "ok" : "empty");
-        }
-      } catch {
-        if (!cancelled) setState("error");
-      }
+        if (!r.ok) { if (!cancelled) setState(r.status === 404 ? "empty" : "error"); return; }
+        const j = (await r.json()) as Payload;
+        if (!cancelled) { setData(j); setState(j?.items?.length ? "ok" : "empty"); }
+      } catch { if (!cancelled) setState("error"); }
     })();
-    return () => {
-      cancelled = true;
-    };
+    return () => { cancelled = true; };
   }, [sel, nonce]);
+
+  const sectors = useMemo(() => {
+    const s = new Set<string>();
+    (data?.items || []).forEach((r) => r.sector && s.add(r.sector));
+    return Array.from(s).sort();
+  }, [data]);
+
+  const rows = useMemo(() => {
+    let rs = (data?.items || []).slice();
+    if (bucketF !== "all") rs = rs.filter((r) => r.bucket === bucketF);
+    if (sectorF !== "all") rs = rs.filter((r) => r.sector === sectorF);
+    if (alignF !== "all") rs = rs.filter((r) => r.align === alignF);
+    if (q.trim()) {
+      const t = q.trim().toLowerCase();
+      rs = rs.filter((r) => (r.name + " " + r.ticker + " " + r.sector).toLowerCase().includes(t));
+    }
+    const num = (v: number | null) => (v == null ? Number.NEGATIVE_INFINITY : v);
+    rs.sort((a, b) => {
+      let c = 0;
+      if (sortKey === "bucket") {
+        c = BUCKET_ORDER.indexOf(a.bucket) - BUCKET_ORDER.indexOf(b.bucket);
+        if (c === 0) c = b.above - a.above;
+        if (c === 0) c = num(b.hg) - num(a.hg);
+      } else if (sortKey === "name" || sortKey === "sector") {
+        c = String(a[sortKey]).localeCompare(String(b[sortKey]));
+      } else {
+        c = num(a[sortKey as keyof Row] as number | null) - num(b[sortKey as keyof Row] as number | null);
+      }
+      return sortDir === "asc" ? c : -c;
+    });
+    return rs;
+  }, [data, bucketF, sectorF, alignF, q, sortKey, sortDir]);
+
+  const onSort = (k: SortKey) => {
+    if (sortKey === k) setSortDir((d) => (d === "asc" ? "desc" : "asc"));
+    else { setSortKey(k); setSortDir(k === "bucket" || k === "name" || k === "sector" ? "asc" : "desc"); }
+  };
+  const Arrow = ({ k }: { k: SortKey }) => sortKey === k ? <span className="text-amber-300">{sortDir === "asc" ? " ▲" : " ▼"}</span> : null;
+
+  const sum = data?.summary;
 
   return (
     <main className="min-h-screen w-full bg-black text-white">
-      <div className="mx-auto w-full max-w-[1600px] px-3 py-6">
-        <div className="mb-4 flex items-center justify-between gap-2">
-          <h1 className="text-lg font-semibold text-white/90">이동평균선 브리핑</h1>
+      <div className="mx-auto w-full max-w-[1600px] px-3 py-5">
+        <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+          <h1 className="text-lg font-semibold text-white/90">📈 이동평균선 브리핑</h1>
           <div className="flex items-center gap-2">
-            <select
-              value={sel}
-              onChange={(e) => setSel(e.target.value)}
-              className="rounded-lg border border-white/15 bg-black/40 px-2 py-1 text-xs text-white/80 outline-none"
-              title="날짜 선택 (지난 브리핑 다시보기)"
-            >
+            <select value={sel} onChange={(e) => setSel(e.target.value)}
+              className="rounded-lg border border-white/15 bg-black/40 px-2 py-1 text-xs text-white/80 outline-none" title="날짜 선택">
               <option value="latest">최신</option>
-              {dates.map((d) => (
-                <option key={d.date} value={d.date}>
-                  {d.date}
-                  {typeof d.bull === "number" ? ` · 정${d.bull}/역${d.bear ?? 0}` : ""}
-                </option>
-              ))}
+              {dates.map((d) => <option key={d.date} value={d.date}>{d.date}</option>)}
             </select>
-            <button
-              onClick={() => setNonce((n) => n + 1)}
-              className="rounded-lg border border-white/15 bg-white/[0.04] px-3 py-1 text-xs text-white/70 hover:bg-white/10"
-            >
-              새로고침
-            </button>
+            <button onClick={() => setNonce((n) => n + 1)}
+              className="rounded-lg border border-white/15 bg-white/[0.04] px-3 py-1 text-xs text-white/70 hover:bg-white/10">새로고침</button>
           </div>
         </div>
-        {sel !== "latest" && (
-          <div className="mb-2 text-xs text-amber-300/80">📅 {sel} 지난 브리핑을 보고 있습니다.</div>
-        )}
 
         {state === "loading" && <div className="text-white/50">불러오는 중…</div>}
-        {state === "error" && (
-          <div className="text-rose-300/80">브리핑을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.</div>
-        )}
-        {state === "empty" && (
-          <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4 text-white/60">
-            아직 생성된 브리핑이 없습니다. 데일리 워크플로우(<code className="text-white/80">ma-watchlist-brief</code>)가
-            처음 실행되면 여기에 표시됩니다.
-          </div>
-        )}
-        {state === "ok" && (
-          <article className="ma-brief-prose">
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              components={{
-                td: ({ children }) => <td>{colorArrows(children as ReactNode)}</td>,
-              }}
-            >
-              {md}
-            </ReactMarkdown>
-          </article>
+        {state === "error" && <div className="text-rose-300/80">브리핑을 불러오지 못했습니다.</div>}
+        {state === "empty" && <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4 text-white/60">아직 생성된 브리핑이 없습니다.</div>}
+
+        {state === "ok" && data && (
+          <>
+            <div className="mb-3 text-xs text-white/60">
+              기준일(전일 종가) <b className="text-white/80">{data.asof}</b> · 종목 {data.count}개 · 생성 {data.generated}
+              {sum && <> · 🟢 정배열 <b>{sum.bull}</b> · ⚪ 혼조 <b>{sum.flat}</b> · 🔴 역배열 <b>{sum.bear}</b> · 20일선 상회 <b>{sum.up}</b>/하회 <b>{sum.dn}</b></>}
+              {sel !== "latest" && <span className="ml-2 text-amber-300/80">📅 {sel} 지난 브리핑</span>}
+            </div>
+
+            {/* 필터 바 */}
+            <div className="mb-3 flex flex-wrap items-center gap-2 text-xs">
+              <select value={bucketF} onChange={(e) => setBucketF(e.target.value)} className="rounded-lg border border-white/15 bg-black/40 px-2 py-1 text-white/80 outline-none">
+                <option value="all">버킷 전체</option>
+                {BUCKET_ORDER.filter((b) => b !== "na" || (data.items.some((r) => r.bucket === "na"))).map((b) => (
+                  <option key={b} value={b}>{data.buckets[b]} ({data.items.filter((r) => r.bucket === b).length})</option>
+                ))}
+              </select>
+              <select value={sectorF} onChange={(e) => setSectorF(e.target.value)} className="rounded-lg border border-white/15 bg-black/40 px-2 py-1 text-white/80 outline-none">
+                <option value="all">섹터 전체</option>
+                {sectors.map((s) => <option key={s} value={s}>{s}</option>)}
+              </select>
+              <select value={alignF} onChange={(e) => setAlignF(e.target.value)} className="rounded-lg border border-white/15 bg-black/40 px-2 py-1 text-white/80 outline-none">
+                <option value="all">배열 전체</option>
+                <option value="bull">🟢 정배열</option>
+                <option value="flat">⚪ 혼조</option>
+                <option value="bear">🔴 역배열</option>
+              </select>
+              <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="종목/티커 검색"
+                className="rounded-lg border border-white/15 bg-black/40 px-2 py-1 text-white/80 outline-none placeholder:text-white/30" />
+              <span className="text-white/40">{rows.length}종목</span>
+              {(bucketF !== "all" || sectorF !== "all" || alignF !== "all" || q) && (
+                <button onClick={() => { setBucketF("all"); setSectorF("all"); setAlignF("all"); setQ(""); }} className="text-amber-300/80 underline">초기화</button>
+              )}
+            </div>
+
+            <div className="overflow-x-auto rounded-lg border border-white/10">
+              <table className="w-full border-collapse text-[12.5px] whitespace-nowrap">
+                <thead>
+                  <tr className="bg-white/[0.05] text-white/80">
+                    <Th onClick={() => onSort("sector")}>섹터<Arrow k="sector" /></Th>
+                    <Th onClick={() => onSort("name")}>종목<Arrow k="name" /></Th>
+                    <Th onClick={() => onSort("close")} right>종가<Arrow k="close" /></Th>
+                    <Th onClick={() => onSort("g5")} right>vs 5일<Arrow k="g5" /></Th>
+                    <Th onClick={() => onSort("g20")} right>vs 20일<Arrow k="g20" /></Th>
+                    <Th onClick={() => onSort("g60")} right>vs 60일<Arrow k="g60" /></Th>
+                    <Th onClick={() => onSort("g120")} right>vs 120일<Arrow k="g120" /></Th>
+                    <Th onClick={() => onSort("hg")} right>52주高比<Arrow k="hg" /></Th>
+                    <Th>배열</Th>
+                    <Th onClick={() => onSort("bucket")}>버킷<Arrow k="bucket" /></Th>
+                    <Th>최근7일</Th>
+                    <Th>오늘 신호</Th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {rows.map((r, i) => (
+                    <tr key={r.ticker + i} className="border-t border-white/5 hover:bg-white/[0.03]" title={r.interp}>
+                      <td className="px-2 py-1 text-indigo-300/90">{r.sector}</td>
+                      <td className="px-2 py-1">
+                        <a href={r.link} target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">{r.name} ({r.ticker})</a>
+                      </td>
+                      <td className="px-2 py-1 text-right text-white/80">{r.close != null ? r.close.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : "—"}</td>
+                      <td className="px-2 py-1 text-right" style={{ color: gapColor(r.g5) }}>{fmtGap(r.g5)}</td>
+                      <td className="px-2 py-1 text-right" style={{ color: gapColor(r.g20) }}>{fmtGap(r.g20)}</td>
+                      <td className="px-2 py-1 text-right" style={{ color: gapColor(r.g60) }}>{fmtGap(r.g60)}</td>
+                      <td className="px-2 py-1 text-right" style={{ color: gapColor(r.g120) }}>{fmtGap(r.g120)}</td>
+                      <td className="px-2 py-1 text-right" style={{ color: highColor(r.hg) }}>{r.hg != null ? `${r.hg >= 0 ? "+" : ""}${r.hg.toFixed(1)}%` : "—"}</td>
+                      <td className="px-2 py-1">{ALIGN_LABEL[r.align] || r.align}</td>
+                      <td className="px-2 py-1 font-semibold text-white/90">{r.bucketLabel}</td>
+                      <td className="px-2 py-1"><Seq7 s={r.seq7} /></td>
+                      <td className="px-2 py-1 text-white/60">{r.signal}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-3 text-[11px] leading-relaxed text-white/40">
+              ▲(적) 상회·상승 / ▼(청) 하회·하락. 52주高比=1년 최고종가 대비 격차. 헤더 클릭 시 해당 컬럼 정렬(재클릭=방향전환). 행에 마우스를 올리면 해석이 뜹니다.
+              버킷: ①진짜주도주(정배열+전상회) ②조정중추세(정배열+단기이탈) ③붕괴임박(정배열+전하회) ④정배열전환후보(혼조+상회) ⑤실질하락(혼조·역배열+전하회) ⑥바닥반전초기(역배열+이평선위).
+            </p>
+          </>
         )}
       </div>
-
-      <style jsx global>{`
-        .ma-brief-prose h1 { font-size: 1.25rem; font-weight: 700; margin: 0 0 0.5rem; }
-        .ma-brief-prose p { color: rgba(255,255,255,0.75); margin: 0.4rem 0; font-size: 0.9rem; }
-        .ma-brief-prose ul { margin: 0.4rem 0 0.8rem; padding-left: 1.1rem; list-style: disc; }
-        .ma-brief-prose li { color: rgba(255,255,255,0.8); font-size: 0.9rem; margin: 0.15rem 0; }
-        .ma-brief-prose strong { color: #fff; }
-        .ma-brief-prose blockquote { border-left: 3px solid rgba(255,255,255,0.15); padding-left: 0.8rem; color: rgba(255,255,255,0.5); font-size: 0.8rem; margin: 0.8rem 0; }
-        .ma-brief-prose table { width: 100%; border-collapse: collapse; margin: 0.6rem 0; font-size: 0.8rem; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-        .ma-brief-prose th, .ma-brief-prose td { border: 1px solid rgba(255,255,255,0.1); padding: 0.3rem 0.45rem; text-align: left; white-space: nowrap; }
-        .ma-brief-prose th { background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.85); font-weight: 600; }
-        .ma-brief-prose code { background: rgba(255,255,255,0.08); padding: 0.05rem 0.3rem; border-radius: 0.25rem; font-size: 0.8em; }
-      `}</style>
     </main>
+  );
+}
+
+function Th({ children, onClick, right }: { children: React.ReactNode; onClick?: () => void; right?: boolean }) {
+  return (
+    <th
+      onClick={onClick}
+      className={`px-2 py-1.5 font-semibold ${right ? "text-right" : "text-left"} ${onClick ? "cursor-pointer select-none hover:text-white" : ""}`}
+    >
+      {children}
+    </th>
   );
 }
