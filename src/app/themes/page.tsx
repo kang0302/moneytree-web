@@ -28,10 +28,19 @@ type ThemeJson = {
 type Top3MoverUI = { id: string; name: string; ret?: number };
 
 type ThemeRow = ThemeIndexItem & {
-  barometerOverall7D?: number | null; // 0~100
-  barometerNote?: string | null;
-  topMovers?: Top3MoverUI[] | null;
+  graph?: { nodes: any[]; edges: any[] } | null; // 캐시된 그래프 (기간 토글 시 재fetch 없이 재계산)
+  loadFailed?: boolean;
 };
+
+// 기간별로 계산된 파생 행
+type ComputedRow = ThemeRow & {
+  score: number | null; // Barometer 0~1000 (궤도 가중)
+  ewReturn: number | null; // 동일가중 평균 수익률(%)
+  note: string | null;
+  topMovers: Top3MoverUI[] | null;
+};
+
+const PERIODS: PeriodKey[] = ["1D", "3D", "7D", "15D", "1M", "YTD", "1Y", "2Y", "3Y"];
 
 const LS_RECENT = "mt_recent_themes_v1";
 const LS_FAV = "mt_favorite_themes_v1";
@@ -235,8 +244,11 @@ export default function ThemesPage() {
 
   const [query, setQuery] = useState("");
   const [sortKey, setSortKey] = useState<
-    "BARO_DESC" | "BARO_ASC" | "THEMEID_ASC" | "THEMEID_DESC" | "UPDATED_DESC"
+    "BARO_DESC" | "BARO_ASC" | "EW_DESC" | "EW_ASC" | "THEMEID_ASC" | "THEMEID_DESC" | "UPDATED_DESC"
   >("BARO_DESC");
+
+  // ✅ 기준 기간 토글 (default 7D)
+  const [period, setPeriod] = useState<PeriodKey>("7D");
 
   const [recent, setRecent] = useState<RecentItem[]>([]);
   const [favs, setFavs] = useState<FavItem[]>([]);
@@ -279,73 +291,21 @@ export default function ThemesPage() {
         return;
       }
 
-      const base: ThemeRow[] = list.map((t: ThemeIndexItem) => ({
-        ...t,
-        barometerOverall7D: null,
-        barometerNote: null,
-        topMovers: null,
-      }));
+      const base: ThemeRow[] = list.map((t: ThemeIndexItem) => ({ ...t, graph: null }));
 
       // 1) 일단 목록을 바로 렌더 (UX)
       setThemes(base);
       setLoading(false);
       setLastLoadedAt(new Date().toISOString());
 
-      // 2) barometer/topMovers는 비동기로 채움
-      const period: PeriodKey = "7D";
-
+      // 2) 각 테마 JSON(nodes/edges)만 캐시 — barometer/EW는 기간 토글마다 클라이언트에서 재계산
       const enriched = await mapLimit(base, 6, async (row) => {
-        // 로컬 우선, 없으면 GitHub raw fallback
         const localUrl = `/data/theme/${row.themeId}.json`;
         const remoteUrl = `https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/${row.themeId}.json`;
-        const tj = await fetchJson<ThemeJson>(localUrl) ?? await fetchJson<ThemeJson>(remoteUrl);
-        if (!tj?.nodes) {
-          return {
-            ...row,
-            barometerNote: row.barometerNote ?? "테마 JSON 로드 실패",
-            barometerOverall7D: null,
-            topMovers: null,
-          };
-        }
-
-        const summary = computeThemeReturnSummary({
-          nodes: tj.nodes,
-          edges: (tj as any).edges ?? (tj as any).links,
-          period,
-          minAssets: 5,
-          topMoversN: 7,
-        });
-
-        if (!summary || summary.ok === false) {
-          return {
-            ...row,
-            barometerNote: summary?.sentence ?? "데이터 없음",
-            barometerOverall7D: null,
-            topMovers: null,
-          };
-        }
-
-        const overall = computeOverallFromSummary(summary);
-
-        // ✅ Top 3 movers 연결 (id 포함)
-        const top3: Top3MoverUI[] = (summary.topMovers ?? [])
-          .slice(0, 3)
-          .map((m: any) => {
-            const ret = normalizeToPct(m.ret) ?? undefined;
-            return {
-              id: String(m.id ?? ""),
-              name: String(m.name || m.id || ""),
-              ret,
-            };
-          })
-          .filter((x) => x.id && x.name);
-
-        return {
-          ...row,
-          barometerOverall7D: overall,
-          barometerNote: summary.note ?? summary.sentence ?? null,
-          topMovers: top3.length ? top3 : null,
-        };
+        const tj = (await fetchJson<ThemeJson>(localUrl)) ?? (await fetchJson<ThemeJson>(remoteUrl));
+        if (!tj?.nodes) return { ...row, graph: null, loadFailed: true };
+        const edges = (tj as any).edges ?? (tj as any).links ?? [];
+        return { ...row, graph: { nodes: tj.nodes, edges }, loadFailed: false };
       });
 
       if (!alive) return;
@@ -358,25 +318,57 @@ export default function ThemesPage() {
     };
   }, [reloadKey]);
 
+  // ✅ 선택 기간(period)으로 barometer(궤도 가중) + EW(동일가중) 재계산
+  const computed = useMemo<ComputedRow[]>(() => {
+    return themes.map((row) => {
+      if (!row.graph?.nodes) {
+        return { ...row, score: null, ewReturn: null, note: row.loadFailed ? "테마 JSON 로드 실패" : null, topMovers: null };
+      }
+      const s = computeThemeReturnSummary({
+        nodes: row.graph.nodes,
+        edges: row.graph.edges,
+        period,
+        minAssets: 5,
+        topMoversN: 7,
+      });
+      if (!s || s.ok === false) {
+        return { ...row, score: null, ewReturn: null, note: (s as any)?.sentence ?? "데이터 없음", topMovers: null };
+      }
+      // EW: edges 미전달(동일가중) avgReturn
+      const sEW = computeThemeReturnSummary({ nodes: row.graph.nodes, period, minAssets: 5, topMoversN: 1 });
+      const ewReturn = sEW.ok && Number.isFinite((sEW as any).avgReturn) ? ((sEW as any).avgReturn as number) : null;
+      const top3: Top3MoverUI[] = ((s as any).topMovers ?? [])
+        .slice(0, 3)
+        .map((m: any) => ({ id: String(m.id ?? ""), name: String(m.name || m.id || ""), ret: normalizeToPct(m.ret) ?? undefined }))
+        .filter((x: Top3MoverUI) => x.id && x.name);
+      return {
+        ...row,
+        score: computeOverallFromSummary(s),
+        ewReturn,
+        note: (s as any).note ?? (s as any).sentence ?? null,
+        topMovers: top3.length ? top3 : null,
+      };
+    });
+  }, [themes, period]);
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (!q) return themes;
-    return themes.filter((t) => {
+    if (!q) return computed;
+    return computed.filter((t) => {
       return (t.themeId ?? "").toLowerCase().includes(q) || (t.themeName ?? "").toLowerCase().includes(q);
     });
-  }, [themes, query]);
+  }, [computed, query]);
 
   const sorted = useMemo(() => {
     const arr = [...filtered];
-
-    const byBaro = (a: ThemeRow, b: ThemeRow) => {
-      const av = typeof a.barometerOverall7D === "number" ? a.barometerOverall7D : -1;
-      const bv = typeof b.barometerOverall7D === "number" ? b.barometerOverall7D : -1;
-      return bv - av; // desc
-    };
+    const num = (v: number | null) => (typeof v === "number" ? v : Number.NEGATIVE_INFINITY);
+    const byBaro = (a: ComputedRow, b: ComputedRow) => num(b.score) - num(a.score);
+    const byEW = (a: ComputedRow, b: ComputedRow) => num(b.ewReturn) - num(a.ewReturn);
 
     if (sortKey === "BARO_DESC") arr.sort(byBaro);
     else if (sortKey === "BARO_ASC") arr.sort((a, b) => -byBaro(a, b));
+    else if (sortKey === "EW_DESC") arr.sort(byEW);
+    else if (sortKey === "EW_ASC") arr.sort((a, b) => -byEW(a, b));
     else if (sortKey === "THEMEID_ASC") arr.sort((a, b) => (a.themeId ?? "").localeCompare(b.themeId ?? ""));
     else if (sortKey === "THEMEID_DESC") arr.sort((a, b) => (b.themeId ?? "").localeCompare(a.themeId ?? ""));
     else if (sortKey === "UPDATED_DESC") arr.sort((a, b) => (b.updatedAt ?? "").localeCompare(a.updatedAt ?? ""));
@@ -398,6 +390,7 @@ export default function ThemesPage() {
   const isFav = (themeId: string) => favs.some((x) => x.themeId === themeId);
 
   return (
+    <div className="min-h-screen w-full bg-[#0a0a0b] text-white">
     <div className="mx-auto w-full max-w-6xl px-4 py-6">
       {/* ====== Header Row (압축) ====== */}
       <div className="mb-4">
@@ -405,7 +398,9 @@ export default function ThemesPage() {
           {/* Left: title + desc */}
           <div className="min-w-0">
             <div className="text-3xl font-extrabold text-white">Full Theme Map</div>
-            <div className="mt-2 text-sm text-white/60">전체 테마 목록을 검색하고, Barometer(7D) 점수로 정렬할 수 있습니다.</div>
+            <div className="mt-2 text-sm text-white/60">
+              전체 테마 목록을 검색하고, 기간별 Barometer(궤도 가중)·EW(동일가중 수익률)로 정렬할 수 있습니다.
+            </div>
             <div className="mt-2 text-xs text-white/45">
               source: <span className="text-white/70">GitHub raw → local</span> · count:{" "}
               <span className="text-white/70">{themes.length}</span>
@@ -446,8 +441,10 @@ export default function ThemesPage() {
               onChange={(e) => setSortKey(e.target.value as any)}
               className="h-10 rounded-xl border border-white/10 bg-black/30 px-3 text-sm text-white outline-none focus:border-white/20"
             >
-              <option value="BARO_DESC">Barometer (7D) High → Low</option>
-              <option value="BARO_ASC">Barometer (7D) Low → High</option>
+              <option value="BARO_DESC">Barometer High → Low</option>
+              <option value="BARO_ASC">Barometer Low → High</option>
+              <option value="EW_DESC">EW 수익률 High → Low</option>
+              <option value="EW_ASC">EW 수익률 Low → High</option>
               <option value="THEMEID_ASC">ThemeId (A→Z)</option>
               <option value="THEMEID_DESC">ThemeId (Z→A)</option>
               <option value="UPDATED_DESC">UpdatedAt (Latest)</option>
@@ -463,6 +460,28 @@ export default function ThemesPage() {
             </button>
           </div>
         </div>
+      </div>
+
+      {/* ====== 기준 기간 토글 (default 7D) ====== */}
+      <div className="mb-5 flex flex-wrap items-center gap-2">
+        <span className="mr-1 text-xs text-white/55">기준 기간</span>
+        {PERIODS.map((p) => {
+          const active = period === p;
+          return (
+            <button
+              key={p}
+              type="button"
+              onClick={() => setPeriod(p)}
+              className={`h-8 rounded-lg border px-3 text-xs font-semibold transition ${
+                active
+                  ? "border-amber-300/60 bg-amber-300/15 text-amber-200"
+                  : "border-white/10 bg-black/30 text-white/70 hover:bg-white/10"
+              }`}
+            >
+              {p}
+            </button>
+          );
+        })}
       </div>
 
       {/* ====== RECENT / FAVORITES 2-column panels ====== */}
@@ -515,11 +534,18 @@ export default function ThemesPage() {
       {/* ====== Theme table ====== */}
       <div className="rounded-2xl border border-white/10 bg-black/20">
         {/* header */}
-        <div className="grid grid-cols-[120px_1fr_260px_110px_90px] gap-2 border-b border-white/10 px-4 py-3 text-xs text-white/55">
-          <div>ThemeId</div>
+        <div className="grid grid-cols-[100px_1fr_230px_96px_96px_64px] gap-2 border-b border-white/10 px-4 py-3 text-xs text-white/55">
+          <button type="button" onClick={() => setSortKey((k) => (k === "THEMEID_ASC" ? "THEMEID_DESC" : "THEMEID_ASC"))} className="text-left hover:text-white/90">
+            ThemeId{sortKey === "THEMEID_ASC" ? " ▲" : sortKey === "THEMEID_DESC" ? " ▼" : ""}
+          </button>
           <div>Theme</div>
           <div className="text-left">Top 3 movers</div>
-          <div className="text-right">Barometer</div>
+          <button type="button" onClick={() => setSortKey((k) => (k === "BARO_DESC" ? "BARO_ASC" : "BARO_DESC"))} className="text-right hover:text-white/90">
+            Barometer{sortKey === "BARO_DESC" ? " ▼" : sortKey === "BARO_ASC" ? " ▲" : ""}
+          </button>
+          <button type="button" onClick={() => setSortKey((k) => (k === "EW_DESC" ? "EW_ASC" : "EW_DESC"))} className="text-right hover:text-white/90" title="동일가중 평균 수익률">
+            EW %{sortKey === "EW_DESC" ? " ▼" : sortKey === "EW_ASC" ? " ▲" : ""}
+          </button>
           <div className="text-right">Fav</div>
         </div>
 
@@ -530,12 +556,13 @@ export default function ThemesPage() {
         ) : (
           <div className="divide-y divide-white/10">
             {sorted.map((t) => {
-              const score = typeof t.barometerOverall7D === "number" ? Math.round(t.barometerOverall7D) : null;
+              const score = typeof t.score === "number" ? Math.round(t.score) : null;
+              const ew = typeof t.ewReturn === "number" ? t.ewReturn : null;
 
               return (
                 <div
                   key={t.themeId}
-                  className="grid grid-cols-[120px_1fr_260px_110px_90px] items-center gap-2 px-4 py-3"
+                  className="grid grid-cols-[100px_1fr_230px_96px_96px_64px] items-center gap-2 px-4 py-3"
                 >
                   {/* ThemeId */}
                   <a href={`/graph/${t.themeId}`} className="text-xs font-semibold text-white/85 hover:text-white">
@@ -551,7 +578,7 @@ export default function ThemesPage() {
                     >
                       {t.themeName}
                     </a>
-                    <div className="mt-0.5 truncate text-[11px] text-white/50">{t.barometerNote ?? t.updatedAt ?? ""}</div>
+                    <div className="mt-0.5 truncate text-[11px] text-white/50">{t.note ?? t.updatedAt ?? ""}</div>
                   </div>
 
                   {/* Top 3 movers (✅ 배지 제거 + 글자색 + 클릭 시 focus) */}
@@ -583,6 +610,11 @@ export default function ThemesPage() {
                   {/* Barometer */}
                   <div className="text-right text-sm font-extrabold text-white">{score === null ? "—" : score}</div>
 
+                  {/* EW % (동일가중 평균 수익률) */}
+                  <div className="text-right text-[13px] font-bold" style={{ color: colorByReturnPct(ew ?? undefined) }}>
+                    {ew === null ? "—" : `${ew >= 0 ? "+" : ""}${ew.toFixed(1)}%`}
+                  </div>
+
                   {/* Fav */}
                   <div className="text-right">
                     <button
@@ -602,8 +634,10 @@ export default function ThemesPage() {
       </div>
 
       <div className="mt-4 text-[11px] text-white/45">
-        * Top 3 movers는 각 테마 JSON의 ASSET 수익률을 기준으로 상위 3개를 표시합니다. (클릭 시 해당 테마로 이동 + focus 적용)
+        * Barometer는 궤도 가중(1궤도 THEMED_AS=1.0, 2궤도=0.5) 점수, EW %는 동일가중 평균 수익률입니다. 선택한 기준 기간에 따라 재계산됩니다.
+        Top 3 movers 클릭 시 해당 테마로 이동 + focus 적용.
       </div>
+    </div>
     </div>
   );
 }
