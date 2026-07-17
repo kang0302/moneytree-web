@@ -59,11 +59,25 @@ function extractReturn(metrics, period) {
   return null;
 }
 
-const scoreAvgReturn = (r) => clamp(500 + r * 30, 0, 1000);
+// ✅ BAROMETER v3 (2026-07-17) — src/lib/themeReturn.ts 와 동일 로직 유지 (#1 기간별 앵커, #2 tail Risk 전용)
+// retSat = 점수 포화 기준 수익률(%), tailThresh = 꼬리 사건 |ret|(%) 임계.
+const PERIOD_ANCHORS = {
+  "1D": { retSat: 4, tailThresh: 5 },
+  "3D": { retSat: 6, tailThresh: 8 },
+  "7D": { retSat: 9, tailThresh: 12 },
+  "15D": { retSat: 13, tailThresh: 15 },
+  "1M": { retSat: 16.7, tailThresh: 15 },
+  YTD: { retSat: 30, tailThresh: 25 },
+  "1Y": { retSat: 50, tailThresh: 40 },
+  "2Y": { retSat: 75, tailThresh: 55 },
+  "3Y": { retSat: 100, tailThresh: 70 },
+};
+const anchorForPeriod = (p) => PERIOD_ANCHORS[p] ?? PERIOD_ANCHORS["1M"];
+
+const scoreReturnPct = (r, retSat) => clamp(500 + r * (500 / retSat), 0, 1000);
 const scoreBreadthPct = (b) => clamp(b * 10, 0, 1000);
-const scoreMomentumPct = (m) => clamp(500 + m * 30, 0, 1000);
-const scoreDiversification = (b, t) =>
-  clamp(clamp(b, 0, 100) * 7 + (100 - clamp(t, 0, 100)) * 3, 0, 1000);
+// #2: Diversification은 breadth 기반, tail 제거
+const scoreDiversification = (b) => clamp(clamp(b, 0, 100) * 10, 0, 1000);
 const scoreRiskFromTailPct = (t) => clamp(1000 - t * 10, 0, 1000);
 
 function tempByScore(s) {
@@ -95,11 +109,13 @@ function computeBarometer(themeJson, period) {
   const topN = returns.length >= 10 ? Math.ceil(returns.length * 0.3) : 2;
   const momentumTopPct = mean(sortedDesc.slice(0, clamp(topN, 1, returns.length)));
   const breadthPct = (returns.filter((x) => x > 0).length / returns.length) * 100;
-  const tailPct = (returns.filter((x) => Math.abs(x) >= 15).length / returns.length) * 100;
+  // #1: 기간별 tail 임계 정규화
+  const anchor = anchorForPeriod(period);
+  const tailPct = (returns.filter((x) => Math.abs(x) >= anchor.tailThresh).length / returns.length) * 100;
 
-  const health = clamp(scoreAvgReturn(avgReturn) * 0.6 + scoreBreadthPct(breadthPct) * 0.4, 0, 1000);
-  const momentum = scoreMomentumPct(momentumTopPct);
-  const diversification = scoreDiversification(breadthPct, tailPct);
+  const health = clamp(scoreReturnPct(avgReturn, anchor.retSat) * 0.6 + scoreBreadthPct(breadthPct) * 0.4, 0, 1000);
+  const momentum = scoreReturnPct(momentumTopPct, anchor.retSat);
+  const diversification = scoreDiversification(breadthPct);
   const risk = scoreRiskFromTailPct(tailPct);
   const overall = clamp(
     health * 0.35 + momentum * 0.35 + diversification * 0.2 + risk * 0.1,

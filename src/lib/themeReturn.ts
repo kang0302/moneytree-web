@@ -179,12 +179,35 @@ export function extractReturnByPeriod(metrics: MetricsT | undefined, periodRaw: 
   }
 }
 
-// ✅ BAROMETER v2 — 0~1000 scale, 10-tier temperature grading
-// Saturation points preserved from v1: avgReturn ±16.67%, breadth 0~100%, tail 0~100.
+// ✅ BAROMETER v3 — 0~1000 scale, 10-tier temperature grading
+// #1 (2026-07-17): 기간별 정규화. v2까지는 avgReturn ±16.67%·tail 15% 컷이 전 기간 동일해
+//   1D −15%(초극단)와 1Y −15%(평범)를 같은 점수로 처리하던 문제 → 기간별 hand-tuned 앵커 도입.
+// #2 (2026-07-17): tail 이중가산 제거. v2에선 tail이 Diversification((100−tail)×3)과 Risk 양쪽에
+//   반영됐음 → Diversification은 breadth 기반으로 단순화하고 tail은 Risk 컴포넌트에만 유지.
 
-function scoreAvgReturn(avgReturn: number): number {
-  // 0% => 500, +10% => 800, +16.67% => 1000, -10% => 200
-  const s = 500 + avgReturn * 30;
+// 기간별 앵커: retSat = 점수 포화 기준 수익률(%)(±retSat → 중심 500에서 ±500),
+//            tailThresh = 해당 기간에 '꼬리(급락/급등) 사건'으로 카운트할 |ret|(%) 임계.
+type PeriodAnchor = { retSat: number; tailThresh: number };
+const PERIOD_ANCHORS: Record<PeriodKey, PeriodAnchor> = {
+  "1D": { retSat: 4, tailThresh: 5 },
+  "3D": { retSat: 6, tailThresh: 8 },
+  "7D": { retSat: 9, tailThresh: 12 },
+  "15D": { retSat: 13, tailThresh: 15 },
+  "1M": { retSat: 16.7, tailThresh: 15 }, // v2 호환: 500/16.7 ≈ 30 (기존 avg×30 유지)
+  YTD: { retSat: 30, tailThresh: 25 },
+  "1Y": { retSat: 50, tailThresh: 40 },
+  "2Y": { retSat: 75, tailThresh: 55 },
+  "3Y": { retSat: 100, tailThresh: 70 },
+};
+const DEFAULT_ANCHOR: PeriodAnchor = PERIOD_ANCHORS["1M"];
+export function anchorForPeriod(period: unknown): PeriodAnchor {
+  const k = normalizePeriodKey(period);
+  return (k && PERIOD_ANCHORS[k]) || DEFAULT_ANCHOR;
+}
+
+// 수익률(avg/momentum) → 0~1000. 기간별 retSat로 포화점을 정규화.
+function scoreReturnPct(retPct: number, retSat: number): number {
+  const s = 500 + retPct * (500 / retSat);
   return clamp(s, 0, 1000);
 }
 
@@ -193,18 +216,9 @@ function scoreBreadthPct(breadthPct: number): number {
   return clamp(breadthPct * 10, 0, 1000);
 }
 
-function scoreMomentumPct(momentumTopPct: number): number {
-  // 0% => 500, +10% => 800, +16.67% => 1000, -10% => 200
-  const s = 500 + momentumTopPct * 30;
-  return clamp(s, 0, 1000);
-}
-
-function scoreDiversification(breadthPct: number, tailPct: number): number {
-  // breadth 높고 tail 낮으면 좋음. max: 100*7 + 100*3 = 1000
-  const b = clamp(breadthPct, 0, 100);
-  const t = clamp(tailPct, 0, 100);
-  const s = b * 7 + (100 - t) * 3;
-  return clamp(s, 0, 1000);
+// #2: Diversification은 breadth(참여폭) 기반. tail은 여기서 제거하고 Risk에만 반영.
+function scoreDiversification(breadthPct: number): number {
+  return clamp(breadthPct * 10, 0, 1000);
 }
 
 /**
@@ -328,8 +342,9 @@ export function computeThemeReturnSummary(args: {
 
   const avgReturn = mean(returns);
 
-  // tail: |ret| >= 15%
-  const tailPct = (returns.filter((x) => Math.abs(x) >= 15).length / validN) * 100;
+  // #1: tail 임계를 기간별로 정규화 (1D ±5% ~ 3Y ±70%)
+  const anchor = anchorForPeriod(period);
+  const tailPct = (returns.filter((x) => Math.abs(x) >= anchor.tailThresh).length / validN) * 100;
 
   const gapPct = computeGapPct(returns);
 
@@ -344,18 +359,18 @@ export function computeThemeReturnSummary(args: {
     2
   )}% / 상위 구간(Momentum) ${momentumTopPct.toFixed(2)}% / 상승 비율(Breadth) ${breadthPct.toFixed(0)}%.`;
 
-  // ✅ BAROMETER scores (v1)
-  const avgScore = scoreAvgReturn(avgReturn);
+  // ✅ BAROMETER scores (v3) — 기간별 앵커(anchor.retSat)로 정규화
+  const avgScore = scoreReturnPct(avgReturn, anchor.retSat);
   const breadthScore = scoreBreadthPct(breadthPct);
 
   // Health: 평균(60) + breadth(40)
   const healthScore = clamp(avgScore * 0.6 + breadthScore * 0.4, 0, 1000);
 
-  // Momentum
-  const momentumScore = scoreMomentumPct(momentumTopPct);
+  // Momentum (기간별 정규화)
+  const momentumScore = scoreReturnPct(momentumTopPct, anchor.retSat);
 
-  // Diversification
-  const divScore = scoreDiversification(breadthPct, tailPct);
+  // Diversification (#2: breadth 기반, tail 제거)
+  const divScore = scoreDiversification(breadthPct);
 
   const { overallScore, riskScore } = calcOverallBarometerScore({
     healthScore,
