@@ -253,6 +253,7 @@ export default function HomePage() {
         totalEdges += Array.isArray(tj.edges) ? tj.edges.length : 0;
         const summary: any = computeThemeReturnSummary({
           nodes: tj.nodes,
+          edges: (tj as any).edges ?? (tj as any).links,
           period,
           minAssets: 5,
           topMoversN: 1,

@@ -72,6 +72,62 @@ function median(arr: number[]) {
   return s.length % 2 ? s[mid] : (s[mid - 1] + s[mid]) / 2;
 }
 
+// ── 가중 통계 헬퍼 (#12 궤도 가중) ──────────────────────────────
+function wsum(ws: number[]) {
+  return ws.reduce((a, b) => a + b, 0);
+}
+function wmean(vals: number[], ws: number[]) {
+  const sw = wsum(ws);
+  if (sw <= 0) return 0;
+  let s = 0;
+  for (let i = 0; i < vals.length; i++) s += vals[i] * ws[i];
+  return s / sw;
+}
+// 가중 중앙값: 오름차순으로 누적 가중이 총합의 절반을 넘는 값.
+function wmedian(vals: number[], ws: number[]) {
+  if (!vals.length) return 0;
+  const idx = vals.map((_, i) => i).sort((a, b) => vals[a] - vals[b]);
+  const half = wsum(ws) / 2;
+  let cum = 0;
+  for (const i of idx) {
+    cum += ws[i];
+    if (cum >= half) return vals[i];
+  }
+  return vals[idx[idx.length - 1]];
+}
+
+/**
+ * #12 궤도(orbit) 가중치: 테마 그래프에서 ASSET의 T 노드까지 거리로 차등.
+ * - 1궤도(THEMED_AS로 T에 직접 연결) = 1.0
+ * - 2궤도(그 외, SUPPLIES·PARTNERS·INVESTS·OPERATES-via-BF 등으로 간접 부착) = 0.5
+ * edges 미제공 또는 THEMED_AS가 하나도 없으면 전부 1.0 (기존 EW와 동일, 하위호환).
+ */
+export function computeOrbitWeights(
+  assetIds: string[],
+  nodes: Array<{ id: string; type?: string }>,
+  edges: Array<{ from?: string; to?: string; type?: string }> | undefined
+): Map<string, number> {
+  const w = new Map<string, number>();
+  if (!edges || !edges.length) {
+    for (const id of assetIds) w.set(id, 1);
+    return w;
+  }
+  const themeId = (nodes.find((n) => (n.type ?? "").toUpperCase() === "THEME") || {}).id;
+  const direct = new Set<string>();
+  for (const e of edges) {
+    if ((e.type ?? "").toUpperCase() === "THEMED_AS" && e.from && (!themeId || e.to === themeId)) {
+      direct.add(e.from);
+    }
+  }
+  // THEMED_AS가 전혀 없으면(구조가 다른 테마) EW로 폴백
+  if (direct.size === 0) {
+    for (const id of assetIds) w.set(id, 1);
+    return w;
+  }
+  for (const id of assetIds) w.set(id, direct.has(id) ? 1 : 0.5);
+  return w;
+}
+
 /**
  * ✅ Period 정규화:
  * UI에서 "7d", "7D ", "7일" 등으로 와도 여기서 PeriodKey로 통일한다.
@@ -217,8 +273,12 @@ function scoreBreadthPct(breadthPct: number): number {
 }
 
 // #2: Diversification은 breadth(참여폭) 기반. tail은 여기서 제거하고 Risk에만 반영.
-function scoreDiversification(breadthPct: number): number {
-  return clamp(breadthPct * 10, 0, 1000);
+// #5: gap(상위30%−하위30% 수익률 폭)을 기간별로 정규화해 '소수 주도(분산 큼)'면 감점.
+//     gap이 retSat의 2배(완전 분산)면 최대 50% 감점.
+function scoreDiversification(breadthPct: number, gapPct = 0, retSat = 16.7): number {
+  const base = clamp(breadthPct, 0, 100) * 10;
+  const dispersion = clamp(retSat > 0 ? gapPct / retSat : 0, 0, 2) / 2; // 0..1
+  return clamp(base * (1 - 0.5 * dispersion), 0, 1000);
 }
 
 /**
@@ -270,15 +330,26 @@ export function tempByScore(score: number): TempBadgeMeta {
   return { name: "FROZEN", color: "#0a1f5c" };
 }
 
-function computeGapPct(returns: number[]) {
+// 가중 gap: 하위30%·상위30% (가중) 평균의 차 = 종목 간 분산/주도 폭.
+function computeGapPctW(returns: number[], weights: number[]) {
   const n = returns.length;
   if (n < 2) return 0;
-
-  const sorted = [...returns].sort((a, b) => a - b);
-  const bucket = Math.max(1, Math.floor(n * 0.3));
-
-  const bot = mean(sorted.slice(0, bucket));
-  const top = mean(sorted.slice(n - bucket));
+  const idx = returns.map((_, i) => i).sort((a, b) => returns[a] - returns[b]);
+  const bucketW = wsum(weights) * 0.3;
+  const pick = (order: number[]) => {
+    const vs: number[] = [];
+    const ws: number[] = [];
+    let cw = 0;
+    for (const i of order) {
+      vs.push(returns[i]);
+      ws.push(weights[i]);
+      cw += weights[i];
+      if (cw >= bucketW) break;
+    }
+    return wmean(vs, ws);
+  };
+  const bot = pick(idx);
+  const top = pick([...idx].reverse());
   return top - bot;
 }
 
@@ -287,8 +358,9 @@ export function computeThemeReturnSummary(args: {
   period: any; // ✅ 여기 intentionally any: UI에서 뭐가 와도 normalizePeriodKey가 처리
   minAssets?: number; // default 5
   topMoversN?: number; // default 7 (panel uses 5)
+  edges?: Array<{ from?: string; to?: string; type?: string }>; // #12 궤도 가중용 (미제공 시 EW)
 }): ThemeReturnSummary {
-  const { nodes, period } = args;
+  const { nodes, period, edges } = args;
   const minAssets = args.minAssets ?? 5;
   const topMoversN = args.topMoversN ?? 7;
 
@@ -331,22 +403,31 @@ export function computeThemeReturnSummary(args: {
     };
   }
 
-  const coreMedianPct = median(returns);
+  // #12: 궤도 가중치 (1궤도 THEMED_AS=1.0, 2궤도=0.5; edges 없으면 전부 1.0=EW)
+  const wmap = computeOrbitWeights(withRet.map((x) => x.id), nodes, edges);
+  const weights = withRet.map((x) => wmap.get(x.id) ?? 1);
+  const totalW = wsum(weights);
 
-  // Momentum: 상위 30% 평균, 단 5~9개면 상위 2개
-  const sortedDesc = [...returns].sort((a, b) => b - a);
+  // #3: median을 점수에 반영 (가중 중앙값). avg도 가중.
+  const coreMedianPct = wmedian(returns, weights);
+  const avgReturn = wmean(returns, weights);
+
+  // Momentum: 상위 30%(개수 기준) 가중 평균, 단 5~9개면 상위 2개
+  const orderDesc = returns.map((_, i) => i).sort((a, b) => returns[b] - returns[a]);
   const topN = validN >= 10 ? Math.ceil(validN * 0.3) : 2;
-  const momentumTopPct = mean(sortedDesc.slice(0, clamp(topN, 1, validN)));
+  const topIdx = orderDesc.slice(0, clamp(topN, 1, validN));
+  const momentumTopPct = wmean(topIdx.map((i) => returns[i]), topIdx.map((i) => weights[i]));
 
-  const breadthPct = (returns.filter((x) => x > 0).length / validN) * 100;
+  // Breadth: 가중 상승 비율
+  const breadthPct = (returns.reduce((acc, r, i) => acc + (r > 0 ? weights[i] : 0), 0) / totalW) * 100;
 
-  const avgReturn = mean(returns);
-
-  // #1: tail 임계를 기간별로 정규화 (1D ±5% ~ 3Y ±70%)
+  // #1: tail 임계를 기간별로 정규화 (1D ±5% ~ 3Y ±70%) + 가중
   const anchor = anchorForPeriod(period);
-  const tailPct = (returns.filter((x) => Math.abs(x) >= anchor.tailThresh).length / validN) * 100;
+  const tailPct =
+    (returns.reduce((acc, r, i) => acc + (Math.abs(r) >= anchor.tailThresh ? weights[i] : 0), 0) / totalW) * 100;
 
-  const gapPct = computeGapPct(returns);
+  // #5: gap(상·하위 분산)을 Diversification 감점에 활용 (가중)
+  const gapPct = computeGapPctW(returns, weights);
 
   // ✅ 고정 문장 템플릿
   let tone = "중립";
@@ -360,17 +441,19 @@ export function computeThemeReturnSummary(args: {
   )}% / 상위 구간(Momentum) ${momentumTopPct.toFixed(2)}% / 상승 비율(Breadth) ${breadthPct.toFixed(0)}%.`;
 
   // ✅ BAROMETER scores (v3) — 기간별 앵커(anchor.retSat)로 정규화
-  const avgScore = scoreReturnPct(avgReturn, anchor.retSat);
+  // #3: Health level = 평균·중앙값 블렌드(robust center)로 outlier 완화
+  const robustCenter = 0.5 * avgReturn + 0.5 * coreMedianPct;
+  const levelScore = scoreReturnPct(robustCenter, anchor.retSat);
   const breadthScore = scoreBreadthPct(breadthPct);
 
-  // Health: 평균(60) + breadth(40)
-  const healthScore = clamp(avgScore * 0.6 + breadthScore * 0.4, 0, 1000);
+  // Health: robust level(60) + breadth(40)
+  const healthScore = clamp(levelScore * 0.6 + breadthScore * 0.4, 0, 1000);
 
   // Momentum (기간별 정규화)
   const momentumScore = scoreReturnPct(momentumTopPct, anchor.retSat);
 
-  // Diversification (#2: breadth 기반, tail 제거)
-  const divScore = scoreDiversification(breadthPct);
+  // Diversification (#2: breadth 기반 + #5: gap 분산 감점)
+  const divScore = scoreDiversification(breadthPct, gapPct, anchor.retSat);
 
   const { overallScore, riskScore } = calcOverallBarometerScore({
     healthScore,

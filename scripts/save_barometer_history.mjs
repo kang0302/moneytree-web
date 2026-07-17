@@ -76,9 +76,62 @@ const anchorForPeriod = (p) => PERIOD_ANCHORS[p] ?? PERIOD_ANCHORS["1M"];
 
 const scoreReturnPct = (r, retSat) => clamp(500 + r * (500 / retSat), 0, 1000);
 const scoreBreadthPct = (b) => clamp(b * 10, 0, 1000);
-// #2: Diversification은 breadth 기반, tail 제거
-const scoreDiversification = (b) => clamp(clamp(b, 0, 100) * 10, 0, 1000);
+// #2: Diversification은 breadth 기반, tail 제거. #5: gap(분산) 감점(기간별 정규화).
+const scoreDiversification = (b, gap = 0, retSat = 16.7) => {
+  const base = clamp(clamp(b, 0, 100) * 10, 0, 1000);
+  const dispersion = clamp(retSat > 0 ? gap / retSat : 0, 0, 2) / 2;
+  return clamp(base * (1 - 0.5 * dispersion), 0, 1000);
+};
 const scoreRiskFromTailPct = (t) => clamp(1000 - t * 10, 0, 1000);
+
+// ── 가중 통계 헬퍼 (#12 궤도 가중) ──
+const wsum = (ws) => ws.reduce((a, b) => a + b, 0);
+const wmean = (vals, ws) => {
+  const sw = wsum(ws);
+  if (sw <= 0) return 0;
+  let s = 0;
+  for (let i = 0; i < vals.length; i++) s += vals[i] * ws[i];
+  return s / sw;
+};
+const wmedian = (vals, ws) => {
+  if (!vals.length) return 0;
+  const idx = vals.map((_, i) => i).sort((a, b) => vals[a] - vals[b]);
+  const half = wsum(ws) / 2;
+  let cum = 0;
+  for (const i of idx) {
+    cum += ws[i];
+    if (cum >= half) return vals[i];
+  }
+  return vals[idx[idx.length - 1]];
+};
+function computeGapPctW(returns, weights) {
+  if (returns.length < 2) return 0;
+  const idx = returns.map((_, i) => i).sort((a, b) => returns[a] - returns[b]);
+  const bw = wsum(weights) * 0.3;
+  const pick = (order) => {
+    const vs = [], ws = [];
+    let cw = 0;
+    for (const i of order) {
+      vs.push(returns[i]); ws.push(weights[i]); cw += weights[i];
+      if (cw >= bw) break;
+    }
+    return wmean(vs, ws);
+  };
+  return pick([...idx].reverse()) - pick(idx);
+}
+// #12: 1궤도(THEMED_AS)=1.0, 2궤도=0.5, edges 없으면 EW
+function computeOrbitWeights(assetIds, nodes, edges) {
+  const w = new Map();
+  if (!edges || !edges.length) { for (const id of assetIds) w.set(id, 1); return w; }
+  const themeId = (nodes.find((n) => String(n?.type ?? "").toUpperCase() === "THEME") || {}).id;
+  const direct = new Set();
+  for (const e of edges) {
+    if (String(e?.type ?? "").toUpperCase() === "THEMED_AS" && (!themeId || e.to === themeId)) direct.add(e.from);
+  }
+  if (direct.size === 0) { for (const id of assetIds) w.set(id, 1); return w; }
+  for (const id of assetIds) w.set(id, direct.has(id) ? 1 : 0.5);
+  return w;
+}
 
 function tempByScore(s) {
   const v = clamp(s, 0, 1000);
@@ -96,26 +149,43 @@ function tempByScore(s) {
 
 function computeBarometer(themeJson, period) {
   const nodes = Array.isArray(themeJson?.nodes) ? themeJson.nodes : [];
+  const edges = Array.isArray(themeJson?.edges)
+    ? themeJson.edges
+    : Array.isArray(themeJson?.links)
+    ? themeJson.links
+    : undefined;
   const assets = nodes.filter((n) => String(n?.type ?? "").toUpperCase() === "ASSET");
   if (assets.length < MIN_ASSETS) return null;
 
-  const returns = assets
-    .map((a) => extractReturn(a?.metrics, period))
-    .filter((v) => typeof v === "number" && Number.isFinite(v));
-  if (returns.length === 0) return null;
+  const withRet = assets
+    .map((a) => ({ id: a?.id, ret: extractReturn(a?.metrics, period) }))
+    .filter((x) => typeof x.ret === "number" && Number.isFinite(x.ret));
+  if (withRet.length === 0) return null;
 
-  const avgReturn = mean(returns);
-  const sortedDesc = [...returns].sort((a, b) => b - a);
+  const returns = withRet.map((x) => x.ret);
+  // #12: 궤도 가중
+  const wmap = computeOrbitWeights(withRet.map((x) => x.id), nodes, edges);
+  const weights = withRet.map((x) => wmap.get(x.id) ?? 1);
+  const totalW = wsum(weights);
+
+  const avgReturn = wmean(returns, weights);
+  const medianReturn = wmedian(returns, weights); // #3
+  const orderDesc = returns.map((_, i) => i).sort((a, b) => returns[b] - returns[a]);
   const topN = returns.length >= 10 ? Math.ceil(returns.length * 0.3) : 2;
-  const momentumTopPct = mean(sortedDesc.slice(0, clamp(topN, 1, returns.length)));
-  const breadthPct = (returns.filter((x) => x > 0).length / returns.length) * 100;
-  // #1: 기간별 tail 임계 정규화
+  const topIdx = orderDesc.slice(0, clamp(topN, 1, returns.length));
+  const momentumTopPct = wmean(topIdx.map((i) => returns[i]), topIdx.map((i) => weights[i]));
+  const breadthPct = (returns.reduce((acc, r, i) => acc + (r > 0 ? weights[i] : 0), 0) / totalW) * 100;
+  // #1: 기간별 tail 임계 정규화 + 가중
   const anchor = anchorForPeriod(period);
-  const tailPct = (returns.filter((x) => Math.abs(x) >= anchor.tailThresh).length / returns.length) * 100;
+  const tailPct =
+    (returns.reduce((acc, r, i) => acc + (Math.abs(r) >= anchor.tailThresh ? weights[i] : 0), 0) / totalW) * 100;
+  const gapPct = computeGapPctW(returns, weights); // #5
 
-  const health = clamp(scoreReturnPct(avgReturn, anchor.retSat) * 0.6 + scoreBreadthPct(breadthPct) * 0.4, 0, 1000);
+  // #3: robust center(avg·median 블렌드)
+  const robustCenter = 0.5 * avgReturn + 0.5 * medianReturn;
+  const health = clamp(scoreReturnPct(robustCenter, anchor.retSat) * 0.6 + scoreBreadthPct(breadthPct) * 0.4, 0, 1000);
   const momentum = scoreReturnPct(momentumTopPct, anchor.retSat);
-  const diversification = scoreDiversification(breadthPct);
+  const diversification = scoreDiversification(breadthPct, gapPct, anchor.retSat); // #5
   const risk = scoreRiskFromTailPct(tailPct);
   const overall = clamp(
     health * 0.35 + momentum * 0.35 + diversification * 0.2 + risk * 0.1,

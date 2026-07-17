@@ -146,7 +146,7 @@ export async function loadScoredThemes(period: PeriodKey = "7D"): Promise<Scored
       ? tj.nodes.filter((n: any) => (n?.type ?? "").toUpperCase() === "ASSET").length
       : 0;
     const graph = buildMiniGraph(tj);
-    const summary: any = computeThemeReturnSummary({ nodes: tj.nodes, period, minAssets: 5, topMoversN: 1 });
+    const summary: any = computeThemeReturnSummary({ nodes: tj.nodes, edges: tj.edges ?? tj.links, period, minAssets: 5, topMoversN: 1 });
     if (!summary || summary.ok === false) {
       return { ...row, score: null, note: summary?.sentence ?? null, topMover: null, nodeCount, edgeCount, assetCount, graph };
     }

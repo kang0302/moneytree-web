@@ -58,23 +58,27 @@ function smoothPath(points: Array<{ x: number; y: number }>, tension = 0.22): st
 
 function BarometerTrendChart({
   nodes,
+  edges,
   period,
   onChangePeriod,
 }: {
   nodes: NodeT[] | undefined;
+  edges?: Array<{ from?: string; to?: string; type?: string }>;
   period: PeriodKey;
   onChangePeriod?: (p: PeriodKey) => void;
 }) {
-  // 6개 기간에 대한 overall score + EW(동일가중) 수익률 동시 계산
+  // 기간별 overall score(#12 궤도 가중) + EW(동일가중) 수익률.
+  // score는 궤도 가중, ewReturn(청록 점선)은 #11 선행지표화의 ground truth라 항상 동일가중 유지.
   const data = useMemo(() => {
     const safe = Array.isArray(nodes) ? nodes : [];
     return TREND_PERIODS.map((p) => {
-      const s = computeThemeReturnSummary({ nodes: safe as any, period: p, minAssets: 5 });
-      const score = s.ok ? Math.round(s.overallScore) : null;
-      const ewReturn = s.ok && Number.isFinite((s as any).avgReturn) ? ((s as any).avgReturn as number) : null;
-      return { period: p, label: TREND_LABELS[p], score, ewReturn, ok: s.ok };
+      const sW = computeThemeReturnSummary({ nodes: safe as any, edges, period: p, minAssets: 5 });
+      const sEW = edges && edges.length ? computeThemeReturnSummary({ nodes: safe as any, period: p, minAssets: 5 }) : sW;
+      const score = sW.ok ? Math.round(sW.overallScore) : null;
+      const ewReturn = sEW.ok && Number.isFinite((sEW as any).avgReturn) ? ((sEW as any).avgReturn as number) : null;
+      return { period: p, label: TREND_LABELS[p], score, ewReturn, ok: sW.ok };
     });
-  }, [nodes]);
+  }, [nodes, edges]);
 
   const W = 520;
   const H = 220;
@@ -522,6 +526,8 @@ type NodeT = {
   [k: string]: any;
 };
 
+type EdgeT = { from?: string; to?: string; type?: string; [k: string]: any };
+
 // ✅ GraphClient.tsx에서 import 하고 있으므로 반드시 export
 export type CompareThemeOptionT = { themeId: string; themeName: string };
 
@@ -535,6 +541,7 @@ type Props = {
   onChangePeriod?: (p: PeriodKey) => void;
 
   nodes?: NodeT[]; // 필요 시 확장용
+  edges?: EdgeT[]; // #12 궤도 가중용 (BarometerTrendChart에 전달)
   compareNodes?: NodeT[] | undefined;
 
   themeReturn?: ThemeReturnSummary | null; // ✅ GraphClient에서 계산된 값
@@ -583,6 +590,7 @@ export default function GraphRightPanel({
   onChangePeriod,
   themeReturn,
   nodes = [],
+  edges,
 }: Props) {
   const themeSummary = themeReturn;
   const ok = !!themeSummary && (themeSummary as any).ok === true;
@@ -727,6 +735,7 @@ export default function GraphRightPanel({
       <div className="mt-3 text-xs text-white/55">BAROMETER 추세</div>
       <BarometerTrendChart
         nodes={nodes}
+        edges={edges}
         period={(period ?? "7D") as PeriodKey}
         onChangePeriod={onChangePeriod}
       />

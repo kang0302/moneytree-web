@@ -291,7 +291,7 @@ export default function GraphClient({
   const [compareThemeId, setCompareThemeId] = useState<string>("");
   const [compareLoading, setCompareLoading] = useState(false);
   const [compareError, setCompareError] = useState<string>("");
-  const [compareData, setCompareData] = useState<{ themeId: string; themeName?: string; nodes: NodeT[] } | null>(null);
+  const [compareData, setCompareData] = useState<{ themeId: string; themeName?: string; nodes: NodeT[]; edges?: EdgeT[] } | null>(null);
 
   // ✅ Resolver master maps (SSOT 기반)
   const [assetMap, setAssetMap] = useState<Record<string, AssetMasterItem>>({});
@@ -564,10 +564,11 @@ export default function GraphClient({
   const themeReturn = useMemo(() => {
     return computeThemeReturnSummary({
       nodes: safeArray<NodeT>(enrichedNodes),
+      edges,
       period,
       minAssets: 5,
     });
-  }, [enrichedNodes, period]);
+  }, [enrichedNodes, edges, period]);
 
   // 페이지 진입 시
   useEffect(() => {
@@ -662,6 +663,7 @@ export default function GraphClient({
           themeId: tid,
           themeName: json?.themeName ?? tid,
           nodes: fetchedNodes,
+          edges: safeArray<EdgeT>((json as any)?.edges ?? (json as any)?.links),
         });
       } catch (e: any) {
         if (cancelled) return;
@@ -701,6 +703,7 @@ export default function GraphClient({
 
     return computeThemeReturnSummary({
       nodes: safeArray<NodeT>(resolvedCompareNodes),
+      edges: compareData?.edges,
       period,
       minAssets: 5,
     });
@@ -900,6 +903,7 @@ export default function GraphClient({
                 return enriched ?? selectedNode;
               })()}
               nodes={safeArray<NodeT>(enrichedNodes)}
+              edges={edges}
               compareNodes={compareNodes}
               period={period}
               onChangePeriod={setPeriod}

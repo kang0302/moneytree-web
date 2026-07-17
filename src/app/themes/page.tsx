@@ -310,6 +310,7 @@ export default function ThemesPage() {
 
         const summary = computeThemeReturnSummary({
           nodes: tj.nodes,
+          edges: (tj as any).edges ?? (tj as any).links,
           period,
           minAssets: 5,
           topMoversN: 7,
