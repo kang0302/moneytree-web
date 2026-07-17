@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
-import { computeThemeReturnSummary, PeriodKey, normalizeToPct } from "@/lib/themeReturn";
+import { computeThemeReturnSummary, PeriodKey, normalizeToPct, tempByScore } from "@/lib/themeReturn";
 import { resolvePlaceholderThemeNames } from "@/lib/themeIndex";
 
 type ThemeIndexItem = {
@@ -41,6 +41,9 @@ type ComputedRow = ThemeRow & {
 };
 
 const PERIODS: PeriodKey[] = ["1D", "3D", "7D", "15D", "1M", "YTD", "1Y", "2Y", "3Y"];
+
+// 온도 등급 (tempByScore와 동일 순서, 높은→낮은)
+const TIERS = ["BLAZING", "HOT", "WARM+", "WARM", "NEUTRAL+", "NEUTRAL", "COOL", "COOL-", "COLD", "FROZEN"] as const;
 
 const LS_RECENT = "mt_recent_themes_v1";
 const LS_FAV = "mt_favorite_themes_v1";
@@ -250,6 +253,9 @@ export default function ThemesPage() {
   // ✅ 기준 기간 토글 (default 7D)
   const [period, setPeriod] = useState<PeriodKey>("7D");
 
+  // ✅ 온도 등급 필터 (default ALL)
+  const [tierFilter, setTierFilter] = useState<string>("ALL");
+
   const [recent, setRecent] = useState<RecentItem[]>([]);
   const [favs, setFavs] = useState<FavItem[]>([]);
 
@@ -353,11 +359,15 @@ export default function ThemesPage() {
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (!q) return computed;
     return computed.filter((t) => {
-      return (t.themeId ?? "").toLowerCase().includes(q) || (t.themeName ?? "").toLowerCase().includes(q);
+      if (q && !((t.themeId ?? "").toLowerCase().includes(q) || (t.themeName ?? "").toLowerCase().includes(q))) return false;
+      if (tierFilter !== "ALL") {
+        if (typeof t.score !== "number") return false;
+        if (tempByScore(t.score).name !== tierFilter) return false;
+      }
+      return true;
     });
-  }, [computed, query]);
+  }, [computed, query, tierFilter]);
 
   const sorted = useMemo(() => {
     const arr = [...filtered];
@@ -462,7 +472,7 @@ export default function ThemesPage() {
         </div>
       </div>
 
-      {/* ====== 기준 기간 토글 (default 7D) ====== */}
+      {/* ====== 기준 기간 토글 (default 7D) + 온도 필터 ====== */}
       <div className="mb-5 flex flex-wrap items-center gap-2">
         <span className="mr-1 text-xs text-white/55">기준 기간</span>
         {PERIODS.map((p) => {
@@ -482,6 +492,29 @@ export default function ThemesPage() {
             </button>
           );
         })}
+
+        <span className="ml-4 mr-1 text-xs text-white/55">온도</span>
+        <select
+          value={tierFilter}
+          onChange={(e) => setTierFilter(e.target.value)}
+          className="h-8 rounded-lg border border-white/10 bg-black/30 px-2 text-xs text-white/85 outline-none focus:border-white/20"
+        >
+          <option value="ALL">전체</option>
+          {TIERS.map((tr) => {
+            const cnt = computed.filter((t) => typeof t.score === "number" && tempByScore(t.score).name === tr).length;
+            return (
+              <option key={tr} value={tr}>
+                {tr} ({cnt})
+              </option>
+            );
+          })}
+        </select>
+        {tierFilter !== "ALL" ? (
+          <button type="button" onClick={() => setTierFilter("ALL")} className="text-xs text-amber-300/80 underline">
+            초기화
+          </button>
+        ) : null}
+        <span className="ml-auto text-xs text-white/40">{sorted.length}개</span>
       </div>
 
       {/* ====== RECENT / FAVORITES 2-column panels ====== */}
@@ -534,12 +567,13 @@ export default function ThemesPage() {
       {/* ====== Theme table ====== */}
       <div className="rounded-2xl border border-white/10 bg-black/20">
         {/* header */}
-        <div className="grid grid-cols-[100px_1fr_230px_96px_96px_64px] gap-2 border-b border-white/10 px-4 py-3 text-xs text-white/55">
+        <div className="grid grid-cols-[86px_1fr_176px_92px_84px_78px_52px] gap-2 border-b border-white/10 px-4 py-3 text-xs text-white/55">
           <button type="button" onClick={() => setSortKey((k) => (k === "THEMEID_ASC" ? "THEMEID_DESC" : "THEMEID_ASC"))} className="text-left hover:text-white/90">
             ThemeId{sortKey === "THEMEID_ASC" ? " ▲" : sortKey === "THEMEID_DESC" ? " ▼" : ""}
           </button>
           <div>Theme</div>
           <div className="text-left">Top 3 movers</div>
+          <div className="text-center">Temp</div>
           <button type="button" onClick={() => setSortKey((k) => (k === "BARO_DESC" ? "BARO_ASC" : "BARO_DESC"))} className="text-right hover:text-white/90">
             Barometer{sortKey === "BARO_DESC" ? " ▼" : sortKey === "BARO_ASC" ? " ▲" : ""}
           </button>
@@ -562,7 +596,7 @@ export default function ThemesPage() {
               return (
                 <div
                   key={t.themeId}
-                  className="grid grid-cols-[100px_1fr_230px_96px_96px_64px] items-center gap-2 px-4 py-3"
+                  className="grid grid-cols-[86px_1fr_176px_92px_84px_78px_52px] items-center gap-2 px-4 py-3"
                 >
                   {/* ThemeId */}
                   <a href={`/graph/${t.themeId}`} className="text-xs font-semibold text-white/85 hover:text-white">
@@ -604,6 +638,26 @@ export default function ThemesPage() {
                       </div>
                     ) : (
                       <div className="text-[12px] text-white/35">—</div>
+                    )}
+                  </div>
+
+                  {/* Temp badge */}
+                  <div className="flex justify-center">
+                    {score === null ? (
+                      <span className="text-[11px] text-white/25">—</span>
+                    ) : (
+                      (() => {
+                        const tb = tempByScore(score);
+                        return (
+                          <span
+                            className="rounded-md px-2 py-0.5 text-[10px] font-extrabold tracking-tight text-white"
+                            style={{ backgroundColor: tb.color, border: `1px solid ${tb.color}` }}
+                            title={`${tb.name} (${score})`}
+                          >
+                            {tb.name}
+                          </span>
+                        );
+                      })()
                     )}
                   </div>
 
