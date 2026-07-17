@@ -172,6 +172,32 @@ export default function MaBriefPage() {
               {sel !== "latest" && <span className="ml-2 text-amber-300/80">📅 {sel} 지난 브리핑</span>}
             </div>
 
+            {/* 종목 검색창 */}
+            <div className="mb-3">
+              <div className="relative">
+                <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-white/40">🔍</span>
+                <input
+                  value={q}
+                  onChange={(e) => setQ(e.target.value)}
+                  placeholder="종목명 · 티커 · 섹터 검색…"
+                  className="w-full rounded-xl border border-white/15 bg-black/40 py-2.5 pl-9 pr-24 text-sm text-white/90 outline-none focus:border-white/30 placeholder:text-white/30"
+                />
+                {q ? (
+                  <button
+                    onClick={() => setQ("")}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 rounded-md px-2 py-0.5 text-xs text-white/50 hover:bg-white/10 hover:text-white/85"
+                  >
+                    ✕ 지우기
+                  </button>
+                ) : null}
+              </div>
+              {q ? (
+                <div className="mt-1 text-[11px] text-white/45">
+                  “{q}” 검색 결과 <b className="text-white/70">{rows.length}</b>종목
+                </div>
+              ) : null}
+            </div>
+
             {/* 필터 바 */}
             <div className="mb-3 flex flex-wrap items-center gap-2 text-xs">
               <select value={bucketF} onChange={(e) => setBucketF(e.target.value)} className="rounded-lg border border-white/15 bg-black/40 px-2 py-1 text-white/80 outline-none">
@@ -190,8 +216,6 @@ export default function MaBriefPage() {
                 <option value="flat">⚪ 혼조</option>
                 <option value="bear">🔴 역배열</option>
               </select>
-              <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="종목/티커 검색"
-                className="rounded-lg border border-white/15 bg-black/40 px-2 py-1 text-white/80 outline-none placeholder:text-white/30" />
               <span className="text-white/40">{rows.length}종목</span>
               {(bucketF !== "all" || sectorF !== "all" || alignF !== "all" || q) && (
                 <button onClick={() => { setBucketF("all"); setSectorF("all"); setAlignF("all"); setQ(""); }} className="text-amber-300/80 underline">초기화</button>
