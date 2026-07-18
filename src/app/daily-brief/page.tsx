@@ -42,6 +42,7 @@ export default function DailyBriefArchivePage() {
   const [sel, setSel] = useState<string>("");
   const [md, setMd] = useState<string>("");
   const [state, setState] = useState<"loading" | "ok" | "empty" | "error">("loading");
+  const [q, setQ] = useState<string>("");
 
   useEffect(() => {
     (async () => {
@@ -74,6 +75,18 @@ export default function DailyBriefArchivePage() {
     })();
     return () => { cancelled = true; };
   }, [sel]);
+
+  // 검색: 날짜 · 제목 · 핫테마명 · 근거로 필터
+  const filteredIndex = useMemo(() => {
+    const t = q.trim().toLowerCase();
+    if (!t) return index;
+    return index.filter((e) => {
+      if ((e.date + " " + (e.title ?? "")).toLowerCase().includes(t)) return true;
+      return (e.themes ?? []).some(
+        (th) => (th.name + " " + (th.id ?? "") + " " + (th.reason ?? "")).toLowerCase().includes(t)
+      );
+    });
+  }, [index, q]);
 
   const curIdx = useMemo(() => index.findIndex((e) => e.date === sel), [index, sel]);
   const cur = curIdx >= 0 ? index[curIdx] : undefined;
@@ -120,15 +133,44 @@ export default function DailyBriefArchivePage() {
           >
             과거 →
           </button>
-          {cur ? <span className="ml-2 text-xs text-white/40">{cur.date} 브리핑</span> : null}
+
+          {/* 검색창 */}
+          <div className="relative ml-auto w-full sm:w-[340px]">
+            <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-white/40">🔍</span>
+            <input
+              value={q}
+              onChange={(e) => setQ(e.target.value)}
+              placeholder="날짜 · 테마명 · 키워드 검색…"
+              className="h-9 w-full rounded-lg border border-white/15 bg-black/40 pl-9 pr-16 text-sm text-white/90 outline-none focus:border-white/30 placeholder:text-white/30"
+            />
+            {q ? (
+              <button
+                onClick={() => setQ("")}
+                className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md px-1.5 py-0.5 text-xs text-white/50 hover:bg-white/10 hover:text-white/85"
+              >
+                ✕
+              </button>
+            ) : null}
+          </div>
         </div>
+
+        {q ? (
+          <div className="mb-3 text-xs text-white/45">
+            “{q}” 검색 결과 <b className="text-white/70">{filteredIndex.length}</b>건
+          </div>
+        ) : null}
 
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-[240px_1fr]">
           {/* 날짜 리스트 (쌓인 아카이브) */}
           <aside className="hidden lg:block">
             <div className="sticky top-4 max-h-[80vh] overflow-y-auto rounded-xl border border-white/10 bg-black/20 p-2">
-              <div className="mb-1 px-2 py-1 text-[11px] uppercase tracking-wider text-white/40">전체 브리핑</div>
-              {index.map((e) => (
+              <div className="mb-1 px-2 py-1 text-[11px] uppercase tracking-wider text-white/40">
+                {q ? `검색 (${filteredIndex.length})` : "전체 브리핑"}
+              </div>
+              {filteredIndex.length === 0 ? (
+                <div className="px-2 py-3 text-xs text-white/40">일치하는 브리핑이 없습니다.</div>
+              ) : null}
+              {filteredIndex.map((e) => (
                 <button
                   key={e.date}
                   onClick={() => setSel(e.date)}
