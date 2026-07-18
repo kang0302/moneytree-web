@@ -243,44 +243,36 @@ function BarometerTrendChart({
         </svg>
       )}
 
-      {/* ─── 기간별 EW 수익률 수치 테이블 (동일가중, 가까운 시간=왼쪽) ─── */}
+      {/* ─── 기간별 EW 수익률 (동일가중) — 바로미터 X축과 열 정렬(xAt/W) ─── */}
       <div className="mt-3 border-t border-white/10 pt-2">
-        <div className="mb-1 text-xs font-semibold text-white/70">
+        <div className="mb-2 text-xs font-semibold text-white/70">
           기간별 EW 수익률 <span className="font-normal text-white/40">(동일가중)</span>
         </div>
-        <div className="overflow-x-auto">
-          <table className="w-full text-center text-[11px]">
-            <thead>
-              <tr>
-                {data.map((d) => (
-                  <th
-                    key={`ewh-${d.period}`}
-                    className={`px-1 py-0.5 font-medium ${d.period === period ? "text-white/85" : "text-white/45"}`}
-                  >
-                    {d.label}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                {data.map((d) => {
-                  const v = d.ewReturn;
-                  const has = typeof v === "number" && Number.isFinite(v);
-                  const color = !has ? "#64748b" : v >= 0 ? "#f87171" : "#60a5fa";
-                  return (
-                    <td
-                      key={`ewv-${d.period}`}
-                      className={`px-1 py-1 font-bold tabular-nums ${d.period === period ? "rounded bg-white/5" : ""}`}
-                      style={{ color }}
-                    >
-                      {has ? `${v >= 0 ? "+" : ""}${v.toFixed(1)}%` : "—"}
-                    </td>
-                  );
-                })}
-              </tr>
-            </tbody>
-          </table>
+        <div className="relative h-[56px]">
+          {data.map((d, i) => {
+            const leftPct = (xAt(i) / W) * 100;
+            const v = d.ewReturn;
+            const has = typeof v === "number" && Number.isFinite(v);
+            const color = !has ? "#64748b" : v >= 0 ? "#f87171" : "#60a5fa";
+            const isCur = d.period === period;
+            return (
+              <div
+                key={`ew-${d.period}`}
+                className="absolute top-0 flex -translate-x-1/2 flex-col items-center gap-1.5 pt-1"
+                style={{ left: `${leftPct}%` }}
+              >
+                {isCur && (
+                  <span className="pointer-events-none absolute -bottom-1 -left-4 -right-4 -top-1 rounded-md bg-white/[0.07]" />
+                )}
+                <span className={`relative text-[11px] font-medium ${isCur ? "text-white/85" : "text-white/45"}`}>
+                  {d.label}
+                </span>
+                <span className="relative text-[14px] font-bold tabular-nums" style={{ color }}>
+                  {has ? `${v >= 0 ? "+" : ""}${v.toFixed(1)}%` : "—"}
+                </span>
+              </div>
+            );
+          })}
         </div>
       </div>
 
@@ -588,43 +580,6 @@ export default function GraphRightPanel({
       <div className="mt-2 text-[12px] text-white/60">
         {(themeSummary as any)?.note ?? (ok ? "테마 상태 요약이 준비되어 있습니다." : "아직 테마 수익률/지표 데이터가 없습니다.")}
       </div>
-
-      {/* EW (Equal-Weighted Virtual ETF) — period 수익률 prominent pill */}
-      {typeof avgReturn === "number" && Number.isFinite(avgReturn) ? (
-        <div className="mt-2 flex items-center gap-2">
-          <span
-            className="inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-semibold"
-            style={{
-              borderColor:
-                avgReturn > 0
-                  ? "rgba(248,113,113,0.4)"
-                  : avgReturn < 0
-                    ? "rgba(96,165,250,0.4)"
-                    : "rgba(255,255,255,0.18)",
-              backgroundColor:
-                avgReturn > 0
-                  ? "rgba(248,113,113,0.08)"
-                  : avgReturn < 0
-                    ? "rgba(96,165,250,0.08)"
-                    : "rgba(255,255,255,0.04)",
-              color:
-                avgReturn > 0
-                  ? "#fca5a5"
-                  : avgReturn < 0
-                    ? "#93c5fd"
-                    : "rgba(255,255,255,0.7)",
-            }}
-            title={`Equal-Weighted 가상 포트폴리오 — 모든 자산 동일가중 단순평균 (n=${assetCount})`}
-          >
-            <span className="text-white/55">EW {period ?? "7D"}</span>
-            <span className="font-extrabold">
-              {avgReturn >= 0 ? "+" : ""}
-              {avgReturn.toFixed(2)}%
-            </span>
-            <span className="text-white/40">· n={assetCount}</span>
-          </span>
-        </div>
-      ) : null}
 
       {/* 수익률 없음 안내 (FMP/PYKRX 구분) */}
       {noReturnNote && (
