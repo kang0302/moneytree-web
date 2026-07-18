@@ -70,6 +70,20 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+# 홈 되돌아가기 (KNOW_VEST 홈 = Next.js dev 서버)
+HOME_URL = "http://localhost:3000"
+st.markdown(
+    f"""
+    <a href="{HOME_URL}" target="_self" style="
+      display:inline-flex; align-items:center; gap:6px; text-decoration:none;
+      border:1px solid rgba(129,140,248,0.4); background:rgba(129,140,248,0.12);
+      color:#c7d2fe; font-weight:600; font-size:13px; padding:6px 14px; border-radius:9px;">
+      ← KNOW_VEST 홈으로
+    </a>
+    """,
+    unsafe_allow_html=True,
+)
+
 st.title("📈 투자퍼포먼스 시뮬레이션")
 st.caption("ETF 이평선 타이밍 + 인출/적립 백테스트 — " + FOOTNOTE)
 
