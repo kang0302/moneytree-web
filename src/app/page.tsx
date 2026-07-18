@@ -422,6 +422,64 @@ export default function HomePage() {
           )}
         </Link>
 
+        {/* Today's Pulse */}
+        <section className="mb-4 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4 backdrop-blur">
+          <div className="mb-3 flex items-end justify-between">
+            <div>
+              <div className="text-[11px] uppercase tracking-wider text-white/45">Today&apos;s Pulse</div>
+              <div className="text-[18px] font-bold">시장의 온도</div>
+            </div>
+            <div className="text-[11px] text-white/45">
+              {loading ? "loading…" : `7D · ${themes.length} themes`}
+            </div>
+          </div>
+
+          {/* 6단계 온도 분포 스트립 (더블클릭 → 상세) */}
+          <div className="mb-3 grid grid-cols-3 gap-2 sm:grid-cols-6">
+            {TEMP_BANDS.map((b) => {
+              const n = bandCounts[b.key] ?? 0;
+              const pct = scoredTotal > 0 ? Math.round((n / scoredTotal) * 100) : 0;
+              return (
+                <div
+                  key={b.key}
+                  onDoubleClick={() => openBand(b.key)}
+                  className="flex cursor-pointer flex-col rounded-xl border px-2.5 py-2 transition hover:brightness-125"
+                  style={{ borderColor: `${b.color}55`, background: `${b.color}14` }}
+                  title={`${b.label}: ${n}개 테마 (${pct}%) — 더블클릭 시 상세 맵`}
+                >
+                  <div className="flex items-center gap-1 text-[11px] font-semibold" style={{ color: b.color }}>
+                    <span>{b.emoji}</span>
+                    <span>{b.label}</span>
+                  </div>
+                  <div className="mt-0.5 flex items-end justify-between">
+                    <span className="font-mono text-[18px] font-extrabold tabular-nums text-white/90">
+                      {loading ? "—" : n}
+                    </span>
+                    <span className="text-[10px] text-white/40">{loading ? "" : `${pct}%`}</span>
+                  </div>
+                  <div className="mt-1 h-1 w-full overflow-hidden rounded-full bg-white/[0.06]">
+                    <div className="h-full rounded-full" style={{ width: `${pct}%`, background: b.color }} />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* 6단계 밴드별 Top 5 (밴드명 더블클릭 → 상세 맵) */}
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
+            {TEMP_BANDS.map((b) => (
+              <BandColumn
+                key={b.key}
+                band={b}
+                rows={perBand[b.key] ?? []}
+                total={bandCounts[b.key] ?? 0}
+                loading={loading}
+                onOpen={() => openBand(b.key)}
+              />
+            ))}
+          </div>
+        </section>
+
         {/* Theme Curation Updates */}
         {updates.length > 0 && (
           <section className="mb-4 rounded-2xl border border-emerald-400/25 bg-emerald-500/[0.04] px-4 py-4 backdrop-blur">
@@ -521,64 +579,6 @@ export default function HomePage() {
                 <div className="text-[10px] text-white/45">— themes</div>
                 <div className="text-[10px] text-white/45">— assets</div>
               </button>
-            ))}
-          </div>
-        </section>
-
-        {/* Today's Pulse */}
-        <section className="mb-4 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4 backdrop-blur">
-          <div className="mb-3 flex items-end justify-between">
-            <div>
-              <div className="text-[11px] uppercase tracking-wider text-white/45">Today&apos;s Pulse</div>
-              <div className="text-[18px] font-bold">시장의 온도</div>
-            </div>
-            <div className="text-[11px] text-white/45">
-              {loading ? "loading…" : `7D · ${themes.length} themes`}
-            </div>
-          </div>
-
-          {/* 6단계 온도 분포 스트립 (더블클릭 → 상세) */}
-          <div className="mb-3 grid grid-cols-3 gap-2 sm:grid-cols-6">
-            {TEMP_BANDS.map((b) => {
-              const n = bandCounts[b.key] ?? 0;
-              const pct = scoredTotal > 0 ? Math.round((n / scoredTotal) * 100) : 0;
-              return (
-                <div
-                  key={b.key}
-                  onDoubleClick={() => openBand(b.key)}
-                  className="flex cursor-pointer flex-col rounded-xl border px-2.5 py-2 transition hover:brightness-125"
-                  style={{ borderColor: `${b.color}55`, background: `${b.color}14` }}
-                  title={`${b.label}: ${n}개 테마 (${pct}%) — 더블클릭 시 상세 맵`}
-                >
-                  <div className="flex items-center gap-1 text-[11px] font-semibold" style={{ color: b.color }}>
-                    <span>{b.emoji}</span>
-                    <span>{b.label}</span>
-                  </div>
-                  <div className="mt-0.5 flex items-end justify-between">
-                    <span className="font-mono text-[18px] font-extrabold tabular-nums text-white/90">
-                      {loading ? "—" : n}
-                    </span>
-                    <span className="text-[10px] text-white/40">{loading ? "" : `${pct}%`}</span>
-                  </div>
-                  <div className="mt-1 h-1 w-full overflow-hidden rounded-full bg-white/[0.06]">
-                    <div className="h-full rounded-full" style={{ width: `${pct}%`, background: b.color }} />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* 6단계 밴드별 Top 5 (밴드명 더블클릭 → 상세 맵) */}
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
-            {TEMP_BANDS.map((b) => (
-              <BandColumn
-                key={b.key}
-                band={b}
-                rows={perBand[b.key] ?? []}
-                total={bandCounts[b.key] ?? 0}
-                loading={loading}
-                onOpen={() => openBand(b.key)}
-              />
             ))}
           </div>
         </section>
