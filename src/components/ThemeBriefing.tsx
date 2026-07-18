@@ -210,7 +210,7 @@ function BriefingCard({ row }: { row: BriefingRow }) {
   const { metrics: m } = row;
   return (
     <div className="rounded-xl border border-white/10 bg-white/3 p-3 backdrop-blur">
-      {/* 상단: 종목명·티커 + 3년 수익률 */}
+      {/* 상단: 종목명·티커 + YTD 수익률 (디폴트) */}
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0 flex-1">
           <a
@@ -228,11 +228,11 @@ function BriefingCard({ row }: { row: BriefingRow }) {
         <div className="shrink-0 text-right">
           <div
             className="text-[14px] font-bold tabular-nums"
-            style={{ color: colorForPct(row.threeYear) }}
+            style={{ color: colorForPct(m?.return_ytd) }}
           >
-            {fmtPct(row.threeYear)}
+            {fmtPct(m?.return_ytd)}
           </div>
-          <div className="text-[10px] text-white/50">3년</div>
+          <div className="text-[10px] text-white/50">YTD</div>
         </div>
       </div>
 
@@ -264,13 +264,14 @@ function BriefingCard({ row }: { row: BriefingRow }) {
         </div>
       )}
 
-      {/* 수익률 4개: 1년 / YTD / 1개월 / 7일 */}
-      <div className="mt-2.5 grid grid-cols-4 gap-1.5 border-t border-white/8 pt-2.5">
+      {/* 수익률 5개: 7일 / 1개월 / YTD / 1년 / 3년 */}
+      <div className="mt-2.5 grid grid-cols-5 gap-1.5 border-t border-white/8 pt-2.5">
         {[
-          { label: "1년", key: "return_1y" },
-          { label: "YTD", key: "return_ytd" },
-          { label: "1개월", key: "return_1m" },
           { label: "7일", key: "return_7d" },
+          { label: "1개월", key: "return_1m" },
+          { label: "YTD", key: "return_ytd" },
+          { label: "1년", key: "return_1y" },
+          { label: "3년", key: "return_3y" },
         ].map((p) => {
           const v = m?.[p.key];
           return (
