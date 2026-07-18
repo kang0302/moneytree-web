@@ -372,8 +372,8 @@ export default function HomePage() {
             오늘, 어떤 시장을 들여다볼까요?
           </div>
 
-          {/* 투자퍼포먼스 시뮬레이션 (로컬 Streamlit 백테스트 앱) */}
-          <div className="mt-4">
+          {/* 퀵 액션 버튼들 */}
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
             <a
               href="http://localhost:8501"
               target="_blank"
@@ -383,6 +383,13 @@ export default function HomePage() {
             >
               📈 투자퍼포먼스 시뮬레이션
             </a>
+            <Link
+              href="/ma-brief"
+              className="inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-sky-500/15 px-5 py-2 text-sm font-semibold text-sky-100 transition hover:border-sky-300/60 hover:bg-sky-500/25"
+              title="관심종목 이동평균선(5·20·60·120) 데일리 트래킹"
+            >
+              📊 이동평균선 트래킹
+            </Link>
           </div>
 
           <div className="mt-3 text-[12px] text-white/55 sm:text-[14px]">
