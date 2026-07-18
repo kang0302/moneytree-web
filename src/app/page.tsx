@@ -371,7 +371,21 @@ export default function HomePage() {
           <div className="text-[28px] font-extrabold leading-tight tracking-tight text-white sm:text-[40px]">
             오늘, 어떤 시장을 들여다볼까요?
           </div>
-          <div className="mt-2 text-[12px] text-white/55 sm:text-[14px]">
+
+          {/* 투자퍼포먼스 시뮬레이션 (로컬 Streamlit 백테스트 앱) */}
+          <div className="mt-4">
+            <a
+              href="http://localhost:8501"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-indigo-400/40 bg-indigo-500/15 px-5 py-2 text-sm font-semibold text-indigo-100 transition hover:border-indigo-300/60 hover:bg-indigo-500/25"
+              title="ETF 이평선 타이밍 + 인출/적립 백테스트 (로컬 앱)"
+            >
+              📈 투자퍼포먼스 시뮬레이션
+            </a>
+          </div>
+
+          <div className="mt-3 text-[12px] text-white/55 sm:text-[14px]">
             종목 · 티커 · 테마 · 산업 · 매크로 — 한 번에 검색
           </div>
           <div className="mx-auto mt-6 flex w-full max-w-3xl flex-wrap items-end justify-center gap-6 sm:gap-10">
