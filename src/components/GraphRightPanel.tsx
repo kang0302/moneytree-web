@@ -30,9 +30,9 @@ export function staleLabel(asOf?: string | null, now: Date = new Date()): string
 }
 
 /* ─────────────────────────────────────────
-   BAROMETER 추세 차트 — 기간별(3Y/2Y/1Y/YTD/1M/15D/7D/3D/1D) overall score 시계열
+   BAROMETER 추세 차트 — 기간별 overall score 시계열 (가까운 시간=왼쪽)
 ───────────────────────────────────────── */
-const TREND_PERIODS: PeriodKey[] = ["3Y", "2Y", "1Y", "YTD", "1M", "15D", "7D", "3D", "1D"];
+const TREND_PERIODS: PeriodKey[] = ["1D", "3D", "7D", "15D", "1M", "YTD", "1Y", "2Y", "3Y"];
 const TREND_LABELS: Record<PeriodKey, string> = {
   "3Y": "3년", "2Y": "2년", "1Y": "1년", "YTD": "YTD", "1M": "1개월", "15D": "15일", "7D": "7일", "3D": "3일", "1D": "1일",
 };
@@ -82,8 +82,7 @@ function BarometerTrendChart({
 
   const W = 520;
   const H = 220;
-  // 우측에 EW 수익률 축 라벨 공간 확보 (18 → 42)
-  const pad = { top: 36, right: 42, bottom: 38, left: 30 };
+  const pad = { top: 36, right: 18, bottom: 38, left: 30 };
   const innerW = W - pad.left - pad.right;
   const innerH = H - pad.top - pad.bottom;
   const xAt = (i: number) => pad.left + (i / (TREND_PERIODS.length - 1)) * innerW;
@@ -96,26 +95,6 @@ function BarometerTrendChart({
 
   const pathD = smoothPath(validPoints.map(({ x, y }) => ({ x, y })));
 
-  // ─── EW 수익률 Y-스케일 (우측 축, 0% 항상 포함하여 동적 스케일) ───
-  const ewValid = data
-    .map((d, i) => ({ ...d, x: xAt(i), idx: i }))
-    .filter((p) => p.ewReturn != null) as Array<{ period: PeriodKey; label: string; ewReturn: number; x: number; idx: number }>;
-  const ewVals = ewValid.map((p) => p.ewReturn);
-  const ewRaw = ewVals.length ? { min: Math.min(...ewVals), max: Math.max(...ewVals) } : null;
-  // 0% 항상 시야 + 10% padding (최소 ±5% 보장)
-  const retMin = ewRaw ? Math.min(0, ewRaw.min) : -5;
-  const retMax = ewRaw ? Math.max(0, ewRaw.max) : 5;
-  const retRange = Math.max(retMax - retMin, 10);
-  const retPad = retRange * 0.1;
-  const retLo = retMin - retPad;
-  const retHi = retMax + retPad;
-  const yAtRet = (v: number) => pad.top + (1 - (v - retLo) / (retHi - retLo)) * innerH;
-  const ewPathD = smoothPath(ewValid.map((p) => ({ x: p.x, y: yAtRet(p.ewReturn) })));
-
-  // 우측 Y축 tick — 4개 균등 분할 + 0% 강조
-  const retTicks = [retLo, retLo + (retHi - retLo) * 0.25, (retLo + retHi) / 2, retLo + (retHi - retLo) * 0.75, retHi];
-
-  // gradient stop도 score → temperature color로
   const yGrid = [0, 200, 400, 500, 600, 800, 1000];
 
   const [hoverIdx, setHoverIdx] = useState<number | null>(null);
@@ -129,12 +108,6 @@ function BarometerTrendChart({
         <div className="flex items-center gap-3 text-[10px] text-white/40">
           <span className="flex items-center gap-1">
             <span className="inline-block h-[2px] w-3 bg-white/55" /> 점수
-          </span>
-          <span className="flex items-center gap-1">
-            <svg width="14" height="2" className="inline-block">
-              <line x1="0" y1="1" x2="14" y2="1" stroke="#22d3ee" strokeWidth="1.5" strokeDasharray="3 2" />
-            </svg>
-            EW 수익률
           </span>
           <span>기간 라벨 클릭으로 전환</span>
         </div>
@@ -179,70 +152,6 @@ function BarometerTrendChart({
 
           {/* main line (BAROMETER 점수) */}
           <path d={pathD} fill="none" stroke="rgba(255,255,255,0.55)" strokeWidth={2} />
-
-          {/* ─── 우측 Y축: EW 수익률 (점선 라인용 동적 스케일) ─── */}
-          {ewValid.length > 0 && (
-            <g>
-              {/* 0% 기준선 (회색 점선, 좌→우 가로) */}
-              {retLo <= 0 && retHi >= 0 && (
-                <>
-                  <line
-                    x1={pad.left}
-                    x2={W - pad.right}
-                    y1={yAtRet(0)}
-                    y2={yAtRet(0)}
-                    stroke="rgba(34,211,238,0.18)"
-                    strokeWidth={1}
-                    strokeDasharray="1 3"
-                  />
-                  <text
-                    x={W - pad.right + 3}
-                    y={yAtRet(0) + 3}
-                    fontSize={9}
-                    fill="rgba(34,211,238,0.5)"
-                  >
-                    0%
-                  </text>
-                </>
-              )}
-              {/* 우측 축 tick 라벨 (0% 외) */}
-              {retTicks.map((v, i) => {
-                if (Math.abs(v) < 0.05) return null; // 0% 은 위에서 별도 처리
-                return (
-                  <text
-                    key={`rtick-${i}`}
-                    x={W - pad.right + 3}
-                    y={yAtRet(v) + 3}
-                    fontSize={9}
-                    fill="rgba(34,211,238,0.35)"
-                  >
-                    {v >= 0 ? "+" : ""}{v.toFixed(0)}%
-                  </text>
-                );
-              })}
-              {/* EW 점선 라인 */}
-              <path
-                d={ewPathD}
-                fill="none"
-                stroke="#22d3ee"
-                strokeWidth={1.6}
-                strokeDasharray="4 3"
-                strokeLinecap="round"
-              />
-              {/* EW 포인트 (작은 원) */}
-              {ewValid.map((p) => (
-                <circle
-                  key={`ew-${p.period}`}
-                  cx={p.x}
-                  cy={yAtRet(p.ewReturn)}
-                  r={3}
-                  fill="#0f172a"
-                  stroke="#22d3ee"
-                  strokeWidth={1.4}
-                />
-              ))}
-            </g>
-          )}
 
           {/* current period vertical guide */}
           {(() => {
@@ -334,21 +243,56 @@ function BarometerTrendChart({
         </svg>
       )}
 
+      {/* ─── 기간별 EW 수익률 수치 테이블 (동일가중, 가까운 시간=왼쪽) ─── */}
+      <div className="mt-3 border-t border-white/10 pt-2">
+        <div className="mb-1 text-xs font-semibold text-white/70">
+          기간별 EW 수익률 <span className="font-normal text-white/40">(동일가중)</span>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full text-center text-[11px]">
+            <thead>
+              <tr>
+                {data.map((d) => (
+                  <th
+                    key={`ewh-${d.period}`}
+                    className={`px-1 py-0.5 font-medium ${d.period === period ? "text-white/85" : "text-white/45"}`}
+                  >
+                    {d.label}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                {data.map((d) => {
+                  const v = d.ewReturn;
+                  const has = typeof v === "number" && Number.isFinite(v);
+                  const color = !has ? "#64748b" : v >= 0 ? "#f87171" : "#60a5fa";
+                  return (
+                    <td
+                      key={`ewv-${d.period}`}
+                      className={`px-1 py-1 font-bold tabular-nums ${d.period === period ? "rounded bg-white/5" : ""}`}
+                      style={{ color }}
+                    >
+                      {has ? `${v >= 0 ? "+" : ""}${v.toFixed(1)}%` : "—"}
+                    </td>
+                  );
+                })}
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       {/* current period summary line */}
       {(() => {
         const cur = data.find((d) => d.period === period);
         if (!cur || cur.score === null) return null;
         const meta = tempByScoreFn(cur.score);
-        const ew = cur.ewReturn;
         return (
           <div className="mt-1 flex items-center justify-between text-[11px]">
             <span className="text-white/55">현재 ({cur.label})</span>
             <span className="flex items-center gap-2">
-              {typeof ew === "number" && Number.isFinite(ew) && (
-                <span className="flex items-center gap-1 font-semibold" style={{ color: "#22d3ee" }}>
-                  EW {ew >= 0 ? "+" : ""}{ew.toFixed(2)}%
-                </span>
-              )}
               <span className="flex items-center gap-1.5">
                 <span
                   className="rounded px-1.5 py-0.5 text-[10px] font-extrabold text-black"
