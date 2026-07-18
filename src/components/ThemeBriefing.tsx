@@ -568,6 +568,125 @@ function ReturnCell({ value }: { value: number | null | undefined }) {
   );
 }
 
+/* ───────────── 이동평균선 시그널 (ma-brief 동일 로직·데이터소스) ─────────────
+   데이터: kang0302/import_MT/main/data/ma_brief/assets.json (ma_theme_assets.py 일 1회 생성) */
+type MaItem = {
+  sector: string; name: string; ticker: string; country: string; link: string;
+  close: number | null; g5: number | null; g20: number | null; g60: number | null; g120: number | null;
+  hg: number | null; align: string; above: number; bucket: string; bucketLabel: string;
+  seq7: string; signal: string; interp: string;
+};
+const MA_ASSETS_URL = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/ma_brief/assets.json";
+const MA_ASSETS_LOCAL = "/data/ma_brief/assets.json";
+const MA_BENCH = ["SPY", "DIA", "QQQ"];
+const MA_BUCKET_ORDER = ["b1", "b2", "b3", "b4", "b5", "b6", "na"];
+const MA_ALIGN: Record<string, string> = { bull: "🟢 정배열", flat: "⚪ 혼조", bear: "🔴 역배열", na: "—" };
+const maGapColor = (v: number | null) => (v == null ? "#94a3b8" : v >= 0 ? "#f87171" : "#60a5fa");
+const maFmtGap = (v: number | null) => (v == null ? "—" : `${v >= 0 ? "▲ +" : "▼ "}${v.toFixed(1)}%`);
+const maHighColor = (v: number | null) => (v == null ? "#94a3b8" : v >= -3 ? "#f87171" : v <= -20 ? "#60a5fa" : "#cbd5e1");
+function MaSeq7({ s }: { s: string }) {
+  return (
+    <span>
+      {s.split("").map((c, i) =>
+        c === "▲" ? <span key={i} style={{ color: "#f87171" }}>▲</span> :
+        c === "▼" ? <span key={i} style={{ color: "#60a5fa" }}>▼</span> :
+        <span key={i} style={{ color: "#64748b" }}>{c}</span>)}
+    </span>
+  );
+}
+
+function MaSignalView({ tickers }: { tickers: string[] }) {
+  const [items, setItems] = useState<Record<string, MaItem> | null>(null);
+  const [asof, setAsof] = useState<string>("");
+  const [state, setState] = useState<"loading" | "ok" | "empty" | "error">("loading");
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        let j: any = null;
+        const r = await fetch(`${MA_ASSETS_URL}?_cb=${Date.now()}`, { cache: "no-store" }).catch(() => null);
+        if (r && r.ok) j = await r.json();
+        else {
+          const rl = await fetch(`${MA_ASSETS_LOCAL}?_cb=${Date.now()}`, { cache: "no-store" }).catch(() => null);
+          if (rl && rl.ok) j = await rl.json();
+        }
+        if (cancelled) return;
+        if (!j?.items) { setState("empty"); return; }
+        setItems(j.items); setAsof(j.asof || ""); setState("ok");
+      } catch { if (!cancelled) setState("error"); }
+    })();
+    return () => { cancelled = true; };
+  }, []);
+
+  const { rows, bench } = useMemo(() => {
+    if (!items) return { rows: [] as MaItem[], bench: [] as MaItem[] };
+    const seen = new Set<string>();
+    const rows = tickers
+      .map((t) => items[t])
+      .filter((x): x is MaItem => !!x && !MA_BENCH.includes(x.ticker))
+      .filter((x) => (seen.has(x.ticker) ? false : (seen.add(x.ticker), true)))
+      .sort((a, b) => {
+        const c = MA_BUCKET_ORDER.indexOf(a.bucket) - MA_BUCKET_ORDER.indexOf(b.bucket);
+        if (c !== 0) return c;
+        if (b.above !== a.above) return b.above - a.above;
+        return (b.hg ?? -999) - (a.hg ?? -999);
+      });
+    const bench = MA_BENCH.map((t) => items[t]).filter((x): x is MaItem => !!x);
+    return { rows, bench };
+  }, [items, tickers]);
+
+  if (state === "loading") return <div className="text-sm text-white/50">이동평균선 시그널 불러오는 중…</div>;
+  if (state === "empty") return <div className="text-sm text-white/55">아직 시그널 데이터가 없습니다. (일 1회 생성 — 곧 채워집니다)</div>;
+  if (state === "error") return <div className="text-sm text-rose-300/80">시그널을 불러오지 못했습니다.</div>;
+
+  const Row = (r: MaItem, isBench: boolean) => (
+    <tr key={r.ticker} className={`border-t border-white/5 ${isBench ? "bg-amber-300/[0.06]" : "hover:bg-white/[0.03]"}`} title={r.interp}>
+      <td className="px-2 py-1 text-indigo-300/90">{r.sector || (isBench ? "벤치마크" : "")}</td>
+      <td className="px-2 py-1"><a href={r.link} target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">{r.name} ({r.ticker})</a></td>
+      <td className="px-2 py-1 text-right text-white/80">{r.close != null ? r.close.toLocaleString(undefined, { maximumFractionDigits: 2 }) : "—"}</td>
+      <td className="px-2 py-1 text-right" style={{ color: maGapColor(r.g5) }}>{maFmtGap(r.g5)}</td>
+      <td className="px-2 py-1 text-right" style={{ color: maGapColor(r.g20) }}>{maFmtGap(r.g20)}</td>
+      <td className="px-2 py-1 text-right" style={{ color: maGapColor(r.g60) }}>{maFmtGap(r.g60)}</td>
+      <td className="px-2 py-1 text-right" style={{ color: maGapColor(r.g120) }}>{maFmtGap(r.g120)}</td>
+      <td className="px-2 py-1 text-right" style={{ color: maHighColor(r.hg) }}>{r.hg != null ? `${r.hg >= 0 ? "+" : ""}${r.hg.toFixed(1)}%` : "—"}</td>
+      <td className="px-2 py-1">{MA_ALIGN[r.align] || r.align}</td>
+      <td className="px-2 py-1 font-semibold text-white/90">{r.bucketLabel}</td>
+      <td className="px-2 py-1"><MaSeq7 s={r.seq7} /></td>
+      <td className="px-2 py-1 text-white/60">{r.signal}</td>
+    </tr>
+  );
+
+  return (
+    <div>
+      <div className="mb-2 text-[11px] text-white/50">
+        기준일 {asof || "—"} · 이평선 5·20·60·120일 · ma-brief 동일 로직(FMP·EODHD) · 벤치마크 SPY·DIA·QQQ 하단 고정
+      </div>
+      <div className="overflow-x-auto rounded-lg border border-white/10">
+        <table className="w-full border-collapse text-[12.5px] whitespace-nowrap">
+          <thead>
+            <tr className="bg-white/[0.05] text-white/80">
+              {["섹터", "종목", "종가", "vs5일", "vs20일", "vs60일", "vs120일", "52주高比", "배열", "버킷", "최근7일", "오늘 신호"].map((h, i) => (
+                <th key={i} className={`px-2 py-1.5 font-semibold ${i >= 2 && i <= 7 ? "text-right" : "text-left"}`}>{h}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.length === 0 && bench.length === 0 ? (
+              <tr><td colSpan={12} className="px-2 py-6 text-center text-white/40">이 테마 자산의 시그널 데이터가 아직 없습니다.</td></tr>
+            ) : null}
+            {rows.map((r) => Row(r, false))}
+            {bench.length > 0 && (
+              <tr><td colSpan={12} className="border-t-2 border-amber-300/30 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-amber-300/70">벤치마크</td></tr>
+            )}
+            {bench.map((r) => Row(r, true))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
 export default function ThemeBriefing({ themeId, nodes, freshInsightIds }: Props) {
   const [md, setMd] = useState<string | null>(null);
   const [state, setState] = useState<State>("loading");
@@ -689,9 +808,25 @@ export default function ThemeBriefing({ themeId, nodes, freshInsightIds }: Props
     window.scrollTo({ top: y, behavior: "smooth" });
   };
 
+  const scrollToMaSignal = () => {
+    const el = typeof document !== "undefined" ? document.getElementById("ma-signal-section") : null;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    window.scrollTo({ top: window.scrollY + rect.top - 24, behavior: "smooth" });
+  };
+
   // 이벤트 DB 섹션 존재 여부 + md 본문/이벤트 DB 분리
   const { briefingMd, eventDbRows } = useMemo(() => parseEventDb(md), [md]);
   const hasEventDb = eventDbRows.length > 0;
+
+  // 이 테마 ASSET 티커 (이동평균선 시그널용)
+  const themeTickers = useMemo(
+    () => (nodes ?? [])
+      .filter((n) => (n.type ?? "").toUpperCase() === "ASSET")
+      .map((n) => (n.exposure?.ticker || "").trim())
+      .filter(Boolean),
+    [nodes],
+  );
 
   // 브리핑 표 카드형 파싱 (수익률 데이터 부착)
   const briefingRows = useMemo(
@@ -865,6 +1000,16 @@ export default function ThemeBriefing({ themeId, nodes, freshInsightIds }: Props
           <EventDbView rows={eventDbRows} />
         </div>
       )}
+
+      {themeTickers.length > 0 && (
+        <div id="ma-signal-section" className="mt-6 border-t border-white/10 pt-5">
+          <h2 className="mb-3 text-[16px] font-semibold text-white/90">
+            📊 이동평균선 시그널
+            <span className="ml-2 text-[12px] font-normal text-white/55">(이 테마 종목 + 벤치마크 SPY·DIA·QQQ)</span>
+          </h2>
+          <MaSignalView tickers={themeTickers} />
+        </div>
+      )}
     </section>
 
     {/* 플로팅 단서: briefing 존재 + viewport 밖일 때만 표시. 그래프 영역 bottom-center 에 고정. */}
@@ -892,6 +1037,17 @@ export default function ThemeBriefing({ themeId, nodes, freshInsightIds }: Props
             >
               <span className="inline-block animate-bounce text-[14px] leading-none">↓</span>
               <span>이벤트 × 테마 DB</span>
+            </button>
+          )}
+          {themeTickers.length > 0 && (
+            <button
+              type="button"
+              onClick={scrollToMaSignal}
+              title="아래 이동평균선 시그널 로 이동"
+              className="flex min-w-50 items-center justify-center gap-3 rounded-full border border-sky-400/40 bg-black/80 px-8 py-3 text-[13px] font-medium text-sky-200 shadow-xl backdrop-blur transition hover:scale-105 hover:bg-black/90 hover:text-sky-100"
+            >
+              <span className="inline-block animate-bounce text-[14px] leading-none">↓</span>
+              <span>이동평균선 시그널</span>
             </button>
           )}
         </div>,
