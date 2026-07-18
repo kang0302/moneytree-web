@@ -3,7 +3,7 @@
 // 데일리 브리핑 아카이브 — 그동안 발송된 데일리 테마 매핑 브리핑을 날짜별로 조회.
 // 데이터: public/data/daily_briefs/index.json + {date}.md (react-markdown 렌더)
 
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -87,6 +87,58 @@ export default function DailyBriefArchivePage() {
       );
     });
   }, [index, q]);
+
+  // 본문 검색어 하이라이트 — 렌더 후 DOM 텍스트 노드를 순회하며 <mark> 래핑
+  const articleRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const root = articleRef.current;
+    if (!root) return;
+    // 1) 기존 하이라이트 해제
+    root.querySelectorAll("mark[data-hl]").forEach((m) => {
+      const parent = m.parentNode;
+      if (parent) {
+        parent.replaceChild(document.createTextNode(m.textContent || ""), m);
+        parent.normalize();
+      }
+    });
+    const term = q.trim();
+    if (!term || state !== "ok") return;
+    const rx = new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi");
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        const v = node.nodeValue;
+        if (!v || !v.trim()) return NodeFilter.FILTER_REJECT;
+        if (node.parentElement?.tagName === "MARK") return NodeFilter.FILTER_REJECT;
+        rx.lastIndex = 0;
+        return rx.test(v) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+      },
+    });
+    const targets: Text[] = [];
+    let n: Node | null;
+    while ((n = walker.nextNode())) targets.push(n as Text);
+    targets.forEach((textNode) => {
+      const s = textNode.nodeValue || "";
+      const frag = document.createDocumentFragment();
+      let last = 0;
+      rx.lastIndex = 0;
+      let m: RegExpExecArray | null;
+      while ((m = rx.exec(s))) {
+        if (m.index > last) frag.appendChild(document.createTextNode(s.slice(last, m.index)));
+        const mark = document.createElement("mark");
+        mark.setAttribute("data-hl", "1");
+        mark.style.backgroundColor = "#fde047";
+        mark.style.color = "#111827";
+        mark.style.borderRadius = "2px";
+        mark.style.padding = "0 1px";
+        mark.textContent = m[0];
+        frag.appendChild(mark);
+        last = m.index + m[0].length;
+        if (m[0].length === 0) rx.lastIndex++;
+      }
+      if (last < s.length) frag.appendChild(document.createTextNode(s.slice(last)));
+      textNode.parentNode?.replaceChild(frag, textNode);
+    });
+  }, [md, q, state]);
 
   const curIdx = useMemo(() => index.findIndex((e) => e.date === sel), [index, sel]);
   const cur = curIdx >= 0 ? index[curIdx] : undefined;
@@ -194,7 +246,7 @@ export default function DailyBriefArchivePage() {
             {state === "error" && <div className="text-rose-300/80">브리핑을 불러오지 못했습니다.</div>}
             {state === "empty" && <div className="text-white/60">아직 저장된 데일리 브리핑이 없습니다.</div>}
             {state === "ok" && (
-              <article className="min-w-0">
+              <article ref={articleRef} className="min-w-0">
                 <ReactMarkdown remarkPlugins={[remarkGfm]} components={MD_COMPONENTS as any}>
                   {md}
                 </ReactMarkdown>
