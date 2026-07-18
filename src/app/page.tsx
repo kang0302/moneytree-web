@@ -207,9 +207,29 @@ export default function HomePage() {
   const [counts, setCounts] = useState({ themes: 0, assets: 0, macros: 0, edges: 0 });
   const [updates, setUpdates] = useState<UpdateItem[]>([]);
 
+  // 최신 데일리 브리핑(5줄 요약) — /data/daily_briefs/index.json[0]
+  const [dailyBrief, setDailyBrief] = useState<{
+    date: string;
+    title: string;
+    themes: { rank?: string; id: string; name: string; strength: string; reason: string }[];
+  } | null>(null);
+
   useEffect(() => {
     setRecent(safeJsonParse<RecentItem[]>(localStorage.getItem(LS_RECENT), []));
     setFavs(safeJsonParse<FavItem[]>(localStorage.getItem(LS_FAV), []));
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const r = await fetch(`/data/daily_briefs/index.json?_cb=${Date.now()}`, { cache: "no-store" });
+        if (!r.ok) return;
+        const j = await r.json();
+        if (Array.isArray(j) && j.length) setDailyBrief(j[0]);
+      } catch {
+        /* 브리핑 없으면 조용히 무시 */
+      }
+    })();
   }, []);
 
   useEffect(() => {
@@ -373,13 +393,34 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Daily Brief (placeholder) */}
-        <section className="mb-4 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 backdrop-blur">
-          <div className="mb-1 text-[11px] uppercase tracking-wider text-white/45">Daily Brief</div>
-          <div className="text-[14px] text-white/75">
-            오늘의 헤드라인 매핑은 곧 연결됩니다. (Bloomberg · 한경 · 매경 · 컨센서스)
+        {/* Daily Brief — 5줄 핵심 요약 + 아카이브 링크 */}
+        <Link
+          href="/daily-brief"
+          className="mb-4 block rounded-2xl border border-sky-400/25 bg-sky-500/[0.05] px-4 py-3 backdrop-blur transition hover:border-sky-400/40 hover:bg-sky-500/[0.08]"
+        >
+          <div className="mb-2 flex items-end justify-between">
+            <div className="flex items-center gap-2">
+              <span className="text-[11px] uppercase tracking-wider text-sky-300/70">Daily Brief</span>
+              {dailyBrief?.date ? <span className="text-[11px] text-white/45">{dailyBrief.date}</span> : null}
+            </div>
+            <span className="text-[11px] text-white/45">전체 브리핑 보기 →</span>
           </div>
-        </section>
+
+          {dailyBrief && dailyBrief.themes?.length ? (
+            <ol className="space-y-1">
+              {dailyBrief.themes.slice(0, 5).map((t, i) => (
+                <li key={i} className="flex items-baseline gap-2 text-[13px] leading-snug">
+                  <span className="shrink-0 text-white/35">{i + 1}</span>
+                  <span className="shrink-0 font-semibold text-white/90">{t.name}</span>
+                  {t.strength ? <span className="shrink-0 text-amber-300/80">{t.strength}</span> : null}
+                  <span className="min-w-0 flex-1 truncate text-white/55">{t.reason}</span>
+                </li>
+              ))}
+            </ol>
+          ) : (
+            <div className="text-[13px] text-white/60">오늘의 핫 테마 브리핑을 불러오는 중…</div>
+          )}
+        </Link>
 
         {/* Theme Curation Updates */}
         {updates.length > 0 && (

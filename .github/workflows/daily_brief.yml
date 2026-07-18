@@ -42,6 +42,11 @@ jobs:
         run: |
           node scripts/daily_brief.mjs
 
+      - name: Rebuild daily-brief index.json
+        shell: bash
+        run: |
+          node scripts/build_daily_brief_index.mjs
+
       - name: Compute brief metadata
         id: brief
         shell: bash
