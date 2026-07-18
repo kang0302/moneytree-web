@@ -133,6 +133,29 @@ function computeOrbitWeights(assetIds, nodes, edges) {
   return w;
 }
 
+// MOMENTUM = 3D/7D/1M/YTD 상위30% 가중 혼합(35:30:20:15) — src/lib/themeReturn.ts 와 동일
+const MOMENTUM_MIX = [["3D", 0.35], ["7D", 0.30], ["1M", 0.20], ["YTD", 0.15]];
+function periodTopMean(assets, wmap, period) {
+  const wr = assets
+    .map((a) => ({ ret: extractReturn(a?.metrics, period), w: wmap.get(a?.id) ?? 1 }))
+    .filter((x) => typeof x.ret === "number" && Number.isFinite(x.ret));
+  if (!wr.length) return null;
+  const n = wr.length;
+  const order = wr.map((_, i) => i).sort((a, b) => wr[b].ret - wr[a].ret);
+  const topN = n >= 10 ? Math.ceil(n * 0.3) : 2;
+  const ti = order.slice(0, Math.min(topN, n));
+  return wmean(ti.map((i) => wr[i].ret), ti.map((i) => wr[i].w));
+}
+function momentumBlendScore(assets, wmap) {
+  let mN = 0, sN = 0, wA = 0;
+  for (const [mp, mw] of MOMENTUM_MIX) {
+    const tm = periodTopMean(assets, wmap, mp);
+    if (tm != null) { mN += mw * tm; sN += mw * anchorForPeriod(mp).retSat; wA += mw; }
+  }
+  if (wA <= 0) return 500;
+  return scoreReturnPct(mN / wA, sN / wA);
+}
+
 function tempByScore(s) {
   const v = clamp(s, 0, 1000);
   if (v >= 900) return "BLAZING";
@@ -184,7 +207,7 @@ function computeBarometer(themeJson, period) {
   // #3: robust center(avg·median 블렌드)
   const robustCenter = 0.5 * avgReturn + 0.5 * medianReturn;
   const health = clamp(scoreReturnPct(robustCenter, anchor.retSat) * 0.6 + scoreBreadthPct(breadthPct) * 0.4, 0, 1000);
-  const momentum = scoreReturnPct(momentumTopPct, anchor.retSat);
+  const momentum = momentumBlendScore(assets, wmap);
   const diversification = scoreDiversification(breadthPct, gapPct, anchor.retSat); // #5
   const risk = scoreRiskFromTailPct(tailPct);
   const overall = clamp(

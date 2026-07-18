@@ -610,7 +610,7 @@ export default function GraphRightPanel({
             <div className="text-[11px] font-semibold tracking-wide text-white/55">MOMENTUM</div>
             <div className="text-[20px] font-black leading-none text-white">{fmtScore(momentumScore)}</div>
           </div>
-          <div className="mt-1 truncate text-[11px] text-white/60">기본: 7D/1M/1Y 혼합</div>
+          <div className="mt-1 truncate text-[11px] text-white/60">3D·7D·1M·YTD 혼합 (35:30:20:15)</div>
         </div>
 
         <div className="rounded-2xl border border-white/10 bg-black/20 px-3 py-2">
