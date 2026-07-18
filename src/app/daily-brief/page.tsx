@@ -18,9 +18,9 @@ const MD_COMPONENTS = {
   h1: (p: any) => <h1 className="mt-2 mb-3 text-2xl font-extrabold text-white" {...p} />,
   h2: (p: any) => <h2 className="mt-6 mb-2 border-b border-white/10 pb-1 text-lg font-bold text-amber-200/90" {...p} />,
   h3: (p: any) => <h3 className="mt-4 mb-1 text-base font-semibold text-white/90" {...p} />,
-  p: (p: any) => <p className="my-2 text-[13.5px] leading-relaxed text-white/75" {...p} />,
-  ul: (p: any) => <ul className="my-2 list-disc pl-5 text-[13.5px] text-white/75" {...p} />,
-  ol: (p: any) => <ol className="my-2 list-decimal pl-5 text-[13.5px] text-white/75" {...p} />,
+  p: (p: any) => <p className="my-2 text-[14.5px] leading-relaxed text-white/80" {...p} />,
+  ul: (p: any) => <ul className="my-2 list-disc pl-5 text-[14.5px] text-white/80" {...p} />,
+  ol: (p: any) => <ol className="my-2 list-decimal pl-5 text-[14.5px] text-white/80" {...p} />,
   li: (p: any) => <li className="my-0.5" {...p} />,
   a: (p: any) => <a className="text-sky-400 hover:underline" target="_blank" rel="noreferrer" {...p} />,
   strong: (p: any) => <strong className="font-semibold text-white/90" {...p} />,
@@ -29,12 +29,12 @@ const MD_COMPONENTS = {
   code: (p: any) => <code className="rounded bg-white/10 px-1 py-0.5 text-[12px] text-amber-100" {...p} />,
   table: (p: any) => (
     <div className="my-3 overflow-x-auto rounded-lg border border-white/10">
-      <table className="w-full border-collapse text-[12.5px]" {...p} />
+      <table className="w-full border-collapse text-[13.5px]" {...p} />
     </div>
   ),
   thead: (p: any) => <thead className="bg-white/[0.06]" {...p} />,
-  th: (p: any) => <th className="border-b border-white/10 px-2.5 py-1.5 text-left font-semibold text-white/80" {...p} />,
-  td: (p: any) => <td className="border-b border-white/5 px-2.5 py-1.5 align-top text-white/70" {...p} />,
+  th: (p: any) => <th className="border-b border-white/10 px-3 py-2 text-left font-semibold text-white/80" {...p} />,
+  td: (p: any) => <td className="border-b border-white/5 px-3 py-2 align-top leading-relaxed text-white/75" {...p} />,
 };
 
 export default function DailyBriefArchivePage() {
@@ -82,7 +82,7 @@ export default function DailyBriefArchivePage() {
 
   return (
     <main className="min-h-screen w-full bg-[#0a0a0b] text-white">
-      <div className="mx-auto w-full max-w-[1100px] px-4 py-6">
+      <div className="mx-auto w-full max-w-[1600px] px-5 py-6">
         {/* Header */}
         <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
           <div>
@@ -123,7 +123,7 @@ export default function DailyBriefArchivePage() {
           {cur ? <span className="ml-2 text-xs text-white/40">{cur.date} 브리핑</span> : null}
         </div>
 
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-[220px_1fr]">
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-[240px_1fr]">
           {/* 날짜 리스트 (쌓인 아카이브) */}
           <aside className="hidden lg:block">
             <div className="sticky top-4 max-h-[80vh] overflow-y-auto rounded-xl border border-white/10 bg-black/20 p-2">
@@ -147,7 +147,7 @@ export default function DailyBriefArchivePage() {
           </aside>
 
           {/* 본문 */}
-          <section className="min-w-0 rounded-2xl border border-white/10 bg-black/20 px-5 py-4">
+          <section className="min-w-0 rounded-2xl border border-white/10 bg-black/20 px-6 py-5">
             {state === "loading" && <div className="text-white/50">불러오는 중…</div>}
             {state === "error" && <div className="text-rose-300/80">브리핑을 불러오지 못했습니다.</div>}
             {state === "empty" && <div className="text-white/60">아직 저장된 데일리 브리핑이 없습니다.</div>}
