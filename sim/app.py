@@ -14,8 +14,61 @@ import engine
 import metrics
 import stress
 
-st.set_page_config(page_title="투자퍼포먼스 시뮬레이션", layout="wide")
+st.set_page_config(page_title="투자퍼포먼스 시뮬레이션", layout="wide", page_icon="📈")
 FOOTNOTE = "환율 제외 · 각 자산 로컬통화 정규화 · 순수 전략 성과 비교"
+
+# ── 고급 다크 테마(그라디언트 배경 + 정제 스타일) ──
+st.markdown(
+    """
+    <style>
+      .stApp {
+        background:
+          radial-gradient(1100px 620px at 12% -8%, rgba(99,102,241,0.14) 0%, rgba(10,10,11,0) 55%),
+          radial-gradient(900px 560px at 100% 0%, rgba(56,189,248,0.08) 0%, rgba(10,10,11,0) 50%),
+          #08080a;
+        background-attachment: fixed;
+      }
+      [data-testid="stHeader"] { background: transparent; }
+      [data-testid="stSidebar"] {
+        background: linear-gradient(180deg, #101016 0%, #0b0b0f 100%);
+        border-right: 1px solid rgba(255,255,255,0.06);
+      }
+      .block-container { padding-top: 2.2rem; max-width: 1500px; }
+      h1 {
+        font-weight: 800; letter-spacing: -0.02em;
+        background: linear-gradient(90deg, #e5e7eb 0%, #a5b4fc 60%, #38bdf8 100%);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      }
+      /* 탭 */
+      .stTabs [data-baseweb="tab-list"] { gap: 4px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .stTabs [data-baseweb="tab"] {
+        background: rgba(255,255,255,0.03); border-radius: 10px 10px 0 0;
+        padding: 8px 16px; color: rgba(229,231,235,0.7);
+      }
+      .stTabs [aria-selected="true"] {
+        background: rgba(129,140,248,0.16); color: #c7d2fe;
+        border-bottom: 2px solid #818cf8;
+      }
+      /* 버튼 */
+      .stButton > button {
+        border-radius: 10px; border: 1px solid rgba(129,140,248,0.5);
+        background: linear-gradient(180deg, rgba(129,140,248,0.22), rgba(129,140,248,0.10));
+        color: #e0e7ff; font-weight: 700;
+      }
+      .stButton > button:hover { border-color: #a5b4fc; background: rgba(129,140,248,0.30); }
+      /* 카드형 요소 */
+      [data-testid="stDataFrame"], [data-testid="stExpander"], .stAlert {
+        border: 1px solid rgba(255,255,255,0.07); border-radius: 12px;
+        background: rgba(255,255,255,0.02);
+      }
+      /* 입력요소 살짝 부드럽게 */
+      [data-baseweb="select"] > div, .stNumberInput input, .stDateInput input {
+        background: rgba(255,255,255,0.03) !important; border-radius: 8px !important;
+      }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 
 st.title("📈 투자퍼포먼스 시뮬레이션")
 st.caption("ETF 이평선 타이밍 + 인출/적립 백테스트 — " + FOOTNOTE)
@@ -161,6 +214,7 @@ if run:
                 fig.add_trace(go.Scatter(x=res.equity.index, y=res.equity.values,
                                          name=f"{data.ASSETS[tk].label} · {sname}", mode="lines"))
         fig.update_layout(height=560, hovermode="x unified", template="plotly_dark",
+                          paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
                           yaxis_title="평가액(로컬통화 정규화)", legend=dict(orientation="h"))
         st.plotly_chart(fig, use_container_width=True)
         st.caption(FOOTNOTE)
@@ -177,6 +231,7 @@ if run:
                 text=sub["자산"], textposition="top center", name=sname,
                 marker=dict(size=13)))
         fig.update_layout(height=560, template="plotly_dark",
+                          paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
                           xaxis_title="MDD (%, 클수록 위험)", yaxis_title=f"{yopt} (%)")
         st.plotly_chart(fig, use_container_width=True)
         st.caption(FOOTNOTE)
@@ -210,6 +265,7 @@ if run:
                     fig.add_vline(x=res.depletion_date, line_color="#ef4444", line_dash="dash",
                                   annotation_text="고갈")
                 fig.update_layout(height=340, template="plotly_dark",
+                                  paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
                                   title=f"{data.ASSETS[tk].label} · {sname} "
                                         f"(부족 {res.shortfall_count}회)")
                 st.plotly_chart(fig, use_container_width=True)
