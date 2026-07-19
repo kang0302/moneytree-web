@@ -23,6 +23,7 @@ def save_run(
     summary3: dict[str, str],
     metrics_rows: list[dict[str, Any]],
     period_label: str = "",
+    note: str = "",
 ) -> Path:
     """
     하나의 시뮬레이션 기록을 저장.
@@ -30,6 +31,7 @@ def save_run(
       params      : 재실행용 설정(위젯 값 dict)
       summary3    : {"내용": .., "결과": .., "시사점": ..}
       metrics_rows: 비교표 행(표시용, 직렬화 가능한 값만)
+      note        : 사용자가 직접 쓴 자유 메모(노트)
     """
     now = datetime.now()
     rid = f"{now:%Y%m%d-%H%M%S}_{_slug(name)}"
@@ -38,6 +40,7 @@ def save_run(
         "name": name or "(무제)",
         "saved_at": now.isoformat(timespec="seconds"),
         "period_label": period_label,
+        "note": note or "",
         "summary3": {
             "내용": summary3.get("내용", ""),
             "결과": summary3.get("결과", ""),

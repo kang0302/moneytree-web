@@ -457,16 +457,21 @@ if sim:
         st.caption(FOOTNOTE)
 
     with t6:
-        st.markdown("**이 시뮬레이션을 3줄 요약과 함께 저장합니다.**")
+        st.markdown("**이 시뮬레이션을 3줄 요약·메모와 함께 저장합니다.**")
         nm_in = st.text_input("제목", value=sim["default_title"], key="save_title")
         c_in = st.text_area("① 내용(설정)", value=ac, height=70, key="save_c")
         r_in = st.text_area("② 결과", value=ar, height=70, key="save_r")
         i_in = st.text_area("③ 시사점", value=ai, height=70, key="save_i")
+        note_in = st.text_area("📝 내 메모(노트) — 자유롭게 작성",
+                               value="", height=120, key="save_note",
+                               placeholder="예) 이 조건은 하락장 방어는 좋은데 상승장 수익을 많이 놓친다. "
+                                           "다음엔 재진입 dd를 3%로 좁혀서 비교해볼 것.")
         if st.button("💾 저장하기", key="save_btn"):
             p = store.save_run(
                 name=nm_in, params=sim.get("params", {}),
                 summary3={"내용": c_in, "결과": r_in, "시사점": i_in},
                 metrics_rows=show_records, period_label=period_lbl,
+                note=note_in,
             )
             st.session_state["_saved_msg"] = f"저장 완료 → {p.name}"
             st.rerun()
@@ -486,6 +491,9 @@ else:
 > **② 결과** — {s3.get('결과','')}
 > **③ 시사점** — {s3.get('시사점','')}
 """)
+        if rec.get("note"):
+            st.markdown("**📝 내 메모**")
+            st.info(rec["note"])
         if rec.get("metrics_rows"):
             st.markdown("**저장 당시 비교표**")
             st.dataframe(pd.DataFrame(rec["metrics_rows"]), use_container_width=True, hide_index=True)
