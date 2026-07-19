@@ -353,40 +353,6 @@ function computeGapPctW(returns: number[], weights: number[]) {
   return top - bot;
 }
 
-// MOMENTUM = 다기간 가중 혼합 (2026-07): 3D/7D/1M/YTD = 35/30/20/15. 선택 기간과 무관한 고정 지수.
-const MOMENTUM_MIX: Array<[PeriodKey, number]> = [["3D", 0.35], ["7D", 0.30], ["1M", 0.20], ["YTD", 0.15]];
-
-// 특정 기간의 (궤도가중) 상위 30% 평균 — momentum 재료. 라이브값(_liveReturn)은 배제(기간 고정).
-function periodTopMean(
-  assets: Array<{ id: string; metrics?: MetricsT }>,
-  wmap: Map<string, number>,
-  period: PeriodKey,
-): number | null {
-  const wr = assets
-    .map((a) => {
-      const m = a.metrics ? { ...a.metrics, _liveReturn: undefined } : undefined;
-      return { ret: extractReturnByPeriod(m, period), w: wmap.get(a.id) ?? 1 };
-    })
-    .filter((x): x is { ret: number; w: number } => typeof x.ret === "number" && Number.isFinite(x.ret));
-  if (!wr.length) return null;
-  const n = wr.length;
-  const order = wr.map((_, i) => i).sort((a, b) => wr[b].ret - wr[a].ret);
-  const topN = n >= 10 ? Math.ceil(n * 0.3) : 2;
-  const ti = order.slice(0, Math.min(topN, n));
-  return wmean(ti.map((i) => wr[i].ret), ti.map((i) => wr[i].w));
-}
-
-// 3D/7D/1M/YTD 상위30% 평균을 가중 혼합 → 0~1000. 가용 기간만으로 재정규화.
-function momentumBlendScore(assets: Array<{ id: string; metrics?: MetricsT }>, wmap: Map<string, number>): number {
-  let momNum = 0, satNum = 0, wAvail = 0;
-  for (const [mp, mw] of MOMENTUM_MIX) {
-    const tm = periodTopMean(assets, wmap, mp);
-    if (tm != null) { momNum += mw * tm; satNum += mw * anchorForPeriod(mp).retSat; wAvail += mw; }
-  }
-  if (wAvail <= 0) return 500;
-  return scoreReturnPct(momNum / wAvail, satNum / wAvail);
-}
-
 export function computeThemeReturnSummary(args: {
   nodes: Array<{ id: string; name?: string; type?: string; metrics?: MetricsT }>;
   period: any; // ✅ 여기 intentionally any: UI에서 뭐가 와도 normalizePeriodKey가 처리
@@ -483,8 +449,8 @@ export function computeThemeReturnSummary(args: {
   // Health: robust level(60) + breadth(40)
   const healthScore = clamp(levelScore * 0.6 + breadthScore * 0.4, 0, 1000);
 
-  // Momentum: 3D/7D/1M/YTD 상위30% 가중 혼합(35:30:20:15) — 선택 기간과 무관한 고정 지수
-  const momentumScore = momentumBlendScore(assets, wmap);
+  // Momentum (기간별 정규화)
+  const momentumScore = scoreReturnPct(momentumTopPct, anchor.retSat);
 
   // Diversification (#2: breadth 기반 + #5: gap 분산 감점)
   const divScore = scoreDiversification(breadthPct, gapPct, anchor.retSat);
