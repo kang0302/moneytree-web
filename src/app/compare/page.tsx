@@ -7,6 +7,7 @@ import Link from "next/link";
 import {
   Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
+  ScatterChart, Scatter, ReferenceLine, LabelList, Cell, ZAxis,
 } from "recharts";
 import { computeThemeReturnSummary, PeriodKey, tempByScore } from "@/lib/themeReturn";
 import { fetchThemeIndex, ThemeIndexItem } from "@/lib/themeIndex";
@@ -48,6 +49,18 @@ async function fetchGraph(id: string): Promise<Graph | null> {
   const tj: any = (await fetchJson(local)) ?? (await fetchJson(remote));
   if (!tj?.nodes) return null;
   return { nodes: tj.nodes, edges: tj.edges ?? tj.links ?? [] };
+}
+
+// 포지셔닝 산점도 배경용: 사전계산된 바로미터 일별 스냅샷(전 테마)
+type SnapItem = { themeId: string; themeName: string; score: number; health: number; momentum: number; diversification: number; tail: number };
+async function fetchLatestSnapshot(): Promise<{ date: string; items: SnapItem[] } | null> {
+  const dates = await fetchJson<string[]>("/data/history/index.json");
+  const latest = Array.isArray(dates) && dates.length ? dates[0] : null;
+  if (!latest) return null;
+  const stamp = latest.replace(/-/g, "");
+  const snap: any = await fetchJson(`/data/history/barometer_${stamp}.json`);
+  const items = (snap?.themes ?? []).filter((x: any) => typeof x?.health === "number" && typeof x?.momentum === "number");
+  return { date: latest, items };
 }
 
 function tickersOf(nodes: any[]): string[] {
@@ -149,6 +162,17 @@ export default function ComparePage() {
     return () => { alive = false; };
   }, [ids]); // eslint-disable-line
 
+  // 산점도 배경 스냅샷 로드(1회)
+  const [snapshot, setSnapshot] = useState<{ date: string; items: SnapItem[] } | null>(null);
+  useEffect(() => {
+    let alive = true;
+    (async () => {
+      const s = await fetchLatestSnapshot();
+      if (alive) setSnapshot(s);
+    })();
+    return () => { alive = false; };
+  }, []);
+
   const nameOf = useMemo(() => {
     const m = new Map<string, string>();
     for (const it of index) m.set(it.themeId, it.themeName);
@@ -213,6 +237,37 @@ export default function ComparePage() {
       }
     return out.sort((x, y) => y.jac - x.jac);
   }, [rows]);
+
+  // 범프차트: 기간별 EW 수익률 순위(1=최고)
+  const bumpData = useMemo(() => {
+    return PERIODS.map((p) => {
+      const vals = rows
+        .map((r) => ({ id: r.id, v: r.ewByPeriod[p] }))
+        .filter((x) => typeof x.v === "number" && Number.isFinite(x.v as number)) as Array<{ id: string; v: number }>;
+      vals.sort((a, b) => b.v - a.v);
+      const o: any = { period: p };
+      vals.forEach((x, i) => { o[x.id] = i + 1; });
+      return o;
+    });
+  }, [rows]);
+
+  // 포지셔닝 산점도: 배경(스냅샷 전 테마) + 선택 테마 하이라이트 (X=Health, Y=Momentum)
+  const selIdSet = useMemo(() => new Set(ids), [ids]);
+  const bgPoints = useMemo(() => {
+    if (!snapshot) return [];
+    return snapshot.items
+      .filter((it) => !selIdSet.has(it.themeId))
+      .map((it) => ({ x: it.health, y: it.momentum, name: it.themeName, score: it.score }));
+  }, [snapshot, selIdSet]);
+  const selPoints = useMemo(() => {
+    const snapMap = new Map((snapshot?.items ?? []).map((it) => [it.themeId, it]));
+    return rows.map((r, i) => {
+      const s = snapMap.get(r.id);
+      const x = typeof r.health === "number" ? r.health : s?.health;
+      const y = typeof r.momentum === "number" ? r.momentum : s?.momentum;
+      return { id: r.id, x, y, name: r.name, color: COLORS[i] };
+    }).filter((p) => typeof p.x === "number" && typeof p.y === "number");
+  }, [rows, snapshot]);
 
   return (
     <div className="min-h-screen bg-[#08080a] text-white/90">
@@ -312,6 +367,63 @@ export default function ComparePage() {
                     ))}
                   </LineChart>
                 </ResponsiveContainer>
+              </div>
+            </div>
+
+            {/* 차트: 범프(순위) + 포지셔닝 산점도 */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-5">
+              <div className="rounded-xl border border-white/8 bg-white/[0.02] p-4">
+                <div className="text-sm font-semibold text-white/80 mb-1">기간 랭킹 범프차트 <span className="text-white/40 font-normal">(선택 테마 · EW 수익률 순위, 1=최고)</span></div>
+                <ResponsiveContainer width="100%" height={320}>
+                  <LineChart data={bumpData} margin={{ top: 10, right: 16, bottom: 4, left: -18 }}>
+                    <CartesianGrid stroke="rgba(255,255,255,0.06)" />
+                    <XAxis dataKey="period" tick={{ fill: "rgba(255,255,255,0.5)", fontSize: 11 }} />
+                    <YAxis reversed allowDecimals={false} domain={[1, Math.max(2, rows.length)]}
+                      ticks={Array.from({ length: rows.length }, (_, i) => i + 1)}
+                      tick={{ fill: "rgba(255,255,255,0.45)", fontSize: 11 }} width={28} />
+                    <Tooltip contentStyle={{ background: "#111116", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 8, fontSize: 12 }}
+                      formatter={(v: any) => (typeof v === "number" ? `${v}위` : "—")} />
+                    <Legend wrapperStyle={{ fontSize: 11 }} />
+                    {rows.map((r, i) => (
+                      <Line key={r.id} type="monotone" dataKey={r.id} name={r.name} stroke={COLORS[i]}
+                        strokeWidth={2.5} dot={{ r: 4 }} connectNulls />
+                    ))}
+                  </LineChart>
+                </ResponsiveContainer>
+                <p className="text-[11px] text-white/35 mt-1">위로 갈수록(1위) 해당 기간 상대 수익 우위. 선이 요동치면 기간별 부침이 큰 테마.</p>
+              </div>
+
+              <div className="rounded-xl border border-white/8 bg-white/[0.02] p-4">
+                <div className="text-sm font-semibold text-white/80 mb-1">포지셔닝 산점도 <span className="text-white/40 font-normal">(Health × Momentum · 배경=전 테마{snapshot?.date ? ` ${snapshot.date}` : ""})</span></div>
+                <ResponsiveContainer width="100%" height={320}>
+                  <ScatterChart margin={{ top: 10, right: 16, bottom: 8, left: -18 }}>
+                    <CartesianGrid stroke="rgba(255,255,255,0.05)" />
+                    <XAxis type="number" dataKey="x" domain={[0, 1000]} name="Health"
+                      tick={{ fill: "rgba(255,255,255,0.4)", fontSize: 11 }} label={{ value: "Health →", position: "insideBottomRight", fill: "rgba(255,255,255,0.4)", fontSize: 10 }} />
+                    <YAxis type="number" dataKey="y" domain={[0, 1000]} name="Momentum" width={30}
+                      tick={{ fill: "rgba(255,255,255,0.4)", fontSize: 11 }} label={{ value: "Momentum →", angle: -90, position: "insideTopLeft", fill: "rgba(255,255,255,0.4)", fontSize: 10 }} />
+                    <ZAxis range={[30, 30]} />
+                    <ReferenceLine x={500} stroke="rgba(255,255,255,0.15)" strokeDasharray="4 4" />
+                    <ReferenceLine y={500} stroke="rgba(255,255,255,0.15)" strokeDasharray="4 4" />
+                    <Tooltip cursor={{ strokeDasharray: "3 3", stroke: "rgba(255,255,255,0.2)" }}
+                      content={({ payload }: any) => {
+                        const p = payload?.[0]?.payload;
+                        if (!p) return null;
+                        return (
+                          <div style={{ background: "#111116", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 8, padding: "6px 9px", fontSize: 12 }}>
+                            <div style={{ color: "#e5e7eb", fontWeight: 600 }}>{p.name}</div>
+                            <div style={{ color: "rgba(255,255,255,0.6)" }}>Health {p.x} · Momentum {p.y}</div>
+                          </div>
+                        );
+                      }} />
+                    <Scatter data={bgPoints} fill="rgba(255,255,255,0.18)" />
+                    <Scatter data={selPoints}>
+                      {selPoints.map((p) => <Cell key={p.id} fill={p.color} />)}
+                      <LabelList dataKey="name" position="top" style={{ fill: "#e5e7eb", fontSize: 10 }} />
+                    </Scatter>
+                  </ScatterChart>
+                </ResponsiveContainer>
+                <p className="text-[11px] text-white/35 mt-1">우상단=펀더멘털·모멘텀 동반 강세, 좌하단=약세. 색점=선택 테마.</p>
               </div>
             </div>
 
