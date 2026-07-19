@@ -288,9 +288,10 @@ def current_params() -> dict:
     return out
 
 
-# ───────────────────────── 실행 ─────────────────────────
+# ───────────────────────── 실행(계산만) ─────────────────────────
+# 결과를 session_state["_sim"]에 보관 → 이후 렌더/저장은 run 버튼과 무관하게 동작(버튼-인-버튼 방지).
 if run:
-    if not asset_keys or not strat_sel and not ladder_on:
+    if not asset_keys or (not strat_sel and not ladder_on):
         st.warning("자산과 전략(또는 래더)을 하나 이상 선택하세요.")
         st.stop()
     with st.spinner("데이터 로딩·백테스트 중…"):
@@ -333,12 +334,57 @@ if run:
             st.error("유효한 결과가 없습니다.")
             st.stop()
 
+        # 3줄 자동요약
+        best_ret = df.loc[df["total_return"].idxmax()]
+        low_mdd = df.loc[df["mdd"].idxmax()]
+        best_sharpe = df.loc[df["sharpe"].idxmax()]
+        auto_content = (("포트폴리오 " + pf_desc.split("(", 1)[-1].rstrip(")") if portfolio_mode
+                         else f"자산 {len(prices)}종")
+                        + f" · 전략 {len(strat_list)}개 · 기간 {period_lbl} · "
+                        + ("적립(DCA)" if mode == "dca" else "원금거치")
+                        + ("" if withdraw == "none" else f" · 인출 {wd_label}"))
+        auto_result = (f"최고수익 {best_ret['자산']}·{best_ret['전략']} {best_ret['total_return']*100:.1f}% "
+                       f"(MDD {best_ret['mdd']*100:.1f}%), 최저낙폭 {low_mdd['자산']}·{low_mdd['전략']} "
+                       f"MDD {low_mdd['mdd']*100:.1f}%, 최고Sharpe {best_sharpe['전략']} {best_sharpe['sharpe']:.2f}")
+        bench = df[df["전략"].str.contains("벤치마크")]
+        timing = df[~df["전략"].str.contains("벤치마크")]
+        if not bench.empty and not timing.empty:
+            b = bench["total_return"].mean() * 100
+            t = timing["total_return"].mean() * 100
+            auto_insight = (("타이밍/래더가 평균적으로 벤치마크 상회" if t > b else "벤치마크가 평균 상회")
+                            + f" (평균 총수익 타이밍 {t:.1f}% vs 벤치 {b:.1f}%); "
+                            + "위기구간에선 다단계 매도가 하방(MDD) 방어에 유리한 경향.")
+        else:
+            auto_insight = "전략 간 수익-낙폭 트레이드오프를 비교해 목표 위험선호에 맞는 조합을 선택."
+
+    st.session_state["_sim"] = {
+        "results": results, "df": df, "period_lbl": period_lbl,
+        "portfolio_mode": portfolio_mode, "pf_desc": pf_desc,
+        "withdraw": withdraw, "wd_label": wd_label, "mode": mode,
+        "prices_n": len(prices), "strat_n": len(strat_list),
+        "auto": (auto_content, auto_result, auto_insight),
+        "params": current_params(),
+        "default_title": f"{'PF ' if portfolio_mode else ''}{period_lbl} · {'/'.join(strat_sel)[:30]}",
+    }
+    st.session_state.pop("_recall_id", None)
+    st.session_state.pop("_saved_msg", None)
+
+
+# ───────────────────────── 렌더 & 저장(run 무관) ─────────────────────────
+sim = st.session_state.get("_sim")
+if sim:
+    results = sim["results"]
+    df = sim["df"]
+    period_lbl = sim["period_lbl"]
+    portfolio_mode = sim["portfolio_mode"]
+    wd = sim["withdraw"]
+
     st.success(f"완료 · 기간: {period_lbl} · "
-               + (pf_desc if portfolio_mode else f"자산 {len(prices)}") + f" × 전략 {len(strat_list)}")
+               + (sim["pf_desc"] if portfolio_mode else f"자산 {sim['prices_n']}")
+               + f" × 전략 {sim['strat_n']}")
 
     t1, t2, t3, t4, t5, t6 = st.tabs(["자산곡선", "위험-수익", "비교표", "인출경로", "시사점", "💾 저장"])
 
-    # ① 자산곡선
     with t1:
         fig = go.Figure()
         for (tk, sname), res in results.items():
@@ -353,7 +399,6 @@ if run:
         st.plotly_chart(fig, use_container_width=True)
         st.caption(FOOTNOTE)
 
-    # ② 위험-수익
     with t2:
         yopt = st.radio("Y축", ["총수익률", "XIRR"], horizontal=True)
         ycol = "total_return" if yopt == "총수익률" else "xirr"
@@ -369,7 +414,6 @@ if run:
         st.plotly_chart(fig, use_container_width=True)
         st.caption(FOOTNOTE)
 
-    # ③ 비교표 (총인출금액 포함)
     with t3:
         show = df[["자산", "전략", "final_value", "total_withdrawn", "total_return", "xirr", "twr_ann",
                    "volatility", "sharpe", "sortino", "mdd", "trades"]].copy()
@@ -383,11 +427,10 @@ if run:
             show[c] = show[c].round(0).map(lambda v: f"{v:,.0f}")
         st.dataframe(show, use_container_width=True, hide_index=True)
         st.caption(FOOTNOTE)
-        st.session_state["_last_table"] = show.to_dict("records")
+        show_records = show.to_dict("records")
 
-    # ④ 인출경로
     with t4:
-        if withdraw == "none":
+        if wd == "none":
             st.info("인출 모드가 아닙니다. 사이드바에서 '정액/정률' 인출을 선택하세요.")
         else:
             for (tk, sname), res in results.items():
@@ -408,57 +451,30 @@ if run:
                 st.plotly_chart(fig, use_container_width=True)
             st.caption(FOOTNOTE)
 
-    # ⑤ 시사점 자동요약 + 3줄 요약 계산
-    best_ret = df.loc[df["total_return"].idxmax()]
-    low_mdd = df.loc[df["mdd"].idxmax()]
-    best_sharpe = df.loc[df["sharpe"].idxmax()]
-    auto_content = (("포트폴리오 " + pf_desc.split("(", 1)[-1].rstrip(")") if portfolio_mode
-                     else f"자산 {len(prices)}종")
-                    + f" · 전략 {len(strat_list)}개 · 기간 {period_lbl} · "
-                    + ("적립(DCA)" if mode == "dca" else "원금거치")
-                    + ("" if withdraw == "none" else f" · 인출 {wd_label}"))
-    auto_result = (f"최고수익 {best_ret['자산']}·{best_ret['전략']} {best_ret['total_return']*100:.1f}% "
-                   f"(MDD {best_ret['mdd']*100:.1f}%), 최저낙폭 {low_mdd['자산']}·{low_mdd['전략']} "
-                   f"MDD {low_mdd['mdd']*100:.1f}%, 최고Sharpe {best_sharpe['전략']} {best_sharpe['sharpe']:.2f}")
-    bench = df[df["전략"].str.contains("벤치마크")]
-    timing = df[~df["전략"].str.contains("벤치마크")]
-    if not bench.empty and not timing.empty:
-        b = bench["total_return"].mean() * 100
-        t = timing["total_return"].mean() * 100
-        auto_insight = (("타이밍/래더가 평균적으로 벤치마크 상회" if t > b else "벤치마크가 평균 상회")
-                        + f" (평균 총수익 타이밍 {t:.1f}% vs 벤치 {b:.1f}%); "
-                        + "위기구간에선 다단계 매도가 하방(MDD) 방어에 유리한 경향.")
-    else:
-        auto_insight = "전략 간 수익-낙폭 트레이드오프를 비교해 목표 위험선호에 맞는 조합을 선택."
-
+    ac, ar, ai = sim["auto"]
     with t5:
-        st.markdown(f"""
-- 🥇 **최고 수익**: {best_ret['자산']} · {best_ret['전략']} — 총수익률 **{best_ret['total_return']*100:.1f}%**, MDD {best_ret['mdd']*100:.1f}%
-- 🛡️ **최저 낙폭**: {low_mdd['자산']} · {low_mdd['전략']} — MDD **{low_mdd['mdd']*100:.1f}%**, 총수익률 {low_mdd['total_return']*100:.1f}%
-- ⚖️ **최고 Sharpe**: {best_sharpe['자산']} · {best_sharpe['전략']} — Sharpe **{best_sharpe['sharpe']:.2f}**, 총수익률 {best_sharpe['total_return']*100:.1f}%
-- 📊 {auto_insight}
-""")
+        st.markdown(f"- 📊 {ai}")
         st.caption(FOOTNOTE)
 
-    # ⑥ 저장 (3줄 요약 편집 후 keep)
     with t6:
         st.markdown("**이 시뮬레이션을 3줄 요약과 함께 저장합니다.**")
-        nm_in = st.text_input("제목", value=f"{'PF ' if portfolio_mode else ''}{period_lbl} · "
-                                            f"{'/'.join(strat_sel)[:30]}")
-        c_in = st.text_area("① 내용(설정)", value=auto_content, height=70)
-        r_in = st.text_area("② 결과", value=auto_result, height=70)
-        i_in = st.text_area("③ 시사점", value=auto_insight, height=70)
-        if st.button("💾 저장하기"):
+        nm_in = st.text_input("제목", value=sim["default_title"], key="save_title")
+        c_in = st.text_area("① 내용(설정)", value=ac, height=70, key="save_c")
+        r_in = st.text_area("② 결과", value=ar, height=70, key="save_r")
+        i_in = st.text_area("③ 시사점", value=ai, height=70, key="save_i")
+        if st.button("💾 저장하기", key="save_btn"):
             p = store.save_run(
-                name=nm_in, params=current_params(),
+                name=nm_in, params=sim.get("params", {}),
                 summary3={"내용": c_in, "결과": r_in, "시사점": i_in},
-                metrics_rows=st.session_state.get("_last_table", []),
-                period_label=period_lbl,
+                metrics_rows=show_records, period_label=period_lbl,
             )
-            st.success(f"저장 완료 → {p.name}  (사이드바 '📚 저장된 시뮬레이션'에서 불러오기)")
+            st.session_state["_saved_msg"] = f"저장 완료 → {p.name}"
+            st.rerun()
+        if st.session_state.get("_saved_msg"):
+            st.success(st.session_state["_saved_msg"]
+                       + "  ·  사이드바 '📚 저장된 시뮬레이션'에서 불러올 수 있습니다.")
 
 else:
-    # 불러온 기록 리콜 뷰
     rid = st.session_state.get("_recall_id")
     rec = store.load_run(rid) if rid else None
     if rec:
