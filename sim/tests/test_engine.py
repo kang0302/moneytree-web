@@ -114,3 +114,54 @@ def test_metrics_sane():
     assert np.isfinite(m["mdd"]) and m["mdd"] <= 0.0
     assert np.isfinite(m["twr"])
     assert m["final_value"] > 0
+
+
+# ── 다단계 매도 래더 & 포트폴리오 ──
+from engine import run_portfolio  # noqa: E402
+
+
+def test_ladder_dd_tiers_reduce_mdd():
+    """급락장에서 DD 티어 매도가 벤치마크보다 MDD를 완화한다."""
+    idx = pd.bdate_range("2020-01-01", periods=400)
+    up = np.linspace(100, 180, 200)
+    down = np.linspace(180, 90, 200)
+    px = pd.Series(np.concatenate([up, down]), index=idx)
+    fp = FlowParams(mode="lump", principal=10_000.0, withdraw="none")
+    cp = CostParams(sell_tax=0.0, buy_fee=0.0, mmf_rate=0.0)
+    bench = run_backtest(px, StrategyParams(rule="benchmark"), fp, cp)
+    ladder = run_backtest(
+        px,
+        StrategyParams(rule="ladder",
+                       dd_sell_tiers=[(10.0, 0.5), (20.0, 0.5)],
+                       reentry_ma=200, reentry_dd=5.0),
+        fp, cp,
+    )
+    assert metrics.mdd(ladder.equity) > metrics.mdd(bench.equity)  # 낙폭(음수) 완화
+    assert ladder.trades >= 2  # 두 티어 발동
+
+
+def test_ladder_no_tiers_equals_benchmark():
+    """티어가 비면 래더는 벤치마크(항상 풀투자)와 사실상 동일."""
+    px = _prices(kind="up")
+    fp = FlowParams(mode="lump", principal=10_000.0, withdraw="none")
+    cp = CostParams(sell_tax=0.0, buy_fee=0.0, mmf_rate=0.0)
+    b = run_backtest(px, StrategyParams(rule="benchmark"), fp, cp)
+    l = run_backtest(px, StrategyParams(rule="ladder", reentry_ma=200), fp, cp)
+    assert np.allclose(b.equity.values, l.equity.values, rtol=1e-9, atol=1e-6)
+
+
+def test_portfolio_weightsum_equals_sleeves():
+    """포트폴리오 최종평가액 = 각 슬리브(비중 원금) 백테스트 합과 일치."""
+    pa = _prices(seed=1, kind="gbm")
+    pb = _prices(seed=2, kind="gbm")
+    prices = {"A": pa, "B": pb}
+    w = {"A": 0.6, "B": 0.4}
+    sp = StrategyParams(rule="benchmark")
+    fp = FlowParams(mode="lump", principal=10_000.0, withdraw="none")
+    cp = CostParams(sell_tax=0.0, buy_fee=0.0, mmf_rate=0.0)
+    pf = run_portfolio(prices, w, sp, fp, {"A": cp, "B": cp})
+    sleeve_a = run_backtest(pa, sp, FlowParams(mode="lump", principal=6_000.0), cp)
+    sleeve_b = run_backtest(pb, sp, FlowParams(mode="lump", principal=4_000.0), cp)
+    exp = sleeve_a.equity.iloc[-1] + sleeve_b.equity.iloc[-1]
+    assert abs(pf.equity.iloc[-1] - exp) / exp < 1e-9
+    assert abs(pf.total_contrib - 10_000.0) < 1e-6

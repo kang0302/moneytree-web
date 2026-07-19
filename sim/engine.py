@@ -18,12 +18,19 @@ TRADING_DAYS = 252
 class StrategyParams:
     name: str = "benchmark"
     ma_period: int = 200
-    rule: Literal["benchmark", "sell_all", "stop_buy", "partial_sell", "dd_breaker"] = "benchmark"
+    rule: Literal["benchmark", "sell_all", "stop_buy", "partial_sell", "dd_breaker", "ladder"] = "benchmark"
     partial_sell_pct: float = 0.0          # 일부매도 X% (0~1)
     dd_A: Optional[float] = None           # 전고점(252일) 대비 -A% 트리거 (%, 예: 20)
     dd_B: float = 0.0                      # 트리거 시 보유분 B% 매도 (%, 예: 50)
     dd_reload_C: Optional[float] = None    # -C%까지 회복 시 재장전 (%, 예: 10)
     execute_next_open: bool = False        # close-only 데이터 → 1일 지연 실행 프록시
+    # ── 다단계 일부매도 래더(rule="ladder") ──
+    # MA 이탈 티어: 종가가 각 MA(일수) 아래로 이탈 시 '현재 보유분'의 frac(0~1)을 매도(각 티어 1회, 재진입 시 재장전).
+    ma_sell_tiers: list = field(default_factory=list)   # [(ma_days:int, frac:float), ...]
+    # 전고점(252일) 대비 하락 티어: -pct% 도달 시 현재 보유분의 frac 매도(각 티어 1회).
+    dd_sell_tiers: list = field(default_factory=list)    # [(dd_pct:float, frac:float), ...]
+    reentry_ma: Optional[int] = None       # 재진입 이평(일). 종가≥이 MA & dd 회복 시 현금 전액 재투자·티어 재장전
+    reentry_dd: float = 5.0                # 재진입 dd 임계(전고점 대비 -reentry_dd% 이내 회복)
 
 
 @dataclass
@@ -91,6 +98,13 @@ def run_backtest(
 
     ma = prices.rolling(sp.ma_period).mean()
     high252 = prices.rolling(TRADING_DAYS, min_periods=1).max()
+
+    # 래더용 사전계산
+    ma_tier_series = [(int(p), float(f), prices.rolling(int(p)).mean()) for (p, f) in sp.ma_sell_tiers]
+    reentry_ma_series = prices.rolling(int(sp.reentry_ma)).mean() if sp.reentry_ma else None
+    tier_fired_ma = [False] * len(ma_tier_series)
+    tier_fired_dd = [False] * len(sp.dd_sell_tiers)
+    derisked = False
 
     # 시그널: 종가 ≥ MA (MA 미형성 구간은 risk-on 기본)
     risk_on = (prices >= ma) | ma.isna()
@@ -215,6 +229,35 @@ def run_backtest(
                 sell_fraction(price, sp.partial_sell_pct)
             if s and not dd_triggered:
                 invest_all(price)
+        elif sp.rule == "ladder":
+            dd_now = price / high252.iloc[i] - 1.0
+            # 재진입: 종가 ≥ 재진입MA & dd 회복 → 현금 전액 재투자 + 티어 재장전
+            if derisked:
+                reentry_ok = dd_now >= -sp.reentry_dd / 100.0
+                if reentry_ma_series is not None:
+                    m = reentry_ma_series.iloc[i]
+                    reentry_ok = reentry_ok and (pd.isna(m) or price >= m)
+                if reentry_ok:
+                    invest_all(price)
+                    derisked = False
+                    tier_fired_ma = [False] * len(ma_tier_series)
+                    tier_fired_dd = [False] * len(sp.dd_sell_tiers)
+            # 건강 구간: 유휴 현금(적립분 등) 투자
+            if not derisked:
+                invest_all(price)
+            # MA 이탈 티어 매도(각 1회)
+            for t, (_p, frac, mser) in enumerate(ma_tier_series):
+                mv = mser.iloc[i]
+                if not tier_fired_ma[t] and pd.notna(mv) and price < mv:
+                    sell_fraction(price, frac)
+                    tier_fired_ma[t] = True
+                    derisked = True
+            # 전고점 하락 티어 매도(각 1회)
+            for t, (thr, frac) in enumerate(sp.dd_sell_tiers):
+                if not tier_fired_dd[t] and dd_now <= -float(thr) / 100.0:
+                    sell_fraction(price, float(frac))
+                    tier_fired_dd[t] = True
+                    derisked = True
 
         # 5) DD 브레이커 (이평선룰과 독립적으로 발동)
         if sp.dd_A is not None:
@@ -264,3 +307,69 @@ def run_multi(
         for sp in strategies:
             out[(ticker, sp.name)] = run_backtest(px, sp, fp, cp)
     return out
+
+
+def run_portfolio(
+    prices: dict[str, pd.Series],
+    weights: dict[str, float],
+    sp: StrategyParams,
+    fp: FlowParams,
+    cp_by_ticker: dict[str, CostParams],
+) -> BacktestResult:
+    """
+    자산배분 포트폴리오 백테스트: 각 자산 슬리브를 비중(weight)만큼의 원금·적립·인출로 독립 실행한 뒤
+    공통 거래일에 정렬해 합산한다(동일 전략 적용). weights 합은 호출 전에 1.0로 정규화 권장.
+      - 각 슬리브 flow = 전체 flow × weight (정률 인출률은 슬리브별 동일 적용 → 합산 시 전체 정률과 근사)
+      - equity/ext_flow 합산, cashflows 병합(XIRR), 납입·인출·매매 합산.
+    """
+    # 공통 거래일(교집합)로 가격 정렬 → 모든 슬리브가 동일 index·flow 타이밍
+    common: Optional[pd.DatetimeIndex] = None
+    for px in prices.values():
+        idx = px.dropna().index
+        common = idx if common is None else common.intersection(idx)
+    if common is None or len(common) == 0:
+        empty = pd.Series(dtype=float)
+        return BacktestResult(empty, empty, empty, empty, [])
+    common = common.sort_values()
+
+    eq_sum: Optional[pd.Series] = None
+    flow_sum: Optional[pd.Series] = None
+    cashflows: list = []
+    total_contrib = total_withdrawn = 0.0
+    trades = shortfall = 0
+    depletion: Optional[pd.Timestamp] = None
+
+    for k, px in prices.items():
+        w = float(weights.get(k, 0.0))
+        if w <= 0:
+            continue
+        pxa = px.reindex(common).dropna()
+        if len(pxa) == 0:
+            continue
+        fp_k = FlowParams(
+            mode=fp.mode, principal=fp.principal * w, monthly_contrib=fp.monthly_contrib * w,
+            withdraw=fp.withdraw, withdraw_amt=fp.withdraw_amt * w, withdraw_pct=fp.withdraw_pct,
+        )
+        res = run_backtest(pxa, sp, fp_k, cp_by_ticker.get(k, CostParams()))
+        eqk = res.equity.reindex(common).ffill().fillna(0.0)
+        flk = res.ext_flow.reindex(common).fillna(0.0)
+        eq_sum = eqk if eq_sum is None else eq_sum.add(eqk, fill_value=0.0)
+        flow_sum = flk if flow_sum is None else flow_sum.add(flk, fill_value=0.0)
+        cashflows += res.cashflows
+        total_contrib += res.total_contrib
+        total_withdrawn += res.total_withdrawn
+        trades += res.trades
+        shortfall += res.shortfall_count
+        if res.depletion_date is not None:
+            depletion = res.depletion_date if depletion is None else min(depletion, res.depletion_date)
+
+    if eq_sum is None:
+        empty = pd.Series(dtype=float)
+        return BacktestResult(empty, empty, empty, empty, [])
+
+    zero = pd.Series(0.0, index=common)
+    return BacktestResult(
+        equity=eq_sum, cash=zero, shares=zero, ext_flow=flow_sum, cashflows=cashflows,
+        total_contrib=total_contrib, total_withdrawn=total_withdrawn,
+        depletion_date=depletion, shortfall_count=shortfall, trades=trades,
+    )
