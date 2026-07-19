@@ -390,6 +390,13 @@ export default function HomePage() {
             >
               📊 이동평균선 트래킹
             </Link>
+            <Link
+              href="/compare"
+              className="inline-flex items-center gap-2 rounded-full border border-fuchsia-400/40 bg-fuchsia-500/15 px-5 py-2 text-sm font-semibold text-fuchsia-100 transition hover:border-fuchsia-300/60 hover:bg-fuchsia-500/25"
+              title="여러 테마를 바로미터·기간수익률·자산구성으로 나란히 비교"
+            >
+              🆚 테마 비교
+            </Link>
           </div>
 
           <div className="mt-3 text-[12px] text-white/55 sm:text-[14px]">
