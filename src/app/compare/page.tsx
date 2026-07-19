@@ -63,6 +63,22 @@ async function fetchLatestSnapshot(): Promise<{ date: string; items: SnapItem[] 
   return { date: latest, items };
 }
 
+// 비교 저장/불러오기 (브라우저 localStorage)
+const LS_KEY = "knowvest.compare.saved.v1";
+type SavedCompare = { sid: string; title: string; ids: string[]; snap: PeriodKey; note: string; savedAt: string };
+function loadSaved(): SavedCompare[] {
+  try {
+    const raw = typeof window !== "undefined" ? window.localStorage.getItem(LS_KEY) : null;
+    const a = raw ? JSON.parse(raw) : [];
+    return Array.isArray(a) ? a : [];
+  } catch {
+    return [];
+  }
+}
+function writeSaved(list: SavedCompare[]) {
+  try { window.localStorage.setItem(LS_KEY, JSON.stringify(list)); } catch { /* ignore */ }
+}
+
 function tickersOf(nodes: any[]): string[] {
   const out: string[] = [];
   for (const n of nodes || []) {
@@ -173,11 +189,36 @@ export default function ComparePage() {
     return () => { alive = false; };
   }, []);
 
+  // 저장/불러오기 상태
+  const [saved, setSaved] = useState<SavedCompare[]>([]);
+  const [saveTitle, setSaveTitle] = useState("");
+  const [saveNote, setSaveNote] = useState("");
+  useEffect(() => { setSaved(loadSaved()); }, []);
+
   const nameOf = useMemo(() => {
     const m = new Map<string, string>();
     for (const it of index) m.set(it.themeId, it.themeName);
     return (id: string) => m.get(id) || id;
   }, [index]);
+
+  function saveCurrent() {
+    if (!ids.length) return;
+    const rec: SavedCompare = {
+      sid: `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`,
+      title: saveTitle.trim() || ids.map((id) => nameOf(id)).join(" · ").slice(0, 48),
+      ids: [...ids], snap, note: saveNote.trim(), savedAt: new Date().toISOString(),
+    };
+    const next = [rec, ...saved].slice(0, 50);
+    setSaved(next); writeSaved(next); setSaveTitle(""); setSaveNote("");
+  }
+  function loadRec(rec: SavedCompare) {
+    setIds(rec.ids.slice(0, MAX));
+    if (rec.snap) setSnap(rec.snap);
+  }
+  function deleteRec(sid: string) {
+    const next = saved.filter((s) => s.sid !== sid);
+    setSaved(next); writeSaved(next);
+  }
 
   const rows: Loaded[] = useMemo(
     () => ids.map((id, i) => compute(id, nameOf(id), graphs[id] ?? null, snap)),
@@ -329,6 +370,46 @@ export default function ComparePage() {
               </button>
             ))}
           </div>
+        </div>
+
+        {/* 저장 / 불러오기 */}
+        <div className="rounded-xl border border-white/8 bg-white/[0.02] p-4 mb-5">
+          <div className="text-sm font-semibold text-white/80 mb-2">
+            📚 비교 저장 / 불러오기 <span className="text-white/40 font-normal">(이 브라우저에 저장)</span>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-2">
+            <input value={saveTitle} onChange={(e) => setSaveTitle(e.target.value)}
+              placeholder="제목(비우면 테마명 자동)"
+              className="flex-1 bg-white/[0.03] border border-white/10 rounded-lg px-3 py-2 text-sm outline-none focus:border-indigo-400/60" />
+            <input value={saveNote} onChange={(e) => setSaveNote(e.target.value)}
+              placeholder="📝 메모(선택)"
+              className="flex-1 bg-white/[0.03] border border-white/10 rounded-lg px-3 py-2 text-sm outline-none focus:border-indigo-400/60" />
+            <button onClick={saveCurrent} disabled={!ids.length}
+              className="text-sm px-4 py-2 rounded-lg border border-emerald-400/40 bg-emerald-400/15 text-emerald-100 hover:bg-emerald-400/25 disabled:opacity-40 disabled:cursor-not-allowed whitespace-nowrap">
+              💾 현재 비교 저장
+            </button>
+          </div>
+          {saved.length > 0 && (
+            <div className="mt-3 flex flex-col divide-y divide-white/5">
+              {saved.map((s) => (
+                <div key={s.sid} className="flex items-center justify-between gap-2 py-1.5">
+                  <div className="min-w-0">
+                    <div className="truncate text-white/85 text-sm">
+                      {s.title}
+                      <span className="text-white/35 text-xs"> · {s.ids.length}개 · {s.snap} · {s.savedAt.slice(0, 10)}</span>
+                    </div>
+                    {s.note && <div className="text-[11px] text-white/40 truncate">📝 {s.note}</div>}
+                  </div>
+                  <div className="flex gap-1 shrink-0">
+                    <button onClick={() => loadRec(s)}
+                      className="text-xs px-2.5 py-1 rounded-md border border-indigo-400/40 bg-indigo-400/10 text-indigo-200 hover:bg-indigo-400/20">불러오기</button>
+                    <button onClick={() => deleteRec(s.sid)}
+                      className="text-xs px-2.5 py-1 rounded-md border border-white/10 text-white/50 hover:text-red-300 hover:border-red-400/40">삭제</button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         {ids.length === 0 ? (
