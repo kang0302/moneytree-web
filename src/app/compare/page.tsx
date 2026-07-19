@@ -310,6 +310,31 @@ export default function ComparePage() {
     }).filter((p) => typeof p.x === "number" && typeof p.y === "number");
   }, [rows, snapshot]);
 
+  // A vs B 승부표(정확히 2개 선택 시)
+  const h2h = useMemo(() => {
+    if (rows.length !== 2) return null;
+    const [A, B] = rows;
+    const base: Array<{ label: string; a: number | null; b: number | null; pct: boolean }> = [
+      { label: "Overall", a: A.overall, b: B.overall, pct: false },
+      { label: "Health", a: A.health, b: B.health, pct: false },
+      { label: "Momentum", a: A.momentum, b: B.momentum, pct: false },
+      { label: "Diversification", a: A.div, b: B.div, pct: false },
+      { label: "Risk(안정)", a: A.risk, b: B.risk, pct: false },
+      ...PERIODS.map((p) => ({ label: p, a: A.ewByPeriod[p] ?? null, b: B.ewByPeriod[p] ?? null, pct: true })),
+    ];
+    let aw = 0, bw = 0;
+    const list = base.map((m) => {
+      const an = typeof m.a === "number", bn = typeof m.b === "number";
+      let w: "A" | "B" | "T" = "T";
+      if (an && bn) w = (m.a as number) > (m.b as number) ? "A" : (m.b as number) > (m.a as number) ? "B" : "T";
+      else if (an) w = "A";
+      else if (bn) w = "B";
+      if (w === "A") aw++; else if (w === "B") bw++;
+      return { ...m, w };
+    });
+    return { A, B, list, aw, bw };
+  }, [rows]);
+
   return (
     <div className="min-h-screen bg-[#08080a] text-white/90">
       <div className="mx-auto max-w-[1400px] px-5 py-6">
@@ -451,8 +476,8 @@ export default function ComparePage() {
               </div>
             </div>
 
-            {/* 차트: 범프(순위) + 포지셔닝 산점도 */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-5">
+            {/* 차트: 범프(순위) + (2개일 때) A vs B 승부표 */}
+            <div className={`grid grid-cols-1 ${h2h ? "lg:grid-cols-2" : ""} gap-5 mb-5`}>
               <div className="rounded-xl border border-white/8 bg-white/[0.02] p-4">
                 <div className="text-sm font-semibold text-white/80 mb-1">기간 랭킹 범프차트 <span className="text-white/40 font-normal">(선택 테마 · EW 수익률 순위, 1=최고)</span></div>
                 <ResponsiveContainer width="100%" height={320}>
@@ -474,38 +499,83 @@ export default function ComparePage() {
                 <p className="text-[11px] text-white/35 mt-1">위로 갈수록(1위) 해당 기간 상대 수익 우위. 선이 요동치면 기간별 부침이 큰 테마.</p>
               </div>
 
-              <div className="rounded-xl border border-white/8 bg-white/[0.02] p-4">
-                <div className="text-sm font-semibold text-white/80 mb-1">포지셔닝 산점도 <span className="text-white/40 font-normal">(Health × Momentum · 배경=전 테마{snapshot?.date ? ` ${snapshot.date}` : ""})</span></div>
-                <ResponsiveContainer width="100%" height={320}>
-                  <ScatterChart margin={{ top: 10, right: 16, bottom: 8, left: -18 }}>
-                    <CartesianGrid stroke="rgba(255,255,255,0.05)" />
-                    <XAxis type="number" dataKey="x" domain={[0, 1000]} name="Health"
-                      tick={{ fill: "rgba(255,255,255,0.4)", fontSize: 11 }} label={{ value: "Health →", position: "insideBottomRight", fill: "rgba(255,255,255,0.4)", fontSize: 10 }} />
-                    <YAxis type="number" dataKey="y" domain={[0, 1000]} name="Momentum" width={30}
-                      tick={{ fill: "rgba(255,255,255,0.4)", fontSize: 11 }} label={{ value: "Momentum →", angle: -90, position: "insideTopLeft", fill: "rgba(255,255,255,0.4)", fontSize: 10 }} />
-                    <ZAxis range={[30, 30]} />
-                    <ReferenceLine x={500} stroke="rgba(255,255,255,0.15)" strokeDasharray="4 4" />
-                    <ReferenceLine y={500} stroke="rgba(255,255,255,0.15)" strokeDasharray="4 4" />
-                    <Tooltip cursor={{ strokeDasharray: "3 3", stroke: "rgba(255,255,255,0.2)" }}
-                      content={({ payload }: any) => {
-                        const p = payload?.[0]?.payload;
-                        if (!p) return null;
+              {h2h && (
+                <div className="rounded-xl border border-white/8 bg-white/[0.02] p-4 overflow-x-auto">
+                  <div className="text-sm font-semibold text-white/80 mb-1">⚔️ A vs B 승부표 <span className="text-white/40 font-normal">({snap} 기준 · 지표별 우세)</span></div>
+                  <div className="text-xs mb-2">
+                    <span style={{ color: COLORS[0] }}>{h2h.A.name}</span>
+                    <b className="text-white/80"> {h2h.aw}</b>
+                    <span className="text-white/40"> : </span>
+                    <b className="text-white/80">{h2h.bw} </b>
+                    <span style={{ color: COLORS[1] }}>{h2h.B.name}</span>
+                    <span className="text-white/50">
+                      {"  →  "}
+                      {h2h.aw > h2h.bw ? `${h2h.A.name} 우세` : h2h.bw > h2h.aw ? `${h2h.B.name} 우세` : "백중"}
+                    </span>
+                  </div>
+                  <table className="w-full text-sm border-collapse min-w-[360px]">
+                    <thead>
+                      <tr className="text-white/45 text-xs border-b border-white/10">
+                        <th className="text-left py-1.5 pr-2">지표</th>
+                        <th className="px-2 text-right" style={{ color: COLORS[0] }}>{h2h.A.name}</th>
+                        <th className="px-1"></th>
+                        <th className="px-2 text-left" style={{ color: COLORS[1] }}>{h2h.B.name}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {h2h.list.map((m) => {
+                        const fa = m.a == null ? "—" : m.pct ? fmtPct(m.a) : Math.round(m.a as number).toString();
+                        const fb = m.b == null ? "—" : m.pct ? fmtPct(m.b) : Math.round(m.b as number).toString();
                         return (
-                          <div style={{ background: "#111116", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 8, padding: "6px 9px", fontSize: 12 }}>
-                            <div style={{ color: "#e5e7eb", fontWeight: 600 }}>{p.name}</div>
-                            <div style={{ color: "rgba(255,255,255,0.6)" }}>Health {p.x} · Momentum {p.y}</div>
-                          </div>
+                          <tr key={m.label} className="border-b border-white/5">
+                            <td className="py-1.5 pr-2 text-white/60">{m.label}</td>
+                            <td className="px-2 text-right tabular-nums font-semibold"
+                              style={{ background: m.w === "A" ? `${COLORS[0]}22` : "", color: m.w === "A" ? COLORS[0] : "rgba(255,255,255,0.75)" }}>{fa}</td>
+                            <td className="px-1 text-center text-white/40">{m.w === "A" ? "◀" : m.w === "B" ? "▶" : "·"}</td>
+                            <td className="px-2 text-left tabular-nums font-semibold"
+                              style={{ background: m.w === "B" ? `${COLORS[1]}22` : "", color: m.w === "B" ? COLORS[1] : "rgba(255,255,255,0.75)" }}>{fb}</td>
+                          </tr>
                         );
-                      }} />
-                    <Scatter data={bgPoints} fill="rgba(255,255,255,0.18)" />
-                    <Scatter data={selPoints}>
-                      {selPoints.map((p) => <Cell key={p.id} fill={p.color} />)}
-                      <LabelList dataKey="name" position="top" style={{ fill: "#e5e7eb", fontSize: 10 }} />
-                    </Scatter>
-                  </ScatterChart>
-                </ResponsiveContainer>
-                <p className="text-[11px] text-white/35 mt-1">우상단=펀더멘털·모멘텀 동반 강세, 좌하단=약세. 색점=선택 테마.</p>
-              </div>
+                      })}
+                    </tbody>
+                  </table>
+                  <p className="text-[11px] text-white/35 mt-1">점수·수익률 모두 높을수록 우세(Risk는 높을수록 안정). ◀/▶ 는 우세 쪽.</p>
+                </div>
+              )}
+            </div>
+
+            {/* 포지셔닝 산점도 — 전체 폭 단독 섹션 */}
+            <div className="rounded-xl border border-white/8 bg-white/[0.02] p-4 mb-5">
+              <div className="text-sm font-semibold text-white/80 mb-1">포지셔닝 산점도 <span className="text-white/40 font-normal">(Health × Momentum · 배경=전 테마{snapshot?.date ? ` ${snapshot.date}` : ""})</span></div>
+              <ResponsiveContainer width="100%" height={480}>
+                <ScatterChart margin={{ top: 10, right: 24, bottom: 12, left: -6 }}>
+                  <CartesianGrid stroke="rgba(255,255,255,0.05)" />
+                  <XAxis type="number" dataKey="x" domain={[0, 1000]} name="Health"
+                    tick={{ fill: "rgba(255,255,255,0.4)", fontSize: 11 }} label={{ value: "Health →", position: "insideBottomRight", fill: "rgba(255,255,255,0.45)", fontSize: 11 }} />
+                  <YAxis type="number" dataKey="y" domain={[0, 1000]} name="Momentum" width={40}
+                    tick={{ fill: "rgba(255,255,255,0.4)", fontSize: 11 }} label={{ value: "Momentum →", angle: -90, position: "insideTopLeft", fill: "rgba(255,255,255,0.45)", fontSize: 11 }} />
+                  <ZAxis range={[36, 36]} />
+                  <ReferenceLine x={500} stroke="rgba(255,255,255,0.15)" strokeDasharray="4 4" />
+                  <ReferenceLine y={500} stroke="rgba(255,255,255,0.15)" strokeDasharray="4 4" />
+                  <Tooltip cursor={{ strokeDasharray: "3 3", stroke: "rgba(255,255,255,0.2)" }}
+                    content={({ payload }: any) => {
+                      const p = payload?.[0]?.payload;
+                      if (!p) return null;
+                      return (
+                        <div style={{ background: "#111116", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 8, padding: "6px 9px", fontSize: 12 }}>
+                          <div style={{ color: "#e5e7eb", fontWeight: 600 }}>{p.name}</div>
+                          <div style={{ color: "rgba(255,255,255,0.6)" }}>Health {p.x} · Momentum {p.y}</div>
+                        </div>
+                      );
+                    }} />
+                  <Scatter data={bgPoints} fill="rgba(255,255,255,0.18)" />
+                  <Scatter data={selPoints}>
+                    {selPoints.map((p) => <Cell key={p.id} fill={p.color} />)}
+                    <LabelList dataKey="name" position="top" style={{ fill: "#e5e7eb", fontSize: 11 }} />
+                  </Scatter>
+                </ScatterChart>
+              </ResponsiveContainer>
+              <p className="text-[11px] text-white/35 mt-1">우상단=펀더멘털·모멘텀 동반 강세, 좌상단=모멘텀만, 우하단=펀더멘털만, 좌하단=약세. 색점=선택 테마.</p>
             </div>
 
             {/* 지표 비교표 */}
