@@ -578,7 +578,7 @@ type MaItem = {
 };
 const MA_ASSETS_URL = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/ma_brief/assets.json";
 const MA_ASSETS_LOCAL = "/data/ma_brief/assets.json";
-const MA_BENCH = ["SPY", "DIA", "QQQ"];
+const MA_BENCH = ["SPY", "DIA", "QQQ", "SOXX", "069500", "229200"];
 const MA_BUCKET_ORDER = ["b1", "b2", "b3", "b4", "b5", "b6", "na"];
 const MA_ALIGN: Record<string, string> = { bull: "🟢 정배열", flat: "⚪ 혼조", bear: "🔴 역배열", na: "—" };
 const maGapColor = (v: number | null) => (v == null ? "#94a3b8" : v >= 0 ? "#f87171" : "#60a5fa");
@@ -660,7 +660,7 @@ function MaSignalView({ tickers }: { tickers: string[] }) {
   return (
     <div>
       <div className="mb-2 text-[11px] text-white/50">
-        기준일 {asof || "—"} · 이평선 5·20·60·120일 · ma-brief 동일 로직(FMP·EODHD) · 벤치마크 SPY·DIA·QQQ 하단 고정
+        기준일 {asof || "—"} · 이평선 5·20·60·120일 · ma-brief 동일 로직(FMP·EODHD) · 벤치마크 SPY·DIA·QQQ·SOXX·KODEX200·KODEX코스닥150 하단 고정
       </div>
       <div className="overflow-x-auto rounded-lg border border-white/10">
         <table className="w-full border-collapse text-[12.5px] whitespace-nowrap">
@@ -1005,7 +1005,7 @@ export default function ThemeBriefing({ themeId, nodes, freshInsightIds }: Props
         <div id="ma-signal-section" className="mt-6 border-t border-white/10 pt-5">
           <h2 className="mb-3 text-[16px] font-semibold text-white/90">
             📊 이동평균선 시그널
-            <span className="ml-2 text-[12px] font-normal text-white/55">(이 테마 종목 + 벤치마크 SPY·DIA·QQQ)</span>
+            <span className="ml-2 text-[12px] font-normal text-white/55">(이 테마 종목 + 벤치마크 SPY·DIA·QQQ·SOXX·KODEX200·KODEX코스닥150)</span>
           </h2>
           <MaSignalView tickers={themeTickers} />
         </div>
