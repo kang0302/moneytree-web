@@ -36,7 +36,11 @@ type ThemeRow = ThemeIndexItem & {
   score: number | null;
   note: string | null;
   topMover: { name: string; ret?: number } | null;
+  graph?: { nodes: any[]; edges: any[] } | null;
 };
+
+// 시장의 온도 기간 토글 옵션
+const HOME_PERIODS: PeriodKey[] = ["1D", "7D", "1M", "YTD", "1Y"];
 
 type UpdateItem = ChangelogEntry & { themeId: string; themeName: string };
 
@@ -201,6 +205,7 @@ function StatCounter({ label, value }: { label: string; value: number }) {
 export default function HomePage() {
   const router = useRouter();
   const [themes, setThemes] = useState<ThemeRow[]>([]);
+  const [period, setPeriod] = useState<PeriodKey>("7D");
   const [loading, setLoading] = useState(true);
   const [recent, setRecent] = useState<RecentItem[]>([]);
   const [favs, setFavs] = useState<FavItem[]>([]);
@@ -247,13 +252,12 @@ export default function HomePage() {
       let totalEdges = 0;
       const collectedUpdates: UpdateItem[] = [];
 
-      const period: PeriodKey = "7D";
       const enriched = await mapLimit(list, 6, async (row) => {
         const localUrl = `/data/theme/${row.themeId}.json`;
         const remoteUrl = `https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/${row.themeId}.json`;
         const tj = (await fetchJson<ThemeJson>(localUrl)) ?? (await fetchJson<ThemeJson>(remoteUrl));
         if (!tj?.nodes) {
-          return { ...row, score: null, note: null, topMover: null } as ThemeRow;
+          return { ...row, graph: null, score: null, note: null, topMover: null } as ThemeRow;
         }
         const cl = tj.meta?.changelog;
         if (Array.isArray(cl)) {
@@ -271,22 +275,8 @@ export default function HomePage() {
           else if (tp === "MACRO") macroIds.add(id);
         }
         totalEdges += Array.isArray(tj.edges) ? tj.edges.length : 0;
-        const summary: any = computeThemeReturnSummary({
-          nodes: tj.nodes,
-          edges: (tj as any).edges ?? (tj as any).links,
-          period,
-          minAssets: 5,
-          topMoversN: 1,
-        });
-        if (!summary || summary.ok === false) {
-          return { ...row, score: null, note: summary?.sentence ?? null, topMover: null } as ThemeRow;
-        }
-        const score = computeOverall(summary);
-        const tm = (summary.topMovers ?? [])[0];
-        const topMover = tm
-          ? { name: String(tm.name || tm.id || ""), ret: normalizeToPct(tm.ret) ?? undefined }
-          : null;
-        return { ...row, score, note: summary.note ?? null, topMover } as ThemeRow;
+        const graph = { nodes: tj.nodes, edges: ((tj as any).edges ?? (tj as any).links) ?? [] };
+        return { ...row, graph, score: null, note: null, topMover: null } as ThemeRow;
       });
 
       if (!alive) return;
@@ -303,6 +293,29 @@ export default function HomePage() {
     };
   }, []);
 
+  // ✅ 선택 기간(period)으로 barometer 점수 재계산 (그래프는 캐시 → 토글마다 재fetch 없음)
+  const scored = useMemo<ThemeRow[]>(() => {
+    return themes.map((t) => {
+      if (!t.graph?.nodes) return t;
+      const summary: any = computeThemeReturnSummary({
+        nodes: t.graph.nodes,
+        edges: t.graph.edges,
+        period,
+        minAssets: 5,
+        topMoversN: 1,
+      });
+      if (!summary || summary.ok === false) {
+        return { ...t, score: null, note: summary?.sentence ?? null, topMover: null };
+      }
+      const score = computeOverall(summary);
+      const tm = (summary.topMovers ?? [])[0];
+      const topMover = tm
+        ? { name: String(tm.name || tm.id || ""), ret: normalizeToPct(tm.ret) ?? undefined }
+        : null;
+      return { ...t, score, note: summary.note ?? null, topMover };
+    });
+  }, [themes, period]);
+
   // ✅ 시장의 온도 6단계: 밴드별 정렬 목록 + 분포
   const { perBand, bandCounts, scoredTotal } = useMemo(() => {
     const map: Record<string, (ThemeRow & { score: number })[]> = {};
@@ -312,7 +325,7 @@ export default function HomePage() {
       cnt[b.key] = 0;
     }
     let total = 0;
-    for (const t of themes) {
+    for (const t of scored) {
       if (typeof t.score !== "number") continue;
       const b = bandOf(t.score);
       if (!b) continue;
@@ -322,7 +335,7 @@ export default function HomePage() {
     }
     for (const k of Object.keys(map)) map[k].sort((a, b) => b.score - a.score);
     return { perBand: map, bandCounts: cnt, scoredTotal: total };
-  }, [themes]);
+  }, [scored]);
 
   const openBand = (key: string) => router.push(`/temperature/${key}`);
 
@@ -457,8 +470,26 @@ export default function HomePage() {
               <div className="text-[11px] uppercase tracking-wider text-white/45">Today&apos;s Pulse</div>
               <div className="text-[18px] font-bold">시장의 온도</div>
             </div>
-            <div className="text-[11px] text-white/45">
-              {loading ? "loading…" : `7D · ${themes.length} themes`}
+            <div className="flex flex-col items-end gap-1.5">
+              <div className="flex items-center gap-1" role="group" aria-label="기간 선택">
+                {HOME_PERIODS.map((p) => (
+                  <button
+                    key={p}
+                    type="button"
+                    onClick={() => setPeriod(p)}
+                    className={`rounded-md px-2 py-0.5 text-[11px] font-semibold transition ${
+                      period === p
+                        ? "border border-indigo-400/70 bg-indigo-400/20 text-indigo-100"
+                        : "border border-white/10 text-white/50 hover:text-white/80"
+                    }`}
+                  >
+                    {p}
+                  </button>
+                ))}
+              </div>
+              <div className="text-[11px] text-white/45">
+                {loading ? "loading…" : `${period} · ${themes.length} themes`}
+              </div>
             </div>
           </div>
 
