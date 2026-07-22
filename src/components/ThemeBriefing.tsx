@@ -430,7 +430,7 @@ function EventDbTimeline({ rows }: { rows: EventDbRow[] }) {
       {/* 가로 스크롤: 연도 컬럼(왼=최신) */}
       <div className="flex gap-3 overflow-x-auto pb-2">
         {groups.map(([year, items]) => (
-          <div key={year} className="flex w-[264px] shrink-0 flex-col">
+          <div key={year} className="flex min-w-[240px] flex-1 flex-col">
             {/* 연도 축 눈금 */}
             <div className="mb-2 flex items-center gap-2">
               <span className="rounded-md bg-white/10 px-2 py-0.5 text-[12px] font-bold tabular-nums text-white/85">
