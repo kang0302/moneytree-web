@@ -288,6 +288,83 @@ def current_params() -> dict:
     return out
 
 
+# ───────────────────────── 기본 비교 대시보드(진입 시 자동) ─────────────────────────
+DEFAULT_PRESETS = [
+    ("① KODEX 200  vs  KODEX 200타겟위클리커버드콜", ["KODEX200", "KODEX200_TWCC"]),
+    ("② KODEX 미국반도체  vs  ACE 미국반도체데일리타겟커버드콜(합성)", ["KODEX_USSEMI", "ACE_USSEMI_TDCC"]),
+    ("③ SPY  vs  QQQ  vs  DIA", ["SPY", "QQQ", "DIA"]),
+]
+
+
+@st.cache_data(ttl=3600, show_spinner=False)
+def _default_prices(keys: tuple, start_s: str, end_s: str) -> dict:
+    s = date.fromisoformat(start_s)
+    e = date.fromisoformat(end_s)
+    out = {}
+    for k in keys:
+        try:
+            px = data.get_prices(k, s, e)
+            if px is not None and len(px) > 5:
+                out[k] = px
+        except Exception:
+            pass
+    return out
+
+
+def _perf_stats(s: pd.Series) -> tuple[float, float, float]:
+    r = s.pct_change().dropna()
+    total = float(s.iloc[-1] / s.iloc[0] - 1)
+    mdd = float((s / s.cummax() - 1).min())
+    vol = float(r.std() * np.sqrt(252)) if len(r) > 1 else 0.0
+    return total, mdd, vol
+
+
+def render_default_dashboard() -> None:
+    st.markdown("### 📊 기본 비교 대시보드 — 최근 1년 성과")
+    st.caption("진입 시 자동 표시되는 프리셋입니다(정규화: 시작=100, 공통구간 정렬). "
+               "사이드바에서 백테스트를 실행하면 상세 결과로 전환됩니다. " + FOOTNOTE)
+    end = date.today()
+    try:
+        start = end.replace(year=end.year - 1)
+    except ValueError:  # 2/29
+        start = end.replace(year=end.year - 1, day=28)
+    for title, keys in DEFAULT_PRESETS:
+        st.markdown(f"**{title}**")
+        prices = _default_prices(tuple(keys), start.isoformat(), end.isoformat())
+        if not prices:
+            st.info("데이터를 불러오지 못했습니다(키/네트워크 확인).")
+            continue
+        # 공통구간(교집합)으로 정렬 → 동일 시작일에서 정규화(공정 비교)
+        idx = None
+        for s in prices.values():
+            idx = s.index if idx is None else idx.intersection(s.index)
+        if idx is None or len(idx) < 2:
+            st.info("공통 거래일이 부족합니다.")
+            continue
+        c_chart, c_stat = st.columns([3, 2])
+        fig = go.Figure()
+        stat_rows = []
+        for k, s in prices.items():
+            al = s.reindex(idx).ffill().dropna()
+            if al.empty:
+                continue
+            base = al / al.iloc[0] * 100.0
+            nm = data.ASSETS[k].label.split(" (")[0]
+            fig.add_trace(go.Scatter(x=base.index, y=base.values, name=nm, mode="lines"))
+            tot, mdd, vol = _perf_stats(al)
+            stat_rows.append({"자산": nm, "기간수익률": f"{tot*100:+.1f}%",
+                              "MDD": f"{mdd*100:.1f}%", "연변동성": f"{vol*100:.1f}%"})
+        span = f"{idx.min().date()} ~ {idx.max().date()}"
+        fig.update_layout(height=330, template="plotly_dark", hovermode="x unified",
+                          paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
+                          margin=dict(t=8, b=8, l=8, r=8), yaxis_title="정규화(시작=100)",
+                          legend=dict(orientation="h", yanchor="bottom", y=1.0))
+        c_chart.plotly_chart(fig, use_container_width=True)
+        c_stat.caption(f"구간: {span}")
+        c_stat.dataframe(pd.DataFrame(stat_rows), use_container_width=True, hide_index=True)
+    st.divider()
+
+
 # ───────────────────────── 실행(계산만) ─────────────────────────
 # 결과를 session_state["_sim"]에 보관 → 이후 렌더/저장은 run 버튼과 무관하게 동작(버튼-인-버튼 방지).
 if run:
@@ -498,5 +575,6 @@ else:
             st.markdown("**저장 당시 비교표**")
             st.dataframe(pd.DataFrame(rec["metrics_rows"]), use_container_width=True, hide_index=True)
     else:
+        render_default_dashboard()
         st.info("사이드바에서 파라미터를 설정하고 **백테스트 실행**을 누르세요. "
                 "포트폴리오 결합·다단계 매도 래더·기록 저장/불러오기를 지원합니다.")
