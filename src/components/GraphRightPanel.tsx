@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import type { PeriodKey, ThemeReturnSummary } from "@/lib/themeReturn";
 import { tempByScore as tempByScoreFn, computeThemeReturnSummary } from "@/lib/themeReturn";
 
@@ -302,146 +302,6 @@ function BarometerTrendChart({
   );
 }
 
-/* ─────────────────────────────────────────
-   테마 인사이트 노트 (로컬 전용)
-───────────────────────────────────────── */
-type NoteItem = { id: string; date: string; content: string; themeId: string };
-
-function noteLsKey(themeId: string) {
-  return `mt_notes_${themeId}`;
-}
-function noteLoad(themeId: string): NoteItem[] {
-  try {
-    const raw = localStorage.getItem(noteLsKey(themeId));
-    const parsed = JSON.parse(raw ?? "");
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
-  }
-}
-function noteSave(themeId: string, notes: NoteItem[]) {
-  try {
-    localStorage.setItem(noteLsKey(themeId), JSON.stringify(notes));
-  } catch {}
-}
-function noteFmtDate(iso: string) {
-  return new Date(iso).toLocaleString("ko-KR", {
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
-  });
-}
-
-
-function ThemeNotes({ themeId }: { themeId: string }) {
-  const [notes, setNotes] = useState<NoteItem[]>([]);
-  const [draft, setDraft] = useState("");
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
-
-  useEffect(() => {
-    setNotes(noteLoad(themeId));
-  }, [themeId]);
-
-  function handleSave() {
-    const content = draft.trim();
-    if (!content) return;
-    const note: NoteItem = {
-      id: `${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
-      date: new Date().toISOString(),
-      content,
-      themeId,
-    };
-    const next = [note, ...notes];
-    setNotes(next);
-    noteSave(themeId, next);
-    setDraft("");
-    textareaRef.current?.focus();
-  }
-
-  function handleDelete(id: string) {
-    const next = notes.filter((n) => n.id !== id);
-    setNotes(next);
-    noteSave(themeId, next);
-  }
-
-  function handleKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {
-    if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) {
-      e.preventDefault();
-      handleSave();
-    }
-  }
-
-  return (
-    <div className="mt-3">
-      {/* 섹션 헤더 */}
-      <div className="flex items-center gap-2">
-        <div className="text-base font-extrabold text-white">인사이트 노트</div>
-        {notes.length > 0 && (
-          <span className="rounded-full bg-white/10 px-2 py-0.5 text-[11px] font-semibold text-white/50">
-            {notes.length}
-          </span>
-        )}
-      </div>
-
-      {/* 입력 영역 */}
-      <div className="mt-2 flex flex-col gap-2">
-        <textarea
-          ref={textareaRef}
-          value={draft}
-          onChange={(e) => setDraft(e.target.value)}
-          onKeyDown={handleKeyDown}
-          placeholder="이 테마에 대한 인사이트를 기록하세요... (Ctrl+Enter로 저장)"
-          rows={3}
-          className="w-full resize-y rounded-xl border border-white/10 bg-black/20 px-3 py-2 text-[13px] leading-relaxed text-white/90 placeholder:text-white/30 outline-none focus:border-white/20"
-        />
-        <div className="flex justify-end">
-          <button
-            type="button"
-            onClick={handleSave}
-            disabled={!draft.trim()}
-            className="rounded-lg border border-white/10 bg-black/20 px-4 py-1.5 text-[12px] font-bold text-white/80 transition hover:bg-black/30 disabled:cursor-not-allowed disabled:text-white/25"
-          >
-            저장
-          </button>
-        </div>
-      </div>
-
-      {/* 노트 리스트 */}
-      {notes.length === 0 ? (
-        <div className="mt-2 rounded-xl border border-white/10 bg-black/20 p-3 text-sm text-white/40 text-center">
-          저장된 노트가 없습니다.
-        </div>
-      ) : (
-        <div className="mt-2 flex flex-col gap-2">
-          {notes.map((note) => (
-            <div
-              key={note.id}
-              className="rounded-xl border border-white/10 bg-black/20 p-3"
-            >
-              <div className="flex items-center justify-between">
-                <span className="text-[11px] text-white/35">{noteFmtDate(note.date)}</span>
-                <button
-                  type="button"
-                  onClick={() => handleDelete(note.id)}
-                  className="rounded px-1.5 py-0.5 text-[11px] text-white/25 transition hover:text-[#ef476f]"
-                  title="노트 삭제"
-                >
-                  ✕
-                </button>
-              </div>
-              <p className="mt-1.5 whitespace-pre-wrap break-words text-[13px] leading-relaxed text-white/80">
-                {note.content}
-              </p>
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
-
 type NodeT = {
   id: string;
   name?: string;
@@ -698,9 +558,6 @@ export default function GraphRightPanel({
           <div>아직 {period} 수익률이 없습니다.</div>
         )}
       </div>
-
-      {/* 테마 인사이트 노트 */}
-      <ThemeNotes themeId={currentThemeId} />
 
       <div className="mt-3 text-[11px] text-white/45">
         * PER 표시는 <b>Trailing PER</b>만 사용합니다.
