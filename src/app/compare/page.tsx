@@ -119,6 +119,9 @@ function compute(id: string, name: string, graph: Graph | null, snap: PeriodKey)
 function fmtPct(v: number | null | undefined): string {
   return typeof v === "number" && Number.isFinite(v) ? `${v >= 0 ? "+" : ""}${v.toFixed(1)}%` : "—";
 }
+function fmtScore(v: number | null | undefined): string {
+  return typeof v === "number" && Number.isFinite(v) ? String(Math.round(v)) : "—";
+}
 function scoreColor(v: number | null): string {
   if (v == null) return "#6b7280";
   if (v >= 700) return "#f87171";
@@ -564,7 +567,7 @@ export default function ComparePage() {
                       return (
                         <div style={{ background: "#111116", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 8, padding: "6px 9px", fontSize: 12 }}>
                           <div style={{ color: "#e5e7eb", fontWeight: 600 }}>{p.name}</div>
-                          <div style={{ color: "rgba(255,255,255,0.6)" }}>Health {p.x} · Momentum {p.y}</div>
+                          <div style={{ color: "rgba(255,255,255,0.6)" }}>Health {fmtScore(p.x)} · Momentum {fmtScore(p.y)}</div>
                         </div>
                       );
                     }} />
@@ -615,11 +618,11 @@ export default function ComparePage() {
                             </span>
                           ) : "—"}
                         </td>
-                        <td className="px-2 text-center font-semibold" style={{ color: scoreColor(r.overall) }}>{r.overall ?? "—"}</td>
-                        <td className="px-2 text-center text-white/70">{r.health ?? "—"}</td>
-                        <td className="px-2 text-center text-white/70">{r.momentum ?? "—"}</td>
-                        <td className="px-2 text-center text-white/70">{r.div ?? "—"}</td>
-                        <td className="px-2 text-center text-white/70">{r.risk ?? "—"}</td>
+                        <td className="px-2 text-center font-semibold" style={{ color: scoreColor(r.overall) }}>{fmtScore(r.overall)}</td>
+                        <td className="px-2 text-center text-white/70">{fmtScore(r.health)}</td>
+                        <td className="px-2 text-center text-white/70">{fmtScore(r.momentum)}</td>
+                        <td className="px-2 text-center text-white/70">{fmtScore(r.div)}</td>
+                        <td className="px-2 text-center text-white/70">{fmtScore(r.risk)}</td>
                         <td className="px-2 text-center text-white/50">{r.assetCount || "—"}</td>
                         {PERIODS.map((p) => {
                           const v = r.ewByPeriod[p];
