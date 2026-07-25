@@ -15,6 +15,7 @@ type Row = {
   close: number | null; g5: number | null; g20: number | null; g60: number | null;
   g120: number | null; hg: number | null; align: string; above: number;
   bucket: string; bucketLabel: string; seq7: string; signal: string; interp: string;
+  themes?: string[];
 };
 type Payload = {
   asof: string; generated: string; count: number;
@@ -248,6 +249,7 @@ export default function High52wPage() {
                     <Th onClick={() => onSort("bucket")}>버킷<Arrow k="bucket" /></Th>
                     <Th>최근7일</Th>
                     <Th>오늘 신호</Th>
+                    <Th>테마</Th>
                   </tr>
                 </thead>
                 <tbody>
@@ -267,6 +269,26 @@ export default function High52wPage() {
                       <td className="px-2 py-1 font-semibold text-white/90">{r.bucketLabel}</td>
                       <td className="px-2 py-1"><Seq7 s={r.seq7} /></td>
                       <td className="px-2 py-1 text-white/60">{r.signal}</td>
+                      <td className="px-2 py-1">
+                        <span className="flex flex-wrap gap-1">
+                          {(r.themes || []).slice(0, 8).map((tid) => (
+                            <a
+                              key={tid}
+                              href={`/graph/${tid}`}
+                              target="_blank"
+                              rel="noreferrer"
+                              title={`${tid} 그래프 보기`}
+                              className="rounded border border-indigo-400/30 bg-indigo-500/10 px-1.5 py-0.5 text-[10.5px] font-medium text-indigo-200 hover:border-indigo-300/60 hover:bg-indigo-500/25"
+                            >
+                              {tid.replace(/^T_/, "")}
+                            </a>
+                          ))}
+                          {(r.themes || []).length > 8 && (
+                            <span className="px-1 py-0.5 text-[10.5px] text-white/40">+{(r.themes || []).length - 8}</span>
+                          )}
+                          {(!r.themes || r.themes.length === 0) && <span className="text-white/25">—</span>}
+                        </span>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
