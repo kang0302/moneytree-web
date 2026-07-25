@@ -404,6 +404,13 @@ export default function HomePage() {
               📊 이동평균선 트래킹
             </Link>
             <Link
+              href="/high52w"
+              className="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/15 px-5 py-2 text-sm font-semibold text-emerald-100 transition hover:border-emerald-300/60 hover:bg-emerald-500/25"
+              title="전체 자산 중 52주 최고가 대비 -10% 이내(신고가 근접) 종목만 이평선 브리핑"
+            >
+              🚀 52주 신고가
+            </Link>
+            <Link
               href="/compare"
               className="inline-flex items-center gap-2 rounded-full border border-fuchsia-400/40 bg-fuchsia-500/15 px-5 py-2 text-sm font-semibold text-fuchsia-100 transition hover:border-fuchsia-300/60 hover:bg-fuchsia-500/25"
               title="여러 테마를 바로미터·기간수익률·자산구성으로 나란히 비교"
