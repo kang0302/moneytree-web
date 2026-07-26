@@ -1675,6 +1675,12 @@ export default function ForceGraphWrapper({
       if (typeof endpoint === "object") return normType(endpoint.type);
       return nodeTypeById.get(endpoint);
     };
+    // 🛰 허브형 테마 보정: 1궤도(THEMED_AS) Asset이 소수(≤2)인데 2궤도(L3)가 많은 경우
+    //   (예: 코어 1개 + 공급망/전략자산 다수인 "생태계" 테마). 코어가 theme에서 멀고
+    //   2궤도가 코어에 뭉쳐 보이는 문제 → 1궤도 링크는 짧게, 2궤도 링크는 길게 반전.
+    const isHubTheme = layerInfo.layer2.size <= 2 && layerInfo.layer3.size >= 4;
+    const themeL2Dist = isHubTheme ? 175 : GRAPH_CONFIG.force.linkDistance.themeL2;
+    const l2l3Dist = isHubTheme ? 250 : GRAPH_CONFIG.force.linkDistance.l2l3;
     fg.d3Force("link")?.distance((l: any) => {
       const sid = typeof l.source === "object" ? l.source?.id : l.source;
       const tid = typeof l.target === "object" ? l.target?.id : l.target;
@@ -1683,12 +1689,12 @@ export default function ForceGraphWrapper({
       if (isTheme(sid) || isTheme(tid)) {
         const other = isTheme(sid) ? tid : sid;
         if (layerInfo.layer1.has(other)) dist = GRAPH_CONFIG.force.linkDistance.themeL1;
-        else if (layerInfo.layer2.has(other)) dist = GRAPH_CONFIG.force.linkDistance.themeL2;
+        else if (layerInfo.layer2.has(other)) dist = themeL2Dist;
       } else if (
         (layerInfo.layer3.has(sid) && layerInfo.layer2.has(tid)) ||
         (layerInfo.layer3.has(tid) && layerInfo.layer2.has(sid))
       ) {
-        dist = GRAPH_CONFIG.force.linkDistance.l2l3;
+        dist = l2l3Dist;
       } else if (
         (layerInfo.layer4.has(sid) && layerInfo.layer3.has(tid)) ||
         (layerInfo.layer4.has(tid) && layerInfo.layer3.has(sid))
