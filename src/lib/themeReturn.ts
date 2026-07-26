@@ -105,7 +105,7 @@ function wmedian(vals: number[], ws: number[]) {
 export function computeOrbitWeights(
   assetIds: string[],
   nodes: Array<{ id: string; type?: string }>,
-  edges: Array<{ from?: string; to?: string; type?: string }> | undefined
+  edges: Array<{ from?: string; to?: string; type?: string; weight?: number }> | undefined
 ): Map<string, number> {
   const w = new Map<string, number>();
   if (!edges || !edges.length) {
@@ -114,17 +114,25 @@ export function computeOrbitWeights(
   }
   const themeId = (nodes.find((n) => (n.type ?? "").toUpperCase() === "THEME") || {}).id;
   const direct = new Set<string>();
+  // 명시적 per-edge weight 오버라이드(예: 투자사 지위만인 자산을 0.3으로) — 자산의 최소 weight 사용
+  const override = new Map<string, number>();
   for (const e of edges) {
     if ((e.type ?? "").toUpperCase() === "THEMED_AS" && e.from && (!themeId || e.to === themeId)) {
       direct.add(e.from);
     }
+    if (e.from && typeof e.weight === "number" && Number.isFinite(e.weight)) {
+      override.set(e.from, Math.min(override.get(e.from) ?? Infinity, e.weight));
+    }
   }
-  // THEMED_AS가 전혀 없으면(구조가 다른 테마) EW로 폴백
+  // THEMED_AS가 전혀 없으면(구조가 다른 테마) EW로 폴백. 단 명시적 weight는 존중.
   if (direct.size === 0) {
-    for (const id of assetIds) w.set(id, 1);
+    for (const id of assetIds) w.set(id, override.has(id) ? override.get(id)! : 1);
     return w;
   }
-  for (const id of assetIds) w.set(id, direct.has(id) ? 1 : 0.5);
+  for (const id of assetIds) {
+    if (override.has(id)) w.set(id, override.get(id)!);
+    else w.set(id, direct.has(id) ? 1 : 0.5);
+  }
   return w;
 }
 
