@@ -1679,7 +1679,7 @@ export default function ForceGraphWrapper({
     //   (예: 코어 1개 + 공급망/전략자산 다수인 "생태계" 테마). 코어가 theme에서 멀고
     //   2궤도가 코어에 뭉쳐 보이는 문제 → 1궤도 링크는 짧게, 2궤도 링크는 길게 반전.
     const isHubTheme = layerInfo.layer2.size <= 2 && layerInfo.layer3.size >= 4;
-    const themeL2Dist = isHubTheme ? 155 : GRAPH_CONFIG.force.linkDistance.themeL2;
+    const themeL2Dist = isHubTheme ? 103 : GRAPH_CONFIG.force.linkDistance.themeL2; // 155 × 2/3
     const l2l3Dist = isHubTheme ? 300 : GRAPH_CONFIG.force.linkDistance.l2l3;
     fg.d3Force("link")?.distance((l: any) => {
       const sid = typeof l.source === "object" ? l.source?.id : l.source;
