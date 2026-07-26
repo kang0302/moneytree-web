@@ -1781,6 +1781,12 @@ export default function ForceGraphWrapper({
       const linkForce = fg.d3Force("link") as any;
       const ls: any[] | undefined = typeof linkForce?.links === "function" ? linkForce.links() : undefined;
       if (!ls || ls.length === 0) return;
+      // 노드 위치 lookup (grandparent=코어 위치 참조용)
+      const nodeById = new Map<string, any>();
+      for (const l of ls) {
+        if (typeof l.source === "object" && l.source?.id) nodeById.set(l.source.id, l.source);
+        if (typeof l.target === "object" && l.target?.id) nodeById.set(l.target.id, l.target);
+      }
       for (const l of ls) {
         const src = typeof l.source === "object" ? l.source : null;
         const tgt = typeof l.target === "object" ? l.target : null;
@@ -1801,6 +1807,25 @@ export default function ForceGraphWrapper({
         if (typeof parent.x !== "number" || typeof parent.y !== "number") continue;
         if (typeof child.x  !== "number" || typeof child.y  !== "number") continue;
 
+        const childIsL3 = layerInfo.layer3.has(child.id);
+
+        // ✅ 허브형 + L4(CHR): 코어→자산 방향의 바깥으로 CHR을 밀어냄
+        //    → CHR이 자산 너머 방사 방향에 위치, 다른 자산의 엣지와 교차하지 않음.
+        if (isHubTheme && !childIsL3) {
+          const coreId = layerInfo.neighborMap.get(parent.id); // L3 자산의 부모 = 코어(L2)
+          const core = coreId ? nodeById.get(coreId) : null;
+          if (core && typeof core.x === "number" && typeof core.y === "number") {
+            let dx = parent.x - core.x, dy = parent.y - core.y;
+            const len = Math.hypot(dx, dy) || 1;
+            dx /= len; dy /= len;
+            const desiredX = parent.x + dx * l3l4Dist;
+            const desiredY = parent.y + dy * l3l4Dist;
+            child.vx = (child.vx ?? 0) + (desiredX - child.x) * alpha * TOWARD_PARENT_STRENGTH;
+            child.vy = (child.vy ?? 0) + (desiredY - child.y) * alpha * TOWARD_PARENT_STRENGTH;
+            continue;
+          }
+        }
+
         const pxRel = parent.x - cx;
         const pyRel = parent.y - cy;
         if (pxRel === 0 && pyRel === 0) continue;
@@ -1813,9 +1838,7 @@ export default function ForceGraphWrapper({
         const desiredX = cx + Math.cos(parentAngle) * targetR;
         const desiredY = cy + Math.sin(parentAngle) * targetR;
 
-        // 허브형: L3(2궤도 자산)는 부모방향 당김을 약화해 넓은 호로 펼치고,
-        //   L4(CHR)는 정상 당김을 유지해 각자의 (펼쳐진) L3 자산 옆에 정렬 → 라벨 겹침 완화.
-        const childIsL3 = layerInfo.layer3.has(child.id);
+        // 허브형: L3(2궤도 자산)는 부모방향 당김을 약화해 넓은 호로 펼침.
         const tps = isHubTheme ? (childIsL3 ? 0.03 : TOWARD_PARENT_STRENGTH) : TOWARD_PARENT_STRENGTH;
         child.vx = (child.vx ?? 0) + (desiredX - child.x) * alpha * tps;
         child.vy = (child.vy ?? 0) + (desiredY - child.y) * alpha * tps;
