@@ -128,19 +128,28 @@ function parseBriefingTable(
     const cells = trimmed.split("|").slice(1, -1).map((c) => c.trim());
     if (cells.length < 4) continue;
 
-    const firstCell = cells[0];
-    // [Name (TICKER)](URL) 형식
-    const nameMatch = firstCell.match(/\[([^\]]+)\]/);
-    if (!nameMatch) continue;
-    const nameWithTicker = nameMatch[1];
-    const ticker = extractTickerFromCell(nameWithTicker);
-    if (!ticker) continue;
+    // [Name (TICKER)](URL) 형식의 종목 셀 탐색 — "구분" 선행 컬럼이 있어도 동작
+    let nameWithTicker = "";
+    let ticker: string | null = null;
+    let nameIdx = -1;
+    for (let ci = 0; ci < cells.length; ci++) {
+      const nm = cells[ci].match(/\[([^\]]+)\]/);
+      if (!nm) continue;
+      const tk = extractTickerFromCell(nm[1]);
+      if (tk) {
+        nameWithTicker = nm[1];
+        ticker = tk;
+        nameIdx = ci;
+        break;
+      }
+    }
+    if (nameIdx < 0 || !ticker) continue;
 
     const assetNode = tickerToNode.get(ticker);
     const m = assetNode?.metrics;
 
-    // 핵심 사업 셀의 첫 줄 = 포지션
-    const bizCell = cells[1] || "";
+    // 핵심 사업 셀의 첫 줄 = 포지션 (종목 셀 다음 컬럼)
+    const bizCell = cells[nameIdx + 1] || "";
     const positionMatch = bizCell.match(/-\s*([^<]+)/);
     const position = (positionMatch ? positionMatch[1] : bizCell.replace(/<br\s*\/?>/gi, " "))
       .trim()
@@ -915,7 +924,15 @@ export default function ThemeBriefing({ themeId, nodes, freshInsightIds }: Props
                 );
               }
               const first = arr[0] as any;
-              const ticker = extractTickerFromCell(extractText(first));
+              // 종목(티커) 셀은 "구분" 선행 컬럼 때문에 첫 셀이 아닐 수 있어 전체 셀 탐색
+              let ticker: string | null = null;
+              for (const cell of arr) {
+                const tk = extractTickerFromCell(extractText(cell));
+                if (tk) {
+                  ticker = tk;
+                  break;
+                }
+              }
               const assetNode = ticker ? tickerToNode.get(ticker) : null;
               const isFreshInsight = !!(assetNode?.id && freshInsightIds?.has(assetNode.id));
               const firstCell = isFreshInsight && React.isValidElement(first)
