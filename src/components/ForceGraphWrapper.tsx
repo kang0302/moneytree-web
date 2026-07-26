@@ -22,7 +22,7 @@ import { getBriefingUrl } from "@/lib/getBriefingUrl";
 
 const ForceGraph2D = dynamic(() => import("react-force-graph-2d"), { ssr: false });
 
-export type PeriodKey = "3D" | "7D" | "1M" | "YTD" | "1Y" | "3Y";
+export type PeriodKey = "1D" | "3D" | "7D" | "15D" | "1M" | "YTD" | "1Y" | "2Y" | "3Y";
 
 type MetricsT = {
   perFwd12m?: number;
@@ -308,6 +308,20 @@ function getReturnByPeriod(n: NodeT, p: PeriodKey): number | undefined {
   // ✅ PATCH: return_7D / return_3D / return_1M / return_YTD / return_1Y / return_3Y 대응 추가
   const candidates: string[] = (() => {
     switch (P) {
+      case "1D":
+        return [
+          "ret1d",
+          "r1d",
+          "return1d",
+          "return_1d",
+          "return_1D", // ✅ 추가
+          "ret_1d",
+          "1d",
+          "1D",
+          "d1",
+          "1day",
+          "1days",
+        ];
       case "3D":
         return [
           "ret3d",
@@ -321,6 +335,20 @@ function getReturnByPeriod(n: NodeT, p: PeriodKey): number | undefined {
           "d3",
           "3day",
           "3days",
+        ];
+      case "15D":
+        return [
+          "ret15d",
+          "r15d",
+          "return15d",
+          "return_15d",
+          "return_15D", // ✅ 추가
+          "ret_15d",
+          "15d",
+          "15D",
+          "d15",
+          "15day",
+          "15days",
         ];
       case "7D":
         return [
@@ -377,6 +405,20 @@ function getReturnByPeriod(n: NodeT, p: PeriodKey): number | undefined {
           "y1",
           "1yr",
           "1year",
+        ];
+      case "2Y":
+        return [
+          "ret2y",
+          "r2y",
+          "return2y",
+          "return_2y",
+          "return_2Y", // ✅ 추가
+          "ret_2y",
+          "2y",
+          "2Y",
+          "y2",
+          "2yr",
+          "2year",
         ];
       case "3Y":
         return [
