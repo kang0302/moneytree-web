@@ -191,13 +191,18 @@ export function normalizeToPct(v: unknown): number | null {
 export function extractReturnByPeriod(metrics: MetricsT | undefined, periodRaw: unknown): number | null {
   if (!metrics) return null;
 
-  // ✅ Live-fetched return (Yahoo Finance) takes absolute priority.
-  // Already in percentage points, bypasses normalizeToPct heuristic.
-  const live = (metrics as any)._liveReturn;
-  if (typeof live === "number" && Number.isFinite(live)) return live;
-
   const period = normalizePeriodKey(periodRaw);
   if (!period) return null;
+
+  // ✅ Live-fetched return (Yahoo Finance)은 그 값이 산출된 기간(_liveReturnPeriod)에만 적용.
+  // (예전엔 모든 기간에 무조건 우선 적용 → 선택 기간 변경 시 다른 기간 EW/바로미터가
+  //  선택 기간 값으로 오염되는 버그. _liveReturnPeriod와 요청 기간이 같을 때만 사용.)
+  const live = (metrics as any)._liveReturn;
+  const livePeriodRaw = (metrics as any)._liveReturnPeriod;
+  if (typeof live === "number" && Number.isFinite(live)) {
+    const livePeriod = livePeriodRaw == null ? null : normalizePeriodKey(livePeriodRaw);
+    if (livePeriod == null || livePeriod === period) return live;
+  }
 
   const pick = (...keys: string[]) => {
     for (const k of keys) {
