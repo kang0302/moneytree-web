@@ -1679,8 +1679,8 @@ export default function ForceGraphWrapper({
     //   (예: 코어 1개 + 공급망/전략자산 다수인 "생태계" 테마). 코어가 theme에서 멀고
     //   2궤도가 코어에 뭉쳐 보이는 문제 → 1궤도 링크는 짧게, 2궤도 링크는 길게 반전.
     const isHubTheme = layerInfo.layer2.size <= 2 && layerInfo.layer3.size >= 4;
-    const themeL2Dist = isHubTheme ? 175 : GRAPH_CONFIG.force.linkDistance.themeL2;
-    const l2l3Dist = isHubTheme ? 250 : GRAPH_CONFIG.force.linkDistance.l2l3;
+    const themeL2Dist = isHubTheme ? 155 : GRAPH_CONFIG.force.linkDistance.themeL2;
+    const l2l3Dist = isHubTheme ? 300 : GRAPH_CONFIG.force.linkDistance.l2l3;
     fg.d3Force("link")?.distance((l: any) => {
       const sid = typeof l.source === "object" ? l.source?.id : l.source;
       const tid = typeof l.target === "object" ? l.target?.id : l.target;
@@ -1724,16 +1724,17 @@ export default function ForceGraphWrapper({
       const sL3 = layerInfo.layer3.has(sid), tL3 = layerInfo.layer3.has(tid);
       const sL4 = layerInfo.layer4.has(sid), tL4 = layerInfo.layer4.has(tid);
       if (sL2 && tL2) return 0.04;
-      if ((sL2 && tL3) || (sL3 && tL2)) return 0.05;
+      // 허브형 테마: L2↔L3 링크를 강하게 하여 늘어난 거리(300)를 실제로 강제 → 2궤도가 코어에서 멀리 확산.
+      if ((sL2 && tL3) || (sL3 && tL2)) return isHubTheme ? 0.3 : 0.05;
       if ((sL3 && tL4) || (sL4 && tL3)) return 0.05;
       // L1 끼리 / L1↔L3 등 드문 케이스도 안전하게 약하게
       if ((sL1 && tL3) || (sL3 && tL1)) return 0.05;
       return LINK_STRENGTH;
     });
 
-    // 🧲 Charge
-    fg.d3Force("charge")?.strength(GRAPH_CONFIG.force.charge);
-    fg.d3Force("charge")?.distanceMax?.(220);
+    // 🧲 Charge — 허브형 테마는 척력을 키워 2궤도 형제 노드를 넓은 호로 벌린다.
+    fg.d3Force("charge")?.strength(isHubTheme ? -360 : GRAPH_CONFIG.force.charge);
+    fg.d3Force("charge")?.distanceMax?.(isHubTheme ? 340 : 220);
 
     // 🧱 Collide: 노드별 시각 반경 + 타입별 패딩.
     //   - asset: 큰 패딩 (라벨 + 동그라미)
@@ -1792,8 +1793,11 @@ export default function ForceGraphWrapper({
         const desiredX = cx + Math.cos(parentAngle) * targetR;
         const desiredY = cy + Math.sin(parentAngle) * targetR;
 
-        child.vx = (child.vx ?? 0) + (desiredX - child.x) * alpha * TOWARD_PARENT_STRENGTH;
-        child.vy = (child.vy ?? 0) + (desiredY - child.y) * alpha * TOWARD_PARENT_STRENGTH;
+        // 허브형 테마: 단일 코어의 각도로 형제들이 정렬돼 뭉치는 것을 막기 위해 부모방향 당김을 약화
+        //   → collide/charge가 2궤도 형제들을 부모 주변 넓은 호로 펼치게 둔다.
+        const tps = isHubTheme ? 0.03 : TOWARD_PARENT_STRENGTH;
+        child.vx = (child.vx ?? 0) + (desiredX - child.x) * alpha * tps;
+        child.vy = (child.vy ?? 0) + (desiredY - child.y) * alpha * tps;
       }
     };
     (towardParent as any).initialize = () => {}; // d3-force 규약: nodes 주입 불필요
