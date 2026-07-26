@@ -1698,8 +1698,8 @@ export default function ForceGraphWrapper({
     //   2궤도가 코어에 뭉쳐 보이는 문제 → 1궤도 링크는 짧게, 2궤도 링크는 길게 반전.
     const isHubTheme = layerInfo.layer2.size <= 2 && layerInfo.layer3.size >= 4;
     const themeL2Dist = isHubTheme ? 103 : GRAPH_CONFIG.force.linkDistance.themeL2; // 155 × 2/3
-    const l2l3Dist = isHubTheme ? 300 : GRAPH_CONFIG.force.linkDistance.l2l3;
-    const l3l4Dist = isHubTheme ? 150 : GRAPH_CONFIG.force.linkDistance.l3l4; // CHR을 자산에서 더 멀리 → 라벨 여유
+    const l2l3Dist = isHubTheme ? 380 : GRAPH_CONFIG.force.linkDistance.l2l3; // 반경 확대 → 자산·CHR 접선 여유
+    const l3l4Dist = isHubTheme ? 195 : GRAPH_CONFIG.force.linkDistance.l3l4; // CHR을 자산에서 더 멀리 → 라벨 여유
     fg.d3Force("link")?.distance((l: any) => {
       const sid = typeof l.source === "object" ? l.source?.id : l.source;
       const tid = typeof l.target === "object" ? l.target?.id : l.target;
@@ -1752,8 +1752,8 @@ export default function ForceGraphWrapper({
     });
 
     // 🧲 Charge — 허브형 테마는 척력을 키워 2궤도 형제 노드를 넓은 호로 벌린다.
-    fg.d3Force("charge")?.strength(isHubTheme ? -360 : GRAPH_CONFIG.force.charge);
-    fg.d3Force("charge")?.distanceMax?.(isHubTheme ? 340 : 220);
+    fg.d3Force("charge")?.strength(isHubTheme ? -460 : GRAPH_CONFIG.force.charge);
+    fg.d3Force("charge")?.distanceMax?.(isHubTheme ? 420 : 220);
 
     // 🧱 Collide: 노드별 시각 반경 + 타입별 패딩.
     //   - asset: 큰 패딩 (라벨 + 동그라미)
@@ -1764,10 +1764,11 @@ export default function ForceGraphWrapper({
       const baseR = nodeRadius(n as NodeT, isTheme);
       const pads = GRAPH_CONFIG.force.collidePad;
       if (isTheme) return baseR + pads.theme;
-      if (normType((n as NodeT).type) === "ASSET") return baseR + pads.asset;
+      // 허브형: 자산·외궤도 CHR 패딩을 키워 라벨 겹침 완화.
+      if (normType((n as NodeT).type) === "ASSET") return baseR + pads.asset + (isHubTheme ? 16 : 0);
       const id = n?.id as string | undefined;
       if (id && (layerInfo.layer3.has(id) || layerInfo.layer4.has(id))) {
-        return baseR + pads.smallOuter;
+        return baseR + pads.smallOuter + (isHubTheme ? 12 : 0);
       }
       return baseR + pads.smallL1;
     });
@@ -2269,12 +2270,16 @@ export default function ForceGraphWrapper({
                   </div>
                 </div>
 
-                {/* 핵심사업 — briefing 표에서 ticker 매칭 */}
+                {/* 핵심사업 — briefing 표에서 ticker 매칭, 없으면 노드의 coreBiz/desc 필드(ETF 등) 폴백 */}
                 {(() => {
                   const tk = getTicker(hoverNode);
-                  const cb = tk ? coreBizMap.get(tk) : undefined;
+                  const cb =
+                    (tk ? coreBizMap.get(tk) : undefined) ??
+                    (hoverNode as any)?.coreBiz ??
+                    (hoverNode as any)?.desc ??
+                    undefined;
                   if (!cb) return null;
-                  const lines = cb.split(/<br\s*\/?>/i).map((s) => s.trim()).filter(Boolean);
+                  const lines = String(cb).split(/<br\s*\/?>/i).map((s) => s.trim()).filter(Boolean);
                   return (
                     <div className="mt-3 border-t border-white/10 pt-2">
                       <div className="text-[10px] font-semibold uppercase tracking-wide text-white/50">
