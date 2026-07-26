@@ -380,7 +380,7 @@ export default function HomePage() {
         </header>
 
         {/* Hero Search */}
-        <section className="mb-6 py-10 text-center sm:py-14">
+        <section className="mb-3 pt-10 pb-5 text-center sm:pt-14 sm:pb-6">
           <div className="text-[28px] font-extrabold leading-tight tracking-tight text-white sm:text-[40px]">
             오늘, 어떤 시장을 들여다볼까요?
           </div>
@@ -451,21 +451,21 @@ export default function HomePage() {
         {/* Daily Brief — 5줄 핵심 요약 + 아카이브 링크 */}
         <Link
           href="/daily-brief"
-          className="mb-4 block rounded-2xl border border-sky-400/25 bg-sky-500/[0.05] px-4 py-3 backdrop-blur transition hover:border-sky-400/40 hover:bg-sky-500/[0.08]"
+          className="mb-4 block rounded-2xl border border-sky-400/25 bg-sky-500/[0.05] px-6 py-5 backdrop-blur transition hover:border-sky-400/40 hover:bg-sky-500/[0.08]"
         >
-          <div className="mb-2 flex items-end justify-between">
-            <div className="flex items-center gap-2">
-              <span className="text-[11px] uppercase tracking-wider text-sky-300/70">Daily Brief</span>
-              {dailyBrief?.date ? <span className="text-[11px] text-white/45">{dailyBrief.date}</span> : null}
+          <div className="mb-3.5 flex items-end justify-between">
+            <div className="flex items-center gap-2.5">
+              <span className="text-[12px] uppercase tracking-wider text-sky-300/75">Daily Brief</span>
+              {dailyBrief?.date ? <span className="text-[12px] text-white/50">{dailyBrief.date}</span> : null}
             </div>
-            <span className="text-[11px] text-white/45">전체 브리핑 보기 →</span>
+            <span className="text-[12px] text-white/50">전체 브리핑 보기 →</span>
           </div>
 
           {dailyBrief && dailyBrief.themes?.length ? (
-            <ol className="space-y-1">
+            <ol className="space-y-2.5">
               {dailyBrief.themes.slice(0, 5).map((t, i) => (
-                <li key={i} className="flex items-baseline gap-2 text-[13px] leading-snug">
-                  <span className="shrink-0 text-white/35">{i + 1}</span>
+                <li key={i} className="flex items-baseline gap-2.5 text-[14.5px] leading-relaxed">
+                  <span className="shrink-0 tabular-nums text-white/35">{i + 1}</span>
                   <span className="shrink-0 font-semibold text-white/90">{t.name}</span>
                   {t.strength ? <span className="shrink-0 text-amber-300/80">{t.strength}</span> : null}
                   <span className="min-w-0 flex-1 truncate text-white/55">{t.reason}</span>
@@ -473,7 +473,7 @@ export default function HomePage() {
               ))}
             </ol>
           ) : (
-            <div className="text-[13px] text-white/60">오늘의 핫 테마 브리핑을 불러오는 중…</div>
+            <div className="text-[14px] text-white/60">오늘의 핫 테마 브리핑을 불러오는 중…</div>
           )}
         </Link>
 
