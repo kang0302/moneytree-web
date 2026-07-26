@@ -1237,27 +1237,45 @@ export default function ForceGraphWrapper({
       l2AngleById.set(id, LAYER2_CENTER_ANGLE + (i - (l2Ids.length - 1) / 2) * l2Step);
     });
 
-    // Layer3: parent(L2) 각도를 그대로 사용
+    // 허브형(단일 코어 L2 + 다수 L3): L3 자산이 부모(단일 코어)의 한 각도로 몰리는 것을 막기 위해
+    //   L3를 섹터 전체에 고르게 분산. → 각 L3의 CHR(L4)도 흩어져 라벨 겹침 완화.
+    const isHubLayout = layerInfo.layer2.size <= 2 && layerInfo.layer3.size >= 4;
     const l3Ids = allClonedNodes
       .filter((n) => layerInfo.layer3.has(n.id))
       .map((n) => n.id);
-    assignByAngle(l3Ids, (id) => {
-      const parent = layerInfo.neighborMap.get(id);
-      if (!parent) return LAYER2_CENTER_ANGLE;
-      const a = l2AngleById.get(parent);
-      return typeof a === "number" ? a : LAYER2_CENTER_ANGLE;
-    });
+    const l3AngleById = new Map<string, number>();
+    if (isHubLayout) {
+      const l3Step = l3Ids.length > 1
+        ? Math.min(LAYER2_STACK_STEP, (2 * LAYER2_HALF_SPAN) / l3Ids.length)
+        : 0;
+      const angAt = (i: number) => LAYER2_CENTER_ANGLE + (i - (l3Ids.length - 1) / 2) * l3Step;
+      assignByAngle(l3Ids, (_id, i) => angAt(i));
+      l3Ids.forEach((id, i) => l3AngleById.set(id, angAt(i)));
+    } else {
+      assignByAngle(l3Ids, (id) => {
+        const parent = layerInfo.neighborMap.get(id);
+        if (!parent) return LAYER2_CENTER_ANGLE;
+        const a = l2AngleById.get(parent);
+        return typeof a === "number" ? a : LAYER2_CENTER_ANGLE;
+      });
+      l3Ids.forEach((id) => {
+        const parent = layerInfo.neighborMap.get(id);
+        const a = parent ? l2AngleById.get(parent) : undefined;
+        l3AngleById.set(id, typeof a === "number" ? a : LAYER2_CENTER_ANGLE);
+      });
+    }
 
-    // Layer4: parent(L3 자산) → grandparent(L2)의 각도로 추정
+    // Layer4: parent(L3)의 각도를 사용 — 허브면 분산된 L3 각도, 아니면 grandparent(L2) 각도로 폴백.
     const l4Ids = allClonedNodes
       .filter((n) => layerInfo.layer4.has(n.id))
       .map((n) => n.id);
     assignByAngle(l4Ids, (id) => {
       const parent = layerInfo.neighborMap.get(id);
       if (!parent) return LAYER2_CENTER_ANGLE;
+      const pa = l3AngleById.get(parent);
+      if (typeof pa === "number") return pa;
       const grandparent = layerInfo.neighborMap.get(parent);
-      if (!grandparent) return LAYER2_CENTER_ANGLE;
-      const a = l2AngleById.get(grandparent);
+      const a = grandparent ? l2AngleById.get(grandparent) : undefined;
       return typeof a === "number" ? a : LAYER2_CENTER_ANGLE;
     });
 
@@ -1681,6 +1699,7 @@ export default function ForceGraphWrapper({
     const isHubTheme = layerInfo.layer2.size <= 2 && layerInfo.layer3.size >= 4;
     const themeL2Dist = isHubTheme ? 103 : GRAPH_CONFIG.force.linkDistance.themeL2; // 155 × 2/3
     const l2l3Dist = isHubTheme ? 300 : GRAPH_CONFIG.force.linkDistance.l2l3;
+    const l3l4Dist = isHubTheme ? 150 : GRAPH_CONFIG.force.linkDistance.l3l4; // CHR을 자산에서 더 멀리 → 라벨 여유
     fg.d3Force("link")?.distance((l: any) => {
       const sid = typeof l.source === "object" ? l.source?.id : l.source;
       const tid = typeof l.target === "object" ? l.target?.id : l.target;
@@ -1699,7 +1718,7 @@ export default function ForceGraphWrapper({
         (layerInfo.layer4.has(sid) && layerInfo.layer3.has(tid)) ||
         (layerInfo.layer4.has(tid) && layerInfo.layer3.has(sid))
       ) {
-        dist = GRAPH_CONFIG.force.linkDistance.l3l4;
+        dist = l3l4Dist;
       }
       const sType = endpointType(l.source);
       const tType = endpointType(l.target);
@@ -1793,9 +1812,10 @@ export default function ForceGraphWrapper({
         const desiredX = cx + Math.cos(parentAngle) * targetR;
         const desiredY = cy + Math.sin(parentAngle) * targetR;
 
-        // 허브형 테마: 단일 코어의 각도로 형제들이 정렬돼 뭉치는 것을 막기 위해 부모방향 당김을 약화
-        //   → collide/charge가 2궤도 형제들을 부모 주변 넓은 호로 펼치게 둔다.
-        const tps = isHubTheme ? 0.03 : TOWARD_PARENT_STRENGTH;
+        // 허브형: L3(2궤도 자산)는 부모방향 당김을 약화해 넓은 호로 펼치고,
+        //   L4(CHR)는 정상 당김을 유지해 각자의 (펼쳐진) L3 자산 옆에 정렬 → 라벨 겹침 완화.
+        const childIsL3 = layerInfo.layer3.has(child.id);
+        const tps = isHubTheme ? (childIsL3 ? 0.03 : TOWARD_PARENT_STRENGTH) : TOWARD_PARENT_STRENGTH;
         child.vx = (child.vx ?? 0) + (desiredX - child.x) * alpha * tps;
         child.vy = (child.vy ?? 0) + (desiredY - child.y) * alpha * tps;
       }
