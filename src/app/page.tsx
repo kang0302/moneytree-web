@@ -76,6 +76,21 @@ function relLabel(d: number | null): string {
   if (d < 30) return `${Math.floor(d / 7)}주 전`;
   return `${Math.floor(d / 30)}개월 전`;
 }
+// 큐레이션 히스토리를 기술용어 대신 콘텐츠 중심 한 줄로 서술
+function changeSummary(u: { title?: string; detail?: string }): string {
+  const raw = `${u.title ?? ""} ${u.detail ?? ""}`;
+  if (/백필|엣지|근거 구체화|THEMED_AS|IMPACTS/.test(raw)) {
+    return "구성 종목·매크로 근거를 구체화하고 2026 이벤트를 반영했어요";
+  }
+  if (/보강/.test(raw)) {
+    return "신규 종목·관계·이벤트를 보강했어요";
+  }
+  if (/신규|생성|추가/.test(raw)) {
+    return "새로운 종목·관계를 테마에 추가했어요";
+  }
+  // 이미 콘텐츠형이면 title 사용, 없으면 detail
+  return u.title || u.detail || "테마 내용을 업데이트했어요";
+}
 
 type RecentItem = { themeId: string; themeName: string; at: number };
 type FavItem = { themeId: string; themeName: string; at: number };
@@ -578,46 +593,60 @@ export default function HomePage() {
                 전체 테마 →
               </Link>
             </div>
-            <div className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
-              {updates.slice(0, 10).map((u, i) => {
-                const d = daysSince(u.date);
-                const recent = d !== null && d <= RECENT_DAYS;
-                const clr = (u.kind && KIND_COLOR[u.kind]) || "#94a3b8";
-                return (
-                  <Link
-                    key={`${u.themeId}-${i}`}
-                    href={`/graph/${u.themeId}#theme-changelog`}
-                    className={[
-                      "group flex items-center gap-2 rounded-xl border px-3 py-2 transition",
-                      recent
-                        ? "border-emerald-400/30 bg-emerald-500/[0.06] hover:bg-emerald-500/[0.1]"
-                        : "border-white/10 bg-black/25 hover:bg-white/[0.05]",
-                    ].join(" ")}
-                    title={u.detail || u.title}
-                  >
-                    <span
-                      className="shrink-0 rounded border px-1.5 py-0.5 text-[10px] font-semibold"
-                      style={{ color: clr, borderColor: `${clr}55`, background: `${clr}1a` }}
+            <div className="relative">
+              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                {updates.slice(0, 6).map((u, i) => {
+                  const d = daysSince(u.date);
+                  const recent = d !== null && d <= RECENT_DAYS;
+                  const clr = (u.kind && KIND_COLOR[u.kind]) || "#94a3b8";
+                  return (
+                    <Link
+                      key={`${u.themeId}-${i}`}
+                      href={`/graph/${u.themeId}#theme-changelog`}
+                      className={[
+                        "group flex items-start gap-2.5 rounded-xl border px-3.5 py-3 transition",
+                        recent
+                          ? "border-emerald-400/30 bg-emerald-500/[0.06] hover:bg-emerald-500/[0.1]"
+                          : "border-white/10 bg-black/25 hover:bg-white/[0.05]",
+                      ].join(" ")}
+                      title={u.detail || u.title}
                     >
-                      {u.kind || "변경"}
-                    </span>
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-center gap-1.5">
-                        <span className="truncate text-[12.5px] font-semibold text-white/90">{u.title || u.themeName}</span>
+                      <span
+                        className="mt-0.5 shrink-0 rounded border px-1.5 py-0.5 text-[10px] font-semibold"
+                        style={{ color: clr, borderColor: `${clr}55`, background: `${clr}1a` }}
+                      >
+                        {u.kind || "변경"}
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-1.5">
+                          <span className="truncate text-[13.5px] font-bold text-white/95">{u.themeName}</span>
+                          <span className="shrink-0 text-[10px] text-white/30">{u.themeId}</span>
+                        </div>
+                        <div className="mt-0.5 line-clamp-1 text-[12px] leading-snug text-white/55">
+                          {changeSummary(u)}
+                        </div>
                       </div>
-                      <div className="truncate text-[10.5px] text-white/45">
-                        {u.themeName} · {u.themeId}
+                      <div className="shrink-0 self-center text-right">
+                        <div className="text-[10px] text-white/40">{fmtDay(u.date)}</div>
+                        {recent && (
+                          <div className="text-[9.5px] font-bold text-emerald-300">{relLabel(d)}</div>
+                        )}
                       </div>
-                    </div>
-                    <div className="shrink-0 text-right">
-                      <div className="text-[10px] text-white/40">{fmtDay(u.date)}</div>
-                      {recent && (
-                        <div className="text-[9.5px] font-bold text-emerald-300">{relLabel(d)}</div>
-                      )}
-                    </div>
-                  </Link>
-                );
-              })}
+                    </Link>
+                  );
+                })}
+              </div>
+              {updates.length > 6 && (
+                <Link
+                  href="/themes"
+                  className="relative mt-1.5 block h-14 rounded-xl border border-white/5 bg-gradient-to-b from-emerald-500/[0.05] to-transparent transition hover:from-emerald-500/[0.09]"
+                >
+                  <span className="pointer-events-none absolute inset-x-0 top-0 h-8 rounded-t-xl bg-gradient-to-b from-emerald-500/[0.06] to-transparent" />
+                  <span className="absolute inset-0 flex items-center justify-center text-[12px] font-medium text-white/45">
+                    + 큐레이션 업데이트 {updates.length}건 전체 보기 →
+                  </span>
+                </Link>
+              )}
             </div>
           </section>
         )}
