@@ -72,7 +72,11 @@ function getCuratedDescription(themeId: string): string {
 
 async function tryFetchThemeJson(url: string, themeId: string): Promise<ThemeJsonT | null> {
   try {
-    const res = await fetch(url, { cache: "no-store", headers: { Accept: "application/json" } });
+    // GitHub raw는 Fastly CDN(~5분) 캐시 → 테마 데이터 편집 직후 stale 방지 위해 캐시버스팅.
+    const bustedUrl = /^https?:/i.test(url)
+      ? url + (url.includes("?") ? "&" : "?") + `_cb=${Date.now()}`
+      : url;
+    const res = await fetch(bustedUrl, { cache: "no-store", headers: { Accept: "application/json" } });
     if (!res.ok) return null;
     const text = await res.text();
     const parsed = JSON.parse(text) as ThemeJsonT;
