@@ -293,6 +293,7 @@ DEFAULT_PRESETS = [
     ("① KODEX 200  vs  KODEX 200타겟위클리커버드콜", ["KODEX200", "KODEX200_TWCC"]),
     ("② KODEX 미국반도체  vs  ACE 미국반도체데일리타겟커버드콜(합성)", ["KODEX_USSEMI", "ACE_USSEMI_TDCC"]),
     ("③ SPY  vs  QQQ  vs  DIA", ["SPY", "QQQ", "DIA"]),
+    ("④ SOXX  vs  LIT  vs  ROBO  (반도체·리튬·로봇)", ["SOXX", "LIT", "ROBO"]),
 ]
 
 
