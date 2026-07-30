@@ -7,8 +7,12 @@ import path from "path";
 import { computeThemeBarometer, PERIODS } from "./barometer_core.mjs";
 
 const ROOT = process.cwd();
-const THEME_DIR = path.join(ROOT, "import_MT", "data", "theme");
-const OUT_DIR = path.join(ROOT, "import_MT", "data", "barometer");
+// 루트 무관: moneytree-web 루트(import_MT/data/theme) 또는 import_MT 루트(data/theme) 자동 감지.
+const DATA_ROOT = fs.existsSync(path.join(ROOT, "import_MT", "data", "theme"))
+  ? path.join(ROOT, "import_MT", "data")
+  : path.join(ROOT, "data");
+const THEME_DIR = path.join(DATA_ROOT, "theme");
+const OUT_DIR = path.join(DATA_ROOT, "barometer");
 
 function today() {
   const d = new Date();
