@@ -199,13 +199,26 @@ for (const th of themes) {
 }
 console.log(`backtest pairs: ${pairs.length}`);
 
-// ── 5) 집계: 점수 구간(bucket)별 forward 평균·승률 + 국면(temp)별 ──
+// ── 5) 벤치마크 = 동일 시점 전체 테마 forward 평균(EW). 시장 타이밍 제거 → 초과수익=테마 선택력.
+const dateSum = new Map(), dateCnt = new Map();
+for (const p of pairs) { dateSum.set(p.date, (dateSum.get(p.date) || 0) + p.fwd); dateCnt.set(p.date, (dateCnt.get(p.date) || 0) + 1); }
+for (const p of pairs) { const m = dateSum.get(p.date) / dateCnt.get(p.date); p.exc = Number((p.fwd - m).toFixed(3)); }
+
+// 집계: 절대(avgFwd/winRate) + 벤치마크 대비(avgExcess/winVsBench)
 function agg(list) {
   const n = list.length;
-  if (!n) return { n: 0, avgFwd: null, winRate: null };
+  if (!n) return { n: 0, avgFwd: null, winRate: null, avgExcess: null, winVsBench: null };
   const avg = list.reduce((a, b) => a + b.fwd, 0) / n;
   const win = list.filter((x) => x.fwd > 0).length / n;
-  return { n, avgFwd: Number(avg.toFixed(2)), winRate: Number((win * 100).toFixed(1)) };
+  const avgExc = list.reduce((a, b) => a + b.exc, 0) / n;
+  const winB = list.filter((x) => x.exc > 0).length / n;
+  return {
+    n,
+    avgFwd: Number(avg.toFixed(2)),
+    winRate: Number((win * 100).toFixed(1)),
+    avgExcess: Number(avgExc.toFixed(2)),
+    winVsBench: Number((winB * 100).toFixed(1)),
+  };
 }
 const buckets = [];
 for (let lo = 0; lo < 1000; lo += 100) {
@@ -223,7 +236,8 @@ const lo = agg(pairs.filter((p) => p.score < 300));
 const out = {
   generated: new Date().toISOString(),
   method: { horizon: HORIZON, fwdDays: FWD_DAYS, weeksBack: WEEKS_BACK, rebalStep: REBAL_STEP,
-    note: "현재 로스터를 과거에 적용(구성종목/룩어헤드 편향). forward=구성종목 단순평균(EW 근사). 거래비용·리밸런싱 미반영. 참고치." },
+    benchmark: "동일 시점 전체 테마 forward 평균(EW). 시장 타이밍 제거 → 초과수익=테마 선택력.",
+    note: "현재 로스터를 과거에 적용(구성종목/룩어헤드 편향). forward=구성종목 중앙값. 거래비용·리밸런싱 미반영. 참고치." },
   totalPairs: pairs.length,
   buckets,
   byTemp,

@@ -9,10 +9,10 @@ const RAW = "https://raw.githubusercontent.com/kang0302/import_MT/main/data";
 const BACKTEST_URL = `${RAW}/track_record/backtest.json`;
 const BARO_INDEX_URL = `${RAW}/barometer/index.json`;
 
-type Agg = { n: number; avgFwd: number | null; winRate: number | null };
+type Agg = { n: number; avgFwd: number | null; winRate: number | null; avgExcess: number | null; winVsBench: number | null };
 type Backtest = {
   generated: string;
-  method: { horizon: string; fwdDays: number; weeksBack: number; note: string };
+  method: { horizon: string; fwdDays: number; weeksBack: number; note: string; benchmark?: string };
   totalPairs: number;
   buckets: Array<{ range: string } & Agg>;
   byTemp: Record<string, Agg>;
@@ -113,8 +113,10 @@ export default function TrackRecordPage() {
                     <th className="px-3 py-1.5 text-left font-semibold">바로미터 점수</th>
                     <th className="px-3 py-1.5 text-right font-semibold">표본</th>
                     <th className="px-3 py-1.5 text-right font-semibold">이후 {bt.method.fwdDays}일 평균수익</th>
-                    <th className="px-3 py-1.5 text-left font-semibold" style={{ width: 260 }}></th>
-                    <th className="px-3 py-1.5 text-right font-semibold">승률</th>
+                    <th className="px-3 py-1.5 text-left font-semibold" style={{ width: 200 }}></th>
+                    <th className="px-3 py-1.5 text-right font-semibold" title="이후 30일 수익이 양수였던 비율(절대 상승 확률)">승률</th>
+                    <th className="px-3 py-1.5 text-right font-semibold" title="동일 시점 전체 테마 평균 대비 초과수익(시장 타이밍 제거)">벤치마크 대비</th>
+                    <th className="px-3 py-1.5 text-right font-semibold" title="동일 시점 평균 테마를 이긴 비율">우위 승률</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -134,6 +136,8 @@ export default function TrackRecordPage() {
                         </div>
                       </td>
                       <td className="px-3 py-1 text-right text-white/70">{b.winRate != null ? `${b.winRate}%` : "—"}</td>
+                      <td className="px-3 py-1 text-right font-semibold" style={{ color: retColor(b.avgExcess) }}>{pct(b.avgExcess, 2)}</td>
+                      <td className="px-3 py-1 text-right text-white/70">{b.winVsBench != null ? `${b.winVsBench}%` : "—"}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -151,7 +155,8 @@ export default function TrackRecordPage() {
                       <span className="text-[12px] font-semibold text-white/85">{t}</span>
                     </div>
                     <div className="mt-1 text-[15px] font-bold tabular-nums" style={{ color: retColor(a.avgFwd) }}>{pct(a.avgFwd, 2)}</div>
-                    <div className="text-[10.5px] text-white/45">승률 {a.winRate}% · n {a.n}</div>
+                    <div className="text-[10.5px] text-white/55">벤치 대비 <span className="font-semibold" style={{ color: retColor(a.avgExcess) }}>{pct(a.avgExcess, 2)}</span></div>
+                    <div className="text-[10.5px] text-white/45">승률 {a.winRate}% · 우위 {a.winVsBench}% · n {a.n}</div>
                   </div>
                 );
               })}
@@ -162,17 +167,19 @@ export default function TrackRecordPage() {
               <div className="flex-1 rounded-lg border border-rose-400/20 bg-rose-500/[0.06] p-3">
                 <div className="text-[11px] text-rose-200/70">상위 바로미터 (≥800)</div>
                 <div className="text-[18px] font-bold" style={{ color: retColor(bt.spread.high_ge800.avgFwd) }}>{pct(bt.spread.high_ge800.avgFwd, 2)}</div>
-                <div className="text-[10.5px] text-white/45">승률 {bt.spread.high_ge800.winRate}% · n {bt.spread.high_ge800.n}</div>
+                <div className="text-[10.5px] text-white/55">벤치 대비 <span className="font-semibold" style={{ color: retColor(bt.spread.high_ge800.avgExcess) }}>{pct(bt.spread.high_ge800.avgExcess, 2)}</span></div>
+                <div className="text-[10.5px] text-white/45">승률 {bt.spread.high_ge800.winRate}% · 우위 {bt.spread.high_ge800.winVsBench}% · n {bt.spread.high_ge800.n}</div>
               </div>
               <div className="flex-1 rounded-lg border border-sky-400/20 bg-sky-500/[0.06] p-3">
                 <div className="text-[11px] text-sky-200/70">하위 바로미터 (&lt;300)</div>
                 <div className="text-[18px] font-bold" style={{ color: retColor(bt.spread.low_lt300.avgFwd) }}>{pct(bt.spread.low_lt300.avgFwd, 2)}</div>
-                <div className="text-[10.5px] text-white/45">승률 {bt.spread.low_lt300.winRate}% · n {bt.spread.low_lt300.n}</div>
+                <div className="text-[10.5px] text-white/55">벤치 대비 <span className="font-semibold" style={{ color: retColor(bt.spread.low_lt300.avgExcess) }}>{pct(bt.spread.low_lt300.avgExcess, 2)}</span></div>
+                <div className="text-[10.5px] text-white/45">승률 {bt.spread.low_lt300.winRate}% · 우위 {bt.spread.low_lt300.winVsBench}% · n {bt.spread.low_lt300.n}</div>
               </div>
               <div className="flex-1 rounded-lg border border-amber-400/25 bg-amber-500/[0.08] p-3">
                 <div className="text-[11px] text-amber-200/80">스프레드 (상위−하위)</div>
                 <div className="text-[18px] font-bold text-amber-200">{pct(bt.spread.spreadPct, 2)}</div>
-                <div className="text-[10.5px] text-white/45">클수록 예측력↑</div>
+                <div className="text-[10.5px] text-white/45">절대수익 격차 · 클수록 예측력↑</div>
               </div>
             </div>
           </section>
@@ -213,6 +220,10 @@ export default function TrackRecordPage() {
 
         {/* ── 방법·한계 고지 ── */}
         <section className="rounded-lg border border-white/10 bg-white/[0.02] p-3 text-[11px] leading-relaxed text-white/45">
+          <b className="text-white/60">지표 정의</b><br />
+          · <b className="text-white/55">승률</b> = 그 시점 이후 {bt?.method.fwdDays ?? 30}거래일 뒤 테마가 <b>상승(수익&gt;0)</b>한 (테마·시점) 비율 = <b>절대 상승 확률</b>.<br />
+          · <b className="text-white/55">벤치마크 대비</b> = 동일 시점 <b>전체 테마 평균 수익</b>을 벤치마크로 뺀 <b>초과수익</b>(시장 타이밍 효과 제거 → 순수 테마 선택력).<br />
+          · <b className="text-white/55">우위 승률</b> = 동일 시점 <b>평균 테마를 이긴</b> 비율. (분포가 우편향이라 초과수익이 +여도 우위 승률은 50% 근처일 수 있음)<br />
           <b className="text-white/60">방법·한계</b><br />
           {bt && <>· 백테스트: {bt.method.horizon} 바로미터 · 이후 {bt.method.fwdDays}거래일 forward · 최근 {bt.method.weeksBack}주 주간 리밸 · 표본 {bt.totalPairs.toLocaleString()}쌍.<br /></>}
           · <b className="text-white/55">구성종목/룩어헤드 편향</b>: 현재 테마 구성을 과거에 적용 → 그 시점에 없던 종목이 포함될 수 있음(참고치).<br />
