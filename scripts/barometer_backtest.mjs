@@ -12,7 +12,7 @@ import { computeThemeBarometer, PERIODS } from "./barometer_core.mjs";
 
 const ROOT = process.cwd();
 const THEME_DIR = path.join(ROOT, "import_MT", "data", "theme");
-const CACHE_DIR = path.join(ROOT, "import_MT", "data", "cache", "px_hist");
+const CACHE_DIR = path.join(ROOT, "import_MT", "data", "cache", "px_adj"); // 조정종가 캐시
 const OUT_DIR = path.join(ROOT, "import_MT", "data", "track_record");
 fs.mkdirSync(CACHE_DIR, { recursive: true });
 fs.mkdirSync(OUT_DIR, { recursive: true });
@@ -37,15 +37,15 @@ const REBAL_STEP = 5; // 거래일 5일 = 1주
 
 function getJSON(url) {
   return new Promise((resolve) => {
-    https
-      .get(url, (res) => {
-        let data = "";
-        res.on("data", (c) => (data += c));
-        res.on("end", () => {
-          try { resolve(JSON.parse(data)); } catch { resolve(null); }
-        });
-      })
-      .on("error", () => resolve(null));
+    const req = https.get(url, (res) => {
+      let data = "";
+      res.on("data", (c) => (data += c));
+      res.on("end", () => {
+        try { resolve(JSON.parse(data)); } catch { resolve(null); }
+      });
+    });
+    req.on("error", () => resolve(null));
+    req.setTimeout(12000, () => { req.destroy(); resolve(null); }); // 12s 타임아웃(hang 방지)
   });
 }
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -68,30 +68,27 @@ async function loadCloses(ticker, exch, co) {
   }
   let series = null;
   const from = "2023-06-01";
+  // 분할·배당 조정종가 우선(아티팩트 방지). EODHD adjusted_close / FMP adjClose.
+  const eod = (r) => (Array.isArray(r) && r.length > 20 ? r.map((x) => [x.date, x.adjusted_close ?? x.close]) : null);
+  const fmp = (r) => {
+    const arr = Array.isArray(r) ? r : r?.historical;
+    return Array.isArray(arr) && arr.length > 20 ? arr.map((x) => [x.date, x.adjClose ?? x.adjustedClose ?? x.close]).reverse() : null;
+  };
   if (co === "KR") {
     for (const suf of [".KO", ".KQ"]) {
       const r = await getJSON(`https://eodhd.com/api/eod/${ticker}${suf}?api_token=${EODHD}&fmt=json&from=${from}&order=a`);
-      if (Array.isArray(r) && r.length > 20) { series = r.map((x) => [x.date, x.close]); break; }
+      series = eod(r); if (series) break;
     }
   } else if (co === "US") {
-    const r = await getJSON(`https://financialmodelingprep.com/stable/historical-price-eod/full?symbol=${ticker}&apikey=${FMP}&from=${from}&to=2026-08-01`);
-    const arr = Array.isArray(r) ? r : r?.historical;
-    if (Array.isArray(arr) && arr.length > 20) series = arr.map((x) => [x.date, x.close]).reverse();
+    series = fmp(await getJSON(`https://financialmodelingprep.com/stable/historical-price-eod/full?symbol=${ticker}&apikey=${FMP}&from=${from}&to=2026-08-01`));
   } else {
-    // 비US·비KR: EODHD 접미사 우선, 실패 시 FMP
     const suf = gfMap(exch, co);
     const eodSuf = suf || ".US";
-    const r = await getJSON(`https://eodhd.com/api/eod/${ticker}${eodSuf}?api_token=${EODHD}&fmt=json&from=${from}&order=a`);
-    if (Array.isArray(r) && r.length > 20) series = r.map((x) => [x.date, x.close]);
-    else {
-      const r2 = await getJSON(`https://financialmodelingprep.com/stable/historical-price-eod/full?symbol=${ticker}${suf}&apikey=${FMP}&from=${from}&to=2026-08-01`);
-      const arr = Array.isArray(r2) ? r2 : r2?.historical;
-      if (Array.isArray(arr) && arr.length > 20) series = arr.map((x) => [x.date, x.close]).reverse();
-    }
+    series = eod(await getJSON(`https://eodhd.com/api/eod/${ticker}${eodSuf}?api_token=${EODHD}&fmt=json&from=${from}&order=a`));
+    if (!series) series = fmp(await getJSON(`https://financialmodelingprep.com/stable/historical-price-eod/full?symbol=${ticker}${suf}&apikey=${FMP}&from=${from}&to=2026-08-01`));
   }
   const out = series || [];
   fs.writeFileSync(cf, JSON.stringify(out), "utf8");
-  await sleep(90);
   return out;
 }
 
@@ -120,12 +117,17 @@ console.log(`themes(≥5): ${themes.length} | unique tickers: ${uniq.size}`);
 // ── 2) 가격 히스토리 수집(캐시) ──
 const px = new Map(); // key -> Map(date->close) + sorted dates
 let done = 0;
-for (const [key, info] of uniq) {
-  const series = await loadCloses(info.ticker, info.exch, info.co);
-  const m = new Map(series);
-  px.set(key, { m, dates: series.map((x) => x[0]) });
-  if (++done % 100 === 0) console.log(`  prices ${done}/${uniq.size}`);
+const entries = [...uniq.entries()];
+const CONC = 12;
+async function worker() {
+  while (entries.length) {
+    const [key, info] = entries.pop();
+    const series = await loadCloses(info.ticker, info.exch, info.co);
+    px.set(key, { m: new Map(series), dates: series.map((x) => x[0]) });
+    if (++done % 200 === 0) console.log(`  prices ${done}/${uniq.size}`);
+  }
 }
+await Promise.all(Array.from({ length: CONC }, () => worker()));
 console.log("price load complete");
 
 // ── 3) 공통 거래일 축(미국 기준 근사): 한 유동종목(SPY 대체 없음) → 모든 종목 날짜 합집합 상위 ──
@@ -182,10 +184,16 @@ for (const th of themes) {
       const nearNow = (() => { for (let k = di; k >= di - 6 && k >= 0; k--) { const v = rec.m.get(axis[k]); if (v != null) return v; } return null; })();
       const fi = di + FWD_DAYS;
       const nearFwd = (() => { for (let k = fi; k <= fi + 6 && k < axis.length; k++) { const v = rec.m.get(axis[k]); if (v != null) return v; } return null; })();
-      if (nearNow != null && nearFwd != null && nearNow !== 0) fwds.push((nearFwd / nearNow - 1) * 100);
+      if (nearNow != null && nearFwd != null && nearNow > 0 && nearFwd > 0) {
+        const r = (nearFwd / nearNow - 1) * 100;
+        if (Math.abs(r) <= 150) fwds.push(r); // 30일 ±150% 초과는 분할/오류로 보고 제외
+      }
     }
-    if (!fwds.length) continue;
-    const fwd = fwds.reduce((a, b) => a + b, 0) / fwds.length;
+    if (fwds.length < 3) continue; // 표본 부족 스킵
+    // 강건: 구성종목 forward의 중앙값(이상치 내성)
+    const sorted = [...fwds].sort((a, b) => a - b);
+    const mid = Math.floor(sorted.length / 2);
+    const fwd = sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
     pairs.push({ themeId: th.themeId, date: axis[di], score: r.overallScore, temp: r.temp, fwd: Number(fwd.toFixed(3)) });
   }
 }
