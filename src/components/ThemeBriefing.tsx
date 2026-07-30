@@ -104,13 +104,50 @@ function shortenDriver(text: string): string {
   return s;
 }
 
+// 구글 파이낸스 거래소코드 매핑 (해외 종목용)
+const GF_EXCH: Record<string, string> = {
+  NASDAQ: "NASDAQ", NYSE: "NYSE",
+  NYSEARCA: "NYSEARCA", "NYSE ARCA": "NYSEARCA", ARCA: "NYSEARCA",
+  OTC: "OTCMKTS", OTCMKTS: "OTCMKTS",
+  NYSEAMERICAN: "NYSEAMERICAN", "NYSE AMERICAN": "NYSEAMERICAN", AMEX: "NYSEAMERICAN", NYSEMKT: "NYSEAMERICAN",
+  BATS: "BATS", CBOE: "CBOE",
+  TSE: "TYO", TYO: "TYO", JPX: "TYO",
+  HKEX: "HKG", HKG: "HKG", SEHK: "HKG",
+  SZSE: "SHE", SSE: "SHA", SHSE: "SHA",
+  TWSE: "TPE", TPEX: "TPE", TPE: "TPE",
+  LSE: "LON", LON: "LON",
+  XETRA: "ETR", ETR: "ETR", FRA: "FRA",
+  SIX: "SWX", SWX: "SWX", VTX: "VTX",
+  BME: "BME", MC: "BME", BMV: "BMV",
+  OMX: "STO", STO: "STO", OMXSTO: "STO",
+  CPH: "CPH", HEL: "HEL", OSL: "OSL",
+  AMS: "AMS", EPA: "EPA", EBR: "EBR", ELI: "ELI", BIT: "BIT",
+  TSX: "TSE", TSXV: "CVE", CSE: "CNSX",
+  ASX: "ASX", IDX: "IDX", NSE: "NSE", BSE: "BOM", SGX: "SGX",
+  TASE: "TLV", TLV: "TLV",
+  "EURONEXT MILAN": "BIT", "EURONEXT PARIS": "EPA", "EURONEXT AMSTERDAM": "AMS",
+  "EURONEXT BRUSSELS": "EBR", "EURONEXT LISBON": "ELI",
+};
+const EURO_BY_CO: Record<string, string> = { FR: "EPA", NL: "AMS", BE: "EBR", PT: "ELI", IT: "BIT", IE: "ISE", EU: "EPA" };
+
+function gfExchange(exchange: string, country: string): string {
+  const e = (exchange || "").toUpperCase().replace(/_/g, " ").trim();
+  if (GF_EXCH[e]) return GF_EXCH[e];
+  if (e === "EURONEXT") return EURO_BY_CO[(country || "").toUpperCase()] || "EPA";
+  return "";
+}
+
 function extractAssetUrl(ticker: string, exchange: string, country: string): string {
   const ko = /KOSPI|KOSDAQ|KRX/i.test(exchange) || country === "KR";
-  if (ko && /^\d{6}$/.test(ticker)) {
-    return `https://finance.naver.com/item/main.nhn?code=${ticker}`;
+  if (ko) {
+    return `https://finance.naver.com/item/main.naver?code=${ticker}`;
   }
-  // 해외 — yahoo 형식 (간단)
-  return `https://finance.yahoo.com/quote/${ticker}`;
+  // 해외 — 구글 파이낸스 (거래소코드; 미상 시 티커만)
+  const t = (ticker || "").replace(/\.+$/, "").trim();
+  const gx = gfExchange(exchange, country);
+  return gx
+    ? `https://www.google.com/finance/quote/${t}:${gx}`
+    : `https://www.google.com/finance/quote/${t}`;
 }
 
 function parseBriefingTable(
