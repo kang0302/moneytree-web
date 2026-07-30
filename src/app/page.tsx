@@ -439,6 +439,13 @@ export default function HomePage() {
             >
               🆚 테마 비교
             </Link>
+            <Link
+              href="/track-record"
+              className="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/15 px-5 py-2 text-sm font-semibold text-emerald-100 transition hover:border-emerald-300/60 hover:bg-emerald-500/25"
+              title="바로미터 점수의 예측력 검증 — 점수구간별 이후 수익률·승률·스프레드"
+            >
+              📈 바로미터 트랙레코드
+            </Link>
           </div>
 
           <div className="mt-3 text-[12px] text-white/55 sm:text-[14px]">
