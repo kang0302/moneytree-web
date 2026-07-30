@@ -158,6 +158,18 @@ function retPct(rec, dIdx, back) {
 }
 const BACK = { "1D": 1, "3D": 3, "7D": 7, "15D": 15, "1M": 21, "1Y": 252, "2Y": 504, "3Y": 756 };
 
+// ── SPY 벤치마크: 동일 구간(리밸일→+30거래일) S&P500 forward 수익률 ──
+const spySeries = await loadCloses("SPY", "NASDAQ", "US");
+const spyM = new Map(spySeries);
+const spyBack = (idx) => { for (let k = idx; k >= 0 && k >= idx - 6; k--) { const v = spyM.get(axis[k]); if (v != null) return v; } return null; };
+const spyForward = (idx) => { for (let k = idx; k < axis.length && k <= idx + 6; k++) { const v = spyM.get(axis[k]); if (v != null) return v; } return null; };
+const spyFwdByDate = new Map();
+for (const di of rebalIdx) {
+  const a = spyBack(di), b = spyForward(di + FWD_DAYS);
+  if (a != null && b != null && a > 0) spyFwdByDate.set(axis[di], (b / a - 1) * 100);
+}
+console.log(`SPY benchmark dates: ${spyFwdByDate.size}/${rebalIdx.length}`);
+
 // ── 4) 백테스트 루프 ──
 const pairs = []; // {themeId, date, score, temp, fwd}
 for (const th of themes) {
@@ -199,10 +211,16 @@ for (const th of themes) {
 }
 console.log(`backtest pairs: ${pairs.length}`);
 
-// ── 5) 벤치마크 = 동일 시점 전체 테마 forward 평균(EW). 시장 타이밍 제거 → 초과수익=테마 선택력.
-const dateSum = new Map(), dateCnt = new Map();
-for (const p of pairs) { dateSum.set(p.date, (dateSum.get(p.date) || 0) + p.fwd); dateCnt.set(p.date, (dateCnt.get(p.date) || 0) + 1); }
-for (const p of pairs) { const m = dateSum.get(p.date) / dateCnt.get(p.date); p.exc = Number((p.fwd - m).toFixed(3)); }
+// ── 5) 벤치마크 = SPY(S&P500) 동일 구간 forward 수익률. 초과수익 = 테마 − SPY.
+let benchMissing = 0;
+const benchPairs = [];
+for (const p of pairs) {
+  const b = spyFwdByDate.get(p.date);
+  if (b == null) { benchMissing++; p.exc = null; continue; }
+  p.exc = Number((p.fwd - b).toFixed(3));
+  benchPairs.push(p);
+}
+console.log(`benchmark(SPY) matched pairs: ${benchPairs.length}, missing: ${benchMissing}`);
 
 // 집계: 절대(avgFwd/winRate) + 벤치마크 대비(avgExcess/winVsBench)
 function agg(list) {
@@ -210,14 +228,16 @@ function agg(list) {
   if (!n) return { n: 0, avgFwd: null, winRate: null, avgExcess: null, winVsBench: null };
   const avg = list.reduce((a, b) => a + b.fwd, 0) / n;
   const win = list.filter((x) => x.fwd > 0).length / n;
-  const avgExc = list.reduce((a, b) => a + b.exc, 0) / n;
-  const winB = list.filter((x) => x.exc > 0).length / n;
+  const exl = list.filter((x) => x.exc != null);
+  const en = exl.length;
+  const avgExc = en ? exl.reduce((a, b) => a + b.exc, 0) / en : null;
+  const winB = en ? exl.filter((x) => x.exc > 0).length / en : null;
   return {
     n,
     avgFwd: Number(avg.toFixed(2)),
     winRate: Number((win * 100).toFixed(1)),
-    avgExcess: Number(avgExc.toFixed(2)),
-    winVsBench: Number((winB * 100).toFixed(1)),
+    avgExcess: avgExc == null ? null : Number(avgExc.toFixed(2)),
+    winVsBench: winB == null ? null : Number((winB * 100).toFixed(1)),
   };
 }
 const buckets = [];
@@ -236,7 +256,7 @@ const lo = agg(pairs.filter((p) => p.score < 300));
 const out = {
   generated: new Date().toISOString(),
   method: { horizon: HORIZON, fwdDays: FWD_DAYS, weeksBack: WEEKS_BACK, rebalStep: REBAL_STEP,
-    benchmark: "동일 시점 전체 테마 forward 평균(EW). 시장 타이밍 제거 → 초과수익=테마 선택력.",
+    benchmark: "SPY(S&P500) 동일 구간 forward 수익률. 초과수익=테마−SPY. (KR 등 비USD 테마는 환율 미조정 — 참고).",
     note: "현재 로스터를 과거에 적용(구성종목/룩어헤드 편향). forward=구성종목 중앙값. 거래비용·리밸런싱 미반영. 참고치." },
   totalPairs: pairs.length,
   buckets,

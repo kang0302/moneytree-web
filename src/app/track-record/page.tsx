@@ -115,8 +115,8 @@ export default function TrackRecordPage() {
                     <th className="px-3 py-1.5 text-right font-semibold">이후 {bt.method.fwdDays}일 평균수익</th>
                     <th className="px-3 py-1.5 text-left font-semibold" style={{ width: 200 }}></th>
                     <th className="px-3 py-1.5 text-right font-semibold" title="이후 30일 수익이 양수였던 비율(절대 상승 확률)">승률</th>
-                    <th className="px-3 py-1.5 text-right font-semibold" title="동일 시점 전체 테마 평균 대비 초과수익(시장 타이밍 제거)">벤치마크 대비</th>
-                    <th className="px-3 py-1.5 text-right font-semibold" title="동일 시점 평균 테마를 이긴 비율">우위 승률</th>
+                    <th className="px-3 py-1.5 text-right font-semibold" title="같은 구간 SPY(S&P500) 대비 초과수익 (테마−SPY)">벤치마크 대비(SPY)</th>
+                    <th className="px-3 py-1.5 text-right font-semibold" title="같은 구간 SPY를 이긴 비율">SPY 우위 승률</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -222,8 +222,8 @@ export default function TrackRecordPage() {
         <section className="rounded-lg border border-white/10 bg-white/[0.02] p-3 text-[11px] leading-relaxed text-white/45">
           <b className="text-white/60">지표 정의</b><br />
           · <b className="text-white/55">승률</b> = 그 시점 이후 {bt?.method.fwdDays ?? 30}거래일 뒤 테마가 <b>상승(수익&gt;0)</b>한 (테마·시점) 비율 = <b>절대 상승 확률</b>.<br />
-          · <b className="text-white/55">벤치마크 대비</b> = 동일 시점 <b>전체 테마 평균 수익</b>을 벤치마크로 뺀 <b>초과수익</b>(시장 타이밍 효과 제거 → 순수 테마 선택력).<br />
-          · <b className="text-white/55">우위 승률</b> = 동일 시점 <b>평균 테마를 이긴</b> 비율. (분포가 우편향이라 초과수익이 +여도 우위 승률은 50% 근처일 수 있음)<br />
+          · <b className="text-white/55">벤치마크 대비</b> = 같은 구간 <b>SPY(S&amp;P500) 수익</b>을 뺀 <b>초과수익</b>(테마 − SPY). <b>+면 시장(SPY)을 이김</b>.<br />
+          · <b className="text-white/55">우위 승률</b> = 같은 구간 <b>SPY를 이긴</b> 비율. (KR 등 비USD 테마는 환율 미조정 — 참고치)<br />
           <b className="text-white/60">방법·한계</b><br />
           {bt && <>· 백테스트: {bt.method.horizon} 바로미터 · 이후 {bt.method.fwdDays}거래일 forward · 최근 {bt.method.weeksBack}주 주간 리밸 · 표본 {bt.totalPairs.toLocaleString()}쌍.<br /></>}
           · <b className="text-white/55">구성종목/룩어헤드 편향</b>: 현재 테마 구성을 과거에 적용 → 그 시점에 없던 종목이 포함될 수 있음(참고치).<br />
