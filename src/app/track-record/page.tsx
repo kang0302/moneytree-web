@@ -19,7 +19,7 @@ type Backtest = {
   spread: { high_ge800: Agg; low_lt300: Agg; spreadPct: number | null };
 };
 type SnapRow = { themeId: string; themeName: string; ok: boolean; headlinePeriod: string; headlineScore: number | null };
-type Snap = { date: string; rows: SnapRow[] };
+type Snap = { date: string; formulaVersion?: string; rows: SnapRow[] };
 
 const TEMP_ORDER = ["BLAZING", "HOT", "WARM+", "WARM", "NEUTRAL+", "NEUTRAL", "COOL", "COOL-", "COLD", "FROZEN"];
 const TEMP_COLOR: Record<string, string> = {
@@ -192,7 +192,9 @@ export default function TrackRecordPage() {
         {/* ── 오늘의 리더보드 ── */}
         {snap && (
           <section className="mb-6">
-            <h2 className="mb-2 text-sm font-semibold text-white/85">오늘의 바로미터 상위 테마 <span className="text-white/40">({snap.date})</span></h2>
+            <h2 className="mb-2 text-sm font-semibold text-white/85">오늘의 바로미터 상위 테마 <span className="text-white/40">({snap.date})</span>
+              {snap.formulaVersion && <span className="ml-2 rounded border border-white/15 bg-white/[0.05] px-1.5 py-0.5 text-[10px] font-normal text-white/45" title="바로미터 산식 버전">{snap.formulaVersion}</span>}
+            </h2>
             <div className="overflow-x-auto rounded-lg border border-white/10">
               <table className="w-full border-collapse text-[12.5px] whitespace-nowrap">
                 <thead>
@@ -229,6 +231,7 @@ export default function TrackRecordPage() {
           · <b className="text-white/55">구성종목/룩어헤드 편향</b>: 현재 테마 구성을 과거에 적용 → 그 시점에 없던 종목이 포함될 수 있음(참고치).<br />
           · <b className="text-white/55">생존편향</b>: 상장폐지·개명 종목 누락. 신규 자산은 이력 부족 시 제외.<br />
           · forward 수익률 = 구성종목 단순평균(EW 근사), 거래비용·리밸런싱 비용 미반영.<br />
+          · <b className="text-white/55">산식 버전</b>: 2026-08-01부터 Momentum 점수를 로지스틱(tanh) 정규화로 개정(v2) — 장기 구간 상단 포화 해소·변별력 개선. 이전 스냅샷(≤2026-07-31)은 구산식(v1)이며 point-in-time 무편향 기록 보존을 위해 재계산하지 않습니다.<br />
           · 무편향 실적은 <b className="text-white/55">일별 포워드 스냅샷</b>이 누적되며 별도 검증됩니다. 본 화면은 투자 자문이 아니라 정보 제공이며, 투자 판단·책임은 이용자 본인에게 있습니다.
         </section>
       </div>

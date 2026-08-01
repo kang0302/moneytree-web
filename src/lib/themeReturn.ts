@@ -286,6 +286,14 @@ function scoreReturnPct(retPct: number, retSat: number): number {
   return clamp(s, 0, 1000);
 }
 
+// Momentum(상위 바스켓 수익률) → 0~1000. 상위 바스켓은 구조적으로 중심값보다 크므로
+// scoreReturnPct(선형)를 그대로 쓰면 장기(YTD/1Y)에서 절반 이상이 1000에 포화돼 변별력이 사라진다.
+// 로지스틱(tanh)으로 하드 포화를 제거하고 극단 테마도 순위를 보존한다. scale K=2.0.
+function scoreMomentumPct(retPct: number, retSat: number): number {
+  const s = 500 + 500 * Math.tanh(retPct / (retSat * 2.0));
+  return clamp(s, 0, 1000);
+}
+
 function scoreBreadthPct(breadthPct: number): number {
   // 50% => 500, 80% => 800, 20% => 200
   return clamp(breadthPct * 10, 0, 1000);
@@ -468,8 +476,8 @@ export function computeThemeReturnSummary(args: {
   // Health: robust level(60) + breadth(40)
   const healthScore = clamp(levelScore * 0.6 + breadthScore * 0.4, 0, 1000);
 
-  // Momentum (기간별 정규화)
-  const momentumScore = scoreReturnPct(momentumTopPct, anchor.retSat);
+  // Momentum (기간별 정규화, tanh 로지스틱 — 상단 포화 제거)
+  const momentumScore = scoreMomentumPct(momentumTopPct, anchor.retSat);
 
   // Diversification (#2: breadth 기반 + #5: gap 분산 감점)
   const divScore = scoreDiversification(breadthPct, gapPct, anchor.retSat);

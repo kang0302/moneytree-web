@@ -132,6 +132,8 @@ function anchorForPeriod(period) {
   return (k && PERIOD_ANCHORS[k]) || DEFAULT_ANCHOR;
 }
 const scoreReturnPct = (retPct, retSat) => clamp(500 + retPct * (500 / retSat), 0, 1000);
+// Momentum: 상위 바스켓 수익률 → tanh 로지스틱(하드 포화 제거, K=2.0). 프런트 themeReturn.ts와 1:1.
+const scoreMomentumPct = (retPct, retSat) => clamp(500 + 500 * Math.tanh(retPct / (retSat * 2.0)), 0, 1000);
 const scoreBreadthPct = (b) => clamp(b * 10, 0, 1000);
 function scoreDiversification(breadthPct, gapPct = 0, retSat = 16.7) {
   const base = clamp(breadthPct, 0, 100) * 10;
@@ -210,7 +212,7 @@ export function computeThemeBarometer({ nodes, edges, period, minAssets = 5, met
   const levelScore = scoreReturnPct(robustCenter, anchor.retSat);
   const breadthScore = scoreBreadthPct(breadthPct);
   const healthScore = clamp(levelScore * 0.6 + breadthScore * 0.4, 0, 1000);
-  const momentumScore = scoreReturnPct(momentumTopPct, anchor.retSat);
+  const momentumScore = scoreMomentumPct(momentumTopPct, anchor.retSat);
   const divScore = scoreDiversification(breadthPct, gapPct, anchor.retSat);
   const { overallScore, riskScore } = calcOverall({ healthScore, momentumScore, divScore, tailPct });
   return {

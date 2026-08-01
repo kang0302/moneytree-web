@@ -37,16 +37,25 @@ for (const f of files) {
   const periodDefault = (d.meta?.periodDefault || "7d").toString();
   const scores = {};
   const avgRet = {};
+  const raw = {}; // 공식 변경 시 정확 재계산을 위한 원천 지표(기간별)
   let ok = false;
   for (const p of PERIODS) {
     const r = computeThemeBarometer({ nodes: d.nodes, edges: d.edges, period: p });
     if (r.ok) {
       scores[p] = r.overallScore;
       avgRet[p] = Number(r.avgReturn.toFixed(3));
+      raw[p] = {
+        momentumTopPct: Number(r.momentumTopPct.toFixed(3)),
+        coreMedianPct: Number(r.coreMedianPct.toFixed(3)),
+        breadthPct: Number(r.breadthPct.toFixed(2)),
+        tailPct: Number(r.tailPct.toFixed(2)),
+        validN: r.validReturnCount,
+      };
       ok = true;
     } else {
       scores[p] = null;
       avgRet[p] = null;
+      raw[p] = null;
     }
   }
   const hp = (periodDefault || "7d").toUpperCase();
@@ -62,10 +71,13 @@ for (const f of files) {
     headlineScore: scores[headlinePeriod] ?? null,
     scores, // overallScore per period
     avgRet, // 가중 EW 수익률(%) per period — forward 매칭·검증용
+    raw, // 원천 지표(기간별) — 공식 변경 시 정확 재계산용
   });
 }
 
-const payload = { date: DATE, generated: new Date().toISOString(), themeCount: rows.length, okCount, rows };
+// 공식 버전: 모멘텀 tanh(K=2.0) 도입 (2026-08-01~). 이전 스냅샷은 v1-linear-momentum.
+const FORMULA_VERSION = "v2-momentum-tanh2.0";
+const payload = { date: DATE, generated: new Date().toISOString(), formulaVersion: FORMULA_VERSION, themeCount: rows.length, okCount, rows };
 const outFile = path.join(OUT_DIR, `${DATE}.json`);
 fs.writeFileSync(outFile, JSON.stringify(payload, null, 2), "utf8");
 
