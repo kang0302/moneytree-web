@@ -9,7 +9,8 @@ import React, { useEffect, useMemo, useState } from "react";
 const RAW = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/cross_market/cm.json";
 
 type Market = { co: string; label: string; n: number; r7: number | null; r30: number | null };
-type Lead = { horizon?: number; hitRate: number; corr: number; n: number; lastUsRet: number | null; lastUsDate: string };
+type LeadH = { hitRate: number; corr: number; n: number; lastUsRet: number | null; lastUsDate: string };
+type Lead = Record<string, LeadH>;
 type Theme = { id: string; name: string; markets: Market[]; marketCount: number; lead: Lead | null };
 type Meta = { generated: string; window: number; themeCount: number; method: string };
 type Payload = { meta: Meta; themes: Theme[] };
@@ -20,6 +21,7 @@ function pct(v: number | null | undefined, d = 1): string { if (v == null) retur
 export default function CrossMarketPage() {
   const [data, setData] = useState<Payload | null>(null);
   const [state, setState] = useState<"loading" | "ok" | "error">("loading");
+  const [H, setH] = useState<"1" | "3" | "5">("3");
 
   useEffect(() => {
     let cancel = false;
@@ -38,8 +40,8 @@ export default function CrossMarketPage() {
     [...(data?.themes ?? [])].sort((a, b) => b.marketCount - a.marketCount || (b.markets[0]?.n ?? 0) - (a.markets[0]?.n ?? 0)).slice(0, 18),
     [data]);
   const leads = useMemo(() =>
-    (data?.themes ?? []).filter((t) => t.lead && t.lead.n >= 60).sort((a, b) => (b.lead!.hitRate - a.lead!.hitRate)).slice(0, 18),
-    [data]);
+    (data?.themes ?? []).filter((t) => t.lead && t.lead[H] && t.lead[H].n >= 60).sort((a, b) => (b.lead![H].hitRate - a.lead![H].hitRate)).slice(0, 18),
+    [data, H]);
 
   return (
     <main className="min-h-screen w-full bg-black text-white">
@@ -60,11 +62,19 @@ export default function CrossMarketPage() {
           <>
             {/* US→KR 오버나잇 리드 */}
             <section className="mb-7">
-              <h2 className="mb-1 text-sm font-semibold text-amber-200/85">📅 US→KR 3일 리드 <span className="text-white/35">{leads.length}</span></h2>
-              <p className="mb-2.5 text-[11px] text-white/45">최근 <b className="text-white/60">3거래일 미국</b> 흐름이 이후 <b className="text-white/60">3거래일 한국</b>으로 이어진 <b className="text-white/60">방향 적중률</b>이 높은 테마. 오버나잇 노이즈 대신 3일 스윙으로 봅니다.</p>
+              <div className="mb-1 flex flex-wrap items-center gap-2">
+                <h2 className="text-sm font-semibold text-amber-200/85">📅 US→KR {H}일 리드 <span className="text-white/35">{leads.length}</span></h2>
+                <div className="flex gap-1">
+                  {(["1", "3", "5"] as const).map((h) => (
+                    <button key={h} onClick={() => setH(h)}
+                      className={`rounded-md border px-2 py-0.5 text-[11px] ${H === h ? "border-amber-300/60 bg-amber-500/20 text-amber-100" : "border-white/12 bg-white/[0.03] text-white/55 hover:bg-white/[0.07]"}`}>{h}일</button>
+                  ))}
+                </div>
+              </div>
+              <p className="mb-2.5 text-[11px] text-white/45">최근 <b className="text-white/60">{H}거래일 미국</b> 흐름이 이후 <b className="text-white/60">{H}거래일 한국</b>으로 이어진 <b className="text-white/60">방향 적중률</b>이 높은 테마. {H === "1" ? "가장 빠른 호흡(오버나잇)." : `${H}일 스윙으로 봅니다.`}</p>
               <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {leads.map((t) => {
-                  const L = t.lead!;
+                  const L = t.lead![H];
                   const up = (L.lastUsRet ?? 0) >= 0;
                   return (
                     <a key={t.id} href={`/graph/${t.id}`} target="_blank" rel="noreferrer"
@@ -74,9 +84,9 @@ export default function CrossMarketPage() {
                         <span className="shrink-0 rounded bg-amber-500/20 px-1.5 py-0.5 text-[10.5px] font-bold text-amber-100" title="어젯밤 미국 방향이 다음 한국 세션 방향과 일치한 비율">적중 {L.hitRate}%</span>
                       </div>
                       <div className="flex items-center justify-between gap-2">
-                        <div className="text-[11px] text-white/50">최근 3일 미국<br /><span className="text-[16px] font-bold tabular-nums" style={{ color: retColor(L.lastUsRet) }}>{pct(L.lastUsRet, 2)}</span></div>
+                        <div className="text-[11px] text-white/50">최근 {H}일 미국<br /><span className="text-[16px] font-bold tabular-nums" style={{ color: retColor(L.lastUsRet) }}>{pct(L.lastUsRet, 2)}</span></div>
                         <div className="text-center text-[11px] text-white/40">→</div>
-                        <div className="text-right text-[11px] text-white/50">향후 3일 한국 예상<br /><span className="text-[16px] font-bold" style={{ color: up ? "#f87171" : "#60a5fa" }}>{up ? "▲ 상승" : "▼ 하락"}</span></div>
+                        <div className="text-right text-[11px] text-white/50">향후 {H}일 한국 예상<br /><span className="text-[16px] font-bold" style={{ color: up ? "#f87171" : "#60a5fa" }}>{up ? "▲ 상승" : "▼ 하락"}</span></div>
                       </div>
                       <div className="mt-1.5 text-[10px] text-white/35">상관 {L.corr?.toFixed(2)} · 표본 {L.n} · 시장 {t.markets.map((m) => `${m.label}${m.n}`).join("·")}</div>
                     </a>

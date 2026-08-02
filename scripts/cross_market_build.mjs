@@ -64,41 +64,42 @@ for (const f of files) {
   markets.sort((a, b) => b.n - a.n);
   const mkOut = markets.map((m) => ({ co: m.co, label: m.label, n: m.n, r7: round(lastNReturn(m.basket, 5)), r30: round(lastNReturn(m.basket, 21)) }));
 
-  // US→KR 3일 리드: 최근 3거래일 미국 누적 → 이후 3거래일 한국 누적
+  // US→KR 리드: 최근 H거래일 미국 누적 → 이후 H거래일 한국 누적 (H=1/3/5 다기간)
   const US = markets.find((m) => m.co === "US"), KR = markets.find((m) => m.co === "KR");
   let lead = null;
   if (US && KR && US.n >= 2 && KR.n >= 2) {
-    const H = 3;
     const usD = [...US.basket.keys()].sort();
     const krD = [...KR.basket.keys()].sort();
     const comp = (basket, dates) => { let p = 1; for (const d of dates) p *= 1 + basket.get(d); return p - 1; };
     const firstAfter = (arr, d) => { let lo = 0, hi = arr.length - 1, ans = arr.length; while (lo <= hi) { const m = (lo + hi) >> 1; if (arr[m] > d) { ans = m; hi = m - 1; } else lo = m + 1; } return ans; };
-    const pairs = [];
-    for (let i = H - 1; i < usD.length; i++) {
-      const k = firstAfter(krD, usD[i]);
-      if (k + H - 1 >= krD.length) continue;
-      pairs.push([comp(US.basket, usD.slice(i - H + 1, i + 1)), comp(KR.basket, krD.slice(k, k + H))]);
-    }
-    const use = pairs.slice(-WINDOW);
-    if (use.length >= 30) {
+    const computeH = (H) => {
+      const pairs = [];
+      for (let i = H - 1; i < usD.length; i++) {
+        const k = firstAfter(krD, usD[i]);
+        if (k + H - 1 >= krD.length) continue;
+        pairs.push([comp(US.basket, usD.slice(i - H + 1, i + 1)), comp(KR.basket, krD.slice(k, k + H))]);
+      }
+      const use = pairs.slice(-WINDOW);
+      if (use.length < 30) return null;
       let hit = 0, n = 0, sx = 0, sy = 0, sxx = 0, syy = 0, sxy = 0;
       for (const [x, y] of use) { if (!isFinite(x) || !isFinite(y)) continue; n++; if (Math.sign(x) === Math.sign(y)) hit++; sx += x; sy += y; sxx += x * x; syy += y * y; sxy += x * y; }
       const cov = sxy - sx * sy / n, vx = sxx - sx * sx / n, vy = syy - sy * sy / n;
       const corr = vx > 0 && vy > 0 ? cov / Math.sqrt(vx * vy) : 0;
-      const lastUsSig = comp(US.basket, usD.slice(-H)) * 100; // 최근 3일 미국 누적
-      lead = { horizon: H, hitRate: Math.round(hit / n * 100), corr: round(corr), n, lastUsRet: round(lastUsSig), lastUsDate: usD[usD.length - 1] };
-    }
+      return { hitRate: Math.round(hit / n * 100), corr: round(corr), n, lastUsRet: round(comp(US.basket, usD.slice(-H)) * 100), lastUsDate: usD[usD.length - 1] };
+    };
+    const byH = {};
+    for (const H of [1, 3, 5]) { const L = computeH(H); if (L) byH[H] = L; }
+    if (Object.keys(byH).length) lead = byH;
   }
   out.push({ id: d.themeId || f.replace(".json", ""), name: d.themeName || "", markets: mkOut, marketCount: markets.length, lead });
 }
 function round(v) { return v == null || !isFinite(v) ? null : +v.toFixed(2); }
 
 const meta = { generated: new Date().toISOString(), window: WINDOW, themeCount: out.length,
-  method: `테마 자산을 국가별 서브바스켓(등가중)으로 분리. 시장별 최근 7/21거래일 수익률. US→KR 3일 리드=최근 3거래일 미국 누적수익 → 이후 3거래일 한국 누적수익 방향 적중률·상관(롤링, 최근 ${WINDOW}표본).` };
+  method: `테마 자산을 국가별 서브바스켓(등가중)으로 분리. 시장별 최근 7/21거래일 수익률. US→KR 리드=최근 H거래일 미국 누적 → 이후 H거래일 한국 누적 방향 적중률·상관(H=1/3/5, 롤링, 최근 ${WINDOW}표본).` };
 fs.writeFileSync(path.join(OUT_DIR, "cm.json"), JSON.stringify({ meta, themes: out }, null, 0));
 
-const leads = out.filter((o) => o.lead).sort((a, b) => b.lead.hitRate - a.lead.hitRate);
+const leads = out.filter((o) => o.lead && o.lead[3]).sort((a, b) => b.lead[3].hitRate - a.lead[3].hitRate);
 console.log(`다국가 테마 ${out.length} | US→KR 리드 산출 ${leads.length}`);
-console.log("적중률 top:", leads.slice(0, 6).map((o) => `${o.name}(${o.lead.hitRate}%,n${o.lead.n})`).join(", "));
-console.log("오늘 대기(pending) 신호:", out.filter((o) => o.lead?.pending).length);
+for (const H of [1, 3, 5]) { const top = out.filter((o) => o.lead && o.lead[H]).sort((a, b) => b.lead[H].hitRate - a.lead[H].hitRate).slice(0, 3); console.log(`H=${H} 적중률 top:`, top.map((o) => `${o.name}(${o.lead[H].hitRate}%,n${o.lead[H].n})`).join(", ")); }
 console.log("→", path.relative(ROOT, OUT_DIR));
