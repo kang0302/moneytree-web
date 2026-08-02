@@ -467,6 +467,13 @@ export default function HomePage() {
             >
               🌐 크로스마켓 교차투자
             </Link>
+            <Link
+              href="/shock"
+              className="inline-flex items-center gap-2 rounded-full border border-purple-400/40 bg-purple-500/15 px-5 py-2 text-sm font-semibold text-purple-100 transition hover:border-purple-300/60 hover:bg-purple-500/25"
+              title="매크로·테마·종목 충격이 온톨로지 엣지를 따라 어디까지 번지는지 시뮬레이션"
+            >
+              💥 충격 전파 what-if
+            </Link>
           </div>
 
           <div className="mt-3 text-[12px] text-white/55 sm:text-[14px]">
