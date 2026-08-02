@@ -182,7 +182,7 @@ function MapTab({ cl, graph, stories }: { cl: Clusters; graph: Graph; stories: S
       <h2 className="mb-2 mt-5 text-sm font-semibold text-white/85">커뮤니티 {sel !== null ? "· 선택됨" : "목록"}</h2>
       <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
         {clusters.filter((c) => sel === null || c.id === sel).map((c) => (
-          <div key={c.id} className="rounded-lg border border-white/10 bg-white/[0.02] p-2.5">
+          <div key={c.id} className="rounded-lg border border-white/10 bg-white/[0.02] p-2.5 transition-all hover:border-white/35 hover:bg-white/[0.05]">
             <div className="mb-1 flex items-center justify-between">
               <span className="text-[12.5px] font-semibold text-white/85">{c.label}</span>
               <span className="text-[10.5px] text-white/40">{c.size}개 테마</span>
@@ -210,7 +210,7 @@ function StoryCard({ st, nameOf }: { st: Story; nameOf: Map<string, string> }) {
   );
   if (st.kind === "cluster") {
     return (
-      <div className="rounded-xl border border-rose-400/20 bg-gradient-to-br from-rose-500/[0.08] to-white/[0.02] p-3">
+      <div className="rounded-xl border border-rose-400/20 bg-gradient-to-br from-rose-500/[0.08] to-white/[0.02] p-3 transition-all hover:border-rose-300/60 hover:shadow-[0_0_0_1px_rgba(251,113,133,0.35)]">
         <div className="mb-1 flex items-center justify-between">
           <span className="text-[11px] font-semibold text-rose-200/80">🧲 함께 움직이는 {st.size}개 테마</span>
           <span className="rounded bg-rose-500/15 px-1.5 py-0.5 text-[10px] text-rose-200/80" title="커뮤니티 내부 평균 동조도">동조 {st.avgR.toFixed(2)}</span>
@@ -222,7 +222,7 @@ function StoryCard({ st, nameOf }: { st: Story; nameOf: Map<string, string> }) {
   }
   if (st.kind === "pair") {
     return (
-      <div className="rounded-xl border border-amber-400/25 bg-gradient-to-br from-amber-500/[0.09] to-white/[0.02] p-3">
+      <div className="rounded-xl border border-amber-400/25 bg-gradient-to-br from-amber-500/[0.09] to-white/[0.02] p-3 transition-all hover:border-amber-300/70 hover:shadow-[0_0_0_1px_rgba(251,191,36,0.4)]">
         <div className="mb-1 flex items-center justify-between">
           <span className="text-[11px] font-semibold text-amber-200/85">🔗 사실상 한 몸 (숨은 중복)</span>
           <span className="rounded bg-amber-500/15 px-1.5 py-0.5 text-[10px] text-amber-200/90">동조 {st.r.toFixed(2)}</span>
@@ -235,7 +235,7 @@ function StoryCard({ st, nameOf }: { st: Story; nameOf: Map<string, string> }) {
     );
   }
   return (
-    <div className="rounded-xl border border-sky-400/25 bg-gradient-to-br from-sky-500/[0.09] to-white/[0.02] p-3">
+    <div className="rounded-xl border border-sky-400/25 bg-gradient-to-br from-sky-500/[0.09] to-white/[0.02] p-3 transition-all hover:border-sky-300/70 hover:shadow-[0_0_0_1px_rgba(56,189,248,0.4)]">
       <div className="mb-1 flex items-center justify-between">
         <span className="text-[11px] font-semibold text-sky-200/85">⚖️ 정반대로 움직임 (헤지)</span>
         <span className="rounded bg-sky-500/15 px-1.5 py-0.5 text-[10px] text-sky-200/90">동조 {st.r.toFixed(2)}</span>
@@ -263,15 +263,23 @@ function ExploreTab({ graph, nbr, nameOf, clusters }: { graph: Graph; nbr: Neigh
 
   const cur = sel ? graph.nodes.find((n) => n.id === sel) : null;
   const data = sel ? nbr[sel] : null;
-  const Bar = ({ id, r }: { id: string; r: number }) => (
-    <button onClick={() => { setSel(id); setQ(""); }} className="group flex w-full items-center gap-2 py-0.5 text-left">
-      <span className="w-[44%] truncate text-[12px] text-sky-300/80 group-hover:text-sky-200">{nameOf.get(id) || id}</span>
-      <span className="relative h-3 flex-1 rounded bg-white/[0.04]">
-        <span className="absolute top-0 h-3 rounded" style={{ left: r >= 0 ? "0" : `${(1 + r) * 100}%`, width: `${Math.abs(r) * 100}%`, background: corrColor(r) }} />
-      </span>
-      <span className="w-10 text-right text-[11px] tabular-nums" style={{ color: r >= 0 ? "#fca5a5" : "#93c5fd" }}>{r.toFixed(2)}</span>
-    </button>
-  );
+  const hubs = useMemo(() => [...graph.nodes].sort((a, b) => b.deg - a.deg).slice(0, 9), [graph]);
+  // 이웃 브리핑 카드(호버 하이라이트)
+  const NeighCard = ({ id, r }: { id: string; r: number }) => {
+    const pos = r >= 0;
+    return (
+      <button onClick={() => { setSel(id); setQ(""); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+        className={`group rounded-lg border p-2.5 text-left transition-all ${pos ? "border-rose-400/20 bg-rose-500/[0.04] hover:border-rose-300/60 hover:shadow-[0_0_0_1px_rgba(251,113,133,0.35)]" : "border-sky-400/20 bg-sky-500/[0.04] hover:border-sky-300/60 hover:shadow-[0_0_0_1px_rgba(56,189,248,0.35)]"}`}>
+        <div className="mb-1 flex items-center justify-between gap-2">
+          <span className="truncate text-[12.5px] font-semibold text-white/85 group-hover:text-white">{nameOf.get(id) || id}</span>
+          <span className="shrink-0 rounded px-1.5 py-0.5 text-[10.5px] font-bold tabular-nums" style={{ background: corrColor(r), color: "#fff" }}>{r > 0 ? "+" : ""}{r.toFixed(2)}</span>
+        </div>
+        <span className="relative block h-2.5 w-full rounded bg-white/[0.05]">
+          <span className="absolute top-0 h-2.5 rounded" style={{ left: pos ? "0" : `${(1 + r) * 100}%`, width: `${Math.abs(r) * 100}%`, background: corrColor(r) }} />
+        </span>
+      </button>
+    );
+  };
 
   return (
     <section>
@@ -287,24 +295,43 @@ function ExploreTab({ graph, nbr, nameOf, clusters }: { graph: Graph; nbr: Neigh
         )}
       </div>
 
-      {!cur && <div className="text-[12.5px] text-white/45">테마를 검색해 선택하면, 시장요인을 뺀 뒤에도 <b className="text-white/70">함께 뜨는 테마</b>와 <b className="text-white/70">반대로 가는(헤지) 테마</b>를 보여줍니다.</div>}
+      {!cur && (
+        <div>
+          <div className="mb-2 text-[12.5px] text-white/45">테마를 검색해 선택하면, 시장요인을 뺀 뒤에도 <b className="text-white/70">함께 뜨는 테마</b>와 <b className="text-white/70">반대로 가는(헤지) 테마</b>를 카드로 보여줍니다.</div>
+          <div className="mb-1.5 text-[11px] font-semibold text-white/55">🔥 많이 엮인 테마부터 살펴보기</div>
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+            {hubs.map((n) => (
+              <button key={n.id} onClick={() => { setSel(n.id); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                className="group rounded-lg border border-white/10 bg-white/[0.02] p-2.5 text-left transition-all hover:border-white/35 hover:bg-white/[0.05]">
+                <div className="truncate text-[12.5px] font-semibold text-white/85 group-hover:text-white">{n.name}</div>
+                <div className="text-[10.5px] text-white/40">연결 {n.deg}개 · 자산 {n.assetCount}종</div>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
 
       {cur && data && (
         <div>
-          <div className="mb-3 flex flex-wrap items-center gap-2">
-            <span className="text-[15px] font-bold text-white/90">{cur.name}</span>
-            {cur.cluster >= 0 && <span className="rounded border border-white/15 bg-white/[0.05] px-1.5 py-0.5 text-[10.5px] text-white/50">커뮤니티: {clusterName.get(cur.cluster) || "-"}</span>}
-            <a href={`/graph/${cur.id}`} target="_blank" rel="noreferrer" className="rounded border border-white/15 bg-white/[0.05] px-1.5 py-0.5 text-[10.5px] text-sky-300 hover:bg-white/10">그래프 열기 ↗</a>
-          </div>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            <div className="rounded-lg border border-rose-400/15 bg-rose-500/[0.04] p-3">
-              <div className="mb-1.5 text-[12px] font-semibold text-rose-200/80">🔺 함께 뜨고 지는 테마 (동조)</div>
-              {data.pos.slice(0, 12).map(([id, r]) => <Bar key={id} id={id} r={r} />)}
+          <div className="mb-3 rounded-xl border border-white/15 bg-white/[0.04] p-3">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="text-[16px] font-bold text-white/90">{cur.name}</span>
+              {cur.cluster >= 0 && <span className="rounded border border-white/15 bg-white/[0.05] px-1.5 py-0.5 text-[10.5px] text-white/50">커뮤니티: {clusterName.get(cur.cluster) || "-"}</span>}
+              <a href={`/graph/${cur.id}`} target="_blank" rel="noreferrer" className="rounded border border-white/15 bg-white/[0.05] px-1.5 py-0.5 text-[10.5px] text-sky-300 transition-colors hover:border-sky-300/50 hover:bg-white/10">그래프 열기 ↗</a>
             </div>
-            <div className="rounded-lg border border-sky-400/15 bg-sky-500/[0.04] p-3">
+          </div>
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+            <div>
+              <div className="mb-1.5 text-[12px] font-semibold text-rose-200/80">🔺 함께 뜨고 지는 테마 (동조)</div>
+              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                {data.pos.slice(0, 12).map(([id, r]) => <NeighCard key={id} id={id} r={r} />)}
+              </div>
+            </div>
+            <div>
               <div className="mb-1.5 text-[12px] font-semibold text-sky-200/80">🔻 반대로 가는 테마 (헤지 후보)</div>
-              {data.neg.filter(([, r]) => r < 0).length === 0 && <div className="py-2 text-[11.5px] text-white/40">뚜렷한 역동조 테마 없음(시장요인 제거 후).</div>}
-              {data.neg.filter(([, r]) => r < 0).slice(0, 12).map(([id, r]) => <Bar key={id} id={id} r={r} />)}
+              {data.neg.filter(([, r]) => r < 0).length === 0
+                ? <div className="rounded-lg border border-white/10 bg-white/[0.02] p-3 text-[11.5px] text-white/40">뚜렷한 역동조 테마 없음(시장요인 제거 후).</div>
+                : <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">{data.neg.filter(([, r]) => r < 0).slice(0, 12).map(([id, r]) => <NeighCard key={id} id={id} r={r} />)}</div>}
             </div>
           </div>
         </div>
@@ -371,39 +398,39 @@ function BasketTab({ graph, nameOf, corrOf }: { graph: Graph; nameOf: Map<string
 
           {ids.length >= 2 && (
             <>
-              <div className="mb-3 flex flex-wrap gap-3">
-                <div className="rounded-lg border border-white/10 bg-white/[0.02] p-3">
+              <div className="mb-3 grid grid-cols-2 gap-3 sm:max-w-md">
+                <div className="rounded-lg border border-white/10 bg-white/[0.02] p-3 transition-all hover:border-white/35 hover:bg-white/[0.05]">
                   <div className="text-[11px] text-white/50">바스켓 평균 동조도</div>
-                  <div className="text-[18px] font-bold" style={{ color: avg == null ? "#94a3b8" : avg >= 0.5 ? "#f87171" : avg >= 0.3 ? "#fbbf24" : "#4ade80" }}>{avg == null ? "—" : avg.toFixed(2)}</div>
+                  <div className="text-[20px] font-bold" style={{ color: avg == null ? "#94a3b8" : avg >= 0.5 ? "#f87171" : avg >= 0.3 ? "#fbbf24" : "#4ade80" }}>{avg == null ? "—" : avg.toFixed(2)}</div>
                   <div className="text-[10.5px] text-white/40">{avg == null ? "" : avg >= 0.5 ? "집중 위험 (분산 착시 가능)" : avg >= 0.3 ? "보통" : "잘 분산됨"}</div>
                 </div>
-                <div className="rounded-lg border border-amber-400/25 bg-amber-500/[0.06] p-3">
+                <div className="rounded-lg border border-amber-400/25 bg-amber-500/[0.06] p-3 transition-all hover:border-amber-300/70 hover:shadow-[0_0_0_1px_rgba(251,191,36,0.4)]">
                   <div className="text-[11px] text-amber-200/80">숨은 중복 쌍 (동조 ≥ 0.70)</div>
-                  <div className="text-[18px] font-bold text-amber-200">{hidden.length}</div>
+                  <div className="text-[20px] font-bold text-amber-200">{hidden.length}</div>
                   <div className="text-[10.5px] text-white/40">달라 보여도 같이 움직이는 쌍</div>
                 </div>
               </div>
 
-              <div className="overflow-x-auto rounded-lg border border-white/10">
-                <table className="w-full border-collapse text-[12px] whitespace-nowrap">
-                  <thead><tr className="bg-white/[0.05] text-white/80">
-                    <th className="px-3 py-1.5 text-left font-semibold">테마 A</th>
-                    <th className="px-3 py-1.5 text-left font-semibold">테마 B</th>
-                    <th className="px-3 py-1.5 text-right font-semibold">동조도</th>
-                    <th className="px-3 py-1.5 text-left font-semibold" style={{ width: 160 }}></th>
-                  </tr></thead>
-                  <tbody>
-                    {pairs.map((p) => (
-                      <tr key={p.a + p.b} className={`border-t border-white/5 ${p.r >= 0.7 ? "bg-amber-500/[0.05]" : ""}`}>
-                        <td className="px-3 py-1 text-white/80">{nameOf.get(p.a) || p.a}</td>
-                        <td className="px-3 py-1 text-white/80">{nameOf.get(p.b) || p.b}</td>
-                        <td className="px-3 py-1 text-right font-semibold tabular-nums" style={{ color: p.r >= 0 ? "#fca5a5" : "#93c5fd" }}>{p.r.toFixed(2)}{p.r >= 0.7 && " ⚠"}</td>
-                        <td className="px-3 py-1"><span className="relative block h-3 w-full rounded bg-white/[0.04]"><span className="absolute top-0 h-3 rounded" style={{ left: p.r >= 0 ? "0" : `${(1 + p.r) * 100}%`, width: `${Math.abs(p.r) * 100}%`, background: corrColor(p.r) }} /></span></td>
-                      </tr>
-                    ))}
-                    {pairs.length === 0 && <tr><td colSpan={4} className="px-3 py-3 text-center text-white/40">담긴 테마 간 뚜렷한 동조가 없습니다(잘 분산됨).</td></tr>}
-                  </tbody>
-                </table>
+              <div className="mb-1.5 text-[11px] font-semibold text-white/55">테마 쌍 동조도 (동조 높은 순)</div>
+              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                {pairs.map((p) => {
+                  const warn = p.r >= 0.7;
+                  return (
+                    <div key={p.a + p.b}
+                      className={`rounded-lg border p-2.5 transition-all ${warn ? "border-amber-400/30 bg-amber-500/[0.06] hover:border-amber-300/70 hover:shadow-[0_0_0_1px_rgba(251,191,36,0.4)]" : "border-white/10 bg-white/[0.02] hover:border-white/35 hover:bg-white/[0.05]"}`}>
+                      <div className="mb-1.5 flex items-center justify-between gap-2">
+                        <div className="flex min-w-0 flex-wrap items-center gap-1 text-[12.5px] font-semibold text-white/85">
+                          <a href={`/graph/${p.a}`} target="_blank" rel="noreferrer" className="truncate text-sky-300/85 hover:underline">{nameOf.get(p.a) || p.a}</a>
+                          <span className="text-white/40">↔</span>
+                          <a href={`/graph/${p.b}`} target="_blank" rel="noreferrer" className="truncate text-sky-300/85 hover:underline">{nameOf.get(p.b) || p.b}</a>
+                        </div>
+                        <span className="shrink-0 rounded px-1.5 py-0.5 text-[10.5px] font-bold tabular-nums text-white" style={{ background: corrColor(p.r) }}>{p.r > 0 ? "+" : ""}{p.r.toFixed(2)}{warn ? " ⚠" : ""}</span>
+                      </div>
+                      <span className="relative block h-2.5 w-full rounded bg-white/[0.05]"><span className="absolute top-0 h-2.5 rounded" style={{ left: p.r >= 0 ? "0" : `${(1 + p.r) * 100}%`, width: `${Math.abs(p.r) * 100}%`, background: corrColor(p.r) }} /></span>
+                    </div>
+                  );
+                })}
+                {pairs.length === 0 && <div className="col-span-full rounded-lg border border-white/10 bg-white/[0.02] p-3 text-center text-[12px] text-white/40">담긴 테마 간 뚜렷한 동조가 없습니다(잘 분산됨).</div>}
               </div>
               <p className="mt-2 text-[10.5px] text-white/35">※ 상관은 각 테마 상위 이웃 기준으로 조회합니다. 목록에 없으면 동조가 낮은 것으로 간주합니다.</p>
             </>
