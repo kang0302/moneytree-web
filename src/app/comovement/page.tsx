@@ -4,7 +4,7 @@
 // (2)함께 뜨고 지는 테마 탐색, (3)내 바스켓 숨은 중복(집중 리스크) 진단.
 // 데이터: import_MT/data/comovement/{meta,graph,neighbors,clusters}.json (사전계산).
 
-import React, { useEffect, useMemo, useState, useCallback } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 const RAW = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/comovement";
 
@@ -20,8 +20,6 @@ type Story =
 type Stories = { stories: Story[] };
 type Meta = { generated: string; window: number; axisStart: string; axisEnd: string; themeCount: number; method: string };
 
-const LS_KEY = "comovement_basket_v1";
-
 function corrColor(r: number): string {
   const a = Math.min(1, Math.abs(r));
   if (r >= 0) return `rgba(239,68,68,${0.1 + 0.75 * a})`;
@@ -35,7 +33,6 @@ export default function ComovementPage() {
   const [cl, setCl] = useState<Clusters | null>(null);
   const [stories, setStories] = useState<Stories | null>(null);
   const [state, setState] = useState<"loading" | "ok" | "error">("loading");
-  const [tab, setTab] = useState<"map" | "explore" | "basket">("map");
 
   useEffect(() => {
     let cancel = false;
@@ -63,17 +60,6 @@ export default function ComovementPage() {
     return m;
   }, [graph]);
 
-  // 임의 테마쌍 상관 조회 (이웃 top-N 기반, 없으면 null=낮음)
-  const posMap = useMemo(() => {
-    const m = new Map<string, Map<string, number>>();
-    if (nbr) for (const id in nbr) m.set(id, new Map(nbr[id].pos));
-    return m;
-  }, [nbr]);
-  const corrOf = useCallback((a: string, b: string): number | null => {
-    if (a === b) return 1;
-    return posMap.get(a)?.get(b) ?? posMap.get(b)?.get(a) ?? null;
-  }, [posMap]);
-
   return (
     <main className="min-h-screen w-full bg-black text-white">
       <div className="mx-auto w-full max-w-[1200px] px-4 py-6">
@@ -89,24 +75,16 @@ export default function ComovementPage() {
           시장 전체 등락이 아닌 <b className="text-white/80">테마 고유의 동조</b>만 포착합니다. <span className="text-white/40">(예측이 아닌 탐지·경보)</span>
         </p>
 
-        {/* 탭 */}
-        <div className="mb-4 flex flex-wrap gap-1.5">
-          {([["map", "🗺️ 코무브먼트 맵"], ["explore", "🔎 함께 뜨고 지는 테마"], ["basket", "🧺 내 바스켓 · 숨은 중복"]] as const).map(([k, label]) => (
-            <button key={k} onClick={() => setTab(k)}
-              className={`rounded-lg border px-3 py-1.5 text-xs ${tab === k ? "border-white/30 bg-white/[0.1] text-white" : "border-white/10 bg-white/[0.03] text-white/60 hover:bg-white/[0.07]"}`}>
-              {label}
-            </button>
-          ))}
-        </div>
-
         {state === "loading" && <div className="text-white/50">불러오는 중…</div>}
         {state === "error" && <div className="rounded-lg border border-white/10 bg-white/[0.03] p-4 text-[12.5px] text-white/55">코무브먼트 데이터 생성 중입니다. 잠시 후 새로고침해 주세요.</div>}
 
         {state === "ok" && graph && nbr && cl && (
           <>
-            {tab === "map" && <MapTab cl={cl} graph={graph} stories={stories} />}
-            {tab === "explore" && <ExploreTab graph={graph} nbr={nbr} nameOf={nameOf} clusters={cl.clusters} />}
-            {tab === "basket" && <BasketTab graph={graph} nameOf={nameOf} corrOf={corrOf} />}
+            <MapTab cl={cl} graph={graph} stories={stories} />
+            <div className="my-7 border-t border-white/10" />
+            <h2 className="mb-1 text-[15px] font-semibold text-white/85">🔎 함께 뜨고 지는 테마</h2>
+            <p className="mb-3 text-[11px] text-white/45">테마를 골라 시장요인을 뺀 뒤에도 동조/역동조하는 이웃을 살펴보세요.</p>
+            <ExploreTab graph={graph} nbr={nbr} nameOf={nameOf} clusters={cl.clusters} />
           </>
         )}
 
@@ -335,107 +313,6 @@ function ExploreTab({ graph, nbr, nameOf, clusters }: { graph: Graph; nbr: Neigh
             </div>
           </div>
         </div>
-      )}
-    </section>
-  );
-}
-
-/* ── Tab 3: 내 바스켓 · 숨은 중복 진단 ── */
-function BasketTab({ graph, nameOf, corrOf }: { graph: Graph; nameOf: Map<string, string>; corrOf: (a: string, b: string) => number | null }) {
-  const sorted = useMemo(() => [...graph.nodes].sort((a, b) => a.name.localeCompare(b.name, "ko")), [graph]);
-  const [q, setQ] = useState("");
-  const [ids, setIds] = useState<string[]>([]);
-
-  useEffect(() => { try { const s = localStorage.getItem(LS_KEY); if (s) setIds(JSON.parse(s)); } catch {} }, []);
-  useEffect(() => { try { localStorage.setItem(LS_KEY, JSON.stringify(ids)); } catch {} }, [ids]);
-
-  const matches = useMemo(() => {
-    if (!q.trim()) return [];
-    const s = q.trim().toLowerCase();
-    return sorted.filter((n) => (n.name.toLowerCase().includes(s) || n.id.toLowerCase().includes(s)) && !ids.includes(n.id)).slice(0, 10);
-  }, [q, sorted, ids]);
-
-  const pairs = useMemo(() => {
-    const out: { a: string; b: string; r: number }[] = [];
-    for (let i = 0; i < ids.length; i++) for (let j = i + 1; j < ids.length; j++) {
-      const r = corrOf(ids[i], ids[j]);
-      if (r != null) out.push({ a: ids[i], b: ids[j], r });
-    }
-    return out.sort((x, y) => y.r - x.r);
-  }, [ids, corrOf]);
-
-  const avg = pairs.length ? pairs.reduce((a, p) => a + p.r, 0) / pairs.length : null;
-  const hidden = pairs.filter((p) => p.r >= 0.7);
-
-  return (
-    <section>
-      <p className="mb-2 text-[12.5px] text-white/55">관심 테마를 담으면, <b className="text-white/80">서로 다른 테마처럼 보여도 실제로는 함께 움직이는(숨은 중복)</b> 쌍을 찾아 <b className="text-white/80">분산 착시·집중 리스크</b>를 경고합니다.</p>
-      <div className="relative mb-3 max-w-md">
-        <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="테마를 검색해 바스켓에 추가"
-          className="w-full rounded-lg border border-white/15 bg-white/[0.04] px-3 py-2 text-[13px] text-white placeholder:text-white/35 focus:border-white/30 focus:outline-none" />
-        {matches.length > 0 && (
-          <div className="absolute z-20 mt-1 max-h-64 w-full overflow-y-auto rounded-lg border border-white/15 bg-neutral-900 shadow-xl">
-            {matches.map((n) => (
-              <button key={n.id} onClick={() => { setIds((p) => [...p, n.id]); setQ(""); }} className="block w-full truncate px-3 py-1.5 text-left text-[12.5px] text-white/80 hover:bg-white/10">＋ {n.name}</button>
-            ))}
-          </div>
-        )}
-      </div>
-
-      {ids.length === 0 && <div className="text-[12.5px] text-white/40">아직 담긴 테마가 없습니다. 위에서 검색해 2개 이상 추가하세요.</div>}
-
-      {ids.length > 0 && (
-        <>
-          <div className="mb-3 flex flex-wrap gap-1.5">
-            {ids.map((id) => (
-              <span key={id} className="flex items-center gap-1 rounded border border-white/15 bg-white/[0.05] px-2 py-1 text-[11.5px] text-white/80">
-                {nameOf.get(id) || id}
-                <button onClick={() => setIds((p) => p.filter((x) => x !== id))} className="text-white/40 hover:text-rose-300">✕</button>
-              </span>
-            ))}
-            <button onClick={() => setIds([])} className="rounded border border-white/10 px-2 py-1 text-[11px] text-white/40 hover:text-white/70">전체 비우기</button>
-          </div>
-
-          {ids.length >= 2 && (
-            <>
-              <div className="mb-3 grid grid-cols-2 gap-3 sm:max-w-md">
-                <div className="rounded-lg border border-white/10 bg-white/[0.02] p-3 transition-all hover:border-white/35 hover:bg-white/[0.05]">
-                  <div className="text-[11px] text-white/50">바스켓 평균 동조도</div>
-                  <div className="text-[20px] font-bold" style={{ color: avg == null ? "#94a3b8" : avg >= 0.5 ? "#f87171" : avg >= 0.3 ? "#fbbf24" : "#4ade80" }}>{avg == null ? "—" : avg.toFixed(2)}</div>
-                  <div className="text-[10.5px] text-white/40">{avg == null ? "" : avg >= 0.5 ? "집중 위험 (분산 착시 가능)" : avg >= 0.3 ? "보통" : "잘 분산됨"}</div>
-                </div>
-                <div className="rounded-lg border border-amber-400/25 bg-amber-500/[0.06] p-3 transition-all hover:border-amber-300/70 hover:shadow-[0_0_0_1px_rgba(251,191,36,0.4)]">
-                  <div className="text-[11px] text-amber-200/80">숨은 중복 쌍 (동조 ≥ 0.70)</div>
-                  <div className="text-[20px] font-bold text-amber-200">{hidden.length}</div>
-                  <div className="text-[10.5px] text-white/40">달라 보여도 같이 움직이는 쌍</div>
-                </div>
-              </div>
-
-              <div className="mb-1.5 text-[11px] font-semibold text-white/55">테마 쌍 동조도 (동조 높은 순)</div>
-              <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-                {pairs.map((p) => {
-                  const warn = p.r >= 0.7;
-                  return (
-                    <div key={p.a + p.b}
-                      className={`rounded-lg border p-2.5 transition-all ${warn ? "border-amber-400/30 bg-amber-500/[0.06] hover:border-amber-300/70 hover:shadow-[0_0_0_1px_rgba(251,191,36,0.4)]" : "border-white/10 bg-white/[0.02] hover:border-white/35 hover:bg-white/[0.05]"}`}>
-                      <div className="mb-1.5 flex items-center justify-between gap-2">
-                        <div className="flex min-w-0 flex-wrap items-center gap-1 text-[12.5px] font-semibold text-white/85">
-                          <a href={`/graph/${p.a}`} target="_blank" rel="noreferrer" className="truncate text-sky-300/85 hover:underline">{nameOf.get(p.a) || p.a}</a>
-                          <span className="text-white/40">↔</span>
-                          <a href={`/graph/${p.b}`} target="_blank" rel="noreferrer" className="truncate text-sky-300/85 hover:underline">{nameOf.get(p.b) || p.b}</a>
-                        </div>
-                        <span className="shrink-0 rounded px-1.5 py-0.5 text-[10.5px] font-bold tabular-nums text-white" style={{ background: corrColor(p.r) }}>{p.r > 0 ? "+" : ""}{p.r.toFixed(2)}{warn ? " ⚠" : ""}</span>
-                      </div>
-                      <span className="relative block h-2.5 w-full rounded bg-white/[0.05]"><span className="absolute top-0 h-2.5 rounded" style={{ left: p.r >= 0 ? "0" : `${(1 + p.r) * 100}%`, width: `${Math.abs(p.r) * 100}%`, background: corrColor(p.r) }} /></span>
-                    </div>
-                  );
-                })}
-                {pairs.length === 0 && <div className="col-span-full rounded-lg border border-white/10 bg-white/[0.02] p-3 text-center text-[12px] text-white/40">담긴 테마 간 뚜렷한 동조가 없습니다(잘 분산됨).</div>}
-              </div>
-              <p className="mt-2 text-[10.5px] text-white/35">※ 상관은 각 테마 상위 이웃 기준으로 조회합니다. 목록에 없으면 동조가 낮은 것으로 간주합니다.</p>
-            </>
-          )}
-        </>
       )}
     </section>
   );
