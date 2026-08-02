@@ -446,6 +446,13 @@ export default function HomePage() {
             >
               📈 바로미터 트랙레코드
             </Link>
+            <Link
+              href="/comovement"
+              className="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-500/15 px-5 py-2 text-sm font-semibold text-cyan-100 transition hover:border-cyan-300/60 hover:bg-cyan-500/25"
+              title="테마 일별수익률(시장요인 제거)의 상관으로 함께 움직이는 테마군·숨은 중복을 탐지"
+            >
+              🔗 테마 코무브먼트
+            </Link>
           </div>
 
           <div className="mt-3 text-[12px] text-white/55 sm:text-[14px]">
