@@ -222,6 +222,38 @@ const centroids = clusterOut.map((c) => {
 });
 const cmat = centroids.map((a) => centroids.map((b) => { const r = corr(a, b); return r === null ? 0 : +r.toFixed(2); }));
 
+// ── 스토리 카드(~9): 응집 커뮤니티 6 + 강한 동조쌍 2 + 헤지쌍 1 (가독성 우선 하이라이트) ──
+function avgInternalR(themeIds) {
+  const idxs = themeIds.map((t) => idxById.get(t));
+  let s = 0, n = 0;
+  for (let i = 0; i < idxs.length && n < 150; i++) for (let j = i + 1; j < idxs.length && n < 150; j++) {
+    const r = corr(themes[idxs[i]].vec, themes[idxs[j]].vec); if (r !== null) { s += r; n++; }
+  }
+  return n ? s / n : 0;
+}
+const clusterStories = clusterOut
+  .filter((c) => !/기타·광역/.test(c.label) && c.size >= 4)
+  .map((c) => ({ c, avgR: avgInternalR(c.themeIds) }))
+  .sort((a, b) => b.avgR * Math.log(b.c.size) - a.avgR * Math.log(a.c.size))
+  .slice(0, 6)
+  .map(({ c, avgR }) => ({
+    kind: "cluster", title: c.label, size: c.size, avgR: +avgR.toFixed(2),
+    themeIds: c.themeIds.map((t) => themes[idxById.get(t)]).sort((a, b) => b.assetCount - a.assetCount).slice(0, 5).map((t) => t.id),
+  }));
+// 강한 동조쌍(숨은 중복 헤드라인) / 헤지쌍
+const seenPair = new Set(); const allPairs = [];
+for (const id in neighbors) for (const [tid, r] of neighbors[id].pos) {
+  const k = id < tid ? id + "|" + tid : tid + "|" + id; if (seenPair.has(k)) continue; seenPair.add(k); allPairs.push([id, tid, r]);
+}
+allPairs.sort((a, b) => b[2] - a[2]);
+const usedT = new Set(); const pairStories = [];
+for (const [a, b, r] of allPairs) { if (pairStories.length >= 2) break; if (usedT.has(a) || usedT.has(b)) continue; usedT.add(a); usedT.add(b); pairStories.push({ kind: "pair", themeIds: [a, b], r: +r.toFixed(2) }); }
+let hedge = null;
+for (const id in neighbors) for (const [tid, r] of neighbors[id].neg) if (r < 0 && (!hedge || r < hedge.r)) hedge = { a: id, b: tid, r };
+const hedgeStories = hedge ? [{ kind: "hedge", themeIds: [hedge.a, hedge.b], r: +hedge.r.toFixed(2) }] : [];
+const stories = [...clusterStories, ...pairStories, ...hedgeStories];
+fs.writeFileSync(path.join(OUT_DIR, "stories.json"), JSON.stringify({ stories }, null, 0));
+
 const meta = { generated: new Date().toISOString(), window: WINDOW, axisStart: axis[0], axisEnd: axis[axis.length - 1],
   themeCount: N, pairCount: pairCnt, edgeThr: EDGE_THR, clusterThr: CLUSTER_THR,
   method: "테마 일별수익률(구성종목 등가중) 최근 " + WINDOW + "거래일 Pearson 상관. 공통거래일 " + MIN_OVERLAP + "+ 필요." };

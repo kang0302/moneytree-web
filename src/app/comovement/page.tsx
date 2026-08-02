@@ -13,6 +13,11 @@ type Graph = { nodes: Node[]; edges: { a: string; b: string; r: number }[] };
 type Neighbors = Record<string, { pos: [string, number][]; neg: [string, number][] }>;
 type Cluster = { id: number; label: string; centroidId: string; size: number; themeIds: string[] };
 type Clusters = { clusters: Cluster[]; matrix: number[][] };
+type Story =
+  | { kind: "cluster"; title: string; size: number; avgR: number; themeIds: string[] }
+  | { kind: "pair"; themeIds: string[]; r: number }
+  | { kind: "hedge"; themeIds: string[]; r: number };
+type Stories = { stories: Story[] };
 type Meta = { generated: string; window: number; axisStart: string; axisEnd: string; themeCount: number; method: string };
 
 const LS_KEY = "comovement_basket_v1";
@@ -28,6 +33,7 @@ export default function ComovementPage() {
   const [graph, setGraph] = useState<Graph | null>(null);
   const [nbr, setNbr] = useState<Neighbors | null>(null);
   const [cl, setCl] = useState<Clusters | null>(null);
+  const [stories, setStories] = useState<Stories | null>(null);
   const [state, setState] = useState<"loading" | "ok" | "error">("loading");
   const [tab, setTab] = useState<"map" | "explore" | "basket">("map");
 
@@ -36,14 +42,15 @@ export default function ComovementPage() {
     (async () => {
       try {
         const cb = `?_cb=${Date.now()}`;
-        const [m, g, n, c] = await Promise.all([
+        const [m, g, n, c, s] = await Promise.all([
           fetch(`${RAW}/meta.json${cb}`, { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
           fetch(`${RAW}/graph.json${cb}`, { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
           fetch(`${RAW}/neighbors.json${cb}`, { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
           fetch(`${RAW}/clusters.json${cb}`, { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+          fetch(`${RAW}/stories.json${cb}`, { cache: "no-store" }).then((r) => (r.ok ? r.json() : null)).catch(() => null),
         ]);
         if (cancel) return;
-        setMeta(m); setGraph(g); setNbr(n); setCl(c);
+        setMeta(m); setGraph(g); setNbr(n); setCl(c); setStories(s);
         setState(g && n && c ? "ok" : "error");
       } catch { if (!cancel) setState("error"); }
     })();
@@ -97,7 +104,7 @@ export default function ComovementPage() {
 
         {state === "ok" && graph && nbr && cl && (
           <>
-            {tab === "map" && <MapTab cl={cl} graph={graph} />}
+            {tab === "map" && <MapTab cl={cl} graph={graph} stories={stories} />}
             {tab === "explore" && <ExploreTab graph={graph} nbr={nbr} nameOf={nameOf} clusters={cl.clusters} />}
             {tab === "basket" && <BasketTab graph={graph} nameOf={nameOf} corrOf={corrOf} />}
           </>
@@ -117,14 +124,31 @@ export default function ComovementPage() {
   );
 }
 
-/* ── Tab 1: 코무브먼트 맵 (클러스터 히트맵 + 카드) ── */
-function MapTab({ cl, graph }: { cl: Clusters; graph: Graph }) {
+/* ── Tab 1: 코무브먼트 맵 — 스토리 카드(앞) + 상세 히트맵/전체군집(뒤·펼치기) ── */
+function MapTab({ cl, graph, stories }: { cl: Clusters; graph: Graph; stories: Stories | null }) {
   const [sel, setSel] = useState<number | null>(null);
+  const [showDetail, setShowDetail] = useState(false);
   const clusters = cl.clusters;
   const nameOf = useMemo(() => { const m = new Map<string, string>(); graph.nodes.forEach((x) => m.set(x.id, x.name)); return m; }, [graph]);
   const short = (s: string) => (s.length > 10 ? s.slice(0, 9) + "…" : s);
+
   return (
     <section>
+      {/* 스토리 카드 */}
+      <h2 className="mb-1 text-sm font-semibold text-white/85">오늘의 코무브먼트 스토리</h2>
+      <p className="mb-3 text-[11px] text-white/45">시장요인을 뺀 뒤에도 특히 뚜렷하게 함께(또는 반대로) 움직이는 관계만 추려낸 하이라이트입니다.</p>
+      <div className="mb-6 grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+        {(stories?.stories ?? []).map((st, i) => <StoryCard key={i} st={st} nameOf={nameOf} />)}
+        {!stories && <div className="text-[12px] text-white/40">스토리 생성 중…</div>}
+      </div>
+
+      {/* 상세: 히트맵 + 전체 클러스터 (뒤로 배치, 펼치기) */}
+      <button onClick={() => setShowDetail((v) => !v)}
+        className="mb-3 rounded-lg border border-white/15 bg-white/[0.04] px-3 py-1.5 text-xs text-white/70 hover:bg-white/10">
+        {showDetail ? "▲ 상세 맵 접기" : `▼ 전체 클러스터 맵·상관 히트맵 보기 (${clusters.length}개 커뮤니티)`}
+      </button>
+
+      {showDetail && (<div>
       <h2 className="mb-1 text-sm font-semibold text-white/85">클러스터 상관 히트맵 <span className="text-white/40">— 같이 움직이는 테마군 {clusters.length}개</span></h2>
       <p className="mb-2 text-[11px] text-white/45">칸 색이 진할수록(빨강=동조, 파랑=역동조) 두 커뮤니티가 함께 움직입니다. 커뮤니티를 클릭하면 소속 테마가 보입니다.</p>
       <div className="overflow-x-auto rounded-lg border border-white/10 p-1">
@@ -173,7 +197,54 @@ function MapTab({ cl, graph }: { cl: Clusters; graph: Graph }) {
           </div>
         ))}
       </div>
+      </div>)}
     </section>
+  );
+}
+
+/* ── 스토리 카드 ── */
+function StoryCard({ st, nameOf }: { st: Story; nameOf: Map<string, string> }) {
+  const chip = (tid: string, key?: React.Key) => (
+    <a key={key ?? tid} href={`/graph/${tid}`} target="_blank" rel="noreferrer"
+      className="rounded border border-white/10 bg-white/[0.04] px-1.5 py-0.5 text-[11px] text-sky-300/85 hover:bg-white/10">{nameOf.get(tid) || tid}</a>
+  );
+  if (st.kind === "cluster") {
+    return (
+      <div className="rounded-xl border border-rose-400/20 bg-gradient-to-br from-rose-500/[0.08] to-white/[0.02] p-3">
+        <div className="mb-1 flex items-center justify-between">
+          <span className="text-[11px] font-semibold text-rose-200/80">🧲 함께 움직이는 {st.size}개 테마</span>
+          <span className="rounded bg-rose-500/15 px-1.5 py-0.5 text-[10px] text-rose-200/80" title="커뮤니티 내부 평균 동조도">동조 {st.avgR.toFixed(2)}</span>
+        </div>
+        <div className="mb-1.5 text-[13.5px] font-bold text-white/90">{st.title}</div>
+        <div className="flex flex-wrap gap-1">{st.themeIds.map((t) => chip(t))}</div>
+      </div>
+    );
+  }
+  if (st.kind === "pair") {
+    return (
+      <div className="rounded-xl border border-amber-400/25 bg-gradient-to-br from-amber-500/[0.09] to-white/[0.02] p-3">
+        <div className="mb-1 flex items-center justify-between">
+          <span className="text-[11px] font-semibold text-amber-200/85">🔗 사실상 한 몸 (숨은 중복)</span>
+          <span className="rounded bg-amber-500/15 px-1.5 py-0.5 text-[10px] text-amber-200/90">동조 {st.r.toFixed(2)}</span>
+        </div>
+        <div className="mb-1.5 flex flex-wrap items-center gap-1.5 text-[13px] font-bold text-white/90">
+          {chip(st.themeIds[0])} <span className="text-white/40">↔</span> {chip(st.themeIds[1])}
+        </div>
+        <div className="text-[10.5px] text-white/45">달라 보여도 거의 같이 움직임 — 분산 착시·집중 리스크 주의.</div>
+      </div>
+    );
+  }
+  return (
+    <div className="rounded-xl border border-sky-400/25 bg-gradient-to-br from-sky-500/[0.09] to-white/[0.02] p-3">
+      <div className="mb-1 flex items-center justify-between">
+        <span className="text-[11px] font-semibold text-sky-200/85">⚖️ 정반대로 움직임 (헤지)</span>
+        <span className="rounded bg-sky-500/15 px-1.5 py-0.5 text-[10px] text-sky-200/90">동조 {st.r.toFixed(2)}</span>
+      </div>
+      <div className="mb-1.5 flex flex-wrap items-center gap-1.5 text-[13px] font-bold text-white/90">
+        {chip(st.themeIds[0])} <span className="text-white/40">↔</span> {chip(st.themeIds[1])}
+      </div>
+      <div className="text-[10.5px] text-white/45">한쪽이 오르면 다른 쪽은 내리는 경향 — 헤지·분산에 활용.</div>
+    </div>
   );
 }
 
