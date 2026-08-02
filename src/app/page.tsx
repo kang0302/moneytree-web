@@ -460,6 +460,13 @@ export default function HomePage() {
             >
               🌡️ 바로미터 국면전환
             </Link>
+            <Link
+              href="/cross-market"
+              className="inline-flex items-center gap-2 rounded-full border border-teal-400/40 bg-teal-500/15 px-5 py-2 text-sm font-semibold text-teal-100 transition hover:border-teal-300/60 hover:bg-teal-500/25"
+              title="여러 나라 증시에 걸친 테마의 시장별 구성·수익률과 US→KR 오버나잇 리드"
+            >
+              🌐 크로스마켓 교차투자
+            </Link>
           </div>
 
           <div className="mt-3 text-[12px] text-white/55 sm:text-[14px]">
