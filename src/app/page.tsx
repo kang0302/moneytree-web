@@ -453,6 +453,13 @@ export default function HomePage() {
             >
               🔗 테마 코무브먼트
             </Link>
+            <Link
+              href="/barometer-trend"
+              className="inline-flex items-center gap-2 rounded-full border border-orange-400/40 bg-orange-500/15 px-5 py-2 text-sm font-semibold text-orange-100 transition hover:border-orange-300/60 hover:bg-orange-500/25"
+              title="테마 바로미터 점수 추세로 상승/하락 국면전환을 탐지"
+            >
+              🌡️ 바로미터 국면전환
+            </Link>
           </div>
 
           <div className="mt-3 text-[12px] text-white/55 sm:text-[14px]">
