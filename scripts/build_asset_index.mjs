@@ -164,6 +164,21 @@ function main() {
     if (t?.themeId) themeScore7d.set(t.themeId, computeThemeScore7d(t));
   }
 
+  // 자산별 metrics (테마 노드에서 첫 발견) — 수익률·PER·시총·종가
+  const assetMetrics = new Map();
+  const MK = ["return_1d", "return_3d", "return_7d", "return_15d", "return_1m", "return_ytd", "return_1y", "return_2y", "return_3y", "pe_ttm", "marketCap", "close", "returnsAsOf", "valuationAsOf"];
+  for (const t of themes) {
+    for (const n of t?.nodes ?? []) {
+      if (n?.type !== "ASSET" || !n?.id || !n?.metrics) continue;
+      const cur = assetMetrics.get(n.id);
+      // 더 채워진 metrics 우선(return_1y 있는 것)
+      if (!cur || (n.metrics.return_1y != null && cur.return_1y == null)) {
+        const m = {}; for (const k of MK) if (n.metrics[k] != null) m[k] = n.metrics[k];
+        assetMetrics.set(n.id, m);
+      }
+    }
+  }
+
   // 자산별 집계 결과
   const index = new Map(); // assetId → entry
 
@@ -269,6 +284,13 @@ function main() {
       infoMatched++;
     }
   }
+  // metrics 부착
+  let metricsMatched = 0;
+  for (const [aid, entry] of Object.entries(out)) {
+    const m = assetMetrics.get(aid);
+    if (m && Object.keys(m).length) { entry.metrics = m; metricsMatched++; }
+  }
+  console.log(`metrics 부착: ${metricsMatched}`);
 
   // 통계
   const totalAssets = Object.keys(out).length;

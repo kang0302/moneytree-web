@@ -1,337 +1,229 @@
 "use client";
 
 // src/app/asset/[assetId]/AssetClient.tsx
-// 자산 중심 그래프 — public/data/asset/index.json 에서 entry fetch → 자산 + 연결 테마들 ForceGraph 시각화.
+// 자산 상세 — (1)프로파일(핵심사업·수익률·밸류) (2)1년 주가 vs SPY·QQQ (3)연결 테마 카드.
 
 import React, { useEffect, useMemo, useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
-
-import ForceGraphWrapper from "@/components/ForceGraphWrapper";
 import SearchBar from "@/components/SearchBar";
-import type { PeriodKey } from "@/lib/themeReturn";
 
 type ThemeRel = { themeId: string; themeName: string; relation: string; score7d?: number | null };
-type AssetRel = { assetId: string; name: string; relation: string; direction: "in" | "out"; themeId: string; themeName: string };
-type BriefingInfo = {
-  gFinanceUrl?: string | null;
-  coreBiz?: string;
-  ecosystem?: string;
-  driver?: string;
-  sourceTheme?: string;
-};
-
+type BriefingInfo = { gFinanceUrl?: string | null; coreBiz?: string; ecosystem?: string; driver?: string; sourceTheme?: string };
+type Metrics = Partial<Record<"return_1d" | "return_7d" | "return_15d" | "return_1m" | "return_ytd" | "return_1y" | "return_2y" | "return_3y" | "pe_ttm" | "marketCap" | "close", number>> & { returnsAsOf?: string };
 type AssetEntry = {
-  id: string;
-  name: string;
-  name_en?: string;
-  ticker: string;
-  exchange: string;
-  country: string;
-  asset_type: string;
-  themes: ThemeRel[];
-  relatedAssets: AssetRel[];
-  info?: BriefingInfo;
+  id: string; name: string; name_en?: string; ticker: string; exchange: string; country: string; asset_type: string;
+  themes: ThemeRel[]; info?: BriefingInfo; metrics?: Metrics;
 };
+type Perf = { assetId: string; ticker: string; start: string; end: string; dates: string[]; stock: number[]; spy: (number | null)[]; qqq: (number | null)[]; returns: Record<string, { stock: number | null; spy: number | null; qqq: number | null }> };
 
-const INDEX_URL_LOCAL = "/data/asset/index.json";
-const INDEX_URL_REMOTE = "https://raw.githubusercontent.com/kang0302/moneytree-web/main/public/data/asset/index.json";
+const IDX_LOCAL = "/data/asset/index.json";
+const IDX_REMOTE = "https://raw.githubusercontent.com/kang0302/moneytree-web/main/public/data/asset/index.json";
+const perfLocal = (id: string) => `/data/asset_perf/${id}.json`;
+const perfRemote = (id: string) => `https://raw.githubusercontent.com/kang0302/moneytree-web/main/public/data/asset_perf/${id}.json`;
 
-/** briefing 셀 — <br> 개행 + 들여쓰기 - 처리 */
-function BriefingCell({ title, body }: { title: string; body?: string }) {
+const CO = (c: string) => ({ US: "미국", KR: "한국", CN: "중국", HK: "홍콩", JP: "일본", TW: "대만", GB: "영국", DE: "독일", FR: "프랑스", CA: "캐나다", AU: "호주", IN: "인도" } as Record<string, string>)[c] || c;
+const REL = (r: string) => ({ THEMED_AS: "1궤도", EXPOSED_TO: "ETF 노출", OPERATES: "사업영위", HAS_TRAIT: "특성" } as Record<string, string>)[r] || r;
+
+function pct(v?: number | null, d = 2) { if (v == null || !Number.isFinite(v)) return "—"; return `${v >= 0 ? "+" : ""}${v.toFixed(d)}%`; }
+function retColor(v?: number | null) { if (v == null) return "#94a3b8"; return v >= 0 ? "#f87171" : "#60a5fa"; }
+function fmtCap(v?: number) { if (v == null || !Number.isFinite(v)) return "—"; if (v >= 1e12) return `$${(v / 1e12).toFixed(2)}T`; if (v >= 1e9) return `$${(v / 1e9).toFixed(1)}B`; if (v >= 1e6) return `$${(v / 1e6).toFixed(0)}M`; return `$${v}`; }
+
+function Bullets({ title, body }: { title: string; body?: string }) {
   if (!body) return null;
   const lines = body.split(/<br\s*\/?>/i).map((s) => s.trim()).filter(Boolean);
+  if (!lines.length) return null;
   return (
     <div>
-      <div className="mb-0.5 text-[10px] font-semibold uppercase tracking-wider text-white/55">{title}</div>
-      <ul className="ml-1 list-disc space-y-0.5 pl-3 text-[11.5px] leading-relaxed text-white/80">
-        {lines.map((l, i) => (
-          <li key={i}>{l.replace(/^[-·]\s*/, "")}</li>
-        ))}
+      <div className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-white/50">{title}</div>
+      <ul className="ml-1 list-disc space-y-0.5 pl-3.5 text-[12px] leading-relaxed text-white/80">
+        {lines.map((l, i) => <li key={i}>{l.replace(/^[-·]\s*/, "")}</li>)}
       </ul>
     </div>
   );
 }
 
-/** 7D EW 수익률 배지 — 양수=빨강, 음수=파랑, null=dash */
-function ScoreBadge({ value }: { value?: number | null }) {
-  if (value == null || !Number.isFinite(value)) {
-    return <span className="shrink-0 text-[10px] text-white/35">—</span>;
-  }
-  const up = value >= 0;
-  const cls = up ? "text-red-400" : "text-sky-400";
-  const sign = up ? "+" : "";
+function PerfChart({ perf }: { perf: Perf }) {
+  const W = 720, H = 260, padL = 6, padR = 6, padT = 14, padB = 4;
+  const all = [...perf.stock, ...perf.spy, ...perf.qqq].filter((v): v is number => v != null);
+  const min = Math.min(100, ...all), max = Math.max(100, ...all);
+  const span = Math.max(1, max - min), n = perf.dates.length;
+  const sx = (i: number) => padL + (i / (n - 1)) * (W - padL - padR);
+  const sy = (v: number) => padT + (1 - (v - min) / span) * (H - padT - padB);
+  const line = (arr: (number | null)[]) => arr.map((v, i) => (v == null ? null : `${sx(i).toFixed(1)},${sy(v).toFixed(1)}`)).filter(Boolean).join(" ");
+  const y100 = sy(100);
+  const series: [string, (number | null)[], string][] = [["종목", perf.stock, "#f5f5f5"], ["SPY", perf.spy, "#38bdf8"], ["QQQ", perf.qqq, "#fbbf24"]];
   return (
-    <span className={`shrink-0 font-mono text-[10.5px] font-semibold tabular-nums ${cls}`}>
-      {sign}
-      {value.toFixed(2)}%
-    </span>
+    <svg viewBox={`0 0 ${W} ${H}`} className="w-full" style={{ maxHeight: 280 }}>
+      <line x1={padL} x2={W - padR} y1={y100} y2={y100} stroke="rgba(255,255,255,0.18)" strokeDasharray="3 3" strokeWidth={1} />
+      <text x={padL + 2} y={y100 - 3} fontSize="9" fill="rgba(255,255,255,0.35)">100 (시작=1년 전)</text>
+      {series.map(([, arr, col]) => <polyline key={col} points={line(arr)} fill="none" stroke={col} strokeWidth={1.8} strokeLinejoin="round" />)}
+      {series.map(([, arr, col]) => { const last = [...arr].reverse().find((v) => v != null); return last != null ? <circle key={col + "d"} cx={sx(n - 1)} cy={sy(last)} r={2.6} fill={col} /> : null; })}
+    </svg>
   );
 }
 
 export default function AssetClient({ assetId }: { assetId: string }) {
   const router = useRouter();
-  const [data, setData] = useState<Record<string, AssetEntry> | null>(null);
-  const [period, setPeriod] = useState<PeriodKey>("7D");
-  const [showRelated, setShowRelated] = useState(false);
-  const [showAllThemes, setShowAllThemes] = useState(false);
-  const [colorByReturn, setColorByReturn] = useState(false);
-  const THEME_LIMIT = 8;
+  const [entry, setEntry] = useState<AssetEntry | null>(null);
+  const [perf, setPerf] = useState<Perf | null>(null);
+  const [state, setState] = useState<"loading" | "ok" | "notfound">("loading");
 
   useEffect(() => {
-    let cancelled = false;
+    let cancel = false;
     (async () => {
       try {
-        let res = await fetch(INDEX_URL_LOCAL, { cache: "no-store" });
-        if (!res.ok) res = await fetch(INDEX_URL_REMOTE, { cache: "no-store" });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const j = await res.json();
-        if (!cancelled) setData(j);
-      } catch (e) {
-        console.error("asset index fetch failed", e);
-        if (!cancelled) setData({});
-      }
+        let res = await fetch(IDX_LOCAL, { cache: "no-store" }).catch(() => null);
+        if (!res || !res.ok) res = await fetch(IDX_REMOTE, { cache: "no-store" });
+        const idx = (await res!.json()) as Record<string, AssetEntry>;
+        if (cancel) return;
+        const e = idx[assetId] || null;
+        setEntry(e); setState(e ? "ok" : "notfound");
+      } catch { if (!cancel) setState("notfound"); }
     })();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
+    return () => { cancel = true; };
+  }, [assetId]);
 
-  const entry: AssetEntry | null = useMemo(() => {
-    if (!data) return null;
-    return data[assetId] ?? null;
-  }, [data, assetId]);
+  useEffect(() => {
+    let cancel = false;
+    setPerf(null);
+    (async () => {
+      try {
+        let res = await fetch(perfLocal(assetId), { cache: "no-store" }).catch(() => null);
+        if (!res || !res.ok) res = await fetch(perfRemote(assetId), { cache: "no-store" }).catch(() => null);
+        if (res && res.ok) { const p = await res.json(); if (!cancel) setPerf(p); }
+      } catch { /* 성과 데이터 없으면 차트 생략 */ }
+    })();
+    return () => { cancel = true; };
+  }, [assetId]);
 
-  // ForceGraph 입력용 nodes/edges 구성
-  const { nodes, edges } = useMemo(() => {
-    if (!entry) return { nodes: [], edges: [] };
-    const nodes: any[] = [];
-    const edges: any[] = [];
-
-    // 1) 중심 자산 노드
-    nodes.push({
-      id: entry.id,
-      type: "ASSET",
-      name: entry.name,
-      exposure: {
-        ticker: entry.ticker,
-        exchange: entry.exchange,
-        country: entry.country,
-      },
-    });
-
-    // 2) 테마 노드 + 자산→테마 엣지 (default: 첫 THEME_LIMIT 개만, 토글 시 전체)
-    const themesToRender = showAllThemes ? entry.themes : entry.themes.slice(0, THEME_LIMIT);
-    for (const t of themesToRender) {
-      nodes.push({ id: t.themeId, type: "THEME", name: t.themeName });
-      edges.push({ from: entry.id, to: t.themeId, type: t.relation });
-    }
-
-    // 3) (옵션) 관련 자산 노드 + 자산간 엣지
-    if (showRelated) {
-      const seenAssets = new Set<string>([entry.id]);
-      for (const r of entry.relatedAssets) {
-        if (!seenAssets.has(r.assetId)) {
-          nodes.push({ id: r.assetId, type: "ASSET", name: r.name });
-          seenAssets.add(r.assetId);
-        }
-        const from = r.direction === "out" ? entry.id : r.assetId;
-        const to = r.direction === "out" ? r.assetId : entry.id;
-        edges.push({ from, to, type: r.relation });
-      }
-    }
-
-    return { nodes, edges };
-  }, [entry, showRelated, showAllThemes]);
-
-  // grouped themes by relation type (사이드 패널용)
-  const themesByRel = useMemo(() => {
-    if (!entry) return {} as Record<string, ThemeRel[]>;
-    const m: Record<string, ThemeRel[]> = {};
-    for (const t of entry.themes) {
-      (m[t.relation] ??= []).push(t);
-    }
-    return m;
-  }, [entry]);
-
-  if (!data) {
-    return <div className="p-6 text-white/70">자산 인덱스 로딩 중…</div>;
-  }
-  if (!entry) {
-    return (
-      <div className="p-6 text-white/70">
-        자산을 찾을 수 없습니다: <span className="font-mono">{assetId}</span>
-        <div className="mt-4">
-          <Link href="/" className="text-cyan-400 underline">
-            홈으로
-          </Link>
-        </div>
-      </div>
-    );
-  }
+  const themes = useMemo(() => (entry?.themes ?? []).slice().sort((a, b) => (b.score7d ?? -999) - (a.score7d ?? -999)), [entry]);
+  const m = entry?.metrics;
+  const RET_ROWS: [string, keyof Metrics][] = [["1일", "return_1d"], ["7일", "return_7d"], ["1개월", "return_1m"], ["YTD", "return_ytd"], ["1년", "return_1y"], ["3년", "return_3y"]];
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <div className="mx-auto max-w-7xl px-4 py-4">
+    <main className="min-h-screen w-full bg-black text-white">
+      <div className="mx-auto w-full max-w-[1100px] px-4 py-5">
         {/* 헤더 */}
-        <div className="mb-3 flex flex-wrap items-center gap-3">
-          <Link href="/" className="text-[12px] text-white/55 hover:text-white">
-            ← Home
-          </Link>
-          <div className="flex-1 min-w-50">
-            <SearchBar
-              indexUrl="/data/search/search_index.json"
+        <div className="mb-4 flex flex-wrap items-center gap-3">
+          <a href="/" className="rounded-lg border border-white/15 bg-white/[0.04] px-3 py-1 text-xs text-white/70 hover:bg-white/10">← 홈으로</a>
+          <div className="min-w-[220px] flex-1">
+            <SearchBar indexUrl="/data/search/search_index.json"
               onGoTheme={(tid) => router.push(`/graph/${tid}`)}
               onGoThemeFocus={(tid, fid) => router.push(`/graph/${tid}?focus=${encodeURIComponent(fid)}`)}
-              onGoAsset={(aid) => router.push(`/asset/${aid}`)}
-            />
-          </div>
-          <Link href="/themes" className="text-[12px] text-white/55 hover:text-white">
-            Full Theme Map ↗
-          </Link>
-        </div>
-
-        {/* 자산 정보 */}
-        <div className="mb-3 rounded-2xl border border-white/10 bg-white/3 px-4 py-3 backdrop-blur">
-          <div className="text-[11px] uppercase tracking-wider text-white/45">ASSET</div>
-          <div className="mt-1 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-            <div className="text-[20px] font-bold">{entry.name}</div>
-            <div className="text-[13px] text-white/55">
-              {entry.id}
-              {entry.ticker ? ` · ${entry.ticker}` : ""}
-              {entry.exchange ? ` · ${entry.exchange}` : ""}
-              {entry.country ? ` (${entry.country})` : ""}
-              {entry.asset_type ? ` · ${entry.asset_type}` : ""}
-            </div>
-          </div>
-          <div className="mt-2 flex flex-wrap items-center gap-3 text-[12px] text-white/65">
-            <span>
-              연결 테마: <span className="font-semibold text-white">{entry.themes.length}</span>
-            </span>
-            <span>
-              관련 자산: <span className="font-semibold text-white">{entry.relatedAssets.length}</span>
-            </span>
-            <div className="ml-auto flex flex-wrap items-center gap-3">
-              {entry.themes.length > THEME_LIMIT ? (
-                <label className="flex cursor-pointer items-center gap-1.5 text-[12px] text-white/65">
-                  <input
-                    type="checkbox"
-                    checked={showAllThemes}
-                    onChange={(e) => setShowAllThemes(e.target.checked)}
-                    className="cursor-pointer"
-                  />
-                  전체 테마 보기 ({entry.themes.length})
-                </label>
-              ) : null}
-              <label className="flex cursor-pointer items-center gap-1.5 text-[12px] text-white/65">
-                <input
-                  type="checkbox"
-                  checked={showRelated}
-                  onChange={(e) => setShowRelated(e.target.checked)}
-                  className="cursor-pointer"
-                />
-                관련 자산 함께 보기 (2궤도)
-              </label>
-              <label className="flex cursor-pointer items-center gap-1.5 text-[12px] text-white/65">
-                <input
-                  type="checkbox"
-                  checked={colorByReturn}
-                  onChange={(e) => setColorByReturn(e.target.checked)}
-                  className="cursor-pointer"
-                />
-                자산 수익률 색 표시
-              </label>
-            </div>
+              onGoAsset={(aid) => router.push(`/asset/${aid}`)} />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-3 lg:grid-cols-[260px_1fr_300px]">
-          {/* 좌측 — 회사 정보 (briefing 기반) */}
-          <div className="rounded-2xl border border-white/10 bg-white/3 px-4 py-3 backdrop-blur">
-            <div className="mb-2 flex items-center justify-between">
-              <div className="text-[11px] uppercase tracking-wider text-white/45">회사 정보</div>
-              {entry.info?.gFinanceUrl ? (
-                <a
-                  href={entry.info.gFinanceUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[11px] text-cyan-400 hover:underline"
-                  title="Google Finance"
-                >
-                  Google Finance ↗
-                </a>
-              ) : null}
-            </div>
-            {entry.info ? (
-              <div className="flex flex-col gap-3 text-[12px] text-white/85">
-                <BriefingCell title="핵심 사업" body={entry.info.coreBiz} />
-                <BriefingCell title="사업 생태계" body={entry.info.ecosystem} />
-                <BriefingCell title="주가 핵심 동인" body={entry.info.driver} />
-                {entry.info.sourceTheme ? (
-                  <div className="mt-1 text-[10px] text-white/35">
-                    출처: {entry.info.sourceTheme} briefing
-                  </div>
-                ) : null}
+        {state === "loading" && <div className="text-white/50">불러오는 중…</div>}
+        {state === "notfound" && <div className="rounded-lg border border-white/10 bg-white/[0.03] p-4 text-[13px] text-white/60">자산을 찾을 수 없습니다: {assetId}</div>}
+
+        {state === "ok" && entry && (
+          <>
+            {/* 타이틀 */}
+            <div className="mb-4">
+              <div className="flex flex-wrap items-baseline gap-2">
+                <h1 className="text-2xl font-bold text-white/95">{entry.name}</h1>
+                {entry.name_en && <span className="text-[13px] text-white/45">{entry.name_en}</span>}
               </div>
-            ) : (
-              <div className="text-[12px] text-white/55">briefing 정보 미연결.</div>
-            )}
-          </div>
+              <div className="mt-0.5 text-[12.5px] text-white/55">
+                {entry.ticker && <b className="text-white/75">{entry.ticker}</b>} · {entry.exchange} · {CO(entry.country)} · {entry.asset_type}
+                {entry.info?.gFinanceUrl && <> · <a href={entry.info.gFinanceUrl} target="_blank" rel="noreferrer" className="text-sky-300 hover:underline">프로파일 ↗</a></>}
+              </div>
+            </div>
 
-          {/* 그래프 */}
-          <div className="rounded-2xl border border-white/10 bg-white/2 p-2" style={{ minHeight: 560 }}>
-            <ForceGraphWrapper
-              themeId={entry.id}
-              themeName={entry.name}
-              nodes={nodes as any}
-              edges={edges as any}
-              period={period}
-              onChangePeriod={setPeriod}
-              onSelectNode={(n) => {
-                if (!n) return;
-                if (n.type === "THEME") router.push(`/graph/${n.id}`);
-                else if (n.type === "ASSET" && n.id !== entry.id) router.push(`/asset/${n.id}`);
-              }}
-              showPeriodButtons={false}
-              showOverlayControls={false}
-              themeDescription={`${entry.name} 가 속한 테마 ${entry.themes.length}개 · 관련 자산 ${entry.relatedAssets.length}개`}
-              assetColorMode={colorByReturn ? "return" : "type"}
-            />
-          </div>
+            {/* ① 프로파일 */}
+            <section className="mb-5 grid grid-cols-1 gap-4 lg:grid-cols-[1.3fr_1fr]">
+              <div className="rounded-xl border border-white/12 bg-white/[0.03] p-4">
+                <h2 className="mb-2.5 text-sm font-semibold text-white/85">종목 프로파일</h2>
+                {entry.info ? (
+                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+                    <Bullets title="핵심 사업" body={entry.info.coreBiz} />
+                    <Bullets title="사업 생태계" body={entry.info.ecosystem} />
+                    <Bullets title="주가 동인" body={entry.info.driver} />
+                  </div>
+                ) : <div className="text-[12.5px] text-white/45">브리핑 프로파일 미연결.</div>}
+                {entry.info?.sourceTheme && <div className="mt-2.5 text-[10.5px] text-white/35">출처: {entry.info.sourceTheme} 브리핑</div>}
+              </div>
+              <div className="rounded-xl border border-white/12 bg-white/[0.03] p-4">
+                <h2 className="mb-2.5 text-sm font-semibold text-white/85">수익률 · 밸류</h2>
+                {m ? (
+                  <>
+                    <div className="grid grid-cols-3 gap-2">
+                      {RET_ROWS.map(([lbl, k]) => { const v = m[k] as number | undefined; return (
+                        <div key={lbl} className="rounded-lg border border-white/8 bg-white/[0.02] px-2 py-1.5 text-center">
+                          <div className="text-[9.5px] text-white/40">{lbl}</div>
+                          <div className="text-[13px] font-bold tabular-nums" style={{ color: retColor(v) }}>{pct(v, 1)}</div>
+                        </div>
+                      ); })}
+                    </div>
+                    <div className="mt-2.5 flex flex-wrap gap-x-4 gap-y-1 text-[11.5px] text-white/60">
+                      <span>PER <b className="text-white/85">{m.pe_ttm != null ? m.pe_ttm.toFixed(1) : "—"}</b></span>
+                      <span>시총 <b className="text-white/85">{fmtCap(m.marketCap)}</b></span>
+                      <span>종가 <b className="text-white/85">{m.close != null ? m.close.toLocaleString() : "—"}</b></span>
+                      {m.returnsAsOf && <span className="text-white/35">기준 {m.returnsAsOf}</span>}
+                    </div>
+                  </>
+                ) : <div className="text-[12.5px] text-white/45">수익률 데이터 없음.</div>}
+              </div>
+            </section>
 
-          {/* 우측 — 관계별 테마 + 점수 */}
-          <div className="rounded-2xl border border-white/10 bg-white/3 px-4 py-3 backdrop-blur">
-            <div className="mb-2 text-[11px] uppercase tracking-wider text-white/45">테마 (관계별 · 7D EW)</div>
-            {entry.themes.length === 0 ? (
-              <div className="text-[12px] text-white/55">아직 어떤 테마에도 속하지 않습니다.</div>
-            ) : (
-              Object.entries(themesByRel).map(([rel, list]) => (
-                <div key={rel} className="mb-3 last:mb-0">
-                  <div className="mb-1 text-[10px] font-semibold uppercase tracking-wider text-cyan-400/80">
-                    {rel} · {list.length}
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    {list.map((t) => (
-                      <Link
-                        key={t.themeId + rel}
-                        href={`/graph/${t.themeId}`}
-                        className="flex items-center justify-between gap-2 rounded-md px-2 py-1.5 text-[12px] text-white/85 hover:bg-white/10 hover:text-white"
-                        title={t.themeName}
-                      >
-                        <span className="min-w-0 flex-1 truncate">
-                          <span className="mr-1.5 font-mono text-[10px] text-white/45">{t.themeId}</span>
-                          {t.themeName}
-                        </span>
-                        <ScoreBadge value={t.score7d} />
-                      </Link>
-                    ))}
-                  </div>
+            {/* ② 1년 주가 vs SPY·QQQ */}
+            <section className="mb-5 rounded-xl border border-white/12 bg-white/[0.03] p-4">
+              <div className="mb-1 flex flex-wrap items-center justify-between gap-2">
+                <h2 className="text-sm font-semibold text-white/85">최근 1년 주가 추이 <span className="text-white/40">vs SPY · QQQ</span></h2>
+                <div className="flex items-center gap-3 text-[11px]">
+                  <span className="flex items-center gap-1"><i className="inline-block h-2 w-3 rounded-sm" style={{ background: "#f5f5f5" }} />종목</span>
+                  <span className="flex items-center gap-1"><i className="inline-block h-2 w-3 rounded-sm" style={{ background: "#38bdf8" }} />SPY</span>
+                  <span className="flex items-center gap-1"><i className="inline-block h-2 w-3 rounded-sm" style={{ background: "#fbbf24" }} />QQQ</span>
                 </div>
-              ))
-            )}
-          </div>
-        </div>
+              </div>
+              {perf ? (
+                <>
+                  <p className="mb-1 text-[10.5px] text-white/40">1년 전 = 100 으로 환산한 상대 추이 (환율 미조정). {perf.start} ~ {perf.end}</p>
+                  <PerfChart perf={perf} />
+                  <div className="mt-3 overflow-x-auto">
+                    <table className="w-full border-collapse text-[12px] whitespace-nowrap">
+                      <thead><tr className="text-white/60"><th className="px-2 py-1 text-left">기간</th><th className="px-2 py-1 text-right">종목</th><th className="px-2 py-1 text-right">SPY</th><th className="px-2 py-1 text-right">QQQ</th><th className="px-2 py-1 text-right">vs SPY</th></tr></thead>
+                      <tbody>
+                        {["1M", "3M", "6M", "1Y"].map((k) => { const r = perf.returns[k]; const ex = r.stock != null && r.spy != null ? r.stock - r.spy : null; return (
+                          <tr key={k} className="border-t border-white/5">
+                            <td className="px-2 py-1 text-white/70">{k}</td>
+                            <td className="px-2 py-1 text-right font-semibold tabular-nums" style={{ color: retColor(r.stock) }}>{pct(r.stock)}</td>
+                            <td className="px-2 py-1 text-right tabular-nums" style={{ color: retColor(r.spy) }}>{pct(r.spy)}</td>
+                            <td className="px-2 py-1 text-right tabular-nums" style={{ color: retColor(r.qqq) }}>{pct(r.qqq)}</td>
+                            <td className="px-2 py-1 text-right font-semibold tabular-nums" style={{ color: retColor(ex) }}>{pct(ex)}</td>
+                          </tr>); })}
+                      </tbody>
+                    </table>
+                  </div>
+                </>
+              ) : <div className="py-8 text-center text-[12.5px] text-white/40">주가 성과 데이터가 없습니다(상장 이력 부족 등).</div>}
+            </section>
+
+            {/* ③ 연결 테마 카드 */}
+            <section className="mb-6">
+              <h2 className="mb-2 text-sm font-semibold text-white/85">연결 테마 <span className="text-white/40">{themes.length}</span></h2>
+              {themes.length ? (
+                <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+                  {themes.map((t) => (
+                    <a key={t.themeId + t.relation} href={`/graph/${t.themeId}`}
+                      className="group rounded-xl border border-white/12 bg-gradient-to-br from-white/[0.05] to-white/[0.01] p-3 transition-all hover:border-white/35 hover:bg-white/[0.06]">
+                      <div className="mb-1 flex items-center justify-between gap-2">
+                        <span className="truncate text-[13px] font-semibold text-white/90 group-hover:text-white">{t.themeName}</span>
+                        <span className="shrink-0 rounded border border-white/12 bg-white/[0.05] px-1.5 py-0.5 text-[9.5px] text-white/50">{REL(t.relation)}</span>
+                      </div>
+                      <div className="flex items-center justify-between text-[11px]">
+                        <span className="text-white/35">{t.themeId}</span>
+                        <span className="font-semibold tabular-nums" style={{ color: retColor(t.score7d) }}>테마 7D {pct(t.score7d, 2)}</span>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              ) : <div className="text-[12.5px] text-white/45">연결된 테마가 없습니다.</div>}
+            </section>
+          </>
+        )}
       </div>
-    </div>
+    </main>
   );
 }
