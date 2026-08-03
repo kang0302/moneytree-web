@@ -164,6 +164,18 @@ function main() {
     if (t?.themeId) themeScore7d.set(t.themeId, computeThemeScore7d(t));
   }
 
+  // 자산별 매크로 동인 집계 — 소속 테마들의 MACRO(IMPACTS)를 빈도순으로
+  const assetMacros = new Map(); // assetId -> Map(name->count)
+  for (const t of themes) {
+    const macros = (t?.nodes ?? []).filter((n) => (n?.type || "").toUpperCase() === "MACRO" && n?.name).map((n) => n.name);
+    if (!macros.length) continue;
+    for (const n of t?.nodes ?? []) {
+      if (n?.type !== "ASSET" || !n?.id) continue;
+      let mm = assetMacros.get(n.id); if (!mm) { mm = new Map(); assetMacros.set(n.id, mm); }
+      for (const nm of macros) mm.set(nm, (mm.get(nm) || 0) + 1);
+    }
+  }
+
   // 자산별 metrics (테마 노드에서 첫 발견) — 수익률·PER·시총·종가
   const assetMetrics = new Map();
   const MK = ["return_1d", "return_3d", "return_7d", "return_15d", "return_1m", "return_ytd", "return_1y", "return_2y", "return_3y", "pe_ttm", "marketCap", "close", "returnsAsOf", "valuationAsOf"];
@@ -284,11 +296,13 @@ function main() {
       infoMatched++;
     }
   }
-  // metrics 부착
+  // metrics + 매크로 동인 부착
   let metricsMatched = 0;
   for (const [aid, entry] of Object.entries(out)) {
     const m = assetMetrics.get(aid);
     if (m && Object.keys(m).length) { entry.metrics = m; metricsMatched++; }
+    const mm = assetMacros.get(aid);
+    if (mm && mm.size) entry.macros = [...mm.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8).map(([name, count]) => ({ name, count }));
   }
   console.log(`metrics 부착: ${metricsMatched}`);
 

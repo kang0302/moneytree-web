@@ -8,12 +8,16 @@ import { useRouter } from "next/navigation";
 import SearchBar from "@/components/SearchBar";
 
 type ThemeRel = { themeId: string; themeName: string; relation: string; score7d?: number | null };
+type Related = { assetId: string; name: string; relation: string; direction: "in" | "out"; themeId: string; themeName: string };
+type MacroDrv = { name: string; count: number };
 type BriefingInfo = { gFinanceUrl?: string | null; coreBiz?: string; ecosystem?: string; driver?: string; sourceTheme?: string };
 type Metrics = Partial<Record<"return_1d" | "return_7d" | "return_15d" | "return_1m" | "return_ytd" | "return_1y" | "return_2y" | "return_3y" | "pe_ttm" | "marketCap" | "close", number>> & { returnsAsOf?: string };
 type AssetEntry = {
   id: string; name: string; name_en?: string; ticker: string; exchange: string; country: string; asset_type: string;
-  themes: ThemeRel[]; info?: BriefingInfo; metrics?: Metrics;
+  themes: ThemeRel[]; relatedAssets?: Related[]; macros?: MacroDrv[]; info?: BriefingInfo; metrics?: Metrics;
 };
+type Trend = { id: string; now: number; delta: number; turnUp: boolean; turnDown: boolean };
+const TREND_URL = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/barometer_trend/trend.json";
 type Perf = { assetId: string; ticker: string; start: string; end: string; dates: string[]; stock: number[]; spy: (number | null)[]; qqq: (number | null)[]; returns: Record<string, { stock: number | null; spy: number | null; qqq: number | null }> };
 
 const IDX_LOCAL = "/data/asset/index.json";
@@ -23,6 +27,17 @@ const perfRemote = (id: string) => `https://raw.githubusercontent.com/kang0302/m
 
 const CO = (c: string) => ({ US: "미국", KR: "한국", CN: "중국", HK: "홍콩", JP: "일본", TW: "대만", GB: "영국", DE: "독일", FR: "프랑스", CA: "캐나다", AU: "호주", IN: "인도" } as Record<string, string>)[c] || c;
 const REL = (r: string) => ({ THEMED_AS: "1궤도", EXPOSED_TO: "ETF 노출", OPERATES: "사업영위", HAS_TRAIT: "특성" } as Record<string, string>)[r] || r;
+// 관계 상대(other asset)의 역할 라벨
+function RELA(r: string, dir: "in" | "out") {
+  const M: Record<string, [string, string]> = { SUPPLIES: ["고객", "공급처"], INVESTS: ["투자처", "투자자"], PARTNERS: ["파트너", "파트너"], COMPETES: ["경쟁사", "경쟁사"], IN_ETF: ["편입 ETF", "구성종목"], OWNS: ["보유", "피보유"] };
+  const pair = M[r]; if (!pair) return r; return dir === "out" ? pair[0] : pair[1];
+}
+const RELA_GROUPS: { key: string; label: string; color: string }[] = [
+  { key: "공급처", label: "🏭 공급처", color: "#a5b4fc" }, { key: "고객", label: "📦 고객", color: "#fca5a5" },
+  { key: "경쟁사", label: "⚔️ 경쟁사", color: "#fbbf24" }, { key: "파트너", label: "🤝 파트너", color: "#6ee7b7" },
+  { key: "투자자", label: "💰 투자자", color: "#f0abfc" }, { key: "투자처", label: "💸 투자처", color: "#c4b5fd" },
+  { key: "편입 ETF", label: "📊 편입 ETF", color: "#7dd3fc" }, { key: "구성종목", label: "🧺 구성종목", color: "#7dd3fc" },
+];
 
 function pct(v?: number | null, d = 2) { if (v == null || !Number.isFinite(v)) return "—"; return `${v >= 0 ? "+" : ""}${v.toFixed(d)}%`; }
 function retColor(v?: number | null) { if (v == null) return "#94a3b8"; return v >= 0 ? "#f87171" : "#60a5fa"; }
@@ -66,7 +81,23 @@ export default function AssetClient({ assetId }: { assetId: string }) {
   const router = useRouter();
   const [entry, setEntry] = useState<AssetEntry | null>(null);
   const [perf, setPerf] = useState<Perf | null>(null);
+  const [trend, setTrend] = useState<Record<string, Trend>>({});
   const [state, setState] = useState<"loading" | "ok" | "notfound">("loading");
+
+  useEffect(() => {
+    let cancel = false;
+    (async () => {
+      try {
+        const r = await fetch(`${TREND_URL}?_cb=${Date.now()}`, { cache: "no-store" });
+        if (!r.ok) return;
+        const j = await r.json();
+        const map: Record<string, Trend> = {};
+        for (const t of j.themes ?? []) map[t.id] = { id: t.id, now: t.now, delta: t.delta, turnUp: t.turnUp, turnDown: t.turnDown };
+        if (!cancel) setTrend(map);
+      } catch { /* 국면 데이터 없으면 생략 */ }
+    })();
+    return () => { cancel = true; };
+  }, []);
 
   useEffect(() => {
     let cancel = false;
@@ -167,6 +198,26 @@ export default function AssetClient({ assetId }: { assetId: string }) {
               </div>
             </section>
 
+            {/* KNOW_VEST 렌즈 ① 이 종목을 흔드는 매크로 동인 */}
+            {entry.macros && entry.macros.length > 0 && (() => {
+              const maxc = Math.max(...entry.macros.map((x) => x.count));
+              return (
+                <section className="mb-5 rounded-xl border border-fuchsia-400/20 bg-fuchsia-500/[0.05] p-4">
+                  <h2 className="mb-1 text-sm font-semibold text-fuchsia-200/85">🎯 이 종목을 흔드는 매크로 동인</h2>
+                  <p className="mb-2.5 text-[10.5px] text-white/45">이 종목이 속한 테마들을 움직이는 매크로를 빈도순으로 집계 — 무엇이 주가를 흔드는가.</p>
+                  <div className="flex flex-wrap gap-2">
+                    {entry.macros.map((mc) => (
+                      <div key={mc.name} className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1.5">
+                        <span className="text-[12px] font-semibold text-white/85">{mc.name}</span>
+                        <span className="relative block h-1.5 w-12 rounded bg-white/10"><span className="absolute top-0 h-1.5 rounded bg-fuchsia-400/70" style={{ width: `${Math.round(mc.count / maxc * 100)}%` }} /></span>
+                        <span className="text-[10px] tabular-nums text-white/45">{mc.count}</span>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              );
+            })()}
+
             {/* ② 1년 주가 vs SPY·QQQ */}
             <section className="mb-5 rounded-xl border border-white/12 bg-white/[0.03] p-4">
               <div className="mb-1 flex flex-wrap items-center justify-between gap-2">
@@ -200,27 +251,69 @@ export default function AssetClient({ assetId }: { assetId: string }) {
               ) : <div className="py-8 text-center text-[12.5px] text-white/40">주가 성과 데이터가 없습니다(상장 이력 부족 등).</div>}
             </section>
 
-            {/* ③ 연결 테마 카드 */}
+            {/* KNOW_VEST 렌즈 ② 소속 테마 · 국면 */}
             <section className="mb-6">
-              <h2 className="mb-2 text-sm font-semibold text-white/85">연결 테마 <span className="text-white/40">{themes.length}</span></h2>
+              <h2 className="mb-1 text-sm font-semibold text-white/85">소속 테마 · 국면 <span className="text-white/40">{themes.length}</span></h2>
+              <p className="mb-2 text-[10.5px] text-white/45">이 종목이 걸려 있는 테마가 지금 <b className="text-rose-300/80">상승 국면</b>인지 <b className="text-sky-300/80">하락 국면</b>인지 — 바로미터 점수와 최근 추세로 확인.</p>
               {themes.length ? (
                 <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
-                  {themes.map((t) => (
-                    <a key={t.themeId + t.relation} href={`/graph/${t.themeId}`}
-                      className="group rounded-xl border border-white/12 bg-gradient-to-br from-white/[0.05] to-white/[0.01] p-3 transition-all hover:border-white/35 hover:bg-white/[0.06]">
-                      <div className="mb-1 flex items-center justify-between gap-2">
-                        <span className="truncate text-[13px] font-semibold text-white/90 group-hover:text-white">{t.themeName}</span>
-                        <span className="shrink-0 rounded border border-white/12 bg-white/[0.05] px-1.5 py-0.5 text-[9.5px] text-white/50">{REL(t.relation)}</span>
-                      </div>
-                      <div className="flex items-center justify-between text-[11px]">
-                        <span className="text-white/35">{t.themeId}</span>
-                        <span className="font-semibold tabular-nums" style={{ color: retColor(t.score7d) }}>테마 7D {pct(t.score7d, 2)}</span>
-                      </div>
-                    </a>
-                  ))}
+                  {themes.map((t) => {
+                    const tr = trend[t.themeId];
+                    return (
+                      <a key={t.themeId + t.relation} href={`/graph/${t.themeId}`}
+                        className="group rounded-xl border border-white/12 bg-gradient-to-br from-white/[0.05] to-white/[0.01] p-3 transition-all hover:border-white/35 hover:bg-white/[0.06]">
+                        <div className="mb-1.5 flex items-center justify-between gap-2">
+                          <span className="truncate text-[13px] font-semibold text-white/90 group-hover:text-white">{t.themeName}</span>
+                          <span className="shrink-0 rounded border border-white/12 bg-white/[0.05] px-1.5 py-0.5 text-[9.5px] text-white/50">{REL(t.relation)}</span>
+                        </div>
+                        <div className="flex items-center justify-between text-[11px]">
+                          {tr ? (
+                            <span className="flex items-center gap-1.5">
+                              <span className="text-white/45">바로미터</span>
+                              <b className="tabular-nums" style={{ color: tr.now >= 500 ? "#f87171" : "#60a5fa" }}>{tr.now}</b>
+                              <span className="tabular-nums" style={{ color: retColor(tr.delta) }}>{tr.delta >= 0 ? "▲" : "▼"}{Math.abs(tr.delta)}</span>
+                              {tr.turnUp && <span className="rounded bg-rose-500/20 px-1 py-0.5 text-[9px] font-bold text-rose-200">상승전환</span>}
+                              {tr.turnDown && <span className="rounded bg-sky-500/20 px-1 py-0.5 text-[9px] font-bold text-sky-200">하락전환</span>}
+                            </span>
+                          ) : <span className="text-white/30">{t.themeId}</span>}
+                          <span className="font-semibold tabular-nums text-white/50" title="테마 7D EW 수익률">7D {pct(t.score7d, 1)}</span>
+                        </div>
+                      </a>
+                    );
+                  })}
                 </div>
               ) : <div className="text-[12.5px] text-white/45">연결된 테마가 없습니다.</div>}
             </section>
+
+            {/* KNOW_VEST 렌즈 ③ 관계망 (온톨로지 2궤도) */}
+            {entry.relatedAssets && entry.relatedAssets.length > 0 && (() => {
+              const byRole = new Map<string, Related[]>();
+              for (const r of entry.relatedAssets!) { const role = RELA(r.relation, r.direction); if (!byRole.has(role)) byRole.set(role, []); byRole.get(role)!.push(r); }
+              const groups = RELA_GROUPS.filter((g) => byRole.has(g.key));
+              return (
+                <section className="mb-8">
+                  <h2 className="mb-1 text-sm font-semibold text-white/85">관계망 <span className="text-white/40">{entry.relatedAssets!.length}</span></h2>
+                  <p className="mb-2.5 text-[10.5px] text-white/45">온톨로지가 연결한 이 종목의 <b className="text-white/60">공급처·고객·경쟁사·파트너·투자 관계</b> — 시세엔 안 보이는 구조적 연결.</p>
+                  <div className="space-y-3">
+                    {groups.map((g) => {
+                      const seen = new Set<string>();
+                      const items = byRole.get(g.key)!.filter((r) => { if (seen.has(r.assetId)) return false; seen.add(r.assetId); return true; });
+                      return (
+                        <div key={g.key}>
+                          <div className="mb-1 text-[11px] font-semibold" style={{ color: g.color }}>{g.label} <span className="text-white/35">{items.length}</span></div>
+                          <div className="flex flex-wrap gap-1.5">
+                            {items.map((r) => (
+                              <a key={r.assetId} href={`/asset/${r.assetId}`} title={`${r.themeName} 맥락`}
+                                className="rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[12px] text-white/80 transition-all hover:border-white/35 hover:bg-white/[0.07] hover:text-white">{r.name}</a>
+                            ))}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </section>
+              );
+            })()}
           </>
         )}
       </div>
