@@ -77,47 +77,54 @@ function PerfChart({ perf }: { perf: Perf }) {
   );
 }
 
-// 관계망 허브-스포크 시각화
-function RelationNetwork({ centerName, groups }: { centerName: string; groups: { key: string; label: string; color: string; items: Related[] }[] }) {
-  const W = 960, H = 620, cx = W / 2, cy = H / 2;
-  const CAP = 6, R0 = 96, STEP = 40;
-  const n = groups.length || 1;
-  const nodes: { x: number; y: number; name: string; id: string; color: string; anchor: string }[] = [];
-  const spokes: { x2: number; y2: number; color: string; lx: number; ly: number; lanchor: string; label: string; color2: string }[] = [];
-  groups.forEach((g, i) => {
-    const ang = (-90 + i * (360 / n)) * Math.PI / 180;
-    const dx = Math.cos(ang), dy = Math.sin(ang);
-    const items = g.items.slice(0, CAP);
-    const extra = g.items.length - items.length;
-    const outR = R0 + (items.length - 1) * STEP + (extra > 0 ? STEP : 0);
-    spokes.push({ x2: cx + dx * outR, y2: cy + dy * outR, color: g.color,
-      lx: cx + dx * 62, ly: cy + dy * 62, lanchor: dx > 0.3 ? "start" : dx < -0.3 ? "end" : "middle", label: g.label, color2: g.color });
-    items.forEach((it, j) => {
-      const r = R0 + j * STEP;
-      nodes.push({ x: cx + dx * r, y: cy + dy * r, name: it.name, id: it.assetId, color: g.color, anchor: dx > 0.2 ? "start" : dx < -0.2 ? "end" : "middle" });
-    });
-    if (extra > 0) {
-      const r = R0 + items.length * STEP;
-      nodes.push({ x: cx + dx * r, y: cy + dy * r, name: `+${extra}`, id: "", color: g.color, anchor: dx > 0.2 ? "start" : dx < -0.2 ? "end" : "middle" });
-    }
-  });
+// 관계망 — 공급망 흐름 다이어그램 (공급처·투자자 → 이 종목 → 고객·투자처, 경쟁/파트너/ETF 측면)
+function RoleBox({ label, color, items, align = "left" }: { label: string; color: string; items: Related[]; align?: "left" | "right" | "center" }) {
+  if (!items.length) return null;
+  const CAP = 10;
+  const shown = items.slice(0, CAP), extra = items.length - shown.length;
   return (
-    <div className="overflow-x-auto">
-      <svg viewBox={`0 0 ${W} ${H}`} className="mx-auto w-full" style={{ minWidth: 620, maxHeight: 560 }}>
-        {spokes.map((s, i) => <line key={"l" + i} x1={cx} y1={cy} x2={s.x2} y2={s.y2} stroke={s.color} strokeOpacity={0.22} strokeWidth={1.4} />)}
-        {spokes.map((s, i) => <text key={"rl" + i} x={s.lx} y={s.ly} textAnchor={s.lanchor as "start" | "middle" | "end"} fontSize="12" fontWeight="700" fill={s.color2} style={{ paintOrder: "stroke" }} stroke="#000" strokeWidth={3}>{s.label}</text>)}
-        {nodes.map((nd, i) => (
-          <a key={"n" + i} href={nd.id ? `/asset/${nd.id}` : undefined} style={{ cursor: nd.id ? "pointer" : "default" }}>
-            <circle cx={nd.x} cy={nd.y} r={nd.id ? 4.5 : 3} fill={nd.id ? nd.color : "transparent"} stroke={nd.color} strokeWidth={1.2} />
-            <text x={nd.x + (nd.anchor === "start" ? 8 : nd.anchor === "end" ? -8 : 0)} y={nd.y + (nd.anchor === "middle" ? 14 : 3.5)}
-              textAnchor={nd.anchor as "start" | "middle" | "end"} fontSize="11" fill={nd.id ? "rgba(255,255,255,0.82)" : "rgba(255,255,255,0.45)"}
-              style={{ paintOrder: "stroke" }} stroke="#000" strokeWidth={2.6}>{nd.name}</text>
-          </a>
+    <div className="rounded-xl border bg-white/[0.02] p-2.5" style={{ borderColor: color + "44" }}>
+      <div className="mb-1.5 text-[11px] font-bold" style={{ color, textAlign: align }}>{label} <span className="font-normal text-white/35">{items.length}</span></div>
+      <div className={`flex flex-wrap gap-1 ${align === "right" ? "justify-end" : align === "center" ? "justify-center" : ""}`}>
+        {shown.map((r) => (
+          <a key={r.assetId} href={`/asset/${r.assetId}`} title={`${r.themeName} 맥락`}
+            className="rounded-md border border-white/10 bg-white/[0.04] px-2 py-0.5 text-[11.5px] text-white/80 transition-all hover:border-white/40 hover:bg-white/[0.09] hover:text-white">{r.name}</a>
         ))}
-        <circle cx={cx} cy={cy} r={30} fill="#0b0b0f" stroke="rgba(255,255,255,0.55)" strokeWidth={1.5} />
-        <circle cx={cx} cy={cy} r={38} fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth={1} />
-        <text x={cx} y={cy + 4} textAnchor="middle" fontSize="13" fontWeight="800" fill="#fff" style={{ paintOrder: "stroke" }} stroke="#000" strokeWidth={3}>{centerName.length > 7 ? centerName.slice(0, 6) + "…" : centerName}</text>
-      </svg>
+        {extra > 0 && <span className="rounded-md px-1.5 py-0.5 text-[11px] text-white/40">+{extra}</span>}
+      </div>
+    </div>
+  );
+}
+function RelationFlow({ centerName, ticker, total, byRole }: { centerName: string; ticker: string; total: number; byRole: (k: string) => Related[] }) {
+  const inputs = [{ k: "공급처", c: "#a5b4fc" }, { k: "투자자", c: "#f0abfc" }].filter((x) => byRole(x.k).length);
+  const outputs = [{ k: "고객", c: "#fca5a5" }, { k: "투자처", c: "#c4b5fd" }].filter((x) => byRole(x.k).length);
+  const lateral = [{ k: "경쟁사", c: "#fbbf24" }, { k: "파트너", c: "#6ee7b7" }, { k: "편입 ETF", c: "#7dd3fc" }, { k: "구성종목", c: "#7dd3fc" }].filter((x) => byRole(x.k).length);
+  const Arrow = () => <div className="hidden items-center justify-center text-white/25 lg:flex"><span className="text-lg">→</span></div>;
+  return (
+    <div>
+      <div className="grid grid-cols-1 items-center gap-3 lg:grid-cols-[minmax(0,1fr)_24px_minmax(200px,auto)_24px_minmax(0,1fr)]">
+        <div className="space-y-2">
+          {inputs.length ? inputs.map((x) => <RoleBox key={x.k} label={x.k} color={x.c} items={byRole(x.k)} align="right" />) : <div className="text-center text-[11px] text-white/25">— 공급/투자 유입 없음 —</div>}
+        </div>
+        <Arrow />
+        <div className="rounded-2xl border-2 border-white/35 bg-gradient-to-br from-white/[0.1] to-white/[0.02] px-5 py-4 text-center shadow-[0_0_34px_rgba(255,255,255,0.07)]">
+          <div className="text-[15px] font-extrabold leading-tight text-white">{centerName}</div>
+          {ticker && <div className="mt-0.5 text-[10.5px] font-mono text-white/50">{ticker}</div>}
+          <div className="mt-1 text-[9.5px] uppercase tracking-wider text-white/35">관계 {total}</div>
+        </div>
+        <Arrow />
+        <div className="space-y-2">
+          {outputs.length ? outputs.map((x) => <RoleBox key={x.k} label={x.k} color={x.c} items={byRole(x.k)} align="left" />) : <div className="text-center text-[11px] text-white/25">— 고객/투자 유출 없음 —</div>}
+        </div>
+      </div>
+      {lateral.length > 0 && (
+        <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-3">
+          {lateral.map((x) => <RoleBox key={x.k} label={x.k} color={x.c} items={byRole(x.k)} align="center" />)}
+        </div>
+      )}
+      <div className="mt-2 flex flex-wrap justify-center gap-x-4 gap-y-1 text-[10px] text-white/40">
+        <span>← 공급처·투자자 (유입)</span><span>이 종목</span><span>고객·투자처 (유출) →</span>
+      </div>
     </div>
   );
 }
@@ -296,7 +303,40 @@ export default function AssetClient({ assetId }: { assetId: string }) {
               ) : <div className="py-8 text-center text-[12.5px] text-white/40">주가 성과 데이터가 없습니다(상장 이력 부족 등).</div>}
             </section>
 
-            {/* KNOW_VEST 렌즈 ② 소속 테마 · 국면 */}
+            {/* KNOW_VEST 렌즈 ② 관계망 (공급망 흐름) */}
+            {entry.relatedAssets && entry.relatedAssets.length > 0 && (() => {
+              const byRoleMap = new Map<string, Related[]>();
+              for (const r of entry.relatedAssets!) { const role = RELA(r.relation, r.direction); if (!byRoleMap.has(role)) byRoleMap.set(role, []); byRoleMap.get(role)!.push(r); }
+              const byRole = (k: string) => { const seen = new Set<string>(); return (byRoleMap.get(k) || []).filter((r) => { if (seen.has(r.assetId)) return false; seen.add(r.assetId); return true; }); };
+              const groups = RELA_GROUPS.filter((g) => byRoleMap.has(g.key));
+              return (
+                <section className="mb-5">
+                  <h2 className="mb-1 text-sm font-semibold text-white/85">관계망 · 공급망 흐름 <span className="text-white/40">{entry.relatedAssets!.length}</span></h2>
+                  <p className="mb-2.5 text-[10.5px] text-white/45">온톨로지가 연결한 <b className="text-white/60">공급처·고객·경쟁사·파트너·투자 관계</b> — 시세엔 안 보이는 구조적 흐름. 노드를 클릭하면 이동합니다.</p>
+                  <div className="rounded-xl border border-white/12 bg-gradient-to-b from-white/[0.04] to-transparent p-3.5">
+                    <RelationFlow centerName={entry.name} ticker={entry.ticker} total={entry.relatedAssets!.length} byRole={byRole} />
+                  </div>
+                  <details className="mt-2">
+                    <summary className="cursor-pointer select-none text-[11.5px] text-white/45 hover:text-white/75">전체 목록 펼치기 ▾</summary>
+                    <div className="mt-2 space-y-2.5">
+                      {groups.map((g) => (
+                        <div key={g.key}>
+                          <div className="mb-1 text-[11px] font-semibold" style={{ color: g.color }}>{g.label} <span className="text-white/35">{byRole(g.key).length}</span></div>
+                          <div className="flex flex-wrap gap-1.5">
+                            {byRole(g.key).map((r) => (
+                              <a key={r.assetId} href={`/asset/${r.assetId}`} title={`${r.themeName} 맥락`}
+                                className="rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[12px] text-white/80 transition-all hover:border-white/35 hover:bg-white/[0.07] hover:text-white">{r.name}</a>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </details>
+                </section>
+              );
+            })()}
+
+            {/* KNOW_VEST 렌즈 ③ 소속 테마 · 국면 */}
             <section className="mb-6">
               <h2 className="mb-1 text-sm font-semibold text-white/85">소속 테마 · 국면 <span className="text-white/40">{themes.length}</span></h2>
               <p className="mb-2 text-[10.5px] text-white/45">이 종목이 걸려 있는 테마가 지금 <b className="text-rose-300/80">상승 국면</b>인지 <b className="text-sky-300/80">하락 국면</b>인지 — 바로미터 점수와 최근 추세로 확인.</p>
@@ -330,44 +370,6 @@ export default function AssetClient({ assetId }: { assetId: string }) {
               ) : <div className="text-[12.5px] text-white/45">연결된 테마가 없습니다.</div>}
             </section>
 
-            {/* KNOW_VEST 렌즈 ③ 관계망 (온톨로지 2궤도) */}
-            {entry.relatedAssets && entry.relatedAssets.length > 0 && (() => {
-              const byRole = new Map<string, Related[]>();
-              for (const r of entry.relatedAssets!) { const role = RELA(r.relation, r.direction); if (!byRole.has(role)) byRole.set(role, []); byRole.get(role)!.push(r); }
-              const groups = RELA_GROUPS.filter((g) => byRole.has(g.key));
-              return (
-                <section className="mb-8">
-                  <h2 className="mb-1 text-sm font-semibold text-white/85">관계망 <span className="text-white/40">{entry.relatedAssets!.length}</span></h2>
-                  <p className="mb-2 text-[10.5px] text-white/45">온톨로지가 연결한 이 종목의 <b className="text-white/60">공급처·고객·경쟁사·파트너·투자 관계</b> — 시세엔 안 보이는 구조적 연결. 노드를 클릭하면 이동합니다.</p>
-                  <div className="rounded-xl border border-white/12 bg-gradient-to-b from-white/[0.04] to-transparent p-2">
-                    <RelationNetwork centerName={entry.name} groups={groups.map((g) => {
-                      const seen = new Set<string>();
-                      return { key: g.key, label: g.label, color: g.color, items: byRole.get(g.key)!.filter((r) => { if (seen.has(r.assetId)) return false; seen.add(r.assetId); return true; }) };
-                    })} />
-                  </div>
-                  <details className="mt-3 group">
-                    <summary className="cursor-pointer select-none text-[11.5px] text-white/50 hover:text-white/80">전체 목록 펼치기 ▾</summary>
-                    <div className="mt-2 space-y-3">
-                      {groups.map((g) => {
-                        const seen = new Set<string>();
-                        const items = byRole.get(g.key)!.filter((r) => { if (seen.has(r.assetId)) return false; seen.add(r.assetId); return true; });
-                        return (
-                          <div key={g.key}>
-                            <div className="mb-1 text-[11px] font-semibold" style={{ color: g.color }}>{g.label} <span className="text-white/35">{items.length}</span></div>
-                            <div className="flex flex-wrap gap-1.5">
-                              {items.map((r) => (
-                                <a key={r.assetId} href={`/asset/${r.assetId}`} title={`${r.themeName} 맥락`}
-                                  className="rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[12px] text-white/80 transition-all hover:border-white/35 hover:bg-white/[0.07] hover:text-white">{r.name}</a>
-                              ))}
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </details>
-                </section>
-              );
-            })()}
           </>
         )}
       </div>
