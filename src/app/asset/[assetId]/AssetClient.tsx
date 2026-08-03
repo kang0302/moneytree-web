@@ -77,6 +77,51 @@ function PerfChart({ perf }: { perf: Perf }) {
   );
 }
 
+// 관계망 허브-스포크 시각화
+function RelationNetwork({ centerName, groups }: { centerName: string; groups: { key: string; label: string; color: string; items: Related[] }[] }) {
+  const W = 960, H = 620, cx = W / 2, cy = H / 2;
+  const CAP = 6, R0 = 96, STEP = 40;
+  const n = groups.length || 1;
+  const nodes: { x: number; y: number; name: string; id: string; color: string; anchor: string }[] = [];
+  const spokes: { x2: number; y2: number; color: string; lx: number; ly: number; lanchor: string; label: string; color2: string }[] = [];
+  groups.forEach((g, i) => {
+    const ang = (-90 + i * (360 / n)) * Math.PI / 180;
+    const dx = Math.cos(ang), dy = Math.sin(ang);
+    const items = g.items.slice(0, CAP);
+    const extra = g.items.length - items.length;
+    const outR = R0 + (items.length - 1) * STEP + (extra > 0 ? STEP : 0);
+    spokes.push({ x2: cx + dx * outR, y2: cy + dy * outR, color: g.color,
+      lx: cx + dx * 62, ly: cy + dy * 62, lanchor: dx > 0.3 ? "start" : dx < -0.3 ? "end" : "middle", label: g.label, color2: g.color });
+    items.forEach((it, j) => {
+      const r = R0 + j * STEP;
+      nodes.push({ x: cx + dx * r, y: cy + dy * r, name: it.name, id: it.assetId, color: g.color, anchor: dx > 0.2 ? "start" : dx < -0.2 ? "end" : "middle" });
+    });
+    if (extra > 0) {
+      const r = R0 + items.length * STEP;
+      nodes.push({ x: cx + dx * r, y: cy + dy * r, name: `+${extra}`, id: "", color: g.color, anchor: dx > 0.2 ? "start" : dx < -0.2 ? "end" : "middle" });
+    }
+  });
+  return (
+    <div className="overflow-x-auto">
+      <svg viewBox={`0 0 ${W} ${H}`} className="mx-auto w-full" style={{ minWidth: 620, maxHeight: 560 }}>
+        {spokes.map((s, i) => <line key={"l" + i} x1={cx} y1={cy} x2={s.x2} y2={s.y2} stroke={s.color} strokeOpacity={0.22} strokeWidth={1.4} />)}
+        {spokes.map((s, i) => <text key={"rl" + i} x={s.lx} y={s.ly} textAnchor={s.lanchor as "start" | "middle" | "end"} fontSize="12" fontWeight="700" fill={s.color2} style={{ paintOrder: "stroke" }} stroke="#000" strokeWidth={3}>{s.label}</text>)}
+        {nodes.map((nd, i) => (
+          <a key={"n" + i} href={nd.id ? `/asset/${nd.id}` : undefined} style={{ cursor: nd.id ? "pointer" : "default" }}>
+            <circle cx={nd.x} cy={nd.y} r={nd.id ? 4.5 : 3} fill={nd.id ? nd.color : "transparent"} stroke={nd.color} strokeWidth={1.2} />
+            <text x={nd.x + (nd.anchor === "start" ? 8 : nd.anchor === "end" ? -8 : 0)} y={nd.y + (nd.anchor === "middle" ? 14 : 3.5)}
+              textAnchor={nd.anchor as "start" | "middle" | "end"} fontSize="11" fill={nd.id ? "rgba(255,255,255,0.82)" : "rgba(255,255,255,0.45)"}
+              style={{ paintOrder: "stroke" }} stroke="#000" strokeWidth={2.6}>{nd.name}</text>
+          </a>
+        ))}
+        <circle cx={cx} cy={cy} r={30} fill="#0b0b0f" stroke="rgba(255,255,255,0.55)" strokeWidth={1.5} />
+        <circle cx={cx} cy={cy} r={38} fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth={1} />
+        <text x={cx} y={cy + 4} textAnchor="middle" fontSize="13" fontWeight="800" fill="#fff" style={{ paintOrder: "stroke" }} stroke="#000" strokeWidth={3}>{centerName.length > 7 ? centerName.slice(0, 6) + "…" : centerName}</text>
+      </svg>
+    </div>
+  );
+}
+
 export default function AssetClient({ assetId }: { assetId: string }) {
   const router = useRouter();
   const [entry, setEntry] = useState<AssetEntry | null>(null);
@@ -293,24 +338,33 @@ export default function AssetClient({ assetId }: { assetId: string }) {
               return (
                 <section className="mb-8">
                   <h2 className="mb-1 text-sm font-semibold text-white/85">관계망 <span className="text-white/40">{entry.relatedAssets!.length}</span></h2>
-                  <p className="mb-2.5 text-[10.5px] text-white/45">온톨로지가 연결한 이 종목의 <b className="text-white/60">공급처·고객·경쟁사·파트너·투자 관계</b> — 시세엔 안 보이는 구조적 연결.</p>
-                  <div className="space-y-3">
-                    {groups.map((g) => {
+                  <p className="mb-2 text-[10.5px] text-white/45">온톨로지가 연결한 이 종목의 <b className="text-white/60">공급처·고객·경쟁사·파트너·투자 관계</b> — 시세엔 안 보이는 구조적 연결. 노드를 클릭하면 이동합니다.</p>
+                  <div className="rounded-xl border border-white/12 bg-gradient-to-b from-white/[0.04] to-transparent p-2">
+                    <RelationNetwork centerName={entry.name} groups={groups.map((g) => {
                       const seen = new Set<string>();
-                      const items = byRole.get(g.key)!.filter((r) => { if (seen.has(r.assetId)) return false; seen.add(r.assetId); return true; });
-                      return (
-                        <div key={g.key}>
-                          <div className="mb-1 text-[11px] font-semibold" style={{ color: g.color }}>{g.label} <span className="text-white/35">{items.length}</span></div>
-                          <div className="flex flex-wrap gap-1.5">
-                            {items.map((r) => (
-                              <a key={r.assetId} href={`/asset/${r.assetId}`} title={`${r.themeName} 맥락`}
-                                className="rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[12px] text-white/80 transition-all hover:border-white/35 hover:bg-white/[0.07] hover:text-white">{r.name}</a>
-                            ))}
-                          </div>
-                        </div>
-                      );
-                    })}
+                      return { key: g.key, label: g.label, color: g.color, items: byRole.get(g.key)!.filter((r) => { if (seen.has(r.assetId)) return false; seen.add(r.assetId); return true; }) };
+                    })} />
                   </div>
+                  <details className="mt-3 group">
+                    <summary className="cursor-pointer select-none text-[11.5px] text-white/50 hover:text-white/80">전체 목록 펼치기 ▾</summary>
+                    <div className="mt-2 space-y-3">
+                      {groups.map((g) => {
+                        const seen = new Set<string>();
+                        const items = byRole.get(g.key)!.filter((r) => { if (seen.has(r.assetId)) return false; seen.add(r.assetId); return true; });
+                        return (
+                          <div key={g.key}>
+                            <div className="mb-1 text-[11px] font-semibold" style={{ color: g.color }}>{g.label} <span className="text-white/35">{items.length}</span></div>
+                            <div className="flex flex-wrap gap-1.5">
+                              {items.map((r) => (
+                                <a key={r.assetId} href={`/asset/${r.assetId}`} title={`${r.themeName} 맥락`}
+                                  className="rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[12px] text-white/80 transition-all hover:border-white/35 hover:bg-white/[0.07] hover:text-white">{r.name}</a>
+                              ))}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </details>
                 </section>
               );
             })()}
