@@ -14,7 +14,7 @@ type BriefingInfo = { gFinanceUrl?: string | null; coreBiz?: string; ecosystem?:
 type Metrics = Partial<Record<"return_1d" | "return_7d" | "return_15d" | "return_1m" | "return_ytd" | "return_1y" | "return_2y" | "return_3y" | "pe_ttm" | "marketCap" | "close", number>> & { returnsAsOf?: string };
 type AssetEntry = {
   id: string; name: string; name_en?: string; ticker: string; exchange: string; country: string; asset_type: string;
-  themes: ThemeRel[]; relatedAssets?: Related[]; macros?: MacroDrv[]; info?: BriefingInfo; metrics?: Metrics;
+  themes: ThemeRel[]; relatedAssets?: Related[]; macros?: MacroDrv[]; characters?: MacroDrv[]; businessFields?: MacroDrv[]; info?: BriefingInfo; metrics?: Metrics;
 };
 type Trend = { id: string; now: number; delta: number; turnUp: boolean; turnDown: boolean };
 const TREND_URL = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/barometer_trend/trend.json";
@@ -249,6 +249,34 @@ export default function AssetClient({ assetId }: { assetId: string }) {
                 ) : <div className="text-[12.5px] text-white/45">수익률 데이터 없음.</div>}
               </div>
             </section>
+
+            {/* 특성 · 사업영역 (Character / Business Field) */}
+            {((entry.characters?.length ?? 0) > 0 || (entry.businessFields?.length ?? 0) > 0) && (
+              <section className="mb-5 rounded-xl border border-white/12 bg-white/[0.03] p-4">
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  {entry.characters && entry.characters.length > 0 && (
+                    <div>
+                      <div className="mb-1.5 text-[11px] font-semibold text-emerald-300/85">🧬 특성 (Character)</div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {entry.characters.map((c) => (
+                          <span key={c.name} className="rounded-full border border-emerald-400/25 bg-emerald-500/[0.08] px-2.5 py-0.5 text-[11.5px] text-emerald-100/90">{c.name}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {entry.businessFields && entry.businessFields.length > 0 && (
+                    <div>
+                      <div className="mb-1.5 text-[11px] font-semibold text-sky-300/85">🏗️ 사업영역 (Business Field)</div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {entry.businessFields.map((b) => (
+                          <span key={b.name} className="rounded-full border border-sky-400/25 bg-sky-500/[0.08] px-2.5 py-0.5 text-[11.5px] text-sky-100/90">{b.name}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </section>
+            )}
 
             {/* KNOW_VEST 렌즈 ① 이 종목을 흔드는 매크로 동인 */}
             {entry.macros && entry.macros.length > 0 && (() => {

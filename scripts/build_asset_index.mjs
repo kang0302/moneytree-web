@@ -176,6 +176,18 @@ function main() {
     }
   }
 
+  // 자산별 Character(HAS_TRAIT)·BusinessField(OPERATES) 집계
+  const assetChars = new Map(), assetBFs = new Map(); // assetId -> Map(name->count)
+  const bump = (map, aid, name) => { if (!name) return; let mm = map.get(aid); if (!mm) { mm = new Map(); map.set(aid, mm); } mm.set(name, (mm.get(name) || 0) + 1); };
+  for (const t of themes) {
+    const nmap = {}; for (const n of t?.nodes ?? []) nmap[n.id] = n;
+    for (const e of t?.edges ?? t?.links ?? []) {
+      const ty = (e?.type || "").toUpperCase();
+      if (ty === "HAS_TRAIT") { const a = nmap[e.from], c = nmap[e.to]; if (a?.type === "ASSET" && (c?.type || "").toUpperCase() === "CHARACTER") bump(assetChars, e.from, c.name); }
+      else if (ty === "OPERATES") { const a = nmap[e.from], b = nmap[e.to]; if (a?.type === "ASSET" && (b?.type || "").toUpperCase() === "BUSINESS_FIELD") bump(assetBFs, e.from, b.name); }
+    }
+  }
+
   // 자산별 metrics (테마 노드에서 첫 발견) — 수익률·PER·시총·종가
   const assetMetrics = new Map();
   const MK = ["return_1d", "return_3d", "return_7d", "return_15d", "return_1m", "return_ytd", "return_1y", "return_2y", "return_3y", "pe_ttm", "marketCap", "close", "returnsAsOf", "valuationAsOf"];
@@ -303,6 +315,10 @@ function main() {
     if (m && Object.keys(m).length) { entry.metrics = m; metricsMatched++; }
     const mm = assetMacros.get(aid);
     if (mm && mm.size) entry.macros = [...mm.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8).map(([name, count]) => ({ name, count }));
+    const ch = assetChars.get(aid);
+    if (ch && ch.size) entry.characters = [...ch.entries()].sort((a, b) => b[1] - a[1]).slice(0, 12).map(([name, count]) => ({ name, count }));
+    const bf = assetBFs.get(aid);
+    if (bf && bf.size) entry.businessFields = [...bf.entries()].sort((a, b) => b[1] - a[1]).slice(0, 12).map(([name, count]) => ({ name, count }));
   }
   console.log(`metrics 부착: ${metricsMatched}`);
 
