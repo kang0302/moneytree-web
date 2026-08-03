@@ -498,6 +498,19 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Disclaimer — 서비스 성격·데이터 고지 (상단 노출) */}
+        <section className="mb-4 rounded-2xl border border-amber-400/25 bg-amber-500/[0.05] px-5 py-4 backdrop-blur">
+          <div className="mb-1.5 flex items-center gap-2">
+            <span className="text-[12px] font-semibold uppercase tracking-wider text-amber-300/85">안내 · Disclaimer</span>
+          </div>
+          <p className="text-[12.5px] leading-relaxed text-white/70 sm:text-[13px]">
+            <b className="text-white/85">KNOW_VEST</b>는 기본적으로 편집자 개인의 글로벌 투자생태계에 대한 관점에 기반해 구조화된 <b className="text-white/85">테마 리서치 서비스</b>입니다.
+            개인 나아가 non-quant 기반 기관투자자의 행동은 사람이 인지 가능한 <b className="text-white/85">스토리라인</b>에 기초한다는 가설에 의해 투자 옵션을 <b className="text-white/85">의미론적으로 도출</b>합니다.
+            다양한 시세정보 파이프라인 위에 국내외 뉴스·분석기사·리포트 등을 수시로 읽고 해석하여 업데이트하고 있습니다.
+            <b className="text-amber-200/90">실시간 시세가 아닌 각 거래소의 전일 종가를 최신 데이터로 함</b>을 참고하시기 바랍니다. 감사합니다.
+          </p>
+        </section>
+
         {/* Daily Brief — 5줄 핵심 요약 + 아카이브 링크 */}
         <Link
           href="/daily-brief"
