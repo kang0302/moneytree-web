@@ -40,7 +40,7 @@ type ThemeRow = ThemeIndexItem & {
 };
 
 // 시장의 온도 기간 토글 옵션
-const HOME_PERIODS: PeriodKey[] = ["1D", "7D", "1M", "YTD", "1Y"];
+const HOME_PERIODS: PeriodKey[] = ["1D", "3D", "7D", "15D", "1M", "YTD", "1Y"];
 
 type UpdateItem = ChangelogEntry & { themeId: string; themeName: string };
 
