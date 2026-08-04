@@ -297,6 +297,8 @@ DEFAULT_PRESETS = [
     ("⑤ SOXX  vs  LIT  vs  ROBO  (반도체·리튬·로봇)", ["SOXX", "LIT", "ROBO"]),
     ("⑥ SPY  vs  KODEX 200  vs  EWJ  vs  TIGER 유로스탁스50(합성 H)  vs  MCHI  (미국·한국·일본·유럽·중국)",
      ["SPY", "KODEX200", "EWJ", "TIGER_ESTOXX50", "MCHI"]),
+    ("⑦ KODEX WTI원유선물(H)  vs  GLD  vs  IBIT  vs  UUP  (원유·금·비트코인·달러)",
+     ["KODEX_WTI", "GLD", "IBIT", "UUP"]),
 ]
 
 
