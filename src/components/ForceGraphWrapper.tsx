@@ -2515,14 +2515,16 @@ export default function ForceGraphWrapper({
         nodeRelSize={4}
         linkColor={(l: any) => {
           const a = getEdgeOpacity(l);
-          return `rgba(255,255,255,${(0.45 * a).toFixed(3)})`;
+          const faint = ASSET_LINK_RELS.has(String(l?.type ?? "").toUpperCase());
+          return `rgba(255,255,255,${((faint ? 0.13 : 0.45) * a).toFixed(3)})`;
         }}
-        linkWidth={1.4}
-        linkDirectionalArrowLength={10}
+        linkWidth={(l: any) => (ASSET_LINK_RELS.has(String(l?.type ?? "").toUpperCase()) ? 0.55 : 1.4)}
+        linkDirectionalArrowLength={(l: any) => (ASSET_LINK_RELS.has(String(l?.type ?? "").toUpperCase()) ? 4 : 10)}
         linkDirectionalArrowRelPos={0.92}
         linkDirectionalArrowColor={(l: any) => {
           const a = getEdgeOpacity(l);
-          return `rgba(255,255,255,${(0.8 * a).toFixed(3)})`;
+          const faint = ASSET_LINK_RELS.has(String(l?.type ?? "").toUpperCase());
+          return `rgba(255,255,255,${((faint ? 0.28 : 0.8) * a).toFixed(3)})`;
         }}
         linkHoverPrecision={8}
         linkLabel={(l: any) => (l?.type ?? l?.label ?? "").toString()}
