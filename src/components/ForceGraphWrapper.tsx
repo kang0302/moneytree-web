@@ -212,6 +212,11 @@ const L3_L4_STACK_STEP   = Math.PI / 7;          // Macro/Character/BF 같은 �
 
 // Asset ↔ Asset relations
 const ASSET_LINK_RELS = new Set(["SUPPLIES", "OPERATES", "INVESTS", "PARTNERS", "COMPETES"]);
+// 2궤도(자산↔자산/BF/ETF) 관계선은 THEMED_AS(1궤도)보다 옅게·얇게 렌더.
+// 레이아웃 인접(assetAdj)엔 IN_ETF를 넣지 않지만(assetEtfAdj로 별도 처리),
+// 시각적으로는 IN_ETF도 2궤도이므로 faint 판정엔 포함한다.
+const FAINT_LINK_RELS = new Set([...ASSET_LINK_RELS, "IN_ETF"]);
+const isFaintRel = (t?: string) => FAINT_LINK_RELS.has(String(t ?? "").toUpperCase());
 
 function normType(t?: string) {
   const x = (t ?? "").toUpperCase();
@@ -2515,15 +2520,15 @@ export default function ForceGraphWrapper({
         nodeRelSize={4}
         linkColor={(l: any) => {
           const a = getEdgeOpacity(l);
-          const faint = ASSET_LINK_RELS.has(String(l?.type ?? "").toUpperCase());
+          const faint = isFaintRel(l?.type);
           return `rgba(255,255,255,${((faint ? 0.28 : 0.45) * a).toFixed(3)})`;
         }}
-        linkWidth={(l: any) => (ASSET_LINK_RELS.has(String(l?.type ?? "").toUpperCase()) ? 0.7 : 1.4)}
-        linkDirectionalArrowLength={(l: any) => (ASSET_LINK_RELS.has(String(l?.type ?? "").toUpperCase()) ? 5 : 10)}
+        linkWidth={(l: any) => (isFaintRel(l?.type) ? 0.7 : 1.4)}
+        linkDirectionalArrowLength={(l: any) => (isFaintRel(l?.type) ? 5 : 10)}
         linkDirectionalArrowRelPos={0.92}
         linkDirectionalArrowColor={(l: any) => {
           const a = getEdgeOpacity(l);
-          const faint = ASSET_LINK_RELS.has(String(l?.type ?? "").toUpperCase());
+          const faint = isFaintRel(l?.type);
           return `rgba(255,255,255,${((faint ? 0.4 : 0.8) * a).toFixed(3)})`;
         }}
         linkHoverPrecision={8}
