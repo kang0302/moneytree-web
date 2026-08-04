@@ -2516,7 +2516,7 @@ export default function ForceGraphWrapper({
         linkColor={(l: any) => {
           const a = getEdgeOpacity(l);
           const faint = ASSET_LINK_RELS.has(String(l?.type ?? "").toUpperCase());
-          return `rgba(255,255,255,${((faint ? 0.20 : 0.45) * a).toFixed(3)})`;
+          return `rgba(255,255,255,${((faint ? 0.28 : 0.45) * a).toFixed(3)})`;
         }}
         linkWidth={(l: any) => (ASSET_LINK_RELS.has(String(l?.type ?? "").toUpperCase()) ? 0.7 : 1.4)}
         linkDirectionalArrowLength={(l: any) => (ASSET_LINK_RELS.has(String(l?.type ?? "").toUpperCase()) ? 5 : 10)}
