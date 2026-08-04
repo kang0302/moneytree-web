@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 
 import AmbientNetwork from "@/components/AmbientNetwork";
 import SearchBar from "@/components/SearchBar";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import { computeThemeReturnSummary, PeriodKey, normalizeToPct } from "@/lib/themeReturn";
 import { resolvePlaceholderThemeNames } from "@/lib/themeIndex";
 import {
@@ -540,6 +541,9 @@ export default function HomePage() {
             <div className="text-[14px] text-white/60">오늘의 핫 테마 브리핑을 불러오는 중…</div>
           )}
         </Link>
+
+        {/* 뉴스레터 구독 — 상단 노출 */}
+        <NewsletterSignup source="home" />
 
         {/* Today's Pulse */}
         <section className="mb-4 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4 backdrop-blur">
