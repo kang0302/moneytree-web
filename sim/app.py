@@ -299,6 +299,8 @@ DEFAULT_PRESETS = [
      ["SPY", "KODEX200", "EWJ", "TIGER_ESTOXX50", "MCHI"]),
     ("⑦ KODEX WTI원유선물(H)  vs  GLD  vs  IBIT  vs  UUP  (원유·금·비트코인·달러)",
      ["KODEX_WTI", "GLD", "IBIT", "UUP"]),
+    ("⑧ BIL  vs  IEF  vs  TLT  (미국채 초단기·중기·장기)",
+     ["BIL", "IEF", "TLT"]),
 ]
 
 
