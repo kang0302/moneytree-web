@@ -45,6 +45,7 @@ ASSETS: dict[str, Asset] = {
     "SPY":    Asset("SPY", "SPY (S&P500 ETF)", "US", "USD", "SPY.US", "SPY"),
     "DIA":    Asset("DIA", "DIA (다우 ETF)", "US", "USD", "DIA.US", "DIA"),
     "QQQ":    Asset("QQQ", "QQQ (나스닥100 ETF)", "US", "USD", "QQQ.US", "QQQ"),
+    "IWM":    Asset("IWM", "IWM (러셀2000 ETF)", "US", "USD", "IWM.US", "IWM"),
     "KODEX200": Asset("KODEX200", "KODEX 200 (069500)", "KR", "KRW", "069500.KO", None, "069500.KQ"),
     "KOSDAQ150": Asset("KOSDAQ150", "KODEX 코스닥150 (229200)", "KR", "KRW", "229200.KQ", None, "229200.KO"),
     "KODEX200_TWCC": Asset("KODEX200_TWCC", "KODEX 200타겟위클리커버드콜 (498400)", "KR", "KRW",
