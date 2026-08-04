@@ -215,7 +215,7 @@ const ASSET_LINK_RELS = new Set(["SUPPLIES", "OPERATES", "INVESTS", "PARTNERS", 
 // 2궤도(자산↔자산/BF/ETF) 관계선은 THEMED_AS(1궤도)보다 옅게·얇게 렌더.
 // 레이아웃 인접(assetAdj)엔 IN_ETF를 넣지 않지만(assetEtfAdj로 별도 처리),
 // 시각적으로는 IN_ETF도 2궤도이므로 faint 판정엔 포함한다.
-const FAINT_LINK_RELS = new Set([...ASSET_LINK_RELS, "IN_ETF", "SUB"]);
+const FAINT_LINK_RELS = new Set([...ASSET_LINK_RELS, "IN_ETF", "SUB", "HAS_TRAIT"]);
 const isFaintRel = (t?: string) => FAINT_LINK_RELS.has(String(t ?? "").toUpperCase());
 
 function normType(t?: string) {
