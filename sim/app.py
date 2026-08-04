@@ -295,6 +295,8 @@ DEFAULT_PRESETS = [
     ("③ SPY  vs  KODEX 200  vs  KODEX 코스닥150  (미국·한국 대표지수)", ["SPY", "KODEX200", "KOSDAQ150"]),
     ("④ SPY  vs  QQQ  vs  DIA  vs  IWM", ["SPY", "QQQ", "DIA", "IWM"]),
     ("⑤ SOXX  vs  LIT  vs  ROBO  (반도체·리튬·로봇)", ["SOXX", "LIT", "ROBO"]),
+    ("⑥ SPY  vs  KODEX 200  vs  EWJ  vs  TIGER 유로스탁스50(합성 H)  vs  MCHI  (미국·한국·일본·유럽·중국)",
+     ["SPY", "KODEX200", "EWJ", "TIGER_ESTOXX50", "MCHI"]),
 ]
 
 
