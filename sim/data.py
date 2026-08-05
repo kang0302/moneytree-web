@@ -61,6 +61,8 @@ ASSETS: dict[str, Asset] = {
     "KODEX_WTI": Asset("KODEX_WTI", "KODEX WTI원유선물(H) (261220)", "KR", "KRW",
                        "261220.KO", None, "261220.KQ"),
     "GLD":    Asset("GLD", "GLD (금 ETF)", "US", "USD", "GLD.US", "GLD"),
+    "SLV":    Asset("SLV", "SLV (은 ETF)", "US", "USD", "SLV.US", "SLV"),
+    "COPX":   Asset("COPX", "COPX (구리광산 ETF)", "US", "USD", "COPX.US", "COPX"),
     "IBIT":   Asset("IBIT", "IBIT (비트코인 현물 ETF)", "US", "USD", "IBIT.US", "IBIT"),
     "UUP":    Asset("UUP", "UUP (달러인덱스 ETF)", "US", "USD", "UUP.US", "UUP"),
     "BIL":    Asset("BIL", "BIL (1-3M 미국채 ETF)", "US", "USD", "BIL.US", "BIL"),
