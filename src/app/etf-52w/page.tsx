@@ -45,6 +45,15 @@ function fmtGap(v: number | null): string {
   const sign = v >= 0 ? "+" : "";
   return `${arrow} ${sign}${v.toFixed(1)}%`;
 }
+// 외부 시세 링크 — 구글파이낸스는 거래소코드 불일치 시 빈 페이지가 잦아,
+// US는 거래소 불필요·커버리지 넓은 Yahoo Finance, KR은 네이버(기존 link) 사용.
+function linkFor(r: Row): string {
+  const co = (r.country || "").toUpperCase();
+  const tk = (r.ticker || "").trim();
+  if (co === "KR") return r.link || `https://finance.naver.com/item/main.naver?code=${tk}`;
+  if (!tk) return r.link || "#";
+  return `https://finance.yahoo.com/quote/${encodeURIComponent(tk)}`;
+}
 function highColor(v: number | null): string {
   if (v == null) return "#94a3b8";
   if (v >= -3) return "#f87171";
@@ -275,7 +284,7 @@ export default function Etf52wPage() {
                       <td className="px-2 py-1 text-white/50">{r.country}</td>
                       <td className="px-2 py-1">
                         <a
-                          href={r.link}
+                          href={linkFor(r)}
                           target="_blank"
                           rel="noreferrer"
                           title={descMap[r.ticker] || r.name}
