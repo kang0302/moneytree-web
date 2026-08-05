@@ -475,6 +475,13 @@ export default function HomePage() {
             >
               💥 충격 전파 what-if
             </Link>
+            <Link
+              href="/etf-52w"
+              className="inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-sky-500/15 px-5 py-2 text-sm font-semibold text-sky-100 transition hover:border-sky-300/60 hover:bg-sky-500/25"
+              title="상장 ETF만 대상으로 52주 고점比·이동평균선(5/20/60/120)·국면을 트래킹"
+            >
+              📊 ETF 52주 이평선
+            </Link>
           </div>
 
           <div className="mt-3 text-[12px] text-white/55 sm:text-[14px]">
