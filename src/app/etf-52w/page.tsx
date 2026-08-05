@@ -9,6 +9,7 @@ import React, { useEffect, useMemo, useState } from "react";
 const BASE_DIR = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/ma_brief";
 const ASSETS_URL = `${BASE_DIR}/assets.json`;
 const ETF_URL = `${BASE_DIR}/etf_tickers.json`;
+const ETF_DESC_URL = `${BASE_DIR}/etf_desc.json`;
 
 type Row = {
   sector: string; name: string; ticker: string; country: string; link: string;
@@ -67,6 +68,7 @@ type SortKey = "bucket" | "close" | "g5" | "g20" | "g60" | "g120" | "hg" | "name
 export default function Etf52wPage() {
   const [data, setData] = useState<Payload | null>(null);
   const [etfSet, setEtfSet] = useState<Set<string> | null>(null);
+  const [descMap, setDescMap] = useState<Record<string, string>>({});
   const [state, setState] = useState<"loading" | "ok" | "empty" | "error">("loading");
   const [nonce, setNonce] = useState(0);
 
@@ -82,9 +84,10 @@ export default function Etf52wPage() {
     setState("loading");
     (async () => {
       try {
-        const [ra, re] = await Promise.all([
+        const [ra, re, rd] = await Promise.all([
           fetch(`${ASSETS_URL}?_cb=${Date.now()}`, { cache: "no-store" }),
           fetch(`${ETF_URL}?_cb=${Date.now()}`, { cache: "no-store" }),
+          fetch(`${ETF_DESC_URL}?_cb=${Date.now()}`, { cache: "no-store" }),
         ]);
         if (!ra.ok) { if (!cancelled) setState(ra.status === 404 ? "empty" : "error"); return; }
         const j = (await ra.json()) as Payload;
@@ -93,9 +96,12 @@ export default function Etf52wPage() {
           const ej = await re.json();
           etf = new Set<string>((ej?.tickers ?? []).map(String));
         }
+        let desc: Record<string, string> = {};
+        if (rd.ok) { try { desc = (await rd.json()) as Record<string, string>; } catch { desc = {}; } }
         if (!cancelled) {
           setData(j);
           setEtfSet(etf);
+          setDescMap(desc);
           setState(j?.items && Object.keys(j.items).length ? "ok" : "empty");
         }
       } catch { if (!cancelled) setState("error"); }
@@ -268,7 +274,16 @@ export default function Etf52wPage() {
                     <tr key={r.ticker + i} className="border-t border-white/5 hover:bg-white/[0.03]" title={r.interp}>
                       <td className="px-2 py-1 text-white/50">{r.country}</td>
                       <td className="px-2 py-1">
-                        <a href={r.link} target="_blank" rel="noreferrer" className="text-sky-400 hover:underline">{r.name} ({r.ticker})</a>
+                        <a
+                          href={r.link}
+                          target="_blank"
+                          rel="noreferrer"
+                          title={descMap[r.ticker] || r.name}
+                          className="text-sky-400 hover:underline"
+                        >
+                          {r.name} ({r.ticker})
+                        </a>
+                        {descMap[r.ticker] ? <span className="ml-1 cursor-help text-white/30" title={descMap[r.ticker]}>ⓘ</span> : null}
                       </td>
                       <td className="px-2 py-1 text-right text-white/80">{r.close != null ? r.close.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : "—"}</td>
                       <td className="px-2 py-1 text-right" style={{ color: gapColor(r.g5) }}>{fmtGap(r.g5)}</td>
