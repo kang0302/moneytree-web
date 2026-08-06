@@ -7,6 +7,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import DailyBriefRich, { BriefData } from "@/components/DailyBriefRich";
 
 type BriefTheme = { rank: string; id: string; name: string; strength: string; reason: string };
 type BriefEntry = { date: string; title: string; themes: BriefTheme[] };
@@ -41,6 +42,7 @@ export default function DailyBriefArchivePage() {
   const [index, setIndex] = useState<BriefEntry[]>([]);
   const [sel, setSel] = useState<string>("");
   const [md, setMd] = useState<string>("");
+  const [rich, setRich] = useState<BriefData | null>(null);
   const [state, setState] = useState<"loading" | "ok" | "empty" | "error">("loading");
   const [q, setQ] = useState<string>("");
 
@@ -62,8 +64,18 @@ export default function DailyBriefArchivePage() {
   useEffect(() => {
     if (!sel) return;
     let cancelled = false;
-    setState("loading");
+    setState("loading"); setRich(null); setMd("");
     (async () => {
+      // 1) 구조화 JSON(리치) 우선
+      try {
+        const rj = await fetch(`/data/daily_briefs/${sel}.json?_cb=${Date.now()}`, { cache: "no-store" });
+        if (rj.ok) {
+          const j = (await rj.json()) as BriefData;
+          if (!cancelled) { setRich(j); setState("ok"); }
+          return;
+        }
+      } catch { /* fall through to markdown */ }
+      // 2) 레거시 마크다운 폴백
       try {
         const r = await fetch(`${mdUrl(sel)}?_cb=${Date.now()}`, { cache: "no-store" });
         if (!r.ok) { if (!cancelled) setState("error"); return; }
@@ -245,13 +257,15 @@ export default function DailyBriefArchivePage() {
             {state === "loading" && <div className="text-white/50">불러오는 중…</div>}
             {state === "error" && <div className="text-rose-300/80">브리핑을 불러오지 못했습니다.</div>}
             {state === "empty" && <div className="text-white/60">아직 저장된 데일리 브리핑이 없습니다.</div>}
-            {state === "ok" && (
+            {state === "ok" && rich ? (
+              <DailyBriefRich data={rich} />
+            ) : state === "ok" ? (
               <article ref={articleRef} className="min-w-0">
                 <ReactMarkdown remarkPlugins={[remarkGfm]} components={MD_COMPONENTS as any}>
                   {md}
                 </ReactMarkdown>
               </article>
-            )}
+            ) : null}
           </section>
         </div>
       </div>

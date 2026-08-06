@@ -34,7 +34,7 @@ function normType(rawType: any, id: string): string {
   return "OTHER";
 }
 
-function buildMiniGraph(tj: any): MiniGraph | null {
+export function buildMiniGraph(tj: any): MiniGraph | null {
   const rawNodes = Array.isArray(tj?.nodes) ? tj.nodes : [];
   if (!rawNodes.length) return null;
   const NODE_CAP = 52;
