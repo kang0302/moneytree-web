@@ -157,14 +157,14 @@ export default function BarometerTrendPage() {
         </h2>
         <p className="mb-2 text-[11px] text-white/45">{sub}</p>
         {shown.length === 0 ? <div className="rounded-lg border border-white/10 bg-white/[0.02] p-3 text-[12px] text-white/40">해당 테마 없음.</div>
-          : <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3">{shown.map((t) => <Card key={t.id} t={t} />)}</div>}
+          : <div className="grid grid-cols-1 gap-2.5 xl:grid-cols-2">{shown.map((t) => <Card key={t.id} t={t} />)}</div>}
       </section>
     );
   };
 
   return (
     <main className="min-h-screen w-full bg-black text-white">
-      <div className="mx-auto w-full max-w-[1200px] px-4 py-6">
+      <div className="mx-auto w-full max-w-[1500px] px-4 py-6">
         <div className="mb-3 flex items-center gap-3">
           <a href="/" className="rounded-lg border border-white/15 bg-white/[0.04] px-3 py-1 text-xs text-white/70 hover:bg-white/10">← 홈으로</a>
           <h1 className="text-lg font-semibold text-white/90">🌡️ 바로미터 국면전환</h1>
@@ -191,12 +191,18 @@ export default function BarometerTrendPage() {
         {state === "error" && <div className="rounded-lg border border-white/10 bg-white/[0.03] p-4 text-[12.5px] text-white/55">국면전환 데이터 생성 중입니다. 잠시 후 새로고침해 주세요.</div>}
 
         {state === "ok" && data && (
-          <>
-            <Section title="🔥 밴드 승격 (온도 단계 ↑)" sub="구간 시작 대비 온도 단계가 오른 테마 — 큰 폭(여러 단계) 순. 국면이 뜨거워지는 신호." list={groups.up} accent="#fca5a5" cap={CAP} />
-            <Section title="🧊 밴드 강등 (온도 단계 ↓)" sub="구간 시작 대비 온도 단계가 내린 테마 — 큰 폭 순. 국면이 식는 신호." list={groups.down} accent="#93c5fd" cap={CAP} />
-            <Section title="📈 같은 밴드 내 가열중" sub="아직 단계 이동은 없지만 점수가 뚜렷이 오르는 테마(단계 전환 임박 후보)." list={groups.risingHold} accent="#fca5a5" />
-            <Section title="📉 같은 밴드 내 냉각중" sub="단계는 유지하나 점수가 뚜렷이 식는 테마." list={groups.fallingHold} accent="#93c5fd" />
-          </>
+          <div className="grid grid-cols-1 gap-x-6 lg:grid-cols-2">
+            {/* 왼쪽: 밴드 승격 */}
+            <div className="rounded-2xl border border-rose-400/15 bg-rose-500/[0.03] p-3">
+              <Section title="🔥 밴드 승격 (온도 단계 ↑)" sub="구간 시작 대비 온도 단계가 오른 테마 — 큰 폭(여러 단계) 순. 국면이 뜨거워지는 신호." list={groups.up} accent="#fca5a5" cap={CAP} />
+              <Section title="📈 같은 밴드 내 가열중" sub="아직 단계 이동은 없지만 점수가 뚜렷이 오르는 테마(단계 전환 임박 후보)." list={groups.risingHold} accent="#fca5a5" />
+            </div>
+            {/* 오른쪽: 밴드 강등 */}
+            <div className="rounded-2xl border border-sky-400/15 bg-sky-500/[0.03] p-3">
+              <Section title="🧊 밴드 강등 (온도 단계 ↓)" sub="구간 시작 대비 온도 단계가 내린 테마 — 큰 폭 순. 국면이 식는 신호." list={groups.down} accent="#93c5fd" cap={CAP} />
+              <Section title="📉 같은 밴드 내 냉각중" sub="단계는 유지하나 점수가 뚜렷이 식는 테마." list={groups.fallingHold} accent="#93c5fd" />
+            </div>
+          </div>
         )}
 
         {data?.meta && (
