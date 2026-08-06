@@ -1,47 +1,46 @@
 "use client";
 
-// 바로미터 국면전환 — 각 테마 바로미터 점수 추세를 온도 단계(Blazing~Cold) 이동으로 포착.
-// 최종 밴드 = 최근 3거래일 평균(노이즈 완화). 전환 = 선택 기간(1주/2주/1개월) 전 밴드 대비 변화.
-// 데이터: import_MT/data/barometer_trend/trend.json (px_hist 기반 사전계산, series[N] = 바로미터 점수 시계열).
+// 바로미터 국면전환 — 최신 스냅샷의 다중 호라이즌 점수로 "최근 온도 vs 기준 기간 온도"의 밴드 이동을 포착.
+// 최종 밴드 = 최근(3D) 바로미터. 전환 = 선택 기준(1주=7D / 2주=15D / 1개월=1M) 호라이즌 대비 밴드 변화.
+// 데이터: import_MT/data/barometer/{최신일}.json (매일 갱신, rows[].scores = 호라이즌별 바로미터 점수).
 
 import React, { useEffect, useMemo, useState } from "react";
 import { TEMP_BANDS, bandOf } from "@/lib/marketTemp";
 
-const RAW = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/barometer_trend/trend.json";
+const BASE = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/barometer";
 
-type T = { id: string; name: string; now: number; prevK: number; delta: number; slope: number; series: number[]; turnUp: boolean; turnDown: boolean };
-type Meta = { generated: string; period: string; days: number; asofStart: string; asofEnd: string; deltaDays: number; themeCount: number; method: string };
-type Payload = { meta: Meta; themes: T[] };
+type Scores = Record<string, number | null>;
+type SnapRow = { themeId: string; themeName: string; ok?: boolean; scores?: Scores };
+type Snap = { date: string; generated?: string; themeCount?: number; rows: SnapRow[] };
 
+// 기준(baseline) 기간 = 호라이즌. 최종은 항상 3D(최근).
 const PERIODS = [
-  { key: "1w", label: "1주", days: 5 },
-  { key: "2w", label: "2주", days: 10 },
-  { key: "1m", label: "1개월", days: 20 },
+  { key: "1w", label: "1주", horizon: "7D" },
+  { key: "2w", label: "2주", horizon: "15D" },
+  { key: "1m", label: "1개월", horizon: "1M" },
 ] as const;
 type PeriodKey = (typeof PERIODS)[number]["key"];
+const FINAL_H = "3D"; // 최근(최종 밴드) 호라이즌
+const SPARK_H = ["1D", "3D", "7D", "15D", "1M"]; // 온도 term-structure(단기→장기)
 
-// 밴드 인덱스: 0=Blazing(가장 뜨거움) … 5=Cold. 낮을수록 뜨겁다.
 const bandIdx = (key: string) => TEMP_BANDS.findIndex((b) => b.key === key);
 const bandUpperScore = (k: number) => (k === 0 ? 1000 : TEMP_BANDS[k - 1].min);
-const mean = (a: number[]) => (a.length ? a.reduce((x, y) => x + y, 0) / a.length : 0);
 
-type Row = T & { fromKey: string; toKey: string; steps: number; crossings: number };
+type Row = {
+  id: string; name: string; finalScore: number; baseScore: number; delta: number;
+  fromKey: string; toKey: string; steps: number; spark: number[];
+};
 
-function enrich(t: T, lookbackDays: number): Row {
-  const s = t.series && t.series.length ? t.series : [t.now];
-  const finalScore = Math.round(mean(s.slice(-3))); // 최근 3거래일 평균 = 최종 밴드
-  const li = Math.max(0, s.length - 1 - lookbackDays); // 기준점(lookback 전)
-  const fromScore = s[li];
-  const fromKey = bandOf(fromScore)?.key ?? "neutral";
-  const toKey = bandOf(finalScore)?.key ?? "neutral";
-  const steps = bandIdx(fromKey) - bandIdx(toKey); // 인덱스 감소 = 상승(뜨거워짐)
-  let crossings = 0;
-  const win = s.slice(li);
-  for (let i = 1; i < win.length; i++) {
-    const a = bandOf(win[i - 1])?.key, b = bandOf(win[i])?.key;
-    if (a && b && a !== b) crossings++;
-  }
-  return { ...t, now: finalScore, prevK: fromScore, delta: finalScore - fromScore, fromKey, toKey, steps, crossings };
+function enrich(r: SnapRow, baseHorizon: string): Row | null {
+  const sc = r.scores || {};
+  const f = sc[FINAL_H];
+  const b = sc[baseHorizon];
+  if (f == null || b == null) return null;
+  const fromKey = bandOf(b)?.key ?? "neutral"; // 기준 기간(과거 관점) 밴드
+  const toKey = bandOf(f)?.key ?? "neutral";   // 최근 밴드
+  const steps = bandIdx(fromKey) - bandIdx(toKey); // >0 = 최근이 더 뜨거움(승격)
+  const spark = SPARK_H.map((h) => (typeof sc[h] === "number" ? (sc[h] as number) : null)).filter((x): x is number => x != null);
+  return { id: r.themeId, name: r.themeName, finalScore: f, baseScore: b, delta: f - b, fromKey, toKey, steps, spark };
 }
 
 function BandChip({ k, dim }: { k: string; dim?: boolean }) {
@@ -55,9 +54,9 @@ function BandChip({ k, dim }: { k: string; dim?: boolean }) {
   );
 }
 
-// 밴드 색 구간(zone)을 배경에 깐 스파크라인.
+// 밴드 색 구간을 배경에 깐 온도 term-structure 스파크라인(왼쪽=단기, 오른쪽=장기).
 function BandSpark({ series, up }: { series: number[]; up: boolean }) {
-  const W = 148, H = 44, pad = 2;
+  const W = 150, H = 44, pad = 2;
   const s = series && series.length ? series : [500];
   const dmin = Math.min(...s), dmax = Math.max(...s);
   const min = dmin, max = Math.max(dmax, dmin + 1);
@@ -68,8 +67,7 @@ function BandSpark({ series, up }: { series: number[]; up: boolean }) {
     const hi = Math.min(bandUpperScore(k), max);
     const lo = Math.max(b.min, min);
     if (hi <= lo) return null;
-    const y1 = yOf(hi), y2 = yOf(lo);
-    return { y: y1, h: Math.max(0.5, y2 - y1), color: b.color };
+    return { y: yOf(hi), h: Math.max(0.5, yOf(lo) - yOf(hi)), color: b.color };
   }).filter(Boolean) as { y: number; h: number; color: string }[];
   const line = up ? "#fb7185" : "#38bdf8";
   return (
@@ -79,12 +77,13 @@ function BandSpark({ series, up }: { series: number[]; up: boolean }) {
         <line key={b.key} x1={0} x2={W} y1={yOf(b.min)} y2={yOf(b.min)} stroke="rgba(255,255,255,0.14)" strokeWidth={0.6} />
       ) : null))}
       <polyline points={pts} fill="none" stroke={line} strokeWidth={1.8} strokeLinejoin="round" strokeLinecap="round" />
-      {(() => { const lv = s[s.length - 1]; return <circle cx={W - pad} cy={yOf(lv)} r={2.2} fill={line} />; })()}
+      {/* 최근(맨 왼쪽=1D) 강조 점 */}
+      <circle cx={pad} cy={yOf(s[0])} r={2.2} fill={line} />
     </svg>
   );
 }
 
-function Card({ t, periodLabel }: { t: Row; periodLabel: string }) {
+function Card({ t, baseLabel }: { t: Row; baseLabel: string }) {
   const up = t.steps > 0 || (t.steps === 0 && t.delta >= 0);
   const border = up ? "border-rose-400/20 hover:border-rose-300/60 hover:shadow-[0_0_0_1px_rgba(251,113,133,0.35)]" : "border-sky-400/20 hover:border-sky-300/60 hover:shadow-[0_0_0_1px_rgba(56,189,248,0.35)]";
   const bg = up ? "from-rose-500/[0.06]" : "from-sky-500/[0.06]";
@@ -102,24 +101,23 @@ function Card({ t, periodLabel }: { t: Row; periodLabel: string }) {
         <BandChip k={t.fromKey} dim />
         <span className="text-white/35">→</span>
         <BandChip k={t.toKey} />
-        {t.crossings > 1 && <span className="ml-auto text-[10px] text-white/35">경계 {t.crossings}회 교차</span>}
       </div>
       <div className="flex items-center justify-between gap-2">
         <div>
-          <div className="text-[19px] font-bold tabular-nums leading-none" style={{ color: nowCol }}>{t.now}</div>
+          <div className="text-[19px] font-bold tabular-nums leading-none" style={{ color: nowCol }}>{t.finalScore}</div>
           <div className="mt-0.5 text-[10px] text-white/40 tabular-nums">
-            <span className="text-white/30">{periodLabel}전</span> {t.prevK} → <span className="text-white/30">최근</span> {t.now}{" "}
+            <span className="text-white/30">{baseLabel}</span> {t.baseScore} → <span className="text-white/30">최근</span> {t.finalScore}{" "}
             <span style={{ color: t.delta >= 0 ? "#f87171" : "#60a5fa" }}>({t.delta >= 0 ? "+" : ""}{t.delta})</span>
           </div>
         </div>
-        <BandSpark series={t.series} up={up} />
+        <BandSpark series={t.spark} up={up} />
       </div>
     </a>
   );
 }
 
 export default function BarometerTrendPage() {
-  const [data, setData] = useState<Payload | null>(null);
+  const [snap, setSnap] = useState<Snap | null>(null);
   const [state, setState] = useState<"loading" | "ok" | "error">("loading");
   const [period, setPeriod] = useState<PeriodKey>("1m");
 
@@ -127,10 +125,15 @@ export default function BarometerTrendPage() {
     let cancel = false;
     (async () => {
       try {
-        const r = await fetch(`${RAW}?_cb=${Date.now()}`, { cache: "no-store" });
-        if (!r.ok) throw new Error();
-        const j = await r.json();
-        if (!cancel) { setData(j); setState("ok"); }
+        const ri = await fetch(`${BASE}/index.json?_cb=${Date.now()}`, { cache: "no-store" });
+        if (!ri.ok) throw new Error();
+        const idx = (await ri.json()) as { date: string }[];
+        const latest = idx?.[0]?.date;
+        if (!latest) throw new Error();
+        const rs = await fetch(`${BASE}/${latest}.json?_cb=${Date.now()}`, { cache: "no-store" });
+        if (!rs.ok) throw new Error();
+        const j = (await rs.json()) as Snap;
+        if (!cancel) { setSnap(j); setState("ok"); }
       } catch { if (!cancel) setState("error"); }
     })();
     return () => { cancel = true; };
@@ -140,13 +143,13 @@ export default function BarometerTrendPage() {
   const CAP = 36;
 
   const groups = useMemo(() => {
-    const rows = (data?.themes ?? []).map((t) => enrich(t, periodDef.days));
+    const rows = (snap?.rows ?? []).map((r) => enrich(r, periodDef.horizon)).filter((x): x is Row => x != null);
     const up = rows.filter((r) => r.steps > 0).sort((a, b) => b.steps - a.steps || b.delta - a.delta);
     const down = rows.filter((r) => r.steps < 0).sort((a, b) => a.steps - b.steps || a.delta - b.delta);
     const risingHold = rows.filter((r) => r.steps === 0 && r.delta > 0).sort((a, b) => b.delta - a.delta).slice(0, 9);
     const fallingHold = rows.filter((r) => r.steps === 0 && r.delta < 0).sort((a, b) => a.delta - b.delta).slice(0, 9);
     return { up, down, risingHold, fallingHold };
-  }, [data, periodDef.days]);
+  }, [snap, periodDef.horizon]);
 
   const Section = ({ title, sub, list, accent, cap }: { title: string; sub: string; list: Row[]; accent: string; cap?: number }) => {
     const shown = cap ? list.slice(0, cap) : list;
@@ -158,7 +161,7 @@ export default function BarometerTrendPage() {
         </h2>
         <p className="mb-2 text-[11px] text-white/45">{sub}</p>
         {shown.length === 0 ? <div className="rounded-lg border border-white/10 bg-white/[0.02] p-3 text-[12px] text-white/40">해당 테마 없음.</div>
-          : <div className="grid grid-cols-1 gap-2.5 xl:grid-cols-2">{shown.map((t) => <Card key={t.id} t={t} periodLabel={periodDef.label} />)}</div>}
+          : <div className="grid grid-cols-1 gap-2.5 xl:grid-cols-2">{shown.map((t) => <Card key={t.id} t={t} baseLabel={periodDef.label} />)}</div>}
       </section>
     );
   };
@@ -171,7 +174,6 @@ export default function BarometerTrendPage() {
             <a href="/" className="rounded-lg border border-white/15 bg-white/[0.04] px-3 py-1 text-xs text-white/70 hover:bg-white/10">← 홈으로</a>
             <h1 className="text-lg font-semibold text-white/90">🌡️ 바로미터 국면전환</h1>
           </div>
-          {/* 기간 토글 — 기준점(baseline) 선택 */}
           <div className="flex items-center gap-1.5">
             <span className="text-[11px] text-white/40">기준 기간</span>
             <div className="flex items-center gap-1 rounded-lg border border-white/10 bg-white/[0.03] p-0.5">
@@ -186,21 +188,21 @@ export default function BarometerTrendPage() {
         </div>
 
         <p className="mb-3 text-[12.5px] leading-relaxed text-white/55">
-          각 테마 바로미터가 <b className="text-white/80">온도 단계(Blazing → Hot → Warm → Neutral → Cool → Cold)</b>를 몇 칸 오르내렸는지로 국면 전환을 포착합니다.
-          단계가 <b className="text-rose-300/90">올라가면 승격(가열)</b>, <b className="text-sky-300/90">내려가면 강등(냉각)</b>. 스파크라인 배경색이 지나온 온도대입니다.
+          각 테마의 <b className="text-white/80">최근 온도(3거래일 기준 바로미터)</b>가 <b className="text-white/80">기준 기간({periodDef.label}) 온도</b>보다 몇 단계 뜨겁거나 식었는지로 국면 전환을 포착합니다.
+          최근이 더 <b className="text-rose-300/90">뜨거우면 승격(가열)</b>, 더 <b className="text-sky-300/90">차가우면 강등(냉각)</b>. 스파크라인은 단기→장기 온도(왼쪽=최근).
         </p>
 
         {/* 산출 공식·방법 — 상단 고정 */}
         <div className="mb-3 rounded-xl border border-white/12 bg-white/[0.035] px-4 py-3 text-[11.5px] leading-relaxed text-white/60">
           <div className="mb-1 flex items-center gap-2">
             <span className="text-[12px] font-semibold text-white/80">📐 산출 공식·방법</span>
-            {data?.meta && <span className="text-[10.5px] text-white/40">구간 {data.meta.asofStart} ~ {data.meta.asofEnd} · {data.meta.days}거래일 · 테마 {data.meta.themeCount}개 · 갱신 {data.meta.generated?.slice(0, 10)}</span>}
+            {snap?.date && <span className="text-[10.5px] text-white/40">스냅샷 {snap.date} · 테마 {snap.themeCount ?? snap.rows.length}개{snap.generated ? ` · 갱신 ${snap.generated.slice(0, 10)}` : ""}</span>}
           </div>
           <ul className="ml-1 space-y-0.5">
             <li>· <b className="text-white/75">온도 단계</b> = 바로미터 점수를 6밴드로 구분 (Blazing≥850 · Hot≥700 · Warm≥550 · Neutral≥420 · Cool≥280 · Cold&lt;280).</li>
-            <li>· <b className="text-white/75">최종 밴드</b> = <b className="text-amber-200/90">최근 3거래일 평균</b> 점수로 판정(노이즈 완화).</li>
-            <li>· <b className="text-white/75">전환</b> = 위 <b className="text-indigo-200/90">기준 기간({periodDef.label}) 전</b> 밴드 대비 단계 변화. 올라가면 승격(가열)/내려가면 강등(냉각). Δ = 최근 평균 − {periodDef.label} 전.</li>
-            <li>· 점수는 현 바로미터 산식으로 <b className="text-white/70">과거 시점 데이터를 재계산</b>한 참고치입니다. 추세·전환은 탐지·경보이며 미래를 보장하지 않습니다(투자 자문 아님).</li>
+            <li>· <b className="text-white/75">최종 밴드</b> = <b className="text-amber-200/90">최근 3거래일(3D) 바로미터</b>로 판정.</li>
+            <li>· <b className="text-white/75">전환</b> = <b className="text-indigo-200/90">기준 기간({periodDef.label} = {periodDef.horizon}) 바로미터</b> 밴드 대비 단계 변화. 최근이 더 뜨거우면 승격/식으면 강등. Δ = 최근(3D) − {periodDef.label}.</li>
+            <li>· 같은 날짜의 단기·장기 호라이즌 바로미터를 비교하므로 <b className="text-white/70">최신 스냅샷 하나로 즉시 산출</b>(항상 최신). 탐지·경보이며 미래를 보장하지 않습니다(투자 자문 아님).</li>
           </ul>
         </div>
 
@@ -218,19 +220,17 @@ export default function BarometerTrendPage() {
         )}
 
         {state === "loading" && <div className="text-white/50">불러오는 중…</div>}
-        {state === "error" && <div className="rounded-lg border border-white/10 bg-white/[0.03] p-4 text-[12.5px] text-white/55">국면전환 데이터 생성 중입니다. 잠시 후 새로고침해 주세요.</div>}
+        {state === "error" && <div className="rounded-lg border border-white/10 bg-white/[0.03] p-4 text-[12.5px] text-white/55">스냅샷을 불러오지 못했습니다. 잠시 후 새로고침해 주세요.</div>}
 
-        {state === "ok" && data && (
+        {state === "ok" && snap && (
           <div className="grid grid-cols-1 gap-x-6 lg:grid-cols-2">
-            {/* 왼쪽: 밴드 승격 */}
             <div className="rounded-2xl border border-rose-400/15 bg-rose-500/[0.03] p-3">
-              <Section title="🔥 밴드 승격 (온도 단계 ↑)" sub={`${periodDef.label} 전 대비 온도 단계가 오른 테마 — 큰 폭(여러 단계) 순. 국면이 뜨거워지는 신호.`} list={groups.up} accent="#fca5a5" cap={CAP} />
-              <Section title="📈 같은 밴드 내 가열중" sub="아직 단계 이동은 없지만 점수가 뚜렷이 오르는 테마(단계 전환 임박 후보)." list={groups.risingHold} accent="#fca5a5" />
+              <Section title="🔥 밴드 승격 (온도 단계 ↑)" sub={`최근(3D) 온도가 ${periodDef.label} 기준보다 뜨거운 테마 — 큰 폭(여러 단계) 순. 가열 신호.`} list={groups.up} accent="#fca5a5" cap={CAP} />
+              <Section title="📈 같은 밴드 내 가열중" sub="단계 이동은 없지만 최근 점수가 기준보다 높은 테마(전환 임박 후보)." list={groups.risingHold} accent="#fca5a5" />
             </div>
-            {/* 오른쪽: 밴드 강등 */}
             <div className="rounded-2xl border border-sky-400/15 bg-sky-500/[0.03] p-3">
-              <Section title="🧊 밴드 강등 (온도 단계 ↓)" sub={`${periodDef.label} 전 대비 온도 단계가 내린 테마 — 큰 폭 순. 국면이 식는 신호.`} list={groups.down} accent="#93c5fd" cap={CAP} />
-              <Section title="📉 같은 밴드 내 냉각중" sub="단계는 유지하나 점수가 뚜렷이 식는 테마." list={groups.fallingHold} accent="#93c5fd" />
+              <Section title="🧊 밴드 강등 (온도 단계 ↓)" sub={`최근(3D) 온도가 ${periodDef.label} 기준보다 식은 테마 — 큰 폭 순. 냉각 신호.`} list={groups.down} accent="#93c5fd" cap={CAP} />
+              <Section title="📉 같은 밴드 내 냉각중" sub="단계는 유지하나 최근 점수가 기준보다 낮은 테마." list={groups.fallingHold} accent="#93c5fd" />
             </div>
           </div>
         )}
