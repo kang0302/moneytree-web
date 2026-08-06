@@ -520,34 +520,39 @@ export default function HomePage() {
           </p>
         </section>
 
-        {/* Daily Brief — 5줄 핵심 요약 + 아카이브 링크 */}
-        <Link
-          href="/daily-brief"
-          className="mb-4 block rounded-2xl border border-sky-400/25 bg-sky-500/[0.05] px-6 py-5 backdrop-blur transition hover:border-sky-400/40 hover:bg-sky-500/[0.08]"
-        >
+        {/* Daily Brief — 뉴스→테마 해석 5줄. 각 줄 클릭 시 해당 테마 그래프로 유도. */}
+        <section className="mb-4 rounded-2xl border border-sky-400/25 bg-sky-500/[0.05] px-6 py-5 backdrop-blur">
           <div className="mb-3.5 flex items-end justify-between">
             <div className="flex items-center gap-2.5">
               <span className="text-[12px] uppercase tracking-wider text-sky-300/75">Daily Brief</span>
               {dailyBrief?.date ? <span className="text-[12px] text-white/50">{dailyBrief.date}</span> : null}
+              <span className="hidden text-[11.5px] text-white/40 sm:inline">· 오늘 뉴스가 어떤 테마에 무슨 의미인지</span>
             </div>
-            <span className="text-[12px] text-white/50">전체 브리핑 보기 →</span>
+            <Link href="/daily-brief" className="text-[12px] text-sky-300/80 hover:text-sky-200 hover:underline">전체 브리핑 보기 →</Link>
           </div>
 
           {dailyBrief && dailyBrief.themes?.length ? (
-            <ol className="space-y-2.5">
+            <ol className="space-y-1">
               {dailyBrief.themes.slice(0, 5).map((t, i) => (
-                <li key={i} className="flex items-baseline gap-2.5 text-[14.5px] leading-relaxed">
-                  <span className="shrink-0 tabular-nums text-white/35">{i + 1}</span>
-                  <span className="shrink-0 font-semibold text-white/90">{t.name}</span>
-                  {t.strength ? <span className="shrink-0 text-amber-300/80">{t.strength}</span> : null}
-                  <span className="min-w-0 flex-1 truncate text-white/55">{t.reason}</span>
+                <li key={i}>
+                  <Link
+                    href={`/graph/${t.id}`}
+                    className="group flex items-baseline gap-2.5 rounded-lg px-2 py-1.5 text-[14.5px] leading-relaxed transition hover:bg-white/[0.06]"
+                    title={`${t.name} 테마 그래프로 이동`}
+                  >
+                    <span className="shrink-0 tabular-nums text-white/35">{i + 1}</span>
+                    <span className="shrink-0 font-semibold text-white/90 group-hover:text-sky-200">{t.name}</span>
+                    {t.strength ? <span className="shrink-0 text-amber-300/80">{t.strength}</span> : null}
+                    <span className="min-w-0 flex-1 truncate text-white/55">{t.reason}</span>
+                    <span className="shrink-0 text-[11px] text-white/25 group-hover:text-sky-300/70">그래프 →</span>
+                  </Link>
                 </li>
               ))}
             </ol>
           ) : (
             <div className="text-[14px] text-white/60">오늘의 핫 테마 브리핑을 불러오는 중…</div>
           )}
-        </Link>
+        </section>
 
         {/* 뉴스레터 구독 — 상단 노출 */}
         <NewsletterSignup source="home" />
