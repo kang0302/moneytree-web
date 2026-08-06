@@ -10,7 +10,8 @@ import { TEMP_BANDS, bandOf } from "@/lib/marketTemp";
 const BASE = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/barometer";
 
 type Scores = Record<string, number | null>;
-type SnapRow = { themeId: string; themeName: string; ok?: boolean; scores?: Scores };
+type Mover = { n: string; t: string; r: number | null };
+type SnapRow = { themeId: string; themeName: string; ok?: boolean; scores?: Scores; movers?: Mover[] };
 type Snap = { date: string; generated?: string; themeCount?: number; rows: SnapRow[] };
 
 // 기준(baseline) 기간 = 호라이즌. 최종은 항상 3D(최근).
@@ -28,7 +29,7 @@ const bandUpperScore = (k: number) => (k === 0 ? 1000 : TEMP_BANDS[k - 1].min);
 
 type Row = {
   id: string; name: string; finalScore: number; baseScore: number; delta: number;
-  fromKey: string; toKey: string; steps: number; spark: number[];
+  fromKey: string; toKey: string; steps: number; spark: number[]; movers: Mover[];
 };
 
 function enrich(r: SnapRow, baseHorizon: string): Row | null {
@@ -40,7 +41,29 @@ function enrich(r: SnapRow, baseHorizon: string): Row | null {
   const toKey = bandOf(f)?.key ?? "neutral";   // 최근 밴드
   const steps = bandIdx(fromKey) - bandIdx(toKey); // >0 = 최근이 더 뜨거움(승격)
   const spark = SPARK_H.map((h) => (typeof sc[h] === "number" ? (sc[h] as number) : null)).filter((x): x is number => x != null);
-  return { id: r.themeId, name: r.themeName, finalScore: f, baseScore: b, delta: f - b, fromKey, toKey, steps, spark };
+  return { id: r.themeId, name: r.themeName, finalScore: f, baseScore: b, delta: f - b, fromKey, toKey, steps, spark, movers: r.movers ?? [] };
+}
+
+// 종목 수익률 색: 상승=적, 하락=청 (앱 공통).
+function retColor(r: number | null): string {
+  if (r == null) return "#94a3b8";
+  return r >= 0 ? "#f87171" : "#60a5fa";
+}
+function MoverChips({ movers }: { movers: Mover[] }) {
+  if (!movers || !movers.length) return null;
+  return (
+    <div className="mt-2 flex flex-wrap gap-1">
+      {movers.map((m, i) => (
+        <span key={i} className="inline-flex items-center gap-1 rounded-md border border-white/10 bg-white/[0.03] px-1.5 py-0.5 text-[10.5px]"
+          title={m.t ? `${m.n} (${m.t}) · 3D ${m.r == null ? "—" : (m.r >= 0 ? "+" : "") + m.r + "%"}` : m.n}>
+          <span className="max-w-[92px] truncate text-white/75">{m.n}</span>
+          <span className="tabular-nums font-semibold" style={{ color: retColor(m.r) }}>
+            {m.r == null ? "—" : `${m.r >= 0 ? "+" : ""}${m.r}%`}
+          </span>
+        </span>
+      ))}
+    </div>
+  );
 }
 
 function BandChip({ k, dim }: { k: string; dim?: boolean }) {
@@ -112,6 +135,7 @@ function Card({ t, baseLabel }: { t: Row; baseLabel: string }) {
         </div>
         <BandSpark series={t.spark} up={up} />
       </div>
+      <MoverChips movers={t.movers} />
     </a>
   );
 }
