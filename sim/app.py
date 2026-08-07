@@ -303,6 +303,8 @@ DEFAULT_PRESETS = [
      ["BIL", "IEF", "TLT"]),
     ("⑨ TIGER 2차전지TOP10  vs  KODEX 로봇액티브  vs  KODEX 반도체  vs  PLUS K방산  vs  HANARO 원자력iSelect  vs  SOL 조선TOP3플러스  (K-테마)",
      ["TIGER_2NDBAT_TOP10", "KODEX_ROBOT", "KODEX_SEMI", "PLUS_KDEF", "HANARO_NUCLEAR", "SOL_SHIP_TOP3"]),
+    ("⑩ HANARO K-뷰티  vs  HANARO Fn K-푸드  vs  ACE KPOP포커스  (K-소비·컬처)",
+     ["HANARO_KBEAUTY", "HANARO_KFOOD", "ACE_KPOP"]),
 ]
 
 
