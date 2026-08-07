@@ -305,6 +305,8 @@ DEFAULT_PRESETS = [
      ["TIGER_2NDBAT_TOP10", "KODEX_ROBOT", "KODEX_SEMI", "PLUS_KDEF", "HANARO_NUCLEAR", "SOL_SHIP_TOP3"]),
     ("⑩ HANARO K-뷰티  vs  HANARO Fn K-푸드  vs  ACE KPOP포커스  (K-소비·컬처)",
      ["HANARO_KBEAUTY", "HANARO_KFOOD", "ACE_KPOP"]),
+    ("⑪ TIGER K게임  vs  TIGER 인터넷TOP10  vs  KODEX Fn웹툰&드라마  (K-콘텐츠·플랫폼)",
+     ["TIGER_KGAME", "TIGER_INTERNET_TOP10", "KODEX_WEBTOON_DRAMA"]),
 ]
 
 
