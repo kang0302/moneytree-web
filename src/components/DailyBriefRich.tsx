@@ -107,33 +107,34 @@ function ThemePanel({ themeId, themeName, bar }: { themeId: string; themeName: s
       className="group block rounded-xl border border-white/12 bg-white/[0.02] p-2.5 transition hover:border-sky-400/50 hover:bg-white/[0.04]"
       title={`${themeName} 테마 그래프 열기`}
     >
-      {/* 상단: (좌) 종목명+밴드전환 / (우) 온도 스파크라인 */}
-      <div className="flex items-start justify-between gap-2">
-        <div className="min-w-0 flex-1">
-          <div className="flex items-center gap-1.5">
-            <span className="truncate text-[11.5px] font-bold text-white/85 group-hover:text-white">{themeName}</span>
-            {stepLabel && <span className="shrink-0 rounded px-1 py-0.5 text-[9.5px] font-bold text-white" style={{ background: up ? "rgba(239,68,68,0.35)" : "rgba(59,130,246,0.35)" }}>{stepLabel}</span>}
-          </div>
-          {t && (
-            <div className="mt-1 flex items-center gap-1">
-              <BandChip k={t.fromKey} /><span className="text-white/30 text-[10px]">→</span><BandChip k={t.toKey} />
-            </div>
-          )}
+      {/* 개요: 종목명 + 단계뱃지 / 밴드 전환 / 점수 */}
+      <div className="mb-2 border-b border-white/8 pb-2">
+        <div className="mb-1 flex items-center justify-between gap-2">
+          <span className="truncate text-[12px] font-bold text-white/85 group-hover:text-white">{themeName}</span>
+          {stepLabel && <span className="shrink-0 rounded px-1 py-0.5 text-[9.5px] font-bold text-white" style={{ background: up ? "rgba(239,68,68,0.35)" : "rgba(59,130,246,0.35)" }}>{stepLabel}</span>}
         </div>
-        {scores && (
-          <div className="h-[38px] w-[96px] shrink-0"><TempSpark scores={scores} /></div>
-        )}
+        <div className="flex items-end justify-between gap-2">
+          {t ? (
+            <div className="flex items-center gap-1">
+              <BandChip k={t.fromKey} /><span className="text-[10px] text-white/30">→</span><BandChip k={t.toKey} />
+            </div>
+          ) : band ? <BandChip k={band.key} /> : <span />}
+          <div className="text-[22px] font-bold leading-none tabular-nums" style={{ color: nowCol }}>{score ?? "—"}</div>
+        </div>
+        {t && <div className="mt-1 text-right text-[10px] tabular-nums text-white/40">1주 {t.base} → 최근 {t.final} <span style={{ color: t.delta >= 0 ? "#f87171" : "#60a5fa" }}>({t.delta >= 0 ? "+" : ""}{t.delta})</span></div>}
       </div>
-      {/* 점수 + 1주→최근 */}
-      <div className="mt-1.5 flex items-end justify-between gap-2">
-        <div className="text-[21px] font-bold leading-none tabular-nums" style={{ color: nowCol }}>{score ?? "—"}</div>
-        {t ? (
-          <div className="text-[10px] tabular-nums text-white/40">1주 {t.base} → 최근 {t.final} <span style={{ color: t.delta >= 0 ? "#f87171" : "#60a5fa" }}>({t.delta >= 0 ? "+" : ""}{t.delta})</span></div>
-        ) : band ? <div className="text-[10.5px] font-semibold" style={{ color: band.color }}>{band.emoji} {band.label}</div> : null}
-      </div>
+
+      {/* 온도 추세 — 별도 섹션(개요와 분리) */}
+      {scores && (
+        <div className="mb-2 overflow-hidden rounded-lg border border-white/8 bg-white/[0.015] px-2 pb-1.5 pt-1">
+          <div className="mb-0.5 flex items-center justify-between text-[9px] text-white/30"><span>온도 추세</span><span>단기 → 장기</span></div>
+          <div className="h-[34px] w-full overflow-hidden"><TempSpark scores={scores} /></div>
+        </div>
+      )}
+
       {/* 주요 종목 */}
       {movers.length > 0 && (
-        <div className="mt-1.5 flex flex-wrap gap-1">
+        <div className="flex flex-wrap gap-1">
           {movers.map((m, i) => (
             <span key={i} className="inline-flex items-center gap-1 rounded border border-white/10 bg-white/[0.03] px-1.5 py-0.5 text-[10px]">
               <span className="max-w-[74px] truncate text-white/75">{m.n}</span>
@@ -142,7 +143,7 @@ function ThemePanel({ themeId, themeName, bar }: { themeId: string; themeName: s
           ))}
         </div>
       )}
-      <div className="mt-1 text-right text-[10px] text-white/30 group-hover:text-sky-300/80">테마 그래프 열기 →</div>
+      <div className="mt-1.5 text-right text-[10px] text-white/30 group-hover:text-sky-300/80">테마 그래프 열기 →</div>
     </Link>
   );
 }
@@ -222,7 +223,7 @@ export default function DailyBriefRich({ data }: { data: BriefData }) {
                 style={{ display: "flex", flexWrap: "wrap", gap: 14, alignItems: "flex-start" }}
               >
                 {/* 좌: 해석 (~7할) */}
-                <div className="min-w-0" style={{ flex: "1 1 60%", minWidth: 340 }}>
+                <div className="min-w-0" style={{ flex: "6 1 0%", minWidth: 340 }}>
                   <div className="mb-1.5 flex flex-wrap items-center gap-2">
                     <span className="shrink-0 tabular-nums text-[13px] font-bold text-white/30">{i + 1}</span>
                     <Link href={`/graph/${n.themeId}`} className="text-[15px] font-bold text-sky-300 hover:text-sky-200 hover:underline">{n.themeName}</Link>
@@ -254,7 +255,7 @@ export default function DailyBriefRich({ data }: { data: BriefData }) {
                   <Link href={`/graph/${n.themeId}`} className="inline-flex items-center gap-1 rounded-lg border border-sky-400/30 bg-sky-500/10 px-2.5 py-1 text-[12.5px] font-semibold text-sky-200/90 transition hover:border-sky-300/60 hover:bg-sky-500/20">→ {n.themeName} 그래프에서 수혜/피해 종목 지도 확인</Link>
                 </div>
                 {/* 우: 테마 패널(컴팩트) (~3할) */}
-                <aside className="min-w-0" style={{ flex: "0 1 300px", minWidth: 260 }}>
+                <aside className="min-w-0" style={{ flex: "4 1 0%", minWidth: 280 }}>
                   <ThemePanel themeId={n.themeId} themeName={n.themeName} bar={bar} />
                 </aside>
               </article>
