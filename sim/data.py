@@ -78,6 +78,8 @@ ASSETS: dict[str, Asset] = {
                        "449450.KO", None, "449450.KQ"),
     "HANARO_NUCLEAR": Asset("HANARO_NUCLEAR", "HANARO 원자력iSelect (434730)", "KR", "KRW",
                             "434730.KO", None, "434730.KQ"),
+    "SOL_SHIP_TOP3": Asset("SOL_SHIP_TOP3", "SOL 조선TOP3플러스 (466920)", "KR", "KRW",
+                           "466920.KO", None, "466920.KQ"),
     "SOXX":   Asset("SOXX", "SOXX (필라델피아반도체 ETF)", "US", "USD", "SOXX.US", "SOXX"),
     "LIT":    Asset("LIT", "LIT (리튬·배터리 ETF)", "US", "USD", "LIT.US", "LIT"),
     "ROBO":   Asset("ROBO", "ROBO (로봇·자동화 ETF)", "US", "USD", "ROBO.US", "ROBO"),
