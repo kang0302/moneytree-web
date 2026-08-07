@@ -203,9 +203,13 @@ export default function DailyBriefRich({ data }: { data: BriefData }) {
           <KeywordRow label="오늘의 키워드" items={data.newsKeywords} accent="#38bdf8" />
           <div className="space-y-3">
             {data.news.map((n, i) => (
-              <article key={i} className="flex flex-col gap-3 rounded-2xl border border-white/10 bg-white/[0.02] p-3.5 transition hover:border-white/20 md:flex-row">
-                {/* 좌: 해석 */}
-                <div className="min-w-0 flex-1">
+              <article
+                key={i}
+                className="rounded-2xl border border-white/10 bg-white/[0.02] p-3.5 transition hover:border-white/20"
+                style={{ display: "flex", flexWrap: "wrap", gap: 14, alignItems: "flex-start" }}
+              >
+                {/* 좌: 해석 (~7할) */}
+                <div className="min-w-0" style={{ flex: "1 1 60%", minWidth: 340 }}>
                   <div className="mb-1.5 flex flex-wrap items-center gap-2">
                     <span className="shrink-0 tabular-nums text-[13px] font-bold text-white/30">{i + 1}</span>
                     <Link href={`/graph/${n.themeId}`} className="text-[15px] font-bold text-sky-300 hover:text-sky-200 hover:underline">{n.themeName}</Link>
@@ -227,7 +231,8 @@ export default function DailyBriefRich({ data }: { data: BriefData }) {
                   <Link href={`/graph/${n.themeId}`} className="inline-flex items-center gap-1 text-[12.5px] font-semibold text-sky-300/90 hover:text-sky-200">→ 테마 그래프에서 수혜/피해 종목 지도 확인</Link>
                 </div>
                 {/* 우: 테마 패널(온도·다이어그램·주요종목) */}
-                <aside className="w-full shrink-0 md:w-[330px]">
+                {/* 우: 테마 패널 (~3할) */}
+                <aside className="min-w-0" style={{ flex: "0 1 330px", minWidth: 280 }}>
                   <ThemePanel themeId={n.themeId} themeName={n.themeName} bar={barMap.get(n.themeId)} />
                 </aside>
               </article>
