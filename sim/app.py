@@ -301,6 +301,8 @@ DEFAULT_PRESETS = [
      ["KODEX_WTI", "GLD", "SLV", "COPX", "IBIT", "UUP"]),
     ("⑧ BIL  vs  IEF  vs  TLT  (미국채 초단기·중기·장기)",
      ["BIL", "IEF", "TLT"]),
+    ("⑨ TIGER 2차전지TOP10  vs  KODEX 로봇액티브  vs  KODEX 반도체  vs  PLUS K방산  vs  HANARO 원자력iSelect  (K-테마)",
+     ["TIGER_2NDBAT_TOP10", "KODEX_ROBOT", "KODEX_SEMI", "PLUS_KDEF", "HANARO_NUCLEAR"]),
 ]
 
 
