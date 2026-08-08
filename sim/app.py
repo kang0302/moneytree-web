@@ -311,6 +311,14 @@ DEFAULT_PRESETS = [
      ["KODEX_SEMI", "TIGER_USPHLX_SEMI", "TIGER_CN_SEMI", "TIGER_JP_SEMI"]),
     ("⑬ TIGER 차이나휴머노이드로봇  vs  PLUS 글로벌휴머노이드로봇액티브  vs  Global X 일본 로보틱스&AI  vs  TIGER 코리아휴머노이드로봇산업  vs  RISE 미국휴머노이드로봇  (글로벌 휴머노이드로봇 국가별)",
      ["TIGER_CN_HUMANOID", "PLUS_GLOBAL_HUMANOID", "GLOBALX_JP_ROBOTAI", "TIGER_KR_HUMANOID", "RISE_US_HUMANOID"]),
+    ("⑭ PLUS K방산  vs  ITA(미국 항공우주·방산)  vs  HANARO 유럽방산  vs  PLUS 글로벌방산  (글로벌 방산 지역별)",
+     ["PLUS_KDEF", "ITA", "HANARO_EU_DEFENSE", "PLUS_GLOBAL_DEFENSE"]),
+    ("⑮ TIGER Fn신재생에너지  vs  SOL 차이나태양광CSI(합성)  vs  ICLN(글로벌 클린에너지)  (신재생에너지 지역별)",
+     ["TIGER_RENEWABLE", "SOL_CHINA_SOLAR", "ICLN"]),
+    ("⑯ TIGER 차이나바이오테크  vs  TIGER 헬스케어  vs  XLV(미국)  vs  iShares 유럽600 헬스케어  vs  TIGER S&P글로벌헬스케어  (글로벌 헬스케어 지역별)",
+     ["TIGER_CN_BIOTECH", "TIGER_HEALTHCARE", "XLV", "ISHARES_EU_HEALTH", "TIGER_GLOBAL_HEALTH"]),
+    ("⑰ KODEX 자동차  vs  KODEX 200에너지화학  vs  KODEX 운송  vs  KODEX 건설  (K-섹터 경기민감)",
+     ["KODEX_AUTO", "KODEX_ENERGYCHEM", "KODEX_TRANSPORT", "KODEX_CONSTRUCTION"]),
 ]
 
 
