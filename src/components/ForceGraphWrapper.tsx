@@ -527,6 +527,37 @@ function pickRelType(e: EdgeT): string {
   );
 }
 
+// 테마 카드 하단 이미지 — import_MT/data/theme_images/{themeId}.{ext} 를 순차 시도, 전부 실패 시 미표시.
+const THEME_IMG_BASE =
+  "https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme_images";
+const THEME_IMG_EXTS = ["jpg", "png", "webp", "jpeg"];
+function ThemeCardImage({ themeId }: { themeId: string }) {
+  const [extIdx, setExtIdx] = useState(0);
+  const [failed, setFailed] = useState(false);
+  // themeId 변경 시 상태 초기화
+  useEffect(() => {
+    setExtIdx(0);
+    setFailed(false);
+  }, [themeId]);
+  if (failed || !themeId) return null;
+  const src = `${THEME_IMG_BASE}/${themeId}.${THEME_IMG_EXTS[extIdx]}`;
+  return (
+    <div className="mt-2.5 overflow-hidden rounded-lg border border-white/10">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={src}
+        alt=""
+        loading="lazy"
+        className="block h-[116px] w-full object-cover opacity-95"
+        onError={() => {
+          if (extIdx < THEME_IMG_EXTS.length - 1) setExtIdx((i) => i + 1);
+          else setFailed(true);
+        }}
+      />
+    </div>
+  );
+}
+
 export default function ForceGraphWrapper({
   themeId,
   themeName,
@@ -2146,6 +2177,7 @@ export default function ForceGraphWrapper({
               {themeDescription}
             </div>
           ) : null}
+          <ThemeCardImage themeId={themeId} />
         </div>
       </div>
 
