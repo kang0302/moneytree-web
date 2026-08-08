@@ -38,6 +38,7 @@ class Asset:
     eodhd: str          # EODHD 심볼 (예: SPY.US, 069500.KO)
     fmp: Optional[str]  # FMP 심볼 (US만; KR은 None)
     eodhd_alt: Optional[str] = None  # 접미사 fallback (KR .KO↔.KQ)
+    yahoo: Optional[str] = None      # Yahoo Finance 심볼 (EODHD/FMP 미커버 거래소, 예: 도쿄 2638.T)
 
 
 # 자산 레지스트리 (리포에서 검증된 접미사 재사용 — symbol-search 생략)
@@ -92,6 +93,22 @@ ASSETS: dict[str, Asset] = {
                                   "365000.KO", None, "365000.KQ"),
     "KODEX_WEBTOON_DRAMA": Asset("KODEX_WEBTOON_DRAMA", "KODEX Fn웹툰&드라마 (395150)", "KR", "KRW",
                                  "395150.KO", None, "395150.KQ"),
+    "TIGER_USPHLX_SEMI": Asset("TIGER_USPHLX_SEMI", "TIGER 미국필라델피아반도체나스닥 (381180)", "KR", "KRW",
+                               "381180.KO", None, "381180.KQ"),
+    "TIGER_CN_SEMI": Asset("TIGER_CN_SEMI", "TIGER 차이나반도체FACTSET (396520)", "KR", "KRW",
+                           "396520.KO", None, "396520.KQ"),
+    "TIGER_JP_SEMI": Asset("TIGER_JP_SEMI", "TIGER 일본반도체FACTSET (465660)", "KR", "KRW",
+                           "465660.KO", None, "465660.KQ"),
+    "TIGER_CN_HUMANOID": Asset("TIGER_CN_HUMANOID", "TIGER 차이나휴머노이드로봇 (0053L0)", "KR", "KRW",
+                               "0053L0.KO", None),
+    "PLUS_GLOBAL_HUMANOID": Asset("PLUS_GLOBAL_HUMANOID", "PLUS 글로벌휴머노이드로봇액티브 (0035T0)", "KR", "KRW",
+                                  "0035T0.KO", None),
+    "GLOBALX_JP_ROBOTAI": Asset("GLOBALX_JP_ROBOTAI", "Global X 일본 로보틱스&AI (2638.T)", "JP", "JPY",
+                                "", None, None, "2638.T"),
+    "TIGER_KR_HUMANOID": Asset("TIGER_KR_HUMANOID", "TIGER 코리아휴머노이드로봇산업 (0148J0)", "KR", "KRW",
+                               "0148J0.KO", None),
+    "RISE_US_HUMANOID": Asset("RISE_US_HUMANOID", "RISE 미국휴머노이드로봇 (0036R0)", "KR", "KRW",
+                              "0036R0.KO", None),
     "SOXX":   Asset("SOXX", "SOXX (필라델피아반도체 ETF)", "US", "USD", "SOXX.US", "SOXX"),
     "LIT":    Asset("LIT", "LIT (리튬·배터리 ETF)", "US", "USD", "LIT.US", "LIT"),
     "ROBO":   Asset("ROBO", "ROBO (로봇·자동화 ETF)", "US", "USD", "ROBO.US", "ROBO"),
@@ -154,6 +171,30 @@ def _fetch_fmp(symbol: str, start: date, end: date) -> pd.DataFrame:
     return _to_df(data)
 
 
+def _fetch_yahoo(symbol: str, start: date, end: date) -> pd.DataFrame:
+    """Yahoo Finance 차트 API — EODHD/FMP가 커버 못하는 거래소(도쿄 등)용."""
+    import time
+    p1 = int(time.mktime(start.timetuple()))
+    p2 = int(time.mktime(end.timetuple())) + 86400
+    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}"
+    params = {"period1": p1, "period2": p2, "interval": "1d"}
+    resp = requests.get(url, params=params, timeout=30, headers={"User-Agent": "Mozilla/5.0"})
+    resp.raise_for_status()
+    data = resp.json()
+    try:
+        res = data["chart"]["result"][0]
+        ts = res["timestamp"]
+        closes = res["indicators"]["quote"][0]["close"]
+    except (KeyError, TypeError, IndexError):
+        return pd.DataFrame(columns=["close"]).astype(float)
+    rows = []
+    for t, c in zip(ts, closes):
+        if c is None:
+            continue
+        rows.append({"date": datetime.fromtimestamp(t).date().isoformat(), "close": c})
+    return _to_df(rows)
+
+
 def _cache_path(key: str) -> Path:
     return CACHE_DIR / f"{key}.parquet"
 
@@ -179,12 +220,13 @@ def _fetch_asset(a: Asset, start: date, end: date) -> pd.DataFrame:
     """EODHD 우선 → (US) FMP fallback → (KR) 접미사 alt fallback."""
     errs = []
     # 1) EODHD 주력
-    try:
-        df = _fetch_eodhd(a.eodhd, start, end)
-        if not df.empty:
-            return df
-    except Exception as e:
-        errs.append(f"EODHD {a.eodhd}: {e}")
+    if a.eodhd:
+        try:
+            df = _fetch_eodhd(a.eodhd, start, end)
+            if not df.empty:
+                return df
+        except Exception as e:
+            errs.append(f"EODHD {a.eodhd}: {e}")
     # 2) KR 접미사 fallback (.KO↔.KQ)
     if a.eodhd_alt:
         try:
@@ -201,6 +243,14 @@ def _fetch_asset(a: Asset, start: date, end: date) -> pd.DataFrame:
                 return df
         except Exception as e:
             errs.append(f"FMP {a.fmp}: {e}")
+    # 4) Yahoo fallback (도쿄 등 EODHD/FMP 미커버 거래소)
+    if a.yahoo:
+        try:
+            df = _fetch_yahoo(a.yahoo, start, end)
+            if not df.empty:
+                return df
+        except Exception as e:
+            errs.append(f"Yahoo {a.yahoo}: {e}")
     raise RuntimeError(f"{a.key} fetch 실패: " + " | ".join(errs))
 
 

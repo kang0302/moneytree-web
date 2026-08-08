@@ -307,6 +307,10 @@ DEFAULT_PRESETS = [
      ["HANARO_KBEAUTY", "HANARO_KFOOD", "ACE_KPOP"]),
     ("⑪ TIGER K게임  vs  TIGER 인터넷TOP10  vs  KODEX Fn웹툰&드라마  (K-콘텐츠·플랫폼)",
      ["TIGER_KGAME", "TIGER_INTERNET_TOP10", "KODEX_WEBTOON_DRAMA"]),
+    ("⑫ KODEX 반도체  vs  TIGER 미국필라델피아반도체나스닥  vs  TIGER 차이나반도체FACTSET  vs  TIGER 일본반도체FACTSET  (글로벌 반도체 국가별)",
+     ["KODEX_SEMI", "TIGER_USPHLX_SEMI", "TIGER_CN_SEMI", "TIGER_JP_SEMI"]),
+    ("⑬ TIGER 차이나휴머노이드로봇  vs  PLUS 글로벌휴머노이드로봇액티브  vs  Global X 일본 로보틱스&AI  vs  TIGER 코리아휴머노이드로봇산업  vs  RISE 미국휴머노이드로봇  (글로벌 휴머노이드로봇 국가별)",
+     ["TIGER_CN_HUMANOID", "PLUS_GLOBAL_HUMANOID", "GLOBALX_JP_ROBOTAI", "TIGER_KR_HUMANOID", "RISE_US_HUMANOID"]),
 ]
 
 
