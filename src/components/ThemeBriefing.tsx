@@ -17,6 +17,7 @@ type EventDbRow = {
   duration: string;
   recovery: string;
   intensity: 1 | 2 | 3; // 1=중, 2=강, 3=매우강
+  source?: string; // 근거 출처 (7번째 컬럼, 옵션) — 평문 또는 [라벨](url)
 };
 
 function classifyDirection(s: string): EventDbRow["direction"] {
@@ -51,7 +52,7 @@ function parseEventDb(md: string | null): { briefingMd: string; eventDbRows: Eve
   for (const line of dataLines) {
     const cells = line.split("|").slice(1, -1).map((c) => c.trim());
     if (cells.length < 6) continue;
-    const [name, period, dirRaw, mechanism, duration, recovery] = cells;
+    const [name, period, dirRaw, mechanism, duration, recovery, source] = cells;
     rows.push({
       name,
       period,
@@ -61,6 +62,7 @@ function parseEventDb(md: string | null): { briefingMd: string; eventDbRows: Eve
       duration,
       recovery,
       intensity: classifyIntensity(dirRaw, mechanism),
+      source: source && source !== "—" ? source : undefined,
     });
   }
   return { briefingMd: before, eventDbRows: rows };
@@ -410,8 +412,32 @@ function EventCard({ row }: { row: EventDbRow }) {
             {recoveryClean || "—"}
           </span>
         </div>
+        {row.source && <SourceChip source={row.source} />}
       </div>
     </div>
+  );
+}
+
+// 출처 셀: "[라벨](url)" 이면 링크, 아니면 평문 라벨
+function SourceChip({ source }: { source: string }) {
+  const md = source.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+  const label = md ? md[1] : source;
+  const url = md ? md[2] : null;
+  const inner = (
+    <>
+      <span className="opacity-60">출처</span>
+      <span className="font-medium">{label}</span>
+    </>
+  );
+  const cls =
+    "inline-flex items-center gap-1 rounded-md bg-white/6 px-2 py-0.5 text-[10px] text-white/70";
+  return url ? (
+    <a href={url} target="_blank" rel="noopener noreferrer" className={`${cls} hover:bg-white/12 hover:text-white/90`}>
+      {inner}
+      <span className="opacity-50">↗</span>
+    </a>
+  ) : (
+    <span className={cls}>{inner}</span>
   );
 }
 
