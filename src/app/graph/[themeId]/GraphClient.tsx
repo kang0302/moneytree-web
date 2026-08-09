@@ -777,8 +777,8 @@ export default function GraphClient({
           )}
         </div>
 
-        {/* ✅ SearchBar (ASSET/THEME/BF/MACRO) */}
-        <div className="min-w-[320px] max-w-[520px] flex-1">
+        {/* ✅ SearchBar (ASSET/THEME/BF/MACRO) — 고정폭(레이아웃 흔들림 방지) */}
+        <div className="w-[340px] shrink-0">
           <SearchBar
             indexUrl={SEARCH_INDEX_URL}
             onGoTheme={(tid) => router.push(`/graph/${tid}`)}
@@ -788,7 +788,7 @@ export default function GraphClient({
         </div>
 
         {/* Controls in order: Period -> Move -> Full map */}
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-2">
           {/* 1) Period toggle */}
           <div className="flex items-center gap-1 rounded-lg border border-white/10 bg-black/30 p-1">
             {periods.map((p) => {
@@ -839,8 +839,8 @@ export default function GraphClient({
           </a>
         </div>
 
-        {/* Far right: Prev / Next theme + Main Home */}
-        <div className="flex items-center gap-1">
+        {/* Far right: Prev / Next theme + Main Home — ml-auto로 우측 끝 고정 */}
+        <div className="ml-auto flex shrink-0 items-center gap-1">
           <button
             type="button"
             onClick={() => prevTheme && router.push(`/graph/${prevTheme.themeId}`)}
