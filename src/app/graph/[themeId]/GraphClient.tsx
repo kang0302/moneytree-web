@@ -27,6 +27,7 @@ import ThemeChangelog, { ChangelogEntry, latestChangeDays } from "@/components/T
 import SearchBar from "@/components/SearchBar";
 
 import { computeThemeReturnSummary, extractReturnByPeriod, PeriodKey, ThemeReturnSummary } from "@/lib/themeReturn";
+import { fetchLatestBarometer, scoreForPeriod, type SnapRow } from "@/lib/barometerSnapshot";
 import { getThemeJsonUrl } from "@/lib/getThemeJsonUrl";
 import { fetchThemeIndex, resolvePlaceholderThemeNames } from "@/lib/themeIndex";
 
@@ -561,14 +562,32 @@ export default function GraphClient({
   }, [resolvedNodes, liveReturnMap, period]);
 
   // ✅ Theme Return Summary
+  // ✅ 바로미터 스냅샷(단일 소스) — 홈 "시장의 온도"와 동일 점수 공유
+  const [snapRow, setSnapRow] = useState<SnapRow | null>(null);
+  useEffect(() => {
+    let alive = true;
+    fetchLatestBarometer().then((s) => {
+      if (alive && s) setSnapRow(s.map.get(themeId) ?? null);
+    });
+    return () => {
+      alive = false;
+    };
+  }, [themeId]);
+
   const themeReturn = useMemo(() => {
-    return computeThemeReturnSummary({
+    const live = computeThemeReturnSummary({
       nodes: safeArray<NodeT>(enrichedNodes),
       edges,
       period,
       minAssets: 5,
     });
-  }, [enrichedNodes, edges, period]);
+    // 헤드라인 온도 점수는 스냅샷 우선(화면 간 일관성). 세부 타일(Health/Momentum 등)은 live 유지.
+    const snapScore = scoreForPeriod(snapRow, period);
+    if (live && (live as any).ok && typeof snapScore === "number") {
+      return { ...(live as any), overallScore: snapScore } as ThemeReturnSummary;
+    }
+    return live;
+  }, [enrichedNodes, edges, period, snapRow]);
 
   // 페이지 진입 시
   useEffect(() => {
@@ -908,6 +927,7 @@ export default function GraphClient({
               period={period}
               onChangePeriod={setPeriod}
               themeReturn={themeReturn}
+              snapRow={snapRow}
               compareOptions={compareOptions}
               compareThemeId={compareThemeId}
               onChangeCompareThemeId={setCompareThemeId}

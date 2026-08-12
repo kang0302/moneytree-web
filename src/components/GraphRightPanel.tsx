@@ -3,6 +3,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import type { PeriodKey, ThemeReturnSummary } from "@/lib/themeReturn";
 import { tempByScore as tempByScoreFn, computeThemeReturnSummary } from "@/lib/themeReturn";
+import type { SnapRow } from "@/lib/barometerSnapshot";
 
 /* ─────────────────────────────────────────
    데이터 신선도 판정 (valuationAsOf/returnsAsOf 공용)
@@ -61,24 +62,34 @@ function BarometerTrendChart({
   edges,
   period,
   onChangePeriod,
+  snapRow,
 }: {
   nodes: NodeT[] | undefined;
   edges?: Array<{ from?: string; to?: string; type?: string }>;
   period: PeriodKey;
   onChangePeriod?: (p: PeriodKey) => void;
+  snapRow?: SnapRow | null;
 }) {
-  // 기간별 overall score(#12 궤도 가중) + EW(동일가중) 수익률.
-  // score는 궤도 가중, ewReturn(청록 점선)은 #11 선행지표화의 ground truth라 항상 동일가중 유지.
+  // 기간별 barometer score = 바로미터 스냅샷 단일 소스(홈과 동일). EW 수익률(청록 점선)은 동일가중 live.
   const data = useMemo(() => {
     const safe = Array.isArray(nodes) ? nodes : [];
     return TREND_PERIODS.map((p) => {
-      const sW = computeThemeReturnSummary({ nodes: safe as any, edges, period: p, minAssets: 5 });
-      const sEW = edges && edges.length ? computeThemeReturnSummary({ nodes: safe as any, period: p, minAssets: 5 }) : sW;
-      const score = sW.ok ? Math.round(sW.overallScore) : null;
+      const snapScore = snapRow?.scores?.[p];
+      const sEW = computeThemeReturnSummary({ nodes: safe as any, period: p, minAssets: 5 });
+      let score: number | null;
+      let ok: boolean;
+      if (typeof snapScore === "number" && Number.isFinite(snapScore)) {
+        score = Math.round(snapScore);
+        ok = true;
+      } else {
+        const sW = computeThemeReturnSummary({ nodes: safe as any, edges, period: p, minAssets: 5 });
+        score = sW.ok ? Math.round(sW.overallScore) : null;
+        ok = sW.ok;
+      }
       const ewReturn = sEW.ok && Number.isFinite((sEW as any).avgReturn) ? ((sEW as any).avgReturn as number) : null;
-      return { period: p, label: TREND_LABELS[p], score, ewReturn, ok: sW.ok };
+      return { period: p, label: TREND_LABELS[p], score, ewReturn, ok };
     });
-  }, [nodes, edges]);
+  }, [nodes, edges, snapRow]);
 
   const W = 520;
   const H = 220;
@@ -341,6 +352,7 @@ type Props = {
   compareNodes?: NodeT[] | undefined;
 
   themeReturn?: ThemeReturnSummary | null; // ✅ GraphClient에서 계산된 값
+  snapRow?: SnapRow | null; // ✅ 바로미터 스냅샷 row(기간별 점수·movers) — 단일 소스
   compareThemeReturn?: ThemeReturnSummary | undefined;
 
   // compare UI는 지금 화면에서 필수는 아니지만, GraphClient props와 타입 일치 위해 수용
@@ -385,6 +397,7 @@ export default function GraphRightPanel({
   period = "7D",
   onChangePeriod,
   themeReturn,
+  snapRow,
   nodes = [],
   edges,
 }: Props) {
@@ -497,6 +510,7 @@ export default function GraphRightPanel({
         edges={edges}
         period={(period ?? "7D") as PeriodKey}
         onChangePeriod={onChangePeriod}
+        snapRow={snapRow}
       />
 
       {/* TOP MOVERS */}

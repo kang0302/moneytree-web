@@ -7,13 +7,13 @@ import { useRouter } from "next/navigation";
 import AmbientNetwork from "@/components/AmbientNetwork";
 import SearchBar from "@/components/SearchBar";
 import NewsletterSignup from "@/components/NewsletterSignup";
-import { computeThemeReturnSummary, PeriodKey, normalizeToPct } from "@/lib/themeReturn";
+import { PeriodKey, normalizeToPct } from "@/lib/themeReturn";
 import { resolvePlaceholderThemeNames } from "@/lib/themeIndex";
+import { fetchLatestBarometer, scoreForPeriod, type BarometerSnapshot } from "@/lib/barometerSnapshot";
 import {
   TEMP_BANDS,
   TempBand,
   bandOf,
-  computeOverall,
   scoreBadgeColor,
   scoreLabel,
 } from "@/lib/marketTemp";
@@ -227,6 +227,15 @@ export default function HomePage() {
   const [favs, setFavs] = useState<FavItem[]>([]);
   const [counts, setCounts] = useState({ themes: 0, assets: 0, macros: 0, edges: 0 });
   const [updates, setUpdates] = useState<UpdateItem[]>([]);
+  // ✅ 시장의 온도 단일 소스 = 매일 생성되는 바로미터 스냅샷(테마 페이지·트렌드와 동일 점수 공유)
+  const [snap, setSnap] = useState<BarometerSnapshot | null>(null);
+  useEffect(() => {
+    let alive = true;
+    fetchLatestBarometer().then((s) => alive && s && setSnap(s));
+    return () => {
+      alive = false;
+    };
+  }, []);
 
   // 최신 데일리 브리핑(5줄 요약) — /data/daily_briefs/index.json[0]
   const [dailyBrief, setDailyBrief] = useState<{
@@ -309,28 +318,18 @@ export default function HomePage() {
     };
   }, []);
 
-  // ✅ 선택 기간(period)으로 barometer 점수 재계산 (그래프는 캐시 → 토글마다 재fetch 없음)
+  // ✅ 선택 기간(period)별 barometer 점수 = 바로미터 스냅샷 단일 소스(테마 페이지와 동일 점수)
   const scored = useMemo<ThemeRow[]>(() => {
     return themes.map((t) => {
-      if (!t.graph?.nodes) return t;
-      const summary: any = computeThemeReturnSummary({
-        nodes: t.graph.nodes,
-        edges: t.graph.edges,
-        period,
-        minAssets: 5,
-        topMoversN: 1,
-      });
-      if (!summary || summary.ok === false) {
-        return { ...t, score: null, note: summary?.sentence ?? null, topMover: null };
-      }
-      const score = computeOverall(summary);
-      const tm = (summary.topMovers ?? [])[0];
-      const topMover = tm
-        ? { name: String(tm.name || tm.id || ""), ret: normalizeToPct(tm.ret) ?? undefined }
+      const row = snap?.map.get(t.themeId);
+      const score = scoreForPeriod(row, period);
+      const mv = (row?.movers ?? [])[0];
+      const topMover = mv
+        ? { name: String(mv.n || mv.t || ""), ret: normalizeToPct(mv.r) ?? undefined }
         : null;
-      return { ...t, score, note: summary.note ?? null, topMover };
+      return { ...t, score, note: null, topMover };
     });
-  }, [themes, period]);
+  }, [themes, snap, period]);
 
   // ✅ 시장의 온도 6단계: 밴드별 정렬 목록 + 분포
   const { perBand, bandCounts, scoredTotal } = useMemo(() => {
