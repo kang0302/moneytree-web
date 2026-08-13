@@ -505,7 +505,7 @@ export default function GraphRightPanel({
         <div className="rounded-2xl border border-white/10 bg-black/20 px-3 py-2">
           <div className="flex items-start justify-between gap-2">
             <div className="min-w-0">
-              <div className="text-[12px] font-semibold text-white/75">급락 위험</div>
+              <div className="text-[12px] font-semibold text-white/75">급락 비중</div>
               <div className="text-[9px] leading-tight tracking-wide text-white/35">TAIL (≤-15%)</div>
             </div>
             <div className="text-[20px] font-black leading-none text-white">{fmtPct(tailPct, 0)}</div>
