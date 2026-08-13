@@ -439,19 +439,18 @@ export default function GraphRightPanel({
     <aside className="h-full w-full overflow-auto rounded-2xl border border-white/10 bg-black/30 p-4">
       {/* Title + Overall Badge */}
       <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0">
+        <div className="min-w-0 flex-1">
           <div className="text-xs text-white/55">THEME BAROMETER</div>
           <div className="mt-1 text-base font-extrabold text-white truncate">
             {themeName} <span className="text-white/50">({currentThemeId})</span>
           </div>
+          {/* ✅ 요약 문구 — 테마명 바로 아래 부각 배치 */}
+          <div className="mt-1.5 text-[13px] font-semibold leading-snug text-white/85">
+            {(themeSummary as any)?.note ?? (ok ? "테마 상태 요약이 준비되어 있습니다." : "아직 테마 수익률/지표 데이터가 없습니다.")}
+          </div>
         </div>
 
         {typeof overallScore === "number" && Number.isFinite(overallScore) ? <TempBadge score={overallScore} /> : null}
-      </div>
-
-      {/* Summary */}
-      <div className="mt-2 text-[12px] text-white/60">
-        {(themeSummary as any)?.note ?? (ok ? "테마 상태 요약이 준비되어 있습니다." : "아직 테마 수익률/지표 데이터가 없습니다.")}
       </div>
 
       {/* 수익률 없음 안내 (FMP/PYKRX 구분) */}
@@ -469,8 +468,11 @@ export default function GraphRightPanel({
       {/* KPI */}
       <div className="mt-3 grid grid-cols-2 gap-2 lg:grid-cols-4">
         <div className="rounded-2xl border border-white/10 bg-black/20 px-3 py-2">
-          <div className="flex items-baseline justify-between gap-2">
-            <div className="text-[11px] font-semibold tracking-wide text-white/55">HEALTH</div>
+          <div className="flex items-start justify-between gap-2">
+            <div className="min-w-0">
+              <div className="text-[11px] font-semibold tracking-wide text-white/55">HEALTH</div>
+              <div className="text-[9.5px] leading-tight text-white/40">수익 건전성</div>
+            </div>
             <div className="text-[20px] font-black leading-none text-white">{fmtScore(healthScore)}</div>
           </div>
           <div className="mt-1 truncate text-[11px] text-white/60">
@@ -479,24 +481,33 @@ export default function GraphRightPanel({
         </div>
 
         <div className="rounded-2xl border border-white/10 bg-black/20 px-3 py-2">
-          <div className="flex items-baseline justify-between gap-2">
-            <div className="text-[11px] font-semibold tracking-wide text-white/55">MOMENTUM</div>
+          <div className="flex items-start justify-between gap-2">
+            <div className="min-w-0">
+              <div className="text-[11px] font-semibold tracking-wide text-white/55">MOMENTUM</div>
+              <div className="text-[9.5px] leading-tight text-white/40">추세 강도</div>
+            </div>
             <div className="text-[20px] font-black leading-none text-white">{fmtScore(momentumScore)}</div>
           </div>
           <div className="mt-1 truncate text-[11px] text-white/60">기본: 7D/1M/1Y 혼합</div>
         </div>
 
         <div className="rounded-2xl border border-white/10 bg-black/20 px-3 py-2">
-          <div className="flex items-baseline justify-between gap-2">
-            <div className="text-[11px] font-semibold tracking-wide text-white/55">DIVERSIFICATION</div>
+          <div className="flex items-start justify-between gap-2">
+            <div className="min-w-0">
+              <div className="text-[11px] font-semibold tracking-wide text-white/55">DIVERSIFICATION</div>
+              <div className="text-[9.5px] leading-tight text-white/40">분산도</div>
+            </div>
             <div className="text-[20px] font-black leading-none text-white">{fmtScore(divScore)}</div>
           </div>
           <div className="mt-1 truncate text-[11px] text-white/60">편중 경고는 45 미만</div>
         </div>
 
         <div className="rounded-2xl border border-white/10 bg-black/20 px-3 py-2">
-          <div className="flex items-baseline justify-between gap-2">
-            <div className="text-[11px] font-semibold tracking-wide text-white/55">TAIL (≤-15%)</div>
+          <div className="flex items-start justify-between gap-2">
+            <div className="min-w-0">
+              <div className="text-[11px] font-semibold tracking-wide text-white/55">TAIL (≤-15%)</div>
+              <div className="text-[9.5px] leading-tight text-white/40">급락 위험</div>
+            </div>
             <div className="text-[20px] font-black leading-none text-white">{fmtPct(tailPct, 0)}</div>
           </div>
           <div className="mt-1 truncate text-[11px] text-white/60">Gap {fmtPct(gapPct, 1)}</div>
