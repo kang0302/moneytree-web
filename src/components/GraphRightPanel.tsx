@@ -470,8 +470,8 @@ export default function GraphRightPanel({
         <div className="rounded-2xl border border-white/10 bg-black/20 px-3 py-2">
           <div className="flex items-start justify-between gap-2">
             <div className="min-w-0">
-              <div className="text-[11px] font-semibold tracking-wide text-white/55">HEALTH</div>
-              <div className="text-[9.5px] leading-tight text-white/40">수익 건전성</div>
+              <div className="text-[12px] font-semibold text-white/75">수익 건전성</div>
+              <div className="text-[9px] leading-tight tracking-wide text-white/35">HEALTH</div>
             </div>
             <div className="text-[20px] font-black leading-none text-white">{fmtScore(healthScore)}</div>
           </div>
@@ -483,8 +483,8 @@ export default function GraphRightPanel({
         <div className="rounded-2xl border border-white/10 bg-black/20 px-3 py-2">
           <div className="flex items-start justify-between gap-2">
             <div className="min-w-0">
-              <div className="text-[11px] font-semibold tracking-wide text-white/55">MOMENTUM</div>
-              <div className="text-[9.5px] leading-tight text-white/40">추세 강도</div>
+              <div className="text-[12px] font-semibold text-white/75">추세 강도</div>
+              <div className="text-[9px] leading-tight tracking-wide text-white/35">MOMENTUM</div>
             </div>
             <div className="text-[20px] font-black leading-none text-white">{fmtScore(momentumScore)}</div>
           </div>
@@ -494,8 +494,8 @@ export default function GraphRightPanel({
         <div className="rounded-2xl border border-white/10 bg-black/20 px-3 py-2">
           <div className="flex items-start justify-between gap-2">
             <div className="min-w-0">
-              <div className="text-[11px] font-semibold tracking-wide text-white/55">DIVERSIFICATION</div>
-              <div className="text-[9.5px] leading-tight text-white/40">분산도</div>
+              <div className="text-[12px] font-semibold text-white/75">분산도</div>
+              <div className="text-[9px] leading-tight tracking-wide text-white/35">DIVERSIFICATION</div>
             </div>
             <div className="text-[20px] font-black leading-none text-white">{fmtScore(divScore)}</div>
           </div>
@@ -505,8 +505,8 @@ export default function GraphRightPanel({
         <div className="rounded-2xl border border-white/10 bg-black/20 px-3 py-2">
           <div className="flex items-start justify-between gap-2">
             <div className="min-w-0">
-              <div className="text-[11px] font-semibold tracking-wide text-white/55">TAIL (≤-15%)</div>
-              <div className="text-[9.5px] leading-tight text-white/40">급락 위험</div>
+              <div className="text-[12px] font-semibold text-white/75">급락 위험</div>
+              <div className="text-[9px] leading-tight tracking-wide text-white/35">TAIL (≤-15%)</div>
             </div>
             <div className="text-[20px] font-black leading-none text-white">{fmtPct(tailPct, 0)}</div>
           </div>

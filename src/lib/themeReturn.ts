@@ -463,9 +463,14 @@ export function computeThemeReturnSummary(args: {
   else if (coreMedianPct < 0 && breadthPct < 50) tone = "전반 약세";
 
   const p = normalizePeriodKey(period) ?? String(period ?? "").trim();
-  const sentence = `(${p} 기준) 이 테마는 ${tone} 흐름입니다. 중간 수익률(Median) ${coreMedianPct.toFixed(
-    2
-  )}% / 상위 구간(Momentum) ${momentumTopPct.toFixed(2)}% / 상승 비율(Breadth) ${breadthPct.toFixed(0)}%.`;
+  // 쉬운 해석형 요약: 대표(중간) 종목·상위권 종목·오른 종목 비율을 일상어로.
+  const mSign = coreMedianPct >= 0 ? "상승" : "하락";
+  const tSign = momentumTopPct >= 0 ? "상승" : "하락";
+  const sentence = `(${p} 기준) 이 테마는 ${tone} 흐름입니다. 대표(중간) 종목이 ${Math.abs(
+    coreMedianPct
+  ).toFixed(1)}% ${mSign}, 성과 상위 종목은 ${Math.abs(momentumTopPct).toFixed(
+    1
+  )}% ${tSign}했고, 전체 종목의 ${breadthPct.toFixed(0)}%가 올랐습니다.`;
 
   // ✅ BAROMETER scores (v3) — 기간별 앵커(anchor.retSat)로 정규화
   // #3: Health level = 평균·중앙값 블렌드(robust center)로 outlier 완화
