@@ -64,7 +64,7 @@ export default function TemperatureBandPage({
         {/* Header */}
         <header className="mb-5 flex h-12 items-center justify-between rounded-xl border border-white/10 bg-white/[0.03] px-3 backdrop-blur">
           <Link href="/" className="text-[13px] text-white/70 hover:text-white">
-            ← Know_vest
+            ← MONEYTREE
           </Link>
           <nav className="flex items-center gap-1.5 text-[11px]">
             {TEMP_BANDS.map((b) => (

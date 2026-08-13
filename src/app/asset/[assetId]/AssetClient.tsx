@@ -278,7 +278,7 @@ export default function AssetClient({ assetId }: { assetId: string }) {
               </section>
             )}
 
-            {/* KNOW_VEST 렌즈 ① 이 종목을 흔드는 매크로 동인 */}
+            {/* MONEYTREE 렌즈 ① 이 종목을 흔드는 매크로 동인 */}
             {entry.macros && entry.macros.length > 0 && (() => {
               const maxc = Math.max(...entry.macros.map((x) => x.count));
               return (
@@ -331,7 +331,7 @@ export default function AssetClient({ assetId }: { assetId: string }) {
               ) : <div className="py-8 text-center text-[12.5px] text-white/40">주가 성과 데이터가 없습니다(상장 이력 부족 등).</div>}
             </section>
 
-            {/* KNOW_VEST 렌즈 ② 관계망 (공급망 흐름) */}
+            {/* MONEYTREE 렌즈 ② 관계망 (공급망 흐름) */}
             {entry.relatedAssets && entry.relatedAssets.length > 0 && (() => {
               const byRoleMap = new Map<string, Related[]>();
               for (const r of entry.relatedAssets!) { const role = RELA(r.relation, r.direction); if (!byRoleMap.has(role)) byRoleMap.set(role, []); byRoleMap.get(role)!.push(r); }
@@ -364,7 +364,7 @@ export default function AssetClient({ assetId }: { assetId: string }) {
               );
             })()}
 
-            {/* KNOW_VEST 렌즈 ③ 소속 테마 · 국면 */}
+            {/* MONEYTREE 렌즈 ③ 소속 테마 · 국면 */}
             <section className="mb-6">
               <h2 className="mb-1 text-sm font-semibold text-white/85">소속 테마 · 국면 <span className="text-white/40">{themes.length}</span></h2>
               <p className="mb-2 text-[10.5px] text-white/45">이 종목이 걸려 있는 테마가 지금 <b className="text-rose-300/80">상승 국면</b>인지 <b className="text-sky-300/80">하락 국면</b>인지 — 바로미터 점수와 최근 추세로 확인.</p>
