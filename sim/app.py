@@ -319,6 +319,8 @@ DEFAULT_PRESETS = [
      ["TIGER_CN_BIOTECH", "TIGER_HEALTHCARE", "XLV", "ISHARES_EU_HEALTH", "TIGER_GLOBAL_HEALTH"]),
     ("⑰ KODEX 자동차  vs  KODEX 200에너지화학  vs  KODEX 운송  vs  KODEX 건설  (K-섹터 경기민감)",
      ["KODEX_AUTO", "KODEX_ENERGYCHEM", "KODEX_TRANSPORT", "KODEX_CONSTRUCTION"]),
+    ("⑱ IGV(소프트웨어)  vs  SKYY(클라우드)  vs  QTUM(양자컴퓨팅)  vs  BUG(사이버보안)  (미국 테크 테마 ETF)",
+     ["IGV", "SKYY", "QTUM", "BUG"]),
 ]
 
 
