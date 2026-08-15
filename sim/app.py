@@ -321,6 +321,8 @@ DEFAULT_PRESETS = [
      ["KODEX_AUTO", "KODEX_ENERGYCHEM", "KODEX_TRANSPORT", "KODEX_CONSTRUCTION"]),
     ("⑱ IGV(소프트웨어)  vs  SKYY(클라우드)  vs  QTUM(양자컴퓨팅)  vs  BUG(사이버보안)  (미국 테크 테마 ETF)",
      ["IGV", "SKYY", "QTUM", "BUG"]),
+    ("⑲ VT(전세계)  vs  VTI(미국)  vs  VGK(유럽)  vs  EWJ(일본)  vs  MCHI(중국)  vs  EEM(신흥국)  vs  KODEX200(한국)  (글로벌 지역별 주식)",
+     ["VT", "VTI", "VGK", "EWJ", "MCHI", "EEM", "KODEX200"]),
 ]
 
 
