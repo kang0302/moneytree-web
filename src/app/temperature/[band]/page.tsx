@@ -22,7 +22,7 @@ export default function TemperatureBandPage({
     let alive = true;
     (async () => {
       setLoading(true);
-      const all = await loadScoredThemes("7D");
+      const all = await loadScoredThemes("5D");
       if (!alive) return;
       setRows(all);
       setLoading(false);

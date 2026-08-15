@@ -11,7 +11,7 @@ const files = fs.readdirSync(THEME_DIR).filter((f) => /^T_\d+\.json$/.test(f));
 const themes = files.map((f)=>{try{return JSON.parse(fs.readFileSync(path.join(THEME_DIR,f),"utf8"));}catch{return null;}}).filter(Boolean);
 
 const clamp=(x,lo,hi)=>Math.max(lo,Math.min(hi,x));
-const RETSAT={ "7D":9,"1M":16.7,"YTD":30,"1Y":50 };
+const RETSAT={ "5D":9,"1M":16.7,"YTD":30,"1Y":50 };
 
 // 후보 스코어 함수(입력: 상위바스켓 수익률 pct, retSat)
 const F = {
@@ -24,7 +24,7 @@ const F = {
 function stats(arr){const s=[...arr].sort((a,b)=>a-b);const n=s.length;const q=p=>s[Math.min(n-1,Math.floor(p*n))];
   return {n,min:s[0],p10:q(.1),p25:q(.25),med:q(.5),p75:q(.75),p90:q(.9),max:s[n-1],mean:Math.round(arr.reduce((a,b)=>a+b,0)/n)};}
 
-for (const p of ["7D","1M","YTD","1Y"]){
+for (const p of ["5D","1M","YTD","1Y"]){
   const raw=[];
   for (const d of themes){ const r=computeThemeBarometer({nodes:d.nodes,edges:d.edges,period:p}); if(r.ok) raw.push(r.momentumTopPct); }
   console.log(`\n===== ${p} (n=${raw.length}, retSat=${RETSAT[p]}) =====`);

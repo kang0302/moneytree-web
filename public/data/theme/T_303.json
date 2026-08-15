@@ -1,1135 +1,1132 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_303",
-  "themeName": "글로벌토큰증권STO실물자산토큰화수혜주",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-24T00:00:00+09:00",
-    "description": "글로벌 토큰증권(STO) + 실물자산(RWA) 토큰화 수혜주 — 글로벌 STO 인프라 (Securitize·tZERO·ADDX) + BlackRock + 국내 대형 증권사·금융지주 (미래에셋·한국금융지주·하나금융지주·키움·삼성·SK·대신). 블랙록 BUIDL 토큰화 펀드 발행 파트너 Securitize 가 표준 견인. 국내 토큰증권법 (2027 시행 예정) + 자체 메인넷 구축 경쟁. USDC발행잔액·암호화폐거래량·규제완화·토큰증권법시행 4 매크로 + STO발행유통플랫폼·RWA토큰화 2 BF.",
-    "notes": "T_303 글로벌토큰증권STO 수혜주 — Spec 의 한국금융지주·하나금융지주·대신증권 '신규' 라벨이나 SSOT 이미 존재 → 재사용. 신규 = Securitize·tZERO·ADDX 3개만.",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-08-04",
-        "kind": "보강",
-        "title": "2궤도 관계 엣지 추가",
-        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
-      },
-      {
-        "date": "2026-07-24",
-        "kind": "수정",
-        "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
-        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결, 2026 이벤트 2건 추가."
-      },
-      {
-        "date": "2026-08-05",
-        "kind": "관계",
-        "title": "EXPOSED_TO ETF 연결",
-        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-      }
-    ]
-  },
-  "nodes": [
-    {
-      "id": "T_303",
-      "type": "THEME",
-      "name": "글로벌토큰증권STO실물자산토큰화수혜주"
-    },
-    {
-      "id": "A_549",
-      "type": "ASSET",
-      "name": "블랙록",
-      "exposure": {
-        "ticker": "BLK",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.770180244158114,
-        "return_3d": 2.1665331987047898,
-        "return_7d": 3.5418761798902576,
-        "return_15d": 11.183419060880762,
-        "return_1m": 7.973874246814772,
-        "return_ytd": 8.171898328203063,
-        "return_1y": 1.1810039395532934,
-        "return_2y": 37.08436014529146,
-        "return_3y": 69.59210507303963,
-        "close": 1173.73,
-        "marketCap": 181922281350,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1870",
-      "type": "ASSET",
-      "name": "시큐리타이즈(비)",
-      "exposure": {
-        "ticker": "",
-        "exchange": "",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": null,
-        "return_3d": null,
-        "return_7d": null,
-        "return_15d": null,
-        "return_1m": null,
-        "return_ytd": null,
-        "return_1y": null,
-        "return_2y": null,
-        "return_3y": null,
-        "close": null,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": null,
-        "valuationSource": null,
-        "returnsAsOf": null,
-        "returnsSource": null
-      },
-      "coreBiz": "시큐리타이즈는 BUIDL 등 기관 RWA 토큰 발행·이전 인프라 제공"
-    },
-    {
-      "id": "A_1871",
-      "type": "ASSET",
-      "name": "티제로",
-      "exposure": {
-        "ticker": "TZROP",
-        "exchange": "OTC",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.0,
-        "return_3d": 0.0,
-        "return_7d": 0.0,
-        "return_15d": 0.0,
-        "return_1m": 0.0,
-        "return_ytd": -34.0,
-        "return_1y": -53.41176470588236,
-        "return_2y": 1.538461538461533,
-        "return_3y": null,
-        "close": 1.98,
-        "marketCap": 256729354,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1872",
-      "type": "ASSET",
-      "name": "ADDX(비)",
-      "exposure": {
-        "ticker": "",
-        "exchange": "",
-        "country": "SG"
-      },
-      "metrics": {
-        "return_1d": null,
-        "return_3d": null,
-        "return_7d": null,
-        "return_15d": null,
-        "return_1m": null,
-        "return_ytd": null,
-        "return_1y": null,
-        "return_2y": null,
-        "return_3y": null,
-        "close": null,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": null,
-        "valuationSource": null,
-        "returnsAsOf": null,
-        "returnsSource": null
-      },
-      "coreBiz": "ADDX는 아시아 사모자산·펀드 토큰화 플랫폼"
-    },
-    {
-      "id": "A_110",
-      "type": "ASSET",
-      "name": "미래에셋증권",
-      "exposure": {
-        "ticker": "006800",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": -1.0512483574244391,
-        "return_3d": 6.056338028169006,
-        "return_7d": 6.960227272727271,
-        "return_15d": 2.0325203252032464,
-        "return_1m": -9.82035928143713,
-        "return_ytd": 53.400497272667515,
-        "return_1y": 111.01128630154244,
-        "return_2y": 393.39092050627016,
-        "return_3y": 888.2869692532943,
-        "close": 37650,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD"
-      }
-    },
-    {
-      "id": "A_988",
-      "type": "ASSET",
-      "name": "한국금융지주",
-      "exposure": {
-        "ticker": "071050",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 2.153229844767157,
-        "return_3d": 2.978293791014641,
-        "return_7d": -2.6252983293556076,
-        "return_15d": -4.225352112676061,
-        "return_1m": -13.191489361702125,
-        "return_ytd": 27.74795526810663,
-        "return_1y": 57.536716120989006,
-        "return_2y": 194.68898680344583,
-        "return_3y": 366.1172161172162,
-        "close": 204000,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD"
-      }
-    },
-    {
-      "id": "A_1537",
-      "type": "ASSET",
-      "name": "하나금융지주",
-      "exposure": {
-        "ticker": "086790",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 1.526717557251911,
-        "return_3d": 4.150352388410328,
-        "return_7d": 4.325406744621385,
-        "return_15d": 1.3311729913275228,
-        "return_1m": -1.9280168057507319,
-        "return_ytd": 46.51976848792552,
-        "return_1y": 69.69251666221348,
-        "return_2y": 137.56726038214117,
-        "return_3y": 194.2168674698795,
-        "close": 133000,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD"
-      }
-    },
-    {
-      "id": "A_984",
-      "type": "ASSET",
-      "name": "대신증권",
-      "exposure": {
-        "ticker": "003540",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 0.927643784786647,
-        "return_3d": 3.4220532319391594,
-        "return_7d": 2.835538752362954,
-        "return_15d": 5.631067961165059,
-        "return_1m": 3.6190476190476106,
-        "return_ytd": 3.676532207835126,
-        "return_1y": 18.581403347607072,
-        "return_2y": 76.24957645023657,
-        "return_3y": 154.92424242424244,
-        "close": 27200,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD"
-      }
-    },
-    {
-      "id": "A_986",
-      "type": "ASSET",
-      "name": "키움증권",
-      "exposure": {
-        "ticker": "039490",
-        "exchange": "KOSDAQ",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 1.1784511784511675,
-        "return_3d": 0.16666666666667052,
-        "return_7d": 2.7350427350427253,
-        "return_15d": 0.670016750418756,
-        "return_1m": -9.214501510574014,
-        "return_ytd": -0.3316749585406287,
-        "return_1y": 55.880768452909614,
-        "return_2y": 135.52127975400774,
-        "return_3y": 278.6046511627907,
-        "close": 300500,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD"
-      }
-    },
-    {
-      "id": "A_982",
-      "type": "ASSET",
-      "name": "삼성증권",
-      "exposure": {
-        "ticker": "016360",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 0.540540540540535,
-        "return_3d": 0.3236245954692629,
-        "return_7d": -4.713114754098358,
-        "return_15d": -7.2781655034895305,
-        "return_1m": -16.291629162916287,
-        "return_ytd": 22.529644268774707,
-        "return_1y": 46.339590129715646,
-        "return_2y": 132.6019360539611,
-        "return_3y": 294.83282674772033,
-        "close": 93000,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD"
-      }
-    },
-    {
-      "id": "A_983",
-      "type": "ASSET",
-      "name": "SK증권",
-      "exposure": {
-        "ticker": "001510",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 1.8987341772152,
-        "return_3d": 4.094827586206895,
-        "return_7d": 8.295964125560529,
-        "return_15d": 13.915094339622636,
-        "return_1m": 3.205128205128216,
-        "return_ytd": 87.5,
-        "return_1y": 54.41176470588236,
-        "return_2y": 116.09374979028169,
-        "return_3y": 170.935960591133,
-        "close": 2415,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD"
-      }
-    },
-    {
-      "id": "BF_539",
-      "type": "BUSINESS_FIELD",
-      "name": "STO발행유통플랫폼"
-    },
-    {
-      "id": "BF_540",
-      "type": "BUSINESS_FIELD",
-      "name": "RWA토큰화"
-    },
-    {
-      "id": "M_042",
-      "type": "MACRO",
-      "name": "USDC발행잔액"
-    },
-    {
-      "id": "M_043",
-      "type": "MACRO",
-      "name": "암호화폐거래량"
-    },
-    {
-      "id": "M_147",
-      "type": "MACRO",
-      "name": "규제완화"
-    },
-    {
-      "id": "M_334",
-      "type": "MACRO",
-      "name": "토큰증권법시행"
-    },
-    {
-      "id": "C_267",
-      "type": "CHARACTER",
-      "name": "최대수수료수익잠재력"
-    },
-    {
-      "id": "C_268",
-      "type": "CHARACTER",
-      "name": "인프라완성도높음"
-    },
-    {
-      "id": "C_269",
-      "type": "CHARACTER",
-      "name": "조각투자플랫폼보유"
-    },
-    {
-      "id": "C_4458",
-      "type": "CHARACTER",
-      "name": "BUIDL토큰화펀드선도"
-    },
-    {
-      "id": "C_4459",
-      "type": "CHARACTER",
-      "name": "RWA토큰화발행플랫폼1위"
-    },
-    {
-      "id": "C_4460",
-      "type": "CHARACTER",
-      "name": "STO거래플랫폼선도"
-    },
-    {
-      "id": "C_4461",
-      "type": "CHARACTER",
-      "name": "아시아사모RWA토큰화"
-    },
-    {
-      "id": "C_4462",
-      "type": "CHARACTER",
-      "name": "토큰증권인프라구축"
-    },
-    {
-      "id": "C_4463",
-      "type": "CHARACTER",
-      "name": "은행권STO컨소시엄"
-    },
-    {
-      "id": "C_4464",
-      "type": "CHARACTER",
-      "name": "대형증권STO추진"
-    },
-    {
-      "id": "C_4465",
-      "type": "CHARACTER",
-      "name": "STO선제제휴다수"
-    },
-    {
-      "id": "A_2909",
-      "type": "ASSET",
-      "name": "KODEX 증권",
-      "exposure": {
-        "ticker": "102970",
-        "exchange": "KRX",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 1.0314595152140171,
-        "return_3d": 2.672955974842761,
-        "return_7d": 1.5552099533437058,
-        "return_15d": -0.6960366358730985,
-        "return_1m": -10.093317904080013,
-        "return_ytd": 28.312404536537137,
-        "return_1y": 60.62239563063794,
-        "return_2y": 167.30505499648004,
-        "return_3y": null,
-        "close": 19590,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD"
-      }
-    }
+ "schemaVersion": "v5",
+ "themeId": "T_303",
+ "themeName": "글로벌토큰증권STO실물자산토큰화수혜주",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
   ],
-  "edges": [
-    {
-      "from": "A_549",
-      "to": "T_303",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009733"
-      ]
-    },
-    {
-      "from": "A_1870",
-      "to": "T_303",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009734"
-      ]
-    },
-    {
-      "from": "A_1871",
-      "to": "T_303",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009735"
-      ]
-    },
-    {
-      "from": "A_1872",
-      "to": "T_303",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009736"
-      ]
-    },
-    {
-      "from": "A_110",
-      "to": "T_303",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015990"
-      ]
-    },
-    {
-      "from": "A_988",
-      "to": "T_303",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009737"
-      ]
-    },
-    {
-      "from": "A_1537",
-      "to": "T_303",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009738"
-      ]
-    },
-    {
-      "from": "A_984",
-      "to": "T_303",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015991"
-      ]
-    },
-    {
-      "from": "A_986",
-      "to": "T_303",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015992"
-      ]
-    },
-    {
-      "from": "A_982",
-      "to": "T_303",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009739"
-      ]
-    },
-    {
-      "from": "A_983",
-      "to": "T_303",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009740"
-      ]
-    },
-    {
-      "from": "A_1870",
-      "to": "BF_539",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015993"
-      ]
-    },
-    {
-      "from": "A_1871",
-      "to": "BF_539",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015994"
-      ]
-    },
-    {
-      "from": "A_1872",
-      "to": "BF_539",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015995"
-      ]
-    },
-    {
-      "from": "A_1870",
-      "to": "BF_540",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015996"
-      ]
-    },
-    {
-      "from": "A_549",
-      "to": "BF_540",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015997"
-      ]
-    },
-    {
-      "from": "M_042",
-      "to": "T_303",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_009741"
-      ]
-    },
-    {
-      "from": "M_043",
-      "to": "T_303",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_009742"
-      ]
-    },
-    {
-      "from": "M_147",
-      "to": "T_303",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_009743"
-      ]
-    },
-    {
-      "from": "M_334",
-      "to": "T_303",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_009744"
-      ]
-    },
-    {
-      "from": "A_986",
-      "to": "C_267",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015998"
-      ]
-    },
-    {
-      "from": "A_110",
-      "to": "C_268",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015999"
-      ]
-    },
-    {
-      "from": "A_984",
-      "to": "C_269",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_016000"
-      ]
-    },
-    {
-      "from": "A_549",
-      "to": "C_4458",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009745"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1870",
-      "to": "C_4459",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009746"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1871",
-      "to": "C_4460",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009747"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1872",
-      "to": "C_4461",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009748"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_988",
-      "to": "C_4462",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009749"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1537",
-      "to": "C_4463",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009750"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_982",
-      "to": "C_4464",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009751"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_983",
-      "to": "C_4465",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009752"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_982",
-      "to": "A_986",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019498"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "삼성증권과 키움증권은 국내 STO 플랫폼·가상자산 서비스 경쟁"
-    },
-    {
-      "from": "A_110",
-      "to": "A_982",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019499"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "미래에셋증권과 삼성증권은 국내 토큰증권 사업 경쟁"
-    },
-    {
-      "from": "A_988",
-      "to": "A_1537",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019500"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "한국금융지주와 하나금융지주는 STO·디지털 자산 서비스 경쟁"
-    },
-    {
-      "from": "A_549",
-      "to": "A_1870",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_019501"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "블랙록은 시큐리타이즈와 토큰화 펀드(BUIDL) 발행 협력"
-    },
-    {
-      "from": "A_984",
-      "to": "A_983",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019502"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "대신증권과 SK증권은 국내 중형 증권사 STO 사업 경쟁"
-    },
-    {
-      "from": "A_2909",
-      "to": "T_303",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020701"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_549",
-      "to": "T_303",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009733"
-      ]
-    },
-    {
-      "from": "A_1870",
-      "to": "T_303",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009734"
-      ]
-    },
-    {
-      "from": "A_1871",
-      "to": "T_303",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009735"
-      ]
-    },
-    {
-      "from": "A_1872",
-      "to": "T_303",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009736"
-      ]
-    },
-    {
-      "from": "A_110",
-      "to": "T_303",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015990"
-      ]
-    },
-    {
-      "from": "A_988",
-      "to": "T_303",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009737"
-      ]
-    },
-    {
-      "from": "A_1537",
-      "to": "T_303",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009738"
-      ]
-    },
-    {
-      "from": "A_984",
-      "to": "T_303",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015991"
-      ]
-    },
-    {
-      "from": "A_986",
-      "to": "T_303",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015992"
-      ]
-    },
-    {
-      "from": "A_982",
-      "to": "T_303",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009739"
-      ]
-    },
-    {
-      "from": "A_983",
-      "to": "T_303",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009740"
-      ]
-    },
-    {
-      "from": "A_1870",
-      "to": "BF_539",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015993"
-      ]
-    },
-    {
-      "from": "A_1871",
-      "to": "BF_539",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015994"
-      ]
-    },
-    {
-      "from": "A_1872",
-      "to": "BF_539",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015995"
-      ]
-    },
-    {
-      "from": "A_1870",
-      "to": "BF_540",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015996"
-      ]
-    },
-    {
-      "from": "A_549",
-      "to": "BF_540",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015997"
-      ]
-    },
-    {
-      "from": "M_042",
-      "to": "T_303",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_009741"
-      ]
-    },
-    {
-      "from": "M_043",
-      "to": "T_303",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_009742"
-      ]
-    },
-    {
-      "from": "M_147",
-      "to": "T_303",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_009743"
-      ]
-    },
-    {
-      "from": "M_334",
-      "to": "T_303",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_009744"
-      ]
-    },
-    {
-      "from": "A_986",
-      "to": "C_267",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015998"
-      ]
-    },
-    {
-      "from": "A_110",
-      "to": "C_268",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015999"
-      ]
-    },
-    {
-      "from": "A_984",
-      "to": "C_269",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_016000"
-      ]
-    },
-    {
-      "from": "A_549",
-      "to": "C_4458",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009745"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1870",
-      "to": "C_4459",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009746"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1871",
-      "to": "C_4460",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009747"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1872",
-      "to": "C_4461",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009748"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_988",
-      "to": "C_4462",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009749"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1537",
-      "to": "C_4463",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009750"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_982",
-      "to": "C_4464",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009751"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_983",
-      "to": "C_4465",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009752"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_982",
-      "to": "A_986",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019498"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "삼성증권과 키움증권은 국내 STO 플랫폼·가상자산 서비스 경쟁"
-    },
-    {
-      "from": "A_110",
-      "to": "A_982",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019499"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "미래에셋증권과 삼성증권은 국내 토큰증권 사업 경쟁"
-    },
-    {
-      "from": "A_988",
-      "to": "A_1537",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019500"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "한국금융지주와 하나금융지주는 STO·디지털 자산 서비스 경쟁"
-    },
-    {
-      "from": "A_549",
-      "to": "A_1870",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_019501"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "블랙록은 시큐리타이즈와 토큰화 펀드(BUIDL) 발행 협력"
-    },
-    {
-      "from": "A_984",
-      "to": "A_983",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019502"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "대신증권과 SK증권은 국내 중형 증권사 STO 사업 경쟁"
-    },
-    {
-      "from": "A_2909",
-      "to": "T_303",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020701"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
+  "dataAsOf": "2026-07-24T00:00:00+09:00",
+  "description": "글로벌 토큰증권(STO) + 실물자산(RWA) 토큰화 수혜주 — 글로벌 STO 인프라 (Securitize·tZERO·ADDX) + BlackRock + 국내 대형 증권사·금융지주 (미래에셋·한국금융지주·하나금융지주·키움·삼성·SK·대신). 블랙록 BUIDL 토큰화 펀드 발행 파트너 Securitize 가 표준 견인. 국내 토큰증권법 (2027 시행 예정) + 자체 메인넷 구축 경쟁. USDC발행잔액·암호화폐거래량·규제완화·토큰증권법시행 4 매크로 + STO발행유통플랫폼·RWA토큰화 2 BF.",
+  "notes": "T_303 글로벌토큰증권STO 수혜주 — Spec 의 한국금융지주·하나금융지주·대신증권 '신규' 라벨이나 SSOT 이미 존재 → 재사용. 신규 = Securitize·tZERO·ADDX 3개만.",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-08-04",
+    "kind": "보강",
+    "title": "2궤도 관계 엣지 추가",
+    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
+   },
+   {
+    "date": "2026-07-24",
+    "kind": "수정",
+    "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
+    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결, 2026 이벤트 2건 추가."
+   },
+   {
+    "date": "2026-08-05",
+    "kind": "관계",
+    "title": "EXPOSED_TO ETF 연결",
+    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+   }
   ]
+ },
+ "nodes": [
+  {
+   "id": "T_303",
+   "type": "THEME",
+   "name": "글로벌토큰증권STO실물자산토큰화수혜주"
+  },
+  {
+   "id": "A_549",
+   "type": "ASSET",
+   "name": "블랙록",
+   "exposure": {
+    "ticker": "BLK",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.770180244158114,
+    "return_3d": 2.1665331987047898,
+    "return_15d": 11.183419060880762,
+    "return_1m": 14.461120539585014,
+    "return_ytd": 10.891418752216687,
+    "return_1y": 3.28948856333775,
+    "return_3y": 81.47611749060677,
+    "close": 1173.73,
+    "marketCap": 181922281350,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 3.2858437684245567,
+    "return_2y": 42.78931189038266
+   }
+  },
+  {
+   "id": "A_1870",
+   "type": "ASSET",
+   "name": "시큐리타이즈(비)",
+   "exposure": {
+    "ticker": "",
+    "exchange": "",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": null,
+    "return_3d": null,
+    "return_15d": null,
+    "return_1m": null,
+    "return_ytd": null,
+    "return_1y": null,
+    "return_3y": null,
+    "close": null,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": null,
+    "valuationSource": null,
+    "returnsAsOf": null,
+    "returnsSource": null,
+    "return_5d": null
+   },
+   "coreBiz": "시큐리타이즈는 BUIDL 등 기관 RWA 토큰 발행·이전 인프라 제공"
+  },
+  {
+   "id": "A_1871",
+   "type": "ASSET",
+   "name": "티제로",
+   "exposure": {
+    "ticker": "TZROP",
+    "exchange": "OTC",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.0,
+    "return_3d": 0.0,
+    "return_15d": 0.0,
+    "return_1m": 0.0,
+    "return_ytd": -40.0,
+    "return_1y": -50.37593984962406,
+    "return_3y": -39.07692307692307,
+    "close": 1.98,
+    "marketCap": 256729354,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-13",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 0.0,
+    "return_2y": 32.00000000000001
+   }
+  },
+  {
+   "id": "A_1872",
+   "type": "ASSET",
+   "name": "ADDX(비)",
+   "exposure": {
+    "ticker": "",
+    "exchange": "",
+    "country": "SG"
+   },
+   "metrics": {
+    "return_1d": null,
+    "return_3d": null,
+    "return_15d": null,
+    "return_1m": null,
+    "return_ytd": null,
+    "return_1y": null,
+    "return_3y": null,
+    "close": null,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": null,
+    "valuationSource": null,
+    "returnsAsOf": null,
+    "returnsSource": null,
+    "return_5d": null
+   },
+   "coreBiz": "ADDX는 아시아 사모자산·펀드 토큰화 플랫폼"
+  },
+  {
+   "id": "A_110",
+   "type": "ASSET",
+   "name": "미래에셋증권",
+   "exposure": {
+    "ticker": "006800",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": -1.0512483574244391,
+    "return_3d": 6.056338028169006,
+    "return_15d": 2.0325203252032464,
+    "return_1m": -2.83870967741936,
+    "return_ytd": 61.94099613352,
+    "return_1y": 101.02723260657656,
+    "return_3y": 481.838254992122,
+    "close": 37650,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 11.061946902654874,
+    "return_2y": 390.2721412758827
+   }
+  },
+  {
+   "id": "A_988",
+   "type": "ASSET",
+   "name": "한국금융지주",
+   "exposure": {
+    "ticker": "071050",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 2.153229844767157,
+    "return_3d": 2.978293791014641,
+    "return_15d": -4.225352112676061,
+    "return_1m": -5.773672055427248,
+    "return_ytd": 30.355056322726437,
+    "return_1y": 53.29754632172794,
+    "return_3y": 346.56536920849214,
+    "close": 204000,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 8.51063829787233,
+    "return_2y": 213.88968599943712
+   }
+  },
+  {
+   "id": "A_1537",
+   "type": "ASSET",
+   "name": "하나금융지주",
+   "exposure": {
+    "ticker": "086790",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 1.526717557251911,
+    "return_3d": 4.150352388410328,
+    "return_15d": 1.3311729913275228,
+    "return_1m": 0.12124856343038726,
+    "return_ytd": 45.429823299112535,
+    "return_1y": 60.10527020227319,
+    "return_3y": 309.69368149118816,
+    "close": 133000,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -1.2620638455827726,
+    "return_2y": 140.6727149095196
+   }
+  },
+  {
+   "id": "A_984",
+   "type": "ASSET",
+   "name": "대신증권",
+   "exposure": {
+    "ticker": "003540",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 0.927643784786647,
+    "return_3d": 3.4220532319391594,
+    "return_15d": 5.631067961165059,
+    "return_1m": 6.042884990253405,
+    "return_ytd": 3.8685255726467638,
+    "return_1y": 11.287706243890462,
+    "return_3y": 130.2276300360146,
+    "close": 27200,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 4.214559386973171,
+    "return_2y": 82.21691408273534
+   }
+  },
+  {
+   "id": "A_986",
+   "type": "ASSET",
+   "name": "키움증권",
+   "exposure": {
+    "ticker": "039490",
+    "exchange": "KOSDAQ",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 1.1784511784511675,
+    "return_3d": 0.16666666666667052,
+    "return_15d": 0.670016750418756,
+    "return_1m": -2.4350649350649345,
+    "return_ytd": 3.799654576856648,
+    "return_1y": 48.475506270941324,
+    "return_3y": 251.49860335860765,
+    "close": 300500,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 8.288288288288292,
+    "return_2y": 160.27410438604502
+   }
+  },
+  {
+   "id": "A_982",
+   "type": "ASSET",
+   "name": "삼성증권",
+   "exposure": {
+    "ticker": "016360",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 0.540540540540535,
+    "return_3d": 0.3236245954692629,
+    "return_15d": -7.2781655034895305,
+    "return_1m": -8.734052993130526,
+    "return_ytd": 23.342175066312997,
+    "return_1y": 42.298235171690756,
+    "return_3y": 209.28352409752645,
+    "close": 93000,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 2.19780219780219,
+    "return_2y": 138.3776050955597
+   }
+  },
+  {
+   "id": "A_983",
+   "type": "ASSET",
+   "name": "SK증권",
+   "exposure": {
+    "ticker": "001510",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 1.8987341772152,
+    "return_3d": 4.094827586206895,
+    "return_15d": 13.915094339622636,
+    "return_1m": 7.8125,
+    "return_ytd": 87.79160186625194,
+    "return_1y": 86.05546995377505,
+    "return_3y": 89.98105224172134,
+    "close": 2415,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 9.029345372460496,
+    "return_2y": 129.19034690118045
+   }
+  },
+  {
+   "id": "BF_539",
+   "type": "BUSINESS_FIELD",
+   "name": "STO발행유통플랫폼"
+  },
+  {
+   "id": "BF_540",
+   "type": "BUSINESS_FIELD",
+   "name": "RWA토큰화"
+  },
+  {
+   "id": "M_042",
+   "type": "MACRO",
+   "name": "USDC발행잔액"
+  },
+  {
+   "id": "M_043",
+   "type": "MACRO",
+   "name": "암호화폐거래량"
+  },
+  {
+   "id": "M_147",
+   "type": "MACRO",
+   "name": "규제완화"
+  },
+  {
+   "id": "M_334",
+   "type": "MACRO",
+   "name": "토큰증권법시행"
+  },
+  {
+   "id": "C_267",
+   "type": "CHARACTER",
+   "name": "최대수수료수익잠재력"
+  },
+  {
+   "id": "C_268",
+   "type": "CHARACTER",
+   "name": "인프라완성도높음"
+  },
+  {
+   "id": "C_269",
+   "type": "CHARACTER",
+   "name": "조각투자플랫폼보유"
+  },
+  {
+   "id": "C_4458",
+   "type": "CHARACTER",
+   "name": "BUIDL토큰화펀드선도"
+  },
+  {
+   "id": "C_4459",
+   "type": "CHARACTER",
+   "name": "RWA토큰화발행플랫폼1위"
+  },
+  {
+   "id": "C_4460",
+   "type": "CHARACTER",
+   "name": "STO거래플랫폼선도"
+  },
+  {
+   "id": "C_4461",
+   "type": "CHARACTER",
+   "name": "아시아사모RWA토큰화"
+  },
+  {
+   "id": "C_4462",
+   "type": "CHARACTER",
+   "name": "토큰증권인프라구축"
+  },
+  {
+   "id": "C_4463",
+   "type": "CHARACTER",
+   "name": "은행권STO컨소시엄"
+  },
+  {
+   "id": "C_4464",
+   "type": "CHARACTER",
+   "name": "대형증권STO추진"
+  },
+  {
+   "id": "C_4465",
+   "type": "CHARACTER",
+   "name": "STO선제제휴다수"
+  },
+  {
+   "id": "A_2909",
+   "type": "ASSET",
+   "name": "KODEX 증권",
+   "exposure": {
+    "ticker": "102970",
+    "exchange": "KRX",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 1.0314595152140171,
+    "return_3d": 2.672955974842761,
+    "return_15d": -0.6960366358730985,
+    "return_1m": -10.093317904080013,
+    "return_ytd": 28.312404536537137,
+    "return_1y": 60.62239563063794,
+    "return_3y": null,
+    "close": 19590,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": null
+   }
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_549",
+   "to": "T_303",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009733"
+   ]
+  },
+  {
+   "from": "A_1870",
+   "to": "T_303",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009734"
+   ]
+  },
+  {
+   "from": "A_1871",
+   "to": "T_303",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009735"
+   ]
+  },
+  {
+   "from": "A_1872",
+   "to": "T_303",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009736"
+   ]
+  },
+  {
+   "from": "A_110",
+   "to": "T_303",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015990"
+   ]
+  },
+  {
+   "from": "A_988",
+   "to": "T_303",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009737"
+   ]
+  },
+  {
+   "from": "A_1537",
+   "to": "T_303",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009738"
+   ]
+  },
+  {
+   "from": "A_984",
+   "to": "T_303",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015991"
+   ]
+  },
+  {
+   "from": "A_986",
+   "to": "T_303",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015992"
+   ]
+  },
+  {
+   "from": "A_982",
+   "to": "T_303",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009739"
+   ]
+  },
+  {
+   "from": "A_983",
+   "to": "T_303",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009740"
+   ]
+  },
+  {
+   "from": "A_1870",
+   "to": "BF_539",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015993"
+   ]
+  },
+  {
+   "from": "A_1871",
+   "to": "BF_539",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015994"
+   ]
+  },
+  {
+   "from": "A_1872",
+   "to": "BF_539",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015995"
+   ]
+  },
+  {
+   "from": "A_1870",
+   "to": "BF_540",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015996"
+   ]
+  },
+  {
+   "from": "A_549",
+   "to": "BF_540",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015997"
+   ]
+  },
+  {
+   "from": "M_042",
+   "to": "T_303",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_009741"
+   ]
+  },
+  {
+   "from": "M_043",
+   "to": "T_303",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_009742"
+   ]
+  },
+  {
+   "from": "M_147",
+   "to": "T_303",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_009743"
+   ]
+  },
+  {
+   "from": "M_334",
+   "to": "T_303",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_009744"
+   ]
+  },
+  {
+   "from": "A_986",
+   "to": "C_267",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015998"
+   ]
+  },
+  {
+   "from": "A_110",
+   "to": "C_268",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015999"
+   ]
+  },
+  {
+   "from": "A_984",
+   "to": "C_269",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_016000"
+   ]
+  },
+  {
+   "from": "A_549",
+   "to": "C_4458",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009745"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1870",
+   "to": "C_4459",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009746"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1871",
+   "to": "C_4460",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009747"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1872",
+   "to": "C_4461",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009748"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_988",
+   "to": "C_4462",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009749"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1537",
+   "to": "C_4463",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009750"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_982",
+   "to": "C_4464",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009751"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_983",
+   "to": "C_4465",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009752"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_982",
+   "to": "A_986",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019498"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "삼성증권과 키움증권은 국내 STO 플랫폼·가상자산 서비스 경쟁"
+  },
+  {
+   "from": "A_110",
+   "to": "A_982",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019499"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "미래에셋증권과 삼성증권은 국내 토큰증권 사업 경쟁"
+  },
+  {
+   "from": "A_988",
+   "to": "A_1537",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019500"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "한국금융지주와 하나금융지주는 STO·디지털 자산 서비스 경쟁"
+  },
+  {
+   "from": "A_549",
+   "to": "A_1870",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_019501"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "블랙록은 시큐리타이즈와 토큰화 펀드(BUIDL) 발행 협력"
+  },
+  {
+   "from": "A_984",
+   "to": "A_983",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019502"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "대신증권과 SK증권은 국내 중형 증권사 STO 사업 경쟁"
+  },
+  {
+   "from": "A_2909",
+   "to": "T_303",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020701"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_549",
+   "to": "T_303",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009733"
+   ]
+  },
+  {
+   "from": "A_1870",
+   "to": "T_303",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009734"
+   ]
+  },
+  {
+   "from": "A_1871",
+   "to": "T_303",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009735"
+   ]
+  },
+  {
+   "from": "A_1872",
+   "to": "T_303",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009736"
+   ]
+  },
+  {
+   "from": "A_110",
+   "to": "T_303",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015990"
+   ]
+  },
+  {
+   "from": "A_988",
+   "to": "T_303",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009737"
+   ]
+  },
+  {
+   "from": "A_1537",
+   "to": "T_303",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009738"
+   ]
+  },
+  {
+   "from": "A_984",
+   "to": "T_303",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015991"
+   ]
+  },
+  {
+   "from": "A_986",
+   "to": "T_303",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015992"
+   ]
+  },
+  {
+   "from": "A_982",
+   "to": "T_303",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009739"
+   ]
+  },
+  {
+   "from": "A_983",
+   "to": "T_303",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009740"
+   ]
+  },
+  {
+   "from": "A_1870",
+   "to": "BF_539",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015993"
+   ]
+  },
+  {
+   "from": "A_1871",
+   "to": "BF_539",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015994"
+   ]
+  },
+  {
+   "from": "A_1872",
+   "to": "BF_539",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015995"
+   ]
+  },
+  {
+   "from": "A_1870",
+   "to": "BF_540",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015996"
+   ]
+  },
+  {
+   "from": "A_549",
+   "to": "BF_540",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015997"
+   ]
+  },
+  {
+   "from": "M_042",
+   "to": "T_303",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_009741"
+   ]
+  },
+  {
+   "from": "M_043",
+   "to": "T_303",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_009742"
+   ]
+  },
+  {
+   "from": "M_147",
+   "to": "T_303",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_009743"
+   ]
+  },
+  {
+   "from": "M_334",
+   "to": "T_303",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_009744"
+   ]
+  },
+  {
+   "from": "A_986",
+   "to": "C_267",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015998"
+   ]
+  },
+  {
+   "from": "A_110",
+   "to": "C_268",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015999"
+   ]
+  },
+  {
+   "from": "A_984",
+   "to": "C_269",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_016000"
+   ]
+  },
+  {
+   "from": "A_549",
+   "to": "C_4458",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009745"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1870",
+   "to": "C_4459",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009746"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1871",
+   "to": "C_4460",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009747"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1872",
+   "to": "C_4461",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009748"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_988",
+   "to": "C_4462",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009749"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1537",
+   "to": "C_4463",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009750"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_982",
+   "to": "C_4464",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009751"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_983",
+   "to": "C_4465",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009752"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_982",
+   "to": "A_986",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019498"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "삼성증권과 키움증권은 국내 STO 플랫폼·가상자산 서비스 경쟁"
+  },
+  {
+   "from": "A_110",
+   "to": "A_982",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019499"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "미래에셋증권과 삼성증권은 국내 토큰증권 사업 경쟁"
+  },
+  {
+   "from": "A_988",
+   "to": "A_1537",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019500"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "한국금융지주와 하나금융지주는 STO·디지털 자산 서비스 경쟁"
+  },
+  {
+   "from": "A_549",
+   "to": "A_1870",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_019501"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "블랙록은 시큐리타이즈와 토큰화 펀드(BUIDL) 발행 협력"
+  },
+  {
+   "from": "A_984",
+   "to": "A_983",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019502"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "대신증권과 SK증권은 국내 중형 증권사 STO 사업 경쟁"
+  },
+  {
+   "from": "A_2909",
+   "to": "T_303",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020701"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ]
 }

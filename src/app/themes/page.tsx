@@ -40,7 +40,7 @@ type ComputedRow = ThemeRow & {
   topMovers: Top3MoverUI[] | null;
 };
 
-const PERIODS: PeriodKey[] = ["1D", "3D", "7D", "15D", "1M", "YTD", "1Y", "2Y", "3Y"];
+const PERIODS: PeriodKey[] = ["1D", "3D", "5D", "15D", "1M", "YTD", "1Y", "2Y", "3Y"];
 
 // 온도 등급 (tempByScore와 동일 순서, 높은→낮은)
 const TIERS = ["BLAZING", "HOT", "WARM+", "WARM", "NEUTRAL+", "NEUTRAL", "COOL", "COOL-", "COLD", "FROZEN"] as const;
@@ -251,7 +251,7 @@ export default function ThemesPage() {
   >("BARO_DESC");
 
   // ✅ 기준 기간 토글 (default 7D)
-  const [period, setPeriod] = useState<PeriodKey>("7D");
+  const [period, setPeriod] = useState<PeriodKey>("5D");
 
   // ✅ 온도 등급 필터 (default ALL)
   const [tierFilter, setTierFilter] = useState<string>("ALL");

@@ -72,8 +72,8 @@ function toPeriodKo(p: PeriodKey) {
   switch (p) {
     case "3D":
       return "3일";
-    case "7D":
-      return "7일";
+    case "5D":
+      return "5일";
     case "1M":
       return "1개월";
     case "YTD":

@@ -1,715 +1,714 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_202",
-  "themeName": "K-바이오:한미약품",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-05-05T00:00:00+09:00",
-    "notes": "g202 누적 import 기반 K-바이오:한미약품 테마",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-07-12",
-        "kind": "보강",
-        "title": "자산별 테마관점 CHR 정의",
-        "detail": "자산 7개에 테마 관점 특성(CHARACTER)·HAS_TRAIT를 부여했다."
-      },
-      {
-        "date": "2026-07-12",
-        "kind": "보강",
-        "title": "엣지 근거 구체 백필 + 2026 이벤트",
-        "detail": "전 엣지 근거를 종목·관계 사실로 구체화하고 2026 이벤트를 추가했다."
-      },
-      {
-        "date": "2026-07-10",
-        "kind": "변경",
-        "title": "매크로는 테마에만 연결",
-        "detail": "개별 자산·BF에 직접 걸려 있던 매크로 IMPACTS 엣지를 테마 레벨로 정리(repoint 1, 중복제거 0)했다."
-      }
-    ]
-  },
-  "nodes": [
-    {
-      "id": "T_202",
-      "type": "THEME",
-      "name": "K-바이오:한미약품"
-    },
-    {
-      "id": "A_1314",
-      "type": "ASSET",
-      "name": "한미약품",
-      "exposure": {
-        "ticker": "128940",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 0.0,
-        "close": 398500,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": -3.510895883777243,
-        "return_7d": 4.8684210526315885,
-        "return_15d": 1.658163265306123,
-        "return_1m": 3.6410923276983143,
-        "return_ytd": -9.716244145569108,
-        "return_1y": 48.132236464664466,
-        "return_2y": 31.82815620985078,
-        "return_3y": 44.153068968035484,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD"
-      }
-    },
-    {
-      "id": "A_1315",
-      "type": "ASSET",
-      "name": "AstraZeneca",
-      "exposure": {
-        "ticker": "AZN",
-        "exchange": "NASDAQ",
-        "country": "UK"
-      },
-      "metrics": {
-        "return_1d": -0.5024166878656922,
-        "close": 156.45,
-        "marketCap": 242633995272,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": -1.4488188976378047,
-        "return_7d": -3.1269349845201355,
-        "return_15d": -7.568238213399503,
-        "return_1m": -7.584618110933905,
-        "return_ytd": -14.358440989708788,
-        "return_1y": 1.3933895009721198,
-        "return_2y": -3.65192757728785,
-        "return_3y": 9.743265993265982,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1316",
-      "type": "ASSET",
-      "name": "MSD",
-      "exposure": {
-        "ticker": "MRK",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.21394319439320686,
-        "close": 135.84,
-        "marketCap": 335500348800,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 4.15580432449012,
-        "return_7d": 5.85210005454686,
-        "return_15d": 3.639276722362106,
-        "return_1m": 6.4326568988482435,
-        "return_ytd": 27.60920620009395,
-        "return_1y": 64.23648893725064,
-        "return_2y": 18.585770405936273,
-        "return_3y": 28.030160226201705,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1317",
-      "type": "ASSET",
-      "name": "Janssen",
-      "exposure": {
-        "ticker": "",
-        "exchange": "",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": null,
-        "close": null,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": null,
-        "valuationSource": null,
-        "return_3d": null,
-        "return_7d": null,
-        "return_15d": null,
-        "return_1m": null,
-        "return_ytd": null,
-        "return_1y": null,
-        "return_2y": null,
-        "return_3y": null,
-        "returnsAsOf": null,
-        "returnsSource": null
-      },
-      "coreBiz": "얀센은 한미 비만 신약을 기술도입한 글로벌 제약사다"
-    },
-    {
-      "id": "A_1318",
-      "type": "ASSET",
-      "name": "Sanofi",
-      "exposure": {
-        "ticker": "SNY",
-        "exchange": "NASDAQ",
-        "country": "FR"
-      },
-      "metrics": {
-        "return_1d": -0.13704888076747634,
-        "close": 43.72,
-        "marketCap": 104980464000,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 0.36730945821854544,
-        "return_7d": 2.1972884525479186,
-        "return_15d": 0.8535178777393293,
-        "return_1m": -1.1083465279348559,
-        "return_ytd": -9.351026332158408,
-        "return_1y": -10.299548625359057,
-        "return_2y": -16.517089936986817,
-        "return_3y": -17.850432168357766,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1005",
-      "type": "ASSET",
-      "name": "Gilead Sciences",
-      "exposure": {
-        "ticker": "GILD",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.15925872303461652,
-        "close": 138.36,
-        "marketCap": 171783607767,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 1.90763791706563,
-        "return_7d": 5.009107468123886,
-        "return_15d": 6.9986853298275475,
-        "return_1m": 1.511371973587683,
-        "return_ytd": 13.782894736842133,
-        "return_1y": 15.165640086565691,
-        "return_2y": 87.83600325821344,
-        "return_3y": 72.58326057128603,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1320",
-      "type": "ASSET",
-      "name": "한미사이언스",
-      "exposure": {
-        "ticker": "008930",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": -0.11273957158962622,
-        "close": 44300,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": -4.112554112554112,
-        "return_7d": 9.789343246592308,
-        "return_15d": 28.034682080924856,
-        "return_1m": 36.93972179289027,
-        "return_ytd": 22.325531057516244,
-        "return_1y": -1.437485986824516,
-        "return_2y": 38.107864580406556,
-        "return_3y": -24.749163879598658,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD"
-      }
-    },
-    {
-      "id": "BF_364",
-      "type": "BUSINESS_FIELD",
-      "name": "MASH(대사이상지방간염)"
-    },
-    {
-      "id": "M_190",
-      "type": "MACRO",
-      "name": "비만약"
-    },
-    {
-      "id": "M_191",
-      "type": "MACRO",
-      "name": "신약임상성공"
-    },
-    {
-      "id": "M_192",
-      "type": "MACRO",
-      "name": "기술수출(LO)"
-    },
-    {
-      "id": "M_193",
-      "type": "MACRO",
-      "name": "계약해지(Return)"
-    },
-    {
-      "id": "M_194",
-      "type": "MACRO",
-      "name": "경영권분쟁"
-    },
-    {
-      "id": "C_3164",
-      "type": "CHARACTER",
-      "name": "비만·MASH신약대장"
-    },
-    {
-      "id": "C_3165",
-      "type": "CHARACTER",
-      "name": "AZ파트너"
-    },
-    {
-      "id": "C_3166",
-      "type": "CHARACTER",
-      "name": "MASH수출"
-    },
-    {
-      "id": "C_3167",
-      "type": "CHARACTER",
-      "name": "얀센파트너"
-    },
-    {
-      "id": "C_3168",
-      "type": "CHARACTER",
-      "name": "사노피파트너"
-    },
-    {
-      "id": "C_3169",
-      "type": "CHARACTER",
-      "name": "길리어드파트너"
-    },
-    {
-      "id": "C_3170",
-      "type": "CHARACTER",
-      "name": "한미지주"
-    }
+ "schemaVersion": "v5",
+ "themeId": "T_202",
+ "themeName": "K-바이오:한미약품",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
   ],
-  "edges": [
-    {
-      "from": "A_1314",
-      "to": "T_202",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_006251"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1314",
-      "to": "A_1315",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_006252"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_1314",
-      "to": "A_1316",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_006253"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_1314",
-      "to": "A_1317",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_006254"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_1314",
-      "to": "A_1318",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_006255"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_1314",
-      "to": "A_1005",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_006256"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1320",
-      "to": "A_1314",
-      "type": "INVESTS",
-      "evidence": [
-        "EV_006257"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_1314",
-      "to": "BF_364",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_006258"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "M_190",
-      "to": "T_202",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_006259"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "M_191",
-      "to": "T_202",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_006260"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_192",
-      "to": "T_202",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_006261"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "M_193",
-      "to": "T_202",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_006262"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "M_194",
-      "to": "T_202",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_006263"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1314",
-      "to": "C_3164",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006390"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1315",
-      "to": "C_3165",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006391"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1316",
-      "to": "C_3166",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006392"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1317",
-      "to": "C_3167",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006393"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1318",
-      "to": "C_3168",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006394"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1005",
-      "to": "C_3169",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006395"
-      ],
-      "confidence": 0.64,
-      "status": "verified"
-    },
-    {
-      "from": "A_1320",
-      "to": "C_3170",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006396"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_1314",
-      "to": "T_202",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_006251"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1314",
-      "to": "A_1315",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_006252"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_1314",
-      "to": "A_1316",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_006253"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_1314",
-      "to": "A_1317",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_006254"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_1314",
-      "to": "A_1318",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_006255"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_1314",
-      "to": "A_1005",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_006256"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1320",
-      "to": "A_1314",
-      "type": "INVESTS",
-      "evidence": [
-        "EV_006257"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_1314",
-      "to": "BF_364",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_006258"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "M_190",
-      "to": "T_202",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_006259"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "M_191",
-      "to": "T_202",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_006260"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_192",
-      "to": "T_202",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_006261"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "M_193",
-      "to": "T_202",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_006262"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "M_194",
-      "to": "T_202",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_006263"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1314",
-      "to": "C_3164",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006390"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1315",
-      "to": "C_3165",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006391"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1316",
-      "to": "C_3166",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006392"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1317",
-      "to": "C_3167",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006393"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1318",
-      "to": "C_3168",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006394"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1005",
-      "to": "C_3169",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006395"
-      ],
-      "confidence": 0.64,
-      "status": "verified"
-    },
-    {
-      "from": "A_1320",
-      "to": "C_3170",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006396"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
+  "dataAsOf": "2026-05-05T00:00:00+09:00",
+  "notes": "g202 누적 import 기반 K-바이오:한미약품 테마",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-07-12",
+    "kind": "보강",
+    "title": "자산별 테마관점 CHR 정의",
+    "detail": "자산 7개에 테마 관점 특성(CHARACTER)·HAS_TRAIT를 부여했다."
+   },
+   {
+    "date": "2026-07-12",
+    "kind": "보강",
+    "title": "엣지 근거 구체 백필 + 2026 이벤트",
+    "detail": "전 엣지 근거를 종목·관계 사실로 구체화하고 2026 이벤트를 추가했다."
+   },
+   {
+    "date": "2026-07-10",
+    "kind": "변경",
+    "title": "매크로는 테마에만 연결",
+    "detail": "개별 자산·BF에 직접 걸려 있던 매크로 IMPACTS 엣지를 테마 레벨로 정리(repoint 1, 중복제거 0)했다."
+   }
   ]
+ },
+ "nodes": [
+  {
+   "id": "T_202",
+   "type": "THEME",
+   "name": "K-바이오:한미약품"
+  },
+  {
+   "id": "A_1314",
+   "type": "ASSET",
+   "name": "한미약품",
+   "exposure": {
+    "ticker": "128940",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 0.0,
+    "close": 398500,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": -3.510895883777243,
+    "return_15d": 1.658163265306123,
+    "return_1m": 11.781206171108005,
+    "return_ytd": -11.513929566692893,
+    "return_1y": 43.09733035390544,
+    "return_3y": 27.857509703003736,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 1.5286624203821653,
+    "return_2y": 41.09551340042954
+   }
+  },
+  {
+   "id": "A_1315",
+   "type": "ASSET",
+   "name": "AstraZeneca",
+   "exposure": {
+    "ticker": "AZN",
+    "exchange": "NASDAQ",
+    "country": "UK"
+   },
+   "metrics": {
+    "return_1d": -0.5024166878656922,
+    "close": 156.45,
+    "marketCap": 242633995272,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": -1.4488188976378047,
+    "return_15d": -6.955915123811973,
+    "return_1m": -4.263560673465616,
+    "return_ytd": -13.443265089336853,
+    "return_1y": 1.4038387623870552,
+    "return_3y": 17.20128280905515,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -3.078924544666084,
+    "return_2y": -2.9734347528132754
+   }
+  },
+  {
+   "id": "A_1316",
+   "type": "ASSET",
+   "name": "MSD",
+   "exposure": {
+    "ticker": "MRK",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.21394319439320686,
+    "close": 135.84,
+    "marketCap": 335500348800,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 4.15580432449012,
+    "return_15d": 3.639276722362106,
+    "return_1m": 12.468951813214101,
+    "return_ytd": 30.94261524714166,
+    "return_1y": 69.62465051752751,
+    "return_3y": 36.79909847943934,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 5.646290247316843,
+    "return_2y": 27.769923840321443
+   }
+  },
+  {
+   "id": "A_1317",
+   "type": "ASSET",
+   "name": "Janssen",
+   "exposure": {
+    "ticker": "",
+    "exchange": "",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": null,
+    "close": null,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": null,
+    "valuationSource": null,
+    "return_3d": null,
+    "return_15d": null,
+    "return_1m": null,
+    "return_ytd": null,
+    "return_1y": null,
+    "return_3y": null,
+    "returnsAsOf": null,
+    "returnsSource": null,
+    "return_5d": null
+   },
+   "coreBiz": "얀센은 한미 비만 신약을 기술도입한 글로벌 제약사다"
+  },
+  {
+   "id": "A_1318",
+   "type": "ASSET",
+   "name": "Sanofi",
+   "exposure": {
+    "ticker": "SNY",
+    "exchange": "NASDAQ",
+    "country": "FR"
+   },
+   "metrics": {
+    "return_1d": -0.13704888076747634,
+    "close": 43.72,
+    "marketCap": 104980464000,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 0.36730945821854544,
+    "return_15d": 0.8535178777393293,
+    "return_1m": 1.2505789717461857,
+    "return_ytd": -4.776217577195085,
+    "return_1y": -5.902407107682784,
+    "return_3y": -5.719578282724824,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 0.5982512655315242,
+    "return_2y": -9.975208177183292
+   }
+  },
+  {
+   "id": "A_1005",
+   "type": "ASSET",
+   "name": "Gilead Sciences",
+   "exposure": {
+    "ticker": "GILD",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.15925872303461652,
+    "close": 138.36,
+    "marketCap": 171783607767,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 1.90763791706563,
+    "return_15d": 6.9986853298275475,
+    "return_1m": 6.398031374961577,
+    "return_ytd": 14.111340206185584,
+    "return_1y": 19.277712930028244,
+    "return_3y": 91.24100706994618,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 3.866076120411388,
+    "return_2y": 97.6568604901993
+   }
+  },
+  {
+   "id": "A_1320",
+   "type": "ASSET",
+   "name": "한미사이언스",
+   "exposure": {
+    "ticker": "008930",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": -0.11273957158962622,
+    "close": 44300,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": -4.112554112554112,
+    "return_15d": 28.034682080924856,
+    "return_1m": 38.22152886115444,
+    "return_ytd": 23.169155494077366,
+    "return_1y": 6.687739237170476,
+    "return_3y": 20.571832081530992,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -0.7838745800671898,
+    "return_2y": 40.92197467098329
+   }
+  },
+  {
+   "id": "BF_364",
+   "type": "BUSINESS_FIELD",
+   "name": "MASH(대사이상지방간염)"
+  },
+  {
+   "id": "M_190",
+   "type": "MACRO",
+   "name": "비만약"
+  },
+  {
+   "id": "M_191",
+   "type": "MACRO",
+   "name": "신약임상성공"
+  },
+  {
+   "id": "M_192",
+   "type": "MACRO",
+   "name": "기술수출(LO)"
+  },
+  {
+   "id": "M_193",
+   "type": "MACRO",
+   "name": "계약해지(Return)"
+  },
+  {
+   "id": "M_194",
+   "type": "MACRO",
+   "name": "경영권분쟁"
+  },
+  {
+   "id": "C_3164",
+   "type": "CHARACTER",
+   "name": "비만·MASH신약대장"
+  },
+  {
+   "id": "C_3165",
+   "type": "CHARACTER",
+   "name": "AZ파트너"
+  },
+  {
+   "id": "C_3166",
+   "type": "CHARACTER",
+   "name": "MASH수출"
+  },
+  {
+   "id": "C_3167",
+   "type": "CHARACTER",
+   "name": "얀센파트너"
+  },
+  {
+   "id": "C_3168",
+   "type": "CHARACTER",
+   "name": "사노피파트너"
+  },
+  {
+   "id": "C_3169",
+   "type": "CHARACTER",
+   "name": "길리어드파트너"
+  },
+  {
+   "id": "C_3170",
+   "type": "CHARACTER",
+   "name": "한미지주"
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_1314",
+   "to": "T_202",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_006251"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1314",
+   "to": "A_1315",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_006252"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_1314",
+   "to": "A_1316",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_006253"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_1314",
+   "to": "A_1317",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_006254"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_1314",
+   "to": "A_1318",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_006255"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_1314",
+   "to": "A_1005",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_006256"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1320",
+   "to": "A_1314",
+   "type": "INVESTS",
+   "evidence": [
+    "EV_006257"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_1314",
+   "to": "BF_364",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_006258"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "M_190",
+   "to": "T_202",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_006259"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "M_191",
+   "to": "T_202",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_006260"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_192",
+   "to": "T_202",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_006261"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "M_193",
+   "to": "T_202",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_006262"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "M_194",
+   "to": "T_202",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_006263"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1314",
+   "to": "C_3164",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006390"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1315",
+   "to": "C_3165",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006391"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1316",
+   "to": "C_3166",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006392"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1317",
+   "to": "C_3167",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006393"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1318",
+   "to": "C_3168",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006394"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1005",
+   "to": "C_3169",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006395"
+   ],
+   "confidence": 0.64,
+   "status": "verified"
+  },
+  {
+   "from": "A_1320",
+   "to": "C_3170",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006396"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_1314",
+   "to": "T_202",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_006251"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1314",
+   "to": "A_1315",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_006252"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_1314",
+   "to": "A_1316",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_006253"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_1314",
+   "to": "A_1317",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_006254"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_1314",
+   "to": "A_1318",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_006255"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_1314",
+   "to": "A_1005",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_006256"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1320",
+   "to": "A_1314",
+   "type": "INVESTS",
+   "evidence": [
+    "EV_006257"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_1314",
+   "to": "BF_364",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_006258"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "M_190",
+   "to": "T_202",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_006259"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "M_191",
+   "to": "T_202",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_006260"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_192",
+   "to": "T_202",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_006261"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "M_193",
+   "to": "T_202",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_006262"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "M_194",
+   "to": "T_202",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_006263"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1314",
+   "to": "C_3164",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006390"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1315",
+   "to": "C_3165",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006391"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1316",
+   "to": "C_3166",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006392"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1317",
+   "to": "C_3167",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006393"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1318",
+   "to": "C_3168",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006394"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1005",
+   "to": "C_3169",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006395"
+   ],
+   "confidence": 0.64,
+   "status": "verified"
+  },
+  {
+   "from": "A_1320",
+   "to": "C_3170",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006396"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ]
 }

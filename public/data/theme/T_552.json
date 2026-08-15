@@ -1,730 +1,729 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_552",
-  "themeName": "(Y23) 일본 증시 밸류업(버핏 상사)",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-25T00:00:00+09:00",
-    "description": "일본 증시 밸류업(버핏 상사) — 2023 회고 테마.",
-    "notes": "T_552 신규 회고((Y23)). 자산별 CHARACTER, MACRO 3(재사용)",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-08-04",
-        "kind": "보강",
-        "title": "2궤도 관계 엣지 추가",
-        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
-      },
-      {
-        "date": "2026-07-25",
-        "kind": "수정",
-        "title": "구체적 엣지 백필 + 이벤트",
-        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 이벤트 추가."
-      },
-      {
-        "date": "2026-08-05",
-        "kind": "관계",
-        "title": "EXPOSED_TO ETF 연결",
-        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-      }
-    ]
-  },
-  "nodes": [
-    {
-      "id": "T_552",
-      "type": "THEME",
-      "name": "(Y23) 일본 증시 밸류업(버핏 상사)"
-    },
-    {
-      "id": "A_682",
-      "type": "ASSET",
-      "name": "미쓰비시상사",
-      "exposure": {
-        "ticker": "8058",
-        "exchange": "TSE",
-        "country": "JP"
-      },
-      "metrics": {
-        "return_1d": -1.3038079470198638,
-        "return_3d": -1.6498247061249693,
-        "return_7d": 0.6542845082313287,
-        "return_15d": -2.99023596419854,
-        "return_1m": 6.072064056939497,
-        "return_ytd": 30.550232685463996,
-        "return_1y": 59.60508701472558,
-        "return_2y": 44.42761962447002,
-        "return_3y": null,
-        "close": 4769.0,
-        "marketCap": 17461687161999,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1524",
-      "type": "CHARACTER",
-      "name": "버핏 투자 종합상사 1위"
-    },
-    {
-      "id": "A_681",
-      "type": "ASSET",
-      "name": "미쓰이물산",
-      "exposure": {
-        "ticker": "8031",
-        "exchange": "TSE",
-        "country": "JP"
-      },
-      "metrics": {
-        "return_1d": -1.4098896608091493,
-        "return_3d": -1.127049180327866,
-        "return_7d": 0.20768431983384517,
-        "return_15d": -2.917505030181089,
-        "return_1m": 2.703277990634323,
-        "return_ytd": 1.5148327372185966,
-        "return_1y": 55.64516129032258,
-        "return_2y": 30.053908355795155,
-        "return_3y": null,
-        "close": 4825.0,
-        "marketCap": 13674958195275,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1525",
-      "type": "CHARACTER",
-      "name": "버핏 투자 종합상사"
-    },
-    {
-      "id": "A_679",
-      "type": "ASSET",
-      "name": "이토추상사",
-      "exposure": {
-        "ticker": "8001",
-        "exchange": "TSE",
-        "country": "JP"
-      },
-      "metrics": {
-        "return_1d": -0.6496631376323392,
-        "return_3d": -1.2437215977038951,
-        "return_7d": 4.267676767676765,
-        "return_15d": 4.743784880771185,
-        "return_1m": 8.4296218487395,
-        "return_ytd": 3.2508127031757983,
-        "return_1y": 30.12101348796168,
-        "return_2y": 28.34141489493971,
-        "return_3y": null,
-        "close": 2064.5,
-        "marketCap": 14430674740247,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1526",
-      "type": "CHARACTER",
-      "name": "버핏 투자 상사(소비)"
-    },
-    {
-      "id": "A_678",
-      "type": "ASSET",
-      "name": "마루베니",
-      "exposure": {
-        "ticker": "8002",
-        "exchange": "TSE",
-        "country": "JP"
-      },
-      "metrics": {
-        "return_1d": -0.8447304907481912,
-        "return_3d": -0.40404040404040664,
-        "return_7d": -0.14178651002633158,
-        "return_15d": -8.432392273402678,
-        "return_1m": 0.20325203252031798,
-        "return_ytd": 10.836330935251803,
-        "return_1y": 58.368133633151295,
-        "return_2y": 62.17105263157894,
-        "return_3y": null,
-        "close": 4930.0,
-        "marketCap": 8020430729809,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1527",
-      "type": "CHARACTER",
-      "name": "종합상사(곡물·전력)"
-    },
-    {
-      "id": "A_680",
-      "type": "ASSET",
-      "name": "스미토모상사",
-      "exposure": {
-        "ticker": "8053",
-        "exchange": "TSE",
-        "country": "JP"
-      },
-      "metrics": {
-        "return_1d": 0.6462489463332499,
-        "return_3d": 0.3080369644357317,
-        "return_7d": 7.729323308270675,
-        "return_15d": 9.944751381215466,
-        "return_1m": 14.587332053742808,
-        "return_ytd": 28.64068953133416,
-        "return_1y": 85.59585492227978,
-        "return_2y": 80.18108651911469,
-        "return_3y": null,
-        "close": 1791.0,
-        "marketCap": 8487274561488,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1528",
-      "type": "CHARACTER",
-      "name": "종합상사(자원·미디어)"
-    },
-    {
-      "id": "A_006",
-      "type": "ASSET",
-      "name": "도요타",
-      "exposure": {
-        "ticker": "7203",
-        "exchange": "TSE",
-        "country": "JP"
-      },
-      "metrics": {
-        "return_1d": 1.1725293132328396,
-        "return_3d": 1.308285810130827,
-        "return_7d": 3.4778139455199586,
-        "return_15d": 2.3728813559322104,
-        "return_1m": 6.375484325466707,
-        "return_ytd": -11.150338334804355,
-        "return_1y": 11.997033191173735,
-        "return_2y": -3.6067666773060947,
-        "return_3y": null,
-        "close": 3020.0,
-        "marketCap": 35759978489600,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1529",
-      "type": "CHARACTER",
-      "name": "완성차1위(밸류업)"
-    },
-    {
-      "id": "A_086",
-      "type": "ASSET",
-      "name": "Sony",
-      "exposure": {
-        "ticker": "SONY",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 2.8801355357899183,
-        "return_3d": 2.8801355357899183,
-        "return_7d": 8.244206773618522,
-        "return_15d": 15.776930409914192,
-        "return_1m": 13.557737260402059,
-        "return_ytd": -6.143740340030912,
-        "return_1y": -13.187991422444611,
-        "return_2y": 43.898104265402836,
-        "return_3y": 44.841979725700654,
-        "close": 24.29,
-        "marketCap": 142642192922,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1530",
-      "type": "CHARACTER",
-      "name": "일본 대표 테크·엔터"
-    },
-    {
-      "id": "M_127",
-      "type": "MACRO",
-      "name": "엔저"
-    },
-    {
-      "id": "M_126",
-      "type": "MACRO",
-      "name": "지주사밸류업/상법개정"
-    },
-    {
-      "id": "M_173",
-      "type": "MACRO",
-      "name": "주주환원정책"
-    },
-    {
-      "id": "A_973",
-      "type": "ASSET",
-      "name": "WisdomTreeJapanHedgedEquityFund",
-      "exposure": {
-        "ticker": "DXJ",
-        "exchange": "NYSE ARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.2573368374945262,
-        "close": 182.17,
-        "marketCap": 7414427938,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 1.402727525744485,
-        "return_7d": 3.35300124815614,
-        "return_15d": 2.9325347496892196,
-        "return_1m": 3.8893641288850755,
-        "return_ytd": 25.643147803296774,
-        "return_1y": 45.92278115988464,
-        "return_2y": 86.80270713699754,
-        "return_3y": 117.1275327771156,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    }
+ "schemaVersion": "v5",
+ "themeId": "T_552",
+ "themeName": "(Y23) 일본 증시 밸류업(버핏 상사)",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
   ],
-  "edges": [
-    {
-      "from": "A_682",
-      "to": "T_552",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012888"
-      ]
-    },
-    {
-      "from": "A_682",
-      "to": "C_1524",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017608"
-      ]
-    },
-    {
-      "from": "A_681",
-      "to": "T_552",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012889"
-      ]
-    },
-    {
-      "from": "A_681",
-      "to": "C_1525",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017609"
-      ]
-    },
-    {
-      "from": "A_679",
-      "to": "T_552",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012890"
-      ]
-    },
-    {
-      "from": "A_679",
-      "to": "C_1526",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017610"
-      ]
-    },
-    {
-      "from": "A_678",
-      "to": "T_552",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012891"
-      ]
-    },
-    {
-      "from": "A_678",
-      "to": "C_1527",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017611"
-      ]
-    },
-    {
-      "from": "A_680",
-      "to": "T_552",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012892"
-      ]
-    },
-    {
-      "from": "A_680",
-      "to": "C_1528",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017612"
-      ]
-    },
-    {
-      "from": "A_006",
-      "to": "T_552",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012893"
-      ]
-    },
-    {
-      "from": "A_006",
-      "to": "C_1529",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017613"
-      ]
-    },
-    {
-      "from": "A_086",
-      "to": "T_552",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012894"
-      ]
-    },
-    {
-      "from": "A_086",
-      "to": "C_1530",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017614"
-      ]
-    },
-    {
-      "from": "M_127",
-      "to": "T_552",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012895"
-      ]
-    },
-    {
-      "from": "M_126",
-      "to": "T_552",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012896"
-      ]
-    },
-    {
-      "from": "M_173",
-      "to": "T_552",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012897"
-      ]
-    },
-    {
-      "from": "A_682",
-      "to": "A_681",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020150"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "미쓰비시상사와 미쓰이물산은 일본 종합상사 양대 경쟁"
-    },
-    {
-      "from": "A_679",
-      "to": "A_678",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020151"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "이토추상사와 마루베니는 일본 종합상사 시장 경쟁"
-    },
-    {
-      "from": "A_682",
-      "to": "A_679",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020152"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "미쓰비시상사와 이토추상사는 일본 종합상사 시장 경쟁"
-    },
-    {
-      "from": "A_680",
-      "to": "A_681",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020153"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "스미토모상사와 미쓰이물산은 일본 종합상사 시장 경쟁"
-    },
-    {
-      "from": "A_682",
-      "to": "A_006",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_020154"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "미쓰비시상사는 도요타 등 일본 제조사와 자원·유통 사업 협력"
-    },
-    {
-      "from": "A_973",
-      "to": "T_552",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020899"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_682",
-      "to": "T_552",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012888"
-      ]
-    },
-    {
-      "from": "A_682",
-      "to": "C_1524",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017608"
-      ]
-    },
-    {
-      "from": "A_681",
-      "to": "T_552",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012889"
-      ]
-    },
-    {
-      "from": "A_681",
-      "to": "C_1525",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017609"
-      ]
-    },
-    {
-      "from": "A_679",
-      "to": "T_552",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012890"
-      ]
-    },
-    {
-      "from": "A_679",
-      "to": "C_1526",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017610"
-      ]
-    },
-    {
-      "from": "A_678",
-      "to": "T_552",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012891"
-      ]
-    },
-    {
-      "from": "A_678",
-      "to": "C_1527",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017611"
-      ]
-    },
-    {
-      "from": "A_680",
-      "to": "T_552",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012892"
-      ]
-    },
-    {
-      "from": "A_680",
-      "to": "C_1528",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017612"
-      ]
-    },
-    {
-      "from": "A_006",
-      "to": "T_552",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012893"
-      ]
-    },
-    {
-      "from": "A_006",
-      "to": "C_1529",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017613"
-      ]
-    },
-    {
-      "from": "A_086",
-      "to": "T_552",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012894"
-      ]
-    },
-    {
-      "from": "A_086",
-      "to": "C_1530",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017614"
-      ]
-    },
-    {
-      "from": "M_127",
-      "to": "T_552",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012895"
-      ]
-    },
-    {
-      "from": "M_126",
-      "to": "T_552",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012896"
-      ]
-    },
-    {
-      "from": "M_173",
-      "to": "T_552",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012897"
-      ]
-    },
-    {
-      "from": "A_682",
-      "to": "A_681",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020150"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "미쓰비시상사와 미쓰이물산은 일본 종합상사 양대 경쟁"
-    },
-    {
-      "from": "A_679",
-      "to": "A_678",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020151"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "이토추상사와 마루베니는 일본 종합상사 시장 경쟁"
-    },
-    {
-      "from": "A_682",
-      "to": "A_679",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020152"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "미쓰비시상사와 이토추상사는 일본 종합상사 시장 경쟁"
-    },
-    {
-      "from": "A_680",
-      "to": "A_681",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020153"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "스미토모상사와 미쓰이물산은 일본 종합상사 시장 경쟁"
-    },
-    {
-      "from": "A_682",
-      "to": "A_006",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_020154"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "미쓰비시상사는 도요타 등 일본 제조사와 자원·유통 사업 협력"
-    },
-    {
-      "from": "A_973",
-      "to": "T_552",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020899"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
+  "dataAsOf": "2026-07-25T00:00:00+09:00",
+  "description": "일본 증시 밸류업(버핏 상사) — 2023 회고 테마.",
+  "notes": "T_552 신규 회고((Y23)). 자산별 CHARACTER, MACRO 3(재사용)",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-08-04",
+    "kind": "보강",
+    "title": "2궤도 관계 엣지 추가",
+    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
+   },
+   {
+    "date": "2026-07-25",
+    "kind": "수정",
+    "title": "구체적 엣지 백필 + 이벤트",
+    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 이벤트 추가."
+   },
+   {
+    "date": "2026-08-05",
+    "kind": "관계",
+    "title": "EXPOSED_TO ETF 연결",
+    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+   }
   ]
+ },
+ "nodes": [
+  {
+   "id": "T_552",
+   "type": "THEME",
+   "name": "(Y23) 일본 증시 밸류업(버핏 상사)"
+  },
+  {
+   "id": "A_682",
+   "type": "ASSET",
+   "name": "미쓰비시상사",
+   "exposure": {
+    "ticker": "8058",
+    "exchange": "TSE",
+    "country": "JP"
+   },
+   "metrics": {
+    "return_1d": -0.8715501141315585,
+    "return_3d": -1.4441922838869359,
+    "return_15d": 7.011648745519716,
+    "return_1m": 9.891879457096842,
+    "return_ytd": 33.21249302844396,
+    "return_1y": 61.05866486850977,
+    "return_3y": 102.75891341256367,
+    "close": 4777,
+    "marketCap": 17461687161999,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-07-30",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -2.827502034174123,
+    "return_2y": 51.988545975182944
+   }
+  },
+  {
+   "id": "C_1524",
+   "type": "CHARACTER",
+   "name": "버핏 투자 종합상사 1위"
+  },
+  {
+   "id": "A_681",
+   "type": "ASSET",
+   "name": "미쓰이물산",
+   "exposure": {
+    "ticker": "8031",
+    "exchange": "TSE",
+    "country": "JP"
+   },
+   "metrics": {
+    "return_1d": 0.04066693777957653,
+    "return_3d": -1.1055276381909507,
+    "return_15d": 5.647412497315862,
+    "return_1m": 9.40627084723149,
+    "return_ytd": 5.965970277837607,
+    "return_1y": 60.7843137254902,
+    "return_3y": 82.1210438645197,
+    "close": 4920,
+    "marketCap": 13674958195275,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-07-30",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -1.0060362173038184,
+    "return_2y": 40.772532188841204
+   }
+  },
+  {
+   "id": "C_1525",
+   "type": "CHARACTER",
+   "name": "버핏 투자 종합상사"
+  },
+  {
+   "id": "A_679",
+   "type": "ASSET",
+   "name": "이토추상사",
+   "exposure": {
+    "ticker": "8001",
+    "exchange": "TSE",
+    "country": "JP"
+   },
+   "metrics": {
+    "return_1d": -0.9544787077826689,
+    "return_3d": 1.9652305366591127,
+    "return_15d": 7.747603833865813,
+    "return_1m": 9.142394822006473,
+    "return_ytd": 2.455696202531654,
+    "return_1y": 29.0168324407039,
+    "return_3y": 81.31720430107528,
+    "close": 2023.5,
+    "marketCap": 14430674740247,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-07-30",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 2.6636225266362334,
+    "return_2y": 33.458646616541344
+   }
+  },
+  {
+   "id": "C_1526",
+   "type": "CHARACTER",
+   "name": "버핏 투자 상사(소비)"
+  },
+  {
+   "id": "A_678",
+   "type": "ASSET",
+   "name": "마루베니",
+   "exposure": {
+    "ticker": "8002",
+    "exchange": "TSE",
+    "country": "JP"
+   },
+   "metrics": {
+    "return_1d": -0.17291066282421053,
+    "return_3d": -4.660550458715596,
+    "return_15d": 4.736948195928248,
+    "return_1m": 10.788912579957355,
+    "return_ytd": 19.36595451412819,
+    "return_1y": 69.80392156862744,
+    "return_3y": 113.30049261083745,
+    "close": 5196,
+    "marketCap": 8020430729809,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-07-30",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -3.491827637444278,
+    "return_2y": 82.25184145913715
+   }
+  },
+  {
+   "id": "C_1527",
+   "type": "CHARACTER",
+   "name": "종합상사(곡물·전력)"
+  },
+  {
+   "id": "A_680",
+   "type": "ASSET",
+   "name": "스미토모상사",
+   "exposure": {
+    "ticker": "8053",
+    "exchange": "TSE",
+    "country": "JP"
+   },
+   "metrics": {
+    "return_1d": -0.43777360850532077,
+    "return_3d": -1.2100527458889232,
+    "return_15d": 1.7577500798977352,
+    "return_1m": 2.775984506132989,
+    "return_ytd": 17.664449371766455,
+    "return_1y": 66.17954070981212,
+    "return_3y": 112.55006675567425,
+    "close": 1592,
+    "marketCap": 8487274561488,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-07-30",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -2.2713321055862545,
+    "return_2y": 65.5746229849194
+   }
+  },
+  {
+   "id": "C_1528",
+   "type": "CHARACTER",
+   "name": "종합상사(자원·미디어)"
+  },
+  {
+   "id": "A_006",
+   "type": "ASSET",
+   "name": "도요타",
+   "exposure": {
+    "ticker": "7203",
+    "exchange": "TSE",
+    "country": "JP"
+   },
+   "metrics": {
+    "return_1d": -3.0397022332506185,
+    "return_3d": 5.412240768841681,
+    "return_15d": 8.203530633437172,
+    "return_1m": 14.715596330275238,
+    "return_ytd": -6.853396901072706,
+    "return_1y": 13.942044833242218,
+    "return_3y": 35.32467532467531,
+    "close": 3126,
+    "marketCap": 35759978489600,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-07-30",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 5.966101694915249,
+    "return_2y": 4.321708660103463
+   }
+  },
+  {
+   "id": "C_1529",
+   "type": "CHARACTER",
+   "name": "완성차1위(밸류업)"
+  },
+  {
+   "id": "A_086",
+   "type": "ASSET",
+   "name": "Sony",
+   "exposure": {
+    "ticker": "SONY",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 2.8801355357899183,
+    "return_3d": 2.8801355357899183,
+    "return_15d": 15.776930409914192,
+    "return_1m": 16.77884615384615,
+    "return_ytd": -4.852185971083534,
+    "return_1y": -8.974397409761359,
+    "return_3y": 52.36864555628043,
+    "close": 24.29,
+    "marketCap": 142642192922,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 3.5379369138959893,
+    "return_2y": 42.792477675815796
+   }
+  },
+  {
+   "id": "C_1530",
+   "type": "CHARACTER",
+   "name": "일본 대표 테크·엔터"
+  },
+  {
+   "id": "M_127",
+   "type": "MACRO",
+   "name": "엔저"
+  },
+  {
+   "id": "M_126",
+   "type": "MACRO",
+   "name": "지주사밸류업/상법개정"
+  },
+  {
+   "id": "M_173",
+   "type": "MACRO",
+   "name": "주주환원정책"
+  },
+  {
+   "id": "A_973",
+   "type": "ASSET",
+   "name": "WisdomTreeJapanHedgedEquityFund",
+   "exposure": {
+    "ticker": "DXJ",
+    "exchange": "NYSE ARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.2573368374945262,
+    "close": 182.17,
+    "marketCap": 7414427938,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 1.402727525744485,
+    "return_15d": 2.9325347496892196,
+    "return_1m": 3.8893641288850755,
+    "return_ytd": 25.643147803296774,
+    "return_1y": 45.92278115988464,
+    "return_3y": 117.1275327771156,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": null
+   }
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_682",
+   "to": "T_552",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012888"
+   ]
+  },
+  {
+   "from": "A_682",
+   "to": "C_1524",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017608"
+   ]
+  },
+  {
+   "from": "A_681",
+   "to": "T_552",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012889"
+   ]
+  },
+  {
+   "from": "A_681",
+   "to": "C_1525",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017609"
+   ]
+  },
+  {
+   "from": "A_679",
+   "to": "T_552",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012890"
+   ]
+  },
+  {
+   "from": "A_679",
+   "to": "C_1526",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017610"
+   ]
+  },
+  {
+   "from": "A_678",
+   "to": "T_552",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012891"
+   ]
+  },
+  {
+   "from": "A_678",
+   "to": "C_1527",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017611"
+   ]
+  },
+  {
+   "from": "A_680",
+   "to": "T_552",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012892"
+   ]
+  },
+  {
+   "from": "A_680",
+   "to": "C_1528",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017612"
+   ]
+  },
+  {
+   "from": "A_006",
+   "to": "T_552",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012893"
+   ]
+  },
+  {
+   "from": "A_006",
+   "to": "C_1529",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017613"
+   ]
+  },
+  {
+   "from": "A_086",
+   "to": "T_552",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012894"
+   ]
+  },
+  {
+   "from": "A_086",
+   "to": "C_1530",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017614"
+   ]
+  },
+  {
+   "from": "M_127",
+   "to": "T_552",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012895"
+   ]
+  },
+  {
+   "from": "M_126",
+   "to": "T_552",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012896"
+   ]
+  },
+  {
+   "from": "M_173",
+   "to": "T_552",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012897"
+   ]
+  },
+  {
+   "from": "A_682",
+   "to": "A_681",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020150"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "미쓰비시상사와 미쓰이물산은 일본 종합상사 양대 경쟁"
+  },
+  {
+   "from": "A_679",
+   "to": "A_678",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020151"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "이토추상사와 마루베니는 일본 종합상사 시장 경쟁"
+  },
+  {
+   "from": "A_682",
+   "to": "A_679",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020152"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "미쓰비시상사와 이토추상사는 일본 종합상사 시장 경쟁"
+  },
+  {
+   "from": "A_680",
+   "to": "A_681",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020153"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "스미토모상사와 미쓰이물산은 일본 종합상사 시장 경쟁"
+  },
+  {
+   "from": "A_682",
+   "to": "A_006",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_020154"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "미쓰비시상사는 도요타 등 일본 제조사와 자원·유통 사업 협력"
+  },
+  {
+   "from": "A_973",
+   "to": "T_552",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020899"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_682",
+   "to": "T_552",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012888"
+   ]
+  },
+  {
+   "from": "A_682",
+   "to": "C_1524",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017608"
+   ]
+  },
+  {
+   "from": "A_681",
+   "to": "T_552",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012889"
+   ]
+  },
+  {
+   "from": "A_681",
+   "to": "C_1525",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017609"
+   ]
+  },
+  {
+   "from": "A_679",
+   "to": "T_552",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012890"
+   ]
+  },
+  {
+   "from": "A_679",
+   "to": "C_1526",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017610"
+   ]
+  },
+  {
+   "from": "A_678",
+   "to": "T_552",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012891"
+   ]
+  },
+  {
+   "from": "A_678",
+   "to": "C_1527",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017611"
+   ]
+  },
+  {
+   "from": "A_680",
+   "to": "T_552",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012892"
+   ]
+  },
+  {
+   "from": "A_680",
+   "to": "C_1528",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017612"
+   ]
+  },
+  {
+   "from": "A_006",
+   "to": "T_552",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012893"
+   ]
+  },
+  {
+   "from": "A_006",
+   "to": "C_1529",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017613"
+   ]
+  },
+  {
+   "from": "A_086",
+   "to": "T_552",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012894"
+   ]
+  },
+  {
+   "from": "A_086",
+   "to": "C_1530",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017614"
+   ]
+  },
+  {
+   "from": "M_127",
+   "to": "T_552",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012895"
+   ]
+  },
+  {
+   "from": "M_126",
+   "to": "T_552",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012896"
+   ]
+  },
+  {
+   "from": "M_173",
+   "to": "T_552",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012897"
+   ]
+  },
+  {
+   "from": "A_682",
+   "to": "A_681",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020150"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "미쓰비시상사와 미쓰이물산은 일본 종합상사 양대 경쟁"
+  },
+  {
+   "from": "A_679",
+   "to": "A_678",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020151"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "이토추상사와 마루베니는 일본 종합상사 시장 경쟁"
+  },
+  {
+   "from": "A_682",
+   "to": "A_679",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020152"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "미쓰비시상사와 이토추상사는 일본 종합상사 시장 경쟁"
+  },
+  {
+   "from": "A_680",
+   "to": "A_681",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020153"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "스미토모상사와 미쓰이물산은 일본 종합상사 시장 경쟁"
+  },
+  {
+   "from": "A_682",
+   "to": "A_006",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_020154"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "미쓰비시상사는 도요타 등 일본 제조사와 자원·유통 사업 협력"
+  },
+  {
+   "from": "A_973",
+   "to": "T_552",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020899"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ]
 }

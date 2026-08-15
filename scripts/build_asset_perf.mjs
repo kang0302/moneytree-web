@@ -51,11 +51,22 @@ for (let i = 1; i < rows.length; i++) {
     spy.push(spy0 ? +(asof(SPY, d) / spy0 * 100).toFixed(1) : null);
     qqq.push(qqq0 ? +(asof(QQQ, d) / qqq0 * 100).toFixed(1) : null);
   }
-  const ret = (arr, H) => { if (!arr || arr.length < 2) return null; const last = arr[arr.length - 1], base = arr[Math.max(0, arr.length - 1 - H)]; return base && base[1] > 0 ? +((last[1] / base[1] - 1) * 100).toFixed(2) : null; };
-  const retB = (arr, H) => { if (!arr) return null; const lastD = win[win.length - 1][0], baseD = win[Math.max(0, win.length - 1 - H)][0]; const a = asof(arr, lastD), b = asof(arr, baseD); return a && b ? +((a / b - 1) * 100).toFixed(2) : null; };
+  // 구글식 캐논: 캘린더 기준 N개월 전 앵커 + 그 날짜 이전 최근 거래일(as-of), 조정가 기준.
+  const lastD = win[win.length - 1][0];
+  const subMonths = (iso, m) => {
+    const [Y, M, D] = iso.split("-").map(Number);
+    let y = Y, mo = M - m;
+    while (mo <= 0) { mo += 12; y -= 1; }
+    let day = D;
+    while (day > 28) { const dt = new Date(Date.UTC(y, mo - 1, day)); if (dt.getUTCMonth() === mo - 1) break; day -= 1; }
+    const p = (n) => String(n).padStart(2, "0");
+    return `${y}-${p(mo)}-${p(day)}`;
+  };
+  const retCal = (arr, m) => { if (!arr) return null; const a = asof(arr, lastD), b = asof(arr, subMonths(lastD, m)); return a && b ? +((a / b - 1) * 100).toFixed(2) : null; };
   const returns = {};
-  for (const [lbl, H] of [["1M", 21], ["3M", 63], ["6M", 126], ["1Y", 252]]) {
-    returns[lbl] = { stock: ret(win, H), spy: retB(SPY, H), qqq: retB(QQQ, H) };
+  for (const [lbl, M] of [["1M", 1], ["3M", 3], ["6M", 6], ["1Y", 12]]) {
+    // stock은 전체 시계열(s)로 앵커 조회(창이 짧아도 정확한 캘린더 앵커 확보)
+    returns[lbl] = { stock: retCal(s, M), spy: retCal(SPY, M), qqq: retCal(QQQ, M) };
   }
   const out = { assetId: aid, ticker: tk, start, end: win[win.length - 1][0], dates, stock, spy, qqq, returns };
   fs.writeFileSync(path.join(OUT_DIR, `${aid}.json`), JSON.stringify(out));

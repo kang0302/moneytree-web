@@ -198,7 +198,7 @@ function coerceMetrics(metrics: any) {
     if (k in out) out[k] = toNumberOrKeep(out[k]);
   }
 
-  // return keys: ret7d, ret_7d, return_7d, return7d, ret1m, return_30d, etc.
+  // return keys: ret7d, ret_7d, return_5d, return7d, ret1m, return_30d, etc.
   for (const k of Object.keys(out)) {
     const key = k.toLowerCase();
     const looksReturn =
@@ -221,7 +221,7 @@ function coerceMetrics(metrics: any) {
 
 /**
  * ✅ PATCH(핵심):
- * 일부 theme json에서 return_7d 등이 node.metrics 안이 아니라 "노드 루트"에 들어있음.
+ * 일부 theme json에서 return_5d 등이 node.metrics 안이 아니라 "노드 루트"에 들어있음.
  * -> UI/Barometer/Top movers가 전부 '데이터 없음'으로 떨어지는 원인.
  * 해결: 노드 루트의 return/ret 키를 metrics로 승격(hoist)해서 통일.
  */
@@ -273,9 +273,9 @@ export default function GraphClient({
   const focusId = searchParams.get("focus");
 
   // ✅ period (header control)
-  const [period, setPeriod] = useState<PeriodKey>("7D");
+  const [period, setPeriod] = useState<PeriodKey>("5D");
 
-  // ✅ 테마 큐레이션 로그: 최근 변경(7일 이내) 여부 → 헤더 하이라이트 배지
+  // ✅ 테마 큐레이션 로그: 최근 변경(5일 이내) 여부 → 헤더 하이라이트 배지
   const changeDays = useMemo(() => latestChangeDays(changelog), [changelog]);
   const recentlyUpdated = changeDays !== null && changeDays <= 7;
 
@@ -747,7 +747,7 @@ export default function GraphClient({
   const periods: { key: PeriodKey; label: string }[] = [
     { key: "1D", label: "1일" },
     { key: "3D", label: "3일" },
-    { key: "7D", label: "7일" },
+    { key: "5D", label: "5일" },
     { key: "15D", label: "15일" },
     { key: "1M", label: "1개월" },
     { key: "YTD", label: "YTD" },
@@ -943,7 +943,7 @@ export default function GraphClient({
         <ThemeBriefing themeId={themeId} nodes={enrichedNodes as any} freshInsightIds={insightFreshIds} />
       </div>
 
-      {/* ✅ 테마 큐레이션 로그 — 신규/보강/변경/분할/수정 이력 (7일 이내 HIGHLIGHT) */}
+      {/* ✅ 테마 큐레이션 로그 — 신규/보강/변경/분할/수정 이력 (5일 이내 HIGHLIGHT) */}
       <div className="w-full">
         <ThemeChangelog changelog={changelog} />
       </div>

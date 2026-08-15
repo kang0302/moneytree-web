@@ -33,9 +33,9 @@ export function staleLabel(asOf?: string | null, now: Date = new Date()): string
 /* ─────────────────────────────────────────
    BAROMETER 추세 차트 — 기간별 overall score 시계열 (가까운 시간=왼쪽)
 ───────────────────────────────────────── */
-const TREND_PERIODS: PeriodKey[] = ["1D", "3D", "7D", "15D", "1M", "YTD", "1Y", "2Y", "3Y"];
+const TREND_PERIODS: PeriodKey[] = ["1D", "3D", "5D", "15D", "1M", "YTD", "1Y", "2Y", "3Y"];
 const TREND_LABELS: Record<PeriodKey, string> = {
-  "3Y": "3년", "2Y": "2년", "1Y": "1년", "YTD": "YTD", "1M": "1개월", "15D": "15일", "7D": "7일", "3D": "3일", "1D": "1일",
+  "3Y": "3년", "2Y": "2년", "1Y": "1년", "YTD": "YTD", "1M": "1개월", "15D": "15일", "5D": "5일", "3D": "3일", "1D": "1일",
 };
 
 /** Catmull-Rom 기반 cubic-bezier smooth path. tension 0.2 ~ 0.3이 자연스러움. */
@@ -394,7 +394,7 @@ function TempBadge({ score }: { score: number }) {
 export default function GraphRightPanel({
   currentThemeId,
   themeName,
-  period = "7D",
+  period = "5D",
   onChangePeriod,
   themeReturn,
   snapRow,
@@ -519,7 +519,7 @@ export default function GraphRightPanel({
       <BarometerTrendChart
         nodes={nodes}
         edges={edges}
-        period={(period ?? "7D") as PeriodKey}
+        period={(period ?? "5D") as PeriodKey}
         onChangePeriod={onChangePeriod}
         snapRow={snapRow}
       />

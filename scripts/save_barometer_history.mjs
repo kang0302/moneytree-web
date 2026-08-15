@@ -17,7 +17,7 @@ import path from "node:path";
 
 const THEME_DIR = "public/data/theme";
 const HISTORY_DIR = "public/data/history";
-const PERIOD = "7D";
+const PERIOD = "5D";
 const KEEP_DAYS = 90;
 const MIN_ASSETS = 5;
 
@@ -42,7 +42,7 @@ function normalizeToPct(v) {
 
 const RET_KEYS = {
   "3D": ["return_3d", "return_3D", "return3d", "ret_3d", "ret3d"],
-  "7D": ["return_7d", "return_7D", "return7d", "ret_7d", "ret7d"],
+  "5D": ["return_5d", "return_7D", "return7d", "ret_7d", "ret7d"],
   "1M": ["return_1m", "return_30d", "return_30D", "return1m", "return30d", "ret_1m", "ret_30d", "ret1m", "ret30d"],
   YTD: ["return_ytd", "return_YTD", "returnYtd", "ret_ytd", "retYtd"],
   "1Y": ["return_1y", "return_1Y", "return1y", "ret_1y", "ret1y"],
@@ -64,7 +64,7 @@ function extractReturn(metrics, period) {
 const PERIOD_ANCHORS = {
   "1D": { retSat: 4, tailThresh: 5 },
   "3D": { retSat: 6, tailThresh: 8 },
-  "7D": { retSat: 9, tailThresh: 12 },
+  "5D": { retSat: 9, tailThresh: 12 },
   "15D": { retSat: 13, tailThresh: 15 },
   "1M": { retSat: 16.7, tailThresh: 15 },
   YTD: { retSat: 30, tailThresh: 25 },

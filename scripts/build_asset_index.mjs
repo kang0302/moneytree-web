@@ -106,7 +106,7 @@ function computeThemeScore7d(theme) {
   const rets = [];
   for (const n of theme?.nodes ?? []) {
     if (n?.type !== "ASSET") continue;
-    const v = n?.metrics?.return_7d;
+    const v = n?.metrics?.return_5d;
     if (Number.isFinite(v)) rets.push(v);
   }
   if (!rets.length) return null;
@@ -190,7 +190,7 @@ function main() {
 
   // 자산별 metrics (테마 노드에서 첫 발견) — 수익률·PER·시총·종가
   const assetMetrics = new Map();
-  const MK = ["return_1d", "return_3d", "return_7d", "return_15d", "return_1m", "return_ytd", "return_1y", "return_2y", "return_3y", "pe_ttm", "marketCap", "close", "returnsAsOf", "valuationAsOf"];
+  const MK = ["return_1d", "return_3d", "return_5d", "return_15d", "return_1m", "return_ytd", "return_1y", "return_2y", "return_3y", "pe_ttm", "marketCap", "close", "returnsAsOf", "valuationAsOf"];
   for (const t of themes) {
     for (const n of t?.nodes ?? []) {
       if (n?.type !== "ASSET" || !n?.id || !n?.metrics) continue;

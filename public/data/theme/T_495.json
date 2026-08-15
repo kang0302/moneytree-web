@@ -1,796 +1,796 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_495",
-  "themeName": "(Y16) 트럼프 트레이드(리플레이션)",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-25T00:00:00+09:00",
-    "description": "2016.11 트럼프 당선이 촉발한 리플레이션 트레이드 회고 — 금융·인프라·방산·에너지·달러 동반 랠리. 은행(JPM·BAC·GS)·인프라(Caterpillar·Nucor)·방산(Lockheed)·에너지(Exxon)·달러(UUP). 2024 트럼프 2.0으로 반복.",
-    "notes": "T_495 신규 — 2016 회고 테마(Y16). 자산별 CHARACTER, MACRO 3(기존 재사용)",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-08-04",
-        "kind": "보강",
-        "title": "2궤도 관계 엣지 추가",
-        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
-      },
-      {
-        "date": "2026-07-25",
-        "kind": "수정",
-        "title": "구체적 엣지 백필 + 이벤트",
-        "detail": "THEMED_AS/IMPACTS 근거 구체화, 이벤트(회고+2026 에코) 추가."
-      },
-      {
-        "date": "2026-08-05",
-        "kind": "관계",
-        "title": "EXPOSED_TO ETF 연결",
-        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-      }
-    ]
-  },
-  "nodes": [
-    {
-      "id": "T_495",
-      "type": "THEME",
-      "name": "(Y16) 트럼프 트레이드(리플레이션)"
-    },
-    {
-      "id": "A_293",
-      "type": "ASSET",
-      "name": "JP모건",
-      "exposure": {
-        "ticker": "JPM",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.07435763267330531,
-        "return_3d": 0.22097005855705731,
-        "return_7d": 1.0021155773298984,
-        "return_15d": 2.7264233741966626,
-        "return_1m": 5.73801544514061,
-        "return_ytd": 11.478431854491822,
-        "return_1y": 24.888995972877147,
-        "return_2y": 76.30709426627791,
-        "return_3y": 135.93211522205607,
-        "close": 362.84,
-        "marketCap": 972233408400,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1112",
-      "type": "CHARACTER",
-      "name": "대형 은행 — 금리·규제완화"
-    },
-    {
-      "id": "A_113",
-      "type": "ASSET",
-      "name": "뱅크오브아메리카",
-      "exposure": {
-        "ticker": "BAC",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.624122327976262,
-        "return_3d": 0.765624999999992,
-        "return_7d": 1.9604743083003973,
-        "return_15d": 3.9323126510878215,
-        "return_1m": 4.878842088144397,
-        "return_ytd": 15.263628239499539,
-        "return_1y": 36.51566469093987,
-        "return_2y": 68.46917450365724,
-        "return_3y": 108.97602073882044,
-        "close": 64.49,
-        "marketCap": 457659089100,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1113",
-      "type": "CHARACTER",
-      "name": "대형 은행 — 금리 레버리지"
-    },
-    {
-      "id": "A_294",
-      "type": "ASSET",
-      "name": "골드만삭스",
-      "exposure": {
-        "ticker": "GS",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.30787527694388084,
-        "return_3d": 0.48433406482921715,
-        "return_7d": -1.976649880231618,
-        "return_15d": -2.0551624058875007,
-        "return_1m": -5.11565917514103,
-        "return_ytd": 13.679812761117315,
-        "return_1y": 39.577542333051326,
-        "return_2y": 112.01403337004857,
-        "return_3y": 203.31203128191663,
-        "close": 1039.42,
-        "marketCap": 306636175940,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1114",
-      "type": "CHARACTER",
-      "name": "투자은행 — 정책 수혜"
-    },
-    {
-      "id": "A_310",
-      "type": "ASSET",
-      "name": "캐터필라",
-      "exposure": {
-        "ticker": "CAT",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.23051720102973405,
-        "return_3d": 1.5651493413329831,
-        "return_7d": -1.6657482665197176,
-        "return_15d": -3.6186468331214194,
-        "return_1m": -2.3484615296920697,
-        "return_ytd": 43.14099029093767,
-        "return_1y": 107.0510031423737,
-        "return_2y": 153.228285933897,
-        "return_3y": 201.04734122939587,
-        "close": 856.57,
-        "marketCap": 394567835090,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1115",
-      "type": "CHARACTER",
-      "name": "인프라 중장비 — 부양 수혜"
-    },
-    {
-      "id": "A_2055",
-      "type": "ASSET",
-      "name": "누코어",
-      "exposure": {
-        "ticker": "NUE",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -1.241323588820742,
-        "return_3d": -1.1178525464239586,
-        "return_7d": -2.1220062604644374,
-        "return_15d": 8.624171917918888,
-        "return_1m": 14.104468112190794,
-        "return_ytd": 58.742621015348305,
-        "return_1y": 84.38699945145368,
-        "return_2y": 85.27628496623953,
-        "return_3y": 58.76136497815565,
-        "close": 268.91,
-        "marketCap": 61241832310,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1116",
-      "type": "CHARACTER",
-      "name": "철강 — 관세·인프라 수혜"
-    },
-    {
-      "id": "A_421",
-      "type": "ASSET",
-      "name": "록히드마틴",
-      "exposure": {
-        "ticker": "LMT",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 1.7842510994799277,
-        "return_3d": 1.8251166836743105,
-        "return_7d": 5.380886426592779,
-        "return_15d": 4.476484723652585,
-        "return_1m": 18.53092381990964,
-        "return_ytd": 22.45357796688594,
-        "return_1y": 37.53304561990192,
-        "return_2y": 10.352079480764331,
-        "return_3y": 34.422826351008126,
-        "close": 608.68,
-        "marketCap": 140477865880,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1117",
-      "type": "CHARACTER",
-      "name": "방산 — 국방예산 수혜"
-    },
-    {
-      "id": "A_327",
-      "type": "ASSET",
-      "name": "엑슨모빌",
-      "exposure": {
-        "ticker": "XOM",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.9331063615156676,
-        "return_3d": 0.18147684605755998,
-        "return_7d": 5.579370836905628,
-        "return_15d": 2.0071364852810136,
-        "return_1m": 9.68824940047963,
-        "return_ytd": 30.525886669384427,
-        "return_1y": 48.78252788104089,
-        "return_2y": 34.69920067311738,
-        "return_3y": 46.12084702446148,
-        "close": 160.09,
-        "marketCap": 663486601400,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1118",
-      "type": "CHARACTER",
-      "name": "에너지 — 화석연료 진흥"
-    },
-    {
-      "id": "A_1492",
-      "type": "ASSET",
-      "name": "인베스코달러인덱스강세펀드",
-      "exposure": {
-        "ticker": "UUP",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.24840312278211485,
-        "return_3d": -0.10660980810235365,
-        "return_7d": 0.07119971520113122,
-        "return_15d": -1.6445066480055948,
-        "return_1m": -0.8115737473535667,
-        "return_ytd": 3.688675765400218,
-        "return_1y": 2.8540065861690556,
-        "return_2y": -1.610080504025202,
-        "return_3y": -1.2297962052002842,
-        "close": 28.11,
-        "marketCap": 397789782,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1119",
-      "type": "CHARACTER",
-      "name": "달러 강세 ETF"
-    },
-    {
-      "id": "M_070",
-      "type": "MACRO",
-      "name": "트럼프정책리스크"
-    },
-    {
-      "id": "M_072",
-      "type": "MACRO",
-      "name": "금리인상"
-    },
-    {
-      "id": "M_363",
-      "type": "MACRO",
-      "name": "미국인프라capex"
-    },
-    {
-      "id": "A_632",
-      "type": "ASSET",
-      "name": "XLF",
-      "exposure": {
-        "ticker": "XLF",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "Financial Select Sector SPDR. 버크셔·JPM·비자·마스터카드 등 은행·결제·보험, 순이자마진·자본시장·규제완화에 민감."
-      },
-      "metrics": {
-        "return_1d": -0.1716443529007905,
-        "close": 58.16,
-        "marketCap": 59134999823,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 0.6228373702422241,
-        "return_7d": 0.27586206896550447,
-        "return_15d": 3.285384478778175,
-        "return_1m": 2.4845814977973557,
-        "return_ytd": 5.880211177862726,
-        "return_1y": 10.235026535253988,
-        "return_2y": 37.16981132075472,
-        "return_3y": 67.03044227455483,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    }
+ "schemaVersion": "v5",
+ "themeId": "T_495",
+ "themeName": "(Y16) 트럼프 트레이드(리플레이션)",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
   ],
-  "edges": [
-    {
-      "from": "A_293",
-      "to": "T_495",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012305"
-      ]
-    },
-    {
-      "from": "A_293",
-      "to": "C_1112",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017196"
-      ]
-    },
-    {
-      "from": "A_113",
-      "to": "T_495",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012306"
-      ]
-    },
-    {
-      "from": "A_113",
-      "to": "C_1113",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017197"
-      ]
-    },
-    {
-      "from": "A_294",
-      "to": "T_495",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012307"
-      ]
-    },
-    {
-      "from": "A_294",
-      "to": "C_1114",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017198"
-      ]
-    },
-    {
-      "from": "A_310",
-      "to": "T_495",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012308"
-      ]
-    },
-    {
-      "from": "A_310",
-      "to": "C_1115",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017199"
-      ]
-    },
-    {
-      "from": "A_2055",
-      "to": "T_495",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012309"
-      ]
-    },
-    {
-      "from": "A_2055",
-      "to": "C_1116",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017200"
-      ]
-    },
-    {
-      "from": "A_421",
-      "to": "T_495",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012310"
-      ]
-    },
-    {
-      "from": "A_421",
-      "to": "C_1117",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017201"
-      ]
-    },
-    {
-      "from": "A_327",
-      "to": "T_495",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012311"
-      ]
-    },
-    {
-      "from": "A_327",
-      "to": "C_1118",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017202"
-      ]
-    },
-    {
-      "from": "A_1492",
-      "to": "T_495",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012312"
-      ]
-    },
-    {
-      "from": "A_1492",
-      "to": "C_1119",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017203"
-      ]
-    },
-    {
-      "from": "M_070",
-      "to": "T_495",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012313"
-      ]
-    },
-    {
-      "from": "M_072",
-      "to": "T_495",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012314"
-      ]
-    },
-    {
-      "from": "M_363",
-      "to": "T_495",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012315"
-      ]
-    },
-    {
-      "from": "A_293",
-      "to": "A_113",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019920"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "JP모건과 뱅크오브아메리카는 미국 대형은행 시장 경쟁"
-    },
-    {
-      "from": "A_294",
-      "to": "A_293",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019921"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "골드만삭스와 JP모건은 투자은행 시장 경쟁"
-    },
-    {
-      "from": "A_421",
-      "to": "A_310",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019922"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "록히드마틴과 캐터필라는 인프라·방산 재정지출 수혜 경쟁"
-    },
-    {
-      "from": "A_2055",
-      "to": "A_310",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_019923"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "누코어는 캐터필라 등 기계 제조사에 철강을 공급"
-    },
-    {
-      "from": "A_327",
-      "to": "A_2055",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019924"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "엑슨모빌과 누코어는 리플레이션 사이클 원자재 대표주 경쟁"
-    },
-    {
-      "from": "A_632",
-      "to": "T_495",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020844"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_293",
-      "to": "T_495",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012305"
-      ]
-    },
-    {
-      "from": "A_293",
-      "to": "C_1112",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017196"
-      ]
-    },
-    {
-      "from": "A_113",
-      "to": "T_495",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012306"
-      ]
-    },
-    {
-      "from": "A_113",
-      "to": "C_1113",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017197"
-      ]
-    },
-    {
-      "from": "A_294",
-      "to": "T_495",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012307"
-      ]
-    },
-    {
-      "from": "A_294",
-      "to": "C_1114",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017198"
-      ]
-    },
-    {
-      "from": "A_310",
-      "to": "T_495",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012308"
-      ]
-    },
-    {
-      "from": "A_310",
-      "to": "C_1115",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017199"
-      ]
-    },
-    {
-      "from": "A_2055",
-      "to": "T_495",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012309"
-      ]
-    },
-    {
-      "from": "A_2055",
-      "to": "C_1116",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017200"
-      ]
-    },
-    {
-      "from": "A_421",
-      "to": "T_495",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012310"
-      ]
-    },
-    {
-      "from": "A_421",
-      "to": "C_1117",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017201"
-      ]
-    },
-    {
-      "from": "A_327",
-      "to": "T_495",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012311"
-      ]
-    },
-    {
-      "from": "A_327",
-      "to": "C_1118",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017202"
-      ]
-    },
-    {
-      "from": "A_1492",
-      "to": "T_495",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012312"
-      ]
-    },
-    {
-      "from": "A_1492",
-      "to": "C_1119",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017203"
-      ]
-    },
-    {
-      "from": "M_070",
-      "to": "T_495",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012313"
-      ]
-    },
-    {
-      "from": "M_072",
-      "to": "T_495",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012314"
-      ]
-    },
-    {
-      "from": "M_363",
-      "to": "T_495",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012315"
-      ]
-    },
-    {
-      "from": "A_293",
-      "to": "A_113",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019920"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "JP모건과 뱅크오브아메리카는 미국 대형은행 시장 경쟁"
-    },
-    {
-      "from": "A_294",
-      "to": "A_293",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019921"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "골드만삭스와 JP모건은 투자은행 시장 경쟁"
-    },
-    {
-      "from": "A_421",
-      "to": "A_310",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019922"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "록히드마틴과 캐터필라는 인프라·방산 재정지출 수혜 경쟁"
-    },
-    {
-      "from": "A_2055",
-      "to": "A_310",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_019923"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "누코어는 캐터필라 등 기계 제조사에 철강을 공급"
-    },
-    {
-      "from": "A_327",
-      "to": "A_2055",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019924"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "엑슨모빌과 누코어는 리플레이션 사이클 원자재 대표주 경쟁"
-    },
-    {
-      "from": "A_632",
-      "to": "T_495",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020844"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
+  "dataAsOf": "2026-07-25T00:00:00+09:00",
+  "description": "2016.11 트럼프 당선이 촉발한 리플레이션 트레이드 회고 — 금융·인프라·방산·에너지·달러 동반 랠리. 은행(JPM·BAC·GS)·인프라(Caterpillar·Nucor)·방산(Lockheed)·에너지(Exxon)·달러(UUP). 2024 트럼프 2.0으로 반복.",
+  "notes": "T_495 신규 — 2016 회고 테마(Y16). 자산별 CHARACTER, MACRO 3(기존 재사용)",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-08-04",
+    "kind": "보강",
+    "title": "2궤도 관계 엣지 추가",
+    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
+   },
+   {
+    "date": "2026-07-25",
+    "kind": "수정",
+    "title": "구체적 엣지 백필 + 이벤트",
+    "detail": "THEMED_AS/IMPACTS 근거 구체화, 이벤트(회고+2026 에코) 추가."
+   },
+   {
+    "date": "2026-08-05",
+    "kind": "관계",
+    "title": "EXPOSED_TO ETF 연결",
+    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+   }
   ]
+ },
+ "nodes": [
+  {
+   "id": "T_495",
+   "type": "THEME",
+   "name": "(Y16) 트럼프 트레이드(리플레이션)"
+  },
+  {
+   "id": "A_293",
+   "type": "ASSET",
+   "name": "JP모건",
+   "exposure": {
+    "ticker": "JPM",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.07435763267330531,
+    "return_3d": 0.22097005855705731,
+    "return_15d": 2.7264233741966626,
+    "return_1m": 5.818192423226098,
+    "return_ytd": 14.203627674267238,
+    "return_1y": 25.70571752452169,
+    "return_3y": 150.4291266384286,
+    "close": 362.84,
+    "marketCap": 972233408400,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 1.488028641754302,
+    "return_2y": 79.83235009716714
+   }
+  },
+  {
+   "id": "C_1112",
+   "type": "CHARACTER",
+   "name": "대형 은행 — 금리·규제완화"
+  },
+  {
+   "id": "A_113",
+   "type": "ASSET",
+   "name": "뱅크오브아메리카",
+   "exposure": {
+    "ticker": "BAC",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.624122327976262,
+    "return_3d": 0.765624999999992,
+    "return_15d": 3.9323126510878215,
+    "return_1m": 6.384031672715262,
+    "return_ytd": 18.530145327625846,
+    "return_1y": 38.115216660348786,
+    "return_3y": 124.76335196776844,
+    "close": 64.49,
+    "marketCap": 457659089100,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 2.0895994934304163,
+    "return_2y": 73.9493985002967
+   }
+  },
+  {
+   "id": "C_1113",
+   "type": "CHARACTER",
+   "name": "대형 은행 — 금리 레버리지"
+  },
+  {
+   "id": "A_294",
+   "type": "ASSET",
+   "name": "골드만삭스",
+   "exposure": {
+    "ticker": "GS",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.30787527694388084,
+    "return_3d": 0.48433406482921715,
+    "return_15d": -2.0551624058875007,
+    "return_1m": -8.822807017543855,
+    "return_ytd": 19.396490725067594,
+    "return_1y": 41.909001136315084,
+    "return_3y": 230.1602265908865,
+    "close": 1039.42,
+    "marketCap": 306636175940,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -0.018276084300827833,
+    "return_2y": 117.08157256429095
+   }
+  },
+  {
+   "id": "C_1114",
+   "type": "CHARACTER",
+   "name": "투자은행 — 정책 수혜"
+  },
+  {
+   "id": "A_310",
+   "type": "ASSET",
+   "name": "캐터필라",
+   "exposure": {
+    "ticker": "CAT",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.23051720102973405,
+    "return_3d": 1.5651493413329831,
+    "return_15d": -3.6186468331214194,
+    "return_1m": -8.05504052815137,
+    "return_ytd": 50.43629986801679,
+    "return_1y": 107.01327338454631,
+    "return_3y": 214.04592651742544,
+    "close": 856.57,
+    "marketCap": 394567835090,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 1.7074531875230115,
+    "return_2y": 160.10927036885428
+   }
+  },
+  {
+   "id": "C_1115",
+   "type": "CHARACTER",
+   "name": "인프라 중장비 — 부양 수혜"
+  },
+  {
+   "id": "A_2055",
+   "type": "ASSET",
+   "name": "누코어",
+   "exposure": {
+    "ticker": "NUE",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -1.241323588820742,
+    "return_3d": -1.1178525464239586,
+    "return_15d": 8.624171917918888,
+    "return_1m": 14.84028015032457,
+    "return_ytd": 65.83280555361988,
+    "return_1y": 88.78667127207578,
+    "return_3y": 63.17126642043225,
+    "close": 268.91,
+    "marketCap": 61241832310,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -1.364486666911191,
+    "return_2y": 96.23654344627887
+   }
+  },
+  {
+   "id": "C_1116",
+   "type": "CHARACTER",
+   "name": "철강 — 관세·인프라 수혜"
+  },
+  {
+   "id": "A_421",
+   "type": "ASSET",
+   "name": "록히드마틴",
+   "exposure": {
+    "ticker": "LMT",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 1.7842510994799277,
+    "return_3d": 1.8251166836743105,
+    "return_15d": 4.476484723652585,
+    "return_1m": 18.192586263810927,
+    "return_ytd": 27.337553511458324,
+    "return_1y": 42.94534386095681,
+    "return_3y": 46.57388245481633,
+    "close": 608.68,
+    "marketCap": 140477865880,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 3.525810017858655,
+    "return_2y": 13.920143977933176
+   }
+  },
+  {
+   "id": "C_1117",
+   "type": "CHARACTER",
+   "name": "방산 — 국방예산 수혜"
+  },
+  {
+   "id": "A_327",
+   "type": "ASSET",
+   "name": "엑슨모빌",
+   "exposure": {
+    "ticker": "XOM",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.939411134228596,
+    "return_3d": 0.1877346683354153,
+    "return_15d": 2.013508347139026,
+    "return_1m": 10.345302915431787,
+    "return_ytd": 34.83547293057867,
+    "return_1y": 53.84925847732476,
+    "return_3y": 58.13438953804213,
+    "close": 160.1,
+    "marketCap": 663486601400,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 4.613173026659689,
+    "return_2y": 43.727562206384164
+   }
+  },
+  {
+   "id": "C_1118",
+   "type": "CHARACTER",
+   "name": "에너지 — 화석연료 진흥"
+  },
+  {
+   "id": "A_1492",
+   "type": "ASSET",
+   "name": "인베스코달러인덱스강세펀드",
+   "exposure": {
+    "ticker": "UUP",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.24840312278211485,
+    "return_3d": -0.10660980810235365,
+    "return_15d": -1.6445066480055948,
+    "return_1m": -0.9862627685804926,
+    "return_ytd": 3.9955604883462836,
+    "return_1y": 5.979090713728263,
+    "return_3y": 12.737627336167478,
+    "close": 28.11,
+    "marketCap": 397789782,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 0.14250089063057025,
+    "return_2y": 6.7907683540697095
+   }
+  },
+  {
+   "id": "C_1119",
+   "type": "CHARACTER",
+   "name": "달러 강세 ETF"
+  },
+  {
+   "id": "M_070",
+   "type": "MACRO",
+   "name": "트럼프정책리스크"
+  },
+  {
+   "id": "M_072",
+   "type": "MACRO",
+   "name": "금리인상"
+  },
+  {
+   "id": "M_363",
+   "type": "MACRO",
+   "name": "미국인프라capex"
+  },
+  {
+   "id": "A_632",
+   "type": "ASSET",
+   "name": "XLF",
+   "exposure": {
+    "ticker": "XLF",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "Financial Select Sector SPDR. 버크셔·JPM·비자·마스터카드 등 은행·결제·보험, 순이자마진·자본시장·규제완화에 민감."
+   },
+   "metrics": {
+    "return_1d": -0.1716443529007905,
+    "close": 58.16,
+    "marketCap": 59134999823,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 0.6228373702422241,
+    "return_15d": 3.285384478778175,
+    "return_1m": 3.524385902456384,
+    "return_ytd": 7.108261111377123,
+    "return_1y": 11.416770752714523,
+    "return_3y": 74.9915001549529,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 0.9722222222222188,
+    "return_2y": 39.2566910733013
+   }
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_293",
+   "to": "T_495",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012305"
+   ]
+  },
+  {
+   "from": "A_293",
+   "to": "C_1112",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017196"
+   ]
+  },
+  {
+   "from": "A_113",
+   "to": "T_495",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012306"
+   ]
+  },
+  {
+   "from": "A_113",
+   "to": "C_1113",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017197"
+   ]
+  },
+  {
+   "from": "A_294",
+   "to": "T_495",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012307"
+   ]
+  },
+  {
+   "from": "A_294",
+   "to": "C_1114",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017198"
+   ]
+  },
+  {
+   "from": "A_310",
+   "to": "T_495",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012308"
+   ]
+  },
+  {
+   "from": "A_310",
+   "to": "C_1115",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017199"
+   ]
+  },
+  {
+   "from": "A_2055",
+   "to": "T_495",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012309"
+   ]
+  },
+  {
+   "from": "A_2055",
+   "to": "C_1116",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017200"
+   ]
+  },
+  {
+   "from": "A_421",
+   "to": "T_495",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012310"
+   ]
+  },
+  {
+   "from": "A_421",
+   "to": "C_1117",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017201"
+   ]
+  },
+  {
+   "from": "A_327",
+   "to": "T_495",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012311"
+   ]
+  },
+  {
+   "from": "A_327",
+   "to": "C_1118",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017202"
+   ]
+  },
+  {
+   "from": "A_1492",
+   "to": "T_495",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012312"
+   ]
+  },
+  {
+   "from": "A_1492",
+   "to": "C_1119",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017203"
+   ]
+  },
+  {
+   "from": "M_070",
+   "to": "T_495",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012313"
+   ]
+  },
+  {
+   "from": "M_072",
+   "to": "T_495",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012314"
+   ]
+  },
+  {
+   "from": "M_363",
+   "to": "T_495",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012315"
+   ]
+  },
+  {
+   "from": "A_293",
+   "to": "A_113",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019920"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "JP모건과 뱅크오브아메리카는 미국 대형은행 시장 경쟁"
+  },
+  {
+   "from": "A_294",
+   "to": "A_293",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019921"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "골드만삭스와 JP모건은 투자은행 시장 경쟁"
+  },
+  {
+   "from": "A_421",
+   "to": "A_310",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019922"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "록히드마틴과 캐터필라는 인프라·방산 재정지출 수혜 경쟁"
+  },
+  {
+   "from": "A_2055",
+   "to": "A_310",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_019923"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "누코어는 캐터필라 등 기계 제조사에 철강을 공급"
+  },
+  {
+   "from": "A_327",
+   "to": "A_2055",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019924"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "엑슨모빌과 누코어는 리플레이션 사이클 원자재 대표주 경쟁"
+  },
+  {
+   "from": "A_632",
+   "to": "T_495",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020844"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_293",
+   "to": "T_495",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012305"
+   ]
+  },
+  {
+   "from": "A_293",
+   "to": "C_1112",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017196"
+   ]
+  },
+  {
+   "from": "A_113",
+   "to": "T_495",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012306"
+   ]
+  },
+  {
+   "from": "A_113",
+   "to": "C_1113",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017197"
+   ]
+  },
+  {
+   "from": "A_294",
+   "to": "T_495",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012307"
+   ]
+  },
+  {
+   "from": "A_294",
+   "to": "C_1114",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017198"
+   ]
+  },
+  {
+   "from": "A_310",
+   "to": "T_495",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012308"
+   ]
+  },
+  {
+   "from": "A_310",
+   "to": "C_1115",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017199"
+   ]
+  },
+  {
+   "from": "A_2055",
+   "to": "T_495",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012309"
+   ]
+  },
+  {
+   "from": "A_2055",
+   "to": "C_1116",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017200"
+   ]
+  },
+  {
+   "from": "A_421",
+   "to": "T_495",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012310"
+   ]
+  },
+  {
+   "from": "A_421",
+   "to": "C_1117",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017201"
+   ]
+  },
+  {
+   "from": "A_327",
+   "to": "T_495",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012311"
+   ]
+  },
+  {
+   "from": "A_327",
+   "to": "C_1118",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017202"
+   ]
+  },
+  {
+   "from": "A_1492",
+   "to": "T_495",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012312"
+   ]
+  },
+  {
+   "from": "A_1492",
+   "to": "C_1119",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017203"
+   ]
+  },
+  {
+   "from": "M_070",
+   "to": "T_495",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012313"
+   ]
+  },
+  {
+   "from": "M_072",
+   "to": "T_495",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012314"
+   ]
+  },
+  {
+   "from": "M_363",
+   "to": "T_495",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012315"
+   ]
+  },
+  {
+   "from": "A_293",
+   "to": "A_113",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019920"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "JP모건과 뱅크오브아메리카는 미국 대형은행 시장 경쟁"
+  },
+  {
+   "from": "A_294",
+   "to": "A_293",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019921"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "골드만삭스와 JP모건은 투자은행 시장 경쟁"
+  },
+  {
+   "from": "A_421",
+   "to": "A_310",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019922"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "록히드마틴과 캐터필라는 인프라·방산 재정지출 수혜 경쟁"
+  },
+  {
+   "from": "A_2055",
+   "to": "A_310",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_019923"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "누코어는 캐터필라 등 기계 제조사에 철강을 공급"
+  },
+  {
+   "from": "A_327",
+   "to": "A_2055",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019924"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "엑슨모빌과 누코어는 리플레이션 사이클 원자재 대표주 경쟁"
+  },
+  {
+   "from": "A_632",
+   "to": "T_495",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020844"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ]
 }

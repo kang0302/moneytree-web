@@ -1,1004 +1,1002 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_235",
-  "themeName": "국가별장기국채ETF",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-05-19T00:00:00+09:00",
-    "description": "미국 TLT·일본·영국·독일·캐나다·호주·EU 국채와 한국 TIGER 중장기 국채, EM 채권(EMB USD·EMLC 로컬통화·BWX 인터내셔널) 등 주요국 장기 국채 ETF 묶음. 듀레이션·금리 사이클·통화 변동·신용 스프레드·중앙은행 정책이 핵심 동인.",
-    "notes": "g235 누적 import 기반 국가별 장기국채 ETF 테마",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-07-16",
-        "kind": "보강",
-        "title": "자산별 테마관점 CHR 정의",
-        "detail": "자산 12개에 테마 관점 특성(CHARACTER)·HAS_TRAIT를 부여했다."
-      },
-      {
-        "date": "2026-07-16",
-        "kind": "보강",
-        "title": "엣지 근거 구체 백필 + 2026 이벤트",
-        "detail": "전 엣지 근거를 종목·관계 사실로 구체화하고 2026 이벤트를 추가했다."
-      }
-    ]
-  },
-  "nodes": [
-    {
-      "id": "T_235",
-      "type": "THEME",
-      "name": "국가별장기국채ETF"
-    },
-    {
-      "id": "A_1487",
-      "type": "ASSET",
-      "name": "TLT",
-      "exposure": {
-        "ticker": "TLT",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.6659401864632541,
-        "close": 82.04,
-        "marketCap": 41473058188,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": -0.18250395425233323,
-        "return_7d": -1.1566265060240943,
-        "return_15d": -1.453453453453446,
-        "return_1m": -2.57689110556939,
-        "return_ytd": -5.733655061473053,
-        "return_1y": -6.421809056689853,
-        "return_2y": -14.77249116974859,
-        "return_3y": -15.588023459203615,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      },
-      "coreBiz": "TLT는 미국 장기국채 ETF다"
-    },
-    {
-      "id": "A_1519",
-      "type": "ASSET",
-      "name": "Australia gov’t bond long-term ETF",
-      "exposure": {
-        "ticker": "ALTB",
-        "exchange": "ASX",
-        "country": "AU"
-      },
-      "metrics": {
-        "return_1d": null,
-        "close": null,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": null,
-        "valuationSource": null,
-        "return_3d": null,
-        "return_7d": null,
-        "return_15d": null,
-        "return_1m": null,
-        "return_ytd": null,
-        "return_1y": null,
-        "return_2y": null,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1520",
-      "type": "ASSET",
-      "name": "Canada gov’t bond long-term ETF",
-      "exposure": {
-        "ticker": "XLB",
-        "exchange": "TSX",
-        "country": "CA"
-      },
-      "metrics": {
-        "return_1d": -0.6633499170812684,
-        "close": 17.97,
-        "marketCap": 722616594,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 0.2230897936419396,
-        "return_7d": -1.749589939857843,
-        "return_15d": -1.1007154650523043,
-        "return_1m": -2.390005431830533,
-        "return_ytd": -2.5488069414316805,
-        "return_1y": -3.335126412049494,
-        "return_2y": -8.781725888324877,
-        "return_3y": -3.8523274478330816,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1521",
-      "type": "ASSET",
-      "name": "Japan gov’t bond long-term ETF",
-      "exposure": {
-        "ticker": "2561",
-        "exchange": "TSE",
-        "country": "JP"
-      },
-      "metrics": {
-        "return_1d": null,
-        "close": null,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": null,
-        "valuationSource": null,
-        "return_3d": null,
-        "return_7d": null,
-        "return_15d": null,
-        "return_1m": null,
-        "return_ytd": null,
-        "return_1y": null,
-        "return_2y": null,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1522",
-      "type": "ASSET",
-      "name": "UK gilt long-dated ETF",
-      "exposure": {
-        "ticker": "GLTL",
-        "exchange": "LSE",
-        "country": "GB"
-      },
-      "metrics": {
-        "return_1d": -0.883876866808897,
-        "close": 32.52,
-        "marketCap": 241784704,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": -1.0045662100456543,
-        "return_7d": -1.8412315122245726,
-        "return_15d": -2.9543419874664134,
-        "return_1m": -3.6158861885002946,
-        "return_ytd": -9.339280735991062,
-        "return_1y": -3.985828166519023,
-        "return_2y": -18.516662490603842,
-        "return_3y": -11.582381729200641,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1523",
-      "type": "ASSET",
-      "name": "Germany Bund long-dated ETF",
-      "exposure": {
-        "ticker": "SDEU",
-        "exchange": "LSE",
-        "country": "DE"
-      },
-      "metrics": {
-        "return_1d": -0.37059294871795156,
-        "close": 99.465,
-        "marketCap": 132330325,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": -0.2507019655034082,
-        "return_7d": -0.8868074930251102,
-        "return_15d": 0.1409443269908328,
-        "return_1m": 0.5865102639296182,
-        "return_ytd": -3.211053809477471,
-        "return_1y": -3.7262872628726185,
-        "return_2y": -5.5993166935560446,
-        "return_3y": -1.8646408839778972,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1524",
-      "type": "ASSET",
-      "name": "Eurozone long-dated gov’t bond ETF",
-      "exposure": {
-        "ticker": "E20Y",
-        "exchange": "SIX",
-        "country": "EU"
-      },
-      "metrics": {
-        "return_1d": 0.5249343832020914,
-        "close": 3.8437,
-        "marketCap": 459970940,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 1.055408970976246,
-        "return_7d": -0.26041666666666297,
-        "return_15d": -0.5194805194805197,
-        "return_1m": -1.7948717948717885,
-        "return_ytd": -3.7688442211055273,
-        "return_1y": null,
-        "return_2y": null,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1525",
-      "type": "ASSET",
-      "name": "TIGER중장기국채",
-      "exposure": {
-        "ticker": "153130",
-        "exchange": "KRX",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 0.013254396041362249,
-        "close": 113185,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": -0.18079195696270034,
-        "return_7d": -0.13675666137286102,
-        "return_15d": -0.0529824716323013,
-        "return_1m": 0.026512306128756435,
-        "return_ytd": 1.1592346901037276,
-        "return_1y": 2.0251493214476612,
-        "return_2y": 5.2437832880305235,
-        "return_3y": 9.21180793303309,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD"
-      }
-    },
-    {
-      "id": "A_1526",
-      "type": "ASSET",
-      "name": "BZF",
-      "exposure": {
-        "ticker": "BZF",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": null,
-        "close": null,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": null,
-        "valuationSource": null,
-        "return_3d": null,
-        "return_7d": null,
-        "return_15d": null,
-        "return_1m": null,
-        "return_ytd": null,
-        "return_1y": null,
-        "return_2y": null,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      },
-      "coreBiz": "BZF는 브라질 헤알 통화 ETF다"
-    },
-    {
-      "id": "A_1527",
-      "type": "ASSET",
-      "name": "EMB",
-      "exposure": {
-        "ticker": "EMB",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.3250838926174504,
-        "close": 95.05,
-        "marketCap": 14701342153,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 0.23199409469576437,
-        "return_7d": -0.12609015446044536,
-        "return_15d": 0.43322062552830776,
-        "return_1m": -0.5649126477665134,
-        "return_ytd": -1.2980269989615767,
-        "return_1y": 0.9666454217123421,
-        "return_2y": 5.143805309734506,
-        "return_3y": 10.062528948587302,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      },
-      "coreBiz": "EMB는 EM 달러표시 국채 ETF다"
-    },
-    {
-      "id": "A_1528",
-      "type": "ASSET",
-      "name": "EMLC",
-      "exposure": {
-        "ticker": "EMLC",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.038986354775816245,
-        "close": 25.64,
-        "marketCap": 4901123768,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 0.19538882375929045,
-        "return_7d": 0.19538882375929045,
-        "return_15d": 1.705672352241172,
-        "return_1m": 0.7465618860510892,
-        "return_ytd": -0.9273570324574876,
-        "return_1y": 1.1439842209072904,
-        "return_2y": 4.738562091503273,
-        "return_3y": 1.746031746031762,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      },
-      "coreBiz": "EMLC는 EM 현지통화 국채 ETF다"
-    },
-    {
-      "id": "A_1529",
-      "type": "ASSET",
-      "name": "BWX",
-      "exposure": {
-        "ticker": "BWX",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.22904260192394554,
-        "close": 21.78,
-        "marketCap": 1344411621,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": -0.22904260192394554,
-        "return_7d": -0.5933363760839749,
-        "return_15d": 1.7757009345794605,
-        "return_1m": 0.8800370541917513,
-        "return_ytd": -3.113879003558717,
-        "return_1y": -5.673451710697264,
-        "return_2y": -3.7560760053026887,
-        "return_3y": -2.637460885113996,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      },
-      "coreBiz": "BWX는 미국 외 선진국 국채 ETF다"
-    },
-    {
-      "id": "M_145",
-      "type": "MACRO",
-      "name": "금리인하"
-    },
-    {
-      "id": "M_072",
-      "type": "MACRO",
-      "name": "금리인상"
-    },
-    {
-      "id": "M_357",
-      "type": "MACRO",
-      "name": "미국달러약세EM자금유입"
-    },
-    {
-      "id": "C_3459",
-      "type": "CHARACTER",
-      "name": "미국장기국채"
-    },
-    {
-      "id": "C_3460",
-      "type": "CHARACTER",
-      "name": "호주국채"
-    },
-    {
-      "id": "C_3461",
-      "type": "CHARACTER",
-      "name": "캐나다국채"
-    },
-    {
-      "id": "C_3462",
-      "type": "CHARACTER",
-      "name": "일본국채"
-    },
-    {
-      "id": "C_3463",
-      "type": "CHARACTER",
-      "name": "영국길트"
-    },
-    {
-      "id": "C_3464",
-      "type": "CHARACTER",
-      "name": "독일분트"
-    },
-    {
-      "id": "C_3465",
-      "type": "CHARACTER",
-      "name": "유로존국채"
-    },
-    {
-      "id": "C_3466",
-      "type": "CHARACTER",
-      "name": "한국국채"
-    },
-    {
-      "id": "C_3467",
-      "type": "CHARACTER",
-      "name": "브라질통화"
-    },
-    {
-      "id": "C_3468",
-      "type": "CHARACTER",
-      "name": "EM달러국채"
-    },
-    {
-      "id": "C_3469",
-      "type": "CHARACTER",
-      "name": "EM현지국채"
-    },
-    {
-      "id": "C_3470",
-      "type": "CHARACTER",
-      "name": "선진국국채"
-    }
+ "schemaVersion": "v5",
+ "themeId": "T_235",
+ "themeName": "국가별장기국채ETF",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
   ],
-  "edges": [
-    {
-      "from": "A_1487",
-      "to": "T_235",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_007151"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_1519",
-      "to": "T_235",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_007152"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1520",
-      "to": "T_235",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_007153"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1521",
-      "to": "T_235",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_007154"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1522",
-      "to": "T_235",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_007155"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1523",
-      "to": "T_235",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_007156"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1524",
-      "to": "T_235",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_007157"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1525",
-      "to": "T_235",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_007158"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_1526",
-      "to": "T_235",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_007159"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1527",
-      "to": "T_235",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_007160"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_1528",
-      "to": "T_235",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_007161"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1529",
-      "to": "T_235",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_007162"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "M_145",
-      "to": "T_235",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_007163"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_072",
-      "to": "T_235",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_007164"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_357",
-      "to": "T_235",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_007165"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1487",
-      "to": "C_3459",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007308"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1519",
-      "to": "C_3460",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007309"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1520",
-      "to": "C_3461",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007310"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1521",
-      "to": "C_3462",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007311"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1522",
-      "to": "C_3463",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007312"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1523",
-      "to": "C_3464",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007313"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1524",
-      "to": "C_3465",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007314"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1525",
-      "to": "C_3466",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007315"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1526",
-      "to": "C_3467",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007316"
-      ],
-      "confidence": 0.62,
-      "status": "verified"
-    },
-    {
-      "from": "A_1527",
-      "to": "C_3468",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007317"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1528",
-      "to": "C_3469",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007318"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1529",
-      "to": "C_3470",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007319"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_1487",
-      "to": "T_235",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_007151"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_1519",
-      "to": "T_235",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_007152"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1520",
-      "to": "T_235",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_007153"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1521",
-      "to": "T_235",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_007154"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1522",
-      "to": "T_235",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_007155"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1523",
-      "to": "T_235",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_007156"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1524",
-      "to": "T_235",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_007157"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1525",
-      "to": "T_235",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_007158"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_1526",
-      "to": "T_235",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_007159"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1527",
-      "to": "T_235",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_007160"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_1528",
-      "to": "T_235",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_007161"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1529",
-      "to": "T_235",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_007162"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "M_145",
-      "to": "T_235",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_007163"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_072",
-      "to": "T_235",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_007164"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_357",
-      "to": "T_235",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_007165"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1487",
-      "to": "C_3459",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007308"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1519",
-      "to": "C_3460",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007309"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1520",
-      "to": "C_3461",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007310"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1521",
-      "to": "C_3462",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007311"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1522",
-      "to": "C_3463",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007312"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1523",
-      "to": "C_3464",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007313"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1524",
-      "to": "C_3465",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007314"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1525",
-      "to": "C_3466",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007315"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1526",
-      "to": "C_3467",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007316"
-      ],
-      "confidence": 0.62,
-      "status": "verified"
-    },
-    {
-      "from": "A_1527",
-      "to": "C_3468",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007317"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1528",
-      "to": "C_3469",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007318"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1529",
-      "to": "C_3470",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007319"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    }
+  "dataAsOf": "2026-05-19T00:00:00+09:00",
+  "description": "미국 TLT·일본·영국·독일·캐나다·호주·EU 국채와 한국 TIGER 중장기 국채, EM 채권(EMB USD·EMLC 로컬통화·BWX 인터내셔널) 등 주요국 장기 국채 ETF 묶음. 듀레이션·금리 사이클·통화 변동·신용 스프레드·중앙은행 정책이 핵심 동인.",
+  "notes": "g235 누적 import 기반 국가별 장기국채 ETF 테마",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-07-16",
+    "kind": "보강",
+    "title": "자산별 테마관점 CHR 정의",
+    "detail": "자산 12개에 테마 관점 특성(CHARACTER)·HAS_TRAIT를 부여했다."
+   },
+   {
+    "date": "2026-07-16",
+    "kind": "보강",
+    "title": "엣지 근거 구체 백필 + 2026 이벤트",
+    "detail": "전 엣지 근거를 종목·관계 사실로 구체화하고 2026 이벤트를 추가했다."
+   }
   ]
+ },
+ "nodes": [
+  {
+   "id": "T_235",
+   "type": "THEME",
+   "name": "국가별장기국채ETF"
+  },
+  {
+   "id": "A_1487",
+   "type": "ASSET",
+   "name": "TLT",
+   "exposure": {
+    "ticker": "TLT",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.6659401864632541,
+    "close": 82.04,
+    "marketCap": 41473058188,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": -0.18250395425233323,
+    "return_15d": -1.0564909064595396,
+    "return_1m": -2.0332518535943978,
+    "return_ytd": -3.352048762213522,
+    "return_1y": -1.4021707386544513,
+    "return_3y": -2.1836976803800923,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -0.8699855002416657,
+    "return_2y": -8.557925945741097
+   },
+   "coreBiz": "TLT는 미국 장기국채 ETF다"
+  },
+  {
+   "id": "A_1519",
+   "type": "ASSET",
+   "name": "Australia gov’t bond long-term ETF",
+   "exposure": {
+    "ticker": "ALTB",
+    "exchange": "ASX",
+    "country": "AU"
+   },
+   "metrics": {
+    "return_1d": 1.0204081632652962,
+    "close": 9.9,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": null,
+    "valuationSource": null,
+    "return_3d": 25.31645569620253,
+    "return_15d": 25.47528517110267,
+    "return_1m": 49.321266968325794,
+    "return_ytd": 23.750000000000004,
+    "return_1y": 66.10738255033557,
+    "return_3y": 153.84615384615387,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 25.31645569620253,
+    "return_2y": 98.0
+   }
+  },
+  {
+   "id": "A_1520",
+   "type": "ASSET",
+   "name": "Canada gov’t bond long-term ETF",
+   "exposure": {
+    "ticker": "XLB",
+    "exchange": "TSX",
+    "country": "CA"
+   },
+   "metrics": {
+    "return_1d": 0.43968648441981006,
+    "close": 52.54,
+    "marketCap": 722616594,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": -1.3148009015777617,
+    "return_15d": 2.497073741708933,
+    "return_1m": 3.751974723538698,
+    "return_ytd": 16.8077296748103,
+    "return_1y": 18.845116809323038,
+    "return_3y": 34.28273493089067,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -0.6053726825577033,
+    "return_2y": 22.518556174548145
+   }
+  },
+  {
+   "id": "A_1521",
+   "type": "ASSET",
+   "name": "Japan gov’t bond long-term ETF",
+   "exposure": {
+    "ticker": "2561",
+    "exchange": "TSE",
+    "country": "JP"
+   },
+   "metrics": {
+    "return_1d": null,
+    "close": null,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": null,
+    "valuationSource": null,
+    "return_3d": null,
+    "return_15d": null,
+    "return_1m": null,
+    "return_ytd": null,
+    "return_1y": null,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": null
+   }
+  },
+  {
+   "id": "A_1522",
+   "type": "ASSET",
+   "name": "UK gilt long-dated ETF",
+   "exposure": {
+    "ticker": "GLTL",
+    "exchange": "LSE",
+    "country": "GB"
+   },
+   "metrics": {
+    "return_1d": -0.883876866808897,
+    "close": 32.52,
+    "marketCap": 241784704,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": -1.0045662100456543,
+    "return_15d": -0.31878371750857504,
+    "return_1m": -1.2033624882656135,
+    "return_ytd": -5.096814673223116,
+    "return_1y": 0.09233610341643494,
+    "return_3y": -1.110229252761885,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -1.514233797698361,
+    "return_2y": -11.053734266193294
+   }
+  },
+  {
+   "id": "A_1523",
+   "type": "ASSET",
+   "name": "Germany Bund long-dated ETF",
+   "exposure": {
+    "ticker": "SDEU",
+    "exchange": "LSE",
+    "country": "DE"
+   },
+   "metrics": {
+    "return_1d": -0.3756009615384581,
+    "close": 99.465,
+    "marketCap": 132330325,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": -0.25571600481347767,
+    "return_15d": 0.13591060102688957,
+    "return_1m": -0.29570970328789414,
+    "return_ytd": -2.60407894685305,
+    "return_1y": -1.3466213461849286,
+    "return_3y": 3.2762016702367447,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -0.6542149420695198,
+    "return_2y": -1.900254162816084
+   }
+  },
+  {
+   "id": "A_1524",
+   "type": "ASSET",
+   "name": "Eurozone long-dated gov’t bond ETF",
+   "exposure": {
+    "ticker": "E20Y",
+    "exchange": "SIX",
+    "country": "EU"
+   },
+   "metrics": {
+    "return_1d": 0.7468692656858567,
+    "close": 3.1295,
+    "marketCap": 459970940,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 0.4525903575784751,
+    "return_15d": -1.5663825370364481,
+    "return_1m": -3.0334014996591607,
+    "return_ytd": -0.4738582877496511,
+    "return_1y": -3.8733259614203153,
+    "return_3y": -6.492769212381977,
+    "returnsAsOf": "2026-08-05",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 0.10876171587601569,
+    "return_2y": -13.737975137131663
+   }
+  },
+  {
+   "id": "A_1525",
+   "type": "ASSET",
+   "name": "TIGER중장기국채",
+   "exposure": {
+    "ticker": "153130",
+    "exchange": "KRX",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 0.013254396041362249,
+    "close": 113185,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": -0.18079195696270034,
+    "return_15d": -0.0529824716323013,
+    "return_1m": 0.04861663572881536,
+    "return_ytd": 1.1681482107427366,
+    "return_1y": 1.9319177030523882,
+    "return_3y": 8.763741195062957,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -0.14997132901063415,
+    "return_2y": 4.915654399768177
+   }
+  },
+  {
+   "id": "A_1526",
+   "type": "ASSET",
+   "name": "BZF",
+   "exposure": {
+    "ticker": "BZF",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": null,
+    "close": null,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": null,
+    "valuationSource": null,
+    "return_3d": null,
+    "return_15d": null,
+    "return_1m": null,
+    "return_ytd": null,
+    "return_1y": null,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": null
+   },
+   "coreBiz": "BZF는 브라질 헤알 통화 ETF다"
+  },
+  {
+   "id": "A_1527",
+   "type": "ASSET",
+   "name": "EMB",
+   "exposure": {
+    "ticker": "EMB",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.3250838926174504,
+    "close": 95.05,
+    "marketCap": 14701342153,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 0.23199409469576437,
+    "return_15d": 0.8739579629934102,
+    "return_1m": -0.10761683362690011,
+    "return_ytd": 1.7641982737023332,
+    "return_1y": 6.481061382607001,
+    "return_3y": 30.63029633355596,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -0.19949601007979156,
+    "return_2y": 15.954652642314349
+   },
+   "coreBiz": "EMB는 EM 달러표시 국채 ETF다"
+  },
+  {
+   "id": "A_1528",
+   "type": "ASSET",
+   "name": "EMLC",
+   "exposure": {
+    "ticker": "EMLC",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.038986354775816245,
+    "close": 25.64,
+    "marketCap": 4901123768,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 0.19538882375929045,
+    "return_15d": 2.225518104761215,
+    "return_1m": 1.142388285786411,
+    "return_ytd": 2.978504642868618,
+    "return_1y": 8.047517309094276,
+    "return_3y": 23.45322355433581,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -0.3110419906687367,
+    "return_2y": 17.344463666236454
+   },
+   "coreBiz": "EMLC는 EM 현지통화 국채 ETF다"
+  },
+  {
+   "id": "A_1529",
+   "type": "ASSET",
+   "name": "BWX",
+   "exposure": {
+    "ticker": "BWX",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.22904260192394554,
+    "close": 21.78,
+    "marketCap": 1344411621,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": -0.22904260192394554,
+    "return_15d": 1.9892110586648748,
+    "return_1m": 1.091678734543855,
+    "return_ytd": -1.9996040388041925,
+    "return_1y": -2.8151479860246575,
+    "return_3y": 5.130036877570343,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -0.9549795361527891,
+    "return_2y": -0.14533484322633017
+   },
+   "coreBiz": "BWX는 미국 외 선진국 국채 ETF다"
+  },
+  {
+   "id": "M_145",
+   "type": "MACRO",
+   "name": "금리인하"
+  },
+  {
+   "id": "M_072",
+   "type": "MACRO",
+   "name": "금리인상"
+  },
+  {
+   "id": "M_357",
+   "type": "MACRO",
+   "name": "미국달러약세EM자금유입"
+  },
+  {
+   "id": "C_3459",
+   "type": "CHARACTER",
+   "name": "미국장기국채"
+  },
+  {
+   "id": "C_3460",
+   "type": "CHARACTER",
+   "name": "호주국채"
+  },
+  {
+   "id": "C_3461",
+   "type": "CHARACTER",
+   "name": "캐나다국채"
+  },
+  {
+   "id": "C_3462",
+   "type": "CHARACTER",
+   "name": "일본국채"
+  },
+  {
+   "id": "C_3463",
+   "type": "CHARACTER",
+   "name": "영국길트"
+  },
+  {
+   "id": "C_3464",
+   "type": "CHARACTER",
+   "name": "독일분트"
+  },
+  {
+   "id": "C_3465",
+   "type": "CHARACTER",
+   "name": "유로존국채"
+  },
+  {
+   "id": "C_3466",
+   "type": "CHARACTER",
+   "name": "한국국채"
+  },
+  {
+   "id": "C_3467",
+   "type": "CHARACTER",
+   "name": "브라질통화"
+  },
+  {
+   "id": "C_3468",
+   "type": "CHARACTER",
+   "name": "EM달러국채"
+  },
+  {
+   "id": "C_3469",
+   "type": "CHARACTER",
+   "name": "EM현지국채"
+  },
+  {
+   "id": "C_3470",
+   "type": "CHARACTER",
+   "name": "선진국국채"
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_1487",
+   "to": "T_235",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_007151"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_1519",
+   "to": "T_235",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_007152"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1520",
+   "to": "T_235",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_007153"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1521",
+   "to": "T_235",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_007154"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1522",
+   "to": "T_235",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_007155"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1523",
+   "to": "T_235",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_007156"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1524",
+   "to": "T_235",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_007157"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1525",
+   "to": "T_235",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_007158"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_1526",
+   "to": "T_235",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_007159"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1527",
+   "to": "T_235",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_007160"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_1528",
+   "to": "T_235",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_007161"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1529",
+   "to": "T_235",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_007162"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "M_145",
+   "to": "T_235",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_007163"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_072",
+   "to": "T_235",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_007164"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_357",
+   "to": "T_235",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_007165"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1487",
+   "to": "C_3459",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007308"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1519",
+   "to": "C_3460",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007309"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1520",
+   "to": "C_3461",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007310"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1521",
+   "to": "C_3462",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007311"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1522",
+   "to": "C_3463",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007312"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1523",
+   "to": "C_3464",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007313"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1524",
+   "to": "C_3465",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007314"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1525",
+   "to": "C_3466",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007315"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1526",
+   "to": "C_3467",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007316"
+   ],
+   "confidence": 0.62,
+   "status": "verified"
+  },
+  {
+   "from": "A_1527",
+   "to": "C_3468",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007317"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1528",
+   "to": "C_3469",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007318"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1529",
+   "to": "C_3470",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007319"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_1487",
+   "to": "T_235",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_007151"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_1519",
+   "to": "T_235",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_007152"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1520",
+   "to": "T_235",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_007153"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1521",
+   "to": "T_235",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_007154"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1522",
+   "to": "T_235",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_007155"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1523",
+   "to": "T_235",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_007156"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1524",
+   "to": "T_235",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_007157"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1525",
+   "to": "T_235",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_007158"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_1526",
+   "to": "T_235",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_007159"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1527",
+   "to": "T_235",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_007160"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_1528",
+   "to": "T_235",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_007161"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1529",
+   "to": "T_235",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_007162"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "M_145",
+   "to": "T_235",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_007163"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_072",
+   "to": "T_235",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_007164"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_357",
+   "to": "T_235",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_007165"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1487",
+   "to": "C_3459",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007308"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1519",
+   "to": "C_3460",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007309"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1520",
+   "to": "C_3461",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007310"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1521",
+   "to": "C_3462",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007311"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1522",
+   "to": "C_3463",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007312"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1523",
+   "to": "C_3464",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007313"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1524",
+   "to": "C_3465",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007314"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1525",
+   "to": "C_3466",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007315"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1526",
+   "to": "C_3467",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007316"
+   ],
+   "confidence": 0.62,
+   "status": "verified"
+  },
+  {
+   "from": "A_1527",
+   "to": "C_3468",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007317"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1528",
+   "to": "C_3469",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007318"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1529",
+   "to": "C_3470",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007319"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  }
+ ]
 }

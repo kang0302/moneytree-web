@@ -22,7 +22,7 @@ import { getBriefingUrl } from "@/lib/getBriefingUrl";
 
 const ForceGraph2D = dynamic(() => import("react-force-graph-2d"), { ssr: false });
 
-export type PeriodKey = "1D" | "3D" | "7D" | "15D" | "1M" | "YTD" | "1Y" | "2Y" | "3Y";
+export type PeriodKey = "1D" | "3D" | "5D" | "15D" | "1M" | "YTD" | "1Y" | "2Y" | "3Y";
 
 type MetricsT = {
   perFwd12m?: number;
@@ -378,16 +378,16 @@ function getReturnByPeriod(n: NodeT, p: PeriodKey): number | undefined {
           "15day",
           "15days",
         ];
-      case "7D":
+      case "5D":
         return [
           "ret7d",
           "r7d",
           "return7d",
-          "return_7d",
+          "return_5d",
           "return_7D", // ✅ 추가
           "ret_7d",
-          "7d",
-          "7D",
+          "5d",
+          "5D",
           "d7",
           "7day",
           "7days",
@@ -752,7 +752,7 @@ export default function ForceGraphWrapper({
   const rafRef = useRef<number | null>(null);
   const [, setAnimTick] = useState(0);
 
-  // 🎯 Full Asset toggle — 기본은 상위 10개만 (return_7d desc), 클릭 시 전체 표시
+  // 🎯 Full Asset toggle — 기본은 상위 10개만 (return_5d desc), 클릭 시 전체 표시
   const [expanded, setExpanded] = useState(false);
   const expandStartRef = useRef<number | null>(null);
   const rafExpandRef = useRef<number | null>(null);
@@ -1346,8 +1346,8 @@ export default function ForceGraphWrapper({
   const assetRankInfo = useMemo(() => {
     const l2Assets = allClonedNodes.filter((n) => layerInfo.layer2.has(n.id));
     const sorted = [...l2Assets].sort((a, b) => {
-      const ar = getReturnByPeriod(a as NodeT, "7D");
-      const br = getReturnByPeriod(b as NodeT, "7D");
+      const ar = getReturnByPeriod(a as NodeT, "5D");
+      const br = getReturnByPeriod(b as NodeT, "5D");
       const av = typeof ar === "number" && Number.isFinite(ar) ? ar : -Infinity;
       const bv = typeof br === "number" && Number.isFinite(br) ? br : -Infinity;
       return bv - av;
@@ -2038,7 +2038,7 @@ export default function ForceGraphWrapper({
 
   const periods: { key: PeriodKey; label: string }[] = [
     { key: "3D", label: "3일" },
-    { key: "7D", label: "7일" },
+    { key: "5D", label: "5일" },
     { key: "1M", label: "1개월" },
     { key: "YTD", label: "YTD" },
     { key: "1Y", label: "1년" },

@@ -1,788 +1,787 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_661",
-  "themeName": "2022년K급등소형주",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-26T00:00:00+09:00",
-    "description": "2022년 긴축·약세장 속에서 逆行 급등한 중소형주 코호트. 2차전지 신사업(금양)·소재, 로봇 감속기, 방산, 자원 무역이 상대 강세. 지수 급락기라 +수십% 만으로도 상위권.",
-    "notes": "2022년 긴축·약세장 속에서 逆行 급등한 중소형주 코호트. 2차전지 신사업(금양)·소재, 로봇 감속기, 방산, 자원 무역이 상대 강세. 지수 급락기라 +수십% 만으로도 상위권.",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-08-04",
-        "kind": "보강",
-        "title": "2궤도 관계 엣지 추가",
-        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
-      },
-      {
-        "date": "2026-07-26",
-        "kind": "수정",
-        "title": "구체적 엣지 백필 + 이벤트",
-        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
-      },
-      {
-        "date": "2026-07-24",
-        "kind": "수정",
-        "title": "연도별 이벤트 DB(2020~2026) 구성",
-        "detail": "이벤트 타임라인을 2020~2026 전 연도로 확장(각 연도 1건)."
-      },
-      {
-        "date": "2026-07-24",
-        "kind": "신규",
-        "title": "2022년K급등소형주 생성",
-        "detail": "2022년 급등 중소형주 7종 코호트. 종목별 급등사유 CHR·해당연도 수익률 브리핑·드라이버 매크로. 급등시작 기준 중소형."
-      },
-      {
-        "date": "2026-08-05",
-        "kind": "관계",
-        "title": "EXPOSED_TO ETF 연결",
-        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-      }
-    ]
-  },
-  "nodes": [
-    {
-      "id": "T_661",
-      "type": "THEME",
-      "name": "2022년K급등소형주"
-    },
-    {
-      "id": "M_1164",
-      "type": "MACRO",
-      "name": "2022긴축약세장역행테마"
-    },
-    {
-      "id": "M_026",
-      "type": "MACRO",
-      "name": "방산수요증가"
-    },
-    {
-      "id": "M_238",
-      "type": "MACRO",
-      "name": "전기차보급확대"
-    },
-    {
-      "id": "A_2565",
-      "type": "ASSET",
-      "name": "금양",
-      "exposure": {
-        "ticker": "001570",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 0.0,
-        "return_3d": 0.0,
-        "return_7d": 0.0,
-        "return_15d": 0.0,
-        "return_1m": 0.0,
-        "return_ytd": -49.38650306748467,
-        "return_1y": -77.10982658959537,
-        "return_2y": -91.53846153846153,
-        "return_3y": null,
-        "close": 9900.0,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD"
-      }
-    },
-    {
-      "id": "C_4413",
-      "type": "CHARACTER",
-      "name": "2차전지신사업기대급등"
-    },
-    {
-      "id": "A_2135",
-      "type": "ASSET",
-      "name": "다우데이타",
-      "exposure": {
-        "ticker": "032190",
-        "exchange": "KOSDAQ",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 2.8600100351229285,
-        "return_3d": 1.990049751243772,
-        "return_7d": 6.493506493506485,
-        "return_15d": 11.171366594360087,
-        "return_1m": 10.990795885219274,
-        "return_ytd": 11.111111111111116,
-        "return_1y": 36.751085846981724,
-        "return_2y": 93.76159864018298,
-        "return_3y": 55.537052,
-        "close": 20500,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD"
-      }
-    },
-    {
-      "id": "C_4414",
-      "type": "CHARACTER",
-      "name": "반도체유통지주저평가급등"
-    },
-    {
-      "id": "A_092",
-      "type": "ASSET",
-      "name": "SPG",
-      "exposure": {
-        "ticker": "058610",
-        "exchange": "KOSDAQ",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 5.704099821746889,
-        "return_3d": 4.035087719298236,
-        "return_7d": 8.907254361799822,
-        "return_15d": 65.64245810055867,
-        "return_1m": 67.98866855524079,
-        "return_ytd": 43.409915356711,
-        "return_1y": 395.80836459897677,
-        "return_2y": 369.03086671173764,
-        "return_3y": 160.747664,
-        "close": 118600,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD"
-      }
-    },
-    {
-      "id": "C_4415",
-      "type": "CHARACTER",
-      "name": "로봇정밀감속기기대급등"
-    },
-    {
-      "id": "A_2784",
-      "type": "ASSET",
-      "name": "STX",
-      "exposure": {
-        "ticker": "011810",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 0.0,
-        "return_3d": 0.0,
-        "return_7d": 0.0,
-        "return_15d": 0.0,
-        "return_1m": 0.0,
-        "return_ytd": -20.674157303370787,
-        "return_1y": -27.811860940695297,
-        "return_2y": -75.36636427076064,
-        "return_3y": null,
-        "close": 3530.0,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD"
-      }
-    },
-    {
-      "id": "C_4416",
-      "type": "CHARACTER",
-      "name": "자원무역원자재급등"
-    },
-    {
-      "id": "A_571",
-      "type": "ASSET",
-      "name": "퍼스텍",
-      "exposure": {
-        "ticker": "010820",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 1.8547140649149974,
-        "return_3d": 3.4536891679748827,
-        "return_7d": 6.290322580645169,
-        "return_15d": 6.6343042071197456,
-        "return_1m": 11.694915254237293,
-        "return_ytd": 64.75,
-        "return_1y": 53.79229871645275,
-        "return_2y": 102.76923076923077,
-        "return_3y": 63.684913,
-        "close": 6590,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD"
-      }
-    },
-    {
-      "id": "C_4417",
-      "type": "CHARACTER",
-      "name": "방산유도무기부품급등"
-    },
-    {
-      "id": "A_628",
-      "type": "ASSET",
-      "name": "나노신소재",
-      "exposure": {
-        "ticker": "121600",
-        "exchange": "KOSDAQ",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 0.19685039370078705,
-        "return_3d": 1.9019019019018923,
-        "return_7d": 15.41950113378685,
-        "return_15d": 23.99512789281364,
-        "return_1m": 10.292524377031409,
-        "return_ytd": 6.596858638743464,
-        "return_1y": -2.2103103834950177,
-        "return_2y": -49.64902028542546,
-        "return_3y": -74.100928,
-        "close": 50900,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD"
-      }
-    },
-    {
-      "id": "C_4418",
-      "type": "CHARACTER",
-      "name": "2차전지CNT도전재급등"
-    },
-    {
-      "id": "A_2127",
-      "type": "ASSET",
-      "name": "코스모신소재",
-      "exposure": {
-        "ticker": "005070",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 3.9408866995073843,
-        "return_3d": 7.515923566878979,
-        "return_7d": 17.22222222222223,
-        "return_15d": 20.916905444126076,
-        "return_1m": 6.835443037974676,
-        "return_ytd": 1.3205282112845218,
-        "return_1y": 13.59353970390309,
-        "return_2y": -68.4839432412248,
-        "return_3y": -81.45139,
-        "close": 42200,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD"
-      }
-    },
-    {
-      "id": "C_4419",
-      "type": "CHARACTER",
-      "name": "2차전지양극재전환급등"
-    },
-    {
-      "id": "A_2907",
-      "type": "ASSET",
-      "name": "TIGER 2차전지소재Fn",
-      "exposure": {
-        "ticker": "462010",
-        "exchange": "KRX",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 2.158273381294973,
-        "return_3d": 4.631578947368431,
-        "return_7d": 12.826333711691262,
-        "return_15d": 14.252873563218383,
-        "return_1m": 5.857294994675177,
-        "return_ytd": -2.234898419502218,
-        "return_1y": 29.085440562245267,
-        "return_2y": -20.143856744827403,
-        "return_3y": null,
-        "close": 4970,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD"
-      }
-    }
+ "schemaVersion": "v5",
+ "themeId": "T_661",
+ "themeName": "2022년K급등소형주",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
   ],
-  "edges": [
-    {
-      "from": "A_2565",
-      "to": "T_661",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013952"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_2565",
-      "to": "C_4413",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009576"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_2135",
-      "to": "T_661",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013953"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_2135",
-      "to": "C_4414",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009578"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_092",
-      "to": "T_661",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013954"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_092",
-      "to": "C_4415",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009580"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_2784",
-      "to": "T_661",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013955"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_2784",
-      "to": "C_4416",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009582"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_571",
-      "to": "T_661",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013956"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_571",
-      "to": "C_4417",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009584"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_628",
-      "to": "T_661",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013957"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_628",
-      "to": "C_4418",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009586"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_2127",
-      "to": "T_661",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013958"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_2127",
-      "to": "C_4419",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009588"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_1164",
-      "to": "T_661",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013959"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_026",
-      "to": "T_661",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013960"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_238",
-      "to": "T_661",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013961"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_2565",
-      "to": "A_2127",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020361"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "금양과 코스모신소재는 이차전지 소재·셀 사업 경쟁"
-    },
-    {
-      "from": "A_628",
-      "to": "A_2127",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020362"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "나노신소재와 코스모신소재는 이차전지 첨가·양극 소재 시장 경쟁"
-    },
-    {
-      "from": "A_571",
-      "to": "A_2784",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020363"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "퍼스텍과 STX는 방산·기계 관련 중소형주 시장 경쟁"
-    },
-    {
-      "from": "A_092",
-      "to": "A_571",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020364"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "SPG와 퍼스텍은 국내 부품·기계 중소형주 시장 경쟁"
-    },
-    {
-      "from": "A_2907",
-      "to": "T_661",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020952"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_2565",
-      "to": "T_661",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013952"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_2565",
-      "to": "C_4413",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009576"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_2135",
-      "to": "T_661",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013953"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_2135",
-      "to": "C_4414",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009578"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_092",
-      "to": "T_661",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013954"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_092",
-      "to": "C_4415",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009580"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_2784",
-      "to": "T_661",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013955"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_2784",
-      "to": "C_4416",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009582"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_571",
-      "to": "T_661",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013956"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_571",
-      "to": "C_4417",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009584"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_628",
-      "to": "T_661",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013957"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_628",
-      "to": "C_4418",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009586"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_2127",
-      "to": "T_661",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013958"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_2127",
-      "to": "C_4419",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009588"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_1164",
-      "to": "T_661",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013959"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_026",
-      "to": "T_661",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013960"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_238",
-      "to": "T_661",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013961"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_2565",
-      "to": "A_2127",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020361"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "금양과 코스모신소재는 이차전지 소재·셀 사업 경쟁"
-    },
-    {
-      "from": "A_628",
-      "to": "A_2127",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020362"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "나노신소재와 코스모신소재는 이차전지 첨가·양극 소재 시장 경쟁"
-    },
-    {
-      "from": "A_571",
-      "to": "A_2784",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020363"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "퍼스텍과 STX는 방산·기계 관련 중소형주 시장 경쟁"
-    },
-    {
-      "from": "A_092",
-      "to": "A_571",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020364"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "SPG와 퍼스텍은 국내 부품·기계 중소형주 시장 경쟁"
-    },
-    {
-      "from": "A_2907",
-      "to": "T_661",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020952"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
+  "dataAsOf": "2026-07-26T00:00:00+09:00",
+  "description": "2022년 긴축·약세장 속에서 逆行 급등한 중소형주 코호트. 2차전지 신사업(금양)·소재, 로봇 감속기, 방산, 자원 무역이 상대 강세. 지수 급락기라 +수십% 만으로도 상위권.",
+  "notes": "2022년 긴축·약세장 속에서 逆行 급등한 중소형주 코호트. 2차전지 신사업(금양)·소재, 로봇 감속기, 방산, 자원 무역이 상대 강세. 지수 급락기라 +수십% 만으로도 상위권.",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-08-04",
+    "kind": "보강",
+    "title": "2궤도 관계 엣지 추가",
+    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
+   },
+   {
+    "date": "2026-07-26",
+    "kind": "수정",
+    "title": "구체적 엣지 백필 + 이벤트",
+    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
+   },
+   {
+    "date": "2026-07-24",
+    "kind": "수정",
+    "title": "연도별 이벤트 DB(2020~2026) 구성",
+    "detail": "이벤트 타임라인을 2020~2026 전 연도로 확장(각 연도 1건)."
+   },
+   {
+    "date": "2026-07-24",
+    "kind": "신규",
+    "title": "2022년K급등소형주 생성",
+    "detail": "2022년 급등 중소형주 7종 코호트. 종목별 급등사유 CHR·해당연도 수익률 브리핑·드라이버 매크로. 급등시작 기준 중소형."
+   },
+   {
+    "date": "2026-08-05",
+    "kind": "관계",
+    "title": "EXPOSED_TO ETF 연결",
+    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+   }
   ]
+ },
+ "nodes": [
+  {
+   "id": "T_661",
+   "type": "THEME",
+   "name": "2022년K급등소형주"
+  },
+  {
+   "id": "M_1164",
+   "type": "MACRO",
+   "name": "2022긴축약세장역행테마"
+  },
+  {
+   "id": "M_026",
+   "type": "MACRO",
+   "name": "방산수요증가"
+  },
+  {
+   "id": "M_238",
+   "type": "MACRO",
+   "name": "전기차보급확대"
+  },
+  {
+   "id": "A_2565",
+   "type": "ASSET",
+   "name": "금양",
+   "exposure": {
+    "ticker": "001570",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 0.0,
+    "return_3d": 0.0,
+    "return_15d": 0.0,
+    "return_1m": 0.0,
+    "return_ytd": -53.30188679245283,
+    "return_1y": -73.31536388140162,
+    "return_3y": null,
+    "close": 9900,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "returnsAsOf": "2025-11-12",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 0.0,
+    "return_2y": -90.13944223107569
+   }
+  },
+  {
+   "id": "C_4413",
+   "type": "CHARACTER",
+   "name": "2차전지신사업기대급등"
+  },
+  {
+   "id": "A_2135",
+   "type": "ASSET",
+   "name": "다우데이타",
+   "exposure": {
+    "ticker": "032190",
+    "exchange": "KOSDAQ",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 2.8600100351229285,
+    "return_3d": 1.990049751243772,
+    "return_15d": 11.171366594360087,
+    "return_1m": 15.168539325842701,
+    "return_ytd": 11.413043478260864,
+    "return_1y": 32.792275847723396,
+    "return_3y": 55.88848367515267,
+    "close": 20500,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 7.95155344918379,
+    "return_2y": 104.36636209432658
+   }
+  },
+  {
+   "id": "C_4414",
+   "type": "CHARACTER",
+   "name": "반도체유통지주저평가급등"
+  },
+  {
+   "id": "A_092",
+   "type": "ASSET",
+   "name": "SPG",
+   "exposure": {
+    "ticker": "058610",
+    "exchange": "KOSDAQ",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 5.704099821746889,
+    "return_3d": 4.035087719298236,
+    "return_15d": 65.64245810055867,
+    "return_1m": 79.15407854984895,
+    "return_ytd": 45.87945879458795,
+    "return_1y": 383.7400075619249,
+    "return_3y": 268.7479622477702,
+    "close": 118600,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 16.61750245821043,
+    "return_2y": 458.4739613304906
+   }
+  },
+  {
+   "id": "C_4415",
+   "type": "CHARACTER",
+   "name": "로봇정밀감속기기대급등"
+  },
+  {
+   "id": "A_2784",
+   "type": "ASSET",
+   "name": "STX",
+   "exposure": {
+    "ticker": "011810",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 0.0,
+    "return_3d": 0.0,
+    "return_15d": 0.0,
+    "return_1m": 0.0,
+    "return_ytd": -18.943742824339836,
+    "return_1y": -25.84033613445378,
+    "return_3y": null,
+    "close": 3530,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "returnsAsOf": "2025-11-12",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 0.0,
+    "return_2y": -62.99790356394131
+   }
+  },
+  {
+   "id": "C_4416",
+   "type": "CHARACTER",
+   "name": "자원무역원자재급등"
+  },
+  {
+   "id": "A_571",
+   "type": "ASSET",
+   "name": "퍼스텍",
+   "exposure": {
+    "ticker": "010820",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 1.8547140649149974,
+    "return_3d": 3.4536891679748827,
+    "return_15d": 6.6343042071197456,
+    "return_1m": 18.525179856115102,
+    "return_ytd": 69.84536082474226,
+    "return_1y": 55.24146054181389,
+    "return_3y": 85.89562764456981,
+    "close": 6590,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 9.286898839137647,
+    "return_2y": 104.65838509316771
+   }
+  },
+  {
+   "id": "C_4417",
+   "type": "CHARACTER",
+   "name": "방산유도무기부품급등"
+  },
+  {
+   "id": "A_628",
+   "type": "ASSET",
+   "name": "나노신소재",
+   "exposure": {
+    "ticker": "121600",
+    "exchange": "KOSDAQ",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 0.19685039370078705,
+    "return_3d": 1.9019019019018923,
+    "return_15d": 23.99512789281364,
+    "return_1m": 18.92523364485981,
+    "return_ytd": 1.9019019019018923,
+    "return_1y": -13.020395046122912,
+    "return_3y": -64.57902925045393,
+    "close": 50900,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 6.820566631689395,
+    "return_2y": -43.188053835763625
+   }
+  },
+  {
+   "id": "C_4418",
+   "type": "CHARACTER",
+   "name": "2차전지CNT도전재급등"
+  },
+  {
+   "id": "A_2127",
+   "type": "ASSET",
+   "name": "코스모신소재",
+   "exposure": {
+    "ticker": "005070",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 3.9408866995073843,
+    "return_3d": 7.515923566878979,
+    "return_15d": 20.916905444126076,
+    "return_1m": 11.788079470198664,
+    "return_ytd": -2.5404157043879882,
+    "return_1y": -17.25490196078432,
+    "return_3y": -72.35372866706018,
+    "close": 42200,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 15.458276333789334,
+    "return_2y": -63.14410480349345
+   }
+  },
+  {
+   "id": "C_4419",
+   "type": "CHARACTER",
+   "name": "2차전지양극재전환급등"
+  },
+  {
+   "id": "A_2907",
+   "type": "ASSET",
+   "name": "TIGER 2차전지소재Fn",
+   "exposure": {
+    "ticker": "462010",
+    "exchange": "KRX",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 2.158273381294973,
+    "return_3d": 4.631578947368431,
+    "return_15d": 14.252873563218383,
+    "return_1m": 5.857294994675177,
+    "return_ytd": -2.234898419502218,
+    "return_1y": 29.085440562245267,
+    "return_3y": null,
+    "close": 4970,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": null
+   }
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_2565",
+   "to": "T_661",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013952"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_2565",
+   "to": "C_4413",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009576"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_2135",
+   "to": "T_661",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013953"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_2135",
+   "to": "C_4414",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009578"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_092",
+   "to": "T_661",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013954"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_092",
+   "to": "C_4415",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009580"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_2784",
+   "to": "T_661",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013955"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_2784",
+   "to": "C_4416",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009582"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_571",
+   "to": "T_661",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013956"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_571",
+   "to": "C_4417",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009584"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_628",
+   "to": "T_661",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013957"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_628",
+   "to": "C_4418",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009586"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_2127",
+   "to": "T_661",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013958"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_2127",
+   "to": "C_4419",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009588"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_1164",
+   "to": "T_661",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013959"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_026",
+   "to": "T_661",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013960"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_238",
+   "to": "T_661",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013961"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_2565",
+   "to": "A_2127",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020361"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "금양과 코스모신소재는 이차전지 소재·셀 사업 경쟁"
+  },
+  {
+   "from": "A_628",
+   "to": "A_2127",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020362"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "나노신소재와 코스모신소재는 이차전지 첨가·양극 소재 시장 경쟁"
+  },
+  {
+   "from": "A_571",
+   "to": "A_2784",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020363"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "퍼스텍과 STX는 방산·기계 관련 중소형주 시장 경쟁"
+  },
+  {
+   "from": "A_092",
+   "to": "A_571",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020364"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "SPG와 퍼스텍은 국내 부품·기계 중소형주 시장 경쟁"
+  },
+  {
+   "from": "A_2907",
+   "to": "T_661",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020952"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_2565",
+   "to": "T_661",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013952"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_2565",
+   "to": "C_4413",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009576"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_2135",
+   "to": "T_661",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013953"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_2135",
+   "to": "C_4414",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009578"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_092",
+   "to": "T_661",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013954"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_092",
+   "to": "C_4415",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009580"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_2784",
+   "to": "T_661",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013955"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_2784",
+   "to": "C_4416",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009582"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_571",
+   "to": "T_661",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013956"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_571",
+   "to": "C_4417",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009584"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_628",
+   "to": "T_661",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013957"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_628",
+   "to": "C_4418",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009586"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_2127",
+   "to": "T_661",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013958"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_2127",
+   "to": "C_4419",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009588"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_1164",
+   "to": "T_661",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013959"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_026",
+   "to": "T_661",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013960"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_238",
+   "to": "T_661",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013961"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_2565",
+   "to": "A_2127",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020361"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "금양과 코스모신소재는 이차전지 소재·셀 사업 경쟁"
+  },
+  {
+   "from": "A_628",
+   "to": "A_2127",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020362"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "나노신소재와 코스모신소재는 이차전지 첨가·양극 소재 시장 경쟁"
+  },
+  {
+   "from": "A_571",
+   "to": "A_2784",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020363"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "퍼스텍과 STX는 방산·기계 관련 중소형주 시장 경쟁"
+  },
+  {
+   "from": "A_092",
+   "to": "A_571",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020364"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "SPG와 퍼스텍은 국내 부품·기계 중소형주 시장 경쟁"
+  },
+  {
+   "from": "A_2907",
+   "to": "T_661",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020952"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ]
 }

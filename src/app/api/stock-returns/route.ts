@@ -47,7 +47,7 @@ function getPeriodInfo(period: string): PeriodInfo {
   switch (period.toUpperCase()) {
     case "1D":  return { yRange: "5d",   calendarDays: 1,    isYtd: false };
     case "3D":  return { yRange: "10d",  calendarDays: 3,    isYtd: false };
-    case "7D":  return { yRange: "15d",  calendarDays: 7,    isYtd: false };
+    case "5D":  return { yRange: "15d",  calendarDays: 7,    isYtd: false };
     case "15D": return { yRange: "30d",  calendarDays: 15,   isYtd: false };
     case "1M":  return { yRange: "60d",  calendarDays: 30,   isYtd: false };
     case "YTD": return { yRange: "ytd",  calendarDays: 0,    isYtd: true  };
@@ -128,7 +128,7 @@ async function fetchTickerReturn(
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const tickersParam = searchParams.get("tickers") ?? "";
-  const period = searchParams.get("period") ?? "7D";
+  const period = searchParams.get("period") ?? "5D";
 
   // Format: "TPR:NYSE,EXPE:NASDAQ,MONC:MIL"
   const pairs = tickersParam

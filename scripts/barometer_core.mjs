@@ -2,7 +2,7 @@
 // src/lib/themeReturn.ts 의 바로미터 계산을 Node(.mjs)로 충실 이식.
 // 프런트와 동일 결과를 내야 트랙레코드가 유효 — 로직 변경 금지(원본과 1:1).
 
-export const PERIODS = ["1D", "3D", "7D", "15D", "1M", "YTD", "1Y", "2Y", "3Y"];
+export const PERIODS = ["1D", "3D", "5D", "15D", "1M", "YTD", "1Y", "2Y", "3Y"];
 
 const clamp = (x, lo, hi) => Math.max(lo, Math.min(hi, x));
 const wsum = (ws) => ws.reduce((a, b) => a + b, 0);
@@ -30,7 +30,8 @@ export function normalizePeriodKey(p) {
   const raw = String(p).trim();
   if (raw === "1" || raw.toLowerCase() === "1d" || raw === "1일") return "1D";
   if (raw === "3" || raw.toLowerCase() === "3d" || raw === "3일") return "3D";
-  if (raw === "7" || raw.toLowerCase() === "7d" || raw === "7일") return "7D";
+  if (raw === "5" || raw.toLowerCase() === "5d" || raw === "5일"
+      || raw === "7" || raw.toLowerCase() === "7d" || raw === "7일") return "5D";
   if (raw === "15" || raw.toLowerCase() === "15d" || raw === "15일") return "15D";
   if (raw.toLowerCase() === "1m" || raw === "1개월" || raw === "1달") return "1M";
   if (raw.toLowerCase() === "ytd" || raw === "연초" || raw === "올해") return "YTD";
@@ -38,7 +39,7 @@ export function normalizePeriodKey(p) {
   if (raw.toLowerCase() === "2y" || raw === "2년") return "2Y";
   if (raw.toLowerCase() === "3y" || raw === "3년") return "3Y";
   const up = raw.toUpperCase();
-  if (["1D","3D","7D","15D","1M","YTD","1Y","2Y","3Y"].includes(up)) return up;
+  if (["1D","3D","5D","15D","1M","YTD","1Y","2Y","3Y"].includes(up)) return up;
   return null;
 }
 
@@ -75,7 +76,7 @@ export function extractReturnByPeriod(metrics, periodRaw) {
   switch (period) {
     case "1D": return pick("return_1d","return_1D","return1d","ret_1d","ret1d");
     case "3D": return pick("return_3d","return_3D","return3d","ret_3d","ret3d");
-    case "7D": return pick("return_7d","return_7D","return7d","ret_7d","ret7d");
+    case "5D": return pick("return_5d","return_7D","return7d","ret_7d","ret7d");
     case "15D": return pick("return_15d","return_15D","return15d","ret_15d","ret15d");
     case "1M": return pick("return_1m","return_30d","return_30D","return1m","return30d","ret_1m","ret_30d","ret1m","ret30d");
     case "YTD": return pick("return_ytd","return_YTD","returnYtd","ret_ytd","retYtd");
@@ -118,7 +119,7 @@ export function computeOrbitWeights(assetIds, nodes, edges) {
 const PERIOD_ANCHORS = {
   "1D": { retSat: 4, tailThresh: 5 },
   "3D": { retSat: 6, tailThresh: 8 },
-  "7D": { retSat: 9, tailThresh: 12 },
+  "5D": { retSat: 9, tailThresh: 12 },
   "15D": { retSat: 13, tailThresh: 15 },
   "1M": { retSat: 16.7, tailThresh: 15 },
   YTD: { retSat: 30, tailThresh: 25 },

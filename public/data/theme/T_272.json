@@ -1,1323 +1,1323 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_272",
-  "themeName": "미국은행주",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-05-28T00:00:00+09:00",
-    "description": "미국은행주 — 대형은행 5 (JP모건·BAC·씨티·US뱅코프·웰스파고) + 투자은행 2 (골드만삭스·모건스탠리) + 지방중소형 4 (트루이스트·키코프·PNC·헌팅턴뱅크셰어스). 3 BF 버킷(대형은행·투자은행·지방중소형) OPERATES + M_072 금리인상 IMPACTS + A_632 XLF (Financial Select Sector SPDR) EXPOSED_TO.",
-    "notes": "11 ASSET + 1 ETF(EXPOSED_TO) + 3 BF + 1 MACRO",
-    "sources": [],
-    "provenanceSeed": "T_272 공개사실 시드(2026-06-29) — evidence_ssot 참조",
-    "changelog": [
-      {
-        "date": "2026-08-04",
-        "kind": "보강",
-        "title": "2궤도 관계 엣지 추가",
-        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
-      }
-    ]
-  },
-  "nodes": [
-    {
-      "id": "T_272",
-      "type": "THEME",
-      "name": "미국은행주"
-    },
-    {
-      "id": "A_293",
-      "type": "ASSET",
-      "name": "JP모건",
-      "exposure": {
-        "ticker": "JPM",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "JPMorgan Chase — 미국 자산 1위 종합금융그룹",
-        "theme_role": "대형은행 대장주 — 소매·기업·투자은행 통합",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -0.07435763267330531,
-        "close": 362.84,
-        "marketCap": 972233408400,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 0.22097005855705731,
-        "return_7d": 1.0021155773298984,
-        "return_15d": 2.7264233741966626,
-        "return_1m": 5.73801544514061,
-        "return_ytd": 11.478431854491822,
-        "return_1y": 24.888995972877147,
-        "return_2y": 76.30709426627791,
-        "return_3y": 135.93211522205607,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_113",
-      "type": "ASSET",
-      "name": "뱅크오브아메리카",
-      "exposure": {
-        "ticker": "BAC",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "Bank of America — 미국 2위 소매·기업금융 은행",
-        "theme_role": "대형은행 — 소매·자산관리·기업금융",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": 0.624122327976262,
-        "close": 64.49,
-        "marketCap": 457659089100,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 0.765624999999992,
-        "return_7d": 1.9604743083003973,
-        "return_15d": 3.9323126510878215,
-        "return_1m": 4.878842088144397,
-        "return_ytd": 15.263628239499539,
-        "return_1y": 36.51566469093987,
-        "return_2y": 68.46917450365724,
-        "return_3y": 108.97602073882044,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_295",
-      "type": "ASSET",
-      "name": "씨티그룹",
-      "exposure": {
-        "ticker": "C",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "Citigroup — 미국 4위 글로벌 종합은행",
-        "theme_role": "대형은행 — 글로벌 트레저리·신용카드 강자",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": 0.42528652778779374,
-        "close": 139.32,
-        "marketCap": 238921261200,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 2.6147160639316436,
-        "return_7d": 1.2205754141238145,
-        "return_15d": 5.393751418412895,
-        "return_1m": 5.777845266114934,
-        "return_ytd": 17.371524852569497,
-        "return_1y": 47.194928684627556,
-        "return_2y": 140.87136929460578,
-        "return_3y": 213.5013501350135,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1718",
-      "type": "ASSET",
-      "name": "US뱅코프",
-      "exposure": {
-        "ticker": "USB",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "U.S. Bancorp — 미국 5위 대형 소매·기업 은행",
-        "theme_role": "대형은행 — 중서부 거점 소매·결제 강자",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": 0.3836120914531227,
-        "close": 65.42,
-        "marketCap": 101906809646,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 1.7576606004044093,
-        "return_7d": 1.8844416757514582,
-        "return_15d": 2.2666875097702155,
-        "return_1m": 2.2027808154975625,
-        "return_ytd": 21.30539588355276,
-        "return_1y": 40.35614674962456,
-        "return_2y": 55.50273353933919,
-        "return_3y": 64.9936948297604,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1719",
-      "type": "ASSET",
-      "name": "웰스파고은행",
-      "exposure": {
-        "ticker": "WFC",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "Wells Fargo — 미국 3위 소매은행·모기지 강자",
-        "theme_role": "대형은행 — 소매·주택대출·자산관리",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": 0.7717625695153885,
-        "close": 88.79,
-        "marketCap": 268500960000,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 1.5323041738136034,
-        "return_7d": -0.42615229337220617,
-        "return_15d": 2.873363457305067,
-        "return_1m": 0.8175315090269253,
-        "return_ytd": -6.733193277310923,
-        "return_1y": 13.994094235460274,
-        "return_2y": 68.29037149355574,
-        "return_3y": 103.08783165599272,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_294",
-      "type": "ASSET",
-      "name": "골드만삭스",
-      "exposure": {
-        "ticker": "GS",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "The Goldman Sachs Group — 글로벌 1위 투자은행",
-        "theme_role": "투자은행 대장주 — 트레이딩·M&A·자산운용",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -0.30787527694388084,
-        "close": 1039.42,
-        "marketCap": 306636175940,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 0.48433406482921715,
-        "return_7d": -1.976649880231618,
-        "return_15d": -2.0551624058875007,
-        "return_1m": -5.11565917514103,
-        "return_ytd": 13.679812761117315,
-        "return_1y": 39.577542333051326,
-        "return_2y": 112.01403337004857,
-        "return_3y": 203.31203128191663,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1724",
-      "type": "ASSET",
-      "name": "모건스탠리",
-      "exposure": {
-        "ticker": "MS",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "Morgan Stanley — 글로벌 투자은행·자산관리",
-        "theme_role": "투자은행 — Wealth Management 비중 확대",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -0.4716549134536119,
-        "close": 217.35,
-        "marketCap": 342821808000,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 1.0601199609429512,
-        "return_7d": -0.42149631190727677,
-        "return_15d": 1.3381201044386337,
-        "return_1m": -0.4670971287264791,
-        "return_ytd": 19.48873007146783,
-        "return_1y": 47.09664320519762,
-        "return_2y": 129.4657939189189,
-        "return_3y": 148.22978529008677,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1720",
-      "type": "ASSET",
-      "name": "트루이스트파이낸셜",
-      "exposure": {
-        "ticker": "TFC",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "Truist Financial — 미국 동남부 지역은행 빅3 (BB&T+SunTrust 합병)",
-        "theme_role": "지방중소형 — 동남부 거점",
-        "theme_status": "Support"
-      },
-      "metrics": {
-        "return_1d": 0.2075863370447184,
-        "close": 53.1,
-        "marketCap": 66156228000,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 1.510227489963678,
-        "return_7d": 0.47303689687796524,
-        "return_15d": 2.588871715610508,
-        "return_1m": -0.28169014084507005,
-        "return_ytd": 6.755126658624855,
-        "return_1y": 18.50033474670831,
-        "return_2y": 27.767083734359964,
-        "return_3y": 68.73212583412776,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1721",
-      "type": "ASSET",
-      "name": "키코프",
-      "exposure": {
-        "ticker": "KEY",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "KeyCorp — 미국 중서부·북동부 지역은행",
-        "theme_role": "지방중소형 — 클리블랜드 본사 지역은행",
-        "theme_status": "Support"
-      },
-      "metrics": {
-        "return_1d": 1.391909525880819,
-        "close": 23.31,
-        "marketCap": 25160114700,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 2.732481269281606,
-        "return_7d": 0.9527934170636687,
-        "return_15d": 2.9139072847682135,
-        "return_1m": -2.8345143809920814,
-        "return_ytd": 11.105815061963774,
-        "return_1y": 27.936333699231607,
-        "return_2y": 59.54825462012321,
-        "return_3y": 102.51954821894005,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1722",
-      "type": "ASSET",
-      "name": "PNC파이낸셜서비스",
-      "exposure": {
-        "ticker": "PNC",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "PNC Financial Services — 미국 6위 지방·중소형 종합은행",
-        "theme_role": "지방중소형 — 피츠버그 본사, 동부 광역 지역은행",
-        "theme_status": "Support"
-      },
-      "metrics": {
-        "return_1d": 0.6935736677116111,
-        "close": 256.97,
-        "marketCap": 102531030000,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 1.0777642292412626,
-        "return_7d": 0.6265418804088263,
-        "return_15d": 2.382565042431972,
-        "return_1m": 0.6935736677116111,
-        "return_ytd": 21.52180081339261,
-        "return_1y": 32.86970010341263,
-        "return_2y": 51.229990583804174,
-        "return_3y": 101.78248920298394,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1723",
-      "type": "ASSET",
-      "name": "헌팅턴뱅크셰어스",
-      "exposure": {
-        "ticker": "HBAN",
-        "exchange": "NASDAQ",
-        "country": "US",
-        "business_desc": "Huntington Bancshares — 미국 중서부 지역은행",
-        "theme_role": "지방중소형 — 오하이오 거점",
-        "theme_status": "Support"
-      },
-      "metrics": {
-        "return_1d": 0.7878446820483997,
-        "close": 17.91,
-        "marketCap": 36185632256,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 0.7878446820483997,
-        "return_7d": 1.7613636363636331,
-        "return_15d": 3.1682027649769573,
-        "return_1m": -3.50215517241379,
-        "return_ytd": 2.4599542334096114,
-        "return_1y": 7.117224880382778,
-        "return_2y": 31.594415870683324,
-        "return_3y": 50.50420168067227,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_632",
-      "type": "ASSET",
-      "name": "XLF",
-      "exposure": {
-        "ticker": "XLF",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "Financial Select Sector SPDR Fund — S&P 500 금융 섹터 ETF",
-        "theme_role": "미국 금융 섹터 ETF — 미국은행주 테마 EXPOSED_TO",
-        "theme_status": "Support"
-      },
-      "metrics": {
-        "return_1d": -0.1716443529007905,
-        "close": 58.16,
-        "marketCap": 59134999823,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 0.6228373702422241,
-        "return_7d": 0.27586206896550447,
-        "return_15d": 3.285384478778175,
-        "return_1m": 2.4845814977973557,
-        "return_ytd": 5.880211177862726,
-        "return_1y": 10.235026535253988,
-        "return_2y": 37.16981132075472,
-        "return_3y": 67.03044227455483,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      },
-      "coreBiz": "XLF"
-    },
-    {
-      "id": "BF_485",
-      "type": "BUSINESS_FIELD",
-      "name": "대형은행"
-    },
-    {
-      "id": "BF_486",
-      "type": "BUSINESS_FIELD",
-      "name": "투자은행"
-    },
-    {
-      "id": "BF_487",
-      "type": "BUSINESS_FIELD",
-      "name": "지방중소형은행"
-    },
-    {
-      "id": "M_072",
-      "type": "MACRO",
-      "name": "금리인상"
-    },
-    {
-      "id": "C_614",
-      "type": "CHARACTER",
-      "name": "자산1위_종합금융그룹"
-    },
-    {
-      "id": "C_615",
-      "type": "CHARACTER",
-      "name": "자산2위_Merrill자산관리"
-    },
-    {
-      "id": "C_616",
-      "type": "CHARACTER",
-      "name": "글로벌_트레저리네트워크"
-    },
-    {
-      "id": "C_617",
-      "type": "CHARACTER",
-      "name": "글로벌IB1위_트레이딩강자"
-    },
-    {
-      "id": "C_618",
-      "type": "CHARACTER",
-      "name": "WealthMgmt거장_60pct"
-    },
-    {
-      "id": "C_619",
-      "type": "CHARACTER",
-      "name": "5위소매_페이먼츠Elavon"
-    },
-    {
-      "id": "C_620",
-      "type": "CHARACTER",
-      "name": "모기지_자산상한해제기대"
-    },
-    {
-      "id": "C_621",
-      "type": "CHARACTER",
-      "name": "동남부지역은행1위_BBT합병"
-    },
-    {
-      "id": "C_622",
-      "type": "CHARACTER",
-      "name": "중서부지역은행_상업"
-    },
-    {
-      "id": "C_623",
-      "type": "CHARACTER",
-      "name": "중동부지역은행_BBVA인수"
-    },
-    {
-      "id": "C_624",
-      "type": "CHARACTER",
-      "name": "중서부지역은행2위"
-    }
+ "schemaVersion": "v5",
+ "themeId": "T_272",
+ "themeName": "미국은행주",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
   ],
-  "edges": [
-    {
-      "from": "A_293",
-      "to": "T_272",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008821"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_113",
-      "to": "T_272",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008822"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_295",
-      "to": "T_272",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008823"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_1718",
-      "to": "T_272",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008824"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_1719",
-      "to": "T_272",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008825"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_294",
-      "to": "T_272",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008826"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_1724",
-      "to": "T_272",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008827"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_1720",
-      "to": "T_272",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008828"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1721",
-      "to": "T_272",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008829"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1722",
-      "to": "T_272",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008830"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1723",
-      "to": "T_272",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008831"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_293",
-      "to": "BF_485",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000159"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_113",
-      "to": "BF_485",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000160"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_295",
-      "to": "BF_485",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000161"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1718",
-      "to": "BF_485",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000162"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1719",
-      "to": "BF_485",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000163"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_294",
-      "to": "BF_486",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000164"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1724",
-      "to": "BF_486",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000165"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1720",
-      "to": "BF_487",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000166"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1721",
-      "to": "BF_487",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000167"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1722",
-      "to": "BF_487",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000168"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1723",
-      "to": "BF_487",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000169"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "M_072",
-      "to": "T_272",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_008832"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_632",
-      "to": "T_272",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_000171"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_293",
-      "to": "C_614",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000172"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_113",
-      "to": "C_615",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000173"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_295",
-      "to": "C_616",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000174"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_294",
-      "to": "C_617",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000175"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_1724",
-      "to": "C_618",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000176"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_1718",
-      "to": "C_619",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000177"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_1719",
-      "to": "C_620",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000178"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_1720",
-      "to": "C_621",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000179"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_1721",
-      "to": "C_622",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000180"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_1722",
-      "to": "C_623",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000181"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_1723",
-      "to": "C_624",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000182"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_293",
-      "to": "A_113",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019447"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "JP모건과 뱅크오브아메리카는 미국 대형은행 시장 양대 경쟁"
-    },
-    {
-      "from": "A_293",
-      "to": "A_295",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019448"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "JP모건과 씨티그룹은 글로벌 투자은행·소매금융 경쟁"
-    },
-    {
-      "from": "A_294",
-      "to": "A_1724",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019449"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "골드만삭스와 모건스탠리는 투자은행·자산관리 시장 경쟁"
-    },
-    {
-      "from": "A_1719",
-      "to": "A_1718",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019450"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "웰스파고와 US뱅코프는 미국 상업은행 시장 경쟁"
-    },
-    {
-      "from": "A_1720",
-      "to": "A_1721",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019451"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "트루이스트와 키코프는 미국 중형 지역은행 시장 경쟁"
-    },
-    {
-      "from": "A_1722",
-      "to": "A_1723",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019452"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "PNC파이낸셜과 헌팅턴뱅크셰어스는 미국 중부 지역은행 경쟁"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_293",
-      "to": "T_272",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008821"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_113",
-      "to": "T_272",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008822"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_295",
-      "to": "T_272",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008823"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_1718",
-      "to": "T_272",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008824"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_1719",
-      "to": "T_272",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008825"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_294",
-      "to": "T_272",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008826"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_1724",
-      "to": "T_272",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008827"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_1720",
-      "to": "T_272",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008828"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1721",
-      "to": "T_272",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008829"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1722",
-      "to": "T_272",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008830"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1723",
-      "to": "T_272",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008831"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_293",
-      "to": "BF_485",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000159"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_113",
-      "to": "BF_485",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000160"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_295",
-      "to": "BF_485",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000161"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1718",
-      "to": "BF_485",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000162"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1719",
-      "to": "BF_485",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000163"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_294",
-      "to": "BF_486",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000164"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1724",
-      "to": "BF_486",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000165"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1720",
-      "to": "BF_487",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000166"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1721",
-      "to": "BF_487",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000167"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1722",
-      "to": "BF_487",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000168"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1723",
-      "to": "BF_487",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000169"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "M_072",
-      "to": "T_272",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_008832"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_632",
-      "to": "T_272",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_000171"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_293",
-      "to": "C_614",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000172"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_113",
-      "to": "C_615",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000173"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_295",
-      "to": "C_616",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000174"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_294",
-      "to": "C_617",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000175"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_1724",
-      "to": "C_618",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000176"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_1718",
-      "to": "C_619",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000177"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_1719",
-      "to": "C_620",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000178"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_1720",
-      "to": "C_621",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000179"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_1721",
-      "to": "C_622",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000180"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_1722",
-      "to": "C_623",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000181"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_1723",
-      "to": "C_624",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000182"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_293",
-      "to": "A_113",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019447"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "JP모건과 뱅크오브아메리카는 미국 대형은행 시장 양대 경쟁"
-    },
-    {
-      "from": "A_293",
-      "to": "A_295",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019448"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "JP모건과 씨티그룹은 글로벌 투자은행·소매금융 경쟁"
-    },
-    {
-      "from": "A_294",
-      "to": "A_1724",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019449"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "골드만삭스와 모건스탠리는 투자은행·자산관리 시장 경쟁"
-    },
-    {
-      "from": "A_1719",
-      "to": "A_1718",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019450"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "웰스파고와 US뱅코프는 미국 상업은행 시장 경쟁"
-    },
-    {
-      "from": "A_1720",
-      "to": "A_1721",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019451"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "트루이스트와 키코프는 미국 중형 지역은행 시장 경쟁"
-    },
-    {
-      "from": "A_1722",
-      "to": "A_1723",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019452"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "PNC파이낸셜과 헌팅턴뱅크셰어스는 미국 중부 지역은행 경쟁"
-    }
+  "dataAsOf": "2026-05-28T00:00:00+09:00",
+  "description": "미국은행주 — 대형은행 5 (JP모건·BAC·씨티·US뱅코프·웰스파고) + 투자은행 2 (골드만삭스·모건스탠리) + 지방중소형 4 (트루이스트·키코프·PNC·헌팅턴뱅크셰어스). 3 BF 버킷(대형은행·투자은행·지방중소형) OPERATES + M_072 금리인상 IMPACTS + A_632 XLF (Financial Select Sector SPDR) EXPOSED_TO.",
+  "notes": "11 ASSET + 1 ETF(EXPOSED_TO) + 3 BF + 1 MACRO",
+  "sources": [],
+  "provenanceSeed": "T_272 공개사실 시드(2026-06-29) — evidence_ssot 참조",
+  "changelog": [
+   {
+    "date": "2026-08-04",
+    "kind": "보강",
+    "title": "2궤도 관계 엣지 추가",
+    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
+   }
   ]
+ },
+ "nodes": [
+  {
+   "id": "T_272",
+   "type": "THEME",
+   "name": "미국은행주"
+  },
+  {
+   "id": "A_293",
+   "type": "ASSET",
+   "name": "JP모건",
+   "exposure": {
+    "ticker": "JPM",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "JPMorgan Chase — 미국 자산 1위 종합금융그룹",
+    "theme_role": "대형은행 대장주 — 소매·기업·투자은행 통합",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -0.07435763267330531,
+    "close": 362.84,
+    "marketCap": 972233408400,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 0.22097005855705731,
+    "return_15d": 2.7264233741966626,
+    "return_1m": 5.818192423226098,
+    "return_ytd": 14.203627674267238,
+    "return_1y": 25.70571752452169,
+    "return_3y": 150.4291266384286,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 1.488028641754302,
+    "return_2y": 79.83235009716714
+   }
+  },
+  {
+   "id": "A_113",
+   "type": "ASSET",
+   "name": "뱅크오브아메리카",
+   "exposure": {
+    "ticker": "BAC",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "Bank of America — 미국 2위 소매·기업금융 은행",
+    "theme_role": "대형은행 — 소매·자산관리·기업금융",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": 0.624122327976262,
+    "close": 64.49,
+    "marketCap": 457659089100,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 0.765624999999992,
+    "return_15d": 3.9323126510878215,
+    "return_1m": 6.384031672715262,
+    "return_ytd": 18.530145327625846,
+    "return_1y": 38.115216660348786,
+    "return_3y": 124.76335196776844,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 2.0895994934304163,
+    "return_2y": 73.9493985002967
+   }
+  },
+  {
+   "id": "A_295",
+   "type": "ASSET",
+   "name": "씨티그룹",
+   "exposure": {
+    "ticker": "C",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "Citigroup — 미국 4위 글로벌 종합은행",
+    "theme_role": "대형은행 — 글로벌 트레저리·신용카드 강자",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": 0.43249477402149683,
+    "close": 139.33,
+    "marketCap": 238921261200,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 2.622081461294834,
+    "return_15d": 5.937213211852388,
+    "return_1m": 5.078663819922036,
+    "return_ytd": 21.205109178548966,
+    "return_1y": 49.04409814039863,
+    "return_3y": 246.32066912742508,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 3.2074074074074144,
+    "return_2y": 147.3802514816538
+   }
+  },
+  {
+   "id": "A_1718",
+   "type": "ASSET",
+   "name": "US뱅코프",
+   "exposure": {
+    "ticker": "USB",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "U.S. Bancorp — 미국 5위 대형 소매·기업 은행",
+    "theme_role": "대형은행 — 중서부 거점 소매·결제 강자",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": 0.3836120914531227,
+    "close": 65.42,
+    "marketCap": 101906809646,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 1.7576606004044093,
+    "return_15d": 2.2666875097702155,
+    "return_1m": 5.2784036047634375,
+    "return_ytd": 24.927195821756264,
+    "return_1y": 45.2651166095628,
+    "return_3y": 93.04426857409278,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 2.3146700031279277,
+    "return_2y": 67.95762805421268
+   }
+  },
+  {
+   "id": "A_1719",
+   "type": "ASSET",
+   "name": "웰스파고은행",
+   "exposure": {
+    "ticker": "WFC",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "Wells Fargo — 미국 3위 소매은행·모기지 강자",
+    "theme_role": "대형은행 — 소매·주택대출·자산관리",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": 0.8058109181704687,
+    "close": 88.82,
+    "marketCap": 268500960000,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 1.5666094911377826,
+    "return_15d": 3.4989448514460175,
+    "return_1m": 4.736737218332809,
+    "return_ytd": -3.1306405789040426,
+    "return_1y": 14.288949537607131,
+    "return_3y": 118.39569404931973,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 1.7994269340974034,
+    "return_2y": 72.89506776038401
+   }
+  },
+  {
+   "id": "A_294",
+   "type": "ASSET",
+   "name": "골드만삭스",
+   "exposure": {
+    "ticker": "GS",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "The Goldman Sachs Group — 글로벌 1위 투자은행",
+    "theme_role": "투자은행 대장주 — 트레이딩·M&A·자산운용",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -0.30787527694388084,
+    "close": 1039.42,
+    "marketCap": 306636175940,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 0.48433406482921715,
+    "return_15d": -2.0551624058875007,
+    "return_1m": -8.822807017543855,
+    "return_ytd": 19.396490725067594,
+    "return_1y": 41.909001136315084,
+    "return_3y": 230.1602265908865,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -0.018276084300827833,
+    "return_2y": 117.08157256429095
+   }
+  },
+  {
+   "id": "A_1724",
+   "type": "ASSET",
+   "name": "모건스탠리",
+   "exposure": {
+    "ticker": "MS",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "Morgan Stanley — 글로벌 투자은행·자산관리",
+    "theme_role": "투자은행 — Wealth Management 비중 확대",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -0.4670757395365821,
+    "close": 217.36,
+    "marketCap": 342821808000,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 1.064769609894456,
+    "return_15d": 1.9006515528410484,
+    "return_1m": -4.002939622901492,
+    "return_ytd": 24.453554650260667,
+    "return_1y": 49.678414521615785,
+    "return_3y": 172.84903550075254,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 0.4761244395137032,
+    "return_2y": 130.21399861253067
+   }
+  },
+  {
+   "id": "A_1720",
+   "type": "ASSET",
+   "name": "트루이스트파이낸셜",
+   "exposure": {
+    "ticker": "TFC",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "Truist Financial — 미국 동남부 지역은행 빅3 (BB&T+SunTrust 합병)",
+    "theme_role": "지방중소형 — 동남부 거점",
+    "theme_status": "Support"
+   },
+   "metrics": {
+    "return_1d": 1.2006861063464935,
+    "close": 53.1,
+    "marketCap": 66156228000,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 2.516183463425281,
+    "return_15d": 3.6055107985819124,
+    "return_1m": 3.2266593053681847,
+    "return_ytd": 11.23633636527417,
+    "return_1y": 23.191852169777416,
+    "return_3y": 101.30411706725302,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 2.4378669002224296,
+    "return_2y": 38.65967536401429
+   }
+  },
+  {
+   "id": "A_1721",
+   "type": "ASSET",
+   "name": "키코프",
+   "exposure": {
+    "ticker": "KEY",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "KeyCorp — 미국 중서부·북동부 지역은행",
+    "theme_role": "지방중소형 — 클리블랜드 본사 지역은행",
+    "theme_status": "Support"
+   },
+   "metrics": {
+    "return_1d": 1.391909525880819,
+    "close": 23.31,
+    "marketCap": 25160114700,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 2.732481269281606,
+    "return_15d": 2.9139072847682135,
+    "return_1m": 0.0429184549356032,
+    "return_ytd": 15.18391872393412,
+    "return_1y": 32.79478619526701,
+    "return_3y": 146.93842959447431,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 2.551693796744381,
+    "return_2y": 63.05146158742594
+   }
+  },
+  {
+   "id": "A_1722",
+   "type": "ASSET",
+   "name": "PNC파이낸셜서비스",
+   "exposure": {
+    "ticker": "PNC",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "PNC Financial Services — 미국 6위 지방·중소형 종합은행",
+    "theme_role": "지방중소형 — 피츠버그 본사, 동부 광역 지역은행",
+    "theme_status": "Support"
+   },
+   "metrics": {
+    "return_1d": 0.6935736677116111,
+    "close": 256.97,
+    "marketCap": 102531030000,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 1.0777642292412626,
+    "return_15d": 2.382565042431972,
+    "return_1m": 2.834151967402976,
+    "return_ytd": 26.00577340536279,
+    "return_1y": 36.43688261076172,
+    "return_3y": 125.62959762999806,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 1.7461197339246226,
+    "return_2y": 63.37567185757573
+   }
+  },
+  {
+   "id": "A_1723",
+   "type": "ASSET",
+   "name": "헌팅턴뱅크셰어스",
+   "exposure": {
+    "ticker": "HBAN",
+    "exchange": "NASDAQ",
+    "country": "US",
+    "business_desc": "Huntington Bancshares — 미국 중서부 지역은행",
+    "theme_role": "지방중소형 — 오하이오 거점",
+    "theme_status": "Support"
+   },
+   "metrics": {
+    "return_1d": 0.7878446820483997,
+    "close": 17.91,
+    "marketCap": 36185632256,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 0.7878446820483997,
+    "return_15d": 3.1682027649769573,
+    "return_1m": 0.3361344537815114,
+    "return_ytd": 5.219250834234157,
+    "return_1y": 10.539179380832465,
+    "return_3y": 73.94260185499928,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 2.051282051282044,
+    "return_2y": 43.502716215566565
+   }
+  },
+  {
+   "id": "A_632",
+   "type": "ASSET",
+   "name": "XLF",
+   "exposure": {
+    "ticker": "XLF",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "Financial Select Sector SPDR Fund — S&P 500 금융 섹터 ETF",
+    "theme_role": "미국 금융 섹터 ETF — 미국은행주 테마 EXPOSED_TO",
+    "theme_status": "Support"
+   },
+   "metrics": {
+    "return_1d": -0.1716443529007905,
+    "close": 58.16,
+    "marketCap": 59134999823,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 0.6228373702422241,
+    "return_15d": 3.285384478778175,
+    "return_1m": 3.524385902456384,
+    "return_ytd": 7.108261111377123,
+    "return_1y": 11.416770752714523,
+    "return_3y": 74.9915001549529,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 0.9722222222222188,
+    "return_2y": 39.2566910733013
+   },
+   "coreBiz": "XLF"
+  },
+  {
+   "id": "BF_485",
+   "type": "BUSINESS_FIELD",
+   "name": "대형은행"
+  },
+  {
+   "id": "BF_486",
+   "type": "BUSINESS_FIELD",
+   "name": "투자은행"
+  },
+  {
+   "id": "BF_487",
+   "type": "BUSINESS_FIELD",
+   "name": "지방중소형은행"
+  },
+  {
+   "id": "M_072",
+   "type": "MACRO",
+   "name": "금리인상"
+  },
+  {
+   "id": "C_614",
+   "type": "CHARACTER",
+   "name": "자산1위_종합금융그룹"
+  },
+  {
+   "id": "C_615",
+   "type": "CHARACTER",
+   "name": "자산2위_Merrill자산관리"
+  },
+  {
+   "id": "C_616",
+   "type": "CHARACTER",
+   "name": "글로벌_트레저리네트워크"
+  },
+  {
+   "id": "C_617",
+   "type": "CHARACTER",
+   "name": "글로벌IB1위_트레이딩강자"
+  },
+  {
+   "id": "C_618",
+   "type": "CHARACTER",
+   "name": "WealthMgmt거장_60pct"
+  },
+  {
+   "id": "C_619",
+   "type": "CHARACTER",
+   "name": "5위소매_페이먼츠Elavon"
+  },
+  {
+   "id": "C_620",
+   "type": "CHARACTER",
+   "name": "모기지_자산상한해제기대"
+  },
+  {
+   "id": "C_621",
+   "type": "CHARACTER",
+   "name": "동남부지역은행1위_BBT합병"
+  },
+  {
+   "id": "C_622",
+   "type": "CHARACTER",
+   "name": "중서부지역은행_상업"
+  },
+  {
+   "id": "C_623",
+   "type": "CHARACTER",
+   "name": "중동부지역은행_BBVA인수"
+  },
+  {
+   "id": "C_624",
+   "type": "CHARACTER",
+   "name": "중서부지역은행2위"
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_293",
+   "to": "T_272",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008821"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_113",
+   "to": "T_272",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008822"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_295",
+   "to": "T_272",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008823"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_1718",
+   "to": "T_272",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008824"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_1719",
+   "to": "T_272",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008825"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_294",
+   "to": "T_272",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008826"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_1724",
+   "to": "T_272",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008827"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_1720",
+   "to": "T_272",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008828"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1721",
+   "to": "T_272",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008829"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1722",
+   "to": "T_272",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008830"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1723",
+   "to": "T_272",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008831"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_293",
+   "to": "BF_485",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000159"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_113",
+   "to": "BF_485",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000160"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_295",
+   "to": "BF_485",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000161"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1718",
+   "to": "BF_485",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000162"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1719",
+   "to": "BF_485",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000163"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_294",
+   "to": "BF_486",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000164"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1724",
+   "to": "BF_486",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000165"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1720",
+   "to": "BF_487",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000166"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1721",
+   "to": "BF_487",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000167"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1722",
+   "to": "BF_487",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000168"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1723",
+   "to": "BF_487",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000169"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "M_072",
+   "to": "T_272",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_008832"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_632",
+   "to": "T_272",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_000171"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_293",
+   "to": "C_614",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000172"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_113",
+   "to": "C_615",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000173"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_295",
+   "to": "C_616",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000174"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_294",
+   "to": "C_617",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000175"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_1724",
+   "to": "C_618",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000176"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_1718",
+   "to": "C_619",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000177"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_1719",
+   "to": "C_620",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000178"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_1720",
+   "to": "C_621",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000179"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_1721",
+   "to": "C_622",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000180"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_1722",
+   "to": "C_623",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000181"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_1723",
+   "to": "C_624",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000182"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_293",
+   "to": "A_113",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019447"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "JP모건과 뱅크오브아메리카는 미국 대형은행 시장 양대 경쟁"
+  },
+  {
+   "from": "A_293",
+   "to": "A_295",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019448"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "JP모건과 씨티그룹은 글로벌 투자은행·소매금융 경쟁"
+  },
+  {
+   "from": "A_294",
+   "to": "A_1724",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019449"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "골드만삭스와 모건스탠리는 투자은행·자산관리 시장 경쟁"
+  },
+  {
+   "from": "A_1719",
+   "to": "A_1718",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019450"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "웰스파고와 US뱅코프는 미국 상업은행 시장 경쟁"
+  },
+  {
+   "from": "A_1720",
+   "to": "A_1721",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019451"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "트루이스트와 키코프는 미국 중형 지역은행 시장 경쟁"
+  },
+  {
+   "from": "A_1722",
+   "to": "A_1723",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019452"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "PNC파이낸셜과 헌팅턴뱅크셰어스는 미국 중부 지역은행 경쟁"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_293",
+   "to": "T_272",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008821"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_113",
+   "to": "T_272",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008822"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_295",
+   "to": "T_272",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008823"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_1718",
+   "to": "T_272",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008824"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_1719",
+   "to": "T_272",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008825"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_294",
+   "to": "T_272",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008826"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_1724",
+   "to": "T_272",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008827"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_1720",
+   "to": "T_272",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008828"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1721",
+   "to": "T_272",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008829"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1722",
+   "to": "T_272",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008830"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1723",
+   "to": "T_272",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008831"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_293",
+   "to": "BF_485",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000159"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_113",
+   "to": "BF_485",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000160"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_295",
+   "to": "BF_485",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000161"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1718",
+   "to": "BF_485",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000162"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1719",
+   "to": "BF_485",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000163"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_294",
+   "to": "BF_486",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000164"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1724",
+   "to": "BF_486",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000165"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1720",
+   "to": "BF_487",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000166"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1721",
+   "to": "BF_487",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000167"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1722",
+   "to": "BF_487",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000168"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1723",
+   "to": "BF_487",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000169"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "M_072",
+   "to": "T_272",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_008832"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_632",
+   "to": "T_272",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_000171"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_293",
+   "to": "C_614",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000172"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_113",
+   "to": "C_615",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000173"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_295",
+   "to": "C_616",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000174"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_294",
+   "to": "C_617",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000175"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_1724",
+   "to": "C_618",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000176"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_1718",
+   "to": "C_619",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000177"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_1719",
+   "to": "C_620",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000178"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_1720",
+   "to": "C_621",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000179"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_1721",
+   "to": "C_622",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000180"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_1722",
+   "to": "C_623",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000181"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_1723",
+   "to": "C_624",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000182"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_293",
+   "to": "A_113",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019447"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "JP모건과 뱅크오브아메리카는 미국 대형은행 시장 양대 경쟁"
+  },
+  {
+   "from": "A_293",
+   "to": "A_295",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019448"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "JP모건과 씨티그룹은 글로벌 투자은행·소매금융 경쟁"
+  },
+  {
+   "from": "A_294",
+   "to": "A_1724",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019449"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "골드만삭스와 모건스탠리는 투자은행·자산관리 시장 경쟁"
+  },
+  {
+   "from": "A_1719",
+   "to": "A_1718",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019450"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "웰스파고와 US뱅코프는 미국 상업은행 시장 경쟁"
+  },
+  {
+   "from": "A_1720",
+   "to": "A_1721",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019451"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "트루이스트와 키코프는 미국 중형 지역은행 시장 경쟁"
+  },
+  {
+   "from": "A_1722",
+   "to": "A_1723",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019452"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "PNC파이낸셜과 헌팅턴뱅크셰어스는 미국 중부 지역은행 경쟁"
+  }
+ ]
 }

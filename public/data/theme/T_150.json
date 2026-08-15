@@ -1,910 +1,908 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_150",
-  "themeName": "BNPL",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-04-16T00:00:00+09:00",
-    "notes": "g150 누적 import 기반 BNPL 테마",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-07-11",
-        "kind": "보강",
-        "title": "자산별 테마관점 CHR 정의",
-        "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
-      },
-      {
-        "date": "2026-07-11",
-        "kind": "보강",
-        "title": "엣지 근거 구체 백필 + 2026 이벤트",
-        "detail": "전 엣지 근거(호버 박스)를 종목·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
-      },
-      {
-        "date": "2026-08-05",
-        "kind": "관계",
-        "title": "클라르나–애플 PARTNERS + CHR 추가",
-        "detail": "클라르나가 애플 리스프로그램 독점파트너임을 반영해 애플 관련노드·PARTNERS 관계와 CHR을 추가했다."
-      },
-      {
-        "date": "2026-08-05",
-        "kind": "관계",
-        "title": "EXPOSED_TO ETF 연결",
-        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-      }
-    ]
-  },
-  "nodes": [
-    {
-      "id": "T_150",
-      "type": "THEME",
-      "name": "BNPL"
-    },
-    {
-      "id": "M_145",
-      "type": "MACRO",
-      "name": "금리인하"
-    },
-    {
-      "id": "M_146",
-      "type": "MACRO",
-      "name": "이커머스확대"
-    },
-    {
-      "id": "M_147",
-      "type": "MACRO",
-      "name": "규제완화"
-    },
-    {
-      "id": "M_148",
-      "type": "MACRO",
-      "name": "가계소비심리"
-    },
-    {
-      "id": "M_149",
-      "type": "MACRO",
-      "name": "대출건전성"
-    },
-    {
-      "id": "A_1029",
-      "type": "ASSET",
-      "name": "세즐",
-      "exposure": {
-        "ticker": "SEZL",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.700700700700696,
-        "close": 128.96,
-        "marketCap": 4336540241,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 0.5379278085288819,
-        "return_7d": -26.055045871559635,
-        "return_15d": -16.19988303333548,
-        "return_1m": -28.530259365994226,
-        "return_ytd": 97.94320798158095,
-        "return_1y": 39.91537376586742,
-        "return_2y": 564.7422680412373,
-        "return_3y": 10384.552845528457,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_915",
-      "type": "ASSET",
-      "name": "어펌",
-      "exposure": {
-        "ticker": "AFRM",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.03830439223697635,
-        "close": 78.35,
-        "marketCap": 26239301863,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 2.137922044062046,
-        "return_7d": -0.1529246845928478,
-        "return_15d": 11.562010536807609,
-        "return_1m": -1.8662324649298734,
-        "return_ytd": 5.835472105903006,
-        "return_1y": 0.8235748294942669,
-        "return_2y": 207.97955974842765,
-        "return_3y": 404.8324742268041,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1030",
-      "type": "ASSET",
-      "name": "클라르나",
-      "exposure": {
-        "ticker": "KLAR",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.5319148936170137,
-        "close": 20.79,
-        "marketCap": 7848389241,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 9.248554913294793,
-        "return_7d": 2.0618556701030855,
-        "return_15d": 19.758064516129025,
-        "return_1m": 8.16857440166494,
-        "return_ytd": -27.231361568078405,
-        "return_1y": null,
-        "return_2y": null,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1031",
-      "type": "ASSET",
-      "name": "애프터페이",
-      "exposure": {
-        "ticker": "",
-        "exchange": "",
-        "country": "AU"
-      },
-      "metrics": {
-        "return_1d": null,
-        "close": null,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": null,
-        "valuationSource": null,
-        "return_3d": null,
-        "return_7d": null,
-        "return_15d": null,
-        "return_1m": null,
-        "return_ytd": null,
-        "return_1y": null,
-        "return_2y": null,
-        "return_3y": null,
-        "returnsAsOf": null,
-        "returnsSource": null
-      },
-      "coreBiz": "애프터페이는 블록이 인수한 BNPL 브랜드다"
-    },
-    {
-      "id": "A_349",
-      "type": "ASSET",
-      "name": "페이팔",
-      "exposure": {
-        "ticker": "PYPL",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 1.765967981515093,
-        "close": 61.66,
-        "marketCap": 52747725260,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 4.508474576271171,
-        "return_7d": 6.438805454859309,
-        "return_15d": 9.813000890471946,
-        "return_1m": 8.690287325929846,
-        "return_ytd": 6.054351565187477,
-        "return_1y": -12.699985841710316,
-        "return_2y": -4.728059332509272,
-        "return_3y": -0.5804579168010471,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_211",
-      "type": "ASSET",
-      "name": "아마존",
-      "exposure": {
-        "ticker": "AMZN",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.9353901859465275,
-        "close": 262.65,
-        "marketCap": 2825352315000,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": -3.5332574282880946,
-        "return_7d": -3.667705849990832,
-        "return_15d": 13.157554607729072,
-        "return_1m": 5.106246748569365,
-        "return_ytd": 15.960264900662246,
-        "return_1y": 16.962059137869588,
-        "return_2y": 57.331975560081446,
-        "return_3y": 90.53318824809575,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1032",
-      "type": "ASSET",
-      "name": "블록",
-      "exposure": {
-        "ticker": "XYZ",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.2527379949452513,
-        "close": 82.88,
-        "marketCap": 49328598959,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 4.818515239661059,
-        "return_7d": -1.5676959619952635,
-        "return_15d": 7.427090084251442,
-        "return_1m": 1.6683022571148287,
-        "return_ytd": 27.214121258633895,
-        "return_1y": 7.706302794022091,
-        "return_2y": 33.37624718377856,
-        "return_3y": 32.16392919789506,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1033",
-      "type": "ASSET",
-      "name": "ARKF",
-      "exposure": {
-        "ticker": "ARKF",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -1.358080579447718,
-        "close": 43.58,
-        "marketCap": 794721045,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 0.8329477093937943,
-        "return_7d": 2.686145146088603,
-        "return_15d": 10.41297187737522,
-        "return_1m": 5.4184808901790005,
-        "return_ytd": -9.509966777408641,
-        "return_1y": -21.646889608054654,
-        "return_2y": 67.03717899578383,
-        "return_3y": 105.46911834040546,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_2596",
-      "type": "CHARACTER",
-      "name": "미국BNPL성장"
-    },
-    {
-      "id": "C_2597",
-      "type": "CHARACTER",
-      "name": "미국BNPL선두(Affirm)"
-    },
-    {
-      "id": "C_2598",
-      "type": "CHARACTER",
-      "name": "글로벌BNPL"
-    },
-    {
-      "id": "C_2599",
-      "type": "CHARACTER",
-      "name": "블록인수BNPL"
-    },
-    {
-      "id": "C_2600",
-      "type": "CHARACTER",
-      "name": "결제BNPL핀테크"
-    },
-    {
-      "id": "C_2601",
-      "type": "CHARACTER",
-      "name": "BNPL제휴이커머스"
-    },
-    {
-      "id": "C_2602",
-      "type": "CHARACTER",
-      "name": "애프터페이내재화"
-    },
-    {
-      "id": "C_2603",
-      "type": "CHARACTER",
-      "name": "핀테크ETF"
-    },
-    {
-      "id": "A_374",
-      "type": "ASSET",
-      "name": "애플",
-      "exposure": {
-        "ticker": "AAPL",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.21948502915547508,
-        "close": 305.93,
-        "marketCap": 4493302821080,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 0.33452494178609626,
-        "return_7d": -1.6302250803858498,
-        "return_15d": -8.134646567773697,
-        "return_1m": -8.200804176918918,
-        "return_ytd": 12.885133389911818,
-        "return_1y": 31.114730210431564,
-        "return_2y": 41.47706252312244,
-        "return_3y": 71.68752455244403,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_5886",
-      "type": "CHARACTER",
-      "name": "애플 리스프로그램 독점파트너"
-    },
-    {
-      "id": "A_2889",
-      "type": "ASSET",
-      "name": "Amplify Digital Payments ETF",
-      "exposure": {
-        "ticker": "IPAY",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.4013761467889898,
-        "return_3d": 3.1472684085510627,
-        "return_7d": 1.125557927420906,
-        "return_15d": 8.539887523432622,
-        "return_1m": 4.074295985620124,
-        "return_ytd": 1.0471204188481575,
-        "return_1y": -11.752751905165116,
-        "return_2y": 10.754516471838471,
-        "return_3y": 21.44022372407366,
-        "close": 52.11,
-        "marketCap": 159233152,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    }
+ "schemaVersion": "v5",
+ "themeId": "T_150",
+ "themeName": "BNPL",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
   ],
-  "edges": [
-    {
-      "from": "M_145",
-      "to": "T_150",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_004382"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "M_146",
-      "to": "T_150",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_004383"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "M_147",
-      "to": "T_150",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_004384"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "M_148",
-      "to": "T_150",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_004385"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_149",
-      "to": "T_150",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_004386"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1029",
-      "to": "T_150",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004373"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_915",
-      "to": "T_150",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004374"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1030",
-      "to": "T_150",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004375"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1031",
-      "to": "T_150",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004376"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_349",
-      "to": "T_150",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004377"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_915",
-      "to": "A_211",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_004378"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_1032",
-      "to": "A_1031",
-      "type": "INVESTS",
-      "evidence": [
-        "EV_004379"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_349",
-      "to": "A_1033",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_004380"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1032",
-      "to": "A_1033",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_004381"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1029",
-      "to": "C_2596",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004479"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_915",
-      "to": "C_2597",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004480"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1030",
-      "to": "C_2598",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004481"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1031",
-      "to": "C_2599",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004482"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_349",
-      "to": "C_2600",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004483"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_211",
-      "to": "C_2601",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004484"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1032",
-      "to": "C_2602",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004485"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_1033",
-      "to": "C_2603",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004486"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_1030",
-      "to": "A_374",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_020541"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_1030",
-      "to": "C_5886",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_020542"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_2889",
-      "to": "T_150",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020620"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "M_145",
-      "to": "T_150",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_004382"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "M_146",
-      "to": "T_150",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_004383"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "M_147",
-      "to": "T_150",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_004384"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "M_148",
-      "to": "T_150",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_004385"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_149",
-      "to": "T_150",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_004386"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1029",
-      "to": "T_150",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004373"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_915",
-      "to": "T_150",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004374"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1030",
-      "to": "T_150",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004375"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1031",
-      "to": "T_150",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004376"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_349",
-      "to": "T_150",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004377"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_915",
-      "to": "A_211",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_004378"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_1032",
-      "to": "A_1031",
-      "type": "INVESTS",
-      "evidence": [
-        "EV_004379"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_349",
-      "to": "A_1033",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_004380"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1032",
-      "to": "A_1033",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_004381"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1029",
-      "to": "C_2596",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004479"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_915",
-      "to": "C_2597",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004480"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1030",
-      "to": "C_2598",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004481"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1031",
-      "to": "C_2599",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004482"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_349",
-      "to": "C_2600",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004483"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_211",
-      "to": "C_2601",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004484"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1032",
-      "to": "C_2602",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004485"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_1033",
-      "to": "C_2603",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004486"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_1030",
-      "to": "A_374",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_020541"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_1030",
-      "to": "C_5886",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_020542"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_2889",
-      "to": "T_150",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020620"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
+  "dataAsOf": "2026-04-16T00:00:00+09:00",
+  "notes": "g150 누적 import 기반 BNPL 테마",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-07-11",
+    "kind": "보강",
+    "title": "자산별 테마관점 CHR 정의",
+    "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
+   },
+   {
+    "date": "2026-07-11",
+    "kind": "보강",
+    "title": "엣지 근거 구체 백필 + 2026 이벤트",
+    "detail": "전 엣지 근거(호버 박스)를 종목·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
+   },
+   {
+    "date": "2026-08-05",
+    "kind": "관계",
+    "title": "클라르나–애플 PARTNERS + CHR 추가",
+    "detail": "클라르나가 애플 리스프로그램 독점파트너임을 반영해 애플 관련노드·PARTNERS 관계와 CHR을 추가했다."
+   },
+   {
+    "date": "2026-08-05",
+    "kind": "관계",
+    "title": "EXPOSED_TO ETF 연결",
+    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+   }
   ]
+ },
+ "nodes": [
+  {
+   "id": "T_150",
+   "type": "THEME",
+   "name": "BNPL"
+  },
+  {
+   "id": "M_145",
+   "type": "MACRO",
+   "name": "금리인하"
+  },
+  {
+   "id": "M_146",
+   "type": "MACRO",
+   "name": "이커머스확대"
+  },
+  {
+   "id": "M_147",
+   "type": "MACRO",
+   "name": "규제완화"
+  },
+  {
+   "id": "M_148",
+   "type": "MACRO",
+   "name": "가계소비심리"
+  },
+  {
+   "id": "M_149",
+   "type": "MACRO",
+   "name": "대출건전성"
+  },
+  {
+   "id": "A_1029",
+   "type": "ASSET",
+   "name": "세즐",
+   "exposure": {
+    "ticker": "SEZL",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.700700700700696,
+    "close": 128.96,
+    "marketCap": 4336540241,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 0.5379278085288819,
+    "return_15d": -16.19988303333548,
+    "return_1m": -29.29436920883819,
+    "return_ytd": 103.16660102402521,
+    "return_1y": 40.9861156663387,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 9.269615319437396,
+    "return_2y": 538.7320455671124
+   }
+  },
+  {
+   "id": "A_915",
+   "type": "ASSET",
+   "name": "어펌",
+   "exposure": {
+    "ticker": "AFRM",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.03830439223697635,
+    "close": 78.35,
+    "marketCap": 26239301863,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 2.144579883971054,
+    "return_15d": 11.562010536807609,
+    "return_1m": -7.223208999407948,
+    "return_ytd": 5.266693537552047,
+    "return_1y": 1.7268242015060942,
+    "return_3y": 417.84534038334425,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 4.119601328903655,
+    "return_2y": 194.77050413844995
+   }
+  },
+  {
+   "id": "A_1030",
+   "type": "ASSET",
+   "name": "클라르나",
+   "exposure": {
+    "ticker": "KLAR",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.5319148936170137,
+    "close": 20.79,
+    "marketCap": 7848389241,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 9.248554913294793,
+    "return_15d": 19.758064516129025,
+    "return_1m": 5.909322465613864,
+    "return_ytd": -28.087167070217923,
+    "return_1y": null,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 4.472361809045222,
+    "return_2y": null
+   }
+  },
+  {
+   "id": "A_1031",
+   "type": "ASSET",
+   "name": "애프터페이",
+   "exposure": {
+    "ticker": "",
+    "exchange": "",
+    "country": "AU"
+   },
+   "metrics": {
+    "return_1d": null,
+    "close": null,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": null,
+    "valuationSource": null,
+    "return_3d": null,
+    "return_15d": null,
+    "return_1m": null,
+    "return_ytd": null,
+    "return_1y": null,
+    "return_3y": null,
+    "returnsAsOf": null,
+    "returnsSource": null,
+    "return_5d": null
+   },
+   "coreBiz": "애프터페이는 블록이 인수한 BNPL 브랜드다"
+  },
+  {
+   "id": "A_349",
+   "type": "ASSET",
+   "name": "페이팔",
+   "exposure": {
+    "ticker": "PYPL",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 1.765967981515093,
+    "close": 61.66,
+    "marketCap": 52747725260,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 4.508474576271171,
+    "return_15d": 9.813000890471946,
+    "return_1m": 30.16677221870383,
+    "return_ytd": 6.287438052143934,
+    "return_1y": -10.357450755477638,
+    "return_3y": -1.7007084691073038,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 4.384628406974778,
+    "return_2y": -5.966104486511803
+   }
+  },
+  {
+   "id": "A_211",
+   "type": "ASSET",
+   "name": "아마존",
+   "exposure": {
+    "ticker": "AMZN",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.9353901859465275,
+    "close": 262.65,
+    "marketCap": 2825352315000,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": -3.5332574282880946,
+    "return_15d": 13.157554607729072,
+    "return_1m": 6.125500020202823,
+    "return_ytd": 13.789966207434357,
+    "return_1y": 13.711143821975913,
+    "return_3y": 86.8464110407626,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -4.309967939376291,
+    "return_2y": 54.40917107583773
+   }
+  },
+  {
+   "id": "A_1032",
+   "type": "ASSET",
+   "name": "블록",
+   "exposure": {
+    "ticker": "XYZ",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.2527379949452513,
+    "close": 82.88,
+    "marketCap": 49328598959,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 4.818515239661059,
+    "return_15d": 7.427090084251442,
+    "return_1m": 3.6129516189523647,
+    "return_ytd": 27.331387309878608,
+    "return_1y": 8.99526564965807,
+    "return_3y": 37.78886118038238,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 4.911392405063286,
+    "return_2y": 33.24758842443729
+   }
+  },
+  {
+   "id": "A_1033",
+   "type": "ASSET",
+   "name": "ARKF",
+   "exposure": {
+    "ticker": "ARKF",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -1.358080579447718,
+    "close": 43.58,
+    "marketCap": 794721045,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 0.8329477093937943,
+    "return_15d": 10.41297187737522,
+    "return_1m": 3.663177925784966,
+    "return_ytd": -8.503044299811046,
+    "return_1y": -19.98149181820853,
+    "return_3y": 106.13485325071541,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 1.3959981386691522,
+    "return_2y": 63.18063699609833
+   }
+  },
+  {
+   "id": "C_2596",
+   "type": "CHARACTER",
+   "name": "미국BNPL성장"
+  },
+  {
+   "id": "C_2597",
+   "type": "CHARACTER",
+   "name": "미국BNPL선두(Affirm)"
+  },
+  {
+   "id": "C_2598",
+   "type": "CHARACTER",
+   "name": "글로벌BNPL"
+  },
+  {
+   "id": "C_2599",
+   "type": "CHARACTER",
+   "name": "블록인수BNPL"
+  },
+  {
+   "id": "C_2600",
+   "type": "CHARACTER",
+   "name": "결제BNPL핀테크"
+  },
+  {
+   "id": "C_2601",
+   "type": "CHARACTER",
+   "name": "BNPL제휴이커머스"
+  },
+  {
+   "id": "C_2602",
+   "type": "CHARACTER",
+   "name": "애프터페이내재화"
+  },
+  {
+   "id": "C_2603",
+   "type": "CHARACTER",
+   "name": "핀테크ETF"
+  },
+  {
+   "id": "A_374",
+   "type": "ASSET",
+   "name": "애플",
+   "exposure": {
+    "ticker": "AAPL",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.21948502915547508,
+    "close": 305.93,
+    "marketCap": 4493302821080,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 0.33452494178609626,
+    "return_15d": -8.05540778942876,
+    "return_1m": -2.7523874824493144,
+    "return_ytd": 12.838500748740422,
+    "return_1y": 31.9099892076389,
+    "return_3y": 72.77816307213388,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -2.2775186865137687,
+    "return_2y": 39.13460305274774
+   }
+  },
+  {
+   "id": "C_5886",
+   "type": "CHARACTER",
+   "name": "애플 리스프로그램 독점파트너"
+  },
+  {
+   "id": "A_2889",
+   "type": "ASSET",
+   "name": "Amplify Digital Payments ETF",
+   "exposure": {
+    "ticker": "IPAY",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.4013761467889898,
+    "return_3d": 3.1472684085510627,
+    "return_15d": 8.539887523432622,
+    "return_1m": 4.074295985620124,
+    "return_ytd": 1.0471204188481575,
+    "return_1y": -11.752751905165116,
+    "return_3y": 21.44022372407366,
+    "close": 52.11,
+    "marketCap": 159233152,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": null
+   }
+  }
+ ],
+ "edges": [
+  {
+   "from": "M_145",
+   "to": "T_150",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_004382"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "M_146",
+   "to": "T_150",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_004383"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "M_147",
+   "to": "T_150",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_004384"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "M_148",
+   "to": "T_150",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_004385"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_149",
+   "to": "T_150",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_004386"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1029",
+   "to": "T_150",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004373"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_915",
+   "to": "T_150",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004374"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1030",
+   "to": "T_150",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004375"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1031",
+   "to": "T_150",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004376"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_349",
+   "to": "T_150",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004377"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_915",
+   "to": "A_211",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_004378"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_1032",
+   "to": "A_1031",
+   "type": "INVESTS",
+   "evidence": [
+    "EV_004379"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_349",
+   "to": "A_1033",
+   "type": "IN_ETF",
+   "evidence": [
+    "EV_004380"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1032",
+   "to": "A_1033",
+   "type": "IN_ETF",
+   "evidence": [
+    "EV_004381"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1029",
+   "to": "C_2596",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004479"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_915",
+   "to": "C_2597",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004480"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1030",
+   "to": "C_2598",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004481"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1031",
+   "to": "C_2599",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004482"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_349",
+   "to": "C_2600",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004483"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_211",
+   "to": "C_2601",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004484"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1032",
+   "to": "C_2602",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004485"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_1033",
+   "to": "C_2603",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004486"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_1030",
+   "to": "A_374",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_020541"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_1030",
+   "to": "C_5886",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_020542"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_2889",
+   "to": "T_150",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020620"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "M_145",
+   "to": "T_150",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_004382"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "M_146",
+   "to": "T_150",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_004383"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "M_147",
+   "to": "T_150",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_004384"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "M_148",
+   "to": "T_150",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_004385"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_149",
+   "to": "T_150",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_004386"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1029",
+   "to": "T_150",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004373"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_915",
+   "to": "T_150",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004374"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1030",
+   "to": "T_150",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004375"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1031",
+   "to": "T_150",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004376"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_349",
+   "to": "T_150",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004377"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_915",
+   "to": "A_211",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_004378"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_1032",
+   "to": "A_1031",
+   "type": "INVESTS",
+   "evidence": [
+    "EV_004379"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_349",
+   "to": "A_1033",
+   "type": "IN_ETF",
+   "evidence": [
+    "EV_004380"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1032",
+   "to": "A_1033",
+   "type": "IN_ETF",
+   "evidence": [
+    "EV_004381"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1029",
+   "to": "C_2596",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004479"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_915",
+   "to": "C_2597",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004480"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1030",
+   "to": "C_2598",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004481"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1031",
+   "to": "C_2599",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004482"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_349",
+   "to": "C_2600",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004483"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_211",
+   "to": "C_2601",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004484"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1032",
+   "to": "C_2602",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004485"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_1033",
+   "to": "C_2603",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004486"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_1030",
+   "to": "A_374",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_020541"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_1030",
+   "to": "C_5886",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_020542"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_2889",
+   "to": "T_150",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020620"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ]
 }

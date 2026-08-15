@@ -34,7 +34,7 @@ for (const f of files) {
     continue;
   }
   const themeId = d.themeId || f.replace(".json", "");
-  const periodDefault = (d.meta?.periodDefault || "7d").toString();
+  const periodDefault = (d.meta?.periodDefault || "5d").toString();
   const scores = {};
   const avgRet = {};
   const raw = {}; // 공식 변경 시 정확 재계산을 위한 원천 지표(기간별)
@@ -58,8 +58,8 @@ for (const f of files) {
       raw[p] = null;
     }
   }
-  const hp = (periodDefault || "7d").toUpperCase();
-  const headlinePeriod = PERIODS.includes(hp) ? hp : "7D";
+  const hp = (periodDefault || "5d").toUpperCase();
+  const headlinePeriod = PERIODS.includes(hp) ? hp : "5D";
   const assetCount = (d.nodes || []).filter((n) => (n.type ?? "").toUpperCase() === "ASSET").length;
   if (ok) okCount++;
   rows.push({

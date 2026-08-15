@@ -1,1346 +1,1344 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_354",
-  "themeName": "글로벌송전망노후화수혜",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-29T00:00:00+09:00",
-    "description": "글로벌 송전망 노후화 + AI DC 전력 수요 폭증 수혜주. 미국 전력망 60% 50년+, 송전 capa 2배 필요. 장비: Eaton·Hubbell·ABB·Schneider·Emerson. 건설 EPC: Quanta Services. 유틸리티 IOU: NextEra·Duke·Southern·AEP·Edison. IIJA $73B 송전 자금 + AI capex 사이클.",
-    "notes": "T_354 신규 — 글로벌 송전망 노후화 11사",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-08-04",
-        "kind": "보강",
-        "title": "2궤도 관계 엣지 추가",
-        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 7건 백필(리서치 기반)."
-      },
-      {
-        "date": "2026-07-29",
-        "kind": "수정",
-        "title": "AI 전력 고평가 폭락 이벤트 추가",
-        "detail": "AI 전력수요 랠리 장기화·고평가 부담에 따른 되돌림 폭락 반영."
-      },
-      {
-        "date": "2026-07-25",
-        "kind": "수정",
-        "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
-        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결(ETF 제외), 2026 이벤트 2건 추가."
-      },
-      {
-        "date": "2026-08-05",
-        "kind": "관계",
-        "title": "EXPOSED_TO ETF 연결",
-        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-      }
-    ]
-  },
-  "nodes": [
-    {
-      "id": "T_354",
-      "type": "THEME",
-      "name": "글로벌송전망노후화수혜"
-    },
-    {
-      "id": "A_955",
-      "type": "ASSET",
-      "name": "이튼",
-      "exposure": {
-        "ticker": "ETN",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.40147354024662185,
-        "return_3d": -1.6939188747850054,
-        "return_7d": 0.9457163298157711,
-        "return_15d": 11.7405400054446,
-        "return_1m": 13.939990410578652,
-        "return_ytd": 37.94567840884788,
-        "return_1y": 26.300036364653543,
-        "return_2y": 54.81758332190372,
-        "return_3y": 107.27631639351785,
-        "close": 451.51,
-        "marketCap": 175321333000,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1987",
-      "type": "ASSET",
-      "name": "허벨",
-      "exposure": {
-        "ticker": "HUBB",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.8459869848156165,
-        "return_3d": -1.5838497363457993,
-        "return_7d": -0.42641847423966484,
-        "return_15d": 5.204797465489941,
-        "return_1m": 6.088706331424776,
-        "return_ytd": 10.444247672936967,
-        "return_1y": 15.190899876112173,
-        "return_2y": 35.6472148541114,
-        "return_3y": 67.23021582733813,
-        "close": 511.39,
-        "marketCap": 27018048484,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1860",
-      "type": "ASSET",
-      "name": "퀀타서비스",
-      "exposure": {
-        "ticker": "PWR",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 1.932280983382384,
-        "return_3d": 2.2666945032658203,
-        "return_7d": 0.4084979282273471,
-        "return_15d": 9.577527802633256,
-        "return_1m": 8.678013375170357,
-        "return_ytd": 55.97252547307132,
-        "return_1y": 80.48741972839247,
-        "return_2y": 164.1476003389569,
-        "return_3y": 237.09201730239874,
-        "close": 685.78,
-        "marketCap": 103102222540,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1062",
-      "type": "ASSET",
-      "name": "NextEra Energy",
-      "exposure": {
-        "ticker": "NEE",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.20927799093128918,
-        "return_3d": 0.5248425472358376,
-        "return_7d": 0.32592247701082044,
-        "return_15d": -3.99866339942081,
-        "return_1m": -3.53665360940123,
-        "return_ytd": 6.499443963919416,
-        "return_1y": 19.21161825726141,
-        "return_2y": 11.270333075135564,
-        "return_3y": 25.05803830528148,
-        "close": 86.19,
-        "marketCap": 179790460541,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1063",
-      "type": "ASSET",
-      "name": "듀크에너지",
-      "exposure": {
-        "ticker": "DUK",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.45786810185556304,
-        "return_3d": 0.5925805666044281,
-        "return_7d": 0.4702448516296309,
-        "return_15d": -5.056696291756058,
-        "return_1m": -1.7365791769090477,
-        "return_ytd": 5.517711171662132,
-        "return_1y": -1.4239121788242715,
-        "return_2y": 9.984911689003283,
-        "return_3y": 33.50570997629823,
-        "close": 123.92,
-        "marketCap": 96607536320,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1064",
-      "type": "ASSET",
-      "name": "써던컴퍼니",
-      "exposure": {
-        "ticker": "SO",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.01077702338612152,
-        "return_3d": 0.9573542210617791,
-        "return_7d": -0.3222341568206222,
-        "return_15d": -4.575835475578405,
-        "return_1m": -3.4037680857707864,
-        "return_ytd": 6.446432668043123,
-        "return_1y": -2.099377571473793,
-        "return_2y": 6.912442396313367,
-        "return_3y": 34.1234282410753,
-        "close": 92.8,
-        "marketCap": 106753408000,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1065",
-      "type": "ASSET",
-      "name": "아메리칸일렉트릭파워",
-      "exposure": {
-        "ticker": "AEP",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.17546658159195427,
-        "return_3d": 1.634568700436967,
-        "return_7d": -0.6879101763264006,
-        "return_15d": -7.333628449166296,
-        "return_1m": -5.656125591527084,
-        "return_ytd": 8.453501424747433,
-        "return_1y": 11.042348156661653,
-        "return_2y": 28.780887931918375,
-        "return_3y": 55.6188824185355,
-        "close": 125.6,
-        "marketCap": 68376263200,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1988",
-      "type": "ASSET",
-      "name": "에디슨인터내셔널",
-      "exposure": {
-        "ticker": "EIX",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 1.0328239954725316,
-        "return_3d": 2.174846186865076,
-        "return_7d": 4.522833723653408,
-        "return_15d": -10.457680250783707,
-        "return_1m": -8.507367072389494,
-        "return_ytd": 17.20006564910552,
-        "return_1y": 26.88343994314142,
-        "return_2y": -12.893388631373515,
-        "return_3y": 1.6078542970973109,
-        "close": 71.41,
-        "marketCap": 27478139540,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_286",
-      "type": "ASSET",
-      "name": "ABB",
-      "exposure": {
-        "ticker": "ABB",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.0802756243049263,
-        "return_3d": 0.18781862087469126,
-        "return_7d": 0.7011811919535482,
-        "return_15d": 1.9104803493449785,
-        "return_1m": null,
-        "return_ytd": 0.0,
-        "return_1y": null,
-        "return_2y": null,
-        "return_3y": null,
-        "close": 37.13,
-        "marketCap": 69020585106,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_100",
-      "type": "ASSET",
-      "name": "슈나이더일렉트릭",
-      "exposure": {
-        "ticker": "SU",
-        "exchange": "EURONEXT",
-        "country": "FR"
-      },
-      "metrics": {
-        "return_1d": -0.9215844785772087,
-        "return_3d": 0.21259198691740977,
-        "return_7d": 1.9973368841544659,
-        "return_15d": 14.30703227009884,
-        "return_1m": 15.906941554756937,
-        "return_ytd": 29.25543134359838,
-        "return_1y": 37.24524076147815,
-        "return_2y": 35.665264556121315,
-        "return_3y": 92.8742288807755,
-        "close": 306.4,
-        "marketCap": 172715931988,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1989",
-      "type": "ASSET",
-      "name": "에머슨일렉트릭",
-      "exposure": {
-        "ticker": "EMR",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.6333353632543837,
-        "return_3d": -0.7360992821511148,
-        "return_7d": 0.4308487720809939,
-        "return_15d": 10.294714073272937,
-        "return_1m": 17.32096635030196,
-        "return_ytd": 20.136945957885445,
-        "return_1y": 20.91144868469803,
-        "return_2y": 57.3632944353361,
-        "return_3y": 69.89795918367345,
-        "close": 163.13,
-        "marketCap": 91369113000,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_320",
-      "type": "CHARACTER",
-      "name": "송전망노후화수혜"
-    },
-    {
-      "id": "BF_566",
-      "type": "BUSINESS_FIELD",
-      "name": "송전망장비메이저"
-    },
-    {
-      "id": "BF_567",
-      "type": "BUSINESS_FIELD",
-      "name": "송전EPC건설"
-    },
-    {
-      "id": "BF_568",
-      "type": "BUSINESS_FIELD",
-      "name": "전력유틸리티IOU"
-    },
-    {
-      "id": "M_098",
-      "type": "MACRO",
-      "name": "전력망투자"
-    },
-    {
-      "id": "M_091",
-      "type": "MACRO",
-      "name": "전력수요확대"
-    },
-    {
-      "id": "M_035",
-      "type": "MACRO",
-      "name": "AI데이터센터전력수요증가"
-    },
-    {
-      "id": "C_4887",
-      "type": "CHARACTER",
-      "name": "전력관리그리드전방위"
-    },
-    {
-      "id": "C_4888",
-      "type": "CHARACTER",
-      "name": "전력송배전기기"
-    },
-    {
-      "id": "C_4889",
-      "type": "CHARACTER",
-      "name": "전력그리드EPC"
-    },
-    {
-      "id": "C_4890",
-      "type": "CHARACTER",
-      "name": "최대재생에너지IPP"
-    },
-    {
-      "id": "C_4891",
-      "type": "CHARACTER",
-      "name": "미국유틸리티송배전투자"
-    },
-    {
-      "id": "C_4892",
-      "type": "CHARACTER",
-      "name": "미국유틸리티원전"
-    },
-    {
-      "id": "C_4893",
-      "type": "CHARACTER",
-      "name": "송전망최대유틸리티"
-    },
-    {
-      "id": "C_4894",
-      "type": "CHARACTER",
-      "name": "캘리포니아유틸리티"
-    },
-    {
-      "id": "C_4895",
-      "type": "CHARACTER",
-      "name": "전력전자그리드자동화"
-    },
-    {
-      "id": "C_4896",
-      "type": "CHARACTER",
-      "name": "전력관리에너지효율"
-    },
-    {
-      "id": "C_4897",
-      "type": "CHARACTER",
-      "name": "산업자동화전력"
-    },
-    {
-      "id": "A_2917",
-      "type": "ASSET",
-      "name": "TIGER 글로벌AI전력인프라액티브",
-      "exposure": {
-        "ticker": "491010",
-        "exchange": "KRX",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 0.25945144551520194,
-        "return_3d": 6.07843137254902,
-        "return_7d": 0.7073715562174288,
-        "return_15d": -5.353393981805454,
-        "return_1m": -11.846178914779204,
-        "return_ytd": 45.001340123291335,
-        "return_1y": 61.56742357311356,
-        "return_2y": null,
-        "return_3y": null,
-        "close": 27050,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD"
-      }
-    },
-    {
-      "id": "A_1473",
-      "type": "ASSET",
-      "name": "GRID",
-      "exposure": {
-        "ticker": "GRID",
-        "exchange": "NASDAQ",
-        "country": "US",
-        "theme_role": "1궤도",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -0.18064927474629178,
-        "close": 187.87,
-        "marketCap": 12286980369,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 0.24010244370933354,
-        "return_7d": 0.653629788373955,
-        "return_15d": 5.901916572717014,
-        "return_1m": 5.7409804694095845,
-        "return_ytd": 20.56860480041074,
-        "return_1y": 30.185018363245785,
-        "return_2y": 64.94293239683932,
-        "return_3y": 86.50848803732751,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    }
+ "schemaVersion": "v5",
+ "themeId": "T_354",
+ "themeName": "글로벌송전망노후화수혜",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
   ],
-  "edges": [
-    {
-      "from": "A_955",
-      "to": "T_354",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_010840"
-      ]
-    },
-    {
-      "from": "A_1987",
-      "to": "T_354",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_010841"
-      ]
-    },
-    {
-      "from": "A_1860",
-      "to": "T_354",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_010842"
-      ]
-    },
-    {
-      "from": "A_1062",
-      "to": "T_354",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_010843"
-      ]
-    },
-    {
-      "from": "A_1063",
-      "to": "T_354",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_010844"
-      ]
-    },
-    {
-      "from": "A_1064",
-      "to": "T_354",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_010845"
-      ]
-    },
-    {
-      "from": "A_1065",
-      "to": "T_354",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_010846"
-      ]
-    },
-    {
-      "from": "A_1988",
-      "to": "T_354",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_010847"
-      ]
-    },
-    {
-      "from": "A_286",
-      "to": "T_354",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_010848"
-      ]
-    },
-    {
-      "from": "A_100",
-      "to": "T_354",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_010849"
-      ]
-    },
-    {
-      "from": "A_1989",
-      "to": "T_354",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_010850"
-      ]
-    },
-    {
-      "from": "T_354",
-      "to": "C_320",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_016185"
-      ]
-    },
-    {
-      "from": "A_955",
-      "to": "BF_566",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016186"
-      ]
-    },
-    {
-      "from": "A_1987",
-      "to": "BF_566",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016187"
-      ]
-    },
-    {
-      "from": "A_286",
-      "to": "BF_566",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016188"
-      ]
-    },
-    {
-      "from": "A_100",
-      "to": "BF_566",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016189"
-      ]
-    },
-    {
-      "from": "A_1989",
-      "to": "BF_566",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016190"
-      ]
-    },
-    {
-      "from": "A_1860",
-      "to": "BF_567",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016191"
-      ]
-    },
-    {
-      "from": "A_1062",
-      "to": "BF_568",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016192"
-      ]
-    },
-    {
-      "from": "A_1063",
-      "to": "BF_568",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016193"
-      ]
-    },
-    {
-      "from": "A_1064",
-      "to": "BF_568",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016194"
-      ]
-    },
-    {
-      "from": "A_1065",
-      "to": "BF_568",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016195"
-      ]
-    },
-    {
-      "from": "A_1988",
-      "to": "BF_568",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016196"
-      ]
-    },
-    {
-      "from": "M_098",
-      "to": "T_354",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_010851"
-      ]
-    },
-    {
-      "from": "M_091",
-      "to": "T_354",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_010852"
-      ]
-    },
-    {
-      "from": "M_035",
-      "to": "T_354",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_010853"
-      ]
-    },
-    {
-      "from": "A_955",
-      "to": "C_4887",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_010854"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1987",
-      "to": "C_4888",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_010855"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1860",
-      "to": "C_4889",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_010856"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1062",
-      "to": "C_4890",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_010857"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1063",
-      "to": "C_4891",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_010858"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1064",
-      "to": "C_4892",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_010859"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1065",
-      "to": "C_4893",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_010860"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1988",
-      "to": "C_4894",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_010861"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_286",
-      "to": "C_4895",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_010862"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_100",
-      "to": "C_4896",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_010863"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1989",
-      "to": "C_4897",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_010864"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_955",
-      "to": "A_286",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019532"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "이튼과 ABB는 글로벌 전력관리·배전 장비 시장 경쟁"
-    },
-    {
-      "from": "A_955",
-      "to": "A_100",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019533"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "이튼과 슈나이더일렉트릭은 송배전·전력관리 시장 경쟁"
-    },
-    {
-      "from": "A_1987",
-      "to": "A_955",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019534"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "허벨과 이튼은 전력 인프라·변전 장비 시장 경쟁"
-    },
-    {
-      "from": "A_1860",
-      "to": "A_1062",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_019535"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "퀀타서비스는 NextEra 등 유틸리티에 송전망 건설·시공 서비스 제공"
-    },
-    {
-      "from": "A_1062",
-      "to": "A_1063",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019536"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "NextEra Energy와 듀크에너지는 미국 송배전 유틸리티 경쟁"
-    },
-    {
-      "from": "A_1989",
-      "to": "A_100",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019537"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "에머슨일렉트릭과 슈나이더일렉트릭은 산업 자동화·전력 시스템 경쟁"
-    },
-    {
-      "from": "A_1988",
-      "to": "A_1065",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019538"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "에디슨인터내셔널과 아메리칸일렉트릭파워는 미국 전력 유틸리티 경쟁"
-    },
-    {
-      "from": "A_2917",
-      "to": "T_354",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020726"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_1473",
-      "to": "T_354",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020727"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_955",
-      "to": "T_354",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_010840"
-      ]
-    },
-    {
-      "from": "A_1987",
-      "to": "T_354",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_010841"
-      ]
-    },
-    {
-      "from": "A_1860",
-      "to": "T_354",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_010842"
-      ]
-    },
-    {
-      "from": "A_1062",
-      "to": "T_354",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_010843"
-      ]
-    },
-    {
-      "from": "A_1063",
-      "to": "T_354",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_010844"
-      ]
-    },
-    {
-      "from": "A_1064",
-      "to": "T_354",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_010845"
-      ]
-    },
-    {
-      "from": "A_1065",
-      "to": "T_354",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_010846"
-      ]
-    },
-    {
-      "from": "A_1988",
-      "to": "T_354",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_010847"
-      ]
-    },
-    {
-      "from": "A_286",
-      "to": "T_354",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_010848"
-      ]
-    },
-    {
-      "from": "A_100",
-      "to": "T_354",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_010849"
-      ]
-    },
-    {
-      "from": "A_1989",
-      "to": "T_354",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_010850"
-      ]
-    },
-    {
-      "from": "T_354",
-      "to": "C_320",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_016185"
-      ]
-    },
-    {
-      "from": "A_955",
-      "to": "BF_566",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016186"
-      ]
-    },
-    {
-      "from": "A_1987",
-      "to": "BF_566",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016187"
-      ]
-    },
-    {
-      "from": "A_286",
-      "to": "BF_566",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016188"
-      ]
-    },
-    {
-      "from": "A_100",
-      "to": "BF_566",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016189"
-      ]
-    },
-    {
-      "from": "A_1989",
-      "to": "BF_566",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016190"
-      ]
-    },
-    {
-      "from": "A_1860",
-      "to": "BF_567",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016191"
-      ]
-    },
-    {
-      "from": "A_1062",
-      "to": "BF_568",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016192"
-      ]
-    },
-    {
-      "from": "A_1063",
-      "to": "BF_568",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016193"
-      ]
-    },
-    {
-      "from": "A_1064",
-      "to": "BF_568",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016194"
-      ]
-    },
-    {
-      "from": "A_1065",
-      "to": "BF_568",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016195"
-      ]
-    },
-    {
-      "from": "A_1988",
-      "to": "BF_568",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016196"
-      ]
-    },
-    {
-      "from": "M_098",
-      "to": "T_354",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_010851"
-      ]
-    },
-    {
-      "from": "M_091",
-      "to": "T_354",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_010852"
-      ]
-    },
-    {
-      "from": "M_035",
-      "to": "T_354",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_010853"
-      ]
-    },
-    {
-      "from": "A_955",
-      "to": "C_4887",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_010854"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1987",
-      "to": "C_4888",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_010855"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1860",
-      "to": "C_4889",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_010856"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1062",
-      "to": "C_4890",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_010857"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1063",
-      "to": "C_4891",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_010858"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1064",
-      "to": "C_4892",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_010859"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1065",
-      "to": "C_4893",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_010860"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1988",
-      "to": "C_4894",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_010861"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_286",
-      "to": "C_4895",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_010862"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_100",
-      "to": "C_4896",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_010863"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1989",
-      "to": "C_4897",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_010864"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_955",
-      "to": "A_286",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019532"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "이튼과 ABB는 글로벌 전력관리·배전 장비 시장 경쟁"
-    },
-    {
-      "from": "A_955",
-      "to": "A_100",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019533"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "이튼과 슈나이더일렉트릭은 송배전·전력관리 시장 경쟁"
-    },
-    {
-      "from": "A_1987",
-      "to": "A_955",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019534"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "허벨과 이튼은 전력 인프라·변전 장비 시장 경쟁"
-    },
-    {
-      "from": "A_1860",
-      "to": "A_1062",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_019535"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "퀀타서비스는 NextEra 등 유틸리티에 송전망 건설·시공 서비스 제공"
-    },
-    {
-      "from": "A_1062",
-      "to": "A_1063",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019536"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "NextEra Energy와 듀크에너지는 미국 송배전 유틸리티 경쟁"
-    },
-    {
-      "from": "A_1989",
-      "to": "A_100",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019537"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "에머슨일렉트릭과 슈나이더일렉트릭은 산업 자동화·전력 시스템 경쟁"
-    },
-    {
-      "from": "A_1988",
-      "to": "A_1065",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019538"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "에디슨인터내셔널과 아메리칸일렉트릭파워는 미국 전력 유틸리티 경쟁"
-    },
-    {
-      "from": "A_2917",
-      "to": "T_354",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020726"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_1473",
-      "to": "T_354",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020727"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
+  "dataAsOf": "2026-07-29T00:00:00+09:00",
+  "description": "글로벌 송전망 노후화 + AI DC 전력 수요 폭증 수혜주. 미국 전력망 60% 50년+, 송전 capa 2배 필요. 장비: Eaton·Hubbell·ABB·Schneider·Emerson. 건설 EPC: Quanta Services. 유틸리티 IOU: NextEra·Duke·Southern·AEP·Edison. IIJA $73B 송전 자금 + AI capex 사이클.",
+  "notes": "T_354 신규 — 글로벌 송전망 노후화 11사",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-08-04",
+    "kind": "보강",
+    "title": "2궤도 관계 엣지 추가",
+    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 7건 백필(리서치 기반)."
+   },
+   {
+    "date": "2026-07-29",
+    "kind": "수정",
+    "title": "AI 전력 고평가 폭락 이벤트 추가",
+    "detail": "AI 전력수요 랠리 장기화·고평가 부담에 따른 되돌림 폭락 반영."
+   },
+   {
+    "date": "2026-07-25",
+    "kind": "수정",
+    "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
+    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결(ETF 제외), 2026 이벤트 2건 추가."
+   },
+   {
+    "date": "2026-08-05",
+    "kind": "관계",
+    "title": "EXPOSED_TO ETF 연결",
+    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+   }
   ]
+ },
+ "nodes": [
+  {
+   "id": "T_354",
+   "type": "THEME",
+   "name": "글로벌송전망노후화수혜"
+  },
+  {
+   "id": "A_955",
+   "type": "ASSET",
+   "name": "이튼",
+   "exposure": {
+    "ticker": "ETN",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.40147354024662185,
+    "return_3d": -1.6939188747850054,
+    "return_15d": 12.015457046434896,
+    "return_1m": 8.928777356440353,
+    "return_ytd": 42.94275736328848,
+    "return_1y": 28.560608649104214,
+    "return_3y": 113.97391708611417,
+    "close": 451.51,
+    "marketCap": 175321333000,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 0.6307390567888094,
+    "return_2y": 55.019410472350685
+   }
+  },
+  {
+   "id": "A_1987",
+   "type": "ASSET",
+   "name": "허벨",
+   "exposure": {
+    "ticker": "HUBB",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.8459869848156165,
+    "return_3d": -1.5838497363457993,
+    "return_15d": 5.204797465489941,
+    "return_1m": 5.683109797681296,
+    "return_ytd": 15.8091661327882,
+    "return_1y": 18.254106080678433,
+    "return_3y": 71.27150648191933,
+    "close": 511.39,
+    "marketCap": 27018048484,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -0.5058464172454813,
+    "return_2y": 38.082931843642996
+   }
+  },
+  {
+   "id": "A_1860",
+   "type": "ASSET",
+   "name": "퀀타서비스",
+   "exposure": {
+    "ticker": "PWR",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 1.932280983382384,
+    "return_3d": 2.2666945032658203,
+    "return_15d": 9.577527802633256,
+    "return_1m": 3.7582836566102618,
+    "return_ytd": 62.58312239347921,
+    "return_1y": 81.81345787573756,
+    "return_3y": 238.1576527288856,
+    "close": 685.78,
+    "marketCap": 103102222540,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 2.0718602089720983,
+    "return_2y": 160.83804558218824
+   }
+  },
+  {
+   "id": "A_1062",
+   "type": "ASSET",
+   "name": "NextEra Energy",
+   "exposure": {
+    "ticker": "NEE",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.20927799093128918,
+    "return_3d": 0.5248425472358376,
+    "return_15d": -3.99866339942081,
+    "return_1m": -3.741344650435574,
+    "return_ytd": 8.885974819407693,
+    "return_1y": 22.764487035591596,
+    "return_3y": 37.3453888345322,
+    "close": 86.19,
+    "marketCap": 179790460541,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 1.8192557590076763,
+    "return_2y": 17.074482679931215
+   }
+  },
+  {
+   "id": "A_1063",
+   "type": "ASSET",
+   "name": "듀크에너지",
+   "exposure": {
+    "ticker": "DUK",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.4173250678659812,
+    "return_3d": 1.47703459734696,
+    "return_15d": -4.221903442817565,
+    "return_1m": -1.0765666735319201,
+    "return_ytd": 8.492193149723072,
+    "return_1y": 4.118704733737766,
+    "return_3y": 51.19976378087259,
+    "close": 123.92,
+    "marketCap": 96607536320,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 0.12774529156389658,
+    "return_2y": 18.33178161331137
+   }
+  },
+  {
+   "id": "A_1064",
+   "type": "ASSET",
+   "name": "써던컴퍼니",
+   "exposure": {
+    "ticker": "SO",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.01077702338612152,
+    "return_3d": 0.9573542210617791,
+    "return_15d": -4.575835475578405,
+    "return_1m": -3.293038766152556,
+    "return_ytd": 8.14602977045773,
+    "return_1y": 1.7443454045105167,
+    "return_3y": 49.81829688239103,
+    "close": 92.8,
+    "marketCap": 106753408000,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 0.11867515373826798,
+    "return_2y": 13.637198549166452
+   }
+  },
+  {
+   "id": "A_1065",
+   "type": "ASSET",
+   "name": "아메리칸일렉트릭파워",
+   "exposure": {
+    "ticker": "AEP",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.17546658159195427,
+    "return_3d": 1.634568700436967,
+    "return_15d": -6.628138383640891,
+    "return_1m": -6.212944405781351,
+    "return_ytd": 11.424270086753019,
+    "return_1y": 14.740709748027193,
+    "return_3y": 74.94083907532068,
+    "close": 125.6,
+    "marketCap": 68376263200,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 0.6571565956082548,
+    "return_2y": 38.06764655122188
+   }
+  },
+  {
+   "id": "A_1988",
+   "type": "ASSET",
+   "name": "에디슨인터내셔널",
+   "exposure": {
+    "ticker": "EIX",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 1.0328239954725316,
+    "return_3d": 2.174846186865076,
+    "return_15d": -10.457680250783707,
+    "return_1m": -6.751109950378686,
+    "return_ytd": 23.636980632918835,
+    "return_1y": 34.497306663653134,
+    "return_3y": 18.821008073372504,
+    "close": 71.41,
+    "marketCap": 27478139540,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 4.065870008743788,
+    "return_2y": -4.650252961904178
+   }
+  },
+  {
+   "id": "A_286",
+   "type": "ASSET",
+   "name": "ABB",
+   "exposure": {
+    "ticker": "ABB",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.0802756243049263,
+    "return_3d": 0.18781862087469126,
+    "return_15d": 1.9104803493449785,
+    "return_1m": null,
+    "return_ytd": 0.0,
+    "return_1y": null,
+    "return_3y": null,
+    "close": 37.13,
+    "marketCap": 69020585106,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": null
+   }
+  },
+  {
+   "id": "A_100",
+   "type": "ASSET",
+   "name": "슈나이더일렉트릭",
+   "exposure": {
+    "ticker": "SU",
+    "exchange": "EURONEXT",
+    "country": "FR"
+   },
+   "metrics": {
+    "return_1d": -0.9215844785772087,
+    "return_3d": 0.21259198691740977,
+    "return_15d": 14.30703227009884,
+    "return_1m": 12.193335774441572,
+    "return_ytd": 32.47959515896037,
+    "return_1y": 40.17776590313093,
+    "return_3y": 100.89906264588784,
+    "close": 306.4,
+    "marketCap": 172715931988,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 0.8890352321369699,
+    "return_2y": 45.28026431145735
+   }
+  },
+  {
+   "id": "A_1989",
+   "type": "ASSET",
+   "name": "에머슨일렉트릭",
+   "exposure": {
+    "ticker": "EMR",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.29635513733159424,
+    "return_3d": -0.3994520962689374,
+    "return_15d": 10.668746608790002,
+    "return_1m": 20.30524220305241,
+    "return_ytd": 24.334493849568737,
+    "return_1y": 23.82676849850651,
+    "return_3y": 79.36623271551264,
+    "close": 163.17,
+    "marketCap": 91369113000,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 3.452145536759832,
+    "return_2y": 63.655730207255125
+   }
+  },
+  {
+   "id": "C_320",
+   "type": "CHARACTER",
+   "name": "송전망노후화수혜"
+  },
+  {
+   "id": "BF_566",
+   "type": "BUSINESS_FIELD",
+   "name": "송전망장비메이저"
+  },
+  {
+   "id": "BF_567",
+   "type": "BUSINESS_FIELD",
+   "name": "송전EPC건설"
+  },
+  {
+   "id": "BF_568",
+   "type": "BUSINESS_FIELD",
+   "name": "전력유틸리티IOU"
+  },
+  {
+   "id": "M_098",
+   "type": "MACRO",
+   "name": "전력망투자"
+  },
+  {
+   "id": "M_091",
+   "type": "MACRO",
+   "name": "전력수요확대"
+  },
+  {
+   "id": "M_035",
+   "type": "MACRO",
+   "name": "AI데이터센터전력수요증가"
+  },
+  {
+   "id": "C_4887",
+   "type": "CHARACTER",
+   "name": "전력관리그리드전방위"
+  },
+  {
+   "id": "C_4888",
+   "type": "CHARACTER",
+   "name": "전력송배전기기"
+  },
+  {
+   "id": "C_4889",
+   "type": "CHARACTER",
+   "name": "전력그리드EPC"
+  },
+  {
+   "id": "C_4890",
+   "type": "CHARACTER",
+   "name": "최대재생에너지IPP"
+  },
+  {
+   "id": "C_4891",
+   "type": "CHARACTER",
+   "name": "미국유틸리티송배전투자"
+  },
+  {
+   "id": "C_4892",
+   "type": "CHARACTER",
+   "name": "미국유틸리티원전"
+  },
+  {
+   "id": "C_4893",
+   "type": "CHARACTER",
+   "name": "송전망최대유틸리티"
+  },
+  {
+   "id": "C_4894",
+   "type": "CHARACTER",
+   "name": "캘리포니아유틸리티"
+  },
+  {
+   "id": "C_4895",
+   "type": "CHARACTER",
+   "name": "전력전자그리드자동화"
+  },
+  {
+   "id": "C_4896",
+   "type": "CHARACTER",
+   "name": "전력관리에너지효율"
+  },
+  {
+   "id": "C_4897",
+   "type": "CHARACTER",
+   "name": "산업자동화전력"
+  },
+  {
+   "id": "A_2917",
+   "type": "ASSET",
+   "name": "TIGER 글로벌AI전력인프라액티브",
+   "exposure": {
+    "ticker": "491010",
+    "exchange": "KRX",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 0.25945144551520194,
+    "return_3d": 6.07843137254902,
+    "return_15d": -5.353393981805454,
+    "return_1m": -11.846178914779204,
+    "return_ytd": 45.001340123291335,
+    "return_1y": 61.56742357311356,
+    "return_3y": null,
+    "close": 27050,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": null
+   }
+  },
+  {
+   "id": "A_1473",
+   "type": "ASSET",
+   "name": "GRID",
+   "exposure": {
+    "ticker": "GRID",
+    "exchange": "NASDAQ",
+    "country": "US",
+    "theme_role": "1궤도",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -0.18064927474629178,
+    "close": 187.87,
+    "marketCap": 12286980369,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 0.24010244370933354,
+    "return_15d": 5.901916572717014,
+    "return_1m": 2.26443851722824,
+    "return_ytd": 23.34347681934419,
+    "return_1y": 31.671904480222945,
+    "return_3y": 94.05792505626927,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 0.7724078742691542,
+    "return_2y": 64.60187846078365
+   }
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_955",
+   "to": "T_354",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_010840"
+   ]
+  },
+  {
+   "from": "A_1987",
+   "to": "T_354",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_010841"
+   ]
+  },
+  {
+   "from": "A_1860",
+   "to": "T_354",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_010842"
+   ]
+  },
+  {
+   "from": "A_1062",
+   "to": "T_354",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_010843"
+   ]
+  },
+  {
+   "from": "A_1063",
+   "to": "T_354",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_010844"
+   ]
+  },
+  {
+   "from": "A_1064",
+   "to": "T_354",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_010845"
+   ]
+  },
+  {
+   "from": "A_1065",
+   "to": "T_354",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_010846"
+   ]
+  },
+  {
+   "from": "A_1988",
+   "to": "T_354",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_010847"
+   ]
+  },
+  {
+   "from": "A_286",
+   "to": "T_354",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_010848"
+   ]
+  },
+  {
+   "from": "A_100",
+   "to": "T_354",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_010849"
+   ]
+  },
+  {
+   "from": "A_1989",
+   "to": "T_354",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_010850"
+   ]
+  },
+  {
+   "from": "T_354",
+   "to": "C_320",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_016185"
+   ]
+  },
+  {
+   "from": "A_955",
+   "to": "BF_566",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016186"
+   ]
+  },
+  {
+   "from": "A_1987",
+   "to": "BF_566",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016187"
+   ]
+  },
+  {
+   "from": "A_286",
+   "to": "BF_566",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016188"
+   ]
+  },
+  {
+   "from": "A_100",
+   "to": "BF_566",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016189"
+   ]
+  },
+  {
+   "from": "A_1989",
+   "to": "BF_566",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016190"
+   ]
+  },
+  {
+   "from": "A_1860",
+   "to": "BF_567",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016191"
+   ]
+  },
+  {
+   "from": "A_1062",
+   "to": "BF_568",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016192"
+   ]
+  },
+  {
+   "from": "A_1063",
+   "to": "BF_568",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016193"
+   ]
+  },
+  {
+   "from": "A_1064",
+   "to": "BF_568",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016194"
+   ]
+  },
+  {
+   "from": "A_1065",
+   "to": "BF_568",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016195"
+   ]
+  },
+  {
+   "from": "A_1988",
+   "to": "BF_568",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016196"
+   ]
+  },
+  {
+   "from": "M_098",
+   "to": "T_354",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_010851"
+   ]
+  },
+  {
+   "from": "M_091",
+   "to": "T_354",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_010852"
+   ]
+  },
+  {
+   "from": "M_035",
+   "to": "T_354",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_010853"
+   ]
+  },
+  {
+   "from": "A_955",
+   "to": "C_4887",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_010854"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1987",
+   "to": "C_4888",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_010855"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1860",
+   "to": "C_4889",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_010856"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1062",
+   "to": "C_4890",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_010857"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1063",
+   "to": "C_4891",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_010858"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1064",
+   "to": "C_4892",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_010859"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1065",
+   "to": "C_4893",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_010860"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1988",
+   "to": "C_4894",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_010861"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_286",
+   "to": "C_4895",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_010862"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_100",
+   "to": "C_4896",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_010863"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1989",
+   "to": "C_4897",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_010864"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_955",
+   "to": "A_286",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019532"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "이튼과 ABB는 글로벌 전력관리·배전 장비 시장 경쟁"
+  },
+  {
+   "from": "A_955",
+   "to": "A_100",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019533"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "이튼과 슈나이더일렉트릭은 송배전·전력관리 시장 경쟁"
+  },
+  {
+   "from": "A_1987",
+   "to": "A_955",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019534"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "허벨과 이튼은 전력 인프라·변전 장비 시장 경쟁"
+  },
+  {
+   "from": "A_1860",
+   "to": "A_1062",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_019535"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "퀀타서비스는 NextEra 등 유틸리티에 송전망 건설·시공 서비스 제공"
+  },
+  {
+   "from": "A_1062",
+   "to": "A_1063",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019536"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "NextEra Energy와 듀크에너지는 미국 송배전 유틸리티 경쟁"
+  },
+  {
+   "from": "A_1989",
+   "to": "A_100",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019537"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "에머슨일렉트릭과 슈나이더일렉트릭은 산업 자동화·전력 시스템 경쟁"
+  },
+  {
+   "from": "A_1988",
+   "to": "A_1065",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019538"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "에디슨인터내셔널과 아메리칸일렉트릭파워는 미국 전력 유틸리티 경쟁"
+  },
+  {
+   "from": "A_2917",
+   "to": "T_354",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020726"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_1473",
+   "to": "T_354",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020727"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_955",
+   "to": "T_354",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_010840"
+   ]
+  },
+  {
+   "from": "A_1987",
+   "to": "T_354",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_010841"
+   ]
+  },
+  {
+   "from": "A_1860",
+   "to": "T_354",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_010842"
+   ]
+  },
+  {
+   "from": "A_1062",
+   "to": "T_354",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_010843"
+   ]
+  },
+  {
+   "from": "A_1063",
+   "to": "T_354",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_010844"
+   ]
+  },
+  {
+   "from": "A_1064",
+   "to": "T_354",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_010845"
+   ]
+  },
+  {
+   "from": "A_1065",
+   "to": "T_354",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_010846"
+   ]
+  },
+  {
+   "from": "A_1988",
+   "to": "T_354",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_010847"
+   ]
+  },
+  {
+   "from": "A_286",
+   "to": "T_354",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_010848"
+   ]
+  },
+  {
+   "from": "A_100",
+   "to": "T_354",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_010849"
+   ]
+  },
+  {
+   "from": "A_1989",
+   "to": "T_354",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_010850"
+   ]
+  },
+  {
+   "from": "T_354",
+   "to": "C_320",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_016185"
+   ]
+  },
+  {
+   "from": "A_955",
+   "to": "BF_566",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016186"
+   ]
+  },
+  {
+   "from": "A_1987",
+   "to": "BF_566",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016187"
+   ]
+  },
+  {
+   "from": "A_286",
+   "to": "BF_566",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016188"
+   ]
+  },
+  {
+   "from": "A_100",
+   "to": "BF_566",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016189"
+   ]
+  },
+  {
+   "from": "A_1989",
+   "to": "BF_566",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016190"
+   ]
+  },
+  {
+   "from": "A_1860",
+   "to": "BF_567",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016191"
+   ]
+  },
+  {
+   "from": "A_1062",
+   "to": "BF_568",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016192"
+   ]
+  },
+  {
+   "from": "A_1063",
+   "to": "BF_568",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016193"
+   ]
+  },
+  {
+   "from": "A_1064",
+   "to": "BF_568",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016194"
+   ]
+  },
+  {
+   "from": "A_1065",
+   "to": "BF_568",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016195"
+   ]
+  },
+  {
+   "from": "A_1988",
+   "to": "BF_568",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016196"
+   ]
+  },
+  {
+   "from": "M_098",
+   "to": "T_354",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_010851"
+   ]
+  },
+  {
+   "from": "M_091",
+   "to": "T_354",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_010852"
+   ]
+  },
+  {
+   "from": "M_035",
+   "to": "T_354",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_010853"
+   ]
+  },
+  {
+   "from": "A_955",
+   "to": "C_4887",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_010854"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1987",
+   "to": "C_4888",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_010855"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1860",
+   "to": "C_4889",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_010856"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1062",
+   "to": "C_4890",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_010857"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1063",
+   "to": "C_4891",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_010858"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1064",
+   "to": "C_4892",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_010859"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1065",
+   "to": "C_4893",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_010860"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1988",
+   "to": "C_4894",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_010861"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_286",
+   "to": "C_4895",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_010862"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_100",
+   "to": "C_4896",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_010863"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1989",
+   "to": "C_4897",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_010864"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_955",
+   "to": "A_286",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019532"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "이튼과 ABB는 글로벌 전력관리·배전 장비 시장 경쟁"
+  },
+  {
+   "from": "A_955",
+   "to": "A_100",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019533"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "이튼과 슈나이더일렉트릭은 송배전·전력관리 시장 경쟁"
+  },
+  {
+   "from": "A_1987",
+   "to": "A_955",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019534"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "허벨과 이튼은 전력 인프라·변전 장비 시장 경쟁"
+  },
+  {
+   "from": "A_1860",
+   "to": "A_1062",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_019535"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "퀀타서비스는 NextEra 등 유틸리티에 송전망 건설·시공 서비스 제공"
+  },
+  {
+   "from": "A_1062",
+   "to": "A_1063",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019536"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "NextEra Energy와 듀크에너지는 미국 송배전 유틸리티 경쟁"
+  },
+  {
+   "from": "A_1989",
+   "to": "A_100",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019537"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "에머슨일렉트릭과 슈나이더일렉트릭은 산업 자동화·전력 시스템 경쟁"
+  },
+  {
+   "from": "A_1988",
+   "to": "A_1065",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019538"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "에디슨인터내셔널과 아메리칸일렉트릭파워는 미국 전력 유틸리티 경쟁"
+  },
+  {
+   "from": "A_2917",
+   "to": "T_354",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020726"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_1473",
+   "to": "T_354",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020727"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ]
 }

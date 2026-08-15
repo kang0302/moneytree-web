@@ -9,7 +9,7 @@ const DATA_ROOT = fs.existsSync(path.join(ROOT, "import_MT", "data", "theme"))
 const THEME_DIR = path.join(DATA_ROOT, "theme");
 const files = fs.readdirSync(THEME_DIR).filter((f) => /^T_\d+\.json$/.test(f));
 
-const PERIODS = ["7D","1M","YTD","1Y"];
+const PERIODS = ["5D","1M","YTD","1Y"];
 const themes = files.map((f) => { try { return JSON.parse(fs.readFileSync(path.join(THEME_DIR,f),"utf8")); } catch { return null; } }).filter(Boolean);
 
 function stats(arr) {

@@ -1,822 +1,821 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_446",
-  "themeName": "미국소형해운_Tanker_Bulk",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-25T00:00:00+09:00",
-    "description": "미국 소형 해운 (Tanker + Bulk) — Frontline·Euronav·International Seaways·Star Bulk·SFL·DHT. VLCC + BDI 운임 사이클.",
-    "notes": "T_446 신규 — Russell 2000",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-08-04",
-        "kind": "보강",
-        "title": "2궤도 관계 엣지 추가",
-        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
-      },
-      {
-        "date": "2026-07-25",
-        "kind": "수정",
-        "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
-        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결, 2026 이벤트 2건 추가."
-      },
-      {
-        "date": "2026-08-05",
-        "kind": "관계",
-        "title": "EXPOSED_TO ETF 연결",
-        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-      }
-    ]
-  },
-  "nodes": [
-    {
-      "id": "T_446",
-      "type": "THEME",
-      "name": "미국소형해운_Tanker_Bulk"
-    },
-    {
-      "id": "A_2340",
-      "type": "ASSET",
-      "name": "프론트라인",
-      "exposure": {
-        "ticker": "FRO",
-        "exchange": "NYSE",
-        "country": "BM"
-      },
-      "metrics": {
-        "return_1d": 1.702862783810466,
-        "return_3d": 8.049292081803872,
-        "return_7d": 8.533052409797204,
-        "return_15d": 4.88673962840418,
-        "return_1m": 10.868980360505788,
-        "return_ytd": 100.24295432458699,
-        "return_1y": 118.85289431757835,
-        "return_2y": 78.70771899392889,
-        "return_3y": 134.94868871151655,
-        "close": 41.21,
-        "marketCap": 9174289256,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_749",
-      "type": "CHARACTER",
-      "name": "VLCC원유유조선_Frontline"
-    },
-    {
-      "id": "A_2341",
-      "type": "ASSET",
-      "name": "유로내브(비)",
-      "exposure": {
-        "ticker": "",
-        "exchange": "",
-        "country": "BE"
-      },
-      "metrics": {
-        "return_1d": null,
-        "return_3d": null,
-        "return_7d": null,
-        "return_15d": null,
-        "return_1m": null,
-        "return_ytd": null,
-        "return_1y": null,
-        "return_2y": null,
-        "return_3y": null,
-        "close": null,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": null,
-        "valuationSource": null,
-        "returnsAsOf": null,
-        "returnsSource": null
-      },
-      "coreBiz": "VLCC_벨기에_Euronav피인수"
-    },
-    {
-      "id": "C_750",
-      "type": "CHARACTER",
-      "name": "VLCC_벨기에_Euronav피인수"
-    },
-    {
-      "id": "A_2342",
-      "type": "ASSET",
-      "name": "인터내셔널씨웨이즈",
-      "exposure": {
-        "ticker": "INSW",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 1.9968470835522778,
-        "return_3d": 8.971479901190204,
-        "return_7d": 6.9893065814133015,
-        "return_15d": 5.169050715214563,
-        "return_1m": 9.996599795987748,
-        "return_ytd": 106.53330495850177,
-        "return_1y": 129.37839754195224,
-        "return_2y": 97.57736156351793,
-        "return_3y": 110.01947630383033,
-        "close": 97.05,
-        "marketCap": 4804430747,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_751",
-      "type": "CHARACTER",
-      "name": "정유운반선_시웨이즈_INSW"
-    },
-    {
-      "id": "A_2343",
-      "type": "ASSET",
-      "name": "스타벌크",
-      "exposure": {
-        "ticker": "SBLK",
-        "exchange": "NASDAQ",
-        "country": "GR"
-      },
-      "metrics": {
-        "return_1d": 1.0786360473208134,
-        "return_3d": 4.987350921575717,
-        "return_7d": 3.8984263233190264,
-        "return_15d": 3.233830845771135,
-        "return_1m": 11.644888547271325,
-        "return_ytd": 49.974186886938554,
-        "return_1y": 52.97525013164825,
-        "return_2y": 38.53123509775871,
-        "return_3y": 56.94219340896811,
-        "close": 29.05,
-        "marketCap": 3239973400,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_752",
-      "type": "CHARACTER",
-      "name": "드라이벌크_곡물철광석_SBLK"
-    },
-    {
-      "id": "A_2344",
-      "type": "ASSET",
-      "name": "SFL",
-      "exposure": {
-        "ticker": "SFL",
-        "exchange": "NYSE",
-        "country": "BM"
-      },
-      "metrics": {
-        "return_1d": 2.066115702479343,
-        "return_3d": 6.926406926406914,
-        "return_7d": 4.043807919123843,
-        "return_15d": 3.6073825503355694,
-        "return_1m": 9.388839681133753,
-        "return_ytd": 56.527249683143225,
-        "return_1y": 34.82532751091703,
-        "return_2y": 7.860262008733621,
-        "return_3y": 22.885572139303466,
-        "close": 12.35,
-        "marketCap": 1642292194,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_753",
-      "type": "CHARACTER",
-      "name": "선박_드라이벌크"
-    },
-    {
-      "id": "A_2345",
-      "type": "ASSET",
-      "name": "DHT",
-      "exposure": {
-        "ticker": "DHT",
-        "exchange": "NYSE",
-        "country": "BM"
-      },
-      "metrics": {
-        "return_1d": 1.6666666666666607,
-        "return_3d": 7.252747252747249,
-        "return_7d": 9.233351986569671,
-        "return_15d": 5.7994579945799485,
-        "return_1m": 9.4170403587444,
-        "return_ytd": 66.26916524701873,
-        "return_1y": 72.13403880070545,
-        "return_2y": 78.75457875457874,
-        "return_3y": 100.41067761806981,
-        "close": 19.52,
-        "marketCap": 3143539840,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_754",
-      "type": "CHARACTER",
-      "name": "VLCC원유"
-    },
-    {
-      "id": "M_423",
-      "type": "MACRO",
-      "name": "BDI(발틱운임)지수"
-    },
-    {
-      "id": "M_059",
-      "type": "MACRO",
-      "name": "유가상승"
-    },
-    {
-      "id": "A_2577",
-      "type": "ASSET",
-      "name": "스코르피오탱커스",
-      "exposure": {
-        "ticker": "STNG",
-        "exchange": "NYSE",
-        "country": "MC"
-      },
-      "metrics": {
-        "return_1d": 1.1077158135981646,
-        "return_3d": 7.035988677719374,
-        "return_7d": 7.238352464550979,
-        "return_15d": -0.10064159013711826,
-        "return_1m": 1.8729955099422657,
-        "return_ytd": 59.81082712819481,
-        "return_1y": 76.42746056431903,
-        "return_2y": 6.920694762353574,
-        "return_3y": 58.566293929712465,
-        "close": 79.41,
-        "marketCap": 3976960162,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1566",
-      "type": "CHARACTER",
-      "name": "정유제품선_MR_LR_STNG"
-    },
-    {
-      "id": "A_2578",
-      "type": "ASSET",
-      "name": "노르딕아메리칸탱커스",
-      "exposure": {
-        "ticker": "NAT",
-        "exchange": "NYSE",
-        "country": "BM"
-      },
-      "metrics": {
-        "return_1d": 1.5128593040847127,
-        "return_3d": 8.752025931928697,
-        "return_7d": 9.461663947797728,
-        "return_15d": 4.031007751937987,
-        "return_1m": 8.225806451612904,
-        "return_ytd": 99.10979228486647,
-        "return_1y": 134.6153846153846,
-        "return_2y": 91.16809116809117,
-        "return_3y": 51.46726862302484,
-        "close": 6.71,
-        "marketCap": 1420849210,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1567",
-      "type": "CHARACTER",
-      "name": "수에즈막스원유_NAT"
-    },
-    {
-      "id": "M_1080",
-      "type": "MACRO",
-      "name": "전쟁위기_운임/보험료상승"
-    },
-    {
-      "id": "A_2644",
-      "type": "ASSET",
-      "name": "BOAT",
-      "exposure": {
-        "ticker": "BOAT",
-        "exchange": "BATS",
-        "country": "US",
-        "business_desc": "SonicShares Global Shipping ETF. 글로벌 해운주(컨테이너·벌크·탱커)를 담되 컨테이너 선사 비중이 높은 미국 상장 해운 ETF.",
-        "theme_role": "2궤도",
-        "theme_status": "Ref"
-      },
-      "metrics": {
-        "return_1d": 2.0677518697756136,
-        "return_3d": 6.7157313707451705,
-        "return_7d": 7.258437355524738,
-        "return_15d": 6.032906764168189,
-        "return_1m": 11.645813282001916,
-        "return_ytd": 47.30158730158729,
-        "return_1y": 48.14814814814814,
-        "return_2y": 44.054641415709405,
-        "return_3y": 59.45017182130583,
-        "close": 46.4,
-        "marketCap": 54283267,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      },
-      "coreBiz": "BOAT는 글로벌 해운주를 담는 ETF 중 컨테이너 선사 비중이 높아 컨테이너 운임 사이클에 직접 연동된다"
-    }
+ "schemaVersion": "v5",
+ "themeId": "T_446",
+ "themeName": "미국소형해운_Tanker_Bulk",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
   ],
-  "edges": [
-    {
-      "from": "A_2340",
-      "to": "T_446",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_011756"
-      ]
-    },
-    {
-      "from": "A_2340",
-      "to": "C_749",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_016726"
-      ]
-    },
-    {
-      "from": "A_2341",
-      "to": "T_446",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_011757"
-      ]
-    },
-    {
-      "from": "A_2341",
-      "to": "C_750",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_016727"
-      ]
-    },
-    {
-      "from": "A_2342",
-      "to": "T_446",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_011758"
-      ]
-    },
-    {
-      "from": "A_2342",
-      "to": "C_751",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_016728"
-      ]
-    },
-    {
-      "from": "A_2343",
-      "to": "T_446",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_011759"
-      ]
-    },
-    {
-      "from": "A_2343",
-      "to": "C_752",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_016729"
-      ]
-    },
-    {
-      "from": "A_2344",
-      "to": "T_446",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_011760"
-      ]
-    },
-    {
-      "from": "A_2344",
-      "to": "C_753",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_016730"
-      ]
-    },
-    {
-      "from": "A_2345",
-      "to": "T_446",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_011761"
-      ]
-    },
-    {
-      "from": "A_2345",
-      "to": "C_754",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_016731"
-      ]
-    },
-    {
-      "from": "M_423",
-      "to": "T_446",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_011762"
-      ]
-    },
-    {
-      "from": "M_059",
-      "to": "T_446",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_011763"
-      ]
-    },
-    {
-      "from": "A_2577",
-      "to": "T_446",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_011764"
-      ]
-    },
-    {
-      "from": "A_2577",
-      "to": "C_1566",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_016732"
-      ]
-    },
-    {
-      "from": "A_2578",
-      "to": "T_446",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_011765"
-      ]
-    },
-    {
-      "from": "A_2578",
-      "to": "C_1567",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_016733"
-      ]
-    },
-    {
-      "from": "M_1080",
-      "to": "T_446",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_011766"
-      ]
-    },
-    {
-      "from": "A_2340",
-      "to": "A_2342",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019679"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "프론트라인과 인터내셔널씨웨이즈는 원유 탱커 해운 시장 경쟁"
-    },
-    {
-      "from": "A_2345",
-      "to": "A_2342",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019680"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "DHT와 인터내셔널씨웨이즈는 VLCC 원유 탱커 시장 경쟁"
-    },
-    {
-      "from": "A_2577",
-      "to": "A_2340",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019681"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "스코르피오탱커스와 프론트라인은 제품유·원유 탱커 시장 경쟁"
-    },
-    {
-      "from": "A_2578",
-      "to": "A_2345",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019682"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "노르딕아메리칸탱커스와 DHT는 수에즈막스·VLCC 탱커 시장 경쟁"
-    },
-    {
-      "from": "A_2343",
-      "to": "A_2344",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019683"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "스타벌크와 SFL은 벌크·선박 리스 시장 경쟁"
-    },
-    {
-      "from": "A_2341",
-      "to": "A_2340",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019684"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "유로내브와 프론트라인은 유럽계 원유 탱커 시장 경쟁"
-    },
-    {
-      "from": "A_2644",
-      "to": "T_446",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020792"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_2340",
-      "to": "T_446",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_011756"
-      ]
-    },
-    {
-      "from": "A_2340",
-      "to": "C_749",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_016726"
-      ]
-    },
-    {
-      "from": "A_2341",
-      "to": "T_446",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_011757"
-      ]
-    },
-    {
-      "from": "A_2341",
-      "to": "C_750",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_016727"
-      ]
-    },
-    {
-      "from": "A_2342",
-      "to": "T_446",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_011758"
-      ]
-    },
-    {
-      "from": "A_2342",
-      "to": "C_751",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_016728"
-      ]
-    },
-    {
-      "from": "A_2343",
-      "to": "T_446",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_011759"
-      ]
-    },
-    {
-      "from": "A_2343",
-      "to": "C_752",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_016729"
-      ]
-    },
-    {
-      "from": "A_2344",
-      "to": "T_446",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_011760"
-      ]
-    },
-    {
-      "from": "A_2344",
-      "to": "C_753",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_016730"
-      ]
-    },
-    {
-      "from": "A_2345",
-      "to": "T_446",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_011761"
-      ]
-    },
-    {
-      "from": "A_2345",
-      "to": "C_754",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_016731"
-      ]
-    },
-    {
-      "from": "M_423",
-      "to": "T_446",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_011762"
-      ]
-    },
-    {
-      "from": "M_059",
-      "to": "T_446",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_011763"
-      ]
-    },
-    {
-      "from": "A_2577",
-      "to": "T_446",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_011764"
-      ]
-    },
-    {
-      "from": "A_2577",
-      "to": "C_1566",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_016732"
-      ]
-    },
-    {
-      "from": "A_2578",
-      "to": "T_446",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_011765"
-      ]
-    },
-    {
-      "from": "A_2578",
-      "to": "C_1567",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_016733"
-      ]
-    },
-    {
-      "from": "M_1080",
-      "to": "T_446",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_011766"
-      ]
-    },
-    {
-      "from": "A_2340",
-      "to": "A_2342",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019679"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "프론트라인과 인터내셔널씨웨이즈는 원유 탱커 해운 시장 경쟁"
-    },
-    {
-      "from": "A_2345",
-      "to": "A_2342",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019680"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "DHT와 인터내셔널씨웨이즈는 VLCC 원유 탱커 시장 경쟁"
-    },
-    {
-      "from": "A_2577",
-      "to": "A_2340",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019681"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "스코르피오탱커스와 프론트라인은 제품유·원유 탱커 시장 경쟁"
-    },
-    {
-      "from": "A_2578",
-      "to": "A_2345",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019682"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "노르딕아메리칸탱커스와 DHT는 수에즈막스·VLCC 탱커 시장 경쟁"
-    },
-    {
-      "from": "A_2343",
-      "to": "A_2344",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019683"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "스타벌크와 SFL은 벌크·선박 리스 시장 경쟁"
-    },
-    {
-      "from": "A_2341",
-      "to": "A_2340",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019684"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "유로내브와 프론트라인은 유럽계 원유 탱커 시장 경쟁"
-    },
-    {
-      "from": "A_2644",
-      "to": "T_446",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020792"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
+  "dataAsOf": "2026-07-25T00:00:00+09:00",
+  "description": "미국 소형 해운 (Tanker + Bulk) — Frontline·Euronav·International Seaways·Star Bulk·SFL·DHT. VLCC + BDI 운임 사이클.",
+  "notes": "T_446 신규 — Russell 2000",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-08-04",
+    "kind": "보강",
+    "title": "2궤도 관계 엣지 추가",
+    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
+   },
+   {
+    "date": "2026-07-25",
+    "kind": "수정",
+    "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
+    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결, 2026 이벤트 2건 추가."
+   },
+   {
+    "date": "2026-08-05",
+    "kind": "관계",
+    "title": "EXPOSED_TO ETF 연결",
+    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+   }
   ]
+ },
+ "nodes": [
+  {
+   "id": "T_446",
+   "type": "THEME",
+   "name": "미국소형해운_Tanker_Bulk"
+  },
+  {
+   "id": "A_2340",
+   "type": "ASSET",
+   "name": "프론트라인",
+   "exposure": {
+    "ticker": "FRO",
+    "exchange": "NYSE",
+    "country": "BM"
+   },
+   "metrics": {
+    "return_1d": 1.702862783810466,
+    "return_3d": 8.049292081803872,
+    "return_15d": 4.88673962840418,
+    "return_1m": 7.373632100052108,
+    "return_ytd": 103.34349804107332,
+    "return_1y": 144.09458146752908,
+    "return_3y": 207.84055935697853,
+    "close": 41.21,
+    "marketCap": 9174289256,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 3.699043784599887,
+    "return_2y": 104.19994846688998
+   }
+  },
+  {
+   "id": "C_749",
+   "type": "CHARACTER",
+   "name": "VLCC원유유조선_Frontline"
+  },
+  {
+   "id": "A_2341",
+   "type": "ASSET",
+   "name": "유로내브(비)",
+   "exposure": {
+    "ticker": "",
+    "exchange": "",
+    "country": "BE"
+   },
+   "metrics": {
+    "return_1d": null,
+    "return_3d": null,
+    "return_15d": null,
+    "return_1m": null,
+    "return_ytd": null,
+    "return_1y": null,
+    "return_3y": null,
+    "close": null,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": null,
+    "valuationSource": null,
+    "returnsAsOf": null,
+    "returnsSource": null,
+    "return_5d": null
+   },
+   "coreBiz": "VLCC_벨기에_Euronav피인수"
+  },
+  {
+   "id": "C_750",
+   "type": "CHARACTER",
+   "name": "VLCC_벨기에_Euronav피인수"
+  },
+  {
+   "id": "A_2342",
+   "type": "ASSET",
+   "name": "인터내셔널씨웨이즈",
+   "exposure": {
+    "ticker": "INSW",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 1.9968470835522778,
+    "return_3d": 8.971479901190204,
+    "return_15d": 5.169050715214563,
+    "return_1m": 10.133908306854277,
+    "return_ytd": 118.11096353130752,
+    "return_1y": 163.7192429450687,
+    "return_3y": 201.43027968878604,
+    "close": 97.05,
+    "marketCap": 4804430747,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 5.021101612379608,
+    "return_2y": 144.0502534803251
+   }
+  },
+  {
+   "id": "C_751",
+   "type": "CHARACTER",
+   "name": "정유운반선_시웨이즈_INSW"
+  },
+  {
+   "id": "A_2343",
+   "type": "ASSET",
+   "name": "스타벌크",
+   "exposure": {
+    "ticker": "SBLK",
+    "exchange": "NASDAQ",
+    "country": "GR"
+   },
+   "metrics": {
+    "return_1d": 1.0786360473208134,
+    "return_3d": 4.987350921575717,
+    "return_15d": 3.233830845771135,
+    "return_1m": 9.375,
+    "return_ytd": 56.42668676969467,
+    "return_1y": 60.95074519363954,
+    "return_3y": 92.59838761005624,
+    "close": 29.05,
+    "marketCap": 3239973400,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 0.519031141868509,
+    "return_2y": 54.6199701937407
+   }
+  },
+  {
+   "id": "C_752",
+   "type": "CHARACTER",
+   "name": "드라이벌크_곡물철광석_SBLK"
+  },
+  {
+   "id": "A_2344",
+   "type": "ASSET",
+   "name": "SFL",
+   "exposure": {
+    "ticker": "SFL",
+    "exchange": "NYSE",
+    "country": "BM"
+   },
+   "metrics": {
+    "return_1d": 2.066115702479343,
+    "return_3d": 6.926406926406914,
+    "return_15d": 3.6073825503355694,
+    "return_1m": 9.29203539823007,
+    "return_ytd": 64.17632670424331,
+    "return_1y": 49.52841039797562,
+    "return_3y": 55.88907261780038,
+    "close": 12.35,
+    "marketCap": 1642292194,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 2.319801159900581,
+    "return_2y": 30.348510755071434
+   }
+  },
+  {
+   "id": "C_753",
+   "type": "CHARACTER",
+   "name": "선박_드라이벌크"
+  },
+  {
+   "id": "A_2345",
+   "type": "ASSET",
+   "name": "DHT",
+   "exposure": {
+    "ticker": "DHT",
+    "exchange": "NYSE",
+    "country": "BM"
+   },
+   "metrics": {
+    "return_1d": 1.6666666666666607,
+    "return_3d": 7.252747252747249,
+    "return_15d": 5.7994579945799485,
+    "return_1m": 7.370737073707367,
+    "return_ytd": 69.83069132923836,
+    "return_1y": 91.61300455473534,
+    "return_3y": 164.54524509737487,
+    "close": 19.52,
+    "marketCap": 3143539840,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 4.051172707889106,
+    "return_2y": 112.18775137508965
+   }
+  },
+  {
+   "id": "C_754",
+   "type": "CHARACTER",
+   "name": "VLCC원유"
+  },
+  {
+   "id": "M_423",
+   "type": "MACRO",
+   "name": "BDI(발틱운임)지수"
+  },
+  {
+   "id": "M_059",
+   "type": "MACRO",
+   "name": "유가상승"
+  },
+  {
+   "id": "A_2577",
+   "type": "ASSET",
+   "name": "스코르피오탱커스",
+   "exposure": {
+    "ticker": "STNG",
+    "exchange": "NYSE",
+    "country": "MC"
+   },
+   "metrics": {
+    "return_1d": 1.1077158135981646,
+    "return_3d": 7.035988677719374,
+    "return_15d": -0.10064159013711826,
+    "return_1m": 1.9776550661358527,
+    "return_ytd": 58.0782966322017,
+    "return_1y": 80.10110700604871,
+    "return_3y": 71.64496877708632,
+    "close": 79.41,
+    "marketCap": 3976960162,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 4.376971608832814,
+    "return_2y": 14.76660798987175
+   }
+  },
+  {
+   "id": "C_1566",
+   "type": "CHARACTER",
+   "name": "정유제품선_MR_LR_STNG"
+  },
+  {
+   "id": "A_2578",
+   "type": "ASSET",
+   "name": "노르딕아메리칸탱커스",
+   "exposure": {
+    "ticker": "NAT",
+    "exchange": "NYSE",
+    "country": "BM"
+   },
+   "metrics": {
+    "return_1d": 1.5128593040847127,
+    "return_3d": 8.752025931928697,
+    "return_15d": 4.031007751937987,
+    "return_1m": 6.677265500794904,
+    "return_ytd": 109.80551560252643,
+    "return_1y": 173.52030001630524,
+    "return_3y": 129.8889954775935,
+    "close": 6.71,
+    "marketCap": 1420849210,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 3.8699690402476783,
+    "return_2y": 140.57077298150006
+   }
+  },
+  {
+   "id": "C_1567",
+   "type": "CHARACTER",
+   "name": "수에즈막스원유_NAT"
+  },
+  {
+   "id": "M_1080",
+   "type": "MACRO",
+   "name": "전쟁위기_운임/보험료상승"
+  },
+  {
+   "id": "A_2644",
+   "type": "ASSET",
+   "name": "BOAT",
+   "exposure": {
+    "ticker": "BOAT",
+    "exchange": "BATS",
+    "country": "US",
+    "business_desc": "SonicShares Global Shipping ETF. 글로벌 해운주(컨테이너·벌크·탱커)를 담되 컨테이너 선사 비중이 높은 미국 상장 해운 ETF.",
+    "theme_role": "2궤도",
+    "theme_status": "Ref"
+   },
+   "metrics": {
+    "return_1d": 2.0677518697756136,
+    "return_3d": 6.723094969754118,
+    "return_15d": 6.032906764168189,
+    "return_1m": 10.962311077099663,
+    "return_ytd": 52.46707499802843,
+    "return_1y": 62.267265376921685,
+    "return_3y": 116.01992597593052,
+    "close": 46.4,
+    "marketCap": 54283267,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 4.528046857400314,
+    "return_2y": 74.72839901338706
+   },
+   "coreBiz": "BOAT는 글로벌 해운주를 담는 ETF 중 컨테이너 선사 비중이 높아 컨테이너 운임 사이클에 직접 연동된다"
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_2340",
+   "to": "T_446",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_011756"
+   ]
+  },
+  {
+   "from": "A_2340",
+   "to": "C_749",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_016726"
+   ]
+  },
+  {
+   "from": "A_2341",
+   "to": "T_446",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_011757"
+   ]
+  },
+  {
+   "from": "A_2341",
+   "to": "C_750",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_016727"
+   ]
+  },
+  {
+   "from": "A_2342",
+   "to": "T_446",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_011758"
+   ]
+  },
+  {
+   "from": "A_2342",
+   "to": "C_751",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_016728"
+   ]
+  },
+  {
+   "from": "A_2343",
+   "to": "T_446",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_011759"
+   ]
+  },
+  {
+   "from": "A_2343",
+   "to": "C_752",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_016729"
+   ]
+  },
+  {
+   "from": "A_2344",
+   "to": "T_446",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_011760"
+   ]
+  },
+  {
+   "from": "A_2344",
+   "to": "C_753",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_016730"
+   ]
+  },
+  {
+   "from": "A_2345",
+   "to": "T_446",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_011761"
+   ]
+  },
+  {
+   "from": "A_2345",
+   "to": "C_754",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_016731"
+   ]
+  },
+  {
+   "from": "M_423",
+   "to": "T_446",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_011762"
+   ]
+  },
+  {
+   "from": "M_059",
+   "to": "T_446",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_011763"
+   ]
+  },
+  {
+   "from": "A_2577",
+   "to": "T_446",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_011764"
+   ]
+  },
+  {
+   "from": "A_2577",
+   "to": "C_1566",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_016732"
+   ]
+  },
+  {
+   "from": "A_2578",
+   "to": "T_446",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_011765"
+   ]
+  },
+  {
+   "from": "A_2578",
+   "to": "C_1567",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_016733"
+   ]
+  },
+  {
+   "from": "M_1080",
+   "to": "T_446",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_011766"
+   ]
+  },
+  {
+   "from": "A_2340",
+   "to": "A_2342",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019679"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "프론트라인과 인터내셔널씨웨이즈는 원유 탱커 해운 시장 경쟁"
+  },
+  {
+   "from": "A_2345",
+   "to": "A_2342",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019680"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "DHT와 인터내셔널씨웨이즈는 VLCC 원유 탱커 시장 경쟁"
+  },
+  {
+   "from": "A_2577",
+   "to": "A_2340",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019681"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "스코르피오탱커스와 프론트라인은 제품유·원유 탱커 시장 경쟁"
+  },
+  {
+   "from": "A_2578",
+   "to": "A_2345",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019682"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "노르딕아메리칸탱커스와 DHT는 수에즈막스·VLCC 탱커 시장 경쟁"
+  },
+  {
+   "from": "A_2343",
+   "to": "A_2344",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019683"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "스타벌크와 SFL은 벌크·선박 리스 시장 경쟁"
+  },
+  {
+   "from": "A_2341",
+   "to": "A_2340",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019684"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "유로내브와 프론트라인은 유럽계 원유 탱커 시장 경쟁"
+  },
+  {
+   "from": "A_2644",
+   "to": "T_446",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020792"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_2340",
+   "to": "T_446",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_011756"
+   ]
+  },
+  {
+   "from": "A_2340",
+   "to": "C_749",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_016726"
+   ]
+  },
+  {
+   "from": "A_2341",
+   "to": "T_446",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_011757"
+   ]
+  },
+  {
+   "from": "A_2341",
+   "to": "C_750",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_016727"
+   ]
+  },
+  {
+   "from": "A_2342",
+   "to": "T_446",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_011758"
+   ]
+  },
+  {
+   "from": "A_2342",
+   "to": "C_751",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_016728"
+   ]
+  },
+  {
+   "from": "A_2343",
+   "to": "T_446",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_011759"
+   ]
+  },
+  {
+   "from": "A_2343",
+   "to": "C_752",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_016729"
+   ]
+  },
+  {
+   "from": "A_2344",
+   "to": "T_446",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_011760"
+   ]
+  },
+  {
+   "from": "A_2344",
+   "to": "C_753",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_016730"
+   ]
+  },
+  {
+   "from": "A_2345",
+   "to": "T_446",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_011761"
+   ]
+  },
+  {
+   "from": "A_2345",
+   "to": "C_754",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_016731"
+   ]
+  },
+  {
+   "from": "M_423",
+   "to": "T_446",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_011762"
+   ]
+  },
+  {
+   "from": "M_059",
+   "to": "T_446",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_011763"
+   ]
+  },
+  {
+   "from": "A_2577",
+   "to": "T_446",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_011764"
+   ]
+  },
+  {
+   "from": "A_2577",
+   "to": "C_1566",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_016732"
+   ]
+  },
+  {
+   "from": "A_2578",
+   "to": "T_446",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_011765"
+   ]
+  },
+  {
+   "from": "A_2578",
+   "to": "C_1567",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_016733"
+   ]
+  },
+  {
+   "from": "M_1080",
+   "to": "T_446",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_011766"
+   ]
+  },
+  {
+   "from": "A_2340",
+   "to": "A_2342",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019679"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "프론트라인과 인터내셔널씨웨이즈는 원유 탱커 해운 시장 경쟁"
+  },
+  {
+   "from": "A_2345",
+   "to": "A_2342",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019680"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "DHT와 인터내셔널씨웨이즈는 VLCC 원유 탱커 시장 경쟁"
+  },
+  {
+   "from": "A_2577",
+   "to": "A_2340",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019681"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "스코르피오탱커스와 프론트라인은 제품유·원유 탱커 시장 경쟁"
+  },
+  {
+   "from": "A_2578",
+   "to": "A_2345",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019682"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "노르딕아메리칸탱커스와 DHT는 수에즈막스·VLCC 탱커 시장 경쟁"
+  },
+  {
+   "from": "A_2343",
+   "to": "A_2344",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019683"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "스타벌크와 SFL은 벌크·선박 리스 시장 경쟁"
+  },
+  {
+   "from": "A_2341",
+   "to": "A_2340",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019684"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "유로내브와 프론트라인은 유럽계 원유 탱커 시장 경쟁"
+  },
+  {
+   "from": "A_2644",
+   "to": "T_446",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020792"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ]
 }

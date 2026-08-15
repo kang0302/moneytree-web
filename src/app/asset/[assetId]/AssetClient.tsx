@@ -11,7 +11,7 @@ type ThemeRel = { themeId: string; themeName: string; relation: string; score7d?
 type Related = { assetId: string; name: string; relation: string; direction: "in" | "out"; themeId: string; themeName: string };
 type MacroDrv = { name: string; count: number };
 type BriefingInfo = { gFinanceUrl?: string | null; coreBiz?: string; ecosystem?: string; driver?: string; sourceTheme?: string };
-type Metrics = Partial<Record<"return_1d" | "return_7d" | "return_15d" | "return_1m" | "return_ytd" | "return_1y" | "return_2y" | "return_3y" | "pe_ttm" | "marketCap" | "close", number>> & { returnsAsOf?: string };
+type Metrics = Partial<Record<"return_1d" | "return_5d" | "return_15d" | "return_1m" | "return_ytd" | "return_1y" | "return_2y" | "return_3y" | "pe_ttm" | "marketCap" | "close", number>> & { returnsAsOf?: string };
 type AssetEntry = {
   id: string; name: string; name_en?: string; ticker: string; exchange: string; country: string; asset_type: string;
   themes: ThemeRel[]; relatedAssets?: Related[]; macros?: MacroDrv[]; characters?: MacroDrv[]; businessFields?: MacroDrv[]; info?: BriefingInfo; metrics?: Metrics;
@@ -181,7 +181,7 @@ export default function AssetClient({ assetId }: { assetId: string }) {
 
   const themes = useMemo(() => (entry?.themes ?? []).slice().sort((a, b) => (b.score7d ?? -999) - (a.score7d ?? -999)), [entry]);
   const m = entry?.metrics;
-  const RET_ROWS: [string, keyof Metrics][] = [["1일", "return_1d"], ["7일", "return_7d"], ["1개월", "return_1m"], ["YTD", "return_ytd"], ["1년", "return_1y"], ["3년", "return_3y"]];
+  const RET_ROWS: [string, keyof Metrics][] = [["1일", "return_1d"], ["5일", "return_5d"], ["1개월", "return_1m"], ["YTD", "return_ytd"], ["1년", "return_1y"], ["3년", "return_3y"]];
 
   return (
     <main className="min-h-screen w-full bg-black text-white">

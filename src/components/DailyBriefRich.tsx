@@ -22,7 +22,7 @@ type Mover = { n: string; t: string; r: number | null };
 type BarRow = { themeId: string; scores?: Record<string, number | null>; headlineScore?: number | null; movers?: Mover[] };
 
 const BAR_BASE = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/barometer";
-const SPARK_H = ["1D", "3D", "7D", "15D", "1M"];
+const SPARK_H = ["1D", "3D", "5D", "15D", "1M"];
 const bandUpper = (k: number) => (k === 0 ? 1000 : TEMP_BANDS[k - 1].min);
 
 function dirStyle(dir: string): { bg: string; fg: string } {
@@ -74,7 +74,7 @@ function TempSpark({ scores }: { scores: Record<string, number | null> }) {
 function bandTransition(bar?: BarRow) {
   const sc = bar?.scores || {};
   const final = typeof sc["3D"] === "number" ? sc["3D"] : null;
-  const base = typeof sc["7D"] === "number" ? sc["7D"] : (typeof sc["1M"] === "number" ? sc["1M"] : null);
+  const base = typeof sc["5D"] === "number" ? sc["5D"] : (typeof sc["1M"] === "number" ? sc["1M"] : null);
   if (final == null || base == null) return null;
   const fromKey = bandOf(base)?.key ?? "neutral";
   const toKey = bandOf(final)?.key ?? "neutral";
@@ -95,7 +95,7 @@ function BandChip({ k }: { k: string }) {
 function ThemePanel({ themeId, themeName, bar }: { themeId: string; themeName: string; bar?: BarRow }) {
   const t = bandTransition(bar);
   const scores = bar?.scores;
-  const score = t?.final ?? bar?.headlineScore ?? (typeof scores?.["7D"] === "number" ? scores!["7D"] : null);
+  const score = t?.final ?? bar?.headlineScore ?? (typeof scores?.["5D"] === "number" ? scores!["5D"] : null);
   const band = score != null ? bandOf(score) : null;
   const nowCol = band?.color ?? "#e5e7eb";
   const up = t ? t.steps > 0 || (t.steps === 0 && t.delta >= 0) : true;

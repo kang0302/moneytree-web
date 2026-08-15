@@ -41,7 +41,7 @@ type ThemeRow = ThemeIndexItem & {
 };
 
 // 시장의 온도 기간 토글 옵션
-const HOME_PERIODS: PeriodKey[] = ["1D", "3D", "7D", "15D", "1M", "YTD", "1Y"];
+const HOME_PERIODS: PeriodKey[] = ["1D", "3D", "5D", "15D", "1M", "YTD", "1Y"];
 
 type UpdateItem = ChangelogEntry & { themeId: string; themeName: string };
 
@@ -221,7 +221,7 @@ function StatCounter({ label, value }: { label: string; value: number }) {
 export default function HomePage() {
   const router = useRouter();
   const [themes, setThemes] = useState<ThemeRow[]>([]);
-  const [period, setPeriod] = useState<PeriodKey>("7D");
+  const [period, setPeriod] = useState<PeriodKey>("5D");
   const [loading, setLoading] = useState(true);
   const [recent, setRecent] = useState<RecentItem[]>([]);
   const [favs, setFavs] = useState<FavItem[]>([]);

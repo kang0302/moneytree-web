@@ -1,760 +1,756 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_312",
-  "themeName": "자율주행트럭물류",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-24T00:00:00+09:00",
-    "description": "자율주행 트럭/물류 (T_015 K-자율주행·T_207 미국로봇물류와 별개) — Aurora·Kodiak·TuSimple·Plus AI (자율주행 SW) + Daimler Trucks·Volvo Group (트럭 OEM 통합). 레벨4 상용화·드라이버 부족·물류비용 절감이 핵심 동인. 미국 NHTSA·DOT 규제 사이클.",
-    "notes": "T_312 신규 — 자율주행 트럭 6사",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-07-24",
-        "kind": "수정",
-        "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
-        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결(ETF 제외), 2026 이벤트 2건 추가."
-      }
-    ]
-  },
-  "nodes": [
-    {
-      "id": "T_312",
-      "type": "THEME",
-      "name": "자율주행트럭물류"
-    },
-    {
-      "id": "A_138",
-      "type": "ASSET",
-      "name": "오로라 이노베이션",
-      "exposure": {
-        "ticker": "AUR",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 2.1929824561403466,
-        "return_3d": 0.575539568345329,
-        "return_7d": 4.484304932735417,
-        "return_15d": 17.47899159663866,
-        "return_1m": 17.47899159663866,
-        "return_ytd": 80.6201550387597,
-        "return_1y": 8.204334365325083,
-        "return_2y": 99.14529914529918,
-        "return_3y": 124.03846153846155,
-        "close": 6.99,
-        "marketCap": 13708809396,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1911",
-      "type": "ASSET",
-      "name": "코디악로보틱스(비)",
-      "exposure": {
-        "ticker": "",
-        "exchange": "PRIVATE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": null,
-        "return_3d": null,
-        "return_7d": null,
-        "return_15d": null,
-        "return_1m": null,
-        "return_ytd": null,
-        "return_1y": null,
-        "return_2y": null,
-        "return_3y": null,
-        "close": null,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": null,
-        "valuationSource": null,
-        "returnsAsOf": null,
-        "returnsSource": null
-      },
-      "coreBiz": "코디악로보틱스는 자율주행 트럭 Level4 상용화 추진"
-    },
-    {
-      "id": "A_1912",
-      "type": "ASSET",
-      "name": "투심플(비)",
-      "exposure": {
-        "ticker": "",
-        "exchange": "PRIVATE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": null,
-        "return_3d": null,
-        "return_7d": null,
-        "return_15d": null,
-        "return_1m": null,
-        "return_ytd": null,
-        "return_1y": null,
-        "return_2y": null,
-        "return_3y": null,
-        "close": null,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": null,
-        "valuationSource": null,
-        "returnsAsOf": null,
-        "returnsSource": null
-      },
-      "coreBiz": "투심플은 자율주행 트럭 인지·제어 기술 보유"
-    },
-    {
-      "id": "A_1913",
-      "type": "ASSET",
-      "name": "플러스AI(비)",
-      "exposure": {
-        "ticker": "",
-        "exchange": "PRIVATE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": null,
-        "return_3d": null,
-        "return_7d": null,
-        "return_15d": null,
-        "return_1m": null,
-        "return_ytd": null,
-        "return_1y": null,
-        "return_2y": null,
-        "return_3y": null,
-        "close": null,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": null,
-        "valuationSource": null,
-        "returnsAsOf": null,
-        "returnsSource": null
-      },
-      "coreBiz": "플러스AI는 자율주행 트럭 SW·플랫폼 개발"
-    },
-    {
-      "id": "A_1914",
-      "type": "ASSET",
-      "name": "다임러트럭",
-      "exposure": {
-        "ticker": "DTGHY",
-        "exchange": "OTC",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": null,
-        "return_3d": null,
-        "return_7d": null,
-        "return_15d": null,
-        "return_1m": null,
-        "return_ytd": null,
-        "return_1y": null,
-        "return_2y": null,
-        "return_3y": null,
-        "close": null,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": null,
-        "valuationSource": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_1915",
-      "type": "ASSET",
-      "name": "볼보그룹",
-      "exposure": {
-        "ticker": "VLVLY",
-        "exchange": "OTC",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.2529510961214232,
-        "return_3d": -2.8594771241829964,
-        "return_7d": -7.4468085106382915,
-        "return_15d": -1.7355371900826366,
-        "return_1m": 0.9337860780984641,
-        "return_ytd": 10.296846011131722,
-        "return_1y": 17.29694179546202,
-        "return_2y": 46.428571428571445,
-        "return_3y": 67.70098730606489,
-        "close": 35.67,
-        "marketCap": 72533227347,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "M_021",
-      "type": "MACRO",
-      "name": "자율주행보급확대"
-    },
-    {
-      "id": "M_028",
-      "type": "MACRO",
-      "name": "자동화확산"
-    },
-    {
-      "id": "M_117",
-      "type": "MACRO",
-      "name": "로보택시확산"
-    },
-    {
-      "id": "M_047",
-      "type": "MACRO",
-      "name": "자율주행테마"
-    },
-    {
-      "id": "BF_014",
-      "type": "BUSINESS_FIELD",
-      "name": "자율주행"
-    },
-    {
-      "id": "BF_080",
-      "type": "BUSINESS_FIELD",
-      "name": "운송업"
-    },
-    {
-      "id": "BF_561",
-      "type": "BUSINESS_FIELD",
-      "name": "자율주행트럭"
-    },
-    {
-      "id": "C_285",
-      "type": "CHARACTER",
-      "name": "레벨4자율주행상용화"
-    },
-    {
-      "id": "C_286",
-      "type": "CHARACTER",
-      "name": "물류비용절감"
-    },
-    {
-      "id": "C_4519",
-      "type": "CHARACTER",
-      "name": "자율주행트럭상용화선도"
-    },
-    {
-      "id": "C_4520",
-      "type": "CHARACTER",
-      "name": "자율주행트럭Level4"
-    },
-    {
-      "id": "C_4521",
-      "type": "CHARACTER",
-      "name": "자율주행트럭기술"
-    },
-    {
-      "id": "C_4522",
-      "type": "CHARACTER",
-      "name": "자율주행트럭소프트웨어"
-    },
-    {
-      "id": "C_4523",
-      "type": "CHARACTER",
-      "name": "상용트럭1위자율제휴"
-    },
-    {
-      "id": "C_4524",
-      "type": "CHARACTER",
-      "name": "상용트럭자율주행제휴"
-    }
+ "schemaVersion": "v5",
+ "themeId": "T_312",
+ "themeName": "자율주행트럭물류",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
   ],
-  "edges": [
-    {
-      "from": "A_138",
-      "to": "T_312",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009886"
-      ]
-    },
-    {
-      "from": "A_1911",
-      "to": "T_312",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009887"
-      ]
-    },
-    {
-      "from": "A_1912",
-      "to": "T_312",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009888"
-      ]
-    },
-    {
-      "from": "A_1913",
-      "to": "T_312",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009889"
-      ]
-    },
-    {
-      "from": "A_1914",
-      "to": "T_312",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009890"
-      ]
-    },
-    {
-      "from": "A_1915",
-      "to": "T_312",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009891"
-      ]
-    },
-    {
-      "from": "M_021",
-      "to": "T_312",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_009892"
-      ]
-    },
-    {
-      "from": "M_028",
-      "to": "T_312",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_009893"
-      ]
-    },
-    {
-      "from": "M_117",
-      "to": "T_312",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_009894"
-      ]
-    },
-    {
-      "from": "M_047",
-      "to": "T_312",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_009895"
-      ]
-    },
-    {
-      "from": "A_138",
-      "to": "BF_561",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016113"
-      ]
-    },
-    {
-      "from": "A_138",
-      "to": "BF_014",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016114"
-      ]
-    },
-    {
-      "from": "A_1911",
-      "to": "BF_561",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016115"
-      ]
-    },
-    {
-      "from": "A_1912",
-      "to": "BF_561",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016116"
-      ]
-    },
-    {
-      "from": "A_1913",
-      "to": "BF_561",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016117"
-      ]
-    },
-    {
-      "from": "A_1914",
-      "to": "BF_561",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016118"
-      ]
-    },
-    {
-      "from": "A_1914",
-      "to": "BF_080",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016119"
-      ]
-    },
-    {
-      "from": "A_1915",
-      "to": "BF_561",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016120"
-      ]
-    },
-    {
-      "from": "A_1915",
-      "to": "BF_080",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016121"
-      ]
-    },
-    {
-      "from": "A_138",
-      "to": "A_1914",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_016122"
-      ]
-    },
-    {
-      "from": "T_312",
-      "to": "C_285",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_016123"
-      ]
-    },
-    {
-      "from": "T_312",
-      "to": "C_286",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_016124"
-      ]
-    },
-    {
-      "from": "A_138",
-      "to": "C_4519",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009896"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1911",
-      "to": "C_4520",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009897"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1912",
-      "to": "C_4521",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009898"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1913",
-      "to": "C_4522",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009899"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1914",
-      "to": "C_4523",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009900"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1915",
-      "to": "C_4524",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009901"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_138",
-      "to": "T_312",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009886"
-      ]
-    },
-    {
-      "from": "A_1911",
-      "to": "T_312",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009887"
-      ]
-    },
-    {
-      "from": "A_1912",
-      "to": "T_312",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009888"
-      ]
-    },
-    {
-      "from": "A_1913",
-      "to": "T_312",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009889"
-      ]
-    },
-    {
-      "from": "A_1914",
-      "to": "T_312",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009890"
-      ]
-    },
-    {
-      "from": "A_1915",
-      "to": "T_312",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_009891"
-      ]
-    },
-    {
-      "from": "M_021",
-      "to": "T_312",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_009892"
-      ]
-    },
-    {
-      "from": "M_028",
-      "to": "T_312",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_009893"
-      ]
-    },
-    {
-      "from": "M_117",
-      "to": "T_312",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_009894"
-      ]
-    },
-    {
-      "from": "M_047",
-      "to": "T_312",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_009895"
-      ]
-    },
-    {
-      "from": "A_138",
-      "to": "BF_561",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016113"
-      ]
-    },
-    {
-      "from": "A_138",
-      "to": "BF_014",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016114"
-      ]
-    },
-    {
-      "from": "A_1911",
-      "to": "BF_561",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016115"
-      ]
-    },
-    {
-      "from": "A_1912",
-      "to": "BF_561",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016116"
-      ]
-    },
-    {
-      "from": "A_1913",
-      "to": "BF_561",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016117"
-      ]
-    },
-    {
-      "from": "A_1914",
-      "to": "BF_561",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016118"
-      ]
-    },
-    {
-      "from": "A_1914",
-      "to": "BF_080",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016119"
-      ]
-    },
-    {
-      "from": "A_1915",
-      "to": "BF_561",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016120"
-      ]
-    },
-    {
-      "from": "A_1915",
-      "to": "BF_080",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_016121"
-      ]
-    },
-    {
-      "from": "A_138",
-      "to": "A_1914",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_016122"
-      ]
-    },
-    {
-      "from": "T_312",
-      "to": "C_285",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_016123"
-      ]
-    },
-    {
-      "from": "T_312",
-      "to": "C_286",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_016124"
-      ]
-    },
-    {
-      "from": "A_138",
-      "to": "C_4519",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009896"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1911",
-      "to": "C_4520",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009897"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1912",
-      "to": "C_4521",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009898"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1913",
-      "to": "C_4522",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009899"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1914",
-      "to": "C_4523",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009900"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1915",
-      "to": "C_4524",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_009901"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    }
+  "dataAsOf": "2026-07-24T00:00:00+09:00",
+  "description": "자율주행 트럭/물류 (T_015 K-자율주행·T_207 미국로봇물류와 별개) — Aurora·Kodiak·TuSimple·Plus AI (자율주행 SW) + Daimler Trucks·Volvo Group (트럭 OEM 통합). 레벨4 상용화·드라이버 부족·물류비용 절감이 핵심 동인. 미국 NHTSA·DOT 규제 사이클.",
+  "notes": "T_312 신규 — 자율주행 트럭 6사",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-07-24",
+    "kind": "수정",
+    "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
+    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결(ETF 제외), 2026 이벤트 2건 추가."
+   }
   ]
+ },
+ "nodes": [
+  {
+   "id": "T_312",
+   "type": "THEME",
+   "name": "자율주행트럭물류"
+  },
+  {
+   "id": "A_138",
+   "type": "ASSET",
+   "name": "오로라 이노베이션",
+   "exposure": {
+    "ticker": "AUR",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 2.1929824561403466,
+    "return_3d": 0.575539568345329,
+    "return_15d": 17.47899159663866,
+    "return_1m": 14.029363784665595,
+    "return_ytd": 82.03125000000003,
+    "return_1y": 6.554878048780499,
+    "return_3y": 90.46321525885558,
+    "close": 6.99,
+    "marketCap": 13708809396,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -0.9915014164305846,
+    "return_2y": 106.80473372781067
+   }
+  },
+  {
+   "id": "A_1911",
+   "type": "ASSET",
+   "name": "코디악로보틱스(비)",
+   "exposure": {
+    "ticker": "",
+    "exchange": "PRIVATE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": null,
+    "return_3d": null,
+    "return_15d": null,
+    "return_1m": null,
+    "return_ytd": null,
+    "return_1y": null,
+    "return_3y": null,
+    "close": null,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": null,
+    "valuationSource": null,
+    "returnsAsOf": null,
+    "returnsSource": null,
+    "return_5d": null
+   },
+   "coreBiz": "코디악로보틱스는 자율주행 트럭 Level4 상용화 추진"
+  },
+  {
+   "id": "A_1912",
+   "type": "ASSET",
+   "name": "투심플(비)",
+   "exposure": {
+    "ticker": "",
+    "exchange": "PRIVATE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": null,
+    "return_3d": null,
+    "return_15d": null,
+    "return_1m": null,
+    "return_ytd": null,
+    "return_1y": null,
+    "return_3y": null,
+    "close": null,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": null,
+    "valuationSource": null,
+    "returnsAsOf": null,
+    "returnsSource": null,
+    "return_5d": null
+   },
+   "coreBiz": "투심플은 자율주행 트럭 인지·제어 기술 보유"
+  },
+  {
+   "id": "A_1913",
+   "type": "ASSET",
+   "name": "플러스AI(비)",
+   "exposure": {
+    "ticker": "",
+    "exchange": "PRIVATE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": null,
+    "return_3d": null,
+    "return_15d": null,
+    "return_1m": null,
+    "return_ytd": null,
+    "return_1y": null,
+    "return_3y": null,
+    "close": null,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": null,
+    "valuationSource": null,
+    "returnsAsOf": null,
+    "returnsSource": null,
+    "return_5d": null
+   },
+   "coreBiz": "플러스AI는 자율주행 트럭 SW·플랫폼 개발"
+  },
+  {
+   "id": "A_1914",
+   "type": "ASSET",
+   "name": "다임러트럭",
+   "exposure": {
+    "ticker": "DTGHY",
+    "exchange": "OTC",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": null,
+    "return_3d": null,
+    "return_15d": null,
+    "return_1m": null,
+    "return_ytd": null,
+    "return_1y": null,
+    "return_3y": null,
+    "close": null,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": null,
+    "valuationSource": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": null
+   }
+  },
+  {
+   "id": "A_1915",
+   "type": "ASSET",
+   "name": "볼보그룹",
+   "exposure": {
+    "ticker": "VLVLY",
+    "exchange": "OTC",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.2529510961214232,
+    "return_3d": -2.8594771241829964,
+    "return_15d": -1.8707015130673965,
+    "return_1m": 2.5589419206440533,
+    "return_ytd": 15.999245533362384,
+    "return_1y": 22.116967993508997,
+    "return_3y": 104.51105403174022,
+    "close": 35.67,
+    "marketCap": 72533227347,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -5.062280421590549,
+    "return_2y": 60.89672748596045
+   }
+  },
+  {
+   "id": "M_021",
+   "type": "MACRO",
+   "name": "자율주행보급확대"
+  },
+  {
+   "id": "M_028",
+   "type": "MACRO",
+   "name": "자동화확산"
+  },
+  {
+   "id": "M_117",
+   "type": "MACRO",
+   "name": "로보택시확산"
+  },
+  {
+   "id": "M_047",
+   "type": "MACRO",
+   "name": "자율주행테마"
+  },
+  {
+   "id": "BF_014",
+   "type": "BUSINESS_FIELD",
+   "name": "자율주행"
+  },
+  {
+   "id": "BF_080",
+   "type": "BUSINESS_FIELD",
+   "name": "운송업"
+  },
+  {
+   "id": "BF_561",
+   "type": "BUSINESS_FIELD",
+   "name": "자율주행트럭"
+  },
+  {
+   "id": "C_285",
+   "type": "CHARACTER",
+   "name": "레벨4자율주행상용화"
+  },
+  {
+   "id": "C_286",
+   "type": "CHARACTER",
+   "name": "물류비용절감"
+  },
+  {
+   "id": "C_4519",
+   "type": "CHARACTER",
+   "name": "자율주행트럭상용화선도"
+  },
+  {
+   "id": "C_4520",
+   "type": "CHARACTER",
+   "name": "자율주행트럭Level4"
+  },
+  {
+   "id": "C_4521",
+   "type": "CHARACTER",
+   "name": "자율주행트럭기술"
+  },
+  {
+   "id": "C_4522",
+   "type": "CHARACTER",
+   "name": "자율주행트럭소프트웨어"
+  },
+  {
+   "id": "C_4523",
+   "type": "CHARACTER",
+   "name": "상용트럭1위자율제휴"
+  },
+  {
+   "id": "C_4524",
+   "type": "CHARACTER",
+   "name": "상용트럭자율주행제휴"
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_138",
+   "to": "T_312",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009886"
+   ]
+  },
+  {
+   "from": "A_1911",
+   "to": "T_312",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009887"
+   ]
+  },
+  {
+   "from": "A_1912",
+   "to": "T_312",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009888"
+   ]
+  },
+  {
+   "from": "A_1913",
+   "to": "T_312",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009889"
+   ]
+  },
+  {
+   "from": "A_1914",
+   "to": "T_312",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009890"
+   ]
+  },
+  {
+   "from": "A_1915",
+   "to": "T_312",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009891"
+   ]
+  },
+  {
+   "from": "M_021",
+   "to": "T_312",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_009892"
+   ]
+  },
+  {
+   "from": "M_028",
+   "to": "T_312",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_009893"
+   ]
+  },
+  {
+   "from": "M_117",
+   "to": "T_312",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_009894"
+   ]
+  },
+  {
+   "from": "M_047",
+   "to": "T_312",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_009895"
+   ]
+  },
+  {
+   "from": "A_138",
+   "to": "BF_561",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016113"
+   ]
+  },
+  {
+   "from": "A_138",
+   "to": "BF_014",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016114"
+   ]
+  },
+  {
+   "from": "A_1911",
+   "to": "BF_561",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016115"
+   ]
+  },
+  {
+   "from": "A_1912",
+   "to": "BF_561",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016116"
+   ]
+  },
+  {
+   "from": "A_1913",
+   "to": "BF_561",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016117"
+   ]
+  },
+  {
+   "from": "A_1914",
+   "to": "BF_561",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016118"
+   ]
+  },
+  {
+   "from": "A_1914",
+   "to": "BF_080",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016119"
+   ]
+  },
+  {
+   "from": "A_1915",
+   "to": "BF_561",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016120"
+   ]
+  },
+  {
+   "from": "A_1915",
+   "to": "BF_080",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016121"
+   ]
+  },
+  {
+   "from": "A_138",
+   "to": "A_1914",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_016122"
+   ]
+  },
+  {
+   "from": "T_312",
+   "to": "C_285",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_016123"
+   ]
+  },
+  {
+   "from": "T_312",
+   "to": "C_286",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_016124"
+   ]
+  },
+  {
+   "from": "A_138",
+   "to": "C_4519",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009896"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1911",
+   "to": "C_4520",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009897"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1912",
+   "to": "C_4521",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009898"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1913",
+   "to": "C_4522",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009899"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1914",
+   "to": "C_4523",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009900"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1915",
+   "to": "C_4524",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009901"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_138",
+   "to": "T_312",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009886"
+   ]
+  },
+  {
+   "from": "A_1911",
+   "to": "T_312",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009887"
+   ]
+  },
+  {
+   "from": "A_1912",
+   "to": "T_312",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009888"
+   ]
+  },
+  {
+   "from": "A_1913",
+   "to": "T_312",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009889"
+   ]
+  },
+  {
+   "from": "A_1914",
+   "to": "T_312",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009890"
+   ]
+  },
+  {
+   "from": "A_1915",
+   "to": "T_312",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_009891"
+   ]
+  },
+  {
+   "from": "M_021",
+   "to": "T_312",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_009892"
+   ]
+  },
+  {
+   "from": "M_028",
+   "to": "T_312",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_009893"
+   ]
+  },
+  {
+   "from": "M_117",
+   "to": "T_312",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_009894"
+   ]
+  },
+  {
+   "from": "M_047",
+   "to": "T_312",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_009895"
+   ]
+  },
+  {
+   "from": "A_138",
+   "to": "BF_561",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016113"
+   ]
+  },
+  {
+   "from": "A_138",
+   "to": "BF_014",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016114"
+   ]
+  },
+  {
+   "from": "A_1911",
+   "to": "BF_561",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016115"
+   ]
+  },
+  {
+   "from": "A_1912",
+   "to": "BF_561",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016116"
+   ]
+  },
+  {
+   "from": "A_1913",
+   "to": "BF_561",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016117"
+   ]
+  },
+  {
+   "from": "A_1914",
+   "to": "BF_561",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016118"
+   ]
+  },
+  {
+   "from": "A_1914",
+   "to": "BF_080",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016119"
+   ]
+  },
+  {
+   "from": "A_1915",
+   "to": "BF_561",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016120"
+   ]
+  },
+  {
+   "from": "A_1915",
+   "to": "BF_080",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_016121"
+   ]
+  },
+  {
+   "from": "A_138",
+   "to": "A_1914",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_016122"
+   ]
+  },
+  {
+   "from": "T_312",
+   "to": "C_285",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_016123"
+   ]
+  },
+  {
+   "from": "T_312",
+   "to": "C_286",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_016124"
+   ]
+  },
+  {
+   "from": "A_138",
+   "to": "C_4519",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009896"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1911",
+   "to": "C_4520",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009897"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1912",
+   "to": "C_4521",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009898"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1913",
+   "to": "C_4522",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009899"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1914",
+   "to": "C_4523",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009900"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1915",
+   "to": "C_4524",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_009901"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  }
+ ]
 }

@@ -11,7 +11,7 @@
 // - healthScore/momentumScore/divScore (0~1000)
 // - note: sentence 기반
 
-export type PeriodKey = "1D" | "3D" | "7D" | "15D" | "1M" | "YTD" | "1Y" | "2Y" | "3Y";
+export type PeriodKey = "1D" | "3D" | "5D" | "15D" | "1M" | "YTD" | "1Y" | "2Y" | "3Y";
 
 export type TopMover = {
   id: string;
@@ -144,7 +144,7 @@ export function computeOrbitWeights(
 
 /**
  * ✅ Period 정규화:
- * UI에서 "7d", "7D ", "7일" 등으로 와도 여기서 PeriodKey로 통일한다.
+ * UI에서 "5d", "7D ", "5일" 등으로 와도 여기서 PeriodKey로 통일한다.
  */
 export function normalizePeriodKey(p: unknown): PeriodKey | null {
   if (p === null || p === undefined) return null;
@@ -153,7 +153,9 @@ export function normalizePeriodKey(p: unknown): PeriodKey | null {
   // 한글 라벨/축약 대응
   if (raw === "1" || raw.toLowerCase() === "1d" || raw === "1일") return "1D";
   if (raw === "3" || raw.toLowerCase() === "3d" || raw === "3일") return "3D";
-  if (raw === "7" || raw.toLowerCase() === "7d" || raw === "7일") return "7D";
+  // 5D(신규 표준). 레거시 7D/7d/7일/7 데이터는 최근접 버킷 5D로 매핑.
+  if (raw === "5" || raw.toLowerCase() === "5d" || raw === "5일"
+      || raw === "7" || raw.toLowerCase() === "7d" || raw === "7일") return "5D";
   if (raw === "15" || raw.toLowerCase() === "15d" || raw === "15일") return "15D";
   if (raw.toLowerCase() === "1m" || raw === "1개월" || raw === "1달") return "1M";
   if (raw.toLowerCase() === "ytd" || raw === "연초" || raw === "올해") return "YTD";
@@ -163,7 +165,7 @@ export function normalizePeriodKey(p: unknown): PeriodKey | null {
 
   // 대문자 표준값 직접 매칭
   const up = raw.toUpperCase();
-  if (up === "1D" || up === "3D" || up === "7D" || up === "15D" || up === "1M" || up === "YTD" || up === "1Y" || up === "2Y" || up === "3Y") {
+  if (up === "1D" || up === "3D" || up === "5D" || up === "15D" || up === "1M" || up === "YTD" || up === "1Y" || up === "2Y" || up === "3Y") {
     return up as PeriodKey;
   }
   return null;
@@ -218,15 +220,15 @@ export function extractReturnByPeriod(metrics: MetricsT | undefined, periodRaw: 
     return null;
   };
 
-  // ✅ Priority: return_7d (new pipeline) BEFORE ret7d (stale old pipeline).
+  // ✅ Priority: return_5d (new pipeline) BEFORE ret7d (stale old pipeline).
   // Some theme JSONs (e.g. T_006) carry both; the newer return_* field is authoritative.
   switch (period) {
     case "1D":
       return pick("return_1d", "return_1D", "return1d", "ret_1d", "ret1d");
     case "3D":
       return pick("return_3d", "return_3D", "return3d", "ret_3d", "ret3d");
-    case "7D":
-      return pick("return_7d", "return_7D", "return7d", "ret_7d", "ret7d");
+    case "5D":
+      return pick("return_5d", "return_7D", "return7d", "ret_7d", "ret7d");
     case "15D":
       return pick("return_15d", "return_15D", "return15d", "ret_15d", "ret15d");
     case "1M":
@@ -266,7 +268,7 @@ type PeriodAnchor = { retSat: number; tailThresh: number };
 const PERIOD_ANCHORS: Record<PeriodKey, PeriodAnchor> = {
   "1D": { retSat: 4, tailThresh: 5 },
   "3D": { retSat: 6, tailThresh: 8 },
-  "7D": { retSat: 9, tailThresh: 12 },
+  "5D": { retSat: 9, tailThresh: 12 },
   "15D": { retSat: 13, tailThresh: 15 },
   "1M": { retSat: 16.7, tailThresh: 15 }, // v2 호환: 500/16.7 ≈ 30 (기존 avg×30 유지)
   YTD: { retSat: 30, tailThresh: 25 },

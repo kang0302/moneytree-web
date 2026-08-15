@@ -30,7 +30,7 @@ try {
 const EODHD = env.EODHD_API_KEY;
 const FMP = env.FMP_API_KEY;
 
-const HORIZON = "7D"; // 바로미터 산출 기간(대부분 테마 default 3d/7d 대표로 7D 고정 — 크로스섹션 일관)
+const HORIZON = "5D"; // 바로미터 산출 기간(대부분 테마 default 3d/7d 대표로 7D 고정 — 크로스섹션 일관)
 const FWD_DAYS = 30; // forward 수익률 창(거래일)
 const WEEKS_BACK = 78; // ~1.5년 주간
 const REBAL_STEP = 5; // 거래일 5일 = 1주
@@ -156,7 +156,7 @@ function retPct(rec, dIdx, back) {
   if (c0 == null || cB == null || cB === 0) return null;
   return (c0 / cB - 1) * 100;
 }
-const BACK = { "1D": 1, "3D": 3, "7D": 7, "15D": 15, "1M": 21, "1Y": 252, "2Y": 504, "3Y": 756 };
+const BACK = { "1D": 1, "3D": 3, "5D": 7, "15D": 15, "1M": 21, "1Y": 252, "2Y": 504, "3Y": 756 };
 
 // ── SPY 벤치마크: 동일 구간(리밸일→+30거래일) S&P500 forward 수익률 ──
 const spySeries = await loadCloses("SPY", "NASDAQ", "US");

@@ -1,1066 +1,1065 @@
 {
-  "schemaVersion": 5,
-  "themeId": "T_560",
-  "themeName": "AI CAPEX 지출주식",
-  "meta": {
-    "periodDefault": "7d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-26T00:00:00+09:00",
-    "description": "AI CAPEX 지출 주식 — 하이퍼스케일러·네오클라우드 등 AI 데이터센터 capex 지출 주체(Spender). capex 급증에 따른 마진·FCF 훼손 리스크와 AI 수익화가 관건. (수혜주식은 별도 테마, 매크로 공통)",
-    "notes": "AI CAPEX 지출 주식 — 하이퍼스케일러·네오클라우드 등 AI 데이터센터 capex 지출 주체(Spender). capex 급증에 따른 마진·FCF 훼손 리스크와 AI 수익화가 관건. (수혜주식은 별도 테마, 매크로 공통)",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-08-04",
-        "kind": "보강",
-        "title": "2궤도 관계 엣지 추가",
-        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 12건 백필(리서치 기반)."
-      },
-      {
-        "date": "2026-07-26",
-        "kind": "수정",
-        "title": "AI CAPEX 지출/수혜 분리",
-        "detail": "기존 T_560(지출자vs수혜자)을 지출주식·수혜주식 2개로 분리(매크로 공통)."
-      },
-      {
-        "date": "2026-08-05",
-        "kind": "관계",
-        "title": "EXPOSED_TO ETF 연결",
-        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-      }
-    ]
-  },
-  "nodes": [
-    {
-      "id": "T_560",
-      "type": "THEME",
-      "name": "AI CAPEX 지출주식"
-    },
-    {
-      "id": "A_050",
-      "type": "ASSET",
-      "name": "알파벳",
-      "exposure": {
-        "ticker": "GOOGL",
-        "exchange": "NASDAQ",
-        "country": "US",
-        "business_desc": "클라우드/광고(Cloud·TPU) — 광고 캐시카우로 CAPEX 흡수, 자체칩(TPU) 비용 내재화",
-        "theme_role": "Spender — CAPEX 지출(마진 압박)",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -0.13280979327867648,
-        "return_3d": 0.6108202443280808,
-        "return_7d": -4.5608807217945575,
-        "return_15d": 8.181647588665776,
-        "return_1m": -2.4149410370704727,
-        "return_ytd": 9.75725844835793,
-        "return_1y": 71.27153891859773,
-        "return_2y": 111.3398912445775,
-        "return_3y": 166.77464136973623,
-        "close": 345.9,
-        "marketCap": 4186120293827,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_211",
-      "type": "ASSET",
-      "name": "아마존",
-      "exposure": {
-        "ticker": "AMZN",
-        "exchange": "NASDAQ",
-        "country": "US",
-        "business_desc": "클라우드/이커머스(AWS·Trainium) — 수요 견조 vs 빌드아웃 부담, 리테일 현금흐름 완충",
-        "theme_role": "Spender — CAPEX 지출(마진 압박)",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -0.9353901859465275,
-        "return_3d": -3.5332574282880946,
-        "return_7d": -3.667705849990832,
-        "return_15d": 13.157554607729072,
-        "return_1m": 5.106246748569365,
-        "return_ytd": 15.960264900662246,
-        "return_1y": 16.962059137869588,
-        "return_2y": 57.331975560081446,
-        "return_3y": 90.53318824809575,
-        "close": 262.65,
-        "marketCap": 2825352315000,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_240",
-      "type": "ASSET",
-      "name": "코어위브",
-      "exposure": {
-        "ticker": "CRWV",
-        "exchange": "NASDAQ",
-        "country": "US",
-        "business_desc": "GPU 클라우드(neo-cloud) — 차입 GPU 임대 레버리지 순수 spender, 신용·금리 최고 베타",
-        "theme_role": "Spender — CAPEX 지출(마진 압박)",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -0.9690469470317042,
-        "return_3d": 16.54118689105404,
-        "return_7d": 17.098676159750802,
-        "return_15d": 46.43850862548693,
-        "return_1m": 44.36977095048691,
-        "return_ytd": 32.70297528996471,
-        "return_1y": -10.614809782608692,
-        "return_2y": null,
-        "return_3y": null,
-        "close": 105.26,
-        "marketCap": 57426739041,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_895",
-      "type": "ASSET",
-      "name": "오라클",
-      "exposure": {
-        "ticker": "ORCL",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "클라우드 인프라/DB(OCI) — 차입·초대형 계약 레버리지, OpenAI 계약 의존(양날의 검)",
-        "theme_role": "Spender — CAPEX 지출(마진 압박)",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -3.7767251312252004,
-        "return_3d": 3.326917789386852,
-        "return_7d": 4.106932613061853,
-        "return_15d": 30.72441081833204,
-        "return_1m": 21.020851783270267,
-        "return_ytd": -23.192478667416083,
-        "return_1y": -38.43885658121059,
-        "return_2y": 13.827048311373602,
-        "return_3y": 32.908930150309466,
-        "close": 150.32,
-        "marketCap": 432992250400,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_210",
-      "type": "ASSET",
-      "name": "마이크로소프트",
-      "exposure": {
-        "ticker": "MSFT",
-        "exchange": "NASDAQ",
-        "country": "US",
-        "business_desc": "클라우드/엔터프라이즈SW(Azure) — CAPEX가 영업현금흐름 잠식, Azure 마진·FCF 훼손형",
-        "theme_role": "Spender — CAPEX 지출(마진 압박)",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -0.2978586379005055,
-        "return_3d": -1.6692800857466161,
-        "return_7d": 1.628851598079839,
-        "return_15d": 29.787791459261204,
-        "return_1m": 23.510346546995752,
-        "return_ytd": 4.749016788598981,
-        "return_1y": -4.8369126743248,
-        "return_2y": 22.013693906704113,
-        "return_3y": 53.741116593737374,
-        "close": 495.4,
-        "marketCap": 3678617470000,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "A_373",
-      "type": "ASSET",
-      "name": "메타",
-      "exposure": {
-        "ticker": "META",
-        "exchange": "NASDAQ",
-        "country": "US",
-        "business_desc": "소셜/생성형AI 인프라 — 순수 비용형 CAPEX, 수익화 가시성 최저",
-        "theme_role": "Spender — CAPEX 지출(마진 압박)",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -0.8605475906348192,
-        "return_3d": -1.5472693283482442,
-        "return_7d": 0.18343325916743147,
-        "return_15d": -0.8971924931534536,
-        "return_1m": -11.239353537785524,
-        "return_ytd": -9.311049953106497,
-        "return_1y": -24.385960414316475,
-        "return_2y": 13.921239160244902,
-        "return_3y": 93.26037810032439,
-        "close": 589.85,
-        "marketCap": 1502634953315,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_5107",
-      "type": "CHARACTER",
-      "name": "AI캐팩스지출자하이퍼스케일러"
-    },
-    {
-      "id": "C_5108",
-      "type": "CHARACTER",
-      "name": "AI캐팩스지출자하이퍼스케일러2"
-    },
-    {
-      "id": "C_5109",
-      "type": "CHARACTER",
-      "name": "AI캐팩스지출자AWS"
-    },
-    {
-      "id": "C_5110",
-      "type": "CHARACTER",
-      "name": "AI캐팩스지출자대규모"
-    },
-    {
-      "id": "C_5111",
-      "type": "CHARACTER",
-      "name": "AI캐팩스지출자OCI"
-    },
-    {
-      "id": "C_5112",
-      "type": "CHARACTER",
-      "name": "AI캐팩스지출자네오클라우드"
-    },
-    {
-      "id": "BF_008",
-      "type": "BUSINESS_FIELD",
-      "name": "클라우드"
-    },
-    {
-      "id": "BF_007",
-      "type": "BUSINESS_FIELD",
-      "name": "검색광고"
-    },
-    {
-      "id": "BF_201",
-      "type": "BUSINESS_FIELD",
-      "name": "빅테크"
-    },
-    {
-      "id": "BF_059",
-      "type": "BUSINESS_FIELD",
-      "name": "클라우드인프라"
-    },
-    {
-      "id": "BF_100",
-      "type": "BUSINESS_FIELD",
-      "name": "클라우드서비스"
-    },
-    {
-      "id": "M_035",
-      "type": "MACRO",
-      "name": "AI데이터센터전력수요증가"
-    },
-    {
-      "id": "M_051",
-      "type": "MACRO",
-      "name": "AI수요확대"
-    },
-    {
-      "id": "M_074",
-      "type": "MACRO",
-      "name": "DC건설확대"
-    },
-    {
-      "id": "M_212",
-      "type": "MACRO",
-      "name": "AI데이터센터확대"
-    },
-    {
-      "id": "M_072",
-      "type": "MACRO",
-      "name": "금리인상"
-    },
-    {
-      "id": "M_067",
-      "type": "MACRO",
-      "name": "사모신용리스크"
-    },
-    {
-      "id": "M_161",
-      "type": "MACRO",
-      "name": "AI반도체수요증가"
-    },
-    {
-      "id": "A_2914",
-      "type": "ASSET",
-      "name": "TIGER 미국테크TOP10 INDXX",
-      "exposure": {
-        "ticker": "381170",
-        "exchange": "KRX",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 0.7109004739336511,
-        "return_3d": -0.29715358148264537,
-        "return_7d": -1.589996912627356,
-        "return_15d": 3.37279065996432,
-        "return_1m": -2.7756596004270273,
-        "return_ytd": 3.726000650829797,
-        "return_1y": 21.131535676233714,
-        "return_2y": 47.323647216035106,
-        "return_3y": null,
-        "close": 31875,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD"
-      }
-    }
+ "schemaVersion": 5,
+ "themeId": "T_560",
+ "themeName": "AI CAPEX 지출주식",
+ "meta": {
+  "periodDefault": "7d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
   ],
-  "edges": [
-    {
-      "from": "A_210",
-      "to": "T_560",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_017719"
-      ]
-    },
-    {
-      "from": "A_050",
-      "to": "T_560",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_017720"
-      ]
-    },
-    {
-      "from": "A_211",
-      "to": "T_560",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_017721"
-      ]
-    },
-    {
-      "from": "A_373",
-      "to": "T_560",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_017722"
-      ]
-    },
-    {
-      "from": "A_895",
-      "to": "T_560",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_017723"
-      ]
-    },
-    {
-      "from": "A_240",
-      "to": "T_560",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_017724"
-      ]
-    },
-    {
-      "from": "A_210",
-      "to": "C_5107",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_012979"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_050",
-      "to": "C_5108",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_012980"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_211",
-      "to": "C_5109",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_012981"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_373",
-      "to": "C_5110",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_012982"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_895",
-      "to": "C_5111",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_012983"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_240",
-      "to": "C_5112",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_012984"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_210",
-      "to": "BF_008",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_017725"
-      ]
-    },
-    {
-      "from": "A_050",
-      "to": "BF_007",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_017726"
-      ]
-    },
-    {
-      "from": "A_211",
-      "to": "BF_008",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_017727"
-      ]
-    },
-    {
-      "from": "A_373",
-      "to": "BF_201",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_017728"
-      ]
-    },
-    {
-      "from": "A_895",
-      "to": "BF_059",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_017729"
-      ]
-    },
-    {
-      "from": "A_240",
-      "to": "BF_100",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_017730"
-      ]
-    },
-    {
-      "from": "M_035",
-      "to": "T_560",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012972"
-      ]
-    },
-    {
-      "from": "M_051",
-      "to": "T_560",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012973"
-      ]
-    },
-    {
-      "from": "M_074",
-      "to": "T_560",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012974"
-      ]
-    },
-    {
-      "from": "M_212",
-      "to": "T_560",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012975"
-      ]
-    },
-    {
-      "from": "M_072",
-      "to": "T_560",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012976"
-      ]
-    },
-    {
-      "from": "M_067",
-      "to": "T_560",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012977"
-      ]
-    },
-    {
-      "from": "M_161",
-      "to": "T_560",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012978"
-      ]
-    },
-    {
-      "from": "A_211",
-      "to": "A_210",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018606"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "아마존 AWS와 마이크로소프트 Azure는 글로벌 클라우드 인프라(IaaS) 시장 1·2위로 직접 경쟁한다."
-    },
-    {
-      "from": "A_211",
-      "to": "A_050",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018607"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "아마존 AWS와 알파벳 구글 클라우드(GCP)는 퍼블릭 클라우드 인프라 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_211",
-      "to": "A_895",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018608"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "아마존 AWS와 오라클 클라우드 인프라(OCI)는 클라우드 인프라 시장에서 경쟁한다."
-    },
-    {
-      "from": "A_210",
-      "to": "A_050",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018609"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "마이크로소프트 Azure와 알파벳 구글 클라우드는 퍼블릭 클라우드 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_050",
-      "to": "A_895",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018610"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "알파벳 구글 클라우드와 오라클 OCI는 클라우드 인프라 시장에서 경쟁한다."
-    },
-    {
-      "from": "A_210",
-      "to": "A_895",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_018611"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "마이크로소프트와 오라클은 Azure 데이터센터에서 오라클 DB를 구동하는 Oracle Database@Azure 멀티클라우드 제휴를 운영한다."
-    },
-    {
-      "from": "A_050",
-      "to": "A_373",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018612"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "알파벳(구글)과 메타는 글로벌 디지털 광고 시장의 양대 사업자로 직접 경쟁한다."
-    },
-    {
-      "from": "A_240",
-      "to": "A_210",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_018613"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "코어위브는 GPU 클라우드 용량을 마이크로소프트에 공급하며 MS가 코어위브 매출의 약 67%를 차지하는 최대 고객이다."
-    },
-    {
-      "from": "A_240",
-      "to": "A_373",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_018614"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "코어위브는 메타와 약 142억~210억 달러 규모 계약으로 엔비디아 GB300 기반 AI 컴퓨팅 용량을 공급한다."
-    },
-    {
-      "from": "A_240",
-      "to": "A_895",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018615"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "코어위브(네오클라우드)와 오라클은 AI용 GPU 클라우드 렌탈 시장에서 경쟁한다."
-    },
-    {
-      "from": "A_240",
-      "to": "A_211",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018616"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "코어위브는 GPU-as-a-Service 네오클라우드로서 아마존 AWS의 GPU 클라우드 제공과 경쟁한다."
-    },
-    {
-      "from": "A_240",
-      "to": "A_050",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018617"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "코어위브는 GPU-as-a-Service 네오클라우드로서 알파벳 구글 클라우드의 GPU 인프라와 경쟁한다."
-    },
-    {
-      "from": "A_2914",
-      "to": "T_560",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020904"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_210",
-      "to": "T_560",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_017719"
-      ]
-    },
-    {
-      "from": "A_050",
-      "to": "T_560",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_017720"
-      ]
-    },
-    {
-      "from": "A_211",
-      "to": "T_560",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_017721"
-      ]
-    },
-    {
-      "from": "A_373",
-      "to": "T_560",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_017722"
-      ]
-    },
-    {
-      "from": "A_895",
-      "to": "T_560",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_017723"
-      ]
-    },
-    {
-      "from": "A_240",
-      "to": "T_560",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_017724"
-      ]
-    },
-    {
-      "from": "A_210",
-      "to": "C_5107",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_012979"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_050",
-      "to": "C_5108",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_012980"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_211",
-      "to": "C_5109",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_012981"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_373",
-      "to": "C_5110",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_012982"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_895",
-      "to": "C_5111",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_012983"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_240",
-      "to": "C_5112",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_012984"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_210",
-      "to": "BF_008",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_017725"
-      ]
-    },
-    {
-      "from": "A_050",
-      "to": "BF_007",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_017726"
-      ]
-    },
-    {
-      "from": "A_211",
-      "to": "BF_008",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_017727"
-      ]
-    },
-    {
-      "from": "A_373",
-      "to": "BF_201",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_017728"
-      ]
-    },
-    {
-      "from": "A_895",
-      "to": "BF_059",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_017729"
-      ]
-    },
-    {
-      "from": "A_240",
-      "to": "BF_100",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_017730"
-      ]
-    },
-    {
-      "from": "M_035",
-      "to": "T_560",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012972"
-      ]
-    },
-    {
-      "from": "M_051",
-      "to": "T_560",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012973"
-      ]
-    },
-    {
-      "from": "M_074",
-      "to": "T_560",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012974"
-      ]
-    },
-    {
-      "from": "M_212",
-      "to": "T_560",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012975"
-      ]
-    },
-    {
-      "from": "M_072",
-      "to": "T_560",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012976"
-      ]
-    },
-    {
-      "from": "M_067",
-      "to": "T_560",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012977"
-      ]
-    },
-    {
-      "from": "M_161",
-      "to": "T_560",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012978"
-      ]
-    },
-    {
-      "from": "A_211",
-      "to": "A_210",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018606"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "아마존 AWS와 마이크로소프트 Azure는 글로벌 클라우드 인프라(IaaS) 시장 1·2위로 직접 경쟁한다."
-    },
-    {
-      "from": "A_211",
-      "to": "A_050",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018607"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "아마존 AWS와 알파벳 구글 클라우드(GCP)는 퍼블릭 클라우드 인프라 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_211",
-      "to": "A_895",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018608"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "아마존 AWS와 오라클 클라우드 인프라(OCI)는 클라우드 인프라 시장에서 경쟁한다."
-    },
-    {
-      "from": "A_210",
-      "to": "A_050",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018609"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "마이크로소프트 Azure와 알파벳 구글 클라우드는 퍼블릭 클라우드 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_050",
-      "to": "A_895",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018610"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "알파벳 구글 클라우드와 오라클 OCI는 클라우드 인프라 시장에서 경쟁한다."
-    },
-    {
-      "from": "A_210",
-      "to": "A_895",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_018611"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "마이크로소프트와 오라클은 Azure 데이터센터에서 오라클 DB를 구동하는 Oracle Database@Azure 멀티클라우드 제휴를 운영한다."
-    },
-    {
-      "from": "A_050",
-      "to": "A_373",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018612"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "알파벳(구글)과 메타는 글로벌 디지털 광고 시장의 양대 사업자로 직접 경쟁한다."
-    },
-    {
-      "from": "A_240",
-      "to": "A_210",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_018613"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "코어위브는 GPU 클라우드 용량을 마이크로소프트에 공급하며 MS가 코어위브 매출의 약 67%를 차지하는 최대 고객이다."
-    },
-    {
-      "from": "A_240",
-      "to": "A_373",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_018614"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "코어위브는 메타와 약 142억~210억 달러 규모 계약으로 엔비디아 GB300 기반 AI 컴퓨팅 용량을 공급한다."
-    },
-    {
-      "from": "A_240",
-      "to": "A_895",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018615"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "코어위브(네오클라우드)와 오라클은 AI용 GPU 클라우드 렌탈 시장에서 경쟁한다."
-    },
-    {
-      "from": "A_240",
-      "to": "A_211",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018616"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "코어위브는 GPU-as-a-Service 네오클라우드로서 아마존 AWS의 GPU 클라우드 제공과 경쟁한다."
-    },
-    {
-      "from": "A_240",
-      "to": "A_050",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018617"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "코어위브는 GPU-as-a-Service 네오클라우드로서 알파벳 구글 클라우드의 GPU 인프라와 경쟁한다."
-    },
-    {
-      "from": "A_2914",
-      "to": "T_560",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020904"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
+  "dataAsOf": "2026-07-26T00:00:00+09:00",
+  "description": "AI CAPEX 지출 주식 — 하이퍼스케일러·네오클라우드 등 AI 데이터센터 capex 지출 주체(Spender). capex 급증에 따른 마진·FCF 훼손 리스크와 AI 수익화가 관건. (수혜주식은 별도 테마, 매크로 공통)",
+  "notes": "AI CAPEX 지출 주식 — 하이퍼스케일러·네오클라우드 등 AI 데이터센터 capex 지출 주체(Spender). capex 급증에 따른 마진·FCF 훼손 리스크와 AI 수익화가 관건. (수혜주식은 별도 테마, 매크로 공통)",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-08-04",
+    "kind": "보강",
+    "title": "2궤도 관계 엣지 추가",
+    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 12건 백필(리서치 기반)."
+   },
+   {
+    "date": "2026-07-26",
+    "kind": "수정",
+    "title": "AI CAPEX 지출/수혜 분리",
+    "detail": "기존 T_560(지출자vs수혜자)을 지출주식·수혜주식 2개로 분리(매크로 공통)."
+   },
+   {
+    "date": "2026-08-05",
+    "kind": "관계",
+    "title": "EXPOSED_TO ETF 연결",
+    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+   }
   ]
+ },
+ "nodes": [
+  {
+   "id": "T_560",
+   "type": "THEME",
+   "name": "AI CAPEX 지출주식"
+  },
+  {
+   "id": "A_050",
+   "type": "ASSET",
+   "name": "알파벳",
+   "exposure": {
+    "ticker": "GOOGL",
+    "exchange": "NASDAQ",
+    "country": "US",
+    "business_desc": "클라우드/광고(Cloud·TPU) — 광고 캐시카우로 CAPEX 흡수, 자체칩(TPU) 비용 내재화",
+    "theme_role": "Spender — CAPEX 지출(마진 압박)",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -0.13280979327867648,
+    "return_3d": 0.6108202443280808,
+    "return_15d": 8.181647588665776,
+    "return_1m": -3.785708325220438,
+    "return_ytd": 10.655033652374279,
+    "return_1y": 70.93071005674464,
+    "return_3y": 165.71779525671838,
+    "close": 345.9,
+    "marketCap": 4186120293827,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -2.370872142252334,
+    "return_2y": 117.35182656593537
+   }
+  },
+  {
+   "id": "A_211",
+   "type": "ASSET",
+   "name": "아마존",
+   "exposure": {
+    "ticker": "AMZN",
+    "exchange": "NASDAQ",
+    "country": "US",
+    "business_desc": "클라우드/이커머스(AWS·Trainium) — 수요 견조 vs 빌드아웃 부담, 리테일 현금흐름 완충",
+    "theme_role": "Spender — CAPEX 지출(마진 압박)",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -0.9353901859465275,
+    "return_3d": -3.5332574282880946,
+    "return_15d": 13.157554607729072,
+    "return_1m": 6.125500020202823,
+    "return_ytd": 13.789966207434357,
+    "return_1y": 13.711143821975913,
+    "return_3y": 86.8464110407626,
+    "close": 262.65,
+    "marketCap": 2825352315000,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -4.309967939376291,
+    "return_2y": 54.40917107583773
+   }
+  },
+  {
+   "id": "A_240",
+   "type": "ASSET",
+   "name": "코어위브",
+   "exposure": {
+    "ticker": "CRWV",
+    "exchange": "NASDAQ",
+    "country": "US",
+    "business_desc": "GPU 클라우드(neo-cloud) — 차입 GPU 임대 레버리지 순수 spender, 신용·금리 최고 베타",
+    "theme_role": "Spender — CAPEX 지출(마진 압박)",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -0.9690469470317042,
+    "return_3d": 16.54118689105404,
+    "return_15d": 46.43850862548693,
+    "return_1m": 31.673755316487373,
+    "return_ytd": 46.99064376483732,
+    "return_1y": 5.783628963368681,
+    "return_3y": null,
+    "close": 105.26,
+    "marketCap": 57426739041,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 16.091320172052505,
+    "return_2y": null
+   }
+  },
+  {
+   "id": "A_895",
+   "type": "ASSET",
+   "name": "오라클",
+   "exposure": {
+    "ticker": "ORCL",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "클라우드 인프라/DB(OCI) — 차입·초대형 계약 레버리지, OpenAI 계약 의존(양날의 검)",
+    "theme_role": "Spender — CAPEX 지출(마진 압박)",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -3.64870055050569,
+    "return_3d": 3.464393731097082,
+    "return_15d": 30.89833898599881,
+    "return_1m": 17.64889792090043,
+    "return_ytd": -22.029713868941325,
+    "return_1y": -37.85288574088715,
+    "return_3y": 34.94008739011241,
+    "close": 150.52,
+    "marketCap": 432992250400,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 2.3806284859202886,
+    "return_2y": 13.458455225292521
+   }
+  },
+  {
+   "id": "A_210",
+   "type": "ASSET",
+   "name": "마이크로소프트",
+   "exposure": {
+    "ticker": "MSFT",
+    "exchange": "NASDAQ",
+    "country": "US",
+    "business_desc": "클라우드/엔터프라이즈SW(Azure) — CAPEX가 영업현금흐름 잠식, Azure 마진·FCF 훼손형",
+    "theme_role": "Spender — CAPEX 지출(마진 압박)",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -0.2978586379005055,
+    "return_3d": -1.6692800857466161,
+    "return_15d": 29.787791459261204,
+    "return_1m": 28.69872444340529,
+    "return_ytd": 2.8919833561728225,
+    "return_1y": -4.425611235257499,
+    "return_3y": 56.499763070604935,
+    "close": 495.4,
+    "marketCap": 3678617470000,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -0.9180183603672121,
+    "return_2y": 20.708530321256703
+   }
+  },
+  {
+   "id": "A_373",
+   "type": "ASSET",
+   "name": "메타",
+   "exposure": {
+    "ticker": "META",
+    "exchange": "NASDAQ",
+    "country": "US",
+    "business_desc": "소셜/생성형AI 인프라 — 순수 비용형 CAPEX, 수익화 가시성 최저",
+    "theme_role": "Spender — CAPEX 지출(마진 압박)",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -0.8605475906348192,
+    "return_3d": -1.5472693283482442,
+    "return_15d": -0.8971924931534536,
+    "return_1m": -10.769393682681827,
+    "return_ytd": -10.48157075287145,
+    "return_1y": -24.33696877618814,
+    "return_3y": 94.33350706993767,
+    "close": 589.85,
+    "marketCap": 1502634953315,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -0.3800033778078027,
+    "return_2y": 12.728680022360361
+   }
+  },
+  {
+   "id": "C_5107",
+   "type": "CHARACTER",
+   "name": "AI캐팩스지출자하이퍼스케일러"
+  },
+  {
+   "id": "C_5108",
+   "type": "CHARACTER",
+   "name": "AI캐팩스지출자하이퍼스케일러2"
+  },
+  {
+   "id": "C_5109",
+   "type": "CHARACTER",
+   "name": "AI캐팩스지출자AWS"
+  },
+  {
+   "id": "C_5110",
+   "type": "CHARACTER",
+   "name": "AI캐팩스지출자대규모"
+  },
+  {
+   "id": "C_5111",
+   "type": "CHARACTER",
+   "name": "AI캐팩스지출자OCI"
+  },
+  {
+   "id": "C_5112",
+   "type": "CHARACTER",
+   "name": "AI캐팩스지출자네오클라우드"
+  },
+  {
+   "id": "BF_008",
+   "type": "BUSINESS_FIELD",
+   "name": "클라우드"
+  },
+  {
+   "id": "BF_007",
+   "type": "BUSINESS_FIELD",
+   "name": "검색광고"
+  },
+  {
+   "id": "BF_201",
+   "type": "BUSINESS_FIELD",
+   "name": "빅테크"
+  },
+  {
+   "id": "BF_059",
+   "type": "BUSINESS_FIELD",
+   "name": "클라우드인프라"
+  },
+  {
+   "id": "BF_100",
+   "type": "BUSINESS_FIELD",
+   "name": "클라우드서비스"
+  },
+  {
+   "id": "M_035",
+   "type": "MACRO",
+   "name": "AI데이터센터전력수요증가"
+  },
+  {
+   "id": "M_051",
+   "type": "MACRO",
+   "name": "AI수요확대"
+  },
+  {
+   "id": "M_074",
+   "type": "MACRO",
+   "name": "DC건설확대"
+  },
+  {
+   "id": "M_212",
+   "type": "MACRO",
+   "name": "AI데이터센터확대"
+  },
+  {
+   "id": "M_072",
+   "type": "MACRO",
+   "name": "금리인상"
+  },
+  {
+   "id": "M_067",
+   "type": "MACRO",
+   "name": "사모신용리스크"
+  },
+  {
+   "id": "M_161",
+   "type": "MACRO",
+   "name": "AI반도체수요증가"
+  },
+  {
+   "id": "A_2914",
+   "type": "ASSET",
+   "name": "TIGER 미국테크TOP10 INDXX",
+   "exposure": {
+    "ticker": "381170",
+    "exchange": "KRX",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 0.7109004739336511,
+    "return_3d": -0.29715358148264537,
+    "return_15d": 3.37279065996432,
+    "return_1m": -2.7756596004270273,
+    "return_ytd": 3.726000650829797,
+    "return_1y": 21.131535676233714,
+    "return_3y": null,
+    "close": 31875,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": null
+   }
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_210",
+   "to": "T_560",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_017719"
+   ]
+  },
+  {
+   "from": "A_050",
+   "to": "T_560",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_017720"
+   ]
+  },
+  {
+   "from": "A_211",
+   "to": "T_560",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_017721"
+   ]
+  },
+  {
+   "from": "A_373",
+   "to": "T_560",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_017722"
+   ]
+  },
+  {
+   "from": "A_895",
+   "to": "T_560",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_017723"
+   ]
+  },
+  {
+   "from": "A_240",
+   "to": "T_560",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_017724"
+   ]
+  },
+  {
+   "from": "A_210",
+   "to": "C_5107",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_012979"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_050",
+   "to": "C_5108",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_012980"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_211",
+   "to": "C_5109",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_012981"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_373",
+   "to": "C_5110",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_012982"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_895",
+   "to": "C_5111",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_012983"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_240",
+   "to": "C_5112",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_012984"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_210",
+   "to": "BF_008",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_017725"
+   ]
+  },
+  {
+   "from": "A_050",
+   "to": "BF_007",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_017726"
+   ]
+  },
+  {
+   "from": "A_211",
+   "to": "BF_008",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_017727"
+   ]
+  },
+  {
+   "from": "A_373",
+   "to": "BF_201",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_017728"
+   ]
+  },
+  {
+   "from": "A_895",
+   "to": "BF_059",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_017729"
+   ]
+  },
+  {
+   "from": "A_240",
+   "to": "BF_100",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_017730"
+   ]
+  },
+  {
+   "from": "M_035",
+   "to": "T_560",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012972"
+   ]
+  },
+  {
+   "from": "M_051",
+   "to": "T_560",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012973"
+   ]
+  },
+  {
+   "from": "M_074",
+   "to": "T_560",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012974"
+   ]
+  },
+  {
+   "from": "M_212",
+   "to": "T_560",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012975"
+   ]
+  },
+  {
+   "from": "M_072",
+   "to": "T_560",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012976"
+   ]
+  },
+  {
+   "from": "M_067",
+   "to": "T_560",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012977"
+   ]
+  },
+  {
+   "from": "M_161",
+   "to": "T_560",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012978"
+   ]
+  },
+  {
+   "from": "A_211",
+   "to": "A_210",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018606"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "아마존 AWS와 마이크로소프트 Azure는 글로벌 클라우드 인프라(IaaS) 시장 1·2위로 직접 경쟁한다."
+  },
+  {
+   "from": "A_211",
+   "to": "A_050",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018607"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "아마존 AWS와 알파벳 구글 클라우드(GCP)는 퍼블릭 클라우드 인프라 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_211",
+   "to": "A_895",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018608"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "아마존 AWS와 오라클 클라우드 인프라(OCI)는 클라우드 인프라 시장에서 경쟁한다."
+  },
+  {
+   "from": "A_210",
+   "to": "A_050",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018609"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "마이크로소프트 Azure와 알파벳 구글 클라우드는 퍼블릭 클라우드 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_050",
+   "to": "A_895",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018610"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "알파벳 구글 클라우드와 오라클 OCI는 클라우드 인프라 시장에서 경쟁한다."
+  },
+  {
+   "from": "A_210",
+   "to": "A_895",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_018611"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "마이크로소프트와 오라클은 Azure 데이터센터에서 오라클 DB를 구동하는 Oracle Database@Azure 멀티클라우드 제휴를 운영한다."
+  },
+  {
+   "from": "A_050",
+   "to": "A_373",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018612"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "알파벳(구글)과 메타는 글로벌 디지털 광고 시장의 양대 사업자로 직접 경쟁한다."
+  },
+  {
+   "from": "A_240",
+   "to": "A_210",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_018613"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "코어위브는 GPU 클라우드 용량을 마이크로소프트에 공급하며 MS가 코어위브 매출의 약 67%를 차지하는 최대 고객이다."
+  },
+  {
+   "from": "A_240",
+   "to": "A_373",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_018614"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "코어위브는 메타와 약 142억~210억 달러 규모 계약으로 엔비디아 GB300 기반 AI 컴퓨팅 용량을 공급한다."
+  },
+  {
+   "from": "A_240",
+   "to": "A_895",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018615"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "코어위브(네오클라우드)와 오라클은 AI용 GPU 클라우드 렌탈 시장에서 경쟁한다."
+  },
+  {
+   "from": "A_240",
+   "to": "A_211",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018616"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "코어위브는 GPU-as-a-Service 네오클라우드로서 아마존 AWS의 GPU 클라우드 제공과 경쟁한다."
+  },
+  {
+   "from": "A_240",
+   "to": "A_050",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018617"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "코어위브는 GPU-as-a-Service 네오클라우드로서 알파벳 구글 클라우드의 GPU 인프라와 경쟁한다."
+  },
+  {
+   "from": "A_2914",
+   "to": "T_560",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020904"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_210",
+   "to": "T_560",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_017719"
+   ]
+  },
+  {
+   "from": "A_050",
+   "to": "T_560",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_017720"
+   ]
+  },
+  {
+   "from": "A_211",
+   "to": "T_560",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_017721"
+   ]
+  },
+  {
+   "from": "A_373",
+   "to": "T_560",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_017722"
+   ]
+  },
+  {
+   "from": "A_895",
+   "to": "T_560",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_017723"
+   ]
+  },
+  {
+   "from": "A_240",
+   "to": "T_560",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_017724"
+   ]
+  },
+  {
+   "from": "A_210",
+   "to": "C_5107",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_012979"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_050",
+   "to": "C_5108",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_012980"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_211",
+   "to": "C_5109",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_012981"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_373",
+   "to": "C_5110",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_012982"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_895",
+   "to": "C_5111",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_012983"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_240",
+   "to": "C_5112",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_012984"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_210",
+   "to": "BF_008",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_017725"
+   ]
+  },
+  {
+   "from": "A_050",
+   "to": "BF_007",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_017726"
+   ]
+  },
+  {
+   "from": "A_211",
+   "to": "BF_008",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_017727"
+   ]
+  },
+  {
+   "from": "A_373",
+   "to": "BF_201",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_017728"
+   ]
+  },
+  {
+   "from": "A_895",
+   "to": "BF_059",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_017729"
+   ]
+  },
+  {
+   "from": "A_240",
+   "to": "BF_100",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_017730"
+   ]
+  },
+  {
+   "from": "M_035",
+   "to": "T_560",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012972"
+   ]
+  },
+  {
+   "from": "M_051",
+   "to": "T_560",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012973"
+   ]
+  },
+  {
+   "from": "M_074",
+   "to": "T_560",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012974"
+   ]
+  },
+  {
+   "from": "M_212",
+   "to": "T_560",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012975"
+   ]
+  },
+  {
+   "from": "M_072",
+   "to": "T_560",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012976"
+   ]
+  },
+  {
+   "from": "M_067",
+   "to": "T_560",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012977"
+   ]
+  },
+  {
+   "from": "M_161",
+   "to": "T_560",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012978"
+   ]
+  },
+  {
+   "from": "A_211",
+   "to": "A_210",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018606"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "아마존 AWS와 마이크로소프트 Azure는 글로벌 클라우드 인프라(IaaS) 시장 1·2위로 직접 경쟁한다."
+  },
+  {
+   "from": "A_211",
+   "to": "A_050",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018607"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "아마존 AWS와 알파벳 구글 클라우드(GCP)는 퍼블릭 클라우드 인프라 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_211",
+   "to": "A_895",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018608"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "아마존 AWS와 오라클 클라우드 인프라(OCI)는 클라우드 인프라 시장에서 경쟁한다."
+  },
+  {
+   "from": "A_210",
+   "to": "A_050",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018609"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "마이크로소프트 Azure와 알파벳 구글 클라우드는 퍼블릭 클라우드 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_050",
+   "to": "A_895",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018610"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "알파벳 구글 클라우드와 오라클 OCI는 클라우드 인프라 시장에서 경쟁한다."
+  },
+  {
+   "from": "A_210",
+   "to": "A_895",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_018611"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "마이크로소프트와 오라클은 Azure 데이터센터에서 오라클 DB를 구동하는 Oracle Database@Azure 멀티클라우드 제휴를 운영한다."
+  },
+  {
+   "from": "A_050",
+   "to": "A_373",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018612"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "알파벳(구글)과 메타는 글로벌 디지털 광고 시장의 양대 사업자로 직접 경쟁한다."
+  },
+  {
+   "from": "A_240",
+   "to": "A_210",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_018613"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "코어위브는 GPU 클라우드 용량을 마이크로소프트에 공급하며 MS가 코어위브 매출의 약 67%를 차지하는 최대 고객이다."
+  },
+  {
+   "from": "A_240",
+   "to": "A_373",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_018614"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "코어위브는 메타와 약 142억~210억 달러 규모 계약으로 엔비디아 GB300 기반 AI 컴퓨팅 용량을 공급한다."
+  },
+  {
+   "from": "A_240",
+   "to": "A_895",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018615"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "코어위브(네오클라우드)와 오라클은 AI용 GPU 클라우드 렌탈 시장에서 경쟁한다."
+  },
+  {
+   "from": "A_240",
+   "to": "A_211",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018616"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "코어위브는 GPU-as-a-Service 네오클라우드로서 아마존 AWS의 GPU 클라우드 제공과 경쟁한다."
+  },
+  {
+   "from": "A_240",
+   "to": "A_050",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018617"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "코어위브는 GPU-as-a-Service 네오클라우드로서 알파벳 구글 클라우드의 GPU 인프라와 경쟁한다."
+  },
+  {
+   "from": "A_2914",
+   "to": "T_560",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020904"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ]
 }

@@ -1,795 +1,794 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_486",
-  "themeName": "글로벌 원전 해체·핵폐기물",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-25T00:00:00+09:00",
-    "description": "원전 르네상스의 뒷단 — 노후 원전 해체·핵폐기물 처리·연료 후행. 해체/EPC(Fluor·Jacobs·AtkinsRealis)·원자로 부품(BWXT·Curtiss-Wright)·폐기물 서비스(Veolia·Studsvik)·농축(Centrus). 원전 수명·해체 발주·폐기물 정책이 동인.",
-    "notes": "T_486 신규 — 자산별 CHARACTER(사업특성/포지션), MACRO 3(기존 재사용)",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-08-04",
-        "kind": "보강",
-        "title": "2궤도 관계 엣지 추가",
-        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
-      },
-      {
-        "date": "2026-07-25",
-        "kind": "수정",
-        "title": "구체적 엣지 백필 + 이벤트",
-        "detail": "THEMED_AS/IMPACTS 근거 구체화, 이벤트(회고+2026 에코) 추가."
-      },
-      {
-        "date": "2026-08-05",
-        "kind": "관계",
-        "title": "EXPOSED_TO ETF 연결",
-        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-      }
-    ]
-  },
-  "nodes": [
-    {
-      "id": "T_486",
-      "type": "THEME",
-      "name": "글로벌 원전 해체·핵폐기물"
-    },
-    {
-      "id": "A_494",
-      "type": "ASSET",
-      "name": "플루어",
-      "exposure": {
-        "ticker": "FLR",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.07643798968086646,
-        "return_3d": -1.095372993389998,
-        "return_7d": 3.8675128917096346,
-        "return_15d": 0.3448936577888473,
-        "return_1m": 5.776610785699865,
-        "return_ytd": 25.587529976019162,
-        "return_1y": 22.790152403282526,
-        "return_2y": 7.779378472936815,
-        "return_3y": 48.18902093944537,
-        "close": 52.37,
-        "marketCap": 7314517900,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1045",
-      "type": "CHARACTER",
-      "name": "원전 EPC·해체·SMR"
-    },
-    {
-      "id": "A_1291",
-      "type": "ASSET",
-      "name": "제이콥스솔루션즈",
-      "exposure": {
-        "ticker": "J",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.5211590577444136,
-        "return_3d": -2.0051483538815917,
-        "return_7d": -0.006912283127114005,
-        "return_15d": 7.505945303210448,
-        "return_1m": 9.334139520822315,
-        "return_ytd": 6.878463243442923,
-        "return_1y": -4.9415166250492915,
-        "return_2y": 21.870261162594762,
-        "return_3y": 28.24468085106382,
-        "close": 144.66,
-        "marketCap": 17081597460,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1046",
-      "type": "CHARACTER",
-      "name": "원자력 엔지니어링·해체"
-    },
-    {
-      "id": "A_169",
-      "type": "ASSET",
-      "name": "BWX테크놀로지",
-      "exposure": {
-        "ticker": "BWXT",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 1.6847666568828856,
-        "return_3d": 2.068234046314288,
-        "return_7d": 2.9355835512241413,
-        "return_15d": -0.7449002979601271,
-        "return_1m": -0.29929780131231487,
-        "return_ytd": -4.7456695078361255,
-        "return_1y": -2.0027155465037305,
-        "return_2y": 77.04415372035976,
-        "return_3y": 137.28767123287673,
-        "close": 173.22,
-        "marketCap": 15869481012,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1047",
-      "type": "CHARACTER",
-      "name": "원자로 부품·핵연료"
-    },
-    {
-      "id": "A_313",
-      "type": "ASSET",
-      "name": "커티스-라이트",
-      "exposure": {
-        "ticker": "CW",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 1.5214203794840397,
-        "return_3d": -0.9419797155646337,
-        "return_7d": -6.560575085848674,
-        "return_15d": -6.782281821938452,
-        "return_1m": -2.28187356771562,
-        "return_ytd": 22.175827247632675,
-        "return_1y": 40.76571589605265,
-        "return_2y": 140.04050389592558,
-        "return_3y": 236.53031761308947,
-        "close": 699.31,
-        "marketCap": 25833350572,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1048",
-      "type": "CHARACTER",
-      "name": "원전 부품·밸브·계측"
-    },
-    {
-      "id": "A_2011",
-      "type": "ASSET",
-      "name": "베올리아",
-      "exposure": {
-        "ticker": "VEOEY",
-        "exchange": "OTC",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.40404040404041774,
-        "return_3d": -1.1033099297893756,
-        "return_7d": -3.7579306979014127,
-        "return_15d": -5.192307692307696,
-        "return_1m": -7.200000000000006,
-        "return_ytd": 11.791383219954632,
-        "return_1y": 12.492869366799763,
-        "return_2y": 29.82225148123765,
-        "return_3y": 28.804702808621798,
-        "close": 19.72,
-        "marketCap": 28878478886,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1049",
-      "type": "CHARACTER",
-      "name": "핵폐기물·환경 서비스"
-    },
-    {
-      "id": "A_166",
-      "type": "ASSET",
-      "name": "센트러스에너지",
-      "exposure": {
-        "ticker": "LEU",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.870607861536854,
-        "return_3d": 0.5074263967440151,
-        "return_7d": 1.3430688056281115,
-        "return_15d": 16.02294221734091,
-        "return_1m": 29.29217379479161,
-        "return_ytd": -30.22018348623853,
-        "return_1y": 1.445795988049503,
-        "return_2y": 376.8054162487462,
-        "return_3y": 334.13242009132426,
-        "close": 190.15,
-        "marketCap": 3604025899,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1050",
-      "type": "CHARACTER",
-      "name": "농축·핵연료(HALEU)"
-    },
-    {
-      "id": "A_2508",
-      "type": "ASSET",
-      "name": "앳킨스레알리스",
-      "exposure": {
-        "ticker": "ATRL",
-        "exchange": "TSX",
-        "country": "CA"
-      },
-      "metrics": {
-        "return_1d": 0.4678762980714568,
-        "return_3d": 0.76685361107931,
-        "return_7d": -1.2672423460805105,
-        "return_15d": 2.051698156949122,
-        "return_1m": -2.394678492239466,
-        "return_ytd": -2.5890683779597135,
-        "return_1y": -8.776292612164537,
-        "return_2y": 62.97667530544242,
-        "return_3y": 105.8933582787652,
-        "close": 88.04,
-        "marketCap": 14313828009,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1051",
-      "type": "CHARACTER",
-      "name": "CANDU 원전·해체"
-    },
-    {
-      "id": "A_2509",
-      "type": "ASSET",
-      "name": "스투스비크",
-      "exposure": {
-        "ticker": "STUD",
-        "exchange": "STO",
-        "country": "SE"
-      },
-      "metrics": {
-        "return_1d": null,
-        "return_3d": null,
-        "return_7d": null,
-        "return_15d": null,
-        "return_1m": null,
-        "return_ytd": null,
-        "return_1y": null,
-        "return_2y": null,
-        "return_3y": null,
-        "close": null,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": null,
-        "valuationSource": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1052",
-      "type": "CHARACTER",
-      "name": "원전 해체·폐기물 전문"
-    },
-    {
-      "id": "M_027",
-      "type": "MACRO",
-      "name": "원전확대"
-    },
-    {
-      "id": "M_177",
-      "type": "MACRO",
-      "name": "탄소중립"
-    },
-    {
-      "id": "M_411",
-      "type": "MACRO",
-      "name": "ESG의무화_폐기물순환경제"
-    },
-    {
-      "id": "A_1350",
-      "type": "ASSET",
-      "name": "VanEck 우라늄+원자력 ETF",
-      "exposure": {
-        "ticker": "NLR",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.3543705703678679,
-        "close": 118.1,
-        "marketCap": 2827714831,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": -0.906192314146681,
-        "return_7d": 3.7056550755180773,
-        "return_15d": 9.250693802035158,
-        "return_1m": 12.830801566829075,
-        "return_ytd": -11.2297053517739,
-        "return_1y": 1.4953592299759233,
-        "return_2y": 62.35908715974705,
-        "return_3y": 91.44107634948936,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    }
+ "schemaVersion": "v5",
+ "themeId": "T_486",
+ "themeName": "글로벌 원전 해체·핵폐기물",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
   ],
-  "edges": [
-    {
-      "from": "A_494",
-      "to": "T_486",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012211"
-      ]
-    },
-    {
-      "from": "A_494",
-      "to": "C_1045",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017129"
-      ]
-    },
-    {
-      "from": "A_1291",
-      "to": "T_486",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012212"
-      ]
-    },
-    {
-      "from": "A_1291",
-      "to": "C_1046",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017130"
-      ]
-    },
-    {
-      "from": "A_169",
-      "to": "T_486",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012213"
-      ]
-    },
-    {
-      "from": "A_169",
-      "to": "C_1047",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017131"
-      ]
-    },
-    {
-      "from": "A_313",
-      "to": "T_486",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012214"
-      ]
-    },
-    {
-      "from": "A_313",
-      "to": "C_1048",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017132"
-      ]
-    },
-    {
-      "from": "A_2011",
-      "to": "T_486",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012215"
-      ]
-    },
-    {
-      "from": "A_2011",
-      "to": "C_1049",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017133"
-      ]
-    },
-    {
-      "from": "A_166",
-      "to": "T_486",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012216"
-      ]
-    },
-    {
-      "from": "A_166",
-      "to": "C_1050",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017134"
-      ]
-    },
-    {
-      "from": "A_2508",
-      "to": "T_486",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012217"
-      ]
-    },
-    {
-      "from": "A_2508",
-      "to": "C_1051",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017135"
-      ]
-    },
-    {
-      "from": "A_2509",
-      "to": "T_486",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012218"
-      ]
-    },
-    {
-      "from": "A_2509",
-      "to": "C_1052",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017136"
-      ]
-    },
-    {
-      "from": "M_027",
-      "to": "T_486",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012219"
-      ]
-    },
-    {
-      "from": "M_177",
-      "to": "T_486",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012220"
-      ]
-    },
-    {
-      "from": "M_411",
-      "to": "T_486",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012221"
-      ]
-    },
-    {
-      "from": "A_494",
-      "to": "A_1291",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019883"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "플루어와 제이콥스솔루션즈는 원전 해체·환경복원 엔지니어링 시장 경쟁"
-    },
-    {
-      "from": "A_169",
-      "to": "A_313",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019884"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "BWX테크놀로지와 커티스-라이트는 원전 부품·서비스 시장 경쟁"
-    },
-    {
-      "from": "A_2508",
-      "to": "A_494",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019885"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "앳킨스레알리스와 플루어는 원전 해체·엔지니어링 시장 경쟁"
-    },
-    {
-      "from": "A_2011",
-      "to": "A_494",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019886"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "베올리아와 플루어는 핵폐기물 처리·환경 서비스 시장 경쟁"
-    },
-    {
-      "from": "A_166",
-      "to": "A_169",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_019887"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "센트러스에너지와 BWX테크놀로지는 HALEU 농축·연료 제조 협력"
-    },
-    {
-      "from": "A_1350",
-      "to": "T_486",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020835"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_494",
-      "to": "T_486",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012211"
-      ]
-    },
-    {
-      "from": "A_494",
-      "to": "C_1045",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017129"
-      ]
-    },
-    {
-      "from": "A_1291",
-      "to": "T_486",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012212"
-      ]
-    },
-    {
-      "from": "A_1291",
-      "to": "C_1046",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017130"
-      ]
-    },
-    {
-      "from": "A_169",
-      "to": "T_486",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012213"
-      ]
-    },
-    {
-      "from": "A_169",
-      "to": "C_1047",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017131"
-      ]
-    },
-    {
-      "from": "A_313",
-      "to": "T_486",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012214"
-      ]
-    },
-    {
-      "from": "A_313",
-      "to": "C_1048",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017132"
-      ]
-    },
-    {
-      "from": "A_2011",
-      "to": "T_486",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012215"
-      ]
-    },
-    {
-      "from": "A_2011",
-      "to": "C_1049",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017133"
-      ]
-    },
-    {
-      "from": "A_166",
-      "to": "T_486",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012216"
-      ]
-    },
-    {
-      "from": "A_166",
-      "to": "C_1050",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017134"
-      ]
-    },
-    {
-      "from": "A_2508",
-      "to": "T_486",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012217"
-      ]
-    },
-    {
-      "from": "A_2508",
-      "to": "C_1051",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017135"
-      ]
-    },
-    {
-      "from": "A_2509",
-      "to": "T_486",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012218"
-      ]
-    },
-    {
-      "from": "A_2509",
-      "to": "C_1052",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017136"
-      ]
-    },
-    {
-      "from": "M_027",
-      "to": "T_486",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012219"
-      ]
-    },
-    {
-      "from": "M_177",
-      "to": "T_486",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012220"
-      ]
-    },
-    {
-      "from": "M_411",
-      "to": "T_486",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012221"
-      ]
-    },
-    {
-      "from": "A_494",
-      "to": "A_1291",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019883"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "플루어와 제이콥스솔루션즈는 원전 해체·환경복원 엔지니어링 시장 경쟁"
-    },
-    {
-      "from": "A_169",
-      "to": "A_313",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019884"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "BWX테크놀로지와 커티스-라이트는 원전 부품·서비스 시장 경쟁"
-    },
-    {
-      "from": "A_2508",
-      "to": "A_494",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019885"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "앳킨스레알리스와 플루어는 원전 해체·엔지니어링 시장 경쟁"
-    },
-    {
-      "from": "A_2011",
-      "to": "A_494",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019886"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "베올리아와 플루어는 핵폐기물 처리·환경 서비스 시장 경쟁"
-    },
-    {
-      "from": "A_166",
-      "to": "A_169",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_019887"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "센트러스에너지와 BWX테크놀로지는 HALEU 농축·연료 제조 협력"
-    },
-    {
-      "from": "A_1350",
-      "to": "T_486",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020835"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
+  "dataAsOf": "2026-07-25T00:00:00+09:00",
+  "description": "원전 르네상스의 뒷단 — 노후 원전 해체·핵폐기물 처리·연료 후행. 해체/EPC(Fluor·Jacobs·AtkinsRealis)·원자로 부품(BWXT·Curtiss-Wright)·폐기물 서비스(Veolia·Studsvik)·농축(Centrus). 원전 수명·해체 발주·폐기물 정책이 동인.",
+  "notes": "T_486 신규 — 자산별 CHARACTER(사업특성/포지션), MACRO 3(기존 재사용)",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-08-04",
+    "kind": "보강",
+    "title": "2궤도 관계 엣지 추가",
+    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
+   },
+   {
+    "date": "2026-07-25",
+    "kind": "수정",
+    "title": "구체적 엣지 백필 + 이벤트",
+    "detail": "THEMED_AS/IMPACTS 근거 구체화, 이벤트(회고+2026 에코) 추가."
+   },
+   {
+    "date": "2026-08-05",
+    "kind": "관계",
+    "title": "EXPOSED_TO ETF 연결",
+    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+   }
   ]
+ },
+ "nodes": [
+  {
+   "id": "T_486",
+   "type": "THEME",
+   "name": "글로벌 원전 해체·핵폐기물"
+  },
+  {
+   "id": "A_494",
+   "type": "ASSET",
+   "name": "플루어",
+   "exposure": {
+    "ticker": "FLR",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.07643798968086646,
+    "return_3d": -1.095372993389998,
+    "return_15d": 0.3448936577888473,
+    "return_1m": 2.4452269170579077,
+    "return_ytd": 32.14736310875599,
+    "return_1y": 26.040914560770155,
+    "return_3y": 50.5750431282346,
+    "close": 52.37,
+    "marketCap": 7314517900,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -8.122807017543865,
+    "return_2y": 7.249641613762026
+   }
+  },
+  {
+   "id": "C_1045",
+   "type": "CHARACTER",
+   "name": "원전 EPC·해체·SMR"
+  },
+  {
+   "id": "A_1291",
+   "type": "ASSET",
+   "name": "제이콥스솔루션즈",
+   "exposure": {
+    "ticker": "J",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.5211590577444136,
+    "return_3d": -2.0051483538815917,
+    "return_15d": 7.505945303210448,
+    "return_1m": 11.913971839702931,
+    "return_ytd": 9.840046286805059,
+    "return_1y": -1.4609876516299192,
+    "return_3y": 32.12503379390468,
+    "close": 144.66,
+    "marketCap": 17081597460,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -0.2826221823946984,
+    "return_2y": 23.805146822839518
+   }
+  },
+  {
+   "id": "C_1046",
+   "type": "CHARACTER",
+   "name": "원자력 엔지니어링·해체"
+  },
+  {
+   "id": "A_169",
+   "type": "ASSET",
+   "name": "BWX테크놀로지",
+   "exposure": {
+    "ticker": "BWXT",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 1.6847666568828856,
+    "return_3d": 2.068234046314288,
+    "return_15d": -0.7449002979601271,
+    "return_1m": -3.6756937107268017,
+    "return_ytd": 0.49254224898618304,
+    "return_1y": -0.2922389463510977,
+    "return_3y": 140.21200560799764,
+    "close": 173.22,
+    "marketCap": 15869481012,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 1.9540906415538517,
+    "return_2y": 81.11024911285045
+   }
+  },
+  {
+   "id": "C_1047",
+   "type": "CHARACTER",
+   "name": "원자로 부품·핵연료"
+  },
+  {
+   "id": "A_313",
+   "type": "ASSET",
+   "name": "커티스-라이트",
+   "exposure": {
+    "ticker": "CW",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 1.5214203794840397,
+    "return_3d": -0.9419797155646337,
+    "return_15d": -6.782281821938452,
+    "return_1m": -7.027666617918826,
+    "return_ytd": 26.94125860467176,
+    "return_1y": 42.31693872969957,
+    "return_3y": 241.50565065834,
+    "close": 699.31,
+    "marketCap": 25833350572,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 1.1265039333641758,
+    "return_2y": 134.5776538880195
+   }
+  },
+  {
+   "id": "C_1048",
+   "type": "CHARACTER",
+   "name": "원전 부품·밸브·계측"
+  },
+  {
+   "id": "A_2011",
+   "type": "ASSET",
+   "name": "베올리아",
+   "exposure": {
+    "ticker": "VEOEY",
+    "exchange": "OTC",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.40404040404041774,
+    "return_3d": -1.1033099297893756,
+    "return_15d": -5.192307692307696,
+    "return_1m": -7.374354156881169,
+    "return_ytd": 17.832644183656377,
+    "return_1y": 15.450591011012293,
+    "return_3y": 46.212705379915775,
+    "close": 19.72,
+    "marketCap": 28878478886,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -3.3806957373836433,
+    "return_2y": 38.76672131955048
+   }
+  },
+  {
+   "id": "C_1049",
+   "type": "CHARACTER",
+   "name": "핵폐기물·환경 서비스"
+  },
+  {
+   "id": "A_166",
+   "type": "ASSET",
+   "name": "센트러스에너지",
+   "exposure": {
+    "ticker": "LEU",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.870607861536854,
+    "return_3d": 0.5074263967440151,
+    "return_15d": 16.02294221734091,
+    "return_1m": 19.306060986322017,
+    "return_ytd": -21.67160982039874,
+    "return_1y": 0.5658980325788043,
+    "return_3y": 349.4209406759631,
+    "close": 190.15,
+    "marketCap": 3604025899,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -0.6375084914040818,
+    "return_2y": 416.010854816825
+   }
+  },
+  {
+   "id": "C_1050",
+   "type": "CHARACTER",
+   "name": "농축·핵연료(HALEU)"
+  },
+  {
+   "id": "A_2508",
+   "type": "ASSET",
+   "name": "앳킨스레알리스",
+   "exposure": {
+    "ticker": "ATRL",
+    "exchange": "TSX",
+    "country": "CA"
+   },
+   "metrics": {
+    "return_1d": -3.1881454872025206,
+    "return_3d": -0.3466605038132786,
+    "return_15d": -3.8036809815951034,
+    "return_1m": -0.6337135614702283,
+    "return_ytd": -2.6636568848758424,
+    "return_1y": -12.00000000000001,
+    "return_3y": 127.5461741424802,
+    "close": 86.24,
+    "marketCap": 14313828009,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-07-29",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": -2.6526696015351736,
+    "return_2y": 49.98260869565216
+   }
+  },
+  {
+   "id": "C_1051",
+   "type": "CHARACTER",
+   "name": "CANDU 원전·해체"
+  },
+  {
+   "id": "A_2509",
+   "type": "ASSET",
+   "name": "스투스비크",
+   "exposure": {
+    "ticker": "STUD",
+    "exchange": "STO",
+    "country": "SE"
+   },
+   "metrics": {
+    "return_1d": null,
+    "return_3d": null,
+    "return_15d": null,
+    "return_1m": null,
+    "return_ytd": null,
+    "return_1y": null,
+    "return_3y": null,
+    "close": null,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": null,
+    "valuationSource": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": null
+   }
+  },
+  {
+   "id": "C_1052",
+   "type": "CHARACTER",
+   "name": "원전 해체·폐기물 전문"
+  },
+  {
+   "id": "M_027",
+   "type": "MACRO",
+   "name": "원전확대"
+  },
+  {
+   "id": "M_177",
+   "type": "MACRO",
+   "name": "탄소중립"
+  },
+  {
+   "id": "M_411",
+   "type": "MACRO",
+   "name": "ESG의무화_폐기물순환경제"
+  },
+  {
+   "id": "A_1350",
+   "type": "ASSET",
+   "name": "VanEck 우라늄+원자력 ETF",
+   "exposure": {
+    "ticker": "NLR",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.3543705703678679,
+    "close": 118.1,
+    "marketCap": 2827714831,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": -0.906192314146681,
+    "return_15d": 9.250693802035158,
+    "return_1m": 6.042919996408358,
+    "return_ytd": -4.911433172302749,
+    "return_1y": 4.383949089623473,
+    "return_3y": 104.48977118269886,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 0.2376506535392897,
+    "return_2y": 65.1297897776131
+   }
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_494",
+   "to": "T_486",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012211"
+   ]
+  },
+  {
+   "from": "A_494",
+   "to": "C_1045",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017129"
+   ]
+  },
+  {
+   "from": "A_1291",
+   "to": "T_486",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012212"
+   ]
+  },
+  {
+   "from": "A_1291",
+   "to": "C_1046",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017130"
+   ]
+  },
+  {
+   "from": "A_169",
+   "to": "T_486",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012213"
+   ]
+  },
+  {
+   "from": "A_169",
+   "to": "C_1047",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017131"
+   ]
+  },
+  {
+   "from": "A_313",
+   "to": "T_486",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012214"
+   ]
+  },
+  {
+   "from": "A_313",
+   "to": "C_1048",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017132"
+   ]
+  },
+  {
+   "from": "A_2011",
+   "to": "T_486",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012215"
+   ]
+  },
+  {
+   "from": "A_2011",
+   "to": "C_1049",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017133"
+   ]
+  },
+  {
+   "from": "A_166",
+   "to": "T_486",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012216"
+   ]
+  },
+  {
+   "from": "A_166",
+   "to": "C_1050",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017134"
+   ]
+  },
+  {
+   "from": "A_2508",
+   "to": "T_486",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012217"
+   ]
+  },
+  {
+   "from": "A_2508",
+   "to": "C_1051",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017135"
+   ]
+  },
+  {
+   "from": "A_2509",
+   "to": "T_486",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012218"
+   ]
+  },
+  {
+   "from": "A_2509",
+   "to": "C_1052",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017136"
+   ]
+  },
+  {
+   "from": "M_027",
+   "to": "T_486",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012219"
+   ]
+  },
+  {
+   "from": "M_177",
+   "to": "T_486",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012220"
+   ]
+  },
+  {
+   "from": "M_411",
+   "to": "T_486",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012221"
+   ]
+  },
+  {
+   "from": "A_494",
+   "to": "A_1291",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019883"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "플루어와 제이콥스솔루션즈는 원전 해체·환경복원 엔지니어링 시장 경쟁"
+  },
+  {
+   "from": "A_169",
+   "to": "A_313",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019884"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "BWX테크놀로지와 커티스-라이트는 원전 부품·서비스 시장 경쟁"
+  },
+  {
+   "from": "A_2508",
+   "to": "A_494",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019885"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "앳킨스레알리스와 플루어는 원전 해체·엔지니어링 시장 경쟁"
+  },
+  {
+   "from": "A_2011",
+   "to": "A_494",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019886"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "베올리아와 플루어는 핵폐기물 처리·환경 서비스 시장 경쟁"
+  },
+  {
+   "from": "A_166",
+   "to": "A_169",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_019887"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "센트러스에너지와 BWX테크놀로지는 HALEU 농축·연료 제조 협력"
+  },
+  {
+   "from": "A_1350",
+   "to": "T_486",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020835"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_494",
+   "to": "T_486",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012211"
+   ]
+  },
+  {
+   "from": "A_494",
+   "to": "C_1045",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017129"
+   ]
+  },
+  {
+   "from": "A_1291",
+   "to": "T_486",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012212"
+   ]
+  },
+  {
+   "from": "A_1291",
+   "to": "C_1046",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017130"
+   ]
+  },
+  {
+   "from": "A_169",
+   "to": "T_486",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012213"
+   ]
+  },
+  {
+   "from": "A_169",
+   "to": "C_1047",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017131"
+   ]
+  },
+  {
+   "from": "A_313",
+   "to": "T_486",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012214"
+   ]
+  },
+  {
+   "from": "A_313",
+   "to": "C_1048",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017132"
+   ]
+  },
+  {
+   "from": "A_2011",
+   "to": "T_486",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012215"
+   ]
+  },
+  {
+   "from": "A_2011",
+   "to": "C_1049",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017133"
+   ]
+  },
+  {
+   "from": "A_166",
+   "to": "T_486",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012216"
+   ]
+  },
+  {
+   "from": "A_166",
+   "to": "C_1050",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017134"
+   ]
+  },
+  {
+   "from": "A_2508",
+   "to": "T_486",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012217"
+   ]
+  },
+  {
+   "from": "A_2508",
+   "to": "C_1051",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017135"
+   ]
+  },
+  {
+   "from": "A_2509",
+   "to": "T_486",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012218"
+   ]
+  },
+  {
+   "from": "A_2509",
+   "to": "C_1052",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017136"
+   ]
+  },
+  {
+   "from": "M_027",
+   "to": "T_486",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012219"
+   ]
+  },
+  {
+   "from": "M_177",
+   "to": "T_486",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012220"
+   ]
+  },
+  {
+   "from": "M_411",
+   "to": "T_486",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012221"
+   ]
+  },
+  {
+   "from": "A_494",
+   "to": "A_1291",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019883"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "플루어와 제이콥스솔루션즈는 원전 해체·환경복원 엔지니어링 시장 경쟁"
+  },
+  {
+   "from": "A_169",
+   "to": "A_313",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019884"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "BWX테크놀로지와 커티스-라이트는 원전 부품·서비스 시장 경쟁"
+  },
+  {
+   "from": "A_2508",
+   "to": "A_494",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019885"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "앳킨스레알리스와 플루어는 원전 해체·엔지니어링 시장 경쟁"
+  },
+  {
+   "from": "A_2011",
+   "to": "A_494",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019886"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "베올리아와 플루어는 핵폐기물 처리·환경 서비스 시장 경쟁"
+  },
+  {
+   "from": "A_166",
+   "to": "A_169",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_019887"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "센트러스에너지와 BWX테크놀로지는 HALEU 농축·연료 제조 협력"
+  },
+  {
+   "from": "A_1350",
+   "to": "T_486",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020835"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ]
 }

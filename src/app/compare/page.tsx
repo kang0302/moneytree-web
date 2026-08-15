@@ -12,7 +12,7 @@ import {
 import { computeThemeReturnSummary, PeriodKey, tempByScore } from "@/lib/themeReturn";
 import { fetchThemeIndex, ThemeIndexItem } from "@/lib/themeIndex";
 
-const PERIODS: PeriodKey[] = ["1D", "3D", "7D", "15D", "1M", "YTD", "1Y", "2Y", "3Y"];
+const PERIODS: PeriodKey[] = ["1D", "3D", "5D", "15D", "1M", "YTD", "1Y", "2Y", "3Y"];
 const MAX = 5;
 const COLORS = ["#818cf8", "#38bdf8", "#f472b6", "#34d399", "#fbbf24"];
 
@@ -133,7 +133,7 @@ function scoreColor(v: number | null): string {
 export default function ComparePage() {
   const [index, setIndex] = useState<ThemeIndexItem[]>([]);
   const [ids, setIds] = useState<string[]>([]);
-  const [snap, setSnap] = useState<PeriodKey>("7D");
+  const [snap, setSnap] = useState<PeriodKey>("5D");
   const [graphs, setGraphs] = useState<Record<string, Graph | null>>({});
   const [query, setQuery] = useState("");
   const [loadingIdx, setLoadingIdx] = useState(true);

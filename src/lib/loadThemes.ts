@@ -131,7 +131,7 @@ async function mapLimit<T, R>(items: T[], limit: number, fn: (x: T) => Promise<R
   return out;
 }
 
-export async function loadScoredThemes(period: PeriodKey = "7D"): Promise<ScoredTheme[]> {
+export async function loadScoredThemes(period: PeriodKey = "5D"): Promise<ScoredTheme[]> {
   let list = await fetchIndexWithFallback();
   list = await resolvePlaceholderThemeNames(list);
   return mapLimit(list, 6, async (row) => {

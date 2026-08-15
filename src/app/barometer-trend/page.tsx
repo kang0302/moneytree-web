@@ -16,13 +16,13 @@ type Snap = { date: string; generated?: string; themeCount?: number; rows: SnapR
 
 // 기준(baseline) 기간 = 호라이즌. 최종은 항상 3D(최근).
 const PERIODS = [
-  { key: "1w", label: "1주", horizon: "7D" },
+  { key: "1w", label: "1주", horizon: "5D" },
   { key: "2w", label: "2주", horizon: "15D" },
   { key: "1m", label: "1개월", horizon: "1M" },
 ] as const;
 type PeriodKey = (typeof PERIODS)[number]["key"];
 const FINAL_H = "3D"; // 최근(최종 밴드) 호라이즌
-const SPARK_H = ["1D", "3D", "7D", "15D", "1M"]; // 온도 term-structure(단기→장기)
+const SPARK_H = ["1D", "3D", "5D", "15D", "1M"]; // 온도 term-structure(단기→장기)
 
 const bandIdx = (key: string) => TEMP_BANDS.findIndex((b) => b.key === key);
 const bandUpperScore = (k: number) => (k === 0 ? 1000 : TEMP_BANDS[k - 1].min);

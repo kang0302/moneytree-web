@@ -4,7 +4,7 @@
 // 테마 그래프 하단에 붙는 markdown briefing 섹션.
 // 데이터 소스: GitHub raw — kang0302/import_MT/main/data/briefing/{themeId}.md
 // 없으면 조용히 숨김 (그래프만 표시).
-// briefing 의 본문 표 각 행에서 첫 셀의 ticker 를 추출 → 9개 기간 수익률 컬럼(3년/2년/1년/YTD/1개월/15일/7일/3일/1일) 자동 부착.
+// briefing 의 본문 표 각 행에서 첫 셀의 ticker 를 추출 → 9개 기간 수익률 컬럼(3년/2년/1년/YTD/1개월/15일/5일/3일/1일) 자동 부착.
 
 import React, { Children, Fragment, ReactNode, useEffect, useMemo, useRef, useState } from "react";
 
@@ -312,10 +312,10 @@ function BriefingCard({ row }: { row: BriefingRow }) {
         </div>
       )}
 
-      {/* 수익률 5개: 7일 / 1개월 / YTD / 1년 / 3년 */}
+      {/* 수익률 5개: 5일 / 1개월 / YTD / 1년 / 3년 */}
       <div className="mt-2.5 grid grid-cols-5 gap-1.5 border-t border-white/8 pt-2.5">
         {[
-          { label: "7일", key: "return_7d" },
+          { label: "5일", key: "return_5d" },
           { label: "1개월", key: "return_1m" },
           { label: "YTD", key: "return_ytd" },
           { label: "1년", key: "return_1y" },
@@ -615,7 +615,7 @@ const RETURN_COLUMNS: Array<{ periodKey: PeriodKey; label: string }> = [
   { periodKey: "YTD", label: "YTD" },
   { periodKey: "1M", label: "1개월" },
   { periodKey: "15D", label: "15일" },
-  { periodKey: "7D", label: "7일" },
+  { periodKey: "5D", label: "5일" },
   { periodKey: "3D", label: "3일" },
   { periodKey: "1D", label: "1일" },
 ];
@@ -739,7 +739,7 @@ function MaSignalView({ tickers }: { tickers: string[] }) {
         <table className="w-full border-collapse text-[12.5px] whitespace-nowrap">
           <thead>
             <tr className="bg-white/[0.05] text-white/80">
-              {["섹터", "종목", "종가", "vs5일", "vs20일", "vs60일", "vs120일", "52주高比", "배열", "버킷", "최근7일", "오늘 신호"].map((h, i) => (
+              {["섹터", "종목", "종가", "vs5일", "vs20일", "vs60일", "vs120일", "52주高比", "배열", "버킷", "최근5일", "오늘 신호"].map((h, i) => (
                 <th key={i} className={`px-2 py-1.5 font-semibold ${i >= 2 && i <= 7 ? "text-right" : "text-left"}`}>{h}</th>
               ))}
             </tr>

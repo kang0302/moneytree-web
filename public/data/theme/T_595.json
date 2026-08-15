@@ -1,487 +1,487 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_595",
-  "themeName": "중동전쟁리스크헷지투자_원자재/안전자산",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-26T00:00:00+09:00",
-    "description": "유가 스파이크·금 등 안전자산으로 중동 리스크를 헤지하는 원자재·에너지·안전자산(USO·UNG·XLE·GLD·KODEX에너지화학).",
-    "notes": "T_595 — 중동전쟁헷지 분할(2026-07-08)",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-07-26",
-        "kind": "수정",
-        "title": "구체적 엣지 백필 + 이벤트",
-        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
-      }
-    ]
-  },
-  "nodes": [
-    {
-      "id": "T_595",
-      "type": "THEME",
-      "name": "중동전쟁리스크헷지투자_원자재/안전자산"
-    },
-    {
-      "id": "A_070",
-      "type": "ASSET",
-      "name": "USO",
-      "exposure": {
-        "ticker": "USO",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "USO는 WTI 원유선물 ETF로 유가 스파이크를 직접 헤지한다."
-      },
-      "metrics": {
-        "return_1d": 1.2556986323282393,
-        "close": 126.6,
-        "marketCap": 15078059114,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": -0.791474022412042,
-        "return_7d": 10.201949860724223,
-        "return_15d": -7.381666544736265,
-        "return_1m": 6.119027661357923,
-        "return_ytd": 83.584686774942,
-        "return_1y": 74.71708528843502,
-        "return_2y": 66.09813697192337,
-        "return_3y": 68.57523302263648,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1906",
-      "type": "CHARACTER",
-      "name": "WTI원유선물헤지"
-    },
-    {
-      "id": "A_502",
-      "type": "ASSET",
-      "name": "UNG",
-      "exposure": {
-        "ticker": "UNG",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "UNG는 미국 천연가스 선물 ETF다."
-      },
-      "metrics": {
-        "return_1d": -0.5015045135406293,
-        "close": 9.92,
-        "marketCap": 415071489,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": -1.4895729890764708,
-        "return_7d": 1.848049281314168,
-        "return_15d": -5.97156398104266,
-        "return_1m": -4.798464491362764,
-        "return_ytd": -17.744610281923723,
-        "return_1y": -20.000000000000007,
-        "return_2y": -30.532212885154063,
-        "return_3y": -68.88331242158092,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1907",
-      "type": "CHARACTER",
-      "name": "천연가스선물"
-    },
-    {
-      "id": "A_503",
-      "type": "ASSET",
-      "name": "XLE",
-      "exposure": {
-        "ticker": "XLE",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "XLE는 엑슨·셰브론 등 미국 에너지 섹터 ETF다."
-      },
-      "metrics": {
-        "return_1d": 1.3920733704552823,
-        "close": 61.91,
-        "marketCap": 40776850381,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 1.608403085507959,
-        "return_7d": 8.026522421915882,
-        "return_15d": 3.8409929553840927,
-        "return_1m": 8.57593826727463,
-        "return_ytd": 35.618838992332954,
-        "return_1y": 44.58197104156936,
-        "return_2y": 38.470140908074235,
-        "return_3y": 39.81481481481482,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1908",
-      "type": "CHARACTER",
-      "name": "미에너지섹터"
-    },
-    {
-      "id": "A_063",
-      "type": "ASSET",
-      "name": "GLD",
-      "exposure": {
-        "ticker": "GLD",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "GLD는 금 현물 ETF로 지정학 위기 안전자산 헤지의 핵심이다."
-      },
-      "metrics": {
-        "return_1d": 0.6316422699017554,
-        "close": 401.48,
-        "marketCap": 141640328909,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "return_3d": 0.1296887470071839,
-        "return_7d": 3.0387023919515643,
-        "return_15d": 7.9537510083355745,
-        "return_1m": 10.006576063130224,
-        "return_ytd": 0.8034548558802923,
-        "return_1y": 29.840561430742873,
-        "return_2y": 78.78517990737444,
-        "return_3y": 125.81697508296305,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP"
-      }
-    },
-    {
-      "id": "C_1909",
-      "type": "CHARACTER",
-      "name": "금현물안전자산"
-    },
-    {
-      "id": "A_508",
-      "type": "ASSET",
-      "name": "KODEX에너지화학ETF",
-      "exposure": {
-        "ticker": "117460",
-        "exchange": "KRX",
-        "country": "KR",
-        "business_desc": "KODEX 에너지화학 ETF는 국내 정유·화학 섹터로 유가·정제마진에 노출된다."
-      },
-      "metrics": {
-        "return_1d": 1.6714082503556105,
-        "close": 14295,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": 1.9978594363182278,
-        "return_7d": 10.556844547563804,
-        "return_15d": 5.471211951804422,
-        "return_1m": 9.373083508327063,
-        "return_ytd": 15.70832036150922,
-        "return_1y": 29.119257716826663,
-        "return_2y": 8.410897367847125,
-        "return_3y": -9.118111092976445,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD"
-      }
-    },
-    {
-      "id": "C_1910",
-      "type": "CHARACTER",
-      "name": "K정유화학섹터"
-    },
-    {
-      "id": "M_068",
-      "type": "MACRO",
-      "name": "고유가"
-    },
-    {
-      "id": "M_1094",
-      "type": "MACRO",
-      "name": "안전자산선호"
-    },
-    {
-      "id": "M_1092",
-      "type": "MACRO",
-      "name": "미-이란중동전쟁"
-    }
+ "schemaVersion": "v5",
+ "themeId": "T_595",
+ "themeName": "중동전쟁리스크헷지투자_원자재/안전자산",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
   ],
-  "edges": [
-    {
-      "from": "A_070",
-      "to": "T_595",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013313"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_070",
-      "to": "C_1906",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002016"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_502",
-      "to": "T_595",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013314"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_502",
-      "to": "C_1907",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002018"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_503",
-      "to": "T_595",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013315"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_503",
-      "to": "C_1908",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002020"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_063",
-      "to": "T_595",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013316"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_063",
-      "to": "C_1909",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002022"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_508",
-      "to": "T_595",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013317"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_508",
-      "to": "C_1910",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002024"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "M_068",
-      "to": "T_595",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013318"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_1094",
-      "to": "T_595",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013319"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_1092",
-      "to": "T_595",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013320"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_070",
-      "to": "T_595",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013313"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_070",
-      "to": "C_1906",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002016"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_502",
-      "to": "T_595",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013314"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_502",
-      "to": "C_1907",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002018"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_503",
-      "to": "T_595",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013315"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_503",
-      "to": "C_1908",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002020"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_063",
-      "to": "T_595",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013316"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_063",
-      "to": "C_1909",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002022"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_508",
-      "to": "T_595",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013317"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_508",
-      "to": "C_1910",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002024"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "M_068",
-      "to": "T_595",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013318"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_1094",
-      "to": "T_595",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013319"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_1092",
-      "to": "T_595",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013320"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    }
+  "dataAsOf": "2026-07-26T00:00:00+09:00",
+  "description": "유가 스파이크·금 등 안전자산으로 중동 리스크를 헤지하는 원자재·에너지·안전자산(USO·UNG·XLE·GLD·KODEX에너지화학).",
+  "notes": "T_595 — 중동전쟁헷지 분할(2026-07-08)",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-07-26",
+    "kind": "수정",
+    "title": "구체적 엣지 백필 + 이벤트",
+    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
+   }
   ]
+ },
+ "nodes": [
+  {
+   "id": "T_595",
+   "type": "THEME",
+   "name": "중동전쟁리스크헷지투자_원자재/안전자산"
+  },
+  {
+   "id": "A_070",
+   "type": "ASSET",
+   "name": "USO",
+   "exposure": {
+    "ticker": "USO",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "USO는 WTI 원유선물 ETF로 유가 스파이크를 직접 헤지한다."
+   },
+   "metrics": {
+    "return_1d": 1.2556986323282393,
+    "close": 126.6,
+    "marketCap": 15078059114,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": -0.791474022412042,
+    "return_15d": -7.381666544736265,
+    "return_1m": 5.350753099775307,
+    "return_ytd": 83.05378831694621,
+    "return_1y": 71.68429617575265,
+    "return_3y": 71.52147405500608,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 7.306323105611101,
+    "return_2y": 65.29573051312181
+   }
+  },
+  {
+   "id": "C_1906",
+   "type": "CHARACTER",
+   "name": "WTI원유선물헤지"
+  },
+  {
+   "id": "A_502",
+   "type": "ASSET",
+   "name": "UNG",
+   "exposure": {
+    "ticker": "UNG",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "UNG는 미국 천연가스 선물 ETF다."
+   },
+   "metrics": {
+    "return_1d": -0.5015045135406293,
+    "close": 9.92,
+    "marketCap": 415071489,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": -1.4895729890764708,
+    "return_15d": -5.97156398104266,
+    "return_1m": -5.703422053231932,
+    "return_ytd": -19.08646003262643,
+    "return_1y": -20.70343725019984,
+    "return_3y": -67.02127659574468,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 1.848049281314168,
+    "return_2y": -32.70013568521032
+   }
+  },
+  {
+   "id": "C_1907",
+   "type": "CHARACTER",
+   "name": "천연가스선물"
+  },
+  {
+   "id": "A_503",
+   "type": "ASSET",
+   "name": "XLE",
+   "exposure": {
+    "ticker": "XLE",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "XLE는 엑슨·셰브론 등 미국 에너지 섹터 ETF다."
+   },
+   "metrics": {
+    "return_1d": 1.3920733704552823,
+    "close": 61.91,
+    "marketCap": 40776850381,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 1.608403085507959,
+    "return_15d": 3.8409929553840927,
+    "return_1m": 8.709394205443367,
+    "return_ytd": 40.37466499181468,
+    "return_1y": 49.22027525368171,
+    "return_3y": 52.26079364493796,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 7.669565217391305,
+    "return_2y": 47.35809850690138
+   }
+  },
+  {
+   "id": "C_1908",
+   "type": "CHARACTER",
+   "name": "미에너지섹터"
+  },
+  {
+   "id": "A_063",
+   "type": "ASSET",
+   "name": "GLD",
+   "exposure": {
+    "ticker": "GLD",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "GLD는 금 현물 ETF로 지정학 위기 안전자산 헤지의 핵심이다."
+   },
+   "metrics": {
+    "return_1d": 0.6316422699017554,
+    "close": 401.48,
+    "marketCap": 141640328909,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "return_3d": 0.1296887470071839,
+    "return_15d": 7.9537510083355745,
+    "return_1m": 7.881230686551133,
+    "return_ytd": 1.3045343291867573,
+    "return_1y": 30.668836452400328,
+    "return_3y": 126.74799502993336,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 0.755389364318515,
+    "return_2y": 77.48894783377544
+   }
+  },
+  {
+   "id": "C_1909",
+   "type": "CHARACTER",
+   "name": "금현물안전자산"
+  },
+  {
+   "id": "A_508",
+   "type": "ASSET",
+   "name": "KODEX에너지화학ETF",
+   "exposure": {
+    "ticker": "117460",
+    "exchange": "KRX",
+    "country": "KR",
+    "business_desc": "KODEX 에너지화학 ETF는 국내 정유·화학 섹터로 유가·정제마진에 노출된다."
+   },
+   "metrics": {
+    "return_1d": 1.6714082503556105,
+    "close": 14295,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": 1.9978594363182278,
+    "return_15d": 5.471211951804422,
+    "return_1m": 15.171175465779374,
+    "return_ytd": 13.559647953810838,
+    "return_1y": 25.291834877930253,
+    "return_3y": -22.419258732217152,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 4.343065693430659,
+    "return_2y": 19.949681045868584
+   }
+  },
+  {
+   "id": "C_1910",
+   "type": "CHARACTER",
+   "name": "K정유화학섹터"
+  },
+  {
+   "id": "M_068",
+   "type": "MACRO",
+   "name": "고유가"
+  },
+  {
+   "id": "M_1094",
+   "type": "MACRO",
+   "name": "안전자산선호"
+  },
+  {
+   "id": "M_1092",
+   "type": "MACRO",
+   "name": "미-이란중동전쟁"
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_070",
+   "to": "T_595",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013313"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_070",
+   "to": "C_1906",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002016"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_502",
+   "to": "T_595",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013314"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_502",
+   "to": "C_1907",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002018"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_503",
+   "to": "T_595",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013315"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_503",
+   "to": "C_1908",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002020"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_063",
+   "to": "T_595",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013316"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_063",
+   "to": "C_1909",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002022"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_508",
+   "to": "T_595",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013317"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_508",
+   "to": "C_1910",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002024"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "M_068",
+   "to": "T_595",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013318"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_1094",
+   "to": "T_595",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013319"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_1092",
+   "to": "T_595",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013320"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_070",
+   "to": "T_595",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013313"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_070",
+   "to": "C_1906",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002016"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_502",
+   "to": "T_595",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013314"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_502",
+   "to": "C_1907",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002018"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_503",
+   "to": "T_595",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013315"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_503",
+   "to": "C_1908",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002020"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_063",
+   "to": "T_595",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013316"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_063",
+   "to": "C_1909",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002022"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_508",
+   "to": "T_595",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013317"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_508",
+   "to": "C_1910",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002024"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "M_068",
+   "to": "T_595",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013318"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_1094",
+   "to": "T_595",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013319"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_1092",
+   "to": "T_595",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013320"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  }
+ ]
 }

@@ -1,533 +1,527 @@
 {
-  "schemaVersion": 1,
-  "themeId": "T_725",
-  "themeName": "나스닥 Composite ETF",
-  "meta": {
-    "periodDefault": "7d",
-    "description": "나스닥 Composite ETF — QQQ(원조)·QQQM(저비용)·QQQE(동일가중)·ONEQ(전종목)·QQQJ(NextGen100)·QQQG(FCF 캐시카우)로 비용/가중/범위/팩터 축을 매핑. 저금리·유동성이 성장주 밸류에이션 동인.",
-    "notes": "ETF 바스켓 테마",
-    "changelog": [
-      {
-        "date": "2026-08-14",
-        "kind": "생성",
-        "title": "신규 테마: 나스닥 Composite ETF",
-        "detail": "나스닥 Composite ETF — QQQ(원조)·QQQM(저비용)·QQQE(동일가중)·ONEQ(전종목)·QQQJ(NextGen100)·QQQG"
-      }
-    ]
-  },
-  "nodes": [
-    {
-      "id": "T_725",
-      "type": "THEME",
-      "name": "나스닥 Composite ETF"
-    },
-    {
-      "name": "QQQ(미국)",
-      "id": "A_120",
-      "metrics": {
-        "return_1d": -0.13659895911593,
-        "return_30d": null,
-        "market_cap": null,
-        "asof": null,
-        "return_90d": null,
-        "currency": null,
-        "per": null,
-        "last_price": null,
-        "return_7d": 1.919698870765374,
-        "return_15d": 6.8456513160779275,
-        "return_3d": 1.7565592595170099,
-        "return_1m": 3.559792616936286,
-        "return_ytd": 19.237669624217133,
-        "return_1y": 25.972705655305518,
-        "return_2y": 62.3121156279834,
-        "return_3y": 98.70892337800005,
-        "close": 731.07,
-        "marketCap": 520913204434,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "pe_ttm": null
-      },
-      "exposure": {
-        "country": null,
-        "ticker": "QQQ",
-        "exchange": null
-      },
-      "type": "ASSET"
-    },
-    {
-      "id": "C_5910",
-      "type": "CHARACTER",
-      "name": "원조·보수 0.18%·유동성/옵션 최강"
-    },
-    {
-      "id": "A_2997",
-      "type": "ASSET",
-      "name": "Invesco Nasdaq-100 ETF",
-      "exposure": {
-        "ticker": "QQQM",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.13270959822170303,
-        "return_3d": 1.7510056451340406,
-        "return_7d": 1.9163704079905086,
-        "return_15d": 6.862397046293656,
-        "return_1m": 3.5537360671528795,
-        "return_ytd": 19.240215496751702,
-        "return_1y": 25.99305177681972,
-        "return_2y": 62.409625553037664,
-        "return_3y": 98.93595928887713,
-        "close": 301.01,
-        "marketCap": 81232299341,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "pe_ttm": null
-      },
-      "coreBiz": "Invesco Nasdaq-100 ETF"
-    },
-    {
-      "id": "C_5911",
-      "type": "CHARACTER",
-      "name": "저비용 복제·보수 0.15%·장기투자용"
-    },
-    {
-      "id": "A_2998",
-      "type": "ASSET",
-      "name": "Direxion NASDAQ-100 동일가중 ETF",
-      "exposure": {
-        "ticker": "QQQE",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.04811933595316731,
-        "return_3d": 1.8551814318404691,
-        "return_7d": 2.9319458209448257,
-        "return_15d": 7.988909106663189,
-        "return_1m": 5.244046613747666,
-        "return_ytd": 21.75654552559594,
-        "return_1y": 25.609756097560975,
-        "return_2y": 46.88273423688862,
-        "return_3y": 60.72994583440803,
-        "close": 124.63,
-        "marketCap": 1494025306,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "pe_ttm": null
-      },
-      "coreBiz": "Direxion NASDAQ-100 동일가중 ETF"
-    },
-    {
-      "id": "C_5912",
-      "type": "CHARACTER",
-      "name": "나스닥100 동일가중·쏠림 완화"
-    },
-    {
-      "id": "A_2999",
-      "type": "ASSET",
-      "name": "Fidelity Nasdaq Composite ETF",
-      "exposure": {
-        "ticker": "ONEQ",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.2934772318470169,
-        "return_3d": 1.113671274961603,
-        "return_7d": 1.386214863303814,
-        "return_15d": 7.086934417895274,
-        "return_1m": 3.45776031434184,
-        "return_ytd": 15.280210157618201,
-        "return_1y": 23.28221936088024,
-        "return_2y": 59.50325609571405,
-        "return_3y": 95.47141796585001,
-        "close": 105.32,
-        "marketCap": 11263213274,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "pe_ttm": null
-      },
-      "coreBiz": "Fidelity Nasdaq Composite ETF"
-    },
-    {
-      "id": "C_5913",
-      "type": "CHARACTER",
-      "name": "나스닥 전종목(3천+)·중소형 포함"
-    },
-    {
-      "id": "A_3000",
-      "type": "ASSET",
-      "name": "Invesco NASDAQ Next Gen 100 ETF",
-      "exposure": {
-        "ticker": "QQQJ",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.320649850363397,
-        "return_3d": 0.8870618779749151,
-        "return_7d": 2.9814487632508824,
-        "return_15d": 6.949541284403682,
-        "return_1m": 5.832955061280076,
-        "return_ytd": 24.313516395627843,
-        "return_1y": 36.14598540145985,
-        "return_2y": 68.94927536231886,
-        "return_3y": 78.93323100537224,
-        "close": 46.63,
-        "marketCap": 1181478952,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "pe_ttm": null
-      },
-      "coreBiz": "Invesco NASDAQ Next Gen 100 ETF"
-    },
-    {
-      "id": "C_5914",
-      "type": "CHARACTER",
-      "name": "NextGen100(101~200위)·중형 성장"
-    },
-    {
-      "id": "A_3001",
-      "type": "ASSET",
-      "name": "Pacer Nasdaq-100 Cash Cows Growth ETF",
-      "exposure": {
-        "ticker": "QQQG",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.3147623544224265,
-        "return_3d": 3.3733376581252195,
-        "return_7d": 3.5412605588044155,
-        "return_15d": 6.731413261888819,
-        "return_1m": 5.146816232266582,
-        "return_ytd": 31.585466556564825,
-        "return_1y": 36.37141634574241,
-        "return_2y": null,
-        "return_3y": null,
-        "close": 31.8722,
-        "marketCap": 11426789,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "FMP",
-        "pe_ttm": null
-      },
-      "coreBiz": "Pacer Nasdaq-100 Cash Cows Growth ETF"
-    },
-    {
-      "id": "C_5915",
-      "type": "CHARACTER",
-      "name": "FCF 캐시카우 상위50"
-    },
-    {
-      "id": "M_057",
-      "type": "MACRO",
-      "name": "저금리"
-    },
-    {
-      "id": "M_069",
-      "type": "MACRO",
-      "name": "유동성확대"
-    }
-  ],
-  "edges": [
-    {
-      "from": "A_120",
-      "to": "T_725",
-      "type": "THEMED_AS",
-      "evidence": [
-        "원조·보수 0.18%·유동성/옵션 최강"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_120",
-      "to": "C_5910",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "원조·보수 0.18%·유동성/옵션 최강"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_2997",
-      "to": "T_725",
-      "type": "THEMED_AS",
-      "evidence": [
-        "저비용 복제·보수 0.15%·장기투자용"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_2997",
-      "to": "C_5911",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "저비용 복제·보수 0.15%·장기투자용"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_2998",
-      "to": "T_725",
-      "type": "THEMED_AS",
-      "evidence": [
-        "나스닥100 동일가중·쏠림 완화"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_2998",
-      "to": "C_5912",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "나스닥100 동일가중·쏠림 완화"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_2999",
-      "to": "T_725",
-      "type": "THEMED_AS",
-      "evidence": [
-        "나스닥 전종목(3천+)·중소형 포함"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_2999",
-      "to": "C_5913",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "나스닥 전종목(3천+)·중소형 포함"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_3000",
-      "to": "T_725",
-      "type": "THEMED_AS",
-      "evidence": [
-        "NextGen100(101~200위)·중형 성장"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_3000",
-      "to": "C_5914",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "NextGen100(101~200위)·중형 성장"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_3001",
-      "to": "T_725",
-      "type": "THEMED_AS",
-      "evidence": [
-        "FCF 캐시카우 상위50"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_3001",
-      "to": "C_5915",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "FCF 캐시카우 상위50"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "M_057",
-      "to": "T_725",
-      "type": "IMPACTS",
-      "evidence": [
-        "지수 상승 거시 동인"
-      ],
-      "confidence": 0.7,
-      "status": "verified",
-      "effect": "positive"
-    },
-    {
-      "from": "M_069",
-      "to": "T_725",
-      "type": "IMPACTS",
-      "evidence": [
-        "지수 상승 거시 동인"
-      ],
-      "confidence": 0.7,
-      "status": "verified",
-      "effect": "positive"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_120",
-      "to": "T_725",
-      "type": "THEMED_AS",
-      "evidence": [
-        "원조·보수 0.18%·유동성/옵션 최강"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_120",
-      "to": "C_5910",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "원조·보수 0.18%·유동성/옵션 최강"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_2997",
-      "to": "T_725",
-      "type": "THEMED_AS",
-      "evidence": [
-        "저비용 복제·보수 0.15%·장기투자용"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_2997",
-      "to": "C_5911",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "저비용 복제·보수 0.15%·장기투자용"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_2998",
-      "to": "T_725",
-      "type": "THEMED_AS",
-      "evidence": [
-        "나스닥100 동일가중·쏠림 완화"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_2998",
-      "to": "C_5912",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "나스닥100 동일가중·쏠림 완화"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_2999",
-      "to": "T_725",
-      "type": "THEMED_AS",
-      "evidence": [
-        "나스닥 전종목(3천+)·중소형 포함"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_2999",
-      "to": "C_5913",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "나스닥 전종목(3천+)·중소형 포함"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_3000",
-      "to": "T_725",
-      "type": "THEMED_AS",
-      "evidence": [
-        "NextGen100(101~200위)·중형 성장"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_3000",
-      "to": "C_5914",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "NextGen100(101~200위)·중형 성장"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_3001",
-      "to": "T_725",
-      "type": "THEMED_AS",
-      "evidence": [
-        "FCF 캐시카우 상위50"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_3001",
-      "to": "C_5915",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "FCF 캐시카우 상위50"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "M_057",
-      "to": "T_725",
-      "type": "IMPACTS",
-      "evidence": [
-        "지수 상승 거시 동인"
-      ],
-      "confidence": 0.7,
-      "status": "verified",
-      "effect": "positive"
-    },
-    {
-      "from": "M_069",
-      "to": "T_725",
-      "type": "IMPACTS",
-      "evidence": [
-        "지수 상승 거시 동인"
-      ],
-      "confidence": 0.7,
-      "status": "verified",
-      "effect": "positive"
-    }
+ "schemaVersion": 1,
+ "themeId": "T_725",
+ "themeName": "나스닥 Composite ETF",
+ "meta": {
+  "periodDefault": "7d",
+  "description": "나스닥 Composite ETF — QQQ(원조)·QQQM(저비용)·QQQE(동일가중)·ONEQ(전종목)·QQQJ(NextGen100)·QQQG(FCF 캐시카우)로 비용/가중/범위/팩터 축을 매핑. 저금리·유동성이 성장주 밸류에이션 동인.",
+  "notes": "ETF 바스켓 테마",
+  "changelog": [
+   {
+    "date": "2026-08-14",
+    "kind": "생성",
+    "title": "신규 테마: 나스닥 Composite ETF",
+    "detail": "나스닥 Composite ETF — QQQ(원조)·QQQM(저비용)·QQQE(동일가중)·ONEQ(전종목)·QQQJ(NextGen100)·QQQG"
+   }
   ]
+ },
+ "nodes": [
+  {
+   "id": "T_725",
+   "type": "THEME",
+   "name": "나스닥 Composite ETF"
+  },
+  {
+   "name": "QQQ(미국)",
+   "id": "A_120",
+   "metrics": {
+    "return_1d": -0.13659895911593,
+    "return_30d": null,
+    "market_cap": null,
+    "asof": null,
+    "return_90d": null,
+    "currency": null,
+    "per": null,
+    "last_price": null,
+    "return_15d": 6.8456513160779275,
+    "return_3d": 1.7565592595170099,
+    "return_1m": 3.559792616936286,
+    "return_ytd": 19.237669624217133,
+    "return_1y": 25.972705655305518,
+    "return_3y": 98.70892337800005,
+    "close": 731.07,
+    "marketCap": 520913204434,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "pe_ttm": null,
+    "return_5d": null
+   },
+   "exposure": {
+    "country": null,
+    "ticker": "QQQ",
+    "exchange": null
+   },
+   "type": "ASSET"
+  },
+  {
+   "id": "C_5910",
+   "type": "CHARACTER",
+   "name": "원조·보수 0.18%·유동성/옵션 최강"
+  },
+  {
+   "id": "A_2997",
+   "type": "ASSET",
+   "name": "Invesco Nasdaq-100 ETF",
+   "exposure": {
+    "ticker": "QQQM",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.13270959822170303,
+    "return_3d": 1.7510056451340406,
+    "return_15d": 6.862397046293656,
+    "return_1m": 3.5537360671528795,
+    "return_ytd": 19.240215496751702,
+    "return_1y": 25.99305177681972,
+    "return_3y": 98.93595928887713,
+    "close": 301.01,
+    "marketCap": 81232299341,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "pe_ttm": null,
+    "return_5d": null
+   },
+   "coreBiz": "Invesco Nasdaq-100 ETF"
+  },
+  {
+   "id": "C_5911",
+   "type": "CHARACTER",
+   "name": "저비용 복제·보수 0.15%·장기투자용"
+  },
+  {
+   "id": "A_2998",
+   "type": "ASSET",
+   "name": "Direxion NASDAQ-100 동일가중 ETF",
+   "exposure": {
+    "ticker": "QQQE",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.04811933595316731,
+    "return_3d": 1.8551814318404691,
+    "return_15d": 7.988909106663189,
+    "return_1m": 5.244046613747666,
+    "return_ytd": 21.75654552559594,
+    "return_1y": 25.609756097560975,
+    "return_3y": 60.72994583440803,
+    "close": 124.63,
+    "marketCap": 1494025306,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "pe_ttm": null,
+    "return_5d": null
+   },
+   "coreBiz": "Direxion NASDAQ-100 동일가중 ETF"
+  },
+  {
+   "id": "C_5912",
+   "type": "CHARACTER",
+   "name": "나스닥100 동일가중·쏠림 완화"
+  },
+  {
+   "id": "A_2999",
+   "type": "ASSET",
+   "name": "Fidelity Nasdaq Composite ETF",
+   "exposure": {
+    "ticker": "ONEQ",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.2934772318470169,
+    "return_3d": 1.113671274961603,
+    "return_15d": 7.086934417895274,
+    "return_1m": 3.45776031434184,
+    "return_ytd": 15.280210157618201,
+    "return_1y": 23.28221936088024,
+    "return_3y": 95.47141796585001,
+    "close": 105.32,
+    "marketCap": 11263213274,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "pe_ttm": null,
+    "return_5d": null
+   },
+   "coreBiz": "Fidelity Nasdaq Composite ETF"
+  },
+  {
+   "id": "C_5913",
+   "type": "CHARACTER",
+   "name": "나스닥 전종목(3천+)·중소형 포함"
+  },
+  {
+   "id": "A_3000",
+   "type": "ASSET",
+   "name": "Invesco NASDAQ Next Gen 100 ETF",
+   "exposure": {
+    "ticker": "QQQJ",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.320649850363397,
+    "return_3d": 0.8870618779749151,
+    "return_15d": 6.949541284403682,
+    "return_1m": 5.832955061280076,
+    "return_ytd": 24.313516395627843,
+    "return_1y": 36.14598540145985,
+    "return_3y": 78.93323100537224,
+    "close": 46.63,
+    "marketCap": 1181478952,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "pe_ttm": null,
+    "return_5d": null
+   },
+   "coreBiz": "Invesco NASDAQ Next Gen 100 ETF"
+  },
+  {
+   "id": "C_5914",
+   "type": "CHARACTER",
+   "name": "NextGen100(101~200위)·중형 성장"
+  },
+  {
+   "id": "A_3001",
+   "type": "ASSET",
+   "name": "Pacer Nasdaq-100 Cash Cows Growth ETF",
+   "exposure": {
+    "ticker": "QQQG",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.3147623544224265,
+    "return_3d": 3.3733376581252195,
+    "return_15d": 6.731413261888819,
+    "return_1m": 5.146816232266582,
+    "return_ytd": 31.585466556564825,
+    "return_1y": 36.37141634574241,
+    "return_3y": null,
+    "close": 31.8722,
+    "marketCap": 11426789,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "FMP",
+    "pe_ttm": null,
+    "return_5d": null
+   },
+   "coreBiz": "Pacer Nasdaq-100 Cash Cows Growth ETF"
+  },
+  {
+   "id": "C_5915",
+   "type": "CHARACTER",
+   "name": "FCF 캐시카우 상위50"
+  },
+  {
+   "id": "M_057",
+   "type": "MACRO",
+   "name": "저금리"
+  },
+  {
+   "id": "M_069",
+   "type": "MACRO",
+   "name": "유동성확대"
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_120",
+   "to": "T_725",
+   "type": "THEMED_AS",
+   "evidence": [
+    "원조·보수 0.18%·유동성/옵션 최강"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_120",
+   "to": "C_5910",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "원조·보수 0.18%·유동성/옵션 최강"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_2997",
+   "to": "T_725",
+   "type": "THEMED_AS",
+   "evidence": [
+    "저비용 복제·보수 0.15%·장기투자용"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_2997",
+   "to": "C_5911",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "저비용 복제·보수 0.15%·장기투자용"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_2998",
+   "to": "T_725",
+   "type": "THEMED_AS",
+   "evidence": [
+    "나스닥100 동일가중·쏠림 완화"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_2998",
+   "to": "C_5912",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "나스닥100 동일가중·쏠림 완화"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_2999",
+   "to": "T_725",
+   "type": "THEMED_AS",
+   "evidence": [
+    "나스닥 전종목(3천+)·중소형 포함"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_2999",
+   "to": "C_5913",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "나스닥 전종목(3천+)·중소형 포함"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_3000",
+   "to": "T_725",
+   "type": "THEMED_AS",
+   "evidence": [
+    "NextGen100(101~200위)·중형 성장"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_3000",
+   "to": "C_5914",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "NextGen100(101~200위)·중형 성장"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_3001",
+   "to": "T_725",
+   "type": "THEMED_AS",
+   "evidence": [
+    "FCF 캐시카우 상위50"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_3001",
+   "to": "C_5915",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "FCF 캐시카우 상위50"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "M_057",
+   "to": "T_725",
+   "type": "IMPACTS",
+   "evidence": [
+    "지수 상승 거시 동인"
+   ],
+   "confidence": 0.7,
+   "status": "verified",
+   "effect": "positive"
+  },
+  {
+   "from": "M_069",
+   "to": "T_725",
+   "type": "IMPACTS",
+   "evidence": [
+    "지수 상승 거시 동인"
+   ],
+   "confidence": 0.7,
+   "status": "verified",
+   "effect": "positive"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_120",
+   "to": "T_725",
+   "type": "THEMED_AS",
+   "evidence": [
+    "원조·보수 0.18%·유동성/옵션 최강"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_120",
+   "to": "C_5910",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "원조·보수 0.18%·유동성/옵션 최강"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_2997",
+   "to": "T_725",
+   "type": "THEMED_AS",
+   "evidence": [
+    "저비용 복제·보수 0.15%·장기투자용"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_2997",
+   "to": "C_5911",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "저비용 복제·보수 0.15%·장기투자용"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_2998",
+   "to": "T_725",
+   "type": "THEMED_AS",
+   "evidence": [
+    "나스닥100 동일가중·쏠림 완화"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_2998",
+   "to": "C_5912",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "나스닥100 동일가중·쏠림 완화"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_2999",
+   "to": "T_725",
+   "type": "THEMED_AS",
+   "evidence": [
+    "나스닥 전종목(3천+)·중소형 포함"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_2999",
+   "to": "C_5913",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "나스닥 전종목(3천+)·중소형 포함"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_3000",
+   "to": "T_725",
+   "type": "THEMED_AS",
+   "evidence": [
+    "NextGen100(101~200위)·중형 성장"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_3000",
+   "to": "C_5914",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "NextGen100(101~200위)·중형 성장"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_3001",
+   "to": "T_725",
+   "type": "THEMED_AS",
+   "evidence": [
+    "FCF 캐시카우 상위50"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_3001",
+   "to": "C_5915",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "FCF 캐시카우 상위50"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "M_057",
+   "to": "T_725",
+   "type": "IMPACTS",
+   "evidence": [
+    "지수 상승 거시 동인"
+   ],
+   "confidence": 0.7,
+   "status": "verified",
+   "effect": "positive"
+  },
+  {
+   "from": "M_069",
+   "to": "T_725",
+   "type": "IMPACTS",
+   "evidence": [
+    "지수 상승 거시 동인"
+   ],
+   "confidence": 0.7,
+   "status": "verified",
+   "effect": "positive"
+  }
+ ]
 }
