@@ -719,7 +719,7 @@ export default function ForceGraphWrapper({
   const NODE_ANIM_DUR_MS = 350;
   const EDGE_ANIM_DUR_MS = 250;
   const EXTRA_ASSET_STAGGER_MS = 120; // 확장 시 추가 layer2 asset 노드 간 간격
-  const DEFAULT_ASSET_LIMIT = 10;
+  const DEFAULT_ASSET_LIMIT = Infinity; // 접기 기능 제거 — 모든 2궤도 자산 노드 항상 표시
   const animStartRef = useRef<number | null>(null);
   // ✅ 첫 렌더 시점에 animStart를 즉시 셋팅. useEffect보다 먼저 실행되므로
   //   초기 paint에서 노드들이 "no animation, fully visible"로 깜빡 노출되는 현상 방지.
@@ -2180,25 +2180,6 @@ export default function ForceGraphWrapper({
           <ThemeCardImage themeId={themeId} />
         </div>
       </div>
-
-      {/* 🎯 Full Asset toggle — 숨겨진 자산이 있을 때만 표시 */}
-      {assetRankInfo.hiddenAssetCount > 0 && (
-        <button
-          type="button"
-          onClick={() => setExpanded((e) => !e)}
-          className="absolute bottom-3 right-3 z-30 rounded-lg px-3 py-1.5 text-[11px] font-medium transition hover:brightness-125"
-          style={{
-            background: "#1A3450",
-            color: "#60A5FA",
-            border: "1px solid #3B82F6",
-          }}
-          title={expanded ? "상위 10개만 보기" : "전체 종목 보기"}
-        >
-          {expanded
-            ? "접기 ▲"
-            : `전체 종목 보기 (+ ${assetRankInfo.hiddenAssetCount}개) ▼`}
-        </button>
-      )}
 
       {/* ✅ Overlay controls (period 버튼만, 필요 시 표시) */}
       {showOverlayControls && showPeriodButtons && (
