@@ -1371,6 +1371,9 @@ export default function ForceGraphWrapper({
           evidence: (e as any).evidence,
           confidence: (e as any).confidence,
           status: (e as any).status,
+          // ✅ primary/secondary weight — secondary(0.5)는 점선 렌더
+          weight: (e as any).weight,
+          tier: (e as any).tier,
         };
       })
       .filter(Boolean) as any[];
@@ -2537,6 +2540,11 @@ export default function ForceGraphWrapper({
           return `rgba(255,255,255,${((faint ? 0.28 : 0.45) * a).toFixed(3)})`;
         }}
         linkWidth={(l: any) => (isFaintRel(l?.type) ? 0.7 : 1.4)}
+        linkLineDash={(l: any) =>
+          l?.tier === "secondary" || (typeof l?.weight === "number" && l.weight < 1)
+            ? [4, 3]
+            : null
+        }
         linkDirectionalArrowLength={(l: any) => (isFaintRel(l?.type) ? 5 : 10)}
         linkDirectionalArrowRelPos={0.92}
         linkDirectionalArrowColor={(l: any) => {
