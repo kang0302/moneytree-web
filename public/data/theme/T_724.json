@@ -1,780 +1,788 @@
 {
- "schemaVersion": 1,
- "themeId": "T_724",
- "themeName": "미국 S&P Composite ETF",
- "meta": {
-  "periodDefault": "7d",
-  "description": "미국 S&P Composite ETF — 대형(S&P500: VOO·IVV·SPY)·중형(MidCap400: IVOO·IJH·MDY)·소형(SmallCap600: VIOO·IJR·SPSM)을 운용사(Vanguard·iShares·SPDR)×규모로 매핑. 보수(경비율) 비교. 저금리·유동성·경기호황이 지수 상승 동인.",
-  "notes": "ETF 바스켓 테마",
-  "changelog": [
-   {
-    "date": "2026-08-14",
-    "kind": "교체",
-    "title": "SLY(상장폐지)→SPSM",
-    "detail": "SPDR S&P600 소형 ETF를 청산된 SLY에서 현행 SPSM(보수 0.03%)로 교체"
-   },
-   {
-    "date": "2026-08-14",
-    "kind": "생성",
-    "title": "신규 테마: 미국 S&P Composite ETF",
-    "detail": "미국 S&P Composite ETF — 대형(S&P500: VOO·IVV·SPY)·중형(MidCap400: IVOO·IJH·MDY)·소형(Sm"
-   }
+  "schemaVersion": 1,
+  "themeId": "T_724",
+  "themeName": "미국 S&P Composite ETF",
+  "meta": {
+    "periodDefault": "7d",
+    "description": "미국 S&P Composite ETF — 대형(S&P500: VOO·IVV·SPY)·중형(MidCap400: IVOO·IJH·MDY)·소형(SmallCap600: VIOO·IJR·SPSM)을 운용사(Vanguard·iShares·SPDR)×규모로 매핑. 보수(경비율) 비교. 저금리·유동성·경기호황이 지수 상승 동인.",
+    "notes": "ETF 바스켓 테마",
+    "changelog": [
+      {
+        "date": "2026-08-14",
+        "kind": "교체",
+        "title": "SLY(상장폐지)→SPSM",
+        "detail": "SPDR S&P600 소형 ETF를 청산된 SLY에서 현행 SPSM(보수 0.03%)로 교체"
+      },
+      {
+        "date": "2026-08-14",
+        "kind": "생성",
+        "title": "신규 테마: 미국 S&P Composite ETF",
+        "detail": "미국 S&P Composite ETF — 대형(S&P500: VOO·IVV·SPY)·중형(MidCap400: IVOO·IJH·MDY)·소형(Sm"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_724",
+      "type": "THEME",
+      "name": "미국 S&P Composite ETF"
+    },
+    {
+      "id": "A_2989",
+      "type": "ASSET",
+      "name": "Vanguard S&P500 ETF",
+      "exposure": {
+        "ticker": "VOO",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.18742569410449272,
+        "return_3d": 0.732616244600659,
+        "return_7d": 0.8493499152063322,
+        "return_15d": 5.075536708189765,
+        "return_1m": 3.400759266235842,
+        "return_ytd": 13.577908642368296,
+        "return_1y": 20.371432426961732,
+        "return_2y": 45.68821199624353,
+        "return_3y": 74.24246123794408,
+        "close": 713.61,
+        "marketCap": 1737523604118,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "FMP",
+        "pe_ttm": null
+      },
+      "coreBiz": "Vanguard S&P500 ETF"
+    },
+    {
+      "id": "C_5901",
+      "type": "CHARACTER",
+      "name": "대형(S&P500)·보수 0.03%"
+    },
+    {
+      "id": "A_2990",
+      "type": "ASSET",
+      "name": "iShares Core S&P500 ETF",
+      "exposure": {
+        "ticker": "IVV",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.18298847044673217,
+        "return_3d": 0.7504230009170332,
+        "return_7d": 0.863763318506261,
+        "return_15d": 5.075704509941259,
+        "return_1m": 3.3959863206171725,
+        "return_ytd": 13.676969935440608,
+        "return_1y": 20.35611238832913,
+        "return_2y": 45.57058878417466,
+        "return_3y": 74.07333020910043,
+        "close": 780.04,
+        "marketCap": 903869633912,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "FMP",
+        "pe_ttm": null
+      },
+      "coreBiz": "iShares Core S&P500 ETF"
+    },
+    {
+      "id": "C_5902",
+      "type": "CHARACTER",
+      "name": "대형(S&P500)·보수 0.03%"
+    },
+    {
+      "name": "SPY",
+      "id": "A_020",
+      "metrics": {
+        "return_1d": -0.1979739805625491,
+        "return_30d": null,
+        "market_cap": null,
+        "asof": null,
+        "return_90d": null,
+        "currency": null,
+        "per": null,
+        "last_price": null,
+        "return_7d": 0.8508814092154982,
+        "return_15d": 5.0627258332995195,
+        "return_3d": 0.7501038205980137,
+        "return_1m": 3.4127237851662384,
+        "return_ytd": 13.637893935623646,
+        "return_1y": 20.383321186558945,
+        "return_2y": 45.65751702658587,
+        "return_3y": 74.16489063376332,
+        "close": 776.34,
+        "marketCap": 826987044373,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "pe_ttm": null
+      },
+      "exposure": {
+        "country": null,
+        "ticker": "SPY",
+        "exchange": null
+      },
+      "type": "ASSET"
+    },
+    {
+      "id": "C_5903",
+      "type": "CHARACTER",
+      "name": "대형(S&P500)·보수 0.0945%"
+    },
+    {
+      "id": "A_2991",
+      "type": "ASSET",
+      "name": "Vanguard S&P MidCap400 ETF",
+      "exposure": {
+        "ticker": "IVOO",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.33928975344945655,
+        "return_3d": 1.1323048863895568,
+        "return_7d": 2.14921707092417,
+        "return_15d": 3.798455658684974,
+        "return_1m": 3.4112984691895276,
+        "return_ytd": 17.426983146563146,
+        "return_1y": 21.51205259313369,
+        "return_2y": 33.93719806763287,
+        "return_3y": 47.78456413103833,
+        "close": 133.08,
+        "marketCap": 6122672511,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "FMP",
+        "pe_ttm": null
+      },
+      "coreBiz": "Vanguard S&P MidCap400 ETF"
+    },
+    {
+      "id": "C_5904",
+      "type": "CHARACTER",
+      "name": "중형(MidCap400)·보수 0.07%"
+    },
+    {
+      "id": "A_2992",
+      "type": "ASSET",
+      "name": "iShares Core S&P MidCap400 ETF",
+      "exposure": {
+        "ticker": "IJH",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.3187962254526999,
+        "return_3d": 1.157258583001175,
+        "return_7d": 2.1688311688311757,
+        "return_15d": 3.827372310941013,
+        "return_1m": 3.5267798394525762,
+        "return_ytd": 17.57584815423705,
+        "return_1y": 21.5919629057187,
+        "return_2y": 34.08897221748764,
+        "return_3y": 47.7648384673178,
+        "close": 78.67,
+        "marketCap": 127990787878,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "FMP",
+        "pe_ttm": null
+      },
+      "coreBiz": "iShares Core S&P MidCap400 ETF"
+    },
+    {
+      "id": "C_5905",
+      "type": "CHARACTER",
+      "name": "중형(MidCap400)·보수 0.05%"
+    },
+    {
+      "id": "A_2993",
+      "type": "ASSET",
+      "name": "SPDR S&P MidCap400 ETF",
+      "exposure": {
+        "ticker": "MDY",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.32325776658268524,
+        "return_3d": 1.1085254918552945,
+        "return_7d": 2.1268412205475817,
+        "return_15d": 3.7931983031952443,
+        "return_1m": 3.4517092598738808,
+        "return_ytd": 17.274377975168086,
+        "return_1y": 21.318937945272708,
+        "return_2y": 33.724422226781805,
+        "return_3y": 47.248752233655786,
+        "close": 716.91,
+        "marketCap": 29317361988,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "FMP",
+        "pe_ttm": null
+      },
+      "coreBiz": "SPDR S&P MidCap400 ETF"
+    },
+    {
+      "id": "C_5906",
+      "type": "CHARACTER",
+      "name": "중형(MidCap400)·보수 0.23%"
+    },
+    {
+      "id": "A_2994",
+      "type": "ASSET",
+      "name": "Vanguard S&P SmallCap600 ETF",
+      "exposure": {
+        "ticker": "VIOO",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.47543581616480424,
+        "return_3d": 1.3883840953696325,
+        "return_7d": 1.0431758910460776,
+        "return_15d": 3.8879785490838703,
+        "return_1m": 2.288061014960374,
+        "return_ytd": 24.446823697359022,
+        "return_1y": 28.778506139783943,
+        "return_2y": 37.40518175549206,
+        "return_3y": 47.69165607793306,
+        "close": 139.48,
+        "marketCap": 6628079418,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "FMP",
+        "pe_ttm": null
+      },
+      "coreBiz": "Vanguard S&P SmallCap600 ETF"
+    },
+    {
+      "id": "C_5907",
+      "type": "CHARACTER",
+      "name": "소형(SmallCap600)·보수 0.07%"
+    },
+    {
+      "id": "A_2995",
+      "type": "ASSET",
+      "name": "iShares Core S&P SmallCap600 ETF",
+      "exposure": {
+        "ticker": "IJR",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.4808976756612404,
+        "return_3d": 1.3678323563102168,
+        "return_7d": 1.0071169598496077,
+        "return_15d": 3.85199502968383,
+        "return_1m": 2.2288665398205953,
+        "return_ytd": 23.95155310208452,
+        "return_1y": 28.801369863013694,
+        "return_2y": 36.6642441860465,
+        "return_3y": 46.75641400838941,
+        "close": 150.44,
+        "marketCap": 113256321536,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "FMP",
+        "pe_ttm": null
+      },
+      "coreBiz": "iShares Core S&P SmallCap600 ETF"
+    },
+    {
+      "id": "C_5908",
+      "type": "CHARACTER",
+      "name": "소형(SmallCap600)·보수 0.06%"
+    },
+    {
+      "id": "A_2996",
+      "type": "ASSET",
+      "name": "SPDR Portfolio S&P 600 Small Cap ETF",
+      "exposure": {
+        "ticker": "SPSM",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.4810996563573866,
+        "return_3d": 1.3693881088576942,
+        "return_7d": 0.9842859609739296,
+        "return_15d": 3.8352272727272707,
+        "return_1m": 2.2198916273378666,
+        "return_ytd": 23.636363636363633,
+        "return_1y": 28.358208955223873,
+        "return_2y": 36.57169546940682,
+        "return_3y": 46.41962944416625,
+        "close": 58.48,
+        "marketCap": 17494307731,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "FMP",
+        "pe_ttm": null
+      },
+      "coreBiz": "SPDR Portfolio S&P 600 Small Cap ETF"
+    },
+    {
+      "id": "C_5909",
+      "type": "CHARACTER",
+      "name": "소형(SmallCap600)·보수 0.03%"
+    },
+    {
+      "id": "M_057",
+      "type": "MACRO",
+      "name": "저금리"
+    },
+    {
+      "id": "M_069",
+      "type": "MACRO",
+      "name": "유동성확대"
+    },
+    {
+      "id": "M_1203",
+      "type": "MACRO",
+      "name": "미국 경제 호황"
+    }
+  ],
+  "edges": [
+    {
+      "from": "A_2989",
+      "to": "T_724",
+      "type": "THEMED_AS",
+      "evidence": [
+        "대형(S&P500)·보수 0.03%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2989",
+      "to": "C_5901",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "대형(S&P500)·보수 0.03%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2990",
+      "to": "T_724",
+      "type": "THEMED_AS",
+      "evidence": [
+        "대형(S&P500)·보수 0.03%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2990",
+      "to": "C_5902",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "대형(S&P500)·보수 0.03%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_020",
+      "to": "T_724",
+      "type": "THEMED_AS",
+      "evidence": [
+        "대형(S&P500)·보수 0.0945%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_020",
+      "to": "C_5903",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "대형(S&P500)·보수 0.0945%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2991",
+      "to": "T_724",
+      "type": "THEMED_AS",
+      "evidence": [
+        "중형(MidCap400)·보수 0.07%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2991",
+      "to": "C_5904",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "중형(MidCap400)·보수 0.07%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2992",
+      "to": "T_724",
+      "type": "THEMED_AS",
+      "evidence": [
+        "중형(MidCap400)·보수 0.05%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2992",
+      "to": "C_5905",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "중형(MidCap400)·보수 0.05%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2993",
+      "to": "T_724",
+      "type": "THEMED_AS",
+      "evidence": [
+        "중형(MidCap400)·보수 0.23%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2993",
+      "to": "C_5906",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "중형(MidCap400)·보수 0.23%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2994",
+      "to": "T_724",
+      "type": "THEMED_AS",
+      "evidence": [
+        "소형(SmallCap600)·보수 0.07%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2994",
+      "to": "C_5907",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "소형(SmallCap600)·보수 0.07%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2995",
+      "to": "T_724",
+      "type": "THEMED_AS",
+      "evidence": [
+        "소형(SmallCap600)·보수 0.06%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2995",
+      "to": "C_5908",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "소형(SmallCap600)·보수 0.06%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2996",
+      "to": "T_724",
+      "type": "THEMED_AS",
+      "evidence": [
+        "소형(SmallCap600)·보수 0.03%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2996",
+      "to": "C_5909",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "소형(SmallCap600)·보수 0.03%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "M_057",
+      "to": "T_724",
+      "type": "IMPACTS",
+      "evidence": [
+        "지수 상승 거시 동인"
+      ],
+      "confidence": 0.7,
+      "status": "verified",
+      "effect": "positive"
+    },
+    {
+      "from": "M_069",
+      "to": "T_724",
+      "type": "IMPACTS",
+      "evidence": [
+        "지수 상승 거시 동인"
+      ],
+      "confidence": 0.7,
+      "status": "verified",
+      "effect": "positive"
+    },
+    {
+      "from": "M_1203",
+      "to": "T_724",
+      "type": "IMPACTS",
+      "evidence": [
+        "지수 상승 거시 동인"
+      ],
+      "confidence": 0.7,
+      "status": "verified",
+      "effect": "positive"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_2989",
+      "to": "T_724",
+      "type": "THEMED_AS",
+      "evidence": [
+        "대형(S&P500)·보수 0.03%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2989",
+      "to": "C_5901",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "대형(S&P500)·보수 0.03%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2990",
+      "to": "T_724",
+      "type": "THEMED_AS",
+      "evidence": [
+        "대형(S&P500)·보수 0.03%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2990",
+      "to": "C_5902",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "대형(S&P500)·보수 0.03%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_020",
+      "to": "T_724",
+      "type": "THEMED_AS",
+      "evidence": [
+        "대형(S&P500)·보수 0.0945%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_020",
+      "to": "C_5903",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "대형(S&P500)·보수 0.0945%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2991",
+      "to": "T_724",
+      "type": "THEMED_AS",
+      "evidence": [
+        "중형(MidCap400)·보수 0.07%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2991",
+      "to": "C_5904",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "중형(MidCap400)·보수 0.07%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2992",
+      "to": "T_724",
+      "type": "THEMED_AS",
+      "evidence": [
+        "중형(MidCap400)·보수 0.05%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2992",
+      "to": "C_5905",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "중형(MidCap400)·보수 0.05%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2993",
+      "to": "T_724",
+      "type": "THEMED_AS",
+      "evidence": [
+        "중형(MidCap400)·보수 0.23%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2993",
+      "to": "C_5906",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "중형(MidCap400)·보수 0.23%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2994",
+      "to": "T_724",
+      "type": "THEMED_AS",
+      "evidence": [
+        "소형(SmallCap600)·보수 0.07%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2994",
+      "to": "C_5907",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "소형(SmallCap600)·보수 0.07%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2995",
+      "to": "T_724",
+      "type": "THEMED_AS",
+      "evidence": [
+        "소형(SmallCap600)·보수 0.06%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2995",
+      "to": "C_5908",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "소형(SmallCap600)·보수 0.06%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2996",
+      "to": "T_724",
+      "type": "THEMED_AS",
+      "evidence": [
+        "소형(SmallCap600)·보수 0.03%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_2996",
+      "to": "C_5909",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "소형(SmallCap600)·보수 0.03%"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "M_057",
+      "to": "T_724",
+      "type": "IMPACTS",
+      "evidence": [
+        "지수 상승 거시 동인"
+      ],
+      "confidence": 0.7,
+      "status": "verified",
+      "effect": "positive"
+    },
+    {
+      "from": "M_069",
+      "to": "T_724",
+      "type": "IMPACTS",
+      "evidence": [
+        "지수 상승 거시 동인"
+      ],
+      "confidence": 0.7,
+      "status": "verified",
+      "effect": "positive"
+    },
+    {
+      "from": "M_1203",
+      "to": "T_724",
+      "type": "IMPACTS",
+      "evidence": [
+        "지수 상승 거시 동인"
+      ],
+      "confidence": 0.7,
+      "status": "verified",
+      "effect": "positive"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_724",
-   "type": "THEME",
-   "name": "미국 S&P Composite ETF"
-  },
-  {
-   "id": "A_2989",
-   "type": "ASSET",
-   "name": "Vanguard S&P500 ETF",
-   "exposure": {
-    "ticker": "VOO",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.6731,
-    "return_3d": 0.6051,
-    "return_7d": 1.2104,
-    "return_15d": 6.6087,
-    "return_1m": 3.451,
-    "return_ytd": 14.0035,
-    "return_1y": 20.5975,
-    "return_2y": 43.5037,
-    "return_3y": 73.6496,
-    "close": 714.95,
-    "marketCap": null,
-    "returnsAsOf": "2026-08-13",
-    "returnsSource": "EODHD",
-    "valuationAsOf": "2026-08-13",
-    "valuationSource": "EODHD"
-   },
-   "coreBiz": "Vanguard S&P500 ETF"
-  },
-  {
-   "id": "C_5901",
-   "type": "CHARACTER",
-   "name": "대형(S&P500)·보수 0.03%"
-  },
-  {
-   "id": "A_2990",
-   "type": "ASSET",
-   "name": "iShares Core S&P500 ETF",
-   "exposure": {
-    "ticker": "IVV",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.6802,
-    "return_3d": 0.609,
-    "return_7d": 1.2096,
-    "return_15d": 6.5951,
-    "return_1m": 3.4895,
-    "return_ytd": 14.0932,
-    "return_1y": 20.5768,
-    "return_2y": 43.3811,
-    "return_3y": 73.4904,
-    "close": 781.47,
-    "marketCap": null,
-    "returnsAsOf": "2026-08-13",
-    "returnsSource": "EODHD",
-    "valuationAsOf": "2026-08-13",
-    "valuationSource": "EODHD"
-   },
-   "coreBiz": "iShares Core S&P500 ETF"
-  },
-  {
-   "id": "C_5902",
-   "type": "CHARACTER",
-   "name": "대형(S&P500)·보수 0.03%"
-  },
-  {
-   "name": "SPY",
-   "id": "A_020",
-   "metrics": {
-    "return_1d": 0.6977436601121045,
-    "return_30d": null,
-    "market_cap": null,
-    "asof": null,
-    "return_90d": null,
-    "currency": null,
-    "per": null,
-    "last_price": null,
-    "return_7d": 0.8491825807371622,
-    "return_15d": 5.378092064266182,
-    "return_3d": 0.6274012651514171,
-    "return_1m": 3.0563982989096683,
-    "return_ytd": 13.863313670096765,
-    "return_1y": 21.03502466196765,
-    "return_2y": 46.5900310939414,
-    "return_3y": 73.34373259052924,
-    "close": 777.88,
-    "marketCap": 828627511241,
-    "valuationAsOf": "2026-08-13",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-13",
-    "returnsSource": "FMP",
-    "pe_ttm": null
-   },
-   "exposure": {
-    "country": null,
-    "ticker": "SPY",
-    "exchange": null
-   },
-   "type": "ASSET"
-  },
-  {
-   "id": "C_5903",
-   "type": "CHARACTER",
-   "name": "대형(S&P500)·보수 0.0945%"
-  },
-  {
-   "id": "A_2991",
-   "type": "ASSET",
-   "name": "Vanguard S&P MidCap400 ETF",
-   "exposure": {
-    "ticker": "IVOO",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.3708,
-    "return_3d": 1.0514,
-    "return_7d": 2.1095,
-    "return_15d": 4.8956,
-    "return_1m": 3.6658,
-    "return_ytd": 18.6315,
-    "return_1y": 21.1012,
-    "return_2y": 32.471,
-    "return_3y": 47.2521,
-    "close": 132.63,
-    "marketCap": null,
-    "returnsAsOf": "2026-08-13",
-    "returnsSource": "EODHD",
-    "valuationAsOf": "2026-08-13",
-    "valuationSource": "EODHD"
-   },
-   "coreBiz": "Vanguard S&P MidCap400 ETF"
-  },
-  {
-   "id": "C_5904",
-   "type": "CHARACTER",
-   "name": "중형(MidCap400)·보수 0.07%"
-  },
-  {
-   "id": "A_2992",
-   "type": "ASSET",
-   "name": "iShares Core S&P MidCap400 ETF",
-   "exposure": {
-    "ticker": "IJH",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.4612,
-    "return_3d": 1.1349,
-    "return_7d": 2.1759,
-    "return_15d": 4.9378,
-    "return_1m": 3.7713,
-    "return_ytd": 18.8182,
-    "return_1y": 21.2056,
-    "return_2y": 32.6679,
-    "return_3y": -70.5409,
-    "close": 78.42,
-    "marketCap": null,
-    "returnsAsOf": "2026-08-13",
-    "returnsSource": "EODHD",
-    "valuationAsOf": "2026-08-13",
-    "valuationSource": "EODHD"
-   },
-   "coreBiz": "iShares Core S&P MidCap400 ETF"
-  },
-  {
-   "id": "C_5905",
-   "type": "CHARACTER",
-   "name": "중형(MidCap400)·보수 0.05%"
-  },
-  {
-   "id": "A_2993",
-   "type": "ASSET",
-   "name": "SPDR S&P MidCap400 ETF",
-   "exposure": {
-    "ticker": "MDY",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.4047,
-    "return_3d": 1.0778,
-    "return_7d": 2.1485,
-    "return_15d": 4.9093,
-    "return_1m": 3.6869,
-    "return_ytd": 18.4525,
-    "return_1y": 20.928,
-    "return_2y": 32.299,
-    "return_3y": 46.7532,
-    "close": 714.6,
-    "marketCap": null,
-    "returnsAsOf": "2026-08-13",
-    "returnsSource": "EODHD",
-    "valuationAsOf": "2026-08-13",
-    "valuationSource": "EODHD"
-   },
-   "coreBiz": "SPDR S&P MidCap400 ETF"
-  },
-  {
-   "id": "C_5906",
-   "type": "CHARACTER",
-   "name": "중형(MidCap400)·보수 0.23%"
-  },
-  {
-   "id": "A_2994",
-   "type": "ASSET",
-   "name": "Vanguard S&P SmallCap600 ETF",
-   "exposure": {
-    "ticker": "VIOO",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.4923,
-    "return_3d": 1.1881,
-    "return_7d": 1.2546,
-    "return_15d": 3.7519,
-    "return_1m": 2.9898,
-    "return_ytd": 25.1081,
-    "return_1y": 28.1691,
-    "return_2y": 36.098,
-    "return_3y": 48.312,
-    "close": 138.82,
-    "marketCap": null,
-    "returnsAsOf": "2026-08-13",
-    "returnsSource": "EODHD",
-    "valuationAsOf": "2026-08-13",
-    "valuationSource": "EODHD"
-   },
-   "coreBiz": "Vanguard S&P SmallCap600 ETF"
-  },
-  {
-   "id": "C_5907",
-   "type": "CHARACTER",
-   "name": "소형(SmallCap600)·보수 0.07%"
-  },
-  {
-   "id": "A_2995",
-   "type": "ASSET",
-   "name": "iShares Core S&P SmallCap600 ETF",
-   "exposure": {
-    "ticker": "IJR",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.4563,
-    "return_3d": 1.1212,
-    "return_7d": 1.2853,
-    "return_15d": 3.7417,
-    "return_1m": 2.9853,
-    "return_ytd": 24.5798,
-    "return_1y": 28.1849,
-    "return_2y": 35.3707,
-    "return_3y": 47.3912,
-    "close": 149.72,
-    "marketCap": null,
-    "returnsAsOf": "2026-08-13",
-    "returnsSource": "EODHD",
-    "valuationAsOf": "2026-08-13",
-    "valuationSource": "EODHD"
-   },
-   "coreBiz": "iShares Core S&P SmallCap600 ETF"
-  },
-  {
-   "id": "C_5908",
-   "type": "CHARACTER",
-   "name": "소형(SmallCap600)·보수 0.06%"
-  },
-  {
-   "id": "A_2996",
-   "type": "ASSET",
-   "name": "SPDR Portfolio S&P 600 Small Cap ETF",
-   "exposure": {
-    "ticker": "SPSM",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.3968,
-    "return_3d": 1.0943,
-    "return_7d": 1.2174,
-    "return_15d": 3.7433,
-    "return_1m": 2.9906,
-    "return_ytd": 24.1997,
-    "return_1y": 27.7436,
-    "return_2y": 35.3803,
-    "return_3y": 46.9326,
-    "close": 58.2,
-    "marketCap": null,
-    "returnsAsOf": "2026-08-13",
-    "returnsSource": "EODHD",
-    "valuationAsOf": "2026-08-13",
-    "valuationSource": "EODHD"
-   },
-   "coreBiz": "SPDR Portfolio S&P 600 Small Cap ETF"
-  },
-  {
-   "id": "C_5909",
-   "type": "CHARACTER",
-   "name": "소형(SmallCap600)·보수 0.03%"
-  },
-  {
-   "id": "M_057",
-   "type": "MACRO",
-   "name": "저금리"
-  },
-  {
-   "id": "M_069",
-   "type": "MACRO",
-   "name": "유동성확대"
-  },
-  {
-   "id": "M_1203",
-   "type": "MACRO",
-   "name": "미국 경제 호황"
-  }
- ],
- "edges": [
-  {
-   "from": "A_2989",
-   "to": "T_724",
-   "type": "THEMED_AS",
-   "evidence": [
-    "대형(S&P500)·보수 0.03%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2989",
-   "to": "C_5901",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "대형(S&P500)·보수 0.03%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2990",
-   "to": "T_724",
-   "type": "THEMED_AS",
-   "evidence": [
-    "대형(S&P500)·보수 0.03%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2990",
-   "to": "C_5902",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "대형(S&P500)·보수 0.03%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_020",
-   "to": "T_724",
-   "type": "THEMED_AS",
-   "evidence": [
-    "대형(S&P500)·보수 0.0945%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_020",
-   "to": "C_5903",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "대형(S&P500)·보수 0.0945%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2991",
-   "to": "T_724",
-   "type": "THEMED_AS",
-   "evidence": [
-    "중형(MidCap400)·보수 0.07%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2991",
-   "to": "C_5904",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "중형(MidCap400)·보수 0.07%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2992",
-   "to": "T_724",
-   "type": "THEMED_AS",
-   "evidence": [
-    "중형(MidCap400)·보수 0.05%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2992",
-   "to": "C_5905",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "중형(MidCap400)·보수 0.05%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2993",
-   "to": "T_724",
-   "type": "THEMED_AS",
-   "evidence": [
-    "중형(MidCap400)·보수 0.23%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2993",
-   "to": "C_5906",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "중형(MidCap400)·보수 0.23%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2994",
-   "to": "T_724",
-   "type": "THEMED_AS",
-   "evidence": [
-    "소형(SmallCap600)·보수 0.07%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2994",
-   "to": "C_5907",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "소형(SmallCap600)·보수 0.07%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2995",
-   "to": "T_724",
-   "type": "THEMED_AS",
-   "evidence": [
-    "소형(SmallCap600)·보수 0.06%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2995",
-   "to": "C_5908",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "소형(SmallCap600)·보수 0.06%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2996",
-   "to": "T_724",
-   "type": "THEMED_AS",
-   "evidence": [
-    "소형(SmallCap600)·보수 0.03%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2996",
-   "to": "C_5909",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "소형(SmallCap600)·보수 0.03%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "M_057",
-   "to": "T_724",
-   "type": "IMPACTS",
-   "evidence": [
-    "지수 상승 거시 동인"
-   ],
-   "confidence": 0.7,
-   "status": "verified",
-   "effect": "positive"
-  },
-  {
-   "from": "M_069",
-   "to": "T_724",
-   "type": "IMPACTS",
-   "evidence": [
-    "지수 상승 거시 동인"
-   ],
-   "confidence": 0.7,
-   "status": "verified",
-   "effect": "positive"
-  },
-  {
-   "from": "M_1203",
-   "to": "T_724",
-   "type": "IMPACTS",
-   "evidence": [
-    "지수 상승 거시 동인"
-   ],
-   "confidence": 0.7,
-   "status": "verified",
-   "effect": "positive"
-  }
- ],
- "links": [
-  {
-   "from": "A_2989",
-   "to": "T_724",
-   "type": "THEMED_AS",
-   "evidence": [
-    "대형(S&P500)·보수 0.03%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2989",
-   "to": "C_5901",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "대형(S&P500)·보수 0.03%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2990",
-   "to": "T_724",
-   "type": "THEMED_AS",
-   "evidence": [
-    "대형(S&P500)·보수 0.03%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2990",
-   "to": "C_5902",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "대형(S&P500)·보수 0.03%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_020",
-   "to": "T_724",
-   "type": "THEMED_AS",
-   "evidence": [
-    "대형(S&P500)·보수 0.0945%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_020",
-   "to": "C_5903",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "대형(S&P500)·보수 0.0945%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2991",
-   "to": "T_724",
-   "type": "THEMED_AS",
-   "evidence": [
-    "중형(MidCap400)·보수 0.07%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2991",
-   "to": "C_5904",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "중형(MidCap400)·보수 0.07%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2992",
-   "to": "T_724",
-   "type": "THEMED_AS",
-   "evidence": [
-    "중형(MidCap400)·보수 0.05%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2992",
-   "to": "C_5905",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "중형(MidCap400)·보수 0.05%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2993",
-   "to": "T_724",
-   "type": "THEMED_AS",
-   "evidence": [
-    "중형(MidCap400)·보수 0.23%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2993",
-   "to": "C_5906",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "중형(MidCap400)·보수 0.23%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2994",
-   "to": "T_724",
-   "type": "THEMED_AS",
-   "evidence": [
-    "소형(SmallCap600)·보수 0.07%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2994",
-   "to": "C_5907",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "소형(SmallCap600)·보수 0.07%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2995",
-   "to": "T_724",
-   "type": "THEMED_AS",
-   "evidence": [
-    "소형(SmallCap600)·보수 0.06%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2995",
-   "to": "C_5908",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "소형(SmallCap600)·보수 0.06%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2996",
-   "to": "T_724",
-   "type": "THEMED_AS",
-   "evidence": [
-    "소형(SmallCap600)·보수 0.03%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_2996",
-   "to": "C_5909",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "소형(SmallCap600)·보수 0.03%"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "M_057",
-   "to": "T_724",
-   "type": "IMPACTS",
-   "evidence": [
-    "지수 상승 거시 동인"
-   ],
-   "confidence": 0.7,
-   "status": "verified",
-   "effect": "positive"
-  },
-  {
-   "from": "M_069",
-   "to": "T_724",
-   "type": "IMPACTS",
-   "evidence": [
-    "지수 상승 거시 동인"
-   ],
-   "confidence": 0.7,
-   "status": "verified",
-   "effect": "positive"
-  },
-  {
-   "from": "M_1203",
-   "to": "T_724",
-   "type": "IMPACTS",
-   "evidence": [
-    "지수 상승 거시 동인"
-   ],
-   "confidence": 0.7,
-   "status": "verified",
-   "effect": "positive"
-  }
- ]
 }
