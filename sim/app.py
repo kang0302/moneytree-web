@@ -323,6 +323,8 @@ DEFAULT_PRESETS = [
      ["IGV", "SKYY", "QTUM", "BUG"]),
     ("⑲ VT(전세계)  vs  VTI(미국)  vs  VGK(유럽)  vs  EWJ(일본)  vs  MCHI(중국)  vs  EEM(신흥국)  vs  KODEX200(한국)  (글로벌 지역별 주식)",
      ["VT", "VTI", "VGK", "EWJ", "MCHI", "EEM", "KODEX200"]),
+    ("⑳ 아마존  vs  알파벳  vs  테슬라  vs  넷플릭스  vs  메타  vs  마이크로소프트  vs  MAGS  (매그니피센트7)",
+     ["AMZN", "GOOGL", "TSLA", "NFLX", "META", "MSFT", "MAGS"]),
 ]
 
 

@@ -1,6 +1,6 @@
 # sim/data.py
 # EODHD(주력)/FMP(보조)에서 일별 raw close fetch + 로컬 parquet 캐시 + 티커 매핑.
-# 데이터 규칙(확정): raw(무조정) close만 사용. split 보정·adjusted·배당조정 없음. FX 제외.
+# 데이터 규칙(확정): 액면분할·배당 조정가(adjusted_close) 우선 사용 — 분할일 절벽 방지(예: 넷플릭스 10:1). 조정가 없으면 raw close. FX 제외.
 from __future__ import annotations
 
 import os
@@ -61,6 +61,13 @@ ASSETS: dict[str, Asset] = {
     "VTI":    Asset("VTI", "VTI (미국 전체주식 ETF)", "US", "USD", "VTI.US", "VTI"),
     "VT":     Asset("VT", "VT (전세계 주식 ETF)", "US", "USD", "VT.US", "VT"),
     "VGK":    Asset("VGK", "VGK (유럽 FTSE ETF)", "US", "USD", "VGK.US", "VGK"),
+    "AMZN":   Asset("AMZN", "아마존 (AMZN)", "US", "USD", "AMZN.US", "AMZN"),
+    "GOOGL":  Asset("GOOGL", "알파벳 (GOOGL)", "US", "USD", "GOOGL.US", "GOOGL"),
+    "TSLA":   Asset("TSLA", "테슬라 (TSLA)", "US", "USD", "TSLA.US", "TSLA"),
+    "NFLX":   Asset("NFLX", "넷플릭스 (NFLX)", "US", "USD", "NFLX.US", "NFLX"),
+    "META":   Asset("META", "메타 (META)", "US", "USD", "META.US", "META"),
+    "MSFT":   Asset("MSFT", "마이크로소프트 (MSFT)", "US", "USD", "MSFT.US", "MSFT"),
+    "MAGS":   Asset("MAGS", "MAGS (매그니피센트7 ETF)", "US", "USD", "MAGS.US", "MAGS"),
     "TIGER_ESTOXX50": Asset("TIGER_ESTOXX50", "TIGER 유로스탁스50(합성 H) (195930)", "KR", "KRW",
                             "195930.KO", None, "195930.KQ"),
     "KODEX_WTI": Asset("KODEX_WTI", "KODEX WTI원유선물(H) (261220)", "KR", "KRW",
@@ -147,11 +154,16 @@ ASSETS: dict[str, Asset] = {
 
 
 def _to_df(rows: list[dict]) -> pd.DataFrame:
-    """[{date, close}, ...] → DataFrame(index=date, close). raw close만."""
+    """[{date, adjusted_close|adjClose|close}, ...] → DataFrame(index=date, close).
+    액면분할·배당 조정가(adjusted_close) 우선 — 분할일 절벽 방지(예: 넷플릭스 10:1). 없으면 raw close."""
     recs = []
     for r in rows:
         d = r.get("date")
-        c = r.get("close")
+        c = r.get("adjusted_close")
+        if c is None:
+            c = r.get("adjClose")
+        if c is None:
+            c = r.get("close")
         if d is None or c is None:
             continue
         try:
@@ -215,7 +227,11 @@ def _fetch_yahoo(symbol: str, start: date, end: date) -> pd.DataFrame:
     try:
         res = data["chart"]["result"][0]
         ts = res["timestamp"]
-        closes = res["indicators"]["quote"][0]["close"]
+        # 분할·배당 조정가 우선(adjclose), 없으면 raw close
+        try:
+            closes = res["indicators"]["adjclose"][0]["adjclose"]
+        except (KeyError, TypeError, IndexError):
+            closes = res["indicators"]["quote"][0]["close"]
     except (KeyError, TypeError, IndexError):
         return pd.DataFrame(columns=["close"]).astype(float)
     rows = []
