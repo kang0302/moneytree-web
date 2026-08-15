@@ -218,6 +218,29 @@ const ASSET_LINK_RELS = new Set(["SUPPLIES", "OPERATES", "INVESTS", "PARTNERS", 
 const FAINT_LINK_RELS = new Set([...ASSET_LINK_RELS, "IN_ETF", "SUB", "HAS_TRAIT"]);
 const isFaintRel = (t?: string) => FAINT_LINK_RELS.has(String(t ?? "").toUpperCase());
 
+// 엣지가 secondary(부수 사업/점선)인지 — weight<1 또는 tier==='secondary'
+const isSecondaryEdge = (l?: any): boolean =>
+  l?.tier === "secondary" || (typeof l?.weight === "number" && l.weight < 1);
+
+// 관계 타입 → 한국 투자자 친화 한글 라벨. THEMED_AS는 핵심/부분 관련주로 분기.
+const REL_LABEL_KO: Record<string, string> = {
+  EXPOSED_TO: "ETF 편입",
+  IMPACTS: "영향",
+  HAS_TRAIT: "특성",
+  OPERATES: "사업 영위",
+  COMPETES: "경쟁",
+  SUPPLIES: "공급",
+  PARTNERS: "협력",
+  INVESTS: "투자",
+  IN_ETF: "ETF 구성",
+  SUB: "자회사",
+};
+const relLabelKo = (l?: any): string => {
+  const t = String(l?.type ?? l?.label ?? "").toUpperCase();
+  if (t === "THEMED_AS") return isSecondaryEdge(l) ? "부분 관련주" : "핵심 관련주";
+  return REL_LABEL_KO[t] || t || "관련";
+};
+
 function normType(t?: string) {
   const x = (t ?? "").toUpperCase();
   if (x === "THEME") return "THEME";
@@ -2133,7 +2156,7 @@ export default function ForceGraphWrapper({
     return { name: "FROZEN", color: "#0a1f5c" };
   };
 
-  const hoverLinkLabel = hoverLink?.type?.toString?.() || hoverLink?.label?.toString?.() || "";
+  const hoverLinkLabel = hoverLink ? relLabelKo(hoverLink) : "";
 
   // ─ THEME 카드 (좌측 상단 고정 표시용) — 페이지 진입 시 즉시 보이도록 hover와 무관하게 렌더 ─
   const themeOverallScore =
@@ -2434,7 +2457,7 @@ export default function ForceGraphWrapper({
                 <div className="mt-1 break-words leading-snug text-white/85">
                   <span className="font-medium">{from}</span>
                   <span className="mx-1 text-white/50">
-                    —{(selectedEdge.type || selectedEdge.label || "").toString()}→
+                    —{relLabelKo(selectedEdge)}→
                   </span>
                   <span className="font-medium">{to}</span>
                 </div>
@@ -2553,7 +2576,7 @@ export default function ForceGraphWrapper({
           return `rgba(255,255,255,${((faint ? 0.4 : 0.8) * a).toFixed(3)})`;
         }}
         linkHoverPrecision={8}
-        linkLabel={(l: any) => (l?.type ?? l?.label ?? "").toString()}
+        linkLabel={(l: any) => relLabelKo(l)}
         nodeCanvasObject={drawNode}
         nodeCanvasObjectMode={() => "replace"}
         onNodeHover={(n: any) => {
