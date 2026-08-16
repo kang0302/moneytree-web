@@ -148,7 +148,6 @@ export default function MaBriefPage() {
   return (
     <main className="min-h-screen w-full bg-black text-white">
       <div className="mx-auto w-full max-w-[1600px] px-3 py-5">
-        <MaCrossSummary />
         <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-3">
             <a href="/" className="rounded-lg border border-white/15 bg-white/[0.04] px-3 py-1 text-xs text-white/70 hover:bg-white/10">← 홈으로</a>
@@ -164,6 +163,8 @@ export default function MaBriefPage() {
               className="rounded-lg border border-white/15 bg-white/[0.04] px-3 py-1 text-xs text-white/70 hover:bg-white/10">새로고침</button>
           </div>
         </div>
+
+        <MaCrossSummary />
 
         {state === "loading" && <div className="text-white/50">불러오는 중…</div>}
         {state === "error" && <div className="text-rose-300/80">브리핑을 불러오지 못했습니다.</div>}

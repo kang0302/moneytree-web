@@ -73,24 +73,28 @@ export default function MaCrossSummary() {
 
   return (
     <section className="mb-4">
-      {/* 접이식 sub 버튼 */}
+      {/* 접이식 sub 버튼 (부각) */}
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="flex w-full items-center justify-between gap-2 rounded-xl border border-white/15 bg-white/[0.03] px-4 py-2.5 text-left transition hover:border-white/30 hover:bg-white/[0.06]"
+        className="flex w-full items-center justify-between gap-3 rounded-2xl border border-amber-400/30 bg-gradient-to-r from-amber-500/[0.10] via-white/[0.03] to-sky-500/[0.08] px-5 py-4 text-left shadow-lg transition hover:border-amber-300/50 hover:brightness-110"
       >
-        <span className="flex items-center gap-2.5 text-[13px] font-semibold text-white/85">
-          <span className={`transition ${open ? "rotate-90" : ""}`}>▶</span>
-          최근 5거래일 이동평균 크로스
-          <span className="rounded-md bg-rose-500/15 px-1.5 py-0.5 text-[11px] font-bold text-rose-200">
+        <span className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
+          <span className={`text-lg text-amber-300 transition ${open ? "rotate-90" : ""}`}>▶</span>
+          <span className="text-[16px] font-extrabold tracking-tight text-white">
+            최근 5거래일 이동평균 크로스
+          </span>
+          <span className="rounded-lg bg-rose-500/20 px-2.5 py-1 text-[14px] font-extrabold text-rose-200">
             ▲ 골든 {data.goldenCount}
           </span>
-          <span className="rounded-md bg-sky-500/15 px-1.5 py-0.5 text-[11px] font-bold text-sky-200">
+          <span className="rounded-lg bg-sky-500/20 px-2.5 py-1 text-[14px] font-extrabold text-sky-200">
             ▼ 데드 {data.deadCount}
           </span>
         </span>
-        <span className="text-[11px] text-white/40">
-          SMA20×SMA60 · {data.asof ?? ""} · {open ? "접기" : "펼치기"}
+        <span className="shrink-0 text-right text-[12px] text-white/50">
+          SMA20×SMA60 · {data.asof ?? ""}
+          <br />
+          <span className="font-semibold text-amber-200/80">{open ? "▲ 접기" : "▼ 펼쳐보기"}</span>
         </span>
       </button>
 
