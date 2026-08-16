@@ -49,8 +49,14 @@ for aid, a in idx.items():
     if mult < 2:
         continue
     if tk not in seen or mult > seen[tk]["multiple"]:
+        ths = []; seenT = set()
+        for t in (a.get("themes") or []):
+            nmT = (t.get("themeName") or "").strip(); idT = (t.get("themeId") or "").strip()
+            if nmT and idT and idT not in seenT:
+                seenT.add(idT); ths.append({"id": idT, "name": nmT})
         seen[tk] = {"id": aid, "name": nm, "ticker": tk, "country": co,
-                    "multiple": round(mult, 2), "ret": round((mult - 1) * 100, 1), "desc": blurb(a)}
+                    "multiple": round(mult, 2), "ret": round((mult - 1) * 100, 1),
+                    "desc": blurb(a), "themes": ths[:6], "themeCount": len(ths)}
 
 buckets = {}
 for tk, it in seen.items():

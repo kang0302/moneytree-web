@@ -12,6 +12,8 @@ export type BaggerItem = {
   multiple: number;
   ret: number;
   desc: string;
+  themes?: { id: string; name: string }[];
+  themeCount?: number;
 };
 export type BaggerBucket = { label: string; min: number; count: number; items: BaggerItem[] };
 export type BaggersData = {
@@ -151,7 +153,7 @@ export default function BaggersClient({ data }: { data: BaggersData }) {
               </div>
 
               <div className="overflow-x-auto rounded-xl border border-white/10">
-                <table className="w-full min-w-[560px] border-collapse text-[13px]">
+                <table className="w-full min-w-[820px] border-collapse text-[13px]">
                   <thead>
                     <tr className="bg-white/[0.04] text-left text-[11px] uppercase tracking-wide text-white/45">
                       <th className="w-10 px-3 py-2 text-right">#</th>
@@ -159,6 +161,7 @@ export default function BaggersClient({ data }: { data: BaggersData }) {
                       <th className="px-3 py-2">티커</th>
                       <th className="px-3 py-2 text-right">배수</th>
                       <th className="px-3 py-2 text-right">수익률</th>
+                      <th className="px-3 py-2">소속 테마</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -183,6 +186,28 @@ export default function BaggersClient({ data }: { data: BaggersData }) {
                         </td>
                         <td className="px-3 py-2 text-right tabular-nums text-rose-300">
                           +{Math.round(it.ret).toLocaleString()}%
+                        </td>
+                        <td className="px-3 py-2">
+                          <div className="flex flex-wrap items-center gap-1">
+                            {(it.themes ?? []).slice(0, 3).map((t) => (
+                              <Link
+                                key={t.id}
+                                href={`/graph/${t.id}`}
+                                onClick={(e) => e.stopPropagation()}
+                                onDoubleClick={(e) => e.stopPropagation()}
+                                className="max-w-[160px] truncate rounded-full border border-white/10 bg-white/[0.05] px-2 py-0.5 text-[11px] text-white/70 transition hover:border-white/30 hover:bg-white/10 hover:text-white"
+                                title={t.name}
+                              >
+                                {t.name}
+                              </Link>
+                            ))}
+                            {(it.themeCount ?? 0) > 3 && (
+                              <span className="text-[11px] text-white/35">+{(it.themeCount ?? 0) - 3}</span>
+                            )}
+                            {(it.themes ?? []).length === 0 && (
+                              <span className="text-[11px] text-white/25">—</span>
+                            )}
+                          </div>
                         </td>
                       </tr>
                     ))}
