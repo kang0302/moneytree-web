@@ -46,7 +46,7 @@ for aid, a in idx.items():
     if not b or not e or b <= 0:
         continue
     mult = e / b
-    if mult < 3:
+    if mult < 2:
         continue
     if tk not in seen or mult > seen[tk]["multiple"]:
         seen[tk] = {"id": aid, "name": nm, "ticker": tk, "country": co,
@@ -57,12 +57,12 @@ for tk, it in seen.items():
     bk = 10 if it["multiple"] >= 10 else int(math.floor(it["multiple"]))
     buckets.setdefault(bk, []).append(it)
 out_buckets = []
-for bk in range(10, 2, -1):
+for bk in range(10, 1, -1):
     items = sorted(buckets.get(bk, []), key=lambda x: -x["multiple"])
     out_buckets.append({"label": "X10+" if bk == 10 else f"X{bk}", "min": bk, "count": len(items), "items": items})
 
 payload = {
-    "title": "x3~x10 배거 포트폴리오",
+    "title": "x2~x10 배거 포트폴리오",
     "window": {"start": BASE, "end": END},
     "note": "2023년 7월 1일 → 2026년 6월 30일(3년, 반기 정렬) 동안의 주가 상승 배수로 분류한 개별종목 리스트입니다. 배수 = 종료일 종가 ÷ 시작일 종가(분할·배당 조정가, 직전 거래일 as-of). ETF·ETN 제외, 2023년 7월 이전 상장 종목만 포함(3년 미만 상장 종목의 과대배수 제거). 티커 중복 시 최고 배수 1개만 표기.",
     "asOf": END,

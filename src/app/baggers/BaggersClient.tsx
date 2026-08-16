@@ -33,6 +33,7 @@ const BUCKET_COLOR: Record<string, { bar: string; text: string; ring: string }> 
   X5: { bar: "#818CF8", text: "#A5B4FC", ring: "rgba(129,140,248,0.4)" },
   X4: { bar: "#60A5FA", text: "#93C5FD", ring: "rgba(96,165,250,0.4)" },
   X3: { bar: "#38BDF8", text: "#7DD3FC", ring: "rgba(56,189,248,0.4)" },
+  X2: { bar: "#2DD4BF", text: "#5EEAD4", ring: "rgba(45,212,191,0.4)" },
 };
 
 const FLAG: Record<string, string> = {
@@ -56,7 +57,7 @@ export default function BaggersClient({ data }: { data: BaggersData }) {
           <div className="flex items-center gap-3">
             <span className="text-2xl">💰</span>
             <div>
-              <h1 className="text-lg font-bold tracking-tight text-amber-200">x3~x10 배거 포트폴리오</h1>
+              <h1 className="text-lg font-bold tracking-tight text-amber-200">x2~x10 배거 포트폴리오</h1>
               <p className="text-[11px] text-white/50">
                 {data.window.start} → {data.window.end} · 개별종목 {data.total}
               </p>
@@ -81,11 +82,39 @@ export default function BaggersClient({ data }: { data: BaggersData }) {
           </p>
         </section>
 
+        {/* 버킷 이동 버튼 (X2 → X10, 왼쪽부터) */}
+        <nav className="mb-7 flex flex-wrap gap-2">
+          {[...data.buckets]
+            .sort((a, b) => a.min - b.min)
+            .map((b) => {
+              const c = BUCKET_COLOR[b.label] ?? BUCKET_COLOR["X3"];
+              return (
+                <button
+                  key={b.label}
+                  type="button"
+                  onClick={() => {
+                    document
+                      .getElementById(`bkt-${b.label}`)
+                      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }}
+                  className="inline-flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-[13px] font-bold transition hover:brightness-110"
+                  style={{ background: c.bar, color: "#0a0e17", boxShadow: `0 0 0 1px ${c.ring}` }}
+                  title={`${b.label} 버킷으로 이동`}
+                >
+                  {b.label}
+                  <span className="rounded-md bg-black/25 px-1.5 py-0.5 text-[11px] font-semibold tabular-nums">
+                    {b.count}
+                  </span>
+                </button>
+              );
+            })}
+        </nav>
+
         {/* 버킷별 테이블 */}
         {data.buckets.map((b) => {
           const c = BUCKET_COLOR[b.label] ?? BUCKET_COLOR["X3"];
           return (
-            <section key={b.label} className="mb-7">
+            <section key={b.label} id={`bkt-${b.label}`} className="mb-7 scroll-mt-24">
               <div className="mb-2 flex items-center gap-2">
                 <span
                   className="rounded-md px-2 py-0.5 text-sm font-extrabold"

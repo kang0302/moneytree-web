@@ -414,9 +414,9 @@ export default function HomePage() {
             <Link
               href="/baggers"
               className="inline-flex items-center gap-2 rounded-full border border-amber-400/50 bg-amber-500/15 px-5 py-2 text-sm font-semibold text-amber-100 transition hover:border-amber-300/70 hover:bg-amber-500/25"
-              title="2023.7~2026.6 3년간 3~10배 이상 상승한 개별종목 포트폴리오"
+              title="2023.7~2026.6 3년간 2~10배 이상 상승한 개별종목 포트폴리오"
             >
-              💰 x3~x10 배거 포트폴리오
+              💰 x2~x10 배거 포트폴리오
             </Link>
             <Link
               href="/ma-brief"

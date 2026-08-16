@@ -5,8 +5,8 @@ import BaggersClient, { type BaggersData } from "./BaggersClient";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "x3~x10 배거 포트폴리오 · MONEYTREE",
-  description: "2023.7~2026.6 3년간 3~10배 이상 상승한 개별종목 포트폴리오",
+  title: "x2~x10 배거 포트폴리오 · MONEYTREE",
+  description: "2023.7~2026.6 3년간 2~10배 이상 상승한 개별종목 포트폴리오",
 };
 
 function loadBaggers(): BaggersData | null {
