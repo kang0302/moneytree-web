@@ -7,7 +7,8 @@ import { usePathname, useRouter } from "next/navigation";
 export default function GlobalBackButton() {
   const pathname = usePathname();
   const router = useRouter();
-  if (!pathname || pathname === "/") return null;
+  // 홈(/) 및 그래프 페이지(자체 우상단 Previous 버튼 보유)에서는 미표시
+  if (!pathname || pathname === "/" || pathname.startsWith("/graph/")) return null;
 
   return (
     <button

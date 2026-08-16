@@ -857,8 +857,19 @@ export default function GraphClient({
           </a>
         </div>
 
-        {/* Far right: Prev / Next theme + Main Home — ml-auto로 우측 끝 고정 */}
+        {/* Far right: Previous(뒤로) / Prev / Next theme + Main Home — ml-auto로 우측 끝 고정 */}
         <div className="ml-auto flex shrink-0 items-center gap-1">
+          <button
+            type="button"
+            onClick={() => {
+              if (typeof window !== "undefined" && window.history.length > 1) router.back();
+              else router.push("/");
+            }}
+            title="이전 페이지로 (뒤로가기)"
+            className="flex h-9 items-center rounded-lg border border-white/20 bg-white/[0.06] px-2.5 text-[11px] font-semibold text-white/85 transition hover:border-white/40 hover:bg-white/10"
+          >
+            ← Previous
+          </button>
           <button
             type="button"
             onClick={() => prevTheme && router.push(`/graph/${prevTheme.themeId}`)}
