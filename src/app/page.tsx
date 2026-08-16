@@ -412,6 +412,13 @@ export default function HomePage() {
               📈 투자퍼포먼스 시뮬레이션
             </a>
             <Link
+              href="/baggers"
+              className="inline-flex items-center gap-2 rounded-full border border-amber-400/50 bg-amber-500/15 px-5 py-2 text-sm font-semibold text-amber-100 transition hover:border-amber-300/70 hover:bg-amber-500/25"
+              title="2023.7~2026.6 3년간 3~10배 이상 상승한 개별종목 포트폴리오"
+            >
+              💰 x3~x10 배거 포트폴리오
+            </Link>
+            <Link
               href="/ma-brief"
               className="inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-sky-500/15 px-5 py-2 text-sm font-semibold text-sky-100 transition hover:border-sky-300/60 hover:bg-sky-500/25"
               title="관심종목 이동평균선(5·20·60·120) 데일리 트래킹"
