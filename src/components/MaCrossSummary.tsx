@@ -56,6 +56,7 @@ function Chip({ r, tone }: { r: Row; tone: "gold" | "dead" }) {
 
 export default function MaCrossSummary() {
   const [data, setData] = useState<Crosses | null>(null);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     let alive = true;
@@ -71,14 +72,30 @@ export default function MaCrossSummary() {
   if (!data) return null;
 
   return (
-    <section className="mb-6 rounded-2xl border border-white/10 bg-white/[0.02] p-4">
-      <div className="mb-3 flex items-baseline gap-2">
-        <h2 className="text-sm font-bold text-white/90">최근 5거래일 이동평균 크로스</h2>
-        <span className="text-[11px] text-white/40">
-          SMA20×SMA60 · 기준일 {data.asof ?? ""}
+    <section className="mb-4">
+      {/* 접이식 sub 버튼 */}
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        className="flex w-full items-center justify-between gap-2 rounded-xl border border-white/15 bg-white/[0.03] px-4 py-2.5 text-left transition hover:border-white/30 hover:bg-white/[0.06]"
+      >
+        <span className="flex items-center gap-2.5 text-[13px] font-semibold text-white/85">
+          <span className={`transition ${open ? "rotate-90" : ""}`}>▶</span>
+          최근 5거래일 이동평균 크로스
+          <span className="rounded-md bg-rose-500/15 px-1.5 py-0.5 text-[11px] font-bold text-rose-200">
+            ▲ 골든 {data.goldenCount}
+          </span>
+          <span className="rounded-md bg-sky-500/15 px-1.5 py-0.5 text-[11px] font-bold text-sky-200">
+            ▼ 데드 {data.deadCount}
+          </span>
         </span>
-      </div>
-      <div className="grid gap-4 md:grid-cols-2">
+        <span className="text-[11px] text-white/40">
+          SMA20×SMA60 · {data.asof ?? ""} · {open ? "접기" : "펼치기"}
+        </span>
+      </button>
+
+      {!open ? null : (
+      <div className="mt-3 grid gap-4 md:grid-cols-2">
         {/* 골든크로스 */}
         <div className="rounded-xl border border-rose-400/20 bg-rose-500/[0.04] p-3">
           <div className="mb-2 flex items-center gap-2">
@@ -110,6 +127,7 @@ export default function MaCrossSummary() {
           </div>
         </div>
       </div>
+      )}
     </section>
   );
 }
