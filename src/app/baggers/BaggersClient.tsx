@@ -42,6 +42,20 @@ const FLAG: Record<string, string> = {
   SE: "🇸🇪", ES: "🇪🇸", FR: "🇫🇷", NL: "🇳🇱",
 };
 
+const COUNTRY_KO: Record<string, string> = {
+  US: "미국", KR: "한국", JP: "일본", CN: "중국", TW: "대만", HK: "홍콩",
+  CA: "캐나다", DE: "독일", IT: "이탈리아", GB: "영국", IL: "이스라엘", AU: "호주",
+  SE: "스웨덴", ES: "스페인", FR: "프랑스", NL: "네덜란드",
+};
+
+function countryBreakdown(items: BaggerItem[]): { ko: string; n: number }[] {
+  const m: Record<string, number> = {};
+  for (const it of items) m[it.country] = (m[it.country] ?? 0) + 1;
+  return Object.entries(m)
+    .sort((a, b) => b[1] - a[1])
+    .map(([co, n]) => ({ ko: COUNTRY_KO[co] ?? co, n }));
+}
+
 export default function BaggersClient({ data }: { data: BaggersData }) {
   const router = useRouter();
   const [tip, setTip] = useState<{ x: number; y: number; item: BaggerItem } | null>(null);
@@ -82,12 +96,12 @@ export default function BaggersClient({ data }: { data: BaggersData }) {
           </p>
         </section>
 
-        {/* 버킷 이동 버튼 (X2 → X10, 왼쪽부터) */}
-        <nav className="mb-7 flex flex-wrap gap-2">
+        {/* 버킷 이동 버튼 (X2 → X10, 왼쪽부터) — 블랙·흰테두리, 국가 구성 표기 */}
+        <nav className="mb-8 grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-5">
           {[...data.buckets]
             .sort((a, b) => a.min - b.min)
             .map((b) => {
-              const c = BUCKET_COLOR[b.label] ?? BUCKET_COLOR["X3"];
+              const bd = countryBreakdown(b.items);
               return (
                 <button
                   key={b.label}
@@ -97,14 +111,23 @@ export default function BaggersClient({ data }: { data: BaggersData }) {
                       .getElementById(`bkt-${b.label}`)
                       ?.scrollIntoView({ behavior: "smooth", block: "start" });
                   }}
-                  className="inline-flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-[13px] font-bold transition hover:brightness-110"
-                  style={{ background: c.bar, color: "#0a0e17", boxShadow: `0 0 0 1px ${c.ring}` }}
+                  className="group flex flex-col items-start gap-2 rounded-2xl border border-white/20 bg-black px-4 py-3.5 text-left transition hover:border-white/60 hover:bg-white/[0.05] focus:outline-none focus-visible:border-white/70"
                   title={`${b.label} 버킷으로 이동`}
                 >
-                  {b.label}
-                  <span className="rounded-md bg-black/25 px-1.5 py-0.5 text-[11px] font-semibold tabular-nums">
-                    {b.count}
-                  </span>
+                  <div className="flex w-full items-baseline justify-between">
+                    <span className="text-xl font-extrabold tracking-tight text-white">{b.label}</span>
+                    <span className="text-[12px] font-medium text-white/45 tabular-nums">
+                      {b.count}<span className="ml-0.5 text-white/30">종목</span>
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap gap-x-2 gap-y-0.5 text-[11px] leading-tight text-white/55">
+                    {bd.slice(0, 5).map((x) => (
+                      <span key={x.ko} className="tabular-nums">
+                        {x.ko} <span className="font-semibold text-white/75">{x.n}</span>
+                      </span>
+                    ))}
+                    {bd.length > 5 && <span className="text-white/35">외 {bd.length - 5}국</span>}
+                  </div>
                 </button>
               );
             })}
