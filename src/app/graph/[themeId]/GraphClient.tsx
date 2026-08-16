@@ -20,7 +20,6 @@ import { useRouter, useSearchParams } from "next/navigation";
 import ForceGraphWrapper from "@/components/ForceGraphWrapper";
 import GraphRightPanel, { CompareThemeOptionT } from "@/components/GraphRightPanel";
 import ThemeBriefing from "@/components/ThemeBriefing";
-import ThemeInsights from "@/components/ThemeInsights";
 import ThemeChangelog, { ChangelogEntry, latestChangeDays } from "@/components/ThemeChangelog";
 
 // ✅ Search import
@@ -948,18 +947,7 @@ export default function GraphClient({
         <ThemeChangelog changelog={changelog} />
       </div>
 
-      {/* ✅ 브리핑 아래: 투자 인사이트 — 테마 + 자산별 Claude 리서치 표시 */}
-      <div className="w-full">
-        <ThemeInsights
-          themeId={themeId}
-          themeName={themeName}
-          assets={(enrichedNodes as any[])
-            .filter((n) => n?.type === "ASSET" && typeof n?.id === "string")
-            .map((n) => ({ id: n.id, name: n.name }))}
-          onNewCount={setInsightNewCount}
-          onFreshIds={setInsightFreshIds}
-        />
-      </div>
+      {/* 투자 인사이트 섹션 제거됨 (사용자 요청) */}
     </div>
   );
 }
