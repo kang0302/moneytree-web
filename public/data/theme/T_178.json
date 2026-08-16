@@ -1,1231 +1,1232 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_178",
-  "themeName": "K-방산",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-04-25T00:00:00+09:00",
-    "notes": "g178 누적 import 기반 K-방산 테마",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-08-04",
-        "kind": "보강",
-        "title": "2궤도 관계 엣지 추가",
-        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 7건 백필(리서치 기반)."
-      },
-      {
-        "date": "2026-07-12",
-        "kind": "보강",
-        "title": "자산별 테마관점 CHR 정의",
-        "detail": "자산 10개에 테마 관점 특성(CHARACTER) 노드와 HAS_TRAIT를 부여했다."
-      },
-      {
-        "date": "2026-07-12",
-        "kind": "보강",
-        "title": "엣지 근거 구체 백필 + 2026 이벤트",
-        "detail": "전 엣지 근거(호버 박스)를 종목·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
-      },
-      {
-        "date": "2026-08-05",
-        "kind": "관계",
-        "title": "EXPOSED_TO ETF 연결",
-        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-      }
-    ]
+ "schemaVersion": "v5",
+ "themeId": "T_178",
+ "themeName": "K-방산",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
+  ],
+  "dataAsOf": "2026-04-25T00:00:00+09:00",
+  "notes": "g178 누적 import 기반 K-방산 테마",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-08-04",
+    "kind": "보강",
+    "title": "2궤도 관계 엣지 추가",
+    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 7건 백필(리서치 기반)."
+   },
+   {
+    "date": "2026-07-12",
+    "kind": "보강",
+    "title": "자산별 테마관점 CHR 정의",
+    "detail": "자산 10개에 테마 관점 특성(CHARACTER) 노드와 HAS_TRAIT를 부여했다."
+   },
+   {
+    "date": "2026-07-12",
+    "kind": "보강",
+    "title": "엣지 근거 구체 백필 + 2026 이벤트",
+    "detail": "전 엣지 근거(호버 박스)를 종목·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
+   },
+   {
+    "date": "2026-08-05",
+    "kind": "관계",
+    "title": "EXPOSED_TO ETF 연결",
+    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+   }
+  ],
+  "description": "K9·K2·천궁II·잠수함 등 글로벌 수출 사이클의 직접 수혜군. 폴란드 2차 계약·중동·동남아 추가 수주와 미 해군 MRO·핵잠 잠재가 동인. PLUS K방산 등 ETF로도 익스포저를 확장한다. 러-우전쟁·중동전쟁·미중갈등·NATO군사자립 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 밸류체인은 군함/잠수함건조·레이저무기체계 등 사업영역으로 이어진다. 경쟁·공급·협력 등 7건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다."
+ },
+ "nodes": [
+  {
+   "id": "T_178",
+   "type": "THEME",
+   "name": "K-방산"
   },
-  "nodes": [
-    {
-      "id": "T_178",
-      "type": "THEME",
-      "name": "K-방산"
-    },
-    {
-      "id": "A_744",
-      "type": "ASSET",
-      "name": "현대로템",
-      "exposure": {
-        "ticker": "064350",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": -0.47425474254743083,
-        "close": 146900,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": 3.8896746817538963,
-        "return_15d": -7.260101010101005,
-        "return_1m": -12.4031007751938,
-        "return_ytd": -23.795209235234626,
-        "return_1y": -24.030894154069316,
-        "return_3y": 400.81927248565086,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 0.0,
-        "return_2y": 239.07160905476488
-      }
-    },
-    {
-      "id": "A_576",
-      "type": "ASSET",
-      "name": "풍산",
-      "exposure": {
-        "ticker": "103140",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": -2.3809523809523836,
-        "close": 82000,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": -1.7964071856287456,
-        "return_15d": 20.05856515373352,
-        "return_1m": 31.41025641025641,
-        "return_ytd": -21.692531287751503,
-        "return_1y": -38.33648035487157,
-        "return_3y": 156.4986586168045,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": -1.9138755980861233,
-        "return_2y": 33.2198808999643
-      }
-    },
-    {
-      "id": "A_670",
-      "type": "ASSET",
-      "name": "LIG넥스원",
-      "exposure": {
-        "ticker": "079550",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": -2.628434886499398,
-        "close": 815000,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": 7.236842105263164,
-        "return_15d": 6.955380577427817,
-        "return_1m": 7.661822985468958,
-        "return_ytd": 86.3973280684494,
-        "return_1y": 38.22369428545815,
-        "return_3y": 998.3889977088401,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 9.986504723346833,
-        "return_2y": 247.78213219309114
-      }
-    },
-    {
-      "id": "A_813",
-      "type": "ASSET",
-      "name": "한화오션",
-      "exposure": {
-        "ticker": "042660",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 5.622932745314224,
-        "close": 116000,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": 7.640449438202257,
-        "return_15d": 8.987485779294646,
-        "return_1m": 16.82926829268292,
-        "return_ytd": -16.47776809067132,
-        "return_1y": -18.39863713798978,
-        "return_3y": 154.5686225608848,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 7.158836689038028,
-        "return_2y": 205.0955414012739
-      }
-    },
-    {
-      "id": "A_814",
-      "type": "ASSET",
-      "name": "HD현대중공업",
-      "exposure": {
-        "ticker": "329180",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 2.822580645161299,
-        "close": 673000,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": 2.634279849469734,
-        "return_15d": 6.333764711138468,
-        "return_1m": 9.607309475404847,
-        "return_ytd": 3.1233375721810397,
-        "return_1y": 9.074841841746672,
-        "return_3y": 311.5398909909263,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 2.0257762206126406,
-        "return_2y": 206.9722201294107
-      }
-    },
-    {
-      "id": "A_745",
-      "type": "ASSET",
-      "name": "한화에어로스페이스",
-      "exposure": {
-        "ticker": "012450",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": -2.1097046413502074,
-        "close": 1160000,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": 5.64663023679417,
-        "return_15d": 18.488253319713998,
-        "return_1m": 24.865446716899896,
-        "return_ytd": 22.621564482029587,
-        "return_1y": 24.53770375094626,
-        "return_3y": 862.6671640513406,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 5.742935278031003,
-        "return_2y": 357.0007157824927
-      }
-    },
-    {
-      "id": "A_595",
-      "type": "ASSET",
-      "name": "대한광통신",
-      "exposure": {
-        "ticker": "010170",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 0.981873111782483,
-        "close": 13370,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": -0.5947955390334547,
-        "return_15d": 34.77822580645162,
-        "return_1m": 14.469178082191792,
-        "return_ytd": 398.32656200591316,
-        "return_1y": 1309.4085027706947,
-        "return_3y": 650.7722088049688,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 16.666666666666675,
-        "return_2y": 1163.7375932538152
-      }
-    },
-    {
-      "id": "A_671",
-      "type": "ASSET",
-      "name": "한화시스템",
-      "exposure": {
-        "ticker": "272210",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 0.8793969849246297,
-        "close": 80300,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": 10.150891632373105,
-        "return_15d": 17.741935483870975,
-        "return_1m": 22.036474164133747,
-        "return_ytd": 45.74141709828361,
-        "return_1y": 34.54925489395728,
-        "return_3y": 490.3320909134063,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 13.578500707213582,
-        "return_2y": 315.8556962711799
-      }
-    },
-    {
-      "id": "A_1192",
-      "type": "ASSET",
-      "name": "한국항공우주",
-      "exposure": {
-        "ticker": "047810",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": -3.1746031746031744,
-        "close": 146400,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": 8.04428044280443,
-        "return_15d": -7.400379506641364,
-        "return_1m": -0.7457627118644061,
-        "return_ytd": 25.703267278292728,
-        "return_1y": 61.51970982322166,
-        "return_3y": 211.43162890433365,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": -5.058365758754868,
-        "return_2y": 195.62155759145924
-      }
-    },
-    {
-      "id": "A_1193",
-      "type": "ASSET",
-      "name": "SNT모티브",
-      "exposure": {
-        "ticker": "064960",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 3.079710144927539,
-        "close": 28450,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": 1.9713261648745428,
-        "return_15d": 7.969639468690692,
-        "return_1m": 7.765151515151514,
-        "return_ytd": -14.498672825559167,
-        "return_1y": -4.94448231537199,
-        "return_3y": 40.7703989370761,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 4.0219378427788,
-        "return_2y": 45.68374623136759
-      }
-    },
-    {
-      "id": "BF_314",
-      "type": "BUSINESS_FIELD",
-      "name": "군함/잠수함건조"
-    },
-    {
-      "id": "BF_315",
-      "type": "BUSINESS_FIELD",
-      "name": "레이저무기체계"
-    },
-    {
-      "id": "M_061",
-      "type": "MACRO",
-      "name": "러-우전쟁"
-    },
-    {
-      "id": "M_084",
-      "type": "MACRO",
-      "name": "중동전쟁"
-    },
-    {
-      "id": "M_138",
-      "type": "MACRO",
-      "name": "미중갈등"
-    },
-    {
-      "id": "M_167",
-      "type": "MACRO",
-      "name": "NATO군사자립"
-    },
-    {
-      "id": "M_1067",
-      "type": "MACRO",
-      "name": "폴란드등생산현지화압박/경쟁"
-    },
-    {
-      "id": "M_1068",
-      "type": "MACRO",
-      "name": "신속/대량생산체계요구"
-    },
-    {
-      "id": "C_2915",
-      "type": "CHARACTER",
-      "name": "K2전차·지상방산"
-    },
-    {
-      "id": "C_2916",
-      "type": "CHARACTER",
-      "name": "탄약·신동소재"
-    },
-    {
-      "id": "C_2917",
-      "type": "CHARACTER",
-      "name": "천궁·유도무기"
-    },
-    {
-      "id": "C_2918",
-      "type": "CHARACTER",
-      "name": "잠수함·함정방산"
-    },
-    {
-      "id": "C_2919",
-      "type": "CHARACTER",
-      "name": "함정·잠수함건조"
-    },
-    {
-      "id": "C_2920",
-      "type": "CHARACTER",
-      "name": "K9·항공엔진대장"
-    },
-    {
-      "id": "C_2921",
-      "type": "CHARACTER",
-      "name": "방산광통신부품"
-    },
-    {
-      "id": "C_2922",
-      "type": "CHARACTER",
-      "name": "전자·레이저무기"
-    },
-    {
-      "id": "C_2923",
-      "type": "CHARACTER",
-      "name": "FA-50항공방산"
-    },
-    {
-      "id": "C_2924",
-      "type": "CHARACTER",
-      "name": "소총·화기부품"
-    },
-    {
-      "id": "A_2887",
-      "type": "ASSET",
-      "name": "PLUS K방산",
-      "exposure": {
-        "ticker": "449450",
-        "exchange": "KRX",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": -0.059772863120144404,
-        "return_3d": 6.206896551724128,
-        "return_15d": 6.062528318985039,
-        "return_1m": 8.823802882380294,
-        "return_ytd": 10.520849237899533,
-        "return_1y": 7.755794773174451,
-        "return_3y": null,
-        "close": 58520,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": null,
-        "return_2y": 237.74096450000798
-      }
-    }
-  ],
-  "edges": [
-    {
-      "from": "A_744",
-      "to": "T_178",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_005305"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_576",
-      "to": "T_178",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_005306"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_670",
-      "to": "T_178",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_005307"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_813",
-      "to": "T_178",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_005308"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_814",
-      "to": "T_178",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_005309"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_745",
-      "to": "T_178",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_005310"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_595",
-      "to": "T_178",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_005311"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_671",
-      "to": "T_178",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_005312"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1192",
-      "to": "T_178",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_005313"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1193",
-      "to": "T_178",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_005314"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_813",
-      "to": "BF_314",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_005315"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_814",
-      "to": "BF_314",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_005316"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_671",
-      "to": "BF_315",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_005317"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_670",
-      "to": "BF_315",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_005318"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "M_061",
-      "to": "T_178",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_005319"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_084",
-      "to": "T_178",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_005320"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_138",
-      "to": "T_178",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_005321"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_167",
-      "to": "T_178",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_005322"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_1067",
-      "to": "T_178",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_005323"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "M_1068",
-      "to": "T_178",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_005324"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_744",
-      "to": "C_2915",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_005417"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_576",
-      "to": "C_2916",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_005418"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_670",
-      "to": "C_2917",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_005419"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_813",
-      "to": "C_2918",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_005420"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_814",
-      "to": "C_2919",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_005421"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_745",
-      "to": "C_2920",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_005422"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_595",
-      "to": "C_2921",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_005423"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_671",
-      "to": "C_2922",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_005424"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_1192",
-      "to": "C_2923",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_005425"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1193",
-      "to": "C_2924",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_005426"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_745",
-      "to": "A_744",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_019232"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "한화에어로스페이스와 현대로템는 K-방산 내 제휴·협력 관계"
-    },
-    {
-      "from": "A_813",
-      "to": "A_814",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019233"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "한화오션와 HD현대중공업는 K-방산 내 직접 경쟁 관계"
-    },
-    {
-      "from": "A_670",
-      "to": "A_671",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019234"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "LIG넥스원와 한화시스템는 K-방산 내 직접 경쟁 관계"
-    },
-    {
-      "from": "A_745",
-      "to": "A_671",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_019235"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "한화에어로스페이스와 한화시스템는 K-방산 내 제휴·협력 관계"
-    },
-    {
-      "from": "A_1192",
-      "to": "A_670",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019236"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "한국항공우주와 LIG넥스원는 K-방산 내 직접 경쟁 관계"
-    },
-    {
-      "from": "A_576",
-      "to": "A_745",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_019237"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "풍산가 한화에어로스페이스에 공급하는 관계 (K-방산)"
-    },
-    {
-      "from": "A_1193",
-      "to": "A_744",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_019238"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "SNT모티브가 현대로템에 공급하는 관계 (K-방산)"
-    },
-    {
-      "from": "A_2887",
-      "to": "T_178",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020634"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_744",
-      "to": "T_178",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_005305"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_576",
-      "to": "T_178",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_005306"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_670",
-      "to": "T_178",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_005307"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_813",
-      "to": "T_178",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_005308"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_814",
-      "to": "T_178",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_005309"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_745",
-      "to": "T_178",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_005310"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_595",
-      "to": "T_178",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_005311"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_671",
-      "to": "T_178",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_005312"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1192",
-      "to": "T_178",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_005313"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1193",
-      "to": "T_178",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_005314"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_813",
-      "to": "BF_314",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_005315"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_814",
-      "to": "BF_314",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_005316"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_671",
-      "to": "BF_315",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_005317"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_670",
-      "to": "BF_315",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_005318"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "M_061",
-      "to": "T_178",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_005319"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_084",
-      "to": "T_178",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_005320"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_138",
-      "to": "T_178",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_005321"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_167",
-      "to": "T_178",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_005322"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_1067",
-      "to": "T_178",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_005323"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "M_1068",
-      "to": "T_178",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_005324"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_744",
-      "to": "C_2915",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_005417"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_576",
-      "to": "C_2916",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_005418"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_670",
-      "to": "C_2917",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_005419"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_813",
-      "to": "C_2918",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_005420"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_814",
-      "to": "C_2919",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_005421"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_745",
-      "to": "C_2920",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_005422"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_595",
-      "to": "C_2921",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_005423"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_671",
-      "to": "C_2922",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_005424"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_1192",
-      "to": "C_2923",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_005425"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1193",
-      "to": "C_2924",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_005426"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_745",
-      "to": "A_744",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_019232"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "한화에어로스페이스와 현대로템는 K-방산 내 제휴·협력 관계"
-    },
-    {
-      "from": "A_813",
-      "to": "A_814",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019233"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "한화오션와 HD현대중공업는 K-방산 내 직접 경쟁 관계"
-    },
-    {
-      "from": "A_670",
-      "to": "A_671",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019234"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "LIG넥스원와 한화시스템는 K-방산 내 직접 경쟁 관계"
-    },
-    {
-      "from": "A_745",
-      "to": "A_671",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_019235"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "한화에어로스페이스와 한화시스템는 K-방산 내 제휴·협력 관계"
-    },
-    {
-      "from": "A_1192",
-      "to": "A_670",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019236"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "한국항공우주와 LIG넥스원는 K-방산 내 직접 경쟁 관계"
-    },
-    {
-      "from": "A_576",
-      "to": "A_745",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_019237"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "풍산가 한화에어로스페이스에 공급하는 관계 (K-방산)"
-    },
-    {
-      "from": "A_1193",
-      "to": "A_744",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_019238"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "SNT모티브가 현대로템에 공급하는 관계 (K-방산)"
-    },
-    {
-      "from": "A_2887",
-      "to": "T_178",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020634"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ]
+  {
+   "id": "A_744",
+   "type": "ASSET",
+   "name": "현대로템",
+   "exposure": {
+    "ticker": "064350",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": -0.47425474254743083,
+    "close": 146900,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": 3.8896746817538963,
+    "return_15d": -7.260101010101005,
+    "return_1m": -12.4031007751938,
+    "return_ytd": -23.795209235234626,
+    "return_1y": -24.030894154069316,
+    "return_3y": 400.81927248565086,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 0.0,
+    "return_2y": 239.07160905476488
+   }
+  },
+  {
+   "id": "A_576",
+   "type": "ASSET",
+   "name": "풍산",
+   "exposure": {
+    "ticker": "103140",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": -2.3809523809523836,
+    "close": 82000,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": -1.7964071856287456,
+    "return_15d": 20.05856515373352,
+    "return_1m": 31.41025641025641,
+    "return_ytd": -21.692531287751503,
+    "return_1y": -38.33648035487157,
+    "return_3y": 156.4986586168045,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": -1.9138755980861233,
+    "return_2y": 33.2198808999643
+   }
+  },
+  {
+   "id": "A_670",
+   "type": "ASSET",
+   "name": "LIG넥스원",
+   "exposure": {
+    "ticker": "079550",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": -2.628434886499398,
+    "close": 815000,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": 7.236842105263164,
+    "return_15d": 6.955380577427817,
+    "return_1m": 7.661822985468958,
+    "return_ytd": 86.3973280684494,
+    "return_1y": 38.22369428545815,
+    "return_3y": 998.3889977088401,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 9.986504723346833,
+    "return_2y": 247.78213219309114
+   }
+  },
+  {
+   "id": "A_813",
+   "type": "ASSET",
+   "name": "한화오션",
+   "exposure": {
+    "ticker": "042660",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 5.622932745314224,
+    "close": 116000,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": 7.640449438202257,
+    "return_15d": 8.987485779294646,
+    "return_1m": 16.82926829268292,
+    "return_ytd": -16.47776809067132,
+    "return_1y": -18.39863713798978,
+    "return_3y": 154.5686225608848,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 7.158836689038028,
+    "return_2y": 205.0955414012739
+   }
+  },
+  {
+   "id": "A_814",
+   "type": "ASSET",
+   "name": "HD현대중공업",
+   "exposure": {
+    "ticker": "329180",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 2.822580645161299,
+    "close": 673000,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": 2.634279849469734,
+    "return_15d": 6.333764711138468,
+    "return_1m": 9.607309475404847,
+    "return_ytd": 3.1233375721810397,
+    "return_1y": 9.074841841746672,
+    "return_3y": 311.5398909909263,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 2.0257762206126406,
+    "return_2y": 206.9722201294107
+   }
+  },
+  {
+   "id": "A_745",
+   "type": "ASSET",
+   "name": "한화에어로스페이스",
+   "exposure": {
+    "ticker": "012450",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": -2.1097046413502074,
+    "close": 1160000,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": 5.64663023679417,
+    "return_15d": 18.488253319713998,
+    "return_1m": 24.865446716899896,
+    "return_ytd": 22.621564482029587,
+    "return_1y": 24.53770375094626,
+    "return_3y": 862.6671640513406,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 5.742935278031003,
+    "return_2y": 357.0007157824927
+   }
+  },
+  {
+   "id": "A_595",
+   "type": "ASSET",
+   "name": "대한광통신",
+   "exposure": {
+    "ticker": "010170",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 0.981873111782483,
+    "close": 13370,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": -0.5947955390334547,
+    "return_15d": 34.77822580645162,
+    "return_1m": 14.469178082191792,
+    "return_ytd": 398.32656200591316,
+    "return_1y": 1309.4085027706947,
+    "return_3y": 650.7722088049688,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 16.666666666666675,
+    "return_2y": 1163.7375932538152
+   }
+  },
+  {
+   "id": "A_671",
+   "type": "ASSET",
+   "name": "한화시스템",
+   "exposure": {
+    "ticker": "272210",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 0.8793969849246297,
+    "close": 80300,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": 10.150891632373105,
+    "return_15d": 17.741935483870975,
+    "return_1m": 22.036474164133747,
+    "return_ytd": 45.74141709828361,
+    "return_1y": 34.54925489395728,
+    "return_3y": 490.3320909134063,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 13.578500707213582,
+    "return_2y": 315.8556962711799
+   }
+  },
+  {
+   "id": "A_1192",
+   "type": "ASSET",
+   "name": "한국항공우주",
+   "exposure": {
+    "ticker": "047810",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": -3.1746031746031744,
+    "close": 146400,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": 8.04428044280443,
+    "return_15d": -7.400379506641364,
+    "return_1m": -0.7457627118644061,
+    "return_ytd": 25.703267278292728,
+    "return_1y": 61.51970982322166,
+    "return_3y": 211.43162890433365,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": -5.058365758754868,
+    "return_2y": 195.62155759145924
+   }
+  },
+  {
+   "id": "A_1193",
+   "type": "ASSET",
+   "name": "SNT모티브",
+   "exposure": {
+    "ticker": "064960",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 3.079710144927539,
+    "close": 28450,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": 1.9713261648745428,
+    "return_15d": 7.969639468690692,
+    "return_1m": 7.765151515151514,
+    "return_ytd": -14.498672825559167,
+    "return_1y": -4.94448231537199,
+    "return_3y": 40.7703989370761,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 4.0219378427788,
+    "return_2y": 45.68374623136759
+   }
+  },
+  {
+   "id": "BF_314",
+   "type": "BUSINESS_FIELD",
+   "name": "군함/잠수함건조"
+  },
+  {
+   "id": "BF_315",
+   "type": "BUSINESS_FIELD",
+   "name": "레이저무기체계"
+  },
+  {
+   "id": "M_061",
+   "type": "MACRO",
+   "name": "러-우전쟁"
+  },
+  {
+   "id": "M_084",
+   "type": "MACRO",
+   "name": "중동전쟁"
+  },
+  {
+   "id": "M_138",
+   "type": "MACRO",
+   "name": "미중갈등"
+  },
+  {
+   "id": "M_167",
+   "type": "MACRO",
+   "name": "NATO군사자립"
+  },
+  {
+   "id": "M_1067",
+   "type": "MACRO",
+   "name": "폴란드등생산현지화압박/경쟁"
+  },
+  {
+   "id": "M_1068",
+   "type": "MACRO",
+   "name": "신속/대량생산체계요구"
+  },
+  {
+   "id": "C_2915",
+   "type": "CHARACTER",
+   "name": "K2전차·지상방산"
+  },
+  {
+   "id": "C_2916",
+   "type": "CHARACTER",
+   "name": "탄약·신동소재"
+  },
+  {
+   "id": "C_2917",
+   "type": "CHARACTER",
+   "name": "천궁·유도무기"
+  },
+  {
+   "id": "C_2918",
+   "type": "CHARACTER",
+   "name": "잠수함·함정방산"
+  },
+  {
+   "id": "C_2919",
+   "type": "CHARACTER",
+   "name": "함정·잠수함건조"
+  },
+  {
+   "id": "C_2920",
+   "type": "CHARACTER",
+   "name": "K9·항공엔진대장"
+  },
+  {
+   "id": "C_2921",
+   "type": "CHARACTER",
+   "name": "방산광통신부품"
+  },
+  {
+   "id": "C_2922",
+   "type": "CHARACTER",
+   "name": "전자·레이저무기"
+  },
+  {
+   "id": "C_2923",
+   "type": "CHARACTER",
+   "name": "FA-50항공방산"
+  },
+  {
+   "id": "C_2924",
+   "type": "CHARACTER",
+   "name": "소총·화기부품"
+  },
+  {
+   "id": "A_2887",
+   "type": "ASSET",
+   "name": "PLUS K방산",
+   "exposure": {
+    "ticker": "449450",
+    "exchange": "KRX",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": -0.059772863120144404,
+    "return_3d": 6.206896551724128,
+    "return_15d": 6.062528318985039,
+    "return_1m": 8.823802882380294,
+    "return_ytd": 10.520849237899533,
+    "return_1y": 7.755794773174451,
+    "return_3y": null,
+    "close": 58520,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": null,
+    "return_2y": 237.74096450000798
+   }
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_744",
+   "to": "T_178",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_005305"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_576",
+   "to": "T_178",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_005306"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_670",
+   "to": "T_178",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_005307"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_813",
+   "to": "T_178",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_005308"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_814",
+   "to": "T_178",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_005309"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_745",
+   "to": "T_178",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_005310"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_595",
+   "to": "T_178",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_005311"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_671",
+   "to": "T_178",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_005312"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1192",
+   "to": "T_178",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_005313"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1193",
+   "to": "T_178",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_005314"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_813",
+   "to": "BF_314",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_005315"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_814",
+   "to": "BF_314",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_005316"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_671",
+   "to": "BF_315",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_005317"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_670",
+   "to": "BF_315",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_005318"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "M_061",
+   "to": "T_178",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_005319"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_084",
+   "to": "T_178",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_005320"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_138",
+   "to": "T_178",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_005321"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_167",
+   "to": "T_178",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_005322"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_1067",
+   "to": "T_178",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_005323"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "M_1068",
+   "to": "T_178",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_005324"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_744",
+   "to": "C_2915",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_005417"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_576",
+   "to": "C_2916",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_005418"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_670",
+   "to": "C_2917",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_005419"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_813",
+   "to": "C_2918",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_005420"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_814",
+   "to": "C_2919",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_005421"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_745",
+   "to": "C_2920",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_005422"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_595",
+   "to": "C_2921",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_005423"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_671",
+   "to": "C_2922",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_005424"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_1192",
+   "to": "C_2923",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_005425"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1193",
+   "to": "C_2924",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_005426"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_745",
+   "to": "A_744",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_019232"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "한화에어로스페이스와 현대로템는 K-방산 내 제휴·협력 관계"
+  },
+  {
+   "from": "A_813",
+   "to": "A_814",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019233"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "한화오션와 HD현대중공업는 K-방산 내 직접 경쟁 관계"
+  },
+  {
+   "from": "A_670",
+   "to": "A_671",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019234"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "LIG넥스원와 한화시스템는 K-방산 내 직접 경쟁 관계"
+  },
+  {
+   "from": "A_745",
+   "to": "A_671",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_019235"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "한화에어로스페이스와 한화시스템는 K-방산 내 제휴·협력 관계"
+  },
+  {
+   "from": "A_1192",
+   "to": "A_670",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019236"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "한국항공우주와 LIG넥스원는 K-방산 내 직접 경쟁 관계"
+  },
+  {
+   "from": "A_576",
+   "to": "A_745",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_019237"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "풍산가 한화에어로스페이스에 공급하는 관계 (K-방산)"
+  },
+  {
+   "from": "A_1193",
+   "to": "A_744",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_019238"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "SNT모티브가 현대로템에 공급하는 관계 (K-방산)"
+  },
+  {
+   "from": "A_2887",
+   "to": "T_178",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020634"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_744",
+   "to": "T_178",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_005305"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_576",
+   "to": "T_178",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_005306"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_670",
+   "to": "T_178",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_005307"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_813",
+   "to": "T_178",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_005308"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_814",
+   "to": "T_178",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_005309"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_745",
+   "to": "T_178",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_005310"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_595",
+   "to": "T_178",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_005311"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_671",
+   "to": "T_178",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_005312"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1192",
+   "to": "T_178",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_005313"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1193",
+   "to": "T_178",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_005314"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_813",
+   "to": "BF_314",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_005315"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_814",
+   "to": "BF_314",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_005316"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_671",
+   "to": "BF_315",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_005317"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_670",
+   "to": "BF_315",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_005318"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "M_061",
+   "to": "T_178",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_005319"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_084",
+   "to": "T_178",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_005320"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_138",
+   "to": "T_178",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_005321"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_167",
+   "to": "T_178",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_005322"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_1067",
+   "to": "T_178",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_005323"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "M_1068",
+   "to": "T_178",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_005324"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_744",
+   "to": "C_2915",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_005417"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_576",
+   "to": "C_2916",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_005418"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_670",
+   "to": "C_2917",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_005419"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_813",
+   "to": "C_2918",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_005420"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_814",
+   "to": "C_2919",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_005421"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_745",
+   "to": "C_2920",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_005422"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_595",
+   "to": "C_2921",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_005423"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_671",
+   "to": "C_2922",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_005424"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_1192",
+   "to": "C_2923",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_005425"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1193",
+   "to": "C_2924",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_005426"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_745",
+   "to": "A_744",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_019232"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "한화에어로스페이스와 현대로템는 K-방산 내 제휴·협력 관계"
+  },
+  {
+   "from": "A_813",
+   "to": "A_814",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019233"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "한화오션와 HD현대중공업는 K-방산 내 직접 경쟁 관계"
+  },
+  {
+   "from": "A_670",
+   "to": "A_671",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019234"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "LIG넥스원와 한화시스템는 K-방산 내 직접 경쟁 관계"
+  },
+  {
+   "from": "A_745",
+   "to": "A_671",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_019235"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "한화에어로스페이스와 한화시스템는 K-방산 내 제휴·협력 관계"
+  },
+  {
+   "from": "A_1192",
+   "to": "A_670",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019236"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "한국항공우주와 LIG넥스원는 K-방산 내 직접 경쟁 관계"
+  },
+  {
+   "from": "A_576",
+   "to": "A_745",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_019237"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "풍산가 한화에어로스페이스에 공급하는 관계 (K-방산)"
+  },
+  {
+   "from": "A_1193",
+   "to": "A_744",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_019238"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "SNT모티브가 현대로템에 공급하는 관계 (K-방산)"
+  },
+  {
+   "from": "A_2887",
+   "to": "T_178",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020634"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ]
 }

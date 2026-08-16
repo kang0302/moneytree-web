@@ -1,1437 +1,1438 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_060",
-  "themeName": "유럽에너지자립위기",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-26T00:00:00+09:00",
-    "notes": "g60 누적 import 기반 유럽 에너지 자립 위기 테마",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-08-04",
-        "kind": "보강",
-        "title": "2궤도 관계 엣지 추가",
-        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
-      },
-      {
-        "date": "2026-07-26",
-        "kind": "수정",
-        "title": "자산 CHR 백필",
-        "detail": "CHR 미정의 자산에 CHARACTER·HAS_TRAIT 추가."
-      },
-      {
-        "date": "2026-08-05",
-        "kind": "관계",
-        "title": "EXPOSED_TO ETF 연결",
-        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-      }
-    ]
+ "schemaVersion": "v5",
+ "themeId": "T_060",
+ "themeName": "유럽에너지자립위기",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
+  ],
+  "dataAsOf": "2026-07-26T00:00:00+09:00",
+  "notes": "g60 누적 import 기반 유럽 에너지 자립 위기 테마",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-08-04",
+    "kind": "보강",
+    "title": "2궤도 관계 엣지 추가",
+    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
+   },
+   {
+    "date": "2026-07-26",
+    "kind": "수정",
+    "title": "자산 CHR 백필",
+    "detail": "CHR 미정의 자산에 CHARACTER·HAS_TRAIT 추가."
+   },
+   {
+    "date": "2026-08-05",
+    "kind": "관계",
+    "title": "EXPOSED_TO ETF 연결",
+    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+   }
+  ],
+  "description": "RWE·E.ON·Engie·Equinor 등 EU 에너지 자립 핵심 유틸리티. 러시아 가스 차단·재생e 전환·전력가 변동이 multiyear 동인. First Trust Natural Gas ETF 등 ETF로도 익스포저를 확장한다. 러-우전쟁·신재생에너지전환 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 밸류체인은 LNG채굴/수출·LNG터미널EPC/플랜트·LNG운송 등 사업영역으로 이어진다. 경쟁·공급·협력 등 4건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다."
+ },
+ "nodes": [
+  {
+   "id": "T_060",
+   "type": "THEME",
+   "name": "유럽에너지자립위기"
   },
-  "nodes": [
-    {
-      "id": "T_060",
-      "type": "THEME",
-      "name": "유럽에너지자립위기"
-    },
-    {
-      "id": "A_489",
-      "type": "ASSET",
-      "name": "셰니에르에너지",
-      "exposure": {
-        "ticker": "LNG",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 1.9363554488141643,
-        "close": 271.64,
-        "marketCap": 56922705280,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 2.33959989451078,
-        "return_15d": 0.7118493252261437,
-        "return_1m": 2.4940572765347335,
-        "return_ytd": 39.739698544163794,
-        "return_1y": 16.769118342432176,
-        "return_3y": 65.04040342669664,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 6.051378152572817,
-        "return_2y": 47.53421681512056
-      }
-    },
-    {
-      "id": "A_487",
-      "type": "ASSET",
-      "name": "EQT",
-      "exposure": {
-        "ticker": "EQT",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.6286982248520756,
-        "close": 54.42,
-        "marketCap": 34040580720,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 0.09196247930844947,
-        "return_15d": 2.6211578351876375,
-        "return_1m": 9.255169644649675,
-        "return_ytd": 1.5298507462686572,
-        "return_1y": 4.553314121037477,
-        "return_3y": 26.85314685314686,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 5.281485780615225,
-        "return_2y": 72.87166454891995
-      }
-    },
-    {
-      "id": "A_490",
-      "type": "ASSET",
-      "name": "킨더모건",
-      "exposure": {
-        "ticker": "KMI",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 2.3067331670822977,
-        "close": 32.82,
-        "marketCap": 73083576000,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 4.256670902160109,
-        "return_15d": -0.12172854534387989,
-        "return_1m": 0.8604794099569713,
-        "return_ytd": 19.38886867951983,
-        "return_1y": 22.23463687150837,
-        "return_3y": 85.7385398981324,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 6.385737439222039,
-        "return_2y": 56.583969465648856
-      }
-    },
-    {
-      "id": "A_491",
-      "type": "ASSET",
-      "name": "윌리엄스",
-      "exposure": {
-        "ticker": "WMB",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 2.957283680175249,
-        "close": 75.2,
-        "marketCap": 91982193894,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 3.996680956990728,
-        "return_15d": 1.6216216216216273,
-        "return_1m": -1.0265859436693892,
-        "return_ytd": 25.103976043919495,
-        "return_1y": 31.147540983606547,
-        "return_3y": 114.67313731087638,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 6.818181818181812,
-        "return_2y": 73.31182300069142
-      }
-    },
-    {
-      "id": "A_492",
-      "type": "ASSET",
-      "name": "차트인더스트리즈",
-      "exposure": {
-        "ticker": "GTLS",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.0,
-        "close": 209.9,
-        "marketCap": 10047719052,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 0.05243338576672585,
-        "return_15d": 0.5749880210829117,
-        "return_1m": 1.2542209358417766,
-        "return_ytd": 1.7795665034185282,
-        "return_1y": 24.318881781568358,
-        "return_3y": 30.599800895968144,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 0.14312977099237845,
-        "return_2y": 24.680724680724687
-      }
-    },
-    {
-      "id": "A_493",
-      "type": "ASSET",
-      "name": "테크닙FMC",
-      "exposure": {
-        "ticker": "FTI",
-        "exchange": "NYSE",
-        "country": "GB"
-      },
-      "metrics": {
-        "return_1d": 2.5303247684883345,
-        "close": 78.616,
-        "marketCap": 30830395841,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 4.3680297397769685,
-        "return_15d": 2.423452768729639,
-        "return_1m": 5.417728308971448,
-        "return_ytd": 76.41382405745061,
-        "return_1y": 120.814606741573,
-        "return_3y": 324.23097679438746,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 12.912956047112889,
-        "return_2y": 200.2673796791444
-      }
-    },
-    {
-      "id": "A_494",
-      "type": "ASSET",
-      "name": "플루어",
-      "exposure": {
-        "ticker": "FLR",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.07643798968086646,
-        "close": 52.37,
-        "marketCap": 7314517900,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": -1.095372993389998,
-        "return_15d": 0.3448936577888473,
-        "return_1m": 2.4452269170579077,
-        "return_ytd": 32.14736310875599,
-        "return_1y": 26.040914560770155,
-        "return_3y": 50.5750431282346,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -8.122807017543865,
-        "return_2y": 7.249641613762026
-      }
-    },
-    {
-      "id": "A_495",
-      "type": "ASSET",
-      "name": "골라LNG",
-      "exposure": {
-        "ticker": "GLNG",
-        "exchange": "NASDAQ",
-        "country": "BM"
-      },
-      "metrics": {
-        "return_1d": 2.4995118140988204,
-        "close": 52.49,
-        "marketCap": 5342419865,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 3.2454760031471297,
-        "return_15d": 7.9596873714520955,
-        "return_1m": 1.0978428351309688,
-        "return_ytd": 41.06423004568664,
-        "return_1y": 29.99009410599307,
-        "return_3y": 135.27566113850295,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 4.084870116993855,
-        "return_2y": 56.40643623361144
-      }
-    },
-    {
-      "id": "A_496",
-      "type": "ASSET",
-      "name": "플렉스LNG",
-      "exposure": {
-        "ticker": "FLNG",
-        "exchange": "NYSE",
-        "country": "BM"
-      },
-      "metrics": {
-        "return_1d": 1.616628175519641,
-        "close": 30.8,
-        "marketCap": 1666045181,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 5.660377358490565,
-        "return_15d": -0.16207455429497752,
-        "return_1m": -0.03245699448229944,
-        "return_ytd": 23.446893787575164,
-        "return_1y": 22.076892588188656,
-        "return_3y": -4.19906687402799,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -0.12970168612191912,
-        "return_2y": 19.056822574410504
-      }
-    },
-    {
-      "id": "A_497",
-      "type": "ASSET",
-      "name": "WENT",
-      "exposure": {
-        "ticker": "WENT",
-        "exchange": "LSE",
-        "country": "GB"
-      },
-      "metrics": {
-        "return_1d": 0.17966223499821243,
-        "close": 27.88,
-        "marketCap": 316388680,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": -0.641482537419813,
-        "return_15d": 3.1446540880503138,
-        "return_1m": 3.374119391916941,
-        "return_ytd": 9.034024247164641,
-        "return_1y": 37.00245700245699,
-        "return_3y": 54.28887659103485,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 0.3599712023037993,
-        "return_2y": 50.05382131324006
-      },
-      "coreBiz": "WENT는 포트폴리오의 유럽 비중이 커 유럽 에너지 전환 테마에 집중 노출된다"
-    },
-    {
-      "id": "A_498",
-      "type": "ASSET",
-      "name": "ICLN",
-      "exposure": {
-        "ticker": "ICLN",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.8169934640522847,
-        "close": 18.21,
-        "marketCap": 2383107318,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 0.05494505494505475,
-        "return_15d": 2.4184476940382504,
-        "return_1m": -4.509701101206076,
-        "return_ytd": 10.83384053560561,
-        "return_1y": 33.30893118594436,
-        "return_3y": 8.071216617210686,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -0.4918032786885185,
-        "return_2y": 29.51635846372689
-      }
-    },
-    {
-      "id": "A_499",
-      "type": "ASSET",
-      "name": "CO2P",
-      "exposure": {
-        "ticker": "CO2P",
-        "exchange": "LSE",
-        "country": "GB"
-      },
-      "metrics": {
-        "return_1d": -0.7090610538886377,
-        "close": 6651.5,
-        "marketCap": 624576,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": -0.44900097283544493,
-        "return_15d": -1.3862120088954821,
-        "return_1m": 1.1096754579311474,
-        "return_ytd": -7.166782972784369,
-        "return_1y": 13.564964999146323,
-        "return_3y": -9.398624259347542,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -1.6486766228005378,
-        "return_2y": 12.290031231535403
-      }
-    },
-    {
-      "id": "A_500",
-      "type": "ASSET",
-      "name": "INRG",
-      "exposure": {
-        "ticker": "INRG",
-        "exchange": "LSE",
-        "country": "GB"
-      },
-      "metrics": {
-        "return_1d": -0.9590792838874651,
-        "close": 774.5,
-        "marketCap": 2264687553,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": -0.38585209003215715,
-        "return_15d": -0.5776636713735517,
-        "return_1m": -5.6925418569254145,
-        "return_ytd": 10.366939793373708,
-        "return_1y": 33.82289416846653,
-        "return_3y": 1.8074268813670802,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -0.6414368184733843,
-        "return_2y": 22.160883280757094
-      }
-    },
-    {
-      "id": "A_501",
-      "type": "ASSET",
-      "name": "WREN",
-      "exposure": {
-        "ticker": "WREN",
-        "exchange": "LSE",
-        "country": "GB"
-      },
-      "metrics": {
-        "return_1d": -0.6712962962962976,
-        "close": 2145.5,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": null,
-        "valuationSource": null,
-        "return_3d": 0.17509046340609125,
-        "return_15d": 2.6186775080712765,
-        "return_1m": -2.874603893164329,
-        "return_ytd": 5.184458879764686,
-        "return_1y": 47.32541371970063,
-        "return_3y": 13.548557819528973,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 0.7040600797934671,
-        "return_2y": 56.25227587211421
-      }
-    },
-    {
-      "id": "BF_115",
-      "type": "BUSINESS_FIELD",
-      "name": "LNG채굴/수출"
-    },
-    {
-      "id": "BF_116",
-      "type": "BUSINESS_FIELD",
-      "name": "LNG터미널EPC/플랜트"
-    },
-    {
-      "id": "BF_117",
-      "type": "BUSINESS_FIELD",
-      "name": "LNG운송"
-    },
-    {
-      "id": "C_069",
-      "type": "CHARACTER",
-      "name": "유럽고비중"
-    },
-    {
-      "id": "M_061",
-      "type": "MACRO",
-      "name": "러-우전쟁"
-    },
-    {
-      "id": "M_062",
-      "type": "MACRO",
-      "name": "신재생에너지전환"
-    },
-    {
-      "id": "C_5455",
-      "type": "CHARACTER",
-      "name": "LNG수출"
-    },
-    {
-      "id": "C_5456",
-      "type": "CHARACTER",
-      "name": "가스공급"
-    },
-    {
-      "id": "C_5457",
-      "type": "CHARACTER",
-      "name": "가스파이프라인"
-    },
-    {
-      "id": "C_5458",
-      "type": "CHARACTER",
-      "name": "가스미드스트림"
-    },
-    {
-      "id": "C_5459",
-      "type": "CHARACTER",
-      "name": "LNG설비"
-    },
-    {
-      "id": "C_5460",
-      "type": "CHARACTER",
-      "name": "LNG_EPC"
-    },
-    {
-      "id": "C_5461",
-      "type": "CHARACTER",
-      "name": "LNG플랜트EPC"
-    },
-    {
-      "id": "C_5462",
-      "type": "CHARACTER",
-      "name": "LNG운송"
-    },
-    {
-      "id": "C_5463",
-      "type": "CHARACTER",
-      "name": "LNG운송"
-    },
-    {
-      "id": "A_2877",
-      "type": "ASSET",
-      "name": "First Trust Natural Gas ETF",
-      "exposure": {
-        "ticker": "FCG",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 1.4915254237288122,
-        "return_3d": -0.39920159680637557,
-        "return_15d": 2.780638516992795,
-        "return_1m": 8.714596949891074,
-        "return_ytd": 27.894062366510042,
-        "return_1y": 29.722703639514748,
-        "return_3y": 14.187643020594965,
-        "close": 29.94,
-        "marketCap": 600903854,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 5.534014804370813,
-        "return_2y": 20.482897384305844
-      }
-    }
-  ],
-  "edges": [
-    {
-      "from": "A_489",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001972"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_487",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001973"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_490",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001974"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_491",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001975"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_492",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001976"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_493",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001977"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_494",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001978"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_495",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001979"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_496",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001980"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_497",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001981"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_498",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001982"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_499",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001983"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_500",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001984"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_501",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001985"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_489",
-      "to": "BF_115",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_001986"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_487",
-      "to": "BF_115",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_001987"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_490",
-      "to": "BF_115",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_001988"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_491",
-      "to": "BF_115",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_001989"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_492",
-      "to": "BF_116",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_001990"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_493",
-      "to": "BF_116",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_001991"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_494",
-      "to": "BF_116",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_001992"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_495",
-      "to": "BF_117",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_001993"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_496",
-      "to": "BF_117",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_001994"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_497",
-      "to": "C_069",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_001995"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_498",
-      "to": "C_069",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_001996"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_499",
-      "to": "C_069",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_001997"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_500",
-      "to": "C_069",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_001998"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_501",
-      "to": "C_069",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_001999"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_061",
-      "to": "T_060",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002000"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_062",
-      "to": "T_060",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002001"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_489",
-      "to": "C_5455",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014398"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_487",
-      "to": "C_5456",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014399"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_490",
-      "to": "C_5457",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014400"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_491",
-      "to": "C_5458",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014401"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_492",
-      "to": "C_5459",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014402"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_493",
-      "to": "C_5460",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014403"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_494",
-      "to": "C_5461",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014404"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_495",
-      "to": "C_5462",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014405"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_496",
-      "to": "C_5463",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014406"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_490",
-      "to": "A_491",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018918"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "킨더모건과 윌리엄스는 미국 최대급 주간 천연가스 파이프라인 미드스트림 사업자로 직접 경쟁한다."
-    },
-    {
-      "from": "A_492",
-      "to": "A_489",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_018919"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "차트인더스트리즈는 셰니에르 코퍼스크리스티 등 LNG 프로젝트에 극저온 열교환기·액화 장비를 공급한다."
-    },
-    {
-      "from": "A_487",
-      "to": "A_489",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_018920"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "EQT는 애팔래치아산 천연가스를 셰니에르 등 LNG 수출터미널에 피드가스로 공급한다."
-    },
-    {
-      "from": "A_493",
-      "to": "A_494",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_018921"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "테크닙FMC와 플루어는 JGC와 함께 모잠비크 로부마 LNG EPC 컨소시엄을 구성해 공동 수주했다."
-    },
-    {
-      "from": "A_2877",
-      "to": "T_060",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020584"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_489",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001972"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_487",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001973"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_490",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001974"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_491",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001975"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_492",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001976"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_493",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001977"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_494",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001978"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_495",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001979"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_496",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001980"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_497",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001981"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_498",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001982"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_499",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001983"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_500",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001984"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_501",
-      "to": "T_060",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001985"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_489",
-      "to": "BF_115",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_001986"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_487",
-      "to": "BF_115",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_001987"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_490",
-      "to": "BF_115",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_001988"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_491",
-      "to": "BF_115",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_001989"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_492",
-      "to": "BF_116",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_001990"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_493",
-      "to": "BF_116",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_001991"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_494",
-      "to": "BF_116",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_001992"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_495",
-      "to": "BF_117",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_001993"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_496",
-      "to": "BF_117",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_001994"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_497",
-      "to": "C_069",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_001995"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_498",
-      "to": "C_069",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_001996"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_499",
-      "to": "C_069",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_001997"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_500",
-      "to": "C_069",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_001998"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_501",
-      "to": "C_069",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_001999"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_061",
-      "to": "T_060",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002000"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_062",
-      "to": "T_060",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002001"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_489",
-      "to": "C_5455",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014398"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_487",
-      "to": "C_5456",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014399"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_490",
-      "to": "C_5457",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014400"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_491",
-      "to": "C_5458",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014401"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_492",
-      "to": "C_5459",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014402"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_493",
-      "to": "C_5460",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014403"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_494",
-      "to": "C_5461",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014404"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_495",
-      "to": "C_5462",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014405"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_496",
-      "to": "C_5463",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014406"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_490",
-      "to": "A_491",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018918"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "킨더모건과 윌리엄스는 미국 최대급 주간 천연가스 파이프라인 미드스트림 사업자로 직접 경쟁한다."
-    },
-    {
-      "from": "A_492",
-      "to": "A_489",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_018919"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "차트인더스트리즈는 셰니에르 코퍼스크리스티 등 LNG 프로젝트에 극저온 열교환기·액화 장비를 공급한다."
-    },
-    {
-      "from": "A_487",
-      "to": "A_489",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_018920"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "EQT는 애팔래치아산 천연가스를 셰니에르 등 LNG 수출터미널에 피드가스로 공급한다."
-    },
-    {
-      "from": "A_493",
-      "to": "A_494",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_018921"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "테크닙FMC와 플루어는 JGC와 함께 모잠비크 로부마 LNG EPC 컨소시엄을 구성해 공동 수주했다."
-    },
-    {
-      "from": "A_2877",
-      "to": "T_060",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020584"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ]
+  {
+   "id": "A_489",
+   "type": "ASSET",
+   "name": "셰니에르에너지",
+   "exposure": {
+    "ticker": "LNG",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 1.9363554488141643,
+    "close": 271.64,
+    "marketCap": 56922705280,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 2.33959989451078,
+    "return_15d": 0.7118493252261437,
+    "return_1m": 2.4940572765347335,
+    "return_ytd": 39.739698544163794,
+    "return_1y": 16.769118342432176,
+    "return_3y": 65.04040342669664,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 6.051378152572817,
+    "return_2y": 47.53421681512056
+   }
+  },
+  {
+   "id": "A_487",
+   "type": "ASSET",
+   "name": "EQT",
+   "exposure": {
+    "ticker": "EQT",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.6286982248520756,
+    "close": 54.42,
+    "marketCap": 34040580720,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 0.09196247930844947,
+    "return_15d": 2.6211578351876375,
+    "return_1m": 9.255169644649675,
+    "return_ytd": 1.5298507462686572,
+    "return_1y": 4.553314121037477,
+    "return_3y": 26.85314685314686,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 5.281485780615225,
+    "return_2y": 72.87166454891995
+   }
+  },
+  {
+   "id": "A_490",
+   "type": "ASSET",
+   "name": "킨더모건",
+   "exposure": {
+    "ticker": "KMI",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 2.3067331670822977,
+    "close": 32.82,
+    "marketCap": 73083576000,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 4.256670902160109,
+    "return_15d": -0.12172854534387989,
+    "return_1m": 0.8604794099569713,
+    "return_ytd": 19.38886867951983,
+    "return_1y": 22.23463687150837,
+    "return_3y": 85.7385398981324,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 6.385737439222039,
+    "return_2y": 56.583969465648856
+   }
+  },
+  {
+   "id": "A_491",
+   "type": "ASSET",
+   "name": "윌리엄스",
+   "exposure": {
+    "ticker": "WMB",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 2.957283680175249,
+    "close": 75.2,
+    "marketCap": 91982193894,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 3.996680956990728,
+    "return_15d": 1.6216216216216273,
+    "return_1m": -1.0265859436693892,
+    "return_ytd": 25.103976043919495,
+    "return_1y": 31.147540983606547,
+    "return_3y": 114.67313731087638,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 6.818181818181812,
+    "return_2y": 73.31182300069142
+   }
+  },
+  {
+   "id": "A_492",
+   "type": "ASSET",
+   "name": "차트인더스트리즈",
+   "exposure": {
+    "ticker": "GTLS",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.0,
+    "close": 209.9,
+    "marketCap": 10047719052,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 0.05243338576672585,
+    "return_15d": 0.5749880210829117,
+    "return_1m": 1.2542209358417766,
+    "return_ytd": 1.7795665034185282,
+    "return_1y": 24.318881781568358,
+    "return_3y": 30.599800895968144,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 0.14312977099237845,
+    "return_2y": 24.680724680724687
+   }
+  },
+  {
+   "id": "A_493",
+   "type": "ASSET",
+   "name": "테크닙FMC",
+   "exposure": {
+    "ticker": "FTI",
+    "exchange": "NYSE",
+    "country": "GB"
+   },
+   "metrics": {
+    "return_1d": 2.5303247684883345,
+    "close": 78.616,
+    "marketCap": 30830395841,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 4.3680297397769685,
+    "return_15d": 2.423452768729639,
+    "return_1m": 5.417728308971448,
+    "return_ytd": 76.41382405745061,
+    "return_1y": 120.814606741573,
+    "return_3y": 324.23097679438746,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 12.912956047112889,
+    "return_2y": 200.2673796791444
+   }
+  },
+  {
+   "id": "A_494",
+   "type": "ASSET",
+   "name": "플루어",
+   "exposure": {
+    "ticker": "FLR",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.07643798968086646,
+    "close": 52.37,
+    "marketCap": 7314517900,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": -1.095372993389998,
+    "return_15d": 0.3448936577888473,
+    "return_1m": 2.4452269170579077,
+    "return_ytd": 32.14736310875599,
+    "return_1y": 26.040914560770155,
+    "return_3y": 50.5750431282346,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -8.122807017543865,
+    "return_2y": 7.249641613762026
+   }
+  },
+  {
+   "id": "A_495",
+   "type": "ASSET",
+   "name": "골라LNG",
+   "exposure": {
+    "ticker": "GLNG",
+    "exchange": "NASDAQ",
+    "country": "BM"
+   },
+   "metrics": {
+    "return_1d": 2.4995118140988204,
+    "close": 52.49,
+    "marketCap": 5342419865,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 3.2454760031471297,
+    "return_15d": 7.9596873714520955,
+    "return_1m": 1.0978428351309688,
+    "return_ytd": 41.06423004568664,
+    "return_1y": 29.99009410599307,
+    "return_3y": 135.27566113850295,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 4.084870116993855,
+    "return_2y": 56.40643623361144
+   }
+  },
+  {
+   "id": "A_496",
+   "type": "ASSET",
+   "name": "플렉스LNG",
+   "exposure": {
+    "ticker": "FLNG",
+    "exchange": "NYSE",
+    "country": "BM"
+   },
+   "metrics": {
+    "return_1d": 1.616628175519641,
+    "close": 30.8,
+    "marketCap": 1666045181,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 5.660377358490565,
+    "return_15d": -0.16207455429497752,
+    "return_1m": -0.03245699448229944,
+    "return_ytd": 23.446893787575164,
+    "return_1y": 22.076892588188656,
+    "return_3y": -4.19906687402799,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -0.12970168612191912,
+    "return_2y": 19.056822574410504
+   }
+  },
+  {
+   "id": "A_497",
+   "type": "ASSET",
+   "name": "WENT",
+   "exposure": {
+    "ticker": "WENT",
+    "exchange": "LSE",
+    "country": "GB"
+   },
+   "metrics": {
+    "return_1d": 0.17966223499821243,
+    "close": 27.88,
+    "marketCap": 316388680,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": -0.641482537419813,
+    "return_15d": 3.1446540880503138,
+    "return_1m": 3.374119391916941,
+    "return_ytd": 9.034024247164641,
+    "return_1y": 37.00245700245699,
+    "return_3y": 54.28887659103485,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 0.3599712023037993,
+    "return_2y": 50.05382131324006
+   },
+   "coreBiz": "WENT는 포트폴리오의 유럽 비중이 커 유럽 에너지 전환 테마에 집중 노출된다"
+  },
+  {
+   "id": "A_498",
+   "type": "ASSET",
+   "name": "ICLN",
+   "exposure": {
+    "ticker": "ICLN",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.8169934640522847,
+    "close": 18.21,
+    "marketCap": 2383107318,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 0.05494505494505475,
+    "return_15d": 2.4184476940382504,
+    "return_1m": -4.509701101206076,
+    "return_ytd": 10.83384053560561,
+    "return_1y": 33.30893118594436,
+    "return_3y": 8.071216617210686,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -0.4918032786885185,
+    "return_2y": 29.51635846372689
+   }
+  },
+  {
+   "id": "A_499",
+   "type": "ASSET",
+   "name": "CO2P",
+   "exposure": {
+    "ticker": "CO2P",
+    "exchange": "LSE",
+    "country": "GB"
+   },
+   "metrics": {
+    "return_1d": -0.7090610538886377,
+    "close": 6651.5,
+    "marketCap": 624576,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": -0.44900097283544493,
+    "return_15d": -1.3862120088954821,
+    "return_1m": 1.1096754579311474,
+    "return_ytd": -7.166782972784369,
+    "return_1y": 13.564964999146323,
+    "return_3y": -9.398624259347542,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -1.6486766228005378,
+    "return_2y": 12.290031231535403
+   }
+  },
+  {
+   "id": "A_500",
+   "type": "ASSET",
+   "name": "INRG",
+   "exposure": {
+    "ticker": "INRG",
+    "exchange": "LSE",
+    "country": "GB"
+   },
+   "metrics": {
+    "return_1d": -0.9590792838874651,
+    "close": 774.5,
+    "marketCap": 2264687553,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": -0.38585209003215715,
+    "return_15d": -0.5776636713735517,
+    "return_1m": -5.6925418569254145,
+    "return_ytd": 10.366939793373708,
+    "return_1y": 33.82289416846653,
+    "return_3y": 1.8074268813670802,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -0.6414368184733843,
+    "return_2y": 22.160883280757094
+   }
+  },
+  {
+   "id": "A_501",
+   "type": "ASSET",
+   "name": "WREN",
+   "exposure": {
+    "ticker": "WREN",
+    "exchange": "LSE",
+    "country": "GB"
+   },
+   "metrics": {
+    "return_1d": -0.6712962962962976,
+    "close": 2145.5,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": null,
+    "valuationSource": null,
+    "return_3d": 0.17509046340609125,
+    "return_15d": 2.6186775080712765,
+    "return_1m": -2.874603893164329,
+    "return_ytd": 5.184458879764686,
+    "return_1y": 47.32541371970063,
+    "return_3y": 13.548557819528973,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 0.7040600797934671,
+    "return_2y": 56.25227587211421
+   }
+  },
+  {
+   "id": "BF_115",
+   "type": "BUSINESS_FIELD",
+   "name": "LNG채굴/수출"
+  },
+  {
+   "id": "BF_116",
+   "type": "BUSINESS_FIELD",
+   "name": "LNG터미널EPC/플랜트"
+  },
+  {
+   "id": "BF_117",
+   "type": "BUSINESS_FIELD",
+   "name": "LNG운송"
+  },
+  {
+   "id": "C_069",
+   "type": "CHARACTER",
+   "name": "유럽고비중"
+  },
+  {
+   "id": "M_061",
+   "type": "MACRO",
+   "name": "러-우전쟁"
+  },
+  {
+   "id": "M_062",
+   "type": "MACRO",
+   "name": "신재생에너지전환"
+  },
+  {
+   "id": "C_5455",
+   "type": "CHARACTER",
+   "name": "LNG수출"
+  },
+  {
+   "id": "C_5456",
+   "type": "CHARACTER",
+   "name": "가스공급"
+  },
+  {
+   "id": "C_5457",
+   "type": "CHARACTER",
+   "name": "가스파이프라인"
+  },
+  {
+   "id": "C_5458",
+   "type": "CHARACTER",
+   "name": "가스미드스트림"
+  },
+  {
+   "id": "C_5459",
+   "type": "CHARACTER",
+   "name": "LNG설비"
+  },
+  {
+   "id": "C_5460",
+   "type": "CHARACTER",
+   "name": "LNG_EPC"
+  },
+  {
+   "id": "C_5461",
+   "type": "CHARACTER",
+   "name": "LNG플랜트EPC"
+  },
+  {
+   "id": "C_5462",
+   "type": "CHARACTER",
+   "name": "LNG운송"
+  },
+  {
+   "id": "C_5463",
+   "type": "CHARACTER",
+   "name": "LNG운송"
+  },
+  {
+   "id": "A_2877",
+   "type": "ASSET",
+   "name": "First Trust Natural Gas ETF",
+   "exposure": {
+    "ticker": "FCG",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 1.4915254237288122,
+    "return_3d": -0.39920159680637557,
+    "return_15d": 2.780638516992795,
+    "return_1m": 8.714596949891074,
+    "return_ytd": 27.894062366510042,
+    "return_1y": 29.722703639514748,
+    "return_3y": 14.187643020594965,
+    "close": 29.94,
+    "marketCap": 600903854,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 5.534014804370813,
+    "return_2y": 20.482897384305844
+   }
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_489",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001972"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_487",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001973"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_490",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001974"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_491",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001975"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_492",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001976"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_493",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001977"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_494",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001978"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_495",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001979"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_496",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001980"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_497",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001981"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_498",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001982"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_499",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001983"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_500",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001984"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_501",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001985"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_489",
+   "to": "BF_115",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_001986"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_487",
+   "to": "BF_115",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_001987"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_490",
+   "to": "BF_115",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_001988"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_491",
+   "to": "BF_115",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_001989"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_492",
+   "to": "BF_116",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_001990"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_493",
+   "to": "BF_116",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_001991"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_494",
+   "to": "BF_116",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_001992"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_495",
+   "to": "BF_117",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_001993"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_496",
+   "to": "BF_117",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_001994"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_497",
+   "to": "C_069",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_001995"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_498",
+   "to": "C_069",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_001996"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_499",
+   "to": "C_069",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_001997"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_500",
+   "to": "C_069",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_001998"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_501",
+   "to": "C_069",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_001999"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_061",
+   "to": "T_060",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002000"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_062",
+   "to": "T_060",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002001"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_489",
+   "to": "C_5455",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014398"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_487",
+   "to": "C_5456",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014399"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_490",
+   "to": "C_5457",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014400"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_491",
+   "to": "C_5458",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014401"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_492",
+   "to": "C_5459",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014402"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_493",
+   "to": "C_5460",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014403"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_494",
+   "to": "C_5461",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014404"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_495",
+   "to": "C_5462",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014405"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_496",
+   "to": "C_5463",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014406"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_490",
+   "to": "A_491",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018918"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "킨더모건과 윌리엄스는 미국 최대급 주간 천연가스 파이프라인 미드스트림 사업자로 직접 경쟁한다."
+  },
+  {
+   "from": "A_492",
+   "to": "A_489",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_018919"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "차트인더스트리즈는 셰니에르 코퍼스크리스티 등 LNG 프로젝트에 극저온 열교환기·액화 장비를 공급한다."
+  },
+  {
+   "from": "A_487",
+   "to": "A_489",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_018920"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "EQT는 애팔래치아산 천연가스를 셰니에르 등 LNG 수출터미널에 피드가스로 공급한다."
+  },
+  {
+   "from": "A_493",
+   "to": "A_494",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_018921"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "테크닙FMC와 플루어는 JGC와 함께 모잠비크 로부마 LNG EPC 컨소시엄을 구성해 공동 수주했다."
+  },
+  {
+   "from": "A_2877",
+   "to": "T_060",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020584"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_489",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001972"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_487",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001973"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_490",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001974"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_491",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001975"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_492",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001976"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_493",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001977"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_494",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001978"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_495",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001979"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_496",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001980"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_497",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001981"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_498",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001982"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_499",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001983"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_500",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001984"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_501",
+   "to": "T_060",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001985"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_489",
+   "to": "BF_115",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_001986"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_487",
+   "to": "BF_115",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_001987"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_490",
+   "to": "BF_115",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_001988"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_491",
+   "to": "BF_115",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_001989"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_492",
+   "to": "BF_116",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_001990"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_493",
+   "to": "BF_116",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_001991"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_494",
+   "to": "BF_116",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_001992"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_495",
+   "to": "BF_117",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_001993"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_496",
+   "to": "BF_117",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_001994"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_497",
+   "to": "C_069",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_001995"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_498",
+   "to": "C_069",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_001996"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_499",
+   "to": "C_069",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_001997"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_500",
+   "to": "C_069",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_001998"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_501",
+   "to": "C_069",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_001999"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_061",
+   "to": "T_060",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002000"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_062",
+   "to": "T_060",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002001"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_489",
+   "to": "C_5455",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014398"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_487",
+   "to": "C_5456",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014399"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_490",
+   "to": "C_5457",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014400"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_491",
+   "to": "C_5458",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014401"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_492",
+   "to": "C_5459",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014402"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_493",
+   "to": "C_5460",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014403"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_494",
+   "to": "C_5461",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014404"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_495",
+   "to": "C_5462",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014405"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_496",
+   "to": "C_5463",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014406"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_490",
+   "to": "A_491",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018918"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "킨더모건과 윌리엄스는 미국 최대급 주간 천연가스 파이프라인 미드스트림 사업자로 직접 경쟁한다."
+  },
+  {
+   "from": "A_492",
+   "to": "A_489",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_018919"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "차트인더스트리즈는 셰니에르 코퍼스크리스티 등 LNG 프로젝트에 극저온 열교환기·액화 장비를 공급한다."
+  },
+  {
+   "from": "A_487",
+   "to": "A_489",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_018920"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "EQT는 애팔래치아산 천연가스를 셰니에르 등 LNG 수출터미널에 피드가스로 공급한다."
+  },
+  {
+   "from": "A_493",
+   "to": "A_494",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_018921"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "테크닙FMC와 플루어는 JGC와 함께 모잠비크 로부마 LNG EPC 컨소시엄을 구성해 공동 수주했다."
+  },
+  {
+   "from": "A_2877",
+   "to": "T_060",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020584"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ]
 }

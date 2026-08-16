@@ -1,1083 +1,1084 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_152",
-  "themeName": "유럽방산",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-26T00:00:00+09:00",
-    "notes": "g152 누적 import 기반 유럽방산 테마",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-08-04",
-        "kind": "보강",
-        "title": "2궤도 관계 엣지 추가",
-        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
-      },
-      {
-        "date": "2026-07-30",
-        "kind": "수정",
-        "title": "미국 방산 ETF 티커·수익률 정정",
-        "detail": "티커 공란으로 수익률 미집계되던 US ETF 2종을 정정: iShares→Select STOXX Europe A&D(EUAD, BATS), 상장폐지된 VanEck DFND→Global X Defense Tech(SHLD). 메트릭 주입 및 브리핑 카드 노출. 연결 ETF 4종(EUAD·SHLD·XAR·ACE) 모두 브리핑 표에 반영."
-      },
-      {
-        "date": "2026-07-29",
-        "kind": "보강",
-        "title": "ACE 유럽방산TOP10 ETF 편입(EXPOSED_TO)",
-        "detail": "국내 상장 ACE 유럽방산TOP10(0102X0)을 THEME에 EXPOSED_TO로 연결. ETF 특성은 hover 박스로 표기(CHR 미부착)."
-      },
-      {
-        "date": "2026-07-26",
-        "kind": "수정",
-        "title": "ETF 정리(IN_ETF·CHR 제거)",
-        "detail": "ETF↔개별주 IN_ETF 연결·ETF CHR 제거, ETF는 THEME과 EXPOSED_TO만, 특징은 호버 박스."
-      },
-      {
-        "date": "2026-07-12",
-        "kind": "보강",
-        "title": "자산별 테마관점 CHR 정의",
-        "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
-      },
-      {
-        "date": "2026-07-12",
-        "kind": "보강",
-        "title": "엣지 근거 구체 백필 + 2026 이벤트",
-        "detail": "전 엣지 근거(호버 박스)를 종목·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
-      }
-    ]
+ "schemaVersion": "v5",
+ "themeId": "T_152",
+ "themeName": "유럽방산",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
+  ],
+  "dataAsOf": "2026-07-26T00:00:00+09:00",
+  "notes": "g152 누적 import 기반 유럽방산 테마",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-08-04",
+    "kind": "보강",
+    "title": "2궤도 관계 엣지 추가",
+    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
+   },
+   {
+    "date": "2026-07-30",
+    "kind": "수정",
+    "title": "미국 방산 ETF 티커·수익률 정정",
+    "detail": "티커 공란으로 수익률 미집계되던 US ETF 2종을 정정: iShares→Select STOXX Europe A&D(EUAD, BATS), 상장폐지된 VanEck DFND→Global X Defense Tech(SHLD). 메트릭 주입 및 브리핑 카드 노출. 연결 ETF 4종(EUAD·SHLD·XAR·ACE) 모두 브리핑 표에 반영."
+   },
+   {
+    "date": "2026-07-29",
+    "kind": "보강",
+    "title": "ACE 유럽방산TOP10 ETF 편입(EXPOSED_TO)",
+    "detail": "국내 상장 ACE 유럽방산TOP10(0102X0)을 THEME에 EXPOSED_TO로 연결. ETF 특성은 hover 박스로 표기(CHR 미부착)."
+   },
+   {
+    "date": "2026-07-26",
+    "kind": "수정",
+    "title": "ETF 정리(IN_ETF·CHR 제거)",
+    "detail": "ETF↔개별주 IN_ETF 연결·ETF CHR 제거, ETF는 THEME과 EXPOSED_TO만, 특징은 호버 박스."
+   },
+   {
+    "date": "2026-07-12",
+    "kind": "보강",
+    "title": "자산별 테마관점 CHR 정의",
+    "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
+   },
+   {
+    "date": "2026-07-12",
+    "kind": "보강",
+    "title": "엣지 근거 구체 백필 + 2026 이벤트",
+    "detail": "전 엣지 근거(호버 박스)를 종목·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
+   }
+  ],
+  "description": "Rheinmetall·BAE·Leonardo·Saab·Thales 등 유럽 방산 빅5. NATO GDP 2%+ 약속 이행·우크라 지원·EDIS 패키지가 multiyear 동인. 나토군비증강·미유럽갈등·DDR5전환·중국반도체자립 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 구성종목은 유럽항공방산헬기·그리펜전투기·방공전자전·이탈리아헬기·방산전자 등의 특성으로 차별화된다. 경쟁·공급·협력 등 6건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다. 종목별 브리핑 카드와 연도별 이벤트 DB로 테마의 맥락과 변동요인을 확인할 수 있다."
+ },
+ "nodes": [
+  {
+   "id": "T_152",
+   "type": "THEME",
+   "name": "유럽방산"
   },
-  "nodes": [
-    {
-      "id": "T_152",
-      "type": "THEME",
-      "name": "유럽방산"
-    },
-    {
-      "id": "M_150",
-      "type": "MACRO",
-      "name": "나토군비증강"
-    },
-    {
-      "id": "M_151",
-      "type": "MACRO",
-      "name": "미유럽갈등"
-    },
-    {
-      "id": "A_1041",
-      "type": "ASSET",
-      "name": "에어버스",
-      "exposure": {
-        "ticker": "AIR",
-        "exchange": "Euronext",
-        "country": "EU"
-      },
-      "metrics": {
-        "return_1d": 1.1742602160638826,
-        "close": 215.4,
-        "marketCap": 170484892161,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 1.3647058823529346,
-        "return_15d": 4.537733559815571,
-        "return_1m": 9.931611717872823,
-        "return_ytd": 8.568548387096776,
-        "return_1y": 17.205354227881166,
-        "return_3y": 64.88058787507657,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 0.8426966292134797,
-        "return_2y": 59.95841378286055
-      }
-    },
-    {
-      "id": "A_1042",
-      "type": "ASSET",
-      "name": "사브",
-      "exposure": {
-        "ticker": "SAAB-B",
-        "exchange": "OMX",
-        "country": "SE"
-      },
-      "metrics": {
-        "return_1d": 1.8526687251874785,
-        "close": 692.7,
-        "marketCap": 367324209962,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 5.241567912488598,
-        "return_15d": 17.92645556690502,
-        "return_1m": 32.093821510297495,
-        "return_ytd": 28.85044642857144,
-        "return_1y": 33.058009988474836,
-        "return_3y": 398.1661272923409,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 9.362172402904978,
-        "return_2y": 171.75362887406828
-      }
-    },
-    {
-      "id": "A_1043",
-      "type": "ASSET",
-      "name": "탈레스",
-      "exposure": {
-        "ticker": "HO",
-        "exchange": "EURONEXT",
-        "country": "FR"
-      },
-      "metrics": {
-        "return_1d": 0.6701414743112366,
-        "close": 270.4,
-        "marketCap": 55556686307,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 0.9708737864077444,
-        "return_15d": 14.382402707275798,
-        "return_1m": 22.9090909090909,
-        "return_ytd": 17.667536988685796,
-        "return_1y": 13.85263157894736,
-        "return_3y": 102.85071267816951,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 2.114803625377637,
-        "return_2y": 81.6593886462882
-      }
-    },
-    {
-      "id": "A_1044",
-      "type": "ASSET",
-      "name": "레오나르도",
-      "exposure": {
-        "ticker": "LDO",
-        "exchange": "EURONEXT",
-        "country": "IT"
-      },
-      "metrics": {
-        "return_1d": 1.0118043844856706,
-        "close": 59.9,
-        "marketCap": 34555463613,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 1.6977928692699429,
-        "return_15d": 14.61921163413702,
-        "return_1m": 17.45098039215687,
-        "return_ytd": 21.847030105777066,
-        "return_1y": 25.31380753138075,
-        "return_3y": 357.60122230710465,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 3.204686423156433,
-        "return_2y": 165.98579040852576
-      }
-    },
-    {
-      "id": "A_1045",
-      "type": "ASSET",
-      "name": "라인메탈",
-      "exposure": {
-        "ticker": "RHM",
-        "exchange": "XETRA",
-        "country": "DE"
-      },
-      "metrics": {
-        "return_1d": 3.2114030568435536,
-        "close": 1202,
-        "marketCap": 56080146592,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 5.235510418490619,
-        "return_15d": 15.84425597532768,
-        "return_1m": 22.665578120216345,
-        "return_ytd": -22.99807815502882,
-        "return_1y": -26.751980499695303,
-        "return_3y": 353.9274924471299,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 4.849965108164689,
-        "return_2y": 115.41218637992831
-      }
-    },
-    {
-      "id": "A_207",
-      "type": "ASSET",
-      "name": "BAE시스템즈",
-      "exposure": {
-        "ticker": "BA.",
-        "exchange": "LSE",
-        "country": "UK"
-      },
-      "metrics": {
-        "return_1d": 0.9838998211091132,
-        "close": 2258.0,
-        "marketCap": 66171609638,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 1.255605381165914,
-        "return_15d": 14.561136478944704,
-        "return_1m": 21.856449001619005,
-        "return_ytd": 31.73862310385065,
-        "return_1y": 27.211267605633793,
-        "return_3y": 121.80746561886049,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 1.7117117117117164,
-        "return_2y": 66.33517495395948
-      }
-    },
-    {
-      "id": "A_162",
-      "type": "ASSET",
-      "name": "롤스로이스홀딩스",
-      "exposure": {
-        "ticker": "RR.",
-        "exchange": "LSE",
-        "country": "GB"
-      },
-      "metrics": {
-        "return_1d": 1.0491803278688483,
-        "close": 1541.0,
-        "marketCap": 127349929583,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 0.5218525766470972,
-        "return_15d": 8.858434586041252,
-        "return_1m": 9.898730566253032,
-        "return_ytd": 34.00000000000001,
-        "return_1y": 39.900136177939174,
-        "return_3y": 637.3205741626795,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 0.7189542483660105,
-        "return_2y": 208.75576036866357
-      }
-    },
-    {
-      "id": "A_419",
-      "type": "ASSET",
-      "name": "RTX",
-      "exposure": {
-        "ticker": "RTX",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 1.1293541364296056,
-        "close": 222.97,
-        "marketCap": 300509623780,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": -0.3975699097650387,
-        "return_15d": 4.784059401287655,
-        "return_1m": 15.295516831273591,
-        "return_ytd": 21.57579062159214,
-        "return_1y": 43.77740521021407,
-        "return_3y": 157.9477093937992,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -0.026902210464962995,
-        "return_2y": 89.51976200594984
-      }
-    },
-    {
-      "id": "A_1046",
-      "type": "ASSET",
-      "name": "유럽방산ETF(EUAD)",
-      "exposure": {
-        "ticker": "EUAD",
-        "exchange": "BATS",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 1.3974168960406708,
-        "close": 47.89,
-        "marketCap": 1223171325,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 1.6125610014852576,
-        "return_15d": 11.449848731673274,
-        "return_1m": 15.592565773594025,
-        "return_ytd": 13.671967718965107,
-        "return_1y": 11.814148961008652,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 1.9586970406642479,
-        "return_2y": null
-      },
-      "coreBiz": "미국 상장 유럽 항공·방산 ETF (Select STOXX Europe Aerospace & Defense) — 라인메탈·BAE·에어버스·탈레스·사브·레오나르도 등 유럽 방산주 집중 노출."
-    },
-    {
-      "id": "A_1047",
-      "type": "ASSET",
-      "name": "디펜스테크ETF(SHLD)",
-      "exposure": {
-        "ticker": "SHLD",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.7684644940942231,
-        "close": 70.81,
-        "marketCap": 4893111133,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 1.9582433405327615,
-        "return_15d": 12.378987462307567,
-        "return_1m": 17.58551976087679,
-        "return_ytd": 9.291557339095524,
-        "return_1y": 12.916600223249874,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 2.5637311703360366,
-        "return_2y": 94.3194291986828
-      },
-      "coreBiz": "미국 상장 글로벌 방산·디펜스테크 ETF (Global X Defense Tech) — 방산·사이버·드론·AI 국방기술 및 미·EU 방산 대형주 노출."
-    },
-    {
-      "id": "A_504",
-      "type": "ASSET",
-      "name": "XAR",
-      "exposure": {
-        "ticker": "XAR",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 1.5850736049298098,
-        "close": 296.73,
-        "marketCap": 5001973159,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 1.5051482913146286,
-        "return_15d": 10.304449648711955,
-        "return_1m": 11.318277310924385,
-        "return_ytd": 23.001989719781136,
-        "return_1y": 37.0197635759143,
-        "return_3y": 143.2811347052554,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 3.4515218073423393,
-        "return_2y": 100.08766014834794
-      },
-      "coreBiz": "미국 항공·방산 동일가중 ETF (SPDR S&P Aerospace & Defense)"
-    },
-    {
-      "id": "M_140",
-      "type": "MACRO",
-      "name": "DDR5전환"
-    },
-    {
-      "id": "M_141",
-      "type": "MACRO",
-      "name": "중국반도체자립"
-    },
-    {
-      "id": "C_2657",
-      "type": "CHARACTER",
-      "name": "유럽항공방산헬기"
-    },
-    {
-      "id": "C_2658",
-      "type": "CHARACTER",
-      "name": "그리펜전투기"
-    },
-    {
-      "id": "C_2659",
-      "type": "CHARACTER",
-      "name": "방공전자전"
-    },
-    {
-      "id": "C_2660",
-      "type": "CHARACTER",
-      "name": "이탈리아헬기·방산전자"
-    },
-    {
-      "id": "C_2661",
-      "type": "CHARACTER",
-      "name": "포탄장갑차"
-    },
-    {
-      "id": "C_2662",
-      "type": "CHARACTER",
-      "name": "영국최대방산BAE"
-    },
-    {
-      "id": "C_2663",
-      "type": "CHARACTER",
-      "name": "항공엔진방산원자력"
-    },
-    {
-      "id": "C_2664",
-      "type": "CHARACTER",
-      "name": "미사일방공"
-    },
-    {
-      "id": "A_2831",
-      "type": "ASSET",
-      "name": "ACE유럽방산TOP10",
-      "exposure": {
-        "ticker": "0102X0",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": -0.732421875,
-        "close": 10165,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-07-29",
-        "valuationSource": "EODHD",
-        "return_3d": 2.058232931726911,
-        "return_15d": 9.790902065921303,
-        "return_1m": 13.391604235748122,
-        "return_ytd": 12.138998610987795,
-        "return_1y": null,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD_ADJ",
-        "return_5d": 2.212166918049263,
-        "return_2y": null
-      },
-      "coreBiz": "국내 상장 유럽 방산 ETF (ACE) — NYSE FactSet Europe Defense TOP10 지수 추종. 라인메탈·BAE·레오나르도·탈레스 등 유럽 방산 TOP10 편입, 원화로 유럽 방산 사이클에 직접 노출."
-    }
-  ],
-  "edges": [
-    {
-      "from": "M_150",
-      "to": "T_152",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_004626"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "M_151",
-      "to": "T_152",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_004627"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_1041",
-      "to": "T_152",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004628"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1042",
-      "to": "T_152",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004629"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1043",
-      "to": "T_152",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004630"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1044",
-      "to": "T_152",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004631"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1045",
-      "to": "T_152",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004632"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_207",
-      "to": "T_152",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004633"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_162",
-      "to": "T_152",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004634"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_419",
-      "to": "T_152",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004635"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "T_152",
-      "to": "A_1046",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_004642"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "T_152",
-      "to": "A_1047",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_004643"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "T_152",
-      "to": "A_504",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_004644"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "M_140",
-      "to": "T_152",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_004645"
-      ],
-      "confidence": 0.6,
-      "status": "verified"
-    },
-    {
-      "from": "M_141",
-      "to": "T_152",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_004646"
-      ],
-      "confidence": 0.6,
-      "status": "verified"
-    },
-    {
-      "from": "A_1041",
-      "to": "C_2657",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004783"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1042",
-      "to": "C_2658",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004784"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1043",
-      "to": "C_2659",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004785"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1044",
-      "to": "C_2660",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004786"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1045",
-      "to": "C_2661",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004787"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_207",
-      "to": "C_2662",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004788"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_162",
-      "to": "C_2663",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004789"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_419",
-      "to": "C_2664",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004790"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "T_152",
-      "to": "A_2831",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_014940"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_1041",
-      "to": "A_207",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019164"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "에어버스와 BAE시스템즈는 유럽 방산 항공기 시장 경쟁"
-    },
-    {
-      "from": "A_1045",
-      "to": "A_1043",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019165"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "라인메탈과 탈레스는 유럽 지상전·전자전 방산 시장 경쟁"
-    },
-    {
-      "from": "A_207",
-      "to": "A_162",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_019166"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "BAE시스템즈와 롤스로이스는 영국 군용기 엔진 공급 협력"
-    },
-    {
-      "from": "A_162",
-      "to": "A_1041",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_019167"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "롤스로이스는 에어버스 항공기에 엔진 공급"
-    },
-    {
-      "from": "A_1044",
-      "to": "A_1043",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019168"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "레오나르도와 탈레스는 유럽 방산 전자·항공기 시장 경쟁"
-    },
-    {
-      "from": "A_1042",
-      "to": "A_1045",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019169"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "사브와 라인메탈은 유럽 지상·항공 방산 시장 경쟁"
-    }
-  ],
-  "links": [
-    {
-      "from": "M_150",
-      "to": "T_152",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_004626"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "M_151",
-      "to": "T_152",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_004627"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_1041",
-      "to": "T_152",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004628"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1042",
-      "to": "T_152",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004629"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1043",
-      "to": "T_152",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004630"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1044",
-      "to": "T_152",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004631"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1045",
-      "to": "T_152",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004632"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_207",
-      "to": "T_152",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004633"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_162",
-      "to": "T_152",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004634"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_419",
-      "to": "T_152",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_004635"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "T_152",
-      "to": "A_1046",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_004642"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "T_152",
-      "to": "A_1047",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_004643"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "T_152",
-      "to": "A_504",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_004644"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "M_140",
-      "to": "T_152",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_004645"
-      ],
-      "confidence": 0.6,
-      "status": "verified"
-    },
-    {
-      "from": "M_141",
-      "to": "T_152",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_004646"
-      ],
-      "confidence": 0.6,
-      "status": "verified"
-    },
-    {
-      "from": "A_1041",
-      "to": "C_2657",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004783"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1042",
-      "to": "C_2658",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004784"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1043",
-      "to": "C_2659",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004785"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1044",
-      "to": "C_2660",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004786"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1045",
-      "to": "C_2661",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004787"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_207",
-      "to": "C_2662",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004788"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_162",
-      "to": "C_2663",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004789"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_419",
-      "to": "C_2664",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_004790"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "T_152",
-      "to": "A_2831",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_014940"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_1041",
-      "to": "A_207",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019164"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "에어버스와 BAE시스템즈는 유럽 방산 항공기 시장 경쟁"
-    },
-    {
-      "from": "A_1045",
-      "to": "A_1043",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019165"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "라인메탈과 탈레스는 유럽 지상전·전자전 방산 시장 경쟁"
-    },
-    {
-      "from": "A_207",
-      "to": "A_162",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_019166"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "BAE시스템즈와 롤스로이스는 영국 군용기 엔진 공급 협력"
-    },
-    {
-      "from": "A_162",
-      "to": "A_1041",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_019167"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "롤스로이스는 에어버스 항공기에 엔진 공급"
-    },
-    {
-      "from": "A_1044",
-      "to": "A_1043",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019168"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "레오나르도와 탈레스는 유럽 방산 전자·항공기 시장 경쟁"
-    },
-    {
-      "from": "A_1042",
-      "to": "A_1045",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019169"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "사브와 라인메탈은 유럽 지상·항공 방산 시장 경쟁"
-    }
-  ]
+  {
+   "id": "M_150",
+   "type": "MACRO",
+   "name": "나토군비증강"
+  },
+  {
+   "id": "M_151",
+   "type": "MACRO",
+   "name": "미유럽갈등"
+  },
+  {
+   "id": "A_1041",
+   "type": "ASSET",
+   "name": "에어버스",
+   "exposure": {
+    "ticker": "AIR",
+    "exchange": "Euronext",
+    "country": "EU"
+   },
+   "metrics": {
+    "return_1d": 1.1742602160638826,
+    "close": 215.4,
+    "marketCap": 170484892161,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 1.3647058823529346,
+    "return_15d": 4.537733559815571,
+    "return_1m": 9.931611717872823,
+    "return_ytd": 8.568548387096776,
+    "return_1y": 17.205354227881166,
+    "return_3y": 64.88058787507657,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 0.8426966292134797,
+    "return_2y": 59.95841378286055
+   }
+  },
+  {
+   "id": "A_1042",
+   "type": "ASSET",
+   "name": "사브",
+   "exposure": {
+    "ticker": "SAAB-B",
+    "exchange": "OMX",
+    "country": "SE"
+   },
+   "metrics": {
+    "return_1d": 1.8526687251874785,
+    "close": 692.7,
+    "marketCap": 367324209962,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 5.241567912488598,
+    "return_15d": 17.92645556690502,
+    "return_1m": 32.093821510297495,
+    "return_ytd": 28.85044642857144,
+    "return_1y": 33.058009988474836,
+    "return_3y": 398.1661272923409,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 9.362172402904978,
+    "return_2y": 171.75362887406828
+   }
+  },
+  {
+   "id": "A_1043",
+   "type": "ASSET",
+   "name": "탈레스",
+   "exposure": {
+    "ticker": "HO",
+    "exchange": "EURONEXT",
+    "country": "FR"
+   },
+   "metrics": {
+    "return_1d": 0.6701414743112366,
+    "close": 270.4,
+    "marketCap": 55556686307,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 0.9708737864077444,
+    "return_15d": 14.382402707275798,
+    "return_1m": 22.9090909090909,
+    "return_ytd": 17.667536988685796,
+    "return_1y": 13.85263157894736,
+    "return_3y": 102.85071267816951,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 2.114803625377637,
+    "return_2y": 81.6593886462882
+   }
+  },
+  {
+   "id": "A_1044",
+   "type": "ASSET",
+   "name": "레오나르도",
+   "exposure": {
+    "ticker": "LDO",
+    "exchange": "EURONEXT",
+    "country": "IT"
+   },
+   "metrics": {
+    "return_1d": 1.0118043844856706,
+    "close": 59.9,
+    "marketCap": 34555463613,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 1.6977928692699429,
+    "return_15d": 14.61921163413702,
+    "return_1m": 17.45098039215687,
+    "return_ytd": 21.847030105777066,
+    "return_1y": 25.31380753138075,
+    "return_3y": 357.60122230710465,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 3.204686423156433,
+    "return_2y": 165.98579040852576
+   }
+  },
+  {
+   "id": "A_1045",
+   "type": "ASSET",
+   "name": "라인메탈",
+   "exposure": {
+    "ticker": "RHM",
+    "exchange": "XETRA",
+    "country": "DE"
+   },
+   "metrics": {
+    "return_1d": 3.2114030568435536,
+    "close": 1202,
+    "marketCap": 56080146592,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 5.235510418490619,
+    "return_15d": 15.84425597532768,
+    "return_1m": 22.665578120216345,
+    "return_ytd": -22.99807815502882,
+    "return_1y": -26.751980499695303,
+    "return_3y": 353.9274924471299,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 4.849965108164689,
+    "return_2y": 115.41218637992831
+   }
+  },
+  {
+   "id": "A_207",
+   "type": "ASSET",
+   "name": "BAE시스템즈",
+   "exposure": {
+    "ticker": "BA.",
+    "exchange": "LSE",
+    "country": "UK"
+   },
+   "metrics": {
+    "return_1d": 0.9838998211091132,
+    "close": 2258.0,
+    "marketCap": 66171609638,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 1.255605381165914,
+    "return_15d": 14.561136478944704,
+    "return_1m": 21.856449001619005,
+    "return_ytd": 31.73862310385065,
+    "return_1y": 27.211267605633793,
+    "return_3y": 121.80746561886049,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 1.7117117117117164,
+    "return_2y": 66.33517495395948
+   }
+  },
+  {
+   "id": "A_162",
+   "type": "ASSET",
+   "name": "롤스로이스홀딩스",
+   "exposure": {
+    "ticker": "RR.",
+    "exchange": "LSE",
+    "country": "GB"
+   },
+   "metrics": {
+    "return_1d": 1.0491803278688483,
+    "close": 1541.0,
+    "marketCap": 127349929583,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 0.5218525766470972,
+    "return_15d": 8.858434586041252,
+    "return_1m": 9.898730566253032,
+    "return_ytd": 34.00000000000001,
+    "return_1y": 39.900136177939174,
+    "return_3y": 637.3205741626795,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 0.7189542483660105,
+    "return_2y": 208.75576036866357
+   }
+  },
+  {
+   "id": "A_419",
+   "type": "ASSET",
+   "name": "RTX",
+   "exposure": {
+    "ticker": "RTX",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 1.1293541364296056,
+    "close": 222.97,
+    "marketCap": 300509623780,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": -0.3975699097650387,
+    "return_15d": 4.784059401287655,
+    "return_1m": 15.295516831273591,
+    "return_ytd": 21.57579062159214,
+    "return_1y": 43.77740521021407,
+    "return_3y": 157.9477093937992,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -0.026902210464962995,
+    "return_2y": 89.51976200594984
+   }
+  },
+  {
+   "id": "A_1046",
+   "type": "ASSET",
+   "name": "유럽방산ETF(EUAD)",
+   "exposure": {
+    "ticker": "EUAD",
+    "exchange": "BATS",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 1.3974168960406708,
+    "close": 47.89,
+    "marketCap": 1223171325,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 1.6125610014852576,
+    "return_15d": 11.449848731673274,
+    "return_1m": 15.592565773594025,
+    "return_ytd": 13.671967718965107,
+    "return_1y": 11.814148961008652,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 1.9586970406642479,
+    "return_2y": null
+   },
+   "coreBiz": "미국 상장 유럽 항공·방산 ETF (Select STOXX Europe Aerospace & Defense) — 라인메탈·BAE·에어버스·탈레스·사브·레오나르도 등 유럽 방산주 집중 노출."
+  },
+  {
+   "id": "A_1047",
+   "type": "ASSET",
+   "name": "디펜스테크ETF(SHLD)",
+   "exposure": {
+    "ticker": "SHLD",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.7684644940942231,
+    "close": 70.81,
+    "marketCap": 4893111133,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 1.9582433405327615,
+    "return_15d": 12.378987462307567,
+    "return_1m": 17.58551976087679,
+    "return_ytd": 9.291557339095524,
+    "return_1y": 12.916600223249874,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 2.5637311703360366,
+    "return_2y": 94.3194291986828
+   },
+   "coreBiz": "미국 상장 글로벌 방산·디펜스테크 ETF (Global X Defense Tech) — 방산·사이버·드론·AI 국방기술 및 미·EU 방산 대형주 노출."
+  },
+  {
+   "id": "A_504",
+   "type": "ASSET",
+   "name": "XAR",
+   "exposure": {
+    "ticker": "XAR",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 1.5850736049298098,
+    "close": 296.73,
+    "marketCap": 5001973159,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 1.5051482913146286,
+    "return_15d": 10.304449648711955,
+    "return_1m": 11.318277310924385,
+    "return_ytd": 23.001989719781136,
+    "return_1y": 37.0197635759143,
+    "return_3y": 143.2811347052554,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 3.4515218073423393,
+    "return_2y": 100.08766014834794
+   },
+   "coreBiz": "미국 항공·방산 동일가중 ETF (SPDR S&P Aerospace & Defense)"
+  },
+  {
+   "id": "M_140",
+   "type": "MACRO",
+   "name": "DDR5전환"
+  },
+  {
+   "id": "M_141",
+   "type": "MACRO",
+   "name": "중국반도체자립"
+  },
+  {
+   "id": "C_2657",
+   "type": "CHARACTER",
+   "name": "유럽항공방산헬기"
+  },
+  {
+   "id": "C_2658",
+   "type": "CHARACTER",
+   "name": "그리펜전투기"
+  },
+  {
+   "id": "C_2659",
+   "type": "CHARACTER",
+   "name": "방공전자전"
+  },
+  {
+   "id": "C_2660",
+   "type": "CHARACTER",
+   "name": "이탈리아헬기·방산전자"
+  },
+  {
+   "id": "C_2661",
+   "type": "CHARACTER",
+   "name": "포탄장갑차"
+  },
+  {
+   "id": "C_2662",
+   "type": "CHARACTER",
+   "name": "영국최대방산BAE"
+  },
+  {
+   "id": "C_2663",
+   "type": "CHARACTER",
+   "name": "항공엔진방산원자력"
+  },
+  {
+   "id": "C_2664",
+   "type": "CHARACTER",
+   "name": "미사일방공"
+  },
+  {
+   "id": "A_2831",
+   "type": "ASSET",
+   "name": "ACE유럽방산TOP10",
+   "exposure": {
+    "ticker": "0102X0",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": -0.732421875,
+    "close": 10165,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-07-29",
+    "valuationSource": "EODHD",
+    "return_3d": 2.058232931726911,
+    "return_15d": 9.790902065921303,
+    "return_1m": 13.391604235748122,
+    "return_ytd": 12.138998610987795,
+    "return_1y": null,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD_ADJ",
+    "return_5d": 2.212166918049263,
+    "return_2y": null
+   },
+   "coreBiz": "국내 상장 유럽 방산 ETF (ACE) — NYSE FactSet Europe Defense TOP10 지수 추종. 라인메탈·BAE·레오나르도·탈레스 등 유럽 방산 TOP10 편입, 원화로 유럽 방산 사이클에 직접 노출."
+  }
+ ],
+ "edges": [
+  {
+   "from": "M_150",
+   "to": "T_152",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_004626"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "M_151",
+   "to": "T_152",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_004627"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_1041",
+   "to": "T_152",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004628"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1042",
+   "to": "T_152",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004629"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1043",
+   "to": "T_152",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004630"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1044",
+   "to": "T_152",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004631"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1045",
+   "to": "T_152",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004632"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_207",
+   "to": "T_152",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004633"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_162",
+   "to": "T_152",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004634"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_419",
+   "to": "T_152",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004635"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "T_152",
+   "to": "A_1046",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_004642"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "T_152",
+   "to": "A_1047",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_004643"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "T_152",
+   "to": "A_504",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_004644"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "M_140",
+   "to": "T_152",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_004645"
+   ],
+   "confidence": 0.6,
+   "status": "verified"
+  },
+  {
+   "from": "M_141",
+   "to": "T_152",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_004646"
+   ],
+   "confidence": 0.6,
+   "status": "verified"
+  },
+  {
+   "from": "A_1041",
+   "to": "C_2657",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004783"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1042",
+   "to": "C_2658",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004784"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1043",
+   "to": "C_2659",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004785"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1044",
+   "to": "C_2660",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004786"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1045",
+   "to": "C_2661",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004787"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_207",
+   "to": "C_2662",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004788"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_162",
+   "to": "C_2663",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004789"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_419",
+   "to": "C_2664",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004790"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "T_152",
+   "to": "A_2831",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_014940"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_1041",
+   "to": "A_207",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019164"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "에어버스와 BAE시스템즈는 유럽 방산 항공기 시장 경쟁"
+  },
+  {
+   "from": "A_1045",
+   "to": "A_1043",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019165"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "라인메탈과 탈레스는 유럽 지상전·전자전 방산 시장 경쟁"
+  },
+  {
+   "from": "A_207",
+   "to": "A_162",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_019166"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "BAE시스템즈와 롤스로이스는 영국 군용기 엔진 공급 협력"
+  },
+  {
+   "from": "A_162",
+   "to": "A_1041",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_019167"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "롤스로이스는 에어버스 항공기에 엔진 공급"
+  },
+  {
+   "from": "A_1044",
+   "to": "A_1043",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019168"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "레오나르도와 탈레스는 유럽 방산 전자·항공기 시장 경쟁"
+  },
+  {
+   "from": "A_1042",
+   "to": "A_1045",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019169"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "사브와 라인메탈은 유럽 지상·항공 방산 시장 경쟁"
+  }
+ ],
+ "links": [
+  {
+   "from": "M_150",
+   "to": "T_152",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_004626"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "M_151",
+   "to": "T_152",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_004627"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_1041",
+   "to": "T_152",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004628"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1042",
+   "to": "T_152",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004629"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1043",
+   "to": "T_152",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004630"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1044",
+   "to": "T_152",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004631"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1045",
+   "to": "T_152",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004632"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_207",
+   "to": "T_152",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004633"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_162",
+   "to": "T_152",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004634"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_419",
+   "to": "T_152",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_004635"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "T_152",
+   "to": "A_1046",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_004642"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "T_152",
+   "to": "A_1047",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_004643"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "T_152",
+   "to": "A_504",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_004644"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "M_140",
+   "to": "T_152",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_004645"
+   ],
+   "confidence": 0.6,
+   "status": "verified"
+  },
+  {
+   "from": "M_141",
+   "to": "T_152",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_004646"
+   ],
+   "confidence": 0.6,
+   "status": "verified"
+  },
+  {
+   "from": "A_1041",
+   "to": "C_2657",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004783"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1042",
+   "to": "C_2658",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004784"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1043",
+   "to": "C_2659",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004785"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1044",
+   "to": "C_2660",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004786"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1045",
+   "to": "C_2661",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004787"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_207",
+   "to": "C_2662",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004788"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_162",
+   "to": "C_2663",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004789"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_419",
+   "to": "C_2664",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_004790"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "T_152",
+   "to": "A_2831",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_014940"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_1041",
+   "to": "A_207",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019164"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "에어버스와 BAE시스템즈는 유럽 방산 항공기 시장 경쟁"
+  },
+  {
+   "from": "A_1045",
+   "to": "A_1043",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019165"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "라인메탈과 탈레스는 유럽 지상전·전자전 방산 시장 경쟁"
+  },
+  {
+   "from": "A_207",
+   "to": "A_162",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_019166"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "BAE시스템즈와 롤스로이스는 영국 군용기 엔진 공급 협력"
+  },
+  {
+   "from": "A_162",
+   "to": "A_1041",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_019167"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "롤스로이스는 에어버스 항공기에 엔진 공급"
+  },
+  {
+   "from": "A_1044",
+   "to": "A_1043",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019168"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "레오나르도와 탈레스는 유럽 방산 전자·항공기 시장 경쟁"
+  },
+  {
+   "from": "A_1042",
+   "to": "A_1045",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019169"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "사브와 라인메탈은 유럽 지상·항공 방산 시장 경쟁"
+  }
+ ]
 }

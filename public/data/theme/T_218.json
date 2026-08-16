@@ -1,1141 +1,1142 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_218",
-  "themeName": "롯데그룹주",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-05-11T00:00:00+09:00",
-    "notes": "T_218 누적 import 기반 롯데그룹주 테마",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-08-04",
-        "kind": "보강",
-        "title": "2궤도 관계 엣지 추가",
-        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 7건 백필(리서치 기반)."
-      },
-      {
-        "date": "2026-07-13",
-        "kind": "보강",
-        "title": "자산별 테마관점 CHR 정의",
-        "detail": "자산 11개에 테마 관점 특성(CHARACTER)·HAS_TRAIT를 부여했다."
-      },
-      {
-        "date": "2026-07-13",
-        "kind": "보강",
-        "title": "엣지 근거 구체 백필 + 2026 이벤트",
-        "detail": "전 엣지 근거를 종목·관계 사실로 구체화하고 2026 이벤트를 추가했다."
-      },
-      {
-        "date": "2026-07-10",
-        "kind": "변경",
-        "title": "매크로는 테마에만 연결",
-        "detail": "개별 자산·BF에 직접 걸려 있던 매크로 IMPACTS 엣지를 테마 레벨로 정리(repoint 2, 중복제거 0)했다."
-      }
-    ]
+ "schemaVersion": "v5",
+ "themeId": "T_218",
+ "themeName": "롯데그룹주",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
+  ],
+  "dataAsOf": "2026-05-11T00:00:00+09:00",
+  "notes": "T_218 누적 import 기반 롯데그룹주 테마",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-08-04",
+    "kind": "보강",
+    "title": "2궤도 관계 엣지 추가",
+    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 7건 백필(리서치 기반)."
+   },
+   {
+    "date": "2026-07-13",
+    "kind": "보강",
+    "title": "자산별 테마관점 CHR 정의",
+    "detail": "자산 11개에 테마 관점 특성(CHARACTER)·HAS_TRAIT를 부여했다."
+   },
+   {
+    "date": "2026-07-13",
+    "kind": "보강",
+    "title": "엣지 근거 구체 백필 + 2026 이벤트",
+    "detail": "전 엣지 근거를 종목·관계 사실로 구체화하고 2026 이벤트를 추가했다."
+   },
+   {
+    "date": "2026-07-10",
+    "kind": "변경",
+    "title": "매크로는 테마에만 연결",
+    "detail": "개별 자산·BF에 직접 걸려 있던 매크로 IMPACTS 엣지를 테마 레벨로 정리(repoint 2, 중복제거 0)했다."
+   }
+  ],
+  "description": "롯데지주 아래 식품(웰푸드·칠성)·유통(쇼핑·하이마트·리츠)·금융(손해보험)·IT(이노베이트)·화학(케미칼·정밀화학·에너지머티리얼즈) 11 종목. 그룹 NAV·구조조정·이차전지/수소 신사업·내수회복이 동인. 해외수출확대·코코아원가상승 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 밸류체인은 ESS·2차전지소재·데이터센터반도체소재 등 사업영역으로 이어진다. 경쟁·공급·협력 등 7건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다. 종목별 브리핑 카드와 연도별 이벤트 DB로 테마의 맥락과 변동요인을 확인할 수 있다."
+ },
+ "nodes": [
+  {
+   "id": "T_218",
+   "type": "THEME",
+   "name": "롯데그룹주"
   },
-  "nodes": [
-    {
-      "id": "T_218",
-      "type": "THEME",
-      "name": "롯데그룹주"
-    },
-    {
-      "id": "M_216",
-      "type": "MACRO",
-      "name": "해외수출확대"
-    },
-    {
-      "id": "M_217",
-      "type": "MACRO",
-      "name": "코코아원가상승"
-    },
-    {
-      "id": "BF_158",
-      "type": "BUSINESS_FIELD",
-      "name": "ESS"
-    },
-    {
-      "id": "BF_167",
-      "type": "BUSINESS_FIELD",
-      "name": "2차전지소재"
-    },
-    {
-      "id": "BF_394",
-      "type": "BUSINESS_FIELD",
-      "name": "데이터센터반도체소재"
-    },
-    {
-      "id": "A_1395",
-      "type": "ASSET",
-      "name": "롯데지주",
-      "exposure": {
-        "ticker": "004990",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 3.404255319148941,
-        "close": 24300,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": 2.748414376321362,
-        "return_15d": 3.6247334754797356,
-        "return_1m": 7.048458149779746,
-        "return_ytd": -2.791833736368521,
-        "return_1y": -5.688166725716359,
-        "return_3y": 7.380112744434308,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 2.5316455696202445,
-        "return_2y": 7.29573843139335
-      }
-    },
-    {
-      "id": "A_1396",
-      "type": "ASSET",
-      "name": "롯데웰푸드",
-      "exposure": {
-        "ticker": "280360",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 8.473154362416114,
-        "close": 129300,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": 1.650943396226423,
-        "return_15d": 26.764705882352935,
-        "return_1m": 29.041916167664674,
-        "return_ytd": 18.714863728575935,
-        "return_1y": 10.714943606431548,
-        "return_3y": 33.35418031490751,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 10.607356715141147,
-        "return_2y": -21.044896504905363
-      }
-    },
-    {
-      "id": "A_1397",
-      "type": "ASSET",
-      "name": "롯데칠성음료",
-      "exposure": {
-        "ticker": "005300",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 2.7272727272727337,
-        "close": 101700,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": 0.7928642220019766,
-        "return_15d": 1.6999999999999904,
-        "return_1m": 2.8311425682507663,
-        "return_ytd": -21.850811428557616,
-        "return_1y": -19.631686353674027,
-        "return_3y": -19.18351350032652,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": -0.8771929824561431,
-        "return_2y": -16.092758114378736
-      }
-    },
-    {
-      "id": "A_1398",
-      "type": "ASSET",
-      "name": "롯데쇼핑",
-      "exposure": {
-        "ticker": "023530",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 3.41708542713568,
-        "close": 102900,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": 4.149797570850211,
-        "return_15d": -18.268467037331217,
-        "return_1m": -30.284552845528456,
-        "return_ytd": 54.91622321094838,
-        "return_1y": 50.741176124640994,
-        "return_3y": 57.58708197828861,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 3.2096288866599876,
-        "return_2y": 84.4827949812526
-      }
-    },
-    {
-      "id": "A_1399",
-      "type": "ASSET",
-      "name": "롯데이노베이트",
-      "exposure": {
-        "ticker": "286940",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 1.0610079575596787,
-        "close": 19050,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": -3.1520081342145345,
-        "return_15d": 12.058823529411766,
-        "return_1m": 13.190730837789655,
-        "return_ytd": 0.47564272633615623,
-        "return_1y": -4.730601245025512,
-        "return_3y": -21.62866930404913,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": -1.244167962674958,
-        "return_2y": -25.305850194024814
-      }
-    },
-    {
-      "id": "A_1400",
-      "type": "ASSET",
-      "name": "롯데하이마트",
-      "exposure": {
-        "ticker": "071840",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 1.0869565217391353,
-        "close": 6510,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": -0.7621951219512146,
-        "return_15d": 1.4018691588784993,
-        "return_1m": 6.026058631921827,
-        "return_ytd": -10.233395653327271,
-        "return_1y": -22.126436809108373,
-        "return_3y": -29.900152943652493,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 0.4629629629629539,
-        "return_2y": -22.140920413202313
-      }
-    },
-    {
-      "id": "A_1401",
-      "type": "ASSET",
-      "name": "롯데리츠",
-      "exposure": {
-        "ticker": "330590",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 2.454780361757103,
-        "close": 3965,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": 1.2771392081736943,
-        "return_15d": 10.909090909090914,
-        "return_1m": 14.927536231884053,
-        "return_ytd": 1.8242200656374719,
-        "return_1y": 11.13999785568478,
-        "return_3y": 37.53442913412799,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 6.016042780748654,
-        "return_2y": 26.582541154889295
-      }
-    },
-    {
-      "id": "A_1226",
-      "type": "ASSET",
-      "name": "롯데손해보험",
-      "exposure": {
-        "ticker": "000400",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 3.12657589510843,
-        "close": 2045,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": 1.4888337468982549,
-        "return_15d": -10.698689956331876,
-        "return_1m": -22.83018867924528,
-        "return_ytd": 17.596319723979303,
-        "return_1y": 22.30861244019138,
-        "return_3y": 17.32644865174986,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 2.403605408112175,
-        "return_2y": -27.353463587921844
-      }
-    },
-    {
-      "id": "A_1361",
-      "type": "ASSET",
-      "name": "롯데케미칼",
-      "exposure": {
-        "ticker": "011170",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": -0.34843205574912606,
-        "close": 57200,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": -1.5490533562822706,
-        "return_15d": -6.382978723404253,
-        "return_1m": -5.766062602965405,
-        "return_ytd": -14.743804596234234,
-        "return_1y": -10.0813565179375,
-        "return_3y": -55.568067028597234,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": -6.229508196721312,
-        "return_2y": -44.949343179593725
-      }
-    },
-    {
-      "id": "A_1366",
-      "type": "ASSET",
-      "name": "롯데정밀화학",
-      "exposure": {
-        "ticker": "004000",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 1.7278617710583255,
-        "close": 48650,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": -2.685950413223137,
-        "return_15d": 0.0,
-        "return_1m": 4.899777282850781,
-        "return_ytd": 12.932648663525658,
-        "return_1y": 18.88375634142614,
-        "return_3y": -16.28952818254329,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": -2.9866117404737436,
-        "return_2y": 7.372304380968964
-      }
-    },
-    {
-      "id": "A_1136",
-      "type": "ASSET",
-      "name": "롯데에너지머티리얼즈",
-      "exposure": {
-        "ticker": "020150",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": -0.5772005772005762,
-        "close": 34450,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": 6.327160493827155,
-        "return_15d": 14.2620232172471,
-        "return_1m": 0.7309941520467822,
-        "return_ytd": 14.833333333333343,
-        "return_1y": 40.899795501022496,
-        "return_3y": -38.39685451227689,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 12.581699346405228,
-        "return_2y": -23.614190687361415
-      }
-    },
-    {
-      "id": "C_3319",
-      "type": "CHARACTER",
-      "name": "동박2차전지소재"
-    },
-    {
-      "id": "C_3320",
-      "type": "CHARACTER",
-      "name": "롯데손보"
-    },
-    {
-      "id": "C_3321",
-      "type": "CHARACTER",
-      "name": "롯데화학핵심"
-    },
-    {
-      "id": "C_3322",
-      "type": "CHARACTER",
-      "name": "롯데정밀화학"
-    },
-    {
-      "id": "C_3323",
-      "type": "CHARACTER",
-      "name": "롯데지주"
-    },
-    {
-      "id": "C_3324",
-      "type": "CHARACTER",
-      "name": "제과식품"
-    },
-    {
-      "id": "C_3325",
-      "type": "CHARACTER",
-      "name": "음료주류"
-    },
-    {
-      "id": "C_3326",
-      "type": "CHARACTER",
-      "name": "유통백화점마트"
-    },
-    {
-      "id": "C_3327",
-      "type": "CHARACTER",
-      "name": "IT·SI"
-    },
-    {
-      "id": "C_3328",
-      "type": "CHARACTER",
-      "name": "가전유통"
-    },
-    {
-      "id": "C_3329",
-      "type": "CHARACTER",
-      "name": "부동산리츠"
-    }
-  ],
-  "edges": [
-    {
-      "from": "M_216",
-      "to": "T_218",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_006642"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "M_217",
-      "to": "T_218",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_006643"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1136",
-      "to": "BF_158",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_006639"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1136",
-      "to": "BF_167",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_006640"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_1136",
-      "to": "BF_394",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_006641"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1136",
-      "to": "T_218",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_006628"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1226",
-      "to": "T_218",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_006629"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1361",
-      "to": "T_218",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_006630"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_1366",
-      "to": "T_218",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_006631"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_1395",
-      "to": "T_218",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_006632"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_1396",
-      "to": "T_218",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_006633"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1397",
-      "to": "T_218",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_006634"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1398",
-      "to": "T_218",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_006635"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1399",
-      "to": "T_218",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_006636"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1400",
-      "to": "T_218",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_006637"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1401",
-      "to": "T_218",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_006638"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1136",
-      "to": "C_3319",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006752"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1226",
-      "to": "C_3320",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006753"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1361",
-      "to": "C_3321",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006754"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1366",
-      "to": "C_3322",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006755"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1395",
-      "to": "C_3323",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006756"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1396",
-      "to": "C_3324",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006757"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_1397",
-      "to": "C_3325",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006758"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_1398",
-      "to": "C_3326",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006759"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_1399",
-      "to": "C_3327",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006760"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1400",
-      "to": "C_3328",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006761"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1401",
-      "to": "C_3329",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006762"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1395",
-      "to": "A_1396",
-      "type": "INVESTS",
-      "evidence": [
-        "EV_019325"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "롯데지주가 롯데웰푸드 지분을 보유·투자하는 관계 (롯데그룹주)"
-    },
-    {
-      "from": "A_1395",
-      "to": "A_1398",
-      "type": "INVESTS",
-      "evidence": [
-        "EV_019326"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "롯데지주가 롯데쇼핑 지분을 보유·투자하는 관계 (롯데그룹주)"
-    },
-    {
-      "from": "A_1395",
-      "to": "A_1361",
-      "type": "INVESTS",
-      "evidence": [
-        "EV_019327"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "롯데지주가 롯데케미칼 지분을 보유·투자하는 관계 (롯데그룹주)"
-    },
-    {
-      "from": "A_1395",
-      "to": "A_1399",
-      "type": "INVESTS",
-      "evidence": [
-        "EV_019328"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "롯데지주가 롯데이노베이트 지분을 보유·투자하는 관계 (롯데그룹주)"
-    },
-    {
-      "from": "A_1361",
-      "to": "A_1366",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_019329"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "롯데케미칼와 롯데정밀화학는 롯데그룹주 내 제휴·협력 관계"
-    },
-    {
-      "from": "A_1361",
-      "to": "A_1136",
-      "type": "INVESTS",
-      "evidence": [
-        "EV_019330"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "롯데케미칼가 롯데에너지머티리얼즈 지분을 보유·투자하는 관계 (롯데그룹주)"
-    },
-    {
-      "from": "A_1398",
-      "to": "A_1400",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_019331"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "롯데쇼핑와 롯데하이마트는 롯데그룹주 내 제휴·협력 관계"
-    }
-  ],
-  "links": [
-    {
-      "from": "M_216",
-      "to": "T_218",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_006642"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "M_217",
-      "to": "T_218",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_006643"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1136",
-      "to": "BF_158",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_006639"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1136",
-      "to": "BF_167",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_006640"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_1136",
-      "to": "BF_394",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_006641"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1136",
-      "to": "T_218",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_006628"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1226",
-      "to": "T_218",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_006629"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1361",
-      "to": "T_218",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_006630"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_1366",
-      "to": "T_218",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_006631"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_1395",
-      "to": "T_218",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_006632"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_1396",
-      "to": "T_218",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_006633"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1397",
-      "to": "T_218",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_006634"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1398",
-      "to": "T_218",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_006635"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1399",
-      "to": "T_218",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_006636"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1400",
-      "to": "T_218",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_006637"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1401",
-      "to": "T_218",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_006638"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1136",
-      "to": "C_3319",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006752"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1226",
-      "to": "C_3320",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006753"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1361",
-      "to": "C_3321",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006754"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1366",
-      "to": "C_3322",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006755"
-      ],
-      "confidence": 0.68,
-      "status": "verified"
-    },
-    {
-      "from": "A_1395",
-      "to": "C_3323",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006756"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1396",
-      "to": "C_3324",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006757"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_1397",
-      "to": "C_3325",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006758"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_1398",
-      "to": "C_3326",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006759"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_1399",
-      "to": "C_3327",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006760"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1400",
-      "to": "C_3328",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006761"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1401",
-      "to": "C_3329",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_006762"
-      ],
-      "confidence": 0.66,
-      "status": "verified"
-    },
-    {
-      "from": "A_1395",
-      "to": "A_1396",
-      "type": "INVESTS",
-      "evidence": [
-        "EV_019325"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "롯데지주가 롯데웰푸드 지분을 보유·투자하는 관계 (롯데그룹주)"
-    },
-    {
-      "from": "A_1395",
-      "to": "A_1398",
-      "type": "INVESTS",
-      "evidence": [
-        "EV_019326"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "롯데지주가 롯데쇼핑 지분을 보유·투자하는 관계 (롯데그룹주)"
-    },
-    {
-      "from": "A_1395",
-      "to": "A_1361",
-      "type": "INVESTS",
-      "evidence": [
-        "EV_019327"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "롯데지주가 롯데케미칼 지분을 보유·투자하는 관계 (롯데그룹주)"
-    },
-    {
-      "from": "A_1395",
-      "to": "A_1399",
-      "type": "INVESTS",
-      "evidence": [
-        "EV_019328"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "롯데지주가 롯데이노베이트 지분을 보유·투자하는 관계 (롯데그룹주)"
-    },
-    {
-      "from": "A_1361",
-      "to": "A_1366",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_019329"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "롯데케미칼와 롯데정밀화학는 롯데그룹주 내 제휴·협력 관계"
-    },
-    {
-      "from": "A_1361",
-      "to": "A_1136",
-      "type": "INVESTS",
-      "evidence": [
-        "EV_019330"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "롯데케미칼가 롯데에너지머티리얼즈 지분을 보유·투자하는 관계 (롯데그룹주)"
-    },
-    {
-      "from": "A_1398",
-      "to": "A_1400",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_019331"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "롯데쇼핑와 롯데하이마트는 롯데그룹주 내 제휴·협력 관계"
-    }
-  ]
+  {
+   "id": "M_216",
+   "type": "MACRO",
+   "name": "해외수출확대"
+  },
+  {
+   "id": "M_217",
+   "type": "MACRO",
+   "name": "코코아원가상승"
+  },
+  {
+   "id": "BF_158",
+   "type": "BUSINESS_FIELD",
+   "name": "ESS"
+  },
+  {
+   "id": "BF_167",
+   "type": "BUSINESS_FIELD",
+   "name": "2차전지소재"
+  },
+  {
+   "id": "BF_394",
+   "type": "BUSINESS_FIELD",
+   "name": "데이터센터반도체소재"
+  },
+  {
+   "id": "A_1395",
+   "type": "ASSET",
+   "name": "롯데지주",
+   "exposure": {
+    "ticker": "004990",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 3.404255319148941,
+    "close": 24300,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": 2.748414376321362,
+    "return_15d": 3.6247334754797356,
+    "return_1m": 7.048458149779746,
+    "return_ytd": -2.791833736368521,
+    "return_1y": -5.688166725716359,
+    "return_3y": 7.380112744434308,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 2.5316455696202445,
+    "return_2y": 7.29573843139335
+   }
+  },
+  {
+   "id": "A_1396",
+   "type": "ASSET",
+   "name": "롯데웰푸드",
+   "exposure": {
+    "ticker": "280360",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 8.473154362416114,
+    "close": 129300,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": 1.650943396226423,
+    "return_15d": 26.764705882352935,
+    "return_1m": 29.041916167664674,
+    "return_ytd": 18.714863728575935,
+    "return_1y": 10.714943606431548,
+    "return_3y": 33.35418031490751,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 10.607356715141147,
+    "return_2y": -21.044896504905363
+   }
+  },
+  {
+   "id": "A_1397",
+   "type": "ASSET",
+   "name": "롯데칠성음료",
+   "exposure": {
+    "ticker": "005300",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 2.7272727272727337,
+    "close": 101700,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": 0.7928642220019766,
+    "return_15d": 1.6999999999999904,
+    "return_1m": 2.8311425682507663,
+    "return_ytd": -21.850811428557616,
+    "return_1y": -19.631686353674027,
+    "return_3y": -19.18351350032652,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": -0.8771929824561431,
+    "return_2y": -16.092758114378736
+   }
+  },
+  {
+   "id": "A_1398",
+   "type": "ASSET",
+   "name": "롯데쇼핑",
+   "exposure": {
+    "ticker": "023530",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 3.41708542713568,
+    "close": 102900,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": 4.149797570850211,
+    "return_15d": -18.268467037331217,
+    "return_1m": -30.284552845528456,
+    "return_ytd": 54.91622321094838,
+    "return_1y": 50.741176124640994,
+    "return_3y": 57.58708197828861,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 3.2096288866599876,
+    "return_2y": 84.4827949812526
+   }
+  },
+  {
+   "id": "A_1399",
+   "type": "ASSET",
+   "name": "롯데이노베이트",
+   "exposure": {
+    "ticker": "286940",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 1.0610079575596787,
+    "close": 19050,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": -3.1520081342145345,
+    "return_15d": 12.058823529411766,
+    "return_1m": 13.190730837789655,
+    "return_ytd": 0.47564272633615623,
+    "return_1y": -4.730601245025512,
+    "return_3y": -21.62866930404913,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": -1.244167962674958,
+    "return_2y": -25.305850194024814
+   }
+  },
+  {
+   "id": "A_1400",
+   "type": "ASSET",
+   "name": "롯데하이마트",
+   "exposure": {
+    "ticker": "071840",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 1.0869565217391353,
+    "close": 6510,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": -0.7621951219512146,
+    "return_15d": 1.4018691588784993,
+    "return_1m": 6.026058631921827,
+    "return_ytd": -10.233395653327271,
+    "return_1y": -22.126436809108373,
+    "return_3y": -29.900152943652493,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 0.4629629629629539,
+    "return_2y": -22.140920413202313
+   }
+  },
+  {
+   "id": "A_1401",
+   "type": "ASSET",
+   "name": "롯데리츠",
+   "exposure": {
+    "ticker": "330590",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 2.454780361757103,
+    "close": 3965,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": 1.2771392081736943,
+    "return_15d": 10.909090909090914,
+    "return_1m": 14.927536231884053,
+    "return_ytd": 1.8242200656374719,
+    "return_1y": 11.13999785568478,
+    "return_3y": 37.53442913412799,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 6.016042780748654,
+    "return_2y": 26.582541154889295
+   }
+  },
+  {
+   "id": "A_1226",
+   "type": "ASSET",
+   "name": "롯데손해보험",
+   "exposure": {
+    "ticker": "000400",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 3.12657589510843,
+    "close": 2045,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": 1.4888337468982549,
+    "return_15d": -10.698689956331876,
+    "return_1m": -22.83018867924528,
+    "return_ytd": 17.596319723979303,
+    "return_1y": 22.30861244019138,
+    "return_3y": 17.32644865174986,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 2.403605408112175,
+    "return_2y": -27.353463587921844
+   }
+  },
+  {
+   "id": "A_1361",
+   "type": "ASSET",
+   "name": "롯데케미칼",
+   "exposure": {
+    "ticker": "011170",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": -0.34843205574912606,
+    "close": 57200,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": -1.5490533562822706,
+    "return_15d": -6.382978723404253,
+    "return_1m": -5.766062602965405,
+    "return_ytd": -14.743804596234234,
+    "return_1y": -10.0813565179375,
+    "return_3y": -55.568067028597234,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": -6.229508196721312,
+    "return_2y": -44.949343179593725
+   }
+  },
+  {
+   "id": "A_1366",
+   "type": "ASSET",
+   "name": "롯데정밀화학",
+   "exposure": {
+    "ticker": "004000",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 1.7278617710583255,
+    "close": 48650,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": -2.685950413223137,
+    "return_15d": 0.0,
+    "return_1m": 4.899777282850781,
+    "return_ytd": 12.932648663525658,
+    "return_1y": 18.88375634142614,
+    "return_3y": -16.28952818254329,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": -2.9866117404737436,
+    "return_2y": 7.372304380968964
+   }
+  },
+  {
+   "id": "A_1136",
+   "type": "ASSET",
+   "name": "롯데에너지머티리얼즈",
+   "exposure": {
+    "ticker": "020150",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": -0.5772005772005762,
+    "close": 34450,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": 6.327160493827155,
+    "return_15d": 14.2620232172471,
+    "return_1m": 0.7309941520467822,
+    "return_ytd": 14.833333333333343,
+    "return_1y": 40.899795501022496,
+    "return_3y": -38.39685451227689,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 12.581699346405228,
+    "return_2y": -23.614190687361415
+   }
+  },
+  {
+   "id": "C_3319",
+   "type": "CHARACTER",
+   "name": "동박2차전지소재"
+  },
+  {
+   "id": "C_3320",
+   "type": "CHARACTER",
+   "name": "롯데손보"
+  },
+  {
+   "id": "C_3321",
+   "type": "CHARACTER",
+   "name": "롯데화학핵심"
+  },
+  {
+   "id": "C_3322",
+   "type": "CHARACTER",
+   "name": "롯데정밀화학"
+  },
+  {
+   "id": "C_3323",
+   "type": "CHARACTER",
+   "name": "롯데지주"
+  },
+  {
+   "id": "C_3324",
+   "type": "CHARACTER",
+   "name": "제과식품"
+  },
+  {
+   "id": "C_3325",
+   "type": "CHARACTER",
+   "name": "음료주류"
+  },
+  {
+   "id": "C_3326",
+   "type": "CHARACTER",
+   "name": "유통백화점마트"
+  },
+  {
+   "id": "C_3327",
+   "type": "CHARACTER",
+   "name": "IT·SI"
+  },
+  {
+   "id": "C_3328",
+   "type": "CHARACTER",
+   "name": "가전유통"
+  },
+  {
+   "id": "C_3329",
+   "type": "CHARACTER",
+   "name": "부동산리츠"
+  }
+ ],
+ "edges": [
+  {
+   "from": "M_216",
+   "to": "T_218",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_006642"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "M_217",
+   "to": "T_218",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_006643"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1136",
+   "to": "BF_158",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_006639"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1136",
+   "to": "BF_167",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_006640"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_1136",
+   "to": "BF_394",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_006641"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1136",
+   "to": "T_218",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_006628"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1226",
+   "to": "T_218",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_006629"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1361",
+   "to": "T_218",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_006630"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_1366",
+   "to": "T_218",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_006631"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_1395",
+   "to": "T_218",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_006632"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_1396",
+   "to": "T_218",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_006633"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1397",
+   "to": "T_218",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_006634"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1398",
+   "to": "T_218",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_006635"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1399",
+   "to": "T_218",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_006636"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1400",
+   "to": "T_218",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_006637"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1401",
+   "to": "T_218",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_006638"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1136",
+   "to": "C_3319",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006752"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1226",
+   "to": "C_3320",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006753"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1361",
+   "to": "C_3321",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006754"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1366",
+   "to": "C_3322",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006755"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1395",
+   "to": "C_3323",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006756"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1396",
+   "to": "C_3324",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006757"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_1397",
+   "to": "C_3325",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006758"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_1398",
+   "to": "C_3326",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006759"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_1399",
+   "to": "C_3327",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006760"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1400",
+   "to": "C_3328",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006761"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1401",
+   "to": "C_3329",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006762"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1395",
+   "to": "A_1396",
+   "type": "INVESTS",
+   "evidence": [
+    "EV_019325"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "롯데지주가 롯데웰푸드 지분을 보유·투자하는 관계 (롯데그룹주)"
+  },
+  {
+   "from": "A_1395",
+   "to": "A_1398",
+   "type": "INVESTS",
+   "evidence": [
+    "EV_019326"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "롯데지주가 롯데쇼핑 지분을 보유·투자하는 관계 (롯데그룹주)"
+  },
+  {
+   "from": "A_1395",
+   "to": "A_1361",
+   "type": "INVESTS",
+   "evidence": [
+    "EV_019327"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "롯데지주가 롯데케미칼 지분을 보유·투자하는 관계 (롯데그룹주)"
+  },
+  {
+   "from": "A_1395",
+   "to": "A_1399",
+   "type": "INVESTS",
+   "evidence": [
+    "EV_019328"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "롯데지주가 롯데이노베이트 지분을 보유·투자하는 관계 (롯데그룹주)"
+  },
+  {
+   "from": "A_1361",
+   "to": "A_1366",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_019329"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "롯데케미칼와 롯데정밀화학는 롯데그룹주 내 제휴·협력 관계"
+  },
+  {
+   "from": "A_1361",
+   "to": "A_1136",
+   "type": "INVESTS",
+   "evidence": [
+    "EV_019330"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "롯데케미칼가 롯데에너지머티리얼즈 지분을 보유·투자하는 관계 (롯데그룹주)"
+  },
+  {
+   "from": "A_1398",
+   "to": "A_1400",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_019331"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "롯데쇼핑와 롯데하이마트는 롯데그룹주 내 제휴·협력 관계"
+  }
+ ],
+ "links": [
+  {
+   "from": "M_216",
+   "to": "T_218",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_006642"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "M_217",
+   "to": "T_218",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_006643"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1136",
+   "to": "BF_158",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_006639"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1136",
+   "to": "BF_167",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_006640"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_1136",
+   "to": "BF_394",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_006641"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1136",
+   "to": "T_218",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_006628"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1226",
+   "to": "T_218",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_006629"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1361",
+   "to": "T_218",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_006630"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_1366",
+   "to": "T_218",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_006631"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_1395",
+   "to": "T_218",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_006632"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_1396",
+   "to": "T_218",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_006633"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1397",
+   "to": "T_218",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_006634"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1398",
+   "to": "T_218",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_006635"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1399",
+   "to": "T_218",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_006636"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1400",
+   "to": "T_218",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_006637"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1401",
+   "to": "T_218",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_006638"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1136",
+   "to": "C_3319",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006752"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1226",
+   "to": "C_3320",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006753"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1361",
+   "to": "C_3321",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006754"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1366",
+   "to": "C_3322",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006755"
+   ],
+   "confidence": 0.68,
+   "status": "verified"
+  },
+  {
+   "from": "A_1395",
+   "to": "C_3323",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006756"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1396",
+   "to": "C_3324",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006757"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_1397",
+   "to": "C_3325",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006758"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_1398",
+   "to": "C_3326",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006759"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_1399",
+   "to": "C_3327",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006760"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1400",
+   "to": "C_3328",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006761"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1401",
+   "to": "C_3329",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_006762"
+   ],
+   "confidence": 0.66,
+   "status": "verified"
+  },
+  {
+   "from": "A_1395",
+   "to": "A_1396",
+   "type": "INVESTS",
+   "evidence": [
+    "EV_019325"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "롯데지주가 롯데웰푸드 지분을 보유·투자하는 관계 (롯데그룹주)"
+  },
+  {
+   "from": "A_1395",
+   "to": "A_1398",
+   "type": "INVESTS",
+   "evidence": [
+    "EV_019326"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "롯데지주가 롯데쇼핑 지분을 보유·투자하는 관계 (롯데그룹주)"
+  },
+  {
+   "from": "A_1395",
+   "to": "A_1361",
+   "type": "INVESTS",
+   "evidence": [
+    "EV_019327"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "롯데지주가 롯데케미칼 지분을 보유·투자하는 관계 (롯데그룹주)"
+  },
+  {
+   "from": "A_1395",
+   "to": "A_1399",
+   "type": "INVESTS",
+   "evidence": [
+    "EV_019328"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "롯데지주가 롯데이노베이트 지분을 보유·투자하는 관계 (롯데그룹주)"
+  },
+  {
+   "from": "A_1361",
+   "to": "A_1366",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_019329"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "롯데케미칼와 롯데정밀화학는 롯데그룹주 내 제휴·협력 관계"
+  },
+  {
+   "from": "A_1361",
+   "to": "A_1136",
+   "type": "INVESTS",
+   "evidence": [
+    "EV_019330"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "롯데케미칼가 롯데에너지머티리얼즈 지분을 보유·투자하는 관계 (롯데그룹주)"
+  },
+  {
+   "from": "A_1398",
+   "to": "A_1400",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_019331"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "롯데쇼핑와 롯데하이마트는 롯데그룹주 내 제휴·협력 관계"
+  }
+ ]
 }

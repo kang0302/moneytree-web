@@ -1,1078 +1,1079 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_075",
-  "themeName": "Top12SectorETF",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-03-26T00:00:00+09:00",
-    "notes": "g75 누적 import 기반 Top12SectorETF 테마",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-07-10",
-        "kind": "보강",
-        "title": "섹터 ETF별 CHR 정의·근거 리서치",
-        "detail": "13개 섹터 ETF(SPY·XLK·XLC·XLV·XLF·XLI·XLB·XLP·XLY·XLU·XLRE·XLE·SMH)에 상위 구성종목·핵심 동인 기반 포지션 CHR을 정의하고, 상투적이던 THEMED_AS 근거를 구성비중·수혜 논리로 구체화했다."
-      }
-    ]
+ "schemaVersion": "v5",
+ "themeId": "T_075",
+ "themeName": "Top12SectorETF",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
+  ],
+  "dataAsOf": "2026-03-26T00:00:00+09:00",
+  "notes": "g75 누적 import 기반 Top12SectorETF 테마",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-07-10",
+    "kind": "보강",
+    "title": "섹터 ETF별 CHR 정의·근거 리서치",
+    "detail": "13개 섹터 ETF(SPY·XLK·XLC·XLV·XLF·XLI·XLB·XLP·XLY·XLU·XLRE·XLE·SMH)에 상위 구성종목·핵심 동인 기반 포지션 CHR을 정의하고, 상투적이던 THEMED_AS 근거를 구성비중·수혜 논리로 구체화했다."
+   }
+  ],
+  "description": "S&P 12 섹터 ETF 묶음 — 섹터 로테이션 베이스 보드. 금리·실적·매크로 사이클에 따른 outperform 섹터 비교 도구. 유동성확대·위험자산선호심리·금리인하 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 구성종목은 미국대형주벤치마크·빅테크반도체집중섹터·플랫폼미디어통신섹터·제약바이오헬스방어섹터 등의 특성으로 차별화된다. 구성종목의 기간별 수익률과 이동평균 시그널을 함께 제공한다. 종목별 브리핑 카드와 연도별 이벤트 DB로 테마의 맥락과 변동요인을 확인할 수 있다."
+ },
+ "nodes": [
+  {
+   "id": "T_075",
+   "type": "THEME",
+   "name": "Top12SectorETF"
   },
-  "nodes": [
-    {
-      "id": "T_075",
-      "type": "THEME",
-      "name": "Top12SectorETF"
-    },
-    {
-      "id": "A_020",
-      "type": "ASSET",
-      "name": "SPY",
-      "exposure": {
-        "ticker": "SPY",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "SPDR S&P500 ETF. 미국 대형주 500종목 시총가중 벤치마크로 상위 10종목(애플·MS·엔비디아·아마존·메타 등) 집중도가 사상 최고 수준."
-      },
-      "metrics": {
-        "return_1d": -0.1979739805625491,
-        "close": 776.34,
-        "marketCap": 826987044373,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 0.7501038205980137,
-        "return_15d": 5.0627258332995195,
-        "return_1m": 3.2600454890068242,
-        "return_ytd": 13.846198967620849,
-        "return_1y": 20.372121869912398,
-        "return_3y": 73.24764008837117,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 0.3983136331893622,
-        "return_2y": 42.775172413793115
-      }
-    },
-    {
-      "id": "A_503",
-      "type": "ASSET",
-      "name": "XLE",
-      "exposure": {
-        "ticker": "XLE",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "Energy Select Sector SPDR. 엑슨모빌·셰브론 양대 비중 약 40%에 코노코 등 정유·E&P, 유가·OPEC+·중동 지정학 리스크에 연동."
-      },
-      "metrics": {
-        "return_1d": 1.3920733704552823,
-        "close": 61.91,
-        "marketCap": 40776850381,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 1.608403085507959,
-        "return_15d": 3.8409929553840927,
-        "return_1m": 8.709394205443367,
-        "return_ytd": 38.470140908074235,
-        "return_1y": 44.71715755025711,
-        "return_3y": 38.315460232350304,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 7.669565217391305,
-        "return_2y": 38.34636871508379
-      }
-    },
-    {
-      "id": "A_629",
-      "type": "ASSET",
-      "name": "XLK",
-      "exposure": {
-        "ticker": "XLK",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "Technology Select Sector SPDR. 애플·MS·엔비디아·브로드컴 등 IT 하드웨어·소프트웨어·반도체 집중, AI capex 사이클 최대 수혜 섹터."
-      },
-      "metrics": {
-        "return_1d": -0.3983854903810924,
-        "close": 190.01,
-        "marketCap": 124269323837,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 2.106507603847585,
-        "return_15d": 8.033886740959751,
-        "return_1m": 3.4800130704716103,
-        "return_ytd": 31.978884489824267,
-        "return_1y": 41.93620676775976,
-        "return_3y": 124.12125501297476,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 1.0852795658881753,
-        "return_2y": 76.86865866145396
-      }
-    },
-    {
-      "id": "A_630",
-      "type": "ASSET",
-      "name": "XLC",
-      "exposure": {
-        "ticker": "XLC",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "Communication Services Select Sector SPDR. 메타·알파벳 양대 비중 약 45%에 넷플릭스·통신을 더한 플랫폼·미디어 섹터, AI 광고·스트리밍 수혜."
-      },
-      "metrics": {
-        "return_1d": 0.35539760106619855,
-        "close": 112.95,
-        "marketCap": 23237079481,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 1.5098409274737268,
-        "return_15d": 6.25587958607714,
-        "return_1m": 1.3458950201884257,
-        "return_ytd": -4.051987767584098,
-        "return_1y": 1.5737410071942515,
-        "return_3y": 67.0610856382192,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 1.5280898876404603,
-        "return_2y": 32.52375923970432
-      }
-    },
-    {
-      "id": "A_631",
-      "type": "ASSET",
-      "name": "XLV",
-      "exposure": {
-        "ticker": "XLV",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "Health Care Select Sector SPDR. 일라이릴리·유나이티드헬스·J&J·머크 등 제약·바이오·보험, 방어적 성격에 GLP-1(비만치료) 성장 동력."
-      },
-      "metrics": {
-        "return_1d": -0.5998337094666795,
-        "close": 167.37,
-        "marketCap": 42990509408,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": -0.38092970656508074,
-        "return_15d": 2.95257427569664,
-        "return_1m": 5.736306778697342,
-        "return_ytd": 8.120155038759691,
-        "return_1y": 24.94028068080023,
-        "return_3y": 22.99382716049383,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 1.0200386286817853,
-        "return_2y": 10.285977859778605
-      }
-    },
-    {
-      "id": "A_632",
-      "type": "ASSET",
-      "name": "XLF",
-      "exposure": {
-        "ticker": "XLF",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "Financial Select Sector SPDR. 버크셔·JPM·비자·마스터카드 등 은행·결제·보험, 순이자마진·자본시장·규제완화에 민감."
-      },
-      "metrics": {
-        "return_1d": -0.1716443529007905,
-        "close": 58.16,
-        "marketCap": 59134999823,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 0.6228373702422241,
-        "return_15d": 3.285384478778175,
-        "return_1m": 3.524385902456384,
-        "return_ytd": 6.189519810115018,
-        "return_1y": 9.715148085266922,
-        "return_3y": 66.88665710186513,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 0.9722222222222188,
-        "return_2y": 35.09872241579559
-      }
-    },
-    {
-      "id": "A_633",
-      "type": "ASSET",
-      "name": "XLI",
-      "exposure": {
-        "ticker": "XLI",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "Industrial Select Sector SPDR. GE에어로스페이스·캐터필러·RTX·유니온퍼시픽 등 항공·방산·기계·운송, 리쇼어링·인프라·방산 사이클 수혜."
-      },
-      "metrics": {
-        "return_1d": 0.3875343129339681,
-        "close": 186.51,
-        "marketCap": 34117113089,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 0.43618739903068526,
-        "return_15d": 2.107741158436438,
-        "return_1m": 3.358270989193679,
-        "return_ytd": 20.235946364105196,
-        "return_1y": 23.410309005491968,
-        "return_3y": 71.22004957312033,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 0.7182201101630703,
-        "return_2y": 48.66092778574844
-      }
-    },
-    {
-      "id": "A_634",
-      "type": "ASSET",
-      "name": "XLB",
-      "exposure": {
-        "ticker": "XLB",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "Materials Select Sector SPDR. 린데(산업가스)·셔윈윌리엄스·프리포트맥모란(구리) 등 화학·금속·건자재, 원자재·건설·전동화 수요 연동."
-      },
-      "metrics": {
-        "return_1d": 0.43968648441981006,
-        "close": 52.54,
-        "marketCap": 8492298697,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": -1.3148009015777617,
-        "return_15d": 2.497073741708933,
-        "return_1m": 3.751974723538698,
-        "return_ytd": 15.854465270121265,
-        "return_1y": 16.703687250111045,
-        "return_3y": 26.755126658624828,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -0.6053726825577033,
-        "return_2y": 17.987873343813156
-      }
-    },
-    {
-      "id": "A_635",
-      "type": "ASSET",
-      "name": "XLP",
-      "exposure": {
-        "ticker": "XLP",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "Consumer Staples Select Sector SPDR. 코스트코·월마트·P&G·코카콜라 등 필수소비재, 경기방어·배당·가격전가력이 특징."
-      },
-      "metrics": {
-        "return_1d": 0.10465116279070319,
-        "close": 86.09,
-        "marketCap": 13848433096,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 1.6530877317274761,
-        "return_15d": 2.329727802210879,
-        "return_1m": 3.200671301846092,
-        "return_ytd": 10.826467559217301,
-        "return_1y": 5.128831359140307,
-        "return_3y": 15.665726185677809,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 1.1395676691729362,
-        "return_2y": 8.33018749213541
-      }
-    },
-    {
-      "id": "A_636",
-      "type": "ASSET",
-      "name": "XLY",
-      "exposure": {
-        "ticker": "XLY",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "Consumer Discretionary Select Sector SPDR. 아마존·테슬라 양대 비중에 홈디포·맥도날드 등 임의소비재, 소비 사이클·이커머스·EV 연동."
-      },
-      "metrics": {
-        "return_1d": -0.21105951878429563,
-        "close": 118.2,
-        "marketCap": 22908685489,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": -0.8721905400872143,
-        "return_15d": 8.034000548395959,
-        "return_1m": 1.9844693701466687,
-        "return_ytd": -1.0133154677162692,
-        "return_1y": 2.961672473867605,
-        "return_3y": 38.86278195488722,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -1.384949107291833,
-        "return_2y": 33.51406302948152
-      }
-    },
-    {
-      "id": "A_637",
-      "type": "ASSET",
-      "name": "XLU",
-      "exposure": {
-        "ticker": "XLU",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "Utilities Select Sector SPDR. 넥스트에라·서던·듀크·콘스텔레이션 등 전력·유틸, AI 데이터센터 전력수요와 금리(할인율)에 민감."
-      },
-      "metrics": {
-        "return_1d": 0.6130790190735702,
-        "close": 44.31,
-        "marketCap": 22936811312,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 1.5585606234242544,
-        "return_15d": -4.277381723914441,
-        "return_1m": -3.020354563361771,
-        "return_ytd": 3.7947997189037297,
-        "return_1y": 3.190498369818351,
-        "return_3y": 38.339057133936926,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 1.605136436597121,
-        "return_2y": 19.56287101996761
-      }
-    },
-    {
-      "id": "A_638",
-      "type": "ASSET",
-      "name": "XLRE",
-      "exposure": {
-        "ticker": "XLRE",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "Real Estate Select Sector SPDR. 프로로지스(물류)·아메리칸타워(통신)·에퀴닉스(데이터센터) 등 REIT, 금리인하 수혜+데이터센터 구조 성장."
-      },
-      "metrics": {
-        "return_1d": 0.3324468085106558,
-        "close": 45.27,
-        "marketCap": 8144749560,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 2.699637023593482,
-        "return_15d": -1.4798694232861842,
-        "return_1m": 1.776079136690667,
-        "return_ytd": 12.193308550185877,
-        "return_1y": 10.25328787140769,
-        "return_3y": 21.726270502823365,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 0.6447309915518229,
-        "return_2y": 7.785714285714285
-      }
-    },
-    {
-      "id": "A_639",
-      "type": "ASSET",
-      "name": "SMH",
-      "exposure": {
-        "ticker": "SMH",
-        "exchange": "NASDAQ",
-        "country": "US",
-        "business_desc": "VanEck Semiconductor ETF. 엔비디아 최상위 비중에 TSMC·브로드컴·AMD 등 반도체 25종목, AI 가속기 사이클 순수 노출."
-      },
-      "metrics": {
-        "return_1d": -0.22066811515479845,
-        "close": 587.82,
-        "marketCap": 74089272489,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 2.598921334194415,
-        "return_15d": 4.745273436803932,
-        "return_1m": -2.0805916942912672,
-        "return_ytd": 63.224391192069554,
-        "return_1y": 94.69395866454691,
-        "return_3y": 290.16328156113104,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 0.8786682684057023,
-        "return_2y": 148.66534117348453
-      }
-    },
-    {
-      "id": "M_069",
-      "type": "MACRO",
-      "name": "유동성확대"
-    },
-    {
-      "id": "M_302",
-      "type": "MACRO",
-      "name": "위험자산선호심리"
-    },
-    {
-      "id": "M_145",
-      "type": "MACRO",
-      "name": "금리인하"
-    },
-    {
-      "id": "C_1946",
-      "type": "CHARACTER",
-      "name": "미국대형주벤치마크"
-    },
-    {
-      "id": "C_1947",
-      "type": "CHARACTER",
-      "name": "빅테크반도체집중섹터"
-    },
-    {
-      "id": "C_1948",
-      "type": "CHARACTER",
-      "name": "플랫폼미디어통신섹터"
-    },
-    {
-      "id": "C_1949",
-      "type": "CHARACTER",
-      "name": "제약바이오헬스방어섹터"
-    },
-    {
-      "id": "C_1950",
-      "type": "CHARACTER",
-      "name": "은행결제금융섹터"
-    },
-    {
-      "id": "C_1951",
-      "type": "CHARACTER",
-      "name": "방산기계항공산업섹터"
-    },
-    {
-      "id": "C_1952",
-      "type": "CHARACTER",
-      "name": "화학금속소재섹터"
-    },
-    {
-      "id": "C_1953",
-      "type": "CHARACTER",
-      "name": "필수소비방어배당섹터"
-    },
-    {
-      "id": "C_1954",
-      "type": "CHARACTER",
-      "name": "이커머스자동차소비섹터"
-    },
-    {
-      "id": "C_1955",
-      "type": "CHARACTER",
-      "name": "전력유틸AI전력수요섹터"
-    },
-    {
-      "id": "C_1956",
-      "type": "CHARACTER",
-      "name": "리츠데이터센터물류섹터"
-    },
-    {
-      "id": "C_1957",
-      "type": "CHARACTER",
-      "name": "원유가스에너지섹터"
-    },
-    {
-      "id": "C_1958",
-      "type": "CHARACTER",
-      "name": "AI반도체집중ETF"
-    }
-  ],
-  "edges": [
-    {
-      "from": "A_020",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002496"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_503",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002518"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_629",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002498"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_630",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002500"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_631",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002502"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_632",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002504"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_633",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002506"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_634",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002508"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_635",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002510"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_636",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002512"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_637",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002514"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_638",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002516"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_639",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002520"
-      ],
-      "confidence": 0.84,
-      "status": "verified"
-    },
-    {
-      "from": "M_069",
-      "to": "T_075",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002334"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_302",
-      "to": "T_075",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002335"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_145",
-      "to": "T_075",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002336"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_020",
-      "to": "C_1946",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002497"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_629",
-      "to": "C_1947",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002499"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_630",
-      "to": "C_1948",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002501"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_631",
-      "to": "C_1949",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002503"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_632",
-      "to": "C_1950",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002505"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_633",
-      "to": "C_1951",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002507"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_634",
-      "to": "C_1952",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002509"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_635",
-      "to": "C_1953",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002511"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_636",
-      "to": "C_1954",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002513"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_637",
-      "to": "C_1955",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002515"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_638",
-      "to": "C_1956",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002517"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_503",
-      "to": "C_1957",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002519"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_639",
-      "to": "C_1958",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002521"
-      ],
-      "confidence": 0.84,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_020",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002496"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_503",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002518"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_629",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002498"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_630",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002500"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_631",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002502"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_632",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002504"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_633",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002506"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_634",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002508"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_635",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002510"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_636",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002512"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_637",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002514"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_638",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002516"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_639",
-      "to": "T_075",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002520"
-      ],
-      "confidence": 0.84,
-      "status": "verified"
-    },
-    {
-      "from": "M_069",
-      "to": "T_075",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002334"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_302",
-      "to": "T_075",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002335"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_145",
-      "to": "T_075",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002336"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_020",
-      "to": "C_1946",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002497"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_629",
-      "to": "C_1947",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002499"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_630",
-      "to": "C_1948",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002501"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_631",
-      "to": "C_1949",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002503"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_632",
-      "to": "C_1950",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002505"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_633",
-      "to": "C_1951",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002507"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_634",
-      "to": "C_1952",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002509"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_635",
-      "to": "C_1953",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002511"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_636",
-      "to": "C_1954",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002513"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_637",
-      "to": "C_1955",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002515"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_638",
-      "to": "C_1956",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002517"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_503",
-      "to": "C_1957",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002519"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_639",
-      "to": "C_1958",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002521"
-      ],
-      "confidence": 0.84,
-      "status": "verified"
-    }
-  ]
+  {
+   "id": "A_020",
+   "type": "ASSET",
+   "name": "SPY",
+   "exposure": {
+    "ticker": "SPY",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "SPDR S&P500 ETF. 미국 대형주 500종목 시총가중 벤치마크로 상위 10종목(애플·MS·엔비디아·아마존·메타 등) 집중도가 사상 최고 수준."
+   },
+   "metrics": {
+    "return_1d": -0.1979739805625491,
+    "close": 776.34,
+    "marketCap": 826987044373,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 0.7501038205980137,
+    "return_15d": 5.0627258332995195,
+    "return_1m": 3.2600454890068242,
+    "return_ytd": 13.846198967620849,
+    "return_1y": 20.372121869912398,
+    "return_3y": 73.24764008837117,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 0.3983136331893622,
+    "return_2y": 42.775172413793115
+   }
+  },
+  {
+   "id": "A_503",
+   "type": "ASSET",
+   "name": "XLE",
+   "exposure": {
+    "ticker": "XLE",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "Energy Select Sector SPDR. 엑슨모빌·셰브론 양대 비중 약 40%에 코노코 등 정유·E&P, 유가·OPEC+·중동 지정학 리스크에 연동."
+   },
+   "metrics": {
+    "return_1d": 1.3920733704552823,
+    "close": 61.91,
+    "marketCap": 40776850381,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 1.608403085507959,
+    "return_15d": 3.8409929553840927,
+    "return_1m": 8.709394205443367,
+    "return_ytd": 38.470140908074235,
+    "return_1y": 44.71715755025711,
+    "return_3y": 38.315460232350304,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 7.669565217391305,
+    "return_2y": 38.34636871508379
+   }
+  },
+  {
+   "id": "A_629",
+   "type": "ASSET",
+   "name": "XLK",
+   "exposure": {
+    "ticker": "XLK",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "Technology Select Sector SPDR. 애플·MS·엔비디아·브로드컴 등 IT 하드웨어·소프트웨어·반도체 집중, AI capex 사이클 최대 수혜 섹터."
+   },
+   "metrics": {
+    "return_1d": -0.3983854903810924,
+    "close": 190.01,
+    "marketCap": 124269323837,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 2.106507603847585,
+    "return_15d": 8.033886740959751,
+    "return_1m": 3.4800130704716103,
+    "return_ytd": 31.978884489824267,
+    "return_1y": 41.93620676775976,
+    "return_3y": 124.12125501297476,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 1.0852795658881753,
+    "return_2y": 76.86865866145396
+   }
+  },
+  {
+   "id": "A_630",
+   "type": "ASSET",
+   "name": "XLC",
+   "exposure": {
+    "ticker": "XLC",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "Communication Services Select Sector SPDR. 메타·알파벳 양대 비중 약 45%에 넷플릭스·통신을 더한 플랫폼·미디어 섹터, AI 광고·스트리밍 수혜."
+   },
+   "metrics": {
+    "return_1d": 0.35539760106619855,
+    "close": 112.95,
+    "marketCap": 23237079481,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 1.5098409274737268,
+    "return_15d": 6.25587958607714,
+    "return_1m": 1.3458950201884257,
+    "return_ytd": -4.051987767584098,
+    "return_1y": 1.5737410071942515,
+    "return_3y": 67.0610856382192,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 1.5280898876404603,
+    "return_2y": 32.52375923970432
+   }
+  },
+  {
+   "id": "A_631",
+   "type": "ASSET",
+   "name": "XLV",
+   "exposure": {
+    "ticker": "XLV",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "Health Care Select Sector SPDR. 일라이릴리·유나이티드헬스·J&J·머크 등 제약·바이오·보험, 방어적 성격에 GLP-1(비만치료) 성장 동력."
+   },
+   "metrics": {
+    "return_1d": -0.5998337094666795,
+    "close": 167.37,
+    "marketCap": 42990509408,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": -0.38092970656508074,
+    "return_15d": 2.95257427569664,
+    "return_1m": 5.736306778697342,
+    "return_ytd": 8.120155038759691,
+    "return_1y": 24.94028068080023,
+    "return_3y": 22.99382716049383,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 1.0200386286817853,
+    "return_2y": 10.285977859778605
+   }
+  },
+  {
+   "id": "A_632",
+   "type": "ASSET",
+   "name": "XLF",
+   "exposure": {
+    "ticker": "XLF",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "Financial Select Sector SPDR. 버크셔·JPM·비자·마스터카드 등 은행·결제·보험, 순이자마진·자본시장·규제완화에 민감."
+   },
+   "metrics": {
+    "return_1d": -0.1716443529007905,
+    "close": 58.16,
+    "marketCap": 59134999823,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 0.6228373702422241,
+    "return_15d": 3.285384478778175,
+    "return_1m": 3.524385902456384,
+    "return_ytd": 6.189519810115018,
+    "return_1y": 9.715148085266922,
+    "return_3y": 66.88665710186513,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 0.9722222222222188,
+    "return_2y": 35.09872241579559
+   }
+  },
+  {
+   "id": "A_633",
+   "type": "ASSET",
+   "name": "XLI",
+   "exposure": {
+    "ticker": "XLI",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "Industrial Select Sector SPDR. GE에어로스페이스·캐터필러·RTX·유니온퍼시픽 등 항공·방산·기계·운송, 리쇼어링·인프라·방산 사이클 수혜."
+   },
+   "metrics": {
+    "return_1d": 0.3875343129339681,
+    "close": 186.51,
+    "marketCap": 34117113089,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 0.43618739903068526,
+    "return_15d": 2.107741158436438,
+    "return_1m": 3.358270989193679,
+    "return_ytd": 20.235946364105196,
+    "return_1y": 23.410309005491968,
+    "return_3y": 71.22004957312033,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 0.7182201101630703,
+    "return_2y": 48.66092778574844
+   }
+  },
+  {
+   "id": "A_634",
+   "type": "ASSET",
+   "name": "XLB",
+   "exposure": {
+    "ticker": "XLB",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "Materials Select Sector SPDR. 린데(산업가스)·셔윈윌리엄스·프리포트맥모란(구리) 등 화학·금속·건자재, 원자재·건설·전동화 수요 연동."
+   },
+   "metrics": {
+    "return_1d": 0.43968648441981006,
+    "close": 52.54,
+    "marketCap": 8492298697,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": -1.3148009015777617,
+    "return_15d": 2.497073741708933,
+    "return_1m": 3.751974723538698,
+    "return_ytd": 15.854465270121265,
+    "return_1y": 16.703687250111045,
+    "return_3y": 26.755126658624828,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -0.6053726825577033,
+    "return_2y": 17.987873343813156
+   }
+  },
+  {
+   "id": "A_635",
+   "type": "ASSET",
+   "name": "XLP",
+   "exposure": {
+    "ticker": "XLP",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "Consumer Staples Select Sector SPDR. 코스트코·월마트·P&G·코카콜라 등 필수소비재, 경기방어·배당·가격전가력이 특징."
+   },
+   "metrics": {
+    "return_1d": 0.10465116279070319,
+    "close": 86.09,
+    "marketCap": 13848433096,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 1.6530877317274761,
+    "return_15d": 2.329727802210879,
+    "return_1m": 3.200671301846092,
+    "return_ytd": 10.826467559217301,
+    "return_1y": 5.128831359140307,
+    "return_3y": 15.665726185677809,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 1.1395676691729362,
+    "return_2y": 8.33018749213541
+   }
+  },
+  {
+   "id": "A_636",
+   "type": "ASSET",
+   "name": "XLY",
+   "exposure": {
+    "ticker": "XLY",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "Consumer Discretionary Select Sector SPDR. 아마존·테슬라 양대 비중에 홈디포·맥도날드 등 임의소비재, 소비 사이클·이커머스·EV 연동."
+   },
+   "metrics": {
+    "return_1d": -0.21105951878429563,
+    "close": 118.2,
+    "marketCap": 22908685489,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": -0.8721905400872143,
+    "return_15d": 8.034000548395959,
+    "return_1m": 1.9844693701466687,
+    "return_ytd": -1.0133154677162692,
+    "return_1y": 2.961672473867605,
+    "return_3y": 38.86278195488722,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -1.384949107291833,
+    "return_2y": 33.51406302948152
+   }
+  },
+  {
+   "id": "A_637",
+   "type": "ASSET",
+   "name": "XLU",
+   "exposure": {
+    "ticker": "XLU",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "Utilities Select Sector SPDR. 넥스트에라·서던·듀크·콘스텔레이션 등 전력·유틸, AI 데이터센터 전력수요와 금리(할인율)에 민감."
+   },
+   "metrics": {
+    "return_1d": 0.6130790190735702,
+    "close": 44.31,
+    "marketCap": 22936811312,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 1.5585606234242544,
+    "return_15d": -4.277381723914441,
+    "return_1m": -3.020354563361771,
+    "return_ytd": 3.7947997189037297,
+    "return_1y": 3.190498369818351,
+    "return_3y": 38.339057133936926,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 1.605136436597121,
+    "return_2y": 19.56287101996761
+   }
+  },
+  {
+   "id": "A_638",
+   "type": "ASSET",
+   "name": "XLRE",
+   "exposure": {
+    "ticker": "XLRE",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "Real Estate Select Sector SPDR. 프로로지스(물류)·아메리칸타워(통신)·에퀴닉스(데이터센터) 등 REIT, 금리인하 수혜+데이터센터 구조 성장."
+   },
+   "metrics": {
+    "return_1d": 0.3324468085106558,
+    "close": 45.27,
+    "marketCap": 8144749560,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 2.699637023593482,
+    "return_15d": -1.4798694232861842,
+    "return_1m": 1.776079136690667,
+    "return_ytd": 12.193308550185877,
+    "return_1y": 10.25328787140769,
+    "return_3y": 21.726270502823365,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 0.6447309915518229,
+    "return_2y": 7.785714285714285
+   }
+  },
+  {
+   "id": "A_639",
+   "type": "ASSET",
+   "name": "SMH",
+   "exposure": {
+    "ticker": "SMH",
+    "exchange": "NASDAQ",
+    "country": "US",
+    "business_desc": "VanEck Semiconductor ETF. 엔비디아 최상위 비중에 TSMC·브로드컴·AMD 등 반도체 25종목, AI 가속기 사이클 순수 노출."
+   },
+   "metrics": {
+    "return_1d": -0.22066811515479845,
+    "close": 587.82,
+    "marketCap": 74089272489,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 2.598921334194415,
+    "return_15d": 4.745273436803932,
+    "return_1m": -2.0805916942912672,
+    "return_ytd": 63.224391192069554,
+    "return_1y": 94.69395866454691,
+    "return_3y": 290.16328156113104,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 0.8786682684057023,
+    "return_2y": 148.66534117348453
+   }
+  },
+  {
+   "id": "M_069",
+   "type": "MACRO",
+   "name": "유동성확대"
+  },
+  {
+   "id": "M_302",
+   "type": "MACRO",
+   "name": "위험자산선호심리"
+  },
+  {
+   "id": "M_145",
+   "type": "MACRO",
+   "name": "금리인하"
+  },
+  {
+   "id": "C_1946",
+   "type": "CHARACTER",
+   "name": "미국대형주벤치마크"
+  },
+  {
+   "id": "C_1947",
+   "type": "CHARACTER",
+   "name": "빅테크반도체집중섹터"
+  },
+  {
+   "id": "C_1948",
+   "type": "CHARACTER",
+   "name": "플랫폼미디어통신섹터"
+  },
+  {
+   "id": "C_1949",
+   "type": "CHARACTER",
+   "name": "제약바이오헬스방어섹터"
+  },
+  {
+   "id": "C_1950",
+   "type": "CHARACTER",
+   "name": "은행결제금융섹터"
+  },
+  {
+   "id": "C_1951",
+   "type": "CHARACTER",
+   "name": "방산기계항공산업섹터"
+  },
+  {
+   "id": "C_1952",
+   "type": "CHARACTER",
+   "name": "화학금속소재섹터"
+  },
+  {
+   "id": "C_1953",
+   "type": "CHARACTER",
+   "name": "필수소비방어배당섹터"
+  },
+  {
+   "id": "C_1954",
+   "type": "CHARACTER",
+   "name": "이커머스자동차소비섹터"
+  },
+  {
+   "id": "C_1955",
+   "type": "CHARACTER",
+   "name": "전력유틸AI전력수요섹터"
+  },
+  {
+   "id": "C_1956",
+   "type": "CHARACTER",
+   "name": "리츠데이터센터물류섹터"
+  },
+  {
+   "id": "C_1957",
+   "type": "CHARACTER",
+   "name": "원유가스에너지섹터"
+  },
+  {
+   "id": "C_1958",
+   "type": "CHARACTER",
+   "name": "AI반도체집중ETF"
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_020",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002496"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_503",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002518"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_629",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002498"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_630",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002500"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_631",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002502"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_632",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002504"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_633",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002506"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_634",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002508"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_635",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002510"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_636",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002512"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_637",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002514"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_638",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002516"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_639",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002520"
+   ],
+   "confidence": 0.84,
+   "status": "verified"
+  },
+  {
+   "from": "M_069",
+   "to": "T_075",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002334"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_302",
+   "to": "T_075",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002335"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_145",
+   "to": "T_075",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002336"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_020",
+   "to": "C_1946",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002497"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_629",
+   "to": "C_1947",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002499"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_630",
+   "to": "C_1948",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002501"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_631",
+   "to": "C_1949",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002503"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_632",
+   "to": "C_1950",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002505"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_633",
+   "to": "C_1951",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002507"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_634",
+   "to": "C_1952",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002509"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_635",
+   "to": "C_1953",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002511"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_636",
+   "to": "C_1954",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002513"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_637",
+   "to": "C_1955",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002515"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_638",
+   "to": "C_1956",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002517"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_503",
+   "to": "C_1957",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002519"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_639",
+   "to": "C_1958",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002521"
+   ],
+   "confidence": 0.84,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_020",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002496"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_503",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002518"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_629",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002498"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_630",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002500"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_631",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002502"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_632",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002504"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_633",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002506"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_634",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002508"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_635",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002510"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_636",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002512"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_637",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002514"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_638",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002516"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_639",
+   "to": "T_075",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002520"
+   ],
+   "confidence": 0.84,
+   "status": "verified"
+  },
+  {
+   "from": "M_069",
+   "to": "T_075",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002334"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_302",
+   "to": "T_075",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002335"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_145",
+   "to": "T_075",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002336"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_020",
+   "to": "C_1946",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002497"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_629",
+   "to": "C_1947",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002499"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_630",
+   "to": "C_1948",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002501"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_631",
+   "to": "C_1949",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002503"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_632",
+   "to": "C_1950",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002505"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_633",
+   "to": "C_1951",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002507"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_634",
+   "to": "C_1952",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002509"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_635",
+   "to": "C_1953",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002511"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_636",
+   "to": "C_1954",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002513"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_637",
+   "to": "C_1955",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002515"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_638",
+   "to": "C_1956",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002517"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_503",
+   "to": "C_1957",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002519"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_639",
+   "to": "C_1958",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002521"
+   ],
+   "confidence": 0.84,
+   "status": "verified"
+  }
+ ]
 }

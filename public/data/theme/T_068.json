@@ -1,1278 +1,1279 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_068",
-  "themeName": "K방산소부장",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-26T00:00:00+09:00",
-    "notes": "g68 누적 import 기반 K방산 소부장 테마",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-08-04",
-        "kind": "보강",
-        "title": "2궤도 관계 엣지 추가",
-        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 2건 백필(리서치 기반)."
-      },
-      {
-        "date": "2026-07-26",
-        "kind": "수정",
-        "title": "자산 CHR 백필",
-        "detail": "CHR 미정의 자산에 CHARACTER·HAS_TRAIT 추가."
-      },
-      {
-        "date": "2026-08-05",
-        "kind": "관계",
-        "title": "EXPOSED_TO ETF 연결",
-        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-      }
-    ]
+ "schemaVersion": "v5",
+ "themeId": "T_068",
+ "themeName": "K방산소부장",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
+  ],
+  "dataAsOf": "2026-07-26T00:00:00+09:00",
+  "notes": "g68 누적 import 기반 K방산 소부장 테마",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-08-04",
+    "kind": "보강",
+    "title": "2궤도 관계 엣지 추가",
+    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 2건 백필(리서치 기반)."
+   },
+   {
+    "date": "2026-07-26",
+    "kind": "수정",
+    "title": "자산 CHR 백필",
+    "detail": "CHR 미정의 자산에 CHARACTER·HAS_TRAIT 추가."
+   },
+   {
+    "date": "2026-08-05",
+    "kind": "관계",
+    "title": "EXPOSED_TO ETF 연결",
+    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+   }
+  ],
+  "description": "한화에어로스페이스·LIG넥스원·현대로템 등 K-방산 핵심 + 부품 소부장. 폴란드 2차·중동·동남아 추가 수주와 미 해군 MRO 잠재가 동인. PLUS K방산소부장 등 ETF로도 익스포저를 확장한다. 방산수요증가·군비증강·나토군비증강 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 밸류체인은 지상화력/기동·유도무기·레이더·전자전·항공/우주 등 사업영역으로 이어진다. 경쟁·공급·협력 등 2건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다."
+ },
+ "nodes": [
+  {
+   "id": "T_068",
+   "type": "THEME",
+   "name": "K방산소부장"
   },
-  "nodes": [
-    {
-      "id": "T_068",
-      "type": "THEME",
-      "name": "K방산소부장"
-    },
-    {
-      "id": "A_570",
-      "type": "ASSET",
-      "name": "코츠테크놀로지",
-      "exposure": {
-        "ticker": "448710",
-        "exchange": "KOSDAQ",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": -1.9182652210175122,
-        "close": 11760,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": -2.8901734104046284,
-        "return_15d": 7.201458523245208,
-        "return_1m": 11.048158640226635,
-        "return_ytd": -33.37110481586403,
-        "return_1y": -47.72372216539919,
-        "return_3y": -46.37624405232863,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 4.533333333333323,
-        "return_2y": -53.54686273661618
-      }
-    },
-    {
-      "id": "A_571",
-      "type": "ASSET",
-      "name": "퍼스텍",
-      "exposure": {
-        "ticker": "010820",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 1.8547140649149974,
-        "close": 6590,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": 3.4536891679748827,
-        "return_15d": 6.6343042071197456,
-        "return_1m": 11.694915254237293,
-        "return_ytd": 64.75,
-        "return_1y": 53.79229871645275,
-        "return_3y": 85.89562764456981,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 9.286898839137647,
-        "return_2y": 102.76923076923077
-      }
-    },
-    {
-      "id": "A_572",
-      "type": "ASSET",
-      "name": "엠앤씨솔루션",
-      "exposure": {
-        "ticker": "484870",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": -2.729257641921401,
-        "close": 17820,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": 5.07075471698113,
-        "return_15d": -16.338028169014084,
-        "return_1m": -24.331210191082796,
-        "return_ytd": -62.08510638297873,
-        "return_1y": -65.40928210080494,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 11.375000000000002,
-        "return_2y": null
-      }
-    },
-    {
-      "id": "A_573",
-      "type": "ASSET",
-      "name": "SNT다이내믹스",
-      "exposure": {
-        "ticker": "003570",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 1.8750000000000044,
-        "close": 32600,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": 1.3996889580093264,
-        "return_15d": -6.857142857142861,
-        "return_1m": -6.051873198847257,
-        "return_ytd": -25.935042765117664,
-        "return_1y": -40.92716831576267,
-        "return_3y": 301.83962178854796,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 1.8750000000000044,
-        "return_2y": 74.12759431287313
-      }
-    },
-    {
-      "id": "A_574",
-      "type": "ASSET",
-      "name": "STX엔진",
-      "exposure": {
-        "ticker": "077970",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": -0.5253940455341555,
-        "close": 28400,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": 0.35335689045936647,
-        "return_15d": 11.154598825831696,
-        "return_1m": 10.9375,
-        "return_ytd": -15.09715994020927,
-        "return_1y": 15.212981744421917,
-        "return_3y": 103.00214438884919,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 4.990757855822547,
-        "return_2y": 69.04761904761905
-      }
-    },
-    {
-      "id": "A_575",
-      "type": "ASSET",
-      "name": "삼양컴텍",
-      "exposure": {
-        "ticker": "484590",
-        "exchange": "KOSDAQ",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": -0.887573964497046,
-        "close": 6700,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": 2.7607361963190247,
-        "return_15d": 4.037267080745344,
-        "return_1m": 8.239095315024226,
-        "return_ytd": -50.0,
-        "return_1y": null,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 6.518282988871227,
-        "return_2y": null
-      }
-    },
-    {
-      "id": "A_576",
-      "type": "ASSET",
-      "name": "풍산",
-      "exposure": {
-        "ticker": "103140",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": -2.3809523809523836,
-        "close": 82000,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": -1.7964071856287456,
-        "return_15d": 20.05856515373352,
-        "return_1m": 31.41025641025641,
-        "return_ytd": -21.692531287751503,
-        "return_1y": -38.33648035487157,
-        "return_3y": 156.4986586168045,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": -1.9138755980861233,
-        "return_2y": 33.2198808999643
-      }
-    },
-    {
-      "id": "A_577",
-      "type": "ASSET",
-      "name": "켄코아에어로스페이스",
-      "exposure": {
-        "ticker": "274090",
-        "exchange": "KOSDAQ",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": -3.154305200341001,
-        "close": 11360,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": -10.832025117739407,
-        "return_15d": -37.23756906077348,
-        "return_1m": -47.77011494252874,
-        "return_ytd": -39.28380545163015,
-        "return_1y": -9.984152139461177,
-        "return_3y": -22.45733788395905,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": -6.502057613168722,
-        "return_2y": 4.124656278643446
-      }
-    },
-    {
-      "id": "A_578",
-      "type": "ASSET",
-      "name": "비츠로테크",
-      "exposure": {
-        "ticker": "042370",
-        "exchange": "KOSDAQ",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": -1.2931034482758674,
-        "close": 9160,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": 3.9727582292849117,
-        "return_15d": 15.510718789407306,
-        "return_1m": 9.832134292565954,
-        "return_ytd": 0.43859649122806044,
-        "return_1y": 12.079659369848518,
-        "return_3y": -6.569336394839942,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 6.759906759906764,
-        "return_2y": 6.44035371338032
-      }
-    },
-    {
-      "id": "A_579",
-      "type": "ASSET",
-      "name": "RFHIC",
-      "exposure": {
-        "ticker": "218410",
-        "exchange": "KOSDAQ",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": -2.025782688766109,
-        "close": 53200,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": 2.111324376199608,
-        "return_15d": 18.09100998890123,
-        "return_1m": 3.90625,
-        "return_ytd": 51.78316690442226,
-        "return_1y": 100.15587627967987,
-        "return_3y": 199.79569768491396,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 9.80392156862746,
-        "return_2y": 280.3908570397635
-      }
-    },
-    {
-      "id": "A_580",
-      "type": "ASSET",
-      "name": "아이쓰리시스템",
-      "exposure": {
-        "ticker": "214430",
-        "exchange": "KOSDAQ",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": -2.4390243902439046,
-        "close": 72000,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": -1.5047879616963078,
-        "return_15d": 10.939907550077033,
-        "return_1m": 19.20529801324504,
-        "return_ytd": -9.774436090225569,
-        "return_1y": -33.503105139464196,
-        "return_3y": 114.93189423215813,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 12.676056338028175,
-        "return_2y": 88.89702384999394
-      }
-    },
-    {
-      "id": "BF_128",
-      "type": "BUSINESS_FIELD",
-      "name": "지상화력/기동"
-    },
-    {
-      "id": "BF_129",
-      "type": "BUSINESS_FIELD",
-      "name": "유도무기·레이더·전자전"
-    },
-    {
-      "id": "BF_130",
-      "type": "BUSINESS_FIELD",
-      "name": "항공/우주"
-    },
-    {
-      "id": "M_026",
-      "type": "MACRO",
-      "name": "방산수요증가"
-    },
-    {
-      "id": "M_131",
-      "type": "MACRO",
-      "name": "군비증강"
-    },
-    {
-      "id": "M_150",
-      "type": "MACRO",
-      "name": "나토군비증강"
-    },
-    {
-      "id": "C_5524",
-      "type": "CHARACTER",
-      "name": "방산전자통신"
-    },
-    {
-      "id": "C_5525",
-      "type": "CHARACTER",
-      "name": "유도무기부품"
-    },
-    {
-      "id": "C_5526",
-      "type": "CHARACTER",
-      "name": "방산구동장치"
-    },
-    {
-      "id": "C_5527",
-      "type": "CHARACTER",
-      "name": "방산변속기포"
-    },
-    {
-      "id": "C_5528",
-      "type": "CHARACTER",
-      "name": "방산엔진"
-    },
-    {
-      "id": "C_5529",
-      "type": "CHARACTER",
-      "name": "방탄소재"
-    },
-    {
-      "id": "C_5530",
-      "type": "CHARACTER",
-      "name": "탄약구리"
-    },
-    {
-      "id": "C_5531",
-      "type": "CHARACTER",
-      "name": "항공우주부품"
-    },
-    {
-      "id": "C_5532",
-      "type": "CHARACTER",
-      "name": "방산전력"
-    },
-    {
-      "id": "C_5533",
-      "type": "CHARACTER",
-      "name": "방산GaN_RF"
-    },
-    {
-      "id": "C_5534",
-      "type": "CHARACTER",
-      "name": "적외선센서"
-    },
-    {
-      "id": "A_2880",
-      "type": "ASSET",
-      "name": "PLUS K방산소부장",
-      "exposure": {
-        "ticker": "0090B0",
-        "exchange": "KRX",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": null,
-        "return_3d": null,
-        "return_15d": null,
-        "return_1m": null,
-        "return_ytd": null,
-        "return_1y": null,
-        "return_3y": null,
-        "close": null,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": null,
-        "valuationSource": null,
-        "returnsAsOf": null,
-        "returnsSource": null,
-        "return_5d": null,
-        "return_2y": null
-      }
-    }
-  ],
-  "edges": [
-    {
-      "from": "A_570",
-      "to": "T_068",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002161"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_571",
-      "to": "T_068",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002162"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_572",
-      "to": "T_068",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002163"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_573",
-      "to": "T_068",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002164"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_574",
-      "to": "T_068",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002165"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_575",
-      "to": "T_068",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002166"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_576",
-      "to": "T_068",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002167"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_577",
-      "to": "T_068",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002168"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_578",
-      "to": "T_068",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002169"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_579",
-      "to": "T_068",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002170"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_580",
-      "to": "T_068",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002171"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_570",
-      "to": "BF_128",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_002172"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_571",
-      "to": "BF_128",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_002173"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_572",
-      "to": "BF_128",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_002174"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_573",
-      "to": "BF_128",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_002175"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_574",
-      "to": "BF_128",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_002176"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_575",
-      "to": "BF_128",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_002177"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_576",
-      "to": "BF_128",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_002178"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_580",
-      "to": "BF_129",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_002179"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_579",
-      "to": "BF_129",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_002180"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_578",
-      "to": "BF_129",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_002181"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_577",
-      "to": "BF_130",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_002182"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_578",
-      "to": "BF_130",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_002183"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "M_026",
-      "to": "T_068",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002184"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_131",
-      "to": "T_068",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002185"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_150",
-      "to": "T_068",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002186"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_570",
-      "to": "C_5524",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014467"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_571",
-      "to": "C_5525",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014468"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_572",
-      "to": "C_5526",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014469"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_573",
-      "to": "C_5527",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014470"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_574",
-      "to": "C_5528",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014471"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_575",
-      "to": "C_5529",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014472"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_576",
-      "to": "C_5530",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014473"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_577",
-      "to": "C_5531",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014474"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_578",
-      "to": "C_5532",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014475"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_579",
-      "to": "C_5533",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014476"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_580",
-      "to": "C_5534",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014477"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_573",
-      "to": "A_574",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019028"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "SNT다이내믹스와 STX엔진은 군용 동력장치·구동계 부품 시장 경쟁"
-    },
-    {
-      "from": "A_578",
-      "to": "A_579",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019029"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "비츠로테크와 RFHIC는 방산용 전력전자·RF 부품 시장 경쟁"
-    },
-    {
-      "from": "A_2880",
-      "to": "T_068",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020587"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_570",
-      "to": "T_068",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002161"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_571",
-      "to": "T_068",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002162"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_572",
-      "to": "T_068",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002163"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_573",
-      "to": "T_068",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002164"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_574",
-      "to": "T_068",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002165"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_575",
-      "to": "T_068",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002166"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_576",
-      "to": "T_068",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002167"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_577",
-      "to": "T_068",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002168"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_578",
-      "to": "T_068",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002169"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_579",
-      "to": "T_068",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002170"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_580",
-      "to": "T_068",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002171"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_570",
-      "to": "BF_128",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_002172"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_571",
-      "to": "BF_128",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_002173"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_572",
-      "to": "BF_128",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_002174"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_573",
-      "to": "BF_128",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_002175"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_574",
-      "to": "BF_128",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_002176"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_575",
-      "to": "BF_128",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_002177"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_576",
-      "to": "BF_128",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_002178"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_580",
-      "to": "BF_129",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_002179"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_579",
-      "to": "BF_129",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_002180"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_578",
-      "to": "BF_129",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_002181"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_577",
-      "to": "BF_130",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_002182"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_578",
-      "to": "BF_130",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_002183"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "M_026",
-      "to": "T_068",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002184"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_131",
-      "to": "T_068",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002185"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_150",
-      "to": "T_068",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002186"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_570",
-      "to": "C_5524",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014467"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_571",
-      "to": "C_5525",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014468"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_572",
-      "to": "C_5526",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014469"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_573",
-      "to": "C_5527",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014470"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_574",
-      "to": "C_5528",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014471"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_575",
-      "to": "C_5529",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014472"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_576",
-      "to": "C_5530",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014473"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_577",
-      "to": "C_5531",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014474"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_578",
-      "to": "C_5532",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014475"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_579",
-      "to": "C_5533",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014476"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_580",
-      "to": "C_5534",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014477"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_573",
-      "to": "A_574",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019028"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "SNT다이내믹스와 STX엔진은 군용 동력장치·구동계 부품 시장 경쟁"
-    },
-    {
-      "from": "A_578",
-      "to": "A_579",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019029"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "비츠로테크와 RFHIC는 방산용 전력전자·RF 부품 시장 경쟁"
-    },
-    {
-      "from": "A_2880",
-      "to": "T_068",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020587"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ]
+  {
+   "id": "A_570",
+   "type": "ASSET",
+   "name": "코츠테크놀로지",
+   "exposure": {
+    "ticker": "448710",
+    "exchange": "KOSDAQ",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": -1.9182652210175122,
+    "close": 11760,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": -2.8901734104046284,
+    "return_15d": 7.201458523245208,
+    "return_1m": 11.048158640226635,
+    "return_ytd": -33.37110481586403,
+    "return_1y": -47.72372216539919,
+    "return_3y": -46.37624405232863,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 4.533333333333323,
+    "return_2y": -53.54686273661618
+   }
+  },
+  {
+   "id": "A_571",
+   "type": "ASSET",
+   "name": "퍼스텍",
+   "exposure": {
+    "ticker": "010820",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 1.8547140649149974,
+    "close": 6590,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": 3.4536891679748827,
+    "return_15d": 6.6343042071197456,
+    "return_1m": 11.694915254237293,
+    "return_ytd": 64.75,
+    "return_1y": 53.79229871645275,
+    "return_3y": 85.89562764456981,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 9.286898839137647,
+    "return_2y": 102.76923076923077
+   }
+  },
+  {
+   "id": "A_572",
+   "type": "ASSET",
+   "name": "엠앤씨솔루션",
+   "exposure": {
+    "ticker": "484870",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": -2.729257641921401,
+    "close": 17820,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": 5.07075471698113,
+    "return_15d": -16.338028169014084,
+    "return_1m": -24.331210191082796,
+    "return_ytd": -62.08510638297873,
+    "return_1y": -65.40928210080494,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 11.375000000000002,
+    "return_2y": null
+   }
+  },
+  {
+   "id": "A_573",
+   "type": "ASSET",
+   "name": "SNT다이내믹스",
+   "exposure": {
+    "ticker": "003570",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 1.8750000000000044,
+    "close": 32600,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": 1.3996889580093264,
+    "return_15d": -6.857142857142861,
+    "return_1m": -6.051873198847257,
+    "return_ytd": -25.935042765117664,
+    "return_1y": -40.92716831576267,
+    "return_3y": 301.83962178854796,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 1.8750000000000044,
+    "return_2y": 74.12759431287313
+   }
+  },
+  {
+   "id": "A_574",
+   "type": "ASSET",
+   "name": "STX엔진",
+   "exposure": {
+    "ticker": "077970",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": -0.5253940455341555,
+    "close": 28400,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": 0.35335689045936647,
+    "return_15d": 11.154598825831696,
+    "return_1m": 10.9375,
+    "return_ytd": -15.09715994020927,
+    "return_1y": 15.212981744421917,
+    "return_3y": 103.00214438884919,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 4.990757855822547,
+    "return_2y": 69.04761904761905
+   }
+  },
+  {
+   "id": "A_575",
+   "type": "ASSET",
+   "name": "삼양컴텍",
+   "exposure": {
+    "ticker": "484590",
+    "exchange": "KOSDAQ",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": -0.887573964497046,
+    "close": 6700,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": 2.7607361963190247,
+    "return_15d": 4.037267080745344,
+    "return_1m": 8.239095315024226,
+    "return_ytd": -50.0,
+    "return_1y": null,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 6.518282988871227,
+    "return_2y": null
+   }
+  },
+  {
+   "id": "A_576",
+   "type": "ASSET",
+   "name": "풍산",
+   "exposure": {
+    "ticker": "103140",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": -2.3809523809523836,
+    "close": 82000,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": -1.7964071856287456,
+    "return_15d": 20.05856515373352,
+    "return_1m": 31.41025641025641,
+    "return_ytd": -21.692531287751503,
+    "return_1y": -38.33648035487157,
+    "return_3y": 156.4986586168045,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": -1.9138755980861233,
+    "return_2y": 33.2198808999643
+   }
+  },
+  {
+   "id": "A_577",
+   "type": "ASSET",
+   "name": "켄코아에어로스페이스",
+   "exposure": {
+    "ticker": "274090",
+    "exchange": "KOSDAQ",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": -3.154305200341001,
+    "close": 11360,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": -10.832025117739407,
+    "return_15d": -37.23756906077348,
+    "return_1m": -47.77011494252874,
+    "return_ytd": -39.28380545163015,
+    "return_1y": -9.984152139461177,
+    "return_3y": -22.45733788395905,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": -6.502057613168722,
+    "return_2y": 4.124656278643446
+   }
+  },
+  {
+   "id": "A_578",
+   "type": "ASSET",
+   "name": "비츠로테크",
+   "exposure": {
+    "ticker": "042370",
+    "exchange": "KOSDAQ",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": -1.2931034482758674,
+    "close": 9160,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": 3.9727582292849117,
+    "return_15d": 15.510718789407306,
+    "return_1m": 9.832134292565954,
+    "return_ytd": 0.43859649122806044,
+    "return_1y": 12.079659369848518,
+    "return_3y": -6.569336394839942,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 6.759906759906764,
+    "return_2y": 6.44035371338032
+   }
+  },
+  {
+   "id": "A_579",
+   "type": "ASSET",
+   "name": "RFHIC",
+   "exposure": {
+    "ticker": "218410",
+    "exchange": "KOSDAQ",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": -2.025782688766109,
+    "close": 53200,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": 2.111324376199608,
+    "return_15d": 18.09100998890123,
+    "return_1m": 3.90625,
+    "return_ytd": 51.78316690442226,
+    "return_1y": 100.15587627967987,
+    "return_3y": 199.79569768491396,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 9.80392156862746,
+    "return_2y": 280.3908570397635
+   }
+  },
+  {
+   "id": "A_580",
+   "type": "ASSET",
+   "name": "아이쓰리시스템",
+   "exposure": {
+    "ticker": "214430",
+    "exchange": "KOSDAQ",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": -2.4390243902439046,
+    "close": 72000,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": -1.5047879616963078,
+    "return_15d": 10.939907550077033,
+    "return_1m": 19.20529801324504,
+    "return_ytd": -9.774436090225569,
+    "return_1y": -33.503105139464196,
+    "return_3y": 114.93189423215813,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 12.676056338028175,
+    "return_2y": 88.89702384999394
+   }
+  },
+  {
+   "id": "BF_128",
+   "type": "BUSINESS_FIELD",
+   "name": "지상화력/기동"
+  },
+  {
+   "id": "BF_129",
+   "type": "BUSINESS_FIELD",
+   "name": "유도무기·레이더·전자전"
+  },
+  {
+   "id": "BF_130",
+   "type": "BUSINESS_FIELD",
+   "name": "항공/우주"
+  },
+  {
+   "id": "M_026",
+   "type": "MACRO",
+   "name": "방산수요증가"
+  },
+  {
+   "id": "M_131",
+   "type": "MACRO",
+   "name": "군비증강"
+  },
+  {
+   "id": "M_150",
+   "type": "MACRO",
+   "name": "나토군비증강"
+  },
+  {
+   "id": "C_5524",
+   "type": "CHARACTER",
+   "name": "방산전자통신"
+  },
+  {
+   "id": "C_5525",
+   "type": "CHARACTER",
+   "name": "유도무기부품"
+  },
+  {
+   "id": "C_5526",
+   "type": "CHARACTER",
+   "name": "방산구동장치"
+  },
+  {
+   "id": "C_5527",
+   "type": "CHARACTER",
+   "name": "방산변속기포"
+  },
+  {
+   "id": "C_5528",
+   "type": "CHARACTER",
+   "name": "방산엔진"
+  },
+  {
+   "id": "C_5529",
+   "type": "CHARACTER",
+   "name": "방탄소재"
+  },
+  {
+   "id": "C_5530",
+   "type": "CHARACTER",
+   "name": "탄약구리"
+  },
+  {
+   "id": "C_5531",
+   "type": "CHARACTER",
+   "name": "항공우주부품"
+  },
+  {
+   "id": "C_5532",
+   "type": "CHARACTER",
+   "name": "방산전력"
+  },
+  {
+   "id": "C_5533",
+   "type": "CHARACTER",
+   "name": "방산GaN_RF"
+  },
+  {
+   "id": "C_5534",
+   "type": "CHARACTER",
+   "name": "적외선센서"
+  },
+  {
+   "id": "A_2880",
+   "type": "ASSET",
+   "name": "PLUS K방산소부장",
+   "exposure": {
+    "ticker": "0090B0",
+    "exchange": "KRX",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": null,
+    "return_3d": null,
+    "return_15d": null,
+    "return_1m": null,
+    "return_ytd": null,
+    "return_1y": null,
+    "return_3y": null,
+    "close": null,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": null,
+    "valuationSource": null,
+    "returnsAsOf": null,
+    "returnsSource": null,
+    "return_5d": null,
+    "return_2y": null
+   }
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_570",
+   "to": "T_068",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002161"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_571",
+   "to": "T_068",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002162"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_572",
+   "to": "T_068",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002163"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_573",
+   "to": "T_068",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002164"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_574",
+   "to": "T_068",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002165"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_575",
+   "to": "T_068",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002166"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_576",
+   "to": "T_068",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002167"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_577",
+   "to": "T_068",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002168"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_578",
+   "to": "T_068",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002169"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_579",
+   "to": "T_068",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002170"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_580",
+   "to": "T_068",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002171"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_570",
+   "to": "BF_128",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_002172"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_571",
+   "to": "BF_128",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_002173"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_572",
+   "to": "BF_128",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_002174"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_573",
+   "to": "BF_128",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_002175"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_574",
+   "to": "BF_128",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_002176"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_575",
+   "to": "BF_128",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_002177"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_576",
+   "to": "BF_128",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_002178"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_580",
+   "to": "BF_129",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_002179"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_579",
+   "to": "BF_129",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_002180"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_578",
+   "to": "BF_129",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_002181"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_577",
+   "to": "BF_130",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_002182"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_578",
+   "to": "BF_130",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_002183"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "M_026",
+   "to": "T_068",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002184"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_131",
+   "to": "T_068",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002185"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_150",
+   "to": "T_068",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002186"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_570",
+   "to": "C_5524",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014467"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_571",
+   "to": "C_5525",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014468"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_572",
+   "to": "C_5526",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014469"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_573",
+   "to": "C_5527",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014470"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_574",
+   "to": "C_5528",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014471"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_575",
+   "to": "C_5529",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014472"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_576",
+   "to": "C_5530",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014473"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_577",
+   "to": "C_5531",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014474"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_578",
+   "to": "C_5532",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014475"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_579",
+   "to": "C_5533",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014476"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_580",
+   "to": "C_5534",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014477"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_573",
+   "to": "A_574",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019028"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "SNT다이내믹스와 STX엔진은 군용 동력장치·구동계 부품 시장 경쟁"
+  },
+  {
+   "from": "A_578",
+   "to": "A_579",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019029"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "비츠로테크와 RFHIC는 방산용 전력전자·RF 부품 시장 경쟁"
+  },
+  {
+   "from": "A_2880",
+   "to": "T_068",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020587"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_570",
+   "to": "T_068",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002161"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_571",
+   "to": "T_068",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002162"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_572",
+   "to": "T_068",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002163"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_573",
+   "to": "T_068",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002164"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_574",
+   "to": "T_068",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002165"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_575",
+   "to": "T_068",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002166"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_576",
+   "to": "T_068",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002167"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_577",
+   "to": "T_068",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002168"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_578",
+   "to": "T_068",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002169"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_579",
+   "to": "T_068",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002170"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_580",
+   "to": "T_068",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002171"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_570",
+   "to": "BF_128",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_002172"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_571",
+   "to": "BF_128",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_002173"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_572",
+   "to": "BF_128",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_002174"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_573",
+   "to": "BF_128",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_002175"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_574",
+   "to": "BF_128",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_002176"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_575",
+   "to": "BF_128",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_002177"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_576",
+   "to": "BF_128",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_002178"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_580",
+   "to": "BF_129",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_002179"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_579",
+   "to": "BF_129",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_002180"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_578",
+   "to": "BF_129",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_002181"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_577",
+   "to": "BF_130",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_002182"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_578",
+   "to": "BF_130",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_002183"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "M_026",
+   "to": "T_068",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002184"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_131",
+   "to": "T_068",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002185"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_150",
+   "to": "T_068",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002186"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_570",
+   "to": "C_5524",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014467"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_571",
+   "to": "C_5525",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014468"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_572",
+   "to": "C_5526",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014469"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_573",
+   "to": "C_5527",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014470"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_574",
+   "to": "C_5528",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014471"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_575",
+   "to": "C_5529",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014472"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_576",
+   "to": "C_5530",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014473"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_577",
+   "to": "C_5531",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014474"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_578",
+   "to": "C_5532",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014475"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_579",
+   "to": "C_5533",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014476"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_580",
+   "to": "C_5534",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014477"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_573",
+   "to": "A_574",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019028"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "SNT다이내믹스와 STX엔진은 군용 동력장치·구동계 부품 시장 경쟁"
+  },
+  {
+   "from": "A_578",
+   "to": "A_579",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019029"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "비츠로테크와 RFHIC는 방산용 전력전자·RF 부품 시장 경쟁"
+  },
+  {
+   "from": "A_2880",
+   "to": "T_068",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020587"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ]
 }

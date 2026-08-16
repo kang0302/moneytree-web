@@ -1,486 +1,487 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_077",
-  "themeName": "중동/이스라엘마켓",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-03-26T00:00:00+09:00",
-    "notes": "g77 누적 import 기반 중동/이스라엘 ETF 테마",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-07-10",
-        "kind": "보강",
-        "title": "국가별 ETF CHR 정의",
-        "detail": "터키·사우디·카타르·UAE·이스라엘 5개 국가 ETF에 시장 특성(리라 변동성·비전2030 유가·LNG 금융·금융허브·기술방산) 기반 CHR을 정의하고 상투적 근거를 구체화했다."
-      }
-    ]
+ "schemaVersion": "v5",
+ "themeId": "T_077",
+ "themeName": "중동/이스라엘마켓",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
+  ],
+  "dataAsOf": "2026-03-26T00:00:00+09:00",
+  "notes": "g77 누적 import 기반 중동/이스라엘 ETF 테마",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-07-10",
+    "kind": "보강",
+    "title": "국가별 ETF CHR 정의",
+    "detail": "터키·사우디·카타르·UAE·이스라엘 5개 국가 ETF에 시장 특성(리라 변동성·비전2030 유가·LNG 금융·금융허브·기술방산) 기반 CHR을 정의하고 상투적 근거를 구체화했다."
+   }
+  ],
+  "description": "TUR(터키)·KSA(사우디)·QAT(카타르)·UAE·EIS(이스라엘) 등 미 상장 중동·이스라엘 ETF 묶음. 유가·OPEC+·중동 지정학·이스라엘 IT 사이클의 직접 노출. 유가상승·천연가스가격상승·중동전쟁 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 구성종목은 터키증시리라변동성·사우디비전2030유가·카타르LNG금융·금융부동산허브 등의 특성으로 차별화된다. 구성종목의 기간별 수익률과 이동평균 시그널을 함께 제공한다. 종목별 브리핑 카드와 연도별 이벤트 DB로 테마의 맥락과 변동요인을 확인할 수 있다."
+ },
+ "nodes": [
+  {
+   "id": "T_077",
+   "type": "THEME",
+   "name": "중동/이스라엘마켓"
   },
-  "nodes": [
-    {
-      "id": "T_077",
-      "type": "THEME",
-      "name": "중동/이스라엘마켓"
-    },
-    {
-      "id": "A_648",
-      "type": "ASSET",
-      "name": "TUR",
-      "exposure": {
-        "ticker": "TUR",
-        "exchange": "NASDAQ",
-        "country": "TR",
-        "business_desc": "iShares MSCI Turkey ETF. 은행·산업 중심 터키 대표주 ETF로 리라 통화·초인플레·급격한 금리정책 변동성이 큰 변수."
-      },
-      "metrics": {
-        "return_1d": 0.5588011176022478,
-        "close": 39.59,
-        "marketCap": 206343793,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 3.206465067778952,
-        "return_15d": 1.09805924412667,
-        "return_1m": 2.4851151954439654,
-        "return_ytd": 15.020337013364337,
-        "return_1y": 16.065669891527424,
-        "return_3y": 9.546209186496956,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 2.16774193548388,
-        "return_2y": 4.293993677555319
-      }
-    },
-    {
-      "id": "A_650",
-      "type": "ASSET",
-      "name": "KSA",
-      "exposure": {
-        "ticker": "KSA",
-        "exchange": "NYSEARCA",
-        "country": "SA",
-        "business_desc": "iShares MSCI Saudi Arabia ETF. 아람코·알라지은행 등 사우디 대표주 ETF로 비전2030 투자와 유가가 핵심 동인."
-      },
-      "metrics": {
-        "return_1d": -0.13199577613517421,
-        "close": 37.83,
-        "marketCap": 624149604,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 0.13234515616726839,
-        "return_15d": 2.050175343943894,
-        "return_1m": 2.5203252032520274,
-        "return_ytd": 3.9000274649821476,
-        "return_1y": 0.6384676775738063,
-        "return_3y": -7.641601562500011,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 0.47808764940238113,
-        "return_2y": -8.023340627279364
-      }
-    },
-    {
-      "id": "A_651",
-      "type": "ASSET",
-      "name": "QAT",
-      "exposure": {
-        "ticker": "QAT",
-        "exchange": "NASDAQ",
-        "country": "QA",
-        "business_desc": "iShares MSCI Qatar ETF. QNB 등 금융과 LNG 기반 경제의 카타르 대표주 ETF로 천연가스 수출·중동 유동성에 노출."
-      },
-      "metrics": {
-        "return_1d": -0.05665722379601945,
-        "close": 17.64,
-        "marketCap": 82204534,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 0.2272727272727204,
-        "return_15d": 0.627495721620086,
-        "return_1m": -0.954519932622111,
-        "return_ytd": -6.269925611052074,
-        "return_1y": -14.035087719298245,
-        "return_3y": -5.161290322580648,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -0.7874015748031482,
-        "return_2y": 1.1467889908256756
-      }
-    },
-    {
-      "id": "A_652",
-      "type": "ASSET",
-      "name": "UAE",
-      "exposure": {
-        "ticker": "UAE",
-        "exchange": "NASDAQ",
-        "country": "AE",
-        "business_desc": "iShares MSCI UAE ETF. 두바이·아부다비 은행·부동산 중심 아랍에미리트 ETF로 중동 금융·물류 허브 지위가 특징."
-      },
-      "metrics": {
-        "return_1d": 0.15313935681471325,
-        "close": 19.62,
-        "marketCap": 319836548,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 0.8740359897172256,
-        "return_15d": 4.0296924708377535,
-        "return_1m": 1.922077922077925,
-        "return_ytd": 2.6150627615062705,
-        "return_1y": -1.8018018018017945,
-        "return_3y": 29.07894736842107,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -0.6079027355622935,
-        "return_2y": 36.155447605829295
-      }
-    },
-    {
-      "id": "A_134",
-      "type": "ASSET",
-      "name": "EIS",
-      "exposure": {
-        "ticker": "EIS",
-        "exchange": "NYSEARCA",
-        "country": "IL",
-        "business_desc": "iShares MSCI Israel ETF. 기술·방산·제약(테바) 중심 이스라엘 대표주 ETF로 '스타트업 네이션' 혁신과 중동 지정학 리스크가 공존."
-      },
-      "metrics": {
-        "return_1d": 0.1606554743352806,
-        "close": 124.82,
-        "marketCap": 917454211,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "return_3d": 2.7015896548884033,
-        "return_15d": 4.282010537760317,
-        "return_1m": 3.7613381043521743,
-        "return_ytd": 13.323639007543386,
-        "return_1y": 37.80946065428823,
-        "return_3y": 123.65919282511211,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 0.8492397282432895,
-        "return_2y": 95.13302034428794
-      }
-    },
-    {
-      "id": "M_059",
-      "type": "MACRO",
-      "name": "유가상승"
-    },
-    {
-      "id": "M_060",
-      "type": "MACRO",
-      "name": "천연가스가격상승"
-    },
-    {
-      "id": "M_084",
-      "type": "MACRO",
-      "name": "중동전쟁"
-    },
-    {
-      "id": "C_1969",
-      "type": "CHARACTER",
-      "name": "터키증시리라변동성"
-    },
-    {
-      "id": "C_1970",
-      "type": "CHARACTER",
-      "name": "사우디비전2030유가"
-    },
-    {
-      "id": "C_1971",
-      "type": "CHARACTER",
-      "name": "카타르LNG금융"
-    },
-    {
-      "id": "C_1972",
-      "type": "CHARACTER",
-      "name": "금융부동산허브"
-    },
-    {
-      "id": "C_1973",
-      "type": "CHARACTER",
-      "name": "이스라엘기술방산"
-    }
-  ],
-  "edges": [
-    {
-      "from": "A_648",
-      "to": "T_077",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002542"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_650",
-      "to": "T_077",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002544"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_651",
-      "to": "T_077",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002546"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_652",
-      "to": "T_077",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002548"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_134",
-      "to": "T_077",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002550"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "M_059",
-      "to": "T_077",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002362"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_060",
-      "to": "T_077",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002363"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_084",
-      "to": "T_077",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002364"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_648",
-      "to": "C_1969",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002543"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_650",
-      "to": "C_1970",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002545"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_651",
-      "to": "C_1971",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002547"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_652",
-      "to": "C_1972",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002549"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_134",
-      "to": "C_1973",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002551"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_648",
-      "to": "T_077",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002542"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_650",
-      "to": "T_077",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002544"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_651",
-      "to": "T_077",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002546"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_652",
-      "to": "T_077",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002548"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_134",
-      "to": "T_077",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002550"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "M_059",
-      "to": "T_077",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002362"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_060",
-      "to": "T_077",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002363"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_084",
-      "to": "T_077",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002364"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_648",
-      "to": "C_1969",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002543"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_650",
-      "to": "C_1970",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002545"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_651",
-      "to": "C_1971",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002547"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_652",
-      "to": "C_1972",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002549"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_134",
-      "to": "C_1973",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002551"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    }
-  ]
+  {
+   "id": "A_648",
+   "type": "ASSET",
+   "name": "TUR",
+   "exposure": {
+    "ticker": "TUR",
+    "exchange": "NASDAQ",
+    "country": "TR",
+    "business_desc": "iShares MSCI Turkey ETF. 은행·산업 중심 터키 대표주 ETF로 리라 통화·초인플레·급격한 금리정책 변동성이 큰 변수."
+   },
+   "metrics": {
+    "return_1d": 0.5588011176022478,
+    "close": 39.59,
+    "marketCap": 206343793,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 3.206465067778952,
+    "return_15d": 1.09805924412667,
+    "return_1m": 2.4851151954439654,
+    "return_ytd": 15.020337013364337,
+    "return_1y": 16.065669891527424,
+    "return_3y": 9.546209186496956,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 2.16774193548388,
+    "return_2y": 4.293993677555319
+   }
+  },
+  {
+   "id": "A_650",
+   "type": "ASSET",
+   "name": "KSA",
+   "exposure": {
+    "ticker": "KSA",
+    "exchange": "NYSEARCA",
+    "country": "SA",
+    "business_desc": "iShares MSCI Saudi Arabia ETF. 아람코·알라지은행 등 사우디 대표주 ETF로 비전2030 투자와 유가가 핵심 동인."
+   },
+   "metrics": {
+    "return_1d": -0.13199577613517421,
+    "close": 37.83,
+    "marketCap": 624149604,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 0.13234515616726839,
+    "return_15d": 2.050175343943894,
+    "return_1m": 2.5203252032520274,
+    "return_ytd": 3.9000274649821476,
+    "return_1y": 0.6384676775738063,
+    "return_3y": -7.641601562500011,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 0.47808764940238113,
+    "return_2y": -8.023340627279364
+   }
+  },
+  {
+   "id": "A_651",
+   "type": "ASSET",
+   "name": "QAT",
+   "exposure": {
+    "ticker": "QAT",
+    "exchange": "NASDAQ",
+    "country": "QA",
+    "business_desc": "iShares MSCI Qatar ETF. QNB 등 금융과 LNG 기반 경제의 카타르 대표주 ETF로 천연가스 수출·중동 유동성에 노출."
+   },
+   "metrics": {
+    "return_1d": -0.05665722379601945,
+    "close": 17.64,
+    "marketCap": 82204534,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 0.2272727272727204,
+    "return_15d": 0.627495721620086,
+    "return_1m": -0.954519932622111,
+    "return_ytd": -6.269925611052074,
+    "return_1y": -14.035087719298245,
+    "return_3y": -5.161290322580648,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -0.7874015748031482,
+    "return_2y": 1.1467889908256756
+   }
+  },
+  {
+   "id": "A_652",
+   "type": "ASSET",
+   "name": "UAE",
+   "exposure": {
+    "ticker": "UAE",
+    "exchange": "NASDAQ",
+    "country": "AE",
+    "business_desc": "iShares MSCI UAE ETF. 두바이·아부다비 은행·부동산 중심 아랍에미리트 ETF로 중동 금융·물류 허브 지위가 특징."
+   },
+   "metrics": {
+    "return_1d": 0.15313935681471325,
+    "close": 19.62,
+    "marketCap": 319836548,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 0.8740359897172256,
+    "return_15d": 4.0296924708377535,
+    "return_1m": 1.922077922077925,
+    "return_ytd": 2.6150627615062705,
+    "return_1y": -1.8018018018017945,
+    "return_3y": 29.07894736842107,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -0.6079027355622935,
+    "return_2y": 36.155447605829295
+   }
+  },
+  {
+   "id": "A_134",
+   "type": "ASSET",
+   "name": "EIS",
+   "exposure": {
+    "ticker": "EIS",
+    "exchange": "NYSEARCA",
+    "country": "IL",
+    "business_desc": "iShares MSCI Israel ETF. 기술·방산·제약(테바) 중심 이스라엘 대표주 ETF로 '스타트업 네이션' 혁신과 중동 지정학 리스크가 공존."
+   },
+   "metrics": {
+    "return_1d": 0.1606554743352806,
+    "close": 124.82,
+    "marketCap": 917454211,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "return_3d": 2.7015896548884033,
+    "return_15d": 4.282010537760317,
+    "return_1m": 3.7613381043521743,
+    "return_ytd": 13.323639007543386,
+    "return_1y": 37.80946065428823,
+    "return_3y": 123.65919282511211,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 0.8492397282432895,
+    "return_2y": 95.13302034428794
+   }
+  },
+  {
+   "id": "M_059",
+   "type": "MACRO",
+   "name": "유가상승"
+  },
+  {
+   "id": "M_060",
+   "type": "MACRO",
+   "name": "천연가스가격상승"
+  },
+  {
+   "id": "M_084",
+   "type": "MACRO",
+   "name": "중동전쟁"
+  },
+  {
+   "id": "C_1969",
+   "type": "CHARACTER",
+   "name": "터키증시리라변동성"
+  },
+  {
+   "id": "C_1970",
+   "type": "CHARACTER",
+   "name": "사우디비전2030유가"
+  },
+  {
+   "id": "C_1971",
+   "type": "CHARACTER",
+   "name": "카타르LNG금융"
+  },
+  {
+   "id": "C_1972",
+   "type": "CHARACTER",
+   "name": "금융부동산허브"
+  },
+  {
+   "id": "C_1973",
+   "type": "CHARACTER",
+   "name": "이스라엘기술방산"
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_648",
+   "to": "T_077",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002542"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_650",
+   "to": "T_077",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002544"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_651",
+   "to": "T_077",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002546"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_652",
+   "to": "T_077",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002548"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_134",
+   "to": "T_077",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002550"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "M_059",
+   "to": "T_077",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002362"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_060",
+   "to": "T_077",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002363"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_084",
+   "to": "T_077",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002364"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_648",
+   "to": "C_1969",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002543"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_650",
+   "to": "C_1970",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002545"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_651",
+   "to": "C_1971",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002547"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_652",
+   "to": "C_1972",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002549"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_134",
+   "to": "C_1973",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002551"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_648",
+   "to": "T_077",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002542"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_650",
+   "to": "T_077",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002544"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_651",
+   "to": "T_077",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002546"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_652",
+   "to": "T_077",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002548"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_134",
+   "to": "T_077",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002550"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "M_059",
+   "to": "T_077",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002362"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_060",
+   "to": "T_077",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002363"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_084",
+   "to": "T_077",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002364"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_648",
+   "to": "C_1969",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002543"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_650",
+   "to": "C_1970",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002545"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_651",
+   "to": "C_1971",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002547"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_652",
+   "to": "C_1972",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002549"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_134",
+   "to": "C_1973",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002551"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  }
+ ]
 }

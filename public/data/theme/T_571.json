@@ -1,675 +1,675 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_571",
-  "themeName": "관세전가력_승자vs패자",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-25T00:00:00+09:00",
-    "description": "관세 전가력 — 관세 전쟁을 종목 미시로. 가격을 소비자에 전가하는 브랜드·독점(승자) vs 마진을 흡수하는 수입의존·저마진(패자). 관세 상시화 국면에서 전가력이 실적 갈림길.",
-    "notes": "T_571 신규(2026-07-01)",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-08-04",
-        "kind": "보강",
-        "title": "2궤도 관계 엣지 추가",
-        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
-      },
-      {
-        "date": "2026-07-25",
-        "kind": "수정",
-        "title": "구체적 엣지 백필 + 이벤트",
-        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
-      }
-    ]
-  },
-  "nodes": [
-    {
-      "id": "T_571",
-      "type": "THEME",
-      "name": "관세전가력_승자vs패자"
-    },
-    {
-      "id": "A_798",
-      "type": "ASSET",
-      "name": "코스트코",
-      "exposure": {
-        "ticker": "COST",
-        "exchange": "NASDAQ",
-        "country": "US",
-        "business_desc": "회원제 리테일(전가력·트래픽)",
-        "theme_role": "승자",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -0.07797473618547102,
-        "return_3d": 1.776940020332085,
-        "return_15d": 2.7881458348929966,
-        "return_1m": 4.269053430973702,
-        "return_ytd": 11.452559315351252,
-        "return_1y": -1.4650550036395704,
-        "return_3y": 71.17566388230894,
-        "close": 961.1,
-        "marketCap": 426227666900,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 1.4011099153847795,
-        "return_2y": 11.404759420894628
-      }
-    },
-    {
-      "id": "C_1664",
-      "type": "CHARACTER",
-      "name": "회원제가격전가"
-    },
-    {
-      "id": "A_1763",
-      "type": "ASSET",
-      "name": "코카콜라",
-      "exposure": {
-        "ticker": "KO",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "글로벌 음료 브랜드(전가력)",
-        "theme_role": "승자",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": 0.331731869137486,
-        "return_3d": 1.422294172062899,
-        "return_15d": 6.638297872340426,
-        "return_1m": 5.572941742898396,
-        "return_ytd": 25.461307395222434,
-        "return_1y": 26.11071171818835,
-        "return_3y": 44.07030223390274,
-        "close": 87.71,
-        "marketCap": 377376567001,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 0.7581849511774763,
-        "return_2y": 27.8944298629338
-      }
-    },
-    {
-      "id": "C_1665",
-      "type": "CHARACTER",
-      "name": "브랜드가격전가"
-    },
-    {
-      "id": "A_959",
-      "type": "ASSET",
-      "name": "필립모리스",
-      "exposure": {
-        "ticker": "PM",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "담배·니코틴(비탄력 수요 전가)",
-        "theme_role": "승자",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": 0.7834418506166951,
-        "return_3d": 2.239286864998391,
-        "return_15d": -1.3523316062176272,
-        "return_1m": 8.20687695368003,
-        "return_ytd": 18.697007481296744,
-        "return_1y": 15.199370726689644,
-        "return_3y": 98.63328116849243,
-        "close": 190.39,
-        "marketCap": 296743757900,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 0.4325578941815733,
-        "return_2y": 62.44880546075085
-      }
-    },
-    {
-      "id": "C_1666",
-      "type": "CHARACTER",
-      "name": "니코틴가격전가"
-    },
-    {
-      "id": "A_2026",
-      "type": "ASSET",
-      "name": "페라리",
-      "exposure": {
-        "ticker": "RACE",
-        "exchange": "NYSE",
-        "country": "IT",
-        "business_desc": "초럭셔리(가격 무탄력·전가력)",
-        "theme_role": "승자",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": 0.6209221664362552,
-        "return_3d": 1.1188027104762854,
-        "return_15d": 15.191314488809926,
-        "return_1m": 12.376747209881888,
-        "return_ytd": 12.255114189847394,
-        "return_1y": -10.675451628878408,
-        "return_3y": 31.460531736223363,
-        "close": 414.85,
-        "marketCap": 72978765460,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 0.6282443118420522,
-        "return_2y": -8.401413115478018
-      }
-    },
-    {
-      "id": "C_1667",
-      "type": "CHARACTER",
-      "name": "럭셔리가격전가"
-    },
-    {
-      "id": "A_864",
-      "type": "ASSET",
-      "name": "달러트리",
-      "exposure": {
-        "ticker": "DLTR",
-        "exchange": "NASDAQ",
-        "country": "US",
-        "business_desc": "초저가 리테일(관세 마진 흡수)",
-        "theme_role": "패자",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -0.1080830695591839,
-        "return_3d": 1.0385756676557722,
-        "return_15d": 7.422166874221658,
-        "return_1m": 3.877649325626198,
-        "return_ytd": 5.186570197544893,
-        "return_1y": 12.876210416121436,
-        "return_3y": -11.14544705397611,
-        "close": 129.39,
-        "marketCap": 24865523250,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -1.1535523300229333,
-        "return_2y": 40.077947385514754
-      }
-    },
-    {
-      "id": "C_1668",
-      "type": "CHARACTER",
-      "name": "저가수입의존"
-    },
-    {
-      "id": "A_834",
-      "type": "ASSET",
-      "name": "나이키",
-      "exposure": {
-        "ticker": "NKE",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "신발·의류(수입의존 원가 노출)",
-        "theme_role": "패자",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -1.2127091923356814,
-        "return_3d": -1.4278799612778448,
-        "return_15d": -2.326139088729029,
-        "return_1m": -4.969668688754092,
-        "return_ytd": -36.06969078637577,
-        "return_1y": -46.68150281450452,
-        "return_3y": -62.16090672612412,
-        "close": 40.73,
-        "marketCap": 60272711194,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -2.326139088729029,
-        "return_2y": -48.12786551197147
-      }
-    },
-    {
-      "id": "C_1669",
-      "type": "CHARACTER",
-      "name": "중국베트남생산"
-    },
-    {
-      "id": "A_2605",
-      "type": "ASSET",
-      "name": "하스브로",
-      "exposure": {
-        "ticker": "HAS",
-        "exchange": "NASDAQ",
-        "country": "US",
-        "business_desc": "완구(중국 생산·관세 마진 흡수)",
-        "theme_role": "패자",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": 0.0,
-        "return_3d": -0.3503709810387501,
-        "return_15d": 8.90866088523481,
-        "return_1m": 23.31038000510075,
-        "return_ytd": 17.92682926829268,
-        "return_1y": 20.04965859714465,
-        "return_3y": 47.36360865589759,
-        "close": 96.7,
-        "marketCap": 13638999959,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 3.400342172797277,
-        "return_2y": 49.64407304240173
-      }
-    },
-    {
-      "id": "C_1670",
-      "type": "CHARACTER",
-      "name": "완구중국생산"
-    },
-    {
-      "id": "M_118",
-      "type": "MACRO",
-      "name": "관세불확실성"
-    },
-    {
-      "id": "M_256",
-      "type": "MACRO",
-      "name": "보호무역장벽"
-    },
-    {
-      "id": "M_285",
-      "type": "MACRO",
-      "name": "미국소비심리"
-    }
+ "schemaVersion": "v5",
+ "themeId": "T_571",
+ "themeName": "관세전가력_승자vs패자",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
   ],
-  "edges": [
-    {
-      "from": "A_798",
-      "to": "T_571",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013091"
-      ]
-    },
-    {
-      "from": "A_798",
-      "to": "C_1664",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017800"
-      ]
-    },
-    {
-      "from": "A_1763",
-      "to": "T_571",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013092"
-      ]
-    },
-    {
-      "from": "A_1763",
-      "to": "C_1665",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017801"
-      ]
-    },
-    {
-      "from": "A_959",
-      "to": "T_571",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013093"
-      ]
-    },
-    {
-      "from": "A_959",
-      "to": "C_1666",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017802"
-      ]
-    },
-    {
-      "from": "A_2026",
-      "to": "T_571",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013094"
-      ]
-    },
-    {
-      "from": "A_2026",
-      "to": "C_1667",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017803"
-      ]
-    },
-    {
-      "from": "A_864",
-      "to": "T_571",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013095"
-      ]
-    },
-    {
-      "from": "A_864",
-      "to": "C_1668",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017804"
-      ]
-    },
-    {
-      "from": "A_834",
-      "to": "T_571",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013096"
-      ]
-    },
-    {
-      "from": "A_834",
-      "to": "C_1669",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017805"
-      ]
-    },
-    {
-      "from": "A_2605",
-      "to": "T_571",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013097"
-      ]
-    },
-    {
-      "from": "A_2605",
-      "to": "C_1670",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017806"
-      ]
-    },
-    {
-      "from": "M_118",
-      "to": "T_571",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013098"
-      ]
-    },
-    {
-      "from": "M_256",
-      "to": "T_571",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013099"
-      ]
-    },
-    {
-      "from": "M_285",
-      "to": "T_571",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013100"
-      ]
-    },
-    {
-      "from": "A_798",
-      "to": "A_864",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020211"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "코스트코와 달러트리는 저가 소매 시장 경쟁"
-    },
-    {
-      "from": "A_1763",
-      "to": "A_959",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020212"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "코카콜라와 필립모리스는 강한 가격전가력 소비재 대표주 경쟁"
-    },
-    {
-      "from": "A_834",
-      "to": "A_2605",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020213"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "나이키와 하스브로는 아시아 생산 의존 소비재로 관세 노출 경쟁"
-    },
-    {
-      "from": "A_2026",
-      "to": "A_834",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020214"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "페라리와 나이키는 브랜드 프리미엄 기반 가격전가력 격차 비교 대상"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_798",
-      "to": "T_571",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013091"
-      ]
-    },
-    {
-      "from": "A_798",
-      "to": "C_1664",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017800"
-      ]
-    },
-    {
-      "from": "A_1763",
-      "to": "T_571",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013092"
-      ]
-    },
-    {
-      "from": "A_1763",
-      "to": "C_1665",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017801"
-      ]
-    },
-    {
-      "from": "A_959",
-      "to": "T_571",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013093"
-      ]
-    },
-    {
-      "from": "A_959",
-      "to": "C_1666",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017802"
-      ]
-    },
-    {
-      "from": "A_2026",
-      "to": "T_571",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013094"
-      ]
-    },
-    {
-      "from": "A_2026",
-      "to": "C_1667",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017803"
-      ]
-    },
-    {
-      "from": "A_864",
-      "to": "T_571",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013095"
-      ]
-    },
-    {
-      "from": "A_864",
-      "to": "C_1668",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017804"
-      ]
-    },
-    {
-      "from": "A_834",
-      "to": "T_571",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013096"
-      ]
-    },
-    {
-      "from": "A_834",
-      "to": "C_1669",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017805"
-      ]
-    },
-    {
-      "from": "A_2605",
-      "to": "T_571",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013097"
-      ]
-    },
-    {
-      "from": "A_2605",
-      "to": "C_1670",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017806"
-      ]
-    },
-    {
-      "from": "M_118",
-      "to": "T_571",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013098"
-      ]
-    },
-    {
-      "from": "M_256",
-      "to": "T_571",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013099"
-      ]
-    },
-    {
-      "from": "M_285",
-      "to": "T_571",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013100"
-      ]
-    },
-    {
-      "from": "A_798",
-      "to": "A_864",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020211"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "코스트코와 달러트리는 저가 소매 시장 경쟁"
-    },
-    {
-      "from": "A_1763",
-      "to": "A_959",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020212"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "코카콜라와 필립모리스는 강한 가격전가력 소비재 대표주 경쟁"
-    },
-    {
-      "from": "A_834",
-      "to": "A_2605",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020213"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "나이키와 하스브로는 아시아 생산 의존 소비재로 관세 노출 경쟁"
-    },
-    {
-      "from": "A_2026",
-      "to": "A_834",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020214"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "페라리와 나이키는 브랜드 프리미엄 기반 가격전가력 격차 비교 대상"
-    }
+  "dataAsOf": "2026-07-25T00:00:00+09:00",
+  "description": "관세 전가력 — 관세 전쟁을 종목 미시로. 가격을 소비자에 전가하는 브랜드·독점(승자) vs 마진을 흡수하는 수입의존·저마진(패자). 관세 상시화 국면에서 전가력이 실적 갈림길. 관세불확실성·보호무역장벽·미국소비심리 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 구성종목은 회원제가격전가·브랜드가격전가·니코틴가격전가·럭셔리가격전가 등의 특성으로 차별화된다. 경쟁·공급·협력 등 4건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다. 종목별 브리핑 카드와 연도별 이벤트 DB로 테마의 맥락과 변동요인을 확인할 수 있다.",
+  "notes": "T_571 신규(2026-07-01)",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-08-04",
+    "kind": "보강",
+    "title": "2궤도 관계 엣지 추가",
+    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
+   },
+   {
+    "date": "2026-07-25",
+    "kind": "수정",
+    "title": "구체적 엣지 백필 + 이벤트",
+    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
+   }
   ]
+ },
+ "nodes": [
+  {
+   "id": "T_571",
+   "type": "THEME",
+   "name": "관세전가력_승자vs패자"
+  },
+  {
+   "id": "A_798",
+   "type": "ASSET",
+   "name": "코스트코",
+   "exposure": {
+    "ticker": "COST",
+    "exchange": "NASDAQ",
+    "country": "US",
+    "business_desc": "회원제 리테일(전가력·트래픽)",
+    "theme_role": "승자",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -0.07797473618547102,
+    "return_3d": 1.776940020332085,
+    "return_15d": 2.7881458348929966,
+    "return_1m": 4.269053430973702,
+    "return_ytd": 11.452559315351252,
+    "return_1y": -1.4650550036395704,
+    "return_3y": 71.17566388230894,
+    "close": 961.1,
+    "marketCap": 426227666900,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 1.4011099153847795,
+    "return_2y": 11.404759420894628
+   }
+  },
+  {
+   "id": "C_1664",
+   "type": "CHARACTER",
+   "name": "회원제가격전가"
+  },
+  {
+   "id": "A_1763",
+   "type": "ASSET",
+   "name": "코카콜라",
+   "exposure": {
+    "ticker": "KO",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "글로벌 음료 브랜드(전가력)",
+    "theme_role": "승자",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": 0.331731869137486,
+    "return_3d": 1.422294172062899,
+    "return_15d": 6.638297872340426,
+    "return_1m": 5.572941742898396,
+    "return_ytd": 25.461307395222434,
+    "return_1y": 26.11071171818835,
+    "return_3y": 44.07030223390274,
+    "close": 87.71,
+    "marketCap": 377376567001,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 0.7581849511774763,
+    "return_2y": 27.8944298629338
+   }
+  },
+  {
+   "id": "C_1665",
+   "type": "CHARACTER",
+   "name": "브랜드가격전가"
+  },
+  {
+   "id": "A_959",
+   "type": "ASSET",
+   "name": "필립모리스",
+   "exposure": {
+    "ticker": "PM",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "담배·니코틴(비탄력 수요 전가)",
+    "theme_role": "승자",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": 0.7834418506166951,
+    "return_3d": 2.239286864998391,
+    "return_15d": -1.3523316062176272,
+    "return_1m": 8.20687695368003,
+    "return_ytd": 18.697007481296744,
+    "return_1y": 15.199370726689644,
+    "return_3y": 98.63328116849243,
+    "close": 190.39,
+    "marketCap": 296743757900,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 0.4325578941815733,
+    "return_2y": 62.44880546075085
+   }
+  },
+  {
+   "id": "C_1666",
+   "type": "CHARACTER",
+   "name": "니코틴가격전가"
+  },
+  {
+   "id": "A_2026",
+   "type": "ASSET",
+   "name": "페라리",
+   "exposure": {
+    "ticker": "RACE",
+    "exchange": "NYSE",
+    "country": "IT",
+    "business_desc": "초럭셔리(가격 무탄력·전가력)",
+    "theme_role": "승자",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": 0.6209221664362552,
+    "return_3d": 1.1188027104762854,
+    "return_15d": 15.191314488809926,
+    "return_1m": 12.376747209881888,
+    "return_ytd": 12.255114189847394,
+    "return_1y": -10.675451628878408,
+    "return_3y": 31.460531736223363,
+    "close": 414.85,
+    "marketCap": 72978765460,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 0.6282443118420522,
+    "return_2y": -8.401413115478018
+   }
+  },
+  {
+   "id": "C_1667",
+   "type": "CHARACTER",
+   "name": "럭셔리가격전가"
+  },
+  {
+   "id": "A_864",
+   "type": "ASSET",
+   "name": "달러트리",
+   "exposure": {
+    "ticker": "DLTR",
+    "exchange": "NASDAQ",
+    "country": "US",
+    "business_desc": "초저가 리테일(관세 마진 흡수)",
+    "theme_role": "패자",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -0.1080830695591839,
+    "return_3d": 1.0385756676557722,
+    "return_15d": 7.422166874221658,
+    "return_1m": 3.877649325626198,
+    "return_ytd": 5.186570197544893,
+    "return_1y": 12.876210416121436,
+    "return_3y": -11.14544705397611,
+    "close": 129.39,
+    "marketCap": 24865523250,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -1.1535523300229333,
+    "return_2y": 40.077947385514754
+   }
+  },
+  {
+   "id": "C_1668",
+   "type": "CHARACTER",
+   "name": "저가수입의존"
+  },
+  {
+   "id": "A_834",
+   "type": "ASSET",
+   "name": "나이키",
+   "exposure": {
+    "ticker": "NKE",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "신발·의류(수입의존 원가 노출)",
+    "theme_role": "패자",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -1.2127091923356814,
+    "return_3d": -1.4278799612778448,
+    "return_15d": -2.326139088729029,
+    "return_1m": -4.969668688754092,
+    "return_ytd": -36.06969078637577,
+    "return_1y": -46.68150281450452,
+    "return_3y": -62.16090672612412,
+    "close": 40.73,
+    "marketCap": 60272711194,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -2.326139088729029,
+    "return_2y": -48.12786551197147
+   }
+  },
+  {
+   "id": "C_1669",
+   "type": "CHARACTER",
+   "name": "중국베트남생산"
+  },
+  {
+   "id": "A_2605",
+   "type": "ASSET",
+   "name": "하스브로",
+   "exposure": {
+    "ticker": "HAS",
+    "exchange": "NASDAQ",
+    "country": "US",
+    "business_desc": "완구(중국 생산·관세 마진 흡수)",
+    "theme_role": "패자",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": 0.0,
+    "return_3d": -0.3503709810387501,
+    "return_15d": 8.90866088523481,
+    "return_1m": 23.31038000510075,
+    "return_ytd": 17.92682926829268,
+    "return_1y": 20.04965859714465,
+    "return_3y": 47.36360865589759,
+    "close": 96.7,
+    "marketCap": 13638999959,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 3.400342172797277,
+    "return_2y": 49.64407304240173
+   }
+  },
+  {
+   "id": "C_1670",
+   "type": "CHARACTER",
+   "name": "완구중국생산"
+  },
+  {
+   "id": "M_118",
+   "type": "MACRO",
+   "name": "관세불확실성"
+  },
+  {
+   "id": "M_256",
+   "type": "MACRO",
+   "name": "보호무역장벽"
+  },
+  {
+   "id": "M_285",
+   "type": "MACRO",
+   "name": "미국소비심리"
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_798",
+   "to": "T_571",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013091"
+   ]
+  },
+  {
+   "from": "A_798",
+   "to": "C_1664",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017800"
+   ]
+  },
+  {
+   "from": "A_1763",
+   "to": "T_571",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013092"
+   ]
+  },
+  {
+   "from": "A_1763",
+   "to": "C_1665",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017801"
+   ]
+  },
+  {
+   "from": "A_959",
+   "to": "T_571",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013093"
+   ]
+  },
+  {
+   "from": "A_959",
+   "to": "C_1666",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017802"
+   ]
+  },
+  {
+   "from": "A_2026",
+   "to": "T_571",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013094"
+   ]
+  },
+  {
+   "from": "A_2026",
+   "to": "C_1667",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017803"
+   ]
+  },
+  {
+   "from": "A_864",
+   "to": "T_571",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013095"
+   ]
+  },
+  {
+   "from": "A_864",
+   "to": "C_1668",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017804"
+   ]
+  },
+  {
+   "from": "A_834",
+   "to": "T_571",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013096"
+   ]
+  },
+  {
+   "from": "A_834",
+   "to": "C_1669",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017805"
+   ]
+  },
+  {
+   "from": "A_2605",
+   "to": "T_571",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013097"
+   ]
+  },
+  {
+   "from": "A_2605",
+   "to": "C_1670",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017806"
+   ]
+  },
+  {
+   "from": "M_118",
+   "to": "T_571",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013098"
+   ]
+  },
+  {
+   "from": "M_256",
+   "to": "T_571",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013099"
+   ]
+  },
+  {
+   "from": "M_285",
+   "to": "T_571",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013100"
+   ]
+  },
+  {
+   "from": "A_798",
+   "to": "A_864",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020211"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "코스트코와 달러트리는 저가 소매 시장 경쟁"
+  },
+  {
+   "from": "A_1763",
+   "to": "A_959",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020212"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "코카콜라와 필립모리스는 강한 가격전가력 소비재 대표주 경쟁"
+  },
+  {
+   "from": "A_834",
+   "to": "A_2605",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020213"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "나이키와 하스브로는 아시아 생산 의존 소비재로 관세 노출 경쟁"
+  },
+  {
+   "from": "A_2026",
+   "to": "A_834",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020214"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "페라리와 나이키는 브랜드 프리미엄 기반 가격전가력 격차 비교 대상"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_798",
+   "to": "T_571",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013091"
+   ]
+  },
+  {
+   "from": "A_798",
+   "to": "C_1664",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017800"
+   ]
+  },
+  {
+   "from": "A_1763",
+   "to": "T_571",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013092"
+   ]
+  },
+  {
+   "from": "A_1763",
+   "to": "C_1665",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017801"
+   ]
+  },
+  {
+   "from": "A_959",
+   "to": "T_571",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013093"
+   ]
+  },
+  {
+   "from": "A_959",
+   "to": "C_1666",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017802"
+   ]
+  },
+  {
+   "from": "A_2026",
+   "to": "T_571",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013094"
+   ]
+  },
+  {
+   "from": "A_2026",
+   "to": "C_1667",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017803"
+   ]
+  },
+  {
+   "from": "A_864",
+   "to": "T_571",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013095"
+   ]
+  },
+  {
+   "from": "A_864",
+   "to": "C_1668",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017804"
+   ]
+  },
+  {
+   "from": "A_834",
+   "to": "T_571",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013096"
+   ]
+  },
+  {
+   "from": "A_834",
+   "to": "C_1669",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017805"
+   ]
+  },
+  {
+   "from": "A_2605",
+   "to": "T_571",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013097"
+   ]
+  },
+  {
+   "from": "A_2605",
+   "to": "C_1670",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017806"
+   ]
+  },
+  {
+   "from": "M_118",
+   "to": "T_571",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013098"
+   ]
+  },
+  {
+   "from": "M_256",
+   "to": "T_571",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013099"
+   ]
+  },
+  {
+   "from": "M_285",
+   "to": "T_571",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013100"
+   ]
+  },
+  {
+   "from": "A_798",
+   "to": "A_864",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020211"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "코스트코와 달러트리는 저가 소매 시장 경쟁"
+  },
+  {
+   "from": "A_1763",
+   "to": "A_959",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020212"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "코카콜라와 필립모리스는 강한 가격전가력 소비재 대표주 경쟁"
+  },
+  {
+   "from": "A_834",
+   "to": "A_2605",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020213"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "나이키와 하스브로는 아시아 생산 의존 소비재로 관세 노출 경쟁"
+  },
+  {
+   "from": "A_2026",
+   "to": "A_834",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020214"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "페라리와 나이키는 브랜드 프리미엄 기반 가격전가력 격차 비교 대상"
+  }
+ ]
 }

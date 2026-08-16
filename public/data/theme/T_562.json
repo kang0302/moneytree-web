@@ -1,805 +1,805 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_562",
-  "themeName": "글로벌HALEU차세대원전연료농축사이클",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-29T00:00:00+09:00",
-    "description": "글로벌 HALEU·차세대 원전연료 농축 사이클 — SMR 대부분이 요구하는 HALEU를 러시아 의존에서 탈피하려는 서방 농축 병목 수혜. 농축(센트러스·사일렉스·ASP)·우라늄(카메코)·연료설계(라이트브리지)·SMR 수요처(오클로)·기기(두산).",
-    "notes": "T_562 신규(2026-07-01)",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-08-04",
-        "kind": "보강",
-        "title": "2궤도 관계 엣지 추가",
-        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
-      },
-      {
-        "date": "2026-07-29",
-        "kind": "수정",
-        "title": "AI 전력 고평가 폭락 이벤트 추가",
-        "detail": "AI 전력수요 랠리 장기화·고평가 부담에 따른 되돌림 폭락 반영."
-      },
-      {
-        "date": "2026-07-25",
-        "kind": "수정",
-        "title": "구체적 엣지 백필 + 이벤트",
-        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
-      },
-      {
-        "date": "2026-08-05",
-        "kind": "관계",
-        "title": "EXPOSED_TO ETF 연결",
-        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-      }
-    ]
-  },
-  "nodes": [
-    {
-      "id": "T_562",
-      "type": "THEME",
-      "name": "글로벌HALEU차세대원전연료농축사이클"
-    },
-    {
-      "id": "A_166",
-      "type": "ASSET",
-      "name": "센트러스에너지",
-      "exposure": {
-        "ticker": "LEU",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "미국 내 HALEU 농축 유일 사업자",
-        "theme_role": "HALEU농축",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -0.870607861536854,
-        "return_3d": 0.5074263967440151,
-        "return_15d": 16.02294221734091,
-        "return_1m": 19.306060986322017,
-        "return_ytd": -21.67160982039874,
-        "return_1y": 0.5658980325788043,
-        "return_3y": 349.4209406759631,
-        "close": 190.15,
-        "marketCap": 3604025899,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -0.6375084914040818,
-        "return_2y": 416.010854816825
-      }
-    },
-    {
-      "id": "C_1602",
-      "type": "CHARACTER",
-      "name": "미국HALEU농축유일"
-    },
-    {
-      "id": "A_165",
-      "type": "ASSET",
-      "name": "Cameco",
-      "exposure": {
-        "ticker": "CCJ",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "세계 우라늄 채굴·연료서비스 대형",
-        "theme_role": "우라늄",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -0.010230179028136721,
-        "return_3d": -1.0027347310847867,
-        "return_15d": 11.245162758934658,
-        "return_1m": 6.7380146336136315,
-        "return_ytd": 6.831347688271938,
-        "return_1y": 29.371277299801445,
-        "return_3y": 180.86206896551724,
-        "close": 97.74,
-        "marketCap": 42568995420,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 0.35937981312248457,
-        "return_2y": 145.26976160602257
-      }
-    },
-    {
-      "id": "C_1603",
-      "type": "CHARACTER",
-      "name": "글로벌우라늄공급1위_카메코"
-    },
-    {
-      "id": "A_170",
-      "type": "ASSET",
-      "name": "오클로",
-      "exposure": {
-        "ticker": "OKLO",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "고속로 SMR 개발(HALEU 수요처)",
-        "theme_role": "SMR수요처",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -4.456404736275566,
-        "return_3d": -5.594554350138258,
-        "return_15d": 10.26086956521739,
-        "return_1m": -4.022491349480973,
-        "return_ytd": -38.154960981047935,
-        "return_1y": -39.7502036383383,
-        "return_3y": 329.622458857696,
-        "close": 44.38,
-        "marketCap": 7721720003,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -8.343659644774881,
-        "return_2y": 483.180026281209
-      }
-    },
-    {
-      "id": "C_1604",
-      "type": "CHARACTER",
-      "name": "SMR개발·연료수요"
-    },
-    {
-      "id": "A_2590",
-      "type": "ASSET",
-      "name": "ASP아이소토프스",
-      "exposure": {
-        "ticker": "ASPI",
-        "exchange": "NASDAQ",
-        "country": "US",
-        "business_desc": "레이저 동위원소 농축(HALEU 진입)",
-        "theme_role": "레이저농축",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -0.23364485981309802,
-        "return_3d": -1.1574074074074292,
-        "return_15d": 10.33591731266148,
-        "return_1m": -9.148936170212774,
-        "return_ytd": -20.186915887850464,
-        "return_1y": -59.60264900662252,
-        "return_3y": 218.6567164179104,
-        "close": 4.27,
-        "marketCap": 537607732,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -3.6117381489842004,
-        "return_2y": 98.60465116279069
-      }
-    },
-    {
-      "id": "C_1605",
-      "type": "CHARACTER",
-      "name": "레이저동위원소농축_ASP"
-    },
-    {
-      "id": "A_2591",
-      "type": "ASSET",
-      "name": "사일렉스시스템즈",
-      "exposure": {
-        "ticker": "SLX",
-        "exchange": "ASX",
-        "country": "AU",
-        "business_desc": "레이저 우라늄 농축(GLE)",
-        "theme_role": "레이저농축",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -3.9106145251396662,
-        "return_3d": 0.19417475728154,
-        "return_15d": 10.729613733905573,
-        "return_1m": 8.631578947368435,
-        "return_ytd": -40.20857473928158,
-        "return_1y": 32.30769230769231,
-        "return_3y": 56.838905775076,
-        "close": 5.16,
-        "marketCap": 1436740080,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 6.172839506172845,
-        "return_2y": 21.698113207547177
-      }
-    },
-    {
-      "id": "C_1606",
-      "type": "CHARACTER",
-      "name": "레이저우라늄농축_사일렉스"
-    },
-    {
-      "id": "A_2592",
-      "type": "ASSET",
-      "name": "라이트브리지",
-      "exposure": {
-        "ticker": "LTBR",
-        "exchange": "NASDAQ",
-        "country": "US",
-        "business_desc": "차세대 금속 핵연료봉 설계",
-        "theme_role": "핵연료설계",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -3.0963302752293753,
-        "return_3d": -6.732891832229592,
-        "return_15d": 12.666666666666648,
-        "return_1m": 5.889724310776923,
-        "return_ytd": -33.1487341772152,
-        "return_1y": -48.159509202454,
-        "return_3y": 48.24561403508769,
-        "close": 8.45,
-        "marketCap": 296992995,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -10.77085533262937,
-        "return_2y": 236.65338645418328
-      }
-    },
-    {
-      "id": "C_1607",
-      "type": "CHARACTER",
-      "name": "차세대금속핵연료"
-    },
-    {
-      "id": "A_161",
-      "type": "ASSET",
-      "name": "두산에너빌리티",
-      "exposure": {
-        "ticker": "034020",
-        "exchange": "KOSPI",
-        "country": "KR",
-        "business_desc": "원자로 주기기·SMR 제작",
-        "theme_role": "기기제작",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": 2.1013597033374465,
-        "return_3d": 6.033376123234913,
-        "return_15d": 14.563106796116498,
-        "return_1m": 13.15068493150684,
-        "return_ytd": 9.840425531914887,
-        "return_1y": 34.52768729641693,
-        "return_3y": 536.0103811061982,
-        "close": 82600,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 7.133592736705574,
-        "return_2y": 397.1356470423574
-      }
-    },
-    {
-      "id": "C_1608",
-      "type": "CHARACTER",
-      "name": "원자로·SMR제작_두산"
-    },
-    {
-      "id": "M_337",
-      "type": "MACRO",
-      "name": "SMR원전수요확대"
-    },
-    {
-      "id": "M_027",
-      "type": "MACRO",
-      "name": "원전확대"
-    },
-    {
-      "id": "M_1052",
-      "type": "MACRO",
-      "name": "비중국공급망에너지안보"
-    },
-    {
-      "id": "A_2882",
-      "type": "ASSET",
-      "name": "HANARO 원자력iSelect",
-      "exposure": {
-        "ticker": "434730",
-        "exchange": "KRX",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 0.737288135593217,
-        "return_3d": 3.4731894150417775,
-        "return_15d": 6.077101552739594,
-        "return_1m": 5.897550111358574,
-        "return_ytd": 22.99346233719277,
-        "return_1y": 67.38714343947446,
-        "return_3y": null,
-        "close": 59435,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": null,
-        "return_2y": 212.38896913684755
-      }
-    },
-    {
-      "id": "A_069",
-      "type": "ASSET",
-      "name": "URA",
-      "exposure": {
-        "ticker": "URA",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.7071823204419903,
-        "return_3d": -0.5313261013947357,
-        "return_15d": 12.634745550263226,
-        "return_1m": 8.134777376654645,
-        "return_ytd": 5.14860753568922,
-        "return_1y": 15.116576992057396,
-        "return_3y": 98.36644591611481,
-        "close": 44.93,
-        "marketCap": 4485618585,
-        "valuationAsOf": "2026-08-15",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "pe_ttm": null,
-        "return_5d": 0.044533511467381715,
-        "return_2y": 78.64811133200796
-      }
-    }
+ "schemaVersion": "v5",
+ "themeId": "T_562",
+ "themeName": "글로벌HALEU차세대원전연료농축사이클",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
   ],
-  "edges": [
-    {
-      "from": "A_166",
-      "to": "T_562",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013002"
-      ]
-    },
-    {
-      "from": "A_166",
-      "to": "C_1602",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017738"
-      ]
-    },
-    {
-      "from": "A_165",
-      "to": "T_562",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013003"
-      ]
-    },
-    {
-      "from": "A_165",
-      "to": "C_1603",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017739"
-      ]
-    },
-    {
-      "from": "A_170",
-      "to": "T_562",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013004"
-      ]
-    },
-    {
-      "from": "A_170",
-      "to": "C_1604",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017740"
-      ]
-    },
-    {
-      "from": "A_2590",
-      "to": "T_562",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013005"
-      ]
-    },
-    {
-      "from": "A_2590",
-      "to": "C_1605",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017741"
-      ]
-    },
-    {
-      "from": "A_2591",
-      "to": "T_562",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013006"
-      ]
-    },
-    {
-      "from": "A_2591",
-      "to": "C_1606",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017742"
-      ]
-    },
-    {
-      "from": "A_2592",
-      "to": "T_562",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013007"
-      ]
-    },
-    {
-      "from": "A_2592",
-      "to": "C_1607",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017743"
-      ]
-    },
-    {
-      "from": "A_161",
-      "to": "T_562",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013008"
-      ]
-    },
-    {
-      "from": "A_161",
-      "to": "C_1608",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017744"
-      ]
-    },
-    {
-      "from": "M_337",
-      "to": "T_562",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013009"
-      ]
-    },
-    {
-      "from": "M_027",
-      "to": "T_562",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013010"
-      ]
-    },
-    {
-      "from": "M_1052",
-      "to": "T_562",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013011"
-      ]
-    },
-    {
-      "from": "A_166",
-      "to": "A_2590",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020183"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "센트러스에너지와 ASP아이소토프스는 HALEU·동위원소 농축 시장 경쟁"
-    },
-    {
-      "from": "A_165",
-      "to": "A_166",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_020184"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "Cameco는 센트러스에너지에 천연우라늄을 공급"
-    },
-    {
-      "from": "A_2591",
-      "to": "A_166",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020185"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "사일렉스시스템즈와 센트러스에너지는 레이저·원심분리 농축 기술 경쟁"
-    },
-    {
-      "from": "A_166",
-      "to": "A_170",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_020186"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "센트러스에너지는 오클로 등 차세대 원전에 HALEU 연료를 공급"
-    },
-    {
-      "from": "A_2592",
-      "to": "A_166",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020187"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "라이트브리지와 센트러스에너지는 차세대 원전 연료 기술 경쟁"
-    },
-    {
-      "from": "A_2882",
-      "to": "T_562",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020906"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_069",
-      "to": "T_562",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020907"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_166",
-      "to": "T_562",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013002"
-      ]
-    },
-    {
-      "from": "A_166",
-      "to": "C_1602",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017738"
-      ]
-    },
-    {
-      "from": "A_165",
-      "to": "T_562",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013003"
-      ]
-    },
-    {
-      "from": "A_165",
-      "to": "C_1603",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017739"
-      ]
-    },
-    {
-      "from": "A_170",
-      "to": "T_562",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013004"
-      ]
-    },
-    {
-      "from": "A_170",
-      "to": "C_1604",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017740"
-      ]
-    },
-    {
-      "from": "A_2590",
-      "to": "T_562",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013005"
-      ]
-    },
-    {
-      "from": "A_2590",
-      "to": "C_1605",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017741"
-      ]
-    },
-    {
-      "from": "A_2591",
-      "to": "T_562",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013006"
-      ]
-    },
-    {
-      "from": "A_2591",
-      "to": "C_1606",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017742"
-      ]
-    },
-    {
-      "from": "A_2592",
-      "to": "T_562",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013007"
-      ]
-    },
-    {
-      "from": "A_2592",
-      "to": "C_1607",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017743"
-      ]
-    },
-    {
-      "from": "A_161",
-      "to": "T_562",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013008"
-      ]
-    },
-    {
-      "from": "A_161",
-      "to": "C_1608",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017744"
-      ]
-    },
-    {
-      "from": "M_337",
-      "to": "T_562",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013009"
-      ]
-    },
-    {
-      "from": "M_027",
-      "to": "T_562",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013010"
-      ]
-    },
-    {
-      "from": "M_1052",
-      "to": "T_562",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013011"
-      ]
-    },
-    {
-      "from": "A_166",
-      "to": "A_2590",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020183"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "센트러스에너지와 ASP아이소토프스는 HALEU·동위원소 농축 시장 경쟁"
-    },
-    {
-      "from": "A_165",
-      "to": "A_166",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_020184"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "Cameco는 센트러스에너지에 천연우라늄을 공급"
-    },
-    {
-      "from": "A_2591",
-      "to": "A_166",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020185"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "사일렉스시스템즈와 센트러스에너지는 레이저·원심분리 농축 기술 경쟁"
-    },
-    {
-      "from": "A_166",
-      "to": "A_170",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_020186"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "센트러스에너지는 오클로 등 차세대 원전에 HALEU 연료를 공급"
-    },
-    {
-      "from": "A_2592",
-      "to": "A_166",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020187"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "라이트브리지와 센트러스에너지는 차세대 원전 연료 기술 경쟁"
-    },
-    {
-      "from": "A_2882",
-      "to": "T_562",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020906"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_069",
-      "to": "T_562",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020907"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
+  "dataAsOf": "2026-07-29T00:00:00+09:00",
+  "description": "글로벌 HALEU·차세대 원전연료 농축 사이클 — SMR 대부분이 요구하는 HALEU를 러시아 의존에서 탈피하려는 서방 농축 병목 수혜. 농축(센트러스·사일렉스·ASP)·우라늄(카메코)·연료설계(라이트브리지)·SMR 수요처(오클로)·기기(두산). HANARO 원자력iSelect·URA 등 ETF로도 익스포저를 확장한다. SMR원전수요확대·원전확대·비중국공급망에너지안보 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 구성종목은 미국HALEU농축유일·글로벌우라늄공급1위_카메코·SMR개발·연료수요·레이저동위원소농축_ASP 등의 특성으로 차별화된다. 경쟁·공급·협력 등 5건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다.",
+  "notes": "T_562 신규(2026-07-01)",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-08-04",
+    "kind": "보강",
+    "title": "2궤도 관계 엣지 추가",
+    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
+   },
+   {
+    "date": "2026-07-29",
+    "kind": "수정",
+    "title": "AI 전력 고평가 폭락 이벤트 추가",
+    "detail": "AI 전력수요 랠리 장기화·고평가 부담에 따른 되돌림 폭락 반영."
+   },
+   {
+    "date": "2026-07-25",
+    "kind": "수정",
+    "title": "구체적 엣지 백필 + 이벤트",
+    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
+   },
+   {
+    "date": "2026-08-05",
+    "kind": "관계",
+    "title": "EXPOSED_TO ETF 연결",
+    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+   }
   ]
+ },
+ "nodes": [
+  {
+   "id": "T_562",
+   "type": "THEME",
+   "name": "글로벌HALEU차세대원전연료농축사이클"
+  },
+  {
+   "id": "A_166",
+   "type": "ASSET",
+   "name": "센트러스에너지",
+   "exposure": {
+    "ticker": "LEU",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "미국 내 HALEU 농축 유일 사업자",
+    "theme_role": "HALEU농축",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -0.870607861536854,
+    "return_3d": 0.5074263967440151,
+    "return_15d": 16.02294221734091,
+    "return_1m": 19.306060986322017,
+    "return_ytd": -21.67160982039874,
+    "return_1y": 0.5658980325788043,
+    "return_3y": 349.4209406759631,
+    "close": 190.15,
+    "marketCap": 3604025899,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -0.6375084914040818,
+    "return_2y": 416.010854816825
+   }
+  },
+  {
+   "id": "C_1602",
+   "type": "CHARACTER",
+   "name": "미국HALEU농축유일"
+  },
+  {
+   "id": "A_165",
+   "type": "ASSET",
+   "name": "Cameco",
+   "exposure": {
+    "ticker": "CCJ",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "세계 우라늄 채굴·연료서비스 대형",
+    "theme_role": "우라늄",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -0.010230179028136721,
+    "return_3d": -1.0027347310847867,
+    "return_15d": 11.245162758934658,
+    "return_1m": 6.7380146336136315,
+    "return_ytd": 6.831347688271938,
+    "return_1y": 29.371277299801445,
+    "return_3y": 180.86206896551724,
+    "close": 97.74,
+    "marketCap": 42568995420,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 0.35937981312248457,
+    "return_2y": 145.26976160602257
+   }
+  },
+  {
+   "id": "C_1603",
+   "type": "CHARACTER",
+   "name": "글로벌우라늄공급1위_카메코"
+  },
+  {
+   "id": "A_170",
+   "type": "ASSET",
+   "name": "오클로",
+   "exposure": {
+    "ticker": "OKLO",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "고속로 SMR 개발(HALEU 수요처)",
+    "theme_role": "SMR수요처",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -4.456404736275566,
+    "return_3d": -5.594554350138258,
+    "return_15d": 10.26086956521739,
+    "return_1m": -4.022491349480973,
+    "return_ytd": -38.154960981047935,
+    "return_1y": -39.7502036383383,
+    "return_3y": 329.622458857696,
+    "close": 44.38,
+    "marketCap": 7721720003,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -8.343659644774881,
+    "return_2y": 483.180026281209
+   }
+  },
+  {
+   "id": "C_1604",
+   "type": "CHARACTER",
+   "name": "SMR개발·연료수요"
+  },
+  {
+   "id": "A_2590",
+   "type": "ASSET",
+   "name": "ASP아이소토프스",
+   "exposure": {
+    "ticker": "ASPI",
+    "exchange": "NASDAQ",
+    "country": "US",
+    "business_desc": "레이저 동위원소 농축(HALEU 진입)",
+    "theme_role": "레이저농축",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -0.23364485981309802,
+    "return_3d": -1.1574074074074292,
+    "return_15d": 10.33591731266148,
+    "return_1m": -9.148936170212774,
+    "return_ytd": -20.186915887850464,
+    "return_1y": -59.60264900662252,
+    "return_3y": 218.6567164179104,
+    "close": 4.27,
+    "marketCap": 537607732,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -3.6117381489842004,
+    "return_2y": 98.60465116279069
+   }
+  },
+  {
+   "id": "C_1605",
+   "type": "CHARACTER",
+   "name": "레이저동위원소농축_ASP"
+  },
+  {
+   "id": "A_2591",
+   "type": "ASSET",
+   "name": "사일렉스시스템즈",
+   "exposure": {
+    "ticker": "SLX",
+    "exchange": "ASX",
+    "country": "AU",
+    "business_desc": "레이저 우라늄 농축(GLE)",
+    "theme_role": "레이저농축",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -3.9106145251396662,
+    "return_3d": 0.19417475728154,
+    "return_15d": 10.729613733905573,
+    "return_1m": 8.631578947368435,
+    "return_ytd": -40.20857473928158,
+    "return_1y": 32.30769230769231,
+    "return_3y": 56.838905775076,
+    "close": 5.16,
+    "marketCap": 1436740080,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 6.172839506172845,
+    "return_2y": 21.698113207547177
+   }
+  },
+  {
+   "id": "C_1606",
+   "type": "CHARACTER",
+   "name": "레이저우라늄농축_사일렉스"
+  },
+  {
+   "id": "A_2592",
+   "type": "ASSET",
+   "name": "라이트브리지",
+   "exposure": {
+    "ticker": "LTBR",
+    "exchange": "NASDAQ",
+    "country": "US",
+    "business_desc": "차세대 금속 핵연료봉 설계",
+    "theme_role": "핵연료설계",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -3.0963302752293753,
+    "return_3d": -6.732891832229592,
+    "return_15d": 12.666666666666648,
+    "return_1m": 5.889724310776923,
+    "return_ytd": -33.1487341772152,
+    "return_1y": -48.159509202454,
+    "return_3y": 48.24561403508769,
+    "close": 8.45,
+    "marketCap": 296992995,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -10.77085533262937,
+    "return_2y": 236.65338645418328
+   }
+  },
+  {
+   "id": "C_1607",
+   "type": "CHARACTER",
+   "name": "차세대금속핵연료"
+  },
+  {
+   "id": "A_161",
+   "type": "ASSET",
+   "name": "두산에너빌리티",
+   "exposure": {
+    "ticker": "034020",
+    "exchange": "KOSPI",
+    "country": "KR",
+    "business_desc": "원자로 주기기·SMR 제작",
+    "theme_role": "기기제작",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": 2.1013597033374465,
+    "return_3d": 6.033376123234913,
+    "return_15d": 14.563106796116498,
+    "return_1m": 13.15068493150684,
+    "return_ytd": 9.840425531914887,
+    "return_1y": 34.52768729641693,
+    "return_3y": 536.0103811061982,
+    "close": 82600,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 7.133592736705574,
+    "return_2y": 397.1356470423574
+   }
+  },
+  {
+   "id": "C_1608",
+   "type": "CHARACTER",
+   "name": "원자로·SMR제작_두산"
+  },
+  {
+   "id": "M_337",
+   "type": "MACRO",
+   "name": "SMR원전수요확대"
+  },
+  {
+   "id": "M_027",
+   "type": "MACRO",
+   "name": "원전확대"
+  },
+  {
+   "id": "M_1052",
+   "type": "MACRO",
+   "name": "비중국공급망에너지안보"
+  },
+  {
+   "id": "A_2882",
+   "type": "ASSET",
+   "name": "HANARO 원자력iSelect",
+   "exposure": {
+    "ticker": "434730",
+    "exchange": "KRX",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 0.737288135593217,
+    "return_3d": 3.4731894150417775,
+    "return_15d": 6.077101552739594,
+    "return_1m": 5.897550111358574,
+    "return_ytd": 22.99346233719277,
+    "return_1y": 67.38714343947446,
+    "return_3y": null,
+    "close": 59435,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": null,
+    "return_2y": 212.38896913684755
+   }
+  },
+  {
+   "id": "A_069",
+   "type": "ASSET",
+   "name": "URA",
+   "exposure": {
+    "ticker": "URA",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.7071823204419903,
+    "return_3d": -0.5313261013947357,
+    "return_15d": 12.634745550263226,
+    "return_1m": 8.134777376654645,
+    "return_ytd": 5.14860753568922,
+    "return_1y": 15.116576992057396,
+    "return_3y": 98.36644591611481,
+    "close": 44.93,
+    "marketCap": 4485618585,
+    "valuationAsOf": "2026-08-15",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "pe_ttm": null,
+    "return_5d": 0.044533511467381715,
+    "return_2y": 78.64811133200796
+   }
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_166",
+   "to": "T_562",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013002"
+   ]
+  },
+  {
+   "from": "A_166",
+   "to": "C_1602",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017738"
+   ]
+  },
+  {
+   "from": "A_165",
+   "to": "T_562",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013003"
+   ]
+  },
+  {
+   "from": "A_165",
+   "to": "C_1603",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017739"
+   ]
+  },
+  {
+   "from": "A_170",
+   "to": "T_562",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013004"
+   ]
+  },
+  {
+   "from": "A_170",
+   "to": "C_1604",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017740"
+   ]
+  },
+  {
+   "from": "A_2590",
+   "to": "T_562",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013005"
+   ]
+  },
+  {
+   "from": "A_2590",
+   "to": "C_1605",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017741"
+   ]
+  },
+  {
+   "from": "A_2591",
+   "to": "T_562",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013006"
+   ]
+  },
+  {
+   "from": "A_2591",
+   "to": "C_1606",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017742"
+   ]
+  },
+  {
+   "from": "A_2592",
+   "to": "T_562",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013007"
+   ]
+  },
+  {
+   "from": "A_2592",
+   "to": "C_1607",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017743"
+   ]
+  },
+  {
+   "from": "A_161",
+   "to": "T_562",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013008"
+   ]
+  },
+  {
+   "from": "A_161",
+   "to": "C_1608",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017744"
+   ]
+  },
+  {
+   "from": "M_337",
+   "to": "T_562",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013009"
+   ]
+  },
+  {
+   "from": "M_027",
+   "to": "T_562",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013010"
+   ]
+  },
+  {
+   "from": "M_1052",
+   "to": "T_562",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013011"
+   ]
+  },
+  {
+   "from": "A_166",
+   "to": "A_2590",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020183"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "센트러스에너지와 ASP아이소토프스는 HALEU·동위원소 농축 시장 경쟁"
+  },
+  {
+   "from": "A_165",
+   "to": "A_166",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_020184"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "Cameco는 센트러스에너지에 천연우라늄을 공급"
+  },
+  {
+   "from": "A_2591",
+   "to": "A_166",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020185"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "사일렉스시스템즈와 센트러스에너지는 레이저·원심분리 농축 기술 경쟁"
+  },
+  {
+   "from": "A_166",
+   "to": "A_170",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_020186"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "센트러스에너지는 오클로 등 차세대 원전에 HALEU 연료를 공급"
+  },
+  {
+   "from": "A_2592",
+   "to": "A_166",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020187"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "라이트브리지와 센트러스에너지는 차세대 원전 연료 기술 경쟁"
+  },
+  {
+   "from": "A_2882",
+   "to": "T_562",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020906"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_069",
+   "to": "T_562",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020907"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_166",
+   "to": "T_562",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013002"
+   ]
+  },
+  {
+   "from": "A_166",
+   "to": "C_1602",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017738"
+   ]
+  },
+  {
+   "from": "A_165",
+   "to": "T_562",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013003"
+   ]
+  },
+  {
+   "from": "A_165",
+   "to": "C_1603",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017739"
+   ]
+  },
+  {
+   "from": "A_170",
+   "to": "T_562",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013004"
+   ]
+  },
+  {
+   "from": "A_170",
+   "to": "C_1604",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017740"
+   ]
+  },
+  {
+   "from": "A_2590",
+   "to": "T_562",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013005"
+   ]
+  },
+  {
+   "from": "A_2590",
+   "to": "C_1605",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017741"
+   ]
+  },
+  {
+   "from": "A_2591",
+   "to": "T_562",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013006"
+   ]
+  },
+  {
+   "from": "A_2591",
+   "to": "C_1606",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017742"
+   ]
+  },
+  {
+   "from": "A_2592",
+   "to": "T_562",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013007"
+   ]
+  },
+  {
+   "from": "A_2592",
+   "to": "C_1607",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017743"
+   ]
+  },
+  {
+   "from": "A_161",
+   "to": "T_562",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013008"
+   ]
+  },
+  {
+   "from": "A_161",
+   "to": "C_1608",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017744"
+   ]
+  },
+  {
+   "from": "M_337",
+   "to": "T_562",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013009"
+   ]
+  },
+  {
+   "from": "M_027",
+   "to": "T_562",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013010"
+   ]
+  },
+  {
+   "from": "M_1052",
+   "to": "T_562",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013011"
+   ]
+  },
+  {
+   "from": "A_166",
+   "to": "A_2590",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020183"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "센트러스에너지와 ASP아이소토프스는 HALEU·동위원소 농축 시장 경쟁"
+  },
+  {
+   "from": "A_165",
+   "to": "A_166",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_020184"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "Cameco는 센트러스에너지에 천연우라늄을 공급"
+  },
+  {
+   "from": "A_2591",
+   "to": "A_166",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020185"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "사일렉스시스템즈와 센트러스에너지는 레이저·원심분리 농축 기술 경쟁"
+  },
+  {
+   "from": "A_166",
+   "to": "A_170",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_020186"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "센트러스에너지는 오클로 등 차세대 원전에 HALEU 연료를 공급"
+  },
+  {
+   "from": "A_2592",
+   "to": "A_166",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020187"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "라이트브리지와 센트러스에너지는 차세대 원전 연료 기술 경쟁"
+  },
+  {
+   "from": "A_2882",
+   "to": "T_562",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020906"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_069",
+   "to": "T_562",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020907"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ]
 }
