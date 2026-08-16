@@ -1,1432 +1,1432 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_177",
- "themeName": "테슬라옵티머스밸류체인",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_177",
+  "themeName": "테슬라옵티머스밸류체인",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-04-25T00:00:00+09:00",
+    "notes": "g177 누적 import 기반 테슬라옵티머스밸류체인 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 8건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-12",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "자산 12개에 테마 관점 특성(CHARACTER) 노드와 HAS_TRAIT를 부여했다."
+      },
+      {
+        "date": "2026-07-12",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필 + 2026 이벤트",
+        "detail": "전 엣지 근거(호버 박스)를 종목·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
+      }
+    ],
+    "description": "Tesla(TSLA) + Optimus 부품 공급망 — 하모닉·SMC·Nidec·LG에너지솔루션·Sanhua. Optimus V3 양산 일정·Tesla AI Day·OEM 채택 뉴스가 모멘텀 트리거. 휴머노이드확산·로보택시확산·피지컬AI확산 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 밸류체인은 AI도조칩·액추에이터·로봇프레임·카메라/센서 등 사업영역으로 이어진다. 경쟁·공급·협력 등 8건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다. 종목별 브리핑 카드와 연도별 이벤트 DB로 테마의 맥락과 변동요인을 확인할 수 있다."
+  },
+  "nodes": [
+    {
+      "id": "T_177",
+      "type": "THEME",
+      "name": "테슬라옵티머스밸류체인"
+    },
+    {
+      "id": "A_002",
+      "type": "ASSET",
+      "name": "테슬라",
+      "exposure": {
+        "ticker": "TSLA",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.6794917049064653,
+        "close": 342.27,
+        "marketCap": 1351811586544,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 2.842462666386214,
+        "return_15d": 9.340957735680288,
+        "return_1m": -13.607451158564299,
+        "return_ytd": -23.892644312016376,
+        "return_1y": 1.9935633827999233,
+        "return_3y": 42.75525525525525,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 4.166413050094353,
+        "return_2y": 69.9622604032178
+      }
+    },
+    {
+      "id": "A_055",
+      "type": "ASSET",
+      "name": "엔비디아",
+      "exposure": {
+        "ticker": "NVDA",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.062139369729252714,
+        "close": 225.16,
+        "marketCap": 5453600360000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 3.5218390804597766,
+        "return_15d": 8.857087603945079,
+        "return_1m": 6.30783758262512,
+        "return_ytd": 20.72922252010723,
+        "return_1y": 23.7006922316229,
+        "return_3y": 414.6514285714286,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.5358099660653703,
+        "return_2y": 90.68428184281842
+      }
+    },
+    {
+      "id": "A_232",
+      "type": "ASSET",
+      "name": "TSMC",
+      "exposure": {
+        "ticker": "2330",
+        "exchange": "TWSE",
+        "country": "TW"
+      },
+      "metrics": {
+        "return_1d": -1.642710472279263,
+        "close": 2395.0,
+        "marketCap": 62108098000000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 0.0,
+        "return_15d": 1.914893617021285,
+        "return_1m": -1.0330578512396715,
+        "return_ytd": 54.516129032258064,
+        "return_1y": 103.82978723404257,
+        "return_3y": 342.6987060998152,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 1.0548523206751037,
+        "return_2y": 152.63713080168776
+      }
+    },
+    {
+      "id": "A_088",
+      "type": "ASSET",
+      "name": "삼성전자",
+      "exposure": {
+        "ticker": "005930",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 2.425373134328357,
+        "close": 274500,
+        "marketCap": 1281601610113000,
+        "pe_ttm": 43.74,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 14.613778705636737,
+        "return_15d": 10.020040080160332,
+        "return_1m": -1.7889087656529523,
+        "return_ytd": 114.29346147111178,
+        "return_1y": 303.3965744682708,
+        "return_3y": 331.2849163731555,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 18.83116883116882,
+        "return_2y": 228.50489498681625
+      }
+    },
+    {
+      "id": "A_202",
+      "type": "ASSET",
+      "name": "파나소닉",
+      "exposure": {
+        "ticker": "6752",
+        "exchange": "TSE",
+        "country": "JP"
+      },
+      "metrics": {
+        "return_1d": 0.8976276982261222,
+        "close": 4721.0,
+        "marketCap": 11023181019420,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 6.42470694319206,
+        "return_15d": 17.554780876494025,
+        "return_1m": 13.13203930026361,
+        "return_ytd": 133.30862367185568,
+        "return_1y": 208.96596858638742,
+        "return_3y": 195.52425665101723,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 6.9793791071833144,
+        "return_2y": 331.7329675354367
+      }
+    },
+    {
+      "id": "A_147",
+      "type": "ASSET",
+      "name": "LG에너지솔루션",
+      "exposure": {
+        "ticker": "373220",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.0943912448700521,
+        "close": 369500,
+        "marketCap": 99918000000000,
+        "pe_ttm": 0.0,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 4.231311706629048,
+        "return_15d": 12.139605462822466,
+        "return_1m": 10.298507462686569,
+        "return_ytd": 2.3545706371191244,
+        "return_1y": -0.9383378016085797,
+        "return_3y": -31.826568265682653,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 2.6388888888888795,
+        "return_2y": 9.806835066864794
+      }
+    },
+    {
+      "id": "A_816",
+      "type": "ASSET",
+      "name": "삼성디스플레이(비)",
+      "exposure": {
+        "ticker": "",
+        "exchange": "",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": null,
+        "returnsSource": null,
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "옵티머스·차량 디스플레이 공급 후보(비상장)다"
+    },
+    {
+      "id": "A_085",
+      "type": "ASSET",
+      "name": "삼성전기",
+      "exposure": {
+        "ticker": "009150",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 3.659347970725224,
+        "close": 1558000,
+        "marketCap": 33500122656000,
+        "pe_ttm": 49.9,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 23.454833597464344,
+        "return_15d": 17.49622926093515,
+        "return_1m": 10.261854210898802,
+        "return_ytd": 477.03703703703707,
+        "return_1y": 997.1847397326669,
+        "return_3y": 986.7667530483475,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 21.909233176838818,
+        "return_2y": 823.6077316673402
+      }
+    },
+    {
+      "id": "A_080",
+      "type": "ASSET",
+      "name": "LG이노텍",
+      "exposure": {
+        "ticker": "011070",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 6.341463414634152,
+        "close": 654000,
+        "marketCap": 7549807133000,
+        "pe_ttm": 16.8,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 19.12568306010929,
+        "return_15d": 4.64,
+        "return_1m": -4.941860465116276,
+        "return_ytd": 145.92855759157146,
+        "return_1y": 331.10019110157316,
+        "return_3y": 159.60768814973716,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 18.47826086956521,
+        "return_2y": 124.23234519487471
+      }
+    },
+    {
+      "id": "A_079",
+      "type": "ASSET",
+      "name": "LG전자",
+      "exposure": {
+        "ticker": "066570",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 4.1162227602905554,
+        "close": 215000,
+        "marketCap": 23732546585900,
+        "pe_ttm": 71.56,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 18.65342163355408,
+        "return_15d": 27.419188566705376,
+        "return_1m": 11.130550055440459,
+        "return_ytd": 137.6826899077562,
+        "return_1y": 191.55162581933465,
+        "return_3y": 119.48051518238701,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 16.536901137916217,
+        "return_2y": 96.25215220265014
+      }
+    },
+    {
+      "id": "A_083",
+      "type": "ASSET",
+      "name": "로보스타",
+      "exposure": {
+        "ticker": "090360",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -0.11627906976744429,
+        "close": 85900,
+        "marketCap": 781950000000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 4.247572815533984,
+        "return_15d": 41.74917491749175,
+        "return_1m": 28.208955223880604,
+        "return_ytd": 7.644110275689231,
+        "return_1y": 232.94573643410854,
+        "return_3y": 154.5185185185185,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -1.3777267508610747,
+        "return_2y": 207.3345259391771
+      }
+    },
+    {
+      "id": "A_1191",
+      "type": "ASSET",
+      "name": "한라캐스트",
+      "exposure": {
+        "ticker": "125490",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 16.251154201292707,
+        "close": 12590,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 39.11602209944751,
+        "return_15d": 70.36535859269281,
+        "return_1m": 56.0099132589839,
+        "return_ytd": -36.09137055837564,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 49.524940617577194,
+        "return_2y": null
+      }
+    },
+    {
+      "id": "BF_312",
+      "type": "BUSINESS_FIELD",
+      "name": "AI도조칩"
+    },
+    {
+      "id": "BF_021",
+      "type": "BUSINESS_FIELD",
+      "name": "액추에이터"
+    },
+    {
+      "id": "BF_313",
+      "type": "BUSINESS_FIELD",
+      "name": "로봇프레임"
+    },
+    {
+      "id": "BF_036",
+      "type": "BUSINESS_FIELD",
+      "name": "카메라/센서"
+    },
+    {
+      "id": "BF_032",
+      "type": "BUSINESS_FIELD",
+      "name": "배터리"
+    },
+    {
+      "id": "BF_215",
+      "type": "BUSINESS_FIELD",
+      "name": "디스플레이"
+    },
+    {
+      "id": "M_023",
+      "type": "MACRO",
+      "name": "휴머노이드확산"
+    },
+    {
+      "id": "M_117",
+      "type": "MACRO",
+      "name": "로보택시확산"
+    },
+    {
+      "id": "M_018",
+      "type": "MACRO",
+      "name": "피지컬AI확산"
+    },
+    {
+      "id": "C_2903",
+      "type": "CHARACTER",
+      "name": "옵티머스허브"
+    },
+    {
+      "id": "C_2904",
+      "type": "CHARACTER",
+      "name": "AI컴퓨트공급"
+    },
+    {
+      "id": "C_2905",
+      "type": "CHARACTER",
+      "name": "AI칩위탁생산"
+    },
+    {
+      "id": "C_2906",
+      "type": "CHARACTER",
+      "name": "파운드리·메모리"
+    },
+    {
+      "id": "C_2907",
+      "type": "CHARACTER",
+      "name": "배터리셀핵심"
+    },
+    {
+      "id": "C_2908",
+      "type": "CHARACTER",
+      "name": "배터리공급"
+    },
+    {
+      "id": "C_2909",
+      "type": "CHARACTER",
+      "name": "디스플레이공급후보"
+    },
+    {
+      "id": "C_2910",
+      "type": "CHARACTER",
+      "name": "카메라·MLCC"
+    },
+    {
+      "id": "C_2911",
+      "type": "CHARACTER",
+      "name": "카메라·센서"
+    },
+    {
+      "id": "C_2912",
+      "type": "CHARACTER",
+      "name": "로봇·액추에이터"
+    },
+    {
+      "id": "C_2913",
+      "type": "CHARACTER",
+      "name": "액추에이터부품"
+    },
+    {
+      "id": "C_2914",
+      "type": "CHARACTER",
+      "name": "경량주조프레임"
+    }
   ],
-  "dataAsOf": "2026-04-25T00:00:00+09:00",
-  "notes": "g177 누적 import 기반 테슬라옵티머스밸류체인 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 8건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-12",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "자산 12개에 테마 관점 특성(CHARACTER) 노드와 HAS_TRAIT를 부여했다."
-   },
-   {
-    "date": "2026-07-12",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필 + 2026 이벤트",
-    "detail": "전 엣지 근거(호버 박스)를 종목·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
-   }
+  "edges": [
+    {
+      "from": "A_002",
+      "to": "T_177",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005279"
+      ],
+      "confidence": 0.83,
+      "status": "verified"
+    },
+    {
+      "from": "A_055",
+      "to": "T_177",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005280"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_232",
+      "to": "T_177",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005281"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_088",
+      "to": "T_177",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005282"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_202",
+      "to": "T_177",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005283"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_147",
+      "to": "T_177",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005284"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_816",
+      "to": "T_177",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005285"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_085",
+      "to": "T_177",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005286"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_080",
+      "to": "T_177",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005287"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_079",
+      "to": "T_177",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005288"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_083",
+      "to": "T_177",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005289"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1191",
+      "to": "T_177",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005290"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_055",
+      "to": "BF_312",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005291"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_232",
+      "to": "BF_312",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005292"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_088",
+      "to": "BF_312",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005293"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_079",
+      "to": "BF_021",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005294"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_083",
+      "to": "BF_021",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005295"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1191",
+      "to": "BF_313",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005296"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_085",
+      "to": "BF_036",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005297"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_080",
+      "to": "BF_036",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005298"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_202",
+      "to": "BF_032",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005299"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_147",
+      "to": "BF_032",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005300"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_816",
+      "to": "BF_215",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005301"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_023",
+      "to": "T_177",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005302"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_117",
+      "to": "T_177",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005303"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_018",
+      "to": "T_177",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005304"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_002",
+      "to": "C_2903",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005405"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_055",
+      "to": "C_2904",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005406"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_232",
+      "to": "C_2905",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005407"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_088",
+      "to": "C_2906",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005408"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_202",
+      "to": "C_2907",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005409"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_147",
+      "to": "C_2908",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005410"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_816",
+      "to": "C_2909",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005411"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_085",
+      "to": "C_2910",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005412"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_080",
+      "to": "C_2911",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005413"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_079",
+      "to": "C_2912",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005414"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_083",
+      "to": "C_2913",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005415"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1191",
+      "to": "C_2914",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005416"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_232",
+      "to": "A_002",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_019224"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "TSMC가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
+    },
+    {
+      "from": "A_055",
+      "to": "A_002",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_019225"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "엔비디아가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
+    },
+    {
+      "from": "A_080",
+      "to": "A_002",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_019226"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "LG이노텍가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
+    },
+    {
+      "from": "A_079",
+      "to": "A_002",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_019227"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "LG전자가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
+    },
+    {
+      "from": "A_147",
+      "to": "A_002",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_019228"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "LG에너지솔루션가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
+    },
+    {
+      "from": "A_202",
+      "to": "A_002",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_019229"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "파나소닉가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
+    },
+    {
+      "from": "A_085",
+      "to": "A_002",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_019230"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "삼성전기가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
+    },
+    {
+      "from": "A_147",
+      "to": "A_202",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019231"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "LG에너지솔루션와 파나소닉는 테슬라옵티머스밸류체인 내 직접 경쟁 관계"
+    }
   ],
-  "description": "Tesla(TSLA) + Optimus 부품 공급망 — 하모닉·SMC·Nidec·LG에너지솔루션·Sanhua. Optimus V3 양산 일정·Tesla AI Day·OEM 채택 뉴스가 모멘텀 트리거. 휴머노이드확산·로보택시확산·피지컬AI확산 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 밸류체인은 AI도조칩·액추에이터·로봇프레임·카메라/센서 등 사업영역으로 이어진다. 경쟁·공급·협력 등 8건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다. 종목별 브리핑 카드와 연도별 이벤트 DB로 테마의 맥락과 변동요인을 확인할 수 있다."
- },
- "nodes": [
-  {
-   "id": "T_177",
-   "type": "THEME",
-   "name": "테슬라옵티머스밸류체인"
-  },
-  {
-   "id": "A_002",
-   "type": "ASSET",
-   "name": "테슬라",
-   "exposure": {
-    "ticker": "TSLA",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.6794917049064653,
-    "close": 342.27,
-    "marketCap": 1351811586544,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 2.842462666386214,
-    "return_15d": 9.340957735680288,
-    "return_1m": -13.607451158564299,
-    "return_ytd": -23.892644312016376,
-    "return_1y": 1.9935633827999233,
-    "return_3y": 42.75525525525525,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 4.166413050094353,
-    "return_2y": 69.9622604032178
-   }
-  },
-  {
-   "id": "A_055",
-   "type": "ASSET",
-   "name": "엔비디아",
-   "exposure": {
-    "ticker": "NVDA",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.062139369729252714,
-    "close": 225.16,
-    "marketCap": 5453600360000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 3.5218390804597766,
-    "return_15d": 8.857087603945079,
-    "return_1m": 6.30783758262512,
-    "return_ytd": 20.72922252010723,
-    "return_1y": 23.7006922316229,
-    "return_3y": 414.6514285714286,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.5358099660653703,
-    "return_2y": 90.68428184281842
-   }
-  },
-  {
-   "id": "A_232",
-   "type": "ASSET",
-   "name": "TSMC",
-   "exposure": {
-    "ticker": "2330",
-    "exchange": "TWSE",
-    "country": "TW"
-   },
-   "metrics": {
-    "return_1d": -1.642710472279263,
-    "close": 2395.0,
-    "marketCap": 62108098000000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 0.0,
-    "return_15d": 1.914893617021285,
-    "return_1m": -1.0330578512396715,
-    "return_ytd": 54.516129032258064,
-    "return_1y": 103.82978723404257,
-    "return_3y": 342.6987060998152,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.0548523206751037,
-    "return_2y": 152.63713080168776
-   }
-  },
-  {
-   "id": "A_088",
-   "type": "ASSET",
-   "name": "삼성전자",
-   "exposure": {
-    "ticker": "005930",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 2.425373134328357,
-    "close": 274500,
-    "marketCap": 1281601610113000,
-    "pe_ttm": 43.74,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 14.613778705636737,
-    "return_15d": 10.020040080160332,
-    "return_1m": -1.7889087656529523,
-    "return_ytd": 114.29346147111178,
-    "return_1y": 303.3965744682708,
-    "return_3y": 331.2849163731555,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 18.83116883116882,
-    "return_2y": 228.50489498681625
-   }
-  },
-  {
-   "id": "A_202",
-   "type": "ASSET",
-   "name": "파나소닉",
-   "exposure": {
-    "ticker": "6752",
-    "exchange": "TSE",
-    "country": "JP"
-   },
-   "metrics": {
-    "return_1d": 0.8976276982261222,
-    "close": 4721.0,
-    "marketCap": 11023181019420,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 6.42470694319206,
-    "return_15d": 17.554780876494025,
-    "return_1m": 13.13203930026361,
-    "return_ytd": 133.30862367185568,
-    "return_1y": 208.96596858638742,
-    "return_3y": 195.52425665101723,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 6.9793791071833144,
-    "return_2y": 331.7329675354367
-   }
-  },
-  {
-   "id": "A_147",
-   "type": "ASSET",
-   "name": "LG에너지솔루션",
-   "exposure": {
-    "ticker": "373220",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.0943912448700521,
-    "close": 369500,
-    "marketCap": 99918000000000,
-    "pe_ttm": 0.0,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 4.231311706629048,
-    "return_15d": 12.139605462822466,
-    "return_1m": 10.298507462686569,
-    "return_ytd": 2.3545706371191244,
-    "return_1y": -0.9383378016085797,
-    "return_3y": -31.826568265682653,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 2.6388888888888795,
-    "return_2y": 9.806835066864794
-   }
-  },
-  {
-   "id": "A_816",
-   "type": "ASSET",
-   "name": "삼성디스플레이(비)",
-   "exposure": {
-    "ticker": "",
-    "exchange": "",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": null,
-    "returnsSource": null,
-    "return_5d": null,
-    "return_2y": null
-   },
-   "coreBiz": "옵티머스·차량 디스플레이 공급 후보(비상장)다"
-  },
-  {
-   "id": "A_085",
-   "type": "ASSET",
-   "name": "삼성전기",
-   "exposure": {
-    "ticker": "009150",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 3.659347970725224,
-    "close": 1558000,
-    "marketCap": 33500122656000,
-    "pe_ttm": 49.9,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 23.454833597464344,
-    "return_15d": 17.49622926093515,
-    "return_1m": 10.261854210898802,
-    "return_ytd": 477.03703703703707,
-    "return_1y": 997.1847397326669,
-    "return_3y": 986.7667530483475,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 21.909233176838818,
-    "return_2y": 823.6077316673402
-   }
-  },
-  {
-   "id": "A_080",
-   "type": "ASSET",
-   "name": "LG이노텍",
-   "exposure": {
-    "ticker": "011070",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 6.341463414634152,
-    "close": 654000,
-    "marketCap": 7549807133000,
-    "pe_ttm": 16.8,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 19.12568306010929,
-    "return_15d": 4.64,
-    "return_1m": -4.941860465116276,
-    "return_ytd": 145.92855759157146,
-    "return_1y": 331.10019110157316,
-    "return_3y": 159.60768814973716,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 18.47826086956521,
-    "return_2y": 124.23234519487471
-   }
-  },
-  {
-   "id": "A_079",
-   "type": "ASSET",
-   "name": "LG전자",
-   "exposure": {
-    "ticker": "066570",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 4.1162227602905554,
-    "close": 215000,
-    "marketCap": 23732546585900,
-    "pe_ttm": 71.56,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 18.65342163355408,
-    "return_15d": 27.419188566705376,
-    "return_1m": 11.130550055440459,
-    "return_ytd": 137.6826899077562,
-    "return_1y": 191.55162581933465,
-    "return_3y": 119.48051518238701,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 16.536901137916217,
-    "return_2y": 96.25215220265014
-   }
-  },
-  {
-   "id": "A_083",
-   "type": "ASSET",
-   "name": "로보스타",
-   "exposure": {
-    "ticker": "090360",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -0.11627906976744429,
-    "close": 85900,
-    "marketCap": 781950000000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 4.247572815533984,
-    "return_15d": 41.74917491749175,
-    "return_1m": 28.208955223880604,
-    "return_ytd": 7.644110275689231,
-    "return_1y": 232.94573643410854,
-    "return_3y": 154.5185185185185,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": -1.3777267508610747,
-    "return_2y": 207.3345259391771
-   }
-  },
-  {
-   "id": "A_1191",
-   "type": "ASSET",
-   "name": "한라캐스트",
-   "exposure": {
-    "ticker": "125490",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 16.251154201292707,
-    "close": 12590,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 39.11602209944751,
-    "return_15d": 70.36535859269281,
-    "return_1m": 56.0099132589839,
-    "return_ytd": -36.09137055837564,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 49.524940617577194,
-    "return_2y": null
-   }
-  },
-  {
-   "id": "BF_312",
-   "type": "BUSINESS_FIELD",
-   "name": "AI도조칩"
-  },
-  {
-   "id": "BF_021",
-   "type": "BUSINESS_FIELD",
-   "name": "액추에이터"
-  },
-  {
-   "id": "BF_313",
-   "type": "BUSINESS_FIELD",
-   "name": "로봇프레임"
-  },
-  {
-   "id": "BF_036",
-   "type": "BUSINESS_FIELD",
-   "name": "카메라/센서"
-  },
-  {
-   "id": "BF_032",
-   "type": "BUSINESS_FIELD",
-   "name": "배터리"
-  },
-  {
-   "id": "BF_215",
-   "type": "BUSINESS_FIELD",
-   "name": "디스플레이"
-  },
-  {
-   "id": "M_023",
-   "type": "MACRO",
-   "name": "휴머노이드확산"
-  },
-  {
-   "id": "M_117",
-   "type": "MACRO",
-   "name": "로보택시확산"
-  },
-  {
-   "id": "M_018",
-   "type": "MACRO",
-   "name": "피지컬AI확산"
-  },
-  {
-   "id": "C_2903",
-   "type": "CHARACTER",
-   "name": "옵티머스허브"
-  },
-  {
-   "id": "C_2904",
-   "type": "CHARACTER",
-   "name": "AI컴퓨트공급"
-  },
-  {
-   "id": "C_2905",
-   "type": "CHARACTER",
-   "name": "AI칩위탁생산"
-  },
-  {
-   "id": "C_2906",
-   "type": "CHARACTER",
-   "name": "파운드리·메모리"
-  },
-  {
-   "id": "C_2907",
-   "type": "CHARACTER",
-   "name": "배터리셀핵심"
-  },
-  {
-   "id": "C_2908",
-   "type": "CHARACTER",
-   "name": "배터리공급"
-  },
-  {
-   "id": "C_2909",
-   "type": "CHARACTER",
-   "name": "디스플레이공급후보"
-  },
-  {
-   "id": "C_2910",
-   "type": "CHARACTER",
-   "name": "카메라·MLCC"
-  },
-  {
-   "id": "C_2911",
-   "type": "CHARACTER",
-   "name": "카메라·센서"
-  },
-  {
-   "id": "C_2912",
-   "type": "CHARACTER",
-   "name": "로봇·액추에이터"
-  },
-  {
-   "id": "C_2913",
-   "type": "CHARACTER",
-   "name": "액추에이터부품"
-  },
-  {
-   "id": "C_2914",
-   "type": "CHARACTER",
-   "name": "경량주조프레임"
-  }
- ],
- "edges": [
-  {
-   "from": "A_002",
-   "to": "T_177",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005279"
-   ],
-   "confidence": 0.83,
-   "status": "verified"
-  },
-  {
-   "from": "A_055",
-   "to": "T_177",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005280"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_232",
-   "to": "T_177",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005281"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_088",
-   "to": "T_177",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005282"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_202",
-   "to": "T_177",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005283"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_147",
-   "to": "T_177",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005284"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_816",
-   "to": "T_177",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005285"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_085",
-   "to": "T_177",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005286"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_080",
-   "to": "T_177",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005287"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_079",
-   "to": "T_177",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005288"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_083",
-   "to": "T_177",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005289"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1191",
-   "to": "T_177",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005290"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_055",
-   "to": "BF_312",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005291"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_232",
-   "to": "BF_312",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005292"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_088",
-   "to": "BF_312",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005293"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_079",
-   "to": "BF_021",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005294"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_083",
-   "to": "BF_021",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005295"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1191",
-   "to": "BF_313",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005296"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_085",
-   "to": "BF_036",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005297"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_080",
-   "to": "BF_036",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005298"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_202",
-   "to": "BF_032",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005299"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_147",
-   "to": "BF_032",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005300"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_816",
-   "to": "BF_215",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005301"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_023",
-   "to": "T_177",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005302"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_117",
-   "to": "T_177",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005303"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_018",
-   "to": "T_177",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005304"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_002",
-   "to": "C_2903",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005405"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_055",
-   "to": "C_2904",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005406"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_232",
-   "to": "C_2905",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005407"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_088",
-   "to": "C_2906",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005408"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_202",
-   "to": "C_2907",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005409"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_147",
-   "to": "C_2908",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005410"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_816",
-   "to": "C_2909",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005411"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_085",
-   "to": "C_2910",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005412"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_080",
-   "to": "C_2911",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005413"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_079",
-   "to": "C_2912",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005414"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_083",
-   "to": "C_2913",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005415"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1191",
-   "to": "C_2914",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005416"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_232",
-   "to": "A_002",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_019224"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "TSMC가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
-  },
-  {
-   "from": "A_055",
-   "to": "A_002",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_019225"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "엔비디아가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
-  },
-  {
-   "from": "A_080",
-   "to": "A_002",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_019226"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "LG이노텍가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
-  },
-  {
-   "from": "A_079",
-   "to": "A_002",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_019227"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "LG전자가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
-  },
-  {
-   "from": "A_147",
-   "to": "A_002",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_019228"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "LG에너지솔루션가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
-  },
-  {
-   "from": "A_202",
-   "to": "A_002",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_019229"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "파나소닉가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
-  },
-  {
-   "from": "A_085",
-   "to": "A_002",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_019230"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "삼성전기가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
-  },
-  {
-   "from": "A_147",
-   "to": "A_202",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019231"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "LG에너지솔루션와 파나소닉는 테슬라옵티머스밸류체인 내 직접 경쟁 관계"
-  }
- ],
- "links": [
-  {
-   "from": "A_002",
-   "to": "T_177",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005279"
-   ],
-   "confidence": 0.83,
-   "status": "verified"
-  },
-  {
-   "from": "A_055",
-   "to": "T_177",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005280"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_232",
-   "to": "T_177",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005281"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_088",
-   "to": "T_177",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005282"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_202",
-   "to": "T_177",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005283"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_147",
-   "to": "T_177",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005284"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_816",
-   "to": "T_177",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005285"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_085",
-   "to": "T_177",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005286"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_080",
-   "to": "T_177",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005287"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_079",
-   "to": "T_177",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005288"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_083",
-   "to": "T_177",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005289"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1191",
-   "to": "T_177",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005290"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_055",
-   "to": "BF_312",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005291"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_232",
-   "to": "BF_312",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005292"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_088",
-   "to": "BF_312",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005293"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_079",
-   "to": "BF_021",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005294"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_083",
-   "to": "BF_021",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005295"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1191",
-   "to": "BF_313",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005296"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_085",
-   "to": "BF_036",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005297"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_080",
-   "to": "BF_036",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005298"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_202",
-   "to": "BF_032",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005299"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_147",
-   "to": "BF_032",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005300"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_816",
-   "to": "BF_215",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005301"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_023",
-   "to": "T_177",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005302"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_117",
-   "to": "T_177",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005303"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_018",
-   "to": "T_177",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005304"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_002",
-   "to": "C_2903",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005405"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_055",
-   "to": "C_2904",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005406"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_232",
-   "to": "C_2905",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005407"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_088",
-   "to": "C_2906",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005408"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_202",
-   "to": "C_2907",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005409"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_147",
-   "to": "C_2908",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005410"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_816",
-   "to": "C_2909",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005411"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_085",
-   "to": "C_2910",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005412"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_080",
-   "to": "C_2911",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005413"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_079",
-   "to": "C_2912",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005414"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_083",
-   "to": "C_2913",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005415"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1191",
-   "to": "C_2914",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005416"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_232",
-   "to": "A_002",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_019224"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "TSMC가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
-  },
-  {
-   "from": "A_055",
-   "to": "A_002",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_019225"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "엔비디아가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
-  },
-  {
-   "from": "A_080",
-   "to": "A_002",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_019226"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "LG이노텍가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
-  },
-  {
-   "from": "A_079",
-   "to": "A_002",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_019227"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "LG전자가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
-  },
-  {
-   "from": "A_147",
-   "to": "A_002",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_019228"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "LG에너지솔루션가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
-  },
-  {
-   "from": "A_202",
-   "to": "A_002",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_019229"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "파나소닉가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
-  },
-  {
-   "from": "A_085",
-   "to": "A_002",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_019230"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "삼성전기가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
-  },
-  {
-   "from": "A_147",
-   "to": "A_202",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019231"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "LG에너지솔루션와 파나소닉는 테슬라옵티머스밸류체인 내 직접 경쟁 관계"
-  }
- ]
+  "links": [
+    {
+      "from": "A_002",
+      "to": "T_177",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005279"
+      ],
+      "confidence": 0.83,
+      "status": "verified"
+    },
+    {
+      "from": "A_055",
+      "to": "T_177",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005280"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_232",
+      "to": "T_177",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005281"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_088",
+      "to": "T_177",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005282"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_202",
+      "to": "T_177",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005283"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_147",
+      "to": "T_177",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005284"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_816",
+      "to": "T_177",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005285"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_085",
+      "to": "T_177",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005286"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_080",
+      "to": "T_177",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005287"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_079",
+      "to": "T_177",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005288"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_083",
+      "to": "T_177",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005289"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1191",
+      "to": "T_177",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005290"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_055",
+      "to": "BF_312",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005291"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_232",
+      "to": "BF_312",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005292"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_088",
+      "to": "BF_312",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005293"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_079",
+      "to": "BF_021",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005294"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_083",
+      "to": "BF_021",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005295"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1191",
+      "to": "BF_313",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005296"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_085",
+      "to": "BF_036",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005297"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_080",
+      "to": "BF_036",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005298"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_202",
+      "to": "BF_032",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005299"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_147",
+      "to": "BF_032",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005300"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_816",
+      "to": "BF_215",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005301"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_023",
+      "to": "T_177",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005302"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_117",
+      "to": "T_177",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005303"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_018",
+      "to": "T_177",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005304"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_002",
+      "to": "C_2903",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005405"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_055",
+      "to": "C_2904",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005406"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_232",
+      "to": "C_2905",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005407"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_088",
+      "to": "C_2906",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005408"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_202",
+      "to": "C_2907",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005409"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_147",
+      "to": "C_2908",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005410"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_816",
+      "to": "C_2909",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005411"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_085",
+      "to": "C_2910",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005412"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_080",
+      "to": "C_2911",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005413"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_079",
+      "to": "C_2912",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005414"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_083",
+      "to": "C_2913",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005415"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1191",
+      "to": "C_2914",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005416"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_232",
+      "to": "A_002",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_019224"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "TSMC가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
+    },
+    {
+      "from": "A_055",
+      "to": "A_002",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_019225"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "엔비디아가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
+    },
+    {
+      "from": "A_080",
+      "to": "A_002",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_019226"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "LG이노텍가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
+    },
+    {
+      "from": "A_079",
+      "to": "A_002",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_019227"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "LG전자가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
+    },
+    {
+      "from": "A_147",
+      "to": "A_002",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_019228"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "LG에너지솔루션가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
+    },
+    {
+      "from": "A_202",
+      "to": "A_002",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_019229"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "파나소닉가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
+    },
+    {
+      "from": "A_085",
+      "to": "A_002",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_019230"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "삼성전기가 테슬라에 공급하는 관계 (테슬라옵티머스밸류체인)"
+    },
+    {
+      "from": "A_147",
+      "to": "A_202",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019231"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "LG에너지솔루션와 파나소닉는 테슬라옵티머스밸류체인 내 직접 경쟁 관계"
+    }
+  ]
 }

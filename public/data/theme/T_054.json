@@ -1,927 +1,927 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_054",
- "themeName": "미국시니어요양",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_054",
+  "themeName": "미국시니어요양",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-26T00:00:00+09:00",
+    "notes": "g54 누적 import 기반 T_054 freeze",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-26",
+        "kind": "수정",
+        "title": "자산 CHR 백필",
+        "detail": "CHR 미정의 자산에 CHARACTER·HAS_TRAIT 추가."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ],
+    "description": "Welltower·Ventas·Brookdale 등 미국 SNF·시니어 리빙 REIT/운영사. 베이비부머 고령화와 occupancy 회복이 multiyear 동인. iShares Residential and Multisector Real Estate ETF 등 ETF로도 익스포저를 확장한다. 저금리·인구고령화 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 밸류체인은 시니어하우징리츠·요양서비스 등 사업영역으로 이어진다. 경쟁·공급·협력 등 4건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다."
+  },
+  "nodes": [
+    {
+      "id": "T_054",
+      "type": "THEME",
+      "name": "미국시니어요양"
+    },
+    {
+      "id": "A_433",
+      "type": "ASSET",
+      "name": "웰타워",
+      "exposure": {
+        "ticker": "WELL",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.4606722402320518,
+        "close": 235.46,
+        "marketCap": 169665885710,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 4.2077784168842225,
+        "return_15d": -6.565636529535435,
+        "return_1m": -0.20338983050847137,
+        "return_ytd": 26.889714993804215,
+        "return_1y": 45.49048678033112,
+        "return_3y": 179.44945420028478,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -0.5909167651527825,
+        "return_2y": 100.4254957024934
+      }
+    },
+    {
+      "id": "A_434",
+      "type": "ASSET",
+      "name": "벤타스",
+      "exposure": {
+        "ticker": "VTR",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.36227710709933,
+        "close": 91.52,
+        "marketCap": 44494278400,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 5.243790248390057,
+        "return_15d": -8.962498756590076,
+        "return_1m": -0.9523809523809601,
+        "return_ytd": 18.27345567330059,
+        "return_1y": 35.52495187324152,
+        "return_3y": 113.83177570093457,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -1.9708654670094305,
+        "return_2y": 56.39097744360902
+      }
+    },
+    {
+      "id": "A_445",
+      "type": "ASSET",
+      "name": "헬스피크",
+      "exposure": {
+        "ticker": "DOC",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.09610764055741905,
+        "close": 20.79,
+        "marketCap": 14333041800,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 1.3651877133105783,
+        "return_15d": -6.645711719802428,
+        "return_1m": -4.016620498614964,
+        "return_ytd": 29.291044776119413,
+        "return_1y": 22.007042253521124,
+        "return_3y": 0.6779661016949268,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -2.89584306398879,
+        "return_2y": -4.589261128958233
+      }
+    },
+    {
+      "id": "A_446",
+      "type": "ASSET",
+      "name": "오메가헬스케어인베스터스",
+      "exposure": {
+        "ticker": "OHI",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.130189089328404,
+        "close": 46.53,
+        "marketCap": 13917634830,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 2.106649111257397,
+        "return_15d": -10.03480278422273,
+        "return_1m": -3.6446469248291535,
+        "return_ytd": 4.93910690121786,
+        "return_1y": 13.932419196865808,
+        "return_3y": 47.71428571428571,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -3.9826661163846477,
+        "return_2y": 22.770448548812674
+      }
+    },
+    {
+      "id": "A_447",
+      "type": "ASSET",
+      "name": "내셔널헬스인베스터스",
+      "exposure": {
+        "ticker": "NHI",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 2.35723305738742,
+        "close": 72.95,
+        "marketCap": 3535966745,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 4.288777698355961,
+        "return_15d": -9.42388875093122,
+        "return_1m": -4.164477141355761,
+        "return_ytd": -4.478198245384313,
+        "return_1y": -1.7508417508417473,
+        "return_3y": 41.10251450676983,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -3.120849933598935,
+        "return_2y": -2.198686150958573
+      }
+    },
+    {
+      "id": "A_448",
+      "type": "ASSET",
+      "name": "AHR",
+      "exposure": {
+        "ticker": "AHR",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.324626865671652,
+        "close": 54.31,
+        "marketCap": 11227088547,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 3.074587208198909,
+        "return_15d": -5.44916434540389,
+        "return_1m": -0.7674036177598986,
+        "return_ytd": 15.40586485337867,
+        "return_1y": 34.46397623174053,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -4.282692985548109,
+        "return_2y": 200.8864265927978
+      }
+    },
+    {
+      "id": "A_449",
+      "type": "ASSET",
+      "name": "INNV",
+      "exposure": {
+        "ticker": "INNV",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.3755868544600971,
+        "close": 10.61,
+        "marketCap": 1440158960,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 3.7145650048875822,
+        "return_15d": -8.217993079584785,
+        "return_1m": -8.613264427217915,
+        "return_ytd": 104.43159922928706,
+        "return_1y": 200.56657223796032,
+        "return_3y": 84.20138888888889,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -5.098389982110918,
+        "return_2y": 80.1358234295416
+      },
+      "coreBiz": "이노베이지는 메디케어·메디케이드 수가에 실적이 크게 좌우된다"
+    },
+    {
+      "id": "BF_113",
+      "type": "BUSINESS_FIELD",
+      "name": "시니어하우징리츠"
+    },
+    {
+      "id": "BF_114",
+      "type": "BUSINESS_FIELD",
+      "name": "요양서비스"
+    },
+    {
+      "id": "C_062",
+      "type": "CHARACTER",
+      "name": "고가하우징위주"
+    },
+    {
+      "id": "C_063",
+      "type": "CHARACTER",
+      "name": "공보험수가민감"
+    },
+    {
+      "id": "C_064",
+      "type": "CHARACTER",
+      "name": "운영리스크"
+    },
+    {
+      "id": "M_057",
+      "type": "MACRO",
+      "name": "저금리"
+    },
+    {
+      "id": "M_058",
+      "type": "MACRO",
+      "name": "인구고령화"
+    },
+    {
+      "id": "C_5415",
+      "type": "CHARACTER",
+      "name": "시니어리빙리츠"
+    },
+    {
+      "id": "C_5416",
+      "type": "CHARACTER",
+      "name": "의료오피스리츠"
+    },
+    {
+      "id": "C_5417",
+      "type": "CHARACTER",
+      "name": "요양시설리츠"
+    },
+    {
+      "id": "C_5418",
+      "type": "CHARACTER",
+      "name": "시니어요양넷리스리츠"
+    },
+    {
+      "id": "C_5419",
+      "type": "CHARACTER",
+      "name": "시니어헬스리츠"
+    },
+    {
+      "id": "A_2874",
+      "type": "ASSET",
+      "name": "iShares Residential and Multisector Real Estate ETF",
+      "exposure": {
+        "ticker": "REZ",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.26271542664986214,
+        "return_3d": 2.558314522197125,
+        "return_15d": -3.936770036246473,
+        "return_1m": -0.5316930775646433,
+        "return_ytd": 15.452565343659241,
+        "return_1y": 17.110592856266106,
+        "return_3y": 33.87119405079275,
+        "close": 95.445,
+        "marketCap": 869123888,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -1.231884057971011,
+        "return_2y": 14.703053618658313
+      }
+    }
   ],
-  "dataAsOf": "2026-07-26T00:00:00+09:00",
-  "notes": "g54 누적 import 기반 T_054 freeze",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-26",
-    "kind": "수정",
-    "title": "자산 CHR 백필",
-    "detail": "CHR 미정의 자산에 CHARACTER·HAS_TRAIT 추가."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_433",
+      "to": "T_054",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001858"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_434",
+      "to": "T_054",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001859"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_445",
+      "to": "T_054",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001860"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_446",
+      "to": "T_054",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001861"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_447",
+      "to": "T_054",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001862"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_448",
+      "to": "T_054",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001863"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_449",
+      "to": "T_054",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001864"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_433",
+      "to": "BF_113",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001865"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_434",
+      "to": "BF_113",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001866"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_445",
+      "to": "BF_113",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001867"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_446",
+      "to": "BF_113",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001868"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_447",
+      "to": "BF_113",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001869"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_448",
+      "to": "BF_113",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001870"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_449",
+      "to": "BF_114",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001871"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_433",
+      "to": "C_062",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_001872"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_449",
+      "to": "C_063",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_001873"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_449",
+      "to": "C_064",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_001874"
+      ],
+      "confidence": 0.65,
+      "status": "verified"
+    },
+    {
+      "from": "M_057",
+      "to": "T_054",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_001875"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_058",
+      "to": "T_054",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_001876"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_434",
+      "to": "C_5415",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014358"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_445",
+      "to": "C_5416",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014359"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_446",
+      "to": "C_5417",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014360"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_447",
+      "to": "C_5418",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014361"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_448",
+      "to": "C_5419",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014362"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_433",
+      "to": "A_434",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018658"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "웰타워와 벤타스는 미국 최대 규모의 시니어하우징·헬스케어 리츠로 자산 인수와 운영자 확보에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_433",
+      "to": "A_448",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018659"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "AHR는 RIDEA 구조의 시니어하우징 리츠로 웰타워와 동일 자산군을 두고 경쟁한다(공시·리서치에서 명시적 경쟁사)."
+    },
+    {
+      "from": "A_434",
+      "to": "A_448",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018660"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "AHR는 시니어하우징 중심 포트폴리오로 벤타스와 직접 경쟁 관계로 비교된다."
+    },
+    {
+      "from": "A_446",
+      "to": "A_447",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018661"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "오메가헬스케어와 내셔널헬스인베스터스는 스킬드너싱·시니어리빙 트리플넷 리츠로 동일 등급·자산군에서 경쟁하는 피어다."
+    },
+    {
+      "from": "A_2874",
+      "to": "T_054",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020579"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ],
-  "description": "Welltower·Ventas·Brookdale 등 미국 SNF·시니어 리빙 REIT/운영사. 베이비부머 고령화와 occupancy 회복이 multiyear 동인. iShares Residential and Multisector Real Estate ETF 등 ETF로도 익스포저를 확장한다. 저금리·인구고령화 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 밸류체인은 시니어하우징리츠·요양서비스 등 사업영역으로 이어진다. 경쟁·공급·협력 등 4건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다."
- },
- "nodes": [
-  {
-   "id": "T_054",
-   "type": "THEME",
-   "name": "미국시니어요양"
-  },
-  {
-   "id": "A_433",
-   "type": "ASSET",
-   "name": "웰타워",
-   "exposure": {
-    "ticker": "WELL",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.4606722402320518,
-    "close": 235.46,
-    "marketCap": 169665885710,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 4.2077784168842225,
-    "return_15d": -6.565636529535435,
-    "return_1m": -0.20338983050847137,
-    "return_ytd": 26.889714993804215,
-    "return_1y": 45.49048678033112,
-    "return_3y": 179.44945420028478,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.5909167651527825,
-    "return_2y": 100.4254957024934
-   }
-  },
-  {
-   "id": "A_434",
-   "type": "ASSET",
-   "name": "벤타스",
-   "exposure": {
-    "ticker": "VTR",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.36227710709933,
-    "close": 91.52,
-    "marketCap": 44494278400,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 5.243790248390057,
-    "return_15d": -8.962498756590076,
-    "return_1m": -0.9523809523809601,
-    "return_ytd": 18.27345567330059,
-    "return_1y": 35.52495187324152,
-    "return_3y": 113.83177570093457,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -1.9708654670094305,
-    "return_2y": 56.39097744360902
-   }
-  },
-  {
-   "id": "A_445",
-   "type": "ASSET",
-   "name": "헬스피크",
-   "exposure": {
-    "ticker": "DOC",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.09610764055741905,
-    "close": 20.79,
-    "marketCap": 14333041800,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 1.3651877133105783,
-    "return_15d": -6.645711719802428,
-    "return_1m": -4.016620498614964,
-    "return_ytd": 29.291044776119413,
-    "return_1y": 22.007042253521124,
-    "return_3y": 0.6779661016949268,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -2.89584306398879,
-    "return_2y": -4.589261128958233
-   }
-  },
-  {
-   "id": "A_446",
-   "type": "ASSET",
-   "name": "오메가헬스케어인베스터스",
-   "exposure": {
-    "ticker": "OHI",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.130189089328404,
-    "close": 46.53,
-    "marketCap": 13917634830,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 2.106649111257397,
-    "return_15d": -10.03480278422273,
-    "return_1m": -3.6446469248291535,
-    "return_ytd": 4.93910690121786,
-    "return_1y": 13.932419196865808,
-    "return_3y": 47.71428571428571,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -3.9826661163846477,
-    "return_2y": 22.770448548812674
-   }
-  },
-  {
-   "id": "A_447",
-   "type": "ASSET",
-   "name": "내셔널헬스인베스터스",
-   "exposure": {
-    "ticker": "NHI",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 2.35723305738742,
-    "close": 72.95,
-    "marketCap": 3535966745,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 4.288777698355961,
-    "return_15d": -9.42388875093122,
-    "return_1m": -4.164477141355761,
-    "return_ytd": -4.478198245384313,
-    "return_1y": -1.7508417508417473,
-    "return_3y": 41.10251450676983,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -3.120849933598935,
-    "return_2y": -2.198686150958573
-   }
-  },
-  {
-   "id": "A_448",
-   "type": "ASSET",
-   "name": "AHR",
-   "exposure": {
-    "ticker": "AHR",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.324626865671652,
-    "close": 54.31,
-    "marketCap": 11227088547,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 3.074587208198909,
-    "return_15d": -5.44916434540389,
-    "return_1m": -0.7674036177598986,
-    "return_ytd": 15.40586485337867,
-    "return_1y": 34.46397623174053,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -4.282692985548109,
-    "return_2y": 200.8864265927978
-   }
-  },
-  {
-   "id": "A_449",
-   "type": "ASSET",
-   "name": "INNV",
-   "exposure": {
-    "ticker": "INNV",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.3755868544600971,
-    "close": 10.61,
-    "marketCap": 1440158960,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 3.7145650048875822,
-    "return_15d": -8.217993079584785,
-    "return_1m": -8.613264427217915,
-    "return_ytd": 104.43159922928706,
-    "return_1y": 200.56657223796032,
-    "return_3y": 84.20138888888889,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -5.098389982110918,
-    "return_2y": 80.1358234295416
-   },
-   "coreBiz": "이노베이지는 메디케어·메디케이드 수가에 실적이 크게 좌우된다"
-  },
-  {
-   "id": "BF_113",
-   "type": "BUSINESS_FIELD",
-   "name": "시니어하우징리츠"
-  },
-  {
-   "id": "BF_114",
-   "type": "BUSINESS_FIELD",
-   "name": "요양서비스"
-  },
-  {
-   "id": "C_062",
-   "type": "CHARACTER",
-   "name": "고가하우징위주"
-  },
-  {
-   "id": "C_063",
-   "type": "CHARACTER",
-   "name": "공보험수가민감"
-  },
-  {
-   "id": "C_064",
-   "type": "CHARACTER",
-   "name": "운영리스크"
-  },
-  {
-   "id": "M_057",
-   "type": "MACRO",
-   "name": "저금리"
-  },
-  {
-   "id": "M_058",
-   "type": "MACRO",
-   "name": "인구고령화"
-  },
-  {
-   "id": "C_5415",
-   "type": "CHARACTER",
-   "name": "시니어리빙리츠"
-  },
-  {
-   "id": "C_5416",
-   "type": "CHARACTER",
-   "name": "의료오피스리츠"
-  },
-  {
-   "id": "C_5417",
-   "type": "CHARACTER",
-   "name": "요양시설리츠"
-  },
-  {
-   "id": "C_5418",
-   "type": "CHARACTER",
-   "name": "시니어요양넷리스리츠"
-  },
-  {
-   "id": "C_5419",
-   "type": "CHARACTER",
-   "name": "시니어헬스리츠"
-  },
-  {
-   "id": "A_2874",
-   "type": "ASSET",
-   "name": "iShares Residential and Multisector Real Estate ETF",
-   "exposure": {
-    "ticker": "REZ",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.26271542664986214,
-    "return_3d": 2.558314522197125,
-    "return_15d": -3.936770036246473,
-    "return_1m": -0.5316930775646433,
-    "return_ytd": 15.452565343659241,
-    "return_1y": 17.110592856266106,
-    "return_3y": 33.87119405079275,
-    "close": 95.445,
-    "marketCap": 869123888,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -1.231884057971011,
-    "return_2y": 14.703053618658313
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_433",
-   "to": "T_054",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001858"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_434",
-   "to": "T_054",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001859"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_445",
-   "to": "T_054",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001860"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_446",
-   "to": "T_054",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001861"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_447",
-   "to": "T_054",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001862"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_448",
-   "to": "T_054",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001863"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_449",
-   "to": "T_054",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001864"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_433",
-   "to": "BF_113",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001865"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_434",
-   "to": "BF_113",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001866"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_445",
-   "to": "BF_113",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001867"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_446",
-   "to": "BF_113",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001868"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_447",
-   "to": "BF_113",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001869"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_448",
-   "to": "BF_113",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001870"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_449",
-   "to": "BF_114",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001871"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_433",
-   "to": "C_062",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_001872"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_449",
-   "to": "C_063",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_001873"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_449",
-   "to": "C_064",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_001874"
-   ],
-   "confidence": 0.65,
-   "status": "verified"
-  },
-  {
-   "from": "M_057",
-   "to": "T_054",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_001875"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_058",
-   "to": "T_054",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_001876"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_434",
-   "to": "C_5415",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014358"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_445",
-   "to": "C_5416",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014359"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_446",
-   "to": "C_5417",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014360"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_447",
-   "to": "C_5418",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014361"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_448",
-   "to": "C_5419",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014362"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_433",
-   "to": "A_434",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018658"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "웰타워와 벤타스는 미국 최대 규모의 시니어하우징·헬스케어 리츠로 자산 인수와 운영자 확보에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_433",
-   "to": "A_448",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018659"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "AHR는 RIDEA 구조의 시니어하우징 리츠로 웰타워와 동일 자산군을 두고 경쟁한다(공시·리서치에서 명시적 경쟁사)."
-  },
-  {
-   "from": "A_434",
-   "to": "A_448",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018660"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "AHR는 시니어하우징 중심 포트폴리오로 벤타스와 직접 경쟁 관계로 비교된다."
-  },
-  {
-   "from": "A_446",
-   "to": "A_447",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018661"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "오메가헬스케어와 내셔널헬스인베스터스는 스킬드너싱·시니어리빙 트리플넷 리츠로 동일 등급·자산군에서 경쟁하는 피어다."
-  },
-  {
-   "from": "A_2874",
-   "to": "T_054",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020579"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_433",
-   "to": "T_054",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001858"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_434",
-   "to": "T_054",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001859"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_445",
-   "to": "T_054",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001860"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_446",
-   "to": "T_054",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001861"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_447",
-   "to": "T_054",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001862"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_448",
-   "to": "T_054",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001863"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_449",
-   "to": "T_054",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001864"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_433",
-   "to": "BF_113",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001865"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_434",
-   "to": "BF_113",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001866"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_445",
-   "to": "BF_113",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001867"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_446",
-   "to": "BF_113",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001868"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_447",
-   "to": "BF_113",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001869"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_448",
-   "to": "BF_113",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001870"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_449",
-   "to": "BF_114",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001871"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_433",
-   "to": "C_062",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_001872"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_449",
-   "to": "C_063",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_001873"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_449",
-   "to": "C_064",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_001874"
-   ],
-   "confidence": 0.65,
-   "status": "verified"
-  },
-  {
-   "from": "M_057",
-   "to": "T_054",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_001875"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_058",
-   "to": "T_054",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_001876"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_434",
-   "to": "C_5415",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014358"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_445",
-   "to": "C_5416",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014359"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_446",
-   "to": "C_5417",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014360"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_447",
-   "to": "C_5418",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014361"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_448",
-   "to": "C_5419",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014362"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_433",
-   "to": "A_434",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018658"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "웰타워와 벤타스는 미국 최대 규모의 시니어하우징·헬스케어 리츠로 자산 인수와 운영자 확보에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_433",
-   "to": "A_448",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018659"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "AHR는 RIDEA 구조의 시니어하우징 리츠로 웰타워와 동일 자산군을 두고 경쟁한다(공시·리서치에서 명시적 경쟁사)."
-  },
-  {
-   "from": "A_434",
-   "to": "A_448",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018660"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "AHR는 시니어하우징 중심 포트폴리오로 벤타스와 직접 경쟁 관계로 비교된다."
-  },
-  {
-   "from": "A_446",
-   "to": "A_447",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018661"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "오메가헬스케어와 내셔널헬스인베스터스는 스킬드너싱·시니어리빙 트리플넷 리츠로 동일 등급·자산군에서 경쟁하는 피어다."
-  },
-  {
-   "from": "A_2874",
-   "to": "T_054",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020579"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
+  "links": [
+    {
+      "from": "A_433",
+      "to": "T_054",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001858"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_434",
+      "to": "T_054",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001859"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_445",
+      "to": "T_054",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001860"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_446",
+      "to": "T_054",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001861"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_447",
+      "to": "T_054",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001862"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_448",
+      "to": "T_054",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001863"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_449",
+      "to": "T_054",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001864"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_433",
+      "to": "BF_113",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001865"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_434",
+      "to": "BF_113",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001866"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_445",
+      "to": "BF_113",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001867"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_446",
+      "to": "BF_113",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001868"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_447",
+      "to": "BF_113",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001869"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_448",
+      "to": "BF_113",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001870"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_449",
+      "to": "BF_114",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001871"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_433",
+      "to": "C_062",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_001872"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_449",
+      "to": "C_063",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_001873"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_449",
+      "to": "C_064",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_001874"
+      ],
+      "confidence": 0.65,
+      "status": "verified"
+    },
+    {
+      "from": "M_057",
+      "to": "T_054",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_001875"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_058",
+      "to": "T_054",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_001876"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_434",
+      "to": "C_5415",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014358"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_445",
+      "to": "C_5416",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014359"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_446",
+      "to": "C_5417",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014360"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_447",
+      "to": "C_5418",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014361"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_448",
+      "to": "C_5419",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014362"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_433",
+      "to": "A_434",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018658"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "웰타워와 벤타스는 미국 최대 규모의 시니어하우징·헬스케어 리츠로 자산 인수와 운영자 확보에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_433",
+      "to": "A_448",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018659"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "AHR는 RIDEA 구조의 시니어하우징 리츠로 웰타워와 동일 자산군을 두고 경쟁한다(공시·리서치에서 명시적 경쟁사)."
+    },
+    {
+      "from": "A_434",
+      "to": "A_448",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018660"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "AHR는 시니어하우징 중심 포트폴리오로 벤타스와 직접 경쟁 관계로 비교된다."
+    },
+    {
+      "from": "A_446",
+      "to": "A_447",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018661"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "오메가헬스케어와 내셔널헬스인베스터스는 스킬드너싱·시니어리빙 트리플넷 리츠로 동일 등급·자산군에서 경쟁하는 피어다."
+    },
+    {
+      "from": "A_2874",
+      "to": "T_054",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020579"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ]
 }

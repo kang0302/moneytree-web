@@ -1,825 +1,825 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_082",
- "themeName": "글로벌석탄발전",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_082",
+  "themeName": "글로벌석탄발전",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-26T00:00:00+09:00",
+    "notes": "g82 누적 import 기반 글로벌 석탄 발전 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 8건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-26",
+        "kind": "수정",
+        "title": "자산 CHR 백필",
+        "detail": "CHR 미정의 자산에 CHARACTER·HAS_TRAIT 추가."
+      },
+      {
+        "date": "2026-07-10",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필",
+        "detail": "석탄 5종목의 THEMED_AS·OPERATES 근거를 광종(발전용탄·원료탄)·지역·계약구조로 구체화하고, AI 전력수요·가스 스위칭 등 매크로 인과를 명시."
+      }
+    ],
+    "description": "Peabody·Glencore·Adani·Coal India·중국선화 등 글로벌 석탄 빅캡. AI DC 전력 수요·EU 가스 대체·신흥국 화력 증설이 multiyear 동인. 북반구겨울한파·트럼프화석에너지진흥정책·AI데이터센터전력수요증가·천연가스가격상승 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 밸류체인은 석탄채굴/발전연료 등 사업영역으로 이어진다. 경쟁·공급·협력 등 8건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다. 종목별 브리핑 카드와 연도별 이벤트 DB로 테마의 맥락과 변동요인을 확인할 수 있다."
+  },
+  "nodes": [
+    {
+      "id": "T_082",
+      "type": "THEME",
+      "name": "글로벌석탄발전"
+    },
+    {
+      "id": "A_663",
+      "type": "ASSET",
+      "name": "코어내추럴리소시즈",
+      "exposure": {
+        "ticker": "CNR",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 2.620601133811107,
+        "close": 95.94,
+        "marketCap": 4836106103,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 2.3578363384188616,
+        "return_15d": 15.312499999999996,
+        "return_1m": 10.951775182144097,
+        "return_ytd": 8.394531691334306,
+        "return_1y": 28.313494717132535,
+        "return_3y": 19.910011248593907,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 7.075892857142851,
+        "return_2y": 3.0394157448179637
+      }
+    },
+    {
+      "id": "A_664",
+      "type": "ASSET",
+      "name": "피바디에너지",
+      "exposure": {
+        "ticker": "BTU",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 5.770029057700299,
+        "close": 25.48,
+        "marketCap": 3103464000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 4.383449405981166,
+        "return_15d": 11.754385964912274,
+        "return_1m": 5.990016638935103,
+        "return_ytd": -14.208754208754204,
+        "return_1y": 41.79187534780191,
+        "return_3y": 13.648528099910795,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 7.013859722805549,
+        "return_2y": 16.8271435121504
+      }
+    },
+    {
+      "id": "A_665",
+      "type": "ASSET",
+      "name": "워리어메트콜",
+      "exposure": {
+        "ticker": "HCC",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 4.0474676838313295,
+        "close": 98.2,
+        "marketCap": 5185152865,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 0.41926577359647776,
+        "return_15d": 22.642687648307746,
+        "return_1m": 17.844713788551548,
+        "return_ytd": 11.375751389361465,
+        "return_1y": 59.441467770741994,
+        "return_3y": 140.8633799362276,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 6.773948026530396,
+        "return_2y": 71.19944211994422
+      }
+    },
+    {
+      "id": "A_666",
+      "type": "ASSET",
+      "name": "얼라이언스리소스파트너스",
+      "exposure": {
+        "ticker": "ARLP",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 2.1704180064308742,
+        "close": 25.42,
+        "marketCap": 3270506721,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 2.7901334411645884,
+        "return_15d": 2.873330635370297,
+        "return_1m": 1.9246190858059453,
+        "return_ytd": 9.427464485579007,
+        "return_1y": -0.19630938358852212,
+        "return_3y": 27.418546365914807,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 3.249390739236402,
+        "return_2y": 9.568965517241379
+      }
+    },
+    {
+      "id": "A_667",
+      "type": "ASSET",
+      "name": "글렌코어",
+      "exposure": {
+        "ticker": "GLNCY",
+        "exchange": "OTC",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.0652463382157085,
+        "close": 14.86,
+        "marketCap": 87204208530,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": -3.6941023979261245,
+        "return_15d": 4.061624649859952,
+        "return_1m": 5.166312809624896,
+        "return_ytd": 35.95608417200366,
+        "return_1y": 86.21553884711777,
+        "return_3y": 35.46034639927071,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -0.734802939211765,
+        "return_2y": 44.41205053449953
+      }
+    },
+    {
+      "id": "BF_429",
+      "type": "BUSINESS_FIELD",
+      "name": "석탄채굴/발전연료"
+    },
+    {
+      "id": "C_075",
+      "type": "CHARACTER",
+      "name": "중장기전망부정적"
+    },
+    {
+      "id": "M_088",
+      "type": "MACRO",
+      "name": "북반구겨울한파"
+    },
+    {
+      "id": "M_089",
+      "type": "MACRO",
+      "name": "트럼프화석에너지진흥정책"
+    },
+    {
+      "id": "M_035",
+      "type": "MACRO",
+      "name": "AI데이터센터전력수요증가"
+    },
+    {
+      "id": "M_060",
+      "type": "MACRO",
+      "name": "천연가스가격상승"
+    },
+    {
+      "id": "C_076",
+      "type": "CHARACTER",
+      "name": "장기계약+고배당"
+    },
+    {
+      "id": "C_5609",
+      "type": "CHARACTER",
+      "name": "석탄"
+    },
+    {
+      "id": "C_5610",
+      "type": "CHARACTER",
+      "name": "석탄"
+    },
+    {
+      "id": "C_5611",
+      "type": "CHARACTER",
+      "name": "원료탄"
+    },
+    {
+      "id": "C_5612",
+      "type": "CHARACTER",
+      "name": "석탄광산트레이딩"
+    }
   ],
-  "dataAsOf": "2026-07-26T00:00:00+09:00",
-  "notes": "g82 누적 import 기반 글로벌 석탄 발전 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 8건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-26",
-    "kind": "수정",
-    "title": "자산 CHR 백필",
-    "detail": "CHR 미정의 자산에 CHARACTER·HAS_TRAIT 추가."
-   },
-   {
-    "date": "2026-07-10",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필",
-    "detail": "석탄 5종목의 THEMED_AS·OPERATES 근거를 광종(발전용탄·원료탄)·지역·계약구조로 구체화하고, AI 전력수요·가스 스위칭 등 매크로 인과를 명시."
-   }
+  "edges": [
+    {
+      "from": "A_663",
+      "to": "T_082",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002582"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_664",
+      "to": "T_082",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002583"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_665",
+      "to": "T_082",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002584"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_666",
+      "to": "T_082",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002585"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_667",
+      "to": "T_082",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002586"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_663",
+      "to": "BF_429",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002587"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_664",
+      "to": "BF_429",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002588"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_665",
+      "to": "BF_429",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002589"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_666",
+      "to": "BF_429",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002590"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_667",
+      "to": "BF_429",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002591"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "M_089",
+      "to": "T_082",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002592"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_035",
+      "to": "T_082",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002593"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_088",
+      "to": "T_082",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002594"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_060",
+      "to": "T_082",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002595"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "T_082",
+      "to": "C_075",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002596"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_666",
+      "to": "C_076",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002597"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_663",
+      "to": "C_5609",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014552"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_664",
+      "to": "C_5610",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014553"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_665",
+      "to": "C_5611",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014554"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_667",
+      "to": "C_5612",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014555"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_663",
+      "to": "A_665",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018025"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "코어내추럴리소시즈와 워리어메트콜은 모두 미국산 프리미엄 제철용 야금탄(메트콜)을 생산·수출하는 직접 경쟁사다."
+    },
+    {
+      "from": "A_663",
+      "to": "A_664",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018026"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "코어내추럴리소시즈와 피바디에너지는 야금탄과 연료탄을 함께 생산하는 미국 대형 석탄생산사로 같은 시장에서 경쟁한다(Zacks 동종업계 피어 그룹)."
+    },
+    {
+      "from": "A_664",
+      "to": "A_665",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018027"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "피바디에너지는 호주 광산의 해상 야금탄 사업을 통해 순수 야금탄업체 워리어메트콜과 제철용 석탄 시장에서 경쟁한다."
+    },
+    {
+      "from": "A_664",
+      "to": "A_666",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018028"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "피바디에너지와 얼라이언스리소스파트너스는 미국 발전용 연료탄(스팀콜) 시장을 놓고 경쟁하는 주요 생산사다."
+    },
+    {
+      "from": "A_663",
+      "to": "A_666",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018029"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "코어내추럴리소시즈(노던애팔래치아)와 얼라이언스리소스파트너스(일리노이분지)는 미국 발전용·수출용 연료탄 시장에서 경쟁한다."
+    },
+    {
+      "from": "A_667",
+      "to": "A_664",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018030"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "글렌코어는 세계 최대 해상 연료탄 수출사이자 EVR 인수로 야금탄까지 확대해, 호주 해상 석탄사업을 가진 피바디에너지와 글로벌 시장에서 경쟁한다."
+    },
+    {
+      "from": "A_667",
+      "to": "A_665",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018031"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "글렌코어는 EVR(엘크밸리) 인수로 확보한 해상 야금탄으로 순수 제철용탄 수출사 워리어메트콜과 경쟁한다."
+    },
+    {
+      "from": "A_667",
+      "to": "A_663",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018032"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "글렌코어는 해상 야금탄·연료탄 수출에서 메트콜·스팀콜을 함께 수출하는 코어내추럴리소시즈와 경쟁한다."
+    }
   ],
-  "description": "Peabody·Glencore·Adani·Coal India·중국선화 등 글로벌 석탄 빅캡. AI DC 전력 수요·EU 가스 대체·신흥국 화력 증설이 multiyear 동인. 북반구겨울한파·트럼프화석에너지진흥정책·AI데이터센터전력수요증가·천연가스가격상승 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 밸류체인은 석탄채굴/발전연료 등 사업영역으로 이어진다. 경쟁·공급·협력 등 8건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다. 종목별 브리핑 카드와 연도별 이벤트 DB로 테마의 맥락과 변동요인을 확인할 수 있다."
- },
- "nodes": [
-  {
-   "id": "T_082",
-   "type": "THEME",
-   "name": "글로벌석탄발전"
-  },
-  {
-   "id": "A_663",
-   "type": "ASSET",
-   "name": "코어내추럴리소시즈",
-   "exposure": {
-    "ticker": "CNR",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 2.620601133811107,
-    "close": 95.94,
-    "marketCap": 4836106103,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 2.3578363384188616,
-    "return_15d": 15.312499999999996,
-    "return_1m": 10.951775182144097,
-    "return_ytd": 8.394531691334306,
-    "return_1y": 28.313494717132535,
-    "return_3y": 19.910011248593907,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 7.075892857142851,
-    "return_2y": 3.0394157448179637
-   }
-  },
-  {
-   "id": "A_664",
-   "type": "ASSET",
-   "name": "피바디에너지",
-   "exposure": {
-    "ticker": "BTU",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 5.770029057700299,
-    "close": 25.48,
-    "marketCap": 3103464000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 4.383449405981166,
-    "return_15d": 11.754385964912274,
-    "return_1m": 5.990016638935103,
-    "return_ytd": -14.208754208754204,
-    "return_1y": 41.79187534780191,
-    "return_3y": 13.648528099910795,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 7.013859722805549,
-    "return_2y": 16.8271435121504
-   }
-  },
-  {
-   "id": "A_665",
-   "type": "ASSET",
-   "name": "워리어메트콜",
-   "exposure": {
-    "ticker": "HCC",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 4.0474676838313295,
-    "close": 98.2,
-    "marketCap": 5185152865,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 0.41926577359647776,
-    "return_15d": 22.642687648307746,
-    "return_1m": 17.844713788551548,
-    "return_ytd": 11.375751389361465,
-    "return_1y": 59.441467770741994,
-    "return_3y": 140.8633799362276,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 6.773948026530396,
-    "return_2y": 71.19944211994422
-   }
-  },
-  {
-   "id": "A_666",
-   "type": "ASSET",
-   "name": "얼라이언스리소스파트너스",
-   "exposure": {
-    "ticker": "ARLP",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 2.1704180064308742,
-    "close": 25.42,
-    "marketCap": 3270506721,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 2.7901334411645884,
-    "return_15d": 2.873330635370297,
-    "return_1m": 1.9246190858059453,
-    "return_ytd": 9.427464485579007,
-    "return_1y": -0.19630938358852212,
-    "return_3y": 27.418546365914807,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 3.249390739236402,
-    "return_2y": 9.568965517241379
-   }
-  },
-  {
-   "id": "A_667",
-   "type": "ASSET",
-   "name": "글렌코어",
-   "exposure": {
-    "ticker": "GLNCY",
-    "exchange": "OTC",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -1.0652463382157085,
-    "close": 14.86,
-    "marketCap": 87204208530,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": -3.6941023979261245,
-    "return_15d": 4.061624649859952,
-    "return_1m": 5.166312809624896,
-    "return_ytd": 35.95608417200366,
-    "return_1y": 86.21553884711777,
-    "return_3y": 35.46034639927071,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.734802939211765,
-    "return_2y": 44.41205053449953
-   }
-  },
-  {
-   "id": "BF_429",
-   "type": "BUSINESS_FIELD",
-   "name": "석탄채굴/발전연료"
-  },
-  {
-   "id": "C_075",
-   "type": "CHARACTER",
-   "name": "중장기전망부정적"
-  },
-  {
-   "id": "M_088",
-   "type": "MACRO",
-   "name": "북반구겨울한파"
-  },
-  {
-   "id": "M_089",
-   "type": "MACRO",
-   "name": "트럼프화석에너지진흥정책"
-  },
-  {
-   "id": "M_035",
-   "type": "MACRO",
-   "name": "AI데이터센터전력수요증가"
-  },
-  {
-   "id": "M_060",
-   "type": "MACRO",
-   "name": "천연가스가격상승"
-  },
-  {
-   "id": "C_076",
-   "type": "CHARACTER",
-   "name": "장기계약+고배당"
-  },
-  {
-   "id": "C_5609",
-   "type": "CHARACTER",
-   "name": "석탄"
-  },
-  {
-   "id": "C_5610",
-   "type": "CHARACTER",
-   "name": "석탄"
-  },
-  {
-   "id": "C_5611",
-   "type": "CHARACTER",
-   "name": "원료탄"
-  },
-  {
-   "id": "C_5612",
-   "type": "CHARACTER",
-   "name": "석탄광산트레이딩"
-  }
- ],
- "edges": [
-  {
-   "from": "A_663",
-   "to": "T_082",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002582"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_664",
-   "to": "T_082",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002583"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_665",
-   "to": "T_082",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002584"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_666",
-   "to": "T_082",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002585"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_667",
-   "to": "T_082",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002586"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_663",
-   "to": "BF_429",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002587"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_664",
-   "to": "BF_429",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002588"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_665",
-   "to": "BF_429",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002589"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_666",
-   "to": "BF_429",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002590"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_667",
-   "to": "BF_429",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002591"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "M_089",
-   "to": "T_082",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002592"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_035",
-   "to": "T_082",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002593"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_088",
-   "to": "T_082",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002594"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_060",
-   "to": "T_082",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002595"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "T_082",
-   "to": "C_075",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002596"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_666",
-   "to": "C_076",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002597"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_663",
-   "to": "C_5609",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014552"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_664",
-   "to": "C_5610",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014553"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_665",
-   "to": "C_5611",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014554"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_667",
-   "to": "C_5612",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014555"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_663",
-   "to": "A_665",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018025"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "코어내추럴리소시즈와 워리어메트콜은 모두 미국산 프리미엄 제철용 야금탄(메트콜)을 생산·수출하는 직접 경쟁사다."
-  },
-  {
-   "from": "A_663",
-   "to": "A_664",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018026"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "코어내추럴리소시즈와 피바디에너지는 야금탄과 연료탄을 함께 생산하는 미국 대형 석탄생산사로 같은 시장에서 경쟁한다(Zacks 동종업계 피어 그룹)."
-  },
-  {
-   "from": "A_664",
-   "to": "A_665",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018027"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "피바디에너지는 호주 광산의 해상 야금탄 사업을 통해 순수 야금탄업체 워리어메트콜과 제철용 석탄 시장에서 경쟁한다."
-  },
-  {
-   "from": "A_664",
-   "to": "A_666",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018028"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "피바디에너지와 얼라이언스리소스파트너스는 미국 발전용 연료탄(스팀콜) 시장을 놓고 경쟁하는 주요 생산사다."
-  },
-  {
-   "from": "A_663",
-   "to": "A_666",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018029"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "코어내추럴리소시즈(노던애팔래치아)와 얼라이언스리소스파트너스(일리노이분지)는 미국 발전용·수출용 연료탄 시장에서 경쟁한다."
-  },
-  {
-   "from": "A_667",
-   "to": "A_664",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018030"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "글렌코어는 세계 최대 해상 연료탄 수출사이자 EVR 인수로 야금탄까지 확대해, 호주 해상 석탄사업을 가진 피바디에너지와 글로벌 시장에서 경쟁한다."
-  },
-  {
-   "from": "A_667",
-   "to": "A_665",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018031"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "글렌코어는 EVR(엘크밸리) 인수로 확보한 해상 야금탄으로 순수 제철용탄 수출사 워리어메트콜과 경쟁한다."
-  },
-  {
-   "from": "A_667",
-   "to": "A_663",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018032"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "글렌코어는 해상 야금탄·연료탄 수출에서 메트콜·스팀콜을 함께 수출하는 코어내추럴리소시즈와 경쟁한다."
-  }
- ],
- "links": [
-  {
-   "from": "A_663",
-   "to": "T_082",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002582"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_664",
-   "to": "T_082",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002583"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_665",
-   "to": "T_082",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002584"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_666",
-   "to": "T_082",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002585"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_667",
-   "to": "T_082",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002586"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_663",
-   "to": "BF_429",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002587"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_664",
-   "to": "BF_429",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002588"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_665",
-   "to": "BF_429",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002589"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_666",
-   "to": "BF_429",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002590"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_667",
-   "to": "BF_429",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002591"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "M_089",
-   "to": "T_082",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002592"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_035",
-   "to": "T_082",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002593"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_088",
-   "to": "T_082",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002594"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_060",
-   "to": "T_082",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002595"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "T_082",
-   "to": "C_075",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002596"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_666",
-   "to": "C_076",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002597"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_663",
-   "to": "C_5609",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014552"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_664",
-   "to": "C_5610",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014553"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_665",
-   "to": "C_5611",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014554"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_667",
-   "to": "C_5612",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014555"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_663",
-   "to": "A_665",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018025"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "코어내추럴리소시즈와 워리어메트콜은 모두 미국산 프리미엄 제철용 야금탄(메트콜)을 생산·수출하는 직접 경쟁사다."
-  },
-  {
-   "from": "A_663",
-   "to": "A_664",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018026"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "코어내추럴리소시즈와 피바디에너지는 야금탄과 연료탄을 함께 생산하는 미국 대형 석탄생산사로 같은 시장에서 경쟁한다(Zacks 동종업계 피어 그룹)."
-  },
-  {
-   "from": "A_664",
-   "to": "A_665",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018027"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "피바디에너지는 호주 광산의 해상 야금탄 사업을 통해 순수 야금탄업체 워리어메트콜과 제철용 석탄 시장에서 경쟁한다."
-  },
-  {
-   "from": "A_664",
-   "to": "A_666",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018028"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "피바디에너지와 얼라이언스리소스파트너스는 미국 발전용 연료탄(스팀콜) 시장을 놓고 경쟁하는 주요 생산사다."
-  },
-  {
-   "from": "A_663",
-   "to": "A_666",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018029"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "코어내추럴리소시즈(노던애팔래치아)와 얼라이언스리소스파트너스(일리노이분지)는 미국 발전용·수출용 연료탄 시장에서 경쟁한다."
-  },
-  {
-   "from": "A_667",
-   "to": "A_664",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018030"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "글렌코어는 세계 최대 해상 연료탄 수출사이자 EVR 인수로 야금탄까지 확대해, 호주 해상 석탄사업을 가진 피바디에너지와 글로벌 시장에서 경쟁한다."
-  },
-  {
-   "from": "A_667",
-   "to": "A_665",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018031"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "글렌코어는 EVR(엘크밸리) 인수로 확보한 해상 야금탄으로 순수 제철용탄 수출사 워리어메트콜과 경쟁한다."
-  },
-  {
-   "from": "A_667",
-   "to": "A_663",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018032"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "글렌코어는 해상 야금탄·연료탄 수출에서 메트콜·스팀콜을 함께 수출하는 코어내추럴리소시즈와 경쟁한다."
-  }
- ]
+  "links": [
+    {
+      "from": "A_663",
+      "to": "T_082",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002582"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_664",
+      "to": "T_082",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002583"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_665",
+      "to": "T_082",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002584"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_666",
+      "to": "T_082",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002585"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_667",
+      "to": "T_082",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002586"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_663",
+      "to": "BF_429",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002587"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_664",
+      "to": "BF_429",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002588"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_665",
+      "to": "BF_429",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002589"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_666",
+      "to": "BF_429",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002590"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_667",
+      "to": "BF_429",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002591"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "M_089",
+      "to": "T_082",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002592"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_035",
+      "to": "T_082",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002593"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_088",
+      "to": "T_082",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002594"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_060",
+      "to": "T_082",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002595"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "T_082",
+      "to": "C_075",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002596"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_666",
+      "to": "C_076",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002597"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_663",
+      "to": "C_5609",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014552"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_664",
+      "to": "C_5610",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014553"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_665",
+      "to": "C_5611",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014554"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_667",
+      "to": "C_5612",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014555"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_663",
+      "to": "A_665",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018025"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "코어내추럴리소시즈와 워리어메트콜은 모두 미국산 프리미엄 제철용 야금탄(메트콜)을 생산·수출하는 직접 경쟁사다."
+    },
+    {
+      "from": "A_663",
+      "to": "A_664",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018026"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "코어내추럴리소시즈와 피바디에너지는 야금탄과 연료탄을 함께 생산하는 미국 대형 석탄생산사로 같은 시장에서 경쟁한다(Zacks 동종업계 피어 그룹)."
+    },
+    {
+      "from": "A_664",
+      "to": "A_665",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018027"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "피바디에너지는 호주 광산의 해상 야금탄 사업을 통해 순수 야금탄업체 워리어메트콜과 제철용 석탄 시장에서 경쟁한다."
+    },
+    {
+      "from": "A_664",
+      "to": "A_666",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018028"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "피바디에너지와 얼라이언스리소스파트너스는 미국 발전용 연료탄(스팀콜) 시장을 놓고 경쟁하는 주요 생산사다."
+    },
+    {
+      "from": "A_663",
+      "to": "A_666",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018029"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "코어내추럴리소시즈(노던애팔래치아)와 얼라이언스리소스파트너스(일리노이분지)는 미국 발전용·수출용 연료탄 시장에서 경쟁한다."
+    },
+    {
+      "from": "A_667",
+      "to": "A_664",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018030"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "글렌코어는 세계 최대 해상 연료탄 수출사이자 EVR 인수로 야금탄까지 확대해, 호주 해상 석탄사업을 가진 피바디에너지와 글로벌 시장에서 경쟁한다."
+    },
+    {
+      "from": "A_667",
+      "to": "A_665",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018031"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "글렌코어는 EVR(엘크밸리) 인수로 확보한 해상 야금탄으로 순수 제철용탄 수출사 워리어메트콜과 경쟁한다."
+    },
+    {
+      "from": "A_667",
+      "to": "A_663",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018032"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "글렌코어는 해상 야금탄·연료탄 수출에서 메트콜·스팀콜을 함께 수출하는 코어내추럴리소시즈와 경쟁한다."
+    }
+  ]
 }

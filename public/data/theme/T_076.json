@@ -1,1122 +1,1122 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_076",
- "themeName": "AIDC랙통합",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_076",
+  "themeName": "AIDC랙통합",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-29T00:00:00+09:00",
+    "notes": "g76 누적 import 기반 AIDC 인프라(랙통합) 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-07-29",
+        "kind": "수정",
+        "title": "AI 전력 고평가 폭락 이벤트 추가",
+        "detail": "AI 전력수요 랠리 장기화·고평가 부담에 따른 되돌림 폭락 반영."
+      },
+      {
+        "date": "2026-07-26",
+        "kind": "수정",
+        "title": "자산 CHR 백필",
+        "detail": "CHR 미정의 자산에 CHARACTER·HAS_TRAIT 추가."
+      },
+      {
+        "date": "2026-07-09",
+        "kind": "보강",
+        "title": "1궤도 AI 서버 랙/EMS CHR 정의",
+        "detail": "1궤도(THEMED_AS) 6개사(셀레스티카·폭스콘·Wiwynn·Flex·Inventec·Jabil)에 AI 서버 랙 통합·EMS 사업 포지션 CHR을 정의·연결. 2궤도(장비·플랫폼사)는 제외."
+      }
+    ],
+    "description": "Vertiv·Eaton·Schneider·Legrand 등 AIDC 랙·전력·열관리 통합 솔루션. NVDA Blackwell·Rubin 세대 PUE 요구와 hyperscaler 표준화가 동인. AI인프라·구글TPU 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 밸류체인은 AI서버제조(ODM/랙통합)·DC전력·파워·쿨링·네트워크장비·스위치·서버/통신장비제조 등 사업영역으로 이어진다. 경쟁·공급·협력 등 6건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다. 종목별 브리핑 카드와 연도별 이벤트 DB로 테마의 맥락과 변동요인을 확인할 수 있다."
+  },
+  "nodes": [
+    {
+      "id": "T_076",
+      "type": "THEME",
+      "name": "AIDC인프라:셀레스티카(랙통합)"
+    },
+    {
+      "id": "A_640",
+      "type": "ASSET",
+      "name": "셀레스티카",
+      "exposure": {
+        "ticker": "CLS",
+        "exchange": "NYSE",
+        "country": "CA"
+      },
+      "metrics": {
+        "return_1d": -3.618790092914881,
+        "close": 335.05,
+        "marketCap": 38524719100,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 7.948321412462156,
+        "return_15d": 9.751703354297714,
+        "return_1m": -2.8925021012665475,
+        "return_ytd": 13.341903183248194,
+        "return_1y": 70.38751017087064,
+        "return_3y": 1466.3861617578307,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 5.417990749771895,
+        "return_2y": 540.9986607996939
+      }
+    },
+    {
+      "id": "A_641",
+      "type": "ASSET",
+      "name": "Wiwynn",
+      "exposure": {
+        "ticker": "6669",
+        "exchange": "TWSE",
+        "country": "TW"
+      },
+      "metrics": {
+        "return_1d": 6.013179571663918,
+        "close": 6435.0,
+        "marketCap": 3587656470255,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 8.516020236087684,
+        "return_15d": 12.303664921465973,
+        "return_1m": 31.192660550458704,
+        "return_ytd": 43.47826086956521,
+        "return_1y": 89.5428879443654,
+        "return_3y": 309.8752221351728,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 5.491803278688523,
+        "return_2y": 228.31800162245725
+      }
+    },
+    {
+      "id": "A_642",
+      "type": "ASSET",
+      "name": "Jabil",
+      "exposure": {
+        "ticker": "JBL",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.9602548871368364,
+        "close": 363.1,
+        "marketCap": 38048192016,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 1.8199153136479573,
+        "return_15d": 16.158546338654478,
+        "return_1m": 11.10091181690227,
+        "return_ytd": 59.24041750723621,
+        "return_1y": 67.01931922723092,
+        "return_3y": 239.63146571882893,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 6.4122853291131765,
+        "return_2y": 251.6025951389562
+      }
+    },
+    {
+      "id": "A_643",
+      "type": "ASSET",
+      "name": "Flex",
+      "exposure": {
+        "ticker": "FLEX",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.496379726468211,
+        "close": 126.16,
+        "marketCap": 46603879704,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 3.063475206273991,
+        "return_15d": 6.455151464011477,
+        "return_1m": -4.597701149425292,
+        "return_ytd": 108.80503144654088,
+        "return_1y": 155.17799352750808,
+        "return_3y": 373.0408698912636,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 3.963741244334562,
+        "return_2y": 314.182534471438
+      }
+    },
+    {
+      "id": "A_644",
+      "type": "ASSET",
+      "name": "폭스콘",
+      "exposure": {
+        "ticker": "2317",
+        "exchange": "TWSE",
+        "country": "TW"
+      },
+      "metrics": {
+        "return_1d": -0.9541984732824416,
+        "close": 259.5,
+        "marketCap": 3633498219759,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": -1.3307984790874472,
+        "return_15d": 2.7722772277227747,
+        "return_1m": 10.191082802547768,
+        "return_ytd": 12.581344902386116,
+        "return_1y": 30.075187969924812,
+        "return_3y": 135.90909090909088,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -0.19230769230769162,
+        "return_2y": 39.89218328840971
+      },
+      "coreBiz": "폭스콘은 세계 최대 EMS로 AI 서버·랙을 대규모 조립·통합한다"
+    },
+    {
+      "id": "A_645",
+      "type": "ASSET",
+      "name": "Inventec",
+      "exposure": {
+        "ticker": "2356",
+        "exchange": "TWSE",
+        "country": "TW"
+      },
+      "metrics": {
+        "return_1d": 1.5988372093023395,
+        "close": 69.9,
+        "marketCap": 250764507113,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 7.373271889400934,
+        "return_15d": 8.372093023255832,
+        "return_1m": 9.733124018838302,
+        "return_ytd": 62.93706293706296,
+        "return_1y": 67.42514970059881,
+        "return_3y": 31.63841807909604,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 9.218750000000009,
+        "return_2y": 46.54088050314466
+      }
+    },
+    {
+      "id": "A_646",
+      "type": "ASSET",
+      "name": "HPE",
+      "exposure": {
+        "ticker": "HPE",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.8555667001002973,
+        "close": 58.7,
+        "marketCap": 77730746683,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 7.962486208164754,
+        "return_15d": 23.10756972111554,
+        "return_1m": 18.46246973365617,
+        "return_ytd": 144.42131557035802,
+        "return_1y": 175.375234521576,
+        "return_3y": 233.5795454545454,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 10.31567080045097,
+        "return_2y": 230.20247469066365
+      }
+    },
+    {
+      "id": "A_647",
+      "type": "ASSET",
+      "name": "주니퍼네트웍스(비)",
+      "exposure": {
+        "ticker": "",
+        "exchange": "",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "returnsAsOf": null,
+        "returnsSource": null,
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "데이터센터 네트워크"
+    },
+    {
+      "id": "A_050",
+      "type": "ASSET",
+      "name": "알파벳",
+      "exposure": {
+        "ticker": "GOOGL",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.13280979327867648,
+        "return_3d": 0.6108202443280808,
+        "return_15d": 8.181647588665776,
+        "return_1m": -3.785708325220438,
+        "return_ytd": 10.511182108626183,
+        "return_1y": 70.44446634473243,
+        "return_3y": 163.38231934820678,
+        "close": 345.9,
+        "marketCap": 4186120293827,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -2.370872142252334,
+        "return_2y": 115.68871983538065
+      }
+    },
+    {
+      "id": "A_211",
+      "type": "ASSET",
+      "name": "아마존",
+      "exposure": {
+        "ticker": "AMZN",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.9353901859465275,
+        "return_3d": -3.5332574282880946,
+        "return_15d": 13.157554607729072,
+        "return_1m": 6.125500020202823,
+        "return_ytd": 13.789966207434357,
+        "return_1y": 13.711143821975913,
+        "return_3y": 86.8464110407626,
+        "close": 262.65,
+        "marketCap": 2825352315000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -4.309967939376291,
+        "return_2y": 54.40917107583773
+      }
+    },
+    {
+      "id": "A_373",
+      "type": "ASSET",
+      "name": "메타",
+      "exposure": {
+        "ticker": "META",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.8605475906348192,
+        "return_3d": -1.5472693283482442,
+        "return_15d": -0.8971924931534536,
+        "return_1m": -10.769393682681827,
+        "return_ytd": -10.64097320062416,
+        "return_1y": -24.584148415225084,
+        "return_3y": 92.64182370423595,
+        "close": 589.85,
+        "marketCap": 1502634953315,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -0.3800033778078027,
+        "return_2y": 11.976991419242156
+      }
+    },
+    {
+      "id": "A_212",
+      "type": "ASSET",
+      "name": "시스코",
+      "exposure": {
+        "ticker": "CSCO",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.5775094738697426,
+        "return_3d": -7.265631487170965,
+        "return_15d": -2.1809582201979483,
+        "return_1m": -4.620377487402849,
+        "return_ytd": 44.98247436063871,
+        "return_1y": 61.154401154401164,
+        "return_3y": 107.275426874536,
+        "close": 111.68,
+        "marketCap": 440179423387,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -8.029317302149385,
+        "return_2y": 145.77464788732394
+      }
+    },
+    {
+      "id": "BF_142",
+      "type": "BUSINESS_FIELD",
+      "name": "AI서버제조(ODM/랙통합)"
+    },
+    {
+      "id": "BF_143",
+      "type": "BUSINESS_FIELD",
+      "name": "DC전력·파워·쿨링"
+    },
+    {
+      "id": "BF_144",
+      "type": "BUSINESS_FIELD",
+      "name": "네트워크장비·스위치"
+    },
+    {
+      "id": "BF_145",
+      "type": "BUSINESS_FIELD",
+      "name": "서버/통신장비제조"
+    },
+    {
+      "id": "M_085",
+      "type": "MACRO",
+      "name": "AI인프라"
+    },
+    {
+      "id": "M_086",
+      "type": "MACRO",
+      "name": "구글TPU"
+    },
+    {
+      "id": "C_1917",
+      "type": "CHARACTER",
+      "name": "AI서버랙통합ODM선두"
+    },
+    {
+      "id": "C_1918",
+      "type": "CHARACTER",
+      "name": "하이퍼스케일서버ODM"
+    },
+    {
+      "id": "C_1919",
+      "type": "CHARACTER",
+      "name": "서버전력EMS"
+    },
+    {
+      "id": "C_1920",
+      "type": "CHARACTER",
+      "name": "세계최대EMS_AI서버조립"
+    },
+    {
+      "id": "C_1921",
+      "type": "CHARACTER",
+      "name": "대만서버ODM"
+    },
+    {
+      "id": "C_1922",
+      "type": "CHARACTER",
+      "name": "인프라서버EMS"
+    },
+    {
+      "id": "C_5586",
+      "type": "CHARACTER",
+      "name": "AI서버랙"
+    },
+    {
+      "id": "C_5587",
+      "type": "CHARACTER",
+      "name": "DC네트워크"
+    },
+    {
+      "id": "C_5588",
+      "type": "CHARACTER",
+      "name": "자체DC랙"
+    },
+    {
+      "id": "C_5589",
+      "type": "CHARACTER",
+      "name": "AWS_DC랙"
+    },
+    {
+      "id": "C_5590",
+      "type": "CHARACTER",
+      "name": "자체DC랙"
+    },
+    {
+      "id": "C_5591",
+      "type": "CHARACTER",
+      "name": "DC네트워크스위치"
+    }
   ],
-  "dataAsOf": "2026-07-29T00:00:00+09:00",
-  "notes": "g76 누적 import 기반 AIDC 인프라(랙통합) 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-07-29",
-    "kind": "수정",
-    "title": "AI 전력 고평가 폭락 이벤트 추가",
-    "detail": "AI 전력수요 랠리 장기화·고평가 부담에 따른 되돌림 폭락 반영."
-   },
-   {
-    "date": "2026-07-26",
-    "kind": "수정",
-    "title": "자산 CHR 백필",
-    "detail": "CHR 미정의 자산에 CHARACTER·HAS_TRAIT 추가."
-   },
-   {
-    "date": "2026-07-09",
-    "kind": "보강",
-    "title": "1궤도 AI 서버 랙/EMS CHR 정의",
-    "detail": "1궤도(THEMED_AS) 6개사(셀레스티카·폭스콘·Wiwynn·Flex·Inventec·Jabil)에 AI 서버 랙 통합·EMS 사업 포지션 CHR을 정의·연결. 2궤도(장비·플랫폼사)는 제외."
-   }
+  "edges": [
+    {
+      "from": "A_640",
+      "to": "T_076",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002337"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_641",
+      "to": "T_076",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002338"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_642",
+      "to": "T_076",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002339"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_643",
+      "to": "T_076",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002340"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_644",
+      "to": "T_076",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002341"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_645",
+      "to": "T_076",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002342"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_640",
+      "to": "A_050",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_002343"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_640",
+      "to": "A_211",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_002344"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_640",
+      "to": "A_373",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_002345"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_640",
+      "to": "A_646",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_002346"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_640",
+      "to": "A_647",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_002347"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_640",
+      "to": "A_212",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_002348"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_640",
+      "to": "BF_142",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002349"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_640",
+      "to": "BF_143",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002350"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_640",
+      "to": "BF_144",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002351"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_646",
+      "to": "BF_145",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002352"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_647",
+      "to": "BF_145",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002353"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_212",
+      "to": "BF_145",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002354"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_085",
+      "to": "T_076",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002355"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_086",
+      "to": "T_076",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002356"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_640",
+      "to": "C_1917",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002417"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_641",
+      "to": "C_1918",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002418"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_643",
+      "to": "C_1919",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002419"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_644",
+      "to": "C_1920",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002420"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_645",
+      "to": "C_1921",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002421"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_642",
+      "to": "C_1922",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002422"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_646",
+      "to": "C_5586",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014529"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_647",
+      "to": "C_5587",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014530"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_050",
+      "to": "C_5588",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014531"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_211",
+      "to": "C_5589",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014532"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_373",
+      "to": "C_5590",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014533"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_212",
+      "to": "C_5591",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014534"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    }
   ],
-  "description": "Vertiv·Eaton·Schneider·Legrand 등 AIDC 랙·전력·열관리 통합 솔루션. NVDA Blackwell·Rubin 세대 PUE 요구와 hyperscaler 표준화가 동인. AI인프라·구글TPU 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 밸류체인은 AI서버제조(ODM/랙통합)·DC전력·파워·쿨링·네트워크장비·스위치·서버/통신장비제조 등 사업영역으로 이어진다. 경쟁·공급·협력 등 6건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다. 종목별 브리핑 카드와 연도별 이벤트 DB로 테마의 맥락과 변동요인을 확인할 수 있다."
- },
- "nodes": [
-  {
-   "id": "T_076",
-   "type": "THEME",
-   "name": "AIDC인프라:셀레스티카(랙통합)"
-  },
-  {
-   "id": "A_640",
-   "type": "ASSET",
-   "name": "셀레스티카",
-   "exposure": {
-    "ticker": "CLS",
-    "exchange": "NYSE",
-    "country": "CA"
-   },
-   "metrics": {
-    "return_1d": -3.618790092914881,
-    "close": 335.05,
-    "marketCap": 38524719100,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 7.948321412462156,
-    "return_15d": 9.751703354297714,
-    "return_1m": -2.8925021012665475,
-    "return_ytd": 13.341903183248194,
-    "return_1y": 70.38751017087064,
-    "return_3y": 1466.3861617578307,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 5.417990749771895,
-    "return_2y": 540.9986607996939
-   }
-  },
-  {
-   "id": "A_641",
-   "type": "ASSET",
-   "name": "Wiwynn",
-   "exposure": {
-    "ticker": "6669",
-    "exchange": "TWSE",
-    "country": "TW"
-   },
-   "metrics": {
-    "return_1d": 6.013179571663918,
-    "close": 6435.0,
-    "marketCap": 3587656470255,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 8.516020236087684,
-    "return_15d": 12.303664921465973,
-    "return_1m": 31.192660550458704,
-    "return_ytd": 43.47826086956521,
-    "return_1y": 89.5428879443654,
-    "return_3y": 309.8752221351728,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 5.491803278688523,
-    "return_2y": 228.31800162245725
-   }
-  },
-  {
-   "id": "A_642",
-   "type": "ASSET",
-   "name": "Jabil",
-   "exposure": {
-    "ticker": "JBL",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -1.9602548871368364,
-    "close": 363.1,
-    "marketCap": 38048192016,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 1.8199153136479573,
-    "return_15d": 16.158546338654478,
-    "return_1m": 11.10091181690227,
-    "return_ytd": 59.24041750723621,
-    "return_1y": 67.01931922723092,
-    "return_3y": 239.63146571882893,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 6.4122853291131765,
-    "return_2y": 251.6025951389562
-   }
-  },
-  {
-   "id": "A_643",
-   "type": "ASSET",
-   "name": "Flex",
-   "exposure": {
-    "ticker": "FLEX",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.496379726468211,
-    "close": 126.16,
-    "marketCap": 46603879704,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 3.063475206273991,
-    "return_15d": 6.455151464011477,
-    "return_1m": -4.597701149425292,
-    "return_ytd": 108.80503144654088,
-    "return_1y": 155.17799352750808,
-    "return_3y": 373.0408698912636,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 3.963741244334562,
-    "return_2y": 314.182534471438
-   }
-  },
-  {
-   "id": "A_644",
-   "type": "ASSET",
-   "name": "폭스콘",
-   "exposure": {
-    "ticker": "2317",
-    "exchange": "TWSE",
-    "country": "TW"
-   },
-   "metrics": {
-    "return_1d": -0.9541984732824416,
-    "close": 259.5,
-    "marketCap": 3633498219759,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": -1.3307984790874472,
-    "return_15d": 2.7722772277227747,
-    "return_1m": 10.191082802547768,
-    "return_ytd": 12.581344902386116,
-    "return_1y": 30.075187969924812,
-    "return_3y": 135.90909090909088,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.19230769230769162,
-    "return_2y": 39.89218328840971
-   },
-   "coreBiz": "폭스콘은 세계 최대 EMS로 AI 서버·랙을 대규모 조립·통합한다"
-  },
-  {
-   "id": "A_645",
-   "type": "ASSET",
-   "name": "Inventec",
-   "exposure": {
-    "ticker": "2356",
-    "exchange": "TWSE",
-    "country": "TW"
-   },
-   "metrics": {
-    "return_1d": 1.5988372093023395,
-    "close": 69.9,
-    "marketCap": 250764507113,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 7.373271889400934,
-    "return_15d": 8.372093023255832,
-    "return_1m": 9.733124018838302,
-    "return_ytd": 62.93706293706296,
-    "return_1y": 67.42514970059881,
-    "return_3y": 31.63841807909604,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 9.218750000000009,
-    "return_2y": 46.54088050314466
-   }
-  },
-  {
-   "id": "A_646",
-   "type": "ASSET",
-   "name": "HPE",
-   "exposure": {
-    "ticker": "HPE",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -1.8555667001002973,
-    "close": 58.7,
-    "marketCap": 77730746683,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 7.962486208164754,
-    "return_15d": 23.10756972111554,
-    "return_1m": 18.46246973365617,
-    "return_ytd": 144.42131557035802,
-    "return_1y": 175.375234521576,
-    "return_3y": 233.5795454545454,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 10.31567080045097,
-    "return_2y": 230.20247469066365
-   }
-  },
-  {
-   "id": "A_647",
-   "type": "ASSET",
-   "name": "주니퍼네트웍스(비)",
-   "exposure": {
-    "ticker": "",
-    "exchange": "",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "returnsAsOf": null,
-    "returnsSource": null,
-    "return_5d": null,
-    "return_2y": null
-   },
-   "coreBiz": "데이터센터 네트워크"
-  },
-  {
-   "id": "A_050",
-   "type": "ASSET",
-   "name": "알파벳",
-   "exposure": {
-    "ticker": "GOOGL",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.13280979327867648,
-    "return_3d": 0.6108202443280808,
-    "return_15d": 8.181647588665776,
-    "return_1m": -3.785708325220438,
-    "return_ytd": 10.511182108626183,
-    "return_1y": 70.44446634473243,
-    "return_3y": 163.38231934820678,
-    "close": 345.9,
-    "marketCap": 4186120293827,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -2.370872142252334,
-    "return_2y": 115.68871983538065
-   }
-  },
-  {
-   "id": "A_211",
-   "type": "ASSET",
-   "name": "아마존",
-   "exposure": {
-    "ticker": "AMZN",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.9353901859465275,
-    "return_3d": -3.5332574282880946,
-    "return_15d": 13.157554607729072,
-    "return_1m": 6.125500020202823,
-    "return_ytd": 13.789966207434357,
-    "return_1y": 13.711143821975913,
-    "return_3y": 86.8464110407626,
-    "close": 262.65,
-    "marketCap": 2825352315000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -4.309967939376291,
-    "return_2y": 54.40917107583773
-   }
-  },
-  {
-   "id": "A_373",
-   "type": "ASSET",
-   "name": "메타",
-   "exposure": {
-    "ticker": "META",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.8605475906348192,
-    "return_3d": -1.5472693283482442,
-    "return_15d": -0.8971924931534536,
-    "return_1m": -10.769393682681827,
-    "return_ytd": -10.64097320062416,
-    "return_1y": -24.584148415225084,
-    "return_3y": 92.64182370423595,
-    "close": 589.85,
-    "marketCap": 1502634953315,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.3800033778078027,
-    "return_2y": 11.976991419242156
-   }
-  },
-  {
-   "id": "A_212",
-   "type": "ASSET",
-   "name": "시스코",
-   "exposure": {
-    "ticker": "CSCO",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -1.5775094738697426,
-    "return_3d": -7.265631487170965,
-    "return_15d": -2.1809582201979483,
-    "return_1m": -4.620377487402849,
-    "return_ytd": 44.98247436063871,
-    "return_1y": 61.154401154401164,
-    "return_3y": 107.275426874536,
-    "close": 111.68,
-    "marketCap": 440179423387,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -8.029317302149385,
-    "return_2y": 145.77464788732394
-   }
-  },
-  {
-   "id": "BF_142",
-   "type": "BUSINESS_FIELD",
-   "name": "AI서버제조(ODM/랙통합)"
-  },
-  {
-   "id": "BF_143",
-   "type": "BUSINESS_FIELD",
-   "name": "DC전력·파워·쿨링"
-  },
-  {
-   "id": "BF_144",
-   "type": "BUSINESS_FIELD",
-   "name": "네트워크장비·스위치"
-  },
-  {
-   "id": "BF_145",
-   "type": "BUSINESS_FIELD",
-   "name": "서버/통신장비제조"
-  },
-  {
-   "id": "M_085",
-   "type": "MACRO",
-   "name": "AI인프라"
-  },
-  {
-   "id": "M_086",
-   "type": "MACRO",
-   "name": "구글TPU"
-  },
-  {
-   "id": "C_1917",
-   "type": "CHARACTER",
-   "name": "AI서버랙통합ODM선두"
-  },
-  {
-   "id": "C_1918",
-   "type": "CHARACTER",
-   "name": "하이퍼스케일서버ODM"
-  },
-  {
-   "id": "C_1919",
-   "type": "CHARACTER",
-   "name": "서버전력EMS"
-  },
-  {
-   "id": "C_1920",
-   "type": "CHARACTER",
-   "name": "세계최대EMS_AI서버조립"
-  },
-  {
-   "id": "C_1921",
-   "type": "CHARACTER",
-   "name": "대만서버ODM"
-  },
-  {
-   "id": "C_1922",
-   "type": "CHARACTER",
-   "name": "인프라서버EMS"
-  },
-  {
-   "id": "C_5586",
-   "type": "CHARACTER",
-   "name": "AI서버랙"
-  },
-  {
-   "id": "C_5587",
-   "type": "CHARACTER",
-   "name": "DC네트워크"
-  },
-  {
-   "id": "C_5588",
-   "type": "CHARACTER",
-   "name": "자체DC랙"
-  },
-  {
-   "id": "C_5589",
-   "type": "CHARACTER",
-   "name": "AWS_DC랙"
-  },
-  {
-   "id": "C_5590",
-   "type": "CHARACTER",
-   "name": "자체DC랙"
-  },
-  {
-   "id": "C_5591",
-   "type": "CHARACTER",
-   "name": "DC네트워크스위치"
-  }
- ],
- "edges": [
-  {
-   "from": "A_640",
-   "to": "T_076",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002337"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_641",
-   "to": "T_076",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002338"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_642",
-   "to": "T_076",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002339"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_643",
-   "to": "T_076",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002340"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_644",
-   "to": "T_076",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002341"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_645",
-   "to": "T_076",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002342"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_640",
-   "to": "A_050",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_002343"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_640",
-   "to": "A_211",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_002344"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_640",
-   "to": "A_373",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_002345"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_640",
-   "to": "A_646",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_002346"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_640",
-   "to": "A_647",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_002347"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_640",
-   "to": "A_212",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_002348"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_640",
-   "to": "BF_142",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002349"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_640",
-   "to": "BF_143",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002350"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_640",
-   "to": "BF_144",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002351"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_646",
-   "to": "BF_145",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002352"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_647",
-   "to": "BF_145",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002353"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_212",
-   "to": "BF_145",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002354"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_085",
-   "to": "T_076",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002355"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_086",
-   "to": "T_076",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002356"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_640",
-   "to": "C_1917",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002417"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_641",
-   "to": "C_1918",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002418"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_643",
-   "to": "C_1919",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002419"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_644",
-   "to": "C_1920",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002420"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_645",
-   "to": "C_1921",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002421"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_642",
-   "to": "C_1922",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002422"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_646",
-   "to": "C_5586",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014529"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_647",
-   "to": "C_5587",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014530"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_050",
-   "to": "C_5588",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014531"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_211",
-   "to": "C_5589",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014532"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_373",
-   "to": "C_5590",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014533"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_212",
-   "to": "C_5591",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014534"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_640",
-   "to": "T_076",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002337"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_641",
-   "to": "T_076",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002338"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_642",
-   "to": "T_076",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002339"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_643",
-   "to": "T_076",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002340"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_644",
-   "to": "T_076",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002341"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_645",
-   "to": "T_076",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002342"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_640",
-   "to": "A_050",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_002343"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_640",
-   "to": "A_211",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_002344"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_640",
-   "to": "A_373",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_002345"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_640",
-   "to": "A_646",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_002346"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_640",
-   "to": "A_647",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_002347"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_640",
-   "to": "A_212",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_002348"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_640",
-   "to": "BF_142",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002349"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_640",
-   "to": "BF_143",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002350"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_640",
-   "to": "BF_144",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002351"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_646",
-   "to": "BF_145",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002352"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_647",
-   "to": "BF_145",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002353"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_212",
-   "to": "BF_145",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002354"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_085",
-   "to": "T_076",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002355"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_086",
-   "to": "T_076",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002356"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_640",
-   "to": "C_1917",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002417"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_641",
-   "to": "C_1918",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002418"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_643",
-   "to": "C_1919",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002419"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_644",
-   "to": "C_1920",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002420"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_645",
-   "to": "C_1921",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002421"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_642",
-   "to": "C_1922",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002422"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_646",
-   "to": "C_5586",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014529"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_647",
-   "to": "C_5587",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014530"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_050",
-   "to": "C_5588",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014531"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_211",
-   "to": "C_5589",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014532"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_373",
-   "to": "C_5590",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014533"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_212",
-   "to": "C_5591",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014534"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  }
- ]
+  "links": [
+    {
+      "from": "A_640",
+      "to": "T_076",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002337"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_641",
+      "to": "T_076",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002338"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_642",
+      "to": "T_076",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002339"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_643",
+      "to": "T_076",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002340"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_644",
+      "to": "T_076",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002341"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_645",
+      "to": "T_076",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002342"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_640",
+      "to": "A_050",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_002343"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_640",
+      "to": "A_211",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_002344"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_640",
+      "to": "A_373",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_002345"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_640",
+      "to": "A_646",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_002346"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_640",
+      "to": "A_647",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_002347"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_640",
+      "to": "A_212",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_002348"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_640",
+      "to": "BF_142",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002349"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_640",
+      "to": "BF_143",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002350"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_640",
+      "to": "BF_144",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002351"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_646",
+      "to": "BF_145",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002352"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_647",
+      "to": "BF_145",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002353"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_212",
+      "to": "BF_145",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002354"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_085",
+      "to": "T_076",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002355"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_086",
+      "to": "T_076",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002356"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_640",
+      "to": "C_1917",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002417"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_641",
+      "to": "C_1918",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002418"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_643",
+      "to": "C_1919",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002419"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_644",
+      "to": "C_1920",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002420"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_645",
+      "to": "C_1921",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002421"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_642",
+      "to": "C_1922",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002422"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_646",
+      "to": "C_5586",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014529"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_647",
+      "to": "C_5587",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014530"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_050",
+      "to": "C_5588",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014531"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_211",
+      "to": "C_5589",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014532"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_373",
+      "to": "C_5590",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014533"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_212",
+      "to": "C_5591",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014534"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    }
+  ]
 }

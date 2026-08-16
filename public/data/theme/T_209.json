@@ -1,1862 +1,1862 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_209",
- "themeName": "미국원전",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_209",
+  "themeName": "미국원전",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-29T00:00:00+09:00",
+    "notes": "g209 누적 import 기반 미국원전 테마",
+    "sources": [],
+    "provenanceSeed": "T_209 공개사실 시드(2026-06-29) — evidence_ssot 참조",
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 7건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-29",
+        "kind": "수정",
+        "title": "AI 전력 고평가 폭락 이벤트 추가",
+        "detail": "AI 전력수요 랠리 장기화·고평가 부담에 따른 되돌림 폭락 반영."
+      },
+      {
+        "date": "2026-07-12",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "자산 16개에 테마 관점 특성(CHARACTER)·HAS_TRAIT를 부여했다."
+      }
+    ],
+    "description": "NuScale·오클로·X-에너지·웨스팅하우스 SMR + Cameco·우라늄에너지 우라늄 + Vistra·탈렌·PSEG 발전사 + GE버노바·BWX·NLR ETF. AI DC 전력·SMR 인허가·우라늄 사이클이 multiyear 동인. AI확산·AI데이터센터확대·신재생에너지전환 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 밸류체인은 우라늄핵연료·발전/운영·설계/제조·인프라투자 등 사업영역으로 이어진다. 경쟁·공급·협력 등 7건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다. 종목별 브리핑 카드와 연도별 이벤트 DB로 테마의 맥락과 변동요인을 확인할 수 있다."
+  },
+  "nodes": [
+    {
+      "id": "T_209",
+      "type": "THEME",
+      "name": "미국원전"
+    },
+    {
+      "id": "M_055",
+      "type": "MACRO",
+      "name": "AI확산"
+    },
+    {
+      "id": "M_212",
+      "type": "MACRO",
+      "name": "AI데이터센터확대"
+    },
+    {
+      "id": "M_062",
+      "type": "MACRO",
+      "name": "신재생에너지전환"
+    },
+    {
+      "id": "A_164",
+      "type": "ASSET",
+      "name": "X-에너지(비)",
+      "exposure": {
+        "ticker": "",
+        "exchange": "",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -7.699076110866699,
+        "close": 20.975,
+        "marketCap": 460376458,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 1.9931939718035974,
+        "return_15d": 44.09340659340659,
+        "return_1m": 36.85583822570124,
+        "return_ytd": -28.15068493150684,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -7.3730684326710705,
+        "return_2y": null
+      },
+      "coreBiz": "X-에너지는 SMR 설계 미국사(비상장)다"
+    },
+    {
+      "id": "A_165",
+      "type": "ASSET",
+      "name": "Cameco",
+      "exposure": {
+        "ticker": "CCJ",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.010230179028136721,
+        "close": 97.74,
+        "marketCap": 42568995420,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": -1.0027347310847867,
+        "return_15d": 11.245162758934658,
+        "return_1m": 6.7380146336136315,
+        "return_ytd": 6.831347688271938,
+        "return_1y": 29.371277299801445,
+        "return_3y": 180.86206896551724,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.35937981312248457,
+        "return_2y": 145.26976160602257
+      }
+    },
+    {
+      "id": "A_166",
+      "type": "ASSET",
+      "name": "센트루스에너지",
+      "exposure": {
+        "ticker": "LEU",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.870607861536854,
+        "close": 190.15,
+        "marketCap": 3604025899,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 0.5074263967440151,
+        "return_15d": 16.02294221734091,
+        "return_1m": 19.306060986322017,
+        "return_ytd": -21.67160982039874,
+        "return_1y": 0.5658980325788043,
+        "return_3y": 349.4209406759631,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -0.6375084914040818,
+        "return_2y": 416.010854816825
+      }
+    },
+    {
+      "id": "A_167",
+      "type": "ASSET",
+      "name": "GE버노바",
+      "exposure": {
+        "ticker": "GEV",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.31787082388366,
+        "close": 1063.25,
+        "marketCap": 283179200200,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 5.0766889354468825,
+        "return_15d": 4.779502340477948,
+        "return_1m": -0.25890939109388666,
+        "return_ytd": 62.68341570145508,
+        "return_1y": 70.04653989476546,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 7.364286291299771,
+        "return_2y": 477.3512163336229
+      }
+    },
+    {
+      "id": "A_168",
+      "type": "ASSET",
+      "name": "NuScale Power",
+      "exposure": {
+        "ticker": "SMR",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -4.670050761421307,
+        "close": 9.39,
+        "marketCap": 2799890838,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": -5.0556117290192155,
+        "return_15d": 16.069221260815823,
+        "return_1m": 9.18604651162791,
+        "return_ytd": -33.73323923782638,
+        "return_1y": -73.865850264403,
+        "return_3y": 31.51260504201683,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -4.378818737270873,
+        "return_2y": -0.42417815482501675
+      }
+    },
+    {
+      "id": "A_169",
+      "type": "ASSET",
+      "name": "BWX테크놀로지",
+      "exposure": {
+        "ticker": "BWXT",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.6847666568828856,
+        "close": 173.22,
+        "marketCap": 15869481012,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 2.068234046314288,
+        "return_15d": -0.7449002979601271,
+        "return_1m": -3.6756937107268017,
+        "return_ytd": 0.21985651469567102,
+        "return_1y": -0.8471665712650234,
+        "return_3y": 134.08108108108107,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 1.9540906415538517,
+        "return_2y": 78.44854228906975
+      }
+    },
+    {
+      "id": "A_170",
+      "type": "ASSET",
+      "name": "오클로",
+      "exposure": {
+        "ticker": "OKLO",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -4.456404736275566,
+        "close": 44.38,
+        "marketCap": 7721720003,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": -5.594554350138258,
+        "return_15d": 10.26086956521739,
+        "return_1m": -4.022491349480973,
+        "return_ytd": -38.154960981047935,
+        "return_1y": -39.7502036383383,
+        "return_3y": 329.622458857696,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -8.343659644774881,
+        "return_2y": 483.180026281209
+      }
+    },
+    {
+      "id": "A_173",
+      "type": "ASSET",
+      "name": "웨스팅하우스(비)",
+      "exposure": {
+        "ticker": "",
+        "exchange": "",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": null,
+        "returnsSource": null,
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "웨스팅하우스는 대형·SMR 원자로 대표사(비상장)다"
+    },
+    {
+      "id": "A_553",
+      "type": "ASSET",
+      "name": "브룩필드",
+      "exposure": {
+        "ticker": "BAM",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -2.7747941281775823,
+        "close": 54.31,
+        "marketCap": 86721470144,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": -1.8966763005780263,
+        "return_15d": 17.17367853290184,
+        "return_1m": 14.288720538720545,
+        "return_ytd": 3.664821530826501,
+        "return_1y": -12.558364192561577,
+        "return_3y": 53.76557191392979,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 3.4673271099256997,
+        "return_2y": 33.08012741975006
+      }
+    },
+    {
+      "id": "A_1061",
+      "type": "ASSET",
+      "name": "비스트라에너지",
+      "exposure": {
+        "ticker": "VST",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.181693989071042,
+        "close": 148.13,
+        "marketCap": 49946838985,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 2.2150151807894147,
+        "return_15d": -9.334067817358305,
+        "return_1m": -6.501293946853504,
+        "return_ytd": -8.181987231141152,
+        "return_1y": -26.795156906350382,
+        "return_3y": 388.5554089709762,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 5.363112596913,
+        "return_2y": 86.9148264984227
+      }
+    },
+    {
+      "id": "A_1341",
+      "type": "ASSET",
+      "name": "탈렌에너지",
+      "exposure": {
+        "ticker": "TLN",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.2109375000000089,
+        "close": 362.74,
+        "marketCap": 16466585202,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 1.357997093997998,
+        "return_15d": 0.7891080855793264,
+        "return_1m": -8.618213880841408,
+        "return_ytd": -3.2280439654252424,
+        "return_1y": -4.692590646347872,
+        "return_3y": 559.5272727272728,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 4.322567656955512,
+        "return_2y": 179.43918034049764
+      }
+    },
+    {
+      "id": "A_171",
+      "type": "ASSET",
+      "name": "나노뉴클리어에너지",
+      "exposure": {
+        "ticker": "NNE",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -4.191033138401556,
+        "close": 19.66,
+        "marketCap": 1055705472,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 1.4447884416924683,
+        "return_15d": 26.106478511866584,
+        "return_1m": 8.379272326350605,
+        "return_ytd": -18.117451062057476,
+        "return_1y": -44.14772727272728,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 4.297082228116711,
+        "return_2y": 147.29559748427673
+      }
+    },
+    {
+      "id": "A_1343",
+      "type": "ASSET",
+      "name": "넥스젠에너지",
+      "exposure": {
+        "ticker": "NXE",
+        "exchange": "NYSE",
+        "country": "CA"
+      },
+      "metrics": {
+        "return_1d": 0.0,
+        "close": 10.39,
+        "marketCap": 6877234510,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": -1.6098484848484862,
+        "return_15d": 13.6761487964989,
+        "return_1m": 11.00427350427351,
+        "return_ytd": 12.934782608695672,
+        "return_1y": 53.244837758112105,
+        "return_3y": 107.3852295409182,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -0.3835091083413178,
+        "return_2y": 76.10169491525423
+      }
+    },
+    {
+      "id": "A_1344",
+      "type": "ASSET",
+      "name": "에너지퓨얼스",
+      "exposure": {
+        "ticker": "UUUU",
+        "exchange": "NYSEAMERICAN",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 3.566529492455417,
+        "close": 15.1,
+        "marketCap": 3773779014,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 2.165087956698253,
+        "return_15d": 33.62831858407078,
+        "return_1m": 14.134542705971276,
+        "return_ytd": 3.8514442916093516,
+        "return_1y": 54.23901940755875,
+        "return_3y": 128.44175491679272,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 6.789250353606779,
+        "return_2y": 233.33333333333331
+      }
+    },
+    {
+      "id": "A_1345",
+      "type": "ASSET",
+      "name": "우라늄에너지",
+      "exposure": {
+        "ticker": "UEC",
+        "exchange": "NYSEAMERICAN",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.17873100983021306,
+        "close": 11.21,
+        "marketCap": 5547515120,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": -2.1815008726003504,
+        "return_15d": 17.875920084122,
+        "return_1m": 7.892204042348405,
+        "return_ytd": -4.023972602739711,
+        "return_1y": 9.259259259259277,
+        "return_3y": 193.455497382199,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -0.444049733570151,
+        "return_2y": 136.99788583509513
+      }
+    },
+    {
+      "id": "A_1346",
+      "type": "ASSET",
+      "name": "PSEG",
+      "exposure": {
+        "ticker": "PEG",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.14487027525351692,
+        "close": 76.04,
+        "marketCap": 37892328840,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 1.1035766520409718,
+        "return_15d": -4.723718832226531,
+        "return_1m": -5.540372670807447,
+        "return_ytd": -5.305105853051051,
+        "return_1y": -12.396313364055288,
+        "return_3y": 26.648900732844783,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.5022468939994917,
+        "return_2y": -5.5521053285306206
+      }
+    },
+    {
+      "id": "A_1350",
+      "type": "ASSET",
+      "name": "VanEck 우라늄+원자력 ETF",
+      "exposure": {
+        "ticker": "NLR",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.3543705703678679,
+        "close": 118.1,
+        "marketCap": 2827714831,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": -0.906192314146681,
+        "return_15d": 9.250693802035158,
+        "return_1m": 6.042919996408358,
+        "return_ytd": -4.911433172302749,
+        "return_1y": 1.8454639530872674,
+        "return_3y": 89.32350112215452,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.2376506535392897,
+        "return_2y": 59.918754231550444
+      }
+    },
+    {
+      "id": "BF_375",
+      "type": "BUSINESS_FIELD",
+      "name": "우라늄핵연료"
+    },
+    {
+      "id": "BF_376",
+      "type": "BUSINESS_FIELD",
+      "name": "발전/운영"
+    },
+    {
+      "id": "BF_377",
+      "type": "BUSINESS_FIELD",
+      "name": "설계/제조"
+    },
+    {
+      "id": "BF_378",
+      "type": "BUSINESS_FIELD",
+      "name": "인프라투자"
+    },
+    {
+      "id": "C_3218",
+      "type": "CHARACTER",
+      "name": "SMR설계(비)"
+    },
+    {
+      "id": "C_3219",
+      "type": "CHARACTER",
+      "name": "우라늄1위"
+    },
+    {
+      "id": "C_3220",
+      "type": "CHARACTER",
+      "name": "농축우라늄HALEU"
+    },
+    {
+      "id": "C_3221",
+      "type": "CHARACTER",
+      "name": "원자로·가스터빈"
+    },
+    {
+      "id": "C_3222",
+      "type": "CHARACTER",
+      "name": "SMR상장대표"
+    },
+    {
+      "id": "C_3223",
+      "type": "CHARACTER",
+      "name": "원자로부품·해군"
+    },
+    {
+      "id": "C_3224",
+      "type": "CHARACTER",
+      "name": "차세대원전"
+    },
+    {
+      "id": "C_3225",
+      "type": "CHARACTER",
+      "name": "웨스팅하우스(비)"
+    },
+    {
+      "id": "C_3226",
+      "type": "CHARACTER",
+      "name": "인프라투자·원전"
+    },
+    {
+      "id": "C_3227",
+      "type": "CHARACTER",
+      "name": "원전운영·전력"
+    },
+    {
+      "id": "C_3228",
+      "type": "CHARACTER",
+      "name": "원전PPA·전력"
+    },
+    {
+      "id": "C_3229",
+      "type": "CHARACTER",
+      "name": "마이크로원전(비/상장)"
+    },
+    {
+      "id": "C_3230",
+      "type": "CHARACTER",
+      "name": "우라늄개발"
+    },
+    {
+      "id": "C_3231",
+      "type": "CHARACTER",
+      "name": "우라늄·희토"
+    },
+    {
+      "id": "C_3232",
+      "type": "CHARACTER",
+      "name": "우라늄채굴"
+    },
+    {
+      "id": "C_3233",
+      "type": "CHARACTER",
+      "name": "원전운영유틸"
+    }
   ],
-  "dataAsOf": "2026-07-29T00:00:00+09:00",
-  "notes": "g209 누적 import 기반 미국원전 테마",
-  "sources": [],
-  "provenanceSeed": "T_209 공개사실 시드(2026-06-29) — evidence_ssot 참조",
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 7건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-29",
-    "kind": "수정",
-    "title": "AI 전력 고평가 폭락 이벤트 추가",
-    "detail": "AI 전력수요 랠리 장기화·고평가 부담에 따른 되돌림 폭락 반영."
-   },
-   {
-    "date": "2026-07-12",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "자산 16개에 테마 관점 특성(CHARACTER)·HAS_TRAIT를 부여했다."
-   }
+  "edges": [
+    {
+      "from": "M_055",
+      "to": "T_209",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_000079"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_212",
+      "to": "T_209",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_000080"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_062",
+      "to": "T_209",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_000081"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_164",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000082"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_165",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000083"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_166",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000084"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_167",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000085"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_168",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000086"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_169",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000087"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_170",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000088"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_173",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000089"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_553",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000090"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1061",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000091"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1341",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000092"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_171",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000093"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1343",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000094"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1344",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000095"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1345",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000096"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1346",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000097"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1350",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000098"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_165",
+      "to": "BF_375",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000099"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_166",
+      "to": "BF_375",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000100"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1343",
+      "to": "BF_375",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000101"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1344",
+      "to": "BF_375",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000102"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1345",
+      "to": "BF_375",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000103"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1061",
+      "to": "BF_376",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000104"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1341",
+      "to": "BF_376",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000105"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1346",
+      "to": "BF_376",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000106"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_168",
+      "to": "BF_377",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000107"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_164",
+      "to": "BF_377",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000108"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_171",
+      "to": "BF_377",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000109"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_169",
+      "to": "BF_377",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000110"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_167",
+      "to": "BF_377",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000111"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_173",
+      "to": "BF_377",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000112"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_553",
+      "to": "BF_378",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000113"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1350",
+      "to": "BF_378",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000114"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "T_209",
+      "to": "A_1350",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_000115"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_164",
+      "to": "C_3218",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006444"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_165",
+      "to": "C_3219",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006445"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_166",
+      "to": "C_3220",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006446"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_167",
+      "to": "C_3221",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006447"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_168",
+      "to": "C_3222",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006448"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_169",
+      "to": "C_3223",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006449"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_170",
+      "to": "C_3224",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006450"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_173",
+      "to": "C_3225",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006451"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_553",
+      "to": "C_3226",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006452"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1061",
+      "to": "C_3227",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006453"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1341",
+      "to": "C_3228",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006454"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_171",
+      "to": "C_3229",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006455"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_1343",
+      "to": "C_3230",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006456"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1344",
+      "to": "C_3231",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006457"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_1345",
+      "to": "C_3232",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006458"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_1346",
+      "to": "C_3233",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006459"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_165",
+      "to": "A_166",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_019291"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "Cameco가 센트루스에너지에 공급하는 관계 (미국원전)"
+    },
+    {
+      "from": "A_167",
+      "to": "A_168",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019292"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "GE버노바와 NuScale Power는 미국원전 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_170",
+      "to": "A_168",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019293"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "오클로와 NuScale Power는 미국원전 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_169",
+      "to": "A_173",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_019294"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "BWX테크놀로지가 웨스팅하우스(비)에 공급하는 관계 (미국원전)"
+    },
+    {
+      "from": "A_1343",
+      "to": "A_165",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019295"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "넥스젠에너지와 Cameco는 미국원전 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1345",
+      "to": "A_1344",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019296"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "우라늄에너지와 에너지퓨얼스는 미국원전 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1061",
+      "to": "A_1341",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019297"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "비스트라에너지와 탈렌에너지는 미국원전 내 직접 경쟁 관계"
+    }
   ],
-  "description": "NuScale·오클로·X-에너지·웨스팅하우스 SMR + Cameco·우라늄에너지 우라늄 + Vistra·탈렌·PSEG 발전사 + GE버노바·BWX·NLR ETF. AI DC 전력·SMR 인허가·우라늄 사이클이 multiyear 동인. AI확산·AI데이터센터확대·신재생에너지전환 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 밸류체인은 우라늄핵연료·발전/운영·설계/제조·인프라투자 등 사업영역으로 이어진다. 경쟁·공급·협력 등 7건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다. 종목별 브리핑 카드와 연도별 이벤트 DB로 테마의 맥락과 변동요인을 확인할 수 있다."
- },
- "nodes": [
-  {
-   "id": "T_209",
-   "type": "THEME",
-   "name": "미국원전"
-  },
-  {
-   "id": "M_055",
-   "type": "MACRO",
-   "name": "AI확산"
-  },
-  {
-   "id": "M_212",
-   "type": "MACRO",
-   "name": "AI데이터센터확대"
-  },
-  {
-   "id": "M_062",
-   "type": "MACRO",
-   "name": "신재생에너지전환"
-  },
-  {
-   "id": "A_164",
-   "type": "ASSET",
-   "name": "X-에너지(비)",
-   "exposure": {
-    "ticker": "",
-    "exchange": "",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -7.699076110866699,
-    "close": 20.975,
-    "marketCap": 460376458,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 1.9931939718035974,
-    "return_15d": 44.09340659340659,
-    "return_1m": 36.85583822570124,
-    "return_ytd": -28.15068493150684,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -7.3730684326710705,
-    "return_2y": null
-   },
-   "coreBiz": "X-에너지는 SMR 설계 미국사(비상장)다"
-  },
-  {
-   "id": "A_165",
-   "type": "ASSET",
-   "name": "Cameco",
-   "exposure": {
-    "ticker": "CCJ",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.010230179028136721,
-    "close": 97.74,
-    "marketCap": 42568995420,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": -1.0027347310847867,
-    "return_15d": 11.245162758934658,
-    "return_1m": 6.7380146336136315,
-    "return_ytd": 6.831347688271938,
-    "return_1y": 29.371277299801445,
-    "return_3y": 180.86206896551724,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.35937981312248457,
-    "return_2y": 145.26976160602257
-   }
-  },
-  {
-   "id": "A_166",
-   "type": "ASSET",
-   "name": "센트루스에너지",
-   "exposure": {
-    "ticker": "LEU",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.870607861536854,
-    "close": 190.15,
-    "marketCap": 3604025899,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 0.5074263967440151,
-    "return_15d": 16.02294221734091,
-    "return_1m": 19.306060986322017,
-    "return_ytd": -21.67160982039874,
-    "return_1y": 0.5658980325788043,
-    "return_3y": 349.4209406759631,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.6375084914040818,
-    "return_2y": 416.010854816825
-   }
-  },
-  {
-   "id": "A_167",
-   "type": "ASSET",
-   "name": "GE버노바",
-   "exposure": {
-    "ticker": "GEV",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.31787082388366,
-    "close": 1063.25,
-    "marketCap": 283179200200,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 5.0766889354468825,
-    "return_15d": 4.779502340477948,
-    "return_1m": -0.25890939109388666,
-    "return_ytd": 62.68341570145508,
-    "return_1y": 70.04653989476546,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 7.364286291299771,
-    "return_2y": 477.3512163336229
-   }
-  },
-  {
-   "id": "A_168",
-   "type": "ASSET",
-   "name": "NuScale Power",
-   "exposure": {
-    "ticker": "SMR",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -4.670050761421307,
-    "close": 9.39,
-    "marketCap": 2799890838,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": -5.0556117290192155,
-    "return_15d": 16.069221260815823,
-    "return_1m": 9.18604651162791,
-    "return_ytd": -33.73323923782638,
-    "return_1y": -73.865850264403,
-    "return_3y": 31.51260504201683,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -4.378818737270873,
-    "return_2y": -0.42417815482501675
-   }
-  },
-  {
-   "id": "A_169",
-   "type": "ASSET",
-   "name": "BWX테크놀로지",
-   "exposure": {
-    "ticker": "BWXT",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.6847666568828856,
-    "close": 173.22,
-    "marketCap": 15869481012,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 2.068234046314288,
-    "return_15d": -0.7449002979601271,
-    "return_1m": -3.6756937107268017,
-    "return_ytd": 0.21985651469567102,
-    "return_1y": -0.8471665712650234,
-    "return_3y": 134.08108108108107,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.9540906415538517,
-    "return_2y": 78.44854228906975
-   }
-  },
-  {
-   "id": "A_170",
-   "type": "ASSET",
-   "name": "오클로",
-   "exposure": {
-    "ticker": "OKLO",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -4.456404736275566,
-    "close": 44.38,
-    "marketCap": 7721720003,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": -5.594554350138258,
-    "return_15d": 10.26086956521739,
-    "return_1m": -4.022491349480973,
-    "return_ytd": -38.154960981047935,
-    "return_1y": -39.7502036383383,
-    "return_3y": 329.622458857696,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -8.343659644774881,
-    "return_2y": 483.180026281209
-   }
-  },
-  {
-   "id": "A_173",
-   "type": "ASSET",
-   "name": "웨스팅하우스(비)",
-   "exposure": {
-    "ticker": "",
-    "exchange": "",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": null,
-    "returnsSource": null,
-    "return_5d": null,
-    "return_2y": null
-   },
-   "coreBiz": "웨스팅하우스는 대형·SMR 원자로 대표사(비상장)다"
-  },
-  {
-   "id": "A_553",
-   "type": "ASSET",
-   "name": "브룩필드",
-   "exposure": {
-    "ticker": "BAM",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -2.7747941281775823,
-    "close": 54.31,
-    "marketCap": 86721470144,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": -1.8966763005780263,
-    "return_15d": 17.17367853290184,
-    "return_1m": 14.288720538720545,
-    "return_ytd": 3.664821530826501,
-    "return_1y": -12.558364192561577,
-    "return_3y": 53.76557191392979,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 3.4673271099256997,
-    "return_2y": 33.08012741975006
-   }
-  },
-  {
-   "id": "A_1061",
-   "type": "ASSET",
-   "name": "비스트라에너지",
-   "exposure": {
-    "ticker": "VST",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.181693989071042,
-    "close": 148.13,
-    "marketCap": 49946838985,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 2.2150151807894147,
-    "return_15d": -9.334067817358305,
-    "return_1m": -6.501293946853504,
-    "return_ytd": -8.181987231141152,
-    "return_1y": -26.795156906350382,
-    "return_3y": 388.5554089709762,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 5.363112596913,
-    "return_2y": 86.9148264984227
-   }
-  },
-  {
-   "id": "A_1341",
-   "type": "ASSET",
-   "name": "탈렌에너지",
-   "exposure": {
-    "ticker": "TLN",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.2109375000000089,
-    "close": 362.74,
-    "marketCap": 16466585202,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 1.357997093997998,
-    "return_15d": 0.7891080855793264,
-    "return_1m": -8.618213880841408,
-    "return_ytd": -3.2280439654252424,
-    "return_1y": -4.692590646347872,
-    "return_3y": 559.5272727272728,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 4.322567656955512,
-    "return_2y": 179.43918034049764
-   }
-  },
-  {
-   "id": "A_171",
-   "type": "ASSET",
-   "name": "나노뉴클리어에너지",
-   "exposure": {
-    "ticker": "NNE",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -4.191033138401556,
-    "close": 19.66,
-    "marketCap": 1055705472,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 1.4447884416924683,
-    "return_15d": 26.106478511866584,
-    "return_1m": 8.379272326350605,
-    "return_ytd": -18.117451062057476,
-    "return_1y": -44.14772727272728,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 4.297082228116711,
-    "return_2y": 147.29559748427673
-   }
-  },
-  {
-   "id": "A_1343",
-   "type": "ASSET",
-   "name": "넥스젠에너지",
-   "exposure": {
-    "ticker": "NXE",
-    "exchange": "NYSE",
-    "country": "CA"
-   },
-   "metrics": {
-    "return_1d": 0.0,
-    "close": 10.39,
-    "marketCap": 6877234510,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": -1.6098484848484862,
-    "return_15d": 13.6761487964989,
-    "return_1m": 11.00427350427351,
-    "return_ytd": 12.934782608695672,
-    "return_1y": 53.244837758112105,
-    "return_3y": 107.3852295409182,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.3835091083413178,
-    "return_2y": 76.10169491525423
-   }
-  },
-  {
-   "id": "A_1344",
-   "type": "ASSET",
-   "name": "에너지퓨얼스",
-   "exposure": {
-    "ticker": "UUUU",
-    "exchange": "NYSEAMERICAN",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 3.566529492455417,
-    "close": 15.1,
-    "marketCap": 3773779014,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 2.165087956698253,
-    "return_15d": 33.62831858407078,
-    "return_1m": 14.134542705971276,
-    "return_ytd": 3.8514442916093516,
-    "return_1y": 54.23901940755875,
-    "return_3y": 128.44175491679272,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 6.789250353606779,
-    "return_2y": 233.33333333333331
-   }
-  },
-  {
-   "id": "A_1345",
-   "type": "ASSET",
-   "name": "우라늄에너지",
-   "exposure": {
-    "ticker": "UEC",
-    "exchange": "NYSEAMERICAN",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.17873100983021306,
-    "close": 11.21,
-    "marketCap": 5547515120,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": -2.1815008726003504,
-    "return_15d": 17.875920084122,
-    "return_1m": 7.892204042348405,
-    "return_ytd": -4.023972602739711,
-    "return_1y": 9.259259259259277,
-    "return_3y": 193.455497382199,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.444049733570151,
-    "return_2y": 136.99788583509513
-   }
-  },
-  {
-   "id": "A_1346",
-   "type": "ASSET",
-   "name": "PSEG",
-   "exposure": {
-    "ticker": "PEG",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.14487027525351692,
-    "close": 76.04,
-    "marketCap": 37892328840,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 1.1035766520409718,
-    "return_15d": -4.723718832226531,
-    "return_1m": -5.540372670807447,
-    "return_ytd": -5.305105853051051,
-    "return_1y": -12.396313364055288,
-    "return_3y": 26.648900732844783,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.5022468939994917,
-    "return_2y": -5.5521053285306206
-   }
-  },
-  {
-   "id": "A_1350",
-   "type": "ASSET",
-   "name": "VanEck 우라늄+원자력 ETF",
-   "exposure": {
-    "ticker": "NLR",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.3543705703678679,
-    "close": 118.1,
-    "marketCap": 2827714831,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": -0.906192314146681,
-    "return_15d": 9.250693802035158,
-    "return_1m": 6.042919996408358,
-    "return_ytd": -4.911433172302749,
-    "return_1y": 1.8454639530872674,
-    "return_3y": 89.32350112215452,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.2376506535392897,
-    "return_2y": 59.918754231550444
-   }
-  },
-  {
-   "id": "BF_375",
-   "type": "BUSINESS_FIELD",
-   "name": "우라늄핵연료"
-  },
-  {
-   "id": "BF_376",
-   "type": "BUSINESS_FIELD",
-   "name": "발전/운영"
-  },
-  {
-   "id": "BF_377",
-   "type": "BUSINESS_FIELD",
-   "name": "설계/제조"
-  },
-  {
-   "id": "BF_378",
-   "type": "BUSINESS_FIELD",
-   "name": "인프라투자"
-  },
-  {
-   "id": "C_3218",
-   "type": "CHARACTER",
-   "name": "SMR설계(비)"
-  },
-  {
-   "id": "C_3219",
-   "type": "CHARACTER",
-   "name": "우라늄1위"
-  },
-  {
-   "id": "C_3220",
-   "type": "CHARACTER",
-   "name": "농축우라늄HALEU"
-  },
-  {
-   "id": "C_3221",
-   "type": "CHARACTER",
-   "name": "원자로·가스터빈"
-  },
-  {
-   "id": "C_3222",
-   "type": "CHARACTER",
-   "name": "SMR상장대표"
-  },
-  {
-   "id": "C_3223",
-   "type": "CHARACTER",
-   "name": "원자로부품·해군"
-  },
-  {
-   "id": "C_3224",
-   "type": "CHARACTER",
-   "name": "차세대원전"
-  },
-  {
-   "id": "C_3225",
-   "type": "CHARACTER",
-   "name": "웨스팅하우스(비)"
-  },
-  {
-   "id": "C_3226",
-   "type": "CHARACTER",
-   "name": "인프라투자·원전"
-  },
-  {
-   "id": "C_3227",
-   "type": "CHARACTER",
-   "name": "원전운영·전력"
-  },
-  {
-   "id": "C_3228",
-   "type": "CHARACTER",
-   "name": "원전PPA·전력"
-  },
-  {
-   "id": "C_3229",
-   "type": "CHARACTER",
-   "name": "마이크로원전(비/상장)"
-  },
-  {
-   "id": "C_3230",
-   "type": "CHARACTER",
-   "name": "우라늄개발"
-  },
-  {
-   "id": "C_3231",
-   "type": "CHARACTER",
-   "name": "우라늄·희토"
-  },
-  {
-   "id": "C_3232",
-   "type": "CHARACTER",
-   "name": "우라늄채굴"
-  },
-  {
-   "id": "C_3233",
-   "type": "CHARACTER",
-   "name": "원전운영유틸"
-  }
- ],
- "edges": [
-  {
-   "from": "M_055",
-   "to": "T_209",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_000079"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_212",
-   "to": "T_209",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_000080"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_062",
-   "to": "T_209",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_000081"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_164",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000082"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_165",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000083"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_166",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000084"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_167",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000085"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_168",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000086"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_169",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000087"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_170",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000088"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_173",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000089"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_553",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000090"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1061",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000091"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1341",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000092"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_171",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000093"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1343",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000094"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1344",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000095"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1345",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000096"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1346",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000097"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1350",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000098"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_165",
-   "to": "BF_375",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000099"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_166",
-   "to": "BF_375",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000100"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1343",
-   "to": "BF_375",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000101"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1344",
-   "to": "BF_375",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000102"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1345",
-   "to": "BF_375",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000103"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1061",
-   "to": "BF_376",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000104"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1341",
-   "to": "BF_376",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000105"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1346",
-   "to": "BF_376",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000106"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_168",
-   "to": "BF_377",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000107"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_164",
-   "to": "BF_377",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000108"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_171",
-   "to": "BF_377",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000109"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_169",
-   "to": "BF_377",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000110"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_167",
-   "to": "BF_377",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000111"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_173",
-   "to": "BF_377",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000112"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_553",
-   "to": "BF_378",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000113"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1350",
-   "to": "BF_378",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000114"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "T_209",
-   "to": "A_1350",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_000115"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_164",
-   "to": "C_3218",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006444"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_165",
-   "to": "C_3219",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006445"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_166",
-   "to": "C_3220",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006446"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_167",
-   "to": "C_3221",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006447"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_168",
-   "to": "C_3222",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006448"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_169",
-   "to": "C_3223",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006449"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_170",
-   "to": "C_3224",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006450"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_173",
-   "to": "C_3225",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006451"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_553",
-   "to": "C_3226",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006452"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1061",
-   "to": "C_3227",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006453"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1341",
-   "to": "C_3228",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006454"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_171",
-   "to": "C_3229",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006455"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_1343",
-   "to": "C_3230",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006456"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1344",
-   "to": "C_3231",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006457"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_1345",
-   "to": "C_3232",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006458"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_1346",
-   "to": "C_3233",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006459"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_165",
-   "to": "A_166",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_019291"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "Cameco가 센트루스에너지에 공급하는 관계 (미국원전)"
-  },
-  {
-   "from": "A_167",
-   "to": "A_168",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019292"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "GE버노바와 NuScale Power는 미국원전 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_170",
-   "to": "A_168",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019293"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "오클로와 NuScale Power는 미국원전 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_169",
-   "to": "A_173",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_019294"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "BWX테크놀로지가 웨스팅하우스(비)에 공급하는 관계 (미국원전)"
-  },
-  {
-   "from": "A_1343",
-   "to": "A_165",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019295"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "넥스젠에너지와 Cameco는 미국원전 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1345",
-   "to": "A_1344",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019296"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "우라늄에너지와 에너지퓨얼스는 미국원전 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1061",
-   "to": "A_1341",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019297"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "비스트라에너지와 탈렌에너지는 미국원전 내 직접 경쟁 관계"
-  }
- ],
- "links": [
-  {
-   "from": "M_055",
-   "to": "T_209",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_000079"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_212",
-   "to": "T_209",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_000080"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_062",
-   "to": "T_209",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_000081"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_164",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000082"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_165",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000083"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_166",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000084"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_167",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000085"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_168",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000086"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_169",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000087"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_170",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000088"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_173",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000089"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_553",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000090"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1061",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000091"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1341",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000092"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_171",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000093"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1343",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000094"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1344",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000095"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1345",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000096"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1346",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000097"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1350",
-   "to": "T_209",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_000098"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_165",
-   "to": "BF_375",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000099"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_166",
-   "to": "BF_375",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000100"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1343",
-   "to": "BF_375",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000101"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1344",
-   "to": "BF_375",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000102"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1345",
-   "to": "BF_375",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000103"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1061",
-   "to": "BF_376",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000104"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1341",
-   "to": "BF_376",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000105"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1346",
-   "to": "BF_376",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000106"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_168",
-   "to": "BF_377",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000107"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_164",
-   "to": "BF_377",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000108"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_171",
-   "to": "BF_377",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000109"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_169",
-   "to": "BF_377",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000110"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_167",
-   "to": "BF_377",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000111"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_173",
-   "to": "BF_377",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000112"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_553",
-   "to": "BF_378",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000113"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1350",
-   "to": "BF_378",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_000114"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "T_209",
-   "to": "A_1350",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_000115"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_164",
-   "to": "C_3218",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006444"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_165",
-   "to": "C_3219",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006445"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_166",
-   "to": "C_3220",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006446"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_167",
-   "to": "C_3221",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006447"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_168",
-   "to": "C_3222",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006448"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_169",
-   "to": "C_3223",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006449"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_170",
-   "to": "C_3224",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006450"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_173",
-   "to": "C_3225",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006451"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_553",
-   "to": "C_3226",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006452"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1061",
-   "to": "C_3227",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006453"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1341",
-   "to": "C_3228",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006454"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_171",
-   "to": "C_3229",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006455"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_1343",
-   "to": "C_3230",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006456"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1344",
-   "to": "C_3231",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006457"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_1345",
-   "to": "C_3232",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006458"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_1346",
-   "to": "C_3233",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006459"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_165",
-   "to": "A_166",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_019291"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "Cameco가 센트루스에너지에 공급하는 관계 (미국원전)"
-  },
-  {
-   "from": "A_167",
-   "to": "A_168",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019292"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "GE버노바와 NuScale Power는 미국원전 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_170",
-   "to": "A_168",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019293"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "오클로와 NuScale Power는 미국원전 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_169",
-   "to": "A_173",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_019294"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "BWX테크놀로지가 웨스팅하우스(비)에 공급하는 관계 (미국원전)"
-  },
-  {
-   "from": "A_1343",
-   "to": "A_165",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019295"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "넥스젠에너지와 Cameco는 미국원전 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1345",
-   "to": "A_1344",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019296"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "우라늄에너지와 에너지퓨얼스는 미국원전 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1061",
-   "to": "A_1341",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019297"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "비스트라에너지와 탈렌에너지는 미국원전 내 직접 경쟁 관계"
-  }
- ]
+  "links": [
+    {
+      "from": "M_055",
+      "to": "T_209",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_000079"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_212",
+      "to": "T_209",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_000080"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_062",
+      "to": "T_209",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_000081"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_164",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000082"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_165",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000083"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_166",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000084"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_167",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000085"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_168",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000086"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_169",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000087"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_170",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000088"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_173",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000089"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_553",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000090"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1061",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000091"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1341",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000092"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_171",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000093"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1343",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000094"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1344",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000095"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1345",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000096"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1346",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000097"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1350",
+      "to": "T_209",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_000098"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_165",
+      "to": "BF_375",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000099"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_166",
+      "to": "BF_375",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000100"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1343",
+      "to": "BF_375",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000101"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1344",
+      "to": "BF_375",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000102"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1345",
+      "to": "BF_375",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000103"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1061",
+      "to": "BF_376",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000104"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1341",
+      "to": "BF_376",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000105"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1346",
+      "to": "BF_376",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000106"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_168",
+      "to": "BF_377",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000107"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_164",
+      "to": "BF_377",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000108"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_171",
+      "to": "BF_377",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000109"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_169",
+      "to": "BF_377",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000110"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_167",
+      "to": "BF_377",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000111"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_173",
+      "to": "BF_377",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000112"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_553",
+      "to": "BF_378",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000113"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1350",
+      "to": "BF_378",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_000114"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "T_209",
+      "to": "A_1350",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_000115"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_164",
+      "to": "C_3218",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006444"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_165",
+      "to": "C_3219",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006445"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_166",
+      "to": "C_3220",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006446"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_167",
+      "to": "C_3221",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006447"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_168",
+      "to": "C_3222",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006448"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_169",
+      "to": "C_3223",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006449"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_170",
+      "to": "C_3224",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006450"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_173",
+      "to": "C_3225",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006451"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_553",
+      "to": "C_3226",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006452"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1061",
+      "to": "C_3227",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006453"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1341",
+      "to": "C_3228",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006454"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_171",
+      "to": "C_3229",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006455"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_1343",
+      "to": "C_3230",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006456"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1344",
+      "to": "C_3231",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006457"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_1345",
+      "to": "C_3232",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006458"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_1346",
+      "to": "C_3233",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006459"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_165",
+      "to": "A_166",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_019291"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "Cameco가 센트루스에너지에 공급하는 관계 (미국원전)"
+    },
+    {
+      "from": "A_167",
+      "to": "A_168",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019292"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "GE버노바와 NuScale Power는 미국원전 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_170",
+      "to": "A_168",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019293"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "오클로와 NuScale Power는 미국원전 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_169",
+      "to": "A_173",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_019294"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "BWX테크놀로지가 웨스팅하우스(비)에 공급하는 관계 (미국원전)"
+    },
+    {
+      "from": "A_1343",
+      "to": "A_165",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019295"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "넥스젠에너지와 Cameco는 미국원전 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1345",
+      "to": "A_1344",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019296"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "우라늄에너지와 에너지퓨얼스는 미국원전 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1061",
+      "to": "A_1341",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019297"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "비스트라에너지와 탈렌에너지는 미국원전 내 직접 경쟁 관계"
+    }
+  ]
 }

@@ -1,926 +1,926 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_699",
- "themeName": "유로강세_ECB금리인상수혜",
- "meta": {
-  "periodDefault": "7d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_699",
+  "themeName": "유로강세_ECB금리인상수혜",
+  "meta": {
+    "periodDefault": "7d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-31T00:00:00+09:00",
+    "description": "유로 강세(달러 약세) 국면 수혜 — 유럽 내수·서비스 기업. 매출이 유로 기반이고 달러 표시 원자재·에너지 수입원가가 하락(유틸·통신), 금리인상기엔 은행 순이자마진↑·유로 자산가치 상승. Enel·Iberdrola·E.ON(유틸), Deutsche Telekom·Orange(통신), BNP·Santander·Intesa(은행). TIGER 유로스탁스50(합성 H)·SPDR EURO STOXX 50 ETF 등 ETF로도 익스포저를 확장한다. 유로강세·ECB금리정책·미국달러약세EM자금유입 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 구성종목은 이탈리아유틸_유로매출·원가↓·스페인재생유틸_규제기반·독일전력망유틸_내수·유럽통신1위_유로매출 등의 특성으로 차별화된다. 경쟁·공급·협력 등 5건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다.",
+    "notes": "유로 강세(달러 약세) 국면 수혜 — 유럽 내수·서비스 기업. 매출이 유로 기반이고 달러 표시 원자재·에너지 수입원가가 하락(유틸·통신), 금리인상기엔 은행 순이자마진↑·유로 자산가치 상승. Enel·Iberdrola·E.ON(유틸), Deutsche Telekom·Orange(통신), BNP·Santander·Intesa(은행).",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-31",
+        "kind": "신규",
+        "title": "테마 생성",
+        "detail": "유로 강세(달러 약세) 국면 수혜 — 유럽 내수·서비스 기업. 매출이 유로 기반이고 달러 표시 원자재·에너지 수입원가가 하락(유틸·통신), 금리인상기엔 은행 순이자마진↑·유로 자산가치 상승. Enel·Iberdrola·E.ON(유틸), Deutsche Telekom·Orange(통신), BNP·Santander·Intesa(은행)."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_699",
+      "type": "THEME",
+      "name": "유로강세_ECB금리인상수혜"
+    },
+    {
+      "id": "M_1199",
+      "type": "MACRO",
+      "name": "유로강세"
+    },
+    {
+      "id": "M_359",
+      "type": "MACRO",
+      "name": "ECB금리정책"
+    },
+    {
+      "id": "M_357",
+      "type": "MACRO",
+      "name": "미국달러약세EM자금유입"
+    },
+    {
+      "id": "A_2840",
+      "type": "ASSET",
+      "name": "엔엘(Enel)",
+      "exposure": {
+        "ticker": "ENEL",
+        "exchange": "MI",
+        "country": "IT"
+      },
+      "metrics": {
+        "return_1d": 0.44715447154473065,
+        "close": 9.718,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-07-30",
+        "valuationSource": "FMP",
+        "return_3d": 0.14184397163121698,
+        "return_15d": -2.3320158102766664,
+        "return_1m": -2.3320158102766664,
+        "return_ytd": 9.822222222222221,
+        "return_1y": 27.865459249676583,
+        "return_3y": 64.45923460898504,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "이탈리아 최대 전력 유틸 — 유로 매출·규제 요금기반, 유로강세·금리인상기 방어 수혜."
+    },
+    {
+      "id": "C_5845",
+      "type": "CHARACTER",
+      "name": "이탈리아유틸_유로매출·원가↓"
+    },
+    {
+      "id": "A_2841",
+      "type": "ASSET",
+      "name": "이베르드롤라",
+      "exposure": {
+        "ticker": "IBE",
+        "exchange": "MC",
+        "country": "ES"
+      },
+      "metrics": {
+        "return_1d": 1.3645224171540127,
+        "close": 20.58,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-07-30",
+        "valuationSource": "FMP",
+        "return_3d": -0.4784688995215225,
+        "return_15d": -0.4784688995215225,
+        "return_1m": -3.165735567970207,
+        "return_ytd": 11.6478797638218,
+        "return_1y": 34.366925064599485,
+        "return_3y": 91.17647058823528,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "스페인 재생에너지 유틸 글로벌 — 유로 매출·규제기반 안정 현금흐름."
+    },
+    {
+      "id": "C_5846",
+      "type": "CHARACTER",
+      "name": "스페인재생유틸_규제기반"
+    },
+    {
+      "id": "A_2842",
+      "type": "ASSET",
+      "name": "이온(E.ON)",
+      "exposure": {
+        "ticker": "EOAN",
+        "exchange": "XETRA",
+        "country": "DE"
+      },
+      "metrics": {
+        "return_1d": -4.383561643835621,
+        "close": 17.45,
+        "marketCap": 45598210367,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": -8.254468980021034,
+        "return_15d": -10.969387755102055,
+        "return_1m": -10.328879753340193,
+        "return_ytd": 8.18350898946063,
+        "return_1y": 9.130706691682299,
+        "return_3y": 55.94280607685433,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -8.254468980021034,
+        "return_2y": 45.05403158769743
+      },
+      "coreBiz": "독일 전력망·리테일 유틸 — 유로 내수 규제기반 방어주."
+    },
+    {
+      "id": "C_5847",
+      "type": "CHARACTER",
+      "name": "독일전력망유틸_내수"
+    },
+    {
+      "id": "A_2843",
+      "type": "ASSET",
+      "name": "도이치텔레콤",
+      "exposure": {
+        "ticker": "DTE",
+        "exchange": "XETRA",
+        "country": "DE"
+      },
+      "metrics": {
+        "return_1d": 0.8796622097114737,
+        "close": 28.67,
+        "marketCap": 138706102781,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 0.3851540616246707,
+        "return_15d": 8.639636225843116,
+        "return_1m": 7.822489657766085,
+        "return_ytd": 3.6514822848879414,
+        "return_1y": -6.460032626427392,
+        "return_3y": 50.81536033666492,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -1.2741046831955871,
+        "return_2y": 14.909819639278577
+      },
+      "coreBiz": "유럽 통신 1위 — 유로 매출 기반 방어·배당(미 T모바일 자회사 보유)."
+    },
+    {
+      "id": "C_5848",
+      "type": "CHARACTER",
+      "name": "유럽통신1위_유로매출"
+    },
+    {
+      "id": "A_2844",
+      "type": "ASSET",
+      "name": "오랑주",
+      "exposure": {
+        "ticker": "ORA",
+        "exchange": "EURONEXT",
+        "country": "FR"
+      },
+      "metrics": {
+        "return_1d": 0.7366482504604033,
+        "close": 16.405,
+        "marketCap": 43600761750,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 1.6728624535315983,
+        "return_15d": 1.5470297029702929,
+        "return_1m": -0.36429872495445936,
+        "return_ytd": 15.563380281690154,
+        "return_1y": 13.879250520471897,
+        "return_3y": 59.01162790697674,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -0.2431610942249196,
+        "return_2y": 59.78578383641675
+      },
+      "coreBiz": "프랑스 통신 — 유로 내수 매출 기반 방어·배당주."
+    },
+    {
+      "id": "C_5849",
+      "type": "CHARACTER",
+      "name": "프랑스통신_유로내수"
+    },
+    {
+      "id": "A_2845",
+      "type": "ASSET",
+      "name": "BNP파리바",
+      "exposure": {
+        "ticker": "BNP",
+        "exchange": "EURONEXT",
+        "country": "FR"
+      },
+      "metrics": {
+        "return_1d": -0.2669039145907548,
+        "close": 112.1,
+        "marketCap": 122861600000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 0.340136054421758,
+        "return_15d": 5.834592145015094,
+        "return_1m": 9.558248631743549,
+        "return_ytd": 38.75479638569128,
+        "return_1y": 33.54777221825114,
+        "return_3y": 87.83512064343162,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -0.30238349341871196,
+        "return_2y": 87.61506276150625
+      },
+      "coreBiz": "유럽 최대 은행 — 금리인상기 순이자마진↑·유로 자산가치 상승 수혜."
+    },
+    {
+      "id": "C_5850",
+      "type": "CHARACTER",
+      "name": "유럽최대은행_금리인상수혜"
+    },
+    {
+      "id": "A_2044",
+      "type": "ASSET",
+      "name": "산탄데르",
+      "exposure": {
+        "ticker": "SAN",
+        "exchange": "NYSE",
+        "country": "ES"
+      },
+      "metrics": {
+        "return_1d": -0.13531799729363803,
+        "return_3d": 0.3399048266485405,
+        "return_15d": 9.010339734121132,
+        "return_1m": 8.290535583272195,
+        "return_ytd": 25.831202046035795,
+        "return_1y": 53.43035343035345,
+        "return_3y": 280.41237113402065,
+        "close": 14.76,
+        "marketCap": 216650567185,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.40816326530612734,
+        "return_2y": 224.3956043956044
+      }
+    },
+    {
+      "id": "C_5851",
+      "type": "CHARACTER",
+      "name": "스페인은행_유로자산"
+    },
+    {
+      "id": "A_2846",
+      "type": "ASSET",
+      "name": "인테사산파올로",
+      "exposure": {
+        "ticker": "ISP",
+        "exchange": "MI",
+        "country": "IT"
+      },
+      "metrics": {
+        "return_1d": 1.0599078341013923,
+        "close": 6.53,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-07-30",
+        "valuationSource": "FMP",
+        "return_3d": 1.5277777777777724,
+        "return_15d": 5.095846645367419,
+        "return_1m": 7.499999999999996,
+        "return_ytd": 10.385906040268456,
+        "return_1y": 24.132075471698112,
+        "return_3y": 158.0,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "이탈리아 최대 은행 — 금리인상기 마진↑·유로 자산 기반."
+    },
+    {
+      "id": "C_5852",
+      "type": "CHARACTER",
+      "name": "이탈은행_금리마진"
+    },
+    {
+      "id": "A_2979",
+      "type": "ASSET",
+      "name": "TIGER 유로스탁스50(합성 H)",
+      "exposure": {
+        "ticker": "195930",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.08273009307135926,
+        "return_3d": 0.5819995842860193,
+        "return_15d": 5.932574430823112,
+        "return_1m": 4.514038876889859,
+        "return_ytd": 15.434160305343504,
+        "return_1y": 26.42164589383198,
+        "return_3y": null,
+        "close": 24195,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": null,
+        "return_2y": 37.81324953042251
+      }
+    },
+    {
+      "id": "A_2980",
+      "type": "ASSET",
+      "name": "SPDR EURO STOXX 50 ETF",
+      "exposure": {
+        "ticker": "FEZ",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.08328706274289832,
+        "return_3d": 0.3758875121815386,
+        "return_15d": 6.5149948293691695,
+        "return_1m": 6.185567010309256,
+        "return_ytd": 11.973908992079508,
+        "return_1y": 19.075144508670515,
+        "return_3y": 59.301811754308446,
+        "close": 72.1,
+        "marketCap": 4564555756,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.33398274422486995,
+        "return_2y": 44.750050190724735
+      }
+    }
   ],
-  "dataAsOf": "2026-07-31T00:00:00+09:00",
-  "description": "유로 강세(달러 약세) 국면 수혜 — 유럽 내수·서비스 기업. 매출이 유로 기반이고 달러 표시 원자재·에너지 수입원가가 하락(유틸·통신), 금리인상기엔 은행 순이자마진↑·유로 자산가치 상승. Enel·Iberdrola·E.ON(유틸), Deutsche Telekom·Orange(통신), BNP·Santander·Intesa(은행). TIGER 유로스탁스50(합성 H)·SPDR EURO STOXX 50 ETF 등 ETF로도 익스포저를 확장한다. 유로강세·ECB금리정책·미국달러약세EM자금유입 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 구성종목은 이탈리아유틸_유로매출·원가↓·스페인재생유틸_규제기반·독일전력망유틸_내수·유럽통신1위_유로매출 등의 특성으로 차별화된다. 경쟁·공급·협력 등 5건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다.",
-  "notes": "유로 강세(달러 약세) 국면 수혜 — 유럽 내수·서비스 기업. 매출이 유로 기반이고 달러 표시 원자재·에너지 수입원가가 하락(유틸·통신), 금리인상기엔 은행 순이자마진↑·유로 자산가치 상승. Enel·Iberdrola·E.ON(유틸), Deutsche Telekom·Orange(통신), BNP·Santander·Intesa(은행).",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-31",
-    "kind": "신규",
-    "title": "테마 생성",
-    "detail": "유로 강세(달러 약세) 국면 수혜 — 유럽 내수·서비스 기업. 매출이 유로 기반이고 달러 표시 원자재·에너지 수입원가가 하락(유틸·통신), 금리인상기엔 은행 순이자마진↑·유로 자산가치 상승. Enel·Iberdrola·E.ON(유틸), Deutsche Telekom·Orange(통신), BNP·Santander·Intesa(은행)."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "M_1199",
+      "to": "T_699",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_015086"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_359",
+      "to": "T_699",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_015087"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_357",
+      "to": "T_699",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_015088"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_2840",
+      "to": "T_699",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015089"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2840",
+      "to": "C_5845",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015090"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2841",
+      "to": "T_699",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015091"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2841",
+      "to": "C_5846",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015092"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2842",
+      "to": "T_699",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015093"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2842",
+      "to": "C_5847",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015094"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2843",
+      "to": "T_699",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015095"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2843",
+      "to": "C_5848",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015096"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2844",
+      "to": "T_699",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015097"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2844",
+      "to": "C_5849",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015098"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2845",
+      "to": "T_699",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015099"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2845",
+      "to": "C_5850",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015100"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2044",
+      "to": "T_699",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015101"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2044",
+      "to": "C_5851",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015102"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2846",
+      "to": "T_699",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015103"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2846",
+      "to": "C_5852",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015104"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2840",
+      "to": "A_2841",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020506"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "엔엘(Enel)과 이베르드롤라는 유럽 전력 유틸리티 시장 직접 경쟁"
+    },
+    {
+      "from": "A_2842",
+      "to": "A_2841",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020507"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "이온(E.ON)과 이베르드롤라는 유럽 전력·재생에너지 시장 경쟁"
+    },
+    {
+      "from": "A_2843",
+      "to": "A_2844",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020508"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "도이치텔레콤과 오랑주는 유럽 통신 시장 경쟁"
+    },
+    {
+      "from": "A_2845",
+      "to": "A_2044",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020509"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "BNP파리바와 산탄데르는 유럽 대형은행 시장 경쟁"
+    },
+    {
+      "from": "A_2846",
+      "to": "A_2845",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020510"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "인테사산파올로와 BNP파리바는 유럽 유니버설뱅크 시장 경쟁"
+    },
+    {
+      "from": "A_2979",
+      "to": "T_699",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020983"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_2980",
+      "to": "T_699",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020984"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "M_1199",
+      "to": "T_699",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_015086"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_359",
+      "to": "T_699",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_015087"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_357",
+      "to": "T_699",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_015088"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_2840",
+      "to": "T_699",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015089"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2840",
+      "to": "C_5845",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015090"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2841",
+      "to": "T_699",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015091"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2841",
+      "to": "C_5846",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015092"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2842",
+      "to": "T_699",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015093"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2842",
+      "to": "C_5847",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015094"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2843",
+      "to": "T_699",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015095"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2843",
+      "to": "C_5848",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015096"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2844",
+      "to": "T_699",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015097"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2844",
+      "to": "C_5849",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015098"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2845",
+      "to": "T_699",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015099"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2845",
+      "to": "C_5850",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015100"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2044",
+      "to": "T_699",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015101"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2044",
+      "to": "C_5851",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015102"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2846",
+      "to": "T_699",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015103"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2846",
+      "to": "C_5852",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015104"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2840",
+      "to": "A_2841",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020506"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "엔엘(Enel)과 이베르드롤라는 유럽 전력 유틸리티 시장 직접 경쟁"
+    },
+    {
+      "from": "A_2842",
+      "to": "A_2841",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020507"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "이온(E.ON)과 이베르드롤라는 유럽 전력·재생에너지 시장 경쟁"
+    },
+    {
+      "from": "A_2843",
+      "to": "A_2844",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020508"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "도이치텔레콤과 오랑주는 유럽 통신 시장 경쟁"
+    },
+    {
+      "from": "A_2845",
+      "to": "A_2044",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020509"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "BNP파리바와 산탄데르는 유럽 대형은행 시장 경쟁"
+    },
+    {
+      "from": "A_2846",
+      "to": "A_2845",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020510"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "인테사산파올로와 BNP파리바는 유럽 유니버설뱅크 시장 경쟁"
+    },
+    {
+      "from": "A_2979",
+      "to": "T_699",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020983"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_2980",
+      "to": "T_699",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020984"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_699",
-   "type": "THEME",
-   "name": "유로강세_ECB금리인상수혜"
-  },
-  {
-   "id": "M_1199",
-   "type": "MACRO",
-   "name": "유로강세"
-  },
-  {
-   "id": "M_359",
-   "type": "MACRO",
-   "name": "ECB금리정책"
-  },
-  {
-   "id": "M_357",
-   "type": "MACRO",
-   "name": "미국달러약세EM자금유입"
-  },
-  {
-   "id": "A_2840",
-   "type": "ASSET",
-   "name": "엔엘(Enel)",
-   "exposure": {
-    "ticker": "ENEL",
-    "exchange": "MI",
-    "country": "IT"
-   },
-   "metrics": {
-    "return_1d": 0.44715447154473065,
-    "close": 9.718,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-07-30",
-    "valuationSource": "FMP",
-    "return_3d": 0.14184397163121698,
-    "return_15d": -2.3320158102766664,
-    "return_1m": -2.3320158102766664,
-    "return_ytd": 9.822222222222221,
-    "return_1y": 27.865459249676583,
-    "return_3y": 64.45923460898504,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": null,
-    "return_2y": null
-   },
-   "coreBiz": "이탈리아 최대 전력 유틸 — 유로 매출·규제 요금기반, 유로강세·금리인상기 방어 수혜."
-  },
-  {
-   "id": "C_5845",
-   "type": "CHARACTER",
-   "name": "이탈리아유틸_유로매출·원가↓"
-  },
-  {
-   "id": "A_2841",
-   "type": "ASSET",
-   "name": "이베르드롤라",
-   "exposure": {
-    "ticker": "IBE",
-    "exchange": "MC",
-    "country": "ES"
-   },
-   "metrics": {
-    "return_1d": 1.3645224171540127,
-    "close": 20.58,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-07-30",
-    "valuationSource": "FMP",
-    "return_3d": -0.4784688995215225,
-    "return_15d": -0.4784688995215225,
-    "return_1m": -3.165735567970207,
-    "return_ytd": 11.6478797638218,
-    "return_1y": 34.366925064599485,
-    "return_3y": 91.17647058823528,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": null,
-    "return_2y": null
-   },
-   "coreBiz": "스페인 재생에너지 유틸 글로벌 — 유로 매출·규제기반 안정 현금흐름."
-  },
-  {
-   "id": "C_5846",
-   "type": "CHARACTER",
-   "name": "스페인재생유틸_규제기반"
-  },
-  {
-   "id": "A_2842",
-   "type": "ASSET",
-   "name": "이온(E.ON)",
-   "exposure": {
-    "ticker": "EOAN",
-    "exchange": "XETRA",
-    "country": "DE"
-   },
-   "metrics": {
-    "return_1d": -4.383561643835621,
-    "close": 17.45,
-    "marketCap": 45598210367,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": -8.254468980021034,
-    "return_15d": -10.969387755102055,
-    "return_1m": -10.328879753340193,
-    "return_ytd": 8.18350898946063,
-    "return_1y": 9.130706691682299,
-    "return_3y": 55.94280607685433,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -8.254468980021034,
-    "return_2y": 45.05403158769743
-   },
-   "coreBiz": "독일 전력망·리테일 유틸 — 유로 내수 규제기반 방어주."
-  },
-  {
-   "id": "C_5847",
-   "type": "CHARACTER",
-   "name": "독일전력망유틸_내수"
-  },
-  {
-   "id": "A_2843",
-   "type": "ASSET",
-   "name": "도이치텔레콤",
-   "exposure": {
-    "ticker": "DTE",
-    "exchange": "XETRA",
-    "country": "DE"
-   },
-   "metrics": {
-    "return_1d": 0.8796622097114737,
-    "close": 28.67,
-    "marketCap": 138706102781,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 0.3851540616246707,
-    "return_15d": 8.639636225843116,
-    "return_1m": 7.822489657766085,
-    "return_ytd": 3.6514822848879414,
-    "return_1y": -6.460032626427392,
-    "return_3y": 50.81536033666492,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -1.2741046831955871,
-    "return_2y": 14.909819639278577
-   },
-   "coreBiz": "유럽 통신 1위 — 유로 매출 기반 방어·배당(미 T모바일 자회사 보유)."
-  },
-  {
-   "id": "C_5848",
-   "type": "CHARACTER",
-   "name": "유럽통신1위_유로매출"
-  },
-  {
-   "id": "A_2844",
-   "type": "ASSET",
-   "name": "오랑주",
-   "exposure": {
-    "ticker": "ORA",
-    "exchange": "EURONEXT",
-    "country": "FR"
-   },
-   "metrics": {
-    "return_1d": 0.7366482504604033,
-    "close": 16.405,
-    "marketCap": 43600761750,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 1.6728624535315983,
-    "return_15d": 1.5470297029702929,
-    "return_1m": -0.36429872495445936,
-    "return_ytd": 15.563380281690154,
-    "return_1y": 13.879250520471897,
-    "return_3y": 59.01162790697674,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.2431610942249196,
-    "return_2y": 59.78578383641675
-   },
-   "coreBiz": "프랑스 통신 — 유로 내수 매출 기반 방어·배당주."
-  },
-  {
-   "id": "C_5849",
-   "type": "CHARACTER",
-   "name": "프랑스통신_유로내수"
-  },
-  {
-   "id": "A_2845",
-   "type": "ASSET",
-   "name": "BNP파리바",
-   "exposure": {
-    "ticker": "BNP",
-    "exchange": "EURONEXT",
-    "country": "FR"
-   },
-   "metrics": {
-    "return_1d": -0.2669039145907548,
-    "close": 112.1,
-    "marketCap": 122861600000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 0.340136054421758,
-    "return_15d": 5.834592145015094,
-    "return_1m": 9.558248631743549,
-    "return_ytd": 38.75479638569128,
-    "return_1y": 33.54777221825114,
-    "return_3y": 87.83512064343162,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.30238349341871196,
-    "return_2y": 87.61506276150625
-   },
-   "coreBiz": "유럽 최대 은행 — 금리인상기 순이자마진↑·유로 자산가치 상승 수혜."
-  },
-  {
-   "id": "C_5850",
-   "type": "CHARACTER",
-   "name": "유럽최대은행_금리인상수혜"
-  },
-  {
-   "id": "A_2044",
-   "type": "ASSET",
-   "name": "산탄데르",
-   "exposure": {
-    "ticker": "SAN",
-    "exchange": "NYSE",
-    "country": "ES"
-   },
-   "metrics": {
-    "return_1d": -0.13531799729363803,
-    "return_3d": 0.3399048266485405,
-    "return_15d": 9.010339734121132,
-    "return_1m": 8.290535583272195,
-    "return_ytd": 25.831202046035795,
-    "return_1y": 53.43035343035345,
-    "return_3y": 280.41237113402065,
-    "close": 14.76,
-    "marketCap": 216650567185,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.40816326530612734,
-    "return_2y": 224.3956043956044
-   }
-  },
-  {
-   "id": "C_5851",
-   "type": "CHARACTER",
-   "name": "스페인은행_유로자산"
-  },
-  {
-   "id": "A_2846",
-   "type": "ASSET",
-   "name": "인테사산파올로",
-   "exposure": {
-    "ticker": "ISP",
-    "exchange": "MI",
-    "country": "IT"
-   },
-   "metrics": {
-    "return_1d": 1.0599078341013923,
-    "close": 6.53,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-07-30",
-    "valuationSource": "FMP",
-    "return_3d": 1.5277777777777724,
-    "return_15d": 5.095846645367419,
-    "return_1m": 7.499999999999996,
-    "return_ytd": 10.385906040268456,
-    "return_1y": 24.132075471698112,
-    "return_3y": 158.0,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": null,
-    "return_2y": null
-   },
-   "coreBiz": "이탈리아 최대 은행 — 금리인상기 마진↑·유로 자산 기반."
-  },
-  {
-   "id": "C_5852",
-   "type": "CHARACTER",
-   "name": "이탈은행_금리마진"
-  },
-  {
-   "id": "A_2979",
-   "type": "ASSET",
-   "name": "TIGER 유로스탁스50(합성 H)",
-   "exposure": {
-    "ticker": "195930",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.08273009307135926,
-    "return_3d": 0.5819995842860193,
-    "return_15d": 5.932574430823112,
-    "return_1m": 4.514038876889859,
-    "return_ytd": 15.434160305343504,
-    "return_1y": 26.42164589383198,
-    "return_3y": null,
-    "close": 24195,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": null,
-    "return_2y": 37.81324953042251
-   }
-  },
-  {
-   "id": "A_2980",
-   "type": "ASSET",
-   "name": "SPDR EURO STOXX 50 ETF",
-   "exposure": {
-    "ticker": "FEZ",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.08328706274289832,
-    "return_3d": 0.3758875121815386,
-    "return_15d": 6.5149948293691695,
-    "return_1m": 6.185567010309256,
-    "return_ytd": 11.973908992079508,
-    "return_1y": 19.075144508670515,
-    "return_3y": 59.301811754308446,
-    "close": 72.1,
-    "marketCap": 4564555756,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.33398274422486995,
-    "return_2y": 44.750050190724735
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "M_1199",
-   "to": "T_699",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_015086"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_359",
-   "to": "T_699",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_015087"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_357",
-   "to": "T_699",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_015088"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_2840",
-   "to": "T_699",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015089"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2840",
-   "to": "C_5845",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015090"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2841",
-   "to": "T_699",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015091"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2841",
-   "to": "C_5846",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015092"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2842",
-   "to": "T_699",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015093"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2842",
-   "to": "C_5847",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015094"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2843",
-   "to": "T_699",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015095"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2843",
-   "to": "C_5848",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015096"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2844",
-   "to": "T_699",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015097"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2844",
-   "to": "C_5849",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015098"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2845",
-   "to": "T_699",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015099"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2845",
-   "to": "C_5850",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015100"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2044",
-   "to": "T_699",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015101"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2044",
-   "to": "C_5851",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015102"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2846",
-   "to": "T_699",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015103"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2846",
-   "to": "C_5852",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015104"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2840",
-   "to": "A_2841",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020506"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "엔엘(Enel)과 이베르드롤라는 유럽 전력 유틸리티 시장 직접 경쟁"
-  },
-  {
-   "from": "A_2842",
-   "to": "A_2841",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020507"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "이온(E.ON)과 이베르드롤라는 유럽 전력·재생에너지 시장 경쟁"
-  },
-  {
-   "from": "A_2843",
-   "to": "A_2844",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020508"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "도이치텔레콤과 오랑주는 유럽 통신 시장 경쟁"
-  },
-  {
-   "from": "A_2845",
-   "to": "A_2044",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020509"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "BNP파리바와 산탄데르는 유럽 대형은행 시장 경쟁"
-  },
-  {
-   "from": "A_2846",
-   "to": "A_2845",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020510"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "인테사산파올로와 BNP파리바는 유럽 유니버설뱅크 시장 경쟁"
-  },
-  {
-   "from": "A_2979",
-   "to": "T_699",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020983"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_2980",
-   "to": "T_699",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020984"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "M_1199",
-   "to": "T_699",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_015086"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_359",
-   "to": "T_699",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_015087"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_357",
-   "to": "T_699",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_015088"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_2840",
-   "to": "T_699",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015089"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2840",
-   "to": "C_5845",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015090"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2841",
-   "to": "T_699",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015091"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2841",
-   "to": "C_5846",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015092"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2842",
-   "to": "T_699",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015093"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2842",
-   "to": "C_5847",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015094"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2843",
-   "to": "T_699",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015095"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2843",
-   "to": "C_5848",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015096"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2844",
-   "to": "T_699",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015097"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2844",
-   "to": "C_5849",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015098"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2845",
-   "to": "T_699",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015099"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2845",
-   "to": "C_5850",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015100"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2044",
-   "to": "T_699",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015101"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2044",
-   "to": "C_5851",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015102"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2846",
-   "to": "T_699",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015103"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2846",
-   "to": "C_5852",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015104"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2840",
-   "to": "A_2841",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020506"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "엔엘(Enel)과 이베르드롤라는 유럽 전력 유틸리티 시장 직접 경쟁"
-  },
-  {
-   "from": "A_2842",
-   "to": "A_2841",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020507"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "이온(E.ON)과 이베르드롤라는 유럽 전력·재생에너지 시장 경쟁"
-  },
-  {
-   "from": "A_2843",
-   "to": "A_2844",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020508"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "도이치텔레콤과 오랑주는 유럽 통신 시장 경쟁"
-  },
-  {
-   "from": "A_2845",
-   "to": "A_2044",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020509"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "BNP파리바와 산탄데르는 유럽 대형은행 시장 경쟁"
-  },
-  {
-   "from": "A_2846",
-   "to": "A_2845",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020510"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "인테사산파올로와 BNP파리바는 유럽 유니버설뱅크 시장 경쟁"
-  },
-  {
-   "from": "A_2979",
-   "to": "T_699",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020983"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_2980",
-   "to": "T_699",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020984"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

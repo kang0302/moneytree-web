@@ -1,978 +1,978 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_124",
- "themeName": "글로벌금(골드)관련주_개별주식",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_124",
+  "themeName": "글로벌금(골드)관련주_개별주식",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-04-08T00:00:00+09:00",
+    "notes": "g124 누적 import 기반 글로벌 GOLD 관련주 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-18",
+        "kind": "변경",
+        "title": "금 테마 분리(개별주식) + CHR 재정의",
+        "detail": "글로벌GOLD관련주 → 글로벌금(골드)관련주로 개편, 개별주식/ETF 분리. 본 테마는 개별 금광·로열티주 9종만 유지하고 기존 CHR 19종을 전면 삭제 후 자산별 CHR을 새로 정의했다. ETF 6종은 T_626으로 분리."
+      },
+      {
+        "date": "2026-07-11",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
+      },
+      {
+        "date": "2026-07-11",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필 + 2026 이벤트",
+        "detail": "전 엣지 근거(호버 박스)를 종목별 사업·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ],
+    "description": "Newmont·Barrick·Agnico·Franco-Nevada·Wheaton 등 글로벌 금광 빅5. 금가·중앙은행 매수·실질금리 하락 사이클이 multiyear 동인. GDX 등 ETF로도 익스포저를 확장한다. 지정학리스크·약달러·금융시장변동성고조 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 구성종목은 세계1위금광_대형생산·글로벌금광2위_구리병행·캐나다우량금광_저비용·금로열티·스트리밍1위_무부채 등의 특성으로 차별화된다. 경쟁·공급·협력 등 6건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다."
+  },
+  "nodes": [
+    {
+      "id": "T_124",
+      "type": "THEME",
+      "name": "글로벌금(골드)관련주_개별주식"
+    },
+    {
+      "id": "A_882",
+      "type": "ASSET",
+      "name": "뉴몬트",
+      "exposure": {
+        "ticker": "NEM",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 3.1263683334793013,
+        "close": 117.76,
+        "marketCap": 124082801833,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 0.4692432386315337,
+        "return_15d": 26.365489859426994,
+        "return_1m": 24.284960422163593,
+        "return_ytd": 17.93690535803707,
+        "return_1y": 71.96261682242991,
+        "return_3y": 198.42878864673085,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 4.2308373163391755,
+        "return_2y": 139.64183964183965
+      }
+    },
+    {
+      "id": "A_883",
+      "type": "ASSET",
+      "name": "배릭골드",
+      "exposure": {
+        "ticker": "GOLD",
+        "exchange": "NYSE",
+        "country": "CA"
+      },
+      "metrics": {
+        "return_1d": 0.4336909381419618,
+        "close": 44,
+        "marketCap": 1276192456,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 1.2891344383057168,
+        "return_15d": 11.817026683608645,
+        "return_1m": 12.618377271563851,
+        "return_ytd": 29.221732745961827,
+        "return_1y": 89.32874354561102,
+        "return_3y": 22.222222222222232,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 1.1261778901402009,
+        "return_2y": 28.881077914469834
+      }
+    },
+    {
+      "id": "A_884",
+      "type": "ASSET",
+      "name": "아그니코이글",
+      "exposure": {
+        "ticker": "AEM",
+        "exchange": "NYSE",
+        "country": "CA"
+      },
+      "metrics": {
+        "return_1d": 3.382124639609674,
+        "close": 186.46,
+        "marketCap": 94416792541,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 2.5914718019257155,
+        "return_15d": 28.477916350857857,
+        "return_1m": 29.11848209957759,
+        "return_ytd": 9.986433079690915,
+        "return_1y": 40.48067505462218,
+        "return_3y": 287.4896093100582,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 4.272452745777877,
+        "return_2y": 140.15971148892325
+      }
+    },
+    {
+      "id": "A_885",
+      "type": "ASSET",
+      "name": "프랑코네바다",
+      "exposure": {
+        "ticker": "FNV",
+        "exchange": "NYSE",
+        "country": "CA"
+      },
+      "metrics": {
+        "return_1d": 1.1400440471563744,
+        "close": 234.21,
+        "marketCap": 45168803760,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": -2.712469884522717,
+        "return_15d": 9.097261039686977,
+        "return_1m": 15.402808573540284,
+        "return_ytd": 12.992087996912382,
+        "return_1y": 32.046005525173356,
+        "return_3y": 65.11103278110681,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -1.8604651162790642,
+        "return_2y": 100.26507054296707
+      }
+    },
+    {
+      "id": "A_886",
+      "type": "ASSET",
+      "name": "킨로스골드",
+      "exposure": {
+        "ticker": "KGC",
+        "exchange": "NYSE",
+        "country": "CA"
+      },
+      "metrics": {
+        "return_1d": 1.713221601489745,
+        "close": 27.31,
+        "marketCap": 32396235948,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 0.256975036710716,
+        "return_15d": 14.507337526205433,
+        "return_1m": 14.219991635299035,
+        "return_ytd": -3.018465909090917,
+        "return_1y": 44.57384859714133,
+        "return_3y": 448.39357429718865,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -1.193921852387847,
+        "return_2y": 203.44444444444446
+      }
+    },
+    {
+      "id": "A_887",
+      "type": "ASSET",
+      "name": "알라모스골드",
+      "exposure": {
+        "ticker": "AGI",
+        "exchange": "NYSE",
+        "country": "CA"
+      },
+      "metrics": {
+        "return_1d": 1.552511415525104,
+        "close": 33.36,
+        "marketCap": 14010032400,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": -0.2690582959641308,
+        "return_15d": 12.778904665314418,
+        "return_1m": 13.585291113381004,
+        "return_ytd": -13.530326594090203,
+        "return_1y": 31.338582677165363,
+        "return_3y": 188.08290155440415,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.6334841628959254,
+        "return_2y": 80.61721710882512
+      }
+    },
+    {
+      "id": "A_888",
+      "type": "ASSET",
+      "name": "SSR마이닝",
+      "exposure": {
+        "ticker": "SSRM",
+        "exchange": "NASDAQ",
+        "country": "CA"
+      },
+      "metrics": {
+        "return_1d": 1.1310084825636224,
+        "close": 32.19,
+        "marketCap": 6679135290,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 0.6881451360650548,
+        "return_15d": 19.84363365599404,
+        "return_1m": 15.749730312837107,
+        "return_ytd": 46.85218978102188,
+        "return_1y": 100.18656716417911,
+        "return_3y": 116.62180349932703,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 1.2901195720578906,
+        "return_2y": 559.6311475409836
+      }
+    },
+    {
+      "id": "A_889",
+      "type": "ASSET",
+      "name": "골드필즈",
+      "exposure": {
+        "ticker": "GFI",
+        "exchange": "NYSE",
+        "country": "ZA"
+      },
+      "metrics": {
+        "return_1d": 1.7961042246395165,
+        "close": 40.24,
+        "marketCap": 36015765760,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": -0.07449714427614218,
+        "return_15d": 23.05810397553516,
+        "return_1m": 20.732073207320735,
+        "return_ytd": -7.833256985799341,
+        "return_1y": 35.260504201680675,
+        "return_3y": 208.35249042145594,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -1.4208721215090647,
+        "return_2y": 151.9724483406387
+      }
+    },
+    {
+      "id": "A_890",
+      "type": "ASSET",
+      "name": "시바니예스틸워터",
+      "exposure": {
+        "ticker": "SBSW",
+        "exchange": "NYSE",
+        "country": "ZA"
+      },
+      "metrics": {
+        "return_1d": 2.767175572519065,
+        "close": 10.77,
+        "marketCap": 7621302358,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 1.5080113100848225,
+        "return_15d": 28.827751196172247,
+        "return_1m": 25.670945157526237,
+        "return_ytd": -24.421052631578956,
+        "return_1y": 27.00471698113207,
+        "return_3y": 68.80877742946707,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 1.2218045112781795,
+        "return_2y": 163.32518337408314
+      }
+    },
+    {
+      "id": "M_113",
+      "type": "MACRO",
+      "name": "지정학리스크"
+    },
+    {
+      "id": "M_153",
+      "type": "MACRO",
+      "name": "약달러"
+    },
+    {
+      "id": "M_262",
+      "type": "MACRO",
+      "name": "금융시장변동성고조"
+    },
+    {
+      "id": "C_3645",
+      "type": "CHARACTER",
+      "name": "세계1위금광_대형생산"
+    },
+    {
+      "id": "C_3646",
+      "type": "CHARACTER",
+      "name": "글로벌금광2위_구리병행"
+    },
+    {
+      "id": "C_3647",
+      "type": "CHARACTER",
+      "name": "캐나다우량금광_저비용"
+    },
+    {
+      "id": "C_3648",
+      "type": "CHARACTER",
+      "name": "금로열티·스트리밍1위_무부채"
+    },
+    {
+      "id": "C_3649",
+      "type": "CHARACTER",
+      "name": "글로벌금광_북미서아프리카"
+    },
+    {
+      "id": "C_3650",
+      "type": "CHARACTER",
+      "name": "캐나다중견금광_생산성장"
+    },
+    {
+      "id": "C_3651",
+      "type": "CHARACTER",
+      "name": "금은복합생산_다국적"
+    },
+    {
+      "id": "C_3652",
+      "type": "CHARACTER",
+      "name": "남아공글로벌금광메이저"
+    },
+    {
+      "id": "C_3653",
+      "type": "CHARACTER",
+      "name": "금·PGM복합_남아공"
+    },
+    {
+      "id": "A_891",
+      "type": "ASSET",
+      "name": "GDX",
+      "exposure": {
+        "ticker": "GDX",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.925909142403981,
+        "return_3d": -0.1664447403462166,
+        "return_15d": 19.593247374717528,
+        "return_1m": 20.15224358974359,
+        "return_ytd": 4.896817068905213,
+        "return_1y": 55.92720970537262,
+        "return_3y": 210.77720207253887,
+        "close": 89.97,
+        "marketCap": 27566643715,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.0889976638113188,
+        "return_2y": 142.44139046079223
+      }
+    }
   ],
-  "dataAsOf": "2026-04-08T00:00:00+09:00",
-  "notes": "g124 누적 import 기반 글로벌 GOLD 관련주 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-18",
-    "kind": "변경",
-    "title": "금 테마 분리(개별주식) + CHR 재정의",
-    "detail": "글로벌GOLD관련주 → 글로벌금(골드)관련주로 개편, 개별주식/ETF 분리. 본 테마는 개별 금광·로열티주 9종만 유지하고 기존 CHR 19종을 전면 삭제 후 자산별 CHR을 새로 정의했다. ETF 6종은 T_626으로 분리."
-   },
-   {
-    "date": "2026-07-11",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
-   },
-   {
-    "date": "2026-07-11",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필 + 2026 이벤트",
-    "detail": "전 엣지 근거(호버 박스)를 종목별 사업·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_882",
+      "to": "T_124",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003660"
+      ],
+      "confidence": 0.83,
+      "status": "verified"
+    },
+    {
+      "from": "A_883",
+      "to": "T_124",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003661"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_884",
+      "to": "T_124",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003662"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_885",
+      "to": "T_124",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003663"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_886",
+      "to": "T_124",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003664"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_887",
+      "to": "T_124",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003665"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_888",
+      "to": "T_124",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003666"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_889",
+      "to": "T_124",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003667"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_890",
+      "to": "T_124",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003668"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "M_113",
+      "to": "T_124",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003684"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_153",
+      "to": "T_124",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003685"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_262",
+      "to": "T_124",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003686"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_882",
+      "to": "C_3645",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007590"
+      ],
+      "confidence": 0.83,
+      "status": "verified"
+    },
+    {
+      "from": "A_883",
+      "to": "C_3646",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007591"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_884",
+      "to": "C_3647",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007592"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_885",
+      "to": "C_3648",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007593"
+      ],
+      "confidence": 0.83,
+      "status": "verified"
+    },
+    {
+      "from": "A_886",
+      "to": "C_3649",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007594"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_887",
+      "to": "C_3650",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007595"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_888",
+      "to": "C_3651",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007596"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_889",
+      "to": "C_3652",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007597"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_890",
+      "to": "C_3653",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007598"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_882",
+      "to": "A_883",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019126"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "뉴몬트와 배릭골드는 글로벌 금 채굴 시장 양대 경쟁"
+    },
+    {
+      "from": "A_882",
+      "to": "A_884",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019127"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "뉴몬트와 아그니코이글은 글로벌 금 채굴 시장 경쟁"
+    },
+    {
+      "from": "A_883",
+      "to": "A_884",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019128"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "배릭골드와 아그니코이글은 캐나다·글로벌 금광 채굴 경쟁"
+    },
+    {
+      "from": "A_885",
+      "to": "A_882",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_019129"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "프랑코네바다는 뉴몬트 등 금광사와 로열티·스트리밍 계약 체결"
+    },
+    {
+      "from": "A_885",
+      "to": "A_883",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_019130"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "프랑코네바다는 배릭골드와 로열티 스트리밍 협약 보유"
+    },
+    {
+      "from": "A_886",
+      "to": "A_887",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019131"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "킨로스골드와 알라모스골드는 중급 금광사 시장 경쟁"
+    },
+    {
+      "from": "A_891",
+      "to": "T_124",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020606"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ],
-  "description": "Newmont·Barrick·Agnico·Franco-Nevada·Wheaton 등 글로벌 금광 빅5. 금가·중앙은행 매수·실질금리 하락 사이클이 multiyear 동인. GDX 등 ETF로도 익스포저를 확장한다. 지정학리스크·약달러·금융시장변동성고조 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 구성종목은 세계1위금광_대형생산·글로벌금광2위_구리병행·캐나다우량금광_저비용·금로열티·스트리밍1위_무부채 등의 특성으로 차별화된다. 경쟁·공급·협력 등 6건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다."
- },
- "nodes": [
-  {
-   "id": "T_124",
-   "type": "THEME",
-   "name": "글로벌금(골드)관련주_개별주식"
-  },
-  {
-   "id": "A_882",
-   "type": "ASSET",
-   "name": "뉴몬트",
-   "exposure": {
-    "ticker": "NEM",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 3.1263683334793013,
-    "close": 117.76,
-    "marketCap": 124082801833,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 0.4692432386315337,
-    "return_15d": 26.365489859426994,
-    "return_1m": 24.284960422163593,
-    "return_ytd": 17.93690535803707,
-    "return_1y": 71.96261682242991,
-    "return_3y": 198.42878864673085,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 4.2308373163391755,
-    "return_2y": 139.64183964183965
-   }
-  },
-  {
-   "id": "A_883",
-   "type": "ASSET",
-   "name": "배릭골드",
-   "exposure": {
-    "ticker": "GOLD",
-    "exchange": "NYSE",
-    "country": "CA"
-   },
-   "metrics": {
-    "return_1d": 0.4336909381419618,
-    "close": 44,
-    "marketCap": 1276192456,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 1.2891344383057168,
-    "return_15d": 11.817026683608645,
-    "return_1m": 12.618377271563851,
-    "return_ytd": 29.221732745961827,
-    "return_1y": 89.32874354561102,
-    "return_3y": 22.222222222222232,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.1261778901402009,
-    "return_2y": 28.881077914469834
-   }
-  },
-  {
-   "id": "A_884",
-   "type": "ASSET",
-   "name": "아그니코이글",
-   "exposure": {
-    "ticker": "AEM",
-    "exchange": "NYSE",
-    "country": "CA"
-   },
-   "metrics": {
-    "return_1d": 3.382124639609674,
-    "close": 186.46,
-    "marketCap": 94416792541,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 2.5914718019257155,
-    "return_15d": 28.477916350857857,
-    "return_1m": 29.11848209957759,
-    "return_ytd": 9.986433079690915,
-    "return_1y": 40.48067505462218,
-    "return_3y": 287.4896093100582,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 4.272452745777877,
-    "return_2y": 140.15971148892325
-   }
-  },
-  {
-   "id": "A_885",
-   "type": "ASSET",
-   "name": "프랑코네바다",
-   "exposure": {
-    "ticker": "FNV",
-    "exchange": "NYSE",
-    "country": "CA"
-   },
-   "metrics": {
-    "return_1d": 1.1400440471563744,
-    "close": 234.21,
-    "marketCap": 45168803760,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": -2.712469884522717,
-    "return_15d": 9.097261039686977,
-    "return_1m": 15.402808573540284,
-    "return_ytd": 12.992087996912382,
-    "return_1y": 32.046005525173356,
-    "return_3y": 65.11103278110681,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -1.8604651162790642,
-    "return_2y": 100.26507054296707
-   }
-  },
-  {
-   "id": "A_886",
-   "type": "ASSET",
-   "name": "킨로스골드",
-   "exposure": {
-    "ticker": "KGC",
-    "exchange": "NYSE",
-    "country": "CA"
-   },
-   "metrics": {
-    "return_1d": 1.713221601489745,
-    "close": 27.31,
-    "marketCap": 32396235948,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 0.256975036710716,
-    "return_15d": 14.507337526205433,
-    "return_1m": 14.219991635299035,
-    "return_ytd": -3.018465909090917,
-    "return_1y": 44.57384859714133,
-    "return_3y": 448.39357429718865,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -1.193921852387847,
-    "return_2y": 203.44444444444446
-   }
-  },
-  {
-   "id": "A_887",
-   "type": "ASSET",
-   "name": "알라모스골드",
-   "exposure": {
-    "ticker": "AGI",
-    "exchange": "NYSE",
-    "country": "CA"
-   },
-   "metrics": {
-    "return_1d": 1.552511415525104,
-    "close": 33.36,
-    "marketCap": 14010032400,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": -0.2690582959641308,
-    "return_15d": 12.778904665314418,
-    "return_1m": 13.585291113381004,
-    "return_ytd": -13.530326594090203,
-    "return_1y": 31.338582677165363,
-    "return_3y": 188.08290155440415,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.6334841628959254,
-    "return_2y": 80.61721710882512
-   }
-  },
-  {
-   "id": "A_888",
-   "type": "ASSET",
-   "name": "SSR마이닝",
-   "exposure": {
-    "ticker": "SSRM",
-    "exchange": "NASDAQ",
-    "country": "CA"
-   },
-   "metrics": {
-    "return_1d": 1.1310084825636224,
-    "close": 32.19,
-    "marketCap": 6679135290,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 0.6881451360650548,
-    "return_15d": 19.84363365599404,
-    "return_1m": 15.749730312837107,
-    "return_ytd": 46.85218978102188,
-    "return_1y": 100.18656716417911,
-    "return_3y": 116.62180349932703,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.2901195720578906,
-    "return_2y": 559.6311475409836
-   }
-  },
-  {
-   "id": "A_889",
-   "type": "ASSET",
-   "name": "골드필즈",
-   "exposure": {
-    "ticker": "GFI",
-    "exchange": "NYSE",
-    "country": "ZA"
-   },
-   "metrics": {
-    "return_1d": 1.7961042246395165,
-    "close": 40.24,
-    "marketCap": 36015765760,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": -0.07449714427614218,
-    "return_15d": 23.05810397553516,
-    "return_1m": 20.732073207320735,
-    "return_ytd": -7.833256985799341,
-    "return_1y": 35.260504201680675,
-    "return_3y": 208.35249042145594,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -1.4208721215090647,
-    "return_2y": 151.9724483406387
-   }
-  },
-  {
-   "id": "A_890",
-   "type": "ASSET",
-   "name": "시바니예스틸워터",
-   "exposure": {
-    "ticker": "SBSW",
-    "exchange": "NYSE",
-    "country": "ZA"
-   },
-   "metrics": {
-    "return_1d": 2.767175572519065,
-    "close": 10.77,
-    "marketCap": 7621302358,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 1.5080113100848225,
-    "return_15d": 28.827751196172247,
-    "return_1m": 25.670945157526237,
-    "return_ytd": -24.421052631578956,
-    "return_1y": 27.00471698113207,
-    "return_3y": 68.80877742946707,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.2218045112781795,
-    "return_2y": 163.32518337408314
-   }
-  },
-  {
-   "id": "M_113",
-   "type": "MACRO",
-   "name": "지정학리스크"
-  },
-  {
-   "id": "M_153",
-   "type": "MACRO",
-   "name": "약달러"
-  },
-  {
-   "id": "M_262",
-   "type": "MACRO",
-   "name": "금융시장변동성고조"
-  },
-  {
-   "id": "C_3645",
-   "type": "CHARACTER",
-   "name": "세계1위금광_대형생산"
-  },
-  {
-   "id": "C_3646",
-   "type": "CHARACTER",
-   "name": "글로벌금광2위_구리병행"
-  },
-  {
-   "id": "C_3647",
-   "type": "CHARACTER",
-   "name": "캐나다우량금광_저비용"
-  },
-  {
-   "id": "C_3648",
-   "type": "CHARACTER",
-   "name": "금로열티·스트리밍1위_무부채"
-  },
-  {
-   "id": "C_3649",
-   "type": "CHARACTER",
-   "name": "글로벌금광_북미서아프리카"
-  },
-  {
-   "id": "C_3650",
-   "type": "CHARACTER",
-   "name": "캐나다중견금광_생산성장"
-  },
-  {
-   "id": "C_3651",
-   "type": "CHARACTER",
-   "name": "금은복합생산_다국적"
-  },
-  {
-   "id": "C_3652",
-   "type": "CHARACTER",
-   "name": "남아공글로벌금광메이저"
-  },
-  {
-   "id": "C_3653",
-   "type": "CHARACTER",
-   "name": "금·PGM복합_남아공"
-  },
-  {
-   "id": "A_891",
-   "type": "ASSET",
-   "name": "GDX",
-   "exposure": {
-    "ticker": "GDX",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.925909142403981,
-    "return_3d": -0.1664447403462166,
-    "return_15d": 19.593247374717528,
-    "return_1m": 20.15224358974359,
-    "return_ytd": 4.896817068905213,
-    "return_1y": 55.92720970537262,
-    "return_3y": 210.77720207253887,
-    "close": 89.97,
-    "marketCap": 27566643715,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.0889976638113188,
-    "return_2y": 142.44139046079223
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_882",
-   "to": "T_124",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003660"
-   ],
-   "confidence": 0.83,
-   "status": "verified"
-  },
-  {
-   "from": "A_883",
-   "to": "T_124",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003661"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_884",
-   "to": "T_124",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003662"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_885",
-   "to": "T_124",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003663"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_886",
-   "to": "T_124",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003664"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_887",
-   "to": "T_124",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003665"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_888",
-   "to": "T_124",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003666"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_889",
-   "to": "T_124",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003667"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_890",
-   "to": "T_124",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003668"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "M_113",
-   "to": "T_124",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003684"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_153",
-   "to": "T_124",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003685"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_262",
-   "to": "T_124",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003686"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_882",
-   "to": "C_3645",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007590"
-   ],
-   "confidence": 0.83,
-   "status": "verified"
-  },
-  {
-   "from": "A_883",
-   "to": "C_3646",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007591"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_884",
-   "to": "C_3647",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007592"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_885",
-   "to": "C_3648",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007593"
-   ],
-   "confidence": 0.83,
-   "status": "verified"
-  },
-  {
-   "from": "A_886",
-   "to": "C_3649",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007594"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_887",
-   "to": "C_3650",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007595"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_888",
-   "to": "C_3651",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007596"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_889",
-   "to": "C_3652",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007597"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_890",
-   "to": "C_3653",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007598"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_882",
-   "to": "A_883",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019126"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "뉴몬트와 배릭골드는 글로벌 금 채굴 시장 양대 경쟁"
-  },
-  {
-   "from": "A_882",
-   "to": "A_884",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019127"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "뉴몬트와 아그니코이글은 글로벌 금 채굴 시장 경쟁"
-  },
-  {
-   "from": "A_883",
-   "to": "A_884",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019128"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "배릭골드와 아그니코이글은 캐나다·글로벌 금광 채굴 경쟁"
-  },
-  {
-   "from": "A_885",
-   "to": "A_882",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_019129"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "프랑코네바다는 뉴몬트 등 금광사와 로열티·스트리밍 계약 체결"
-  },
-  {
-   "from": "A_885",
-   "to": "A_883",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_019130"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "프랑코네바다는 배릭골드와 로열티 스트리밍 협약 보유"
-  },
-  {
-   "from": "A_886",
-   "to": "A_887",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019131"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "킨로스골드와 알라모스골드는 중급 금광사 시장 경쟁"
-  },
-  {
-   "from": "A_891",
-   "to": "T_124",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020606"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_882",
-   "to": "T_124",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003660"
-   ],
-   "confidence": 0.83,
-   "status": "verified"
-  },
-  {
-   "from": "A_883",
-   "to": "T_124",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003661"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_884",
-   "to": "T_124",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003662"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_885",
-   "to": "T_124",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003663"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_886",
-   "to": "T_124",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003664"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_887",
-   "to": "T_124",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003665"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_888",
-   "to": "T_124",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003666"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_889",
-   "to": "T_124",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003667"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_890",
-   "to": "T_124",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003668"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "M_113",
-   "to": "T_124",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003684"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_153",
-   "to": "T_124",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003685"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_262",
-   "to": "T_124",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003686"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_882",
-   "to": "C_3645",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007590"
-   ],
-   "confidence": 0.83,
-   "status": "verified"
-  },
-  {
-   "from": "A_883",
-   "to": "C_3646",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007591"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_884",
-   "to": "C_3647",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007592"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_885",
-   "to": "C_3648",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007593"
-   ],
-   "confidence": 0.83,
-   "status": "verified"
-  },
-  {
-   "from": "A_886",
-   "to": "C_3649",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007594"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_887",
-   "to": "C_3650",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007595"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_888",
-   "to": "C_3651",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007596"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_889",
-   "to": "C_3652",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007597"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_890",
-   "to": "C_3653",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007598"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_882",
-   "to": "A_883",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019126"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "뉴몬트와 배릭골드는 글로벌 금 채굴 시장 양대 경쟁"
-  },
-  {
-   "from": "A_882",
-   "to": "A_884",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019127"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "뉴몬트와 아그니코이글은 글로벌 금 채굴 시장 경쟁"
-  },
-  {
-   "from": "A_883",
-   "to": "A_884",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019128"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "배릭골드와 아그니코이글은 캐나다·글로벌 금광 채굴 경쟁"
-  },
-  {
-   "from": "A_885",
-   "to": "A_882",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_019129"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "프랑코네바다는 뉴몬트 등 금광사와 로열티·스트리밍 계약 체결"
-  },
-  {
-   "from": "A_885",
-   "to": "A_883",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_019130"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "프랑코네바다는 배릭골드와 로열티 스트리밍 협약 보유"
-  },
-  {
-   "from": "A_886",
-   "to": "A_887",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019131"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "킨로스골드와 알라모스골드는 중급 금광사 시장 경쟁"
-  },
-  {
-   "from": "A_891",
-   "to": "T_124",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020606"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
+  "links": [
+    {
+      "from": "A_882",
+      "to": "T_124",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003660"
+      ],
+      "confidence": 0.83,
+      "status": "verified"
+    },
+    {
+      "from": "A_883",
+      "to": "T_124",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003661"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_884",
+      "to": "T_124",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003662"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_885",
+      "to": "T_124",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003663"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_886",
+      "to": "T_124",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003664"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_887",
+      "to": "T_124",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003665"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_888",
+      "to": "T_124",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003666"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_889",
+      "to": "T_124",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003667"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_890",
+      "to": "T_124",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003668"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "M_113",
+      "to": "T_124",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003684"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_153",
+      "to": "T_124",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003685"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_262",
+      "to": "T_124",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003686"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_882",
+      "to": "C_3645",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007590"
+      ],
+      "confidence": 0.83,
+      "status": "verified"
+    },
+    {
+      "from": "A_883",
+      "to": "C_3646",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007591"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_884",
+      "to": "C_3647",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007592"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_885",
+      "to": "C_3648",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007593"
+      ],
+      "confidence": 0.83,
+      "status": "verified"
+    },
+    {
+      "from": "A_886",
+      "to": "C_3649",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007594"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_887",
+      "to": "C_3650",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007595"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_888",
+      "to": "C_3651",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007596"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_889",
+      "to": "C_3652",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007597"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_890",
+      "to": "C_3653",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007598"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_882",
+      "to": "A_883",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019126"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "뉴몬트와 배릭골드는 글로벌 금 채굴 시장 양대 경쟁"
+    },
+    {
+      "from": "A_882",
+      "to": "A_884",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019127"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "뉴몬트와 아그니코이글은 글로벌 금 채굴 시장 경쟁"
+    },
+    {
+      "from": "A_883",
+      "to": "A_884",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019128"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "배릭골드와 아그니코이글은 캐나다·글로벌 금광 채굴 경쟁"
+    },
+    {
+      "from": "A_885",
+      "to": "A_882",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_019129"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "프랑코네바다는 뉴몬트 등 금광사와 로열티·스트리밍 계약 체결"
+    },
+    {
+      "from": "A_885",
+      "to": "A_883",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_019130"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "프랑코네바다는 배릭골드와 로열티 스트리밍 협약 보유"
+    },
+    {
+      "from": "A_886",
+      "to": "A_887",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019131"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "킨로스골드와 알라모스골드는 중급 금광사 시장 경쟁"
+    },
+    {
+      "from": "A_891",
+      "to": "T_124",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020606"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ]
 }

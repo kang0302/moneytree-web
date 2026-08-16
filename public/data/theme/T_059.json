@@ -1,1176 +1,1176 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_059",
- "themeName": "미국셰일개발주식",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_059",
+  "themeName": "미국셰일개발주식",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-26T00:00:00+09:00",
+    "notes": "g59 누적 import 기반 미국 셰일 개발 주식 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 10건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-26",
+        "kind": "수정",
+        "title": "자산 CHR 백필",
+        "detail": "CHR 미정의 자산에 CHARACTER·HAS_TRAIT 추가."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ],
+    "description": "Pioneer·Diamondback·EOG·Devon 등 미국 셰일 빅캡. 유가·rig count·OPEC+ 공급 정책과 자사주매입 사이클이 dual driver. XOP 등 ETF로도 익스포저를 확장한다. 유가상승·천연가스가격상승 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 밸류체인은 셰일오일·셰일가스 등 사업영역으로 이어진다. 경쟁·공급·협력 등 10건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다."
+  },
+  "nodes": [
+    {
+      "id": "T_059",
+      "type": "THEME",
+      "name": "미국셰일개발주식"
+    },
+    {
+      "id": "A_481",
+      "type": "ASSET",
+      "name": "EOG",
+      "exposure": {
+        "ticker": "EOG",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.8485962803196578,
+        "close": 142.61,
+        "marketCap": 75958221690,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": -0.5509065550906467,
+        "return_15d": -2.582143589042951,
+        "return_1m": 3.333091804941679,
+        "return_ytd": 35.80611370345681,
+        "return_1y": 19.050004173971114,
+        "return_3y": 8.46516580468515,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 5.840878729404775,
+        "return_2y": 12.699541646910074
+      }
+    },
+    {
+      "id": "A_482",
+      "type": "ASSET",
+      "name": "Diamondback",
+      "exposure": {
+        "ticker": "FANG",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.4836349055185272,
+        "close": 202.47,
+        "marketCap": 56957443110,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 0.37677854345345985,
+        "return_15d": -1.0797342192691017,
+        "return_1m": 6.177565682521369,
+        "return_ytd": 34.68369586908799,
+        "return_1y": 43.830361582723576,
+        "return_3y": 35.94064724049952,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 7.673899170389276,
+        "return_2y": 3.0643929753117805
+      }
+    },
+    {
+      "id": "A_483",
+      "type": "ASSET",
+      "name": "Devon",
+      "exposure": {
+        "ticker": "DVN",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 3.2890290605992467,
+        "close": 45.85,
+        "marketCap": 32106966254,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 0.9911894273127775,
+        "return_15d": 1.7984014209591503,
+        "return_1m": 5.645161290322598,
+        "return_ytd": 25.17062517062516,
+        "return_1y": 35.45051698670605,
+        "return_3y": -8.828793000596535,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 6.67752442996743,
+        "return_2y": 3.0568667116205983
+      }
+    },
+    {
+      "id": "A_484",
+      "type": "ASSET",
+      "name": "Expand Energy",
+      "exposure": {
+        "ticker": "EXE",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.10561892691169916,
+        "close": 94.78,
+        "marketCap": 21941949120,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": -3.5219869706840323,
+        "return_15d": 3.5620629370629375,
+        "return_1m": 7.937592529324666,
+        "return_ytd": -14.11743385284523,
+        "return_1y": -0.22107590272659738,
+        "return_3y": 12.391794142060952,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 2.089616544592854,
+        "return_2y": 31.32880698351115
+      }
+    },
+    {
+      "id": "A_485",
+      "type": "ASSET",
+      "name": "CNX",
+      "exposure": {
+        "ticker": "CNX",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.9609949123798645,
+        "close": 35.72,
+        "marketCap": 5284546428,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": -1.1347910323830757,
+        "return_15d": 4.170312044327784,
+        "return_1m": 10.349088662341677,
+        "return_ytd": -2.855588795213504,
+        "return_1y": 24.3732590529248,
+        "return_3y": 65.06469500924213,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 1.6505406943653878,
+        "return_2y": 35.55977229601517
+      }
+    },
+    {
+      "id": "A_486",
+      "type": "ASSET",
+      "name": "Range Resources",
+      "exposure": {
+        "ticker": "RRC",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.0273114507642234,
+        "close": 40.32,
+        "marketCap": 9421977600,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": -0.8605851979345935,
+        "return_15d": 3.4642032332563577,
+        "return_1m": 10.586944596818437,
+        "return_ytd": 14.35053885422577,
+        "return_1y": 17.757009345794383,
+        "return_3y": 24.86838030349954,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 5.3291536050156685,
+        "return_2y": 34.57943925233644
+      }
+    },
+    {
+      "id": "A_487",
+      "type": "ASSET",
+      "name": "EQT",
+      "exposure": {
+        "ticker": "EQT",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.6286982248520756,
+        "close": 54.42,
+        "marketCap": 34040580720,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 0.09196247930844947,
+        "return_15d": 2.6211578351876375,
+        "return_1m": 9.255169644649675,
+        "return_ytd": 1.5298507462686572,
+        "return_1y": 4.553314121037477,
+        "return_3y": 26.85314685314686,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 5.281485780615225,
+        "return_2y": 72.87166454891995
+      }
+    },
+    {
+      "id": "A_488",
+      "type": "ASSET",
+      "name": "Comstock",
+      "exposure": {
+        "ticker": "CRK",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 3.53460972017674,
+        "close": 14.06,
+        "marketCap": 4129365760,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": -2.2932592077831826,
+        "return_15d": 3.9940828402367012,
+        "return_1m": 8.320493066255775,
+        "return_ytd": -39.34426229508197,
+        "return_1y": -11.738857501569367,
+        "return_3y": 16.198347107438018,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 4.847129008202833,
+        "return_2y": 33.77735490009515
+      }
+    },
+    {
+      "id": "BF_426",
+      "type": "BUSINESS_FIELD",
+      "name": "셰일오일"
+    },
+    {
+      "id": "BF_427",
+      "type": "BUSINESS_FIELD",
+      "name": "셰일가스"
+    },
+    {
+      "id": "C_067",
+      "type": "CHARACTER",
+      "name": "자본규율강화"
+    },
+    {
+      "id": "C_068",
+      "type": "CHARACTER",
+      "name": "공급확대"
+    },
+    {
+      "id": "M_059",
+      "type": "MACRO",
+      "name": "유가상승"
+    },
+    {
+      "id": "M_060",
+      "type": "MACRO",
+      "name": "천연가스가격상승"
+    },
+    {
+      "id": "C_5447",
+      "type": "CHARACTER",
+      "name": "셰일오일대형"
+    },
+    {
+      "id": "C_5448",
+      "type": "CHARACTER",
+      "name": "퍼미안셰일"
+    },
+    {
+      "id": "C_5449",
+      "type": "CHARACTER",
+      "name": "셰일E&P"
+    },
+    {
+      "id": "C_5450",
+      "type": "CHARACTER",
+      "name": "셰일가스"
+    },
+    {
+      "id": "C_5451",
+      "type": "CHARACTER",
+      "name": "애팔래치아가스"
+    },
+    {
+      "id": "C_5452",
+      "type": "CHARACTER",
+      "name": "셰일가스"
+    },
+    {
+      "id": "C_5453",
+      "type": "CHARACTER",
+      "name": "미국최대가스E&P"
+    },
+    {
+      "id": "C_5454",
+      "type": "CHARACTER",
+      "name": "하인즈빌가스"
+    },
+    {
+      "id": "A_617",
+      "type": "ASSET",
+      "name": "XOP",
+      "exposure": {
+        "ticker": "XOP",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.7367304794329455,
+        "close": 180.49,
+        "marketCap": 2964170845,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 1.1885406738801452,
+        "return_15d": 3.700086182131579,
+        "return_1m": 8.82725354235756,
+        "return_ytd": 42.95105338191034,
+        "return_1y": 44.21893727526969,
+        "return_3y": 22.142518779183874,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 8.46754807692307,
+        "return_2y": 31.351430026926728
+      }
+    }
   ],
-  "dataAsOf": "2026-07-26T00:00:00+09:00",
-  "notes": "g59 누적 import 기반 미국 셰일 개발 주식 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 10건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-26",
-    "kind": "수정",
-    "title": "자산 CHR 백필",
-    "detail": "CHR 미정의 자산에 CHARACTER·HAS_TRAIT 추가."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_481",
+      "to": "T_059",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001952"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_482",
+      "to": "T_059",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001953"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_483",
+      "to": "T_059",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001954"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_484",
+      "to": "T_059",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001955"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_485",
+      "to": "T_059",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001956"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_486",
+      "to": "T_059",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001957"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_487",
+      "to": "T_059",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001958"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_488",
+      "to": "T_059",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001959"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_481",
+      "to": "BF_426",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001960"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_482",
+      "to": "BF_426",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001961"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_483",
+      "to": "BF_426",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001962"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_484",
+      "to": "BF_427",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001963"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_485",
+      "to": "BF_427",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001964"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_486",
+      "to": "BF_427",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001965"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_487",
+      "to": "BF_427",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001966"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_488",
+      "to": "BF_427",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001967"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_059",
+      "to": "T_059",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_001968"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_060",
+      "to": "T_059",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_001969"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "T_059",
+      "to": "C_067",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_001970"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "T_059",
+      "to": "C_068",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_001971"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_481",
+      "to": "C_5447",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014390"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_482",
+      "to": "C_5448",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014391"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_483",
+      "to": "C_5449",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014392"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_484",
+      "to": "C_5450",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014393"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_485",
+      "to": "C_5451",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014394"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_486",
+      "to": "C_5452",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014395"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_487",
+      "to": "C_5453",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014396"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_488",
+      "to": "C_5454",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014397"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_481",
+      "to": "A_482",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018908"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "EOG와 다이아몬드백은 퍼미안 분지 중심의 대형 셰일 오일 순수 생산업체로 직접 경쟁한다."
+    },
+    {
+      "from": "A_481",
+      "to": "A_483",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018909"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "EOG와 데번에너지는 퍼미안 등 미국 셰일 오일 생산에서 경쟁하는 대형 독립 E&P다."
+    },
+    {
+      "from": "A_482",
+      "to": "A_483",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018910"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "다이아몬드백과 데번에너지는 퍼미안 분지의 주력 셰일 오일 생산업체로 직접 경쟁한다."
+    },
+    {
+      "from": "A_487",
+      "to": "A_484",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018911"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "EQT와 익스팬드에너지는 각각 미국 최대급 천연가스 생산업체로 애팔래치아에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_487",
+      "to": "A_486",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018912"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "EQT와 레인지리소스는 모두 애팔래치아 마셀러스 셰일 가스 생산업체로 경쟁한다."
+    },
+    {
+      "from": "A_487",
+      "to": "A_485",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018913"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "EQT와 CNX는 모두 애팔래치아 분지 집중 천연가스 생산업체로 경쟁한다."
+    },
+    {
+      "from": "A_486",
+      "to": "A_485",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018914"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "레인지리소스와 CNX는 애팔래치아 마셀러스/유티카 순수 가스 생산업체로 직접 경쟁한다."
+    },
+    {
+      "from": "A_486",
+      "to": "A_484",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018915"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "레인지리소스와 익스팬드에너지는 애팔래치아 천연가스 생산에서 경쟁한다."
+    },
+    {
+      "from": "A_485",
+      "to": "A_484",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018916"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "CNX와 익스팬드에너지는 애팔래치아 천연가스 생산에서 경쟁한다."
+    },
+    {
+      "from": "A_484",
+      "to": "A_488",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018917"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "익스팬드에너지와 컴스톡리소스는 헤인즈빌 셰일 천연가스 생산업체로 직접 경쟁한다."
+    },
+    {
+      "from": "A_617",
+      "to": "T_059",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020583"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ],
-  "description": "Pioneer·Diamondback·EOG·Devon 등 미국 셰일 빅캡. 유가·rig count·OPEC+ 공급 정책과 자사주매입 사이클이 dual driver. XOP 등 ETF로도 익스포저를 확장한다. 유가상승·천연가스가격상승 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 밸류체인은 셰일오일·셰일가스 등 사업영역으로 이어진다. 경쟁·공급·협력 등 10건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다."
- },
- "nodes": [
-  {
-   "id": "T_059",
-   "type": "THEME",
-   "name": "미국셰일개발주식"
-  },
-  {
-   "id": "A_481",
-   "type": "ASSET",
-   "name": "EOG",
-   "exposure": {
-    "ticker": "EOG",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.8485962803196578,
-    "close": 142.61,
-    "marketCap": 75958221690,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": -0.5509065550906467,
-    "return_15d": -2.582143589042951,
-    "return_1m": 3.333091804941679,
-    "return_ytd": 35.80611370345681,
-    "return_1y": 19.050004173971114,
-    "return_3y": 8.46516580468515,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 5.840878729404775,
-    "return_2y": 12.699541646910074
-   }
-  },
-  {
-   "id": "A_482",
-   "type": "ASSET",
-   "name": "Diamondback",
-   "exposure": {
-    "ticker": "FANG",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.4836349055185272,
-    "close": 202.47,
-    "marketCap": 56957443110,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 0.37677854345345985,
-    "return_15d": -1.0797342192691017,
-    "return_1m": 6.177565682521369,
-    "return_ytd": 34.68369586908799,
-    "return_1y": 43.830361582723576,
-    "return_3y": 35.94064724049952,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 7.673899170389276,
-    "return_2y": 3.0643929753117805
-   }
-  },
-  {
-   "id": "A_483",
-   "type": "ASSET",
-   "name": "Devon",
-   "exposure": {
-    "ticker": "DVN",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 3.2890290605992467,
-    "close": 45.85,
-    "marketCap": 32106966254,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 0.9911894273127775,
-    "return_15d": 1.7984014209591503,
-    "return_1m": 5.645161290322598,
-    "return_ytd": 25.17062517062516,
-    "return_1y": 35.45051698670605,
-    "return_3y": -8.828793000596535,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 6.67752442996743,
-    "return_2y": 3.0568667116205983
-   }
-  },
-  {
-   "id": "A_484",
-   "type": "ASSET",
-   "name": "Expand Energy",
-   "exposure": {
-    "ticker": "EXE",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.10561892691169916,
-    "close": 94.78,
-    "marketCap": 21941949120,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": -3.5219869706840323,
-    "return_15d": 3.5620629370629375,
-    "return_1m": 7.937592529324666,
-    "return_ytd": -14.11743385284523,
-    "return_1y": -0.22107590272659738,
-    "return_3y": 12.391794142060952,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 2.089616544592854,
-    "return_2y": 31.32880698351115
-   }
-  },
-  {
-   "id": "A_485",
-   "type": "ASSET",
-   "name": "CNX",
-   "exposure": {
-    "ticker": "CNX",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.9609949123798645,
-    "close": 35.72,
-    "marketCap": 5284546428,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": -1.1347910323830757,
-    "return_15d": 4.170312044327784,
-    "return_1m": 10.349088662341677,
-    "return_ytd": -2.855588795213504,
-    "return_1y": 24.3732590529248,
-    "return_3y": 65.06469500924213,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.6505406943653878,
-    "return_2y": 35.55977229601517
-   }
-  },
-  {
-   "id": "A_486",
-   "type": "ASSET",
-   "name": "Range Resources",
-   "exposure": {
-    "ticker": "RRC",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.0273114507642234,
-    "close": 40.32,
-    "marketCap": 9421977600,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": -0.8605851979345935,
-    "return_15d": 3.4642032332563577,
-    "return_1m": 10.586944596818437,
-    "return_ytd": 14.35053885422577,
-    "return_1y": 17.757009345794383,
-    "return_3y": 24.86838030349954,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 5.3291536050156685,
-    "return_2y": 34.57943925233644
-   }
-  },
-  {
-   "id": "A_487",
-   "type": "ASSET",
-   "name": "EQT",
-   "exposure": {
-    "ticker": "EQT",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.6286982248520756,
-    "close": 54.42,
-    "marketCap": 34040580720,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 0.09196247930844947,
-    "return_15d": 2.6211578351876375,
-    "return_1m": 9.255169644649675,
-    "return_ytd": 1.5298507462686572,
-    "return_1y": 4.553314121037477,
-    "return_3y": 26.85314685314686,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 5.281485780615225,
-    "return_2y": 72.87166454891995
-   }
-  },
-  {
-   "id": "A_488",
-   "type": "ASSET",
-   "name": "Comstock",
-   "exposure": {
-    "ticker": "CRK",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 3.53460972017674,
-    "close": 14.06,
-    "marketCap": 4129365760,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": -2.2932592077831826,
-    "return_15d": 3.9940828402367012,
-    "return_1m": 8.320493066255775,
-    "return_ytd": -39.34426229508197,
-    "return_1y": -11.738857501569367,
-    "return_3y": 16.198347107438018,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 4.847129008202833,
-    "return_2y": 33.77735490009515
-   }
-  },
-  {
-   "id": "BF_426",
-   "type": "BUSINESS_FIELD",
-   "name": "셰일오일"
-  },
-  {
-   "id": "BF_427",
-   "type": "BUSINESS_FIELD",
-   "name": "셰일가스"
-  },
-  {
-   "id": "C_067",
-   "type": "CHARACTER",
-   "name": "자본규율강화"
-  },
-  {
-   "id": "C_068",
-   "type": "CHARACTER",
-   "name": "공급확대"
-  },
-  {
-   "id": "M_059",
-   "type": "MACRO",
-   "name": "유가상승"
-  },
-  {
-   "id": "M_060",
-   "type": "MACRO",
-   "name": "천연가스가격상승"
-  },
-  {
-   "id": "C_5447",
-   "type": "CHARACTER",
-   "name": "셰일오일대형"
-  },
-  {
-   "id": "C_5448",
-   "type": "CHARACTER",
-   "name": "퍼미안셰일"
-  },
-  {
-   "id": "C_5449",
-   "type": "CHARACTER",
-   "name": "셰일E&P"
-  },
-  {
-   "id": "C_5450",
-   "type": "CHARACTER",
-   "name": "셰일가스"
-  },
-  {
-   "id": "C_5451",
-   "type": "CHARACTER",
-   "name": "애팔래치아가스"
-  },
-  {
-   "id": "C_5452",
-   "type": "CHARACTER",
-   "name": "셰일가스"
-  },
-  {
-   "id": "C_5453",
-   "type": "CHARACTER",
-   "name": "미국최대가스E&P"
-  },
-  {
-   "id": "C_5454",
-   "type": "CHARACTER",
-   "name": "하인즈빌가스"
-  },
-  {
-   "id": "A_617",
-   "type": "ASSET",
-   "name": "XOP",
-   "exposure": {
-    "ticker": "XOP",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.7367304794329455,
-    "close": 180.49,
-    "marketCap": 2964170845,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 1.1885406738801452,
-    "return_15d": 3.700086182131579,
-    "return_1m": 8.82725354235756,
-    "return_ytd": 42.95105338191034,
-    "return_1y": 44.21893727526969,
-    "return_3y": 22.142518779183874,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 8.46754807692307,
-    "return_2y": 31.351430026926728
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_481",
-   "to": "T_059",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001952"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_482",
-   "to": "T_059",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001953"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_483",
-   "to": "T_059",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001954"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_484",
-   "to": "T_059",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001955"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_485",
-   "to": "T_059",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001956"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_486",
-   "to": "T_059",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001957"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_487",
-   "to": "T_059",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001958"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_488",
-   "to": "T_059",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001959"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_481",
-   "to": "BF_426",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001960"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_482",
-   "to": "BF_426",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001961"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_483",
-   "to": "BF_426",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001962"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_484",
-   "to": "BF_427",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001963"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_485",
-   "to": "BF_427",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001964"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_486",
-   "to": "BF_427",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001965"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_487",
-   "to": "BF_427",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001966"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_488",
-   "to": "BF_427",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001967"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_059",
-   "to": "T_059",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_001968"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_060",
-   "to": "T_059",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_001969"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "T_059",
-   "to": "C_067",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_001970"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "T_059",
-   "to": "C_068",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_001971"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_481",
-   "to": "C_5447",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014390"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_482",
-   "to": "C_5448",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014391"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_483",
-   "to": "C_5449",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014392"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_484",
-   "to": "C_5450",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014393"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_485",
-   "to": "C_5451",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014394"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_486",
-   "to": "C_5452",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014395"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_487",
-   "to": "C_5453",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014396"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_488",
-   "to": "C_5454",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014397"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_481",
-   "to": "A_482",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018908"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "EOG와 다이아몬드백은 퍼미안 분지 중심의 대형 셰일 오일 순수 생산업체로 직접 경쟁한다."
-  },
-  {
-   "from": "A_481",
-   "to": "A_483",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018909"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "EOG와 데번에너지는 퍼미안 등 미국 셰일 오일 생산에서 경쟁하는 대형 독립 E&P다."
-  },
-  {
-   "from": "A_482",
-   "to": "A_483",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018910"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "다이아몬드백과 데번에너지는 퍼미안 분지의 주력 셰일 오일 생산업체로 직접 경쟁한다."
-  },
-  {
-   "from": "A_487",
-   "to": "A_484",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018911"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "EQT와 익스팬드에너지는 각각 미국 최대급 천연가스 생산업체로 애팔래치아에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_487",
-   "to": "A_486",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018912"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "EQT와 레인지리소스는 모두 애팔래치아 마셀러스 셰일 가스 생산업체로 경쟁한다."
-  },
-  {
-   "from": "A_487",
-   "to": "A_485",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018913"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "EQT와 CNX는 모두 애팔래치아 분지 집중 천연가스 생산업체로 경쟁한다."
-  },
-  {
-   "from": "A_486",
-   "to": "A_485",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018914"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "레인지리소스와 CNX는 애팔래치아 마셀러스/유티카 순수 가스 생산업체로 직접 경쟁한다."
-  },
-  {
-   "from": "A_486",
-   "to": "A_484",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018915"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "레인지리소스와 익스팬드에너지는 애팔래치아 천연가스 생산에서 경쟁한다."
-  },
-  {
-   "from": "A_485",
-   "to": "A_484",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018916"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "CNX와 익스팬드에너지는 애팔래치아 천연가스 생산에서 경쟁한다."
-  },
-  {
-   "from": "A_484",
-   "to": "A_488",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018917"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "익스팬드에너지와 컴스톡리소스는 헤인즈빌 셰일 천연가스 생산업체로 직접 경쟁한다."
-  },
-  {
-   "from": "A_617",
-   "to": "T_059",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020583"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_481",
-   "to": "T_059",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001952"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_482",
-   "to": "T_059",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001953"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_483",
-   "to": "T_059",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001954"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_484",
-   "to": "T_059",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001955"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_485",
-   "to": "T_059",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001956"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_486",
-   "to": "T_059",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001957"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_487",
-   "to": "T_059",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001958"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_488",
-   "to": "T_059",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_001959"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_481",
-   "to": "BF_426",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001960"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_482",
-   "to": "BF_426",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001961"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_483",
-   "to": "BF_426",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001962"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_484",
-   "to": "BF_427",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001963"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_485",
-   "to": "BF_427",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001964"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_486",
-   "to": "BF_427",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001965"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_487",
-   "to": "BF_427",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001966"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_488",
-   "to": "BF_427",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_001967"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_059",
-   "to": "T_059",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_001968"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_060",
-   "to": "T_059",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_001969"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "T_059",
-   "to": "C_067",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_001970"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "T_059",
-   "to": "C_068",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_001971"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_481",
-   "to": "C_5447",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014390"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_482",
-   "to": "C_5448",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014391"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_483",
-   "to": "C_5449",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014392"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_484",
-   "to": "C_5450",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014393"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_485",
-   "to": "C_5451",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014394"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_486",
-   "to": "C_5452",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014395"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_487",
-   "to": "C_5453",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014396"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_488",
-   "to": "C_5454",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014397"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_481",
-   "to": "A_482",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018908"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "EOG와 다이아몬드백은 퍼미안 분지 중심의 대형 셰일 오일 순수 생산업체로 직접 경쟁한다."
-  },
-  {
-   "from": "A_481",
-   "to": "A_483",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018909"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "EOG와 데번에너지는 퍼미안 등 미국 셰일 오일 생산에서 경쟁하는 대형 독립 E&P다."
-  },
-  {
-   "from": "A_482",
-   "to": "A_483",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018910"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "다이아몬드백과 데번에너지는 퍼미안 분지의 주력 셰일 오일 생산업체로 직접 경쟁한다."
-  },
-  {
-   "from": "A_487",
-   "to": "A_484",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018911"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "EQT와 익스팬드에너지는 각각 미국 최대급 천연가스 생산업체로 애팔래치아에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_487",
-   "to": "A_486",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018912"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "EQT와 레인지리소스는 모두 애팔래치아 마셀러스 셰일 가스 생산업체로 경쟁한다."
-  },
-  {
-   "from": "A_487",
-   "to": "A_485",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018913"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "EQT와 CNX는 모두 애팔래치아 분지 집중 천연가스 생산업체로 경쟁한다."
-  },
-  {
-   "from": "A_486",
-   "to": "A_485",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018914"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "레인지리소스와 CNX는 애팔래치아 마셀러스/유티카 순수 가스 생산업체로 직접 경쟁한다."
-  },
-  {
-   "from": "A_486",
-   "to": "A_484",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018915"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "레인지리소스와 익스팬드에너지는 애팔래치아 천연가스 생산에서 경쟁한다."
-  },
-  {
-   "from": "A_485",
-   "to": "A_484",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018916"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "CNX와 익스팬드에너지는 애팔래치아 천연가스 생산에서 경쟁한다."
-  },
-  {
-   "from": "A_484",
-   "to": "A_488",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018917"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "익스팬드에너지와 컴스톡리소스는 헤인즈빌 셰일 천연가스 생산업체로 직접 경쟁한다."
-  },
-  {
-   "from": "A_617",
-   "to": "T_059",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020583"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
+  "links": [
+    {
+      "from": "A_481",
+      "to": "T_059",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001952"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_482",
+      "to": "T_059",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001953"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_483",
+      "to": "T_059",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001954"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_484",
+      "to": "T_059",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001955"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_485",
+      "to": "T_059",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001956"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_486",
+      "to": "T_059",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001957"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_487",
+      "to": "T_059",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001958"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_488",
+      "to": "T_059",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_001959"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_481",
+      "to": "BF_426",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001960"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_482",
+      "to": "BF_426",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001961"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_483",
+      "to": "BF_426",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001962"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_484",
+      "to": "BF_427",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001963"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_485",
+      "to": "BF_427",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001964"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_486",
+      "to": "BF_427",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001965"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_487",
+      "to": "BF_427",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001966"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_488",
+      "to": "BF_427",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_001967"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_059",
+      "to": "T_059",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_001968"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_060",
+      "to": "T_059",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_001969"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "T_059",
+      "to": "C_067",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_001970"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "T_059",
+      "to": "C_068",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_001971"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_481",
+      "to": "C_5447",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014390"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_482",
+      "to": "C_5448",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014391"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_483",
+      "to": "C_5449",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014392"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_484",
+      "to": "C_5450",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014393"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_485",
+      "to": "C_5451",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014394"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_486",
+      "to": "C_5452",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014395"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_487",
+      "to": "C_5453",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014396"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_488",
+      "to": "C_5454",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014397"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_481",
+      "to": "A_482",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018908"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "EOG와 다이아몬드백은 퍼미안 분지 중심의 대형 셰일 오일 순수 생산업체로 직접 경쟁한다."
+    },
+    {
+      "from": "A_481",
+      "to": "A_483",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018909"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "EOG와 데번에너지는 퍼미안 등 미국 셰일 오일 생산에서 경쟁하는 대형 독립 E&P다."
+    },
+    {
+      "from": "A_482",
+      "to": "A_483",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018910"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "다이아몬드백과 데번에너지는 퍼미안 분지의 주력 셰일 오일 생산업체로 직접 경쟁한다."
+    },
+    {
+      "from": "A_487",
+      "to": "A_484",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018911"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "EQT와 익스팬드에너지는 각각 미국 최대급 천연가스 생산업체로 애팔래치아에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_487",
+      "to": "A_486",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018912"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "EQT와 레인지리소스는 모두 애팔래치아 마셀러스 셰일 가스 생산업체로 경쟁한다."
+    },
+    {
+      "from": "A_487",
+      "to": "A_485",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018913"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "EQT와 CNX는 모두 애팔래치아 분지 집중 천연가스 생산업체로 경쟁한다."
+    },
+    {
+      "from": "A_486",
+      "to": "A_485",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018914"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "레인지리소스와 CNX는 애팔래치아 마셀러스/유티카 순수 가스 생산업체로 직접 경쟁한다."
+    },
+    {
+      "from": "A_486",
+      "to": "A_484",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018915"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "레인지리소스와 익스팬드에너지는 애팔래치아 천연가스 생산에서 경쟁한다."
+    },
+    {
+      "from": "A_485",
+      "to": "A_484",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018916"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "CNX와 익스팬드에너지는 애팔래치아 천연가스 생산에서 경쟁한다."
+    },
+    {
+      "from": "A_484",
+      "to": "A_488",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018917"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "익스팬드에너지와 컴스톡리소스는 헤인즈빌 셰일 천연가스 생산업체로 직접 경쟁한다."
+    },
+    {
+      "from": "A_617",
+      "to": "T_059",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020583"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ]
 }

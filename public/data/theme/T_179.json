@@ -1,972 +1,972 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_179",
- "themeName": "글로벌선박엔진관련주",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_179",
+  "themeName": "글로벌선박엔진관련주",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-04-25T00:00:00+09:00",
+    "notes": "g179 누적 import 기반 글로벌 선박 엔진 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-12",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "자산 9개에 테마 관점 특성(CHARACTER) 노드와 HAS_TRAIT를 부여했다."
+      },
+      {
+        "date": "2026-07-12",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필 + 2026 이벤트",
+        "detail": "전 엣지 근거(호버 박스)를 종목·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ],
+    "description": "MAN ES·Wartsila·HD현대중공업·HSD엔진·STX엔진 등 글로벌 선박엔진 핵심군. LNG·암모니아·메탄올 듀얼퓨얼 엔진 발주와 IMO 환경규제 사이클이 동인. TIGER 조선TOP10 등 ETF로도 익스포저를 확장한다. 가스터빈업체공급병목·친환경선박전환·AI데이터센터전력수요증가 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 구성종목은 함정·상선조선·엔진·조선대형·대형선박엔진1위·엔진AS·친환경개조 등의 특성으로 차별화된다. 경쟁·공급·협력 등 6건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다."
+  },
+  "nodes": [
+    {
+      "id": "T_179",
+      "type": "THEME",
+      "name": "글로벌선박엔진관련주"
+    },
+    {
+      "id": "A_813",
+      "type": "ASSET",
+      "name": "한화오션",
+      "exposure": {
+        "ticker": "042660",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 5.622932745314224,
+        "close": 116000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 7.640449438202257,
+        "return_15d": 8.987485779294646,
+        "return_1m": 16.82926829268292,
+        "return_ytd": -16.47776809067132,
+        "return_1y": -18.39863713798978,
+        "return_3y": 154.5686225608848,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 7.158836689038028,
+        "return_2y": 205.0955414012739
+      }
+    },
+    {
+      "id": "A_814",
+      "type": "ASSET",
+      "name": "HD현대중공업",
+      "exposure": {
+        "ticker": "329180",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 2.822580645161299,
+        "close": 673000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 2.634279849469734,
+        "return_15d": 6.333764711138468,
+        "return_1m": 9.607309475404847,
+        "return_ytd": 3.1233375721810397,
+        "return_1y": 9.074841841746672,
+        "return_3y": 311.5398909909263,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 2.0257762206126406,
+        "return_2y": 206.9722201294107
+      }
+    },
+    {
+      "id": "A_1194",
+      "type": "ASSET",
+      "name": "HD현대마린엔진",
+      "exposure": {
+        "ticker": "071970",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.34482758620688614,
+        "close": 58200,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 2.645502645502651,
+        "return_15d": -13.905325443786987,
+        "return_1m": -0.17152658662092923,
+        "return_ytd": -31.529411764705884,
+        "return_1y": -10.046367851622872,
+        "return_3y": 363.7450199203188,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 5.434782608695654,
+        "return_2y": 170.69767441860466
+      }
+    },
+    {
+      "id": "A_934",
+      "type": "ASSET",
+      "name": "HD현대마린솔루션",
+      "exposure": {
+        "ticker": "443060",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -1.8453865336658382,
+        "close": 196800,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -1.6000000000000014,
+        "return_15d": -5.629601619367264,
+        "return_1m": -2.125750177963659,
+        "return_ytd": 3.5414264622635416,
+        "return_1y": 4.16798591389258,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 0.6649616368286537,
+        "return_2y": 51.75641989745694
+      }
+    },
+    {
+      "id": "A_574",
+      "type": "ASSET",
+      "name": "STX엔진",
+      "exposure": {
+        "ticker": "077970",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -0.5253940455341555,
+        "close": 28400,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 0.35335689045936647,
+        "return_15d": 11.154598825831696,
+        "return_1m": 10.9375,
+        "return_ytd": -15.09715994020927,
+        "return_1y": 15.212981744421917,
+        "return_3y": 103.00214438884919,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 4.990757855822547,
+        "return_2y": 69.04761904761905
+      }
+    },
+    {
+      "id": "A_3002",
+      "type": "ASSET",
+      "name": "한화엔진",
+      "exposure": {
+        "ticker": "082740",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.6580310880829119,
+        "close": 49050,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 9.731543624161066,
+        "return_15d": 0.0,
+        "return_1m": 3.809523809523818,
+        "return_ytd": 16.646848989298448,
+        "return_1y": 39.5448079658606,
+        "return_3y": 377.1400778210117,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 15.411764705882348,
+        "return_2y": 216.45161290322582
+      }
+    },
+    {
+      "id": "A_167",
+      "type": "ASSET",
+      "name": "GE버노바",
+      "exposure": {
+        "ticker": "GEV",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.31787082388366,
+        "close": 1063.25,
+        "marketCap": 283179200200,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 5.0766889354468825,
+        "return_15d": 4.779502340477948,
+        "return_1m": -0.25890939109388666,
+        "return_ytd": 62.68341570145508,
+        "return_1y": 70.04653989476546,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 7.364286291299771,
+        "return_2y": 477.3512163336229
+      }
+    },
+    {
+      "id": "A_256",
+      "type": "ASSET",
+      "name": "지멘스",
+      "exposure": {
+        "ticker": "SIEGY",
+        "exchange": "OTC",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.1463325406987348,
+        "close": 164.25,
+        "marketCap": 252660577145,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 1.658723772977666,
+        "return_15d": 6.71821194204405,
+        "return_1m": 6.207565470417076,
+        "return_ytd": 17.36334405144695,
+        "return_1y": 20.94992636229749,
+        "return_3y": 117.6938369781312,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 1.5204895234563365,
+        "return_2y": 87.2221588966146
+      }
+    },
+    {
+      "id": "A_311",
+      "type": "ASSET",
+      "name": "미쓰비시중공업",
+      "exposure": {
+        "ticker": "7011",
+        "exchange": "TSE",
+        "country": "JP"
+      },
+      "metrics": {
+        "return_1d": -0.046992481203012026,
+        "close": 4254.0,
+        "marketCap": 14294330532360,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 6.243756243756238,
+        "return_15d": 8.244274809160302,
+        "return_1m": 13.56113187399892,
+        "return_ytd": 10.781250000000009,
+        "return_1y": 9.75232198142415,
+        "return_3y": 450.7509062661834,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 6.40320160080039,
+        "return_2y": 132.26863226863225
+      }
+    },
+    {
+      "id": "M_168",
+      "type": "MACRO",
+      "name": "가스터빈업체공급병목"
+    },
+    {
+      "id": "M_169",
+      "type": "MACRO",
+      "name": "친환경선박전환"
+    },
+    {
+      "id": "M_035",
+      "type": "MACRO",
+      "name": "AI데이터센터전력수요증가"
+    },
+    {
+      "id": "C_2925",
+      "type": "CHARACTER",
+      "name": "함정·상선조선"
+    },
+    {
+      "id": "C_2926",
+      "type": "CHARACTER",
+      "name": "엔진·조선대형"
+    },
+    {
+      "id": "C_2927",
+      "type": "CHARACTER",
+      "name": "대형선박엔진1위"
+    },
+    {
+      "id": "C_2928",
+      "type": "CHARACTER",
+      "name": "엔진AS·친환경개조"
+    },
+    {
+      "id": "C_2929",
+      "type": "CHARACTER",
+      "name": "함정엔진·방산"
+    },
+    {
+      "id": "C_2930",
+      "type": "CHARACTER",
+      "name": "선박엔진(구HSD)"
+    },
+    {
+      "id": "C_2931",
+      "type": "CHARACTER",
+      "name": "가스터빈·발전엔진"
+    },
+    {
+      "id": "C_2932",
+      "type": "CHARACTER",
+      "name": "산업구동시스템"
+    },
+    {
+      "id": "C_2933",
+      "type": "CHARACTER",
+      "name": "선박엔진·중공업"
+    },
+    {
+      "id": "A_2886",
+      "type": "ASSET",
+      "name": "TIGER 조선TOP10",
+      "exposure": {
+        "ticker": "494670",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 3.150119487290892,
+        "return_3d": 2.3055375996552385,
+        "return_15d": 3.8268095342226083,
+        "return_1m": 10.187978649338604,
+        "return_ytd": -7.296080772339075,
+        "return_1y": 0.6420526305282559,
+        "return_3y": null,
+        "close": 23740,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": null,
+        "return_2y": null
+      }
+    }
   ],
-  "dataAsOf": "2026-04-25T00:00:00+09:00",
-  "notes": "g179 누적 import 기반 글로벌 선박 엔진 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-12",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "자산 9개에 테마 관점 특성(CHARACTER) 노드와 HAS_TRAIT를 부여했다."
-   },
-   {
-    "date": "2026-07-12",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필 + 2026 이벤트",
-    "detail": "전 엣지 근거(호버 박스)를 종목·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_813",
+      "to": "T_179",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005325"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_814",
+      "to": "T_179",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005326"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1194",
+      "to": "T_179",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005327"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_934",
+      "to": "T_179",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005328"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_574",
+      "to": "T_179",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005329"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_3002",
+      "to": "T_179",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005330"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_167",
+      "to": "T_179",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005331"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_256",
+      "to": "T_179",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005332"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_311",
+      "to": "T_179",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005333"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "M_168",
+      "to": "T_179",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005334"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_169",
+      "to": "T_179",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005335"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_035",
+      "to": "T_179",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005336"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_813",
+      "to": "C_2925",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005427"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_814",
+      "to": "C_2926",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005428"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1194",
+      "to": "C_2927",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005429"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_934",
+      "to": "C_2928",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005430"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_574",
+      "to": "C_2929",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005431"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_3002",
+      "to": "C_2930",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005432"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_167",
+      "to": "C_2931",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005433"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_256",
+      "to": "C_2932",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005434"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_311",
+      "to": "C_2933",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005435"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_813",
+      "to": "A_814",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019239"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "한화오션와 HD현대중공업는 글로벌선박엔진관련주 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1194",
+      "to": "A_3002",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019240"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "HD현대마린엔진와 한화엔진는 글로벌선박엔진관련주 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1194",
+      "to": "A_574",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019241"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "HD현대마린엔진와 STX엔진는 글로벌선박엔진관련주 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_167",
+      "to": "A_311",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019242"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "GE버노바와 미쓰비시중공업는 글로벌선박엔진관련주 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1194",
+      "to": "A_814",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_019243"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "HD현대마린엔진가 HD현대중공업에 공급하는 관계 (글로벌선박엔진관련주)"
+    },
+    {
+      "from": "A_934",
+      "to": "A_814",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_019244"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "HD현대마린솔루션와 HD현대중공업는 글로벌선박엔진관련주 내 제휴·협력 관계"
+    },
+    {
+      "from": "A_2886",
+      "to": "T_179",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020635"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ],
-  "description": "MAN ES·Wartsila·HD현대중공업·HSD엔진·STX엔진 등 글로벌 선박엔진 핵심군. LNG·암모니아·메탄올 듀얼퓨얼 엔진 발주와 IMO 환경규제 사이클이 동인. TIGER 조선TOP10 등 ETF로도 익스포저를 확장한다. 가스터빈업체공급병목·친환경선박전환·AI데이터센터전력수요증가 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 구성종목은 함정·상선조선·엔진·조선대형·대형선박엔진1위·엔진AS·친환경개조 등의 특성으로 차별화된다. 경쟁·공급·협력 등 6건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다."
- },
- "nodes": [
-  {
-   "id": "T_179",
-   "type": "THEME",
-   "name": "글로벌선박엔진관련주"
-  },
-  {
-   "id": "A_813",
-   "type": "ASSET",
-   "name": "한화오션",
-   "exposure": {
-    "ticker": "042660",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 5.622932745314224,
-    "close": 116000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 7.640449438202257,
-    "return_15d": 8.987485779294646,
-    "return_1m": 16.82926829268292,
-    "return_ytd": -16.47776809067132,
-    "return_1y": -18.39863713798978,
-    "return_3y": 154.5686225608848,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 7.158836689038028,
-    "return_2y": 205.0955414012739
-   }
-  },
-  {
-   "id": "A_814",
-   "type": "ASSET",
-   "name": "HD현대중공업",
-   "exposure": {
-    "ticker": "329180",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 2.822580645161299,
-    "close": 673000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 2.634279849469734,
-    "return_15d": 6.333764711138468,
-    "return_1m": 9.607309475404847,
-    "return_ytd": 3.1233375721810397,
-    "return_1y": 9.074841841746672,
-    "return_3y": 311.5398909909263,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 2.0257762206126406,
-    "return_2y": 206.9722201294107
-   }
-  },
-  {
-   "id": "A_1194",
-   "type": "ASSET",
-   "name": "HD현대마린엔진",
-   "exposure": {
-    "ticker": "071970",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.34482758620688614,
-    "close": 58200,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 2.645502645502651,
-    "return_15d": -13.905325443786987,
-    "return_1m": -0.17152658662092923,
-    "return_ytd": -31.529411764705884,
-    "return_1y": -10.046367851622872,
-    "return_3y": 363.7450199203188,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 5.434782608695654,
-    "return_2y": 170.69767441860466
-   }
-  },
-  {
-   "id": "A_934",
-   "type": "ASSET",
-   "name": "HD현대마린솔루션",
-   "exposure": {
-    "ticker": "443060",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -1.8453865336658382,
-    "close": 196800,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -1.6000000000000014,
-    "return_15d": -5.629601619367264,
-    "return_1m": -2.125750177963659,
-    "return_ytd": 3.5414264622635416,
-    "return_1y": 4.16798591389258,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 0.6649616368286537,
-    "return_2y": 51.75641989745694
-   }
-  },
-  {
-   "id": "A_574",
-   "type": "ASSET",
-   "name": "STX엔진",
-   "exposure": {
-    "ticker": "077970",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -0.5253940455341555,
-    "close": 28400,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 0.35335689045936647,
-    "return_15d": 11.154598825831696,
-    "return_1m": 10.9375,
-    "return_ytd": -15.09715994020927,
-    "return_1y": 15.212981744421917,
-    "return_3y": 103.00214438884919,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 4.990757855822547,
-    "return_2y": 69.04761904761905
-   }
-  },
-  {
-   "id": "A_3002",
-   "type": "ASSET",
-   "name": "한화엔진",
-   "exposure": {
-    "ticker": "082740",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.6580310880829119,
-    "close": 49050,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 9.731543624161066,
-    "return_15d": 0.0,
-    "return_1m": 3.809523809523818,
-    "return_ytd": 16.646848989298448,
-    "return_1y": 39.5448079658606,
-    "return_3y": 377.1400778210117,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 15.411764705882348,
-    "return_2y": 216.45161290322582
-   }
-  },
-  {
-   "id": "A_167",
-   "type": "ASSET",
-   "name": "GE버노바",
-   "exposure": {
-    "ticker": "GEV",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.31787082388366,
-    "close": 1063.25,
-    "marketCap": 283179200200,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 5.0766889354468825,
-    "return_15d": 4.779502340477948,
-    "return_1m": -0.25890939109388666,
-    "return_ytd": 62.68341570145508,
-    "return_1y": 70.04653989476546,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 7.364286291299771,
-    "return_2y": 477.3512163336229
-   }
-  },
-  {
-   "id": "A_256",
-   "type": "ASSET",
-   "name": "지멘스",
-   "exposure": {
-    "ticker": "SIEGY",
-    "exchange": "OTC",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.1463325406987348,
-    "close": 164.25,
-    "marketCap": 252660577145,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 1.658723772977666,
-    "return_15d": 6.71821194204405,
-    "return_1m": 6.207565470417076,
-    "return_ytd": 17.36334405144695,
-    "return_1y": 20.94992636229749,
-    "return_3y": 117.6938369781312,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.5204895234563365,
-    "return_2y": 87.2221588966146
-   }
-  },
-  {
-   "id": "A_311",
-   "type": "ASSET",
-   "name": "미쓰비시중공업",
-   "exposure": {
-    "ticker": "7011",
-    "exchange": "TSE",
-    "country": "JP"
-   },
-   "metrics": {
-    "return_1d": -0.046992481203012026,
-    "close": 4254.0,
-    "marketCap": 14294330532360,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 6.243756243756238,
-    "return_15d": 8.244274809160302,
-    "return_1m": 13.56113187399892,
-    "return_ytd": 10.781250000000009,
-    "return_1y": 9.75232198142415,
-    "return_3y": 450.7509062661834,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 6.40320160080039,
-    "return_2y": 132.26863226863225
-   }
-  },
-  {
-   "id": "M_168",
-   "type": "MACRO",
-   "name": "가스터빈업체공급병목"
-  },
-  {
-   "id": "M_169",
-   "type": "MACRO",
-   "name": "친환경선박전환"
-  },
-  {
-   "id": "M_035",
-   "type": "MACRO",
-   "name": "AI데이터센터전력수요증가"
-  },
-  {
-   "id": "C_2925",
-   "type": "CHARACTER",
-   "name": "함정·상선조선"
-  },
-  {
-   "id": "C_2926",
-   "type": "CHARACTER",
-   "name": "엔진·조선대형"
-  },
-  {
-   "id": "C_2927",
-   "type": "CHARACTER",
-   "name": "대형선박엔진1위"
-  },
-  {
-   "id": "C_2928",
-   "type": "CHARACTER",
-   "name": "엔진AS·친환경개조"
-  },
-  {
-   "id": "C_2929",
-   "type": "CHARACTER",
-   "name": "함정엔진·방산"
-  },
-  {
-   "id": "C_2930",
-   "type": "CHARACTER",
-   "name": "선박엔진(구HSD)"
-  },
-  {
-   "id": "C_2931",
-   "type": "CHARACTER",
-   "name": "가스터빈·발전엔진"
-  },
-  {
-   "id": "C_2932",
-   "type": "CHARACTER",
-   "name": "산업구동시스템"
-  },
-  {
-   "id": "C_2933",
-   "type": "CHARACTER",
-   "name": "선박엔진·중공업"
-  },
-  {
-   "id": "A_2886",
-   "type": "ASSET",
-   "name": "TIGER 조선TOP10",
-   "exposure": {
-    "ticker": "494670",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 3.150119487290892,
-    "return_3d": 2.3055375996552385,
-    "return_15d": 3.8268095342226083,
-    "return_1m": 10.187978649338604,
-    "return_ytd": -7.296080772339075,
-    "return_1y": 0.6420526305282559,
-    "return_3y": null,
-    "close": 23740,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": null,
-    "return_2y": null
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_813",
-   "to": "T_179",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005325"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_814",
-   "to": "T_179",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005326"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1194",
-   "to": "T_179",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005327"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_934",
-   "to": "T_179",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005328"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_574",
-   "to": "T_179",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005329"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_3002",
-   "to": "T_179",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005330"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_167",
-   "to": "T_179",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005331"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_256",
-   "to": "T_179",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005332"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_311",
-   "to": "T_179",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005333"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "M_168",
-   "to": "T_179",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005334"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_169",
-   "to": "T_179",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005335"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_035",
-   "to": "T_179",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005336"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_813",
-   "to": "C_2925",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005427"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_814",
-   "to": "C_2926",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005428"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1194",
-   "to": "C_2927",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005429"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_934",
-   "to": "C_2928",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005430"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_574",
-   "to": "C_2929",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005431"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_3002",
-   "to": "C_2930",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005432"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_167",
-   "to": "C_2931",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005433"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_256",
-   "to": "C_2932",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005434"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_311",
-   "to": "C_2933",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005435"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_813",
-   "to": "A_814",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019239"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "한화오션와 HD현대중공업는 글로벌선박엔진관련주 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1194",
-   "to": "A_3002",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019240"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "HD현대마린엔진와 한화엔진는 글로벌선박엔진관련주 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1194",
-   "to": "A_574",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019241"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "HD현대마린엔진와 STX엔진는 글로벌선박엔진관련주 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_167",
-   "to": "A_311",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019242"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "GE버노바와 미쓰비시중공업는 글로벌선박엔진관련주 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1194",
-   "to": "A_814",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_019243"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "HD현대마린엔진가 HD현대중공업에 공급하는 관계 (글로벌선박엔진관련주)"
-  },
-  {
-   "from": "A_934",
-   "to": "A_814",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_019244"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "HD현대마린솔루션와 HD현대중공업는 글로벌선박엔진관련주 내 제휴·협력 관계"
-  },
-  {
-   "from": "A_2886",
-   "to": "T_179",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020635"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_813",
-   "to": "T_179",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005325"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_814",
-   "to": "T_179",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005326"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1194",
-   "to": "T_179",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005327"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_934",
-   "to": "T_179",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005328"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_574",
-   "to": "T_179",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005329"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_3002",
-   "to": "T_179",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005330"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_167",
-   "to": "T_179",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005331"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_256",
-   "to": "T_179",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005332"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_311",
-   "to": "T_179",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005333"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "M_168",
-   "to": "T_179",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005334"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_169",
-   "to": "T_179",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005335"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_035",
-   "to": "T_179",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005336"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_813",
-   "to": "C_2925",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005427"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_814",
-   "to": "C_2926",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005428"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1194",
-   "to": "C_2927",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005429"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_934",
-   "to": "C_2928",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005430"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_574",
-   "to": "C_2929",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005431"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_3002",
-   "to": "C_2930",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005432"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_167",
-   "to": "C_2931",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005433"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_256",
-   "to": "C_2932",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005434"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_311",
-   "to": "C_2933",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005435"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_813",
-   "to": "A_814",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019239"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "한화오션와 HD현대중공업는 글로벌선박엔진관련주 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1194",
-   "to": "A_3002",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019240"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "HD현대마린엔진와 한화엔진는 글로벌선박엔진관련주 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1194",
-   "to": "A_574",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019241"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "HD현대마린엔진와 STX엔진는 글로벌선박엔진관련주 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_167",
-   "to": "A_311",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019242"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "GE버노바와 미쓰비시중공업는 글로벌선박엔진관련주 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1194",
-   "to": "A_814",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_019243"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "HD현대마린엔진가 HD현대중공업에 공급하는 관계 (글로벌선박엔진관련주)"
-  },
-  {
-   "from": "A_934",
-   "to": "A_814",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_019244"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "HD현대마린솔루션와 HD현대중공업는 글로벌선박엔진관련주 내 제휴·협력 관계"
-  },
-  {
-   "from": "A_2886",
-   "to": "T_179",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020635"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
+  "links": [
+    {
+      "from": "A_813",
+      "to": "T_179",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005325"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_814",
+      "to": "T_179",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005326"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1194",
+      "to": "T_179",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005327"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_934",
+      "to": "T_179",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005328"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_574",
+      "to": "T_179",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005329"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_3002",
+      "to": "T_179",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005330"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_167",
+      "to": "T_179",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005331"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_256",
+      "to": "T_179",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005332"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_311",
+      "to": "T_179",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005333"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "M_168",
+      "to": "T_179",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005334"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_169",
+      "to": "T_179",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005335"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_035",
+      "to": "T_179",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005336"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_813",
+      "to": "C_2925",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005427"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_814",
+      "to": "C_2926",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005428"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1194",
+      "to": "C_2927",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005429"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_934",
+      "to": "C_2928",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005430"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_574",
+      "to": "C_2929",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005431"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_3002",
+      "to": "C_2930",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005432"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_167",
+      "to": "C_2931",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005433"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_256",
+      "to": "C_2932",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005434"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_311",
+      "to": "C_2933",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005435"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_813",
+      "to": "A_814",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019239"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "한화오션와 HD현대중공업는 글로벌선박엔진관련주 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1194",
+      "to": "A_3002",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019240"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "HD현대마린엔진와 한화엔진는 글로벌선박엔진관련주 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1194",
+      "to": "A_574",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019241"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "HD현대마린엔진와 STX엔진는 글로벌선박엔진관련주 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_167",
+      "to": "A_311",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019242"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "GE버노바와 미쓰비시중공업는 글로벌선박엔진관련주 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1194",
+      "to": "A_814",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_019243"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "HD현대마린엔진가 HD현대중공업에 공급하는 관계 (글로벌선박엔진관련주)"
+    },
+    {
+      "from": "A_934",
+      "to": "A_814",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_019244"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "HD현대마린솔루션와 HD현대중공업는 글로벌선박엔진관련주 내 제휴·협력 관계"
+    },
+    {
+      "from": "A_2886",
+      "to": "T_179",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020635"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ]
 }

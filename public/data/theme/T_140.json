@@ -1,991 +1,991 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_140",
- "themeName": "쿠팡관련주식",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_140",
+  "themeName": "쿠팡관련주식",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-04-13T00:00:00+09:00",
+    "notes": "g140 누적 import 기반 쿠팡관련주식 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-07-30",
+        "kind": "수정",
+        "title": "경쟁 유통 4종 2궤도 재배치",
+        "detail": "이마트·롯데쇼핑·NAVER·CJ대한통운의 THEMED_AS(1궤도)를 제거하고 쿠팡과의 COMPETES 관계(2궤도)만 유지 — 쿠팡 중심 경쟁 구도로 재배치."
+      },
+      {
+        "date": "2026-07-11",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
+      },
+      {
+        "date": "2026-07-11",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필 + 2026 이벤트",
+        "detail": "전 엣지 근거(호버 박스)를 종목·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
+      },
+      {
+        "date": "2026-07-10",
+        "kind": "변경",
+        "title": "매크로는 테마에만 연결",
+        "detail": "개별 자산·BF에 직접 걸려 있던 매크로 IMPACTS 엣지를 테마 레벨로 정리(repoint 1, 중복제거 0)했다."
+      }
+    ],
+    "description": "쿠팡·CJ제일제당·삼성SDS·CJ대한통운·이마트 등 쿠팡 거래·물류 노출군. 쿠팡 GMV·Eats·Play 성장과 한국 e-커머스 점유 다툼이 동인. 개인정보유출 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 밸류체인은 이커머스·택배/운송·물류자동화/로봇 등 사업영역으로 이어진다. 경쟁·공급·협력 등 4건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다. 종목별 브리핑 카드와 연도별 이벤트 DB로 테마의 맥락과 변동요인을 확인할 수 있다."
+  },
+  "nodes": [
+    {
+      "id": "T_140",
+      "type": "THEME",
+      "name": "쿠팡관련주식"
+    },
+    {
+      "id": "A_019",
+      "type": "ASSET",
+      "name": "쿠팡",
+      "exposure": {
+        "ticker": "CPNG",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.0435850214855602,
+        "close": 16.12,
+        "marketCap": 28975888394,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": -2.3030303030302957,
+        "return_15d": 4.0000000000000036,
+        "return_1m": -9.131905298759847,
+        "return_ytd": -31.66596015260703,
+        "return_1y": -43.09918813978114,
+        "return_3y": -15.997915581031785,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -0.6777572396795994,
+        "return_2y": -27.223476297968386
+      }
+    },
+    {
+      "id": "A_012",
+      "type": "ASSET",
+      "name": "CJ대한통운",
+      "exposure": {
+        "ticker": "000120",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 4.324324324324325,
+        "close": 77200,
+        "marketCap": 3011229408000,
+        "pe_ttm": 10.92,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -0.2583979328165342,
+        "return_15d": -0.1293661060802087,
+        "return_1m": 7.670850767085069,
+        "return_ytd": -18.131529905263644,
+        "return_1y": -9.668935466693007,
+        "return_3y": -3.0249635412489706,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -2.278481012658229,
+        "return_2y": -13.054952010449883
+      }
+    },
+    {
+      "id": "A_513",
+      "type": "ASSET",
+      "name": "NAVER",
+      "exposure": {
+        "ticker": "035420",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.6622516556291425,
+        "close": 228000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 6.542056074766345,
+        "return_15d": 9.879518072289152,
+        "return_1m": 20.253164556962023,
+        "return_ytd": -6.722665823335927,
+        "return_1y": 2.397784609199083,
+        "return_3y": 5.147967131669673,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 8.571428571428562,
+        "return_2y": 33.520840866609916
+      }
+    },
+    {
+      "id": "A_868",
+      "type": "ASSET",
+      "name": "동방",
+      "exposure": {
+        "ticker": "004140",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.177100053504554,
+        "close": 1891,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -1.3562858633281216,
+        "return_15d": 2.660152008686212,
+        "return_1m": 3.958218801539304,
+        "return_ytd": -25.88801424204269,
+        "return_1y": -36.15728791567522,
+        "return_3y": -6.307631830513028,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 1.394101876675613,
+        "return_2y": -29.824188997152778
+      }
+    },
+    {
+      "id": "A_869",
+      "type": "ASSET",
+      "name": "KCTC",
+      "exposure": {
+        "ticker": "009070",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.6209476309226867,
+        "close": 4075,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -0.2447980416156681,
+        "return_15d": 2.258469259723972,
+        "return_1m": 2.774274905422436,
+        "return_ytd": -33.8474025974026,
+        "return_1y": -23.600771566588218,
+        "return_3y": 4.436316323275791,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 2.386934673366836,
+        "return_2y": 0.7357641330546505
+      }
+    },
+    {
+      "id": "A_093",
+      "type": "ASSET",
+      "name": "씨메스",
+      "exposure": {
+        "ticker": "475400",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 4.106280193236711,
+        "close": 21550,
+        "marketCap": 431447475400,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 5.378973105134466,
+        "return_15d": 36.91232528589581,
+        "return_1m": 34.94051346274265,
+        "return_ytd": -35.57548579970104,
+        "return_1y": 6.157635467980294,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 7.213930348258701,
+        "return_2y": null
+      }
+    },
+    {
+      "id": "A_1398",
+      "type": "ASSET",
+      "name": "롯데쇼핑",
+      "exposure": {
+        "ticker": "023530",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 3.41708542713568,
+        "close": 102900,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 4.149797570850211,
+        "return_15d": -18.268467037331217,
+        "return_1m": -30.284552845528456,
+        "return_ytd": 54.91622321094838,
+        "return_1y": 50.741176124640994,
+        "return_3y": 57.58708197828861,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 3.2096288866599876,
+        "return_2y": 84.4827949812526
+      }
+    },
+    {
+      "id": "A_1456",
+      "type": "ASSET",
+      "name": "이마트",
+      "exposure": {
+        "ticker": "139480",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.0243277848911658,
+        "close": 78900,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -2.109181141439209,
+        "return_15d": -4.131227217496958,
+        "return_1m": -0.6297229219143552,
+        "return_ytd": 0.9544202743212882,
+        "return_1y": -7.043117049897929,
+        "return_3y": 10.021759654612982,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -3.308823529411764,
+        "return_2y": 44.11911774966835
+      }
+    },
+    {
+      "id": "A_1248",
+      "type": "ASSET",
+      "name": "제닉스로보틱스",
+      "exposure": {
+        "ticker": "381620",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.6442451420029869,
+        "close": 6800,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 3.8167938931297662,
+        "return_15d": 19.089316987740812,
+        "return_1m": 26.394052044609673,
+        "return_ytd": -46.540880503144656,
+        "return_1y": -2.9957203994293913,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 12.396694214876035,
+        "return_2y": null
+      },
+      "coreBiz": "제닉스로보틱스는 물류 자동화 로봇(AMR) 기업이다"
+    },
+    {
+      "id": "A_1458",
+      "type": "ASSET",
+      "name": "코닉오토메이션",
+      "exposure": {
+        "ticker": "391710",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -0.6617038875103343,
+        "close": 1201,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -4.984177215189877,
+        "return_15d": -29.56011730205279,
+        "return_1m": -26.31901840490798,
+        "return_ytd": -51.079429735234214,
+        "return_1y": -29.56011730205279,
+        "return_3y": -65.48850574712644,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -9.902475618904727,
+        "return_2y": -63.102918586789556
+      }
+    },
+    {
+      "id": "BF_433",
+      "type": "BUSINESS_FIELD",
+      "name": "이커머스"
+    },
+    {
+      "id": "BF_434",
+      "type": "BUSINESS_FIELD",
+      "name": "택배/운송"
+    },
+    {
+      "id": "BF_291",
+      "type": "BUSINESS_FIELD",
+      "name": "물류자동화/로봇"
+    },
+    {
+      "id": "M_241",
+      "type": "MACRO",
+      "name": "개인정보유출"
+    },
+    {
+      "id": "C_2493",
+      "type": "CHARACTER",
+      "name": "한국이커머스1위"
+    },
+    {
+      "id": "C_2494",
+      "type": "CHARACTER",
+      "name": "국내택배1위"
+    },
+    {
+      "id": "C_2495",
+      "type": "CHARACTER",
+      "name": "커머스플랫폼경쟁"
+    },
+    {
+      "id": "C_2496",
+      "type": "CHARACTER",
+      "name": "항만하역물류"
+    },
+    {
+      "id": "C_2497",
+      "type": "CHARACTER",
+      "name": "종합물류하역"
+    },
+    {
+      "id": "C_2498",
+      "type": "CHARACTER",
+      "name": "물류로봇AI비전"
+    },
+    {
+      "id": "C_2499",
+      "type": "CHARACTER",
+      "name": "유통대형경쟁"
+    },
+    {
+      "id": "C_2500",
+      "type": "CHARACTER",
+      "name": "마트SSG닷컴"
+    },
+    {
+      "id": "C_2501",
+      "type": "CHARACTER",
+      "name": "물류자동화로봇제닉스"
+    },
+    {
+      "id": "C_2502",
+      "type": "CHARACTER",
+      "name": "물류자동화"
+    }
   ],
-  "dataAsOf": "2026-04-13T00:00:00+09:00",
-  "notes": "g140 누적 import 기반 쿠팡관련주식 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-07-30",
-    "kind": "수정",
-    "title": "경쟁 유통 4종 2궤도 재배치",
-    "detail": "이마트·롯데쇼핑·NAVER·CJ대한통운의 THEMED_AS(1궤도)를 제거하고 쿠팡과의 COMPETES 관계(2궤도)만 유지 — 쿠팡 중심 경쟁 구도로 재배치."
-   },
-   {
-    "date": "2026-07-11",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
-   },
-   {
-    "date": "2026-07-11",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필 + 2026 이벤트",
-    "detail": "전 엣지 근거(호버 박스)를 종목·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
-   },
-   {
-    "date": "2026-07-10",
-    "kind": "변경",
-    "title": "매크로는 테마에만 연결",
-    "detail": "개별 자산·BF에 직접 걸려 있던 매크로 IMPACTS 엣지를 테마 레벨로 정리(repoint 1, 중복제거 0)했다."
-   }
+  "edges": [
+    {
+      "from": "A_019",
+      "to": "T_140",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004110"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_868",
+      "to": "T_140",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004113"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_869",
+      "to": "T_140",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004114"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_093",
+      "to": "T_140",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004115"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1248",
+      "to": "T_140",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004118"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1458",
+      "to": "T_140",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004119"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1398",
+      "to": "A_019",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_004120"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1456",
+      "to": "A_019",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_004121"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_513",
+      "to": "A_019",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_004122"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_012",
+      "to": "A_019",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_004123"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_241",
+      "to": "T_140",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_004124"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_019",
+      "to": "BF_433",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004125"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_019",
+      "to": "BF_434",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004126"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_019",
+      "to": "BF_291",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004127"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_868",
+      "to": "BF_434",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004128"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_869",
+      "to": "BF_434",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004129"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_093",
+      "to": "BF_291",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004130"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1248",
+      "to": "BF_291",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004131"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1458",
+      "to": "BF_291",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004132"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_019",
+      "to": "C_2493",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004210"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_012",
+      "to": "C_2494",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004211"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_513",
+      "to": "C_2495",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004212"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_868",
+      "to": "C_2496",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004213"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_869",
+      "to": "C_2497",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004214"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_093",
+      "to": "C_2498",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004215"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1398",
+      "to": "C_2499",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004216"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1456",
+      "to": "C_2500",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004217"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1248",
+      "to": "C_2501",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004218"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1458",
+      "to": "C_2502",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004219"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    }
   ],
-  "description": "쿠팡·CJ제일제당·삼성SDS·CJ대한통운·이마트 등 쿠팡 거래·물류 노출군. 쿠팡 GMV·Eats·Play 성장과 한국 e-커머스 점유 다툼이 동인. 개인정보유출 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 밸류체인은 이커머스·택배/운송·물류자동화/로봇 등 사업영역으로 이어진다. 경쟁·공급·협력 등 4건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다. 종목별 브리핑 카드와 연도별 이벤트 DB로 테마의 맥락과 변동요인을 확인할 수 있다."
- },
- "nodes": [
-  {
-   "id": "T_140",
-   "type": "THEME",
-   "name": "쿠팡관련주식"
-  },
-  {
-   "id": "A_019",
-   "type": "ASSET",
-   "name": "쿠팡",
-   "exposure": {
-    "ticker": "CPNG",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -1.0435850214855602,
-    "close": 16.12,
-    "marketCap": 28975888394,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": -2.3030303030302957,
-    "return_15d": 4.0000000000000036,
-    "return_1m": -9.131905298759847,
-    "return_ytd": -31.66596015260703,
-    "return_1y": -43.09918813978114,
-    "return_3y": -15.997915581031785,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.6777572396795994,
-    "return_2y": -27.223476297968386
-   }
-  },
-  {
-   "id": "A_012",
-   "type": "ASSET",
-   "name": "CJ대한통운",
-   "exposure": {
-    "ticker": "000120",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 4.324324324324325,
-    "close": 77200,
-    "marketCap": 3011229408000,
-    "pe_ttm": 10.92,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -0.2583979328165342,
-    "return_15d": -0.1293661060802087,
-    "return_1m": 7.670850767085069,
-    "return_ytd": -18.131529905263644,
-    "return_1y": -9.668935466693007,
-    "return_3y": -3.0249635412489706,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": -2.278481012658229,
-    "return_2y": -13.054952010449883
-   }
-  },
-  {
-   "id": "A_513",
-   "type": "ASSET",
-   "name": "NAVER",
-   "exposure": {
-    "ticker": "035420",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.6622516556291425,
-    "close": 228000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 6.542056074766345,
-    "return_15d": 9.879518072289152,
-    "return_1m": 20.253164556962023,
-    "return_ytd": -6.722665823335927,
-    "return_1y": 2.397784609199083,
-    "return_3y": 5.147967131669673,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 8.571428571428562,
-    "return_2y": 33.520840866609916
-   }
-  },
-  {
-   "id": "A_868",
-   "type": "ASSET",
-   "name": "동방",
-   "exposure": {
-    "ticker": "004140",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.177100053504554,
-    "close": 1891,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -1.3562858633281216,
-    "return_15d": 2.660152008686212,
-    "return_1m": 3.958218801539304,
-    "return_ytd": -25.88801424204269,
-    "return_1y": -36.15728791567522,
-    "return_3y": -6.307631830513028,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 1.394101876675613,
-    "return_2y": -29.824188997152778
-   }
-  },
-  {
-   "id": "A_869",
-   "type": "ASSET",
-   "name": "KCTC",
-   "exposure": {
-    "ticker": "009070",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.6209476309226867,
-    "close": 4075,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -0.2447980416156681,
-    "return_15d": 2.258469259723972,
-    "return_1m": 2.774274905422436,
-    "return_ytd": -33.8474025974026,
-    "return_1y": -23.600771566588218,
-    "return_3y": 4.436316323275791,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 2.386934673366836,
-    "return_2y": 0.7357641330546505
-   }
-  },
-  {
-   "id": "A_093",
-   "type": "ASSET",
-   "name": "씨메스",
-   "exposure": {
-    "ticker": "475400",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 4.106280193236711,
-    "close": 21550,
-    "marketCap": 431447475400,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 5.378973105134466,
-    "return_15d": 36.91232528589581,
-    "return_1m": 34.94051346274265,
-    "return_ytd": -35.57548579970104,
-    "return_1y": 6.157635467980294,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 7.213930348258701,
-    "return_2y": null
-   }
-  },
-  {
-   "id": "A_1398",
-   "type": "ASSET",
-   "name": "롯데쇼핑",
-   "exposure": {
-    "ticker": "023530",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 3.41708542713568,
-    "close": 102900,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 4.149797570850211,
-    "return_15d": -18.268467037331217,
-    "return_1m": -30.284552845528456,
-    "return_ytd": 54.91622321094838,
-    "return_1y": 50.741176124640994,
-    "return_3y": 57.58708197828861,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 3.2096288866599876,
-    "return_2y": 84.4827949812526
-   }
-  },
-  {
-   "id": "A_1456",
-   "type": "ASSET",
-   "name": "이마트",
-   "exposure": {
-    "ticker": "139480",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.0243277848911658,
-    "close": 78900,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -2.109181141439209,
-    "return_15d": -4.131227217496958,
-    "return_1m": -0.6297229219143552,
-    "return_ytd": 0.9544202743212882,
-    "return_1y": -7.043117049897929,
-    "return_3y": 10.021759654612982,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": -3.308823529411764,
-    "return_2y": 44.11911774966835
-   }
-  },
-  {
-   "id": "A_1248",
-   "type": "ASSET",
-   "name": "제닉스로보틱스",
-   "exposure": {
-    "ticker": "381620",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.6442451420029869,
-    "close": 6800,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 3.8167938931297662,
-    "return_15d": 19.089316987740812,
-    "return_1m": 26.394052044609673,
-    "return_ytd": -46.540880503144656,
-    "return_1y": -2.9957203994293913,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 12.396694214876035,
-    "return_2y": null
-   },
-   "coreBiz": "제닉스로보틱스는 물류 자동화 로봇(AMR) 기업이다"
-  },
-  {
-   "id": "A_1458",
-   "type": "ASSET",
-   "name": "코닉오토메이션",
-   "exposure": {
-    "ticker": "391710",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -0.6617038875103343,
-    "close": 1201,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -4.984177215189877,
-    "return_15d": -29.56011730205279,
-    "return_1m": -26.31901840490798,
-    "return_ytd": -51.079429735234214,
-    "return_1y": -29.56011730205279,
-    "return_3y": -65.48850574712644,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": -9.902475618904727,
-    "return_2y": -63.102918586789556
-   }
-  },
-  {
-   "id": "BF_433",
-   "type": "BUSINESS_FIELD",
-   "name": "이커머스"
-  },
-  {
-   "id": "BF_434",
-   "type": "BUSINESS_FIELD",
-   "name": "택배/운송"
-  },
-  {
-   "id": "BF_291",
-   "type": "BUSINESS_FIELD",
-   "name": "물류자동화/로봇"
-  },
-  {
-   "id": "M_241",
-   "type": "MACRO",
-   "name": "개인정보유출"
-  },
-  {
-   "id": "C_2493",
-   "type": "CHARACTER",
-   "name": "한국이커머스1위"
-  },
-  {
-   "id": "C_2494",
-   "type": "CHARACTER",
-   "name": "국내택배1위"
-  },
-  {
-   "id": "C_2495",
-   "type": "CHARACTER",
-   "name": "커머스플랫폼경쟁"
-  },
-  {
-   "id": "C_2496",
-   "type": "CHARACTER",
-   "name": "항만하역물류"
-  },
-  {
-   "id": "C_2497",
-   "type": "CHARACTER",
-   "name": "종합물류하역"
-  },
-  {
-   "id": "C_2498",
-   "type": "CHARACTER",
-   "name": "물류로봇AI비전"
-  },
-  {
-   "id": "C_2499",
-   "type": "CHARACTER",
-   "name": "유통대형경쟁"
-  },
-  {
-   "id": "C_2500",
-   "type": "CHARACTER",
-   "name": "마트SSG닷컴"
-  },
-  {
-   "id": "C_2501",
-   "type": "CHARACTER",
-   "name": "물류자동화로봇제닉스"
-  },
-  {
-   "id": "C_2502",
-   "type": "CHARACTER",
-   "name": "물류자동화"
-  }
- ],
- "edges": [
-  {
-   "from": "A_019",
-   "to": "T_140",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004110"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_868",
-   "to": "T_140",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004113"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_869",
-   "to": "T_140",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004114"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_093",
-   "to": "T_140",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004115"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1248",
-   "to": "T_140",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004118"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1458",
-   "to": "T_140",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004119"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1398",
-   "to": "A_019",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_004120"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1456",
-   "to": "A_019",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_004121"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_513",
-   "to": "A_019",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_004122"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_012",
-   "to": "A_019",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_004123"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_241",
-   "to": "T_140",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_004124"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_019",
-   "to": "BF_433",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004125"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_019",
-   "to": "BF_434",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004126"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_019",
-   "to": "BF_291",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004127"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_868",
-   "to": "BF_434",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004128"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_869",
-   "to": "BF_434",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004129"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_093",
-   "to": "BF_291",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004130"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1248",
-   "to": "BF_291",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004131"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1458",
-   "to": "BF_291",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004132"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_019",
-   "to": "C_2493",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004210"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_012",
-   "to": "C_2494",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004211"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_513",
-   "to": "C_2495",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004212"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_868",
-   "to": "C_2496",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004213"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_869",
-   "to": "C_2497",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004214"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_093",
-   "to": "C_2498",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004215"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1398",
-   "to": "C_2499",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004216"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1456",
-   "to": "C_2500",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004217"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1248",
-   "to": "C_2501",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004218"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1458",
-   "to": "C_2502",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004219"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_019",
-   "to": "T_140",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004110"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_868",
-   "to": "T_140",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004113"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_869",
-   "to": "T_140",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004114"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_093",
-   "to": "T_140",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004115"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1248",
-   "to": "T_140",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004118"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1458",
-   "to": "T_140",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004119"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1398",
-   "to": "A_019",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_004120"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1456",
-   "to": "A_019",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_004121"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_513",
-   "to": "A_019",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_004122"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_012",
-   "to": "A_019",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_004123"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_241",
-   "to": "T_140",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_004124"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_019",
-   "to": "BF_433",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004125"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_019",
-   "to": "BF_434",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004126"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_019",
-   "to": "BF_291",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004127"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_868",
-   "to": "BF_434",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004128"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_869",
-   "to": "BF_434",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004129"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_093",
-   "to": "BF_291",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004130"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1248",
-   "to": "BF_291",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004131"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1458",
-   "to": "BF_291",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004132"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_019",
-   "to": "C_2493",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004210"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_012",
-   "to": "C_2494",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004211"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_513",
-   "to": "C_2495",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004212"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_868",
-   "to": "C_2496",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004213"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_869",
-   "to": "C_2497",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004214"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_093",
-   "to": "C_2498",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004215"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1398",
-   "to": "C_2499",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004216"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1456",
-   "to": "C_2500",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004217"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1248",
-   "to": "C_2501",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004218"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1458",
-   "to": "C_2502",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004219"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  }
- ]
+  "links": [
+    {
+      "from": "A_019",
+      "to": "T_140",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004110"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_868",
+      "to": "T_140",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004113"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_869",
+      "to": "T_140",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004114"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_093",
+      "to": "T_140",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004115"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1248",
+      "to": "T_140",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004118"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1458",
+      "to": "T_140",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004119"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1398",
+      "to": "A_019",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_004120"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1456",
+      "to": "A_019",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_004121"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_513",
+      "to": "A_019",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_004122"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_012",
+      "to": "A_019",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_004123"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_241",
+      "to": "T_140",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_004124"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_019",
+      "to": "BF_433",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004125"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_019",
+      "to": "BF_434",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004126"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_019",
+      "to": "BF_291",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004127"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_868",
+      "to": "BF_434",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004128"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_869",
+      "to": "BF_434",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004129"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_093",
+      "to": "BF_291",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004130"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1248",
+      "to": "BF_291",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004131"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1458",
+      "to": "BF_291",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004132"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_019",
+      "to": "C_2493",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004210"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_012",
+      "to": "C_2494",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004211"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_513",
+      "to": "C_2495",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004212"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_868",
+      "to": "C_2496",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004213"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_869",
+      "to": "C_2497",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004214"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_093",
+      "to": "C_2498",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004215"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1398",
+      "to": "C_2499",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004216"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1456",
+      "to": "C_2500",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004217"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1248",
+      "to": "C_2501",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004218"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1458",
+      "to": "C_2502",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004219"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    }
+  ]
 }

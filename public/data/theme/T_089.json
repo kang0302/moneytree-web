@@ -1,809 +1,809 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_089",
- "themeName": "글로벌탄소배출권",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_089",
+  "themeName": "글로벌탄소배출권",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-03-31T00:00:00+09:00",
+    "notes": "g89 누적 import 기반 글로벌탄소배출권 테마",
+    "sources": [],
+    "description": "EU ETS·캘리포니아 CCA·RGGI 등 글로벌 탄소배출권 시장 노출 ETF/ETN. 미국 상장 (KRBN·KEUA·KCCA·GRN), 유럽 (CO2.L) + 한국 KRX 4종 (SOL유럽·SOL글로벌·KODEX유럽·HANARO글로벌). EU CBAM·Fit for 55·기후정책이 가격 동력. 유가·금리와 상관성 낮은 ESG·정책 베팅 자산. 탄소중립·기후변화·유럽환경규제 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 밸류체인은 탄소배출권·온실가스감축 등 사업영역으로 이어진다. 구성종목의 기간별 수익률과 이동평균 시그널을 함께 제공한다. 종목별 브리핑 카드와 연도별 이벤트 DB로 테마의 맥락과 변동요인을 확인할 수 있다.",
+    "changelog": [
+      {
+        "date": "2026-07-10",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필",
+        "detail": "글로벌·국내 탄소배출권 9개 ETF의 추종 대상(EU/캘리포니아/글로벌)과 탄소중립·CBAM 인과, 저유가상관·경기민감 특성을 구체화."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_089",
+      "type": "THEME",
+      "name": "글로벌탄소배출권"
+    },
+    {
+      "id": "A_692",
+      "type": "ASSET",
+      "name": "KRBN",
+      "exposure": {
+        "ticker": "KRBN",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.029103608847491635,
+        "close": 34.35,
+        "marketCap": 141119796,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": 0.29197080291971655,
+        "return_15d": 1.3274336283185972,
+        "return_1m": 1.507092198581561,
+        "return_ytd": -2.9661016949152463,
+        "return_1y": 13.40376361835589,
+        "return_3y": -10.007859575582923,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -0.4924681344148363,
+        "return_2y": 3.682463024449145
+      }
+    },
+    {
+      "id": "A_693",
+      "type": "ASSET",
+      "name": "KEUA",
+      "exposure": {
+        "ticker": "KEUA",
+        "exchange": "LSE",
+        "country": "UK"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": 22.82,
+        "marketCap": 6640301,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-05-10",
+        "valuationSource": "FMP",
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": null,
+        "return_2y": null
+      }
+    },
+    {
+      "id": "A_694",
+      "type": "ASSET",
+      "name": "KCCA",
+      "exposure": {
+        "ticker": "KCCA",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.058004640371223104,
+        "close": 17.23,
+        "marketCap": 118792166,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": -0.1159420289855051,
+        "return_15d": 3.3593281343731185,
+        "return_1m": -1.3737836290784067,
+        "return_ytd": 2.498512790005969,
+        "return_1y": 10.307298335467351,
+        "return_3y": -38.26585453242565,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.29103608847498297,
+        "return_2y": -13.50401606425703
+      }
+    },
+    {
+      "id": "A_695",
+      "type": "ASSET",
+      "name": "CO2.L",
+      "exposure": {
+        "ticker": "CO2.L",
+        "exchange": "LSE",
+        "country": "UK"
+      },
+      "metrics": {
+        "return_1d": -0.2307692307692344,
+        "close": 78.405,
+        "marketCap": 73623079,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "return_3d": -0.49865746068278316,
+        "return_15d": -1.5310641528533564,
+        "return_1m": 1.02557445151239,
+        "return_ytd": -5.132268682189456,
+        "return_1y": 14.323490524460114,
+        "return_3y": -8.790436005625878,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -1.5061384634856512,
+        "return_2y": 12.782608695652154
+      }
+    },
+    {
+      "id": "C_086",
+      "type": "CHARACTER",
+      "name": "유가상관관계낮음"
+    },
+    {
+      "id": "C_087",
+      "type": "CHARACTER",
+      "name": "리스크온자산"
+    },
+    {
+      "id": "C_088",
+      "type": "CHARACTER",
+      "name": "경기/전력수요연관성큼"
+    },
+    {
+      "id": "A_1874",
+      "type": "ASSET",
+      "name": "GRN탄소ETN",
+      "exposure": {
+        "ticker": "GRN",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.9388249545729921,
+        "return_3d": -0.3047851264858292,
+        "return_15d": -1.446218740584504,
+        "return_1m": 1.0503552672227467,
+        "return_ytd": -4.384682841274479,
+        "return_1y": 16.075230660042592,
+        "return_3y": -5.802735781137514,
+        "close": 33.0248,
+        "marketCap": 11630113,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-16",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -1.5648510382184622,
+        "return_2y": 15.37918871252204
+      }
+    },
+    {
+      "id": "A_1875",
+      "type": "ASSET",
+      "name": "SOL유럽탄소배출권",
+      "exposure": {
+        "ticker": "400580",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.6055363321799234,
+        "return_3d": 0.6926406926407003,
+        "return_15d": -2.0219039595619215,
+        "return_1m": 1.2184508268059169,
+        "return_ytd": -5.86806960744638,
+        "return_1y": 10.543980464416824,
+        "return_3y": -11.623150047598873,
+        "close": 11630,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 0.9110629067245135,
+        "return_2y": 15.727433891723352
+      }
+    },
+    {
+      "id": "A_1876",
+      "type": "ASSET",
+      "name": "SOL글로벌탄소배출권",
+      "exposure": {
+        "ticker": "400590",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.6898008024213365,
+        "return_3d": -0.24407252440725724,
+        "return_15d": -4.5697131420947334,
+        "return_1m": -4.282368685178994,
+        "return_ytd": -6.594841658504736,
+        "return_1y": 15.89197344992257,
+        "return_3y": 7.087305903696595,
+        "close": 14305,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 0.6331340133661545,
+        "return_2y": 18.679917921781808
+      }
+    },
+    {
+      "id": "A_1877",
+      "type": "ASSET",
+      "name": "KODEX유럽탄소배출권",
+      "exposure": {
+        "ticker": "400570",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.39929015084294583,
+        "return_3d": 0.39929015084294583,
+        "return_15d": -1.3943355119825696,
+        "return_1m": 0.756901157613532,
+        "return_ytd": -5.826050769870994,
+        "return_1y": 10.390243902439034,
+        "return_3y": -16.060830860534125,
+        "close": 11315,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -0.3083700440528636,
+        "return_2y": 11.697926949654502
+      }
+    },
+    {
+      "id": "A_1878",
+      "type": "ASSET",
+      "name": "HANARO글로벌탄소배출권",
+      "exposure": {
+        "ticker": "401590",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.055408970976246,
+        "return_3d": 0.21805494984736828,
+        "return_15d": -4.210087536473528,
+        "return_1m": -2.874049027895187,
+        "return_ytd": -6.280587275693317,
+        "return_1y": 14.435616833819864,
+        "return_3y": 1.3457534127101933,
+        "close": 11490,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 0.13071895424836555,
+        "return_2y": 16.108314849896765
+      }
+    },
+    {
+      "id": "M_177",
+      "type": "MACRO",
+      "name": "탄소중립"
+    },
+    {
+      "id": "M_075",
+      "type": "MACRO",
+      "name": "기후변화"
+    },
+    {
+      "id": "M_095",
+      "type": "MACRO",
+      "name": "유럽환경규제"
+    },
+    {
+      "id": "BF_137",
+      "type": "BUSINESS_FIELD",
+      "name": "탄소배출권·온실가스감축"
+    }
   ],
-  "dataAsOf": "2026-03-31T00:00:00+09:00",
-  "notes": "g89 누적 import 기반 글로벌탄소배출권 테마",
-  "sources": [],
-  "description": "EU ETS·캘리포니아 CCA·RGGI 등 글로벌 탄소배출권 시장 노출 ETF/ETN. 미국 상장 (KRBN·KEUA·KCCA·GRN), 유럽 (CO2.L) + 한국 KRX 4종 (SOL유럽·SOL글로벌·KODEX유럽·HANARO글로벌). EU CBAM·Fit for 55·기후정책이 가격 동력. 유가·금리와 상관성 낮은 ESG·정책 베팅 자산. 탄소중립·기후변화·유럽환경규제 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 밸류체인은 탄소배출권·온실가스감축 등 사업영역으로 이어진다. 구성종목의 기간별 수익률과 이동평균 시그널을 함께 제공한다. 종목별 브리핑 카드와 연도별 이벤트 DB로 테마의 맥락과 변동요인을 확인할 수 있다.",
-  "changelog": [
-   {
-    "date": "2026-07-10",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필",
-    "detail": "글로벌·국내 탄소배출권 9개 ETF의 추종 대상(EU/캘리포니아/글로벌)과 탄소중립·CBAM 인과, 저유가상관·경기민감 특성을 구체화."
-   }
+  "edges": [
+    {
+      "from": "A_692",
+      "to": "T_089",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002702"
+      ],
+      "confidence": 0.83,
+      "status": "verified"
+    },
+    {
+      "from": "A_693",
+      "to": "T_089",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002703"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_694",
+      "to": "T_089",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002704"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_695",
+      "to": "T_089",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002705"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "T_089",
+      "to": "C_086",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002720"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "T_089",
+      "to": "C_087",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002721"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "T_089",
+      "to": "C_088",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002722"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1874",
+      "to": "T_089",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002706"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1875",
+      "to": "T_089",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002707"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1876",
+      "to": "T_089",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002708"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1877",
+      "to": "T_089",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002709"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1878",
+      "to": "T_089",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002710"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "M_177",
+      "to": "T_089",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002723"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_075",
+      "to": "T_089",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002724"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_095",
+      "to": "T_089",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002725"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_692",
+      "to": "BF_137",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002711"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_693",
+      "to": "BF_137",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002712"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_694",
+      "to": "BF_137",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002713"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_695",
+      "to": "BF_137",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002714"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1874",
+      "to": "BF_137",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002715"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1875",
+      "to": "BF_137",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002716"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1876",
+      "to": "BF_137",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002717"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1877",
+      "to": "BF_137",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002718"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1878",
+      "to": "BF_137",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002719"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_692",
+      "to": "T_089",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002702"
+      ],
+      "confidence": 0.83,
+      "status": "verified"
+    },
+    {
+      "from": "A_693",
+      "to": "T_089",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002703"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_694",
+      "to": "T_089",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002704"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_695",
+      "to": "T_089",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002705"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "T_089",
+      "to": "C_086",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002720"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "T_089",
+      "to": "C_087",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002721"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "T_089",
+      "to": "C_088",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002722"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1874",
+      "to": "T_089",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002706"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1875",
+      "to": "T_089",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002707"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1876",
+      "to": "T_089",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002708"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1877",
+      "to": "T_089",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002709"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1878",
+      "to": "T_089",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002710"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "M_177",
+      "to": "T_089",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002723"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_075",
+      "to": "T_089",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002724"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_095",
+      "to": "T_089",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002725"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_692",
+      "to": "BF_137",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002711"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_693",
+      "to": "BF_137",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002712"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_694",
+      "to": "BF_137",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002713"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_695",
+      "to": "BF_137",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002714"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1874",
+      "to": "BF_137",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002715"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1875",
+      "to": "BF_137",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002716"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1876",
+      "to": "BF_137",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002717"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1877",
+      "to": "BF_137",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002718"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1878",
+      "to": "BF_137",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002719"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_089",
-   "type": "THEME",
-   "name": "글로벌탄소배출권"
-  },
-  {
-   "id": "A_692",
-   "type": "ASSET",
-   "name": "KRBN",
-   "exposure": {
-    "ticker": "KRBN",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.029103608847491635,
-    "close": 34.35,
-    "marketCap": 141119796,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 0.29197080291971655,
-    "return_15d": 1.3274336283185972,
-    "return_1m": 1.507092198581561,
-    "return_ytd": -2.9661016949152463,
-    "return_1y": 13.40376361835589,
-    "return_3y": -10.007859575582923,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.4924681344148363,
-    "return_2y": 3.682463024449145
-   }
-  },
-  {
-   "id": "A_693",
-   "type": "ASSET",
-   "name": "KEUA",
-   "exposure": {
-    "ticker": "KEUA",
-    "exchange": "LSE",
-    "country": "UK"
-   },
-   "metrics": {
-    "return_1d": null,
-    "close": 22.82,
-    "marketCap": 6640301,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-05-10",
-    "valuationSource": "FMP",
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": null,
-    "return_2y": null
-   }
-  },
-  {
-   "id": "A_694",
-   "type": "ASSET",
-   "name": "KCCA",
-   "exposure": {
-    "ticker": "KCCA",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.058004640371223104,
-    "close": 17.23,
-    "marketCap": 118792166,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": -0.1159420289855051,
-    "return_15d": 3.3593281343731185,
-    "return_1m": -1.3737836290784067,
-    "return_ytd": 2.498512790005969,
-    "return_1y": 10.307298335467351,
-    "return_3y": -38.26585453242565,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.29103608847498297,
-    "return_2y": -13.50401606425703
-   }
-  },
-  {
-   "id": "A_695",
-   "type": "ASSET",
-   "name": "CO2.L",
-   "exposure": {
-    "ticker": "CO2.L",
-    "exchange": "LSE",
-    "country": "UK"
-   },
-   "metrics": {
-    "return_1d": 0.46367851622874934,
-    "close": 78.405,
-    "marketCap": 73623079,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "return_3d": 0.11551790527533079,
-    "return_15d": -2.0223590001256064,
-    "return_1m": 1.8276762402088753,
-    "return_ytd": -4.912836767036454,
-    "return_1y": 13.191118850674787,
-    "return_3y": -7.297361540289993,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.46367851622874934,
-    "return_2y": 13.322679064361465
-   }
-  },
-  {
-   "id": "C_086",
-   "type": "CHARACTER",
-   "name": "유가상관관계낮음"
-  },
-  {
-   "id": "C_087",
-   "type": "CHARACTER",
-   "name": "리스크온자산"
-  },
-  {
-   "id": "C_088",
-   "type": "CHARACTER",
-   "name": "경기/전력수요연관성큼"
-  },
-  {
-   "id": "A_1874",
-   "type": "ASSET",
-   "name": "GRN탄소ETN",
-   "exposure": {
-    "ticker": "GRN",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.9388249545729921,
-    "return_3d": -0.3047851264858292,
-    "return_15d": -1.446218740584504,
-    "return_1m": 1.0503552672227467,
-    "return_ytd": -4.384682841274479,
-    "return_1y": 16.075230660042592,
-    "return_3y": -5.802735781137514,
-    "close": 33.0248,
-    "marketCap": 11630113,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-15",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -1.5648510382184622,
-    "return_2y": 15.37918871252204
-   }
-  },
-  {
-   "id": "A_1875",
-   "type": "ASSET",
-   "name": "SOL유럽탄소배출권",
-   "exposure": {
-    "ticker": "400580",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.6055363321799234,
-    "return_3d": 0.6926406926407003,
-    "return_15d": -2.0219039595619215,
-    "return_1m": 1.2184508268059169,
-    "return_ytd": -5.86806960744638,
-    "return_1y": 10.543980464416824,
-    "return_3y": -11.623150047598873,
-    "close": 11630,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 0.9110629067245135,
-    "return_2y": 15.727433891723352
-   }
-  },
-  {
-   "id": "A_1876",
-   "type": "ASSET",
-   "name": "SOL글로벌탄소배출권",
-   "exposure": {
-    "ticker": "400590",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.6898008024213365,
-    "return_3d": -0.24407252440725724,
-    "return_15d": -4.5697131420947334,
-    "return_1m": -4.282368685178994,
-    "return_ytd": -6.594841658504736,
-    "return_1y": 15.89197344992257,
-    "return_3y": 7.087305903696595,
-    "close": 14305,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 0.6331340133661545,
-    "return_2y": 18.679917921781808
-   }
-  },
-  {
-   "id": "A_1877",
-   "type": "ASSET",
-   "name": "KODEX유럽탄소배출권",
-   "exposure": {
-    "ticker": "400570",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.39929015084294583,
-    "return_3d": 0.39929015084294583,
-    "return_15d": -1.3943355119825696,
-    "return_1m": 0.756901157613532,
-    "return_ytd": -5.826050769870994,
-    "return_1y": 10.390243902439034,
-    "return_3y": -16.060830860534125,
-    "close": 11315,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": -0.3083700440528636,
-    "return_2y": 11.697926949654502
-   }
-  },
-  {
-   "id": "A_1878",
-   "type": "ASSET",
-   "name": "HANARO글로벌탄소배출권",
-   "exposure": {
-    "ticker": "401590",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.055408970976246,
-    "return_3d": 0.21805494984736828,
-    "return_15d": -4.210087536473528,
-    "return_1m": -2.874049027895187,
-    "return_ytd": -6.280587275693317,
-    "return_1y": 14.435616833819864,
-    "return_3y": 1.3457534127101933,
-    "close": 11490,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 0.13071895424836555,
-    "return_2y": 16.108314849896765
-   }
-  },
-  {
-   "id": "M_177",
-   "type": "MACRO",
-   "name": "탄소중립"
-  },
-  {
-   "id": "M_075",
-   "type": "MACRO",
-   "name": "기후변화"
-  },
-  {
-   "id": "M_095",
-   "type": "MACRO",
-   "name": "유럽환경규제"
-  },
-  {
-   "id": "BF_137",
-   "type": "BUSINESS_FIELD",
-   "name": "탄소배출권·온실가스감축"
-  }
- ],
- "edges": [
-  {
-   "from": "A_692",
-   "to": "T_089",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002702"
-   ],
-   "confidence": 0.83,
-   "status": "verified"
-  },
-  {
-   "from": "A_693",
-   "to": "T_089",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002703"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_694",
-   "to": "T_089",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002704"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_695",
-   "to": "T_089",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002705"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "T_089",
-   "to": "C_086",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002720"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "T_089",
-   "to": "C_087",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002721"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "T_089",
-   "to": "C_088",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002722"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1874",
-   "to": "T_089",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002706"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1875",
-   "to": "T_089",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002707"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1876",
-   "to": "T_089",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002708"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1877",
-   "to": "T_089",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002709"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1878",
-   "to": "T_089",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002710"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "M_177",
-   "to": "T_089",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002723"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_075",
-   "to": "T_089",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002724"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_095",
-   "to": "T_089",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002725"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_692",
-   "to": "BF_137",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002711"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_693",
-   "to": "BF_137",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002712"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_694",
-   "to": "BF_137",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002713"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_695",
-   "to": "BF_137",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002714"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1874",
-   "to": "BF_137",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002715"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1875",
-   "to": "BF_137",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002716"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1876",
-   "to": "BF_137",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002717"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1877",
-   "to": "BF_137",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002718"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1878",
-   "to": "BF_137",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002719"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_692",
-   "to": "T_089",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002702"
-   ],
-   "confidence": 0.83,
-   "status": "verified"
-  },
-  {
-   "from": "A_693",
-   "to": "T_089",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002703"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_694",
-   "to": "T_089",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002704"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_695",
-   "to": "T_089",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002705"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "T_089",
-   "to": "C_086",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002720"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "T_089",
-   "to": "C_087",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002721"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "T_089",
-   "to": "C_088",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002722"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1874",
-   "to": "T_089",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002706"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1875",
-   "to": "T_089",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002707"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1876",
-   "to": "T_089",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002708"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1877",
-   "to": "T_089",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002709"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1878",
-   "to": "T_089",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002710"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "M_177",
-   "to": "T_089",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002723"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_075",
-   "to": "T_089",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002724"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_095",
-   "to": "T_089",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002725"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_692",
-   "to": "BF_137",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002711"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_693",
-   "to": "BF_137",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002712"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_694",
-   "to": "BF_137",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002713"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_695",
-   "to": "BF_137",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002714"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1874",
-   "to": "BF_137",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002715"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1875",
-   "to": "BF_137",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002716"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1876",
-   "to": "BF_137",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002717"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1877",
-   "to": "BF_137",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002718"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1878",
-   "to": "BF_137",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002719"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  }
- ]
 }
