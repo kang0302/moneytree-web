@@ -64,6 +64,7 @@ function Seq7({ s }: { s: string }) {
 
 type SortKey = "bucket" | "close" | "g5" | "g20" | "g60" | "g120" | "hg" | "name" | "country";
 
+import MaCrossSummary from "@/components/MaCrossSummary";
 export default function High52wPage() {
   const [data, setData] = useState<Payload | null>(null);
   const [state, setState] = useState<"loading" | "ok" | "empty" | "error">("loading");
@@ -146,6 +147,7 @@ export default function High52wPage() {
   return (
     <main className="min-h-screen w-full bg-black text-white">
       <div className="mx-auto w-full max-w-[1600px] px-3 py-5">
+        <MaCrossSummary />
         <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-3">
             <a href="/" className="rounded-lg border border-white/15 bg-white/[0.04] px-3 py-1 text-xs text-white/70 hover:bg-white/10">← 홈으로</a>
