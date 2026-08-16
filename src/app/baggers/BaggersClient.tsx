@@ -46,9 +46,9 @@ export default function BaggersClient({ data }: { data: BaggersData }) {
   const [tip, setTip] = useState<{ x: number; y: number; item: BaggerItem } | null>(null);
 
   return (
-    <main className="min-h-screen bg-[#0a0e17] text-white/90">
+    <main className="min-h-screen bg-slate-950 text-white/90">
       {/* Header */}
-      <header className="sticky top-0 z-20 border-b border-white/10 bg-[#0a0e17]/90 px-6 py-4 backdrop-blur">
+      <header className="sticky top-0 z-20 border-b border-white/10 bg-slate-950/90 px-6 py-4 backdrop-blur">
         <div className="mx-auto flex max-w-5xl items-center justify-between">
           <div className="flex items-center gap-3">
             <span className="text-2xl">💰</span>

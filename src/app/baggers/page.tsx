@@ -22,7 +22,7 @@ export default function BaggersPage() {
   const data = loadBaggers();
   if (!data) {
     return (
-      <main className="min-h-screen bg-[#0a0e17] p-10 text-white/80">
+      <main className="min-h-screen bg-slate-950 p-10 text-white/80">
         배거 데이터를 불러오지 못했습니다.
       </main>
     );
