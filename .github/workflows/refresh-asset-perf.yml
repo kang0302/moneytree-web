@@ -50,12 +50,12 @@ jobs:
       - name: Commit & push if changed
         run: |
           set -e
-          if [ -z "$(git status --porcelain public/data/asset_perf public/data/baggers.json)" ]; then
+          if [ -z "$(git status --porcelain public/data/asset_perf public/data/baggers.json public/data/baggers_history)" ]; then
             echo "No changes."
             exit 0
           fi
           git config user.name "moneytree-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add -A public/data/asset_perf public/data/baggers.json
+          git add -A public/data/asset_perf public/data/baggers.json public/data/baggers_history
           git commit -m "chore(data): asset_perf·baggers 데일리 재빌드 (px_hist 최신 반영)"
           git push origin main

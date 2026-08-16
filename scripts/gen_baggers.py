@@ -97,5 +97,18 @@ payload = {
 }
 os.makedirs("public/data", exist_ok=True)
 json.dump(payload, open("public/data/baggers.json", "w", encoding="utf-8"), ensure_ascii=False)
-print("total", payload["total"], "| buckets", {b["label"]: b["count"] for b in out_buckets})
+
+# 데일리 스냅샷 저장(날짜별) + 인덱스(최신순)
+HIST = "public/data/baggers_history"
+os.makedirs(HIST, exist_ok=True)
+json.dump(payload, open(f"{HIST}/{END}.json", "w", encoding="utf-8"), ensure_ascii=False)
+idxp = f"{HIST}/index.json"
+dates = []
+if os.path.exists(idxp):
+    try: dates = json.load(open(idxp, encoding="utf-8"))
+    except Exception: dates = []
+dates = sorted(set([*dates, END]), reverse=True)
+json.dump(dates, open(idxp, "w", encoding="utf-8"), ensure_ascii=False)
+
+print("total", payload["total"], "| buckets", {b["label"]: b["count"] for b in out_buckets}, "| snapshot", END)
 print("sample:", out_buckets[0]["items"][0])
