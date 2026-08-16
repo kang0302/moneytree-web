@@ -1,863 +1,864 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_644",
- "themeName": "K-외국인관광수혜주_K뷰티·미용의료",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_644",
+  "themeName": "K-외국인관광수혜주_K뷰티·미용의료",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-26T00:00:00+09:00",
+    "notes": "g233 누적 import 기반 K-외국인관광수혜 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-26",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
+      },
+      {
+        "date": "2026-07-19",
+        "kind": "분리",
+        "title": "K-외국인관광수혜주_K뷰티·미용의료 분리 생성",
+        "detail": "T_233 분할. 매크로 공동 사용."
+      },
+      {
+        "date": "2026-07-16",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "자산 18개에 테마 관점 특성(CHARACTER)·HAS_TRAIT를 부여했다."
+      },
+      {
+        "date": "2026-07-16",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필 + 2026 이벤트",
+        "detail": "전 엣지 근거를 종목·관계 사실로 구체화하고 2026 이벤트를 추가했다."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ],
+    "description": "파마리서치·휴젤(톡신·필러), 클래시스·루트로닉·제이시스메디칼(에스테틱 의료기기), 엘앤씨바이오·차바이오텍·딥노이드 — K-뷰티·미용의료 밸류체인. 시술 대중화·해외 수출·톡신 규제 통과가 핵심 동인."
+  },
+  "nodes": [
+    {
+      "id": "T_644",
+      "type": "THEME",
+      "name": "K-외국인관광수혜주_K뷰티·미용의료"
+    },
+    {
+      "id": "A_922",
+      "type": "ASSET",
+      "name": "파마리서치",
+      "exposure": {
+        "ticker": "214450",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -6.462984723854293,
+        "close": 398000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -4.556354916067152,
+        "return_15d": 11.484593837535018,
+        "return_1m": 21.526717557251906,
+        "return_ytd": -8.294930875576034,
+        "return_1y": -27.557161090298145,
+        "return_3y": 175.28046711769773,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 5.151915455746359,
+        "return_2y": 180.3075187020965
+      }
+    },
+    {
+      "id": "C_3443",
+      "type": "CHARACTER",
+      "name": "리쥬란스킨부스터"
+    },
+    {
+      "id": "A_924",
+      "type": "ASSET",
+      "name": "휴젤",
+      "exposure": {
+        "ticker": "145020",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -2.4761904761904763,
+        "close": 256000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -9.380530973451329,
+        "return_15d": 9.168443496801704,
+        "return_1m": 9.63597430406853,
+        "return_ytd": 8.936170212765958,
+        "return_1y": -20.249221183800625,
+        "return_3y": 120.88006902502157,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -6.39853747714808,
+        "return_2y": 16.894977168949765
+      }
+    },
+    {
+      "id": "C_3444",
+      "type": "CHARACTER",
+      "name": "톡신필러"
+    },
+    {
+      "id": "A_921",
+      "type": "ASSET",
+      "name": "클래시스",
+      "exposure": {
+        "ticker": "214150",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -5.5415617128463435,
+        "close": 37500,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -19.09385113268608,
+        "return_15d": -15.635545556805397,
+        "return_1m": -17.672886937431397,
+        "return_ytd": -36.00682593856656,
+        "return_1y": -31.361785237575003,
+        "return_3y": 9.296551307333644,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -18.300653594771244,
+        "return_2y": -25.863097811881364
+      }
+    },
+    {
+      "id": "C_3445",
+      "type": "CHARACTER",
+      "name": "미용의료기기(슈링크)"
+    },
+    {
+      "id": "A_1509",
+      "type": "ASSET",
+      "name": "루트로닉",
+      "exposure": {
+        "ticker": "085370",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.0,
+        "close": 36700,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 0.0,
+        "return_15d": 0.0,
+        "return_1m": -0.1360544217687054,
+        "return_ytd": 0.8241758241758212,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 0.0,
+        "return_2y": null
+      }
+    },
+    {
+      "id": "C_3446",
+      "type": "CHARACTER",
+      "name": "레이저미용기기"
+    },
+    {
+      "id": "A_1510",
+      "type": "ASSET",
+      "name": "제이시스메디칼",
+      "exposure": {
+        "ticker": "287410",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.0,
+        "close": 12900,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 0.0,
+        "return_15d": 0.15527950310558758,
+        "return_1m": 0.2331002331002363,
+        "return_ytd": 22.507122507122503,
+        "return_1y": 19.777158774373248,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 0.0,
+        "return_2y": null
+      }
+    },
+    {
+      "id": "C_3447",
+      "type": "CHARACTER",
+      "name": "고주파초음파기기"
+    },
+    {
+      "id": "A_1257",
+      "type": "ASSET",
+      "name": "엘앤씨바이오",
+      "exposure": {
+        "ticker": "290650",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -5.896510228640195,
+        "close": 78200,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -13.781697905181922,
+        "return_15d": 2.6246719160105014,
+        "return_1m": -9.280742459396752,
+        "return_ytd": 25.320512820512818,
+        "return_1y": 170.80453315291427,
+        "return_3y": 119.971870604782,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -16.98513800424628,
+        "return_2y": 301.2234009536373
+      }
+    },
+    {
+      "id": "C_3451",
+      "type": "CHARACTER",
+      "name": "콜라겐미용소재"
+    },
+    {
+      "id": "A_1508",
+      "type": "ASSET",
+      "name": "차바이오텍",
+      "exposure": {
+        "ticker": "085660",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.42149631190726566,
+        "close": 9530,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -1.9547325102880708,
+        "return_15d": 7.319819819819817,
+        "return_1m": 0.0,
+        "return_ytd": -35.82491582491583,
+        "return_1y": -11.100746268656714,
+        "return_3y": -27.19750325785444,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 2.473118279569886,
+        "return_2y": -36.898569456138574
+      }
+    },
+    {
+      "id": "C_3442",
+      "type": "CHARACTER",
+      "name": "안티에이징바이오"
+    },
+    {
+      "id": "A_1210",
+      "type": "ASSET",
+      "name": "딥노이드",
+      "exposure": {
+        "ticker": "315640",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.06414368184732844,
+        "close": 1560,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -3.4653465346534684,
+        "return_15d": -32.173913043478265,
+        "return_1m": -34.864300626304804,
+        "return_ytd": -52.870090634441084,
+        "return_1y": -76.036866359447,
+        "return_3y": -86.1055717717091,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -8.878504672897192,
+        "return_2y": -83.91752577319588
+      }
+    },
+    {
+      "id": "C_3453",
+      "type": "CHARACTER",
+      "name": "의료AI검진"
+    },
+    {
+      "id": "M_227",
+      "type": "MACRO",
+      "name": "일중갈등"
+    },
+    {
+      "id": "M_228",
+      "type": "MACRO",
+      "name": "중국인무비자정책"
+    },
+    {
+      "id": "A_2892",
+      "type": "ASSET",
+      "name": "TIGER 화장품",
+      "exposure": {
+        "ticker": "228790",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -1.0067114093959773,
+        "return_3d": 3.3878504672897103,
+        "return_15d": 20.9016393442623,
+        "return_1m": 20.572207084468673,
+        "return_ytd": 29.4478273476658,
+        "return_1y": 13.131721781970086,
+        "return_3y": null,
+        "close": 4425,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": null,
+        "return_2y": 41.511660496864856
+      }
+    }
   ],
-  "dataAsOf": "2026-07-26T00:00:00+09:00",
-  "notes": "g233 누적 import 기반 K-외국인관광수혜 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-26",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
-   },
-   {
-    "date": "2026-07-19",
-    "kind": "분리",
-    "title": "K-외국인관광수혜주_K뷰티·미용의료 분리 생성",
-    "detail": "T_233 분할. 매크로 공동 사용."
-   },
-   {
-    "date": "2026-07-16",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "자산 18개에 테마 관점 특성(CHARACTER)·HAS_TRAIT를 부여했다."
-   },
-   {
-    "date": "2026-07-16",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필 + 2026 이벤트",
-    "detail": "전 엣지 근거를 종목·관계 사실로 구체화하고 2026 이벤트를 추가했다."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_922",
+      "to": "T_644",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013764"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_922",
+      "to": "C_3443",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007292"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_924",
+      "to": "T_644",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013765"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_924",
+      "to": "C_3444",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007293"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_921",
+      "to": "T_644",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013766"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_921",
+      "to": "C_3445",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007294"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1509",
+      "to": "T_644",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013767"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1509",
+      "to": "C_3446",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007295"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1510",
+      "to": "T_644",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013768"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1510",
+      "to": "C_3447",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007296"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1257",
+      "to": "T_644",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013769"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1257",
+      "to": "C_3451",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007300"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_1508",
+      "to": "T_644",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013770"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1508",
+      "to": "C_3442",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007291"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_1210",
+      "to": "T_644",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013771"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1210",
+      "to": "C_3453",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007302"
+      ],
+      "confidence": 0.64,
+      "status": "verified"
+    },
+    {
+      "from": "M_227",
+      "to": "T_644",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013772"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_228",
+      "to": "T_644",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013773"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_921",
+      "to": "A_1510",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020314"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "클래시스와 제이시스메디칼은 미용의료기기 시장 직접 경쟁"
+    },
+    {
+      "from": "A_1509",
+      "to": "A_1510",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020315"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "루트로닉과 제이시스메디칼은 레이저 미용기기 시장 경쟁"
+    },
+    {
+      "from": "A_922",
+      "to": "A_924",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020316"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "파마리서치와 휴젤은 스킨부스터·톡신 미용시술 시장 경쟁"
+    },
+    {
+      "from": "A_1257",
+      "to": "A_1508",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020317"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "엘앤씨바이오와 차바이오텍은 재생의료·조직이식 시장 경쟁"
+    },
+    {
+      "from": "A_921",
+      "to": "A_1509",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020318"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "클래시스와 루트로닉은 국내 에스테틱 장비 시장 경쟁"
+    },
+    {
+      "from": "A_2892",
+      "to": "T_644",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020941"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ],
-  "description": "파마리서치·휴젤(톡신·필러), 클래시스·루트로닉·제이시스메디칼(에스테틱 의료기기), 엘앤씨바이오·차바이오텍·딥노이드 — K-뷰티·미용의료 밸류체인. 시술 대중화·해외 수출·톡신 규제 통과가 핵심 동인."
- },
- "nodes": [
-  {
-   "id": "T_644",
-   "type": "THEME",
-   "name": "K-외국인관광수혜주_K뷰티·미용의료"
-  },
-  {
-   "id": "A_922",
-   "type": "ASSET",
-   "name": "파마리서치",
-   "exposure": {
-    "ticker": "214450",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -6.462984723854293,
-    "close": 398000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -4.556354916067152,
-    "return_15d": 11.484593837535018,
-    "return_1m": 24.9607535321821,
-    "return_ytd": -1.2406947890818865,
-    "return_1y": -41.64326865253286,
-    "return_3y": 175.28046711769773,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 5.151915455746359,
-    "return_2y": 117.3751365674315
-   }
-  },
-  {
-   "id": "C_3443",
-   "type": "CHARACTER",
-   "name": "리쥬란스킨부스터"
-  },
-  {
-   "id": "A_924",
-   "type": "ASSET",
-   "name": "휴젤",
-   "exposure": {
-    "ticker": "145020",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -2.4761904761904763,
-    "close": 256000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -9.380530973451329,
-    "return_15d": 9.168443496801704,
-    "return_1m": 12.77533039647578,
-    "return_ytd": 11.062906724511933,
-    "return_1y": -19.242902208201894,
-    "return_3y": 120.88006902502157,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -6.39853747714808,
-    "return_2y": -3.0303030303030276
-   }
-  },
-  {
-   "id": "C_3444",
-   "type": "CHARACTER",
-   "name": "톡신필러"
-  },
-  {
-   "id": "A_921",
-   "type": "ASSET",
-   "name": "클래시스",
-   "exposure": {
-    "ticker": "214150",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -5.5415617128463435,
-    "close": 37500,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -19.09385113268608,
-    "return_15d": -15.635545556805397,
-    "return_1m": -17.672886937431397,
-    "return_ytd": -31.19266055045872,
-    "return_1y": -32.94950195265534,
-    "return_3y": 9.296551307333644,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -18.300653594771244,
-    "return_2y": -20.160259097034295
-   }
-  },
-  {
-   "id": "C_3445",
-   "type": "CHARACTER",
-   "name": "미용의료기기(슈링크)"
-  },
-  {
-   "id": "A_1509",
-   "type": "ASSET",
-   "name": "루트로닉",
-   "exposure": {
-    "ticker": "085370",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.0,
-    "close": 36700,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 0.0,
-    "return_15d": 0.0,
-    "return_1m": 0.0,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": "2023-10-26",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.0,
-    "return_2y": null
-   }
-  },
-  {
-   "id": "C_3446",
-   "type": "CHARACTER",
-   "name": "레이저미용기기"
-  },
-  {
-   "id": "A_1510",
-   "type": "ASSET",
-   "name": "제이시스메디칼",
-   "exposure": {
-    "ticker": "287410",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.0,
-    "close": 12900,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 0.0,
-    "return_15d": 0.15527950310558758,
-    "return_1m": 0.3110419906687367,
-    "return_ytd": 22.974261201143943,
-    "return_1y": 10.445205479452046,
-    "return_3y": null,
-    "returnsAsOf": "2024-11-06",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.0,
-    "return_2y": null
-   }
-  },
-  {
-   "id": "C_3447",
-   "type": "CHARACTER",
-   "name": "고주파초음파기기"
-  },
-  {
-   "id": "A_1257",
-   "type": "ASSET",
-   "name": "엘앤씨바이오",
-   "exposure": {
-    "ticker": "290650",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -5.896510228640195,
-    "close": 78200,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -13.781697905181922,
-    "return_15d": 2.6246719160105014,
-    "return_1m": -9.280742459396752,
-    "return_ytd": 27.986906710310965,
-    "return_1y": 162.85714285714286,
-    "return_3y": 119.971870604782,
-    "returnsAsOf": "2026-07-06",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -16.98513800424628,
-    "return_2y": 221.81069958847735
-   }
-  },
-  {
-   "id": "C_3451",
-   "type": "CHARACTER",
-   "name": "콜라겐미용소재"
-  },
-  {
-   "id": "A_1508",
-   "type": "ASSET",
-   "name": "차바이오텍",
-   "exposure": {
-    "ticker": "085660",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.42149631190726566,
-    "close": 9530,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -1.9547325102880708,
-    "return_15d": 7.319819819819817,
-    "return_1m": 3.8126361655773433,
-    "return_ytd": -35.03749147920927,
-    "return_1y": -13.989169675090253,
-    "return_3y": -27.19750325785444,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 2.473118279569886,
-    "return_2y": -38.072021524163866
-   }
-  },
-  {
-   "id": "C_3442",
-   "type": "CHARACTER",
-   "name": "안티에이징바이오"
-  },
-  {
-   "id": "A_1210",
-   "type": "ASSET",
-   "name": "딥노이드",
-   "exposure": {
-    "ticker": "315640",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.06414368184732844,
-    "close": 1560,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -3.4653465346534684,
-    "return_15d": -32.173913043478265,
-    "return_1m": -34.864300626304804,
-    "return_ytd": -51.92604006163328,
-    "return_1y": -74.2998352553542,
-    "return_3y": -86.1055717717091,
-    "returnsAsOf": "2026-07-06",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -8.878504672897192,
-    "return_2y": -79.06040268456375
-   }
-  },
-  {
-   "id": "C_3453",
-   "type": "CHARACTER",
-   "name": "의료AI검진"
-  },
-  {
-   "id": "M_227",
-   "type": "MACRO",
-   "name": "일중갈등"
-  },
-  {
-   "id": "M_228",
-   "type": "MACRO",
-   "name": "중국인무비자정책"
-  },
-  {
-   "id": "A_2892",
-   "type": "ASSET",
-   "name": "TIGER 화장품",
-   "exposure": {
-    "ticker": "228790",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -1.0067114093959773,
-    "return_3d": 3.3878504672897103,
-    "return_15d": 20.9016393442623,
-    "return_1m": 20.572207084468673,
-    "return_ytd": 29.4478273476658,
-    "return_1y": 13.131721781970086,
-    "return_3y": null,
-    "close": 4425,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": null
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_922",
-   "to": "T_644",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013764"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_922",
-   "to": "C_3443",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007292"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_924",
-   "to": "T_644",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013765"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_924",
-   "to": "C_3444",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007293"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_921",
-   "to": "T_644",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013766"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_921",
-   "to": "C_3445",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007294"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1509",
-   "to": "T_644",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013767"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1509",
-   "to": "C_3446",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007295"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1510",
-   "to": "T_644",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013768"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1510",
-   "to": "C_3447",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007296"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1257",
-   "to": "T_644",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013769"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1257",
-   "to": "C_3451",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007300"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_1508",
-   "to": "T_644",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013770"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1508",
-   "to": "C_3442",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007291"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_1210",
-   "to": "T_644",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013771"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1210",
-   "to": "C_3453",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007302"
-   ],
-   "confidence": 0.64,
-   "status": "verified"
-  },
-  {
-   "from": "M_227",
-   "to": "T_644",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013772"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_228",
-   "to": "T_644",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013773"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_921",
-   "to": "A_1510",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020314"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "클래시스와 제이시스메디칼은 미용의료기기 시장 직접 경쟁"
-  },
-  {
-   "from": "A_1509",
-   "to": "A_1510",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020315"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "루트로닉과 제이시스메디칼은 레이저 미용기기 시장 경쟁"
-  },
-  {
-   "from": "A_922",
-   "to": "A_924",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020316"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "파마리서치와 휴젤은 스킨부스터·톡신 미용시술 시장 경쟁"
-  },
-  {
-   "from": "A_1257",
-   "to": "A_1508",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020317"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "엘앤씨바이오와 차바이오텍은 재생의료·조직이식 시장 경쟁"
-  },
-  {
-   "from": "A_921",
-   "to": "A_1509",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020318"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "클래시스와 루트로닉은 국내 에스테틱 장비 시장 경쟁"
-  },
-  {
-   "from": "A_2892",
-   "to": "T_644",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020941"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_922",
-   "to": "T_644",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013764"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_922",
-   "to": "C_3443",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007292"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_924",
-   "to": "T_644",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013765"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_924",
-   "to": "C_3444",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007293"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_921",
-   "to": "T_644",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013766"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_921",
-   "to": "C_3445",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007294"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1509",
-   "to": "T_644",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013767"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1509",
-   "to": "C_3446",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007295"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1510",
-   "to": "T_644",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013768"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1510",
-   "to": "C_3447",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007296"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1257",
-   "to": "T_644",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013769"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1257",
-   "to": "C_3451",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007300"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_1508",
-   "to": "T_644",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013770"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1508",
-   "to": "C_3442",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007291"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_1210",
-   "to": "T_644",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013771"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1210",
-   "to": "C_3453",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007302"
-   ],
-   "confidence": 0.64,
-   "status": "verified"
-  },
-  {
-   "from": "M_227",
-   "to": "T_644",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013772"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_228",
-   "to": "T_644",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013773"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_921",
-   "to": "A_1510",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020314"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "클래시스와 제이시스메디칼은 미용의료기기 시장 직접 경쟁"
-  },
-  {
-   "from": "A_1509",
-   "to": "A_1510",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020315"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "루트로닉과 제이시스메디칼은 레이저 미용기기 시장 경쟁"
-  },
-  {
-   "from": "A_922",
-   "to": "A_924",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020316"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "파마리서치와 휴젤은 스킨부스터·톡신 미용시술 시장 경쟁"
-  },
-  {
-   "from": "A_1257",
-   "to": "A_1508",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020317"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "엘앤씨바이오와 차바이오텍은 재생의료·조직이식 시장 경쟁"
-  },
-  {
-   "from": "A_921",
-   "to": "A_1509",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020318"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "클래시스와 루트로닉은 국내 에스테틱 장비 시장 경쟁"
-  },
-  {
-   "from": "A_2892",
-   "to": "T_644",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020941"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
+  "links": [
+    {
+      "from": "A_922",
+      "to": "T_644",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013764"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_922",
+      "to": "C_3443",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007292"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_924",
+      "to": "T_644",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013765"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_924",
+      "to": "C_3444",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007293"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_921",
+      "to": "T_644",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013766"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_921",
+      "to": "C_3445",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007294"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1509",
+      "to": "T_644",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013767"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1509",
+      "to": "C_3446",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007295"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1510",
+      "to": "T_644",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013768"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1510",
+      "to": "C_3447",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007296"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1257",
+      "to": "T_644",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013769"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1257",
+      "to": "C_3451",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007300"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_1508",
+      "to": "T_644",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013770"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1508",
+      "to": "C_3442",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007291"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_1210",
+      "to": "T_644",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013771"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1210",
+      "to": "C_3453",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007302"
+      ],
+      "confidence": 0.64,
+      "status": "verified"
+    },
+    {
+      "from": "M_227",
+      "to": "T_644",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013772"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_228",
+      "to": "T_644",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013773"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_921",
+      "to": "A_1510",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020314"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "클래시스와 제이시스메디칼은 미용의료기기 시장 직접 경쟁"
+    },
+    {
+      "from": "A_1509",
+      "to": "A_1510",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020315"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "루트로닉과 제이시스메디칼은 레이저 미용기기 시장 경쟁"
+    },
+    {
+      "from": "A_922",
+      "to": "A_924",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020316"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "파마리서치와 휴젤은 스킨부스터·톡신 미용시술 시장 경쟁"
+    },
+    {
+      "from": "A_1257",
+      "to": "A_1508",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020317"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "엘앤씨바이오와 차바이오텍은 재생의료·조직이식 시장 경쟁"
+    },
+    {
+      "from": "A_921",
+      "to": "A_1509",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020318"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "클래시스와 루트로닉은 국내 에스테틱 장비 시장 경쟁"
+    },
+    {
+      "from": "A_2892",
+      "to": "T_644",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020941"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ]
 }

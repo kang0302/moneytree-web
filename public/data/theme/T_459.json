@@ -1,816 +1,817 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_459",
- "themeName": "K-은행지주(밸류업)",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_459",
+  "themeName": "K-은행지주(밸류업)",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-25T00:00:00+09:00",
+    "description": "정부 밸류업 정책·주주환원(자사주·배당) 확대의 핵심 수혜 — 한국 은행지주. 4대 금융지주(KB·신한·하나·우리)·기업은행 + 지방은행지주(BNK·JB·iM). 금리·NIM·부동산 PF가 변수.",
+    "notes": "T_459 신규 — 자산별 CHARACTER(사업특성/포지션), MACRO 3 (기존 재사용)",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-25",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결, 2026 이벤트 2건 추가."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_459",
+      "type": "THEME",
+      "name": "K-은행지주(밸류업)"
+    },
+    {
+      "id": "A_1539",
+      "type": "ASSET",
+      "name": "KB금융",
+      "exposure": {
+        "ticker": "105560",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.2379535990481907,
+        "return_3d": 1.140456182472982,
+        "return_15d": -1.0799527182134172,
+        "return_1m": -6.581563272857737,
+        "return_ytd": 39.92558302425218,
+        "return_1y": 65.21578300511604,
+        "return_3y": 269.39747752821967,
+        "close": 168500,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -4.152445961319684,
+        "return_2y": 114.46262558742033
+      }
+    },
+    {
+      "id": "C_825",
+      "type": "CHARACTER",
+      "name": "국내 1위 금융지주"
+    },
+    {
+      "id": "A_1538",
+      "type": "ASSET",
+      "name": "신한지주",
+      "exposure": {
+        "ticker": "055550",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.7504690431519689,
+        "return_3d": 2.775119617224875,
+        "return_15d": 3.6336115297545435,
+        "return_1m": 0.8327031258092976,
+        "return_ytd": 43.55836589725626,
+        "return_1y": 70.24198506440752,
+        "return_3y": 251.64723713090456,
+        "close": 107400,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -2.3636363636363678,
+        "return_2y": 114.49364558980078
+      }
+    },
+    {
+      "id": "C_826",
+      "type": "CHARACTER",
+      "name": "균형 포트 금융지주"
+    },
+    {
+      "id": "A_1537",
+      "type": "ASSET",
+      "name": "하나금융지주",
+      "exposure": {
+        "ticker": "086790",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.526717557251911,
+        "return_3d": 4.150352388410328,
+        "return_15d": 1.3311729913275228,
+        "return_1m": -1.9280168057507319,
+        "return_ytd": 46.51976848792552,
+        "return_1y": 69.69251666221348,
+        "return_3y": 309.69368149118816,
+        "close": 133000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -1.2620638455827726,
+        "return_2y": 137.56726038214117
+      }
+    },
+    {
+      "id": "C_827",
+      "type": "CHARACTER",
+      "name": "외환·기업 강점 금융지주"
+    },
+    {
+      "id": "A_1536",
+      "type": "ASSET",
+      "name": "우리금융지주",
+      "exposure": {
+        "ticker": "316140",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.2012012012011963,
+        "return_3d": -0.295857988165682,
+        "return_15d": 9.960377393151386,
+        "return_1m": 8.379477316204342,
+        "return_ytd": 24.16313814616602,
+        "return_1y": 49.88997608738941,
+        "return_3y": 257.39041704577096,
+        "close": 33700,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -3.1609195402298895,
+        "return_2y": 153.1513987565038
+      }
+    },
+    {
+      "id": "C_828",
+      "type": "CHARACTER",
+      "name": "은행 중심·증권 재진출"
+    },
+    {
+      "id": "A_1540",
+      "type": "ASSET",
+      "name": "IBK기업은행",
+      "exposure": {
+        "ticker": "024110",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 2.0000000000000018,
+        "return_3d": 1.2406947890818865,
+        "return_15d": -3.4458683412661895,
+        "return_1m": -2.991495939704314,
+        "return_ytd": 3.9729660502578534,
+        "return_1y": 15.680377656965616,
+        "return_3y": 137.7018675827914,
+        "close": 20400,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -1.6867469879518038,
+        "return_2y": 66.53505091380597
+      }
+    },
+    {
+      "id": "C_829",
+      "type": "CHARACTER",
+      "name": "국책 중소기업 은행"
+    },
+    {
+      "id": "A_2390",
+      "type": "ASSET",
+      "name": "BNK금융지주",
+      "exposure": {
+        "ticker": "138930",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.8855218855218903,
+        "return_3d": 1.543624161073831,
+        "return_15d": -15.280795141196258,
+        "return_1m": -16.117757274239818,
+        "return_ytd": -0.2646519976953976,
+        "return_1y": 15.4271419150237,
+        "return_3y": 172.21130938137685,
+        "close": 15130,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 0.8801624147945164,
+        "return_2y": 100.40864289227636
+      }
+    },
+    {
+      "id": "C_830",
+      "type": "CHARACTER",
+      "name": "부울경 지방 금융지주"
+    },
+    {
+      "id": "A_2391",
+      "type": "ASSET",
+      "name": "JB금융지주",
+      "exposure": {
+        "ticker": "175330",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -4.599659284497449,
+        "return_3d": -2.608695652173909,
+        "return_15d": 5.278334201973589,
+        "return_1m": 1.5049173422800655,
+        "return_ytd": 15.987381252274414,
+        "return_1y": 36.2557366402406,
+        "return_3y": 285.3802267296477,
+        "close": 28000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -2.9462738301559765,
+        "return_2y": 116.25179673384562
+      }
+    },
+    {
+      "id": "C_831",
+      "type": "CHARACTER",
+      "name": "고ROE 지방 금융지주"
+    },
+    {
+      "id": "A_2392",
+      "type": "ASSET",
+      "name": "iM금융지주",
+      "exposure": {
+        "ticker": "139130",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 2.9463759575721893,
+        "return_3d": 2.4032825322391593,
+        "return_15d": -4.273972602739729,
+        "return_1m": -3.6403750689464998,
+        "return_ytd": 18.173357013731817,
+        "return_1y": 34.515546609275006,
+        "return_3y": 175.67992856497105,
+        "close": 17470,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -2.2383883603805277,
+        "return_2y": 141.53156395171686
+      }
+    },
+    {
+      "id": "C_832",
+      "type": "CHARACTER",
+      "name": "대구경북 지방 금융지주"
+    },
+    {
+      "id": "M_126",
+      "type": "MACRO",
+      "name": "지주사밸류업/상법개정"
+    },
+    {
+      "id": "M_173",
+      "type": "MACRO",
+      "name": "주주환원정책"
+    },
+    {
+      "id": "M_145",
+      "type": "MACRO",
+      "name": "금리인하"
+    },
+    {
+      "id": "A_2940",
+      "type": "ASSET",
+      "name": "KODEX 은행",
+      "exposure": {
+        "ticker": "091170",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.0625000000000107,
+        "return_3d": 1.379310344827589,
+        "return_15d": 2.263673772581676,
+        "return_1m": -1.6099502386694997,
+        "return_ytd": 31.350619692240866,
+        "return_1y": 50.49806062726419,
+        "return_3y": null,
+        "close": 16170,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": null,
+        "return_2y": 108.12805840127378
+      }
+    }
   ],
-  "dataAsOf": "2026-07-25T00:00:00+09:00",
-  "description": "정부 밸류업 정책·주주환원(자사주·배당) 확대의 핵심 수혜 — 한국 은행지주. 4대 금융지주(KB·신한·하나·우리)·기업은행 + 지방은행지주(BNK·JB·iM). 금리·NIM·부동산 PF가 변수.",
-  "notes": "T_459 신규 — 자산별 CHARACTER(사업특성/포지션), MACRO 3 (기존 재사용)",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-25",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결, 2026 이벤트 2건 추가."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_1539",
+      "to": "T_459",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011916"
+      ]
+    },
+    {
+      "from": "A_1539",
+      "to": "C_825",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016916"
+      ]
+    },
+    {
+      "from": "A_1538",
+      "to": "T_459",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011917"
+      ]
+    },
+    {
+      "from": "A_1538",
+      "to": "C_826",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016917"
+      ]
+    },
+    {
+      "from": "A_1537",
+      "to": "T_459",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011918"
+      ]
+    },
+    {
+      "from": "A_1537",
+      "to": "C_827",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016918"
+      ]
+    },
+    {
+      "from": "A_1536",
+      "to": "T_459",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011919"
+      ]
+    },
+    {
+      "from": "A_1536",
+      "to": "C_828",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016919"
+      ]
+    },
+    {
+      "from": "A_1540",
+      "to": "T_459",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011920"
+      ]
+    },
+    {
+      "from": "A_1540",
+      "to": "C_829",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016920"
+      ]
+    },
+    {
+      "from": "A_2390",
+      "to": "T_459",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011921"
+      ]
+    },
+    {
+      "from": "A_2390",
+      "to": "C_830",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016921"
+      ]
+    },
+    {
+      "from": "A_2391",
+      "to": "T_459",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011922"
+      ]
+    },
+    {
+      "from": "A_2391",
+      "to": "C_831",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016922"
+      ]
+    },
+    {
+      "from": "A_2392",
+      "to": "T_459",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011923"
+      ]
+    },
+    {
+      "from": "A_2392",
+      "to": "C_832",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016923"
+      ]
+    },
+    {
+      "from": "M_126",
+      "to": "T_459",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011924"
+      ]
+    },
+    {
+      "from": "M_173",
+      "to": "T_459",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011925"
+      ]
+    },
+    {
+      "from": "M_145",
+      "to": "T_459",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011926"
+      ]
+    },
+    {
+      "from": "A_1539",
+      "to": "A_1538",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019741"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "KB금융과 신한지주는 국내 금융지주 시장 양대 경쟁"
+    },
+    {
+      "from": "A_1539",
+      "to": "A_1537",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019742"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "KB금융과 하나금융지주는 국내 은행·금융 시장 경쟁"
+    },
+    {
+      "from": "A_1538",
+      "to": "A_1536",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019743"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "신한지주와 우리금융지주는 국내 시중은행 시장 경쟁"
+    },
+    {
+      "from": "A_2390",
+      "to": "A_2391",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019744"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "BNK금융지주와 JB금융지주는 지방 금융지주 시장 경쟁"
+    },
+    {
+      "from": "A_2392",
+      "to": "A_2390",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019745"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "iM금융지주와 BNK금융지주는 영남권 지방은행 시장 경쟁"
+    },
+    {
+      "from": "A_1540",
+      "to": "A_1539",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019746"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "IBK기업은행과 KB금융은 중소기업 금융 시장 경쟁"
+    },
+    {
+      "from": "A_2940",
+      "to": "T_459",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020805"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_1539",
+      "to": "T_459",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011916"
+      ]
+    },
+    {
+      "from": "A_1539",
+      "to": "C_825",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016916"
+      ]
+    },
+    {
+      "from": "A_1538",
+      "to": "T_459",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011917"
+      ]
+    },
+    {
+      "from": "A_1538",
+      "to": "C_826",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016917"
+      ]
+    },
+    {
+      "from": "A_1537",
+      "to": "T_459",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011918"
+      ]
+    },
+    {
+      "from": "A_1537",
+      "to": "C_827",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016918"
+      ]
+    },
+    {
+      "from": "A_1536",
+      "to": "T_459",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011919"
+      ]
+    },
+    {
+      "from": "A_1536",
+      "to": "C_828",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016919"
+      ]
+    },
+    {
+      "from": "A_1540",
+      "to": "T_459",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011920"
+      ]
+    },
+    {
+      "from": "A_1540",
+      "to": "C_829",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016920"
+      ]
+    },
+    {
+      "from": "A_2390",
+      "to": "T_459",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011921"
+      ]
+    },
+    {
+      "from": "A_2390",
+      "to": "C_830",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016921"
+      ]
+    },
+    {
+      "from": "A_2391",
+      "to": "T_459",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011922"
+      ]
+    },
+    {
+      "from": "A_2391",
+      "to": "C_831",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016922"
+      ]
+    },
+    {
+      "from": "A_2392",
+      "to": "T_459",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011923"
+      ]
+    },
+    {
+      "from": "A_2392",
+      "to": "C_832",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016923"
+      ]
+    },
+    {
+      "from": "M_126",
+      "to": "T_459",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011924"
+      ]
+    },
+    {
+      "from": "M_173",
+      "to": "T_459",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011925"
+      ]
+    },
+    {
+      "from": "M_145",
+      "to": "T_459",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011926"
+      ]
+    },
+    {
+      "from": "A_1539",
+      "to": "A_1538",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019741"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "KB금융과 신한지주는 국내 금융지주 시장 양대 경쟁"
+    },
+    {
+      "from": "A_1539",
+      "to": "A_1537",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019742"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "KB금융과 하나금융지주는 국내 은행·금융 시장 경쟁"
+    },
+    {
+      "from": "A_1538",
+      "to": "A_1536",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019743"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "신한지주와 우리금융지주는 국내 시중은행 시장 경쟁"
+    },
+    {
+      "from": "A_2390",
+      "to": "A_2391",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019744"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "BNK금융지주와 JB금융지주는 지방 금융지주 시장 경쟁"
+    },
+    {
+      "from": "A_2392",
+      "to": "A_2390",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019745"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "iM금융지주와 BNK금융지주는 영남권 지방은행 시장 경쟁"
+    },
+    {
+      "from": "A_1540",
+      "to": "A_1539",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019746"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "IBK기업은행과 KB금융은 중소기업 금융 시장 경쟁"
+    },
+    {
+      "from": "A_2940",
+      "to": "T_459",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020805"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_459",
-   "type": "THEME",
-   "name": "K-은행지주(밸류업)"
-  },
-  {
-   "id": "A_1539",
-   "type": "ASSET",
-   "name": "KB금융",
-   "exposure": {
-    "ticker": "105560",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.2379535990481907,
-    "return_3d": 1.140456182472982,
-    "return_15d": -1.0799527182134172,
-    "return_1m": -5.751177163042853,
-    "return_ytd": 38.35464619875564,
-    "return_1y": 53.46969971393558,
-    "return_3y": 269.39747752821967,
-    "close": 168500,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -4.152445961319684,
-    "return_2y": 113.70031746000184
-   }
-  },
-  {
-   "id": "C_825",
-   "type": "CHARACTER",
-   "name": "국내 1위 금융지주"
-  },
-  {
-   "id": "A_1538",
-   "type": "ASSET",
-   "name": "신한지주",
-   "exposure": {
-    "ticker": "055550",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.7504690431519689,
-    "return_3d": 2.775119617224875,
-    "return_15d": 3.6336115297545435,
-    "return_1m": 1.5901318773851703,
-    "return_ytd": 42.99832031696449,
-    "return_1y": 60.387166855302034,
-    "return_3y": 251.64723713090456,
-    "close": 107400,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -2.3636363636363678,
-    "return_2y": 109.81378422995407
-   }
-  },
-  {
-   "id": "C_826",
-   "type": "CHARACTER",
-   "name": "균형 포트 금융지주"
-  },
-  {
-   "id": "A_1537",
-   "type": "ASSET",
-   "name": "하나금융지주",
-   "exposure": {
-    "ticker": "086790",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.526717557251911,
-    "return_3d": 4.150352388410328,
-    "return_15d": 1.3311729913275228,
-    "return_1m": 0.12124856343038726,
-    "return_ytd": 45.429823299112535,
-    "return_1y": 60.10527020227319,
-    "return_3y": 309.69368149118816,
-    "close": 133000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -1.2620638455827726,
-    "return_2y": 140.6727149095196
-   }
-  },
-  {
-   "id": "C_827",
-   "type": "CHARACTER",
-   "name": "외환·기업 강점 금융지주"
-  },
-  {
-   "id": "A_1536",
-   "type": "ASSET",
-   "name": "우리금융지주",
-   "exposure": {
-    "ticker": "316140",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.2012012012011963,
-    "return_3d": -0.295857988165682,
-    "return_15d": 9.960377393151386,
-    "return_1m": 10.497642988548627,
-    "return_ytd": 24.384857822940177,
-    "return_1y": 37.88450675060246,
-    "return_3y": 257.39041704577096,
-    "close": 33700,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -3.1609195402298895,
-    "return_2y": 146.35427472840976
-   }
-  },
-  {
-   "id": "C_828",
-   "type": "CHARACTER",
-   "name": "은행 중심·증권 재진출"
-  },
-  {
-   "id": "A_1540",
-   "type": "ASSET",
-   "name": "IBK기업은행",
-   "exposure": {
-    "ticker": "024110",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 2.0000000000000018,
-    "return_3d": 1.2406947890818865,
-    "return_15d": -3.4458683412661895,
-    "return_1m": -2.3018619981617805,
-    "return_ytd": 2.9803840692798733,
-    "return_1y": 10.865315581136992,
-    "return_3y": 137.7018675827914,
-    "close": 20400,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -1.6867469879518038,
-    "return_2y": 68.84129425691386
-   }
-  },
-  {
-   "id": "C_829",
-   "type": "CHARACTER",
-   "name": "국책 중소기업 은행"
-  },
-  {
-   "id": "A_2390",
-   "type": "ASSET",
-   "name": "BNK금융지주",
-   "exposure": {
-    "ticker": "138930",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.8855218855218903,
-    "return_3d": 1.543624161073831,
-    "return_15d": -15.280795141196258,
-    "return_1m": -15.18676683955954,
-    "return_ytd": -1.1444848622445214,
-    "return_1y": 7.916918523332783,
-    "return_3y": 172.21130938137685,
-    "close": 15130,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.8801624147945164,
-    "return_2y": 71.6102965406642
-   }
-  },
-  {
-   "id": "C_830",
-   "type": "CHARACTER",
-   "name": "부울경 지방 금융지주"
-  },
-  {
-   "id": "A_2391",
-   "type": "ASSET",
-   "name": "JB금융지주",
-   "exposure": {
-    "ticker": "175330",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -4.599659284497449,
-    "return_3d": -2.608695652173909,
-    "return_15d": 5.278334201973589,
-    "return_1m": 5.08301282170005,
-    "return_ytd": 13.952514806857508,
-    "return_1y": 32.54870684487487,
-    "return_3y": 285.3802267296477,
-    "close": 28000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -2.9462738301559765,
-    "return_2y": 118.97765978183963
-   }
-  },
-  {
-   "id": "C_831",
-   "type": "CHARACTER",
-   "name": "고ROE 지방 금융지주"
-  },
-  {
-   "id": "A_2392",
-   "type": "ASSET",
-   "name": "iM금융지주",
-   "exposure": {
-    "ticker": "139130",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 2.9463759575721893,
-    "return_3d": 2.4032825322391593,
-    "return_15d": -4.273972602739729,
-    "return_1m": -3.8525041276829985,
-    "return_ytd": 16.34945932399592,
-    "return_1y": 26.519866975838635,
-    "return_3y": 175.67992856497105,
-    "close": 17470,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -2.2383883603805277,
-    "return_2y": 140.61782282795963
-   }
-  },
-  {
-   "id": "C_832",
-   "type": "CHARACTER",
-   "name": "대구경북 지방 금융지주"
-  },
-  {
-   "id": "M_126",
-   "type": "MACRO",
-   "name": "지주사밸류업/상법개정"
-  },
-  {
-   "id": "M_173",
-   "type": "MACRO",
-   "name": "주주환원정책"
-  },
-  {
-   "id": "M_145",
-   "type": "MACRO",
-   "name": "금리인하"
-  },
-  {
-   "id": "A_2940",
-   "type": "ASSET",
-   "name": "KODEX 은행",
-   "exposure": {
-    "ticker": "091170",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.0625000000000107,
-    "return_3d": 1.379310344827589,
-    "return_15d": 2.263673772581676,
-    "return_1m": -1.6099502386694997,
-    "return_ytd": 31.350619692240866,
-    "return_1y": 50.49806062726419,
-    "return_3y": null,
-    "close": 16170,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": null
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_1539",
-   "to": "T_459",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011916"
-   ]
-  },
-  {
-   "from": "A_1539",
-   "to": "C_825",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016916"
-   ]
-  },
-  {
-   "from": "A_1538",
-   "to": "T_459",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011917"
-   ]
-  },
-  {
-   "from": "A_1538",
-   "to": "C_826",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016917"
-   ]
-  },
-  {
-   "from": "A_1537",
-   "to": "T_459",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011918"
-   ]
-  },
-  {
-   "from": "A_1537",
-   "to": "C_827",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016918"
-   ]
-  },
-  {
-   "from": "A_1536",
-   "to": "T_459",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011919"
-   ]
-  },
-  {
-   "from": "A_1536",
-   "to": "C_828",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016919"
-   ]
-  },
-  {
-   "from": "A_1540",
-   "to": "T_459",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011920"
-   ]
-  },
-  {
-   "from": "A_1540",
-   "to": "C_829",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016920"
-   ]
-  },
-  {
-   "from": "A_2390",
-   "to": "T_459",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011921"
-   ]
-  },
-  {
-   "from": "A_2390",
-   "to": "C_830",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016921"
-   ]
-  },
-  {
-   "from": "A_2391",
-   "to": "T_459",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011922"
-   ]
-  },
-  {
-   "from": "A_2391",
-   "to": "C_831",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016922"
-   ]
-  },
-  {
-   "from": "A_2392",
-   "to": "T_459",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011923"
-   ]
-  },
-  {
-   "from": "A_2392",
-   "to": "C_832",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016923"
-   ]
-  },
-  {
-   "from": "M_126",
-   "to": "T_459",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011924"
-   ]
-  },
-  {
-   "from": "M_173",
-   "to": "T_459",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011925"
-   ]
-  },
-  {
-   "from": "M_145",
-   "to": "T_459",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011926"
-   ]
-  },
-  {
-   "from": "A_1539",
-   "to": "A_1538",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019741"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "KB금융과 신한지주는 국내 금융지주 시장 양대 경쟁"
-  },
-  {
-   "from": "A_1539",
-   "to": "A_1537",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019742"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "KB금융과 하나금융지주는 국내 은행·금융 시장 경쟁"
-  },
-  {
-   "from": "A_1538",
-   "to": "A_1536",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019743"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "신한지주와 우리금융지주는 국내 시중은행 시장 경쟁"
-  },
-  {
-   "from": "A_2390",
-   "to": "A_2391",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019744"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "BNK금융지주와 JB금융지주는 지방 금융지주 시장 경쟁"
-  },
-  {
-   "from": "A_2392",
-   "to": "A_2390",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019745"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "iM금융지주와 BNK금융지주는 영남권 지방은행 시장 경쟁"
-  },
-  {
-   "from": "A_1540",
-   "to": "A_1539",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019746"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "IBK기업은행과 KB금융은 중소기업 금융 시장 경쟁"
-  },
-  {
-   "from": "A_2940",
-   "to": "T_459",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020805"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_1539",
-   "to": "T_459",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011916"
-   ]
-  },
-  {
-   "from": "A_1539",
-   "to": "C_825",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016916"
-   ]
-  },
-  {
-   "from": "A_1538",
-   "to": "T_459",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011917"
-   ]
-  },
-  {
-   "from": "A_1538",
-   "to": "C_826",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016917"
-   ]
-  },
-  {
-   "from": "A_1537",
-   "to": "T_459",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011918"
-   ]
-  },
-  {
-   "from": "A_1537",
-   "to": "C_827",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016918"
-   ]
-  },
-  {
-   "from": "A_1536",
-   "to": "T_459",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011919"
-   ]
-  },
-  {
-   "from": "A_1536",
-   "to": "C_828",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016919"
-   ]
-  },
-  {
-   "from": "A_1540",
-   "to": "T_459",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011920"
-   ]
-  },
-  {
-   "from": "A_1540",
-   "to": "C_829",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016920"
-   ]
-  },
-  {
-   "from": "A_2390",
-   "to": "T_459",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011921"
-   ]
-  },
-  {
-   "from": "A_2390",
-   "to": "C_830",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016921"
-   ]
-  },
-  {
-   "from": "A_2391",
-   "to": "T_459",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011922"
-   ]
-  },
-  {
-   "from": "A_2391",
-   "to": "C_831",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016922"
-   ]
-  },
-  {
-   "from": "A_2392",
-   "to": "T_459",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011923"
-   ]
-  },
-  {
-   "from": "A_2392",
-   "to": "C_832",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016923"
-   ]
-  },
-  {
-   "from": "M_126",
-   "to": "T_459",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011924"
-   ]
-  },
-  {
-   "from": "M_173",
-   "to": "T_459",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011925"
-   ]
-  },
-  {
-   "from": "M_145",
-   "to": "T_459",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011926"
-   ]
-  },
-  {
-   "from": "A_1539",
-   "to": "A_1538",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019741"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "KB금융과 신한지주는 국내 금융지주 시장 양대 경쟁"
-  },
-  {
-   "from": "A_1539",
-   "to": "A_1537",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019742"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "KB금융과 하나금융지주는 국내 은행·금융 시장 경쟁"
-  },
-  {
-   "from": "A_1538",
-   "to": "A_1536",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019743"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "신한지주와 우리금융지주는 국내 시중은행 시장 경쟁"
-  },
-  {
-   "from": "A_2390",
-   "to": "A_2391",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019744"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "BNK금융지주와 JB금융지주는 지방 금융지주 시장 경쟁"
-  },
-  {
-   "from": "A_2392",
-   "to": "A_2390",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019745"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "iM금융지주와 BNK금융지주는 영남권 지방은행 시장 경쟁"
-  },
-  {
-   "from": "A_1540",
-   "to": "A_1539",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019746"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "IBK기업은행과 KB금융은 중소기업 금융 시장 경쟁"
-  },
-  {
-   "from": "A_2940",
-   "to": "T_459",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020805"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

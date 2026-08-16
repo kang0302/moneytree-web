@@ -1,707 +1,708 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_537",
- "themeName": "(Y21) 인플레·원자재 부활",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_537",
+  "themeName": "(Y21) 인플레·원자재 부활",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-25T00:00:00+09:00",
+    "description": "인플레·원자재 부활 — 2021 회고 테마.",
+    "notes": "T_537 신규 회고((Y21)). 자산별 CHARACTER, MACRO 3(재사용)",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-25",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 이벤트(회고+2026 에코) 추가."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_537",
+      "type": "THEME",
+      "name": "(Y21) 인플레·원자재 부활"
+    },
+    {
+      "id": "A_063",
+      "type": "ASSET",
+      "name": "GLD",
+      "exposure": {
+        "ticker": "GLD",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.6316422699017554,
+        "return_3d": 0.1296887470071839,
+        "return_15d": 7.9537510083355745,
+        "return_1m": 7.881230686551133,
+        "return_ytd": 1.3045343291867573,
+        "return_1y": 30.668836452400328,
+        "return_3y": 126.74799502993336,
+        "close": 401.48,
+        "marketCap": 141640328909,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.755389364318515,
+        "return_2y": 77.48894783377544
+      }
+    },
+    {
+      "id": "C_1420",
+      "type": "CHARACTER",
+      "name": "금 — 인플레 헤지"
+    },
+    {
+      "id": "A_576",
+      "type": "ASSET",
+      "name": "풍산",
+      "exposure": {
+        "ticker": "103140",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -2.3809523809523836,
+        "return_3d": -1.7964071856287456,
+        "return_15d": 20.05856515373352,
+        "return_1m": 31.41025641025641,
+        "return_ytd": -21.692531287751503,
+        "return_1y": -38.33648035487157,
+        "return_3y": 156.4986586168045,
+        "close": 82000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -1.9138755980861233,
+        "return_2y": 33.2198808999643
+      }
+    },
+    {
+      "id": "C_1421",
+      "type": "CHARACTER",
+      "name": "구리 가공·방산"
+    },
+    {
+      "id": "A_603",
+      "type": "ASSET",
+      "name": "포스코홀딩스",
+      "exposure": {
+        "ticker": "005490",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 2.611367127496167,
+        "return_3d": 2.297090352220521,
+        "return_15d": 6.709265175718859,
+        "return_1m": 6.200317965023849,
+        "return_ytd": 13.477111991653778,
+        "return_1y": 18.14516771462298,
+        "return_3y": -37.52252985039636,
+        "close": 334000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 0.9063444108761365,
+        "return_2y": -3.638098413921931
+      }
+    },
+    {
+      "id": "C_1422",
+      "type": "CHARACTER",
+      "name": "철강·2차전지 소재"
+    },
+    {
+      "id": "A_2512",
+      "type": "ASSET",
+      "name": "에쓰오일",
+      "exposure": {
+        "ticker": "010950",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 4.75514549325764,
+        "return_3d": 4.237288135593231,
+        "return_15d": -2.3809523809523836,
+        "return_1m": 5.128205128205132,
+        "return_ytd": 84.38203444865763,
+        "return_1y": 145.53693820518475,
+        "return_3y": 97.08521252225228,
+        "close": 147600,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 7.267441860465107,
+        "return_2y": 119.76066128424767
+      }
+    },
+    {
+      "id": "C_1423",
+      "type": "CHARACTER",
+      "name": "정유 — 유가 회복"
+    },
+    {
+      "id": "A_327",
+      "type": "ASSET",
+      "name": "엑슨모빌",
+      "exposure": {
+        "ticker": "XOM",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.939411134228596,
+        "return_3d": 0.1877346683354153,
+        "return_15d": 2.013508347139026,
+        "return_1m": 10.345302915431787,
+        "return_ytd": 33.039720791091895,
+        "return_1y": 49.096666045818594,
+        "return_3y": 43.04860614724804,
+        "close": 160.09,
+        "marketCap": 663486601400,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 4.613173026659689,
+        "return_2y": 34.59436738125261
+      }
+    },
+    {
+      "id": "C_1424",
+      "type": "CHARACTER",
+      "name": "석유 메이저"
+    },
+    {
+      "id": "A_1296",
+      "type": "ASSET",
+      "name": "프리포트맥모란",
+      "exposure": {
+        "ticker": "FCX",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.5087535537932064,
+        "return_3d": -3.4557862639756243,
+        "return_15d": 6.214057507987203,
+        "return_1m": 7.328490718321223,
+        "return_ytd": 30.911596771017912,
+        "return_1y": 57.261116367076625,
+        "return_3y": 61.344333899538924,
+        "close": 66.5,
+        "marketCap": 95597740000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -4.4958345303073965,
+        "return_2y": 58.649486995943704
+      }
+    },
+    {
+      "id": "C_1425",
+      "type": "CHARACTER",
+      "name": "구리 광산"
+    },
+    {
+      "id": "A_811",
+      "type": "ASSET",
+      "name": "고려아연",
+      "exposure": {
+        "ticker": "010130",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -3.0008110300081103,
+        "return_3d": -2.6851098454027666,
+        "return_15d": 11.255813953488381,
+        "return_1m": 17.25490196078432,
+        "return_ytd": -6.731301326880534,
+        "return_1y": 60.645771221101576,
+        "return_3y": 158.87399065994242,
+        "close": 1196000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 8.137432188065109,
+        "return_2y": 128.46363119986165
+      }
+    },
+    {
+      "id": "C_1426",
+      "type": "CHARACTER",
+      "name": "아연·비철 제련"
+    },
+    {
+      "id": "M_059",
+      "type": "MACRO",
+      "name": "유가상승"
+    },
+    {
+      "id": "M_163",
+      "type": "MACRO",
+      "name": "구리가격상승"
+    },
+    {
+      "id": "M_153",
+      "type": "MACRO",
+      "name": "약달러"
+    },
+    {
+      "id": "A_2881",
+      "type": "ASSET",
+      "name": "KODEX 철강",
+      "exposure": {
+        "ticker": "117680",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.5284552845528534,
+        "return_3d": 0.4467912266449936,
+        "return_15d": 12.654103342578903,
+        "return_1m": 14.88847933729538,
+        "return_ytd": 1.013536246830582,
+        "return_1y": 7.855447636917234,
+        "return_3y": null,
+        "close": 12365,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": null,
+        "return_2y": 53.87954985832442
+      }
+    }
   ],
-  "dataAsOf": "2026-07-25T00:00:00+09:00",
-  "description": "인플레·원자재 부활 — 2021 회고 테마.",
-  "notes": "T_537 신규 회고((Y21)). 자산별 CHARACTER, MACRO 3(재사용)",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-25",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 이벤트(회고+2026 에코) 추가."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_063",
+      "to": "T_537",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012739"
+      ]
+    },
+    {
+      "from": "A_063",
+      "to": "C_1420",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017504"
+      ]
+    },
+    {
+      "from": "A_576",
+      "to": "T_537",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012740"
+      ]
+    },
+    {
+      "from": "A_576",
+      "to": "C_1421",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017505"
+      ]
+    },
+    {
+      "from": "A_603",
+      "to": "T_537",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012741"
+      ]
+    },
+    {
+      "from": "A_603",
+      "to": "C_1422",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017506"
+      ]
+    },
+    {
+      "from": "A_2512",
+      "to": "T_537",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012742"
+      ]
+    },
+    {
+      "from": "A_2512",
+      "to": "C_1423",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017507"
+      ]
+    },
+    {
+      "from": "A_327",
+      "to": "T_537",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012743"
+      ]
+    },
+    {
+      "from": "A_327",
+      "to": "C_1424",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017508"
+      ]
+    },
+    {
+      "from": "A_1296",
+      "to": "T_537",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012744"
+      ]
+    },
+    {
+      "from": "A_1296",
+      "to": "C_1425",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017509"
+      ]
+    },
+    {
+      "from": "A_811",
+      "to": "T_537",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012745"
+      ]
+    },
+    {
+      "from": "A_811",
+      "to": "C_1426",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017510"
+      ]
+    },
+    {
+      "from": "M_059",
+      "to": "T_537",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012746"
+      ]
+    },
+    {
+      "from": "M_163",
+      "to": "T_537",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012747"
+      ]
+    },
+    {
+      "from": "M_153",
+      "to": "T_537",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012748"
+      ]
+    },
+    {
+      "from": "A_811",
+      "to": "A_576",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020096"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "고려아연과 풍산은 국내 비철금속 제련·가공 시장 경쟁"
+    },
+    {
+      "from": "A_603",
+      "to": "A_811",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020097"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "포스코홀딩스와 고려아연은 국내 소재·금속 대표주 경쟁"
+    },
+    {
+      "from": "A_1296",
+      "to": "A_811",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020098"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "프리포트맥모란과 고려아연은 글로벌 비철금속 생산 시장 경쟁"
+    },
+    {
+      "from": "A_327",
+      "to": "A_2512",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020099"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "엑슨모빌과 에쓰오일은 정유·에너지 시장 경쟁"
+    },
+    {
+      "from": "A_2881",
+      "to": "T_537",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020884"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_063",
+      "to": "T_537",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012739"
+      ]
+    },
+    {
+      "from": "A_063",
+      "to": "C_1420",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017504"
+      ]
+    },
+    {
+      "from": "A_576",
+      "to": "T_537",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012740"
+      ]
+    },
+    {
+      "from": "A_576",
+      "to": "C_1421",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017505"
+      ]
+    },
+    {
+      "from": "A_603",
+      "to": "T_537",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012741"
+      ]
+    },
+    {
+      "from": "A_603",
+      "to": "C_1422",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017506"
+      ]
+    },
+    {
+      "from": "A_2512",
+      "to": "T_537",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012742"
+      ]
+    },
+    {
+      "from": "A_2512",
+      "to": "C_1423",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017507"
+      ]
+    },
+    {
+      "from": "A_327",
+      "to": "T_537",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012743"
+      ]
+    },
+    {
+      "from": "A_327",
+      "to": "C_1424",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017508"
+      ]
+    },
+    {
+      "from": "A_1296",
+      "to": "T_537",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012744"
+      ]
+    },
+    {
+      "from": "A_1296",
+      "to": "C_1425",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017509"
+      ]
+    },
+    {
+      "from": "A_811",
+      "to": "T_537",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012745"
+      ]
+    },
+    {
+      "from": "A_811",
+      "to": "C_1426",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017510"
+      ]
+    },
+    {
+      "from": "M_059",
+      "to": "T_537",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012746"
+      ]
+    },
+    {
+      "from": "M_163",
+      "to": "T_537",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012747"
+      ]
+    },
+    {
+      "from": "M_153",
+      "to": "T_537",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012748"
+      ]
+    },
+    {
+      "from": "A_811",
+      "to": "A_576",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020096"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "고려아연과 풍산은 국내 비철금속 제련·가공 시장 경쟁"
+    },
+    {
+      "from": "A_603",
+      "to": "A_811",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020097"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "포스코홀딩스와 고려아연은 국내 소재·금속 대표주 경쟁"
+    },
+    {
+      "from": "A_1296",
+      "to": "A_811",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020098"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "프리포트맥모란과 고려아연은 글로벌 비철금속 생산 시장 경쟁"
+    },
+    {
+      "from": "A_327",
+      "to": "A_2512",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020099"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "엑슨모빌과 에쓰오일은 정유·에너지 시장 경쟁"
+    },
+    {
+      "from": "A_2881",
+      "to": "T_537",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020884"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_537",
-   "type": "THEME",
-   "name": "(Y21) 인플레·원자재 부활"
-  },
-  {
-   "id": "A_063",
-   "type": "ASSET",
-   "name": "GLD",
-   "exposure": {
-    "ticker": "GLD",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.6316422699017554,
-    "return_3d": 0.1296887470071839,
-    "return_15d": 7.9537510083355745,
-    "return_1m": 7.881230686551133,
-    "return_ytd": 1.3045343291867573,
-    "return_1y": 30.668836452400328,
-    "return_3y": 126.74799502993336,
-    "close": 401.48,
-    "marketCap": 141640328909,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.755389364318515,
-    "return_2y": 77.48894783377544
-   }
-  },
-  {
-   "id": "C_1420",
-   "type": "CHARACTER",
-   "name": "금 — 인플레 헤지"
-  },
-  {
-   "id": "A_576",
-   "type": "ASSET",
-   "name": "풍산",
-   "exposure": {
-    "ticker": "103140",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -2.3809523809523836,
-    "return_3d": -1.7964071856287456,
-    "return_15d": 20.05856515373352,
-    "return_1m": 35.09060955518946,
-    "return_ytd": -21.54547499912327,
-    "return_1y": -31.848230760580797,
-    "return_3y": 156.4986586168045,
-    "close": 82000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -1.9138755980861233,
-    "return_2y": 57.18029108049425
-   }
-  },
-  {
-   "id": "C_1421",
-   "type": "CHARACTER",
-   "name": "구리 가공·방산"
-  },
-  {
-   "id": "A_603",
-   "type": "ASSET",
-   "name": "포스코홀딩스",
-   "exposure": {
-    "ticker": "005490",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 2.611367127496167,
-    "return_3d": 2.297090352220521,
-    "return_15d": 6.709265175718859,
-    "return_1m": 10.049423393739708,
-    "return_ytd": 10.686691204973787,
-    "return_1y": 11.613564933628172,
-    "return_3y": -37.52252985039636,
-    "close": 334000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.9063444108761365,
-    "return_2y": 5.925639175659425
-   }
-  },
-  {
-   "id": "C_1422",
-   "type": "CHARACTER",
-   "name": "철강·2차전지 소재"
-  },
-  {
-   "id": "A_2512",
-   "type": "ASSET",
-   "name": "에쓰오일",
-   "exposure": {
-    "ticker": "010950",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 4.75514549325764,
-    "return_3d": 4.237288135593231,
-    "return_15d": -2.3809523809523836,
-    "return_1m": 12.328767123287676,
-    "return_ytd": 78.38406465951486,
-    "return_1y": 141.92610074843316,
-    "return_3y": 97.08521252225228,
-    "close": 147600,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 7.267441860465107,
-    "return_2y": 123.31640063454903
-   }
-  },
-  {
-   "id": "C_1423",
-   "type": "CHARACTER",
-   "name": "정유 — 유가 회복"
-  },
-  {
-   "id": "A_327",
-   "type": "ASSET",
-   "name": "엑슨모빌",
-   "exposure": {
-    "ticker": "XOM",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.939411134228596,
-    "return_3d": 0.1877346683354153,
-    "return_15d": 2.013508347139026,
-    "return_1m": 10.345302915431787,
-    "return_ytd": 34.83547293057867,
-    "return_1y": 53.84925847732476,
-    "return_3y": 58.13438953804213,
-    "close": 160.1,
-    "marketCap": 663486601400,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 4.613173026659689,
-    "return_2y": 43.727562206384164
-   }
-  },
-  {
-   "id": "C_1424",
-   "type": "CHARACTER",
-   "name": "석유 메이저"
-  },
-  {
-   "id": "A_1296",
-   "type": "ASSET",
-   "name": "프리포트맥모란",
-   "exposure": {
-    "ticker": "FCX",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.5087535537932064,
-    "return_3d": -3.4557862639756243,
-    "return_15d": 6.214057507987203,
-    "return_1m": 7.588996763754041,
-    "return_ytd": 31.846123339282162,
-    "return_1y": 58.95176462994527,
-    "return_3y": 67.73122641319046,
-    "close": 66.49,
-    "marketCap": 95597740000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -4.4958345303073965,
-    "return_2y": 62.706074376423885
-   }
-  },
-  {
-   "id": "C_1425",
-   "type": "CHARACTER",
-   "name": "구리 광산"
-  },
-  {
-   "id": "A_811",
-   "type": "ASSET",
-   "name": "고려아연",
-   "exposure": {
-    "ticker": "010130",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -3.0008110300081103,
-    "return_3d": -2.6851098454027666,
-    "return_15d": 11.255813953488381,
-    "return_1m": 17.832512315270943,
-    "return_ytd": -8.786614595177989,
-    "return_1y": 51.09063241256242,
-    "return_3y": 158.87399065994242,
-    "close": 1196000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 8.137432188065109,
-    "return_2y": 139.61908193712537
-   }
-  },
-  {
-   "id": "C_1426",
-   "type": "CHARACTER",
-   "name": "아연·비철 제련"
-  },
-  {
-   "id": "M_059",
-   "type": "MACRO",
-   "name": "유가상승"
-  },
-  {
-   "id": "M_163",
-   "type": "MACRO",
-   "name": "구리가격상승"
-  },
-  {
-   "id": "M_153",
-   "type": "MACRO",
-   "name": "약달러"
-  },
-  {
-   "id": "A_2881",
-   "type": "ASSET",
-   "name": "KODEX 철강",
-   "exposure": {
-    "ticker": "117680",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.5284552845528534,
-    "return_3d": 0.4467912266449936,
-    "return_15d": 12.654103342578903,
-    "return_1m": 14.88847933729538,
-    "return_ytd": 1.013536246830582,
-    "return_1y": 7.855447636917234,
-    "return_3y": null,
-    "close": 12365,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": null
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_063",
-   "to": "T_537",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012739"
-   ]
-  },
-  {
-   "from": "A_063",
-   "to": "C_1420",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017504"
-   ]
-  },
-  {
-   "from": "A_576",
-   "to": "T_537",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012740"
-   ]
-  },
-  {
-   "from": "A_576",
-   "to": "C_1421",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017505"
-   ]
-  },
-  {
-   "from": "A_603",
-   "to": "T_537",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012741"
-   ]
-  },
-  {
-   "from": "A_603",
-   "to": "C_1422",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017506"
-   ]
-  },
-  {
-   "from": "A_2512",
-   "to": "T_537",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012742"
-   ]
-  },
-  {
-   "from": "A_2512",
-   "to": "C_1423",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017507"
-   ]
-  },
-  {
-   "from": "A_327",
-   "to": "T_537",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012743"
-   ]
-  },
-  {
-   "from": "A_327",
-   "to": "C_1424",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017508"
-   ]
-  },
-  {
-   "from": "A_1296",
-   "to": "T_537",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012744"
-   ]
-  },
-  {
-   "from": "A_1296",
-   "to": "C_1425",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017509"
-   ]
-  },
-  {
-   "from": "A_811",
-   "to": "T_537",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012745"
-   ]
-  },
-  {
-   "from": "A_811",
-   "to": "C_1426",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017510"
-   ]
-  },
-  {
-   "from": "M_059",
-   "to": "T_537",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012746"
-   ]
-  },
-  {
-   "from": "M_163",
-   "to": "T_537",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012747"
-   ]
-  },
-  {
-   "from": "M_153",
-   "to": "T_537",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012748"
-   ]
-  },
-  {
-   "from": "A_811",
-   "to": "A_576",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020096"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "고려아연과 풍산은 국내 비철금속 제련·가공 시장 경쟁"
-  },
-  {
-   "from": "A_603",
-   "to": "A_811",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020097"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "포스코홀딩스와 고려아연은 국내 소재·금속 대표주 경쟁"
-  },
-  {
-   "from": "A_1296",
-   "to": "A_811",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020098"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "프리포트맥모란과 고려아연은 글로벌 비철금속 생산 시장 경쟁"
-  },
-  {
-   "from": "A_327",
-   "to": "A_2512",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020099"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "엑슨모빌과 에쓰오일은 정유·에너지 시장 경쟁"
-  },
-  {
-   "from": "A_2881",
-   "to": "T_537",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020884"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_063",
-   "to": "T_537",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012739"
-   ]
-  },
-  {
-   "from": "A_063",
-   "to": "C_1420",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017504"
-   ]
-  },
-  {
-   "from": "A_576",
-   "to": "T_537",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012740"
-   ]
-  },
-  {
-   "from": "A_576",
-   "to": "C_1421",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017505"
-   ]
-  },
-  {
-   "from": "A_603",
-   "to": "T_537",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012741"
-   ]
-  },
-  {
-   "from": "A_603",
-   "to": "C_1422",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017506"
-   ]
-  },
-  {
-   "from": "A_2512",
-   "to": "T_537",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012742"
-   ]
-  },
-  {
-   "from": "A_2512",
-   "to": "C_1423",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017507"
-   ]
-  },
-  {
-   "from": "A_327",
-   "to": "T_537",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012743"
-   ]
-  },
-  {
-   "from": "A_327",
-   "to": "C_1424",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017508"
-   ]
-  },
-  {
-   "from": "A_1296",
-   "to": "T_537",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012744"
-   ]
-  },
-  {
-   "from": "A_1296",
-   "to": "C_1425",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017509"
-   ]
-  },
-  {
-   "from": "A_811",
-   "to": "T_537",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012745"
-   ]
-  },
-  {
-   "from": "A_811",
-   "to": "C_1426",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017510"
-   ]
-  },
-  {
-   "from": "M_059",
-   "to": "T_537",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012746"
-   ]
-  },
-  {
-   "from": "M_163",
-   "to": "T_537",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012747"
-   ]
-  },
-  {
-   "from": "M_153",
-   "to": "T_537",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012748"
-   ]
-  },
-  {
-   "from": "A_811",
-   "to": "A_576",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020096"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "고려아연과 풍산은 국내 비철금속 제련·가공 시장 경쟁"
-  },
-  {
-   "from": "A_603",
-   "to": "A_811",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020097"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "포스코홀딩스와 고려아연은 국내 소재·금속 대표주 경쟁"
-  },
-  {
-   "from": "A_1296",
-   "to": "A_811",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020098"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "프리포트맥모란과 고려아연은 글로벌 비철금속 생산 시장 경쟁"
-  },
-  {
-   "from": "A_327",
-   "to": "A_2512",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020099"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "엑슨모빌과 에쓰오일은 정유·에너지 시장 경쟁"
-  },
-  {
-   "from": "A_2881",
-   "to": "T_537",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020884"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

@@ -1,686 +1,687 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_557",
- "themeName": "글로벌 바이오: 특허절벽 타격",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_557",
+  "themeName": "글로벌 바이오: 특허절벽 타격",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-25T00:00:00+09:00",
+    "description": "키트루다·엘리퀴스·스텔라라·아일리아·휴미라 등 대형 바이오 특허만료(LOE)로 매출 절벽에 노출된 글로벌 제약사 — 종목별 타격강도·방어력 차별화.",
+    "notes": "T_557 신규. 자산별 CHARACTER(타격/방어력), MACRO 3(재사용)",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-25",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 이벤트 추가."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_557",
+      "type": "THEME",
+      "name": "글로벌 바이오: 특허절벽 타격"
+    },
+    {
+      "id": "A_1316",
+      "type": "ASSET",
+      "name": "MSD",
+      "exposure": {
+        "ticker": "MRK",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.21394319439320686,
+        "return_3d": 4.15580432449012,
+        "return_15d": 3.639276722362106,
+        "return_1m": 12.468951813214101,
+        "return_ytd": 29.05187155614668,
+        "return_1y": 64.13726437892701,
+        "return_3y": 24.726838674134612,
+        "close": 135.84,
+        "marketCap": 335500348800,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 5.646290247316843,
+        "return_2y": 19.598520866349723
+      }
+    },
+    {
+      "id": "C_1560",
+      "type": "CHARACTER",
+      "name": "절대규모 1위·방어 약함"
+    },
+    {
+      "id": "A_2190",
+      "type": "ASSET",
+      "name": "BMS",
+      "exposure": {
+        "ticker": "BMY",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.2683681361175703,
+        "return_3d": 0.34585756956453384,
+        "return_15d": 2.802383636656458,
+        "return_1m": 12.080772607550472,
+        "return_ytd": 18.335187245087138,
+        "return_1y": 33.50763438611168,
+        "return_3y": 3.5864978902953704,
+        "close": 63.83,
+        "marketCap": 130386179300,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -1.3751545117428932,
+        "return_2y": 31.852922949803776
+      }
+    },
+    {
+      "id": "C_1561",
+      "type": "CHARACTER",
+      "name": "집중도 1위·방어 약함"
+    },
+    {
+      "id": "A_1703",
+      "type": "ASSET",
+      "name": "존슨앤존슨",
+      "exposure": {
+        "ticker": "JNJ",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.6601037851037717,
+        "return_3d": 0.21170130869900827,
+        "return_15d": -1.1579347000759133,
+        "return_1m": 2.560567264132363,
+        "return_ytd": 25.803334138680857,
+        "return_1y": 49.00984432234434,
+        "return_3y": 50.10954797047973,
+        "close": 260.35,
+        "marketCap": 627417052606,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.4281746644036577,
+        "return_2y": 64.27940434124181
+      }
+    },
+    {
+      "id": "C_1562",
+      "type": "CHARACTER",
+      "name": "타격 큼·방어 중간"
+    },
+    {
+      "id": "A_1214",
+      "type": "ASSET",
+      "name": "화이자",
+      "exposure": {
+        "ticker": "PFE",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.03731343283582822,
+        "return_3d": 0.6386175807663319,
+        "return_15d": 9.168704156479212,
+        "return_1m": 10.47422680412371,
+        "return_ytd": 7.590361445783134,
+        "return_1y": 6.690561529271211,
+        "return_3y": -25.727751594122537,
+        "close": 26.79,
+        "marketCap": 152687997600,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.11210762331836932,
+        "return_2y": -7.236842105263152
+      }
+    },
+    {
+      "id": "C_1563",
+      "type": "CHARACTER",
+      "name": "타격 큼·방어 중간"
+    },
+    {
+      "id": "A_1001",
+      "type": "ASSET",
+      "name": "리제네론",
+      "exposure": {
+        "ticker": "REGN",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.3089445016563941,
+        "return_3d": 0.8130489335006263,
+        "return_15d": 22.479840246337712,
+        "return_1m": 22.459306224471142,
+        "return_ytd": 4.0952491999948215,
+        "return_1y": 41.96512182624521,
+        "return_3y": -0.6061505727504413,
+        "close": 803.48,
+        "marketCap": 82776116560,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 2.4376561782854855,
+        "return_2y": -30.546479262832136
+      }
+    },
+    {
+      "id": "C_1564",
+      "type": "CHARACTER",
+      "name": "집중 높음·방어 약함"
+    },
+    {
+      "id": "A_1006",
+      "type": "ASSET",
+      "name": "애브비",
+      "exposure": {
+        "ticker": "ABBV",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.5422215134359254,
+        "return_3d": -0.251909312647447,
+        "return_15d": -3.817088217149911,
+        "return_1m": 1.9119209085709743,
+        "return_ytd": 9.177644535865891,
+        "return_1y": 21.878053547000185,
+        "return_3y": 63.82741183424181,
+        "close": 249.45,
+        "marketCap": 440726469198,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 1.390017883271022,
+        "return_2y": 29.253886010362695
+      }
+    },
+    {
+      "id": "C_1565",
+      "type": "CHARACTER",
+      "name": "이미 흡수·방어 강함(전환성공)"
+    },
+    {
+      "id": "M_1075",
+      "type": "MACRO",
+      "name": "특허절벽($3,200억·25-35)"
+    },
+    {
+      "id": "M_102",
+      "type": "MACRO",
+      "name": "빅파마특허만료"
+    },
+    {
+      "id": "M_1078",
+      "type": "MACRO",
+      "name": "美약가인하(IRA)"
+    },
+    {
+      "id": "A_2923",
+      "type": "ASSET",
+      "name": "VanEck Pharmaceutical ETF",
+      "exposure": {
+        "ticker": "PPH",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.5918220946915298,
+        "return_3d": -1.0355293697553947,
+        "return_15d": 0.20790020790020236,
+        "return_1m": 3.820940250983318,
+        "return_ytd": 7.453717165842777,
+        "return_1y": 28.68253047011027,
+        "return_3y": 33.566265060240966,
+        "close": 110.86,
+        "marketCap": 963169085,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -0.2698812522490046,
+        "return_2y": 15.684023792131896
+      }
+    }
   ],
-  "dataAsOf": "2026-07-25T00:00:00+09:00",
-  "description": "키트루다·엘리퀴스·스텔라라·아일리아·휴미라 등 대형 바이오 특허만료(LOE)로 매출 절벽에 노출된 글로벌 제약사 — 종목별 타격강도·방어력 차별화.",
-  "notes": "T_557 신규. 자산별 CHARACTER(타격/방어력), MACRO 3(재사용)",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-25",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 이벤트 추가."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_1316",
+      "to": "T_557",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012940"
+      ]
+    },
+    {
+      "from": "A_1316",
+      "to": "C_1560",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017643"
+      ]
+    },
+    {
+      "from": "A_2190",
+      "to": "T_557",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012941"
+      ]
+    },
+    {
+      "from": "A_2190",
+      "to": "C_1561",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017644"
+      ]
+    },
+    {
+      "from": "A_1703",
+      "to": "T_557",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012942"
+      ]
+    },
+    {
+      "from": "A_1703",
+      "to": "C_1562",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017645"
+      ]
+    },
+    {
+      "from": "A_1214",
+      "to": "T_557",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012943"
+      ]
+    },
+    {
+      "from": "A_1214",
+      "to": "C_1563",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017646"
+      ]
+    },
+    {
+      "from": "A_1001",
+      "to": "T_557",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012944"
+      ]
+    },
+    {
+      "from": "A_1001",
+      "to": "C_1564",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017647"
+      ]
+    },
+    {
+      "from": "A_1006",
+      "to": "T_557",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012945"
+      ]
+    },
+    {
+      "from": "A_1006",
+      "to": "C_1565",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017648"
+      ]
+    },
+    {
+      "from": "M_1075",
+      "to": "T_557",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012946"
+      ]
+    },
+    {
+      "from": "M_102",
+      "to": "T_557",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012947"
+      ]
+    },
+    {
+      "from": "M_1078",
+      "to": "T_557",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012948"
+      ]
+    },
+    {
+      "from": "A_1316",
+      "to": "A_2190",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018600"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "MSD의 키트루다(펨브롤리주맙)와 BMS의 옵디보(니볼루맙)는 PD-1 면역항암제 시장의 대표적 직접 경쟁 제품이다."
+    },
+    {
+      "from": "A_1316",
+      "to": "A_1001",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018601"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "리제네론의 리브타요(세미플리맙)는 폐암·피부암 등에서 MSD 키트루다와 동일 PD-1 표적으로 직접 경쟁한다."
+    },
+    {
+      "from": "A_2190",
+      "to": "A_1001",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018602"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "BMS 옵디보와 리제네론 리브타요는 모두 PD-1 억제 면역항암제로 동일 적응증에서 경쟁한다."
+    },
+    {
+      "from": "A_1214",
+      "to": "A_2190",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_018603"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "화이자와 BMS는 2007년부터 항응고제 엘리퀴스(아픽사반)를 공동개발·공동판매하며 글로벌 손익을 균등 분담하는 제휴를 맺고 있다."
+    },
+    {
+      "from": "A_1703",
+      "to": "A_1006",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018604"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "J&J의 스텔라라·트렘피어와 애브비의 스카이리치·린버크는 건선·염증성 장질환 등 면역질환 치료제 시장에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_1703",
+      "to": "A_1006",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_018605"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "J&J(얀센)와 애브비(파마사이클릭스)는 혈액암 치료제 임브루비카(이브루티닙)를 공동개발·공동판매하며 손익을 균등 분담한다."
+    },
+    {
+      "from": "A_2923",
+      "to": "T_557",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020903"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_1316",
+      "to": "T_557",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012940"
+      ]
+    },
+    {
+      "from": "A_1316",
+      "to": "C_1560",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017643"
+      ]
+    },
+    {
+      "from": "A_2190",
+      "to": "T_557",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012941"
+      ]
+    },
+    {
+      "from": "A_2190",
+      "to": "C_1561",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017644"
+      ]
+    },
+    {
+      "from": "A_1703",
+      "to": "T_557",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012942"
+      ]
+    },
+    {
+      "from": "A_1703",
+      "to": "C_1562",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017645"
+      ]
+    },
+    {
+      "from": "A_1214",
+      "to": "T_557",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012943"
+      ]
+    },
+    {
+      "from": "A_1214",
+      "to": "C_1563",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017646"
+      ]
+    },
+    {
+      "from": "A_1001",
+      "to": "T_557",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012944"
+      ]
+    },
+    {
+      "from": "A_1001",
+      "to": "C_1564",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017647"
+      ]
+    },
+    {
+      "from": "A_1006",
+      "to": "T_557",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012945"
+      ]
+    },
+    {
+      "from": "A_1006",
+      "to": "C_1565",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017648"
+      ]
+    },
+    {
+      "from": "M_1075",
+      "to": "T_557",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012946"
+      ]
+    },
+    {
+      "from": "M_102",
+      "to": "T_557",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012947"
+      ]
+    },
+    {
+      "from": "M_1078",
+      "to": "T_557",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012948"
+      ]
+    },
+    {
+      "from": "A_1316",
+      "to": "A_2190",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018600"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "MSD의 키트루다(펨브롤리주맙)와 BMS의 옵디보(니볼루맙)는 PD-1 면역항암제 시장의 대표적 직접 경쟁 제품이다."
+    },
+    {
+      "from": "A_1316",
+      "to": "A_1001",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018601"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "리제네론의 리브타요(세미플리맙)는 폐암·피부암 등에서 MSD 키트루다와 동일 PD-1 표적으로 직접 경쟁한다."
+    },
+    {
+      "from": "A_2190",
+      "to": "A_1001",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018602"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "BMS 옵디보와 리제네론 리브타요는 모두 PD-1 억제 면역항암제로 동일 적응증에서 경쟁한다."
+    },
+    {
+      "from": "A_1214",
+      "to": "A_2190",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_018603"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "화이자와 BMS는 2007년부터 항응고제 엘리퀴스(아픽사반)를 공동개발·공동판매하며 글로벌 손익을 균등 분담하는 제휴를 맺고 있다."
+    },
+    {
+      "from": "A_1703",
+      "to": "A_1006",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018604"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "J&J의 스텔라라·트렘피어와 애브비의 스카이리치·린버크는 건선·염증성 장질환 등 면역질환 치료제 시장에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_1703",
+      "to": "A_1006",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_018605"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "J&J(얀센)와 애브비(파마사이클릭스)는 혈액암 치료제 임브루비카(이브루티닙)를 공동개발·공동판매하며 손익을 균등 분담한다."
+    },
+    {
+      "from": "A_2923",
+      "to": "T_557",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020903"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_557",
-   "type": "THEME",
-   "name": "글로벌 바이오: 특허절벽 타격"
-  },
-  {
-   "id": "A_1316",
-   "type": "ASSET",
-   "name": "MSD",
-   "exposure": {
-    "ticker": "MRK",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.21394319439320686,
-    "return_3d": 4.15580432449012,
-    "return_15d": 3.639276722362106,
-    "return_1m": 12.468951813214101,
-    "return_ytd": 30.94261524714166,
-    "return_1y": 69.62465051752751,
-    "return_3y": 36.79909847943934,
-    "close": 135.84,
-    "marketCap": 335500348800,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 5.646290247316843,
-    "return_2y": 27.769923840321443
-   }
-  },
-  {
-   "id": "C_1560",
-   "type": "CHARACTER",
-   "name": "절대규모 1위·방어 약함"
-  },
-  {
-   "id": "A_2190",
-   "type": "ASSET",
-   "name": "BMS",
-   "exposure": {
-    "ticker": "BMY",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -1.2683681361175703,
-    "return_3d": 0.34585756956453384,
-    "return_15d": 2.802383636656458,
-    "return_1m": 12.080772607550472,
-    "return_ytd": 22.333829721581754,
-    "return_1y": 39.9157831053281,
-    "return_3y": 19.292133970504956,
-    "close": 63.83,
-    "marketCap": 130386179300,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -1.3751545117428932,
-    "return_2y": 44.68542310795984
-   }
-  },
-  {
-   "id": "C_1561",
-   "type": "CHARACTER",
-   "name": "집중도 1위·방어 약함"
-  },
-  {
-   "id": "A_1703",
-   "type": "ASSET",
-   "name": "존슨앤존슨",
-   "exposure": {
-    "ticker": "JNJ",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.6601037851037717,
-    "return_3d": 0.21170130869900827,
-    "return_15d": -1.1579347000759133,
-    "return_1m": 2.560567264132363,
-    "return_ytd": 27.212662338455562,
-    "return_1y": 52.74892324769971,
-    "return_3y": 63.861066459556184,
-    "close": 260.35,
-    "marketCap": 627417052606,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.4281746644036577,
-    "return_2y": 73.88545667056272
-   }
-  },
-  {
-   "id": "C_1562",
-   "type": "CHARACTER",
-   "name": "타격 큼·방어 중간"
-  },
-  {
-   "id": "A_1214",
-   "type": "ASSET",
-   "name": "화이자",
-   "exposure": {
-    "ticker": "PFE",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.03731343283582822,
-    "return_3d": 0.6386175807663319,
-    "return_15d": 9.168704156479212,
-    "return_1m": 12.406694890719194,
-    "return_ytd": 13.143479784947143,
-    "return_1y": 14.172959888171,
-    "return_3y": -9.924752368720124,
-    "close": 26.79,
-    "marketCap": 152687997600,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.11210762331836932,
-    "return_2y": 6.234485165240411
-   }
-  },
-  {
-   "id": "C_1563",
-   "type": "CHARACTER",
-   "name": "타격 큼·방어 중간"
-  },
-  {
-   "id": "A_1001",
-   "type": "ASSET",
-   "name": "리제네론",
-   "exposure": {
-    "ticker": "REGN",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.3089445016563941,
-    "return_3d": 0.8130489335006263,
-    "return_15d": 22.479840246337712,
-    "return_1m": 22.459306224471142,
-    "return_ytd": 4.376125059090574,
-    "return_1y": 42.743087669355084,
-    "return_3y": 0.21479052467086035,
-    "close": 803.48,
-    "marketCap": 82776116560,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 2.4376561782854855,
-    "return_2y": -29.972834710074647
-   }
-  },
-  {
-   "id": "C_1564",
-   "type": "CHARACTER",
-   "name": "집중 높음·방어 약함"
-  },
-  {
-   "id": "A_1006",
-   "type": "ASSET",
-   "name": "애브비",
-   "exposure": {
-    "ticker": "ABBV",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.5422215134359254,
-    "return_3d": -0.251909312647447,
-    "return_15d": -3.817088217149911,
-    "return_1m": 2.6373174243982778,
-    "return_ytd": 11.758974071792583,
-    "return_1y": 25.65906026204745,
-    "return_3y": 81.72096587614479,
-    "close": 249.46,
-    "marketCap": 440726469198,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 1.390017883271022,
-    "return_2y": 38.03796403686619
-   }
-  },
-  {
-   "id": "C_1565",
-   "type": "CHARACTER",
-   "name": "이미 흡수·방어 강함(전환성공)"
-  },
-  {
-   "id": "M_1075",
-   "type": "MACRO",
-   "name": "특허절벽($3,200억·25-35)"
-  },
-  {
-   "id": "M_102",
-   "type": "MACRO",
-   "name": "빅파마특허만료"
-  },
-  {
-   "id": "M_1078",
-   "type": "MACRO",
-   "name": "美약가인하(IRA)"
-  },
-  {
-   "id": "A_2923",
-   "type": "ASSET",
-   "name": "VanEck Pharmaceutical ETF",
-   "exposure": {
-    "ticker": "PPH",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.5918220946915298,
-    "return_3d": -1.0355293697553947,
-    "return_15d": 0.20790020790020236,
-    "return_1m": 0.8918820531488958,
-    "return_ytd": 6.883918241419207,
-    "return_1y": 29.995309568480288,
-    "return_3y": 34.2130750605327,
-    "close": 110.86,
-    "marketCap": 963169085,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": null
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_1316",
-   "to": "T_557",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012940"
-   ]
-  },
-  {
-   "from": "A_1316",
-   "to": "C_1560",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017643"
-   ]
-  },
-  {
-   "from": "A_2190",
-   "to": "T_557",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012941"
-   ]
-  },
-  {
-   "from": "A_2190",
-   "to": "C_1561",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017644"
-   ]
-  },
-  {
-   "from": "A_1703",
-   "to": "T_557",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012942"
-   ]
-  },
-  {
-   "from": "A_1703",
-   "to": "C_1562",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017645"
-   ]
-  },
-  {
-   "from": "A_1214",
-   "to": "T_557",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012943"
-   ]
-  },
-  {
-   "from": "A_1214",
-   "to": "C_1563",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017646"
-   ]
-  },
-  {
-   "from": "A_1001",
-   "to": "T_557",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012944"
-   ]
-  },
-  {
-   "from": "A_1001",
-   "to": "C_1564",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017647"
-   ]
-  },
-  {
-   "from": "A_1006",
-   "to": "T_557",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012945"
-   ]
-  },
-  {
-   "from": "A_1006",
-   "to": "C_1565",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017648"
-   ]
-  },
-  {
-   "from": "M_1075",
-   "to": "T_557",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012946"
-   ]
-  },
-  {
-   "from": "M_102",
-   "to": "T_557",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012947"
-   ]
-  },
-  {
-   "from": "M_1078",
-   "to": "T_557",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012948"
-   ]
-  },
-  {
-   "from": "A_1316",
-   "to": "A_2190",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018600"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "MSD의 키트루다(펨브롤리주맙)와 BMS의 옵디보(니볼루맙)는 PD-1 면역항암제 시장의 대표적 직접 경쟁 제품이다."
-  },
-  {
-   "from": "A_1316",
-   "to": "A_1001",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018601"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "리제네론의 리브타요(세미플리맙)는 폐암·피부암 등에서 MSD 키트루다와 동일 PD-1 표적으로 직접 경쟁한다."
-  },
-  {
-   "from": "A_2190",
-   "to": "A_1001",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018602"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "BMS 옵디보와 리제네론 리브타요는 모두 PD-1 억제 면역항암제로 동일 적응증에서 경쟁한다."
-  },
-  {
-   "from": "A_1214",
-   "to": "A_2190",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_018603"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "화이자와 BMS는 2007년부터 항응고제 엘리퀴스(아픽사반)를 공동개발·공동판매하며 글로벌 손익을 균등 분담하는 제휴를 맺고 있다."
-  },
-  {
-   "from": "A_1703",
-   "to": "A_1006",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018604"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "J&J의 스텔라라·트렘피어와 애브비의 스카이리치·린버크는 건선·염증성 장질환 등 면역질환 치료제 시장에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_1703",
-   "to": "A_1006",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_018605"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "J&J(얀센)와 애브비(파마사이클릭스)는 혈액암 치료제 임브루비카(이브루티닙)를 공동개발·공동판매하며 손익을 균등 분담한다."
-  },
-  {
-   "from": "A_2923",
-   "to": "T_557",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020903"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_1316",
-   "to": "T_557",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012940"
-   ]
-  },
-  {
-   "from": "A_1316",
-   "to": "C_1560",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017643"
-   ]
-  },
-  {
-   "from": "A_2190",
-   "to": "T_557",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012941"
-   ]
-  },
-  {
-   "from": "A_2190",
-   "to": "C_1561",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017644"
-   ]
-  },
-  {
-   "from": "A_1703",
-   "to": "T_557",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012942"
-   ]
-  },
-  {
-   "from": "A_1703",
-   "to": "C_1562",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017645"
-   ]
-  },
-  {
-   "from": "A_1214",
-   "to": "T_557",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012943"
-   ]
-  },
-  {
-   "from": "A_1214",
-   "to": "C_1563",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017646"
-   ]
-  },
-  {
-   "from": "A_1001",
-   "to": "T_557",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012944"
-   ]
-  },
-  {
-   "from": "A_1001",
-   "to": "C_1564",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017647"
-   ]
-  },
-  {
-   "from": "A_1006",
-   "to": "T_557",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012945"
-   ]
-  },
-  {
-   "from": "A_1006",
-   "to": "C_1565",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017648"
-   ]
-  },
-  {
-   "from": "M_1075",
-   "to": "T_557",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012946"
-   ]
-  },
-  {
-   "from": "M_102",
-   "to": "T_557",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012947"
-   ]
-  },
-  {
-   "from": "M_1078",
-   "to": "T_557",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012948"
-   ]
-  },
-  {
-   "from": "A_1316",
-   "to": "A_2190",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018600"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "MSD의 키트루다(펨브롤리주맙)와 BMS의 옵디보(니볼루맙)는 PD-1 면역항암제 시장의 대표적 직접 경쟁 제품이다."
-  },
-  {
-   "from": "A_1316",
-   "to": "A_1001",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018601"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "리제네론의 리브타요(세미플리맙)는 폐암·피부암 등에서 MSD 키트루다와 동일 PD-1 표적으로 직접 경쟁한다."
-  },
-  {
-   "from": "A_2190",
-   "to": "A_1001",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018602"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "BMS 옵디보와 리제네론 리브타요는 모두 PD-1 억제 면역항암제로 동일 적응증에서 경쟁한다."
-  },
-  {
-   "from": "A_1214",
-   "to": "A_2190",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_018603"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "화이자와 BMS는 2007년부터 항응고제 엘리퀴스(아픽사반)를 공동개발·공동판매하며 글로벌 손익을 균등 분담하는 제휴를 맺고 있다."
-  },
-  {
-   "from": "A_1703",
-   "to": "A_1006",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018604"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "J&J의 스텔라라·트렘피어와 애브비의 스카이리치·린버크는 건선·염증성 장질환 등 면역질환 치료제 시장에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_1703",
-   "to": "A_1006",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_018605"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "J&J(얀센)와 애브비(파마사이클릭스)는 혈액암 치료제 임브루비카(이브루티닙)를 공동개발·공동판매하며 손익을 균등 분담한다."
-  },
-  {
-   "from": "A_2923",
-   "to": "T_557",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020903"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

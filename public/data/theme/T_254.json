@@ -1,865 +1,866 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_254",
- "themeName": "글로벌mRNA플랫폼",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_254",
+  "themeName": "글로벌mRNA플랫폼",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-05-22T00:00:00+09:00",
+    "description": "글로벌 mRNA 플랫폼 생태계 — 모더나(범용 플랫폼) + BioNTech(항암 특화) 두 핵심 노드가 글로벌 빅파마들과 PARTNERS 구도. COVID 백신 성공 이후 항암·자가면역·심혈관·낭포성섬유증 등 적응증 확장 중.",
+    "notes": "PARTNERS 8개: Moderna-Merck/AZN/Regeneron/Vertex, BioNTech-Pfizer/Roche/Sanofi/Genentech. macro: 글로벌빅파마투자·빅파마특허만료·신약임상성공. BF: RNA치료제·항암제·CDMO·ADC.",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_254",
+      "type": "THEME",
+      "name": "글로벌mRNA플랫폼"
+    },
+    {
+      "id": "A_1632",
+      "type": "ASSET",
+      "name": "모더나",
+      "exposure": {
+        "ticker": "MRNA",
+        "exchange": "NASDAQ",
+        "country": "US",
+        "business_desc": "Moderna — mRNA 범용 플랫폼 (COVID 백신·항암·자가면역·심혈관)",
+        "theme_role": "mRNA 범용 플랫폼 1위, Merck·AstraZeneca 등과 PARTNERS",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -0.5184603299292934,
+        "close": 63.32,
+        "marketCap": 25124489520,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": 4.540201419844814,
+        "return_15d": 17.10745330127612,
+        "return_1m": -6.109134045077102,
+        "return_ytd": 114.71685317056632,
+        "return_1y": 137.24241288872236,
+        "return_3y": -36.68,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 7.013689369612974,
+        "return_2y": -23.015197568389056
+      }
+    },
+    {
+      "id": "A_1633",
+      "type": "ASSET",
+      "name": "바이오엔텍",
+      "exposure": {
+        "ticker": "BNTX",
+        "exchange": "NASDAQ",
+        "country": "DE",
+        "business_desc": "BioNTech — mRNA 항암 특화 (개인맞춤 항암 백신·CAR-T·mRNA)",
+        "theme_role": "mRNA 항암 특화 1위, Pfizer·Roche·Sanofi·Genentech PARTNERS",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": 1.0529743812418557,
+        "close": 93.09,
+        "marketCap": 23384614431,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": 0.31250000000000444,
+        "return_15d": 4.20911228030898,
+        "return_1m": 2.9756637168141475,
+        "return_ytd": -2.216386554621852,
+        "return_1y": -17.400177462289268,
+        "return_3y": -13.356291883842141,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -0.6191950464396245,
+        "return_2y": 9.71125515615794
+      }
+    },
+    {
+      "id": "A_1001",
+      "type": "ASSET",
+      "name": "리제네론",
+      "exposure": {
+        "ticker": "REGN",
+        "exchange": "NASDAQ",
+        "country": "US",
+        "business_desc": "Regeneron — 항체·유전자·항암 (Eylea·Dupixent)",
+        "theme_role": "Moderna PARTNERS — mRNA 항암 협업",
+        "theme_status": "Support"
+      },
+      "metrics": {
+        "return_1d": -0.3089445016563941,
+        "close": 803.48,
+        "marketCap": 82776116560,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": 0.8130489335006263,
+        "return_15d": 22.479840246337712,
+        "return_1m": 22.459306224471142,
+        "return_ytd": 4.0952491999948215,
+        "return_1y": 41.96512182624521,
+        "return_3y": -0.6061505727504413,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 2.4376561782854855,
+        "return_2y": -30.546479262832136
+      }
+    },
+    {
+      "id": "A_1003",
+      "type": "ASSET",
+      "name": "버텍스",
+      "exposure": {
+        "ticker": "VRTX",
+        "exchange": "NASDAQ",
+        "country": "US",
+        "business_desc": "Vertex — 낭포성섬유증·CRISPR (Casgevy)·통증",
+        "theme_role": "Moderna PARTNERS — mRNA 낭포성섬유증 협업",
+        "theme_status": "Support"
+      },
+      "metrics": {
+        "return_1d": -2.069940360932554,
+        "close": 505.75,
+        "marketCap": 128361878750,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": -4.512413858208242,
+        "return_15d": 5.947293447293434,
+        "return_1m": 6.180848606999634,
+        "return_ytd": 11.555937886006706,
+        "return_1y": 29.57981040225468,
+        "return_3y": 44.76056902424364,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 1.9513375128510146,
+        "return_2y": 7.277702358730709
+      }
+    },
+    {
+      "id": "A_1214",
+      "type": "ASSET",
+      "name": "화이자",
+      "exposure": {
+        "ticker": "PFE",
+        "exchange": "NYSE",
+        "country": "US",
+        "business_desc": "Pfizer — 글로벌 빅파마, BioNTech 와 Comirnaty 공동 개발",
+        "theme_role": "BioNTech PARTNERS — Comirnaty 공급 채널",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -0.03731343283582822,
+        "close": 26.79,
+        "marketCap": 152687997600,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": 0.6386175807663319,
+        "return_15d": 9.168704156479212,
+        "return_1m": 10.47422680412371,
+        "return_ytd": 7.590361445783134,
+        "return_1y": 6.690561529271211,
+        "return_3y": -25.727751594122537,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.11210762331836932,
+        "return_2y": -7.236842105263152
+      }
+    },
+    {
+      "id": "A_1634",
+      "type": "ASSET",
+      "name": "로슈",
+      "exposure": {
+        "ticker": "RHHBY",
+        "exchange": "OTC",
+        "country": "CH",
+        "business_desc": "Roche — 글로벌 빅파마 (Genentech 자회사 포함), 진단·항암 1위",
+        "theme_role": "BioNTech PARTNERS — mRNA 항암 협업",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -1.7480627140025184,
+        "close": 54.52,
+        "marketCap": 347542671279,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": -3.7089367714588373,
+        "return_15d": -0.3290676416819016,
+        "return_1m": 8.692185007974484,
+        "return_ytd": 5.720380065929809,
+        "return_1y": 41.02431453698916,
+        "return_3y": 44.462109167991514,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -4.785190359762481,
+        "return_2y": 34.31879773343187
+      }
+    },
+    {
+      "id": "A_1318",
+      "type": "ASSET",
+      "name": "사노피",
+      "exposure": {
+        "ticker": "SNY",
+        "exchange": "NASDAQ",
+        "country": "FR",
+        "business_desc": "Sanofi — 글로벌 빅파마 (Dupixent 공동, 백신 강자)",
+        "theme_role": "BioNTech PARTNERS — mRNA 면역항암 협업",
+        "theme_status": "Support"
+      },
+      "metrics": {
+        "return_1d": -0.13704888076747634,
+        "close": 43.72,
+        "marketCap": 104980464000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": 0.36730945821854544,
+        "return_15d": 0.8535178777393293,
+        "return_1m": 1.2505789717461857,
+        "return_ytd": -9.781262897234832,
+        "return_1y": -10.848287112561172,
+        "return_3y": -17.942942942942953,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.5982512655315242,
+        "return_2y": -18.3261722398655
+      }
+    },
+    {
+      "id": "A_1635",
+      "type": "ASSET",
+      "name": "제넨텍(비)",
+      "exposure": {
+        "ticker": "",
+        "exchange": "",
+        "country": "US",
+        "business_desc": "Genentech — Roche 자회사, 항암·면역질환 (비상장)",
+        "theme_role": "BioNTech PARTNERS — Roche 자회사로 mRNA 항암 협업 채널",
+        "theme_status": "Peripheral"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": null,
+        "returnsSource": null,
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "제넨텍은 로슈 자회사로 모더나와 개인화 mRNA 항암 백신을 공동개발한다(비상장)"
+    },
+    {
+      "id": "A_1315",
+      "type": "ASSET",
+      "name": "아스트라제네카",
+      "exposure": {
+        "ticker": "AZN",
+        "exchange": "NASDAQ",
+        "country": "GB",
+        "business_desc": "AstraZeneca — 글로벌 빅파마, 항암(Imfinzi)·당뇨·심혈관",
+        "theme_role": "Moderna PARTNERS — mRNA 심혈관 협업",
+        "theme_status": "Support"
+      },
+      "metrics": {
+        "return_1d": -0.5024166878656922,
+        "close": 156.45,
+        "marketCap": 242633995272,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": -1.4488188976378047,
+        "return_15d": -7.568238213399503,
+        "return_1m": -4.893617021276597,
+        "return_ytd": -10.85470085470086,
+        "return_1y": 0.44943820224718767,
+        "return_3y": 9.25279329608939,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -3.078924544666084,
+        "return_2y": -5.753012048192774
+      }
+    },
+    {
+      "id": "A_1316",
+      "type": "ASSET",
+      "name": "머크(MSD)",
+      "exposure": {
+        "ticker": "MRK",
+        "exchange": "NYSE",
+        "country": "US",
+        "business_desc": "Merck & Co. (MSD) — 글로벌 빅파마, Keytruda 항암 1위",
+        "theme_role": "Moderna PARTNERS — 개인맞춤 mRNA 항암 백신 mRNA-4157 공동",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": 0.21394319439320686,
+        "close": 135.84,
+        "marketCap": 335500348800,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": 4.15580432449012,
+        "return_15d": 3.639276722362106,
+        "return_1m": 12.468951813214101,
+        "return_ytd": 29.05187155614668,
+        "return_1y": 64.13726437892701,
+        "return_3y": 24.726838674134612,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 5.646290247316843,
+        "return_2y": 19.598520866349723
+      }
+    },
+    {
+      "id": "M_157",
+      "type": "MACRO",
+      "name": "글로벌빅파마투자"
+    },
+    {
+      "id": "M_102",
+      "type": "MACRO",
+      "name": "빅파마특허만료"
+    },
+    {
+      "id": "M_191",
+      "type": "MACRO",
+      "name": "신약임상성공"
+    },
+    {
+      "id": "C_203",
+      "type": "CHARACTER",
+      "name": "범용"
+    },
+    {
+      "id": "C_204",
+      "type": "CHARACTER",
+      "name": "항암특화"
+    },
+    {
+      "id": "C_3960",
+      "type": "CHARACTER",
+      "name": "항체·유전자치료플랫폼"
+    },
+    {
+      "id": "C_3961",
+      "type": "CHARACTER",
+      "name": "유전자편집·희귀질환"
+    },
+    {
+      "id": "C_3962",
+      "type": "CHARACTER",
+      "name": "mRNA백신(코미나티)"
+    },
+    {
+      "id": "C_3963",
+      "type": "CHARACTER",
+      "name": "빅파마_mRNA·개인화항암"
+    },
+    {
+      "id": "C_3964",
+      "type": "CHARACTER",
+      "name": "빅파마_mRNA백신"
+    },
+    {
+      "id": "C_3965",
+      "type": "CHARACTER",
+      "name": "로슈자회사_mRNA항암"
+    },
+    {
+      "id": "C_3966",
+      "type": "CHARACTER",
+      "name": "빅파마_mRNA·세포치료"
+    },
+    {
+      "id": "C_3967",
+      "type": "CHARACTER",
+      "name": "빅파마_mRNA암백신(모더나협력)"
+    },
+    {
+      "id": "A_2513",
+      "type": "ASSET",
+      "name": "IBB",
+      "exposure": {
+        "ticker": "IBB",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.3418116014878847,
+        "return_3d": -0.7409632522279108,
+        "return_15d": 5.378973105134488,
+        "return_1m": 5.082949064504172,
+        "return_ytd": 17.473484624044545,
+        "return_1y": 44.43068405332555,
+        "return_3y": 54.38405232829777,
+        "close": 198.26,
+        "marketCap": 9794008313,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.2781852207778934,
+        "return_2y": 38.847258211359346
+      }
+    }
   ],
-  "dataAsOf": "2026-05-22T00:00:00+09:00",
-  "description": "글로벌 mRNA 플랫폼 생태계 — 모더나(범용 플랫폼) + BioNTech(항암 특화) 두 핵심 노드가 글로벌 빅파마들과 PARTNERS 구도. COVID 백신 성공 이후 항암·자가면역·심혈관·낭포성섬유증 등 적응증 확장 중.",
-  "notes": "PARTNERS 8개: Moderna-Merck/AZN/Regeneron/Vertex, BioNTech-Pfizer/Roche/Sanofi/Genentech. macro: 글로벌빅파마투자·빅파마특허만료·신약임상성공. BF: RNA치료제·항암제·CDMO·ADC.",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_1632",
+      "to": "T_254",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015558"
+      ]
+    },
+    {
+      "from": "A_1633",
+      "to": "T_254",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015559"
+      ]
+    },
+    {
+      "from": "M_157",
+      "to": "T_254",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008462"
+      ]
+    },
+    {
+      "from": "M_102",
+      "to": "T_254",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008463"
+      ]
+    },
+    {
+      "from": "M_191",
+      "to": "T_254",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008464"
+      ]
+    },
+    {
+      "from": "A_1632",
+      "to": "C_203",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015560"
+      ]
+    },
+    {
+      "from": "A_1633",
+      "to": "C_204",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015561"
+      ]
+    },
+    {
+      "from": "A_1632",
+      "to": "A_1316",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_015562"
+      ]
+    },
+    {
+      "from": "A_1632",
+      "to": "A_1315",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_015563"
+      ]
+    },
+    {
+      "from": "A_1632",
+      "to": "A_1001",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_015564"
+      ]
+    },
+    {
+      "from": "A_1632",
+      "to": "A_1003",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_015565"
+      ]
+    },
+    {
+      "from": "A_1633",
+      "to": "A_1214",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_015566"
+      ]
+    },
+    {
+      "from": "A_1633",
+      "to": "A_1634",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_015567"
+      ]
+    },
+    {
+      "from": "A_1633",
+      "to": "A_1318",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_015568"
+      ]
+    },
+    {
+      "from": "A_1633",
+      "to": "A_1635",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_015569"
+      ]
+    },
+    {
+      "from": "A_1001",
+      "to": "C_3960",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008454"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1003",
+      "to": "C_3961",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008455"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1214",
+      "to": "C_3962",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008456"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1634",
+      "to": "C_3963",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008457"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1318",
+      "to": "C_3964",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008458"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1635",
+      "to": "C_3965",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008459"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1315",
+      "to": "C_3966",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008460"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1316",
+      "to": "C_3967",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008461"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2513",
+      "to": "T_254",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020674"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_1632",
+      "to": "T_254",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015558"
+      ]
+    },
+    {
+      "from": "A_1633",
+      "to": "T_254",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015559"
+      ]
+    },
+    {
+      "from": "M_157",
+      "to": "T_254",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008462"
+      ]
+    },
+    {
+      "from": "M_102",
+      "to": "T_254",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008463"
+      ]
+    },
+    {
+      "from": "M_191",
+      "to": "T_254",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008464"
+      ]
+    },
+    {
+      "from": "A_1632",
+      "to": "C_203",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015560"
+      ]
+    },
+    {
+      "from": "A_1633",
+      "to": "C_204",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015561"
+      ]
+    },
+    {
+      "from": "A_1632",
+      "to": "A_1316",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_015562"
+      ]
+    },
+    {
+      "from": "A_1632",
+      "to": "A_1315",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_015563"
+      ]
+    },
+    {
+      "from": "A_1632",
+      "to": "A_1001",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_015564"
+      ]
+    },
+    {
+      "from": "A_1632",
+      "to": "A_1003",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_015565"
+      ]
+    },
+    {
+      "from": "A_1633",
+      "to": "A_1214",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_015566"
+      ]
+    },
+    {
+      "from": "A_1633",
+      "to": "A_1634",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_015567"
+      ]
+    },
+    {
+      "from": "A_1633",
+      "to": "A_1318",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_015568"
+      ]
+    },
+    {
+      "from": "A_1633",
+      "to": "A_1635",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_015569"
+      ]
+    },
+    {
+      "from": "A_1001",
+      "to": "C_3960",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008454"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1003",
+      "to": "C_3961",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008455"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1214",
+      "to": "C_3962",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008456"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1634",
+      "to": "C_3963",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008457"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1318",
+      "to": "C_3964",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008458"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1635",
+      "to": "C_3965",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008459"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1315",
+      "to": "C_3966",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008460"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1316",
+      "to": "C_3967",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008461"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2513",
+      "to": "T_254",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020674"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_254",
-   "type": "THEME",
-   "name": "글로벌mRNA플랫폼"
-  },
-  {
-   "id": "A_1632",
-   "type": "ASSET",
-   "name": "모더나",
-   "exposure": {
-    "ticker": "MRNA",
-    "exchange": "NASDAQ",
-    "country": "US",
-    "business_desc": "Moderna — mRNA 범용 플랫폼 (COVID 백신·항암·자가면역·심혈관)",
-    "theme_role": "mRNA 범용 플랫폼 1위, Merck·AstraZeneca 등과 PARTNERS",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -0.5184603299292934,
-    "close": 63.32,
-    "marketCap": 25124489520,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 4.540201419844814,
-    "return_15d": 17.10745330127612,
-    "return_1m": -6.109134045077102,
-    "return_ytd": 114.71685317056632,
-    "return_1y": 137.24241288872236,
-    "return_3y": -36.68,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 7.013689369612974,
-    "return_2y": -23.015197568389056
-   }
-  },
-  {
-   "id": "A_1633",
-   "type": "ASSET",
-   "name": "바이오엔텍",
-   "exposure": {
-    "ticker": "BNTX",
-    "exchange": "NASDAQ",
-    "country": "DE",
-    "business_desc": "BioNTech — mRNA 항암 특화 (개인맞춤 항암 백신·CAR-T·mRNA)",
-    "theme_role": "mRNA 항암 특화 1위, Pfizer·Roche·Sanofi·Genentech PARTNERS",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": 1.0529743812418557,
-    "close": 93.09,
-    "marketCap": 23384614431,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 0.31250000000000444,
-    "return_15d": 4.20911228030898,
-    "return_1m": 2.9756637168141475,
-    "return_ytd": -2.216386554621852,
-    "return_1y": -17.400177462289268,
-    "return_3y": -13.356291883842141,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -0.6191950464396245,
-    "return_2y": 9.71125515615794
-   }
-  },
-  {
-   "id": "A_1001",
-   "type": "ASSET",
-   "name": "리제네론",
-   "exposure": {
-    "ticker": "REGN",
-    "exchange": "NASDAQ",
-    "country": "US",
-    "business_desc": "Regeneron — 항체·유전자·항암 (Eylea·Dupixent)",
-    "theme_role": "Moderna PARTNERS — mRNA 항암 협업",
-    "theme_status": "Support"
-   },
-   "metrics": {
-    "return_1d": -0.3089445016563941,
-    "close": 803.48,
-    "marketCap": 82776116560,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 0.8130489335006263,
-    "return_15d": 22.479840246337712,
-    "return_1m": 22.459306224471142,
-    "return_ytd": 4.376125059090574,
-    "return_1y": 42.743087669355084,
-    "return_3y": 0.21479052467086035,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 2.4376561782854855,
-    "return_2y": -29.972834710074647
-   }
-  },
-  {
-   "id": "A_1003",
-   "type": "ASSET",
-   "name": "버텍스",
-   "exposure": {
-    "ticker": "VRTX",
-    "exchange": "NASDAQ",
-    "country": "US",
-    "business_desc": "Vertex — 낭포성섬유증·CRISPR (Casgevy)·통증",
-    "theme_role": "Moderna PARTNERS — mRNA 낭포성섬유증 협업",
-    "theme_status": "Support"
-   },
-   "metrics": {
-    "return_1d": -2.069940360932554,
-    "close": 505.75,
-    "marketCap": 128361878750,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": -4.512413858208242,
-    "return_15d": 5.947293447293434,
-    "return_1m": 6.180848606999634,
-    "return_ytd": 11.555937886006706,
-    "return_1y": 29.57981040225468,
-    "return_3y": 44.76056902424364,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 1.9513375128510146,
-    "return_2y": 7.277702358730709
-   }
-  },
-  {
-   "id": "A_1214",
-   "type": "ASSET",
-   "name": "화이자",
-   "exposure": {
-    "ticker": "PFE",
-    "exchange": "NYSE",
-    "country": "US",
-    "business_desc": "Pfizer — 글로벌 빅파마, BioNTech 와 Comirnaty 공동 개발",
-    "theme_role": "BioNTech PARTNERS — Comirnaty 공급 채널",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -0.03731343283582822,
-    "close": 26.79,
-    "marketCap": 152687997600,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 0.6386175807663319,
-    "return_15d": 9.168704156479212,
-    "return_1m": 12.406694890719194,
-    "return_ytd": 13.143479784947143,
-    "return_1y": 14.172959888171,
-    "return_3y": -9.924752368720124,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.11210762331836932,
-    "return_2y": 6.234485165240411
-   }
-  },
-  {
-   "id": "A_1634",
-   "type": "ASSET",
-   "name": "로슈",
-   "exposure": {
-    "ticker": "RHHBY",
-    "exchange": "OTC",
-    "country": "CH",
-    "business_desc": "Roche — 글로벌 빅파마 (Genentech 자회사 포함), 진단·항암 1위",
-    "theme_role": "BioNTech PARTNERS — mRNA 항암 협업",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -1.838169039466575,
-    "close": 54.47,
-    "marketCap": 347542671279,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": -3.7972447898269146,
-    "return_15d": -0.4204753199268829,
-    "return_1m": 8.592503987240828,
-    "return_ytd": 8.966151876450358,
-    "return_1y": 45.353724305587065,
-    "return_3y": 60.37710850113503,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -4.872511351728958,
-    "return_2y": 43.04622543896046
-   }
-  },
-  {
-   "id": "A_1318",
-   "type": "ASSET",
-   "name": "사노피",
-   "exposure": {
-    "ticker": "SNY",
-    "exchange": "NASDAQ",
-    "country": "FR",
-    "business_desc": "Sanofi — 글로벌 빅파마 (Dupixent 공동, 백신 강자)",
-    "theme_role": "BioNTech PARTNERS — mRNA 면역항암 협업",
-    "theme_status": "Support"
-   },
-   "metrics": {
-    "return_1d": -0.13704888076747634,
-    "close": 43.72,
-    "marketCap": 104980464000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 0.36730945821854544,
-    "return_15d": 0.8535178777393293,
-    "return_1m": 1.2505789717461857,
-    "return_ytd": -4.776217577195085,
-    "return_1y": -5.902407107682784,
-    "return_3y": -5.719578282724824,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.5982512655315242,
-    "return_2y": -9.975208177183292
-   }
-  },
-  {
-   "id": "A_1635",
-   "type": "ASSET",
-   "name": "제넨텍(비)",
-   "exposure": {
-    "ticker": "",
-    "exchange": "",
-    "country": "US",
-    "business_desc": "Genentech — Roche 자회사, 항암·면역질환 (비상장)",
-    "theme_role": "BioNTech PARTNERS — Roche 자회사로 mRNA 항암 협업 채널",
-    "theme_status": "Peripheral"
-   },
-   "metrics": {
-    "return_1d": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": null,
-    "returnsSource": null,
-    "return_5d": null
-   },
-   "coreBiz": "제넨텍은 로슈 자회사로 모더나와 개인화 mRNA 항암 백신을 공동개발한다(비상장)"
-  },
-  {
-   "id": "A_1315",
-   "type": "ASSET",
-   "name": "아스트라제네카",
-   "exposure": {
-    "ticker": "AZN",
-    "exchange": "NASDAQ",
-    "country": "GB",
-    "business_desc": "AstraZeneca — 글로벌 빅파마, 항암(Imfinzi)·당뇨·심혈관",
-    "theme_role": "Moderna PARTNERS — mRNA 심혈관 협업",
-    "theme_status": "Support"
-   },
-   "metrics": {
-    "return_1d": -0.5024166878656922,
-    "close": 156.45,
-    "marketCap": 242633995272,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": -1.4488188976378047,
-    "return_15d": -6.955915123811973,
-    "return_1m": -4.263560673465616,
-    "return_ytd": -13.443265089336853,
-    "return_1y": 1.4038387623870552,
-    "return_3y": 17.20128280905515,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -3.078924544666084,
-    "return_2y": -2.9734347528132754
-   }
-  },
-  {
-   "id": "A_1316",
-   "type": "ASSET",
-   "name": "머크(MSD)",
-   "exposure": {
-    "ticker": "MRK",
-    "exchange": "NYSE",
-    "country": "US",
-    "business_desc": "Merck & Co. (MSD) — 글로벌 빅파마, Keytruda 항암 1위",
-    "theme_role": "Moderna PARTNERS — 개인맞춤 mRNA 항암 백신 mRNA-4157 공동",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": 0.21394319439320686,
-    "close": 135.84,
-    "marketCap": 335500348800,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 4.15580432449012,
-    "return_15d": 3.639276722362106,
-    "return_1m": 12.468951813214101,
-    "return_ytd": 30.94261524714166,
-    "return_1y": 69.62465051752751,
-    "return_3y": 36.79909847943934,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 5.646290247316843,
-    "return_2y": 27.769923840321443
-   }
-  },
-  {
-   "id": "M_157",
-   "type": "MACRO",
-   "name": "글로벌빅파마투자"
-  },
-  {
-   "id": "M_102",
-   "type": "MACRO",
-   "name": "빅파마특허만료"
-  },
-  {
-   "id": "M_191",
-   "type": "MACRO",
-   "name": "신약임상성공"
-  },
-  {
-   "id": "C_203",
-   "type": "CHARACTER",
-   "name": "범용"
-  },
-  {
-   "id": "C_204",
-   "type": "CHARACTER",
-   "name": "항암특화"
-  },
-  {
-   "id": "C_3960",
-   "type": "CHARACTER",
-   "name": "항체·유전자치료플랫폼"
-  },
-  {
-   "id": "C_3961",
-   "type": "CHARACTER",
-   "name": "유전자편집·희귀질환"
-  },
-  {
-   "id": "C_3962",
-   "type": "CHARACTER",
-   "name": "mRNA백신(코미나티)"
-  },
-  {
-   "id": "C_3963",
-   "type": "CHARACTER",
-   "name": "빅파마_mRNA·개인화항암"
-  },
-  {
-   "id": "C_3964",
-   "type": "CHARACTER",
-   "name": "빅파마_mRNA백신"
-  },
-  {
-   "id": "C_3965",
-   "type": "CHARACTER",
-   "name": "로슈자회사_mRNA항암"
-  },
-  {
-   "id": "C_3966",
-   "type": "CHARACTER",
-   "name": "빅파마_mRNA·세포치료"
-  },
-  {
-   "id": "C_3967",
-   "type": "CHARACTER",
-   "name": "빅파마_mRNA암백신(모더나협력)"
-  },
-  {
-   "id": "A_2513",
-   "type": "ASSET",
-   "name": "IBB",
-   "exposure": {
-    "ticker": "IBB",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.3418116014878847,
-    "return_3d": -0.7409632522279108,
-    "return_15d": 5.378973105134488,
-    "return_1m": 5.082949064504172,
-    "return_ytd": 17.575824427376794,
-    "return_1y": 44.79829683431746,
-    "return_3y": 55.68192704480743,
-    "close": 198.26,
-    "marketCap": 9794008313,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.2781852207778934,
-    "return_2y": 39.57990854721012
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_1632",
-   "to": "T_254",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015558"
-   ]
-  },
-  {
-   "from": "A_1633",
-   "to": "T_254",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015559"
-   ]
-  },
-  {
-   "from": "M_157",
-   "to": "T_254",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008462"
-   ]
-  },
-  {
-   "from": "M_102",
-   "to": "T_254",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008463"
-   ]
-  },
-  {
-   "from": "M_191",
-   "to": "T_254",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008464"
-   ]
-  },
-  {
-   "from": "A_1632",
-   "to": "C_203",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015560"
-   ]
-  },
-  {
-   "from": "A_1633",
-   "to": "C_204",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015561"
-   ]
-  },
-  {
-   "from": "A_1632",
-   "to": "A_1316",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_015562"
-   ]
-  },
-  {
-   "from": "A_1632",
-   "to": "A_1315",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_015563"
-   ]
-  },
-  {
-   "from": "A_1632",
-   "to": "A_1001",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_015564"
-   ]
-  },
-  {
-   "from": "A_1632",
-   "to": "A_1003",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_015565"
-   ]
-  },
-  {
-   "from": "A_1633",
-   "to": "A_1214",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_015566"
-   ]
-  },
-  {
-   "from": "A_1633",
-   "to": "A_1634",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_015567"
-   ]
-  },
-  {
-   "from": "A_1633",
-   "to": "A_1318",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_015568"
-   ]
-  },
-  {
-   "from": "A_1633",
-   "to": "A_1635",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_015569"
-   ]
-  },
-  {
-   "from": "A_1001",
-   "to": "C_3960",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008454"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1003",
-   "to": "C_3961",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008455"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1214",
-   "to": "C_3962",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008456"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1634",
-   "to": "C_3963",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008457"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1318",
-   "to": "C_3964",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008458"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1635",
-   "to": "C_3965",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008459"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1315",
-   "to": "C_3966",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008460"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1316",
-   "to": "C_3967",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008461"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2513",
-   "to": "T_254",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020674"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_1632",
-   "to": "T_254",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015558"
-   ]
-  },
-  {
-   "from": "A_1633",
-   "to": "T_254",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015559"
-   ]
-  },
-  {
-   "from": "M_157",
-   "to": "T_254",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008462"
-   ]
-  },
-  {
-   "from": "M_102",
-   "to": "T_254",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008463"
-   ]
-  },
-  {
-   "from": "M_191",
-   "to": "T_254",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008464"
-   ]
-  },
-  {
-   "from": "A_1632",
-   "to": "C_203",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015560"
-   ]
-  },
-  {
-   "from": "A_1633",
-   "to": "C_204",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015561"
-   ]
-  },
-  {
-   "from": "A_1632",
-   "to": "A_1316",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_015562"
-   ]
-  },
-  {
-   "from": "A_1632",
-   "to": "A_1315",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_015563"
-   ]
-  },
-  {
-   "from": "A_1632",
-   "to": "A_1001",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_015564"
-   ]
-  },
-  {
-   "from": "A_1632",
-   "to": "A_1003",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_015565"
-   ]
-  },
-  {
-   "from": "A_1633",
-   "to": "A_1214",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_015566"
-   ]
-  },
-  {
-   "from": "A_1633",
-   "to": "A_1634",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_015567"
-   ]
-  },
-  {
-   "from": "A_1633",
-   "to": "A_1318",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_015568"
-   ]
-  },
-  {
-   "from": "A_1633",
-   "to": "A_1635",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_015569"
-   ]
-  },
-  {
-   "from": "A_1001",
-   "to": "C_3960",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008454"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1003",
-   "to": "C_3961",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008455"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1214",
-   "to": "C_3962",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008456"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1634",
-   "to": "C_3963",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008457"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1318",
-   "to": "C_3964",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008458"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1635",
-   "to": "C_3965",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008459"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1315",
-   "to": "C_3966",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008460"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1316",
-   "to": "C_3967",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008461"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2513",
-   "to": "T_254",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020674"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

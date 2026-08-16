@@ -1,836 +1,842 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_702",
- "themeName": "이탈리아대표종목_ADR",
- "meta": {
-  "periodDefault": "7d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_702",
+  "themeName": "이탈리아대표종목_ADR",
+  "meta": {
+    "periodDefault": "7d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-31T00:00:00+09:00",
+    "description": "이탈리아 증시(FTSE MIB) 대표종목 - 미국 ADR 상장분 우선 사용. EWI(대표 지수 ETF) + 금융(유니크레딧/인테사/방코BPM/메디오방카: 고금리 호실적/주주환원), 반도체/방산(STMicroelectronics/레오나르도), 럭셔리(페라리). BTP-분트 스프레드 안정/저평가 매력이 외국인 자금유입 동인.",
+    "notes": "이탈리아 증시(FTSE MIB) 대표종목 - 미국 ADR 상장분 우선 사용. EWI(대표 지수 ETF) + 금융(유니크레딧/인테사/방코BPM/메디오방카: 고금리 호실적/주주환원), 반도체/방산(STMicroelectronics/레오나르도), 럭셔리(페라리). BTP-분트 스프레드 안정/저평가 매력이 외국인 자금유입 동인.",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-31",
+        "kind": "신규",
+        "title": "테마 생성",
+        "detail": "이탈리아 증시(FTSE MIB) 대표종목 - 미국 ADR 상장분 우선 사용. EWI(대표 지수 ETF) + 금융(유니크레딧/인테사/방코BPM/메디오방카: 고금리 호실적/주주환원), 반도체/방산(STMicroelectronics/레오나르도), 럭셔리(페라리). BTP-분트 스프레드 안정/저평가 매력이 외국인 자금유입 동인."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_702",
+      "type": "THEME",
+      "name": "이탈리아대표종목_ADR"
+    },
+    {
+      "id": "M_359",
+      "type": "MACRO",
+      "name": "ECB금리정책"
+    },
+    {
+      "id": "M_173",
+      "type": "MACRO",
+      "name": "주주환원정책"
+    },
+    {
+      "id": "M_1201",
+      "type": "MACRO",
+      "name": "이탈리아국채스프레드안정"
+    },
+    {
+      "name": "EWI(이탈리아)",
+      "id": "A_122",
+      "metrics": {
+        "return_1d": -0.031600568810230545,
+        "return_30d": null,
+        "market_cap": null,
+        "asof": null,
+        "return_90d": null,
+        "currency": null,
+        "per": null,
+        "last_price": null,
+        "return_15d": 5.204522780179577,
+        "return_3d": 0.28530670470756636,
+        "return_1m": 4.354280059376547,
+        "return_ytd": 16.454997239094425,
+        "return_1y": 22.711404189294026,
+        "return_3y": 97.90428526743824,
+        "close": 63.27,
+        "marketCap": 1072488631,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "pe_ttm": null,
+        "return_5d": -0.1262825572217796,
+        "return_2y": 73.38996985475472
+      },
+      "exposure": {
+        "country": null,
+        "ticker": "EWI",
+        "exchange": null
+      },
+      "type": "ASSET"
+    },
+    {
+      "id": "C_5873",
+      "type": "CHARACTER",
+      "name": "이탈리아대표지수ETF"
+    },
+    {
+      "id": "A_2856",
+      "type": "ASSET",
+      "name": "유니크레딧",
+      "exposure": {
+        "ticker": "UNCRY",
+        "exchange": "OTC",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.24296416278598576,
+        "close": 49.29,
+        "marketCap": 147700183973,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": 1.170431211498979,
+        "return_15d": 8.285714285714295,
+        "return_1m": 5.322787516032501,
+        "return_ytd": 18.78013500482161,
+        "return_1y": 21.98564000990344,
+        "return_3y": 306.8538398018167,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 1.1496612605214507,
+        "return_2y": 155.28497409326425
+      },
+      "coreBiz": "이탈리아 대형 은행 - 고금리 순이자마진, 대규모 자사주매입/배당(미 ADR)."
+    },
+    {
+      "id": "C_5874",
+      "type": "CHARACTER",
+      "name": "은행_고금리주주환원"
+    },
+    {
+      "id": "A_2857",
+      "type": "ASSET",
+      "name": "인테사산파올로(ADR)",
+      "exposure": {
+        "ticker": "ISNPY",
+        "exchange": "OTC",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.6704378797402155,
+        "close": 48.05,
+        "marketCap": 23566979904,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": 1.6071050962148448,
+        "return_15d": 9.603102189780998,
+        "return_1m": 10.765329644997678,
+        "return_ytd": 15.477048786349435,
+        "return_1y": 24.064033049315768,
+        "return_3y": 200.87664370695052,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 1.2858347386172087,
+        "return_2y": 107.91864993509304
+      },
+      "coreBiz": "이탈리아 최대 은행 - 호실적, 강력한 배당(미 ADR)."
+    },
+    {
+      "id": "C_5875",
+      "type": "CHARACTER",
+      "name": "최대은행_호실적배당"
+    },
+    {
+      "id": "A_2860",
+      "type": "ASSET",
+      "name": "방코BPM",
+      "exposure": {
+        "ticker": "BAMI",
+        "exchange": "MI",
+        "country": "IT"
+      },
+      "metrics": {
+        "return_1d": 0.3182686187141792,
+        "close": 16.1917,
+        "marketCap": 0,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": 1.6774193548387162,
+        "return_15d": 0.7028753993610248,
+        "return_1m": 3.5479632063074806,
+        "return_ytd": 19.39393939393941,
+        "return_1y": 40.71428571428572,
+        "return_3y": 263.97228637413394,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "이탈리아 은행 - 업계 통합, 금리 수혜(밀란 상장, ADR 부재)."
+    },
+    {
+      "id": "C_5876",
+      "type": "CHARACTER",
+      "name": "은행_통합수혜"
+    },
+    {
+      "id": "A_2858",
+      "type": "ASSET",
+      "name": "메디오방카",
+      "exposure": {
+        "ticker": "MDIBY",
+        "exchange": "OTC",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.6031363088057962,
+        "close": 33.36,
+        "marketCap": 27099888281,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": 0.9990917347865613,
+        "return_15d": 5.972045743329102,
+        "return_1m": 7.405022537025108,
+        "return_ytd": 61.237312711454805,
+        "return_1y": 34.733441033925686,
+        "return_3y": 159.4090202177294,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 1.305800182204675,
+        "return_2y": 116.20220349967596
+      },
+      "coreBiz": "이탈리아 투자은행, 제네랄리 지분 - 자산관리, 주주환원(미 ADR)."
+    },
+    {
+      "id": "C_5877",
+      "type": "CHARACTER",
+      "name": "투자은행_보험지분"
+    },
+    {
+      "id": "A_061",
+      "type": "ASSET",
+      "name": "STMicroelectronics",
+      "exposure": {
+        "ticker": "STM",
+        "exchange": "NYSE",
+        "country": "US",
+        "assetType": "STOCK"
+      },
+      "display": {
+        "name_ko": "STMicro"
+      },
+      "metrics": {
+        "return_1d": 0.6862017804154297,
+        "ret7d": -1.6,
+        "ret1m": 1.2,
+        "retYtd": 5.9,
+        "ret1y": 14.3,
+        "ret3y": 33.8,
+        "return_3d": -1.3626453488372103,
+        "return_15d": 5.335661622041132,
+        "return_1m": -22.586624839583624,
+        "return_ytd": 109.2906707787201,
+        "return_1y": 109.85697719366061,
+        "return_3y": 13.506167677190039,
+        "close": 54.29,
+        "marketCap": 48456278202,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "pe_ttm": null,
+        "return_5d": -3.226381461675587,
+        "return_2y": 83.35021952043229
+      }
+    },
+    {
+      "id": "C_5878",
+      "type": "CHARACTER",
+      "name": "반도체_AI반등"
+    },
+    {
+      "id": "A_2859",
+      "type": "ASSET",
+      "name": "레오나르도(ADR)",
+      "exposure": {
+        "ticker": "FINMY",
+        "exchange": "OTC",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.9356725146198785,
+        "close": 34.52,
+        "marketCap": 79656400515,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": 1.7088980553918942,
+        "return_15d": 16.542876434841336,
+        "return_1m": 18.99345053429853,
+        "return_ytd": 20.741518013291383,
+        "return_1y": 23.81635581061694,
+        "return_3y": 384.15147265077144,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 2.5549613784908054,
+        "return_2y": 179.28802588996766
+      },
+      "coreBiz": "이탈리아 방산, 우주항공 - 유럽 국방비 증액 수혜(미 ADR)."
+    },
+    {
+      "id": "C_5879",
+      "type": "CHARACTER",
+      "name": "방산우주_국방비증액"
+    },
+    {
+      "id": "A_2026",
+      "type": "ASSET",
+      "name": "페라리",
+      "exposure": {
+        "ticker": "RACE",
+        "exchange": "NYSE",
+        "country": "IT"
+      },
+      "metrics": {
+        "return_1d": 0.6209221664362552,
+        "return_3d": 1.1188027104762854,
+        "return_15d": 15.191314488809926,
+        "return_1m": 12.376747209881888,
+        "return_ytd": 12.255114189847394,
+        "return_1y": -10.675451628878408,
+        "return_3y": 31.460531736223363,
+        "close": 414.85,
+        "marketCap": 72978765460,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.6282443118420522,
+        "return_2y": -8.401413115478018
+      }
+    },
+    {
+      "id": "C_5880",
+      "type": "CHARACTER",
+      "name": "럭셔리카_자사주"
+    }
   ],
-  "dataAsOf": "2026-07-31T00:00:00+09:00",
-  "description": "이탈리아 증시(FTSE MIB) 대표종목 - 미국 ADR 상장분 우선 사용. EWI(대표 지수 ETF) + 금융(유니크레딧/인테사/방코BPM/메디오방카: 고금리 호실적/주주환원), 반도체/방산(STMicroelectronics/레오나르도), 럭셔리(페라리). BTP-분트 스프레드 안정/저평가 매력이 외국인 자금유입 동인.",
-  "notes": "이탈리아 증시(FTSE MIB) 대표종목 - 미국 ADR 상장분 우선 사용. EWI(대표 지수 ETF) + 금융(유니크레딧/인테사/방코BPM/메디오방카: 고금리 호실적/주주환원), 반도체/방산(STMicroelectronics/레오나르도), 럭셔리(페라리). BTP-분트 스프레드 안정/저평가 매력이 외국인 자금유입 동인.",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-31",
-    "kind": "신규",
-    "title": "테마 생성",
-    "detail": "이탈리아 증시(FTSE MIB) 대표종목 - 미국 ADR 상장분 우선 사용. EWI(대표 지수 ETF) + 금융(유니크레딧/인테사/방코BPM/메디오방카: 고금리 호실적/주주환원), 반도체/방산(STMicroelectronics/레오나르도), 럭셔리(페라리). BTP-분트 스프레드 안정/저평가 매력이 외국인 자금유입 동인."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "M_359",
+      "to": "T_702",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_015151"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_173",
+      "to": "T_702",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_015152"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_1201",
+      "to": "T_702",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_015153"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_122",
+      "to": "T_702",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015154"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_122",
+      "to": "C_5873",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015155"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2856",
+      "to": "T_702",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015156"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2856",
+      "to": "C_5874",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015157"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2857",
+      "to": "T_702",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015158"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2857",
+      "to": "C_5875",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015159"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2860",
+      "to": "T_702",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015160"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2860",
+      "to": "C_5876",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015161"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2858",
+      "to": "T_702",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015162"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2858",
+      "to": "C_5877",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015163"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_061",
+      "to": "T_702",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015164"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_061",
+      "to": "C_5878",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015165"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2859",
+      "to": "T_702",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015166"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2859",
+      "to": "C_5879",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015167"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2026",
+      "to": "T_702",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015168"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2026",
+      "to": "C_5880",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015169"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2856",
+      "to": "A_2857",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020523"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "유니크레딧과 인테사산파올로(ADR)는 이탈리아 대형은행 양대 경쟁"
+    },
+    {
+      "from": "A_2858",
+      "to": "A_2856",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020524"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "메디오방카와 유니크레딧은 이탈리아 금융 시장 경쟁"
+    },
+    {
+      "from": "A_2860",
+      "to": "A_2856",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020525"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "방코BPM과 유니크레딧은 이탈리아 은행 시장 경쟁"
+    },
+    {
+      "from": "A_061",
+      "to": "A_2859",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020526"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "STMicroelectronics와 레오나르도는 이탈리아 대표 기술·방산주 경쟁"
+    },
+    {
+      "from": "A_122",
+      "to": "T_702",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020989"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "M_359",
+      "to": "T_702",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_015151"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_173",
+      "to": "T_702",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_015152"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_1201",
+      "to": "T_702",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_015153"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_122",
+      "to": "T_702",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015154"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_122",
+      "to": "C_5873",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015155"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2856",
+      "to": "T_702",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015156"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2856",
+      "to": "C_5874",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015157"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2857",
+      "to": "T_702",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015158"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2857",
+      "to": "C_5875",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015159"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2860",
+      "to": "T_702",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015160"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2860",
+      "to": "C_5876",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015161"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2858",
+      "to": "T_702",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015162"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2858",
+      "to": "C_5877",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015163"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_061",
+      "to": "T_702",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015164"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_061",
+      "to": "C_5878",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015165"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2859",
+      "to": "T_702",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015166"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2859",
+      "to": "C_5879",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015167"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2026",
+      "to": "T_702",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015168"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2026",
+      "to": "C_5880",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015169"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2856",
+      "to": "A_2857",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020523"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "유니크레딧과 인테사산파올로(ADR)는 이탈리아 대형은행 양대 경쟁"
+    },
+    {
+      "from": "A_2858",
+      "to": "A_2856",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020524"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "메디오방카와 유니크레딧은 이탈리아 금융 시장 경쟁"
+    },
+    {
+      "from": "A_2860",
+      "to": "A_2856",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020525"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "방코BPM과 유니크레딧은 이탈리아 은행 시장 경쟁"
+    },
+    {
+      "from": "A_061",
+      "to": "A_2859",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020526"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "STMicroelectronics와 레오나르도는 이탈리아 대표 기술·방산주 경쟁"
+    },
+    {
+      "from": "A_122",
+      "to": "T_702",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020989"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_702",
-   "type": "THEME",
-   "name": "이탈리아대표종목_ADR"
-  },
-  {
-   "id": "M_359",
-   "type": "MACRO",
-   "name": "ECB금리정책"
-  },
-  {
-   "id": "M_173",
-   "type": "MACRO",
-   "name": "주주환원정책"
-  },
-  {
-   "id": "M_1201",
-   "type": "MACRO",
-   "name": "이탈리아국채스프레드안정"
-  },
-  {
-   "name": "EWI(이탈리아)",
-   "id": "A_122",
-   "metrics": {
-    "return_1d": -0.031600568810230545,
-    "return_30d": null,
-    "market_cap": null,
-    "asof": null,
-    "return_90d": null,
-    "currency": null,
-    "per": null,
-    "last_price": null,
-    "return_15d": 5.204522780179577,
-    "return_3d": 0.28530670470756636,
-    "return_1m": 4.474900924702774,
-    "return_ytd": 14.702683103698355,
-    "return_1y": 23.816046966731896,
-    "return_3y": 97.65698219306469,
-    "close": 63.27,
-    "marketCap": 1072488631,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "pe_ttm": null,
-    "return_5d": null
-   },
-   "exposure": {
-    "country": null,
-    "ticker": "EWI",
-    "exchange": null
-   },
-   "type": "ASSET"
-  },
-  {
-   "id": "C_5873",
-   "type": "CHARACTER",
-   "name": "이탈리아대표지수ETF"
-  },
-  {
-   "id": "A_2856",
-   "type": "ASSET",
-   "name": "유니크레딧",
-   "exposure": {
-    "ticker": "UNCRY",
-    "exchange": "OTC",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.20247013565499739,
-    "close": 49.29,
-    "marketCap": 147700183973,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 1.2114989733059467,
-    "return_15d": 8.329670329670336,
-    "return_1m": 4.649681528662408,
-    "return_ytd": 18.286537077033827,
-    "return_1y": 22.856430707876374,
-    "return_3y": 305.679012345679,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": null
-   },
-   "coreBiz": "이탈리아 대형 은행 - 고금리 순이자마진, 대규모 자사주매입/배당(미 ADR)."
-  },
-  {
-   "id": "C_5874",
-   "type": "CHARACTER",
-   "name": "은행_고금리주주환원"
-  },
-  {
-   "id": "A_2857",
-   "type": "ASSET",
-   "name": "인테사산파올로(ADR)",
-   "exposure": {
-    "ticker": "ISNPY",
-    "exchange": "OTC",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.6704378797402155,
-    "close": 48.045,
-    "marketCap": 23564527565,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 1.6071050962148448,
-    "return_15d": 9.603102189780998,
-    "return_1m": 9.703196347031962,
-    "return_ytd": 14.160133048229962,
-    "return_1y": 25.424171234664563,
-    "return_3y": 204.69245402663284,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": null
-   },
-   "coreBiz": "이탈리아 최대 은행 - 호실적, 강력한 배당(미 ADR)."
-  },
-  {
-   "id": "C_5875",
-   "type": "CHARACTER",
-   "name": "최대은행_호실적배당"
-  },
-  {
-   "id": "A_2860",
-   "type": "ASSET",
-   "name": "방코BPM",
-   "exposure": {
-    "ticker": "BAMI",
-    "exchange": "MI",
-    "country": "IT"
-   },
-   "metrics": {
-    "return_1d": 0.3182686187141792,
-    "close": 16.1917,
-    "marketCap": 0,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 1.6774193548387162,
-    "return_15d": 0.7028753993610248,
-    "return_1m": 3.5479632063074806,
-    "return_ytd": 19.39393939393941,
-    "return_1y": 40.71428571428572,
-    "return_3y": 263.97228637413394,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": null
-   },
-   "coreBiz": "이탈리아 은행 - 업계 통합, 금리 수혜(밀란 상장, ADR 부재)."
-  },
-  {
-   "id": "C_5876",
-   "type": "CHARACTER",
-   "name": "은행_통합수혜"
-  },
-  {
-   "id": "A_2858",
-   "type": "ASSET",
-   "name": "메디오방카",
-   "exposure": {
-    "ticker": "MDIBY",
-    "exchange": "OTC",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.6031363088057962,
-    "close": 33.36,
-    "marketCap": 27099888281,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 0.9990917347865613,
-    "return_15d": 5.972045743329102,
-    "return_1m": 8.031088082901562,
-    "return_ytd": 59.160305343511446,
-    "return_1y": 34.84236054971706,
-    "return_3y": 158.60465116279067,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": null
-   },
-   "coreBiz": "이탈리아 투자은행, 제네랄리 지분 - 자산관리, 주주환원(미 ADR)."
-  },
-  {
-   "id": "C_5877",
-   "type": "CHARACTER",
-   "name": "투자은행_보험지분"
-  },
-  {
-   "id": "A_061",
-   "type": "ASSET",
-   "name": "STMicroelectronics",
-   "exposure": {
-    "ticker": "STM",
-    "exchange": "NYSE",
-    "country": "US",
-    "assetType": "STOCK"
-   },
-   "display": {
-    "name_ko": "STMicro"
-   },
-   "metrics": {
-    "return_1d": 0.6862017804154297,
-    "ret7d": -1.6,
-    "ret1m": 1.2,
-    "retYtd": 5.9,
-    "ret1y": 14.3,
-    "ret3y": 33.8,
-    "return_3d": -1.3626453488372103,
-    "return_15d": 5.335661622041132,
-    "return_1m": -22.586624839583624,
-    "return_ytd": 110.1242012454958,
-    "return_1y": 112.08108224245761,
-    "return_3y": 16.99573738131257,
-    "close": 54.29,
-    "marketCap": 48456278202,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "pe_ttm": null,
-    "return_5d": -3.226381461675587,
-    "return_2y": 87.81827742721133
-   }
-  },
-  {
-   "id": "C_5878",
-   "type": "CHARACTER",
-   "name": "반도체_AI반등"
-  },
-  {
-   "id": "A_2859",
-   "type": "ASSET",
-   "name": "레오나르도(ADR)",
-   "exposure": {
-    "ticker": "FINMY",
-    "exchange": "OTC",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.9356725146198785,
-    "close": 34.52,
-    "marketCap": 79656400515,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 1.7088980553918942,
-    "return_15d": 16.542876434841336,
-    "return_1m": 22.672352523098805,
-    "return_ytd": 14.913448735019985,
-    "return_1y": 26.585991932526596,
-    "return_3y": 372.22982216142276,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": null
-   },
-   "coreBiz": "이탈리아 방산, 우주항공 - 유럽 국방비 증액 수혜(미 ADR)."
-  },
-  {
-   "id": "C_5879",
-   "type": "CHARACTER",
-   "name": "방산우주_국방비증액"
-  },
-  {
-   "id": "A_2026",
-   "type": "ASSET",
-   "name": "페라리",
-   "exposure": {
-    "ticker": "RACE",
-    "exchange": "NYSE",
-    "country": "IT"
-   },
-   "metrics": {
-    "return_1d": 0.6209221664362552,
-    "return_3d": 1.1188027104762854,
-    "return_15d": 15.191314488809926,
-    "return_1m": 12.376747209881888,
-    "return_ytd": 13.550205969699869,
-    "return_1y": -9.644917703584788,
-    "return_3y": 35.846874359405945,
-    "close": 414.85,
-    "marketCap": 72978765460,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.6282443118420522,
-    "return_2y": -5.948280963102293
-   }
-  },
-  {
-   "id": "C_5880",
-   "type": "CHARACTER",
-   "name": "럭셔리카_자사주"
-  }
- ],
- "edges": [
-  {
-   "from": "M_359",
-   "to": "T_702",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_015151"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_173",
-   "to": "T_702",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_015152"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_1201",
-   "to": "T_702",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_015153"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_122",
-   "to": "T_702",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015154"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_122",
-   "to": "C_5873",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015155"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2856",
-   "to": "T_702",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015156"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2856",
-   "to": "C_5874",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015157"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2857",
-   "to": "T_702",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015158"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2857",
-   "to": "C_5875",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015159"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2860",
-   "to": "T_702",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015160"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2860",
-   "to": "C_5876",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015161"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2858",
-   "to": "T_702",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015162"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2858",
-   "to": "C_5877",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015163"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_061",
-   "to": "T_702",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015164"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_061",
-   "to": "C_5878",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015165"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2859",
-   "to": "T_702",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015166"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2859",
-   "to": "C_5879",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015167"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2026",
-   "to": "T_702",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015168"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2026",
-   "to": "C_5880",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015169"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2856",
-   "to": "A_2857",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020523"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "유니크레딧과 인테사산파올로(ADR)는 이탈리아 대형은행 양대 경쟁"
-  },
-  {
-   "from": "A_2858",
-   "to": "A_2856",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020524"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "메디오방카와 유니크레딧은 이탈리아 금융 시장 경쟁"
-  },
-  {
-   "from": "A_2860",
-   "to": "A_2856",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020525"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "방코BPM과 유니크레딧은 이탈리아 은행 시장 경쟁"
-  },
-  {
-   "from": "A_061",
-   "to": "A_2859",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020526"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "STMicroelectronics와 레오나르도는 이탈리아 대표 기술·방산주 경쟁"
-  },
-  {
-   "from": "A_122",
-   "to": "T_702",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020989"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "M_359",
-   "to": "T_702",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_015151"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_173",
-   "to": "T_702",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_015152"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_1201",
-   "to": "T_702",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_015153"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_122",
-   "to": "T_702",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015154"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_122",
-   "to": "C_5873",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015155"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2856",
-   "to": "T_702",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015156"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2856",
-   "to": "C_5874",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015157"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2857",
-   "to": "T_702",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015158"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2857",
-   "to": "C_5875",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015159"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2860",
-   "to": "T_702",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015160"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2860",
-   "to": "C_5876",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015161"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2858",
-   "to": "T_702",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015162"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2858",
-   "to": "C_5877",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015163"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_061",
-   "to": "T_702",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015164"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_061",
-   "to": "C_5878",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015165"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2859",
-   "to": "T_702",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015166"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2859",
-   "to": "C_5879",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015167"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2026",
-   "to": "T_702",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015168"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2026",
-   "to": "C_5880",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015169"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2856",
-   "to": "A_2857",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020523"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "유니크레딧과 인테사산파올로(ADR)는 이탈리아 대형은행 양대 경쟁"
-  },
-  {
-   "from": "A_2858",
-   "to": "A_2856",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020524"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "메디오방카와 유니크레딧은 이탈리아 금융 시장 경쟁"
-  },
-  {
-   "from": "A_2860",
-   "to": "A_2856",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020525"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "방코BPM과 유니크레딧은 이탈리아 은행 시장 경쟁"
-  },
-  {
-   "from": "A_061",
-   "to": "A_2859",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020526"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "STMicroelectronics와 레오나르도는 이탈리아 대표 기술·방산주 경쟁"
-  },
-  {
-   "from": "A_122",
-   "to": "T_702",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020989"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

@@ -1,816 +1,817 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_466",
- "themeName": "글로벌 거래소·시장인프라",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_466",
+  "themeName": "글로벌 거래소·시장인프라",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-25T00:00:00+09:00",
+    "description": "거래량·변동성·파생·데이터 수수료의 복리 성장 — 글로벌 거래소·시장 인프라. CME·ICE·Nasdaq·Cboe·Deutsche Börse·LSEG·HKEX·Tradeweb. 거래대금·변동성·상장·데이터 구독이 동인.",
+    "notes": "T_466 신규 — 자산별 CHARACTER(사업특성/포지션), MACRO 3 (기존 재사용)",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-25",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 2026 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화(회사·사업 특정), 2026 이벤트 2건 추가."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_466",
+      "type": "THEME",
+      "name": "글로벌 거래소·시장인프라"
+    },
+    {
+      "id": "A_2413",
+      "type": "ASSET",
+      "name": "CME그룹",
+      "exposure": {
+        "ticker": "CME",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.9692751019797274,
+        "return_3d": 4.04133888631808,
+        "return_15d": 5.675453370412442,
+        "return_1m": 10.750790197446737,
+        "return_ytd": -1.2011132268932134,
+        "return_1y": -1.7837641062977694,
+        "return_3y": 30.685395979656093,
+        "close": 269.8,
+        "marketCap": 97014489474,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 2.328756732155046,
+        "return_2y": 29.805147943228306
+      }
+    },
+    {
+      "id": "C_880",
+      "type": "CHARACTER",
+      "name": "글로벌 파생상품 거래소 1위"
+    },
+    {
+      "id": "A_2414",
+      "type": "ASSET",
+      "name": "인터컨티넨탈익스체인지",
+      "exposure": {
+        "ticker": "ICE",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.32852357639784335,
+        "return_3d": 2.300826446280979,
+        "return_15d": 6.132107826325539,
+        "return_1m": 12.440956325848385,
+        "return_ytd": -4.464065201284284,
+        "return_1y": -15.299978103788058,
+        "return_3y": 34.64148973198746,
+        "close": 154.73,
+        "marketCap": 86864648350,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 2.9474384564204703,
+        "return_2y": -0.8903407635152516
+      }
+    },
+    {
+      "id": "C_881",
+      "type": "CHARACTER",
+      "name": "거래소·데이터·모기지"
+    },
+    {
+      "id": "A_2415",
+      "type": "ASSET",
+      "name": "나스닥",
+      "exposure": {
+        "ticker": "NDAQ",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.5840762373194086,
+        "return_3d": 2.1048200378867676,
+        "return_15d": 5.3534585731349615,
+        "return_1m": 10.237473014430165,
+        "return_ytd": -0.11325028312570984,
+        "return_1y": 1.6981132075471583,
+        "return_3y": 89.93735317149569,
+        "close": 97.02,
+        "marketCap": 54231984631,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 2.568981921979052,
+        "return_2y": 39.99999999999999
+      }
+    },
+    {
+      "id": "C_882",
+      "type": "CHARACTER",
+      "name": "거래소·시장기술·데이터"
+    },
+    {
+      "id": "A_2416",
+      "type": "ASSET",
+      "name": "Cboe글로벌마켓",
+      "exposure": {
+        "ticker": "CBOE",
+        "exchange": "CBOE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.044083526682127,
+        "return_3d": 4.743041063912545,
+        "return_15d": 3.8832567439576193,
+        "return_1m": 7.6951050985526015,
+        "return_ytd": 17.984063745019906,
+        "return_1y": 21.513273973164825,
+        "return_3y": 99.38059651248905,
+        "close": 296.14,
+        "marketCap": 30992235560,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 3.335892246493133,
+        "return_2y": 43.76426040099033
+      }
+    },
+    {
+      "id": "C_883",
+      "type": "CHARACTER",
+      "name": "옵션·변동성(VIX) 거래소"
+    },
+    {
+      "id": "A_2417",
+      "type": "ASSET",
+      "name": "도이체뵈르제",
+      "exposure": {
+        "ticker": "DBOEY",
+        "exchange": "OTC",
+        "country": "DE"
+      },
+      "metrics": {
+        "return_1d": 0.0952986022871638,
+        "return_3d": -0.2216592780240556,
+        "return_15d": 7.542662116040955,
+        "return_1m": 7.72649572649573,
+        "return_ytd": 19.855458349182207,
+        "return_1y": 5.243820975283908,
+        "return_3y": 70.32432432432434,
+        "close": 31.51,
+        "marketCap": 56808641666,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -0.3793866582358474,
+        "return_2y": 52.075289575289595
+      }
+    },
+    {
+      "id": "C_884",
+      "type": "CHARACTER",
+      "name": "유럽 거래소·데이터"
+    },
+    {
+      "id": "A_1603",
+      "type": "ASSET",
+      "name": "LSEG",
+      "exposure": {
+        "ticker": "LSEG",
+        "exchange": "LSE",
+        "country": "GB"
+      },
+      "metrics": {
+        "return_1d": -0.2337540906965918,
+        "return_3d": -3.0660913013854207,
+        "return_15d": -2.712559835878736,
+        "return_1m": -4.880766659237801,
+        "return_ytd": -4.64700625558534,
+        "return_1y": -8.21505376344086,
+        "return_3y": 2.9674306393244976,
+        "close": 8536,
+        "marketCap": 41562633247,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -4.304932735426004,
+        "return_2y": -14.571657325860688
+      }
+    },
+    {
+      "id": "C_885",
+      "type": "CHARACTER",
+      "name": "거래소·금융데이터(Refinitiv)"
+    },
+    {
+      "id": "A_2418",
+      "type": "ASSET",
+      "name": "홍콩거래소",
+      "exposure": {
+        "ticker": "0388",
+        "exchange": "HKEX",
+        "country": "HK"
+      },
+      "metrics": {
+        "return_1d": -0.440960313571781,
+        "return_3d": 0.24666995559941007,
+        "return_15d": 1.8546365914786866,
+        "return_1m": 4.473007712082255,
+        "return_ytd": -0.29440628066733643,
+        "return_1y": -7.4681238615664896,
+        "return_3y": 33.42087984241626,
+        "close": 406.4,
+        "marketCap": 513702227661,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -1.263362487852293,
+        "return_2y": 78.08939526730938
+      }
+    },
+    {
+      "id": "C_886",
+      "type": "CHARACTER",
+      "name": "홍콩 거래소·중국 게이트웨이"
+    },
+    {
+      "id": "A_2419",
+      "type": "ASSET",
+      "name": "트레이드웹",
+      "exposure": {
+        "ticker": "TW",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.7201743580024678,
+        "return_3d": 1.7908446657728394,
+        "return_15d": 6.471000701192042,
+        "return_1m": 7.548315288879892,
+        "return_ytd": -1.1623581923005388,
+        "return_1y": -18.582918422060512,
+        "return_3y": 29.590343818580855,
+        "close": 106.29,
+        "marketCap": 22627678131,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 3.5763009160007853,
+        "return_2y": -9.068354863546924
+      }
+    },
+    {
+      "id": "C_887",
+      "type": "CHARACTER",
+      "name": "전자 채권거래 플랫폼"
+    },
+    {
+      "id": "M_262",
+      "type": "MACRO",
+      "name": "금융시장변동성고조"
+    },
+    {
+      "id": "M_137",
+      "type": "MACRO",
+      "name": "거래대금증가"
+    },
+    {
+      "id": "M_258",
+      "type": "MACRO",
+      "name": "자산가격상승"
+    },
+    {
+      "id": "A_2905",
+      "type": "ASSET",
+      "name": "iShares U.S. Broker-Dealers & Securities Exchanges ETF",
+      "exposure": {
+        "ticker": "IAI",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.43747721472839896,
+        "return_3d": 1.6969890413873756,
+        "return_15d": 2.2846441947565355,
+        "return_1m": -1.188814803328686,
+        "return_ytd": 6.578580587612182,
+        "return_1y": 8.373015873015866,
+        "return_3y": 100.80882352941174,
+        "close": 191.17,
+        "marketCap": 1360895834,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 1.551128818061076,
+        "return_2y": 54.780989393571346
+      }
+    }
   ],
-  "dataAsOf": "2026-07-25T00:00:00+09:00",
-  "description": "거래량·변동성·파생·데이터 수수료의 복리 성장 — 글로벌 거래소·시장 인프라. CME·ICE·Nasdaq·Cboe·Deutsche Börse·LSEG·HKEX·Tradeweb. 거래대금·변동성·상장·데이터 구독이 동인.",
-  "notes": "T_466 신규 — 자산별 CHARACTER(사업특성/포지션), MACRO 3 (기존 재사용)",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-25",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 2026 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화(회사·사업 특정), 2026 이벤트 2건 추가."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_2413",
+      "to": "T_466",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011992"
+      ]
+    },
+    {
+      "from": "A_2413",
+      "to": "C_880",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016970"
+      ]
+    },
+    {
+      "from": "A_2414",
+      "to": "T_466",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011993"
+      ]
+    },
+    {
+      "from": "A_2414",
+      "to": "C_881",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016971"
+      ]
+    },
+    {
+      "from": "A_2415",
+      "to": "T_466",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011994"
+      ]
+    },
+    {
+      "from": "A_2415",
+      "to": "C_882",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016972"
+      ]
+    },
+    {
+      "from": "A_2416",
+      "to": "T_466",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011995"
+      ]
+    },
+    {
+      "from": "A_2416",
+      "to": "C_883",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016973"
+      ]
+    },
+    {
+      "from": "A_2417",
+      "to": "T_466",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011996"
+      ]
+    },
+    {
+      "from": "A_2417",
+      "to": "C_884",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016974"
+      ]
+    },
+    {
+      "from": "A_1603",
+      "to": "T_466",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011997"
+      ]
+    },
+    {
+      "from": "A_1603",
+      "to": "C_885",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016975"
+      ]
+    },
+    {
+      "from": "A_2418",
+      "to": "T_466",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011998"
+      ]
+    },
+    {
+      "from": "A_2418",
+      "to": "C_886",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016976"
+      ]
+    },
+    {
+      "from": "A_2419",
+      "to": "T_466",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011999"
+      ]
+    },
+    {
+      "from": "A_2419",
+      "to": "C_887",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016977"
+      ]
+    },
+    {
+      "from": "M_262",
+      "to": "T_466",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012000"
+      ]
+    },
+    {
+      "from": "M_137",
+      "to": "T_466",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012001"
+      ]
+    },
+    {
+      "from": "M_258",
+      "to": "T_466",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012002"
+      ]
+    },
+    {
+      "from": "A_2413",
+      "to": "A_2414",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019778"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "CME그룹과 인터컨티넨탈익스체인지는 글로벌 파생상품 거래소 양대 경쟁"
+    },
+    {
+      "from": "A_2415",
+      "to": "A_2416",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019779"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "나스닥과 Cboe글로벌마켓은 미국 주식·옵션 거래소 경쟁"
+    },
+    {
+      "from": "A_2413",
+      "to": "A_2416",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019780"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "CME그룹과 Cboe는 선물·옵션 상품 시장 경쟁"
+    },
+    {
+      "from": "A_1603",
+      "to": "A_2417",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019781"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "LSEG와 도이체뵈르제는 유럽 거래소·시장데이터 시장 경쟁"
+    },
+    {
+      "from": "A_2419",
+      "to": "A_2414",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019782"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "트레이드웹과 ICE는 채권·금리 전자거래 시장 경쟁"
+    },
+    {
+      "from": "A_2418",
+      "to": "A_2415",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019783"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "홍콩거래소와 나스닥은 글로벌 IPO 유치 경쟁"
+    },
+    {
+      "from": "A_2905",
+      "to": "T_466",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020811"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_2413",
+      "to": "T_466",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011992"
+      ]
+    },
+    {
+      "from": "A_2413",
+      "to": "C_880",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016970"
+      ]
+    },
+    {
+      "from": "A_2414",
+      "to": "T_466",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011993"
+      ]
+    },
+    {
+      "from": "A_2414",
+      "to": "C_881",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016971"
+      ]
+    },
+    {
+      "from": "A_2415",
+      "to": "T_466",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011994"
+      ]
+    },
+    {
+      "from": "A_2415",
+      "to": "C_882",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016972"
+      ]
+    },
+    {
+      "from": "A_2416",
+      "to": "T_466",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011995"
+      ]
+    },
+    {
+      "from": "A_2416",
+      "to": "C_883",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016973"
+      ]
+    },
+    {
+      "from": "A_2417",
+      "to": "T_466",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011996"
+      ]
+    },
+    {
+      "from": "A_2417",
+      "to": "C_884",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016974"
+      ]
+    },
+    {
+      "from": "A_1603",
+      "to": "T_466",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011997"
+      ]
+    },
+    {
+      "from": "A_1603",
+      "to": "C_885",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016975"
+      ]
+    },
+    {
+      "from": "A_2418",
+      "to": "T_466",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011998"
+      ]
+    },
+    {
+      "from": "A_2418",
+      "to": "C_886",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016976"
+      ]
+    },
+    {
+      "from": "A_2419",
+      "to": "T_466",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011999"
+      ]
+    },
+    {
+      "from": "A_2419",
+      "to": "C_887",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016977"
+      ]
+    },
+    {
+      "from": "M_262",
+      "to": "T_466",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012000"
+      ]
+    },
+    {
+      "from": "M_137",
+      "to": "T_466",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012001"
+      ]
+    },
+    {
+      "from": "M_258",
+      "to": "T_466",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012002"
+      ]
+    },
+    {
+      "from": "A_2413",
+      "to": "A_2414",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019778"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "CME그룹과 인터컨티넨탈익스체인지는 글로벌 파생상품 거래소 양대 경쟁"
+    },
+    {
+      "from": "A_2415",
+      "to": "A_2416",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019779"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "나스닥과 Cboe글로벌마켓은 미국 주식·옵션 거래소 경쟁"
+    },
+    {
+      "from": "A_2413",
+      "to": "A_2416",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019780"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "CME그룹과 Cboe는 선물·옵션 상품 시장 경쟁"
+    },
+    {
+      "from": "A_1603",
+      "to": "A_2417",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019781"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "LSEG와 도이체뵈르제는 유럽 거래소·시장데이터 시장 경쟁"
+    },
+    {
+      "from": "A_2419",
+      "to": "A_2414",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019782"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "트레이드웹과 ICE는 채권·금리 전자거래 시장 경쟁"
+    },
+    {
+      "from": "A_2418",
+      "to": "A_2415",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019783"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "홍콩거래소와 나스닥은 글로벌 IPO 유치 경쟁"
+    },
+    {
+      "from": "A_2905",
+      "to": "T_466",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020811"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_466",
-   "type": "THEME",
-   "name": "글로벌 거래소·시장인프라"
-  },
-  {
-   "id": "A_2413",
-   "type": "ASSET",
-   "name": "CME그룹",
-   "exposure": {
-    "ticker": "CME",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.9692751019797274,
-    "return_3d": 4.04133888631808,
-    "return_15d": 5.675453370412442,
-    "return_1m": 10.750790197446737,
-    "return_ytd": 1.68526939247009,
-    "return_1y": 2.037304505714732,
-    "return_3y": 48.61091755949809,
-    "close": 269.8,
-    "marketCap": 97014489474,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 2.328756732155046,
-    "return_2y": 40.934093200374
-   }
-  },
-  {
-   "id": "C_880",
-   "type": "CHARACTER",
-   "name": "글로벌 파생상품 거래소 1위"
-  },
-  {
-   "id": "A_2414",
-   "type": "ASSET",
-   "name": "인터컨티넨탈익스체인지",
-   "exposure": {
-    "ticker": "ICE",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.32852357639784335,
-    "return_3d": 2.300826446280979,
-    "return_15d": 6.132107826325539,
-    "return_1m": 12.440956325848385,
-    "return_ytd": -3.799464191677393,
-    "return_1y": -14.217269311648062,
-    "return_3y": 39.80712706428524,
-    "close": 154.73,
-    "marketCap": 86864648350,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 2.9474384564204703,
-    "return_2y": 1.505359978955001
-   }
-  },
-  {
-   "id": "C_881",
-   "type": "CHARACTER",
-   "name": "거래소·데이터·모기지"
-  },
-  {
-   "id": "A_2415",
-   "type": "ASSET",
-   "name": "나스닥",
-   "exposure": {
-    "ticker": "NDAQ",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.5840762373194086,
-    "return_3d": 2.1048200378867676,
-    "return_15d": 5.3534585731349615,
-    "return_1m": 10.237473014430165,
-    "return_ytd": 0.5625157420450222,
-    "return_1y": 2.9831354766393314,
-    "return_3y": 97.94263703171733,
-    "close": 97.02,
-    "marketCap": 54231984631,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 2.568981921979052,
-    "return_2y": 43.58294349473957
-   }
-  },
-  {
-   "id": "C_882",
-   "type": "CHARACTER",
-   "name": "거래소·시장기술·데이터"
-  },
-  {
-   "id": "A_2416",
-   "type": "ASSET",
-   "name": "Cboe글로벌마켓",
-   "exposure": {
-    "ticker": "CBOE",
-    "exchange": "CBOE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.044083526682127,
-    "return_3d": 4.743041063912545,
-    "return_15d": 3.8832567439576193,
-    "return_1m": 7.6951050985526015,
-    "return_ytd": 18.523321246467983,
-    "return_1y": 22.78587187132153,
-    "return_3y": 106.45407766672173,
-    "close": 296.14,
-    "marketCap": 30992235560,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 3.335892246493133,
-    "return_2y": 46.987291610000725
-   }
-  },
-  {
-   "id": "C_883",
-   "type": "CHARACTER",
-   "name": "옵션·변동성(VIX) 거래소"
-  },
-  {
-   "id": "A_2417",
-   "type": "ASSET",
-   "name": "도이체뵈르제",
-   "exposure": {
-    "ticker": "DBOEY",
-    "exchange": "OTC",
-    "country": "DE"
-   },
-   "metrics": {
-    "return_1d": 0.15883100381195447,
-    "return_3d": -0.15832805573147146,
-    "return_15d": 7.61092150170648,
-    "return_1m": 7.794871794871794,
-    "return_ytd": 22.137345439895874,
-    "return_1y": 7.074452911691598,
-    "return_3y": 79.44135858677836,
-    "close": 31.53,
-    "marketCap": 56844699198,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -0.3161555485298728,
-    "return_2y": 56.34995016438316
-   }
-  },
-  {
-   "id": "C_884",
-   "type": "CHARACTER",
-   "name": "유럽 거래소·데이터"
-  },
-  {
-   "id": "A_1603",
-   "type": "ASSET",
-   "name": "LSEG",
-   "exposure": {
-    "ticker": "LSEG",
-    "exchange": "LSE",
-    "country": "GB"
-   },
-   "metrics": {
-    "return_1d": -0.2337540906965918,
-    "return_3d": -2.453078799559416,
-    "return_15d": -2.0973116249796586,
-    "return_1m": -4.279230850427118,
-    "return_ytd": -2.9634767758837555,
-    "return_1y": -6.594520928265757,
-    "return_3y": 8.000092969152206,
-    "close": 8536,
-    "marketCap": 41562633247,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -3.6997547886188142,
-    "return_2y": -11.563213446369968
-   }
-  },
-  {
-   "id": "C_885",
-   "type": "CHARACTER",
-   "name": "거래소·금융데이터(Refinitiv)"
-  },
-  {
-   "id": "A_2418",
-   "type": "ASSET",
-   "name": "홍콩거래소",
-   "exposure": {
-    "ticker": "0388",
-    "exchange": "HKEX",
-    "country": "HK"
-   },
-   "metrics": {
-    "return_1d": -0.440960313571781,
-    "return_3d": 0.24666995559941007,
-    "return_15d": 1.8546365914786866,
-    "return_1m": 4.473007712082255,
-    "return_ytd": 1.2908350487225384,
-    "return_1y": -4.7379508392506935,
-    "return_3y": 46.39421397041712,
-    "close": 406.4,
-    "marketCap": 513702227661,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -1.263362487852293,
-    "return_2y": 89.43507886447092
-   }
-  },
-  {
-   "id": "C_886",
-   "type": "CHARACTER",
-   "name": "홍콩 거래소·중국 게이트웨이"
-  },
-  {
-   "id": "A_2419",
-   "type": "ASSET",
-   "name": "트레이드웹",
-   "exposure": {
-    "ticker": "TW",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.7201743580024678,
-    "return_3d": 1.7908446657728394,
-    "return_15d": 6.471000701192042,
-    "return_1m": 7.548315288879892,
-    "return_ytd": -0.9115503440920603,
-    "return_1y": -18.20775798915285,
-    "return_3y": 31.122666123868935,
-    "close": 106.29,
-    "marketCap": 22627678131,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 3.5763009160007853,
-    "return_2y": -8.346670161835512
-   }
-  },
-  {
-   "id": "C_887",
-   "type": "CHARACTER",
-   "name": "전자 채권거래 플랫폼"
-  },
-  {
-   "id": "M_262",
-   "type": "MACRO",
-   "name": "금융시장변동성고조"
-  },
-  {
-   "id": "M_137",
-   "type": "MACRO",
-   "name": "거래대금증가"
-  },
-  {
-   "id": "M_258",
-   "type": "MACRO",
-   "name": "자산가격상승"
-  },
-  {
-   "id": "A_2905",
-   "type": "ASSET",
-   "name": "iShares U.S. Broker-Dealers & Securities Exchanges ETF",
-   "exposure": {
-    "ticker": "IAI",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.43747721472839896,
-    "return_3d": 1.6969890413873756,
-    "return_15d": 2.2846441947565355,
-    "return_1m": -0.5772831287705449,
-    "return_ytd": 5.148231670425152,
-    "return_1y": 8.66253623600295,
-    "return_3y": 100.19897371452507,
-    "close": 191.17,
-    "marketCap": 1360895834,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": null
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_2413",
-   "to": "T_466",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011992"
-   ]
-  },
-  {
-   "from": "A_2413",
-   "to": "C_880",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016970"
-   ]
-  },
-  {
-   "from": "A_2414",
-   "to": "T_466",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011993"
-   ]
-  },
-  {
-   "from": "A_2414",
-   "to": "C_881",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016971"
-   ]
-  },
-  {
-   "from": "A_2415",
-   "to": "T_466",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011994"
-   ]
-  },
-  {
-   "from": "A_2415",
-   "to": "C_882",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016972"
-   ]
-  },
-  {
-   "from": "A_2416",
-   "to": "T_466",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011995"
-   ]
-  },
-  {
-   "from": "A_2416",
-   "to": "C_883",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016973"
-   ]
-  },
-  {
-   "from": "A_2417",
-   "to": "T_466",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011996"
-   ]
-  },
-  {
-   "from": "A_2417",
-   "to": "C_884",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016974"
-   ]
-  },
-  {
-   "from": "A_1603",
-   "to": "T_466",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011997"
-   ]
-  },
-  {
-   "from": "A_1603",
-   "to": "C_885",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016975"
-   ]
-  },
-  {
-   "from": "A_2418",
-   "to": "T_466",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011998"
-   ]
-  },
-  {
-   "from": "A_2418",
-   "to": "C_886",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016976"
-   ]
-  },
-  {
-   "from": "A_2419",
-   "to": "T_466",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011999"
-   ]
-  },
-  {
-   "from": "A_2419",
-   "to": "C_887",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016977"
-   ]
-  },
-  {
-   "from": "M_262",
-   "to": "T_466",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012000"
-   ]
-  },
-  {
-   "from": "M_137",
-   "to": "T_466",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012001"
-   ]
-  },
-  {
-   "from": "M_258",
-   "to": "T_466",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012002"
-   ]
-  },
-  {
-   "from": "A_2413",
-   "to": "A_2414",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019778"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "CME그룹과 인터컨티넨탈익스체인지는 글로벌 파생상품 거래소 양대 경쟁"
-  },
-  {
-   "from": "A_2415",
-   "to": "A_2416",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019779"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "나스닥과 Cboe글로벌마켓은 미국 주식·옵션 거래소 경쟁"
-  },
-  {
-   "from": "A_2413",
-   "to": "A_2416",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019780"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "CME그룹과 Cboe는 선물·옵션 상품 시장 경쟁"
-  },
-  {
-   "from": "A_1603",
-   "to": "A_2417",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019781"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "LSEG와 도이체뵈르제는 유럽 거래소·시장데이터 시장 경쟁"
-  },
-  {
-   "from": "A_2419",
-   "to": "A_2414",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019782"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "트레이드웹과 ICE는 채권·금리 전자거래 시장 경쟁"
-  },
-  {
-   "from": "A_2418",
-   "to": "A_2415",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019783"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "홍콩거래소와 나스닥은 글로벌 IPO 유치 경쟁"
-  },
-  {
-   "from": "A_2905",
-   "to": "T_466",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020811"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_2413",
-   "to": "T_466",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011992"
-   ]
-  },
-  {
-   "from": "A_2413",
-   "to": "C_880",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016970"
-   ]
-  },
-  {
-   "from": "A_2414",
-   "to": "T_466",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011993"
-   ]
-  },
-  {
-   "from": "A_2414",
-   "to": "C_881",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016971"
-   ]
-  },
-  {
-   "from": "A_2415",
-   "to": "T_466",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011994"
-   ]
-  },
-  {
-   "from": "A_2415",
-   "to": "C_882",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016972"
-   ]
-  },
-  {
-   "from": "A_2416",
-   "to": "T_466",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011995"
-   ]
-  },
-  {
-   "from": "A_2416",
-   "to": "C_883",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016973"
-   ]
-  },
-  {
-   "from": "A_2417",
-   "to": "T_466",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011996"
-   ]
-  },
-  {
-   "from": "A_2417",
-   "to": "C_884",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016974"
-   ]
-  },
-  {
-   "from": "A_1603",
-   "to": "T_466",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011997"
-   ]
-  },
-  {
-   "from": "A_1603",
-   "to": "C_885",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016975"
-   ]
-  },
-  {
-   "from": "A_2418",
-   "to": "T_466",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011998"
-   ]
-  },
-  {
-   "from": "A_2418",
-   "to": "C_886",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016976"
-   ]
-  },
-  {
-   "from": "A_2419",
-   "to": "T_466",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011999"
-   ]
-  },
-  {
-   "from": "A_2419",
-   "to": "C_887",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016977"
-   ]
-  },
-  {
-   "from": "M_262",
-   "to": "T_466",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012000"
-   ]
-  },
-  {
-   "from": "M_137",
-   "to": "T_466",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012001"
-   ]
-  },
-  {
-   "from": "M_258",
-   "to": "T_466",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012002"
-   ]
-  },
-  {
-   "from": "A_2413",
-   "to": "A_2414",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019778"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "CME그룹과 인터컨티넨탈익스체인지는 글로벌 파생상품 거래소 양대 경쟁"
-  },
-  {
-   "from": "A_2415",
-   "to": "A_2416",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019779"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "나스닥과 Cboe글로벌마켓은 미국 주식·옵션 거래소 경쟁"
-  },
-  {
-   "from": "A_2413",
-   "to": "A_2416",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019780"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "CME그룹과 Cboe는 선물·옵션 상품 시장 경쟁"
-  },
-  {
-   "from": "A_1603",
-   "to": "A_2417",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019781"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "LSEG와 도이체뵈르제는 유럽 거래소·시장데이터 시장 경쟁"
-  },
-  {
-   "from": "A_2419",
-   "to": "A_2414",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019782"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "트레이드웹과 ICE는 채권·금리 전자거래 시장 경쟁"
-  },
-  {
-   "from": "A_2418",
-   "to": "A_2415",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019783"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "홍콩거래소와 나스닥은 글로벌 IPO 유치 경쟁"
-  },
-  {
-   "from": "A_2905",
-   "to": "T_466",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020811"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

@@ -1,801 +1,802 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_510",
- "themeName": "(Y17) 미국 법인세 감세(TCJA)",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_510",
+  "themeName": "(Y17) 미국 법인세 감세(TCJA)",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-25T00:00:00+09:00",
+    "description": "2017.12 트럼프 법인세 감세(35→21%)로 기업이익·자사주·송환이 부양된 TCJA 수혜의 회고. 자사주·송환 수혜(Apple·Cisco·Pfizer)·은행(JPM·BAC)·내수소비(Walmart·Home Depot)·Berkshire. 감세 사이클·재정적자의 양면.",
+    "notes": "T_510 신규 — 2017 회고 테마(Y17). 자산별 CHARACTER, MACRO 3(기존 재사용)",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-25",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 이벤트(회고+2026 에코) 추가."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_510",
+      "type": "THEME",
+      "name": "(Y17) 미국 법인세 감세(TCJA)"
+    },
+    {
+      "id": "A_374",
+      "type": "ASSET",
+      "name": "애플",
+      "exposure": {
+        "ticker": "AAPL",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.21948502915547508,
+        "return_3d": 0.33452494178609626,
+        "return_15d": -8.134646567773697,
+        "return_1m": -2.8361811598805797,
+        "return_ytd": 12.532185683807828,
+        "return_1y": 31.42452100695936,
+        "return_3y": 70.4725286972027,
+        "close": 305.93,
+        "marketCap": 4493302821080,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -2.361727252417567,
+        "return_2y": 37.98033555836191
+      }
+    },
+    {
+      "id": "C_1231",
+      "type": "CHARACTER",
+      "name": "자사주·해외현금 송환"
+    },
+    {
+      "id": "A_212",
+      "type": "ASSET",
+      "name": "시스코",
+      "exposure": {
+        "ticker": "CSCO",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.5775094738697426,
+        "return_3d": -7.265631487170965,
+        "return_15d": -2.1809582201979483,
+        "return_1m": -4.620377487402849,
+        "return_ytd": 44.98247436063871,
+        "return_1y": 61.154401154401164,
+        "return_3y": 107.275426874536,
+        "close": 111.68,
+        "marketCap": 440179423387,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -8.029317302149385,
+        "return_2y": 145.77464788732394
+      }
+    },
+    {
+      "id": "C_1232",
+      "type": "CHARACTER",
+      "name": "해외현금 송환 수혜"
+    },
+    {
+      "id": "A_1214",
+      "type": "ASSET",
+      "name": "화이자",
+      "exposure": {
+        "ticker": "PFE",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.03731343283582822,
+        "return_3d": 0.6386175807663319,
+        "return_15d": 9.168704156479212,
+        "return_1m": 10.47422680412371,
+        "return_ytd": 7.590361445783134,
+        "return_1y": 6.690561529271211,
+        "return_3y": -25.727751594122537,
+        "close": 26.79,
+        "marketCap": 152687997600,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.11210762331836932,
+        "return_2y": -7.236842105263152
+      }
+    },
+    {
+      "id": "C_1233",
+      "type": "CHARACTER",
+      "name": "송환·자사주 제약"
+    },
+    {
+      "id": "A_293",
+      "type": "ASSET",
+      "name": "JP모건",
+      "exposure": {
+        "ticker": "JPM",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.07435763267330531,
+        "return_3d": 0.22097005855705731,
+        "return_15d": 2.7264233741966626,
+        "return_1m": 5.818192423226098,
+        "return_ytd": 12.606293836509197,
+        "return_1y": 23.34783791134074,
+        "return_3y": 134.43819861730307,
+        "close": 362.84,
+        "marketCap": 972233408400,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 1.488028641754302,
+        "return_2y": 72.58371385083713
+      }
+    },
+    {
+      "id": "C_1234",
+      "type": "CHARACTER",
+      "name": "은행 — 감세·규제완화"
+    },
+    {
+      "id": "A_113",
+      "type": "ASSET",
+      "name": "뱅크오브아메리카",
+      "exposure": {
+        "ticker": "BAC",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.624122327976262,
+        "return_3d": 0.765624999999992,
+        "return_15d": 3.9323126510878215,
+        "return_1m": 6.384031672715262,
+        "return_ytd": 17.254545454545458,
+        "return_1y": 35.17082372668203,
+        "return_3y": 108.50307145166505,
+        "close": 64.49,
+        "marketCap": 457659089100,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 2.0895994934304163,
+        "return_2y": 66.1685132697758
+      }
+    },
+    {
+      "id": "C_1235",
+      "type": "CHARACTER",
+      "name": "은행 — 감세 수혜"
+    },
+    {
+      "id": "A_296",
+      "type": "ASSET",
+      "name": "월마트",
+      "exposure": {
+        "ticker": "WMT",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.3888696854476348,
+        "return_3d": 1.7746777326505203,
+        "return_15d": 5.298255229743298,
+        "return_1m": 1.380826737027263,
+        "return_ytd": 3.4646800107710263,
+        "return_1y": 14.298463063956369,
+        "return_3y": 116.14475904744049,
+        "close": 115.27,
+        "marketCap": 917327881600,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 3.0576665176575757,
+        "return_2y": 67.88523157588115
+      }
+    },
+    {
+      "id": "C_1236",
+      "type": "CHARACTER",
+      "name": "내수 소매 — 감세·소비"
+    },
+    {
+      "id": "A_297",
+      "type": "ASSET",
+      "name": "홈디포",
+      "exposure": {
+        "ticker": "HD",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.8311384255194509,
+        "return_3d": -4.406454524937942,
+        "return_15d": 1.7658718241335691,
+        "return_1m": 0.33161603600402323,
+        "return_ytd": -1.522813135716361,
+        "return_1y": -15.352717825739404,
+        "return_3y": 2.7004091529019725,
+        "close": 338.86,
+        "marketCap": 337883066620,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -4.712895787638482,
+        "return_2y": -4.723612438846092
+      }
+    },
+    {
+      "id": "C_1237",
+      "type": "CHARACTER",
+      "name": "주택 소매 — 감세·소비"
+    },
+    {
+      "id": "A_1902",
+      "type": "ASSET",
+      "name": "버크셔해서웨이",
+      "exposure": {
+        "ticker": "BRK-B",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.5720710946284568,
+        "return_3d": -2.3916495604012544,
+        "return_15d": 1.8386438486250434,
+        "return_1m": 2.634954896251207,
+        "return_ytd": 0.2745449119665677,
+        "return_1y": 5.177162889695741,
+        "return_3y": 40.60198616380271,
+        "close": 504.03,
+        "marketCap": 1087118917488,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -3.4055193560751262,
+        "return_2y": 14.951992154537352
+      }
+    },
+    {
+      "id": "C_1238",
+      "type": "CHARACTER",
+      "name": "감세·자사주 — 가치주"
+    },
+    {
+      "id": "M_070",
+      "type": "MACRO",
+      "name": "트럼프정책리스크"
+    },
+    {
+      "id": "M_173",
+      "type": "MACRO",
+      "name": "주주환원정책"
+    },
+    {
+      "id": "M_346",
+      "type": "MACRO",
+      "name": "미국소비강세"
+    },
+    {
+      "name": "DIA",
+      "id": "A_031",
+      "metrics": {
+        "return_1d": -0.20635422282537785,
+        "return_30d": null,
+        "market_cap": null,
+        "asof": null,
+        "return_90d": null,
+        "currency": null,
+        "per": null,
+        "last_price": null,
+        "return_15d": 3.4775233248515613,
+        "return_3d": -0.08933889219774338,
+        "return_1m": 2.308029503135156,
+        "return_ytd": 11.700688765424383,
+        "return_1y": 19.51197791432895,
+        "return_3y": 51.97757707879165,
+        "close": 536.8,
+        "marketCap": 45122610852,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "pe_ttm": null,
+        "return_5d": -0.5225899707201442,
+        "return_2y": 34.16981179234673
+      },
+      "exposure": {
+        "country": null,
+        "ticker": "DIA",
+        "exchange": null
+      },
+      "type": "ASSET"
+    }
   ],
-  "dataAsOf": "2026-07-25T00:00:00+09:00",
-  "description": "2017.12 트럼프 법인세 감세(35→21%)로 기업이익·자사주·송환이 부양된 TCJA 수혜의 회고. 자사주·송환 수혜(Apple·Cisco·Pfizer)·은행(JPM·BAC)·내수소비(Walmart·Home Depot)·Berkshire. 감세 사이클·재정적자의 양면.",
-  "notes": "T_510 신규 — 2017 회고 테마(Y17). 자산별 CHARACTER, MACRO 3(기존 재사용)",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-25",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 이벤트(회고+2026 에코) 추가."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_374",
+      "to": "T_510",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012469"
+      ]
+    },
+    {
+      "from": "A_374",
+      "to": "C_1231",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017315"
+      ]
+    },
+    {
+      "from": "A_212",
+      "to": "T_510",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012470"
+      ]
+    },
+    {
+      "from": "A_212",
+      "to": "C_1232",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017316"
+      ]
+    },
+    {
+      "from": "A_1214",
+      "to": "T_510",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012471"
+      ]
+    },
+    {
+      "from": "A_1214",
+      "to": "C_1233",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017317"
+      ]
+    },
+    {
+      "from": "A_293",
+      "to": "T_510",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012472"
+      ]
+    },
+    {
+      "from": "A_293",
+      "to": "C_1234",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017318"
+      ]
+    },
+    {
+      "from": "A_113",
+      "to": "T_510",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012473"
+      ]
+    },
+    {
+      "from": "A_113",
+      "to": "C_1235",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017319"
+      ]
+    },
+    {
+      "from": "A_296",
+      "to": "T_510",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012474"
+      ]
+    },
+    {
+      "from": "A_296",
+      "to": "C_1236",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017320"
+      ]
+    },
+    {
+      "from": "A_297",
+      "to": "T_510",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012475"
+      ]
+    },
+    {
+      "from": "A_297",
+      "to": "C_1237",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017321"
+      ]
+    },
+    {
+      "from": "A_1902",
+      "to": "T_510",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012476"
+      ]
+    },
+    {
+      "from": "A_1902",
+      "to": "C_1238",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017322"
+      ]
+    },
+    {
+      "from": "M_070",
+      "to": "T_510",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012477"
+      ]
+    },
+    {
+      "from": "M_173",
+      "to": "T_510",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012478"
+      ]
+    },
+    {
+      "from": "M_346",
+      "to": "T_510",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012479"
+      ]
+    },
+    {
+      "from": "A_374",
+      "to": "A_212",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019989"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "애플과 시스코는 기업 IT·해외 유보금 환류 수혜 대표주 경쟁"
+    },
+    {
+      "from": "A_293",
+      "to": "A_113",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019990"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "JP모건과 뱅크오브아메리카는 미국 대형은행 경쟁"
+    },
+    {
+      "from": "A_296",
+      "to": "A_297",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019991"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "월마트와 홈디포는 미국 소매 시장 경쟁"
+    },
+    {
+      "from": "A_1902",
+      "to": "A_113",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019992"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "버크셔해서웨이는 뱅크오브아메리카 지분을 보유한 대주주"
+    },
+    {
+      "from": "A_1902",
+      "to": "A_374",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019993"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "버크셔해서웨이는 애플 지분을 보유한 최대 투자처"
+    },
+    {
+      "from": "A_031",
+      "to": "T_510",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020860"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_374",
+      "to": "T_510",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012469"
+      ]
+    },
+    {
+      "from": "A_374",
+      "to": "C_1231",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017315"
+      ]
+    },
+    {
+      "from": "A_212",
+      "to": "T_510",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012470"
+      ]
+    },
+    {
+      "from": "A_212",
+      "to": "C_1232",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017316"
+      ]
+    },
+    {
+      "from": "A_1214",
+      "to": "T_510",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012471"
+      ]
+    },
+    {
+      "from": "A_1214",
+      "to": "C_1233",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017317"
+      ]
+    },
+    {
+      "from": "A_293",
+      "to": "T_510",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012472"
+      ]
+    },
+    {
+      "from": "A_293",
+      "to": "C_1234",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017318"
+      ]
+    },
+    {
+      "from": "A_113",
+      "to": "T_510",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012473"
+      ]
+    },
+    {
+      "from": "A_113",
+      "to": "C_1235",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017319"
+      ]
+    },
+    {
+      "from": "A_296",
+      "to": "T_510",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012474"
+      ]
+    },
+    {
+      "from": "A_296",
+      "to": "C_1236",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017320"
+      ]
+    },
+    {
+      "from": "A_297",
+      "to": "T_510",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012475"
+      ]
+    },
+    {
+      "from": "A_297",
+      "to": "C_1237",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017321"
+      ]
+    },
+    {
+      "from": "A_1902",
+      "to": "T_510",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012476"
+      ]
+    },
+    {
+      "from": "A_1902",
+      "to": "C_1238",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017322"
+      ]
+    },
+    {
+      "from": "M_070",
+      "to": "T_510",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012477"
+      ]
+    },
+    {
+      "from": "M_173",
+      "to": "T_510",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012478"
+      ]
+    },
+    {
+      "from": "M_346",
+      "to": "T_510",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012479"
+      ]
+    },
+    {
+      "from": "A_374",
+      "to": "A_212",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019989"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "애플과 시스코는 기업 IT·해외 유보금 환류 수혜 대표주 경쟁"
+    },
+    {
+      "from": "A_293",
+      "to": "A_113",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019990"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "JP모건과 뱅크오브아메리카는 미국 대형은행 경쟁"
+    },
+    {
+      "from": "A_296",
+      "to": "A_297",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019991"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "월마트와 홈디포는 미국 소매 시장 경쟁"
+    },
+    {
+      "from": "A_1902",
+      "to": "A_113",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019992"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "버크셔해서웨이는 뱅크오브아메리카 지분을 보유한 대주주"
+    },
+    {
+      "from": "A_1902",
+      "to": "A_374",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019993"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "버크셔해서웨이는 애플 지분을 보유한 최대 투자처"
+    },
+    {
+      "from": "A_031",
+      "to": "T_510",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020860"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_510",
-   "type": "THEME",
-   "name": "(Y17) 미국 법인세 감세(TCJA)"
-  },
-  {
-   "id": "A_374",
-   "type": "ASSET",
-   "name": "애플",
-   "exposure": {
-    "ticker": "AAPL",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.21948502915547508,
-    "return_3d": 0.33452494178609626,
-    "return_15d": -8.05540778942876,
-    "return_1m": -2.7523874824493144,
-    "return_ytd": 12.838500748740422,
-    "return_1y": 31.9099892076389,
-    "return_3y": 72.77816307213388,
-    "close": 305.93,
-    "marketCap": 4493302821080,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -2.2775186865137687,
-    "return_2y": 39.13460305274774
-   }
-  },
-  {
-   "id": "C_1231",
-   "type": "CHARACTER",
-   "name": "자사주·해외현금 송환"
-  },
-  {
-   "id": "A_212",
-   "type": "ASSET",
-   "name": "시스코",
-   "exposure": {
-    "ticker": "CSCO",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -1.5775094738697426,
-    "return_3d": -7.265631487170965,
-    "return_15d": -2.1809582201979483,
-    "return_1m": -4.620377487402849,
-    "return_ytd": 47.09640030030427,
-    "return_1y": 64.49122310889592,
-    "return_3y": 124.35118352883036,
-    "close": 111.68,
-    "marketCap": 440179423387,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -8.029317302149385,
-    "return_2y": 157.7434981386987
-   }
-  },
-  {
-   "id": "C_1232",
-   "type": "CHARACTER",
-   "name": "해외현금 송환 수혜"
-  },
-  {
-   "id": "A_1214",
-   "type": "ASSET",
-   "name": "화이자",
-   "exposure": {
-    "ticker": "PFE",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.03731343283582822,
-    "return_3d": 0.6386175807663319,
-    "return_15d": 9.168704156479212,
-    "return_1m": 12.406694890719194,
-    "return_ytd": 13.143479784947143,
-    "return_1y": 14.172959888171,
-    "return_3y": -9.924752368720124,
-    "close": 26.79,
-    "marketCap": 152687997600,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.11210762331836932,
-    "return_2y": 6.234485165240411
-   }
-  },
-  {
-   "id": "C_1233",
-   "type": "CHARACTER",
-   "name": "송환·자사주 제약"
-  },
-  {
-   "id": "A_293",
-   "type": "ASSET",
-   "name": "JP모건",
-   "exposure": {
-    "ticker": "JPM",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.07435763267330531,
-    "return_3d": 0.22097005855705731,
-    "return_15d": 2.7264233741966626,
-    "return_1m": 5.818192423226098,
-    "return_ytd": 14.203627674267238,
-    "return_1y": 25.70571752452169,
-    "return_3y": 150.4291266384286,
-    "close": 362.84,
-    "marketCap": 972233408400,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 1.488028641754302,
-    "return_2y": 79.83235009716714
-   }
-  },
-  {
-   "id": "C_1234",
-   "type": "CHARACTER",
-   "name": "은행 — 감세·규제완화"
-  },
-  {
-   "id": "A_113",
-   "type": "ASSET",
-   "name": "뱅크오브아메리카",
-   "exposure": {
-    "ticker": "BAC",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.624122327976262,
-    "return_3d": 0.765624999999992,
-    "return_15d": 3.9323126510878215,
-    "return_1m": 6.384031672715262,
-    "return_ytd": 18.530145327625846,
-    "return_1y": 38.115216660348786,
-    "return_3y": 124.76335196776844,
-    "close": 64.49,
-    "marketCap": 457659089100,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 2.0895994934304163,
-    "return_2y": 73.9493985002967
-   }
-  },
-  {
-   "id": "C_1235",
-   "type": "CHARACTER",
-   "name": "은행 — 감세 수혜"
-  },
-  {
-   "id": "A_296",
-   "type": "ASSET",
-   "name": "월마트",
-   "exposure": {
-    "ticker": "WMT",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.3888696854476348,
-    "return_3d": 1.7746777326505203,
-    "return_15d": 5.298255229743298,
-    "return_1m": 1.380826737027263,
-    "return_ytd": 3.874827543635617,
-    "return_1y": 15.254094934898976,
-    "return_3y": 122.51435233980779,
-    "close": 115.27,
-    "marketCap": 917327881600,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 3.0576665176575757,
-    "return_2y": 71.02729136806995
-   }
-  },
-  {
-   "id": "C_1236",
-   "type": "CHARACTER",
-   "name": "내수 소매 — 감세·소비"
-  },
-  {
-   "id": "A_297",
-   "type": "ASSET",
-   "name": "홈디포",
-   "exposure": {
-    "ticker": "HD",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.8311384255194509,
-    "return_3d": -4.406454524937942,
-    "return_15d": 1.7658718241335691,
-    "return_1m": 0.33161603600402323,
-    "return_ytd": -0.12084770241989062,
-    "return_1y": -13.102169958266675,
-    "return_3y": 10.811857254602408,
-    "close": 338.86,
-    "marketCap": 337883066620,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -4.712895787638482,
-    "return_2y": 0.1682279954914545
-   }
-  },
-  {
-   "id": "C_1237",
-   "type": "CHARACTER",
-   "name": "주택 소매 — 감세·소비"
-  },
-  {
-   "id": "A_1902",
-   "type": "ASSET",
-   "name": "버크셔해서웨이",
-   "exposure": {
-    "ticker": "BRK-B",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.5720710946284568,
-    "return_3d": -2.3916495604012544,
-    "return_15d": 1.8386438486250434,
-    "return_1m": 2.634954896251207,
-    "return_ytd": 0.2745449119665677,
-    "return_1y": 5.177162889695741,
-    "return_3y": 40.60198616380271,
-    "close": 504.03,
-    "marketCap": 1087118917488,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -3.4055193560751262,
-    "return_2y": 14.951992154537352
-   }
-  },
-  {
-   "id": "C_1238",
-   "type": "CHARACTER",
-   "name": "감세·자사주 — 가치주"
-  },
-  {
-   "id": "M_070",
-   "type": "MACRO",
-   "name": "트럼프정책리스크"
-  },
-  {
-   "id": "M_173",
-   "type": "MACRO",
-   "name": "주주환원정책"
-  },
-  {
-   "id": "M_346",
-   "type": "MACRO",
-   "name": "미국소비강세"
-  },
-  {
-   "name": "DIA",
-   "id": "A_031",
-   "metrics": {
-    "return_1d": -0.20635422282537785,
-    "return_30d": null,
-    "market_cap": null,
-    "asof": null,
-    "return_90d": null,
-    "currency": null,
-    "per": null,
-    "last_price": null,
-    "return_15d": 3.4775233248515613,
-    "return_3d": -0.08933889219774338,
-    "return_1m": 2.280738524855641,
-    "return_ytd": 10.993941649608164,
-    "return_1y": 19.442837434916104,
-    "return_3y": 52.81257116829878,
-    "close": 536.8,
-    "marketCap": 45122610852,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "pe_ttm": null,
-    "return_5d": null
-   },
-   "exposure": {
-    "country": null,
-    "ticker": "DIA",
-    "exchange": null
-   },
-   "type": "ASSET"
-  }
- ],
- "edges": [
-  {
-   "from": "A_374",
-   "to": "T_510",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012469"
-   ]
-  },
-  {
-   "from": "A_374",
-   "to": "C_1231",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017315"
-   ]
-  },
-  {
-   "from": "A_212",
-   "to": "T_510",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012470"
-   ]
-  },
-  {
-   "from": "A_212",
-   "to": "C_1232",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017316"
-   ]
-  },
-  {
-   "from": "A_1214",
-   "to": "T_510",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012471"
-   ]
-  },
-  {
-   "from": "A_1214",
-   "to": "C_1233",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017317"
-   ]
-  },
-  {
-   "from": "A_293",
-   "to": "T_510",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012472"
-   ]
-  },
-  {
-   "from": "A_293",
-   "to": "C_1234",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017318"
-   ]
-  },
-  {
-   "from": "A_113",
-   "to": "T_510",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012473"
-   ]
-  },
-  {
-   "from": "A_113",
-   "to": "C_1235",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017319"
-   ]
-  },
-  {
-   "from": "A_296",
-   "to": "T_510",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012474"
-   ]
-  },
-  {
-   "from": "A_296",
-   "to": "C_1236",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017320"
-   ]
-  },
-  {
-   "from": "A_297",
-   "to": "T_510",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012475"
-   ]
-  },
-  {
-   "from": "A_297",
-   "to": "C_1237",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017321"
-   ]
-  },
-  {
-   "from": "A_1902",
-   "to": "T_510",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012476"
-   ]
-  },
-  {
-   "from": "A_1902",
-   "to": "C_1238",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017322"
-   ]
-  },
-  {
-   "from": "M_070",
-   "to": "T_510",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012477"
-   ]
-  },
-  {
-   "from": "M_173",
-   "to": "T_510",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012478"
-   ]
-  },
-  {
-   "from": "M_346",
-   "to": "T_510",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012479"
-   ]
-  },
-  {
-   "from": "A_374",
-   "to": "A_212",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019989"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "애플과 시스코는 기업 IT·해외 유보금 환류 수혜 대표주 경쟁"
-  },
-  {
-   "from": "A_293",
-   "to": "A_113",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019990"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "JP모건과 뱅크오브아메리카는 미국 대형은행 경쟁"
-  },
-  {
-   "from": "A_296",
-   "to": "A_297",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019991"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "월마트와 홈디포는 미국 소매 시장 경쟁"
-  },
-  {
-   "from": "A_1902",
-   "to": "A_113",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019992"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "버크셔해서웨이는 뱅크오브아메리카 지분을 보유한 대주주"
-  },
-  {
-   "from": "A_1902",
-   "to": "A_374",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019993"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "버크셔해서웨이는 애플 지분을 보유한 최대 투자처"
-  },
-  {
-   "from": "A_031",
-   "to": "T_510",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020860"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_374",
-   "to": "T_510",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012469"
-   ]
-  },
-  {
-   "from": "A_374",
-   "to": "C_1231",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017315"
-   ]
-  },
-  {
-   "from": "A_212",
-   "to": "T_510",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012470"
-   ]
-  },
-  {
-   "from": "A_212",
-   "to": "C_1232",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017316"
-   ]
-  },
-  {
-   "from": "A_1214",
-   "to": "T_510",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012471"
-   ]
-  },
-  {
-   "from": "A_1214",
-   "to": "C_1233",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017317"
-   ]
-  },
-  {
-   "from": "A_293",
-   "to": "T_510",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012472"
-   ]
-  },
-  {
-   "from": "A_293",
-   "to": "C_1234",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017318"
-   ]
-  },
-  {
-   "from": "A_113",
-   "to": "T_510",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012473"
-   ]
-  },
-  {
-   "from": "A_113",
-   "to": "C_1235",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017319"
-   ]
-  },
-  {
-   "from": "A_296",
-   "to": "T_510",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012474"
-   ]
-  },
-  {
-   "from": "A_296",
-   "to": "C_1236",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017320"
-   ]
-  },
-  {
-   "from": "A_297",
-   "to": "T_510",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012475"
-   ]
-  },
-  {
-   "from": "A_297",
-   "to": "C_1237",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017321"
-   ]
-  },
-  {
-   "from": "A_1902",
-   "to": "T_510",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012476"
-   ]
-  },
-  {
-   "from": "A_1902",
-   "to": "C_1238",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017322"
-   ]
-  },
-  {
-   "from": "M_070",
-   "to": "T_510",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012477"
-   ]
-  },
-  {
-   "from": "M_173",
-   "to": "T_510",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012478"
-   ]
-  },
-  {
-   "from": "M_346",
-   "to": "T_510",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012479"
-   ]
-  },
-  {
-   "from": "A_374",
-   "to": "A_212",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019989"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "애플과 시스코는 기업 IT·해외 유보금 환류 수혜 대표주 경쟁"
-  },
-  {
-   "from": "A_293",
-   "to": "A_113",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019990"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "JP모건과 뱅크오브아메리카는 미국 대형은행 경쟁"
-  },
-  {
-   "from": "A_296",
-   "to": "A_297",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019991"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "월마트와 홈디포는 미국 소매 시장 경쟁"
-  },
-  {
-   "from": "A_1902",
-   "to": "A_113",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019992"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "버크셔해서웨이는 뱅크오브아메리카 지분을 보유한 대주주"
-  },
-  {
-   "from": "A_1902",
-   "to": "A_374",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019993"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "버크셔해서웨이는 애플 지분을 보유한 최대 투자처"
-  },
-  {
-   "from": "A_031",
-   "to": "T_510",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020860"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

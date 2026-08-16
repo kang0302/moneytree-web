@@ -1,1594 +1,1596 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_170",
- "themeName": "한중관계관련주",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_170",
+  "themeName": "한중관계관련주",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-04-22T00:00:00+09:00",
+    "notes": "g170 누적 import 기반 한중관계관련주 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 7건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-12",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
+      },
+      {
+        "date": "2026-07-12",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필 + 2026 이벤트",
+        "detail": "전 엣지 근거(호버 박스)를 종목·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
+      },
+      {
+        "date": "2026-07-10",
+        "kind": "변경",
+        "title": "매크로는 테마에만 연결",
+        "detail": "개별 자산·BF에 직접 걸려 있던 매크로 IMPACTS 엣지를 테마 레벨로 정리(repoint 2, 중복제거 13)했다."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_170",
+      "type": "THEME",
+      "name": "한중관계관련주"
+    },
+    {
+      "id": "A_1142",
+      "type": "ASSET",
+      "name": "GKL",
+      "exposure": {
+        "ticker": "114090",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.5118790496760237,
+        "close": 9400,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -1.2605042016806678,
+        "return_15d": -1.1566771819137789,
+        "return_1m": 2.3965141612200425,
+        "return_ytd": -33.985178197706176,
+        "return_1y": -35.67610493688016,
+        "return_3y": -39.25516780520791,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -1.0526315789473717,
+        "return_2y": -17.576496464470114
+      }
+    },
+    {
+      "id": "A_1143",
+      "type": "ASSET",
+      "name": "파라다이스",
+      "exposure": {
+        "ticker": "034230",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.8537590113285374,
+        "close": 9890,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 0.30425963488844854,
+        "return_15d": -1.395812562313059,
+        "return_1m": -5.358851674641151,
+        "return_ytd": -40.636254501800714,
+        "return_1y": -43.6644422228956,
+        "return_3y": -43.27460147697452,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -2.079207920792081,
+        "return_2y": -19.339971629201102
+      }
+    },
+    {
+      "id": "A_1144",
+      "type": "ASSET",
+      "name": "호텔신라",
+      "exposure": {
+        "ticker": "008770",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 4.608294930875578,
+        "close": 45400,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 1.7937219730941756,
+        "return_15d": -3.6093418259023347,
+        "return_1m": -3.8135593220338992,
+        "return_ytd": -0.3293084522502765,
+        "return_1y": -0.8733624454148492,
+        "return_3y": -49.9554315639766,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 6.323185011709609,
+        "return_2y": -14.015151515151514
+      }
+    },
+    {
+      "id": "A_1145",
+      "type": "ASSET",
+      "name": "크래프톤",
+      "exposure": {
+        "ticker": "259960",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.4925373134328401,
+        "close": 238000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -2.4590163934426257,
+        "return_15d": -1.855670103092788,
+        "return_1m": 3.4782608695652195,
+        "return_ytd": -3.2172453755084263,
+        "return_1y": -23.923539962450935,
+        "return_3y": 48.61995753715498,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -1.449275362318836,
+        "return_2y": -13.193044678490573
+      }
+    },
+    {
+      "id": "A_1146",
+      "type": "ASSET",
+      "name": "넥슨",
+      "exposure": {
+        "ticker": "225570",
+        "exchange": "KOSDAQ",
+        "country": "JP"
+      },
+      "metrics": {
+        "return_1d": 3.9473684210526327,
+        "close": 9480,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": 1.3903743315508033,
+        "return_15d": 8.219178082191792,
+        "return_1m": 11.398354876615757,
+        "return_ytd": -21.065778517901744,
+        "return_1y": -32.90870488322718,
+        "return_3y": -46.440677966101696,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 3.9473684210526327,
+        "return_2y": -58.96103896103896
+      },
+      "coreBiz": "넥슨은 던파 등 중국 매출 비중 큰 게임사다"
+    },
+    {
+      "id": "A_1147",
+      "type": "ASSET",
+      "name": "엔씨소프트",
+      "exposure": {
+        "ticker": "036570",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.642710472279263,
+        "close": 247500,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -3.131115459882583,
+        "return_15d": 8.552631578947366,
+        "return_1m": 9.27152317880795,
+        "return_ytd": 14.893172560260881,
+        "return_1y": 30.50562360596265,
+        "return_3y": -3.126909253031407,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -0.4024144869215318,
+        "return_2y": 32.80214710218841
+      }
+    },
+    {
+      "id": "A_1148",
+      "type": "ASSET",
+      "name": "하이브",
+      "exposure": {
+        "ticker": "352820",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.7006802721088343,
+        "close": 179400,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -0.4991680532445919,
+        "return_15d": -15.37735849056604,
+        "return_1m": -13.749999999999996,
+        "return_ytd": -48.07684749981579,
+        "return_1y": -28.424658311966155,
+        "return_3y": -28.426241361615357,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -3.0270270270270294,
+        "return_2y": -1.4748221244754167
+      }
+    },
+    {
+      "id": "A_1149",
+      "type": "ASSET",
+      "name": "JYP",
+      "exposure": {
+        "ticker": "035900",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.4895960832313362,
+        "close": 41050,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -11.815252416756172,
+        "return_15d": -8.472686733556301,
+        "return_1m": -14.300626304801668,
+        "return_ytd": -46.29983120735325,
+        "return_1y": -40.290343173638,
+        "return_3y": -64.55312334592666,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -12.286324786324787,
+        "return_2y": -24.84637486822644
+      }
+    },
+    {
+      "id": "A_1150",
+      "type": "ASSET",
+      "name": "SM엔터",
+      "exposure": {
+        "ticker": "041510",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 2.086230876216977,
+        "close": 73400,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -3.8007863695937116,
+        "return_15d": 5.157593123209159,
+        "return_1m": 3.3802816901408406,
+        "return_ytd": -44.561933534743204,
+        "return_1y": -43.13762611145866,
+        "return_3y": -45.12282173414503,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -2.910052910052907,
+        "return_2y": 0.16414132556081817
+      }
+    },
+    {
+      "id": "A_1151",
+      "type": "ASSET",
+      "name": "YG엔터",
+      "exposure": {
+        "ticker": "122870",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 3.400503778337538,
+        "close": 41050,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -5.196304849884525,
+        "return_15d": 3.1407035175879505,
+        "return_1m": 0.6127450980392135,
+        "return_ytd": -41.69034090909091,
+        "return_1y": -48.058158165545336,
+        "return_3y": -48.81043430150322,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -1.2033694344163681,
+        "return_2y": 16.648174023867334
+      }
+    },
+    {
+      "id": "A_015",
+      "type": "ASSET",
+      "name": "스튜디오드래곤",
+      "exposure": {
+        "ticker": "253450",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.0,
+        "close": 25800,
+        "marketCap": 1342111935700,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -7.0866141732283445,
+        "return_15d": 14.841849148418484,
+        "return_1m": 16.831683168316825,
+        "return_ytd": -49.30182599355531,
+        "return_1y": -47.32142857142857,
+        "return_3y": -56.21521335807049,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -6.349206349206349,
+        "return_2y": -41.36645962732919
+      }
+    },
+    {
+      "id": "A_1153",
+      "type": "ASSET",
+      "name": "콘텐트리중앙",
+      "exposure": {
+        "ticker": "036420",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -0.24420024420024333,
+        "close": 1634,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 0.8641975308641969,
+        "return_15d": 1.3647642679900818,
+        "return_1m": 0.8641975308641969,
+        "return_ytd": -83.56136820925553,
+        "return_1y": -83.56136820925553,
+        "return_3y": -90.75268817204301,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 0.4302397049784856,
+        "return_2y": -84.33365292425695
+      }
+    },
+    {
+      "id": "A_1154",
+      "type": "ASSET",
+      "name": "아모레퍼시픽",
+      "exposure": {
+        "ticker": "090430",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.8921933085501932,
+        "close": 135700,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -1.1653313911143437,
+        "return_15d": 14.999999999999991,
+        "return_1m": 12.33443708609272,
+        "return_ytd": 7.860822848359206,
+        "return_1y": 4.0877446463546185,
+        "return_3y": 5.816253702985019,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -4.30183356840621,
+        "return_2y": -14.819015419087078
+      }
+    },
+    {
+      "id": "A_1155",
+      "type": "ASSET",
+      "name": "코스맥스",
+      "exposure": {
+        "ticker": "192820",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -0.6024096385542133,
+        "close": 247500,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 17.85714285714286,
+        "return_15d": 38.73318385650224,
+        "return_1m": 37.65294771968855,
+        "return_ytd": 41.31984873915924,
+        "return_1y": 5.471417483012986,
+        "return_3y": 80.47024310927698,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 20.43795620437956,
+        "return_2y": 43.08915972031622
+      }
+    },
+    {
+      "id": "A_1156",
+      "type": "ASSET",
+      "name": "한국콜마",
+      "exposure": {
+        "ticker": "161890",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.1094674556213047,
+        "close": 136700,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 26.691380908248384,
+        "return_15d": 36.42714570858283,
+        "return_1m": 27.51865671641791,
+        "return_ytd": 111.31507777275212,
+        "return_1y": 48.60221603103574,
+        "return_3y": 143.4367662555199,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 28.11621368322399,
+        "return_2y": 131.8847022713736
+      }
+    },
+    {
+      "id": "BF_298",
+      "type": "BUSINESS_FIELD",
+      "name": "K-콘텐츠"
+    },
+    {
+      "id": "BF_299",
+      "type": "BUSINESS_FIELD",
+      "name": "K-화장품"
+    },
+    {
+      "id": "M_164",
+      "type": "MACRO",
+      "name": "비자면제여행규제"
+    },
+    {
+      "id": "M_165",
+      "type": "MACRO",
+      "name": "게임판호규제"
+    },
+    {
+      "id": "M_166",
+      "type": "MACRO",
+      "name": "한한령"
+    },
+    {
+      "id": "C_2833",
+      "type": "CHARACTER",
+      "name": "외국인카지노"
+    },
+    {
+      "id": "C_2834",
+      "type": "CHARACTER",
+      "name": "외국인카지노VIP"
+    },
+    {
+      "id": "C_2835",
+      "type": "CHARACTER",
+      "name": "면세호텔중국관광"
+    },
+    {
+      "id": "C_2836",
+      "type": "CHARACTER",
+      "name": "배그중국판호"
+    },
+    {
+      "id": "C_2837",
+      "type": "CHARACTER",
+      "name": "던파중국매출"
+    },
+    {
+      "id": "C_2838",
+      "type": "CHARACTER",
+      "name": "중국판호수출엔씨"
+    },
+    {
+      "id": "C_2839",
+      "type": "CHARACTER",
+      "name": "K팝한한령완화"
+    },
+    {
+      "id": "C_2840",
+      "type": "CHARACTER",
+      "name": "K팝중국재개"
+    },
+    {
+      "id": "C_2841",
+      "type": "CHARACTER",
+      "name": "K팝중국재개SM"
+    },
+    {
+      "id": "C_2842",
+      "type": "CHARACTER",
+      "name": "K팝중국재개YG"
+    },
+    {
+      "id": "C_2843",
+      "type": "CHARACTER",
+      "name": "K드라마중국수출"
+    },
+    {
+      "id": "C_2844",
+      "type": "CHARACTER",
+      "name": "K콘텐츠중국콘텐트리"
+    },
+    {
+      "id": "C_2845",
+      "type": "CHARACTER",
+      "name": "K화장품중국소비아모레"
+    },
+    {
+      "id": "C_2846",
+      "type": "CHARACTER",
+      "name": "화장품ODM중국"
+    },
+    {
+      "id": "C_2847",
+      "type": "CHARACTER",
+      "name": "화장품ODM중국"
+    },
+    {
+      "id": "A_2891",
+      "type": "ASSET",
+      "name": "KODEX K콘텐츠",
+      "exposure": {
+        "ticker": "266360",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.392222755640904,
+        "return_3d": 0.189753320683117,
+        "return_15d": 3.9881831610044216,
+        "return_1m": 8.196721311475418,
+        "return_ytd": -21.77818916656068,
+        "return_1y": -17.83219161059829,
+        "return_3y": null,
+        "close": 10560,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": null,
+        "return_2y": -3.104140522486154
+      }
+    },
+    {
+      "id": "A_2892",
+      "type": "ASSET",
+      "name": "TIGER 화장품",
+      "exposure": {
+        "ticker": "228790",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -1.0067114093959773,
+        "return_3d": 3.3878504672897103,
+        "return_15d": 20.9016393442623,
+        "return_1m": 20.572207084468673,
+        "return_ytd": 29.4478273476658,
+        "return_1y": 13.131721781970086,
+        "return_3y": null,
+        "close": 4425,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": null,
+        "return_2y": 41.511660496864856
+      }
+    }
   ],
-  "dataAsOf": "2026-04-22T00:00:00+09:00",
-  "notes": "g170 누적 import 기반 한중관계관련주 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 7건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-12",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
-   },
-   {
-    "date": "2026-07-12",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필 + 2026 이벤트",
-    "detail": "전 엣지 근거(호버 박스)를 종목·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
-   },
-   {
-    "date": "2026-07-10",
-    "kind": "변경",
-    "title": "매크로는 테마에만 연결",
-    "detail": "개별 자산·BF에 직접 걸려 있던 매크로 IMPACTS 엣지를 테마 레벨로 정리(repoint 2, 중복제거 13)했다."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_1142",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005030"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1143",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005031"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1144",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005032"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1145",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005033"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1146",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005034"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1147",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005035"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1148",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005036"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1149",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005037"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1150",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005038"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1151",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005039"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_015",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005040"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1153",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005041"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1154",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005042"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1155",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005043"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1156",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005044"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "M_164",
+      "to": "T_170",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005045"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_165",
+      "to": "T_170",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005046"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_166",
+      "to": "T_170",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005047"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_015",
+      "to": "BF_298",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005048"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1153",
+      "to": "BF_298",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005049"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1154",
+      "to": "BF_299",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005050"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1155",
+      "to": "BF_299",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005051"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1156",
+      "to": "BF_299",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005052"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1142",
+      "to": "C_2833",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005144"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1143",
+      "to": "C_2834",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005145"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1144",
+      "to": "C_2835",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005146"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1145",
+      "to": "C_2836",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005147"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1146",
+      "to": "C_2837",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005148"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1147",
+      "to": "C_2838",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005149"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1148",
+      "to": "C_2839",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005150"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1149",
+      "to": "C_2840",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005151"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1150",
+      "to": "C_2841",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005152"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1151",
+      "to": "C_2842",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005153"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_015",
+      "to": "C_2843",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005154"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1153",
+      "to": "C_2844",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005155"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1154",
+      "to": "C_2845",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005156"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1155",
+      "to": "C_2846",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005157"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1156",
+      "to": "C_2847",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005158"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1148",
+      "to": "A_1149",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019204"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "하이브와 JYP는 한중관계관련주 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1148",
+      "to": "A_1150",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019205"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "하이브와 SM엔터는 한중관계관련주 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1149",
+      "to": "A_1150",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019206"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "JYP와 SM엔터는 한중관계관련주 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1148",
+      "to": "A_1151",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019207"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "하이브와 YG엔터는 한중관계관련주 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1155",
+      "to": "A_1156",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019208"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "코스맥스와 한국콜마는 한중관계관련주 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1142",
+      "to": "A_1143",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019209"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "GKL와 파라다이스는 한중관계관련주 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1145",
+      "to": "A_1147",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019210"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "크래프톤와 엔씨소프트는 한중관계관련주 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_2891",
+      "to": "T_170",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020626"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_2892",
+      "to": "T_170",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020627"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_1142",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005030"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1143",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005031"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1144",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005032"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1145",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005033"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1146",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005034"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1147",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005035"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1148",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005036"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1149",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005037"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1150",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005038"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1151",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005039"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_015",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005040"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1153",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005041"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1154",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005042"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1155",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005043"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1156",
+      "to": "T_170",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005044"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "M_164",
+      "to": "T_170",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005045"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_165",
+      "to": "T_170",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005046"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_166",
+      "to": "T_170",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005047"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_015",
+      "to": "BF_298",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005048"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1153",
+      "to": "BF_298",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005049"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1154",
+      "to": "BF_299",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005050"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1155",
+      "to": "BF_299",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005051"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1156",
+      "to": "BF_299",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005052"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1142",
+      "to": "C_2833",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005144"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1143",
+      "to": "C_2834",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005145"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1144",
+      "to": "C_2835",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005146"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1145",
+      "to": "C_2836",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005147"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1146",
+      "to": "C_2837",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005148"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1147",
+      "to": "C_2838",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005149"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1148",
+      "to": "C_2839",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005150"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1149",
+      "to": "C_2840",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005151"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1150",
+      "to": "C_2841",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005152"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1151",
+      "to": "C_2842",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005153"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_015",
+      "to": "C_2843",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005154"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1153",
+      "to": "C_2844",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005155"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1154",
+      "to": "C_2845",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005156"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1155",
+      "to": "C_2846",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005157"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1156",
+      "to": "C_2847",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005158"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1148",
+      "to": "A_1149",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019204"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "하이브와 JYP는 한중관계관련주 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1148",
+      "to": "A_1150",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019205"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "하이브와 SM엔터는 한중관계관련주 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1149",
+      "to": "A_1150",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019206"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "JYP와 SM엔터는 한중관계관련주 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1148",
+      "to": "A_1151",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019207"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "하이브와 YG엔터는 한중관계관련주 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1155",
+      "to": "A_1156",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019208"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "코스맥스와 한국콜마는 한중관계관련주 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1142",
+      "to": "A_1143",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019209"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "GKL와 파라다이스는 한중관계관련주 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1145",
+      "to": "A_1147",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019210"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "크래프톤와 엔씨소프트는 한중관계관련주 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_2891",
+      "to": "T_170",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020626"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_2892",
+      "to": "T_170",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020627"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_170",
-   "type": "THEME",
-   "name": "한중관계관련주"
-  },
-  {
-   "id": "A_1142",
-   "type": "ASSET",
-   "name": "GKL",
-   "exposure": {
-    "ticker": "114090",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.5118790496760237,
-    "close": 9400,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -1.2605042016806678,
-    "return_15d": -1.1566771819137789,
-    "return_1m": -8.649173955296408,
-    "return_ytd": -35.2640223447659,
-    "return_1y": -41.05592183343022,
-    "return_3y": -39.25516780520791,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -1.0526315789473717,
-    "return_2y": -9.70879867681511
-   }
-  },
-  {
-   "id": "A_1143",
-   "type": "ASSET",
-   "name": "파라다이스",
-   "exposure": {
-    "ticker": "034230",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.8537590113285374,
-    "close": 9890,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 0.30425963488844854,
-    "return_15d": -1.395812562313059,
-    "return_1m": -18.12913907284768,
-    "return_ytd": -40.24169184290031,
-    "return_1y": -51.30409336658697,
-    "return_3y": -43.27460147697452,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -2.079207920792081,
-    "return_2y": -7.237277280712462
-   }
-  },
-  {
-   "id": "A_1144",
-   "type": "ASSET",
-   "name": "호텔신라",
-   "exposure": {
-    "ticker": "008770",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 4.608294930875578,
-    "close": 45400,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 1.7937219730941756,
-    "return_15d": -3.6093418259023347,
-    "return_1m": -3.8135593220338992,
-    "return_ytd": 1.7937219730941756,
-    "return_1y": -8.651911468812878,
-    "return_3y": -49.9554315639766,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 6.323185011709609,
-    "return_2y": -4.421052631578948
-   }
-  },
-  {
-   "id": "A_1145",
-   "type": "ASSET",
-   "name": "크래프톤",
-   "exposure": {
-    "ticker": "259960",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.4925373134328401,
-    "close": 238000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -2.4590163934426257,
-    "return_15d": -1.855670103092788,
-    "return_1m": 3.4782608695652195,
-    "return_ytd": -2.4303937496359285,
-    "return_1y": -23.923539962450935,
-    "return_3y": 48.61995753715498,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -1.449275362318836,
-    "return_2y": -27.59540531284551
-   }
-  },
-  {
-   "id": "A_1146",
-   "type": "ASSET",
-   "name": "넥슨",
-   "exposure": {
-    "ticker": "225570",
-    "exchange": "KOSDAQ",
-    "country": "JP"
-   },
-   "metrics": {
-    "return_1d": 3.9473684210526327,
-    "close": 9480,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "return_3d": 1.3903743315508033,
-    "return_15d": 8.219178082191792,
-    "return_1m": 11.398354876615757,
-    "return_ytd": -21.065778517901744,
-    "return_1y": -32.90870488322718,
-    "return_3y": -46.440677966101696,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 3.9473684210526327,
-    "return_2y": -58.96103896103896
-   },
-   "coreBiz": "넥슨은 던파 등 중국 매출 비중 큰 게임사다"
-  },
-  {
-   "id": "A_1147",
-   "type": "ASSET",
-   "name": "엔씨소프트",
-   "exposure": {
-    "ticker": "036570",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.642710472279263,
-    "close": 247500,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -3.131115459882583,
-    "return_15d": 8.552631578947366,
-    "return_1m": 8.791208791208781,
-    "return_ytd": 23.446014190056985,
-    "return_1y": 18.44938980617372,
-    "return_3y": -3.126909253031407,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -0.4024144869215318,
-    "return_2y": 33.57958978079032
-   }
-  },
-  {
-   "id": "A_1148",
-   "type": "ASSET",
-   "name": "하이브",
-   "exposure": {
-    "ticker": "352820",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.7006802721088343,
-    "close": 179400,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -0.4991680532445919,
-    "return_15d": -15.37735849056604,
-    "return_1m": -12.912621359223298,
-    "return_ytd": -45.55936131225901,
-    "return_1y": -36.62994439176243,
-    "return_3y": -28.426241361615357,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -3.0270270270270294,
-    "return_2y": 10.24429773813913
-   }
-  },
-  {
-   "id": "A_1149",
-   "type": "ASSET",
-   "name": "JYP",
-   "exposure": {
-    "ticker": "035900",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.4895960832313362,
-    "close": 41050,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -11.815252416756172,
-    "return_15d": -8.472686733556301,
-    "return_1m": -14.031413612565446,
-    "return_ytd": -42.67543962111093,
-    "return_1y": -47.518750511684196,
-    "return_3y": -64.55312334592666,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -12.286324786324787,
-    "return_2y": -16.628781674797423
-   }
-  },
-  {
-   "id": "A_1150",
-   "type": "ASSET",
-   "name": "SM엔터",
-   "exposure": {
-    "ticker": "041510",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 2.086230876216977,
-    "close": 73400,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -3.8007863695937116,
-    "return_15d": 5.157593123209159,
-    "return_1m": 1.5214384508990264,
-    "return_ytd": -45.62962962962963,
-    "return_1y": -50.44631615669542,
-    "return_3y": -45.12282173414503,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -2.910052910052907,
-    "return_2y": 14.054392088963596
-   }
-  },
-  {
-   "id": "A_1151",
-   "type": "ASSET",
-   "name": "YG엔터",
-   "exposure": {
-    "ticker": "122870",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 3.400503778337538,
-    "close": 41050,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -5.196304849884525,
-    "return_15d": 3.1407035175879505,
-    "return_1m": 1.3580246913580174,
-    "return_ytd": -40.85014409221902,
-    "return_1y": -58.38363025601039,
-    "return_3y": -48.81043430150322,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -1.2033694344163681,
-    "return_2y": 19.505550022605455
-   }
-  },
-  {
-   "id": "A_015",
-   "type": "ASSET",
-   "name": "스튜디오드래곤",
-   "exposure": {
-    "ticker": "253450",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.0,
-    "close": 23600,
-    "marketCap": 1342111935700,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -7.0866141732283445,
-    "return_15d": 14.841849148418484,
-    "return_1m": 16.54320987654321,
-    "return_ytd": -44.7953216374269,
-    "return_1y": -48.63982589771491,
-    "return_3y": -56.21521335807049,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -6.349206349206349,
-    "return_2y": -31.195335276967928
-   }
-  },
-  {
-   "id": "A_1153",
-   "type": "ASSET",
-   "name": "콘텐트리중앙",
-   "exposure": {
-    "ticker": "036420",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -0.24420024420024333,
-    "close": 1634,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 0.8641975308641969,
-    "return_15d": 1.3647642679900818,
-    "return_1m": -3.9952996474735603,
-    "return_ytd": -83.15463917525774,
-    "return_1y": -84.31861804222649,
-    "return_3y": -90.75268817204301,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.4302397049784856,
-    "return_2y": -82.21980413492926
-   }
-  },
-  {
-   "id": "A_1154",
-   "type": "ASSET",
-   "name": "아모레퍼시픽",
-   "exposure": {
-    "ticker": "090430",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.8921933085501932,
-    "close": 135700,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -1.1653313911143437,
-    "return_15d": 14.999999999999991,
-    "return_1m": 13.083333333333336,
-    "return_ytd": 14.540070462333453,
-    "return_1y": 11.643869660374628,
-    "return_3y": 5.816253702985019,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -4.30183356840621,
-    "return_2y": 17.33156827918796
-   }
-  },
-  {
-   "id": "A_1155",
-   "type": "ASSET",
-   "name": "코스맥스",
-   "exposure": {
-    "ticker": "192820",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -0.6024096385542133,
-    "close": 247500,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 17.85714285714286,
-    "return_15d": 38.73318385650224,
-    "return_1m": 41.59038901601831,
-    "return_ytd": 54.3247427165231,
-    "return_1y": 32.3247399439128,
-    "return_3y": 80.47024310927698,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 20.43795620437956,
-    "return_2y": 105.48201934322053
-   }
-  },
-  {
-   "id": "A_1156",
-   "type": "ASSET",
-   "name": "한국콜마",
-   "exposure": {
-    "ticker": "161890",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.1094674556213047,
-    "close": 136700,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 26.691380908248384,
-    "return_15d": 36.42714570858283,
-    "return_1m": 28.598306679209774,
-    "return_ytd": 122.54438175988022,
-    "return_1y": 73.40032737220723,
-    "return_3y": 143.4367662555199,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 28.11621368322399,
-    "return_2y": 121.94678667487997
-   }
-  },
-  {
-   "id": "BF_298",
-   "type": "BUSINESS_FIELD",
-   "name": "K-콘텐츠"
-  },
-  {
-   "id": "BF_299",
-   "type": "BUSINESS_FIELD",
-   "name": "K-화장품"
-  },
-  {
-   "id": "M_164",
-   "type": "MACRO",
-   "name": "비자면제여행규제"
-  },
-  {
-   "id": "M_165",
-   "type": "MACRO",
-   "name": "게임판호규제"
-  },
-  {
-   "id": "M_166",
-   "type": "MACRO",
-   "name": "한한령"
-  },
-  {
-   "id": "C_2833",
-   "type": "CHARACTER",
-   "name": "외국인카지노"
-  },
-  {
-   "id": "C_2834",
-   "type": "CHARACTER",
-   "name": "외국인카지노VIP"
-  },
-  {
-   "id": "C_2835",
-   "type": "CHARACTER",
-   "name": "면세호텔중국관광"
-  },
-  {
-   "id": "C_2836",
-   "type": "CHARACTER",
-   "name": "배그중국판호"
-  },
-  {
-   "id": "C_2837",
-   "type": "CHARACTER",
-   "name": "던파중국매출"
-  },
-  {
-   "id": "C_2838",
-   "type": "CHARACTER",
-   "name": "중국판호수출엔씨"
-  },
-  {
-   "id": "C_2839",
-   "type": "CHARACTER",
-   "name": "K팝한한령완화"
-  },
-  {
-   "id": "C_2840",
-   "type": "CHARACTER",
-   "name": "K팝중국재개"
-  },
-  {
-   "id": "C_2841",
-   "type": "CHARACTER",
-   "name": "K팝중국재개SM"
-  },
-  {
-   "id": "C_2842",
-   "type": "CHARACTER",
-   "name": "K팝중국재개YG"
-  },
-  {
-   "id": "C_2843",
-   "type": "CHARACTER",
-   "name": "K드라마중국수출"
-  },
-  {
-   "id": "C_2844",
-   "type": "CHARACTER",
-   "name": "K콘텐츠중국콘텐트리"
-  },
-  {
-   "id": "C_2845",
-   "type": "CHARACTER",
-   "name": "K화장품중국소비아모레"
-  },
-  {
-   "id": "C_2846",
-   "type": "CHARACTER",
-   "name": "화장품ODM중국"
-  },
-  {
-   "id": "C_2847",
-   "type": "CHARACTER",
-   "name": "화장품ODM중국"
-  },
-  {
-   "id": "A_2891",
-   "type": "ASSET",
-   "name": "KODEX K콘텐츠",
-   "exposure": {
-    "ticker": "266360",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.392222755640904,
-    "return_3d": 0.189753320683117,
-    "return_15d": 3.9881831610044216,
-    "return_1m": 8.196721311475418,
-    "return_ytd": -21.77818916656068,
-    "return_1y": -17.83219161059829,
-    "return_3y": null,
-    "close": 10560,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": null
-   }
-  },
-  {
-   "id": "A_2892",
-   "type": "ASSET",
-   "name": "TIGER 화장품",
-   "exposure": {
-    "ticker": "228790",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -1.0067114093959773,
-    "return_3d": 3.3878504672897103,
-    "return_15d": 20.9016393442623,
-    "return_1m": 20.572207084468673,
-    "return_ytd": 29.4478273476658,
-    "return_1y": 13.131721781970086,
-    "return_3y": null,
-    "close": 4425,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": null
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_1142",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005030"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1143",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005031"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1144",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005032"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1145",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005033"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1146",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005034"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1147",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005035"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1148",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005036"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1149",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005037"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1150",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005038"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1151",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005039"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_015",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005040"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1153",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005041"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1154",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005042"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1155",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005043"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1156",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005044"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "M_164",
-   "to": "T_170",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005045"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_165",
-   "to": "T_170",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005046"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_166",
-   "to": "T_170",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005047"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_015",
-   "to": "BF_298",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005048"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1153",
-   "to": "BF_298",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005049"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1154",
-   "to": "BF_299",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005050"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1155",
-   "to": "BF_299",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005051"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1156",
-   "to": "BF_299",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005052"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1142",
-   "to": "C_2833",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005144"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1143",
-   "to": "C_2834",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005145"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1144",
-   "to": "C_2835",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005146"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1145",
-   "to": "C_2836",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005147"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1146",
-   "to": "C_2837",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005148"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1147",
-   "to": "C_2838",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005149"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1148",
-   "to": "C_2839",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005150"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1149",
-   "to": "C_2840",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005151"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1150",
-   "to": "C_2841",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005152"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1151",
-   "to": "C_2842",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005153"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_015",
-   "to": "C_2843",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005154"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1153",
-   "to": "C_2844",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005155"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1154",
-   "to": "C_2845",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005156"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1155",
-   "to": "C_2846",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005157"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1156",
-   "to": "C_2847",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005158"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1148",
-   "to": "A_1149",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019204"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "하이브와 JYP는 한중관계관련주 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1148",
-   "to": "A_1150",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019205"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "하이브와 SM엔터는 한중관계관련주 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1149",
-   "to": "A_1150",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019206"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "JYP와 SM엔터는 한중관계관련주 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1148",
-   "to": "A_1151",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019207"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "하이브와 YG엔터는 한중관계관련주 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1155",
-   "to": "A_1156",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019208"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "코스맥스와 한국콜마는 한중관계관련주 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1142",
-   "to": "A_1143",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019209"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "GKL와 파라다이스는 한중관계관련주 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1145",
-   "to": "A_1147",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019210"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "크래프톤와 엔씨소프트는 한중관계관련주 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_2891",
-   "to": "T_170",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020626"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_2892",
-   "to": "T_170",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020627"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_1142",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005030"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1143",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005031"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1144",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005032"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1145",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005033"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1146",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005034"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1147",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005035"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1148",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005036"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1149",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005037"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1150",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005038"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1151",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005039"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_015",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005040"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1153",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005041"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1154",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005042"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1155",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005043"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1156",
-   "to": "T_170",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005044"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "M_164",
-   "to": "T_170",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005045"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_165",
-   "to": "T_170",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005046"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_166",
-   "to": "T_170",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005047"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_015",
-   "to": "BF_298",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005048"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1153",
-   "to": "BF_298",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005049"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1154",
-   "to": "BF_299",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005050"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1155",
-   "to": "BF_299",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005051"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1156",
-   "to": "BF_299",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005052"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1142",
-   "to": "C_2833",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005144"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1143",
-   "to": "C_2834",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005145"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1144",
-   "to": "C_2835",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005146"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1145",
-   "to": "C_2836",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005147"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1146",
-   "to": "C_2837",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005148"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1147",
-   "to": "C_2838",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005149"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1148",
-   "to": "C_2839",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005150"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1149",
-   "to": "C_2840",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005151"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1150",
-   "to": "C_2841",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005152"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1151",
-   "to": "C_2842",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005153"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_015",
-   "to": "C_2843",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005154"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1153",
-   "to": "C_2844",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005155"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1154",
-   "to": "C_2845",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005156"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1155",
-   "to": "C_2846",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005157"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1156",
-   "to": "C_2847",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005158"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1148",
-   "to": "A_1149",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019204"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "하이브와 JYP는 한중관계관련주 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1148",
-   "to": "A_1150",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019205"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "하이브와 SM엔터는 한중관계관련주 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1149",
-   "to": "A_1150",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019206"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "JYP와 SM엔터는 한중관계관련주 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1148",
-   "to": "A_1151",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019207"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "하이브와 YG엔터는 한중관계관련주 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1155",
-   "to": "A_1156",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019208"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "코스맥스와 한국콜마는 한중관계관련주 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1142",
-   "to": "A_1143",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019209"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "GKL와 파라다이스는 한중관계관련주 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1145",
-   "to": "A_1147",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019210"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "크래프톤와 엔씨소프트는 한중관계관련주 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_2891",
-   "to": "T_170",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020626"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_2892",
-   "to": "T_170",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020627"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

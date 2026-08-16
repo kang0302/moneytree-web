@@ -1,502 +1,502 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_441",
- "themeName": "미국헬스케어_REIT",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_441",
+  "themeName": "미국헬스케어_REIT",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-25T00:00:00+09:00",
+    "description": "미국 헬스케어 REIT — Healthpeak·Sabra·Medical Properties (Steward 회복)·CareTrust·National Health Investors. 인구고령화 + 시니어 housing.",
+    "notes": "T_441 신규 — Russell 2000",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 3건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-25",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결, 2026 이벤트 2건 추가."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_441",
+      "type": "THEME",
+      "name": "미국헬스케어_REIT"
+    },
+    {
+      "id": "A_445",
+      "type": "ASSET",
+      "name": "헬스피크",
+      "exposure": {
+        "ticker": "DOC",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.09610764055741905,
+        "return_3d": 1.3651877133105783,
+        "return_15d": -6.645711719802428,
+        "return_1m": -4.016620498614964,
+        "return_ytd": 29.291044776119413,
+        "return_1y": 22.007042253521124,
+        "return_3y": 0.6779661016949268,
+        "close": 20.79,
+        "marketCap": 14333041800,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -2.89584306398879,
+        "return_2y": -4.589261128958233
+      }
+    },
+    {
+      "id": "C_724",
+      "type": "CHARACTER",
+      "name": "헬스케어REIT_연구건물"
+    },
+    {
+      "id": "A_2318",
+      "type": "ASSET",
+      "name": "사브라헬스케어",
+      "exposure": {
+        "ticker": "SBRA",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.8436724565756837,
+        "return_3d": 2.3677581863979835,
+        "return_15d": -9.123434704830046,
+        "return_1m": 2.886075949367095,
+        "return_ytd": 7.286166842661035,
+        "return_1y": 10.135501355013554,
+        "return_3y": 61.141950832672485,
+        "close": 20.32,
+        "marketCap": 5124502730,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -3.4220532319391594,
+        "return_2y": 23.676202069385276
+      }
+    },
+    {
+      "id": "C_725",
+      "type": "CHARACTER",
+      "name": "SNF_요양원_장기요양"
+    },
+    {
+      "id": "A_2319",
+      "type": "ASSET",
+      "name": "메디컬프로퍼티스",
+      "exposure": {
+        "ticker": "MPW",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.0,
+        "return_3d": -2.6548672566371723,
+        "return_15d": -3.508771929824561,
+        "return_1m": 4.166666666666652,
+        "return_ytd": 10.000000000000009,
+        "return_1y": -4.013961605584648,
+        "return_3y": null,
+        "close": 5.36,
+        "marketCap": 3224040000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -5.335628227194489,
+        "return_2y": 24.15349887133185
+      }
+    },
+    {
+      "id": "C_726",
+      "type": "CHARACTER",
+      "name": "병원Steward파산_MPW회복"
+    },
+    {
+      "id": "A_2320",
+      "type": "ASSET",
+      "name": "케어트러스트",
+      "exposure": {
+        "ticker": "CTRE",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.1545197012619015,
+        "return_3d": 0.23267838676319652,
+        "return_15d": -10.358381502890168,
+        "return_1m": -4.247962459866628,
+        "return_ytd": 7.217920353982321,
+        "return_1y": 15.010382675763868,
+        "return_3y": 92.88557213930349,
+        "close": 38.77,
+        "marketCap": 9159033911,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -5.943716642406594,
+        "return_2y": 38.513754912468755
+      }
+    },
+    {
+      "id": "C_727",
+      "type": "CHARACTER",
+      "name": "SNF_장기요양_CareTrust"
+    },
+    {
+      "id": "A_447",
+      "type": "ASSET",
+      "name": "내셔널헬스인베스터스",
+      "exposure": {
+        "ticker": "NHI",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 2.35723305738742,
+        "return_3d": 4.288777698355961,
+        "return_15d": -9.42388875093122,
+        "return_1m": -4.164477141355761,
+        "return_ytd": -4.478198245384313,
+        "return_1y": -1.7508417508417473,
+        "return_3y": 41.10251450676983,
+        "close": 72.95,
+        "marketCap": 3535966745,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -3.120849933598935,
+        "return_2y": -2.198686150958573
+      }
+    },
+    {
+      "id": "C_728",
+      "type": "CHARACTER",
+      "name": "헬스케어소형_NHI"
+    },
+    {
+      "id": "M_419",
+      "type": "MACRO",
+      "name": "senior_housing_인구고령화"
+    },
+    {
+      "id": "M_058",
+      "type": "MACRO",
+      "name": "인구고령화"
+    },
+    {
+      "id": "M_145",
+      "type": "MACRO",
+      "name": "금리인하"
+    }
   ],
-  "dataAsOf": "2026-07-25T00:00:00+09:00",
-  "description": "미국 헬스케어 REIT — Healthpeak·Sabra·Medical Properties (Steward 회복)·CareTrust·National Health Investors. 인구고령화 + 시니어 housing.",
-  "notes": "T_441 신규 — Russell 2000",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 3건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-25",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결, 2026 이벤트 2건 추가."
-   }
+  "edges": [
+    {
+      "from": "A_445",
+      "to": "T_441",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011717"
+      ]
+    },
+    {
+      "from": "A_445",
+      "to": "C_724",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016698"
+      ]
+    },
+    {
+      "from": "A_2318",
+      "to": "T_441",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011718"
+      ]
+    },
+    {
+      "from": "A_2318",
+      "to": "C_725",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016699"
+      ]
+    },
+    {
+      "from": "A_2319",
+      "to": "T_441",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011719"
+      ]
+    },
+    {
+      "from": "A_2319",
+      "to": "C_726",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016700"
+      ]
+    },
+    {
+      "from": "A_2320",
+      "to": "T_441",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011720"
+      ]
+    },
+    {
+      "from": "A_2320",
+      "to": "C_727",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016701"
+      ]
+    },
+    {
+      "from": "A_447",
+      "to": "T_441",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011721"
+      ]
+    },
+    {
+      "from": "A_447",
+      "to": "C_728",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016702"
+      ]
+    },
+    {
+      "from": "M_419",
+      "to": "T_441",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011722"
+      ]
+    },
+    {
+      "from": "M_058",
+      "to": "T_441",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011723"
+      ]
+    },
+    {
+      "from": "M_145",
+      "to": "T_441",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011724"
+      ]
+    },
+    {
+      "from": "A_2318",
+      "to": "A_2320",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018236"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "사브라(SBRA)와 케어트러스트(CTRE)는 스킬드너싱·시니어하우징 임대 부동산 인수에서 직접 경쟁하는 헬스케어 REIT다."
+    },
+    {
+      "from": "A_2318",
+      "to": "A_447",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018237"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "사브라(SBRA)와 내셔널헬스인베스터스(NHI)는 시니어하우징·스킬드너싱 시설 임대에 집중하는 동종 헬스케어 REIT 경쟁사다."
+    },
+    {
+      "from": "A_2320",
+      "to": "A_447",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018238"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "케어트러스트(CTRE)와 내셔널헬스인베스터스(NHI)는 스킬드너싱·시니어하우징 자산을 두고 경쟁하는 헬스케어 REIT다."
+    }
+  ],
+  "links": [
+    {
+      "from": "A_445",
+      "to": "T_441",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011717"
+      ]
+    },
+    {
+      "from": "A_445",
+      "to": "C_724",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016698"
+      ]
+    },
+    {
+      "from": "A_2318",
+      "to": "T_441",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011718"
+      ]
+    },
+    {
+      "from": "A_2318",
+      "to": "C_725",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016699"
+      ]
+    },
+    {
+      "from": "A_2319",
+      "to": "T_441",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011719"
+      ]
+    },
+    {
+      "from": "A_2319",
+      "to": "C_726",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016700"
+      ]
+    },
+    {
+      "from": "A_2320",
+      "to": "T_441",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011720"
+      ]
+    },
+    {
+      "from": "A_2320",
+      "to": "C_727",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016701"
+      ]
+    },
+    {
+      "from": "A_447",
+      "to": "T_441",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011721"
+      ]
+    },
+    {
+      "from": "A_447",
+      "to": "C_728",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016702"
+      ]
+    },
+    {
+      "from": "M_419",
+      "to": "T_441",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011722"
+      ]
+    },
+    {
+      "from": "M_058",
+      "to": "T_441",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011723"
+      ]
+    },
+    {
+      "from": "M_145",
+      "to": "T_441",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011724"
+      ]
+    },
+    {
+      "from": "A_2318",
+      "to": "A_2320",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018236"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "사브라(SBRA)와 케어트러스트(CTRE)는 스킬드너싱·시니어하우징 임대 부동산 인수에서 직접 경쟁하는 헬스케어 REIT다."
+    },
+    {
+      "from": "A_2318",
+      "to": "A_447",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018237"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "사브라(SBRA)와 내셔널헬스인베스터스(NHI)는 시니어하우징·스킬드너싱 시설 임대에 집중하는 동종 헬스케어 REIT 경쟁사다."
+    },
+    {
+      "from": "A_2320",
+      "to": "A_447",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018238"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "케어트러스트(CTRE)와 내셔널헬스인베스터스(NHI)는 스킬드너싱·시니어하우징 자산을 두고 경쟁하는 헬스케어 REIT다."
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_441",
-   "type": "THEME",
-   "name": "미국헬스케어_REIT"
-  },
-  {
-   "id": "A_445",
-   "type": "ASSET",
-   "name": "헬스피크",
-   "exposure": {
-    "ticker": "DOC",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.09610764055741905,
-    "return_3d": 1.3651877133105783,
-    "return_15d": -6.645711719802428,
-    "return_1m": -3.5799257022804176,
-    "return_ytd": 34.39609029555504,
-    "return_1y": 30.56174835934309,
-    "return_3y": 24.026105735387105,
-    "close": 20.79,
-    "marketCap": 14333041800,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -2.89584306398879,
-    "return_2y": 7.536336833393675
-   }
-  },
-  {
-   "id": "C_724",
-   "type": "CHARACTER",
-   "name": "헬스케어REIT_연구건물"
-  },
-  {
-   "id": "A_2318",
-   "type": "ASSET",
-   "name": "사브라헬스케어",
-   "exposure": {
-    "ticker": "SBRA",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 2.3677581863979835,
-    "return_3d": 3.914699941190003,
-    "return_15d": -7.749998865034435,
-    "return_1m": 4.4407894736842035,
-    "return_ytd": 12.131997903043334,
-    "return_1y": 18.92568900230007,
-    "return_3y": 103.91983702469716,
-    "close": 20.32,
-    "marketCap": 5124502730,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -1.9622033415835682,
-    "return_2y": 43.29840199715096
-   }
-  },
-  {
-   "id": "C_725",
-   "type": "CHARACTER",
-   "name": "SNF_요양원_장기요양"
-  },
-  {
-   "id": "A_2319",
-   "type": "ASSET",
-   "name": "메디컬프로퍼티스",
-   "exposure": {
-    "ticker": "MPW",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.0,
-    "return_3d": -2.6548672566371723,
-    "return_15d": -3.508771929824561,
-    "return_1m": 4.166666666666652,
-    "return_ytd": 10.000000000000009,
-    "return_1y": -4.013961605584648,
-    "return_3y": null,
-    "close": 5.5,
-    "marketCap": 3224040000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-03-05",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -5.335628227194489,
-    "return_2y": 24.15349887133185
-   }
-  },
-  {
-   "id": "C_726",
-   "type": "CHARACTER",
-   "name": "병원Steward파산_MPW회복"
-  },
-  {
-   "id": "A_2320",
-   "type": "ASSET",
-   "name": "케어트러스트",
-   "exposure": {
-    "ticker": "CTRE",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.1545197012619015,
-    "return_3d": 0.23267838676319652,
-    "return_15d": -10.358381502890168,
-    "return_1m": -4.247962459866628,
-    "return_ytd": 9.425494983136007,
-    "return_1y": 19.620620287064817,
-    "return_3y": 120.17275355076129,
-    "close": 38.77,
-    "marketCap": 9159033911,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -5.943716642406594,
-    "return_2y": 50.395481540962116
-   }
-  },
-  {
-   "id": "C_727",
-   "type": "CHARACTER",
-   "name": "SNF_장기요양_CareTrust"
-  },
-  {
-   "id": "A_447",
-   "type": "ASSET",
-   "name": "내셔널헬스인베스터스",
-   "exposure": {
-    "ticker": "NHI",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 2.35723305738742,
-    "return_3d": 4.288777698355961,
-    "return_15d": -9.42388875093122,
-    "return_1m": -4.164477141355761,
-    "return_ytd": -2.2407570947480693,
-    "return_1y": 2.9624098990700176,
-    "return_3y": 65.16332943914655,
-    "close": 72.95,
-    "marketCap": 3535966745,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -3.120849933598935,
-    "return_2y": 7.620950014900241
-   }
-  },
-  {
-   "id": "C_728",
-   "type": "CHARACTER",
-   "name": "헬스케어소형_NHI"
-  },
-  {
-   "id": "M_419",
-   "type": "MACRO",
-   "name": "senior_housing_인구고령화"
-  },
-  {
-   "id": "M_058",
-   "type": "MACRO",
-   "name": "인구고령화"
-  },
-  {
-   "id": "M_145",
-   "type": "MACRO",
-   "name": "금리인하"
-  }
- ],
- "edges": [
-  {
-   "from": "A_445",
-   "to": "T_441",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011717"
-   ]
-  },
-  {
-   "from": "A_445",
-   "to": "C_724",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016698"
-   ]
-  },
-  {
-   "from": "A_2318",
-   "to": "T_441",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011718"
-   ]
-  },
-  {
-   "from": "A_2318",
-   "to": "C_725",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016699"
-   ]
-  },
-  {
-   "from": "A_2319",
-   "to": "T_441",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011719"
-   ]
-  },
-  {
-   "from": "A_2319",
-   "to": "C_726",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016700"
-   ]
-  },
-  {
-   "from": "A_2320",
-   "to": "T_441",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011720"
-   ]
-  },
-  {
-   "from": "A_2320",
-   "to": "C_727",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016701"
-   ]
-  },
-  {
-   "from": "A_447",
-   "to": "T_441",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011721"
-   ]
-  },
-  {
-   "from": "A_447",
-   "to": "C_728",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016702"
-   ]
-  },
-  {
-   "from": "M_419",
-   "to": "T_441",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011722"
-   ]
-  },
-  {
-   "from": "M_058",
-   "to": "T_441",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011723"
-   ]
-  },
-  {
-   "from": "M_145",
-   "to": "T_441",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011724"
-   ]
-  },
-  {
-   "from": "A_2318",
-   "to": "A_2320",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018236"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "사브라(SBRA)와 케어트러스트(CTRE)는 스킬드너싱·시니어하우징 임대 부동산 인수에서 직접 경쟁하는 헬스케어 REIT다."
-  },
-  {
-   "from": "A_2318",
-   "to": "A_447",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018237"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "사브라(SBRA)와 내셔널헬스인베스터스(NHI)는 시니어하우징·스킬드너싱 시설 임대에 집중하는 동종 헬스케어 REIT 경쟁사다."
-  },
-  {
-   "from": "A_2320",
-   "to": "A_447",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018238"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "케어트러스트(CTRE)와 내셔널헬스인베스터스(NHI)는 스킬드너싱·시니어하우징 자산을 두고 경쟁하는 헬스케어 REIT다."
-  }
- ],
- "links": [
-  {
-   "from": "A_445",
-   "to": "T_441",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011717"
-   ]
-  },
-  {
-   "from": "A_445",
-   "to": "C_724",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016698"
-   ]
-  },
-  {
-   "from": "A_2318",
-   "to": "T_441",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011718"
-   ]
-  },
-  {
-   "from": "A_2318",
-   "to": "C_725",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016699"
-   ]
-  },
-  {
-   "from": "A_2319",
-   "to": "T_441",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011719"
-   ]
-  },
-  {
-   "from": "A_2319",
-   "to": "C_726",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016700"
-   ]
-  },
-  {
-   "from": "A_2320",
-   "to": "T_441",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011720"
-   ]
-  },
-  {
-   "from": "A_2320",
-   "to": "C_727",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016701"
-   ]
-  },
-  {
-   "from": "A_447",
-   "to": "T_441",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011721"
-   ]
-  },
-  {
-   "from": "A_447",
-   "to": "C_728",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016702"
-   ]
-  },
-  {
-   "from": "M_419",
-   "to": "T_441",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011722"
-   ]
-  },
-  {
-   "from": "M_058",
-   "to": "T_441",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011723"
-   ]
-  },
-  {
-   "from": "M_145",
-   "to": "T_441",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011724"
-   ]
-  },
-  {
-   "from": "A_2318",
-   "to": "A_2320",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018236"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "사브라(SBRA)와 케어트러스트(CTRE)는 스킬드너싱·시니어하우징 임대 부동산 인수에서 직접 경쟁하는 헬스케어 REIT다."
-  },
-  {
-   "from": "A_2318",
-   "to": "A_447",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018237"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "사브라(SBRA)와 내셔널헬스인베스터스(NHI)는 시니어하우징·스킬드너싱 시설 임대에 집중하는 동종 헬스케어 REIT 경쟁사다."
-  },
-  {
-   "from": "A_2320",
-   "to": "A_447",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018238"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "케어트러스트(CTRE)와 내셔널헬스인베스터스(NHI)는 스킬드너싱·시니어하우징 자산을 두고 경쟁하는 헬스케어 REIT다."
-  }
- ]
 }

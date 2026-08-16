@@ -1,598 +1,599 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_420",
- "themeName": "K바이오신경_CNS",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_420",
+  "themeName": "K바이오신경_CNS",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-25T00:00:00+09:00",
+    "description": "K-바이오 신경·CNS — SK바이오팜 Cenobamate·셀트리온·디앤디파마텍·삼진제약. 뇌전증·파킨슨·치매 글로벌 진출.",
+    "notes": "T_420 신규 — 질병중심 바이오",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 1건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-25",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결, 2026 이벤트 2건 추가."
+      },
+      {
+        "date": "2026-07-19",
+        "kind": "보강",
+        "title": "바로미터 표본 보강(자산 5종 이상 확보)",
+        "detail": "2종 추가 편입(1궤도) 및 자산별 CHR 정의. 표본 부족(ASSET<5) 해소."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_420",
+      "type": "THEME",
+      "name": "K바이오신경_CNS"
+    },
+    {
+      "id": "A_1726",
+      "type": "ASSET",
+      "name": "SK바이오팜",
+      "exposure": {
+        "ticker": "326030",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -0.3424657534246589,
+        "return_3d": -3.53591160220994,
+        "return_15d": 8.312655086848642,
+        "return_1m": 11.636828644501286,
+        "return_ytd": -28.966639544344996,
+        "return_1y": -6.929637526652455,
+        "return_3y": -8.586387434554975,
+        "close": 87300,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 2.2248243559718883,
+        "return_2y": 2.585193889541726
+      }
+    },
+    {
+      "id": "A_717",
+      "type": "ASSET",
+      "name": "셀트리온",
+      "exposure": {
+        "ticker": "068270",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -0.4950495049504955,
+        "return_3d": -4.513064133016631,
+        "return_15d": 13.17567567567568,
+        "return_1m": 14.399544678429145,
+        "return_ytd": -0.7407395643346915,
+        "return_1y": 17.805483927916498,
+        "return_3y": 31.793001427062496,
+        "close": 201000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 0.8529854490717526,
+        "return_2y": 5.190881375110057
+      }
+    },
+    {
+      "id": "A_1369",
+      "type": "ASSET",
+      "name": "디앤디파마텍",
+      "exposure": {
+        "ticker": "347850",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -0.4862236628849326,
+        "return_3d": 0.8210180623973828,
+        "return_15d": 3.0201342281879207,
+        "return_1m": -19.21052631578948,
+        "return_ytd": -30.933633295838025,
+        "return_1y": 104.66666666666669,
+        "return_3y": null,
+        "close": 61400,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 6.78260869565217,
+        "return_2y": 623.4167893961709
+      }
+    },
+    {
+      "id": "A_2217",
+      "type": "ASSET",
+      "name": "삼진제약",
+      "exposure": {
+        "ticker": "005500",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.9304871373836843,
+        "return_3d": -1.3376136971642638,
+        "return_15d": 3.1897034135422553,
+        "return_1m": 1.2630422844590816,
+        "return_ytd": -4.604242110708745,
+        "return_1y": -3.0361546418948504,
+        "return_3y": -8.207906622471983,
+        "close": 18440,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 0.7650273224043769,
+        "return_2y": 0.5014844216404191
+      }
+    },
+    {
+      "id": "A_2755",
+      "type": "ASSET",
+      "name": "젬백스",
+      "exposure": {
+        "ticker": "082270",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -2.0781379883624274,
+        "close": 11780,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -2.0781379883624274,
+        "return_15d": 16.518298714144407,
+        "return_1m": 10.818438381937924,
+        "return_ytd": -61.50326797385621,
+        "return_1y": -78.0223880597015,
+        "return_3y": -7.535321821036112,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -1.5873015873015928,
+        "return_2y": 4.432624113475181
+      }
+    },
+    {
+      "id": "C_3751",
+      "type": "CHARACTER",
+      "name": "알츠하이머신약_GV1001"
+    },
+    {
+      "id": "A_2756",
+      "type": "ASSET",
+      "name": "카이노스메드",
+      "exposure": {
+        "ticker": "284620",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.0,
+        "close": 1087,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 0.0,
+        "return_15d": 0.0,
+        "return_1m": 0.0,
+        "return_ytd": -59.36448598130841,
+        "return_1y": -79.79553903345725,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 0.0,
+        "return_2y": -67.8877400295421
+      }
+    },
+    {
+      "id": "C_3752",
+      "type": "CHARACTER",
+      "name": "파킨슨·CNS신약"
+    },
+    {
+      "id": "M_388",
+      "type": "MACRO",
+      "name": "신경퇴행성신약사이클"
+    },
+    {
+      "id": "M_396",
+      "type": "MACRO",
+      "name": "K바이오기술이전마일스톤"
+    },
+    {
+      "id": "M_058",
+      "type": "MACRO",
+      "name": "인구고령화"
+    },
+    {
+      "id": "C_585",
+      "type": "CHARACTER",
+      "name": "Cenobamate_뇌전증_글로벌"
+    },
+    {
+      "id": "C_586",
+      "type": "CHARACTER",
+      "name": "CNS시밀러_바이오"
+    },
+    {
+      "id": "C_587",
+      "type": "CHARACTER",
+      "name": "DD01_파킨슨_MASH"
+    },
+    {
+      "id": "C_588",
+      "type": "CHARACTER",
+      "name": "신경계_종합제약_안정"
+    },
+    {
+      "id": "A_2885",
+      "type": "ASSET",
+      "name": "KODEX 헬스케어",
+      "exposure": {
+        "ticker": "266420",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -1.3154362416107346,
+        "return_3d": -3.491730112890523,
+        "return_15d": 14.946841776110077,
+        "return_1m": 12.864599324531767,
+        "return_ytd": -17.039043105393816,
+        "return_1y": 1.9412090959511907,
+        "return_3y": null,
+        "close": 18380,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": null,
+        "return_2y": 14.316328955623314
+      }
+    }
   ],
-  "dataAsOf": "2026-07-25T00:00:00+09:00",
-  "description": "K-바이오 신경·CNS — SK바이오팜 Cenobamate·셀트리온·디앤디파마텍·삼진제약. 뇌전증·파킨슨·치매 글로벌 진출.",
-  "notes": "T_420 신규 — 질병중심 바이오",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 1건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-25",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결, 2026 이벤트 2건 추가."
-   },
-   {
-    "date": "2026-07-19",
-    "kind": "보강",
-    "title": "바로미터 표본 보강(자산 5종 이상 확보)",
-    "detail": "2종 추가 편입(1궤도) 및 자산별 CHR 정의. 표본 부족(ASSET<5) 해소."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_1726",
+      "to": "T_420",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011526"
+      ]
+    },
+    {
+      "from": "A_717",
+      "to": "T_420",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011527"
+      ]
+    },
+    {
+      "from": "A_1369",
+      "to": "T_420",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011528"
+      ]
+    },
+    {
+      "from": "A_2217",
+      "to": "T_420",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011529"
+      ]
+    },
+    {
+      "from": "M_388",
+      "to": "T_420",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011530"
+      ]
+    },
+    {
+      "from": "M_396",
+      "to": "T_420",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011531"
+      ]
+    },
+    {
+      "from": "M_058",
+      "to": "T_420",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011532"
+      ]
+    },
+    {
+      "from": "A_1726",
+      "to": "C_585",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016570"
+      ]
+    },
+    {
+      "from": "A_717",
+      "to": "C_586",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016571"
+      ]
+    },
+    {
+      "from": "A_1369",
+      "to": "C_587",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016572"
+      ]
+    },
+    {
+      "from": "A_2217",
+      "to": "C_588",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016573"
+      ]
+    },
+    {
+      "from": "A_2755",
+      "to": "T_420",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011533"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2755",
+      "to": "C_3751",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007861"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2756",
+      "to": "T_420",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011534"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2756",
+      "to": "C_3752",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007863"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1726",
+      "to": "A_1369",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018562"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "SK바이오팜과 디앤디파마텍은 모두 알파선 기반 방사성의약품(RPT) 후보물질을 도입·개발하며 차세대 RPT 시장에서 직접 경쟁하는 국내 대표 주자로 꼽힌다."
+    },
+    {
+      "from": "A_2885",
+      "to": "T_420",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020776"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_1726",
+      "to": "T_420",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011526"
+      ]
+    },
+    {
+      "from": "A_717",
+      "to": "T_420",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011527"
+      ]
+    },
+    {
+      "from": "A_1369",
+      "to": "T_420",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011528"
+      ]
+    },
+    {
+      "from": "A_2217",
+      "to": "T_420",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011529"
+      ]
+    },
+    {
+      "from": "M_388",
+      "to": "T_420",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011530"
+      ]
+    },
+    {
+      "from": "M_396",
+      "to": "T_420",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011531"
+      ]
+    },
+    {
+      "from": "M_058",
+      "to": "T_420",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011532"
+      ]
+    },
+    {
+      "from": "A_1726",
+      "to": "C_585",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016570"
+      ]
+    },
+    {
+      "from": "A_717",
+      "to": "C_586",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016571"
+      ]
+    },
+    {
+      "from": "A_1369",
+      "to": "C_587",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016572"
+      ]
+    },
+    {
+      "from": "A_2217",
+      "to": "C_588",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016573"
+      ]
+    },
+    {
+      "from": "A_2755",
+      "to": "T_420",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011533"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2755",
+      "to": "C_3751",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007861"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2756",
+      "to": "T_420",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011534"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2756",
+      "to": "C_3752",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007863"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1726",
+      "to": "A_1369",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018562"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "SK바이오팜과 디앤디파마텍은 모두 알파선 기반 방사성의약품(RPT) 후보물질을 도입·개발하며 차세대 RPT 시장에서 직접 경쟁하는 국내 대표 주자로 꼽힌다."
+    },
+    {
+      "from": "A_2885",
+      "to": "T_420",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020776"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_420",
-   "type": "THEME",
-   "name": "K바이오신경_CNS"
-  },
-  {
-   "id": "A_1726",
-   "type": "ASSET",
-   "name": "SK바이오팜",
-   "exposure": {
-    "ticker": "326030",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -0.3424657534246589,
-    "return_3d": -3.53591160220994,
-    "return_15d": 8.312655086848642,
-    "return_1m": 17.024128686327078,
-    "return_ytd": -29.935794542536122,
-    "return_1y": -13.220675944333992,
-    "return_3y": -8.586387434554975,
-    "close": 87300,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 2.2248243559718883,
-    "return_2y": -11.729019211324566
-   }
-  },
-  {
-   "id": "A_717",
-   "type": "ASSET",
-   "name": "셀트리온",
-   "exposure": {
-    "ticker": "068270",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -0.4950495049504955,
-    "return_3d": -4.513064133016631,
-    "return_15d": 13.17567567567568,
-    "return_1m": 16.319444444444443,
-    "return_ytd": 11.049723266078558,
-    "return_1y": 15.314737367837195,
-    "return_3y": 31.793001427062496,
-    "close": 201000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.8529854490717526,
-    "return_2y": 4.055729163106192
-   }
-  },
-  {
-   "id": "A_1369",
-   "type": "ASSET",
-   "name": "디앤디파마텍",
-   "exposure": {
-    "ticker": "347850",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -0.4862236628849326,
-    "return_3d": 0.8210180623973828,
-    "return_15d": 3.0201342281879207,
-    "return_1m": -14.245810055865926,
-    "return_ytd": -33.11546840958606,
-    "return_1y": 69.37931034482759,
-    "return_3y": null,
-    "close": 61400,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 6.78260869565217,
-    "return_2y": 672.3270440251572
-   }
-  },
-  {
-   "id": "A_2217",
-   "type": "ASSET",
-   "name": "삼진제약",
-   "exposure": {
-    "ticker": "005500",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.9304871373836843,
-    "return_3d": -1.3376136971642638,
-    "return_15d": 3.1897034135422553,
-    "return_1m": 1.318681318681314,
-    "return_ytd": -6.632911392405061,
-    "return_1y": -3.669268388728253,
-    "return_3y": -8.207906622471983,
-    "close": 18440,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.7650273224043769,
-    "return_2y": 4.756905408752399
-   }
-  },
-  {
-   "id": "A_2755",
-   "type": "ASSET",
-   "name": "젬백스",
-   "exposure": {
-    "ticker": "082270",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -2.0781379883624274,
-    "close": 11780,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -2.0781379883624274,
-    "return_15d": 16.518298714144407,
-    "return_1m": 13.378248315688168,
-    "return_ytd": -59.37931034482759,
-    "return_1y": -77.126213592233,
-    "return_3y": -7.535321821036112,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -1.5873015873015928,
-    "return_2y": 15.830875122910527
-   }
-  },
-  {
-   "id": "C_3751",
-   "type": "CHARACTER",
-   "name": "알츠하이머신약_GV1001"
-  },
-  {
-   "id": "A_2756",
-   "type": "ASSET",
-   "name": "카이노스메드",
-   "exposure": {
-    "ticker": "284620",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.0,
-    "close": 1087,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 0.0,
-    "return_15d": 0.0,
-    "return_1m": 0.0,
-    "return_ytd": -65.70977917981072,
-    "return_1y": -74.24170616113743,
-    "return_3y": null,
-    "returnsAsOf": "2025-11-12",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.0,
-    "return_2y": -66.605222734255
-   }
-  },
-  {
-   "id": "C_3752",
-   "type": "CHARACTER",
-   "name": "파킨슨·CNS신약"
-  },
-  {
-   "id": "M_388",
-   "type": "MACRO",
-   "name": "신경퇴행성신약사이클"
-  },
-  {
-   "id": "M_396",
-   "type": "MACRO",
-   "name": "K바이오기술이전마일스톤"
-  },
-  {
-   "id": "M_058",
-   "type": "MACRO",
-   "name": "인구고령화"
-  },
-  {
-   "id": "C_585",
-   "type": "CHARACTER",
-   "name": "Cenobamate_뇌전증_글로벌"
-  },
-  {
-   "id": "C_586",
-   "type": "CHARACTER",
-   "name": "CNS시밀러_바이오"
-  },
-  {
-   "id": "C_587",
-   "type": "CHARACTER",
-   "name": "DD01_파킨슨_MASH"
-  },
-  {
-   "id": "C_588",
-   "type": "CHARACTER",
-   "name": "신경계_종합제약_안정"
-  },
-  {
-   "id": "A_2885",
-   "type": "ASSET",
-   "name": "KODEX 헬스케어",
-   "exposure": {
-    "ticker": "266420",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -1.3154362416107346,
-    "return_3d": -3.491730112890523,
-    "return_15d": 14.946841776110077,
-    "return_1m": 12.864599324531767,
-    "return_ytd": -17.039043105393816,
-    "return_1y": 1.9412090959511907,
-    "return_3y": null,
-    "close": 18380,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": null
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_1726",
-   "to": "T_420",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011526"
-   ]
-  },
-  {
-   "from": "A_717",
-   "to": "T_420",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011527"
-   ]
-  },
-  {
-   "from": "A_1369",
-   "to": "T_420",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011528"
-   ]
-  },
-  {
-   "from": "A_2217",
-   "to": "T_420",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011529"
-   ]
-  },
-  {
-   "from": "M_388",
-   "to": "T_420",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011530"
-   ]
-  },
-  {
-   "from": "M_396",
-   "to": "T_420",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011531"
-   ]
-  },
-  {
-   "from": "M_058",
-   "to": "T_420",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011532"
-   ]
-  },
-  {
-   "from": "A_1726",
-   "to": "C_585",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016570"
-   ]
-  },
-  {
-   "from": "A_717",
-   "to": "C_586",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016571"
-   ]
-  },
-  {
-   "from": "A_1369",
-   "to": "C_587",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016572"
-   ]
-  },
-  {
-   "from": "A_2217",
-   "to": "C_588",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016573"
-   ]
-  },
-  {
-   "from": "A_2755",
-   "to": "T_420",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011533"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2755",
-   "to": "C_3751",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007861"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2756",
-   "to": "T_420",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011534"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2756",
-   "to": "C_3752",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007863"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1726",
-   "to": "A_1369",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018562"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "SK바이오팜과 디앤디파마텍은 모두 알파선 기반 방사성의약품(RPT) 후보물질을 도입·개발하며 차세대 RPT 시장에서 직접 경쟁하는 국내 대표 주자로 꼽힌다."
-  },
-  {
-   "from": "A_2885",
-   "to": "T_420",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020776"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_1726",
-   "to": "T_420",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011526"
-   ]
-  },
-  {
-   "from": "A_717",
-   "to": "T_420",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011527"
-   ]
-  },
-  {
-   "from": "A_1369",
-   "to": "T_420",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011528"
-   ]
-  },
-  {
-   "from": "A_2217",
-   "to": "T_420",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011529"
-   ]
-  },
-  {
-   "from": "M_388",
-   "to": "T_420",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011530"
-   ]
-  },
-  {
-   "from": "M_396",
-   "to": "T_420",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011531"
-   ]
-  },
-  {
-   "from": "M_058",
-   "to": "T_420",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011532"
-   ]
-  },
-  {
-   "from": "A_1726",
-   "to": "C_585",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016570"
-   ]
-  },
-  {
-   "from": "A_717",
-   "to": "C_586",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016571"
-   ]
-  },
-  {
-   "from": "A_1369",
-   "to": "C_587",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016572"
-   ]
-  },
-  {
-   "from": "A_2217",
-   "to": "C_588",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016573"
-   ]
-  },
-  {
-   "from": "A_2755",
-   "to": "T_420",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011533"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2755",
-   "to": "C_3751",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007861"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2756",
-   "to": "T_420",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011534"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2756",
-   "to": "C_3752",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007863"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1726",
-   "to": "A_1369",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018562"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "SK바이오팜과 디앤디파마텍은 모두 알파선 기반 방사성의약품(RPT) 후보물질을 도입·개발하며 차세대 RPT 시장에서 직접 경쟁하는 국내 대표 주자로 꼽힌다."
-  },
-  {
-   "from": "A_2885",
-   "to": "T_420",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020776"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

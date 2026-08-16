@@ -1,832 +1,832 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_666",
- "themeName": "2020_미국중소형급등주",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_666",
+  "themeName": "2020_미국중소형급등주",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-26T00:00:00+09:00",
+    "description": "2020년 팬데믹 국면에서 백신·수소·EV·전자상거래 테마로 폭등한 미국 중소형주 코호트(급등 시작 시 시총 수억~수십억 달러). 노바백스(+2,700%)가 상징.",
+    "notes": "2020년 팬데믹 국면에서 백신·수소·EV·전자상거래 테마로 폭등한 미국 중소형주 코호트(급등 시작 시 시총 수억~수십억 달러). 노바백스(+2,700%)가 상징.",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-26",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
+      },
+      {
+        "date": "2026-07-24",
+        "kind": "수정",
+        "title": "연도별 이벤트 DB(2020~2026) 구성",
+        "detail": "이벤트 타임라인을 2020~2026 전 연도로 확장(각 연도 1건)."
+      },
+      {
+        "date": "2026-07-24",
+        "kind": "신규",
+        "title": "2020_미국중소형급등주 생성",
+        "detail": "2020년 미국 급등 중소형주 8종 코호트. 종목별 급등사유 CHR+호버 상세, 연도 드라이버 매크로. 급등시작 시 시총 중소형."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_666",
+      "type": "THEME",
+      "name": "2020_미국중소형급등주"
+    },
+    {
+      "id": "M_1168",
+      "type": "MACRO",
+      "name": "백신"
+    },
+    {
+      "id": "M_1169",
+      "type": "MACRO",
+      "name": "수소"
+    },
+    {
+      "id": "M_238",
+      "type": "MACRO",
+      "name": "전기차보급확대"
+    },
+    {
+      "id": "M_1170",
+      "type": "MACRO",
+      "name": "전자상거래"
+    },
+    {
+      "id": "A_2405",
+      "type": "ASSET",
+      "name": "노바백스",
+      "exposure": {
+        "ticker": "NVAX",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.1056511056511065,
+        "return_3d": 1.2578616352201255,
+        "return_15d": 7.9088471849866115,
+        "return_1m": -4.394299287410918,
+        "return_ytd": 19.791666666666675,
+        "return_1y": -14.634146341463406,
+        "return_3y": 11.187845303867405,
+        "close": 8.05,
+        "marketCap": 1323726858,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 1.2578616352201255,
+        "return_2y": -33.96226415094339
+      }
+    },
+    {
+      "id": "C_4644",
+      "type": "CHARACTER",
+      "name": "코로나백신개발급등"
+    },
+    {
+      "id": "A_2794",
+      "type": "ASSET",
+      "name": "백사트",
+      "exposure": {
+        "ticker": "VXRT",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -2.946428571428583,
+        "return_3d": -2.467474203678788,
+        "return_15d": 9.797979797979806,
+        "return_1m": -1.181818181818195,
+        "return_ytd": 55.28571428571429,
+        "return_1y": 50.97222222222222,
+        "return_3y": -24.51388888888889,
+        "close": 0.54,
+        "marketCap": 130704213,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -1.2715712988192518,
+        "return_2y": -8.114961961115819
+      }
+    },
+    {
+      "id": "C_4645",
+      "type": "CHARACTER",
+      "name": "경구용백신기대급등"
+    },
+    {
+      "id": "A_1885",
+      "type": "ASSET",
+      "name": "블링크차징",
+      "exposure": {
+        "ticker": "BLNK",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.4143094841929993,
+        "return_3d": 0.40671072699542954,
+        "return_15d": 13.267061747275854,
+        "return_1m": 4.1483564774125625,
+        "return_ytd": -11.169415292353824,
+        "return_1y": -37.101910828025474,
+        "return_3y": -89.55026455026454,
+        "close": 0.5925,
+        "marketCap": 85131585,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -3.1546256946714535,
+        "return_2y": -71.37681159420289
+      }
+    },
+    {
+      "id": "C_4646",
+      "type": "CHARACTER",
+      "name": "EV충전테마급등"
+    },
+    {
+      "id": "A_754",
+      "type": "ASSET",
+      "name": "플러그파워",
+      "exposure": {
+        "ticker": "PLUG",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.8695652173912993,
+        "return_3d": 4.504504504504481,
+        "return_15d": 11.004784688995217,
+        "return_1m": 2.2026431718061623,
+        "return_ytd": 17.76649746192893,
+        "return_1y": 40.6060606060606,
+        "return_3y": -75.02691065662002,
+        "close": 2.32,
+        "marketCap": 3236562400,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 6.422018348623837,
+        "return_2y": 14.851485148514843
+      }
+    },
+    {
+      "id": "C_4647",
+      "type": "CHARACTER",
+      "name": "수소연료전지급등"
+    },
+    {
+      "id": "A_2795",
+      "type": "ASSET",
+      "name": "퓨얼셀에너지",
+      "exposure": {
+        "ticker": "FCEL",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 9.980334316617512,
+        "return_3d": 16.510416666666682,
+        "return_15d": 5.2210724365004735,
+        "return_1m": 4.777517564402811,
+        "return_ytd": 206.01915184678526,
+        "return_1y": 428.84160756501177,
+        "return_3y": -60.336879432624116,
+        "close": 22.37,
+        "marketCap": 1788575320,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 9.495839451786603,
+        "return_2y": 68.06912096168294
+      }
+    },
+    {
+      "id": "C_4648",
+      "type": "CHARACTER",
+      "name": "연료전지테마급등"
+    },
+    {
+      "id": "A_2796",
+      "type": "ASSET",
+      "name": "워크호스",
+      "exposure": {
+        "ticker": "WKHS",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.6578947368421018,
+        "return_3d": -2.2364217252396124,
+        "return_15d": 12.915129151291517,
+        "return_1m": 15.909090909090896,
+        "return_ytd": -39.88212180746562,
+        "return_1y": -85.59322033898304,
+        "return_3y": -99.88111888111888,
+        "close": 3.06,
+        "marketCap": 33333804,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -8.108108108108103,
+        "return_2y": -98.14545454545454
+      }
+    },
+    {
+      "id": "C_4649",
+      "type": "CHARACTER",
+      "name": "전기트럭USPS기대급등"
+    },
+    {
+      "id": "A_2797",
+      "type": "ASSET",
+      "name": "비욘드(구 오버스톡)",
+      "exposure": {
+        "ticker": "BYON",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 17.61761761761762,
+        "return_3d": 27.302275189599136,
+        "return_15d": 11.163670766319767,
+        "return_1m": 44.34889434889433,
+        "return_ytd": 138.33671399594323,
+        "return_1y": 27.027027027027017,
+        "return_3y": null,
+        "close": 9.88,
+        "marketCap": 567171280,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 29.120879120879128,
+        "return_2y": -21.875
+      }
+    },
+    {
+      "id": "C_4650",
+      "type": "CHARACTER",
+      "name": "전자상거래수혜급등"
+    },
+    {
+      "id": "A_2016",
+      "type": "ASSET",
+      "name": "셀시우스홀딩스",
+      "exposure": {
+        "ticker": "CELH",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.0771369006254305,
+        "return_3d": 3.5599857600569607,
+        "return_15d": 7.264011799410031,
+        "return_1m": -3.4837425348374307,
+        "return_ytd": -36.40139921294272,
+        "return_1y": -48.66772542791601,
+        "return_3y": -52.31147540983607,
+        "close": 29.09,
+        "marketCap": 7436578072,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 4.753330932661148,
+        "return_2y": -25.847565638541926
+      }
+    },
+    {
+      "id": "C_4651",
+      "type": "CHARACTER",
+      "name": "에너지음료고성장급등"
+    }
   ],
-  "dataAsOf": "2026-07-26T00:00:00+09:00",
-  "description": "2020년 팬데믹 국면에서 백신·수소·EV·전자상거래 테마로 폭등한 미국 중소형주 코호트(급등 시작 시 시총 수억~수십억 달러). 노바백스(+2,700%)가 상징.",
-  "notes": "2020년 팬데믹 국면에서 백신·수소·EV·전자상거래 테마로 폭등한 미국 중소형주 코호트(급등 시작 시 시총 수억~수십억 달러). 노바백스(+2,700%)가 상징.",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-26",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
-   },
-   {
-    "date": "2026-07-24",
-    "kind": "수정",
-    "title": "연도별 이벤트 DB(2020~2026) 구성",
-    "detail": "이벤트 타임라인을 2020~2026 전 연도로 확장(각 연도 1건)."
-   },
-   {
-    "date": "2026-07-24",
-    "kind": "신규",
-    "title": "2020_미국중소형급등주 생성",
-    "detail": "2020년 미국 급등 중소형주 8종 코호트. 종목별 급등사유 CHR+호버 상세, 연도 드라이버 매크로. 급등시작 시 시총 중소형."
-   }
+  "edges": [
+    {
+      "from": "A_2405",
+      "to": "T_666",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_014010"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_2405",
+      "to": "C_4644",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_010220"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_2794",
+      "to": "T_666",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_014011"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_2794",
+      "to": "C_4645",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_010222"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1885",
+      "to": "T_666",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_014012"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_1885",
+      "to": "C_4646",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_010224"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_754",
+      "to": "T_666",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_014013"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_754",
+      "to": "C_4647",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_010226"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_2795",
+      "to": "T_666",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_014014"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_2795",
+      "to": "C_4648",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_010228"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_2796",
+      "to": "T_666",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_014015"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_2796",
+      "to": "C_4649",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_010230"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_2797",
+      "to": "T_666",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_014016"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_2797",
+      "to": "C_4650",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_010232"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_2016",
+      "to": "T_666",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_014017"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_2016",
+      "to": "C_4651",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_010234"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_1168",
+      "to": "T_666",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_014018"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_1169",
+      "to": "T_666",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_014019"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_238",
+      "to": "T_666",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_014020"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_1170",
+      "to": "T_666",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_014021"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_2405",
+      "to": "A_2794",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020376"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "노바백스와 백사트는 코로나 백신 개발 경쟁"
+    },
+    {
+      "from": "A_754",
+      "to": "A_2795",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020377"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "플러그파워와 퓨얼셀에너지는 수소 연료전지 시장 직접 경쟁"
+    },
+    {
+      "from": "A_1885",
+      "to": "A_2796",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020378"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "블링크차징과 워크호스는 전기 상용차·충전 인프라 테마 경쟁"
+    },
+    {
+      "from": "A_2797",
+      "to": "A_2016",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020379"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "비욘드와 셀시우스홀딩스는 2020년 소비 성장주 자금 경쟁"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_2405",
+      "to": "T_666",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_014010"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_2405",
+      "to": "C_4644",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_010220"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_2794",
+      "to": "T_666",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_014011"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_2794",
+      "to": "C_4645",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_010222"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1885",
+      "to": "T_666",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_014012"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_1885",
+      "to": "C_4646",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_010224"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_754",
+      "to": "T_666",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_014013"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_754",
+      "to": "C_4647",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_010226"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_2795",
+      "to": "T_666",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_014014"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_2795",
+      "to": "C_4648",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_010228"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_2796",
+      "to": "T_666",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_014015"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_2796",
+      "to": "C_4649",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_010230"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_2797",
+      "to": "T_666",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_014016"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_2797",
+      "to": "C_4650",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_010232"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_2016",
+      "to": "T_666",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_014017"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_2016",
+      "to": "C_4651",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_010234"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_1168",
+      "to": "T_666",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_014018"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_1169",
+      "to": "T_666",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_014019"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_238",
+      "to": "T_666",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_014020"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_1170",
+      "to": "T_666",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_014021"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_2405",
+      "to": "A_2794",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020376"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "노바백스와 백사트는 코로나 백신 개발 경쟁"
+    },
+    {
+      "from": "A_754",
+      "to": "A_2795",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020377"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "플러그파워와 퓨얼셀에너지는 수소 연료전지 시장 직접 경쟁"
+    },
+    {
+      "from": "A_1885",
+      "to": "A_2796",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020378"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "블링크차징과 워크호스는 전기 상용차·충전 인프라 테마 경쟁"
+    },
+    {
+      "from": "A_2797",
+      "to": "A_2016",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020379"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "비욘드와 셀시우스홀딩스는 2020년 소비 성장주 자금 경쟁"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_666",
-   "type": "THEME",
-   "name": "2020_미국중소형급등주"
-  },
-  {
-   "id": "M_1168",
-   "type": "MACRO",
-   "name": "백신"
-  },
-  {
-   "id": "M_1169",
-   "type": "MACRO",
-   "name": "수소"
-  },
-  {
-   "id": "M_238",
-   "type": "MACRO",
-   "name": "전기차보급확대"
-  },
-  {
-   "id": "M_1170",
-   "type": "MACRO",
-   "name": "전자상거래"
-  },
-  {
-   "id": "A_2405",
-   "type": "ASSET",
-   "name": "노바백스",
-   "exposure": {
-    "ticker": "NVAX",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -1.1056511056511065,
-    "return_3d": 1.2578616352201255,
-    "return_15d": 7.9088471849866115,
-    "return_1m": -4.394299287410918,
-    "return_ytd": 19.791666666666675,
-    "return_1y": -14.634146341463406,
-    "return_3y": 11.187845303867405,
-    "close": 8.05,
-    "marketCap": 1323726858,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 1.2578616352201255,
-    "return_2y": -33.96226415094339
-   }
-  },
-  {
-   "id": "C_4644",
-   "type": "CHARACTER",
-   "name": "코로나백신개발급등"
-  },
-  {
-   "id": "A_2794",
-   "type": "ASSET",
-   "name": "백사트",
-   "exposure": {
-    "ticker": "VXRT",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -2.946428571428583,
-    "return_3d": -2.946428571428583,
-    "return_15d": 8.699999999999996,
-    "return_1m": -1.181818181818195,
-    "return_ytd": 55.28571428571429,
-    "return_1y": 50.97222222222222,
-    "return_3y": -24.26142697881829,
-    "close": 0.5435,
-    "marketCap": 131551369,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -1.181818181818195,
-    "return_2y": -8.114961961115819
-   }
-  },
-  {
-   "id": "C_4645",
-   "type": "CHARACTER",
-   "name": "경구용백신기대급등"
-  },
-  {
-   "id": "A_1885",
-   "type": "ASSET",
-   "name": "블링크차징",
-   "exposure": {
-    "ticker": "BLNK",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -1.4143094841929993,
-    "return_3d": 0.40671072699542954,
-    "return_15d": 13.267061747275854,
-    "return_1m": 4.1483564774125625,
-    "return_ytd": -11.169415292353824,
-    "return_1y": -37.101910828025474,
-    "return_3y": -89.55026455026454,
-    "close": 0.5925,
-    "marketCap": 85131585,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -3.1546256946714535,
-    "return_2y": -71.37681159420289
-   }
-  },
-  {
-   "id": "C_4646",
-   "type": "CHARACTER",
-   "name": "EV충전테마급등"
-  },
-  {
-   "id": "A_754",
-   "type": "ASSET",
-   "name": "플러그파워",
-   "exposure": {
-    "ticker": "PLUG",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.8695652173912993,
-    "return_3d": 4.504504504504481,
-    "return_15d": 11.004784688995217,
-    "return_1m": 2.2026431718061623,
-    "return_ytd": 17.76649746192893,
-    "return_1y": 40.6060606060606,
-    "return_3y": -75.02691065662002,
-    "close": 2.32,
-    "marketCap": 3236562400,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 6.422018348623837,
-    "return_2y": 14.851485148514843
-   }
-  },
-  {
-   "id": "C_4647",
-   "type": "CHARACTER",
-   "name": "수소연료전지급등"
-  },
-  {
-   "id": "A_2795",
-   "type": "ASSET",
-   "name": "퓨얼셀에너지",
-   "exposure": {
-    "ticker": "FCEL",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 9.980334316617512,
-    "return_3d": 16.510416666666682,
-    "return_15d": 5.2210724365004735,
-    "return_1m": 4.777517564402811,
-    "return_ytd": 206.01915184678526,
-    "return_1y": 428.84160756501177,
-    "return_3y": -60.336879432624116,
-    "close": 22.37,
-    "marketCap": 1788575320,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 9.495839451786603,
-    "return_2y": 69.46969696969698
-   }
-  },
-  {
-   "id": "C_4648",
-   "type": "CHARACTER",
-   "name": "연료전지테마급등"
-  },
-  {
-   "id": "A_2796",
-   "type": "ASSET",
-   "name": "워크호스",
-   "exposure": {
-    "ticker": "WKHS",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.6578947368421018,
-    "return_3d": -2.2364217252396124,
-    "return_15d": 12.915129151291517,
-    "return_1m": 15.909090909090896,
-    "return_ytd": -39.88212180746562,
-    "return_1y": -85.59322033898304,
-    "return_3y": -99.88111888111888,
-    "close": 3.06,
-    "marketCap": 33333804,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -8.108108108108103,
-    "return_2y": -98.14545454545454
-   }
-  },
-  {
-   "id": "C_4649",
-   "type": "CHARACTER",
-   "name": "전기트럭USPS기대급등"
-  },
-  {
-   "id": "A_2797",
-   "type": "ASSET",
-   "name": "비욘드(구 오버스톡)",
-   "exposure": {
-    "ticker": "BYON",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 17.61761761761762,
-    "return_3d": 27.302275189599136,
-    "return_15d": 11.163670766319767,
-    "return_1m": 44.34889434889433,
-    "return_ytd": 138.33671399594323,
-    "return_1y": 27.027027027027017,
-    "return_3y": null,
-    "close": 11.75,
-    "marketCap": 567171280,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2025-10-02",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 29.120879120879128,
-    "return_2y": -21.875
-   }
-  },
-  {
-   "id": "C_4650",
-   "type": "CHARACTER",
-   "name": "전자상거래수혜급등"
-  },
-  {
-   "id": "A_2016",
-   "type": "ASSET",
-   "name": "셀시우스홀딩스",
-   "exposure": {
-    "ticker": "CELH",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.0771369006254305,
-    "return_3d": 3.5599857600569607,
-    "return_15d": 7.264011799410031,
-    "return_1m": -3.4837425348374307,
-    "return_ytd": -36.40139921294272,
-    "return_1y": -48.66772542791601,
-    "return_3y": -52.31147540983607,
-    "close": 29.09,
-    "marketCap": 7436578072,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 4.753330932661148,
-    "return_2y": -25.847565638541926
-   }
-  },
-  {
-   "id": "C_4651",
-   "type": "CHARACTER",
-   "name": "에너지음료고성장급등"
-  }
- ],
- "edges": [
-  {
-   "from": "A_2405",
-   "to": "T_666",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_014010"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_2405",
-   "to": "C_4644",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_010220"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_2794",
-   "to": "T_666",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_014011"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_2794",
-   "to": "C_4645",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_010222"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1885",
-   "to": "T_666",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_014012"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_1885",
-   "to": "C_4646",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_010224"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_754",
-   "to": "T_666",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_014013"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_754",
-   "to": "C_4647",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_010226"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_2795",
-   "to": "T_666",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_014014"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_2795",
-   "to": "C_4648",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_010228"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_2796",
-   "to": "T_666",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_014015"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_2796",
-   "to": "C_4649",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_010230"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_2797",
-   "to": "T_666",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_014016"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_2797",
-   "to": "C_4650",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_010232"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_2016",
-   "to": "T_666",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_014017"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_2016",
-   "to": "C_4651",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_010234"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_1168",
-   "to": "T_666",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_014018"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_1169",
-   "to": "T_666",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_014019"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_238",
-   "to": "T_666",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_014020"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_1170",
-   "to": "T_666",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_014021"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_2405",
-   "to": "A_2794",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020376"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "노바백스와 백사트는 코로나 백신 개발 경쟁"
-  },
-  {
-   "from": "A_754",
-   "to": "A_2795",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020377"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "플러그파워와 퓨얼셀에너지는 수소 연료전지 시장 직접 경쟁"
-  },
-  {
-   "from": "A_1885",
-   "to": "A_2796",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020378"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "블링크차징과 워크호스는 전기 상용차·충전 인프라 테마 경쟁"
-  },
-  {
-   "from": "A_2797",
-   "to": "A_2016",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020379"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "비욘드와 셀시우스홀딩스는 2020년 소비 성장주 자금 경쟁"
-  }
- ],
- "links": [
-  {
-   "from": "A_2405",
-   "to": "T_666",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_014010"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_2405",
-   "to": "C_4644",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_010220"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_2794",
-   "to": "T_666",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_014011"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_2794",
-   "to": "C_4645",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_010222"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1885",
-   "to": "T_666",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_014012"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_1885",
-   "to": "C_4646",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_010224"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_754",
-   "to": "T_666",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_014013"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_754",
-   "to": "C_4647",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_010226"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_2795",
-   "to": "T_666",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_014014"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_2795",
-   "to": "C_4648",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_010228"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_2796",
-   "to": "T_666",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_014015"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_2796",
-   "to": "C_4649",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_010230"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_2797",
-   "to": "T_666",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_014016"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_2797",
-   "to": "C_4650",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_010232"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_2016",
-   "to": "T_666",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_014017"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_2016",
-   "to": "C_4651",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_010234"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_1168",
-   "to": "T_666",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_014018"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_1169",
-   "to": "T_666",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_014019"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_238",
-   "to": "T_666",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_014020"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_1170",
-   "to": "T_666",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_014021"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_2405",
-   "to": "A_2794",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020376"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "노바백스와 백사트는 코로나 백신 개발 경쟁"
-  },
-  {
-   "from": "A_754",
-   "to": "A_2795",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020377"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "플러그파워와 퓨얼셀에너지는 수소 연료전지 시장 직접 경쟁"
-  },
-  {
-   "from": "A_1885",
-   "to": "A_2796",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020378"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "블링크차징과 워크호스는 전기 상용차·충전 인프라 테마 경쟁"
-  },
-  {
-   "from": "A_2797",
-   "to": "A_2016",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020379"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "비욘드와 셀시우스홀딩스는 2020년 소비 성장주 자금 경쟁"
-  }
- ]
 }

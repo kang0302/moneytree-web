@@ -1,828 +1,831 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_353",
- "themeName": "글로벌항공기OEM밸류체인",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_353",
+  "themeName": "글로벌항공기OEM밸류체인",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-25T00:00:00+09:00",
+    "description": "글로벌 항공기 OEM 밸류체인 — 듀오폴리 Boeing·Airbus + 라틴 Embraer + 중국 COMAC. 엔진 GE Aerospace·Rolls-Royce. 부품·구조 Spirit AeroSystems (Boeing 인수)·Honeywell·Bombardier. 방산 LMT 통합. Boeing 위기 (737 MAX·787·Starliner) + Airbus 우위 + 중국 C919 진출이 핵심 동인.",
+    "notes": "T_353 신규 — 글로벌 항공기 OEM",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-01",
+        "kind": "수정",
+        "title": "상폐 종목 제거",
+        "detail": "피인수/상폐로 거래/링크가 없는 종목 제거."
+      },
+      {
+        "date": "2026-07-25",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결(ETF 제외), 2026 이벤트 2건 추가."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_353",
+      "type": "THEME",
+      "name": "글로벌항공기OEM밸류체인"
+    },
+    {
+      "id": "A_1475",
+      "type": "ASSET",
+      "name": "보잉",
+      "exposure": {
+        "ticker": "BA",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.5817739764685248,
+        "return_3d": -0.6731263934145137,
+        "return_15d": 10.571783123329514,
+        "return_1m": 6.706277923633164,
+        "return_ytd": 6.701363301400143,
+        "return_1y": -0.6518289806595523,
+        "return_3y": -2.1291876135355547,
+        "close": 231.67,
+        "marketCap": 183105017900,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -1.17310809657879,
+        "return_2y": 37.489614243323444
+      }
+    },
+    {
+      "id": "A_1041",
+      "type": "ASSET",
+      "name": "에어버스",
+      "exposure": {
+        "ticker": "AIR",
+        "exchange": "Euronext",
+        "country": "EU"
+      },
+      "metrics": {
+        "return_1d": 1.1742602160638826,
+        "return_3d": 1.3647058823529346,
+        "return_15d": 4.537733559815571,
+        "return_1m": 9.931611717872823,
+        "return_ytd": 8.568548387096776,
+        "return_1y": 17.205354227881166,
+        "return_3y": 64.88058787507657,
+        "close": 215.4,
+        "marketCap": 170484892161,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.8426966292134797,
+        "return_2y": 59.95841378286055
+      }
+    },
+    {
+      "id": "A_1983",
+      "type": "ASSET",
+      "name": "엠브라에르",
+      "exposure": {
+        "ticker": "ERJ",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.1398166847910609,
+        "return_3d": -0.863664404688469,
+        "return_15d": 3.912059489169084,
+        "return_1m": 2.4872448979591955,
+        "return_ytd": 75.2453653217012,
+        "return_1y": 76.35116598079561,
+        "return_3y": null,
+        "close": 64.52,
+        "marketCap": 47380061407,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 1.132787916928879,
+        "return_2y": 248.40108401084012
+      }
+    },
+    {
+      "id": "A_1986",
+      "type": "ASSET",
+      "name": "COMAC(비)",
+      "exposure": {
+        "ticker": "",
+        "exchange": "PRIVATE",
+        "country": "CN"
+      },
+      "metrics": {
+        "return_1d": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "returnsAsOf": null,
+        "returnsSource": null,
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "OEM도전자"
+    },
+    {
+      "id": "A_1985",
+      "type": "ASSET",
+      "name": "봄바디어",
+      "exposure": {
+        "ticker": "BBD.B",
+        "exchange": "TSX",
+        "country": "CA"
+      },
+      "metrics": {
+        "return_1d": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": null,
+        "return_2y": null
+      }
+    },
+    {
+      "id": "A_307",
+      "type": "ASSET",
+      "name": "GE에어로스페이스",
+      "exposure": {
+        "ticker": "GE",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 2.1461845607808394,
+        "return_3d": 0.08694234635657772,
+        "return_15d": 4.141576908941835,
+        "return_1m": 4.141576908941835,
+        "return_ytd": 19.592247508359595,
+        "return_1y": 36.588802373007056,
+        "return_3y": 299.7612588171459,
+        "close": 368.38,
+        "marketCap": 382217278539,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -0.45936013834846356,
+        "return_2y": 119.3390890145877
+      }
+    },
+    {
+      "id": "A_162",
+      "type": "ASSET",
+      "name": "롤스로이스홀딩스",
+      "exposure": {
+        "ticker": "RR.",
+        "exchange": "LSE",
+        "country": "GB"
+      },
+      "metrics": {
+        "return_1d": 1.0491803278688483,
+        "return_3d": 0.5218525766470972,
+        "return_15d": 8.858434586041252,
+        "return_1m": 9.898730566253032,
+        "return_ytd": 34.00000000000001,
+        "return_1y": 39.900136177939174,
+        "return_3y": 637.3205741626795,
+        "close": 1541.0,
+        "marketCap": 127349929583,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.7189542483660105,
+        "return_2y": 208.75576036866357
+      }
+    },
+    {
+      "id": "A_420",
+      "type": "ASSET",
+      "name": "하니웰인터내셔널",
+      "exposure": {
+        "ticker": "HON",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.012821060729095723,
+        "return_3d": 1.6686945941247977,
+        "return_15d": -3.7795599424223725,
+        "return_1m": 5.065564936231359,
+        "return_ytd": 19.924137577528313,
+        "return_1y": 7.222731439046748,
+        "return_3y": 23.455226637116787,
+        "close": 233.96,
+        "marketCap": 74151282400,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -4.975427480605987,
+        "return_2y": 18.400809716599188
+      }
+    },
+    {
+      "id": "A_421",
+      "type": "ASSET",
+      "name": "록히드마틴",
+      "exposure": {
+        "ticker": "LMT",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.7842510994799277,
+        "return_3d": 1.8251166836743105,
+        "return_15d": 4.476484723652585,
+        "return_1m": 18.192586263810927,
+        "return_ytd": 25.846134761304175,
+        "return_1y": 39.18412146711789,
+        "return_3y": 35.2381798791326,
+        "close": 608.68,
+        "marketCap": 140477865880,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 3.525810017858655,
+        "return_2y": 8.071446326479869
+      }
+    },
+    {
+      "id": "C_319",
+      "type": "CHARACTER",
+      "name": "글로벌항공기복항사이클"
+    },
+    {
+      "id": "C_321",
+      "type": "CHARACTER",
+      "name": "OEM듀오폴리"
+    },
+    {
+      "id": "C_322",
+      "type": "CHARACTER",
+      "name": "OEM도전자"
+    },
+    {
+      "id": "C_323",
+      "type": "CHARACTER",
+      "name": "항공엔진메이저"
+    },
+    {
+      "id": "C_325",
+      "type": "CHARACTER",
+      "name": "방산연계항공"
+    },
+    {
+      "id": "M_082",
+      "type": "MACRO",
+      "name": "항공수요증가"
+    },
+    {
+      "id": "M_025",
+      "type": "MACRO",
+      "name": "항공우주산업확대"
+    },
+    {
+      "id": "M_366",
+      "type": "MACRO",
+      "name": "FAA신규형식인증사이클"
+    },
+    {
+      "id": "A_428",
+      "type": "ASSET",
+      "name": "KODEX미국우주항공",
+      "exposure": {
+        "ticker": "0167Z0",
+        "exchange": "KRX",
+        "country": "KR",
+        "business_desc": "KODEX 미국우주항공 ETF는 미국 우주·항공 대표주에 투자하는 국내 상장 ETF다.",
+        "theme_role": "섹터ETF",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -0.770925110132159,
+        "return_3d": 6.312684365781718,
+        "return_15d": 17.145167839186648,
+        "return_1m": 1.7504556636110502,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "close": 9010,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD_ADJ",
+        "return_5d": 11.303273625694876,
+        "return_2y": null
+      },
+      "coreBiz": "KODEX미국우주항공"
+    },
+    {
+      "id": "A_432",
+      "type": "ASSET",
+      "name": "ITA",
+      "exposure": {
+        "ticker": "ITA",
+        "exchange": "BATS",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.4137530537867038,
+        "close": 253.215,
+        "marketCap": 14860936148,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": 0.5240174672489051,
+        "return_15d": 5.446822686766062,
+        "return_1m": 7.629532027032759,
+        "return_ytd": 17.946807024081224,
+        "return_1y": 29.200469411704667,
+        "return_3y": 116.63102061767474,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.9850448654037836,
+        "return_2y": 79.10595558070447
+      }
+    }
   ],
-  "dataAsOf": "2026-07-25T00:00:00+09:00",
-  "description": "글로벌 항공기 OEM 밸류체인 — 듀오폴리 Boeing·Airbus + 라틴 Embraer + 중국 COMAC. 엔진 GE Aerospace·Rolls-Royce. 부품·구조 Spirit AeroSystems (Boeing 인수)·Honeywell·Bombardier. 방산 LMT 통합. Boeing 위기 (737 MAX·787·Starliner) + Airbus 우위 + 중국 C919 진출이 핵심 동인.",
-  "notes": "T_353 신규 — 글로벌 항공기 OEM",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-01",
-    "kind": "수정",
-    "title": "상폐 종목 제거",
-    "detail": "피인수/상폐로 거래/링크가 없는 종목 제거."
-   },
-   {
-    "date": "2026-07-25",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결(ETF 제외), 2026 이벤트 2건 추가."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_1475",
+      "to": "T_353",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010827"
+      ]
+    },
+    {
+      "from": "A_1041",
+      "to": "T_353",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010828"
+      ]
+    },
+    {
+      "from": "A_1983",
+      "to": "T_353",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010829"
+      ]
+    },
+    {
+      "from": "A_1986",
+      "to": "T_353",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010830"
+      ]
+    },
+    {
+      "from": "A_1985",
+      "to": "T_353",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010831"
+      ]
+    },
+    {
+      "from": "A_307",
+      "to": "T_353",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010832"
+      ]
+    },
+    {
+      "from": "A_162",
+      "to": "T_353",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010833"
+      ]
+    },
+    {
+      "from": "A_420",
+      "to": "T_353",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010835"
+      ]
+    },
+    {
+      "from": "A_421",
+      "to": "T_353",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010836"
+      ]
+    },
+    {
+      "from": "A_307",
+      "to": "A_1475",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_016173"
+      ]
+    },
+    {
+      "from": "A_307",
+      "to": "A_1041",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_016174"
+      ]
+    },
+    {
+      "from": "A_162",
+      "to": "A_1041",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_016175"
+      ]
+    },
+    {
+      "from": "T_353",
+      "to": "C_319",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016176"
+      ]
+    },
+    {
+      "from": "A_1475",
+      "to": "C_321",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016177"
+      ]
+    },
+    {
+      "from": "A_1041",
+      "to": "C_321",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016178"
+      ]
+    },
+    {
+      "from": "A_1983",
+      "to": "C_322",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016179"
+      ]
+    },
+    {
+      "from": "A_1986",
+      "to": "C_322",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016180"
+      ]
+    },
+    {
+      "from": "A_1985",
+      "to": "C_322",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016181"
+      ]
+    },
+    {
+      "from": "A_307",
+      "to": "C_323",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016182"
+      ]
+    },
+    {
+      "from": "A_162",
+      "to": "C_323",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016183"
+      ]
+    },
+    {
+      "from": "A_421",
+      "to": "C_325",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016184"
+      ]
+    },
+    {
+      "from": "M_082",
+      "to": "T_353",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_010837"
+      ]
+    },
+    {
+      "from": "M_025",
+      "to": "T_353",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_010838"
+      ]
+    },
+    {
+      "from": "M_366",
+      "to": "T_353",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_010839"
+      ]
+    },
+    {
+      "from": "A_428",
+      "to": "T_353",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020724"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_432",
+      "to": "T_353",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020725"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_1475",
+      "to": "T_353",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010827"
+      ]
+    },
+    {
+      "from": "A_1041",
+      "to": "T_353",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010828"
+      ]
+    },
+    {
+      "from": "A_1983",
+      "to": "T_353",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010829"
+      ]
+    },
+    {
+      "from": "A_1986",
+      "to": "T_353",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010830"
+      ]
+    },
+    {
+      "from": "A_1985",
+      "to": "T_353",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010831"
+      ]
+    },
+    {
+      "from": "A_307",
+      "to": "T_353",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010832"
+      ]
+    },
+    {
+      "from": "A_162",
+      "to": "T_353",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010833"
+      ]
+    },
+    {
+      "from": "A_420",
+      "to": "T_353",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010835"
+      ]
+    },
+    {
+      "from": "A_421",
+      "to": "T_353",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010836"
+      ]
+    },
+    {
+      "from": "A_307",
+      "to": "A_1475",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_016173"
+      ]
+    },
+    {
+      "from": "A_307",
+      "to": "A_1041",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_016174"
+      ]
+    },
+    {
+      "from": "A_162",
+      "to": "A_1041",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_016175"
+      ]
+    },
+    {
+      "from": "T_353",
+      "to": "C_319",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016176"
+      ]
+    },
+    {
+      "from": "A_1475",
+      "to": "C_321",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016177"
+      ]
+    },
+    {
+      "from": "A_1041",
+      "to": "C_321",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016178"
+      ]
+    },
+    {
+      "from": "A_1983",
+      "to": "C_322",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016179"
+      ]
+    },
+    {
+      "from": "A_1986",
+      "to": "C_322",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016180"
+      ]
+    },
+    {
+      "from": "A_1985",
+      "to": "C_322",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016181"
+      ]
+    },
+    {
+      "from": "A_307",
+      "to": "C_323",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016182"
+      ]
+    },
+    {
+      "from": "A_162",
+      "to": "C_323",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016183"
+      ]
+    },
+    {
+      "from": "A_421",
+      "to": "C_325",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016184"
+      ]
+    },
+    {
+      "from": "M_082",
+      "to": "T_353",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_010837"
+      ]
+    },
+    {
+      "from": "M_025",
+      "to": "T_353",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_010838"
+      ]
+    },
+    {
+      "from": "M_366",
+      "to": "T_353",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_010839"
+      ]
+    },
+    {
+      "from": "A_428",
+      "to": "T_353",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020724"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_432",
+      "to": "T_353",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020725"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_353",
-   "type": "THEME",
-   "name": "글로벌항공기OEM밸류체인"
-  },
-  {
-   "id": "A_1475",
-   "type": "ASSET",
-   "name": "보잉",
-   "exposure": {
-    "ticker": "BA",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.5817739764685248,
-    "return_3d": -0.6731263934145137,
-    "return_15d": 10.571783123329514,
-    "return_1m": 6.706277923633164,
-    "return_ytd": 6.701363301400143,
-    "return_1y": -0.6518289806595523,
-    "return_3y": -2.1291876135355547,
-    "close": 231.67,
-    "marketCap": 183105017900,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -1.17310809657879,
-    "return_2y": 37.489614243323444
-   }
-  },
-  {
-   "id": "A_1041",
-   "type": "ASSET",
-   "name": "에어버스",
-   "exposure": {
-    "ticker": "AIR",
-    "exchange": "Euronext",
-    "country": "EU"
-   },
-   "metrics": {
-    "return_1d": 1.1742602160638826,
-    "return_3d": 1.3647058823529346,
-    "return_15d": 4.537733559815571,
-    "return_1m": 9.931611717872823,
-    "return_ytd": 10.574664849422867,
-    "return_1y": 19.37109058292883,
-    "return_3y": 73.74736938900455,
-    "close": 215.4,
-    "marketCap": 170484892161,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.8426966292134797,
-    "return_2y": 66.6719541551535
-   }
-  },
-  {
-   "id": "A_1983",
-   "type": "ASSET",
-   "name": "엠브라에르",
-   "exposure": {
-    "ticker": "ERJ",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.1398166847910609,
-    "return_3d": -0.863664404688469,
-    "return_15d": 3.912059489169084,
-    "return_1m": 2.4872448979591955,
-    "return_ytd": 75.2453653217012,
-    "return_1y": 76.35116598079561,
-    "return_3y": null,
-    "close": 64.28,
-    "marketCap": 47380061407,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2025-12-29",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 1.132787916928879,
-    "return_2y": 248.40108401084012
-   }
-  },
-  {
-   "id": "A_1986",
-   "type": "ASSET",
-   "name": "COMAC(비)",
-   "exposure": {
-    "ticker": "",
-    "exchange": "PRIVATE",
-    "country": "CN"
-   },
-   "metrics": {
-    "return_1d": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "returnsAsOf": null,
-    "returnsSource": null,
-    "return_5d": null
-   },
-   "coreBiz": "OEM도전자"
-  },
-  {
-   "id": "A_1985",
-   "type": "ASSET",
-   "name": "봄바디어",
-   "exposure": {
-    "ticker": "BBD.B",
-    "exchange": "TSX",
-    "country": "CA"
-   },
-   "metrics": {
-    "return_1d": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": null
-   }
-  },
-  {
-   "id": "A_307",
-   "type": "ASSET",
-   "name": "GE에어로스페이스",
-   "exposure": {
-    "ticker": "GE",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 2.1461845607808394,
-    "return_3d": 0.08694234635657772,
-    "return_15d": 4.141576908941835,
-    "return_1m": 4.141576908941835,
-    "return_ytd": 19.915754934098096,
-    "return_1y": 37.282442657058844,
-    "return_3y": 306.03083312483267,
-    "close": 368.38,
-    "marketCap": 382217278539,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -0.45936013834846356,
-    "return_2y": 121.87409467262458
-   }
-  },
-  {
-   "id": "A_162",
-   "type": "ASSET",
-   "name": "롤스로이스홀딩스",
-   "exposure": {
-    "ticker": "RR.",
-    "exchange": "LSE",
-    "country": "GB"
-   },
-   "metrics": {
-    "return_1d": 1.0491803278688483,
-    "return_3d": 0.5218525766470972,
-    "return_15d": 8.858434586041252,
-    "return_1m": 11.79628554846197,
-    "return_ytd": 28.73851294903926,
-    "return_1y": 43.48230912476723,
-    "return_3y": 661.3636363636364,
-    "close": 1541.0,
-    "marketCap": 127349929583,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": null
-   }
-  },
-  {
-   "id": "A_420",
-   "type": "ASSET",
-   "name": "하니웰인터내셔널",
-   "exposure": {
-    "ticker": "HON",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.2871961935788203,
-    "return_3d": 1.9737472954902469,
-    "return_15d": -3.4908461504826627,
-    "return_1m": 5.380836686728485,
-    "return_ytd": 15.893613269214391,
-    "return_1y": 11.174046590839982,
-    "return_3y": 32.88689335139541,
-    "close": 233.96,
-    "marketCap": 74151282400,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -4.690284161135172,
-    "return_2y": 25.344488399902264
-   }
-  },
-  {
-   "id": "A_421",
-   "type": "ASSET",
-   "name": "록히드마틴",
-   "exposure": {
-    "ticker": "LMT",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.7842510994799277,
-    "return_3d": 1.8251166836743105,
-    "return_15d": 4.476484723652585,
-    "return_1m": 18.192586263810927,
-    "return_ytd": 27.337553511458324,
-    "return_1y": 42.94534386095681,
-    "return_3y": 46.57388245481633,
-    "close": 608.68,
-    "marketCap": 140477865880,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 3.525810017858655,
-    "return_2y": 13.920143977933176
-   }
-  },
-  {
-   "id": "C_319",
-   "type": "CHARACTER",
-   "name": "글로벌항공기복항사이클"
-  },
-  {
-   "id": "C_321",
-   "type": "CHARACTER",
-   "name": "OEM듀오폴리"
-  },
-  {
-   "id": "C_322",
-   "type": "CHARACTER",
-   "name": "OEM도전자"
-  },
-  {
-   "id": "C_323",
-   "type": "CHARACTER",
-   "name": "항공엔진메이저"
-  },
-  {
-   "id": "C_325",
-   "type": "CHARACTER",
-   "name": "방산연계항공"
-  },
-  {
-   "id": "M_082",
-   "type": "MACRO",
-   "name": "항공수요증가"
-  },
-  {
-   "id": "M_025",
-   "type": "MACRO",
-   "name": "항공우주산업확대"
-  },
-  {
-   "id": "M_366",
-   "type": "MACRO",
-   "name": "FAA신규형식인증사이클"
-  },
-  {
-   "id": "A_428",
-   "type": "ASSET",
-   "name": "KODEX미국우주항공",
-   "exposure": {
-    "ticker": "0167Z0",
-    "exchange": "KRX",
-    "country": "KR",
-    "business_desc": "KODEX 미국우주항공 ETF는 미국 우주·항공 대표주에 투자하는 국내 상장 ETF다.",
-    "theme_role": "섹터ETF",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -0.770925110132159,
-    "return_3d": 6.312684365781718,
-    "return_15d": 17.145167839186648,
-    "return_1m": 1.7504556636110502,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "close": 9010,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 11.303273625694876,
-    "return_2y": null
-   },
-   "coreBiz": "KODEX미국우주항공"
-  },
-  {
-   "id": "A_432",
-   "type": "ASSET",
-   "name": "ITA",
-   "exposure": {
-    "ticker": "ITA",
-    "exchange": "BATS",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.4117505707076816,
-    "close": 253.215,
-    "marketCap": 14860936148,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 0.5220325526002378,
-    "return_15d": 5.444740568002016,
-    "return_1m": 7.627406809197934,
-    "return_ytd": 18.103845936782736,
-    "return_1y": 29.854978222887073,
-    "return_3y": 121.42733468700317,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.9830508474576227,
-    "return_2y": 81.28779737635108
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_1475",
-   "to": "T_353",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010827"
-   ]
-  },
-  {
-   "from": "A_1041",
-   "to": "T_353",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010828"
-   ]
-  },
-  {
-   "from": "A_1983",
-   "to": "T_353",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010829"
-   ]
-  },
-  {
-   "from": "A_1986",
-   "to": "T_353",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010830"
-   ]
-  },
-  {
-   "from": "A_1985",
-   "to": "T_353",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010831"
-   ]
-  },
-  {
-   "from": "A_307",
-   "to": "T_353",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010832"
-   ]
-  },
-  {
-   "from": "A_162",
-   "to": "T_353",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010833"
-   ]
-  },
-  {
-   "from": "A_420",
-   "to": "T_353",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010835"
-   ]
-  },
-  {
-   "from": "A_421",
-   "to": "T_353",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010836"
-   ]
-  },
-  {
-   "from": "A_307",
-   "to": "A_1475",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_016173"
-   ]
-  },
-  {
-   "from": "A_307",
-   "to": "A_1041",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_016174"
-   ]
-  },
-  {
-   "from": "A_162",
-   "to": "A_1041",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_016175"
-   ]
-  },
-  {
-   "from": "T_353",
-   "to": "C_319",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016176"
-   ]
-  },
-  {
-   "from": "A_1475",
-   "to": "C_321",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016177"
-   ]
-  },
-  {
-   "from": "A_1041",
-   "to": "C_321",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016178"
-   ]
-  },
-  {
-   "from": "A_1983",
-   "to": "C_322",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016179"
-   ]
-  },
-  {
-   "from": "A_1986",
-   "to": "C_322",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016180"
-   ]
-  },
-  {
-   "from": "A_1985",
-   "to": "C_322",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016181"
-   ]
-  },
-  {
-   "from": "A_307",
-   "to": "C_323",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016182"
-   ]
-  },
-  {
-   "from": "A_162",
-   "to": "C_323",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016183"
-   ]
-  },
-  {
-   "from": "A_421",
-   "to": "C_325",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016184"
-   ]
-  },
-  {
-   "from": "M_082",
-   "to": "T_353",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_010837"
-   ]
-  },
-  {
-   "from": "M_025",
-   "to": "T_353",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_010838"
-   ]
-  },
-  {
-   "from": "M_366",
-   "to": "T_353",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_010839"
-   ]
-  },
-  {
-   "from": "A_428",
-   "to": "T_353",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020724"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_432",
-   "to": "T_353",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020725"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_1475",
-   "to": "T_353",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010827"
-   ]
-  },
-  {
-   "from": "A_1041",
-   "to": "T_353",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010828"
-   ]
-  },
-  {
-   "from": "A_1983",
-   "to": "T_353",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010829"
-   ]
-  },
-  {
-   "from": "A_1986",
-   "to": "T_353",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010830"
-   ]
-  },
-  {
-   "from": "A_1985",
-   "to": "T_353",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010831"
-   ]
-  },
-  {
-   "from": "A_307",
-   "to": "T_353",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010832"
-   ]
-  },
-  {
-   "from": "A_162",
-   "to": "T_353",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010833"
-   ]
-  },
-  {
-   "from": "A_420",
-   "to": "T_353",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010835"
-   ]
-  },
-  {
-   "from": "A_421",
-   "to": "T_353",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010836"
-   ]
-  },
-  {
-   "from": "A_307",
-   "to": "A_1475",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_016173"
-   ]
-  },
-  {
-   "from": "A_307",
-   "to": "A_1041",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_016174"
-   ]
-  },
-  {
-   "from": "A_162",
-   "to": "A_1041",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_016175"
-   ]
-  },
-  {
-   "from": "T_353",
-   "to": "C_319",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016176"
-   ]
-  },
-  {
-   "from": "A_1475",
-   "to": "C_321",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016177"
-   ]
-  },
-  {
-   "from": "A_1041",
-   "to": "C_321",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016178"
-   ]
-  },
-  {
-   "from": "A_1983",
-   "to": "C_322",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016179"
-   ]
-  },
-  {
-   "from": "A_1986",
-   "to": "C_322",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016180"
-   ]
-  },
-  {
-   "from": "A_1985",
-   "to": "C_322",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016181"
-   ]
-  },
-  {
-   "from": "A_307",
-   "to": "C_323",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016182"
-   ]
-  },
-  {
-   "from": "A_162",
-   "to": "C_323",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016183"
-   ]
-  },
-  {
-   "from": "A_421",
-   "to": "C_325",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016184"
-   ]
-  },
-  {
-   "from": "M_082",
-   "to": "T_353",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_010837"
-   ]
-  },
-  {
-   "from": "M_025",
-   "to": "T_353",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_010838"
-   ]
-  },
-  {
-   "from": "M_366",
-   "to": "T_353",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_010839"
-   ]
-  },
-  {
-   "from": "A_428",
-   "to": "T_353",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020724"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_432",
-   "to": "T_353",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020725"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

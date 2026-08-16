@@ -1,765 +1,765 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_567",
- "themeName": "비만약2차파급_수혜vs피해재편",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_567",
+  "themeName": "비만약2차파급_수혜vs피해재편",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-25T00:00:00+09:00",
+    "description": "비만약(GLP-1) 2차 파급 — 약을 만드는 자가 아니라 약이 바꾸는 산업 재편. 정크푸드·스낵·주류·제과 수요 타격(피해축) vs 감량 파생 피트니스·당뇨 관리기기 변화(파생축). 복용 확산이 소비·의료 구조를 재편.",
+    "notes": "T_567 신규(2026-07-01)",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-25",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_567",
+      "type": "THEME",
+      "name": "비만약2차파급_수혜vs피해재편"
+    },
+    {
+      "id": "A_2596",
+      "type": "ASSET",
+      "name": "몬델리즈",
+      "exposure": {
+        "ticker": "MDLZ",
+        "exchange": "NASDAQ",
+        "country": "US",
+        "business_desc": "글로벌 스낵·제과(식욕감소 노출)",
+        "theme_role": "피해",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": 0.1259247599559199,
+        "return_3d": 2.9621236646163673,
+        "return_15d": 5.105750165234624,
+        "return_1m": 8.180272108843534,
+        "return_ytd": 18.168307635147695,
+        "return_1y": 3.498210218027986,
+        "return_3y": -13.112962710012289,
+        "close": 63.61,
+        "marketCap": 81186079100,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 1.597188947452488,
+        "return_2y": -10.660112359550567
+      }
+    },
+    {
+      "id": "C_1636",
+      "type": "CHARACTER",
+      "name": "정크푸드스낵수요타격"
+    },
+    {
+      "id": "A_2597",
+      "type": "ASSET",
+      "name": "크래프트하인즈",
+      "exposure": {
+        "ticker": "KHC",
+        "exchange": "NASDAQ",
+        "country": "US",
+        "business_desc": "가공식품(칼로리 소비 감소 노출)",
+        "theme_role": "피해",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": 0.5122143420015934,
+        "return_3d": 3.488843813387432,
+        "return_15d": -0.6232956758862485,
+        "return_1m": 1.714513556618824,
+        "return_ytd": 5.195876288659806,
+        "return_1y": -7.739602169981907,
+        "return_3y": -25.496495327102807,
+        "close": 25.51,
+        "marketCap": 30249187545,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.750394944707744,
+        "return_2y": -26.03653232821107
+      }
+    },
+    {
+      "id": "C_1637",
+      "type": "CHARACTER",
+      "name": "가공식품수요타격"
+    },
+    {
+      "id": "A_2598",
+      "type": "ASSET",
+      "name": "허쉬",
+      "exposure": {
+        "ticker": "HSY",
+        "exchange": "NYSE",
+        "country": "US",
+        "business_desc": "초콜릿·제과(간식 수요 감소 노출)",
+        "theme_role": "피해",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -1.0208467655276166,
+        "return_3d": 1.2309044949994519,
+        "return_15d": 5.691336775674127,
+        "return_1m": 7.441968972355073,
+        "return_ytd": 1.2309044949994519,
+        "return_1y": 2.1968268057250606,
+        "return_3y": -17.890889641647355,
+        "close": 184.22,
+        "marketCap": 37361585433,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 1.0255004112969646,
+        "return_2y": -8.17008125218085
+      }
+    },
+    {
+      "id": "C_1638",
+      "type": "CHARACTER",
+      "name": "제과초콜릿수요타격"
+    },
+    {
+      "id": "A_2017",
+      "type": "ASSET",
+      "name": "안호이저부시인베브",
+      "exposure": {
+        "ticker": "BUD",
+        "exchange": "NYSE",
+        "country": "BE",
+        "business_desc": "맥주(음주 감소 노출)",
+        "theme_role": "피해",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -0.623208276205911,
+        "return_3d": -1.091675970723227,
+        "return_15d": -2.3634582414890914,
+        "return_1m": 0.453571878543535,
+        "return_ytd": 24.50031230480949,
+        "return_1y": 31.394199077125904,
+        "return_3y": 41.49068322981366,
+        "close": 79.73,
+        "marketCap": 157023116493,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -4.811365807067814,
+        "return_2y": 32.0470354421994
+      }
+    },
+    {
+      "id": "C_1639",
+      "type": "CHARACTER",
+      "name": "주류수요타격_AB인베브"
+    },
+    {
+      "id": "A_1970",
+      "type": "ASSET",
+      "name": "펩시코",
+      "exposure": {
+        "ticker": "PEP",
+        "exchange": "NASDAQ",
+        "country": "US",
+        "business_desc": "스낵·탄산(칼로리 소비 노출)",
+        "theme_role": "피해",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": 0.1208931873133201,
+        "return_3d": 1.7195289357705423,
+        "return_15d": 3.0371779859484915,
+        "return_1m": 3.9424141749723196,
+        "return_ytd": -1.9021739130434923,
+        "return_1y": -5.268469923294317,
+        "return_3y": -23.325345822895116,
+        "close": 140.79,
+        "marketCap": 192319140000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 1.2731981009926452,
+        "return_2y": -18.95112543894998
+      }
+    },
+    {
+      "id": "C_1640",
+      "type": "CHARACTER",
+      "name": "스낵음료수요타격"
+    },
+    {
+      "id": "A_2599",
+      "type": "ASSET",
+      "name": "플래닛피트니스",
+      "exposure": {
+        "ticker": "PLNT",
+        "exchange": "NYSE",
+        "country": "US",
+        "business_desc": "피트니스(감량 후 운동 수요)",
+        "theme_role": "파생수혜",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": 2.5661914460284985,
+        "return_3d": 5.091819699499167,
+        "return_15d": -5.833956619296932,
+        "return_1m": -1.0609037328094262,
+        "return_ytd": -53.57241633631419,
+        "return_1y": -51.96489889355208,
+        "return_3y": -18.511326860841425,
+        "close": 50.36,
+        "marketCap": 4000738350,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.6998600279944034,
+        "return_2y": -36.86058174523571
+      }
+    },
+    {
+      "id": "C_1641",
+      "type": "CHARACTER",
+      "name": "감량파생피트니스수혜"
+    },
+    {
+      "id": "A_2600",
+      "type": "ASSET",
+      "name": "인슐렛",
+      "exposure": {
+        "ticker": "PODD",
+        "exchange": "NASDAQ",
+        "country": "US",
+        "business_desc": "인슐린 자동주입(당뇨 관리 변화)",
+        "theme_role": "변화",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -2.116907948647906,
+        "return_3d": -0.9398756046993695,
+        "return_15d": -12.201396545387722,
+        "return_1m": -9.91704374057315,
+        "return_ytd": -49.57078525189981,
+        "return_1y": -54.60763822914687,
+        "return_3y": -35.97748894546429,
+        "close": 143.34,
+        "marketCap": 9928398371,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 1.5371537862152174,
+        "return_2y": -25.164456510389467
+      }
+    },
+    {
+      "id": "C_1642",
+      "type": "CHARACTER",
+      "name": "당뇨인슐린기기변화"
+    },
+    {
+      "id": "A_2601",
+      "type": "ASSET",
+      "name": "덱스콤",
+      "exposure": {
+        "ticker": "DXCM",
+        "exchange": "NASDAQ",
+        "country": "US",
+        "business_desc": "연속혈당측정(대사 관리 확장)",
+        "theme_role": "파생",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -1.8911237428946293,
+        "return_3d": 0.24572768904278508,
+        "return_15d": 25.454291305563316,
+        "return_1m": 21.087425796006464,
+        "return_ytd": 35.22675907789663,
+        "return_1y": 12.24362181090546,
+        "return_3y": -22.468901174844515,
+        "close": 89.75,
+        "marketCap": 33868149750,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 5.899705014749257,
+        "return_2y": 28.122769450392582
+      }
+    },
+    {
+      "id": "C_1643",
+      "type": "CHARACTER",
+      "name": "연속혈당측정확장"
+    },
+    {
+      "id": "M_350",
+      "type": "MACRO",
+      "name": "GLP-1비만약사이클"
+    },
+    {
+      "id": "M_1065",
+      "type": "MACRO",
+      "name": "GLP-1대사노화확장"
+    },
+    {
+      "id": "M_331",
+      "type": "MACRO",
+      "name": "건강관심소비트렌드"
+    }
   ],
-  "dataAsOf": "2026-07-25T00:00:00+09:00",
-  "description": "비만약(GLP-1) 2차 파급 — 약을 만드는 자가 아니라 약이 바꾸는 산업 재편. 정크푸드·스낵·주류·제과 수요 타격(피해축) vs 감량 파생 피트니스·당뇨 관리기기 변화(파생축). 복용 확산이 소비·의료 구조를 재편.",
-  "notes": "T_567 신규(2026-07-01)",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-25",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
-   }
+  "edges": [
+    {
+      "from": "A_2596",
+      "to": "T_567",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013051"
+      ]
+    },
+    {
+      "from": "A_2596",
+      "to": "C_1636",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017772"
+      ]
+    },
+    {
+      "from": "A_2597",
+      "to": "T_567",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013052"
+      ]
+    },
+    {
+      "from": "A_2597",
+      "to": "C_1637",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017773"
+      ]
+    },
+    {
+      "from": "A_2598",
+      "to": "T_567",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013053"
+      ]
+    },
+    {
+      "from": "A_2598",
+      "to": "C_1638",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017774"
+      ]
+    },
+    {
+      "from": "A_2017",
+      "to": "T_567",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013054"
+      ]
+    },
+    {
+      "from": "A_2017",
+      "to": "C_1639",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017775"
+      ]
+    },
+    {
+      "from": "A_1970",
+      "to": "T_567",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013055"
+      ]
+    },
+    {
+      "from": "A_1970",
+      "to": "C_1640",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017776"
+      ]
+    },
+    {
+      "from": "A_2599",
+      "to": "T_567",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013056"
+      ]
+    },
+    {
+      "from": "A_2599",
+      "to": "C_1641",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017777"
+      ]
+    },
+    {
+      "from": "A_2600",
+      "to": "T_567",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013057"
+      ]
+    },
+    {
+      "from": "A_2600",
+      "to": "C_1642",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017778"
+      ]
+    },
+    {
+      "from": "A_2601",
+      "to": "T_567",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013058"
+      ]
+    },
+    {
+      "from": "A_2601",
+      "to": "C_1643",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017779"
+      ]
+    },
+    {
+      "from": "M_350",
+      "to": "T_567",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013059"
+      ]
+    },
+    {
+      "from": "M_1065",
+      "to": "T_567",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013060"
+      ]
+    },
+    {
+      "from": "M_331",
+      "to": "T_567",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013061"
+      ]
+    },
+    {
+      "from": "A_2596",
+      "to": "A_2597",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020198"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "몬델리즈와 크래프트하인즈는 미국 포장식품 시장 경쟁"
+    },
+    {
+      "from": "A_2598",
+      "to": "A_2596",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020199"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "허쉬와 몬델리즈는 제과·초콜릿 시장 직접 경쟁"
+    },
+    {
+      "from": "A_1970",
+      "to": "A_2596",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020200"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "펩시코와 몬델리즈는 스낵 시장 경쟁"
+    },
+    {
+      "from": "A_2600",
+      "to": "A_2601",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020201"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "인슐렛과 덱스콤은 당뇨 관리 기기 시장 직접 경쟁"
+    },
+    {
+      "from": "A_2599",
+      "to": "A_1970",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020202"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "플래닛피트니스와 펩시코는 비만약 확산의 수혜·피해 상반 익스포저"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_2596",
+      "to": "T_567",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013051"
+      ]
+    },
+    {
+      "from": "A_2596",
+      "to": "C_1636",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017772"
+      ]
+    },
+    {
+      "from": "A_2597",
+      "to": "T_567",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013052"
+      ]
+    },
+    {
+      "from": "A_2597",
+      "to": "C_1637",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017773"
+      ]
+    },
+    {
+      "from": "A_2598",
+      "to": "T_567",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013053"
+      ]
+    },
+    {
+      "from": "A_2598",
+      "to": "C_1638",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017774"
+      ]
+    },
+    {
+      "from": "A_2017",
+      "to": "T_567",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013054"
+      ]
+    },
+    {
+      "from": "A_2017",
+      "to": "C_1639",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017775"
+      ]
+    },
+    {
+      "from": "A_1970",
+      "to": "T_567",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013055"
+      ]
+    },
+    {
+      "from": "A_1970",
+      "to": "C_1640",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017776"
+      ]
+    },
+    {
+      "from": "A_2599",
+      "to": "T_567",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013056"
+      ]
+    },
+    {
+      "from": "A_2599",
+      "to": "C_1641",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017777"
+      ]
+    },
+    {
+      "from": "A_2600",
+      "to": "T_567",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013057"
+      ]
+    },
+    {
+      "from": "A_2600",
+      "to": "C_1642",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017778"
+      ]
+    },
+    {
+      "from": "A_2601",
+      "to": "T_567",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013058"
+      ]
+    },
+    {
+      "from": "A_2601",
+      "to": "C_1643",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017779"
+      ]
+    },
+    {
+      "from": "M_350",
+      "to": "T_567",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013059"
+      ]
+    },
+    {
+      "from": "M_1065",
+      "to": "T_567",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013060"
+      ]
+    },
+    {
+      "from": "M_331",
+      "to": "T_567",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013061"
+      ]
+    },
+    {
+      "from": "A_2596",
+      "to": "A_2597",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020198"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "몬델리즈와 크래프트하인즈는 미국 포장식품 시장 경쟁"
+    },
+    {
+      "from": "A_2598",
+      "to": "A_2596",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020199"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "허쉬와 몬델리즈는 제과·초콜릿 시장 직접 경쟁"
+    },
+    {
+      "from": "A_1970",
+      "to": "A_2596",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020200"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "펩시코와 몬델리즈는 스낵 시장 경쟁"
+    },
+    {
+      "from": "A_2600",
+      "to": "A_2601",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020201"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "인슐렛과 덱스콤은 당뇨 관리 기기 시장 직접 경쟁"
+    },
+    {
+      "from": "A_2599",
+      "to": "A_1970",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020202"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "플래닛피트니스와 펩시코는 비만약 확산의 수혜·피해 상반 익스포저"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_567",
-   "type": "THEME",
-   "name": "비만약2차파급_수혜vs피해재편"
-  },
-  {
-   "id": "A_2596",
-   "type": "ASSET",
-   "name": "몬델리즈",
-   "exposure": {
-    "ticker": "MDLZ",
-    "exchange": "NASDAQ",
-    "country": "US",
-    "business_desc": "글로벌 스낵·제과(식욕감소 노출)",
-    "theme_role": "피해",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": 0.1259247599559199,
-    "return_3d": 2.9621236646163673,
-    "return_15d": 5.105750165234624,
-    "return_1m": 8.180272108843534,
-    "return_ytd": 20.190536294292038,
-    "return_1y": 7.093491725971313,
-    "return_3y": -5.231416507998931,
-    "close": 63.61,
-    "marketCap": 81186079100,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 1.597188947452488,
-    "return_2y": -4.912670935954699
-   }
-  },
-  {
-   "id": "C_1636",
-   "type": "CHARACTER",
-   "name": "정크푸드스낵수요타격"
-  },
-  {
-   "id": "A_2597",
-   "type": "ASSET",
-   "name": "크래프트하인즈",
-   "exposure": {
-    "ticker": "KHC",
-    "exchange": "NASDAQ",
-    "country": "US",
-    "business_desc": "가공식품(칼로리 소비 감소 노출)",
-    "theme_role": "피해",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": 0.5122143420015934,
-    "return_3d": 3.488843813387432,
-    "return_15d": -0.6232956758862485,
-    "return_1m": 1.714513556618824,
-    "return_ytd": 8.900282175956553,
-    "return_1y": -1.5498849935935977,
-    "return_3y": -12.29457470948222,
-    "close": 25.51,
-    "marketCap": 30249187545,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.750394944707744,
-    "return_2y": -16.878191196452253
-   }
-  },
-  {
-   "id": "C_1637",
-   "type": "CHARACTER",
-   "name": "가공식품수요타격"
-  },
-  {
-   "id": "A_2598",
-   "type": "ASSET",
-   "name": "허쉬",
-   "exposure": {
-    "ticker": "HSY",
-    "exchange": "NYSE",
-    "country": "US",
-    "business_desc": "초콜릿·제과(간식 수요 감소 노출)",
-    "theme_role": "피해",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -0.24259752637165732,
-    "return_3d": 2.0268575096519026,
-    "return_15d": 6.522370160321311,
-    "return_1m": 8.286739429963363,
-    "return_ytd": 3.4863007888709774,
-    "return_1y": 6.084879420731171,
-    "return_3y": -9.732937481900771,
-    "close": 184.22,
-    "marketCap": 37361585433,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 1.8198459713675064,
-    "return_2y": -1.5768434707439272
-   }
-  },
-  {
-   "id": "C_1638",
-   "type": "CHARACTER",
-   "name": "제과초콜릿수요타격"
-  },
-  {
-   "id": "A_2017",
-   "type": "ASSET",
-   "name": "안호이저부시인베브",
-   "exposure": {
-    "ticker": "BUD",
-    "exchange": "NYSE",
-    "country": "BE",
-    "business_desc": "맥주(음주 감소 노출)",
-    "theme_role": "피해",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -0.623208276205911,
-    "return_3d": -1.091675970723227,
-    "return_15d": -2.3634582414890914,
-    "return_1m": 0.453571878543535,
-    "return_ytd": 26.347983867772797,
-    "return_1y": 33.60994877140182,
-    "return_3y": 47.89793132104592,
-    "close": 79.73,
-    "marketCap": 157023116493,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -4.811365807067814,
-    "return_2y": 35.99791218556987
-   }
-  },
-  {
-   "id": "C_1639",
-   "type": "CHARACTER",
-   "name": "주류수요타격_AB인베브"
-  },
-  {
-   "id": "A_1970",
-   "type": "ASSET",
-   "name": "펩시코",
-   "exposure": {
-    "ticker": "PEP",
-    "exchange": "NASDAQ",
-    "country": "US",
-    "business_desc": "스낵·탄산(칼로리 소비 노출)",
-    "theme_role": "피해",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": 0.1208931873133201,
-    "return_3d": 1.7195289357705423,
-    "return_15d": 3.0371779859484915,
-    "return_1m": 3.9424141749723196,
-    "return_ytd": 0.015557502019269975,
-    "return_1y": -1.517838218969103,
-    "return_3y": -14.86456578449289,
-    "close": 140.79,
-    "marketCap": 192319140000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 1.2731981009926452,
-    "return_2y": -12.672883376524457
-   }
-  },
-  {
-   "id": "C_1640",
-   "type": "CHARACTER",
-   "name": "스낵음료수요타격"
-  },
-  {
-   "id": "A_2599",
-   "type": "ASSET",
-   "name": "플래닛피트니스",
-   "exposure": {
-    "ticker": "PLNT",
-    "exchange": "NYSE",
-    "country": "US",
-    "business_desc": "피트니스(감량 후 운동 수요)",
-    "theme_role": "파생수혜",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": 2.5661914460284985,
-    "return_3d": 5.091819699499167,
-    "return_15d": -5.833956619296932,
-    "return_1m": -1.0609037328094262,
-    "return_ytd": -53.57241633631419,
-    "return_1y": -51.96489889355208,
-    "return_3y": -18.511326860841425,
-    "close": 50.36,
-    "marketCap": 4000738350,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.6998600279944034,
-    "return_2y": -36.86058174523571
-   }
-  },
-  {
-   "id": "C_1641",
-   "type": "CHARACTER",
-   "name": "감량파생피트니스수혜"
-  },
-  {
-   "id": "A_2600",
-   "type": "ASSET",
-   "name": "인슐렛",
-   "exposure": {
-    "ticker": "PODD",
-    "exchange": "NASDAQ",
-    "country": "US",
-    "business_desc": "인슐린 자동주입(당뇨 관리 변화)",
-    "theme_role": "변화",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -2.116907948647906,
-    "return_3d": -0.9398756046993695,
-    "return_15d": -12.201396545387722,
-    "return_1m": -9.91704374057315,
-    "return_ytd": -49.57078525189981,
-    "return_1y": -54.60763822914687,
-    "return_3y": -35.97748894546429,
-    "close": 143.34,
-    "marketCap": 9928398371,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 1.5371537862152174,
-    "return_2y": -25.164456510389467
-   }
-  },
-  {
-   "id": "C_1642",
-   "type": "CHARACTER",
-   "name": "당뇨인슐린기기변화"
-  },
-  {
-   "id": "A_2601",
-   "type": "ASSET",
-   "name": "덱스콤",
-   "exposure": {
-    "ticker": "DXCM",
-    "exchange": "NASDAQ",
-    "country": "US",
-    "business_desc": "연속혈당측정(대사 관리 확장)",
-    "theme_role": "파생",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -1.8911237428946293,
-    "return_3d": 0.24572768904278508,
-    "return_15d": 25.454291305563316,
-    "return_1m": 21.087425796006464,
-    "return_ytd": 35.22675907789663,
-    "return_1y": 12.24362181090546,
-    "return_3y": -22.468901174844515,
-    "close": 89.75,
-    "marketCap": 33868149750,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 5.899705014749257,
-    "return_2y": 28.122769450392582
-   }
-  },
-  {
-   "id": "C_1643",
-   "type": "CHARACTER",
-   "name": "연속혈당측정확장"
-  },
-  {
-   "id": "M_350",
-   "type": "MACRO",
-   "name": "GLP-1비만약사이클"
-  },
-  {
-   "id": "M_1065",
-   "type": "MACRO",
-   "name": "GLP-1대사노화확장"
-  },
-  {
-   "id": "M_331",
-   "type": "MACRO",
-   "name": "건강관심소비트렌드"
-  }
- ],
- "edges": [
-  {
-   "from": "A_2596",
-   "to": "T_567",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013051"
-   ]
-  },
-  {
-   "from": "A_2596",
-   "to": "C_1636",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017772"
-   ]
-  },
-  {
-   "from": "A_2597",
-   "to": "T_567",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013052"
-   ]
-  },
-  {
-   "from": "A_2597",
-   "to": "C_1637",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017773"
-   ]
-  },
-  {
-   "from": "A_2598",
-   "to": "T_567",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013053"
-   ]
-  },
-  {
-   "from": "A_2598",
-   "to": "C_1638",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017774"
-   ]
-  },
-  {
-   "from": "A_2017",
-   "to": "T_567",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013054"
-   ]
-  },
-  {
-   "from": "A_2017",
-   "to": "C_1639",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017775"
-   ]
-  },
-  {
-   "from": "A_1970",
-   "to": "T_567",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013055"
-   ]
-  },
-  {
-   "from": "A_1970",
-   "to": "C_1640",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017776"
-   ]
-  },
-  {
-   "from": "A_2599",
-   "to": "T_567",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013056"
-   ]
-  },
-  {
-   "from": "A_2599",
-   "to": "C_1641",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017777"
-   ]
-  },
-  {
-   "from": "A_2600",
-   "to": "T_567",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013057"
-   ]
-  },
-  {
-   "from": "A_2600",
-   "to": "C_1642",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017778"
-   ]
-  },
-  {
-   "from": "A_2601",
-   "to": "T_567",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013058"
-   ]
-  },
-  {
-   "from": "A_2601",
-   "to": "C_1643",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017779"
-   ]
-  },
-  {
-   "from": "M_350",
-   "to": "T_567",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013059"
-   ]
-  },
-  {
-   "from": "M_1065",
-   "to": "T_567",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013060"
-   ]
-  },
-  {
-   "from": "M_331",
-   "to": "T_567",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013061"
-   ]
-  },
-  {
-   "from": "A_2596",
-   "to": "A_2597",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020198"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "몬델리즈와 크래프트하인즈는 미국 포장식품 시장 경쟁"
-  },
-  {
-   "from": "A_2598",
-   "to": "A_2596",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020199"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "허쉬와 몬델리즈는 제과·초콜릿 시장 직접 경쟁"
-  },
-  {
-   "from": "A_1970",
-   "to": "A_2596",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020200"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "펩시코와 몬델리즈는 스낵 시장 경쟁"
-  },
-  {
-   "from": "A_2600",
-   "to": "A_2601",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020201"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "인슐렛과 덱스콤은 당뇨 관리 기기 시장 직접 경쟁"
-  },
-  {
-   "from": "A_2599",
-   "to": "A_1970",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020202"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "플래닛피트니스와 펩시코는 비만약 확산의 수혜·피해 상반 익스포저"
-  }
- ],
- "links": [
-  {
-   "from": "A_2596",
-   "to": "T_567",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013051"
-   ]
-  },
-  {
-   "from": "A_2596",
-   "to": "C_1636",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017772"
-   ]
-  },
-  {
-   "from": "A_2597",
-   "to": "T_567",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013052"
-   ]
-  },
-  {
-   "from": "A_2597",
-   "to": "C_1637",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017773"
-   ]
-  },
-  {
-   "from": "A_2598",
-   "to": "T_567",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013053"
-   ]
-  },
-  {
-   "from": "A_2598",
-   "to": "C_1638",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017774"
-   ]
-  },
-  {
-   "from": "A_2017",
-   "to": "T_567",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013054"
-   ]
-  },
-  {
-   "from": "A_2017",
-   "to": "C_1639",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017775"
-   ]
-  },
-  {
-   "from": "A_1970",
-   "to": "T_567",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013055"
-   ]
-  },
-  {
-   "from": "A_1970",
-   "to": "C_1640",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017776"
-   ]
-  },
-  {
-   "from": "A_2599",
-   "to": "T_567",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013056"
-   ]
-  },
-  {
-   "from": "A_2599",
-   "to": "C_1641",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017777"
-   ]
-  },
-  {
-   "from": "A_2600",
-   "to": "T_567",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013057"
-   ]
-  },
-  {
-   "from": "A_2600",
-   "to": "C_1642",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017778"
-   ]
-  },
-  {
-   "from": "A_2601",
-   "to": "T_567",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013058"
-   ]
-  },
-  {
-   "from": "A_2601",
-   "to": "C_1643",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017779"
-   ]
-  },
-  {
-   "from": "M_350",
-   "to": "T_567",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013059"
-   ]
-  },
-  {
-   "from": "M_1065",
-   "to": "T_567",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013060"
-   ]
-  },
-  {
-   "from": "M_331",
-   "to": "T_567",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013061"
-   ]
-  },
-  {
-   "from": "A_2596",
-   "to": "A_2597",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020198"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "몬델리즈와 크래프트하인즈는 미국 포장식품 시장 경쟁"
-  },
-  {
-   "from": "A_2598",
-   "to": "A_2596",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020199"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "허쉬와 몬델리즈는 제과·초콜릿 시장 직접 경쟁"
-  },
-  {
-   "from": "A_1970",
-   "to": "A_2596",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020200"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "펩시코와 몬델리즈는 스낵 시장 경쟁"
-  },
-  {
-   "from": "A_2600",
-   "to": "A_2601",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020201"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "인슐렛과 덱스콤은 당뇨 관리 기기 시장 직접 경쟁"
-  },
-  {
-   "from": "A_2599",
-   "to": "A_1970",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020202"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "플래닛피트니스와 펩시코는 비만약 확산의 수혜·피해 상반 익스포저"
-  }
- ]
 }

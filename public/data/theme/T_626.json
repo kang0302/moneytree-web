@@ -1,566 +1,566 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_626",
- "themeName": "글로벌금(골드)관련주_ETF",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_626",
+  "themeName": "글로벌금(골드)관련주_ETF",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-26T00:00:00+09:00",
+    "notes": "글로벌 금(골드) ETF 분리 테마 — 금 현물·금광기업·탐사·귀금속 종합 ETF.",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-07-26",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
+      },
+      {
+        "date": "2026-07-18",
+        "kind": "신규",
+        "title": "금 ETF 테마 분리 생성",
+        "detail": "글로벌금(골드)관련주에서 ETF 6종(GLD·IAU·GDX·SGDM·GOEX·GOAU)을 분리해 신규 테마로 생성, 자산별 CHR과 매크로 IMPACTS를 정의했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_626",
+      "type": "THEME",
+      "name": "글로벌금(골드)관련주_ETF"
+    },
+    {
+      "id": "A_063",
+      "type": "ASSET",
+      "name": "GLD",
+      "exposure": {
+        "ticker": "GLD",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.6316422699017554,
+        "close": 401.48,
+        "marketCap": 141640328909,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": 0.1296887470071839,
+        "return_15d": 7.9537510083355745,
+        "return_1m": 7.881230686551133,
+        "return_ytd": 1.3045343291867573,
+        "return_1y": 30.668836452400328,
+        "return_3y": 126.74799502993336,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.755389364318515,
+        "return_2y": 77.48894783377544
+      },
+      "coreBiz": "GLD는 금 현물을 추종하는 세계 최대 금 ETF로, 이 테마에서 금가격 순수 노출·최대 유동성을 대표한다"
+    },
+    {
+      "id": "A_881",
+      "type": "ASSET",
+      "name": "IAU",
+      "exposure": {
+        "ticker": "IAU",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.6113964294448548,
+        "close": 82.28,
+        "marketCap": 64919630406,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": 0.12168410805548646,
+        "return_15d": 7.9365079365079305,
+        "return_1m": 7.87990035400552,
+        "return_ytd": 1.3675003079955728,
+        "return_1y": 30.810810810810807,
+        "return_3y": 127.67017155506366,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.7345739471106727,
+        "return_2y": 77.97966688297645
+      },
+      "coreBiz": "IAU는 저보수 금 현물 ETF로, GLD와 함께 금가격에 직접 노출되는 저비용 수단이다"
+    },
+    {
+      "id": "A_891",
+      "type": "ASSET",
+      "name": "GDX",
+      "exposure": {
+        "ticker": "GDX",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.925909142403981,
+        "close": 89.97,
+        "marketCap": 27566643715,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": -0.1664447403462166,
+        "return_15d": 19.593247374717528,
+        "return_1m": 20.15224358974359,
+        "return_ytd": 4.896817068905213,
+        "return_1y": 55.92720970537262,
+        "return_3y": 210.77720207253887,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.0889976638113188,
+        "return_2y": 142.44139046079223
+      },
+      "coreBiz": "GDX는 대형 금광기업을 담은 대표 금광 ETF로, 금가격에 레버리지된 광산주 바스켓이다"
+    },
+    {
+      "id": "A_892",
+      "type": "ASSET",
+      "name": "SGDM",
+      "exposure": {
+        "ticker": "SGDM",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.923597940937416,
+        "close": 75.24,
+        "marketCap": 681738204,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": 0.6151377373629252,
+        "return_15d": 20.75108329321136,
+        "return_1m": 22.520762090864686,
+        "return_ytd": 8.056872037914697,
+        "return_1y": 52.802599512591364,
+        "return_3y": 204.36893203883494,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.6151377373629252,
+        "return_2y": 157.58301951386508
+      },
+      "coreBiz": "SGDM은 재무·품질 팩터로 금광주를 선별하는 Sprott 금광 ETF다"
+    },
+    {
+      "id": "A_893",
+      "type": "ASSET",
+      "name": "GOEX",
+      "exposure": {
+        "ticker": "GOEX",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 2.4614649300991776,
+        "close": 85.79,
+        "marketCap": 130571265,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": 0.8111920996943356,
+        "return_15d": 22.851002865329527,
+        "return_1m": 22.657702760692324,
+        "return_ytd": 6.402779501178801,
+        "return_1y": 73.82931279140483,
+        "return_3y": 259.53878406708594,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 1.7804154302670572,
+        "return_2y": 187.26968174204353
+      },
+      "coreBiz": "GOEX는 금 탐사·주니어 광산주를 담은 ETF로, 금가격 상승 시 고베타 노출을 갖는다"
+    },
+    {
+      "id": "A_894",
+      "type": "ASSET",
+      "name": "GOAU",
+      "exposure": {
+        "ticker": "GOAU",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.1902037079423389,
+        "close": 44.21,
+        "marketCap": 198674700,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": -1.4489522960321022,
+        "return_15d": 19.551108707409416,
+        "return_1m": 20.168524055449865,
+        "return_ytd": 3.876879699248126,
+        "return_1y": 41.426743442098534,
+        "return_3y": 176.65832290362954,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -0.517551755175516,
+        "return_2y": 124.0750126710593
+      },
+      "coreBiz": "GOAU는 로열티·스트리밍 비중을 높인 귀금속 종합 ETF로, 광산 운영 리스크를 완화한 금 노출이다"
+    },
+    {
+      "id": "M_113",
+      "type": "MACRO",
+      "name": "지정학리스크"
+    },
+    {
+      "id": "M_153",
+      "type": "MACRO",
+      "name": "약달러"
+    },
+    {
+      "id": "M_262",
+      "type": "MACRO",
+      "name": "금융시장변동성고조"
+    },
+    {
+      "id": "C_3654",
+      "type": "CHARACTER",
+      "name": "금현물ETF_세계최대유동성"
+    },
+    {
+      "id": "C_3655",
+      "type": "CHARACTER",
+      "name": "금현물ETF_저보수"
+    },
+    {
+      "id": "C_3656",
+      "type": "CHARACTER",
+      "name": "금광기업ETF_대형주대표"
+    },
+    {
+      "id": "C_3657",
+      "type": "CHARACTER",
+      "name": "금광ETF_퀄리티팩터"
+    },
+    {
+      "id": "C_3658",
+      "type": "CHARACTER",
+      "name": "금탐사주니어ETF"
+    },
+    {
+      "id": "C_3659",
+      "type": "CHARACTER",
+      "name": "귀금속종합ETF_로열티가중"
+    }
   ],
-  "dataAsOf": "2026-07-26T00:00:00+09:00",
-  "notes": "글로벌 금(골드) ETF 분리 테마 — 금 현물·금광기업·탐사·귀금속 종합 ETF.",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-07-26",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
-   },
-   {
-    "date": "2026-07-18",
-    "kind": "신규",
-    "title": "금 ETF 테마 분리 생성",
-    "detail": "글로벌금(골드)관련주에서 ETF 6종(GLD·IAU·GDX·SGDM·GOEX·GOAU)을 분리해 신규 테마로 생성, 자산별 CHR과 매크로 IMPACTS를 정의했다."
-   }
+  "edges": [
+    {
+      "from": "A_063",
+      "to": "T_626",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013601"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_881",
+      "to": "T_626",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013602"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_891",
+      "to": "T_626",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013603"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_892",
+      "to": "T_626",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013604"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_893",
+      "to": "T_626",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013605"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_894",
+      "to": "T_626",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013606"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_113",
+      "to": "T_626",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013607"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_153",
+      "to": "T_626",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013608"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_262",
+      "to": "T_626",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013609"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_063",
+      "to": "C_3654",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007608"
+      ],
+      "confidence": 0.83,
+      "status": "verified"
+    },
+    {
+      "from": "A_881",
+      "to": "C_3655",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007609"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_891",
+      "to": "C_3656",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007610"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_892",
+      "to": "C_3657",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007611"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_893",
+      "to": "C_3658",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007612"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_894",
+      "to": "C_3659",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007613"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_063",
+      "to": "T_626",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013601"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_881",
+      "to": "T_626",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013602"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_891",
+      "to": "T_626",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013603"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_892",
+      "to": "T_626",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013604"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_893",
+      "to": "T_626",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013605"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_894",
+      "to": "T_626",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013606"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_113",
+      "to": "T_626",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013607"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_153",
+      "to": "T_626",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013608"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_262",
+      "to": "T_626",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013609"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_063",
+      "to": "C_3654",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007608"
+      ],
+      "confidence": 0.83,
+      "status": "verified"
+    },
+    {
+      "from": "A_881",
+      "to": "C_3655",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007609"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_891",
+      "to": "C_3656",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007610"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_892",
+      "to": "C_3657",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007611"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_893",
+      "to": "C_3658",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007612"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_894",
+      "to": "C_3659",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007613"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_626",
-   "type": "THEME",
-   "name": "글로벌금(골드)관련주_ETF"
-  },
-  {
-   "id": "A_063",
-   "type": "ASSET",
-   "name": "GLD",
-   "exposure": {
-    "ticker": "GLD",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.6316422699017554,
-    "close": 401.48,
-    "marketCap": 141640328909,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 0.1296887470071839,
-    "return_15d": 7.9537510083355745,
-    "return_1m": 7.881230686551133,
-    "return_ytd": 1.3045343291867573,
-    "return_1y": 30.668836452400328,
-    "return_3y": 126.74799502993336,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.755389364318515,
-    "return_2y": 77.48894783377544
-   },
-   "coreBiz": "GLD는 금 현물을 추종하는 세계 최대 금 ETF로, 이 테마에서 금가격 순수 노출·최대 유동성을 대표한다"
-  },
-  {
-   "id": "A_881",
-   "type": "ASSET",
-   "name": "IAU",
-   "exposure": {
-    "ticker": "IAU",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.6113964294448548,
-    "close": 82.28,
-    "marketCap": 64919630406,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 0.12168410805548646,
-    "return_15d": 7.9365079365079305,
-    "return_1m": 7.87990035400552,
-    "return_ytd": 1.3675003079955728,
-    "return_1y": 30.810810810810807,
-    "return_3y": 127.67017155506366,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.7345739471106727,
-    "return_2y": 77.97966688297645
-   },
-   "coreBiz": "IAU는 저보수 금 현물 ETF로, GLD와 함께 금가격에 직접 노출되는 저비용 수단이다"
-  },
-  {
-   "id": "A_891",
-   "type": "ASSET",
-   "name": "GDX",
-   "exposure": {
-    "ticker": "GDX",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.925909142403981,
-    "close": 89.97,
-    "marketCap": 27566643715,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": -0.1664447403462166,
-    "return_15d": 19.593247374717528,
-    "return_1m": 20.15224358974359,
-    "return_ytd": 4.896817068905213,
-    "return_1y": 57.059562879687164,
-    "return_3y": 221.910064117243,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.0889976638113188,
-    "return_2y": 147.06919420347165
-   },
-   "coreBiz": "GDX는 대형 금광기업을 담은 대표 금광 ETF로, 금가격에 레버리지된 광산주 바스켓이다"
-  },
-  {
-   "id": "A_892",
-   "type": "ASSET",
-   "name": "SGDM",
-   "exposure": {
-    "ticker": "SGDM",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.923597940937416,
-    "close": 75.24,
-    "marketCap": 681738204,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 0.6124468454975718,
-    "return_15d": 20.75108329321136,
-    "return_1m": 22.520762090864686,
-    "return_ytd": 8.056872037914697,
-    "return_1y": 54.411312003611954,
-    "return_3y": 214.8446490218642,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.6218655967903608,
-    "return_2y": 162.7205050490942
-   },
-   "coreBiz": "SGDM은 재무·품질 팩터로 금광주를 선별하는 Sprott 금광 ETF다"
-  },
-  {
-   "id": "A_893",
-   "type": "ASSET",
-   "name": "GOEX",
-   "exposure": {
-    "ticker": "GOEX",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 2.4560879436013927,
-    "close": 85.7455,
-    "marketCap": 130571265,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 0.8059017164354643,
-    "return_15d": 22.844555873925508,
-    "return_1m": 22.651265913317143,
-    "return_ytd": 6.533882658728296,
-    "return_1y": 77.65491492835419,
-    "return_3y": 276.4994906561754,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 1.7750741839762663,
-    "return_2y": 200.75482022160566
-   },
-   "coreBiz": "GOEX는 금 탐사·주니어 광산주를 담은 ETF로, 금가격 상승 시 고베타 노출을 갖는다"
-  },
-  {
-   "id": "A_894",
-   "type": "ASSET",
-   "name": "GOAU",
-   "exposure": {
-    "ticker": "GOAU",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.1902037079423389,
-    "close": 44.21,
-    "marketCap": 198674700,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": -1.4445583842346843,
-    "return_15d": 19.551108707409416,
-    "return_1m": 20.168524055449865,
-    "return_ytd": 3.876879699248126,
-    "return_1y": 42.67687769677371,
-    "return_3y": 187.77306220220274,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -0.517551755175516,
-    "return_2y": 130.8230478457908
-   },
-   "coreBiz": "GOAU는 로열티·스트리밍 비중을 높인 귀금속 종합 ETF로, 광산 운영 리스크를 완화한 금 노출이다"
-  },
-  {
-   "id": "M_113",
-   "type": "MACRO",
-   "name": "지정학리스크"
-  },
-  {
-   "id": "M_153",
-   "type": "MACRO",
-   "name": "약달러"
-  },
-  {
-   "id": "M_262",
-   "type": "MACRO",
-   "name": "금융시장변동성고조"
-  },
-  {
-   "id": "C_3654",
-   "type": "CHARACTER",
-   "name": "금현물ETF_세계최대유동성"
-  },
-  {
-   "id": "C_3655",
-   "type": "CHARACTER",
-   "name": "금현물ETF_저보수"
-  },
-  {
-   "id": "C_3656",
-   "type": "CHARACTER",
-   "name": "금광기업ETF_대형주대표"
-  },
-  {
-   "id": "C_3657",
-   "type": "CHARACTER",
-   "name": "금광ETF_퀄리티팩터"
-  },
-  {
-   "id": "C_3658",
-   "type": "CHARACTER",
-   "name": "금탐사주니어ETF"
-  },
-  {
-   "id": "C_3659",
-   "type": "CHARACTER",
-   "name": "귀금속종합ETF_로열티가중"
-  }
- ],
- "edges": [
-  {
-   "from": "A_063",
-   "to": "T_626",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013601"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_881",
-   "to": "T_626",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013602"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_891",
-   "to": "T_626",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013603"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_892",
-   "to": "T_626",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013604"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_893",
-   "to": "T_626",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013605"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_894",
-   "to": "T_626",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013606"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_113",
-   "to": "T_626",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013607"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_153",
-   "to": "T_626",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013608"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_262",
-   "to": "T_626",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013609"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_063",
-   "to": "C_3654",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007608"
-   ],
-   "confidence": 0.83,
-   "status": "verified"
-  },
-  {
-   "from": "A_881",
-   "to": "C_3655",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007609"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_891",
-   "to": "C_3656",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007610"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_892",
-   "to": "C_3657",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007611"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_893",
-   "to": "C_3658",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007612"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_894",
-   "to": "C_3659",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007613"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_063",
-   "to": "T_626",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013601"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_881",
-   "to": "T_626",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013602"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_891",
-   "to": "T_626",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013603"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_892",
-   "to": "T_626",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013604"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_893",
-   "to": "T_626",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013605"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_894",
-   "to": "T_626",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013606"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_113",
-   "to": "T_626",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013607"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_153",
-   "to": "T_626",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013608"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_262",
-   "to": "T_626",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013609"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_063",
-   "to": "C_3654",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007608"
-   ],
-   "confidence": 0.83,
-   "status": "verified"
-  },
-  {
-   "from": "A_881",
-   "to": "C_3655",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007609"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_891",
-   "to": "C_3656",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007610"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_892",
-   "to": "C_3657",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007611"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_893",
-   "to": "C_3658",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007612"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_894",
-   "to": "C_3659",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007613"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  }
- ]
 }

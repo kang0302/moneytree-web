@@ -1,640 +1,642 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_187",
- "themeName": "K-생명보험",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_187",
+  "themeName": "K-생명보험",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-04-27T00:00:00+09:00",
+    "notes": "g187 누적 import 기반 K-생명보험 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-12",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "자산 5개에 테마 관점 특성(CHARACTER)·HAS_TRAIT를 부여했다."
+      },
+      {
+        "date": "2026-07-12",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필 + 2026 이벤트",
+        "detail": "전 엣지 근거를 종목·관계 사실로 구체화했다. 2026 이벤트 2건을 추가했다."
+      },
+      {
+        "date": "2026-07-10",
+        "kind": "변경",
+        "title": "매크로는 테마에만 연결",
+        "detail": "개별 자산·BF에 직접 걸려 있던 매크로 IMPACTS 엣지를 테마 레벨로 정리(repoint 1, 중복제거 0)했다."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_187",
+      "type": "THEME",
+      "name": "K-생명보험"
+    },
+    {
+      "id": "A_1229",
+      "type": "ASSET",
+      "name": "삼성생명",
+      "exposure": {
+        "ticker": "032830",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 3.2590051457976,
+        "close": 301000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 3.9723661485319584,
+        "return_15d": -5.345911949685533,
+        "return_1m": -10.81481481481481,
+        "return_ytd": 92.57837492002558,
+        "return_1y": 159.94003235268912,
+        "return_3y": 395.09303831964024,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 9.255898366606164,
+        "return_2y": 251.76381370565517
+      }
+    },
+    {
+      "id": "A_1230",
+      "type": "ASSET",
+      "name": "한화생명",
+      "exposure": {
+        "ticker": "088350",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 11.928429423459242,
+        "close": 5630,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 19.153439153439145,
+        "return_15d": 22.65795206971677,
+        "return_1m": 24.557522123893815,
+        "return_ytd": 73.23076923076923,
+        "return_1y": 69.06906906906907,
+        "return_3y": 146.86518486168313,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 23.600439077936343,
+        "return_2y": 82.20064724919094
+      }
+    },
+    {
+      "id": "A_1231",
+      "type": "ASSET",
+      "name": "교보생명",
+      "exposure": {
+        "ticker": "",
+        "exchange": "",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": null,
+        "returnsSource": null,
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "교보생명은 국내 대형 생명보험사다"
+    },
+    {
+      "id": "A_1232",
+      "type": "ASSET",
+      "name": "동양생명",
+      "exposure": {
+        "ticker": "082640",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.0,
+        "close": 8250,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 0.0,
+        "return_15d": 7.984293193717273,
+        "return_1m": 7.702349869451708,
+        "return_ytd": 28.90625,
+        "return_1y": -2.3668639053254448,
+        "return_3y": 140.3424084004828,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 0.0,
+        "return_2y": 8.125819134993439
+      }
+    },
+    {
+      "id": "A_1233",
+      "type": "ASSET",
+      "name": "미래에셋생명",
+      "exposure": {
+        "ticker": "085620",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 7.751937984496116,
+        "close": 20850,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 19.896492236917762,
+        "return_15d": 31.132075471698116,
+        "return_1m": 22.64705882352942,
+        "return_ytd": 122.5186766275347,
+        "return_1y": 205.71847507331378,
+        "return_3y": 453.784860557769,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 19.896492236917762,
+        "return_2y": 299.42528735632186
+      }
+    },
+    {
+      "id": "M_072",
+      "type": "MACRO",
+      "name": "금리인상"
+    },
+    {
+      "id": "M_173",
+      "type": "MACRO",
+      "name": "주주환원정책"
+    },
+    {
+      "id": "M_174",
+      "type": "MACRO",
+      "name": "삼성전자지분/배당가치"
+    },
+    {
+      "id": "C_3033",
+      "type": "CHARACTER",
+      "name": "삼성전자지분·생보1위"
+    },
+    {
+      "id": "C_3034",
+      "type": "CHARACTER",
+      "name": "한화계열생보"
+    },
+    {
+      "id": "C_3035",
+      "type": "CHARACTER",
+      "name": "대형생보"
+    },
+    {
+      "id": "C_3036",
+      "type": "CHARACTER",
+      "name": "중견생보"
+    },
+    {
+      "id": "C_3037",
+      "type": "CHARACTER",
+      "name": "변액·운용강점"
+    },
+    {
+      "id": "A_2897",
+      "type": "ASSET",
+      "name": "KODEX 보험",
+      "exposure": {
+        "ticker": "140700",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 5.116279069767438,
+        "return_3d": 4.227517294388927,
+        "return_15d": 4.4234706258625245,
+        "return_1m": 4.3432273301731605,
+        "return_ytd": 62.56134013203112,
+        "return_1y": 88.76900345399945,
+        "return_3y": null,
+        "close": 20340,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": null,
+        "return_2y": 121.5347480792126
+      }
+    }
   ],
-  "dataAsOf": "2026-04-27T00:00:00+09:00",
-  "notes": "g187 누적 import 기반 K-생명보험 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-12",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "자산 5개에 테마 관점 특성(CHARACTER)·HAS_TRAIT를 부여했다."
-   },
-   {
-    "date": "2026-07-12",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필 + 2026 이벤트",
-    "detail": "전 엣지 근거를 종목·관계 사실로 구체화했다. 2026 이벤트 2건을 추가했다."
-   },
-   {
-    "date": "2026-07-10",
-    "kind": "변경",
-    "title": "매크로는 테마에만 연결",
-    "detail": "개별 자산·BF에 직접 걸려 있던 매크로 IMPACTS 엣지를 테마 레벨로 정리(repoint 1, 중복제거 0)했다."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_1229",
+      "to": "T_187",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005766"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1230",
+      "to": "T_187",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005767"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1231",
+      "to": "T_187",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005768"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1232",
+      "to": "T_187",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005769"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1233",
+      "to": "T_187",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005770"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "M_072",
+      "to": "T_187",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005771"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_173",
+      "to": "T_187",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005772"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "M_174",
+      "to": "T_187",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005773"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1229",
+      "to": "C_3033",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005876"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1230",
+      "to": "C_3034",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005877"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1231",
+      "to": "C_3035",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005878"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_1232",
+      "to": "C_3036",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005879"
+      ],
+      "confidence": 0.64,
+      "status": "verified"
+    },
+    {
+      "from": "A_1233",
+      "to": "C_3037",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005880"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_1229",
+      "to": "A_1230",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019268"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "삼성생명와 한화생명는 K-생명보험 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1229",
+      "to": "A_1231",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019269"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "삼성생명와 교보생명는 K-생명보험 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1230",
+      "to": "A_1231",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019270"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "한화생명와 교보생명는 K-생명보험 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1232",
+      "to": "A_1233",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019271"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "동양생명와 미래에셋생명는 K-생명보험 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_2897",
+      "to": "T_187",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020639"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_1229",
+      "to": "T_187",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005766"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1230",
+      "to": "T_187",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005767"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1231",
+      "to": "T_187",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005768"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1232",
+      "to": "T_187",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005769"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1233",
+      "to": "T_187",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005770"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "M_072",
+      "to": "T_187",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005771"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_173",
+      "to": "T_187",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005772"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "M_174",
+      "to": "T_187",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005773"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1229",
+      "to": "C_3033",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005876"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1230",
+      "to": "C_3034",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005877"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1231",
+      "to": "C_3035",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005878"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_1232",
+      "to": "C_3036",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005879"
+      ],
+      "confidence": 0.64,
+      "status": "verified"
+    },
+    {
+      "from": "A_1233",
+      "to": "C_3037",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005880"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_1229",
+      "to": "A_1230",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019268"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "삼성생명와 한화생명는 K-생명보험 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1229",
+      "to": "A_1231",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019269"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "삼성생명와 교보생명는 K-생명보험 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1230",
+      "to": "A_1231",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019270"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "한화생명와 교보생명는 K-생명보험 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1232",
+      "to": "A_1233",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019271"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "동양생명와 미래에셋생명는 K-생명보험 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_2897",
+      "to": "T_187",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020639"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_187",
-   "type": "THEME",
-   "name": "K-생명보험"
-  },
-  {
-   "id": "A_1229",
-   "type": "ASSET",
-   "name": "삼성생명",
-   "exposure": {
-    "ticker": "032830",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 3.2590051457976,
-    "close": 301000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 3.9723661485319584,
-    "return_15d": -5.345911949685533,
-    "return_1m": -5.047318611987384,
-    "return_ytd": 90.98984771573603,
-    "return_1y": 142.1386916511708,
-    "return_3y": 395.09303831964024,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 9.255898366606164,
-    "return_2y": 269.3121218674839
-   }
-  },
-  {
-   "id": "A_1230",
-   "type": "ASSET",
-   "name": "한화생명",
-   "exposure": {
-    "ticker": "088350",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 11.928429423459242,
-    "close": 5630,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 19.153439153439145,
-    "return_15d": 22.65795206971677,
-    "return_1m": 30.778164924506378,
-    "return_ytd": 72.96466973886328,
-    "return_1y": 80.16000000000001,
-    "return_3y": 146.86518486168313,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 23.600439077936343,
-    "return_2y": 99.64539007092199
-   }
-  },
-  {
-   "id": "A_1231",
-   "type": "ASSET",
-   "name": "교보생명",
-   "exposure": {
-    "ticker": "",
-    "exchange": "",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": null,
-    "returnsSource": null,
-    "return_5d": null
-   },
-   "coreBiz": "교보생명은 국내 대형 생명보험사다"
-  },
-  {
-   "id": "A_1232",
-   "type": "ASSET",
-   "name": "동양생명",
-   "exposure": {
-    "ticker": "082640",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.0,
-    "close": 8250,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 0.0,
-    "return_15d": 7.984293193717273,
-    "return_1m": 6.865284974093266,
-    "return_ytd": 25.570776255707763,
-    "return_1y": -0.1210653753026647,
-    "return_3y": 140.3424084004828,
-    "returnsAsOf": "2026-08-13",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.0,
-    "return_2y": -4.953917050691247
-   }
-  },
-  {
-   "id": "A_1233",
-   "type": "ASSET",
-   "name": "미래에셋생명",
-   "exposure": {
-    "ticker": "085620",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 7.751937984496116,
-    "close": 20850,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 19.896492236917762,
-    "return_15d": 31.132075471698116,
-    "return_1m": 29.262244265344073,
-    "return_ytd": 122.28144989339017,
-    "return_1y": 193.2489451476793,
-    "return_3y": 453.784860557769,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 19.896492236917762,
-    "return_2y": 303.2882011605416
-   }
-  },
-  {
-   "id": "M_072",
-   "type": "MACRO",
-   "name": "금리인상"
-  },
-  {
-   "id": "M_173",
-   "type": "MACRO",
-   "name": "주주환원정책"
-  },
-  {
-   "id": "M_174",
-   "type": "MACRO",
-   "name": "삼성전자지분/배당가치"
-  },
-  {
-   "id": "C_3033",
-   "type": "CHARACTER",
-   "name": "삼성전자지분·생보1위"
-  },
-  {
-   "id": "C_3034",
-   "type": "CHARACTER",
-   "name": "한화계열생보"
-  },
-  {
-   "id": "C_3035",
-   "type": "CHARACTER",
-   "name": "대형생보"
-  },
-  {
-   "id": "C_3036",
-   "type": "CHARACTER",
-   "name": "중견생보"
-  },
-  {
-   "id": "C_3037",
-   "type": "CHARACTER",
-   "name": "변액·운용강점"
-  },
-  {
-   "id": "A_2897",
-   "type": "ASSET",
-   "name": "KODEX 보험",
-   "exposure": {
-    "ticker": "140700",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 5.116279069767438,
-    "return_3d": 4.227517294388927,
-    "return_15d": 4.4234706258625245,
-    "return_1m": 4.3432273301731605,
-    "return_ytd": 62.56134013203112,
-    "return_1y": 88.76900345399945,
-    "return_3y": null,
-    "close": 20340,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": null
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_1229",
-   "to": "T_187",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005766"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1230",
-   "to": "T_187",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005767"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1231",
-   "to": "T_187",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005768"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1232",
-   "to": "T_187",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005769"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1233",
-   "to": "T_187",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005770"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "M_072",
-   "to": "T_187",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005771"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_173",
-   "to": "T_187",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005772"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "M_174",
-   "to": "T_187",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005773"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1229",
-   "to": "C_3033",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005876"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1230",
-   "to": "C_3034",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005877"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1231",
-   "to": "C_3035",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005878"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_1232",
-   "to": "C_3036",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005879"
-   ],
-   "confidence": 0.64,
-   "status": "verified"
-  },
-  {
-   "from": "A_1233",
-   "to": "C_3037",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005880"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_1229",
-   "to": "A_1230",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019268"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "삼성생명와 한화생명는 K-생명보험 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1229",
-   "to": "A_1231",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019269"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "삼성생명와 교보생명는 K-생명보험 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1230",
-   "to": "A_1231",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019270"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "한화생명와 교보생명는 K-생명보험 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1232",
-   "to": "A_1233",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019271"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "동양생명와 미래에셋생명는 K-생명보험 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_2897",
-   "to": "T_187",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020639"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_1229",
-   "to": "T_187",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005766"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1230",
-   "to": "T_187",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005767"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1231",
-   "to": "T_187",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005768"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1232",
-   "to": "T_187",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005769"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1233",
-   "to": "T_187",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005770"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "M_072",
-   "to": "T_187",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005771"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_173",
-   "to": "T_187",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005772"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "M_174",
-   "to": "T_187",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005773"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1229",
-   "to": "C_3033",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005876"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1230",
-   "to": "C_3034",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005877"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1231",
-   "to": "C_3035",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005878"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_1232",
-   "to": "C_3036",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005879"
-   ],
-   "confidence": 0.64,
-   "status": "verified"
-  },
-  {
-   "from": "A_1233",
-   "to": "C_3037",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005880"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_1229",
-   "to": "A_1230",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019268"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "삼성생명와 한화생명는 K-생명보험 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1229",
-   "to": "A_1231",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019269"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "삼성생명와 교보생명는 K-생명보험 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1230",
-   "to": "A_1231",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019270"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "한화생명와 교보생명는 K-생명보험 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1232",
-   "to": "A_1233",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019271"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "동양생명와 미래에셋생명는 K-생명보험 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_2897",
-   "to": "T_187",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020639"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

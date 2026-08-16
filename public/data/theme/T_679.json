@@ -1,887 +1,890 @@
 {
- "schemaVersion": 5,
- "themeId": "T_679",
- "themeName": "아마존생태계",
- "meta": {
-  "periodDefault": "7d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": 5,
+  "themeId": "T_679",
+  "themeName": "아마존생태계",
+  "meta": {
+    "periodDefault": "7d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-26T00:00:00+09:00",
+    "description": "아마존(AMZN)을 Core Orchestrator로 하는 Trainium 커스텀 AI칩·AWS·물류로봇 수직 생태계 — TSMC(파운드리)·SK하이닉스(HBM)·버티브(냉각)·이튼(전력) + 리비안·어질리티·앤트로픽 전략 결합. 1궤도 weight 0.7, 2궤도 0.3.",
+    "notes": "아마존(AMZN)을 Core Orchestrator로 하는 Trainium 커스텀 AI칩·AWS·물류로봇 수직 생태계 — TSMC(파운드리)·SK하이닉스(HBM)·버티브(냉각)·이튼(전력) + 리비안·어질리티·앤트로픽 전략 결합. 1궤도 weight 0.7, 2궤도 0.3.",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-07-26",
+        "kind": "수정",
+        "title": "구성종목 변경",
+        "detail": "종목 추가/삭제·관계 조정(허브형 유지)."
+      },
+      {
+        "date": "2026-07-26",
+        "kind": "신규",
+        "title": "테마 생성",
+        "detail": "1궤도(weight 0.7)+2궤도(weight 0.3) 생태계 구성, CHR·이벤트 포함."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_679",
+      "type": "THEME",
+      "name": "아마존생태계"
+    },
+    {
+      "id": "A_211",
+      "type": "ASSET",
+      "name": "아마존",
+      "exposure": {
+        "ticker": "AMZN",
+        "exchange": "NASDAQ",
+        "country": "US",
+        "business_desc": "",
+        "theme_role": "",
+        "theme_status": ""
+      },
+      "metrics": {
+        "return_1d": -0.9353901859465275,
+        "asof": "2026-02-12T09:00:00+09:00",
+        "currency": "USD",
+        "last_price": null,
+        "return_15d": 13.157554607729072,
+        "return_30d": null,
+        "return_90d": null,
+        "per": null,
+        "market_cap": null,
+        "return_3d": -3.5332574282880946,
+        "return_1m": 6.125500020202823,
+        "return_ytd": 13.789966207434357,
+        "return_1y": 13.711143821975913,
+        "return_3y": 86.8464110407626,
+        "close": 262.65,
+        "marketCap": 2825352315000,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "pe_ttm": null,
+        "return_5d": -4.309967939376291,
+        "return_2y": 54.40917107583773
+      },
+      "weight": 0.7
+    },
+    {
+      "id": "C_5658",
+      "type": "CHARACTER",
+      "name": "생태계총괄_CoreOrchestrator"
+    },
+    {
+      "id": "A_232",
+      "type": "ASSET",
+      "name": "TSMC",
+      "exposure": {
+        "ticker": "2330",
+        "exchange": "TWSE",
+        "country": "TW",
+        "business_desc": "",
+        "theme_role": "",
+        "theme_status": ""
+      },
+      "metrics": {
+        "return_1d": -1.642710472279263,
+        "asof": "2026-02-13T09:00:00+09:00",
+        "currency": "USD",
+        "last_price": null,
+        "return_15d": 1.914893617021285,
+        "return_30d": null,
+        "return_90d": null,
+        "per": null,
+        "market_cap": null,
+        "return_3d": 0.0,
+        "return_1m": -1.0330578512396715,
+        "return_ytd": 54.516129032258064,
+        "return_1y": 103.82978723404257,
+        "return_3y": 342.6987060998152,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "close": 2395.0,
+        "marketCap": 62108098000000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_5d": 1.0548523206751037,
+        "return_2y": 152.63713080168776
+      },
+      "weight": 0.3,
+      "coreBiz": "Trainium 3(3nm)·Trainium 4(2nm) 위탁생산 파운드리"
+    },
+    {
+      "id": "C_5659",
+      "type": "CHARACTER",
+      "name": "Trainium위탁생산_Fabricator"
+    },
+    {
+      "id": "A_217",
+      "type": "ASSET",
+      "name": "SK하이닉스",
+      "exposure": {
+        "ticker": "000660",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 3.264281230382915,
+        "return_15d": -6.480955088118245,
+        "return_3d": 15.438596491228074,
+        "return_1m": -20.98943323727186,
+        "return_ytd": 143.4728219615023,
+        "return_1y": 540.2612294462479,
+        "return_3y": 1363.0882989664492,
+        "close": 1645000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 15.682137834036558,
+        "return_2y": 656.609132786635
+      },
+      "weight": 0.3
+    },
+    {
+      "id": "C_5660",
+      "type": "CHARACTER",
+      "name": "Trainium_HBM독점공급_MemorySupplier"
+    },
+    {
+      "id": "A_099",
+      "type": "ASSET",
+      "name": "버티브",
+      "exposure": {
+        "ticker": "VRT",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 2.358309819904547,
+        "close": 293.84,
+        "marketCap": 113124873920,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": 4.268833611298373,
+        "return_15d": 1.1985121917619468,
+        "return_1m": -3.208379998682398,
+        "return_ytd": 81.37152027652614,
+        "return_1y": 121.73256866888012,
+        "return_3y": 749.7397339502603,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 7.870778267254042,
+        "return_2y": 266.56686626746506
+      },
+      "weight": 0.3
+    },
+    {
+      "id": "C_5661",
+      "type": "CHARACTER",
+      "name": "DC액체냉각_ThermalManager"
+    },
+    {
+      "id": "A_001",
+      "type": "ASSET",
+      "name": "리비안",
+      "exposure": {
+        "ticker": "RIVN",
+        "exchange": "NASDAQ",
+        "country": "US",
+        "business_desc": "EV 픽업·SUV·Amazon Delivery Van",
+        "theme_role": "EV 후발주자, Amazon 핵심 공급",
+        "theme_status": "Support"
+      },
+      "metrics": {
+        "return_1d": -2.9077117572692823,
+        "close": 15.36,
+        "marketCap": 18645164682,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": -6.112469437652813,
+        "return_15d": -3.0303030303030276,
+        "return_1m": -12.228571428571433,
+        "return_ytd": -22.070015220700157,
+        "return_1y": 27.363184079601986,
+        "return_3y": -28.7569573283859,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -4.0000000000000036,
+        "return_2y": 15.924528301886799
+      },
+      "weight": 0.3
+    },
+    {
+      "id": "C_5663",
+      "type": "CHARACTER",
+      "name": "지분EDV캡티브_FleetPartner"
+    },
+    {
+      "id": "A_789",
+      "type": "ASSET",
+      "name": "Agility Robotics",
+      "exposure": {
+        "ticker": "Private",
+        "exchange": "-",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": null,
+        "return_2y": null
+      },
+      "weight": 0.3,
+      "coreBiz": "아마존 공동개발 휴머노이드 '디짓', 아마존 펀드 출자(Humanoid Workforce)"
+    },
+    {
+      "id": "C_5664",
+      "type": "CHARACTER",
+      "name": "휴머노이드디짓_Workforce"
+    },
+    {
+      "id": "A_216",
+      "type": "ASSET",
+      "name": "엔트로픽(비)",
+      "exposure": {
+        "ticker": "",
+        "exchange": "",
+        "country": "US",
+        "business_desc": "",
+        "theme_role": "",
+        "theme_status": ""
+      },
+      "metrics": {
+        "return_1d": null,
+        "asof": "2026-02-12T09:00:00+09:00",
+        "currency": "USD",
+        "last_price": null,
+        "return_15d": null,
+        "return_30d": null,
+        "return_90d": null,
+        "per": null,
+        "market_cap": null,
+        "return_3d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "returnsAsOf": null,
+        "returnsSource": null,
+        "return_5d": null,
+        "return_2y": null
+      },
+      "weight": 0.3,
+      "coreBiz": "아마존 606억 달러 지분가치, 매출 60%가 AWS 경유(AI Demand Anchor)"
+    },
+    {
+      "id": "C_5665",
+      "type": "CHARACTER",
+      "name": "AWS수요앵커_DemandAnchor"
+    },
+    {
+      "id": "M_1097",
+      "type": "MACRO",
+      "name": "빅테크자체칩개발가속"
+    },
+    {
+      "id": "M_224",
+      "type": "MACRO",
+      "name": "클라우드확산"
+    },
+    {
+      "id": "M_035",
+      "type": "MACRO",
+      "name": "AI데이터센터전력수요증가"
+    },
+    {
+      "id": "A_055",
+      "type": "ASSET",
+      "name": "엔비디아",
+      "exposure": {
+        "ticker": "NVDA",
+        "exchange": "NASDAQ",
+        "country": "US",
+        "theme_role": "1궤도"
+      },
+      "metrics": {
+        "return_1d": -0.062139369729252714,
+        "close": 225.16,
+        "marketCap": 5453600360000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": 3.5218390804597766,
+        "return_15d": 8.857087603945079,
+        "return_1m": 6.30783758262512,
+        "return_ytd": 20.72922252010723,
+        "return_1y": 23.7006922316229,
+        "return_3y": 414.6514285714286,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.5358099660653703,
+        "return_2y": 90.68428184281842
+      },
+      "weight": 0.3
+    },
+    {
+      "id": "C_5671",
+      "type": "CHARACTER",
+      "name": "최대클라우드고객_NVLinkFusion"
+    },
+    {
+      "id": "A_192",
+      "type": "ASSET",
+      "name": "마벨테크놀로지",
+      "exposure": {
+        "ticker": "MRVL",
+        "exchange": "NASDAQ",
+        "country": "US",
+        "business_desc": "",
+        "theme_role": "",
+        "theme_status": ""
+      },
+      "metrics": {
+        "return_1d": -0.07201368259969199,
+        "asof": "2026-02-13T09:00:00+09:00",
+        "currency": "USD",
+        "last_price": null,
+        "return_15d": 14.307779436750256,
+        "return_30d": null,
+        "return_90d": null,
+        "per": null,
+        "market_cap": null,
+        "return_3d": 4.573501012670156,
+        "return_1m": -0.18881496133787978,
+        "return_ytd": 161.26147328783244,
+        "return_1y": 180.89574898785426,
+        "return_3y": 272.7043814000336,
+        "close": 222.02,
+        "marketCap": 194437567320,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "pe_ttm": null,
+        "return_5d": 1.5087783467446991,
+        "return_2y": 248.04828343000472
+      },
+      "weight": 0.3
+    },
+    {
+      "id": "C_5672",
+      "type": "CHARACTER",
+      "name": "Trainium2공동설계_ChipCoDesigner"
+    },
+    {
+      "id": "A_2972",
+      "type": "ASSET",
+      "name": "ACE 글로벌반도체TOP4 Plus SOLACTIVE",
+      "exposure": {
+        "ticker": "446770",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.8115363006429899,
+        "return_3d": 5.67334118570868,
+        "return_15d": -1.2194541270937775,
+        "return_1m": -9.915486334079981,
+        "return_ytd": 70.50118795163878,
+        "return_1y": 164.49894908797327,
+        "return_3y": null,
+        "close": 80745,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": null,
+        "return_2y": 200.40799457236474
+      }
+    }
   ],
-  "dataAsOf": "2026-07-26T00:00:00+09:00",
-  "description": "아마존(AMZN)을 Core Orchestrator로 하는 Trainium 커스텀 AI칩·AWS·물류로봇 수직 생태계 — TSMC(파운드리)·SK하이닉스(HBM)·버티브(냉각)·이튼(전력) + 리비안·어질리티·앤트로픽 전략 결합. 1궤도 weight 0.7, 2궤도 0.3.",
-  "notes": "아마존(AMZN)을 Core Orchestrator로 하는 Trainium 커스텀 AI칩·AWS·물류로봇 수직 생태계 — TSMC(파운드리)·SK하이닉스(HBM)·버티브(냉각)·이튼(전력) + 리비안·어질리티·앤트로픽 전략 결합. 1궤도 weight 0.7, 2궤도 0.3.",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-07-26",
-    "kind": "수정",
-    "title": "구성종목 변경",
-    "detail": "종목 추가/삭제·관계 조정(허브형 유지)."
-   },
-   {
-    "date": "2026-07-26",
-    "kind": "신규",
-    "title": "테마 생성",
-    "detail": "1궤도(weight 0.7)+2궤도(weight 0.3) 생태계 구성, CHR·이벤트 포함."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_211",
+      "to": "T_679",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_014612"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_211",
+      "to": "C_5658",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014613"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_232",
+      "to": "A_211",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_014614"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_232",
+      "to": "C_5659",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014615"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_217",
+      "to": "A_211",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_014616"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_217",
+      "to": "C_5660",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014617"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_099",
+      "to": "A_211",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_014618"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_099",
+      "to": "C_5661",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014619"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_211",
+      "to": "A_001",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_014622"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_001",
+      "to": "C_5663",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014623"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_211",
+      "to": "A_789",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_014624"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_789",
+      "to": "C_5664",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014625"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_211",
+      "to": "A_216",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_014626"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_216",
+      "to": "C_5665",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014627"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_1097",
+      "to": "T_679",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_014628"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "M_224",
+      "to": "T_679",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_014629"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "M_035",
+      "to": "T_679",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_014630"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_055",
+      "to": "A_211",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_014682"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_055",
+      "to": "C_5671",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014683"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_192",
+      "to": "A_211",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_014684"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_192",
+      "to": "C_5672",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014685"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_2972",
+      "to": "T_679",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020959"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_211",
+      "to": "T_679",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_014612"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_211",
+      "to": "C_5658",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014613"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_232",
+      "to": "A_211",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_014614"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_232",
+      "to": "C_5659",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014615"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_217",
+      "to": "A_211",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_014616"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_217",
+      "to": "C_5660",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014617"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_099",
+      "to": "A_211",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_014618"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_099",
+      "to": "C_5661",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014619"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_211",
+      "to": "A_001",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_014622"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_001",
+      "to": "C_5663",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014623"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_211",
+      "to": "A_789",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_014624"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_789",
+      "to": "C_5664",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014625"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_211",
+      "to": "A_216",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_014626"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_216",
+      "to": "C_5665",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014627"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_1097",
+      "to": "T_679",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_014628"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "M_224",
+      "to": "T_679",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_014629"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "M_035",
+      "to": "T_679",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_014630"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_055",
+      "to": "A_211",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_014682"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_055",
+      "to": "C_5671",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014683"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_192",
+      "to": "A_211",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_014684"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_192",
+      "to": "C_5672",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014685"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_2972",
+      "to": "T_679",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020959"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_679",
-   "type": "THEME",
-   "name": "아마존생태계"
-  },
-  {
-   "id": "A_211",
-   "type": "ASSET",
-   "name": "아마존",
-   "exposure": {
-    "ticker": "AMZN",
-    "exchange": "NASDAQ",
-    "country": "US",
-    "business_desc": "",
-    "theme_role": "",
-    "theme_status": ""
-   },
-   "metrics": {
-    "return_1d": -0.9353901859465275,
-    "asof": "2026-02-12T09:00:00+09:00",
-    "currency": "USD",
-    "last_price": null,
-    "return_15d": 13.157554607729072,
-    "return_30d": null,
-    "return_90d": null,
-    "per": null,
-    "market_cap": null,
-    "return_3d": -3.5332574282880946,
-    "return_1m": 6.125500020202823,
-    "return_ytd": 13.789966207434357,
-    "return_1y": 13.711143821975913,
-    "return_3y": 86.8464110407626,
-    "close": 262.65,
-    "marketCap": 2825352315000,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "pe_ttm": null,
-    "return_5d": -4.309967939376291,
-    "return_2y": 54.40917107583773
-   },
-   "weight": 0.7
-  },
-  {
-   "id": "C_5658",
-   "type": "CHARACTER",
-   "name": "생태계총괄_CoreOrchestrator"
-  },
-  {
-   "id": "A_232",
-   "type": "ASSET",
-   "name": "TSMC",
-   "exposure": {
-    "ticker": "2330",
-    "exchange": "TWSE",
-    "country": "TW",
-    "business_desc": "",
-    "theme_role": "",
-    "theme_status": ""
-   },
-   "metrics": {
-    "return_1d": 0.2272727272727204,
-    "asof": "2026-02-13T09:00:00+09:00",
-    "currency": "USD",
-    "last_price": null,
-    "return_15d": -8.695652173913048,
-    "return_30d": null,
-    "return_90d": null,
-    "per": null,
-    "market_cap": null,
-    "return_3d": -6.17021276595745,
-    "return_1m": -8.506224066390045,
-    "return_ytd": 42.25806451612903,
-    "return_1y": 90.90909090909092,
-    "return_3y": 288.88888888888886,
-    "returnsAsOf": "2026-07-30",
-    "returnsSource": "EODHD_ADJ",
-    "close": 2205,
-    "marketCap": 62108098000000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_5d": -8.316008316008316,
-    "return_2y": 134.5744680851064
-   },
-   "weight": 0.3,
-   "coreBiz": "Trainium 3(3nm)·Trainium 4(2nm) 위탁생산 파운드리"
-  },
-  {
-   "id": "C_5659",
-   "type": "CHARACTER",
-   "name": "Trainium위탁생산_Fabricator"
-  },
-  {
-   "id": "A_217",
-   "type": "ASSET",
-   "name": "SK하이닉스",
-   "exposure": {
-    "ticker": "000660",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 3.264281230382915,
-    "return_15d": -6.480955088118245,
-    "return_3d": 15.438596491228074,
-    "return_1m": -14.009409304756925,
-    "return_ytd": 153.1967748999691,
-    "return_1y": 497.4227745154907,
-    "return_3y": 1363.0882989664492,
-    "close": 1645000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 15.682137834036558,
-    "return_2y": 793.5849693667285
-   },
-   "weight": 0.3
-  },
-  {
-   "id": "C_5660",
-   "type": "CHARACTER",
-   "name": "Trainium_HBM독점공급_MemorySupplier"
-  },
-  {
-   "id": "A_099",
-   "type": "ASSET",
-   "name": "버티브",
-   "exposure": {
-    "ticker": "VRT",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 2.358309819904547,
-    "close": 293.84,
-    "marketCap": 113124873920,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 4.268833611298373,
-    "return_15d": 1.1985121917619468,
-    "return_1m": -3.208379998682398,
-    "return_ytd": 81.45238480453602,
-    "return_1y": 121.9767900391466,
-    "return_3y": 752.822522130315,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 7.870778267254042,
-    "return_2y": 267.468576209336
-   },
-   "weight": 0.3
-  },
-  {
-   "id": "C_5661",
-   "type": "CHARACTER",
-   "name": "DC액체냉각_ThermalManager"
-  },
-  {
-   "id": "A_001",
-   "type": "ASSET",
-   "name": "리비안",
-   "exposure": {
-    "ticker": "RIVN",
-    "exchange": "NASDAQ",
-    "country": "US",
-    "business_desc": "EV 픽업·SUV·Amazon Delivery Van",
-    "theme_role": "EV 후발주자, Amazon 핵심 공급",
-    "theme_status": "Support"
-   },
-   "metrics": {
-    "return_1d": -2.9077117572692823,
-    "close": 15.36,
-    "marketCap": 18645164682,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": -6.112469437652813,
-    "return_15d": -3.0303030303030276,
-    "return_1m": -12.228571428571433,
-    "return_ytd": -22.070015220700157,
-    "return_1y": 27.363184079601986,
-    "return_3y": -28.7569573283859,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -4.0000000000000036,
-    "return_2y": 15.924528301886799
-   },
-   "weight": 0.3
-  },
-  {
-   "id": "C_5663",
-   "type": "CHARACTER",
-   "name": "지분EDV캡티브_FleetPartner"
-  },
-  {
-   "id": "A_789",
-   "type": "ASSET",
-   "name": "Agility Robotics",
-   "exposure": {
-    "ticker": "Private",
-    "exchange": "-",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": null
-   },
-   "weight": 0.3,
-   "coreBiz": "아마존 공동개발 휴머노이드 '디짓', 아마존 펀드 출자(Humanoid Workforce)"
-  },
-  {
-   "id": "C_5664",
-   "type": "CHARACTER",
-   "name": "휴머노이드디짓_Workforce"
-  },
-  {
-   "id": "A_216",
-   "type": "ASSET",
-   "name": "엔트로픽(비)",
-   "exposure": {
-    "ticker": "",
-    "exchange": "",
-    "country": "US",
-    "business_desc": "",
-    "theme_role": "",
-    "theme_status": ""
-   },
-   "metrics": {
-    "return_1d": null,
-    "asof": "2026-02-12T09:00:00+09:00",
-    "currency": "USD",
-    "last_price": null,
-    "return_15d": null,
-    "return_30d": null,
-    "return_90d": null,
-    "per": null,
-    "market_cap": null,
-    "return_3d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "returnsAsOf": null,
-    "returnsSource": null,
-    "return_5d": null
-   },
-   "weight": 0.3,
-   "coreBiz": "아마존 606억 달러 지분가치, 매출 60%가 AWS 경유(AI Demand Anchor)"
-  },
-  {
-   "id": "C_5665",
-   "type": "CHARACTER",
-   "name": "AWS수요앵커_DemandAnchor"
-  },
-  {
-   "id": "M_1097",
-   "type": "MACRO",
-   "name": "빅테크자체칩개발가속"
-  },
-  {
-   "id": "M_224",
-   "type": "MACRO",
-   "name": "클라우드확산"
-  },
-  {
-   "id": "M_035",
-   "type": "MACRO",
-   "name": "AI데이터센터전력수요증가"
-  },
-  {
-   "id": "A_055",
-   "type": "ASSET",
-   "name": "엔비디아",
-   "exposure": {
-    "ticker": "NVDA",
-    "exchange": "NASDAQ",
-    "country": "US",
-    "theme_role": "1궤도"
-   },
-   "metrics": {
-    "return_1d": -0.062139369729252714,
-    "close": 225.16,
-    "marketCap": 5453600360000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 3.5218390804597766,
-    "return_15d": 8.857087603945079,
-    "return_1m": 6.30783758262512,
-    "return_ytd": 20.87647793988172,
-    "return_1y": 23.865442388761227,
-    "return_3y": 415.61902450083466,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.5358099660653703,
-    "return_2y": 90.99856895280767
-   },
-   "weight": 0.3
-  },
-  {
-   "id": "C_5671",
-   "type": "CHARACTER",
-   "name": "최대클라우드고객_NVLinkFusion"
-  },
-  {
-   "id": "A_192",
-   "type": "ASSET",
-   "name": "마벨테크놀로지",
-   "exposure": {
-    "ticker": "MRVL",
-    "exchange": "NASDAQ",
-    "country": "US",
-    "business_desc": "",
-    "theme_role": "",
-    "theme_status": ""
-   },
-   "metrics": {
-    "return_1d": -0.07201368259969199,
-    "asof": "2026-02-13T09:00:00+09:00",
-    "currency": "USD",
-    "last_price": null,
-    "return_15d": 14.307779436750256,
-    "return_30d": null,
-    "return_90d": null,
-    "per": null,
-    "market_cap": null,
-    "return_3d": 4.573501012670156,
-    "return_1m": -0.18881496133787978,
-    "return_ytd": 161.64479615346087,
-    "return_1y": 181.4940663353281,
-    "return_3y": 276.1826659798845,
-    "close": 222.02,
-    "marketCap": 194437567320,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "pe_ttm": null,
-    "return_5d": 1.5087783467446991,
-    "return_2y": 249.9447546903347
-   },
-   "weight": 0.3
-  },
-  {
-   "id": "C_5672",
-   "type": "CHARACTER",
-   "name": "Trainium2공동설계_ChipCoDesigner"
-  },
-  {
-   "id": "A_2972",
-   "type": "ASSET",
-   "name": "ACE 글로벌반도체TOP4 Plus SOLACTIVE",
-   "exposure": {
-    "ticker": "446770",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.8115363006429899,
-    "return_3d": 5.67334118570868,
-    "return_15d": -1.2194541270937775,
-    "return_1m": -9.915486334079981,
-    "return_ytd": 70.50118795163878,
-    "return_1y": 164.49894908797327,
-    "return_3y": null,
-    "close": 80745,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": null
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_211",
-   "to": "T_679",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_014612"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_211",
-   "to": "C_5658",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014613"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_232",
-   "to": "A_211",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_014614"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_232",
-   "to": "C_5659",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014615"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_217",
-   "to": "A_211",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_014616"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_217",
-   "to": "C_5660",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014617"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_099",
-   "to": "A_211",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_014618"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_099",
-   "to": "C_5661",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014619"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_211",
-   "to": "A_001",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_014622"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_001",
-   "to": "C_5663",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014623"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_211",
-   "to": "A_789",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_014624"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_789",
-   "to": "C_5664",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014625"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_211",
-   "to": "A_216",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_014626"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_216",
-   "to": "C_5665",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014627"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_1097",
-   "to": "T_679",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_014628"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "M_224",
-   "to": "T_679",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_014629"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "M_035",
-   "to": "T_679",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_014630"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_055",
-   "to": "A_211",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_014682"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_055",
-   "to": "C_5671",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014683"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_192",
-   "to": "A_211",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_014684"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_192",
-   "to": "C_5672",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014685"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_2972",
-   "to": "T_679",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020959"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_211",
-   "to": "T_679",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_014612"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_211",
-   "to": "C_5658",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014613"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_232",
-   "to": "A_211",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_014614"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_232",
-   "to": "C_5659",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014615"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_217",
-   "to": "A_211",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_014616"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_217",
-   "to": "C_5660",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014617"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_099",
-   "to": "A_211",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_014618"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_099",
-   "to": "C_5661",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014619"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_211",
-   "to": "A_001",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_014622"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_001",
-   "to": "C_5663",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014623"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_211",
-   "to": "A_789",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_014624"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_789",
-   "to": "C_5664",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014625"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_211",
-   "to": "A_216",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_014626"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_216",
-   "to": "C_5665",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014627"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_1097",
-   "to": "T_679",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_014628"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "M_224",
-   "to": "T_679",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_014629"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "M_035",
-   "to": "T_679",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_014630"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_055",
-   "to": "A_211",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_014682"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_055",
-   "to": "C_5671",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014683"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_192",
-   "to": "A_211",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_014684"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_192",
-   "to": "C_5672",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014685"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_2972",
-   "to": "T_679",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020959"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

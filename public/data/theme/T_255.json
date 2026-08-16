@@ -1,950 +1,950 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_255",
- "themeName": "글로벌농산물_농기계정밀농업",
- "meta": {
-  "periodDefault": "7d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_255",
+  "themeName": "글로벌농산물_농기계정밀농업",
+  "meta": {
+    "periodDefault": "7d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-08-01T00:00:00+09:00",
+    "description": "곡물가·비료가 상승과 정밀농업·자동화 수요로 실적이 개선되는 글로벌 '농기계·정밀농업' 축. 디어·AGCO·CNH·쿠보타(글로벌)와 대동·TYM(K-농기계)이 정밀농업(자율주행 트랙터·가변시비)과 신흥국 기계화 수혜. 곡물·비료·ETF는 별도 서브테마.",
+    "notes": "곡물가·비료가 상승과 정밀농업·자동화 수요로 실적이 개선되는 글로벌 '농기계·정밀농업' 축. 디어·AGCO·CNH·쿠보타(글로벌)와 대동·TYM(K-농기계)이 정밀농업(자율주행 트랙터·가변시비)과 신흥국 기계화 수혜. 곡물·비료·ETF는 별도 서브테마.",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 13건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-08-01",
+        "kind": "보강",
+        "title": "엣지 근거·브리핑·설명 구체화",
+        "detail": "분할 시 상투적이던 엣지 근거를 종목별 사실로 구체화하고 브리핑 카드/표와 테마 설명을 보강."
+      },
+      {
+        "date": "2026-08-01",
+        "kind": "수정",
+        "title": "밸류체인 분할",
+        "detail": "과대 테마 T_255를 밸류체인 단계별로 분할."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_255",
+      "type": "THEME",
+      "name": "글로벌농산물_농기계정밀농업"
+    },
+    {
+      "id": "M_099",
+      "type": "MACRO",
+      "name": "곡물수급악화"
+    },
+    {
+      "id": "M_075",
+      "type": "MACRO",
+      "name": "기후변화"
+    },
+    {
+      "id": "M_084",
+      "type": "MACRO",
+      "name": "중동전쟁"
+    },
+    {
+      "id": "M_264",
+      "type": "MACRO",
+      "name": "비료가상승"
+    },
+    {
+      "id": "A_375",
+      "type": "ASSET",
+      "name": "AGCO",
+      "exposure": {
+        "ticker": "AGCO",
+        "exchange": "NYSE",
+        "country": "US",
+        "business_desc": "AGCO — 글로벌 농기계 (Fendt·Massey Ferguson)",
+        "theme_role": "농기계 빅3",
+        "theme_status": "Support"
+      },
+      "metrics": {
+        "return_1d": 1.8903971845148249,
+        "close": 101.33,
+        "marketCap": 7096315302,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": -0.09859016070197235,
+        "return_15d": -16.401287022522894,
+        "return_1m": -11.223059400735934,
+        "return_ytd": -2.86618098159509,
+        "return_1y": -9.023163943257318,
+        "return_3y": -18.935999999999996,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -1.4587182728775683,
+        "return_2y": 18.542349087505848
+      }
+    },
+    {
+      "id": "C_3968",
+      "type": "CHARACTER",
+      "name": "농기계_글로벌"
+    },
+    {
+      "id": "A_376",
+      "type": "ASSET",
+      "name": "CNH인더스트리얼",
+      "exposure": {
+        "ticker": "CNH",
+        "exchange": "NYSE",
+        "country": "US",
+        "business_desc": "CNH Industrial — 농기계·건설장비 (Case IH·New Holland)",
+        "theme_role": "농기계 빅3",
+        "theme_status": "Support"
+      },
+      "metrics": {
+        "return_1d": 0.48123195380171957,
+        "close": 10.44,
+        "marketCap": 12945083606,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": -1.7873941674506288,
+        "return_15d": -6.36771300448431,
+        "return_1m": 0.19193857965451588,
+        "return_ytd": 13.232104121475041,
+        "return_1y": -14.074074074074083,
+        "return_3y": -24.017467248908297,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -4.307974335472053,
+        "return_2y": 7.962771458117879
+      }
+    },
+    {
+      "id": "C_3969",
+      "type": "CHARACTER",
+      "name": "농기계·건설장비"
+    },
+    {
+      "id": "A_377",
+      "type": "ASSET",
+      "name": "쿠보타",
+      "exposure": {
+        "ticker": "6326",
+        "exchange": "TSE",
+        "country": "JP",
+        "business_desc": "Kubota — 농기계·산업기계 (아시아 강자)",
+        "theme_role": "농기계 아시아 1위",
+        "theme_status": "Support"
+      },
+      "metrics": {
+        "return_1d": 0.05454545454546267,
+        "close": 2751.5,
+        "marketCap": 3099277708016,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": -0.4162142598624685,
+        "return_15d": -1.6091543000178787,
+        "return_1m": 0.4747124338141395,
+        "return_ytd": 24.137153169411228,
+        "return_1y": 55.05776275007044,
+        "return_3y": 26.505747126436784,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 2.514903129657231,
+        "return_2y": 39.24595141700404
+      }
+    },
+    {
+      "id": "C_3970",
+      "type": "CHARACTER",
+      "name": "농기계·소형장비(일본)"
+    },
+    {
+      "id": "A_378",
+      "type": "ASSET",
+      "name": "디어앤컴퍼니",
+      "exposure": {
+        "ticker": "DE",
+        "exchange": "NYSE",
+        "country": "US",
+        "business_desc": "Deere & Company — 농기계 1위 (트랙터·콤바인·정밀농업)",
+        "theme_role": "농기계 글로벌 1위 (정밀농업 강자)",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -0.5764394656912364,
+        "close": 608.85,
+        "marketCap": 164351401211,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": -1.4726110526741665,
+        "return_15d": -3.0740575649515933,
+        "return_1m": 4.183778234086244,
+        "return_ytd": 30.77517881306786,
+        "return_1y": 27.151031659844627,
+        "return_3y": 39.121195503153295,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -1.9296747902002198,
+        "return_2y": 73.32327488043728
+      }
+    },
+    {
+      "id": "C_3971",
+      "type": "CHARACTER",
+      "name": "농기계1위·정밀농업"
+    },
+    {
+      "id": "A_380",
+      "type": "ASSET",
+      "name": "대동",
+      "exposure": {
+        "ticker": "000490",
+        "exchange": "KOSPI",
+        "country": "KR",
+        "business_desc": "대동 — 국내 농기계 1위",
+        "theme_role": "K-농기계 대표주",
+        "theme_status": "Support"
+      },
+      "metrics": {
+        "return_1d": -2.1226415094339646,
+        "close": 8300,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 6.41025641025641,
+        "return_15d": 22.418879056047203,
+        "return_1m": 22.058823529411775,
+        "return_ytd": -12.011509233824958,
+        "return_1y": -13.01552749338658,
+        "return_3y": -21.733221764512443,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 23.328380386329872,
+        "return_2y": -20.88429774643593
+      }
+    },
+    {
+      "id": "C_3972",
+      "type": "CHARACTER",
+      "name": "K농기계·스마트농업"
+    },
+    {
+      "id": "A_381",
+      "type": "ASSET",
+      "name": "TYM",
+      "exposure": {
+        "ticker": "002900",
+        "exchange": "KOSPI",
+        "country": "KR",
+        "business_desc": "TYM — 국내 농기계 (대동 경쟁사)",
+        "theme_role": "K-농기계 2위",
+        "theme_status": "Peripheral"
+      },
+      "metrics": {
+        "return_1d": 3.5063113604488105,
+        "close": 7380,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 4.532577903682711,
+        "return_15d": 15.492957746478876,
+        "return_1m": 14.953271028037385,
+        "return_ytd": 20.751879741075886,
+        "return_1y": 55.88869876429057,
+        "return_3y": 29.12144317882297,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 15.312499999999996,
+        "return_2y": 76.39440795308367
+      }
+    },
+    {
+      "id": "C_3973",
+      "type": "CHARACTER",
+      "name": "K농기계(트랙터)"
+    },
+    {
+      "id": "A_382",
+      "type": "ASSET",
+      "name": "VanEck Agribusiness ETF",
+      "exposure": {
+        "ticker": "MOO",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.5064229249011953,
+        "close": 81.37,
+        "marketCap": 574468213,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": -0.30629747610879665,
+        "return_15d": -2.140709561034282,
+        "return_1m": -0.1717580664949092,
+        "return_ytd": 11.787333424920998,
+        "return_1y": 10.918756815703379,
+        "return_3y": -4.338114272278393,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.33292231812578343,
+        "return_2y": 15.664534470504643
+      }
+    }
   ],
-  "dataAsOf": "2026-08-01T00:00:00+09:00",
-  "description": "곡물가·비료가 상승과 정밀농업·자동화 수요로 실적이 개선되는 글로벌 '농기계·정밀농업' 축. 디어·AGCO·CNH·쿠보타(글로벌)와 대동·TYM(K-농기계)이 정밀농업(자율주행 트랙터·가변시비)과 신흥국 기계화 수혜. 곡물·비료·ETF는 별도 서브테마.",
-  "notes": "곡물가·비료가 상승과 정밀농업·자동화 수요로 실적이 개선되는 글로벌 '농기계·정밀농업' 축. 디어·AGCO·CNH·쿠보타(글로벌)와 대동·TYM(K-농기계)이 정밀농업(자율주행 트랙터·가변시비)과 신흥국 기계화 수혜. 곡물·비료·ETF는 별도 서브테마.",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 13건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-08-01",
-    "kind": "보강",
-    "title": "엣지 근거·브리핑·설명 구체화",
-    "detail": "분할 시 상투적이던 엣지 근거를 종목별 사실로 구체화하고 브리핑 카드/표와 테마 설명을 보강."
-   },
-   {
-    "date": "2026-08-01",
-    "kind": "수정",
-    "title": "밸류체인 분할",
-    "detail": "과대 테마 T_255를 밸류체인 단계별로 분할."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "M_099",
+      "to": "T_255",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_015331"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_075",
+      "to": "T_255",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_015332"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_084",
+      "to": "T_255",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_015333"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_264",
+      "to": "T_255",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_015334"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_375",
+      "to": "T_255",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015335"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_375",
+      "to": "C_3968",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015336"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_376",
+      "to": "T_255",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015337"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_376",
+      "to": "C_3969",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015338"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_377",
+      "to": "T_255",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015339"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_377",
+      "to": "C_3970",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015340"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_378",
+      "to": "T_255",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015341"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_378",
+      "to": "C_3971",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015342"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_380",
+      "to": "T_255",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015343"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_380",
+      "to": "C_3972",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015344"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_381",
+      "to": "T_255",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015345"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_381",
+      "to": "C_3973",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015346"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_378",
+      "to": "A_376",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018361"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "디어(John Deere)와 CNH(Case IH·New Holland)는 글로벌 풀라인 농기계 시장의 직접 경쟁자다."
+    },
+    {
+      "from": "A_378",
+      "to": "A_375",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018362"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "디어와 AGCO(Massey Ferguson·Fendt)는 트랙터·콤바인 등 농기계에서 경쟁한다."
+    },
+    {
+      "from": "A_378",
+      "to": "A_377",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018363"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "디어와 쿠보타는 트랙터 시장, 특히 소형·콤팩트 트랙터에서 경쟁한다."
+    },
+    {
+      "from": "A_376",
+      "to": "A_375",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018364"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "CNH와 AGCO는 글로벌 농기계 풀라인 시장에서 경쟁한다."
+    },
+    {
+      "from": "A_376",
+      "to": "A_377",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018365"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "CNH와 쿠보타는 트랙터·농기계 시장에서 경쟁한다."
+    },
+    {
+      "from": "A_375",
+      "to": "A_377",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018366"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "AGCO와 쿠보타는 트랙터·농기계 시장에서 경쟁한다."
+    },
+    {
+      "from": "A_380",
+      "to": "A_381",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018367"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "대동(Kioti)과 TYM은 한국 트랙터 양대 업체로 국내외 시장에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_380",
+      "to": "A_377",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018368"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "대동은 북미 100마력 미만 콤팩트 트랙터 시장에서 쿠보타와 경쟁한다."
+    },
+    {
+      "from": "A_380",
+      "to": "A_378",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018369"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "대동은 북미 콤팩트 트랙터 시장에서 존디어와 경쟁한다."
+    },
+    {
+      "from": "A_380",
+      "to": "A_376",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018370"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "대동은 콤팩트 트랙터 시장에서 CNH(New Holland)와 경쟁한다."
+    },
+    {
+      "from": "A_381",
+      "to": "A_377",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018371"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "TYM은 북미 콤팩트 트랙터 시장에서 쿠보타와 경쟁한다."
+    },
+    {
+      "from": "A_381",
+      "to": "A_378",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018372"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "TYM은 북미 콤팩트 트랙터 시장에서 존디어와 경쟁한다."
+    },
+    {
+      "from": "A_381",
+      "to": "A_376",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018373"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "TYM은 콤팩트 트랙터 시장에서 CNH(New Holland)와 경쟁한다."
+    },
+    {
+      "from": "A_382",
+      "to": "T_255",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020675"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "M_099",
+      "to": "T_255",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_015331"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_075",
+      "to": "T_255",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_015332"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_084",
+      "to": "T_255",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_015333"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_264",
+      "to": "T_255",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_015334"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_375",
+      "to": "T_255",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015335"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_375",
+      "to": "C_3968",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015336"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_376",
+      "to": "T_255",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015337"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_376",
+      "to": "C_3969",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015338"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_377",
+      "to": "T_255",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015339"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_377",
+      "to": "C_3970",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015340"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_378",
+      "to": "T_255",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015341"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_378",
+      "to": "C_3971",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015342"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_380",
+      "to": "T_255",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015343"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_380",
+      "to": "C_3972",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015344"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_381",
+      "to": "T_255",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015345"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_381",
+      "to": "C_3973",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015346"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_378",
+      "to": "A_376",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018361"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "디어(John Deere)와 CNH(Case IH·New Holland)는 글로벌 풀라인 농기계 시장의 직접 경쟁자다."
+    },
+    {
+      "from": "A_378",
+      "to": "A_375",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018362"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "디어와 AGCO(Massey Ferguson·Fendt)는 트랙터·콤바인 등 농기계에서 경쟁한다."
+    },
+    {
+      "from": "A_378",
+      "to": "A_377",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018363"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "디어와 쿠보타는 트랙터 시장, 특히 소형·콤팩트 트랙터에서 경쟁한다."
+    },
+    {
+      "from": "A_376",
+      "to": "A_375",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018364"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "CNH와 AGCO는 글로벌 농기계 풀라인 시장에서 경쟁한다."
+    },
+    {
+      "from": "A_376",
+      "to": "A_377",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018365"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "CNH와 쿠보타는 트랙터·농기계 시장에서 경쟁한다."
+    },
+    {
+      "from": "A_375",
+      "to": "A_377",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018366"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "AGCO와 쿠보타는 트랙터·농기계 시장에서 경쟁한다."
+    },
+    {
+      "from": "A_380",
+      "to": "A_381",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018367"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "대동(Kioti)과 TYM은 한국 트랙터 양대 업체로 국내외 시장에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_380",
+      "to": "A_377",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018368"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "대동은 북미 100마력 미만 콤팩트 트랙터 시장에서 쿠보타와 경쟁한다."
+    },
+    {
+      "from": "A_380",
+      "to": "A_378",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018369"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "대동은 북미 콤팩트 트랙터 시장에서 존디어와 경쟁한다."
+    },
+    {
+      "from": "A_380",
+      "to": "A_376",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018370"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "대동은 콤팩트 트랙터 시장에서 CNH(New Holland)와 경쟁한다."
+    },
+    {
+      "from": "A_381",
+      "to": "A_377",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018371"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "TYM은 북미 콤팩트 트랙터 시장에서 쿠보타와 경쟁한다."
+    },
+    {
+      "from": "A_381",
+      "to": "A_378",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018372"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "TYM은 북미 콤팩트 트랙터 시장에서 존디어와 경쟁한다."
+    },
+    {
+      "from": "A_381",
+      "to": "A_376",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018373"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "TYM은 콤팩트 트랙터 시장에서 CNH(New Holland)와 경쟁한다."
+    },
+    {
+      "from": "A_382",
+      "to": "T_255",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020675"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_255",
-   "type": "THEME",
-   "name": "글로벌농산물_농기계정밀농업"
-  },
-  {
-   "id": "M_099",
-   "type": "MACRO",
-   "name": "곡물수급악화"
-  },
-  {
-   "id": "M_075",
-   "type": "MACRO",
-   "name": "기후변화"
-  },
-  {
-   "id": "M_084",
-   "type": "MACRO",
-   "name": "중동전쟁"
-  },
-  {
-   "id": "M_264",
-   "type": "MACRO",
-   "name": "비료가상승"
-  },
-  {
-   "id": "A_375",
-   "type": "ASSET",
-   "name": "AGCO",
-   "exposure": {
-    "ticker": "AGCO",
-    "exchange": "NYSE",
-    "country": "US",
-    "business_desc": "AGCO — 글로벌 농기계 (Fendt·Massey Ferguson)",
-    "theme_role": "농기계 빅3",
-    "theme_status": "Support"
-   },
-   "metrics": {
-    "return_1d": 2.1986888552697925,
-    "close": 101.33,
-    "marketCap": 7096315302,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 0.2037102962699322,
-    "return_15d": -16.148369307969578,
-    "return_1m": -10.954456099835053,
-    "return_ytd": -2.1182752801554128,
-    "return_1y": -7.8313768080349515,
-    "return_3y": -14.301203402917972,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -1.1605563022947796,
-    "return_2y": 21.59415176889312
-   }
-  },
-  {
-   "id": "C_3968",
-   "type": "CHARACTER",
-   "name": "농기계_글로벌"
-  },
-  {
-   "id": "A_376",
-   "type": "ASSET",
-   "name": "CNH인더스트리얼",
-   "exposure": {
-    "ticker": "CNH",
-    "exchange": "NYSE",
-    "country": "US",
-    "business_desc": "CNH Industrial — 농기계·건설장비 (Case IH·New Holland)",
-    "theme_role": "농기계 빅3",
-    "theme_status": "Support"
-   },
-   "metrics": {
-    "return_1d": 0.48123195380171957,
-    "close": 10.44,
-    "marketCap": 12945083606,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": -1.7873941674506288,
-    "return_15d": -6.36771300448431,
-    "return_1m": 0.19193857965451588,
-    "return_ytd": 14.324510780888966,
-    "return_1y": -13.24436171450415,
-    "return_3y": -18.609183753020975,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -4.307974335472053,
-    "return_2y": 11.044928522804632
-   }
-  },
-  {
-   "id": "C_3969",
-   "type": "CHARACTER",
-   "name": "농기계·건설장비"
-  },
-  {
-   "id": "A_377",
-   "type": "ASSET",
-   "name": "쿠보타",
-   "exposure": {
-    "ticker": "6326",
-    "exchange": "TSE",
-    "country": "JP",
-    "business_desc": "Kubota — 농기계·산업기계 (아시아 강자)",
-    "theme_role": "농기계 아시아 1위",
-    "theme_status": "Support"
-   },
-   "metrics": {
-    "return_1d": -0.8695652173912993,
-    "close": 2793,
-    "marketCap": 3099277708016,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": -3.1049436253252405,
-    "return_15d": 3.2914201183432024,
-    "return_1m": 4.002978961087322,
-    "return_ytd": 26.009474396571175,
-    "return_1y": 66.99551569506725,
-    "return_3y": 30.118798043326358,
-    "returnsAsOf": "2026-07-30",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -0.12515644555695093,
-    "return_2y": 27.70919067215363
-   }
-  },
-  {
-   "id": "C_3970",
-   "type": "CHARACTER",
-   "name": "농기계·소형장비(일본)"
-  },
-  {
-   "id": "A_378",
-   "type": "ASSET",
-   "name": "디어앤컴퍼니",
-   "exposure": {
-    "ticker": "DE",
-    "exchange": "NYSE",
-    "country": "US",
-    "business_desc": "Deere & Company — 농기계 1위 (트랙터·콤바인·정밀농업)",
-    "theme_role": "농기계 글로벌 1위 (정밀농업 강자)",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -0.5764394656912364,
-    "close": 608.85,
-    "marketCap": 164351401211,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": -1.4726110526741665,
-    "return_15d": -3.0740575649515933,
-    "return_1m": 4.183778234086244,
-    "return_ytd": 31.497614965653177,
-    "return_1y": 28.74379382385033,
-    "return_3y": 44.9773336743164,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -1.9296747902002198,
-    "return_2y": 77.96746163768651
-   }
-  },
-  {
-   "id": "C_3971",
-   "type": "CHARACTER",
-   "name": "농기계1위·정밀농업"
-  },
-  {
-   "id": "A_380",
-   "type": "ASSET",
-   "name": "대동",
-   "exposure": {
-    "ticker": "000490",
-    "exchange": "KOSPI",
-    "country": "KR",
-    "business_desc": "대동 — 국내 농기계 1위",
-    "theme_role": "K-농기계 대표주",
-    "theme_status": "Support"
-   },
-   "metrics": {
-    "return_1d": -2.1226415094339646,
-    "close": 8300,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 6.41025641025641,
-    "return_15d": 22.418879056047203,
-    "return_1m": 24.251497005988032,
-    "return_ytd": -13.464363300707728,
-    "return_1y": -21.190759390555414,
-    "return_3y": -21.733221764512443,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 23.328380386329872,
-    "return_2y": -13.537839815430996
-   }
-  },
-  {
-   "id": "C_3972",
-   "type": "CHARACTER",
-   "name": "K농기계·스마트농업"
-  },
-  {
-   "id": "A_381",
-   "type": "ASSET",
-   "name": "TYM",
-   "exposure": {
-    "ticker": "002900",
-    "exchange": "KOSPI",
-    "country": "KR",
-    "business_desc": "TYM — 국내 농기계 (대동 경쟁사)",
-    "theme_role": "K-농기계 2위",
-    "theme_status": "Peripheral"
-   },
-   "metrics": {
-    "return_1d": 3.5063113604488105,
-    "close": 7380,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 4.532577903682711,
-    "return_15d": 15.492957746478876,
-    "return_1m": 15.312499999999996,
-    "return_ytd": 20.943853700545965,
-    "return_1y": 35.84586582006837,
-    "return_3y": 29.12144317882297,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 15.312499999999996,
-    "return_2y": 128.53602362554625
-   }
-  },
-  {
-   "id": "C_3973",
-   "type": "CHARACTER",
-   "name": "K농기계(트랙터)"
-  },
-  {
-   "id": "A_382",
-   "type": "ASSET",
-   "name": "VanEck Agribusiness ETF",
-   "exposure": {
-    "ticker": "MOO",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.5064229249011953,
-    "close": 81.37,
-    "marketCap": 574468213,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": -0.30629747610879665,
-    "return_15d": -2.140709561034282,
-    "return_1m": -0.1717580664949092,
-    "return_ytd": 11.787333424920998,
-    "return_1y": 13.669541117026407,
-    "return_3y": 4.432711040836179,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.33292231812578343,
-    "return_2y": 22.5640083265803
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "M_099",
-   "to": "T_255",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_015331"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_075",
-   "to": "T_255",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_015332"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_084",
-   "to": "T_255",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_015333"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_264",
-   "to": "T_255",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_015334"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_375",
-   "to": "T_255",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015335"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_375",
-   "to": "C_3968",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015336"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_376",
-   "to": "T_255",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015337"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_376",
-   "to": "C_3969",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015338"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_377",
-   "to": "T_255",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015339"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_377",
-   "to": "C_3970",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015340"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_378",
-   "to": "T_255",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015341"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_378",
-   "to": "C_3971",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015342"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_380",
-   "to": "T_255",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015343"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_380",
-   "to": "C_3972",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015344"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_381",
-   "to": "T_255",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015345"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_381",
-   "to": "C_3973",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015346"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_378",
-   "to": "A_376",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018361"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "디어(John Deere)와 CNH(Case IH·New Holland)는 글로벌 풀라인 농기계 시장의 직접 경쟁자다."
-  },
-  {
-   "from": "A_378",
-   "to": "A_375",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018362"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "디어와 AGCO(Massey Ferguson·Fendt)는 트랙터·콤바인 등 농기계에서 경쟁한다."
-  },
-  {
-   "from": "A_378",
-   "to": "A_377",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018363"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "디어와 쿠보타는 트랙터 시장, 특히 소형·콤팩트 트랙터에서 경쟁한다."
-  },
-  {
-   "from": "A_376",
-   "to": "A_375",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018364"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "CNH와 AGCO는 글로벌 농기계 풀라인 시장에서 경쟁한다."
-  },
-  {
-   "from": "A_376",
-   "to": "A_377",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018365"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "CNH와 쿠보타는 트랙터·농기계 시장에서 경쟁한다."
-  },
-  {
-   "from": "A_375",
-   "to": "A_377",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018366"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "AGCO와 쿠보타는 트랙터·농기계 시장에서 경쟁한다."
-  },
-  {
-   "from": "A_380",
-   "to": "A_381",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018367"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "대동(Kioti)과 TYM은 한국 트랙터 양대 업체로 국내외 시장에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_380",
-   "to": "A_377",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018368"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "대동은 북미 100마력 미만 콤팩트 트랙터 시장에서 쿠보타와 경쟁한다."
-  },
-  {
-   "from": "A_380",
-   "to": "A_378",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018369"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "대동은 북미 콤팩트 트랙터 시장에서 존디어와 경쟁한다."
-  },
-  {
-   "from": "A_380",
-   "to": "A_376",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018370"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "대동은 콤팩트 트랙터 시장에서 CNH(New Holland)와 경쟁한다."
-  },
-  {
-   "from": "A_381",
-   "to": "A_377",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018371"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "TYM은 북미 콤팩트 트랙터 시장에서 쿠보타와 경쟁한다."
-  },
-  {
-   "from": "A_381",
-   "to": "A_378",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018372"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "TYM은 북미 콤팩트 트랙터 시장에서 존디어와 경쟁한다."
-  },
-  {
-   "from": "A_381",
-   "to": "A_376",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018373"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "TYM은 콤팩트 트랙터 시장에서 CNH(New Holland)와 경쟁한다."
-  },
-  {
-   "from": "A_382",
-   "to": "T_255",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020675"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "M_099",
-   "to": "T_255",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_015331"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_075",
-   "to": "T_255",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_015332"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_084",
-   "to": "T_255",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_015333"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_264",
-   "to": "T_255",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_015334"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_375",
-   "to": "T_255",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015335"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_375",
-   "to": "C_3968",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015336"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_376",
-   "to": "T_255",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015337"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_376",
-   "to": "C_3969",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015338"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_377",
-   "to": "T_255",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015339"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_377",
-   "to": "C_3970",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015340"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_378",
-   "to": "T_255",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015341"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_378",
-   "to": "C_3971",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015342"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_380",
-   "to": "T_255",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015343"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_380",
-   "to": "C_3972",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015344"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_381",
-   "to": "T_255",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015345"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_381",
-   "to": "C_3973",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015346"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_378",
-   "to": "A_376",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018361"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "디어(John Deere)와 CNH(Case IH·New Holland)는 글로벌 풀라인 농기계 시장의 직접 경쟁자다."
-  },
-  {
-   "from": "A_378",
-   "to": "A_375",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018362"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "디어와 AGCO(Massey Ferguson·Fendt)는 트랙터·콤바인 등 농기계에서 경쟁한다."
-  },
-  {
-   "from": "A_378",
-   "to": "A_377",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018363"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "디어와 쿠보타는 트랙터 시장, 특히 소형·콤팩트 트랙터에서 경쟁한다."
-  },
-  {
-   "from": "A_376",
-   "to": "A_375",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018364"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "CNH와 AGCO는 글로벌 농기계 풀라인 시장에서 경쟁한다."
-  },
-  {
-   "from": "A_376",
-   "to": "A_377",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018365"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "CNH와 쿠보타는 트랙터·농기계 시장에서 경쟁한다."
-  },
-  {
-   "from": "A_375",
-   "to": "A_377",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018366"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "AGCO와 쿠보타는 트랙터·농기계 시장에서 경쟁한다."
-  },
-  {
-   "from": "A_380",
-   "to": "A_381",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018367"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "대동(Kioti)과 TYM은 한국 트랙터 양대 업체로 국내외 시장에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_380",
-   "to": "A_377",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018368"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "대동은 북미 100마력 미만 콤팩트 트랙터 시장에서 쿠보타와 경쟁한다."
-  },
-  {
-   "from": "A_380",
-   "to": "A_378",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018369"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "대동은 북미 콤팩트 트랙터 시장에서 존디어와 경쟁한다."
-  },
-  {
-   "from": "A_380",
-   "to": "A_376",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018370"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "대동은 콤팩트 트랙터 시장에서 CNH(New Holland)와 경쟁한다."
-  },
-  {
-   "from": "A_381",
-   "to": "A_377",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018371"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "TYM은 북미 콤팩트 트랙터 시장에서 쿠보타와 경쟁한다."
-  },
-  {
-   "from": "A_381",
-   "to": "A_378",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018372"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "TYM은 북미 콤팩트 트랙터 시장에서 존디어와 경쟁한다."
-  },
-  {
-   "from": "A_381",
-   "to": "A_376",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018373"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "TYM은 콤팩트 트랙터 시장에서 CNH(New Holland)와 경쟁한다."
-  },
-  {
-   "from": "A_382",
-   "to": "T_255",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020675"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

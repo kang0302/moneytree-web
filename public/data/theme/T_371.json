@@ -1,687 +1,687 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_371",
- "themeName": "글로벌철강통합",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_371",
+  "themeName": "글로벌철강통합",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-25T00:00:00+09:00",
+    "description": "글로벌 철강 통합 6사 — POSCO Holdings (한국 1위)·Nippon Steel (일본 1위, 2025 US Steel 인수 진행)·ArcelorMittal (글로벌 1위·룩셈부르크)·Cleveland-Cliffs (미국)·Nucor (미국 미니밀 1위)·Steel Dynamics (미국)·US Steel (Nippon 인수 target). Trump 25% 관세 + 중국 공급 과잉 + 일본·미국 합병이 핵심 동인.",
+    "notes": "T_371 신규",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 7건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-08-01",
+        "kind": "수정",
+        "title": "상폐 종목 제거",
+        "detail": "피인수/상폐로 거래/링크가 없는 종목 제거."
+      },
+      {
+        "date": "2026-07-25",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결, 2026 이벤트 2건 추가."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_371",
+      "type": "THEME",
+      "name": "글로벌철강통합"
+    },
+    {
+      "id": "A_603",
+      "type": "ASSET",
+      "name": "포스코홀딩스",
+      "exposure": {
+        "ticker": "005490",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 2.611367127496167,
+        "return_3d": 2.297090352220521,
+        "return_15d": 6.709265175718859,
+        "return_1m": 6.200317965023849,
+        "return_ytd": 13.477111991653778,
+        "return_1y": 18.14516771462298,
+        "return_3y": -37.52252985039636,
+        "close": 334000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 0.9063444108761365,
+        "return_2y": -3.638098413921931
+      }
+    },
+    {
+      "id": "A_2052",
+      "type": "ASSET",
+      "name": "일본제철",
+      "exposure": {
+        "ticker": "NPSCY",
+        "exchange": "OTC",
+        "country": "JP"
+      },
+      "metrics": {
+        "return_1d": -0.2331002331002252,
+        "return_3d": -1.6091954022988353,
+        "return_15d": 11.749347258485642,
+        "return_1m": 19.55307262569832,
+        "return_ytd": 5.1597051597051635,
+        "return_1y": -36.87315634218289,
+        "return_3y": -44.198174706649276,
+        "close": 4.28,
+        "marketCap": 67105472269,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -4.464285714285721,
+        "return_2y": -41.76870748299319
+      }
+    },
+    {
+      "id": "A_2053",
+      "type": "ASSET",
+      "name": "아르셀로미탈",
+      "exposure": {
+        "ticker": "MT",
+        "exchange": "NYSE",
+        "country": "LU"
+      },
+      "metrics": {
+        "return_1d": 0.8878568501570872,
+        "return_3d": 0.20350020350021758,
+        "return_15d": 10.436602870813406,
+        "return_1m": 10.255261979399922,
+        "return_ytd": 62.0803159973667,
+        "return_1y": 117.81185491005606,
+        "return_3y": 172.04419889502765,
+        "close": 73.86,
+        "marketCap": 56214846000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.7777322963569366,
+        "return_2y": 237.72290809327842
+      }
+    },
+    {
+      "id": "A_2054",
+      "type": "ASSET",
+      "name": "클리블랜드클리프스",
+      "exposure": {
+        "ticker": "CLF",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -2.0576131687242816,
+        "return_3d": -4.109589041095885,
+        "return_15d": -0.25146689019278634,
+        "return_1m": 21.552604698672127,
+        "return_ytd": -10.391566265060238,
+        "return_1y": 12.689393939393945,
+        "return_3y": -25.531914893617024,
+        "close": 11.9,
+        "marketCap": 6789426000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -2.9363784665579096,
+        "return_2y": -5.1792828685259025
+      }
+    },
+    {
+      "id": "A_2055",
+      "type": "ASSET",
+      "name": "누코어",
+      "exposure": {
+        "ticker": "NUE",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.241323588820742,
+        "return_3d": -1.1178525464239586,
+        "return_15d": 8.624171917918888,
+        "return_1m": 14.84028015032457,
+        "return_ytd": 64.86420207222122,
+        "return_1y": 86.29026671285074,
+        "return_3y": 56.3066728667752,
+        "close": 268.91,
+        "marketCap": 61241832310,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -1.364486666911191,
+        "return_2y": 90.36528387370808
+      }
+    },
+    {
+      "id": "A_1295",
+      "type": "ASSET",
+      "name": "스틸다이내믹스",
+      "exposure": {
+        "ticker": "STLD",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.827044870072525,
+        "return_3d": -3.0035268686715466,
+        "return_15d": 3.5045121605762564,
+        "return_1m": 9.607885151060636,
+        "return_ytd": 50.941280613750386,
+        "return_1y": 100.63539378726074,
+        "return_3y": 137.59405480724573,
+        "close": 255.77,
+        "marketCap": 36659027370,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -2.5452467136597323,
+        "return_2y": 122.31203824424166
+      }
+    },
+    {
+      "id": "M_362",
+      "type": "MACRO",
+      "name": "미국관세철강"
+    },
+    {
+      "id": "M_363",
+      "type": "MACRO",
+      "name": "미국인프라capex"
+    },
+    {
+      "id": "M_070",
+      "type": "MACRO",
+      "name": "트럼프정책리스크"
+    },
+    {
+      "id": "C_386",
+      "type": "CHARACTER",
+      "name": "글로벌철강1위"
+    },
+    {
+      "id": "C_387",
+      "type": "CHARACTER",
+      "name": "아시아철강거장"
+    },
+    {
+      "id": "C_389",
+      "type": "CHARACTER",
+      "name": "미국EAF미니밀"
+    },
+    {
+      "id": "A_2591",
+      "type": "ASSET",
+      "name": "사일렉스시스템즈",
+      "exposure": {
+        "ticker": "SLX",
+        "exchange": "ASX",
+        "country": "AU",
+        "business_desc": "레이저 우라늄 농축(GLE)",
+        "theme_role": "레이저농축",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -3.9106145251396662,
+        "return_3d": 0.19417475728154,
+        "return_15d": 10.729613733905573,
+        "return_1m": 8.631578947368435,
+        "return_ytd": -40.20857473928158,
+        "return_1y": 32.30769230769231,
+        "return_3y": 56.838905775076,
+        "close": 5.16,
+        "marketCap": 1436740080,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 6.172839506172845,
+        "return_2y": 21.698113207547177
+      }
+    }
   ],
-  "dataAsOf": "2026-07-25T00:00:00+09:00",
-  "description": "글로벌 철강 통합 6사 — POSCO Holdings (한국 1위)·Nippon Steel (일본 1위, 2025 US Steel 인수 진행)·ArcelorMittal (글로벌 1위·룩셈부르크)·Cleveland-Cliffs (미국)·Nucor (미국 미니밀 1위)·Steel Dynamics (미국)·US Steel (Nippon 인수 target). Trump 25% 관세 + 중국 공급 과잉 + 일본·미국 합병이 핵심 동인.",
-  "notes": "T_371 신규",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 7건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-08-01",
-    "kind": "수정",
-    "title": "상폐 종목 제거",
-    "detail": "피인수/상폐로 거래/링크가 없는 종목 제거."
-   },
-   {
-    "date": "2026-07-25",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결, 2026 이벤트 2건 추가."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_603",
+      "to": "T_371",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011055"
+      ]
+    },
+    {
+      "from": "A_2052",
+      "to": "T_371",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011056"
+      ]
+    },
+    {
+      "from": "A_2053",
+      "to": "T_371",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011057"
+      ]
+    },
+    {
+      "from": "A_2054",
+      "to": "T_371",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011058"
+      ]
+    },
+    {
+      "from": "A_2055",
+      "to": "T_371",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011059"
+      ]
+    },
+    {
+      "from": "A_1295",
+      "to": "T_371",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011060"
+      ]
+    },
+    {
+      "from": "M_362",
+      "to": "T_371",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011062"
+      ]
+    },
+    {
+      "from": "M_363",
+      "to": "T_371",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011063"
+      ]
+    },
+    {
+      "from": "M_070",
+      "to": "T_371",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011064"
+      ]
+    },
+    {
+      "from": "A_2053",
+      "to": "C_386",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016266"
+      ]
+    },
+    {
+      "from": "A_603",
+      "to": "C_387",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016267"
+      ]
+    },
+    {
+      "from": "A_2052",
+      "to": "C_387",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016268"
+      ]
+    },
+    {
+      "from": "A_2055",
+      "to": "C_389",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016269"
+      ]
+    },
+    {
+      "from": "A_1295",
+      "to": "C_389",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016270"
+      ]
+    },
+    {
+      "from": "A_2052",
+      "to": "A_2053",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_018428"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "일본제철과 아르셀로미탈은 인도 AM/NS India 합작사(아르셀로미탈 60%·일본제철 40%)를 공동 운영하는 오랜 제휴 관계다."
+    },
+    {
+      "from": "A_603",
+      "to": "A_2052",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018429"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "포스코홀딩스와 일본제철은 동아시아·글로벌 고급 철강 시장의 대표 경쟁자다."
+    },
+    {
+      "from": "A_603",
+      "to": "A_2053",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018430"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "포스코홀딩스와 아르셀로미탈은 글로벌 조강 생산 상위 기업으로 세계 철강 시장에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_2052",
+      "to": "A_2054",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018431"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "일본제철(US스틸 인수)과 클리블랜드클리프스는 북미 판재류 철강 시장에서 경쟁하며 US스틸 인수전에서도 맞붙었다."
+    },
+    {
+      "from": "A_2054",
+      "to": "A_2055",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018432"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "클리블랜드클리프스와 누코어는 미국 철강 시장의 대형 경쟁자로 US스틸 인수전에서도 경합했다."
+    },
+    {
+      "from": "A_2055",
+      "to": "A_1295",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018433"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "누코어와 스틸다이내믹스는 미국 전기로(EAF) 미니밀 방식의 대표 철강 경쟁자다."
+    },
+    {
+      "from": "A_2054",
+      "to": "A_1295",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018434"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "클리블랜드클리프스와 스틸다이내믹스는 미국 판재류 철강 시장에서 경쟁한다."
+    },
+    {
+      "from": "A_2591",
+      "to": "T_371",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020740"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_603",
+      "to": "T_371",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011055"
+      ]
+    },
+    {
+      "from": "A_2052",
+      "to": "T_371",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011056"
+      ]
+    },
+    {
+      "from": "A_2053",
+      "to": "T_371",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011057"
+      ]
+    },
+    {
+      "from": "A_2054",
+      "to": "T_371",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011058"
+      ]
+    },
+    {
+      "from": "A_2055",
+      "to": "T_371",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011059"
+      ]
+    },
+    {
+      "from": "A_1295",
+      "to": "T_371",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011060"
+      ]
+    },
+    {
+      "from": "M_362",
+      "to": "T_371",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011062"
+      ]
+    },
+    {
+      "from": "M_363",
+      "to": "T_371",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011063"
+      ]
+    },
+    {
+      "from": "M_070",
+      "to": "T_371",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011064"
+      ]
+    },
+    {
+      "from": "A_2053",
+      "to": "C_386",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016266"
+      ]
+    },
+    {
+      "from": "A_603",
+      "to": "C_387",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016267"
+      ]
+    },
+    {
+      "from": "A_2052",
+      "to": "C_387",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016268"
+      ]
+    },
+    {
+      "from": "A_2055",
+      "to": "C_389",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016269"
+      ]
+    },
+    {
+      "from": "A_1295",
+      "to": "C_389",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016270"
+      ]
+    },
+    {
+      "from": "A_2052",
+      "to": "A_2053",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_018428"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "일본제철과 아르셀로미탈은 인도 AM/NS India 합작사(아르셀로미탈 60%·일본제철 40%)를 공동 운영하는 오랜 제휴 관계다."
+    },
+    {
+      "from": "A_603",
+      "to": "A_2052",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018429"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "포스코홀딩스와 일본제철은 동아시아·글로벌 고급 철강 시장의 대표 경쟁자다."
+    },
+    {
+      "from": "A_603",
+      "to": "A_2053",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018430"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "포스코홀딩스와 아르셀로미탈은 글로벌 조강 생산 상위 기업으로 세계 철강 시장에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_2052",
+      "to": "A_2054",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018431"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "일본제철(US스틸 인수)과 클리블랜드클리프스는 북미 판재류 철강 시장에서 경쟁하며 US스틸 인수전에서도 맞붙었다."
+    },
+    {
+      "from": "A_2054",
+      "to": "A_2055",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018432"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "클리블랜드클리프스와 누코어는 미국 철강 시장의 대형 경쟁자로 US스틸 인수전에서도 경합했다."
+    },
+    {
+      "from": "A_2055",
+      "to": "A_1295",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018433"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "누코어와 스틸다이내믹스는 미국 전기로(EAF) 미니밀 방식의 대표 철강 경쟁자다."
+    },
+    {
+      "from": "A_2054",
+      "to": "A_1295",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018434"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "클리블랜드클리프스와 스틸다이내믹스는 미국 판재류 철강 시장에서 경쟁한다."
+    },
+    {
+      "from": "A_2591",
+      "to": "T_371",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020740"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_371",
-   "type": "THEME",
-   "name": "글로벌철강통합"
-  },
-  {
-   "id": "A_603",
-   "type": "ASSET",
-   "name": "포스코홀딩스",
-   "exposure": {
-    "ticker": "005490",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 2.611367127496167,
-    "return_3d": 2.297090352220521,
-    "return_15d": 6.709265175718859,
-    "return_1m": 10.049423393739708,
-    "return_ytd": 10.686691204973787,
-    "return_1y": 11.613564933628172,
-    "return_3y": -37.52252985039636,
-    "close": 334000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.9063444108761365,
-    "return_2y": 5.925639175659425
-   }
-  },
-  {
-   "id": "A_2052",
-   "type": "ASSET",
-   "name": "일본제철",
-   "exposure": {
-    "ticker": "NPSCY",
-    "exchange": "OTC",
-    "country": "JP"
-   },
-   "metrics": {
-    "return_1d": 1.9704433497536922,
-    "return_3d": 8.09399477806787,
-    "return_15d": 18.965517241379292,
-    "return_1m": 20.348837209302317,
-    "return_ytd": 1.7199017199017064,
-    "return_1y": 5.182926829268286,
-    "return_3y": -9.210526315789469,
-    "close": 4.14,
-    "marketCap": 67105472269,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-07-29",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 10.991957104557626,
-    "return_2y": -1.849217638691325
-   }
-  },
-  {
-   "id": "A_2053",
-   "type": "ASSET",
-   "name": "아르셀로미탈",
-   "exposure": {
-    "ticker": "MT",
-    "exchange": "NYSE",
-    "country": "LU"
-   },
-   "metrics": {
-    "return_1d": 0.8878568501570872,
-    "return_3d": 0.20350020350021758,
-    "return_15d": 10.663290532340476,
-    "return_1m": 10.481535552736766,
-    "return_ytd": 63.18684960562073,
-    "return_1y": 120.79001333229704,
-    "return_3y": 186.51338885677822,
-    "close": 73.86,
-    "marketCap": 56214846000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.7777322963569366,
-    "return_2y": 248.74332472413582
-   }
-  },
-  {
-   "id": "A_2054",
-   "type": "ASSET",
-   "name": "클리블랜드클리프스",
-   "exposure": {
-    "ticker": "CLF",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -2.0576131687242816,
-    "return_3d": -4.109589041095885,
-    "return_15d": -0.25146689019278634,
-    "return_1m": 21.552604698672127,
-    "return_ytd": -10.391566265060238,
-    "return_1y": 12.689393939393945,
-    "return_3y": -25.531914893617024,
-    "close": 11.9,
-    "marketCap": 6789426000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -2.9363784665579096,
-    "return_2y": -5.1792828685259025
-   }
-  },
-  {
-   "id": "A_2055",
-   "type": "ASSET",
-   "name": "누코어",
-   "exposure": {
-    "ticker": "NUE",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -1.241323588820742,
-    "return_3d": -1.1178525464239586,
-    "return_15d": 8.624171917918888,
-    "return_1m": 14.84028015032457,
-    "return_ytd": 65.83280555361988,
-    "return_1y": 88.78667127207578,
-    "return_3y": 63.17126642043225,
-    "close": 268.91,
-    "marketCap": 61241832310,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -1.364486666911191,
-    "return_2y": 96.23654344627887
-   }
-  },
-  {
-   "id": "A_1295",
-   "type": "ASSET",
-   "name": "스틸다이내믹스",
-   "exposure": {
-    "ticker": "STLD",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -1.827044870072525,
-    "return_3d": -3.0035268686715466,
-    "return_15d": 3.5045121605762564,
-    "return_1m": 9.607885151060636,
-    "return_ytd": 51.75184772722283,
-    "return_1y": 103.03524876719811,
-    "return_3y": 147.7359239851612,
-    "close": 255.77,
-    "marketCap": 36659027370,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -2.5452467136597323,
-    "return_2y": 128.50072364071687
-   }
-  },
-  {
-   "id": "M_362",
-   "type": "MACRO",
-   "name": "미국관세철강"
-  },
-  {
-   "id": "M_363",
-   "type": "MACRO",
-   "name": "미국인프라capex"
-  },
-  {
-   "id": "M_070",
-   "type": "MACRO",
-   "name": "트럼프정책리스크"
-  },
-  {
-   "id": "C_386",
-   "type": "CHARACTER",
-   "name": "글로벌철강1위"
-  },
-  {
-   "id": "C_387",
-   "type": "CHARACTER",
-   "name": "아시아철강거장"
-  },
-  {
-   "id": "C_389",
-   "type": "CHARACTER",
-   "name": "미국EAF미니밀"
-  },
-  {
-   "id": "A_2591",
-   "type": "ASSET",
-   "name": "사일렉스시스템즈",
-   "exposure": {
-    "ticker": "SLX",
-    "exchange": "ASX",
-    "country": "AU",
-    "business_desc": "레이저 우라늄 농축(GLE)",
-    "theme_role": "레이저농축",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -0.49769585253456317,
-    "return_3d": -1.2621181635266265,
-    "return_15d": 4.319257899313933,
-    "return_1m": 6.6271604938271444,
-    "return_ytd": 27.22130567994343,
-    "return_1y": 56.55111910268773,
-    "return_3y": 75.95241005582038,
-    "close": 107.96,
-    "marketCap": 1436740080,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -1.87238683875659,
-    "return_2y": 75.70241908184255
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_603",
-   "to": "T_371",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011055"
-   ]
-  },
-  {
-   "from": "A_2052",
-   "to": "T_371",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011056"
-   ]
-  },
-  {
-   "from": "A_2053",
-   "to": "T_371",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011057"
-   ]
-  },
-  {
-   "from": "A_2054",
-   "to": "T_371",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011058"
-   ]
-  },
-  {
-   "from": "A_2055",
-   "to": "T_371",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011059"
-   ]
-  },
-  {
-   "from": "A_1295",
-   "to": "T_371",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011060"
-   ]
-  },
-  {
-   "from": "M_362",
-   "to": "T_371",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011062"
-   ]
-  },
-  {
-   "from": "M_363",
-   "to": "T_371",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011063"
-   ]
-  },
-  {
-   "from": "M_070",
-   "to": "T_371",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011064"
-   ]
-  },
-  {
-   "from": "A_2053",
-   "to": "C_386",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016266"
-   ]
-  },
-  {
-   "from": "A_603",
-   "to": "C_387",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016267"
-   ]
-  },
-  {
-   "from": "A_2052",
-   "to": "C_387",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016268"
-   ]
-  },
-  {
-   "from": "A_2055",
-   "to": "C_389",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016269"
-   ]
-  },
-  {
-   "from": "A_1295",
-   "to": "C_389",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016270"
-   ]
-  },
-  {
-   "from": "A_2052",
-   "to": "A_2053",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_018428"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "일본제철과 아르셀로미탈은 인도 AM/NS India 합작사(아르셀로미탈 60%·일본제철 40%)를 공동 운영하는 오랜 제휴 관계다."
-  },
-  {
-   "from": "A_603",
-   "to": "A_2052",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018429"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "포스코홀딩스와 일본제철은 동아시아·글로벌 고급 철강 시장의 대표 경쟁자다."
-  },
-  {
-   "from": "A_603",
-   "to": "A_2053",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018430"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "포스코홀딩스와 아르셀로미탈은 글로벌 조강 생산 상위 기업으로 세계 철강 시장에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_2052",
-   "to": "A_2054",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018431"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "일본제철(US스틸 인수)과 클리블랜드클리프스는 북미 판재류 철강 시장에서 경쟁하며 US스틸 인수전에서도 맞붙었다."
-  },
-  {
-   "from": "A_2054",
-   "to": "A_2055",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018432"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "클리블랜드클리프스와 누코어는 미국 철강 시장의 대형 경쟁자로 US스틸 인수전에서도 경합했다."
-  },
-  {
-   "from": "A_2055",
-   "to": "A_1295",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018433"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "누코어와 스틸다이내믹스는 미국 전기로(EAF) 미니밀 방식의 대표 철강 경쟁자다."
-  },
-  {
-   "from": "A_2054",
-   "to": "A_1295",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018434"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "클리블랜드클리프스와 스틸다이내믹스는 미국 판재류 철강 시장에서 경쟁한다."
-  },
-  {
-   "from": "A_2591",
-   "to": "T_371",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020740"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_603",
-   "to": "T_371",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011055"
-   ]
-  },
-  {
-   "from": "A_2052",
-   "to": "T_371",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011056"
-   ]
-  },
-  {
-   "from": "A_2053",
-   "to": "T_371",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011057"
-   ]
-  },
-  {
-   "from": "A_2054",
-   "to": "T_371",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011058"
-   ]
-  },
-  {
-   "from": "A_2055",
-   "to": "T_371",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011059"
-   ]
-  },
-  {
-   "from": "A_1295",
-   "to": "T_371",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011060"
-   ]
-  },
-  {
-   "from": "M_362",
-   "to": "T_371",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011062"
-   ]
-  },
-  {
-   "from": "M_363",
-   "to": "T_371",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011063"
-   ]
-  },
-  {
-   "from": "M_070",
-   "to": "T_371",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011064"
-   ]
-  },
-  {
-   "from": "A_2053",
-   "to": "C_386",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016266"
-   ]
-  },
-  {
-   "from": "A_603",
-   "to": "C_387",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016267"
-   ]
-  },
-  {
-   "from": "A_2052",
-   "to": "C_387",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016268"
-   ]
-  },
-  {
-   "from": "A_2055",
-   "to": "C_389",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016269"
-   ]
-  },
-  {
-   "from": "A_1295",
-   "to": "C_389",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016270"
-   ]
-  },
-  {
-   "from": "A_2052",
-   "to": "A_2053",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_018428"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "일본제철과 아르셀로미탈은 인도 AM/NS India 합작사(아르셀로미탈 60%·일본제철 40%)를 공동 운영하는 오랜 제휴 관계다."
-  },
-  {
-   "from": "A_603",
-   "to": "A_2052",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018429"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "포스코홀딩스와 일본제철은 동아시아·글로벌 고급 철강 시장의 대표 경쟁자다."
-  },
-  {
-   "from": "A_603",
-   "to": "A_2053",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018430"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "포스코홀딩스와 아르셀로미탈은 글로벌 조강 생산 상위 기업으로 세계 철강 시장에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_2052",
-   "to": "A_2054",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018431"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "일본제철(US스틸 인수)과 클리블랜드클리프스는 북미 판재류 철강 시장에서 경쟁하며 US스틸 인수전에서도 맞붙었다."
-  },
-  {
-   "from": "A_2054",
-   "to": "A_2055",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018432"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "클리블랜드클리프스와 누코어는 미국 철강 시장의 대형 경쟁자로 US스틸 인수전에서도 경합했다."
-  },
-  {
-   "from": "A_2055",
-   "to": "A_1295",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018433"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "누코어와 스틸다이내믹스는 미국 전기로(EAF) 미니밀 방식의 대표 철강 경쟁자다."
-  },
-  {
-   "from": "A_2054",
-   "to": "A_1295",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018434"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "클리블랜드클리프스와 스틸다이내믹스는 미국 판재류 철강 시장에서 경쟁한다."
-  },
-  {
-   "from": "A_2591",
-   "to": "T_371",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020740"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

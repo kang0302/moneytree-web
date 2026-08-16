@@ -1,1055 +1,1058 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_352",
- "themeName": "글로벌컨테이너해운",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_352",
+  "themeName": "글로벌컨테이너해운",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-25T00:00:00+09:00",
+    "description": "글로벌 컨테이너 해운 8축 — Maersk·MSC(비)·CMA CGM(비)·COSCO·Hapag-Lloyd·ONE(비)·Evergreen·ZIM·HMM. 홍해 위기 (Red Sea diversion) + 미·중 관세 격화 + 항만 노조 파업 + 신규 선박 공급 과잉 vs 수요 cyclicality. SCFI·BDI 운임 지수 동인.",
+    "notes": "T_352 신규 — 글로벌 컨테이너 해운 8사",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 7건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-25",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결(ETF 제외), 2026 이벤트 2건 추가."
+      },
+      {
+        "date": "2026-07-10",
+        "kind": "보강",
+        "title": "컨테이너 선사 CHR·엣지 정비 + SCFI·ETF 편입",
+        "detail": "MSC·머스크·COSCO·하파그로이드·ONE·에버그린·ZIM·HMM 8개사에 선복량·점유율·얼라이언스 기반 포지션 CHR을 정의하고 THEMED_AS 엣지를 구체화했다. SCFI(상하이컨테이너운임지수) 매크로와 해운 ETF(BOAT·KODEX운송)를 추가하고, 'BDI(발틱운임)지수'로 매크로 명칭을 정비. 2020~2026 이벤트 타임라인을 채웠다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_352",
+      "type": "THEME",
+      "name": "글로벌컨테이너해운"
+    },
+    {
+      "id": "A_1976",
+      "type": "ASSET",
+      "name": "머스크",
+      "exposure": {
+        "ticker": "MAERSK-B",
+        "exchange": "CSE",
+        "country": "DK"
+      },
+      "metrics": {
+        "return_1d": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "머스크는 해상운송에 물류·터미널을 통합한 엔드투엔드 로지스틱스 전략을 추진한다"
+    },
+    {
+      "id": "A_1981",
+      "type": "ASSET",
+      "name": "MSC(비)",
+      "exposure": {
+        "ticker": "",
+        "exchange": "PRIVATE",
+        "country": "CH"
+      },
+      "metrics": {
+        "return_1d": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "returnsAsOf": null,
+        "returnsSource": null,
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "MSC는 선복량·점유율 세계 1위 컨테이너 선사로 신조선 발주도 최대 규모다"
+    },
+    {
+      "id": "A_1977",
+      "type": "ASSET",
+      "name": "COSCO쉬핑홀딩스",
+      "exposure": {
+        "ticker": "1919",
+        "exchange": "HKEX",
+        "country": "CN"
+      },
+      "metrics": {
+        "return_1d": 1.7071569271175369,
+        "return_3d": 0.38885288399221896,
+        "return_15d": -0.38585209003215715,
+        "return_1m": 5.589638718473067,
+        "return_ytd": 12.654545454545453,
+        "return_1y": 5.950752393980863,
+        "return_3y": 99.61340206185567,
+        "close": 15.49,
+        "marketCap": 239567828737,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.45395590142671693,
+        "return_2y": 46.685606060606055
+      }
+    },
+    {
+      "id": "A_1978",
+      "type": "ASSET",
+      "name": "하파그로이드",
+      "exposure": {
+        "ticker": "HLAG",
+        "exchange": "XETRA",
+        "country": "DE"
+      },
+      "metrics": {
+        "return_1d": 3.4375000000000044,
+        "return_3d": 7.817589576547235,
+        "return_15d": 1.4559386973180155,
+        "return_1m": 4.169944925255709,
+        "return_ytd": 12.585034013605444,
+        "return_1y": 8.613617719442157,
+        "return_3y": -27.610716238381627,
+        "close": 132.4,
+        "marketCap": 23270624000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 5.835331734612326,
+        "return_2y": -13.180327868852459
+      }
+    },
+    {
+      "id": "A_1982",
+      "type": "ASSET",
+      "name": "ONE(비)",
+      "exposure": {
+        "ticker": "",
+        "exchange": "PRIVATE",
+        "country": "JP"
+      },
+      "metrics": {
+        "return_1d": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "returnsAsOf": null,
+        "returnsSource": null,
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "ONE은 일본 3대 선사 컨테이너 부문을 통합한 선사로 프리미어 얼라이언스에 속한다"
+    },
+    {
+      "id": "A_1980",
+      "type": "ASSET",
+      "name": "에버그린마린",
+      "exposure": {
+        "ticker": "2603",
+        "exchange": "TWSE",
+        "country": "TW"
+      },
+      "metrics": {
+        "return_1d": 1.6241299303944245,
+        "return_3d": 0.4587155963302836,
+        "return_15d": 6.310679611650483,
+        "return_1m": 12.596401028277636,
+        "return_ytd": 15.263157894736846,
+        "return_1y": 10.050251256281406,
+        "return_3y": 105.63380281690141,
+        "close": 219.0,
+        "marketCap": 474144417000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 5.542168674698789,
+        "return_2y": 20.661157024793386
+      }
+    },
+    {
+      "id": "A_1979",
+      "type": "ASSET",
+      "name": "짐인테그레이티드",
+      "exposure": {
+        "ticker": "ZIM",
+        "exchange": "NYSE",
+        "country": "IL"
+      },
+      "metrics": {
+        "return_1d": 4.921700223713654,
+        "return_3d": 14.716673461068087,
+        "return_15d": 13.012048192771086,
+        "return_1m": 15.327868852459027,
+        "return_ytd": 32.54828073480924,
+        "return_1y": 65.9198113207547,
+        "return_3y": 102.15517241379311,
+        "close": 28.14,
+        "marketCap": 3391423401,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 4.609665427509291,
+        "return_2y": 47.63903462749215
+      }
+    },
+    {
+      "id": "A_509",
+      "type": "ASSET",
+      "name": "HMM",
+      "exposure": {
+        "ticker": "011200",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.9501187648456089,
+        "return_3d": -1.8475750577367167,
+        "return_15d": -1.8475750577367167,
+        "return_1m": 5.721393034825861,
+        "return_ytd": 8.434882090128948,
+        "return_1y": -4.765886134741216,
+        "return_3y": 37.00279822896451,
+        "close": 21250,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -2.5229357798165153,
+        "return_2y": 25.801029173187608
+      }
+    },
+    {
+      "id": "C_318",
+      "type": "CHARACTER",
+      "name": "글로벌해운사이클"
+    },
+    {
+      "id": "M_423",
+      "type": "MACRO",
+      "name": "BDI(발틱운임)지수"
+    },
+    {
+      "id": "M_077",
+      "type": "MACRO",
+      "name": "해상운송리스크"
+    },
+    {
+      "id": "M_372",
+      "type": "MACRO",
+      "name": "글로벌e커머스무역량"
+    },
+    {
+      "id": "M_1098",
+      "type": "MACRO",
+      "name": "SCFI상하이컨테이너운임지수"
+    },
+    {
+      "id": "A_2644",
+      "type": "ASSET",
+      "name": "BOAT",
+      "exposure": {
+        "ticker": "BOAT",
+        "exchange": "BATS",
+        "country": "US",
+        "business_desc": "SonicShares Global Shipping ETF. 글로벌 해운주(컨테이너·벌크·탱커)를 담되 컨테이너 선사 비중이 높은 미국 상장 해운 ETF.",
+        "theme_role": "2궤도",
+        "theme_status": "Ref"
+      },
+      "metrics": {
+        "return_1d": 2.0677518697756136,
+        "return_3d": 6.7157313707451705,
+        "return_15d": 6.032906764168189,
+        "return_1m": 10.951697752271627,
+        "return_ytd": 47.02154626108999,
+        "return_1y": 49.967679379444085,
+        "return_3y": 61.785216178521615,
+        "close": 46.4,
+        "marketCap": 54283267,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 4.528046857400314,
+        "return_2y": 40.56346561647985
+      },
+      "coreBiz": "BOAT는 글로벌 해운주를 담는 ETF 중 컨테이너 선사 비중이 높아 컨테이너 운임 사이클에 직접 연동된다"
+    },
+    {
+      "id": "C_1929",
+      "type": "CHARACTER",
+      "name": "컨테이너비중높음"
+    },
+    {
+      "id": "A_2645",
+      "type": "ASSET",
+      "name": "KODEX운송",
+      "exposure": {
+        "ticker": "140710",
+        "exchange": "KRX",
+        "country": "KR",
+        "business_desc": "삼성 KODEX 운송 ETF. HMM·대한항공·팬오션 등 국내 해운·항공·운송주를 담는 한국 운송 섹터 ETF.",
+        "theme_role": "2궤도",
+        "theme_status": "Ref"
+      },
+      "metrics": {
+        "return_1d": 2.61489698890649,
+        "return_3d": 0.7782101167315147,
+        "return_15d": 2.6030643027110667,
+        "return_1m": 7.114925729570931,
+        "return_ytd": 12.754686498349855,
+        "return_1y": 14.316656078031208,
+        "return_3y": 52.233887112800744,
+        "close": 6475,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -0.5376344086021501,
+        "return_2y": 34.24976473117485
+      },
+      "coreBiz": "KODEX 운송은 HMM 등 국내 컨테이너 해운주를 편입한 한국 운송 섹터 대표 ETF로 컨테이너 운임 상승 시 수혜한다"
+    },
+    {
+      "id": "C_1930",
+      "type": "CHARACTER",
+      "name": "한국운송섹터ETF"
+    },
+    {
+      "id": "C_1931",
+      "type": "CHARACTER",
+      "name": "세계최대컨테이너선사"
+    },
+    {
+      "id": "C_1932",
+      "type": "CHARACTER",
+      "name": "글로벌컨테이너2위통합물류"
+    },
+    {
+      "id": "C_1933",
+      "type": "CHARACTER",
+      "name": "중국국영컨테이너선사"
+    },
+    {
+      "id": "C_1934",
+      "type": "CHARACTER",
+      "name": "독일컨테이너제미니동맹"
+    },
+    {
+      "id": "C_1935",
+      "type": "CHARACTER",
+      "name": "일본통합컨테이너선사"
+    },
+    {
+      "id": "C_1936",
+      "type": "CHARACTER",
+      "name": "대만ULCV컨테이너선사"
+    },
+    {
+      "id": "C_1937",
+      "type": "CHARACTER",
+      "name": "이스라엘용선고배당선사"
+    },
+    {
+      "id": "C_1938",
+      "type": "CHARACTER",
+      "name": "한국컨테이너1위"
+    }
   ],
-  "dataAsOf": "2026-07-25T00:00:00+09:00",
-  "description": "글로벌 컨테이너 해운 8축 — Maersk·MSC(비)·CMA CGM(비)·COSCO·Hapag-Lloyd·ONE(비)·Evergreen·ZIM·HMM. 홍해 위기 (Red Sea diversion) + 미·중 관세 격화 + 항만 노조 파업 + 신규 선박 공급 과잉 vs 수요 cyclicality. SCFI·BDI 운임 지수 동인.",
-  "notes": "T_352 신규 — 글로벌 컨테이너 해운 8사",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 7건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-25",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결(ETF 제외), 2026 이벤트 2건 추가."
-   },
-   {
-    "date": "2026-07-10",
-    "kind": "보강",
-    "title": "컨테이너 선사 CHR·엣지 정비 + SCFI·ETF 편입",
-    "detail": "MSC·머스크·COSCO·하파그로이드·ONE·에버그린·ZIM·HMM 8개사에 선복량·점유율·얼라이언스 기반 포지션 CHR을 정의하고 THEMED_AS 엣지를 구체화했다. SCFI(상하이컨테이너운임지수) 매크로와 해운 ETF(BOAT·KODEX운송)를 추가하고, 'BDI(발틱운임)지수'로 매크로 명칭을 정비. 2020~2026 이벤트 타임라인을 채웠다."
-   }
+  "edges": [
+    {
+      "from": "A_1976",
+      "to": "T_352",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010815"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_1981",
+      "to": "T_352",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010816"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_1977",
+      "to": "T_352",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010817"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1978",
+      "to": "T_352",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010818"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1982",
+      "to": "T_352",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010819"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1980",
+      "to": "T_352",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010820"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1979",
+      "to": "T_352",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010821"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_509",
+      "to": "T_352",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010822"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "T_352",
+      "to": "C_318",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016172"
+      ]
+    },
+    {
+      "from": "M_423",
+      "to": "T_352",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_010823"
+      ]
+    },
+    {
+      "from": "M_077",
+      "to": "T_352",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_010824"
+      ]
+    },
+    {
+      "from": "M_372",
+      "to": "T_352",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_010825"
+      ]
+    },
+    {
+      "from": "M_1098",
+      "to": "T_352",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_010826"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2644",
+      "to": "T_352",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_002458"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2644",
+      "to": "C_1929",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002459"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2645",
+      "to": "T_352",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_002460"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_2645",
+      "to": "C_1930",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002461"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1981",
+      "to": "C_1931",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002463"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_1976",
+      "to": "C_1932",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002465"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_1977",
+      "to": "C_1933",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002467"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1978",
+      "to": "C_1934",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002469"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1982",
+      "to": "C_1935",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002471"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1980",
+      "to": "C_1936",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002473"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1979",
+      "to": "C_1937",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002475"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_509",
+      "to": "C_1938",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002477"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_1976",
+      "to": "A_1977",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019525"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "머스크와 COSCO는 글로벌 컨테이너 해운 시장 경쟁"
+    },
+    {
+      "from": "A_1976",
+      "to": "A_1978",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019526"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "머스크와 하파그로이드는 컨테이너 해운 시장 경쟁"
+    },
+    {
+      "from": "A_1976",
+      "to": "A_1981",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019527"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "머스크와 MSC는 글로벌 컨테이너 선복량 1·2위 경쟁"
+    },
+    {
+      "from": "A_509",
+      "to": "A_1976",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019528"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "HMM과 머스크는 컨테이너 해운 시장 경쟁"
+    },
+    {
+      "from": "A_1979",
+      "to": "A_1980",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019529"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "짐인테그레이티드와 에버그린마린은 아시아-미주 항로 경쟁"
+    },
+    {
+      "from": "A_1977",
+      "to": "A_1980",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_019530"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "COSCO와 에버그린마린은 Ocean Alliance 소속 얼라이언스 파트너"
+    },
+    {
+      "from": "A_1978",
+      "to": "A_509",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_019531"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "하파그로이드와 HMM은 해운 얼라이언스 협력 관계"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_1976",
+      "to": "T_352",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010815"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_1981",
+      "to": "T_352",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010816"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_1977",
+      "to": "T_352",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010817"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1978",
+      "to": "T_352",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010818"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1982",
+      "to": "T_352",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010819"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1980",
+      "to": "T_352",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010820"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1979",
+      "to": "T_352",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010821"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_509",
+      "to": "T_352",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010822"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "T_352",
+      "to": "C_318",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016172"
+      ]
+    },
+    {
+      "from": "M_423",
+      "to": "T_352",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_010823"
+      ]
+    },
+    {
+      "from": "M_077",
+      "to": "T_352",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_010824"
+      ]
+    },
+    {
+      "from": "M_372",
+      "to": "T_352",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_010825"
+      ]
+    },
+    {
+      "from": "M_1098",
+      "to": "T_352",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_010826"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2644",
+      "to": "T_352",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_002458"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2644",
+      "to": "C_1929",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002459"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2645",
+      "to": "T_352",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_002460"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_2645",
+      "to": "C_1930",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002461"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1981",
+      "to": "C_1931",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002463"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_1976",
+      "to": "C_1932",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002465"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_1977",
+      "to": "C_1933",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002467"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1978",
+      "to": "C_1934",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002469"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1982",
+      "to": "C_1935",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002471"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1980",
+      "to": "C_1936",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002473"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1979",
+      "to": "C_1937",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002475"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_509",
+      "to": "C_1938",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002477"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_1976",
+      "to": "A_1977",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019525"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "머스크와 COSCO는 글로벌 컨테이너 해운 시장 경쟁"
+    },
+    {
+      "from": "A_1976",
+      "to": "A_1978",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019526"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "머스크와 하파그로이드는 컨테이너 해운 시장 경쟁"
+    },
+    {
+      "from": "A_1976",
+      "to": "A_1981",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019527"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "머스크와 MSC는 글로벌 컨테이너 선복량 1·2위 경쟁"
+    },
+    {
+      "from": "A_509",
+      "to": "A_1976",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019528"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "HMM과 머스크는 컨테이너 해운 시장 경쟁"
+    },
+    {
+      "from": "A_1979",
+      "to": "A_1980",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019529"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "짐인테그레이티드와 에버그린마린은 아시아-미주 항로 경쟁"
+    },
+    {
+      "from": "A_1977",
+      "to": "A_1980",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_019530"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "COSCO와 에버그린마린은 Ocean Alliance 소속 얼라이언스 파트너"
+    },
+    {
+      "from": "A_1978",
+      "to": "A_509",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_019531"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "하파그로이드와 HMM은 해운 얼라이언스 협력 관계"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_352",
-   "type": "THEME",
-   "name": "글로벌컨테이너해운"
-  },
-  {
-   "id": "A_1976",
-   "type": "ASSET",
-   "name": "머스크",
-   "exposure": {
-    "ticker": "MAERSK-B",
-    "exchange": "CSE",
-    "country": "DK"
-   },
-   "metrics": {
-    "return_1d": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": null
-   },
-   "coreBiz": "머스크는 해상운송에 물류·터미널을 통합한 엔드투엔드 로지스틱스 전략을 추진한다"
-  },
-  {
-   "id": "A_1981",
-   "type": "ASSET",
-   "name": "MSC(비)",
-   "exposure": {
-    "ticker": "",
-    "exchange": "PRIVATE",
-    "country": "CH"
-   },
-   "metrics": {
-    "return_1d": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "returnsAsOf": null,
-    "returnsSource": null,
-    "return_5d": null
-   },
-   "coreBiz": "MSC는 선복량·점유율 세계 1위 컨테이너 선사로 신조선 발주도 최대 규모다"
-  },
-  {
-   "id": "A_1977",
-   "type": "ASSET",
-   "name": "COSCO쉬핑홀딩스",
-   "exposure": {
-    "ticker": "1919",
-    "exchange": "HKEX",
-    "country": "CN"
-   },
-   "metrics": {
-    "return_1d": 1.7071569271175369,
-    "return_3d": 0.38885288399221896,
-    "return_15d": -0.38585209003215715,
-    "return_1m": 5.589638718473067,
-    "return_ytd": 16.57221983910173,
-    "return_1y": 14.920357002426021,
-    "return_3y": 169.3069995479676,
-    "close": 15.49,
-    "marketCap": 239567828737,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.45395590142671693,
-    "return_2y": 80.24412664797124
-   }
-  },
-  {
-   "id": "A_1978",
-   "type": "ASSET",
-   "name": "하파그로이드",
-   "exposure": {
-    "ticker": "HLAG",
-    "exchange": "XETRA",
-    "country": "DE"
-   },
-   "metrics": {
-    "return_1d": 3.4375000000000044,
-    "return_3d": 7.817589576547235,
-    "return_15d": 1.4559386973180155,
-    "return_1m": 4.169944925255709,
-    "return_ytd": 15.516964591083916,
-    "return_1y": 11.442089252992904,
-    "return_3y": -15.675879480196574,
-    "close": 132.4,
-    "marketCap": 23270624000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 5.835331734612326,
-    "return_2y": -5.061634646480073
-   }
-  },
-  {
-   "id": "A_1982",
-   "type": "ASSET",
-   "name": "ONE(비)",
-   "exposure": {
-    "ticker": "",
-    "exchange": "PRIVATE",
-    "country": "JP"
-   },
-   "metrics": {
-    "return_1d": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "returnsAsOf": null,
-    "returnsSource": null,
-    "return_5d": null
-   },
-   "coreBiz": "ONE은 일본 3대 선사 컨테이너 부문을 통합한 선사로 프리미어 얼라이언스에 속한다"
-  },
-  {
-   "id": "A_1980",
-   "type": "ASSET",
-   "name": "에버그린마린",
-   "exposure": {
-    "ticker": "2603",
-    "exchange": "TWSE",
-    "country": "TW"
-   },
-   "metrics": {
-    "return_1d": -0.2481389578163795,
-    "return_3d": -1.2285012285012331,
-    "return_15d": 3.3419023136246784,
-    "return_1m": 8.943089430894302,
-    "return_ytd": 5.789473684210522,
-    "return_1y": 0.7518796992481258,
-    "return_3y": 86.9767441860465,
-    "close": 201,
-    "marketCap": 474144417000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-07-30",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -1.2285012285012331,
-    "return_2y": 20.359281437125752
-   }
-  },
-  {
-   "id": "A_1979",
-   "type": "ASSET",
-   "name": "짐인테그레이티드",
-   "exposure": {
-    "ticker": "ZIM",
-    "exchange": "NYSE",
-    "country": "IL"
-   },
-   "metrics": {
-    "return_1d": 4.921700223713654,
-    "return_3d": 14.716673461068087,
-    "return_15d": 13.012048192771086,
-    "return_1m": 15.327868852459027,
-    "return_ytd": 37.02098651214882,
-    "return_1y": 74.93255088212256,
-    "return_3y": 244.67553465128248,
-    "close": 28.14,
-    "marketCap": 3391423401,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 4.609665427509291,
-    "return_2y": 149.02434491730162
-   }
-  },
-  {
-   "id": "A_509",
-   "type": "ASSET",
-   "name": "HMM",
-   "exposure": {
-    "ticker": "011200",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.9501187648456089,
-    "return_3d": -1.8475750577367167,
-    "return_15d": -1.8475750577367167,
-    "return_1m": 7.54048582995952,
-    "return_ytd": 6.8480300267803385,
-    "return_1y": -0.8875739299991636,
-    "return_3y": 37.00279822896451,
-    "close": 21250,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -2.5229357798165153,
-    "return_2y": 28.084428240213867
-   }
-  },
-  {
-   "id": "C_318",
-   "type": "CHARACTER",
-   "name": "글로벌해운사이클"
-  },
-  {
-   "id": "M_423",
-   "type": "MACRO",
-   "name": "BDI(발틱운임)지수"
-  },
-  {
-   "id": "M_077",
-   "type": "MACRO",
-   "name": "해상운송리스크"
-  },
-  {
-   "id": "M_372",
-   "type": "MACRO",
-   "name": "글로벌e커머스무역량"
-  },
-  {
-   "id": "M_1098",
-   "type": "MACRO",
-   "name": "SCFI상하이컨테이너운임지수"
-  },
-  {
-   "id": "A_2644",
-   "type": "ASSET",
-   "name": "BOAT",
-   "exposure": {
-    "ticker": "BOAT",
-    "exchange": "BATS",
-    "country": "US",
-    "business_desc": "SonicShares Global Shipping ETF. 글로벌 해운주(컨테이너·벌크·탱커)를 담되 컨테이너 선사 비중이 높은 미국 상장 해운 ETF.",
-    "theme_role": "2궤도",
-    "theme_status": "Ref"
-   },
-   "metrics": {
-    "return_1d": 2.0677518697756136,
-    "return_3d": 6.723094969754118,
-    "return_15d": 6.032906764168189,
-    "return_1m": 10.962311077099663,
-    "return_ytd": 52.46707499802843,
-    "return_1y": 62.267265376921685,
-    "return_3y": 116.01992597593052,
-    "close": 46.4,
-    "marketCap": 54283267,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 4.528046857400314,
-    "return_2y": 74.72839901338706
-   },
-   "coreBiz": "BOAT는 글로벌 해운주를 담는 ETF 중 컨테이너 선사 비중이 높아 컨테이너 운임 사이클에 직접 연동된다"
-  },
-  {
-   "id": "C_1929",
-   "type": "CHARACTER",
-   "name": "컨테이너비중높음"
-  },
-  {
-   "id": "A_2645",
-   "type": "ASSET",
-   "name": "KODEX운송",
-   "exposure": {
-    "ticker": "140710",
-    "exchange": "KRX",
-    "country": "KR",
-    "business_desc": "삼성 KODEX 운송 ETF. HMM·대한항공·팬오션 등 국내 해운·항공·운송주를 담는 한국 운송 섹터 ETF.",
-    "theme_role": "2궤도",
-    "theme_status": "Ref"
-   },
-   "metrics": {
-    "return_1d": 2.61489698890649,
-    "return_3d": 0.7782101167315147,
-    "return_15d": 2.6030643027110667,
-    "return_1m": 9.068929002747161,
-    "return_ytd": 12.179895318399447,
-    "return_1y": 6.480433731067481,
-    "return_3y": 52.233887112800744,
-    "close": 6475,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -0.5376344086021501,
-    "return_2y": 42.17177608975051
-   },
-   "coreBiz": "KODEX 운송은 HMM 등 국내 컨테이너 해운주를 편입한 한국 운송 섹터 대표 ETF로 컨테이너 운임 상승 시 수혜한다"
-  },
-  {
-   "id": "C_1930",
-   "type": "CHARACTER",
-   "name": "한국운송섹터ETF"
-  },
-  {
-   "id": "C_1931",
-   "type": "CHARACTER",
-   "name": "세계최대컨테이너선사"
-  },
-  {
-   "id": "C_1932",
-   "type": "CHARACTER",
-   "name": "글로벌컨테이너2위통합물류"
-  },
-  {
-   "id": "C_1933",
-   "type": "CHARACTER",
-   "name": "중국국영컨테이너선사"
-  },
-  {
-   "id": "C_1934",
-   "type": "CHARACTER",
-   "name": "독일컨테이너제미니동맹"
-  },
-  {
-   "id": "C_1935",
-   "type": "CHARACTER",
-   "name": "일본통합컨테이너선사"
-  },
-  {
-   "id": "C_1936",
-   "type": "CHARACTER",
-   "name": "대만ULCV컨테이너선사"
-  },
-  {
-   "id": "C_1937",
-   "type": "CHARACTER",
-   "name": "이스라엘용선고배당선사"
-  },
-  {
-   "id": "C_1938",
-   "type": "CHARACTER",
-   "name": "한국컨테이너1위"
-  }
- ],
- "edges": [
-  {
-   "from": "A_1976",
-   "to": "T_352",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010815"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_1981",
-   "to": "T_352",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010816"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_1977",
-   "to": "T_352",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010817"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1978",
-   "to": "T_352",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010818"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1982",
-   "to": "T_352",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010819"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1980",
-   "to": "T_352",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010820"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1979",
-   "to": "T_352",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010821"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_509",
-   "to": "T_352",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010822"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "T_352",
-   "to": "C_318",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016172"
-   ]
-  },
-  {
-   "from": "M_423",
-   "to": "T_352",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_010823"
-   ]
-  },
-  {
-   "from": "M_077",
-   "to": "T_352",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_010824"
-   ]
-  },
-  {
-   "from": "M_372",
-   "to": "T_352",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_010825"
-   ]
-  },
-  {
-   "from": "M_1098",
-   "to": "T_352",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_010826"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2644",
-   "to": "T_352",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_002458"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2644",
-   "to": "C_1929",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002459"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2645",
-   "to": "T_352",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_002460"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_2645",
-   "to": "C_1930",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002461"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1981",
-   "to": "C_1931",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002463"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_1976",
-   "to": "C_1932",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002465"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_1977",
-   "to": "C_1933",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002467"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1978",
-   "to": "C_1934",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002469"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1982",
-   "to": "C_1935",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002471"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1980",
-   "to": "C_1936",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002473"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1979",
-   "to": "C_1937",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002475"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_509",
-   "to": "C_1938",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002477"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_1976",
-   "to": "A_1977",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019525"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "머스크와 COSCO는 글로벌 컨테이너 해운 시장 경쟁"
-  },
-  {
-   "from": "A_1976",
-   "to": "A_1978",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019526"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "머스크와 하파그로이드는 컨테이너 해운 시장 경쟁"
-  },
-  {
-   "from": "A_1976",
-   "to": "A_1981",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019527"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "머스크와 MSC는 글로벌 컨테이너 선복량 1·2위 경쟁"
-  },
-  {
-   "from": "A_509",
-   "to": "A_1976",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019528"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "HMM과 머스크는 컨테이너 해운 시장 경쟁"
-  },
-  {
-   "from": "A_1979",
-   "to": "A_1980",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019529"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "짐인테그레이티드와 에버그린마린은 아시아-미주 항로 경쟁"
-  },
-  {
-   "from": "A_1977",
-   "to": "A_1980",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_019530"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "COSCO와 에버그린마린은 Ocean Alliance 소속 얼라이언스 파트너"
-  },
-  {
-   "from": "A_1978",
-   "to": "A_509",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_019531"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "하파그로이드와 HMM은 해운 얼라이언스 협력 관계"
-  }
- ],
- "links": [
-  {
-   "from": "A_1976",
-   "to": "T_352",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010815"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_1981",
-   "to": "T_352",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010816"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_1977",
-   "to": "T_352",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010817"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1978",
-   "to": "T_352",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010818"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1982",
-   "to": "T_352",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010819"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1980",
-   "to": "T_352",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010820"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1979",
-   "to": "T_352",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010821"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_509",
-   "to": "T_352",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010822"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "T_352",
-   "to": "C_318",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016172"
-   ]
-  },
-  {
-   "from": "M_423",
-   "to": "T_352",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_010823"
-   ]
-  },
-  {
-   "from": "M_077",
-   "to": "T_352",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_010824"
-   ]
-  },
-  {
-   "from": "M_372",
-   "to": "T_352",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_010825"
-   ]
-  },
-  {
-   "from": "M_1098",
-   "to": "T_352",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_010826"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2644",
-   "to": "T_352",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_002458"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2644",
-   "to": "C_1929",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002459"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2645",
-   "to": "T_352",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_002460"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_2645",
-   "to": "C_1930",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002461"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1981",
-   "to": "C_1931",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002463"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_1976",
-   "to": "C_1932",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002465"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_1977",
-   "to": "C_1933",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002467"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1978",
-   "to": "C_1934",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002469"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1982",
-   "to": "C_1935",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002471"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1980",
-   "to": "C_1936",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002473"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1979",
-   "to": "C_1937",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002475"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_509",
-   "to": "C_1938",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002477"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_1976",
-   "to": "A_1977",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019525"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "머스크와 COSCO는 글로벌 컨테이너 해운 시장 경쟁"
-  },
-  {
-   "from": "A_1976",
-   "to": "A_1978",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019526"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "머스크와 하파그로이드는 컨테이너 해운 시장 경쟁"
-  },
-  {
-   "from": "A_1976",
-   "to": "A_1981",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019527"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "머스크와 MSC는 글로벌 컨테이너 선복량 1·2위 경쟁"
-  },
-  {
-   "from": "A_509",
-   "to": "A_1976",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019528"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "HMM과 머스크는 컨테이너 해운 시장 경쟁"
-  },
-  {
-   "from": "A_1979",
-   "to": "A_1980",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019529"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "짐인테그레이티드와 에버그린마린은 아시아-미주 항로 경쟁"
-  },
-  {
-   "from": "A_1977",
-   "to": "A_1980",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_019530"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "COSCO와 에버그린마린은 Ocean Alliance 소속 얼라이언스 파트너"
-  },
-  {
-   "from": "A_1978",
-   "to": "A_509",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_019531"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "하파그로이드와 HMM은 해운 얼라이언스 협력 관계"
-  }
- ]
 }

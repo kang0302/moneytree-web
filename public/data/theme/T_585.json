@@ -1,590 +1,592 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_585",
- "themeName": "중화권지수ETF",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_585",
+  "themeName": "중화권지수ETF",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-26T00:00:00+09:00",
+    "description": "중국 본토·홍콩·대만을 아우르는 중화권 대표 지수 ETF(MCHI·EWH·EWT). 텐센트·알리바바·TSMC 등.",
+    "notes": "T_585 — 지역/국가별ETF(T_013) 분할",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-07-26",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
+      },
+      {
+        "date": "2026-07-14",
+        "kind": "보강",
+        "title": "과창판STAR50(A_2703) 편입",
+        "detail": "중국 본토 STAR Market 추종 ETF(TIGER 차이나과창판STAR50)를 중화권 지수 바스켓에 편입했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_585",
+      "type": "THEME",
+      "name": "중화권지수ETF"
+    },
+    {
+      "name": "MCHI(중국)",
+      "id": "A_124",
+      "metrics": {
+        "return_1d": 0.38588754134509795,
+        "return_30d": null,
+        "market_cap": null,
+        "asof": null,
+        "return_90d": null,
+        "currency": null,
+        "per": null,
+        "last_price": null,
+        "return_15d": 2.4376523532720906,
+        "return_3d": -1.7799352750809017,
+        "return_1m": 2.630095810633115,
+        "return_ytd": -9.05610121524887,
+        "return_1y": -7.87521079258009,
+        "return_3y": 20.039551746868824,
+        "close": 54.63,
+        "marketCap": 5739458010,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "pe_ttm": null,
+        "return_5d": -3.429379529786103,
+        "return_2y": 32.24400871459694
+      },
+      "exposure": {
+        "country": null,
+        "ticker": "MCHI",
+        "exchange": null
+      },
+      "type": "ASSET"
+    },
+    {
+      "name": "EWH(홍콩)",
+      "id": "A_125",
+      "metrics": {
+        "return_1d": -0.48888888888888316,
+        "return_30d": null,
+        "market_cap": null,
+        "asof": null,
+        "return_90d": null,
+        "currency": null,
+        "per": null,
+        "last_price": null,
+        "return_15d": -0.709534368070952,
+        "return_3d": -0.40035587188611554,
+        "return_1m": 3.3225657591139823,
+        "return_ytd": 5.364705882352938,
+        "return_1y": 4.724041159962589,
+        "return_3y": 21.223605847319995,
+        "close": 22.39,
+        "marketCap": 903078797,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "pe_ttm": null,
+        "return_5d": -1.4090708938793495,
+        "return_2y": 45.20103761348897
+      },
+      "exposure": {
+        "country": null,
+        "ticker": "EWH",
+        "exchange": null
+      },
+      "type": "ASSET"
+    },
+    {
+      "name": "EWT(대만)",
+      "id": "A_126",
+      "metrics": {
+        "return_1d": -0.40000000000001146,
+        "return_30d": null,
+        "market_cap": null,
+        "asof": null,
+        "return_90d": null,
+        "currency": null,
+        "per": null,
+        "last_price": null,
+        "return_15d": 9.243954698500145,
+        "return_3d": 3.0113527034827836,
+        "return_1m": 5.094228504122489,
+        "return_ytd": 68.5345506060129,
+        "return_1y": 76.53751030502885,
+        "return_3y": 135.16362837689434,
+        "close": 107.07,
+        "marketCap": 11509626593,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "pe_ttm": null,
+        "return_5d": 3.860704239014434,
+        "return_2y": 102.5539160045403
+      },
+      "exposure": {
+        "country": null,
+        "ticker": "EWT",
+        "exchange": null
+      },
+      "type": "ASSET"
+    },
+    {
+      "id": "A_2620",
+      "type": "ASSET",
+      "name": "FXI",
+      "exposure": {
+        "ticker": "FXI",
+        "exchange": "NYSEARCA",
+        "country": "US",
+        "business_desc": "FXI는 중국 대형주 50종목(H주 중심)을 담는 iShares ETF다.",
+        "theme_role": "지역지수ETF",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": 0.0860585197934638,
+        "return_3d": -2.1592821088053715,
+        "return_15d": 0.8964719491035389,
+        "return_1m": 3.3165531536866855,
+        "return_ytd": -8.879603029511618,
+        "return_1y": -8.99843505477309,
+        "return_3y": 26.13882863340564,
+        "close": 34.89,
+        "marketCap": 4160144249,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -3.5388443461432106,
+        "return_2y": 37.7962085308057
+      }
+    },
+    {
+      "id": "A_872",
+      "type": "ASSET",
+      "name": "KWEB",
+      "exposure": {
+        "ticker": "KWEB",
+        "exchange": "NYSEARCA",
+        "country": "US",
+        "business_desc": "KWEB는 중국 인터넷 대표주(알리바바·텐센트·메이퇀)를 담는 ETF다.",
+        "theme_role": "지역지수ETF",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": 0.5959031657355673,
+        "return_3d": -3.8447846208615077,
+        "return_15d": 2.7386839102320426,
+        "return_1m": 3.1703590527119907,
+        "return_ytd": -20.675477239353878,
+        "return_1y": -26.242490442381204,
+        "return_3y": -5.921281783350752,
+        "close": 27.01,
+        "marketCap": 5347071519,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -5.757152826238654,
+        "return_2y": 3.8846153846153975
+      }
+    },
+    {
+      "id": "C_1853",
+      "type": "CHARACTER",
+      "name": "중국본토홍콩대형"
+    },
+    {
+      "id": "C_1854",
+      "type": "CHARACTER",
+      "name": "홍콩대표주"
+    },
+    {
+      "id": "C_1855",
+      "type": "CHARACTER",
+      "name": "대만TSMC반도체편중"
+    },
+    {
+      "id": "C_1856",
+      "type": "CHARACTER",
+      "name": "중국대형H주50"
+    },
+    {
+      "id": "C_1857",
+      "type": "CHARACTER",
+      "name": "중국인터넷플랫폼"
+    },
+    {
+      "id": "M_039",
+      "type": "MACRO",
+      "name": "중국내수소비"
+    },
+    {
+      "id": "M_033",
+      "type": "MACRO",
+      "name": "미중패권경쟁"
+    },
+    {
+      "id": "M_268",
+      "type": "MACRO",
+      "name": "중국기술자립화"
+    },
+    {
+      "id": "A_2703",
+      "type": "ASSET",
+      "name": "TIGER차이나과창판STAR50합성",
+      "exposure": {
+        "ticker": "414780",
+        "exchange": "KRX",
+        "country": "KR",
+        "business_desc": "상하이 STAR Market(과창판) 상위 50종목을 합성 추종하는 국내 상장 ETF로 중국 반도체·하드테크에 집중 노출된다.",
+        "theme_role": "1궤도",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -1.7654896735509684,
+        "return_3d": -0.23680649526387487,
+        "return_15d": -7.3515551366635234,
+        "return_1m": -15.08782032824647,
+        "return_ytd": 29.228746713409294,
+        "return_1y": 80.68634636914555,
+        "return_3y": 115.63662556715943,
+        "close": 14745,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -1.0402684563758369,
+        "return_2y": 164.2416623601578
+      },
+      "coreBiz": "과창판 STAR50은 중국 반도체·하드테크 집중 지수 ETF다"
+    },
+    {
+      "id": "C_3335",
+      "type": "CHARACTER",
+      "name": "중국STAR반도체지수"
+    }
   ],
-  "dataAsOf": "2026-07-26T00:00:00+09:00",
-  "description": "중국 본토·홍콩·대만을 아우르는 중화권 대표 지수 ETF(MCHI·EWH·EWT). 텐센트·알리바바·TSMC 등.",
-  "notes": "T_585 — 지역/국가별ETF(T_013) 분할",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-07-26",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
-   },
-   {
-    "date": "2026-07-14",
-    "kind": "보강",
-    "title": "과창판STAR50(A_2703) 편입",
-    "detail": "중국 본토 STAR Market 추종 ETF(TIGER 차이나과창판STAR50)를 중화권 지수 바스켓에 편입했다."
-   }
+  "edges": [
+    {
+      "from": "A_124",
+      "to": "T_585",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013232"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_125",
+      "to": "T_585",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013233"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_126",
+      "to": "T_585",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013234"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2620",
+      "to": "T_585",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013235"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_872",
+      "to": "T_585",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013236"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_124",
+      "to": "C_1853",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_001690"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_125",
+      "to": "C_1854",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_001691"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_126",
+      "to": "C_1855",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_001692"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2620",
+      "to": "C_1856",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_001693"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_872",
+      "to": "C_1857",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_001694"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_039",
+      "to": "T_585",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013237"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_033",
+      "to": "T_585",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013238"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_268",
+      "to": "T_585",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013239"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_2703",
+      "to": "T_585",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013240"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_2703",
+      "to": "C_3335",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006776"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_124",
+      "to": "T_585",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013232"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_125",
+      "to": "T_585",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013233"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_126",
+      "to": "T_585",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013234"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2620",
+      "to": "T_585",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013235"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_872",
+      "to": "T_585",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013236"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_124",
+      "to": "C_1853",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_001690"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_125",
+      "to": "C_1854",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_001691"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_126",
+      "to": "C_1855",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_001692"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2620",
+      "to": "C_1856",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_001693"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_872",
+      "to": "C_1857",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_001694"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_039",
+      "to": "T_585",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013237"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_033",
+      "to": "T_585",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013238"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_268",
+      "to": "T_585",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013239"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_2703",
+      "to": "T_585",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013240"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_2703",
+      "to": "C_3335",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006776"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_585",
-   "type": "THEME",
-   "name": "중화권지수ETF"
-  },
-  {
-   "name": "MCHI(중국)",
-   "id": "A_124",
-   "metrics": {
-    "return_1d": 0.38588754134509795,
-    "return_30d": null,
-    "market_cap": null,
-    "asof": null,
-    "return_90d": null,
-    "currency": null,
-    "per": null,
-    "last_price": null,
-    "return_15d": 2.4376523532720906,
-    "return_3d": -1.7799352750809017,
-    "return_1m": 2.630095810633115,
-    "return_ytd": -8.4533594751527,
-    "return_1y": -6.131117457240942,
-    "return_3y": 29.546149778398558,
-    "close": 54.63,
-    "marketCap": 5739458010,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "pe_ttm": null,
-    "return_5d": -3.429379529786103,
-    "return_2y": 38.681221044615114
-   },
-   "exposure": {
-    "country": null,
-    "ticker": "MCHI",
-    "exchange": null
-   },
-   "type": "ASSET"
-  },
-  {
-   "name": "EWH(홍콩)",
-   "id": "A_125",
-   "metrics": {
-    "return_1d": -0.48888888888888316,
-    "return_30d": null,
-    "market_cap": null,
-    "asof": null,
-    "return_90d": null,
-    "currency": null,
-    "per": null,
-    "last_price": null,
-    "return_15d": -0.709534368070952,
-    "return_3d": -0.40035587188611554,
-    "return_1m": 1.5419501133786762,
-    "return_ytd": 2.3776863283036187,
-    "return_1y": 3.849721706864573,
-    "return_3y": 18.906001062134912,
-    "close": 22.39,
-    "marketCap": 903078797,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "pe_ttm": null,
-    "return_5d": null
-   },
-   "exposure": {
-    "country": null,
-    "ticker": "EWH",
-    "exchange": null
-   },
-   "type": "ASSET"
-  },
-  {
-   "name": "EWT(대만)",
-   "id": "A_126",
-   "metrics": {
-    "return_1d": -0.40000000000001146,
-    "return_30d": null,
-    "market_cap": null,
-    "asof": null,
-    "return_90d": null,
-    "currency": null,
-    "per": null,
-    "last_price": null,
-    "return_15d": 9.243954698500145,
-    "return_3d": 3.0113527034827836,
-    "return_1m": 6.898961661341851,
-    "return_ytd": 65.3080129689671,
-    "return_1y": 75.4383090283467,
-    "return_3y": 130.35714285714283,
-    "close": 107.07,
-    "marketCap": 11509626593,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "pe_ttm": null,
-    "return_5d": null
-   },
-   "exposure": {
-    "country": null,
-    "ticker": "EWT",
-    "exchange": null
-   },
-   "type": "ASSET"
-  },
-  {
-   "id": "A_2620",
-   "type": "ASSET",
-   "name": "FXI",
-   "exposure": {
-    "ticker": "FXI",
-    "exchange": "NYSEARCA",
-    "country": "US",
-    "business_desc": "FXI는 중국 대형주 50종목(H주 중심)을 담는 iShares ETF다.",
-    "theme_role": "지역지수ETF",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": 0.0860585197934638,
-    "return_3d": -2.1592821088053715,
-    "return_15d": 0.8964719491035389,
-    "return_1m": 3.3165531536866855,
-    "return_ytd": -8.19532372397026,
-    "return_1y": -7.319846144038089,
-    "return_3y": 36.06211514388109,
-    "close": 34.89,
-    "marketCap": 4160144249,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -3.5388443461432106,
-    "return_2y": 44.44752650688704
-   }
-  },
-  {
-   "id": "A_872",
-   "type": "ASSET",
-   "name": "KWEB",
-   "exposure": {
-    "ticker": "KWEB",
-    "exchange": "NYSEARCA",
-    "country": "US",
-    "business_desc": "KWEB는 중국 인터넷 대표주(알리바바·텐센트·메이퇀)를 담는 ETF다.",
-    "theme_role": "지역지수ETF",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": 0.5959031657355673,
-    "return_3d": -3.8447846208615077,
-    "return_15d": 2.7386839102320426,
-    "return_1m": 3.1703590527119907,
-    "return_ytd": -20.675477239353878,
-    "return_1y": -21.748476833087558,
-    "return_3y": 5.013918912614113,
-    "close": 27.01,
-    "marketCap": 5347071519,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -5.757152826238654,
-    "return_2y": 13.998472141913542
-   }
-  },
-  {
-   "id": "C_1853",
-   "type": "CHARACTER",
-   "name": "중국본토홍콩대형"
-  },
-  {
-   "id": "C_1854",
-   "type": "CHARACTER",
-   "name": "홍콩대표주"
-  },
-  {
-   "id": "C_1855",
-   "type": "CHARACTER",
-   "name": "대만TSMC반도체편중"
-  },
-  {
-   "id": "C_1856",
-   "type": "CHARACTER",
-   "name": "중국대형H주50"
-  },
-  {
-   "id": "C_1857",
-   "type": "CHARACTER",
-   "name": "중국인터넷플랫폼"
-  },
-  {
-   "id": "M_039",
-   "type": "MACRO",
-   "name": "중국내수소비"
-  },
-  {
-   "id": "M_033",
-   "type": "MACRO",
-   "name": "미중패권경쟁"
-  },
-  {
-   "id": "M_268",
-   "type": "MACRO",
-   "name": "중국기술자립화"
-  },
-  {
-   "id": "A_2703",
-   "type": "ASSET",
-   "name": "TIGER차이나과창판STAR50합성",
-   "exposure": {
-    "ticker": "414780",
-    "exchange": "KRX",
-    "country": "KR",
-    "business_desc": "상하이 STAR Market(과창판) 상위 50종목을 합성 추종하는 국내 상장 ETF로 중국 반도체·하드테크에 집중 노출된다.",
-    "theme_role": "1궤도",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -1.7654896735509684,
-    "return_3d": -0.23680649526387487,
-    "return_15d": -7.3515551366635234,
-    "return_1m": -17.533557046979865,
-    "return_ytd": 28.833551769331578,
-    "return_1y": 72.45894810357613,
-    "return_3y": 115.63662556715943,
-    "close": 14745,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -1.0402684563758369,
-    "return_2y": 173.7925645775369
-   },
-   "coreBiz": "과창판 STAR50은 중국 반도체·하드테크 집중 지수 ETF다"
-  },
-  {
-   "id": "C_3335",
-   "type": "CHARACTER",
-   "name": "중국STAR반도체지수"
-  }
- ],
- "edges": [
-  {
-   "from": "A_124",
-   "to": "T_585",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013232"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_125",
-   "to": "T_585",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013233"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_126",
-   "to": "T_585",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013234"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2620",
-   "to": "T_585",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013235"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_872",
-   "to": "T_585",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013236"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_124",
-   "to": "C_1853",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_001690"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_125",
-   "to": "C_1854",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_001691"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_126",
-   "to": "C_1855",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_001692"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2620",
-   "to": "C_1856",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_001693"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_872",
-   "to": "C_1857",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_001694"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_039",
-   "to": "T_585",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013237"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_033",
-   "to": "T_585",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013238"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_268",
-   "to": "T_585",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013239"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_2703",
-   "to": "T_585",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013240"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_2703",
-   "to": "C_3335",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006776"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_124",
-   "to": "T_585",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013232"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_125",
-   "to": "T_585",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013233"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_126",
-   "to": "T_585",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013234"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2620",
-   "to": "T_585",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013235"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_872",
-   "to": "T_585",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013236"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_124",
-   "to": "C_1853",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_001690"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_125",
-   "to": "C_1854",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_001691"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_126",
-   "to": "C_1855",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_001692"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2620",
-   "to": "C_1856",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_001693"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_872",
-   "to": "C_1857",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_001694"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_039",
-   "to": "T_585",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013237"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_033",
-   "to": "T_585",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013238"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_268",
-   "to": "T_585",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013239"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_2703",
-   "to": "T_585",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013240"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_2703",
-   "to": "C_3335",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006776"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  }
- ]
 }

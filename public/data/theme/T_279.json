@@ -1,1451 +1,1455 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_279",
- "themeName": "기업용AI데이터플랫폼+스토리지",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_279",
+  "themeName": "기업용AI데이터플랫폼+스토리지",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-28T00:00:00+09:00",
+    "description": "기업용AI데이터플랫폼+스토리지 — 12 자산. 기존 6 (Pure Storage·MongoDB·Palantir·Snowflake·Datadog·Oracle) + 신규 6 (NetApp·IBM·Nutanix·VAST데이터·WEKA·DDN). 4 BF (HDD·DB/검색/DW·저장최적화·옵저버빌리티/분석) + 5 macro IMPACTS (AI수요확대·AI추론확대·LLM확산·Agentic AI확산·엣지컴퓨팅확산). 에이전트 AI 긴 컨텍스트 추론용 고속 스토리지 강자.",
+    "notes": "12 ASSET + 4 BF + 5 MACRO",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-07-28",
+        "kind": "수정",
+        "title": "팔란티어 유럽 이탈 이벤트 추가",
+        "detail": "유럽 주권 SW 전환(프랑스·네덜란드·폴란드)으로 팔란티어 약세 이벤트를 2026 DB에 반영."
+      },
+      {
+        "date": "2026-07-13",
+        "kind": "변경",
+        "title": "오픈AI THEME 연결 해제",
+        "detail": "오픈AI(A_586)의 THEMED_AS(테마 직접연결)를 해제하고 스노우플레이크와의 PARTNERS 관계로만 유지했다."
+      },
+      {
+        "date": "2026-07-13",
+        "kind": "변경",
+        "title": "CHR 통합: C_1649→C_3244",
+        "detail": "데이터클라우드공유(C_1649) CHR을 'AI구동가능DW제공매출성장'(C_3244)로 통합했다."
+      },
+      {
+        "date": "2026-07-13",
+        "kind": "보강",
+        "title": "스노우플레이크(A_274) 보강",
+        "detail": "스노우플레이크의 오픈AI 협력(2026.2)·데이터클라우드 공유 CHR·AI 데이터 SaaS 매크로를 보강했다."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_279",
+      "type": "THEME",
+      "name": "기업용AI데이터플랫폼+스토리지"
+    },
+    {
+      "id": "A_222",
+      "type": "ASSET",
+      "name": "퓨어스토리지",
+      "exposure": {
+        "ticker": "PSTG",
+        "exchange": "NYSE",
+        "country": "US",
+        "business_desc": "Pure Storage — All-Flash 엔터프라이즈 스토리지 (Everpure)",
+        "theme_role": "저장최적화 — All-Flash 강자",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": 2.6696023118205625,
+        "close": 86.22,
+        "marketCap": 28492341385,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": -0.12048192771084709,
+        "return_15d": 2.1495071193866178,
+        "return_1m": -3.191903464383017,
+        "return_ytd": 11.341590807342183,
+        "return_1y": 41.11972763381881,
+        "return_3y": 97.69475357710651,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 7.600230747043546,
+        "return_2y": 9.158741770299939
+      }
+    },
+    {
+      "id": "A_274",
+      "type": "ASSET",
+      "name": "스노우플레이크",
+      "exposure": {
+        "ticker": "SNOW",
+        "exchange": "NYSE",
+        "country": "US",
+        "business_desc": "Snowflake — 클라우드 DW·Cortex AI 플랫폼",
+        "theme_role": "DB/검색/DW — 멀티클라우드 분석",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -2.5075582429308185,
+        "close": 328.92,
+        "marketCap": 114003672000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": -1.5622194289818592,
+        "return_15d": 22.703872267402826,
+        "return_1m": 19.199826049141123,
+        "return_ytd": 49.945295404814004,
+        "return_1y": 68.7634684453566,
+        "return_3y": 115.17728640586155,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -0.4750521952252673,
+        "return_2y": 158.38177533385704
+      }
+    },
+    {
+      "id": "A_276",
+      "type": "ASSET",
+      "name": "데이터독",
+      "exposure": {
+        "ticker": "DDOG",
+        "exchange": "NASDAQ",
+        "country": "US",
+        "business_desc": "Datadog — 클라우드 옵저버빌리티 플랫폼",
+        "theme_role": "옵저버빌리티·분석 — AI 워크로드 모니터링",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": 1.2765620044402182,
+        "close": 255.46,
+        "marketCap": 90933586050,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": 3.5173028608477264,
+        "return_15d": 3.4837559750465763,
+        "return_1m": -5.640305839766557,
+        "return_ytd": 87.85204794470181,
+        "return_1y": 105.15579826533892,
+        "return_3y": 184.5399866339942,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 9.203607916898227,
+        "return_2y": 123.7932544897065
+      }
+    },
+    {
+      "id": "A_040",
+      "type": "ASSET",
+      "name": "몽고DB",
+      "exposure": {
+        "ticker": "MDB",
+        "exchange": "NASDAQ",
+        "country": "US",
+        "business_desc": "MongoDB — NoSQL 문서DB·Atlas 클라우드",
+        "theme_role": "DB/검색/DW — 비정형데이터",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -2.532342416735489,
+        "close": 460.33,
+        "marketCap": 37025228956,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": 4.820566536114401,
+        "return_15d": 54.359197907584985,
+        "return_1m": 33.55673542809063,
+        "return_ytd": 9.683337701636919,
+        "return_1y": 125.24343103195186,
+        "return_3y": 26.321999945116747,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 15.428786359077229,
+        "return_2y": 89.09382188629642
+      }
+    },
+    {
+      "id": "A_266",
+      "type": "ASSET",
+      "name": "팔란티어",
+      "exposure": {
+        "ticker": "PLTR",
+        "exchange": "NYSE",
+        "country": "US",
+        "business_desc": "Palantir — Foundry·AIP 정부·기업 데이터 통합",
+        "theme_role": "거버넌스·분석 — AI 운영 통합",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -2.776381207753753,
+        "close": 174.04,
+        "marketCap": 399608022800,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": -0.5144621012918793,
+        "return_15d": 41.58802473153269,
+        "return_1m": 30.152557583009276,
+        "return_ytd": -2.0872011251758082,
+        "return_1y": -3.855927521820801,
+        "return_3y": 1007.1246819338421,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 1.1801639439567468,
+        "return_2y": 461.4193548387097
+      }
+    },
+    {
+      "id": "A_895",
+      "type": "ASSET",
+      "name": "오라클",
+      "exposure": {
+        "ticker": "ORCL",
+        "exchange": "NYSE",
+        "country": "US",
+        "business_desc": "Oracle — 전통 RDBMS + OCI 클라우드",
+        "theme_role": "DB/검색/DW — 엔터프라이즈 RDBMS 1위",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -3.64870055050569,
+        "close": 150.32,
+        "marketCap": 432992250400,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": 3.464393731097082,
+        "return_15d": 30.89833898599881,
+        "return_1m": 17.64889792090043,
+        "return_ytd": -22.77461392437534,
+        "return_1y": -38.55323318092749,
+        "return_3y": 30.241412131175927,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 2.3806284859202886,
+        "return_2y": 11.002949852507381
+      }
+    },
+    {
+      "id": "A_1752",
+      "type": "ASSET",
+      "name": "넷앱",
+      "exposure": {
+        "ticker": "NTAP",
+        "exchange": "NASDAQ",
+        "country": "US",
+        "business_desc": "NetApp — 하이브리드 클라우드 데이터 관리·ONTAP 스토리지",
+        "theme_role": "엔터프라이즈 스토리지 빅3 — AI 데이터 플랫폼",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": 1.0195619298502434,
+        "close": 207.08,
+        "marketCap": 40636136720,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": 4.338187131556404,
+        "return_15d": 23.4529629188029,
+        "return_1m": 18.636493841306212,
+        "return_ytd": 93.37006256419835,
+        "return_1y": 89.01058780576854,
+        "return_3y": 170.86984957488554,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 9.265512874630645,
+        "return_2y": 62.9140114861144
+      }
+    },
+    {
+      "id": "A_1495",
+      "type": "ASSET",
+      "name": "IBM",
+      "exposure": {
+        "ticker": "IBM",
+        "exchange": "NYSE",
+        "country": "US",
+        "business_desc": "International Business Machines — Db2·watsonx AI·Storage·Red Hat 하이브리드 클라우드",
+        "theme_role": "AI 데이터 플랫폼 통합 (watsonx + Storage)",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -1.1891709538669137,
+        "close": 234.32,
+        "marketCap": 220760838880,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": -1.7196543914101192,
+        "return_15d": 9.398197861711566,
+        "return_1m": 7.946745289537938,
+        "return_ytd": -20.893960365956577,
+        "return_1y": -1.1766690565560345,
+        "return_3y": 65.11873722782045,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -1.2474713418745842,
+        "return_2y": 21.838602329450918
+      }
+    },
+    {
+      "id": "A_1754",
+      "type": "ASSET",
+      "name": "뉴타닉스",
+      "exposure": {
+        "ticker": "NTNX",
+        "exchange": "NASDAQ",
+        "country": "US",
+        "business_desc": "Nutanix — 하이퍼컨버지드 인프라(HCI)·NCP 멀티클라우드",
+        "theme_role": "HCI 1위 — 엔터프라이즈 데이터 스택",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -1.972038263428999,
+        "close": 66.605,
+        "marketCap": 18004663600,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": 3.560323383084585,
+        "return_15d": 21.021075581395344,
+        "return_1m": 20.08292770867135,
+        "return_ytd": 28.864383826658923,
+        "return_1y": -2.915026963999412,
+        "return_3y": 122.18145430286857,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 6.286899632998244,
+        "return_2y": 29.945376511900122
+      }
+    },
+    {
+      "id": "A_1755",
+      "type": "ASSET",
+      "name": "VAST데이터(비)",
+      "exposure": {
+        "ticker": null,
+        "exchange": null,
+        "country": "US",
+        "business_desc": "VAST Data — 고성능 스케일아웃 NVMe 스토리지 (비상장)",
+        "theme_role": "에이전트 AI 긴 컨텍스트 추론용 고속 스토리지",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": "PRIVATE",
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": null,
+        "returnsSource": "PRIVATE",
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "VAST데이터는 AI 스토리지 플랫폼 기업이다(비상장)"
+    },
+    {
+      "id": "A_1756",
+      "type": "ASSET",
+      "name": "WEKA(비)",
+      "exposure": {
+        "ticker": null,
+        "exchange": null,
+        "country": "US",
+        "business_desc": "WEKA — AI 워크로드용 병렬 파일시스템 (비상장)",
+        "theme_role": "AI 추론용 고성능 병렬 파일시스템",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": "PRIVATE",
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": null,
+        "returnsSource": "PRIVATE",
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "WEKA는 고성능 AI·HPC 스토리지 기업이다(비상장)"
+    },
+    {
+      "id": "A_1757",
+      "type": "ASSET",
+      "name": "DDN(비)",
+      "exposure": {
+        "ticker": null,
+        "exchange": null,
+        "country": "US",
+        "business_desc": "DataDirect Networks — HPC·AI 고성능 스토리지 (비상장)",
+        "theme_role": "HPC·AI 고성능 스토리지 강자",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": "PRIVATE",
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": null,
+        "returnsSource": "PRIVATE",
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "DDN은 HPC·AI 스토리지 기업이다(비상장)"
+    },
+    {
+      "id": "BF_055",
+      "type": "BUSINESS_FIELD",
+      "name": "HDD"
+    },
+    {
+      "id": "BF_070",
+      "type": "BUSINESS_FIELD",
+      "name": "DB/검색/DW"
+    },
+    {
+      "id": "BF_071",
+      "type": "BUSINESS_FIELD",
+      "name": "저장최적화"
+    },
+    {
+      "id": "BF_075",
+      "type": "BUSINESS_FIELD",
+      "name": "옵저버빌리티/분석"
+    },
+    {
+      "id": "M_051",
+      "type": "MACRO",
+      "name": "AI수요확대"
+    },
+    {
+      "id": "M_019",
+      "type": "MACRO",
+      "name": "AI추론확산"
+    },
+    {
+      "id": "M_034",
+      "type": "MACRO",
+      "name": "LLM확산"
+    },
+    {
+      "id": "M_276",
+      "type": "MACRO",
+      "name": "Agentic AI 확산"
+    },
+    {
+      "id": "M_309",
+      "type": "MACRO",
+      "name": "엣지컴퓨팅확산"
+    },
+    {
+      "id": "A_586",
+      "type": "ASSET",
+      "name": "오픈AI(비)",
+      "exposure": {
+        "ticker": "",
+        "exchange": "",
+        "country": "US",
+        "theme_role": "1궤도"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": null,
+        "returnsSource": null,
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "오픈AI는 생성형 AI 선도로 AI 데이터·스토리지 수요를 창출한다(비상장)"
+    },
+    {
+      "id": "M_375",
+      "type": "MACRO",
+      "name": "AI데이터SaaS_ARR폭증"
+    },
+    {
+      "id": "M_280",
+      "type": "MACRO",
+      "name": "비정형데이터확산"
+    },
+    {
+      "id": "C_3244",
+      "type": "CHARACTER",
+      "name": "AI구동가능DW제공매출성장"
+    },
+    {
+      "id": "C_4168",
+      "type": "CHARACTER",
+      "name": "올플래시스토리지(AI)"
+    },
+    {
+      "id": "C_4169",
+      "type": "CHARACTER",
+      "name": "관측성·모니터링"
+    },
+    {
+      "id": "C_4170",
+      "type": "CHARACTER",
+      "name": "NoSQL문서DB"
+    },
+    {
+      "id": "C_4171",
+      "type": "CHARACTER",
+      "name": "AI데이터운영체제(AIP)"
+    },
+    {
+      "id": "C_4172",
+      "type": "CHARACTER",
+      "name": "DB·클라우드인프라(OCI)"
+    },
+    {
+      "id": "C_4173",
+      "type": "CHARACTER",
+      "name": "엔터프라이즈스토리지"
+    },
+    {
+      "id": "C_4174",
+      "type": "CHARACTER",
+      "name": "하이브리드클라우드·watsonx"
+    },
+    {
+      "id": "C_4175",
+      "type": "CHARACTER",
+      "name": "하이퍼컨버지드인프라(HCI)"
+    },
+    {
+      "id": "C_4176",
+      "type": "CHARACTER",
+      "name": "AI스토리지플랫폼"
+    },
+    {
+      "id": "C_4177",
+      "type": "CHARACTER",
+      "name": "고성능AI스토리지"
+    },
+    {
+      "id": "C_4178",
+      "type": "CHARACTER",
+      "name": "HPC·AI스토리지"
+    },
+    {
+      "id": "C_4179",
+      "type": "CHARACTER",
+      "name": "생성형AI(수요·플랫폼)"
+    },
+    {
+      "id": "A_1357",
+      "type": "ASSET",
+      "name": "WCLD ETF",
+      "exposure": {
+        "ticker": "WCLD",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -2.6271793647002495,
+        "close": 40.77,
+        "marketCap": 281891241,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "return_3d": 1.8995251187203355,
+        "return_15d": 25.63944530046225,
+        "return_1m": 16.55231560891941,
+        "return_ytd": 16.45244215938304,
+        "return_1y": 22.8012048192771,
+        "return_3y": 30.130864985636798,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 4.511663675980526,
+        "return_2y": 34.06774087471227
+      }
+    }
   ],
-  "dataAsOf": "2026-07-28T00:00:00+09:00",
-  "description": "기업용AI데이터플랫폼+스토리지 — 12 자산. 기존 6 (Pure Storage·MongoDB·Palantir·Snowflake·Datadog·Oracle) + 신규 6 (NetApp·IBM·Nutanix·VAST데이터·WEKA·DDN). 4 BF (HDD·DB/검색/DW·저장최적화·옵저버빌리티/분석) + 5 macro IMPACTS (AI수요확대·AI추론확대·LLM확산·Agentic AI확산·엣지컴퓨팅확산). 에이전트 AI 긴 컨텍스트 추론용 고속 스토리지 강자.",
-  "notes": "12 ASSET + 4 BF + 5 MACRO",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-07-28",
-    "kind": "수정",
-    "title": "팔란티어 유럽 이탈 이벤트 추가",
-    "detail": "유럽 주권 SW 전환(프랑스·네덜란드·폴란드)으로 팔란티어 약세 이벤트를 2026 DB에 반영."
-   },
-   {
-    "date": "2026-07-13",
-    "kind": "변경",
-    "title": "오픈AI THEME 연결 해제",
-    "detail": "오픈AI(A_586)의 THEMED_AS(테마 직접연결)를 해제하고 스노우플레이크와의 PARTNERS 관계로만 유지했다."
-   },
-   {
-    "date": "2026-07-13",
-    "kind": "변경",
-    "title": "CHR 통합: C_1649→C_3244",
-    "detail": "데이터클라우드공유(C_1649) CHR을 'AI구동가능DW제공매출성장'(C_3244)로 통합했다."
-   },
-   {
-    "date": "2026-07-13",
-    "kind": "보강",
-    "title": "스노우플레이크(A_274) 보강",
-    "detail": "스노우플레이크의 오픈AI 협력(2026.2)·데이터클라우드 공유 CHR·AI 데이터 SaaS 매크로를 보강했다."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_222",
+      "to": "T_279",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008938"
+      ]
+    },
+    {
+      "from": "A_274",
+      "to": "T_279",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015759"
+      ]
+    },
+    {
+      "from": "A_276",
+      "to": "T_279",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008940"
+      ]
+    },
+    {
+      "from": "A_040",
+      "to": "T_279",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008942"
+      ]
+    },
+    {
+      "from": "A_266",
+      "to": "T_279",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008944"
+      ]
+    },
+    {
+      "from": "A_895",
+      "to": "T_279",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008946"
+      ]
+    },
+    {
+      "from": "A_1752",
+      "to": "T_279",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008948"
+      ]
+    },
+    {
+      "from": "A_1495",
+      "to": "T_279",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008950"
+      ]
+    },
+    {
+      "from": "A_1754",
+      "to": "T_279",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008952"
+      ]
+    },
+    {
+      "from": "A_1755",
+      "to": "T_279",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008954"
+      ]
+    },
+    {
+      "from": "A_1756",
+      "to": "T_279",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008956"
+      ]
+    },
+    {
+      "from": "A_1757",
+      "to": "T_279",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008958"
+      ]
+    },
+    {
+      "from": "A_222",
+      "to": "BF_071",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015760"
+      ]
+    },
+    {
+      "from": "A_274",
+      "to": "BF_070",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015761"
+      ]
+    },
+    {
+      "from": "A_276",
+      "to": "BF_075",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015762"
+      ]
+    },
+    {
+      "from": "A_040",
+      "to": "BF_070",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015763"
+      ]
+    },
+    {
+      "from": "A_266",
+      "to": "BF_075",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015764"
+      ]
+    },
+    {
+      "from": "A_895",
+      "to": "BF_070",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015765"
+      ]
+    },
+    {
+      "from": "A_1752",
+      "to": "BF_055",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015766"
+      ]
+    },
+    {
+      "from": "A_1752",
+      "to": "BF_071",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015767"
+      ]
+    },
+    {
+      "from": "A_1495",
+      "to": "BF_070",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015768"
+      ]
+    },
+    {
+      "from": "A_1754",
+      "to": "BF_071",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015769"
+      ]
+    },
+    {
+      "from": "A_1755",
+      "to": "BF_071",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015770"
+      ]
+    },
+    {
+      "from": "A_1756",
+      "to": "BF_071",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015771"
+      ]
+    },
+    {
+      "from": "A_1757",
+      "to": "BF_055",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015772"
+      ]
+    },
+    {
+      "from": "A_1757",
+      "to": "BF_071",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015773"
+      ]
+    },
+    {
+      "from": "M_051",
+      "to": "T_279",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008961"
+      ]
+    },
+    {
+      "from": "M_019",
+      "to": "T_279",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008962"
+      ]
+    },
+    {
+      "from": "M_034",
+      "to": "T_279",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008963"
+      ]
+    },
+    {
+      "from": "M_276",
+      "to": "T_279",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008964"
+      ]
+    },
+    {
+      "from": "M_309",
+      "to": "T_279",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008965"
+      ]
+    },
+    {
+      "from": "A_274",
+      "to": "A_586",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_006471"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_274",
+      "to": "C_3244",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006472"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_375",
+      "to": "T_279",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008966"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_280",
+      "to": "T_279",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008967"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_222",
+      "to": "C_4168",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008939"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_276",
+      "to": "C_4169",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008941"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_040",
+      "to": "C_4170",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008943"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_266",
+      "to": "C_4171",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008945"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_895",
+      "to": "C_4172",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008947"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1752",
+      "to": "C_4173",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008949"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1495",
+      "to": "C_4174",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008951"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1754",
+      "to": "C_4175",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008953"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1755",
+      "to": "C_4176",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008955"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1756",
+      "to": "C_4177",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008957"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1757",
+      "to": "C_4178",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008959"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_586",
+      "to": "C_4179",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008960"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1357",
+      "to": "T_279",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020685"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_222",
+      "to": "T_279",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008938"
+      ]
+    },
+    {
+      "from": "A_274",
+      "to": "T_279",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015759"
+      ]
+    },
+    {
+      "from": "A_276",
+      "to": "T_279",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008940"
+      ]
+    },
+    {
+      "from": "A_040",
+      "to": "T_279",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008942"
+      ]
+    },
+    {
+      "from": "A_266",
+      "to": "T_279",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008944"
+      ]
+    },
+    {
+      "from": "A_895",
+      "to": "T_279",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008946"
+      ]
+    },
+    {
+      "from": "A_1752",
+      "to": "T_279",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008948"
+      ]
+    },
+    {
+      "from": "A_1495",
+      "to": "T_279",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008950"
+      ]
+    },
+    {
+      "from": "A_1754",
+      "to": "T_279",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008952"
+      ]
+    },
+    {
+      "from": "A_1755",
+      "to": "T_279",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008954"
+      ]
+    },
+    {
+      "from": "A_1756",
+      "to": "T_279",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008956"
+      ]
+    },
+    {
+      "from": "A_1757",
+      "to": "T_279",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008958"
+      ]
+    },
+    {
+      "from": "A_222",
+      "to": "BF_071",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015760"
+      ]
+    },
+    {
+      "from": "A_274",
+      "to": "BF_070",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015761"
+      ]
+    },
+    {
+      "from": "A_276",
+      "to": "BF_075",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015762"
+      ]
+    },
+    {
+      "from": "A_040",
+      "to": "BF_070",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015763"
+      ]
+    },
+    {
+      "from": "A_266",
+      "to": "BF_075",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015764"
+      ]
+    },
+    {
+      "from": "A_895",
+      "to": "BF_070",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015765"
+      ]
+    },
+    {
+      "from": "A_1752",
+      "to": "BF_055",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015766"
+      ]
+    },
+    {
+      "from": "A_1752",
+      "to": "BF_071",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015767"
+      ]
+    },
+    {
+      "from": "A_1495",
+      "to": "BF_070",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015768"
+      ]
+    },
+    {
+      "from": "A_1754",
+      "to": "BF_071",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015769"
+      ]
+    },
+    {
+      "from": "A_1755",
+      "to": "BF_071",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015770"
+      ]
+    },
+    {
+      "from": "A_1756",
+      "to": "BF_071",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015771"
+      ]
+    },
+    {
+      "from": "A_1757",
+      "to": "BF_055",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015772"
+      ]
+    },
+    {
+      "from": "A_1757",
+      "to": "BF_071",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015773"
+      ]
+    },
+    {
+      "from": "M_051",
+      "to": "T_279",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008961"
+      ]
+    },
+    {
+      "from": "M_019",
+      "to": "T_279",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008962"
+      ]
+    },
+    {
+      "from": "M_034",
+      "to": "T_279",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008963"
+      ]
+    },
+    {
+      "from": "M_276",
+      "to": "T_279",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008964"
+      ]
+    },
+    {
+      "from": "M_309",
+      "to": "T_279",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008965"
+      ]
+    },
+    {
+      "from": "A_274",
+      "to": "A_586",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_006471"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_274",
+      "to": "C_3244",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006472"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_375",
+      "to": "T_279",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008966"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_280",
+      "to": "T_279",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008967"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_222",
+      "to": "C_4168",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008939"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_276",
+      "to": "C_4169",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008941"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_040",
+      "to": "C_4170",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008943"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_266",
+      "to": "C_4171",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008945"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_895",
+      "to": "C_4172",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008947"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1752",
+      "to": "C_4173",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008949"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1495",
+      "to": "C_4174",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008951"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1754",
+      "to": "C_4175",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008953"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1755",
+      "to": "C_4176",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008955"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1756",
+      "to": "C_4177",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008957"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1757",
+      "to": "C_4178",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008959"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_586",
+      "to": "C_4179",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008960"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1357",
+      "to": "T_279",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020685"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_279",
-   "type": "THEME",
-   "name": "기업용AI데이터플랫폼+스토리지"
-  },
-  {
-   "id": "A_222",
-   "type": "ASSET",
-   "name": "퓨어스토리지",
-   "exposure": {
-    "ticker": "PSTG",
-    "exchange": "NYSE",
-    "country": "US",
-    "business_desc": "Pure Storage — All-Flash 엔터프라이즈 스토리지 (Everpure)",
-    "theme_role": "저장최적화 — All-Flash 강자",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": 2.6696023118205625,
-    "close": 74.61,
-    "marketCap": 28492341385,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": -0.12048192771084709,
-    "return_15d": 2.1495071193866178,
-    "return_1m": -3.191903464383017,
-    "return_ytd": 11.341590807342183,
-    "return_1y": 41.11972763381881,
-    "return_3y": 97.69475357710651,
-    "returnsAsOf": "2026-06-18",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 7.600230747043546,
-    "return_2y": 9.158741770299939
-   }
-  },
-  {
-   "id": "A_274",
-   "type": "ASSET",
-   "name": "스노우플레이크",
-   "exposure": {
-    "ticker": "SNOW",
-    "exchange": "NYSE",
-    "country": "US",
-    "business_desc": "Snowflake — 클라우드 DW·Cortex AI 플랫폼",
-    "theme_role": "DB/검색/DW — 멀티클라우드 분석",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -2.5075582429308185,
-    "close": 328.92,
-    "marketCap": 114003672000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": -1.5622194289818592,
-    "return_15d": 22.703872267402826,
-    "return_1m": 19.199826049141123,
-    "return_ytd": 49.945295404814004,
-    "return_1y": 68.7634684453566,
-    "return_3y": 115.17728640586155,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -0.4750521952252673,
-    "return_2y": 158.38177533385704
-   }
-  },
-  {
-   "id": "A_276",
-   "type": "ASSET",
-   "name": "데이터독",
-   "exposure": {
-    "ticker": "DDOG",
-    "exchange": "NASDAQ",
-    "country": "US",
-    "business_desc": "Datadog — 클라우드 옵저버빌리티 플랫폼",
-    "theme_role": "옵저버빌리티·분석 — AI 워크로드 모니터링",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": 1.2765620044402182,
-    "close": 255.46,
-    "marketCap": 90933586050,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 3.5173028608477264,
-    "return_15d": 3.4837559750465763,
-    "return_1m": -5.640305839766557,
-    "return_ytd": 87.85204794470181,
-    "return_1y": 105.15579826533892,
-    "return_3y": 184.5399866339942,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 9.203607916898227,
-    "return_2y": 123.7932544897065
-   }
-  },
-  {
-   "id": "A_040",
-   "type": "ASSET",
-   "name": "몽고DB",
-   "exposure": {
-    "ticker": "MDB",
-    "exchange": "NASDAQ",
-    "country": "US",
-    "business_desc": "MongoDB — NoSQL 문서DB·Atlas 클라우드",
-    "theme_role": "DB/검색/DW — 비정형데이터",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -2.532342416735489,
-    "close": 460.33,
-    "marketCap": 37025228956,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 4.820566536114401,
-    "return_15d": 54.359197907584985,
-    "return_1m": 33.55673542809063,
-    "return_ytd": 9.683337701636919,
-    "return_1y": 125.24343103195186,
-    "return_3y": 26.321999945116747,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 15.428786359077229,
-    "return_2y": 89.09382188629642
-   }
-  },
-  {
-   "id": "A_266",
-   "type": "ASSET",
-   "name": "팔란티어",
-   "exposure": {
-    "ticker": "PLTR",
-    "exchange": "NYSE",
-    "country": "US",
-    "business_desc": "Palantir — Foundry·AIP 정부·기업 데이터 통합",
-    "theme_role": "거버넌스·분석 — AI 운영 통합",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -2.776381207753753,
-    "close": 174.04,
-    "marketCap": 399608022800,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": -0.5144621012918793,
-    "return_15d": 41.58802473153269,
-    "return_1m": 30.152557583009276,
-    "return_ytd": -2.0872011251758082,
-    "return_1y": -3.855927521820801,
-    "return_3y": 1007.1246819338421,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 1.1801639439567468,
-    "return_2y": 461.4193548387097
-   }
-  },
-  {
-   "id": "A_895",
-   "type": "ASSET",
-   "name": "오라클",
-   "exposure": {
-    "ticker": "ORCL",
-    "exchange": "NYSE",
-    "country": "US",
-    "business_desc": "Oracle — 전통 RDBMS + OCI 클라우드",
-    "theme_role": "DB/검색/DW — 엔터프라이즈 RDBMS 1위",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -3.64870055050569,
-    "close": 150.52,
-    "marketCap": 432992250400,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 3.464393731097082,
-    "return_15d": 30.89833898599881,
-    "return_1m": 17.64889792090043,
-    "return_ytd": -22.029713868941325,
-    "return_1y": -37.85288574088715,
-    "return_3y": 34.94008739011241,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 2.3806284859202886,
-    "return_2y": 13.458455225292521
-   }
-  },
-  {
-   "id": "A_1752",
-   "type": "ASSET",
-   "name": "넷앱",
-   "exposure": {
-    "ticker": "NTAP",
-    "exchange": "NASDAQ",
-    "country": "US",
-    "business_desc": "NetApp — 하이브리드 클라우드 데이터 관리·ONTAP 스토리지",
-    "theme_role": "엔터프라이즈 스토리지 빅3 — AI 데이터 플랫폼",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": 1.0195619298502434,
-    "close": 207.08,
-    "marketCap": 40636136720,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 4.338187131556404,
-    "return_15d": 23.4529629188029,
-    "return_1m": 18.636493841306212,
-    "return_ytd": 95.90202628235511,
-    "return_1y": 92.31840825590942,
-    "return_3y": 187.18950096871677,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 9.265512874630645,
-    "return_2y": 69.11019520190247
-   }
-  },
-  {
-   "id": "A_1495",
-   "type": "ASSET",
-   "name": "IBM",
-   "exposure": {
-    "ticker": "IBM",
-    "exchange": "NYSE",
-    "country": "US",
-    "business_desc": "International Business Machines — Db2·watsonx AI·Storage·Red Hat 하이브리드 클라우드",
-    "theme_role": "AI 데이터 플랫폼 통합 (watsonx + Storage)",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -1.1891709538669137,
-    "close": 234.32,
-    "marketCap": 220760838880,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": -1.7196543914101192,
-    "return_15d": 10.182940735289625,
-    "return_1m": 8.721120952247063,
-    "return_ytd": -19.282498852896556,
-    "return_1y": 1.392414867714309,
-    "return_3y": 81.1135484249954,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -0.5390721168131107,
-    "return_2y": 28.5370734447409
-   }
-  },
-  {
-   "id": "A_1754",
-   "type": "ASSET",
-   "name": "뉴타닉스",
-   "exposure": {
-    "ticker": "NTNX",
-    "exchange": "NASDAQ",
-    "country": "US",
-    "business_desc": "Nutanix — 하이퍼컨버지드 인프라(HCI)·NCP 멀티클라우드",
-    "theme_role": "HCI 1위 — 엔터프라이즈 데이터 스택",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -1.979396615158202,
-    "close": 66.605,
-    "marketCap": 18004663600,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 3.5525497512437942,
-    "return_15d": 21.011991279069786,
-    "return_1m": 20.073913827294042,
-    "return_ytd": 28.854710775778702,
-    "return_1y": -2.922314531409409,
-    "return_3y": 122.16477651767845,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 6.27892133397161,
-    "return_2y": 29.93562231759659
-   }
-  },
-  {
-   "id": "A_1755",
-   "type": "ASSET",
-   "name": "VAST데이터(비)",
-   "exposure": {
-    "ticker": null,
-    "exchange": null,
-    "country": "US",
-    "business_desc": "VAST Data — 고성능 스케일아웃 NVMe 스토리지 (비상장)",
-    "theme_role": "에이전트 AI 긴 컨텍스트 추론용 고속 스토리지",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": "PRIVATE",
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": null,
-    "returnsSource": "PRIVATE",
-    "return_5d": null
-   },
-   "coreBiz": "VAST데이터는 AI 스토리지 플랫폼 기업이다(비상장)"
-  },
-  {
-   "id": "A_1756",
-   "type": "ASSET",
-   "name": "WEKA(비)",
-   "exposure": {
-    "ticker": null,
-    "exchange": null,
-    "country": "US",
-    "business_desc": "WEKA — AI 워크로드용 병렬 파일시스템 (비상장)",
-    "theme_role": "AI 추론용 고성능 병렬 파일시스템",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": "PRIVATE",
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": null,
-    "returnsSource": "PRIVATE",
-    "return_5d": null
-   },
-   "coreBiz": "WEKA는 고성능 AI·HPC 스토리지 기업이다(비상장)"
-  },
-  {
-   "id": "A_1757",
-   "type": "ASSET",
-   "name": "DDN(비)",
-   "exposure": {
-    "ticker": null,
-    "exchange": null,
-    "country": "US",
-    "business_desc": "DataDirect Networks — HPC·AI 고성능 스토리지 (비상장)",
-    "theme_role": "HPC·AI 고성능 스토리지 강자",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": "PRIVATE",
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": null,
-    "returnsSource": "PRIVATE",
-    "return_5d": null
-   },
-   "coreBiz": "DDN은 HPC·AI 스토리지 기업이다(비상장)"
-  },
-  {
-   "id": "BF_055",
-   "type": "BUSINESS_FIELD",
-   "name": "HDD"
-  },
-  {
-   "id": "BF_070",
-   "type": "BUSINESS_FIELD",
-   "name": "DB/검색/DW"
-  },
-  {
-   "id": "BF_071",
-   "type": "BUSINESS_FIELD",
-   "name": "저장최적화"
-  },
-  {
-   "id": "BF_075",
-   "type": "BUSINESS_FIELD",
-   "name": "옵저버빌리티/분석"
-  },
-  {
-   "id": "M_051",
-   "type": "MACRO",
-   "name": "AI수요확대"
-  },
-  {
-   "id": "M_019",
-   "type": "MACRO",
-   "name": "AI추론확산"
-  },
-  {
-   "id": "M_034",
-   "type": "MACRO",
-   "name": "LLM확산"
-  },
-  {
-   "id": "M_276",
-   "type": "MACRO",
-   "name": "Agentic AI 확산"
-  },
-  {
-   "id": "M_309",
-   "type": "MACRO",
-   "name": "엣지컴퓨팅확산"
-  },
-  {
-   "id": "A_586",
-   "type": "ASSET",
-   "name": "오픈AI(비)",
-   "exposure": {
-    "ticker": "",
-    "exchange": "",
-    "country": "US",
-    "theme_role": "1궤도"
-   },
-   "metrics": {
-    "return_1d": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": null,
-    "returnsSource": null,
-    "return_5d": null
-   },
-   "coreBiz": "오픈AI는 생성형 AI 선도로 AI 데이터·스토리지 수요를 창출한다(비상장)"
-  },
-  {
-   "id": "M_375",
-   "type": "MACRO",
-   "name": "AI데이터SaaS_ARR폭증"
-  },
-  {
-   "id": "M_280",
-   "type": "MACRO",
-   "name": "비정형데이터확산"
-  },
-  {
-   "id": "C_3244",
-   "type": "CHARACTER",
-   "name": "AI구동가능DW제공매출성장"
-  },
-  {
-   "id": "C_4168",
-   "type": "CHARACTER",
-   "name": "올플래시스토리지(AI)"
-  },
-  {
-   "id": "C_4169",
-   "type": "CHARACTER",
-   "name": "관측성·모니터링"
-  },
-  {
-   "id": "C_4170",
-   "type": "CHARACTER",
-   "name": "NoSQL문서DB"
-  },
-  {
-   "id": "C_4171",
-   "type": "CHARACTER",
-   "name": "AI데이터운영체제(AIP)"
-  },
-  {
-   "id": "C_4172",
-   "type": "CHARACTER",
-   "name": "DB·클라우드인프라(OCI)"
-  },
-  {
-   "id": "C_4173",
-   "type": "CHARACTER",
-   "name": "엔터프라이즈스토리지"
-  },
-  {
-   "id": "C_4174",
-   "type": "CHARACTER",
-   "name": "하이브리드클라우드·watsonx"
-  },
-  {
-   "id": "C_4175",
-   "type": "CHARACTER",
-   "name": "하이퍼컨버지드인프라(HCI)"
-  },
-  {
-   "id": "C_4176",
-   "type": "CHARACTER",
-   "name": "AI스토리지플랫폼"
-  },
-  {
-   "id": "C_4177",
-   "type": "CHARACTER",
-   "name": "고성능AI스토리지"
-  },
-  {
-   "id": "C_4178",
-   "type": "CHARACTER",
-   "name": "HPC·AI스토리지"
-  },
-  {
-   "id": "C_4179",
-   "type": "CHARACTER",
-   "name": "생성형AI(수요·플랫폼)"
-  },
-  {
-   "id": "A_1357",
-   "type": "ASSET",
-   "name": "WCLD ETF",
-   "exposure": {
-    "ticker": "WCLD",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -2.6271793647002495,
-    "close": 40.77,
-    "marketCap": 281891241,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "return_3d": 1.8995251187203355,
-    "return_15d": 25.63944530046225,
-    "return_1m": 16.538989252229584,
-    "return_ytd": 16.45244215938304,
-    "return_1y": 22.8012048192771,
-    "return_3y": 30.130864985636798,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 4.511663675980526,
-    "return_2y": 34.06774087471227
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_222",
-   "to": "T_279",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008938"
-   ]
-  },
-  {
-   "from": "A_274",
-   "to": "T_279",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015759"
-   ]
-  },
-  {
-   "from": "A_276",
-   "to": "T_279",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008940"
-   ]
-  },
-  {
-   "from": "A_040",
-   "to": "T_279",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008942"
-   ]
-  },
-  {
-   "from": "A_266",
-   "to": "T_279",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008944"
-   ]
-  },
-  {
-   "from": "A_895",
-   "to": "T_279",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008946"
-   ]
-  },
-  {
-   "from": "A_1752",
-   "to": "T_279",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008948"
-   ]
-  },
-  {
-   "from": "A_1495",
-   "to": "T_279",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008950"
-   ]
-  },
-  {
-   "from": "A_1754",
-   "to": "T_279",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008952"
-   ]
-  },
-  {
-   "from": "A_1755",
-   "to": "T_279",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008954"
-   ]
-  },
-  {
-   "from": "A_1756",
-   "to": "T_279",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008956"
-   ]
-  },
-  {
-   "from": "A_1757",
-   "to": "T_279",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008958"
-   ]
-  },
-  {
-   "from": "A_222",
-   "to": "BF_071",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015760"
-   ]
-  },
-  {
-   "from": "A_274",
-   "to": "BF_070",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015761"
-   ]
-  },
-  {
-   "from": "A_276",
-   "to": "BF_075",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015762"
-   ]
-  },
-  {
-   "from": "A_040",
-   "to": "BF_070",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015763"
-   ]
-  },
-  {
-   "from": "A_266",
-   "to": "BF_075",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015764"
-   ]
-  },
-  {
-   "from": "A_895",
-   "to": "BF_070",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015765"
-   ]
-  },
-  {
-   "from": "A_1752",
-   "to": "BF_055",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015766"
-   ]
-  },
-  {
-   "from": "A_1752",
-   "to": "BF_071",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015767"
-   ]
-  },
-  {
-   "from": "A_1495",
-   "to": "BF_070",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015768"
-   ]
-  },
-  {
-   "from": "A_1754",
-   "to": "BF_071",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015769"
-   ]
-  },
-  {
-   "from": "A_1755",
-   "to": "BF_071",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015770"
-   ]
-  },
-  {
-   "from": "A_1756",
-   "to": "BF_071",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015771"
-   ]
-  },
-  {
-   "from": "A_1757",
-   "to": "BF_055",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015772"
-   ]
-  },
-  {
-   "from": "A_1757",
-   "to": "BF_071",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015773"
-   ]
-  },
-  {
-   "from": "M_051",
-   "to": "T_279",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008961"
-   ]
-  },
-  {
-   "from": "M_019",
-   "to": "T_279",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008962"
-   ]
-  },
-  {
-   "from": "M_034",
-   "to": "T_279",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008963"
-   ]
-  },
-  {
-   "from": "M_276",
-   "to": "T_279",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008964"
-   ]
-  },
-  {
-   "from": "M_309",
-   "to": "T_279",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008965"
-   ]
-  },
-  {
-   "from": "A_274",
-   "to": "A_586",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_006471"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_274",
-   "to": "C_3244",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006472"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_375",
-   "to": "T_279",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008966"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_280",
-   "to": "T_279",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008967"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_222",
-   "to": "C_4168",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008939"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_276",
-   "to": "C_4169",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008941"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_040",
-   "to": "C_4170",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008943"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_266",
-   "to": "C_4171",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008945"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_895",
-   "to": "C_4172",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008947"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1752",
-   "to": "C_4173",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008949"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1495",
-   "to": "C_4174",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008951"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1754",
-   "to": "C_4175",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008953"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1755",
-   "to": "C_4176",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008955"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1756",
-   "to": "C_4177",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008957"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1757",
-   "to": "C_4178",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008959"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_586",
-   "to": "C_4179",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008960"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1357",
-   "to": "T_279",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020685"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_222",
-   "to": "T_279",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008938"
-   ]
-  },
-  {
-   "from": "A_274",
-   "to": "T_279",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015759"
-   ]
-  },
-  {
-   "from": "A_276",
-   "to": "T_279",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008940"
-   ]
-  },
-  {
-   "from": "A_040",
-   "to": "T_279",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008942"
-   ]
-  },
-  {
-   "from": "A_266",
-   "to": "T_279",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008944"
-   ]
-  },
-  {
-   "from": "A_895",
-   "to": "T_279",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008946"
-   ]
-  },
-  {
-   "from": "A_1752",
-   "to": "T_279",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008948"
-   ]
-  },
-  {
-   "from": "A_1495",
-   "to": "T_279",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008950"
-   ]
-  },
-  {
-   "from": "A_1754",
-   "to": "T_279",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008952"
-   ]
-  },
-  {
-   "from": "A_1755",
-   "to": "T_279",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008954"
-   ]
-  },
-  {
-   "from": "A_1756",
-   "to": "T_279",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008956"
-   ]
-  },
-  {
-   "from": "A_1757",
-   "to": "T_279",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008958"
-   ]
-  },
-  {
-   "from": "A_222",
-   "to": "BF_071",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015760"
-   ]
-  },
-  {
-   "from": "A_274",
-   "to": "BF_070",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015761"
-   ]
-  },
-  {
-   "from": "A_276",
-   "to": "BF_075",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015762"
-   ]
-  },
-  {
-   "from": "A_040",
-   "to": "BF_070",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015763"
-   ]
-  },
-  {
-   "from": "A_266",
-   "to": "BF_075",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015764"
-   ]
-  },
-  {
-   "from": "A_895",
-   "to": "BF_070",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015765"
-   ]
-  },
-  {
-   "from": "A_1752",
-   "to": "BF_055",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015766"
-   ]
-  },
-  {
-   "from": "A_1752",
-   "to": "BF_071",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015767"
-   ]
-  },
-  {
-   "from": "A_1495",
-   "to": "BF_070",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015768"
-   ]
-  },
-  {
-   "from": "A_1754",
-   "to": "BF_071",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015769"
-   ]
-  },
-  {
-   "from": "A_1755",
-   "to": "BF_071",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015770"
-   ]
-  },
-  {
-   "from": "A_1756",
-   "to": "BF_071",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015771"
-   ]
-  },
-  {
-   "from": "A_1757",
-   "to": "BF_055",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015772"
-   ]
-  },
-  {
-   "from": "A_1757",
-   "to": "BF_071",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015773"
-   ]
-  },
-  {
-   "from": "M_051",
-   "to": "T_279",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008961"
-   ]
-  },
-  {
-   "from": "M_019",
-   "to": "T_279",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008962"
-   ]
-  },
-  {
-   "from": "M_034",
-   "to": "T_279",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008963"
-   ]
-  },
-  {
-   "from": "M_276",
-   "to": "T_279",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008964"
-   ]
-  },
-  {
-   "from": "M_309",
-   "to": "T_279",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008965"
-   ]
-  },
-  {
-   "from": "A_274",
-   "to": "A_586",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_006471"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_274",
-   "to": "C_3244",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006472"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_375",
-   "to": "T_279",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008966"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_280",
-   "to": "T_279",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008967"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_222",
-   "to": "C_4168",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008939"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_276",
-   "to": "C_4169",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008941"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_040",
-   "to": "C_4170",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008943"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_266",
-   "to": "C_4171",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008945"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_895",
-   "to": "C_4172",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008947"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1752",
-   "to": "C_4173",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008949"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1495",
-   "to": "C_4174",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008951"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1754",
-   "to": "C_4175",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008953"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1755",
-   "to": "C_4176",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008955"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1756",
-   "to": "C_4177",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008957"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1757",
-   "to": "C_4178",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008959"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_586",
-   "to": "C_4179",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008960"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1357",
-   "to": "T_279",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020685"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

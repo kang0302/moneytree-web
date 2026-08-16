@@ -1,751 +1,752 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_366",
- "themeName": "유럽제약거장",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_366",
+  "themeName": "유럽제약거장",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-25T00:00:00+09:00",
+    "description": "유럽 제약 거장 7사 — Novo Nordisk (GLP-1 Wegovy·Ozempic 1위)·Roche (스위스 진단·종양)·Novartis (Cosentyx·Kisqali)·Sanofi (Dupixent)·AstraZeneca (Tagrisso·종양)·GSK (RSV·HIV)·Bayer (Xarelto·농업). 글로벌 GLP-1·종양 cycle + 약가 정책.",
+    "notes": "T_366 유럽 특화 신규",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-25",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결, 2026 이벤트 2건 추가."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_366",
+      "type": "THEME",
+      "name": "유럽제약거장"
+    },
+    {
+      "id": "A_1215",
+      "type": "ASSET",
+      "name": "노보노디스크",
+      "exposure": {
+        "ticker": "NVO",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.7765410958904049,
+        "return_3d": -2.7135891456434247,
+        "return_15d": -5.9052696329710885,
+        "return_1m": -6.480538006928882,
+        "return_ytd": -9.807389937106926,
+        "return_1y": -9.931305201177631,
+        "return_3y": -48.85198395006687,
+        "close": 45.89,
+        "marketCap": 203779529388,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -2.8988573846804866,
+        "return_2y": -65.86073500967117
+      }
+    },
+    {
+      "id": "A_1634",
+      "type": "ASSET",
+      "name": "로슈",
+      "exposure": {
+        "ticker": "RHHBY",
+        "exchange": "OTC",
+        "country": "CH"
+      },
+      "metrics": {
+        "return_1d": -1.7480627140025184,
+        "return_3d": -3.7089367714588373,
+        "return_15d": -0.3290676416819016,
+        "return_1m": 8.692185007974484,
+        "return_ytd": 5.720380065929809,
+        "return_1y": 41.02431453698916,
+        "return_3y": 44.462109167991514,
+        "close": 54.52,
+        "marketCap": 347542671279,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -4.785190359762481,
+        "return_2y": 34.31879773343187
+      }
+    },
+    {
+      "id": "A_743",
+      "type": "ASSET",
+      "name": "노바티스",
+      "exposure": {
+        "ticker": "NVS",
+        "exchange": "NYSE",
+        "country": "CH"
+      },
+      "metrics": {
+        "return_1d": -0.5536514632217271,
+        "return_3d": -2.4125218291184414,
+        "return_15d": -2.6643442358557534,
+        "return_1m": 0.34583665868581637,
+        "return_ytd": 9.43642561833611,
+        "return_1y": 23.58096486198704,
+        "return_3y": 54.2424861991413,
+        "close": 150.88,
+        "marketCap": 286779855059,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -3.486215057890374,
+        "return_2y": 32.89879327050118
+      }
+    },
+    {
+      "id": "A_1318",
+      "type": "ASSET",
+      "name": "Sanofi",
+      "exposure": {
+        "ticker": "SNY",
+        "exchange": "NASDAQ",
+        "country": "FR"
+      },
+      "metrics": {
+        "return_1d": -0.13704888076747634,
+        "return_3d": 0.36730945821854544,
+        "return_15d": 0.8535178777393293,
+        "return_1m": 1.2505789717461857,
+        "return_ytd": -9.781262897234832,
+        "return_1y": -10.848287112561172,
+        "return_3y": -17.942942942942953,
+        "close": 43.72,
+        "marketCap": 104980464000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": 0.5982512655315242,
+        "return_2y": -18.3261722398655
+      }
+    },
+    {
+      "id": "A_1315",
+      "type": "ASSET",
+      "name": "AstraZeneca",
+      "exposure": {
+        "ticker": "AZN",
+        "exchange": "NASDAQ",
+        "country": "UK"
+      },
+      "metrics": {
+        "return_1d": -0.5024166878656922,
+        "return_3d": -1.4488188976378047,
+        "return_15d": -7.568238213399503,
+        "return_1m": -4.893617021276597,
+        "return_ytd": -10.85470085470086,
+        "return_1y": 0.44943820224718767,
+        "return_3y": 9.25279329608939,
+        "close": 156.45,
+        "marketCap": 242633995272,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -3.078924544666084,
+        "return_2y": -5.753012048192774
+      }
+    },
+    {
+      "id": "A_2029",
+      "type": "ASSET",
+      "name": "GSK",
+      "exposure": {
+        "ticker": "GSK",
+        "exchange": "NYSE",
+        "country": "UK"
+      },
+      "metrics": {
+        "return_1d": -1.8434093161546095,
+        "return_3d": -2.711198428290762,
+        "return_15d": -3.563777994157735,
+        "return_1m": -3.375609756097553,
+        "return_ytd": 0.978792822185981,
+        "return_1y": 26.22992607698191,
+        "return_3y": 39.72911963882619,
+        "close": 49.52,
+        "marketCap": 99213320000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -6.495468277945616,
+        "return_2y": 20.135856380397875
+      }
+    },
+    {
+      "id": "A_2030",
+      "type": "ASSET",
+      "name": "바이엘",
+      "exposure": {
+        "ticker": "BAYRY",
+        "exchange": "OTC",
+        "country": "DE"
+      },
+      "metrics": {
+        "return_1d": -0.07220216606498298,
+        "return_3d": -3.0133146461107208,
+        "return_15d": 5.407463823305392,
+        "return_1m": -0.717360114777621,
+        "return_ytd": 27.911275415896487,
+        "return_1y": 79.27461139896373,
+        "return_3y": -3.8888888888888973,
+        "close": 13.84,
+        "marketCap": 54386992640,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -4.22145328719723,
+        "return_2y": 93.8375350140056
+      }
+    },
+    {
+      "id": "M_350",
+      "type": "MACRO",
+      "name": "GLP-1비만약사이클"
+    },
+    {
+      "id": "M_351",
+      "type": "MACRO",
+      "name": "종양약개발사이클"
+    },
+    {
+      "id": "M_352",
+      "type": "MACRO",
+      "name": "글로벌약가정책"
+    },
+    {
+      "id": "C_361",
+      "type": "CHARACTER",
+      "name": "GLP-1비만약1위"
+    },
+    {
+      "id": "C_362",
+      "type": "CHARACTER",
+      "name": "진단+종양Roche"
+    },
+    {
+      "id": "C_363",
+      "type": "CHARACTER",
+      "name": "Novartis차세대"
+    },
+    {
+      "id": "C_364",
+      "type": "CHARACTER",
+      "name": "Dupixent아토피"
+    },
+    {
+      "id": "C_365",
+      "type": "CHARACTER",
+      "name": "AstraZeneca종양"
+    },
+    {
+      "id": "C_366",
+      "type": "CHARACTER",
+      "name": "RSV_HIV"
+    },
+    {
+      "id": "C_367",
+      "type": "CHARACTER",
+      "name": "Bayer농업제약통합"
+    },
+    {
+      "id": "A_2923",
+      "type": "ASSET",
+      "name": "VanEck Pharmaceutical ETF",
+      "exposure": {
+        "ticker": "PPH",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.5918220946915298,
+        "return_3d": -1.0355293697553947,
+        "return_15d": 0.20790020790020236,
+        "return_1m": 3.820940250983318,
+        "return_ytd": 7.453717165842777,
+        "return_1y": 28.68253047011027,
+        "return_3y": 33.566265060240966,
+        "close": 110.86,
+        "marketCap": 963169085,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-15",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "FMP",
+        "return_5d": -0.2698812522490046,
+        "return_2y": 15.684023792131896
+      }
+    }
   ],
-  "dataAsOf": "2026-07-25T00:00:00+09:00",
-  "description": "유럽 제약 거장 7사 — Novo Nordisk (GLP-1 Wegovy·Ozempic 1위)·Roche (스위스 진단·종양)·Novartis (Cosentyx·Kisqali)·Sanofi (Dupixent)·AstraZeneca (Tagrisso·종양)·GSK (RSV·HIV)·Bayer (Xarelto·농업). 글로벌 GLP-1·종양 cycle + 약가 정책.",
-  "notes": "T_366 유럽 특화 신규",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-25",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결, 2026 이벤트 2건 추가."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_1215",
+      "to": "T_366",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010991"
+      ]
+    },
+    {
+      "from": "A_1634",
+      "to": "T_366",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010992"
+      ]
+    },
+    {
+      "from": "A_743",
+      "to": "T_366",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010993"
+      ]
+    },
+    {
+      "from": "A_1318",
+      "to": "T_366",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010994"
+      ]
+    },
+    {
+      "from": "A_1315",
+      "to": "T_366",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010995"
+      ]
+    },
+    {
+      "from": "A_2029",
+      "to": "T_366",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010996"
+      ]
+    },
+    {
+      "from": "A_2030",
+      "to": "T_366",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010997"
+      ]
+    },
+    {
+      "from": "M_350",
+      "to": "T_366",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_010998"
+      ]
+    },
+    {
+      "from": "M_351",
+      "to": "T_366",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_010999"
+      ]
+    },
+    {
+      "from": "M_352",
+      "to": "T_366",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011000"
+      ]
+    },
+    {
+      "from": "A_1215",
+      "to": "C_361",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016241"
+      ]
+    },
+    {
+      "from": "A_1634",
+      "to": "C_362",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016242"
+      ]
+    },
+    {
+      "from": "A_743",
+      "to": "C_363",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016243"
+      ]
+    },
+    {
+      "from": "A_1318",
+      "to": "C_364",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016244"
+      ]
+    },
+    {
+      "from": "A_1315",
+      "to": "C_365",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016245"
+      ]
+    },
+    {
+      "from": "A_2029",
+      "to": "C_366",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016246"
+      ]
+    },
+    {
+      "from": "A_2030",
+      "to": "C_367",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016247"
+      ]
+    },
+    {
+      "from": "A_1215",
+      "to": "A_1634",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019552"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "노보노디스크와 로슈는 유럽 대형 제약 시장 경쟁"
+    },
+    {
+      "from": "A_1634",
+      "to": "A_743",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019553"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "로슈와 노바티스는 스위스 제약 양대 경쟁"
+    },
+    {
+      "from": "A_1318",
+      "to": "A_1315",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019554"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "사노피와 아스트라제네카는 글로벌 제약 시장 경쟁"
+    },
+    {
+      "from": "A_2029",
+      "to": "A_1315",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019555"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "GSK와 아스트라제네카는 영국 제약 시장 경쟁"
+    },
+    {
+      "from": "A_2030",
+      "to": "A_1318",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019556"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "바이엘과 사노피는 유럽 제약·컨슈머헬스 시장 경쟁"
+    },
+    {
+      "from": "A_2029",
+      "to": "A_1318",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019557"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "GSK와 사노피는 백신·호흡기 치료제 시장 경쟁"
+    },
+    {
+      "from": "A_2923",
+      "to": "T_366",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020736"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_1215",
+      "to": "T_366",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010991"
+      ]
+    },
+    {
+      "from": "A_1634",
+      "to": "T_366",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010992"
+      ]
+    },
+    {
+      "from": "A_743",
+      "to": "T_366",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010993"
+      ]
+    },
+    {
+      "from": "A_1318",
+      "to": "T_366",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010994"
+      ]
+    },
+    {
+      "from": "A_1315",
+      "to": "T_366",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010995"
+      ]
+    },
+    {
+      "from": "A_2029",
+      "to": "T_366",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010996"
+      ]
+    },
+    {
+      "from": "A_2030",
+      "to": "T_366",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_010997"
+      ]
+    },
+    {
+      "from": "M_350",
+      "to": "T_366",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_010998"
+      ]
+    },
+    {
+      "from": "M_351",
+      "to": "T_366",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_010999"
+      ]
+    },
+    {
+      "from": "M_352",
+      "to": "T_366",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011000"
+      ]
+    },
+    {
+      "from": "A_1215",
+      "to": "C_361",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016241"
+      ]
+    },
+    {
+      "from": "A_1634",
+      "to": "C_362",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016242"
+      ]
+    },
+    {
+      "from": "A_743",
+      "to": "C_363",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016243"
+      ]
+    },
+    {
+      "from": "A_1318",
+      "to": "C_364",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016244"
+      ]
+    },
+    {
+      "from": "A_1315",
+      "to": "C_365",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016245"
+      ]
+    },
+    {
+      "from": "A_2029",
+      "to": "C_366",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016246"
+      ]
+    },
+    {
+      "from": "A_2030",
+      "to": "C_367",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016247"
+      ]
+    },
+    {
+      "from": "A_1215",
+      "to": "A_1634",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019552"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "노보노디스크와 로슈는 유럽 대형 제약 시장 경쟁"
+    },
+    {
+      "from": "A_1634",
+      "to": "A_743",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019553"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "로슈와 노바티스는 스위스 제약 양대 경쟁"
+    },
+    {
+      "from": "A_1318",
+      "to": "A_1315",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019554"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "사노피와 아스트라제네카는 글로벌 제약 시장 경쟁"
+    },
+    {
+      "from": "A_2029",
+      "to": "A_1315",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019555"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "GSK와 아스트라제네카는 영국 제약 시장 경쟁"
+    },
+    {
+      "from": "A_2030",
+      "to": "A_1318",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019556"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "바이엘과 사노피는 유럽 제약·컨슈머헬스 시장 경쟁"
+    },
+    {
+      "from": "A_2029",
+      "to": "A_1318",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019557"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "GSK와 사노피는 백신·호흡기 치료제 시장 경쟁"
+    },
+    {
+      "from": "A_2923",
+      "to": "T_366",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020736"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_366",
-   "type": "THEME",
-   "name": "유럽제약거장"
-  },
-  {
-   "id": "A_1215",
-   "type": "ASSET",
-   "name": "노보노디스크",
-   "exposure": {
-    "ticker": "NVO",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -1.7765410958904049,
-    "return_3d": -2.7135891456434247,
-    "return_15d": -5.9052696329710885,
-    "return_1m": -6.480538006928882,
-    "return_ytd": -6.499592502037488,
-    "return_1y": -5.5759373990481365,
-    "return_3y": -44.651159985767784,
-    "close": 45.89,
-    "marketCap": 203779529388,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -2.8988573846804866,
-    "return_2y": -63.49703060394955
-   }
-  },
-  {
-   "id": "A_1634",
-   "type": "ASSET",
-   "name": "로슈",
-   "exposure": {
-    "ticker": "RHHBY",
-    "exchange": "OTC",
-    "country": "CH"
-   },
-   "metrics": {
-    "return_1d": -1.838169039466575,
-    "return_3d": -3.7972447898269146,
-    "return_15d": -0.4204753199268829,
-    "return_1m": 8.592503987240828,
-    "return_ytd": 8.966151876450358,
-    "return_1y": 45.353724305587065,
-    "return_3y": 60.37710850113503,
-    "close": 54.47,
-    "marketCap": 347542671279,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -4.872511351728958,
-    "return_2y": 43.04622543896046
-   }
-  },
-  {
-   "id": "A_743",
-   "type": "ASSET",
-   "name": "노바티스",
-   "exposure": {
-    "ticker": "NVS",
-    "exchange": "NYSE",
-    "country": "CH"
-   },
-   "metrics": {
-    "return_1d": -0.5536514632217271,
-    "return_3d": -2.4125218291184414,
-    "return_15d": -2.6643442358557534,
-    "return_1m": 0.34583665868581637,
-    "return_ytd": 12.76734410781659,
-    "return_1y": 27.34241081262654,
-    "return_3y": 61.89848724491438,
-    "close": 150.88,
-    "marketCap": 286779855059,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -3.486215057890374,
-    "return_2y": 42.03852776237542
-   }
-  },
-  {
-   "id": "A_1318",
-   "type": "ASSET",
-   "name": "Sanofi",
-   "exposure": {
-    "ticker": "SNY",
-    "exchange": "NASDAQ",
-    "country": "FR"
-   },
-   "metrics": {
-    "return_1d": -0.13704888076747634,
-    "return_3d": 0.36730945821854544,
-    "return_15d": 0.8535178777393293,
-    "return_1m": 1.2505789717461857,
-    "return_ytd": -4.776217577195085,
-    "return_1y": -5.902407107682784,
-    "return_3y": -5.719578282724824,
-    "close": 43.72,
-    "marketCap": 104980464000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.5982512655315242,
-    "return_2y": -9.975208177183292
-   }
-  },
-  {
-   "id": "A_1315",
-   "type": "ASSET",
-   "name": "AstraZeneca",
-   "exposure": {
-    "ticker": "AZN",
-    "exchange": "NASDAQ",
-    "country": "UK"
-   },
-   "metrics": {
-    "return_1d": -0.5024166878656922,
-    "return_3d": -1.4488188976378047,
-    "return_15d": -6.955915123811973,
-    "return_1m": -4.263560673465616,
-    "return_ytd": -13.443265089336853,
-    "return_1y": 1.4038387623870552,
-    "return_3y": 17.20128280905515,
-    "close": 156.45,
-    "marketCap": 242633995272,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -3.078924544666084,
-    "return_2y": -2.9734347528132754
-   }
-  },
-  {
-   "id": "A_2029",
-   "type": "ASSET",
-   "name": "GSK",
-   "exposure": {
-    "ticker": "GSK",
-    "exchange": "NYSE",
-    "country": "UK"
-   },
-   "metrics": {
-    "return_1d": -0.9560382415296553,
-    "return_3d": -1.831734200301327,
-    "return_15d": -2.691889746295417,
-    "return_1m": -2.5020279263173517,
-    "return_ytd": 3.64971753777501,
-    "return_1y": 32.14248546352607,
-    "return_3y": 58.67726224045118,
-    "close": 49.52,
-    "marketCap": 99213320000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -5.650131941202807,
-    "return_2y": 31.30681034757061
-   }
-  },
-  {
-   "id": "A_2030",
-   "type": "ASSET",
-   "name": "바이엘",
-   "exposure": {
-    "ticker": "BAYRY",
-    "exchange": "OTC",
-    "country": "DE"
-   },
-   "metrics": {
-    "return_1d": 0.07225433526012459,
-    "return_3d": -2.9432375613174466,
-    "return_15d": 5.483625285605465,
-    "return_1m": -0.858983536148894,
-    "return_ytd": 28.38814935666878,
-    "return_1y": 79.94257428315295,
-    "return_3y": -2.678621620102306,
-    "close": 13.85,
-    "marketCap": 54386992640,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -4.085872576177286,
-    "return_2y": 95.4806565891801
-   }
-  },
-  {
-   "id": "M_350",
-   "type": "MACRO",
-   "name": "GLP-1비만약사이클"
-  },
-  {
-   "id": "M_351",
-   "type": "MACRO",
-   "name": "종양약개발사이클"
-  },
-  {
-   "id": "M_352",
-   "type": "MACRO",
-   "name": "글로벌약가정책"
-  },
-  {
-   "id": "C_361",
-   "type": "CHARACTER",
-   "name": "GLP-1비만약1위"
-  },
-  {
-   "id": "C_362",
-   "type": "CHARACTER",
-   "name": "진단+종양Roche"
-  },
-  {
-   "id": "C_363",
-   "type": "CHARACTER",
-   "name": "Novartis차세대"
-  },
-  {
-   "id": "C_364",
-   "type": "CHARACTER",
-   "name": "Dupixent아토피"
-  },
-  {
-   "id": "C_365",
-   "type": "CHARACTER",
-   "name": "AstraZeneca종양"
-  },
-  {
-   "id": "C_366",
-   "type": "CHARACTER",
-   "name": "RSV_HIV"
-  },
-  {
-   "id": "C_367",
-   "type": "CHARACTER",
-   "name": "Bayer농업제약통합"
-  },
-  {
-   "id": "A_2923",
-   "type": "ASSET",
-   "name": "VanEck Pharmaceutical ETF",
-   "exposure": {
-    "ticker": "PPH",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.5918220946915298,
-    "return_3d": -1.0355293697553947,
-    "return_15d": 0.20790020790020236,
-    "return_1m": 0.8918820531488958,
-    "return_ytd": 6.883918241419207,
-    "return_1y": 29.995309568480288,
-    "return_3y": 34.2130750605327,
-    "close": 110.86,
-    "marketCap": 963169085,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": null
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_1215",
-   "to": "T_366",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010991"
-   ]
-  },
-  {
-   "from": "A_1634",
-   "to": "T_366",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010992"
-   ]
-  },
-  {
-   "from": "A_743",
-   "to": "T_366",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010993"
-   ]
-  },
-  {
-   "from": "A_1318",
-   "to": "T_366",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010994"
-   ]
-  },
-  {
-   "from": "A_1315",
-   "to": "T_366",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010995"
-   ]
-  },
-  {
-   "from": "A_2029",
-   "to": "T_366",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010996"
-   ]
-  },
-  {
-   "from": "A_2030",
-   "to": "T_366",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010997"
-   ]
-  },
-  {
-   "from": "M_350",
-   "to": "T_366",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_010998"
-   ]
-  },
-  {
-   "from": "M_351",
-   "to": "T_366",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_010999"
-   ]
-  },
-  {
-   "from": "M_352",
-   "to": "T_366",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011000"
-   ]
-  },
-  {
-   "from": "A_1215",
-   "to": "C_361",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016241"
-   ]
-  },
-  {
-   "from": "A_1634",
-   "to": "C_362",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016242"
-   ]
-  },
-  {
-   "from": "A_743",
-   "to": "C_363",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016243"
-   ]
-  },
-  {
-   "from": "A_1318",
-   "to": "C_364",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016244"
-   ]
-  },
-  {
-   "from": "A_1315",
-   "to": "C_365",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016245"
-   ]
-  },
-  {
-   "from": "A_2029",
-   "to": "C_366",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016246"
-   ]
-  },
-  {
-   "from": "A_2030",
-   "to": "C_367",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016247"
-   ]
-  },
-  {
-   "from": "A_1215",
-   "to": "A_1634",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019552"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "노보노디스크와 로슈는 유럽 대형 제약 시장 경쟁"
-  },
-  {
-   "from": "A_1634",
-   "to": "A_743",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019553"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "로슈와 노바티스는 스위스 제약 양대 경쟁"
-  },
-  {
-   "from": "A_1318",
-   "to": "A_1315",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019554"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "사노피와 아스트라제네카는 글로벌 제약 시장 경쟁"
-  },
-  {
-   "from": "A_2029",
-   "to": "A_1315",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019555"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "GSK와 아스트라제네카는 영국 제약 시장 경쟁"
-  },
-  {
-   "from": "A_2030",
-   "to": "A_1318",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019556"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "바이엘과 사노피는 유럽 제약·컨슈머헬스 시장 경쟁"
-  },
-  {
-   "from": "A_2029",
-   "to": "A_1318",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019557"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "GSK와 사노피는 백신·호흡기 치료제 시장 경쟁"
-  },
-  {
-   "from": "A_2923",
-   "to": "T_366",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020736"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_1215",
-   "to": "T_366",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010991"
-   ]
-  },
-  {
-   "from": "A_1634",
-   "to": "T_366",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010992"
-   ]
-  },
-  {
-   "from": "A_743",
-   "to": "T_366",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010993"
-   ]
-  },
-  {
-   "from": "A_1318",
-   "to": "T_366",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010994"
-   ]
-  },
-  {
-   "from": "A_1315",
-   "to": "T_366",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010995"
-   ]
-  },
-  {
-   "from": "A_2029",
-   "to": "T_366",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010996"
-   ]
-  },
-  {
-   "from": "A_2030",
-   "to": "T_366",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_010997"
-   ]
-  },
-  {
-   "from": "M_350",
-   "to": "T_366",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_010998"
-   ]
-  },
-  {
-   "from": "M_351",
-   "to": "T_366",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_010999"
-   ]
-  },
-  {
-   "from": "M_352",
-   "to": "T_366",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011000"
-   ]
-  },
-  {
-   "from": "A_1215",
-   "to": "C_361",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016241"
-   ]
-  },
-  {
-   "from": "A_1634",
-   "to": "C_362",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016242"
-   ]
-  },
-  {
-   "from": "A_743",
-   "to": "C_363",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016243"
-   ]
-  },
-  {
-   "from": "A_1318",
-   "to": "C_364",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016244"
-   ]
-  },
-  {
-   "from": "A_1315",
-   "to": "C_365",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016245"
-   ]
-  },
-  {
-   "from": "A_2029",
-   "to": "C_366",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016246"
-   ]
-  },
-  {
-   "from": "A_2030",
-   "to": "C_367",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016247"
-   ]
-  },
-  {
-   "from": "A_1215",
-   "to": "A_1634",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019552"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "노보노디스크와 로슈는 유럽 대형 제약 시장 경쟁"
-  },
-  {
-   "from": "A_1634",
-   "to": "A_743",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019553"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "로슈와 노바티스는 스위스 제약 양대 경쟁"
-  },
-  {
-   "from": "A_1318",
-   "to": "A_1315",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019554"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "사노피와 아스트라제네카는 글로벌 제약 시장 경쟁"
-  },
-  {
-   "from": "A_2029",
-   "to": "A_1315",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019555"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "GSK와 아스트라제네카는 영국 제약 시장 경쟁"
-  },
-  {
-   "from": "A_2030",
-   "to": "A_1318",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019556"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "바이엘과 사노피는 유럽 제약·컨슈머헬스 시장 경쟁"
-  },
-  {
-   "from": "A_2029",
-   "to": "A_1318",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019557"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "GSK와 사노피는 백신·호흡기 치료제 시장 경쟁"
-  },
-  {
-   "from": "A_2923",
-   "to": "T_366",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020736"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

@@ -1,642 +1,643 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_419",
- "themeName": "K바이오망막_안과",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_419",
+  "themeName": "K바이오망막_안과",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-25T00:00:00+09:00",
+    "description": "K-바이오 망막·안과 — 삼천당제약·삼양홀딩스·셀트리온·메디톡스. 항VEGF 바이오시밀러 (Eylea·Lucentis) 진출.",
+    "notes": "T_419 신규 — 질병중심 바이오",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 3건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-25",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결, 2026 이벤트 2건 추가."
+      },
+      {
+        "date": "2026-07-19",
+        "kind": "보강",
+        "title": "바로미터 표본 보강(자산 5종 이상 확보)",
+        "detail": "2종 추가 편입(1궤도) 및 자산별 CHR 정의. 표본 부족(ASSET<5) 해소."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_419",
+      "type": "THEME",
+      "name": "K바이오망막_안과"
+    },
+    {
+      "id": "A_2215",
+      "type": "ASSET",
+      "name": "삼천당제약",
+      "exposure": {
+        "ticker": "000250",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -0.42149631190726566,
+        "return_3d": -1.4084507042253502,
+        "return_15d": 27.016129032258075,
+        "return_1m": -1.3569937369519836,
+        "return_ytd": -22.699386503067487,
+        "return_1y": -1.5914784905904145,
+        "return_3y": 189.4325985237409,
+        "close": 189000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 14.754098360655732,
+        "return_2y": 0.1528673487454446
+      }
+    },
+    {
+      "id": "A_2216",
+      "type": "ASSET",
+      "name": "삼양홀딩스",
+      "exposure": {
+        "ticker": "000070",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.0067114093959662,
+        "return_3d": -0.3311258278145712,
+        "return_15d": 3.9723661485319584,
+        "return_1m": 9.05797101449275,
+        "return_ytd": 5.6140350877192935,
+        "return_1y": -0.2918129036157846,
+        "return_3y": 63.62143573770964,
+        "close": 60200,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 1.0067114093959662,
+        "return_2y": 50.49153221771094
+      }
+    },
+    {
+      "id": "A_717",
+      "type": "ASSET",
+      "name": "셀트리온",
+      "exposure": {
+        "ticker": "068270",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -0.4950495049504955,
+        "return_3d": -4.513064133016631,
+        "return_15d": 13.17567567567568,
+        "return_1m": 14.399544678429145,
+        "return_ytd": -0.7407395643346915,
+        "return_1y": 17.805483927916498,
+        "return_3y": 31.793001427062496,
+        "close": 201000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 0.8529854490717526,
+        "return_2y": 5.190881375110057
+      }
+    },
+    {
+      "id": "A_926",
+      "type": "ASSET",
+      "name": "메디톡스",
+      "exposure": {
+        "ticker": "086900",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.13020833333332593,
+        "return_3d": -1.4102564102564052,
+        "return_15d": 8.309859154929566,
+        "return_1m": 6.215469613259672,
+        "return_ytd": -37.173202614379086,
+        "return_1y": -44.95190338633264,
+        "return_3y": -65.66646101174459,
+        "close": 76900,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -3.6340852130325785,
+        "return_2y": -50.75094201503907
+      }
+    },
+    {
+      "id": "A_1093",
+      "type": "ASSET",
+      "name": "한올바이오파마",
+      "exposure": {
+        "ticker": "009420",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -1.1589403973509937,
+        "close": 59700,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 4.920913884007039,
+        "return_15d": 28.11158798283262,
+        "return_1m": 9.742647058823529,
+        "return_ytd": 41.46919431279621,
+        "return_1y": 132.295719844358,
+        "return_3y": 140.24144869215291,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 10.351201478743066,
+        "return_2y": 63.11475409836065
+      }
+    },
+    {
+      "id": "C_3749",
+      "type": "CHARACTER",
+      "name": "안구건조증·안과신약"
+    },
+    {
+      "id": "A_2754",
+      "type": "ASSET",
+      "name": "큐라클",
+      "exposure": {
+        "ticker": "365270",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -0.8620689655172376,
+        "close": 11500,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -6.275468622656888,
+        "return_15d": -14.814814814814813,
+        "return_1m": -13.533834586466165,
+        "return_ytd": 40.58679706601467,
+        "return_1y": 100.6980802792321,
+        "return_3y": 14.314115308151099,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -1.4567266495287057,
+        "return_2y": 70.37037037037037
+      }
+    },
+    {
+      "id": "C_3750",
+      "type": "CHARACTER",
+      "name": "당뇨망막·혈관질환신약"
+    },
+    {
+      "id": "M_392",
+      "type": "MACRO",
+      "name": "항VEGF망막사이클"
+    },
+    {
+      "id": "M_396",
+      "type": "MACRO",
+      "name": "K바이오기술이전마일스톤"
+    },
+    {
+      "id": "M_058",
+      "type": "MACRO",
+      "name": "인구고령화"
+    },
+    {
+      "id": "C_581",
+      "type": "CHARACTER",
+      "name": "SCD411_Eylea시밀러first"
+    },
+    {
+      "id": "C_582",
+      "type": "CHARACTER",
+      "name": "바이오팜_의약식품화학"
+    },
+    {
+      "id": "C_583",
+      "type": "CHARACTER",
+      "name": "Lucentis시밀러_안과확장"
+    },
+    {
+      "id": "C_584",
+      "type": "CHARACTER",
+      "name": "보톡스_안과_미용"
+    },
+    {
+      "id": "A_2934",
+      "type": "ASSET",
+      "name": "TIGER 코스닥150바이오테크",
+      "exposure": {
+        "ticker": "261070",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -1.149838303988504,
+        "return_3d": -3.5751840168243953,
+        "return_15d": 23.08724832214766,
+        "return_1m": 14.19676214196761,
+        "return_ytd": -23.80819439961148,
+        "return_1y": -9.91001493980791,
+        "return_3y": null,
+        "close": 13755,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": null,
+        "return_2y": 11.358945145895149
+      }
+    }
   ],
-  "dataAsOf": "2026-07-25T00:00:00+09:00",
-  "description": "K-바이오 망막·안과 — 삼천당제약·삼양홀딩스·셀트리온·메디톡스. 항VEGF 바이오시밀러 (Eylea·Lucentis) 진출.",
-  "notes": "T_419 신규 — 질병중심 바이오",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 3건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-25",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결, 2026 이벤트 2건 추가."
-   },
-   {
-    "date": "2026-07-19",
-    "kind": "보강",
-    "title": "바로미터 표본 보강(자산 5종 이상 확보)",
-    "detail": "2종 추가 편입(1궤도) 및 자산별 CHR 정의. 표본 부족(ASSET<5) 해소."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_2215",
+      "to": "T_419",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011517"
+      ]
+    },
+    {
+      "from": "A_2216",
+      "to": "T_419",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011518"
+      ]
+    },
+    {
+      "from": "A_717",
+      "to": "T_419",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011519"
+      ]
+    },
+    {
+      "from": "A_926",
+      "to": "T_419",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011520"
+      ]
+    },
+    {
+      "from": "M_392",
+      "to": "T_419",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011521"
+      ]
+    },
+    {
+      "from": "M_396",
+      "to": "T_419",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011522"
+      ]
+    },
+    {
+      "from": "M_058",
+      "to": "T_419",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011523"
+      ]
+    },
+    {
+      "from": "A_2215",
+      "to": "C_581",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016566"
+      ]
+    },
+    {
+      "from": "A_2216",
+      "to": "C_582",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016567"
+      ]
+    },
+    {
+      "from": "A_717",
+      "to": "C_583",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016568"
+      ]
+    },
+    {
+      "from": "A_926",
+      "to": "C_584",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016569"
+      ]
+    },
+    {
+      "from": "A_1093",
+      "to": "T_419",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011524"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1093",
+      "to": "C_3749",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007857"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2754",
+      "to": "T_419",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011525"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2754",
+      "to": "C_3750",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007859"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2215",
+      "to": "A_717",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018559"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "삼천당제약(비젠프리/SCD411)과 셀트리온(아이덴젤트/CT-P42)은 모두 황반변성 치료제 아일리아(애플리버셉트) 바이오시밀러를 개발·출시하며 안과 바이오시밀러 시장에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_2754",
+      "to": "A_2215",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018560"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "큐라클의 경구 CU06는 습성 황반변성·당뇨병성 황반부종을 표적하는 first-in-class 신약으로, 삼천당제약의 아일리아 바이오시밀러와 동일 적응증에서 경쟁한다."
+    },
+    {
+      "from": "A_2754",
+      "to": "A_717",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018561"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "큐라클의 경구 CU06는 습성 황반변성·당뇨병성 황반부종 치료제로 셀트리온의 아일리아 바이오시밀러와 동일 적응증에서 경쟁한다."
+    },
+    {
+      "from": "A_2934",
+      "to": "T_419",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020775"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_2215",
+      "to": "T_419",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011517"
+      ]
+    },
+    {
+      "from": "A_2216",
+      "to": "T_419",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011518"
+      ]
+    },
+    {
+      "from": "A_717",
+      "to": "T_419",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011519"
+      ]
+    },
+    {
+      "from": "A_926",
+      "to": "T_419",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011520"
+      ]
+    },
+    {
+      "from": "M_392",
+      "to": "T_419",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011521"
+      ]
+    },
+    {
+      "from": "M_396",
+      "to": "T_419",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011522"
+      ]
+    },
+    {
+      "from": "M_058",
+      "to": "T_419",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011523"
+      ]
+    },
+    {
+      "from": "A_2215",
+      "to": "C_581",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016566"
+      ]
+    },
+    {
+      "from": "A_2216",
+      "to": "C_582",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016567"
+      ]
+    },
+    {
+      "from": "A_717",
+      "to": "C_583",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016568"
+      ]
+    },
+    {
+      "from": "A_926",
+      "to": "C_584",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016569"
+      ]
+    },
+    {
+      "from": "A_1093",
+      "to": "T_419",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011524"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1093",
+      "to": "C_3749",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007857"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2754",
+      "to": "T_419",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011525"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2754",
+      "to": "C_3750",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007859"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2215",
+      "to": "A_717",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018559"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "삼천당제약(비젠프리/SCD411)과 셀트리온(아이덴젤트/CT-P42)은 모두 황반변성 치료제 아일리아(애플리버셉트) 바이오시밀러를 개발·출시하며 안과 바이오시밀러 시장에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_2754",
+      "to": "A_2215",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018560"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "큐라클의 경구 CU06는 습성 황반변성·당뇨병성 황반부종을 표적하는 first-in-class 신약으로, 삼천당제약의 아일리아 바이오시밀러와 동일 적응증에서 경쟁한다."
+    },
+    {
+      "from": "A_2754",
+      "to": "A_717",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018561"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "큐라클의 경구 CU06는 습성 황반변성·당뇨병성 황반부종 치료제로 셀트리온의 아일리아 바이오시밀러와 동일 적응증에서 경쟁한다."
+    },
+    {
+      "from": "A_2934",
+      "to": "T_419",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020775"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_419",
-   "type": "THEME",
-   "name": "K바이오망막_안과"
-  },
-  {
-   "id": "A_2215",
-   "type": "ASSET",
-   "name": "삼천당제약",
-   "exposure": {
-    "ticker": "000250",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -0.42149631190726566,
-    "return_3d": -1.4084507042253502,
-    "return_15d": 27.016129032258075,
-    "return_1m": 5.000000000000004,
-    "return_ytd": -18.709677419354843,
-    "return_1y": 2.0749297548282364,
-    "return_3y": 189.4325985237409,
-    "close": 189000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 14.754098360655732,
-    "return_2y": 25.10834059595526
-   }
-  },
-  {
-   "id": "A_2216",
-   "type": "ASSET",
-   "name": "삼양홀딩스",
-   "exposure": {
-    "ticker": "000070",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.0067114093959662,
-    "return_3d": -0.3311258278145712,
-    "return_15d": 3.9723661485319584,
-    "return_1m": 8.664259927797824,
-    "return_ytd": 4.513888888888884,
-    "return_1y": 15.782355367186774,
-    "return_3y": 63.62143573770964,
-    "close": 60200,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 1.0067114093959662,
-    "return_2y": 48.56215378046607
-   }
-  },
-  {
-   "id": "A_717",
-   "type": "ASSET",
-   "name": "셀트리온",
-   "exposure": {
-    "ticker": "068270",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -0.4950495049504955,
-    "return_3d": -4.513064133016631,
-    "return_15d": 13.17567567567568,
-    "return_1m": 16.319444444444443,
-    "return_ytd": 11.049723266078558,
-    "return_1y": 15.314737367837195,
-    "return_3y": 31.793001427062496,
-    "close": 201000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 0.8529854490717526,
-    "return_2y": 4.055729163106192
-   }
-  },
-  {
-   "id": "A_926",
-   "type": "ASSET",
-   "name": "메디톡스",
-   "exposure": {
-    "ticker": "086900",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.13020833333332593,
-    "return_3d": -1.4102564102564052,
-    "return_15d": 8.309859154929566,
-    "return_1m": 9.857142857142854,
-    "return_ytd": -36.341059602649004,
-    "return_1y": -35.966311345143886,
-    "return_3y": -65.66646101174459,
-    "close": 76900,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -3.6340852130325785,
-    "return_2y": -58.29738068635496
-   }
-  },
-  {
-   "id": "A_1093",
-   "type": "ASSET",
-   "name": "한올바이오파마",
-   "exposure": {
-    "ticker": "009420",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -1.1589403973509937,
-    "close": 59700,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 4.920913884007039,
-    "return_15d": 28.11158798283262,
-    "return_1m": 18.687872763419477,
-    "return_ytd": 36.457142857142856,
-    "return_1y": 104.10256410256409,
-    "return_3y": 140.24144869215291,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 10.351201478743066,
-    "return_2y": 70.57142857142857
-   }
-  },
-  {
-   "id": "C_3749",
-   "type": "CHARACTER",
-   "name": "안구건조증·안과신약"
-  },
-  {
-   "id": "A_2754",
-   "type": "ASSET",
-   "name": "큐라클",
-   "exposure": {
-    "ticker": "365270",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -0.8620689655172376,
-    "close": 11500,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -6.275468622656888,
-    "return_15d": -14.814814814814813,
-    "return_1m": -13.533834586466165,
-    "return_ytd": 61.29032258064515,
-    "return_1y": 130.9868126214087,
-    "return_3y": 14.314115308151099,
-    "returnsAsOf": "2026-07-06",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -1.4567266495287057,
-    "return_2y": 80.25078369905955
-   }
-  },
-  {
-   "id": "C_3750",
-   "type": "CHARACTER",
-   "name": "당뇨망막·혈관질환신약"
-  },
-  {
-   "id": "M_392",
-   "type": "MACRO",
-   "name": "항VEGF망막사이클"
-  },
-  {
-   "id": "M_396",
-   "type": "MACRO",
-   "name": "K바이오기술이전마일스톤"
-  },
-  {
-   "id": "M_058",
-   "type": "MACRO",
-   "name": "인구고령화"
-  },
-  {
-   "id": "C_581",
-   "type": "CHARACTER",
-   "name": "SCD411_Eylea시밀러first"
-  },
-  {
-   "id": "C_582",
-   "type": "CHARACTER",
-   "name": "바이오팜_의약식품화학"
-  },
-  {
-   "id": "C_583",
-   "type": "CHARACTER",
-   "name": "Lucentis시밀러_안과확장"
-  },
-  {
-   "id": "C_584",
-   "type": "CHARACTER",
-   "name": "보톡스_안과_미용"
-  },
-  {
-   "id": "A_2934",
-   "type": "ASSET",
-   "name": "TIGER 코스닥150바이오테크",
-   "exposure": {
-    "ticker": "261070",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -1.149838303988504,
-    "return_3d": -3.5751840168243953,
-    "return_15d": 23.08724832214766,
-    "return_1m": 14.19676214196761,
-    "return_ytd": -23.80819439961148,
-    "return_1y": -9.91001493980791,
-    "return_3y": null,
-    "close": 13755,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": null
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_2215",
-   "to": "T_419",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011517"
-   ]
-  },
-  {
-   "from": "A_2216",
-   "to": "T_419",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011518"
-   ]
-  },
-  {
-   "from": "A_717",
-   "to": "T_419",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011519"
-   ]
-  },
-  {
-   "from": "A_926",
-   "to": "T_419",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011520"
-   ]
-  },
-  {
-   "from": "M_392",
-   "to": "T_419",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011521"
-   ]
-  },
-  {
-   "from": "M_396",
-   "to": "T_419",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011522"
-   ]
-  },
-  {
-   "from": "M_058",
-   "to": "T_419",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011523"
-   ]
-  },
-  {
-   "from": "A_2215",
-   "to": "C_581",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016566"
-   ]
-  },
-  {
-   "from": "A_2216",
-   "to": "C_582",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016567"
-   ]
-  },
-  {
-   "from": "A_717",
-   "to": "C_583",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016568"
-   ]
-  },
-  {
-   "from": "A_926",
-   "to": "C_584",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016569"
-   ]
-  },
-  {
-   "from": "A_1093",
-   "to": "T_419",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011524"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1093",
-   "to": "C_3749",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007857"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2754",
-   "to": "T_419",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011525"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2754",
-   "to": "C_3750",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007859"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2215",
-   "to": "A_717",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018559"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "삼천당제약(비젠프리/SCD411)과 셀트리온(아이덴젤트/CT-P42)은 모두 황반변성 치료제 아일리아(애플리버셉트) 바이오시밀러를 개발·출시하며 안과 바이오시밀러 시장에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_2754",
-   "to": "A_2215",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018560"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "큐라클의 경구 CU06는 습성 황반변성·당뇨병성 황반부종을 표적하는 first-in-class 신약으로, 삼천당제약의 아일리아 바이오시밀러와 동일 적응증에서 경쟁한다."
-  },
-  {
-   "from": "A_2754",
-   "to": "A_717",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018561"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "큐라클의 경구 CU06는 습성 황반변성·당뇨병성 황반부종 치료제로 셀트리온의 아일리아 바이오시밀러와 동일 적응증에서 경쟁한다."
-  },
-  {
-   "from": "A_2934",
-   "to": "T_419",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020775"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_2215",
-   "to": "T_419",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011517"
-   ]
-  },
-  {
-   "from": "A_2216",
-   "to": "T_419",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011518"
-   ]
-  },
-  {
-   "from": "A_717",
-   "to": "T_419",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011519"
-   ]
-  },
-  {
-   "from": "A_926",
-   "to": "T_419",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011520"
-   ]
-  },
-  {
-   "from": "M_392",
-   "to": "T_419",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011521"
-   ]
-  },
-  {
-   "from": "M_396",
-   "to": "T_419",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011522"
-   ]
-  },
-  {
-   "from": "M_058",
-   "to": "T_419",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011523"
-   ]
-  },
-  {
-   "from": "A_2215",
-   "to": "C_581",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016566"
-   ]
-  },
-  {
-   "from": "A_2216",
-   "to": "C_582",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016567"
-   ]
-  },
-  {
-   "from": "A_717",
-   "to": "C_583",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016568"
-   ]
-  },
-  {
-   "from": "A_926",
-   "to": "C_584",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016569"
-   ]
-  },
-  {
-   "from": "A_1093",
-   "to": "T_419",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011524"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1093",
-   "to": "C_3749",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007857"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2754",
-   "to": "T_419",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011525"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2754",
-   "to": "C_3750",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007859"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2215",
-   "to": "A_717",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018559"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "삼천당제약(비젠프리/SCD411)과 셀트리온(아이덴젤트/CT-P42)은 모두 황반변성 치료제 아일리아(애플리버셉트) 바이오시밀러를 개발·출시하며 안과 바이오시밀러 시장에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_2754",
-   "to": "A_2215",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018560"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "큐라클의 경구 CU06는 습성 황반변성·당뇨병성 황반부종을 표적하는 first-in-class 신약으로, 삼천당제약의 아일리아 바이오시밀러와 동일 적응증에서 경쟁한다."
-  },
-  {
-   "from": "A_2754",
-   "to": "A_717",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018561"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "큐라클의 경구 CU06는 습성 황반변성·당뇨병성 황반부종 치료제로 셀트리온의 아일리아 바이오시밀러와 동일 적응증에서 경쟁한다."
-  },
-  {
-   "from": "A_2934",
-   "to": "T_419",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020775"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

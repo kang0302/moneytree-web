@@ -1,935 +1,936 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_121",
- "themeName": "북극항로수혜",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_121",
+  "themeName": "북극항로수혜",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-04-07T00:00:00+09:00",
+    "notes": "g121 누적 import 기반 북극항로수혜 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-11",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
+      },
+      {
+        "date": "2026-07-11",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필 + 2026 이벤트",
+        "detail": "전 엣지 근거(호버 박스)를 종목별 사업·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_121",
+      "type": "THEME",
+      "name": "북극항로수혜"
+    },
+    {
+      "id": "A_090",
+      "type": "ASSET",
+      "name": "삼성중공업",
+      "exposure": {
+        "ticker": "010140",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.3636363636363669,
+        "close": 22300,
+        "marketCap": 25476000000000,
+        "pe_ttm": 386.0,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 2.2935779816513735,
+        "return_15d": -2.6200873362445365,
+        "return_1m": 2.0594965675057253,
+        "return_ytd": -7.660455486542439,
+        "return_1y": 20.021528525296016,
+        "return_3y": 155.1487414187643,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 1.133786848072571,
+        "return_2y": 104.02561756633122
+      }
+    },
+    {
+      "id": "A_813",
+      "type": "ASSET",
+      "name": "한화오션",
+      "exposure": {
+        "ticker": "042660",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 5.622932745314224,
+        "close": 116000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 7.640449438202257,
+        "return_15d": 8.987485779294646,
+        "return_1m": 16.82926829268292,
+        "return_ytd": -16.47776809067132,
+        "return_1y": -18.39863713798978,
+        "return_3y": 154.5686225608848,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 7.158836689038028,
+        "return_2y": 205.0955414012739
+      }
+    },
+    {
+      "id": "A_814",
+      "type": "ASSET",
+      "name": "HD현대중공업",
+      "exposure": {
+        "ticker": "329180",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 2.822580645161299,
+        "close": 673000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 2.634279849469734,
+        "return_15d": 6.333764711138468,
+        "return_1m": 9.607309475404847,
+        "return_ytd": 3.1233375721810397,
+        "return_1y": 9.074841841746672,
+        "return_3y": 311.5398909909263,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 2.0257762206126406,
+        "return_2y": 206.9722201294107
+      }
+    },
+    {
+      "id": "A_509",
+      "type": "ASSET",
+      "name": "HMM",
+      "exposure": {
+        "ticker": "011200",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.9501187648456089,
+        "close": 21250,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -1.8475750577367167,
+        "return_15d": -1.8475750577367167,
+        "return_1m": 5.721393034825861,
+        "return_ytd": 8.434882090128948,
+        "return_1y": -4.765886134741216,
+        "return_3y": 37.00279822896451,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": -2.5229357798165153,
+        "return_2y": 25.801029173187608
+      }
+    },
+    {
+      "id": "A_292",
+      "type": "ASSET",
+      "name": "현대글로비스",
+      "exposure": {
+        "ticker": "086280",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 3.17848410757946,
+        "close": 221500,
+        "marketCap": 21712500000000,
+        "pe_ttm": 19.85,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": 4.714640198511155,
+        "return_15d": 1.9323671497584627,
+        "return_1m": 10.355648535564853,
+        "return_ytd": 19.636396844252225,
+        "return_1y": 47.22601494345726,
+        "return_3y": 35.06296701453429,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 1.6867469879518149,
+        "return_2y": 84.75615638619539
+      }
+    },
+    {
+      "id": "A_868",
+      "type": "ASSET",
+      "name": "동방",
+      "exposure": {
+        "ticker": "004140",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.177100053504554,
+        "close": 1891,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -1.3562858633281216,
+        "return_15d": 2.660152008686212,
+        "return_1m": 3.958218801539304,
+        "return_ytd": -25.88801424204269,
+        "return_1y": -36.15728791567522,
+        "return_3y": -6.307631830513028,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 1.394101876675613,
+        "return_2y": -29.824188997152778
+      }
+    },
+    {
+      "id": "A_869",
+      "type": "ASSET",
+      "name": "KCTC",
+      "exposure": {
+        "ticker": "009070",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.6209476309226867,
+        "close": 4075,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "return_3d": -0.2447980416156681,
+        "return_15d": 2.258469259723972,
+        "return_1m": 2.774274905422436,
+        "return_ytd": -33.8474025974026,
+        "return_1y": -23.600771566588218,
+        "return_3y": 4.436316323275791,
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": 2.386934673366836,
+        "return_2y": 0.7357641330546505
+      }
+    },
+    {
+      "id": "BF_237",
+      "type": "BUSINESS_FIELD",
+      "name": "쇄빙선/극지선박"
+    },
+    {
+      "id": "BF_238",
+      "type": "BUSINESS_FIELD",
+      "name": "해운"
+    },
+    {
+      "id": "BF_239",
+      "type": "BUSINESS_FIELD",
+      "name": "물류"
+    },
+    {
+      "id": "M_075",
+      "type": "MACRO",
+      "name": "기후변화"
+    },
+    {
+      "id": "M_128",
+      "type": "MACRO",
+      "name": "조선수요증가"
+    },
+    {
+      "id": "M_423",
+      "type": "MACRO",
+      "name": "BDI(발틱운임)지수"
+    },
+    {
+      "id": "C_2293",
+      "type": "CHARACTER",
+      "name": "쇄빙LNG선극지조선"
+    },
+    {
+      "id": "C_2294",
+      "type": "CHARACTER",
+      "name": "극지특수선건조"
+    },
+    {
+      "id": "C_2295",
+      "type": "CHARACTER",
+      "name": "쇄빙선건조대형사"
+    },
+    {
+      "id": "C_2296",
+      "type": "CHARACTER",
+      "name": "컨테이너선사항로단축"
+    },
+    {
+      "id": "C_2297",
+      "type": "CHARACTER",
+      "name": "완성차벌크물류"
+    },
+    {
+      "id": "C_2298",
+      "type": "CHARACTER",
+      "name": "항만하역물류"
+    },
+    {
+      "id": "C_2299",
+      "type": "CHARACTER",
+      "name": "종합물류하역"
+    },
+    {
+      "id": "A_2868",
+      "type": "ASSET",
+      "name": "SOL 조선TOP3플러스",
+      "exposure": {
+        "ticker": "466920",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 2.9537305787946,
+        "return_3d": 2.5510204081632626,
+        "return_15d": 3.1121751025991795,
+        "return_1m": 9.258923718064871,
+        "return_ytd": -6.002007809583898,
+        "return_1y": 2.0363535526552123,
+        "return_3y": null,
+        "close": 30150,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-14",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-14",
+        "returnsSource": "EODHD",
+        "return_5d": null,
+        "return_2y": 149.1082935223441
+      }
+    }
   ],
-  "dataAsOf": "2026-04-07T00:00:00+09:00",
-  "notes": "g121 누적 import 기반 북극항로수혜 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-11",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
-   },
-   {
-    "date": "2026-07-11",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필 + 2026 이벤트",
-    "detail": "전 엣지 근거(호버 박스)를 종목별 사업·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_090",
+      "to": "T_121",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003597"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_813",
+      "to": "T_121",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003598"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_814",
+      "to": "T_121",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003599"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_509",
+      "to": "T_121",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003600"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_292",
+      "to": "T_121",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003601"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_868",
+      "to": "T_121",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003602"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_869",
+      "to": "T_121",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003603"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_090",
+      "to": "BF_237",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_003604"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_813",
+      "to": "BF_237",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_003605"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_814",
+      "to": "BF_237",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_003606"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_509",
+      "to": "BF_238",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_003607"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_292",
+      "to": "BF_238",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_003608"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_868",
+      "to": "BF_239",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_003609"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_869",
+      "to": "BF_239",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_003610"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "M_075",
+      "to": "T_121",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003611"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_128",
+      "to": "T_121",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003612"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_423",
+      "to": "T_121",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003613"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_090",
+      "to": "C_2293",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003830"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_813",
+      "to": "C_2294",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003831"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_814",
+      "to": "C_2295",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003832"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_509",
+      "to": "C_2296",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003833"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_292",
+      "to": "C_2297",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003834"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_868",
+      "to": "C_2298",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003835"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_869",
+      "to": "C_2299",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003836"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_813",
+      "to": "A_814",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019119"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "한화오션과 HD현대중공업은 LNG선·쇄빙선 수주 시장 경쟁"
+    },
+    {
+      "from": "A_090",
+      "to": "A_813",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019120"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "삼성중공업과 한화오션은 LNG운반선·해양플랜트 수주 경쟁"
+    },
+    {
+      "from": "A_090",
+      "to": "A_814",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019121"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "삼성중공업과 HD현대중공업은 조선 수주 시장 직접 경쟁"
+    },
+    {
+      "from": "A_509",
+      "to": "A_292",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019122"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "HMM과 현대글로비스는 국내 해운·물류 시장 경쟁"
+    },
+    {
+      "from": "A_2868",
+      "to": "T_121",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020605"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_090",
+      "to": "T_121",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003597"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_813",
+      "to": "T_121",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003598"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_814",
+      "to": "T_121",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003599"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_509",
+      "to": "T_121",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003600"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_292",
+      "to": "T_121",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003601"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_868",
+      "to": "T_121",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003602"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_869",
+      "to": "T_121",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003603"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_090",
+      "to": "BF_237",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_003604"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_813",
+      "to": "BF_237",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_003605"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_814",
+      "to": "BF_237",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_003606"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_509",
+      "to": "BF_238",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_003607"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_292",
+      "to": "BF_238",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_003608"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_868",
+      "to": "BF_239",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_003609"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_869",
+      "to": "BF_239",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_003610"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "M_075",
+      "to": "T_121",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003611"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_128",
+      "to": "T_121",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003612"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_423",
+      "to": "T_121",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003613"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_090",
+      "to": "C_2293",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003830"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_813",
+      "to": "C_2294",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003831"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_814",
+      "to": "C_2295",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003832"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_509",
+      "to": "C_2296",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003833"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_292",
+      "to": "C_2297",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003834"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_868",
+      "to": "C_2298",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003835"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_869",
+      "to": "C_2299",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003836"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_813",
+      "to": "A_814",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019119"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "한화오션과 HD현대중공업은 LNG선·쇄빙선 수주 시장 경쟁"
+    },
+    {
+      "from": "A_090",
+      "to": "A_813",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019120"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "삼성중공업과 한화오션은 LNG운반선·해양플랜트 수주 경쟁"
+    },
+    {
+      "from": "A_090",
+      "to": "A_814",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019121"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "삼성중공업과 HD현대중공업은 조선 수주 시장 직접 경쟁"
+    },
+    {
+      "from": "A_509",
+      "to": "A_292",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019122"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "HMM과 현대글로비스는 국내 해운·물류 시장 경쟁"
+    },
+    {
+      "from": "A_2868",
+      "to": "T_121",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020605"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_121",
-   "type": "THEME",
-   "name": "북극항로수혜"
-  },
-  {
-   "id": "A_090",
-   "type": "ASSET",
-   "name": "삼성중공업",
-   "exposure": {
-    "ticker": "010140",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.3636363636363669,
-    "close": 22300,
-    "marketCap": 25476000000000,
-    "pe_ttm": 386.0,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 2.2935779816513735,
-    "return_15d": -2.6200873362445365,
-    "return_1m": 4.941176470588227,
-    "return_ytd": -7.468879668049788,
-    "return_1y": 18.051879301217568,
-    "return_3y": 155.1487414187643,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 1.133786848072571,
-    "return_2y": 107.63500931098697
-   }
-  },
-  {
-   "id": "A_813",
-   "type": "ASSET",
-   "name": "한화오션",
-   "exposure": {
-    "ticker": "042660",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 5.622932745314224,
-    "close": 95800,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 7.640449438202257,
-    "return_15d": 8.987485779294646,
-    "return_1m": 24.739583333333325,
-    "return_ytd": -15.669014084507038,
-    "return_1y": -10.131332082551591,
-    "return_3y": 154.5686225608848,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 7.158836689038028,
-    "return_2y": 206.56
-   }
-  },
-  {
-   "id": "A_814",
-   "type": "ASSET",
-   "name": "HD현대중공업",
-   "exposure": {
-    "ticker": "329180",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 2.822580645161299,
-    "close": 510000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 2.634279849469734,
-    "return_15d": 6.333764711138468,
-    "return_1m": 10.783353563481523,
-    "return_ytd": 2.1103381850152925,
-    "return_1y": 8.960507625930791,
-    "return_3y": 311.5398909909263,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 2.0257762206126406,
-    "return_2y": 155.1147771587028
-   }
-  },
-  {
-   "id": "A_509",
-   "type": "ASSET",
-   "name": "HMM",
-   "exposure": {
-    "ticker": "011200",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.9501187648456089,
-    "close": 21250,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -1.8475750577367167,
-    "return_15d": -1.8475750577367167,
-    "return_1m": 7.54048582995952,
-    "return_ytd": 6.8480300267803385,
-    "return_1y": -0.8875739299991636,
-    "return_3y": 37.00279822896451,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": -2.5229357798165153,
-    "return_2y": 28.084428240213867
-   }
-  },
-  {
-   "id": "A_292",
-   "type": "ASSET",
-   "name": "현대글로비스",
-   "exposure": {
-    "ticker": "086280",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 3.17848410757946,
-    "close": 211000,
-    "marketCap": 21712500000000,
-    "pe_ttm": 19.85,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 4.714640198511155,
-    "return_15d": 1.9323671497584627,
-    "return_1m": 16.125481563015963,
-    "return_ytd": 19.83512839956896,
-    "return_1y": 22.065562251167247,
-    "return_3y": 35.06296701453429,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 1.6867469879518149,
-    "return_2y": 106.27119873426909
-   }
-  },
-  {
-   "id": "A_868",
-   "type": "ASSET",
-   "name": "동방",
-   "exposure": {
-    "ticker": "004140",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.177100053504554,
-    "close": 1891,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -1.3562858633281216,
-    "return_15d": 2.660152008686212,
-    "return_1m": 4.880754298391565,
-    "return_ytd": -25.16284995222651,
-    "return_1y": -36.89474560823637,
-    "return_3y": -6.307631830513028,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 1.394101876675613,
-    "return_2y": -32.28649665623845
-   }
-  },
-  {
-   "id": "A_869",
-   "type": "ASSET",
-   "name": "KCTC",
-   "exposure": {
-    "ticker": "009070",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.6209476309226867,
-    "close": 4075,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -0.2447980416156681,
-    "return_15d": 2.258469259723972,
-    "return_1m": 6.815203145478366,
-    "return_ytd": -35.007974481658685,
-    "return_1y": -25.665616067959906,
-    "return_3y": 4.436316323275791,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD_ADJ",
-    "return_5d": 2.386934673366836,
-    "return_2y": -23.113014604357407
-   }
-  },
-  {
-   "id": "BF_237",
-   "type": "BUSINESS_FIELD",
-   "name": "쇄빙선/극지선박"
-  },
-  {
-   "id": "BF_238",
-   "type": "BUSINESS_FIELD",
-   "name": "해운"
-  },
-  {
-   "id": "BF_239",
-   "type": "BUSINESS_FIELD",
-   "name": "물류"
-  },
-  {
-   "id": "M_075",
-   "type": "MACRO",
-   "name": "기후변화"
-  },
-  {
-   "id": "M_128",
-   "type": "MACRO",
-   "name": "조선수요증가"
-  },
-  {
-   "id": "M_423",
-   "type": "MACRO",
-   "name": "BDI(발틱운임)지수"
-  },
-  {
-   "id": "C_2293",
-   "type": "CHARACTER",
-   "name": "쇄빙LNG선극지조선"
-  },
-  {
-   "id": "C_2294",
-   "type": "CHARACTER",
-   "name": "극지특수선건조"
-  },
-  {
-   "id": "C_2295",
-   "type": "CHARACTER",
-   "name": "쇄빙선건조대형사"
-  },
-  {
-   "id": "C_2296",
-   "type": "CHARACTER",
-   "name": "컨테이너선사항로단축"
-  },
-  {
-   "id": "C_2297",
-   "type": "CHARACTER",
-   "name": "완성차벌크물류"
-  },
-  {
-   "id": "C_2298",
-   "type": "CHARACTER",
-   "name": "항만하역물류"
-  },
-  {
-   "id": "C_2299",
-   "type": "CHARACTER",
-   "name": "종합물류하역"
-  },
-  {
-   "id": "A_2868",
-   "type": "ASSET",
-   "name": "SOL 조선TOP3플러스",
-   "exposure": {
-    "ticker": "466920",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 2.9537305787946,
-    "return_3d": 2.5510204081632626,
-    "return_15d": 3.1121751025991795,
-    "return_1m": 9.258923718064871,
-    "return_ytd": -6.002007809583898,
-    "return_1y": 2.0363535526552123,
-    "return_3y": null,
-    "close": 30150,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": null
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_090",
-   "to": "T_121",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003597"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_813",
-   "to": "T_121",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003598"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_814",
-   "to": "T_121",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003599"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_509",
-   "to": "T_121",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003600"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_292",
-   "to": "T_121",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003601"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_868",
-   "to": "T_121",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003602"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_869",
-   "to": "T_121",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003603"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_090",
-   "to": "BF_237",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_003604"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_813",
-   "to": "BF_237",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_003605"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_814",
-   "to": "BF_237",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_003606"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_509",
-   "to": "BF_238",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_003607"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_292",
-   "to": "BF_238",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_003608"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_868",
-   "to": "BF_239",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_003609"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_869",
-   "to": "BF_239",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_003610"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "M_075",
-   "to": "T_121",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003611"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_128",
-   "to": "T_121",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003612"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_423",
-   "to": "T_121",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003613"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_090",
-   "to": "C_2293",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003830"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_813",
-   "to": "C_2294",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003831"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_814",
-   "to": "C_2295",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003832"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_509",
-   "to": "C_2296",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003833"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_292",
-   "to": "C_2297",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003834"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_868",
-   "to": "C_2298",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003835"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_869",
-   "to": "C_2299",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003836"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_813",
-   "to": "A_814",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019119"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "한화오션과 HD현대중공업은 LNG선·쇄빙선 수주 시장 경쟁"
-  },
-  {
-   "from": "A_090",
-   "to": "A_813",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019120"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "삼성중공업과 한화오션은 LNG운반선·해양플랜트 수주 경쟁"
-  },
-  {
-   "from": "A_090",
-   "to": "A_814",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019121"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "삼성중공업과 HD현대중공업은 조선 수주 시장 직접 경쟁"
-  },
-  {
-   "from": "A_509",
-   "to": "A_292",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019122"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "HMM과 현대글로비스는 국내 해운·물류 시장 경쟁"
-  },
-  {
-   "from": "A_2868",
-   "to": "T_121",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020605"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_090",
-   "to": "T_121",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003597"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_813",
-   "to": "T_121",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003598"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_814",
-   "to": "T_121",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003599"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_509",
-   "to": "T_121",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003600"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_292",
-   "to": "T_121",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003601"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_868",
-   "to": "T_121",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003602"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_869",
-   "to": "T_121",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003603"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_090",
-   "to": "BF_237",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_003604"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_813",
-   "to": "BF_237",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_003605"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_814",
-   "to": "BF_237",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_003606"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_509",
-   "to": "BF_238",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_003607"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_292",
-   "to": "BF_238",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_003608"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_868",
-   "to": "BF_239",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_003609"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_869",
-   "to": "BF_239",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_003610"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "M_075",
-   "to": "T_121",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003611"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_128",
-   "to": "T_121",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003612"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_423",
-   "to": "T_121",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003613"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_090",
-   "to": "C_2293",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003830"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_813",
-   "to": "C_2294",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003831"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_814",
-   "to": "C_2295",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003832"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_509",
-   "to": "C_2296",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003833"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_292",
-   "to": "C_2297",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003834"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_868",
-   "to": "C_2298",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003835"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_869",
-   "to": "C_2299",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003836"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_813",
-   "to": "A_814",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019119"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "한화오션과 HD현대중공업은 LNG선·쇄빙선 수주 시장 경쟁"
-  },
-  {
-   "from": "A_090",
-   "to": "A_813",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019120"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "삼성중공업과 한화오션은 LNG운반선·해양플랜트 수주 경쟁"
-  },
-  {
-   "from": "A_090",
-   "to": "A_814",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019121"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "삼성중공업과 HD현대중공업은 조선 수주 시장 직접 경쟁"
-  },
-  {
-   "from": "A_509",
-   "to": "A_292",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019122"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "HMM과 현대글로비스는 국내 해운·물류 시장 경쟁"
-  },
-  {
-   "from": "A_2868",
-   "to": "T_121",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020605"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }
