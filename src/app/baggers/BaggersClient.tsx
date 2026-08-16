@@ -99,7 +99,7 @@ export default function BaggersClient({ data }: { data: BaggersData }) {
         </section>
 
         {/* 버킷 이동 버튼 (X2 → X10, 왼쪽부터) — 블랙·흰테두리, 국가 구성 표기 */}
-        <nav className="mb-8 grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-5">
+        <nav className="mb-14 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
           {[...data.buckets]
             .sort((a, b) => a.min - b.min)
             .map((b) => {
@@ -113,16 +113,16 @@ export default function BaggersClient({ data }: { data: BaggersData }) {
                       .getElementById(`bkt-${b.label}`)
                       ?.scrollIntoView({ behavior: "smooth", block: "start" });
                   }}
-                  className="group flex flex-col items-start gap-2 rounded-2xl border border-white/20 bg-black px-4 py-3.5 text-left transition hover:border-white/60 hover:bg-white/[0.05] focus:outline-none focus-visible:border-white/70"
+                  className="group flex flex-col items-start gap-3 rounded-2xl border border-white/20 bg-black px-6 py-5 text-left transition hover:border-white/60 hover:bg-white/[0.05] focus:outline-none focus-visible:border-white/70"
                   title={`${b.label} 버킷으로 이동`}
                 >
                   <div className="flex w-full items-baseline justify-between">
-                    <span className="text-xl font-extrabold tracking-tight text-white">{b.label}</span>
+                    <span className="text-2xl font-extrabold tracking-tight text-white">{b.label}</span>
                     <span className="text-[12px] font-medium text-white/45 tabular-nums">
                       {b.count}<span className="ml-0.5 text-white/30">종목</span>
                     </span>
                   </div>
-                  <div className="flex flex-wrap gap-x-2 gap-y-0.5 text-[11px] leading-tight text-white/55">
+                  <div className="flex flex-wrap gap-x-2.5 gap-y-1 text-[11px] leading-tight text-white/55">
                     {bd.slice(0, 5).map((x) => (
                       <span key={x.ko} className="tabular-nums">
                         {x.ko} <span className="font-semibold text-white/75">{x.n}</span>
