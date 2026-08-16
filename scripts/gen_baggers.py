@@ -1,14 +1,34 @@
 # -*- coding: utf-8 -*-
 import json, io, os, sys, math, bisect, re
+from datetime import date
 sys.stdout = io.TextIOWrapper(os.fdopen(os.dup(1), "wb"), encoding="utf-8")
-os.chdir(r"c:/Users/user/moneytree-web")
+# 로컬은 하드코딩, CI는 리포 루트(cwd). public/data/asset/index.json 있는 위치로 이동.
+_LOCAL = r"c:/Users/user/moneytree-web"
+if os.path.isdir(os.path.join(_LOCAL, "public", "data")):
+    os.chdir(_LOCAL)
 PXDIR = "import_MT/data/cache/px_hist"
 idx = json.load(open("public/data/asset/index.json", encoding="utf-8"))
-BASE, END = "2023-07-01", "2026-06-30"
 
 def asof(dd, cc, t):
     i = bisect.bisect_right(dd, t) - 1
     return cc[i] if i >= 0 else None
+
+# 산출 창: 전일 종가 기준 롤링 3년 (매일 갱신). END=최신 거래일(SPY 벤치마크), BASE=END-3년.
+def _last_date(fp):
+    try:
+        d = json.load(open(fp, encoding="utf-8"))
+        return d[-1][0] if d else None
+    except Exception:
+        return None
+END = _last_date(os.path.join(PXDIR, "SPY_NYSEARCA_US.json")) \
+    or _last_date(os.path.join(PXDIR, "QQQ_NASDAQ_US.json"))
+if not END:
+    raise SystemExit("벤치마크 px_hist 없음(END 산출 불가)")
+_ed = date.fromisoformat(END)
+try:
+    BASE = date(_ed.year - 3, _ed.month, _ed.day).isoformat()
+except ValueError:
+    BASE = date(_ed.year - 3, _ed.month, 28).isoformat()
 
 def blurb(a):
     info = a.get("info") or {}
@@ -70,7 +90,7 @@ for bk in range(10, 1, -1):
 payload = {
     "title": "x2~x10 배거 포트폴리오",
     "window": {"start": BASE, "end": END},
-    "note": "2023년 7월 1일 → 2026년 6월 30일(3년, 반기 정렬) 동안의 주가 상승 배수로 분류한 개별종목 리스트입니다. 배수 = 종료일 종가 ÷ 시작일 종가(분할·배당 조정가, 직전 거래일 as-of). ETF·ETN 제외, 2023년 7월 이전 상장 종목만 포함(3년 미만 상장 종목의 과대배수 제거). 티커 중복 시 최고 배수 1개만 표기.",
+    "note": f"전일 종가 기준 최근 3년({BASE} → {END}) 주가 상승 배수로 분류한 개별종목 리스트로, 매일 갱신됩니다. 배수 = 최신 종가 ÷ 3년 전 종가(분할·배당 조정가, 직전 거래일 as-of). ETF·ETN 제외, 3년 전 이전 상장 종목만 포함(상장 3년 미만 종목의 과대배수 제거). 티커 중복 시 최고 배수 1개만 표기.",
     "asOf": END,
     "total": sum(len(b["items"]) for b in out_buckets),
     "buckets": out_buckets,
