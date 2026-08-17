@@ -1,588 +1,588 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_539",
-  "themeName": "(Y22) 금리인상·긴축",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-25T00:00:00+09:00",
-    "description": "(Y22) 금리인상·긴축 테마로, TLT·QQQ·인베스코달러인덱스강세펀드·JP모건 등을 핵심 축으로 묶은 온톨로지 그래프다. 핵심 구성종목은 TLT·QQQ·인베스코달러인덱스강세펀드·JP모건·XLF·프로셰어즈숏20년국채 등 총 7개 자산으로 구성된다. 금리인상·단기금리인상·금융시장변동성고조 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 구성종목은 장기국채 — 긴축 직격·성장주 — 긴축 타격·달러 강세·은행 — 금리 수혜 등의 특성으로 차별화된다. 경쟁·공급·협력 등 1건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다.",
-    "notes": "T_539 신규 회고((Y22)). 자산별 CHARACTER, MACRO 3(재사용)",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-08-04",
-        "kind": "보강",
-        "title": "2궤도 관계 엣지 추가",
-        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 1건 백필(리서치 기반)."
-      },
-      {
-        "date": "2026-07-25",
-        "kind": "수정",
-        "title": "구체적 엣지 백필 + 이벤트",
-        "detail": "THEMED_AS/IMPACTS 근거 구체화, 이벤트(회고+2026 에코) 추가."
-      }
-    ]
-  },
-  "nodes": [
-    {
-      "id": "T_539",
-      "type": "THEME",
-      "name": "(Y22) 금리인상·긴축"
-    },
-    {
-      "id": "A_1487",
-      "type": "ASSET",
-      "name": "TLT",
-      "exposure": {
-        "ticker": "TLT",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.6659401864632541,
-        "return_3d": -0.18250395425233323,
-        "return_15d": -1.453453453453446,
-        "return_1m": -2.426260704091332,
-        "return_ytd": -5.874254245066535,
-        "return_1y": -5.722822339692013,
-        "return_3y": -13.787305590584264,
-        "close": 82.04,
-        "marketCap": 41473058188,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -0.8699855002416657,
-        "return_2y": -16.19164368168352
-      }
-    },
-    {
-      "id": "C_1434",
-      "type": "CHARACTER",
-      "name": "장기국채 — 긴축 직격"
-    },
-    {
-      "id": "A_023",
-      "type": "ASSET",
-      "name": "QQQ",
-      "exposure": {
-        "ticker": "QQQ",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.13659895911593,
-        "return_3d": 1.7565592595170099,
-        "return_15d": 6.8456513160779275,
-        "return_1m": 1.5812363656574346,
-        "return_ytd": 19.006690433168938,
-        "return_1y": 26.07046163927642,
-        "return_3y": 97.39975698663426,
-        "close": 731.07,
-        "marketCap": 520913204434,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 1.11198705447908,
-        "return_2y": 57.99062088042704
-      }
-    },
-    {
-      "id": "C_1435",
-      "type": "CHARACTER",
-      "name": "성장주 — 긴축 타격"
-    },
-    {
-      "id": "A_1492",
-      "type": "ASSET",
-      "name": "인베스코달러인덱스강세펀드",
-      "exposure": {
-        "ticker": "UUP",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.24840312278211485,
-        "return_3d": -0.10660980810235365,
-        "return_15d": -1.6445066480055948,
-        "return_1m": -0.9862627685804926,
-        "return_ytd": 3.9955604883462836,
-        "return_1y": 2.479037550127594,
-        "return_3y": -1.9532612486920176,
-        "close": 28.11,
-        "marketCap": 397789782,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 0.14250089063057025,
-        "return_2y": -1.195079086115991
-      }
-    },
-    {
-      "id": "C_1436",
-      "type": "CHARACTER",
-      "name": "달러 강세"
-    },
-    {
-      "id": "A_293",
-      "type": "ASSET",
-      "name": "JP모건",
-      "exposure": {
-        "ticker": "JPM",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.07435763267330531,
-        "return_3d": 0.22097005855705731,
-        "return_15d": 2.7264233741966626,
-        "return_1m": 5.818192423226098,
-        "return_ytd": 12.606293836509197,
-        "return_1y": 23.34783791134074,
-        "return_3y": 134.43819861730307,
-        "close": 362.84,
-        "marketCap": 972233408400,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 1.488028641754302,
-        "return_2y": 72.58371385083713
-      }
-    },
-    {
-      "id": "C_1437",
-      "type": "CHARACTER",
-      "name": "은행 — 금리 수혜"
-    },
-    {
-      "id": "A_632",
-      "type": "ASSET",
-      "name": "XLF",
-      "exposure": {
-        "ticker": "XLF",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.1716443529007905,
-        "return_3d": 0.6228373702422241,
-        "return_15d": 3.285384478778175,
-        "return_1m": 3.524385902456384,
-        "return_ytd": 6.189519810115018,
-        "return_1y": 9.715148085266922,
-        "return_3y": 66.88665710186513,
-        "close": 58.16,
-        "marketCap": 59134999823,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 0.9722222222222188,
-        "return_2y": 35.09872241579559
-      }
-    },
-    {
-      "id": "C_1438",
-      "type": "CHARACTER",
-      "name": "금융 섹터"
-    },
-    {
-      "id": "A_1490",
-      "type": "ASSET",
-      "name": "프로셰어즈숏20년국채",
-      "exposure": {
-        "ticker": "TBF",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.7905138339920903,
-        "return_3d": 0.43324143363527856,
-        "return_15d": 1.5127388535031816,
-        "return_1m": 2.657004830917864,
-        "return_ytd": 5.721393034825861,
-        "return_1y": 4.081632653061229,
-        "return_3y": 8.418367346938771,
-        "close": 25.5,
-        "marketCap": 87039864,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 1.030110935023787,
-        "return_2y": 14.452423698384198
-      }
-    },
-    {
-      "id": "C_1439",
-      "type": "CHARACTER",
-      "name": "국채 인버스"
-    },
-    {
-      "id": "A_088",
-      "type": "ASSET",
-      "name": "삼성전자",
-      "exposure": {
-        "ticker": "005930",
-        "exchange": "KOSPI",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 2.425373134328357,
-        "return_3d": 14.613778705636737,
-        "return_15d": 10.020040080160332,
-        "return_1m": -1.7889087656529523,
-        "return_ytd": 114.29346147111178,
-        "return_1y": 303.3965744682708,
-        "return_3y": 331.2849163731555,
-        "close": 274500,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 18.83116883116882,
-        "return_2y": 228.50489498681625
-      }
-    },
-    {
-      "id": "C_1440",
-      "type": "CHARACTER",
-      "name": "금리·증시 민감 대형"
-    },
-    {
-      "id": "M_072",
-      "type": "MACRO",
-      "name": "금리인상"
-    },
-    {
-      "id": "M_041",
-      "type": "MACRO",
-      "name": "단기금리인상"
-    },
-    {
-      "id": "M_262",
-      "type": "MACRO",
-      "name": "금융시장변동성고조"
-    }
+ "schemaVersion": "v5",
+ "themeId": "T_539",
+ "themeName": "(Y22) 금리인상·긴축",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
   ],
-  "edges": [
-    {
-      "from": "A_1487",
-      "to": "T_539",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012759"
-      ]
-    },
-    {
-      "from": "A_1487",
-      "to": "C_1434",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017518"
-      ]
-    },
-    {
-      "from": "A_023",
-      "to": "T_539",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012760"
-      ]
-    },
-    {
-      "from": "A_023",
-      "to": "C_1435",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017519"
-      ]
-    },
-    {
-      "from": "A_1492",
-      "to": "T_539",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012761"
-      ]
-    },
-    {
-      "from": "A_1492",
-      "to": "C_1436",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017520"
-      ]
-    },
-    {
-      "from": "A_293",
-      "to": "T_539",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012762"
-      ]
-    },
-    {
-      "from": "A_293",
-      "to": "C_1437",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017521"
-      ]
-    },
-    {
-      "from": "A_632",
-      "to": "T_539",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012763"
-      ]
-    },
-    {
-      "from": "A_632",
-      "to": "C_1438",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017522"
-      ]
-    },
-    {
-      "from": "A_1490",
-      "to": "T_539",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012764"
-      ]
-    },
-    {
-      "from": "A_1490",
-      "to": "C_1439",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017523"
-      ]
-    },
-    {
-      "from": "A_088",
-      "to": "T_539",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012765"
-      ]
-    },
-    {
-      "from": "A_088",
-      "to": "C_1440",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017524"
-      ]
-    },
-    {
-      "from": "M_072",
-      "to": "T_539",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012766"
-      ]
-    },
-    {
-      "from": "M_041",
-      "to": "T_539",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012767"
-      ]
-    },
-    {
-      "from": "M_262",
-      "to": "T_539",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012768"
-      ]
-    },
-    {
-      "from": "A_293",
-      "to": "A_088",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020104"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "JP모건과 삼성전자는 금리인상 국면 가치주·성장주 상반된 익스포저"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_1487",
-      "to": "T_539",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012759"
-      ]
-    },
-    {
-      "from": "A_1487",
-      "to": "C_1434",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017518"
-      ]
-    },
-    {
-      "from": "A_023",
-      "to": "T_539",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012760"
-      ]
-    },
-    {
-      "from": "A_023",
-      "to": "C_1435",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017519"
-      ]
-    },
-    {
-      "from": "A_1492",
-      "to": "T_539",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012761"
-      ]
-    },
-    {
-      "from": "A_1492",
-      "to": "C_1436",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017520"
-      ]
-    },
-    {
-      "from": "A_293",
-      "to": "T_539",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012762"
-      ]
-    },
-    {
-      "from": "A_293",
-      "to": "C_1437",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017521"
-      ]
-    },
-    {
-      "from": "A_632",
-      "to": "T_539",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012763"
-      ]
-    },
-    {
-      "from": "A_632",
-      "to": "C_1438",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017522"
-      ]
-    },
-    {
-      "from": "A_1490",
-      "to": "T_539",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012764"
-      ]
-    },
-    {
-      "from": "A_1490",
-      "to": "C_1439",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017523"
-      ]
-    },
-    {
-      "from": "A_088",
-      "to": "T_539",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_012765"
-      ]
-    },
-    {
-      "from": "A_088",
-      "to": "C_1440",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_017524"
-      ]
-    },
-    {
-      "from": "M_072",
-      "to": "T_539",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012766"
-      ]
-    },
-    {
-      "from": "M_041",
-      "to": "T_539",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012767"
-      ]
-    },
-    {
-      "from": "M_262",
-      "to": "T_539",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_012768"
-      ]
-    },
-    {
-      "from": "A_293",
-      "to": "A_088",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020104"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "JP모건과 삼성전자는 금리인상 국면 가치주·성장주 상반된 익스포저"
-    }
+  "dataAsOf": "2026-07-25T00:00:00+09:00",
+  "description": "• 금리인상·단기금리인상 수혜\n• 동인 금리인상·단기금리인상·금융시장변동성고조\n• 대표주 TLT(장기국채 — 긴축)·QQQ(성장주 — 긴축 타)·인베스코달러인덱스강세펀드(달러 강세)",
+  "notes": "T_539 신규 회고((Y22)). 자산별 CHARACTER, MACRO 3(재사용)",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-08-04",
+    "kind": "보강",
+    "title": "2궤도 관계 엣지 추가",
+    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 1건 백필(리서치 기반)."
+   },
+   {
+    "date": "2026-07-25",
+    "kind": "수정",
+    "title": "구체적 엣지 백필 + 이벤트",
+    "detail": "THEMED_AS/IMPACTS 근거 구체화, 이벤트(회고+2026 에코) 추가."
+   }
   ]
+ },
+ "nodes": [
+  {
+   "id": "T_539",
+   "type": "THEME",
+   "name": "(Y22) 금리인상·긴축"
+  },
+  {
+   "id": "A_1487",
+   "type": "ASSET",
+   "name": "TLT",
+   "exposure": {
+    "ticker": "TLT",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.6659401864632541,
+    "return_3d": -0.18250395425233323,
+    "return_15d": -1.453453453453446,
+    "return_1m": -2.426260704091332,
+    "return_ytd": -5.874254245066535,
+    "return_1y": -5.722822339692013,
+    "return_3y": -13.787305590584264,
+    "close": 82.04,
+    "marketCap": 41473058188,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -0.8699855002416657,
+    "return_2y": -16.19164368168352
+   }
+  },
+  {
+   "id": "C_1434",
+   "type": "CHARACTER",
+   "name": "장기국채 — 긴축 직격"
+  },
+  {
+   "id": "A_023",
+   "type": "ASSET",
+   "name": "QQQ",
+   "exposure": {
+    "ticker": "QQQ",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.13659895911593,
+    "return_3d": 1.7565592595170099,
+    "return_15d": 6.8456513160779275,
+    "return_1m": 1.5812363656574346,
+    "return_ytd": 19.006690433168938,
+    "return_1y": 26.07046163927642,
+    "return_3y": 97.39975698663426,
+    "close": 731.07,
+    "marketCap": 520913204434,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 1.11198705447908,
+    "return_2y": 57.99062088042704
+   }
+  },
+  {
+   "id": "C_1435",
+   "type": "CHARACTER",
+   "name": "성장주 — 긴축 타격"
+  },
+  {
+   "id": "A_1492",
+   "type": "ASSET",
+   "name": "인베스코달러인덱스강세펀드",
+   "exposure": {
+    "ticker": "UUP",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.24840312278211485,
+    "return_3d": -0.10660980810235365,
+    "return_15d": -1.6445066480055948,
+    "return_1m": -0.9862627685804926,
+    "return_ytd": 3.9955604883462836,
+    "return_1y": 2.479037550127594,
+    "return_3y": -1.9532612486920176,
+    "close": 28.11,
+    "marketCap": 397789782,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 0.14250089063057025,
+    "return_2y": -1.195079086115991
+   }
+  },
+  {
+   "id": "C_1436",
+   "type": "CHARACTER",
+   "name": "달러 강세"
+  },
+  {
+   "id": "A_293",
+   "type": "ASSET",
+   "name": "JP모건",
+   "exposure": {
+    "ticker": "JPM",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.07435763267330531,
+    "return_3d": 0.22097005855705731,
+    "return_15d": 2.7264233741966626,
+    "return_1m": 5.818192423226098,
+    "return_ytd": 12.606293836509197,
+    "return_1y": 23.34783791134074,
+    "return_3y": 134.43819861730307,
+    "close": 362.84,
+    "marketCap": 972233408400,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 1.488028641754302,
+    "return_2y": 72.58371385083713
+   }
+  },
+  {
+   "id": "C_1437",
+   "type": "CHARACTER",
+   "name": "은행 — 금리 수혜"
+  },
+  {
+   "id": "A_632",
+   "type": "ASSET",
+   "name": "XLF",
+   "exposure": {
+    "ticker": "XLF",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.1716443529007905,
+    "return_3d": 0.6228373702422241,
+    "return_15d": 3.285384478778175,
+    "return_1m": 3.524385902456384,
+    "return_ytd": 6.189519810115018,
+    "return_1y": 9.715148085266922,
+    "return_3y": 66.88665710186513,
+    "close": 58.16,
+    "marketCap": 59134999823,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 0.9722222222222188,
+    "return_2y": 35.09872241579559
+   }
+  },
+  {
+   "id": "C_1438",
+   "type": "CHARACTER",
+   "name": "금융 섹터"
+  },
+  {
+   "id": "A_1490",
+   "type": "ASSET",
+   "name": "프로셰어즈숏20년국채",
+   "exposure": {
+    "ticker": "TBF",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.7905138339920903,
+    "return_3d": 0.43324143363527856,
+    "return_15d": 1.5127388535031816,
+    "return_1m": 2.657004830917864,
+    "return_ytd": 5.721393034825861,
+    "return_1y": 4.081632653061229,
+    "return_3y": 8.418367346938771,
+    "close": 25.5,
+    "marketCap": 87039864,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 1.030110935023787,
+    "return_2y": 14.452423698384198
+   }
+  },
+  {
+   "id": "C_1439",
+   "type": "CHARACTER",
+   "name": "국채 인버스"
+  },
+  {
+   "id": "A_088",
+   "type": "ASSET",
+   "name": "삼성전자",
+   "exposure": {
+    "ticker": "005930",
+    "exchange": "KOSPI",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 2.425373134328357,
+    "return_3d": 14.613778705636737,
+    "return_15d": 10.020040080160332,
+    "return_1m": -1.7889087656529523,
+    "return_ytd": 114.29346147111178,
+    "return_1y": 303.3965744682708,
+    "return_3y": 331.2849163731555,
+    "close": 274500,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 18.83116883116882,
+    "return_2y": 228.50489498681625
+   }
+  },
+  {
+   "id": "C_1440",
+   "type": "CHARACTER",
+   "name": "금리·증시 민감 대형"
+  },
+  {
+   "id": "M_072",
+   "type": "MACRO",
+   "name": "금리인상"
+  },
+  {
+   "id": "M_041",
+   "type": "MACRO",
+   "name": "단기금리인상"
+  },
+  {
+   "id": "M_262",
+   "type": "MACRO",
+   "name": "금융시장변동성고조"
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_1487",
+   "to": "T_539",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012759"
+   ]
+  },
+  {
+   "from": "A_1487",
+   "to": "C_1434",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017518"
+   ]
+  },
+  {
+   "from": "A_023",
+   "to": "T_539",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012760"
+   ]
+  },
+  {
+   "from": "A_023",
+   "to": "C_1435",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017519"
+   ]
+  },
+  {
+   "from": "A_1492",
+   "to": "T_539",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012761"
+   ]
+  },
+  {
+   "from": "A_1492",
+   "to": "C_1436",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017520"
+   ]
+  },
+  {
+   "from": "A_293",
+   "to": "T_539",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012762"
+   ]
+  },
+  {
+   "from": "A_293",
+   "to": "C_1437",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017521"
+   ]
+  },
+  {
+   "from": "A_632",
+   "to": "T_539",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012763"
+   ]
+  },
+  {
+   "from": "A_632",
+   "to": "C_1438",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017522"
+   ]
+  },
+  {
+   "from": "A_1490",
+   "to": "T_539",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012764"
+   ]
+  },
+  {
+   "from": "A_1490",
+   "to": "C_1439",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017523"
+   ]
+  },
+  {
+   "from": "A_088",
+   "to": "T_539",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012765"
+   ]
+  },
+  {
+   "from": "A_088",
+   "to": "C_1440",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017524"
+   ]
+  },
+  {
+   "from": "M_072",
+   "to": "T_539",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012766"
+   ]
+  },
+  {
+   "from": "M_041",
+   "to": "T_539",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012767"
+   ]
+  },
+  {
+   "from": "M_262",
+   "to": "T_539",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012768"
+   ]
+  },
+  {
+   "from": "A_293",
+   "to": "A_088",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020104"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "JP모건과 삼성전자는 금리인상 국면 가치주·성장주 상반된 익스포저"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_1487",
+   "to": "T_539",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012759"
+   ]
+  },
+  {
+   "from": "A_1487",
+   "to": "C_1434",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017518"
+   ]
+  },
+  {
+   "from": "A_023",
+   "to": "T_539",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012760"
+   ]
+  },
+  {
+   "from": "A_023",
+   "to": "C_1435",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017519"
+   ]
+  },
+  {
+   "from": "A_1492",
+   "to": "T_539",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012761"
+   ]
+  },
+  {
+   "from": "A_1492",
+   "to": "C_1436",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017520"
+   ]
+  },
+  {
+   "from": "A_293",
+   "to": "T_539",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012762"
+   ]
+  },
+  {
+   "from": "A_293",
+   "to": "C_1437",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017521"
+   ]
+  },
+  {
+   "from": "A_632",
+   "to": "T_539",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012763"
+   ]
+  },
+  {
+   "from": "A_632",
+   "to": "C_1438",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017522"
+   ]
+  },
+  {
+   "from": "A_1490",
+   "to": "T_539",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012764"
+   ]
+  },
+  {
+   "from": "A_1490",
+   "to": "C_1439",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017523"
+   ]
+  },
+  {
+   "from": "A_088",
+   "to": "T_539",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_012765"
+   ]
+  },
+  {
+   "from": "A_088",
+   "to": "C_1440",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_017524"
+   ]
+  },
+  {
+   "from": "M_072",
+   "to": "T_539",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012766"
+   ]
+  },
+  {
+   "from": "M_041",
+   "to": "T_539",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012767"
+   ]
+  },
+  {
+   "from": "M_262",
+   "to": "T_539",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_012768"
+   ]
+  },
+  {
+   "from": "A_293",
+   "to": "A_088",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020104"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "JP모건과 삼성전자는 금리인상 국면 가치주·성장주 상반된 익스포저"
+  }
+ ]
 }

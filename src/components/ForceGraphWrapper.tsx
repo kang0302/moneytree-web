@@ -2199,7 +2199,11 @@ export default function ForceGraphWrapper({
             <div className="text-white/60">Barometer 데이터 없음</div>
           )}
           {themeDescription ? (
-            <div className="mt-2 border-t border-white/10 pt-2 text-[11px] leading-relaxed text-white/75">
+            <div
+              className="mt-2 overflow-hidden whitespace-pre-line border-t border-white/10 pt-2 text-[14px] leading-relaxed text-white/80"
+              style={{ display: "-webkit-box", WebkitLineClamp: 7, WebkitBoxOrient: "vertical" }}
+              title={themeDescription}
+            >
               {themeDescription}
             </div>
           ) : null}

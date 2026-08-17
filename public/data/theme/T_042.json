@@ -1,755 +1,755 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_042",
-  "themeName": "미국스테이블코인",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-03-19T00:00:00+09:00",
-    "notes": "g42 누적 import 기반 T_042 freeze",
-    "sources": [],
-    "provenanceSeed": "T_042 공개사실 시드(2026-06-29) — evidence_ssot 참조",
-    "changelog": [
-      {
-        "date": "2026-07-10",
-        "kind": "변경",
-        "title": "매크로는 테마에만 연결",
-        "detail": "개별 자산·BF에 직접 걸려 있던 매크로 IMPACTS 엣지를 테마 레벨로 정리(repoint 3, 중복제거 0)했다."
-      },
-      {
-        "date": "2026-08-05",
-        "kind": "관계",
-        "title": "EXPOSED_TO ETF 연결",
-        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-      }
-    ],
-    "description": "Circle·Coinbase·Ripple·Robinhood 등 미국 스테이블코인 발행·유통 핵심군. GENIUS Act·CBDC 정책·Treasury 매수 의무화가 valuation 트리거. ARKF 등 ETF로도 익스포저를 확장한다. 단기금리인상·USDC발행잔액·암호화폐거래량·클래리티법안제정논의 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 밸류체인은 트럼프코인수탁·기관용수탁/트레이딩 등 사업영역으로 이어진다. 경쟁·공급·협력 등 1건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다."
+ "schemaVersion": "v5",
+ "themeId": "T_042",
+ "themeName": "미국스테이블코인",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
+  ],
+  "dataAsOf": "2026-03-19T00:00:00+09:00",
+  "notes": "g42 누적 import 기반 T_042 freeze",
+  "sources": [],
+  "provenanceSeed": "T_042 공개사실 시드(2026-06-29) — evidence_ssot 참조",
+  "changelog": [
+   {
+    "date": "2026-07-10",
+    "kind": "변경",
+    "title": "매크로는 테마에만 연결",
+    "detail": "개별 자산·BF에 직접 걸려 있던 매크로 IMPACTS 엣지를 테마 레벨로 정리(repoint 3, 중복제거 0)했다."
+   },
+   {
+    "date": "2026-08-05",
+    "kind": "관계",
+    "title": "EXPOSED_TO ETF 연결",
+    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+   }
+  ],
+  "description": "• GENIUS Act·CBDC 정책·Treasury 매수 의무화가 valuation 트리거\n• 동인 단기금리인상·USDC발행잔액·암호화폐거래량\n• 대표주 비트고(기관디지털자산수탁1)·로빈후드(리테일코인거래브로커)·코인베이스(USDC수익배분거래)\n• 밸류체인 트럼프코인수탁·기관용수탁/트레이딩\n• ETF ARKF"
+ },
+ "nodes": [
+  {
+   "id": "T_042",
+   "type": "THEME",
+   "name": "미국스테이블코인"
   },
-  "nodes": [
-    {
-      "id": "T_042",
-      "type": "THEME",
-      "name": "미국스테이블코인"
-    },
-    {
-      "id": "A_345",
-      "type": "ASSET",
-      "name": "비트고",
-      "exposure": {
-        "ticker": "BTGO",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 4.159132007233257,
-        "close": 5.76,
-        "marketCap": 616919196,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 16.129032258064502,
-        "return_15d": 19.50207468879668,
-        "return_1m": 11.196911196911197,
-        "return_ytd": -68.0,
-        "return_1y": null,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 13.833992094861669,
-        "return_2y": null
-      }
-    },
-    {
-      "id": "A_346",
-      "type": "ASSET",
-      "name": "로빈후드",
-      "exposure": {
-        "ticker": "HOOD",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -3.834155177619003,
-        "close": 95.56,
-        "marketCap": 85916306021,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 1.2502648866285382,
-        "return_15d": 0.6848593404277903,
-        "return_1m": -15.769061260467165,
-        "return_ytd": -15.508399646330673,
-        "return_1y": -13.684400686478181,
-        "return_3y": 797.2769953051643,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 2.4332725908457364,
-        "return_2y": 412.3860589812333
-      }
-    },
-    {
-      "id": "A_347",
-      "type": "ASSET",
-      "name": "코인베이스",
-      "exposure": {
-        "ticker": "COIN",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -3.5282651072124804,
-        "close": 148.47,
-        "marketCap": 39171452984,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": -0.07403419033518155,
-        "return_15d": -6.203803146124198,
-        "return_1m": -8.068111455108362,
-        "return_ytd": -34.34598036614486,
-        "return_1y": -54.30145587737387,
-        "return_3y": 83.72726147753991,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -3.3398437499999933,
-        "return_2y": -24.23453766074709
-      }
-    },
-    {
-      "id": "A_348",
-      "type": "ASSET",
-      "name": "서클",
-      "exposure": {
-        "ticker": "CRCL",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -5.014592730167156,
-        "close": 71.6,
-        "marketCap": 19138012974,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 0.6183249016301184,
-        "return_15d": 14.81719050673509,
-        "return_1m": 13.255298956026573,
-        "return_ytd": -9.70996216897857,
-        "return_1y": -48.57430151547799,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 7.394630268486568,
-        "return_2y": null
-      }
-    },
-    {
-      "id": "A_349",
-      "type": "ASSET",
-      "name": "페이팔",
-      "exposure": {
-        "ticker": "PYPL",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 1.765967981515093,
-        "close": 61.66,
-        "marketCap": 52747725260,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 4.508474576271171,
-        "return_15d": 9.813000890471946,
-        "return_1m": 30.16677221870383,
-        "return_ytd": 5.618362452894821,
-        "return_1y": -11.127125972902851,
-        "return_3y": -2.544649913070973,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 4.384628406974778,
-        "return_2y": -6.773510734804966
-      }
-    },
-    {
-      "id": "A_350",
-      "type": "ASSET",
-      "name": "소파이",
-      "exposure": {
-        "ticker": "SOFI",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.7596310363537695,
-        "close": 18.29,
-        "marketCap": 23461314600,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 1.724137931034475,
-        "return_15d": 11.11786148238152,
-        "return_1m": -1.401617250673859,
-        "return_ytd": -30.137509549274256,
-        "return_1y": -21.468441391155004,
-        "return_3y": 110.71428571428572,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -0.4896626768226331,
-        "return_2y": 176.7019667170953
-      }
-    },
-    {
-      "id": "M_041",
-      "type": "MACRO",
-      "name": "단기금리인상"
-    },
-    {
-      "id": "M_042",
-      "type": "MACRO",
-      "name": "USDC발행잔액"
-    },
-    {
-      "id": "M_043",
-      "type": "MACRO",
-      "name": "암호화폐거래량"
-    },
-    {
-      "id": "BF_087",
-      "type": "BUSINESS_FIELD",
-      "name": "트럼프코인수탁"
-    },
-    {
-      "id": "BF_088",
-      "type": "BUSINESS_FIELD",
-      "name": "기관용수탁/트레이딩"
-    },
-    {
-      "id": "M_271",
-      "type": "MACRO",
-      "name": "클래리티법안제정논의"
-    },
-    {
-      "id": "C_1702",
-      "type": "CHARACTER",
-      "name": "준비자산운용수익의존도높음"
-    },
-    {
-      "id": "M_1087",
-      "type": "MACRO",
-      "name": "오픈USD출시_스테이블코인경쟁"
-    },
-    {
-      "id": "C_1746",
-      "type": "CHARACTER",
-      "name": "기관디지털자산수탁1위"
-    },
-    {
-      "id": "C_1747",
-      "type": "CHARACTER",
-      "name": "리테일코인거래브로커"
-    },
-    {
-      "id": "C_1748",
-      "type": "CHARACTER",
-      "name": "USDC수익배분거래소1위"
-    },
-    {
-      "id": "C_1749",
-      "type": "CHARACTER",
-      "name": "USDC발행1위스테이블코인"
-    },
-    {
-      "id": "C_1750",
-      "type": "CHARACTER",
-      "name": "PYUSD자체스테이블코인"
-    },
-    {
-      "id": "C_1751",
-      "type": "CHARACTER",
-      "name": "핀테크뱅크코인연계"
-    },
-    {
-      "id": "A_1033",
-      "type": "ASSET",
-      "name": "ARKF",
-      "exposure": {
-        "ticker": "ARKF",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -1.358080579447718,
-        "close": 43.58,
-        "marketCap": 794721045,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 0.8329477093937943,
-        "return_15d": 10.41297187737522,
-        "return_1m": 3.663177925784966,
-        "return_ytd": -8.503044299811046,
-        "return_1y": -20.051366721702436,
-        "return_3y": 105.9546313799622,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 1.3959981386691522,
-        "return_2y": 63.037785260007475
-      }
-    }
-  ],
-  "edges": [
-    {
-      "from": "A_345",
-      "to": "T_042",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001161"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_346",
-      "to": "T_042",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001162"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_347",
-      "to": "T_042",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001163"
-      ],
-      "confidence": 0.9,
-      "status": "verified"
-    },
-    {
-      "from": "A_348",
-      "to": "T_042",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001164"
-      ],
-      "confidence": 0.9,
-      "status": "verified"
-    },
-    {
-      "from": "A_349",
-      "to": "T_042",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001165"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_350",
-      "to": "T_042",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001166"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "M_041",
-      "to": "T_042",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_001167"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "M_042",
-      "to": "T_042",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_001168"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "M_043",
-      "to": "T_042",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_001169"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_345",
-      "to": "BF_087",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_001170"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_345",
-      "to": "BF_088",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_001171"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_348",
-      "to": "A_347",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_001172"
-      ],
-      "confidence": 0.9,
-      "status": "verified"
-    },
-    {
-      "from": "M_271",
-      "to": "T_042",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_001173"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_348",
-      "to": "C_1702",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_001311"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "M_1087",
-      "to": "T_042",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_001310"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_345",
-      "to": "C_1746",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_001494"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_346",
-      "to": "C_1747",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_001495"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_347",
-      "to": "C_1748",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_001496"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_348",
-      "to": "C_1749",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_001497"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_349",
-      "to": "C_1750",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_001498"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_350",
-      "to": "C_1751",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_001499"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1033",
-      "to": "T_042",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020573"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_345",
-      "to": "T_042",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001161"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_346",
-      "to": "T_042",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001162"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_347",
-      "to": "T_042",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001163"
-      ],
-      "confidence": 0.9,
-      "status": "verified"
-    },
-    {
-      "from": "A_348",
-      "to": "T_042",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001164"
-      ],
-      "confidence": 0.9,
-      "status": "verified"
-    },
-    {
-      "from": "A_349",
-      "to": "T_042",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001165"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_350",
-      "to": "T_042",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001166"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "M_041",
-      "to": "T_042",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_001167"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "M_042",
-      "to": "T_042",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_001168"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "M_043",
-      "to": "T_042",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_001169"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_345",
-      "to": "BF_087",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_001170"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_345",
-      "to": "BF_088",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_001171"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_348",
-      "to": "A_347",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_001172"
-      ],
-      "confidence": 0.9,
-      "status": "verified"
-    },
-    {
-      "from": "M_271",
-      "to": "T_042",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_001173"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_348",
-      "to": "C_1702",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_001311"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "M_1087",
-      "to": "T_042",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_001310"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_345",
-      "to": "C_1746",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_001494"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_346",
-      "to": "C_1747",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_001495"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_347",
-      "to": "C_1748",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_001496"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_348",
-      "to": "C_1749",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_001497"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_349",
-      "to": "C_1750",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_001498"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_350",
-      "to": "C_1751",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_001499"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1033",
-      "to": "T_042",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020573"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ]
+  {
+   "id": "A_345",
+   "type": "ASSET",
+   "name": "비트고",
+   "exposure": {
+    "ticker": "BTGO",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 4.159132007233257,
+    "close": 5.76,
+    "marketCap": 616919196,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 16.129032258064502,
+    "return_15d": 19.50207468879668,
+    "return_1m": 11.196911196911197,
+    "return_ytd": -68.0,
+    "return_1y": null,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 13.833992094861669,
+    "return_2y": null
+   }
+  },
+  {
+   "id": "A_346",
+   "type": "ASSET",
+   "name": "로빈후드",
+   "exposure": {
+    "ticker": "HOOD",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -3.834155177619003,
+    "close": 95.56,
+    "marketCap": 85916306021,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 1.2502648866285382,
+    "return_15d": 0.6848593404277903,
+    "return_1m": -15.769061260467165,
+    "return_ytd": -15.508399646330673,
+    "return_1y": -13.684400686478181,
+    "return_3y": 797.2769953051643,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 2.4332725908457364,
+    "return_2y": 412.3860589812333
+   }
+  },
+  {
+   "id": "A_347",
+   "type": "ASSET",
+   "name": "코인베이스",
+   "exposure": {
+    "ticker": "COIN",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -3.5282651072124804,
+    "close": 148.47,
+    "marketCap": 39171452984,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": -0.07403419033518155,
+    "return_15d": -6.203803146124198,
+    "return_1m": -8.068111455108362,
+    "return_ytd": -34.34598036614486,
+    "return_1y": -54.30145587737387,
+    "return_3y": 83.72726147753991,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -3.3398437499999933,
+    "return_2y": -24.23453766074709
+   }
+  },
+  {
+   "id": "A_348",
+   "type": "ASSET",
+   "name": "서클",
+   "exposure": {
+    "ticker": "CRCL",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -5.014592730167156,
+    "close": 71.6,
+    "marketCap": 19138012974,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 0.6183249016301184,
+    "return_15d": 14.81719050673509,
+    "return_1m": 13.255298956026573,
+    "return_ytd": -9.70996216897857,
+    "return_1y": -48.57430151547799,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 7.394630268486568,
+    "return_2y": null
+   }
+  },
+  {
+   "id": "A_349",
+   "type": "ASSET",
+   "name": "페이팔",
+   "exposure": {
+    "ticker": "PYPL",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 1.765967981515093,
+    "close": 61.66,
+    "marketCap": 52747725260,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 4.508474576271171,
+    "return_15d": 9.813000890471946,
+    "return_1m": 30.16677221870383,
+    "return_ytd": 5.618362452894821,
+    "return_1y": -11.127125972902851,
+    "return_3y": -2.544649913070973,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 4.384628406974778,
+    "return_2y": -6.773510734804966
+   }
+  },
+  {
+   "id": "A_350",
+   "type": "ASSET",
+   "name": "소파이",
+   "exposure": {
+    "ticker": "SOFI",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.7596310363537695,
+    "close": 18.29,
+    "marketCap": 23461314600,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 1.724137931034475,
+    "return_15d": 11.11786148238152,
+    "return_1m": -1.401617250673859,
+    "return_ytd": -30.137509549274256,
+    "return_1y": -21.468441391155004,
+    "return_3y": 110.71428571428572,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -0.4896626768226331,
+    "return_2y": 176.7019667170953
+   }
+  },
+  {
+   "id": "M_041",
+   "type": "MACRO",
+   "name": "단기금리인상"
+  },
+  {
+   "id": "M_042",
+   "type": "MACRO",
+   "name": "USDC발행잔액"
+  },
+  {
+   "id": "M_043",
+   "type": "MACRO",
+   "name": "암호화폐거래량"
+  },
+  {
+   "id": "BF_087",
+   "type": "BUSINESS_FIELD",
+   "name": "트럼프코인수탁"
+  },
+  {
+   "id": "BF_088",
+   "type": "BUSINESS_FIELD",
+   "name": "기관용수탁/트레이딩"
+  },
+  {
+   "id": "M_271",
+   "type": "MACRO",
+   "name": "클래리티법안제정논의"
+  },
+  {
+   "id": "C_1702",
+   "type": "CHARACTER",
+   "name": "준비자산운용수익의존도높음"
+  },
+  {
+   "id": "M_1087",
+   "type": "MACRO",
+   "name": "오픈USD출시_스테이블코인경쟁"
+  },
+  {
+   "id": "C_1746",
+   "type": "CHARACTER",
+   "name": "기관디지털자산수탁1위"
+  },
+  {
+   "id": "C_1747",
+   "type": "CHARACTER",
+   "name": "리테일코인거래브로커"
+  },
+  {
+   "id": "C_1748",
+   "type": "CHARACTER",
+   "name": "USDC수익배분거래소1위"
+  },
+  {
+   "id": "C_1749",
+   "type": "CHARACTER",
+   "name": "USDC발행1위스테이블코인"
+  },
+  {
+   "id": "C_1750",
+   "type": "CHARACTER",
+   "name": "PYUSD자체스테이블코인"
+  },
+  {
+   "id": "C_1751",
+   "type": "CHARACTER",
+   "name": "핀테크뱅크코인연계"
+  },
+  {
+   "id": "A_1033",
+   "type": "ASSET",
+   "name": "ARKF",
+   "exposure": {
+    "ticker": "ARKF",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -1.358080579447718,
+    "close": 43.58,
+    "marketCap": 794721045,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 0.8329477093937943,
+    "return_15d": 10.41297187737522,
+    "return_1m": 3.663177925784966,
+    "return_ytd": -8.503044299811046,
+    "return_1y": -20.051366721702436,
+    "return_3y": 105.9546313799622,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 1.3959981386691522,
+    "return_2y": 63.037785260007475
+   }
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_345",
+   "to": "T_042",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001161"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_346",
+   "to": "T_042",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001162"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_347",
+   "to": "T_042",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001163"
+   ],
+   "confidence": 0.9,
+   "status": "verified"
+  },
+  {
+   "from": "A_348",
+   "to": "T_042",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001164"
+   ],
+   "confidence": 0.9,
+   "status": "verified"
+  },
+  {
+   "from": "A_349",
+   "to": "T_042",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001165"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_350",
+   "to": "T_042",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001166"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "M_041",
+   "to": "T_042",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_001167"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "M_042",
+   "to": "T_042",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_001168"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "M_043",
+   "to": "T_042",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_001169"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_345",
+   "to": "BF_087",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_001170"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_345",
+   "to": "BF_088",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_001171"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_348",
+   "to": "A_347",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_001172"
+   ],
+   "confidence": 0.9,
+   "status": "verified"
+  },
+  {
+   "from": "M_271",
+   "to": "T_042",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_001173"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_348",
+   "to": "C_1702",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_001311"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "M_1087",
+   "to": "T_042",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_001310"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_345",
+   "to": "C_1746",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_001494"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_346",
+   "to": "C_1747",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_001495"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_347",
+   "to": "C_1748",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_001496"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_348",
+   "to": "C_1749",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_001497"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_349",
+   "to": "C_1750",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_001498"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_350",
+   "to": "C_1751",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_001499"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1033",
+   "to": "T_042",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020573"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_345",
+   "to": "T_042",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001161"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_346",
+   "to": "T_042",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001162"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_347",
+   "to": "T_042",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001163"
+   ],
+   "confidence": 0.9,
+   "status": "verified"
+  },
+  {
+   "from": "A_348",
+   "to": "T_042",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001164"
+   ],
+   "confidence": 0.9,
+   "status": "verified"
+  },
+  {
+   "from": "A_349",
+   "to": "T_042",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001165"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_350",
+   "to": "T_042",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001166"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "M_041",
+   "to": "T_042",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_001167"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "M_042",
+   "to": "T_042",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_001168"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "M_043",
+   "to": "T_042",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_001169"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_345",
+   "to": "BF_087",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_001170"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_345",
+   "to": "BF_088",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_001171"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_348",
+   "to": "A_347",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_001172"
+   ],
+   "confidence": 0.9,
+   "status": "verified"
+  },
+  {
+   "from": "M_271",
+   "to": "T_042",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_001173"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_348",
+   "to": "C_1702",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_001311"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "M_1087",
+   "to": "T_042",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_001310"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_345",
+   "to": "C_1746",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_001494"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_346",
+   "to": "C_1747",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_001495"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_347",
+   "to": "C_1748",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_001496"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_348",
+   "to": "C_1749",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_001497"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_349",
+   "to": "C_1750",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_001498"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_350",
+   "to": "C_1751",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_001499"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1033",
+   "to": "T_042",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020573"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ]
 }

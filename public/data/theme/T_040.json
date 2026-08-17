@@ -1,785 +1,785 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_040",
-  "themeName": "글로벌OTA",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-26T00:00:00+09:00",
-    "notes": "g40 누적 import 기반 T_040 freeze",
-    "sources": [],
-    "provenanceSeed": "T_040 공개사실 시드(2026-06-29) — evidence_ssot 참조",
-    "changelog": [
-      {
-        "date": "2026-08-04",
-        "kind": "보강",
-        "title": "2궤도 관계 엣지 추가",
-        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 8건 백필(리서치 기반)."
-      },
-      {
-        "date": "2026-07-26",
-        "kind": "수정",
-        "title": "자산 CHR 백필",
-        "detail": "CHR 미정의 자산에 CHARACTER·HAS_TRAIT 추가."
-      },
-      {
-        "date": "2026-07-10",
-        "kind": "변경",
-        "title": "매크로는 테마에만 연결",
-        "detail": "개별 자산·BF에 직접 걸려 있던 매크로 IMPACTS 엣지를 테마 레벨로 정리(repoint 0, 중복제거 1)했다."
-      },
-      {
-        "date": "2026-08-05",
-        "kind": "관계",
-        "title": "EXPOSED_TO ETF 연결",
-        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-      }
-    ],
-    "description": "Booking·Expedia·Airbnb·Trip.com 등 글로벌 OTA 4강. 여행 수요 회복과 AI 검색·추천 도입이 take rate·전환율 동인. AWAY 등 ETF로도 익스포저를 확장한다. 글로벌여행수요·유가하락·반독점규제 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 구성종목은 OTA여행예약·OTA글로벌1위·숙박공유OTA·중남미OTA 등의 특성으로 차별화된다. 경쟁·공급·협력 등 11건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다."
+ "schemaVersion": "v5",
+ "themeId": "T_040",
+ "themeName": "글로벌OTA",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
+  ],
+  "dataAsOf": "2026-07-26T00:00:00+09:00",
+  "notes": "g40 누적 import 기반 T_040 freeze",
+  "sources": [],
+  "provenanceSeed": "T_040 공개사실 시드(2026-06-29) — evidence_ssot 참조",
+  "changelog": [
+   {
+    "date": "2026-08-04",
+    "kind": "보강",
+    "title": "2궤도 관계 엣지 추가",
+    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 8건 백필(리서치 기반)."
+   },
+   {
+    "date": "2026-07-26",
+    "kind": "수정",
+    "title": "자산 CHR 백필",
+    "detail": "CHR 미정의 자산에 CHARACTER·HAS_TRAIT 추가."
+   },
+   {
+    "date": "2026-07-10",
+    "kind": "변경",
+    "title": "매크로는 테마에만 연결",
+    "detail": "개별 자산·BF에 직접 걸려 있던 매크로 IMPACTS 엣지를 테마 레벨로 정리(repoint 0, 중복제거 1)했다."
+   },
+   {
+    "date": "2026-08-05",
+    "kind": "관계",
+    "title": "EXPOSED_TO ETF 연결",
+    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+   }
+  ],
+  "description": "• 여행 수요 회복과 AI 검색·추천 도입이 take rate·전환율 동인\n• 동인 글로벌여행수요·유가하락·반독점규제\n• 대표주 익스피디아(OTA여행예약)·부킹홀딩스(OTA글로벌1위)·에어비앤비(숙박공유OTA)\n• ETF AWAY"
+ },
+ "nodes": [
+  {
+   "id": "T_040",
+   "type": "THEME",
+   "name": "글로벌OTA"
   },
-  "nodes": [
-    {
-      "id": "T_040",
-      "type": "THEME",
-      "name": "글로벌OTA"
-    },
-    {
-      "id": "A_329",
-      "type": "ASSET",
-      "name": "익스피디아",
-      "exposure": {
-        "ticker": "EXPE",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 1.3341049617739298,
-        "close": 332.69,
-        "marketCap": 38092547551,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 3.6191484722957634,
-        "return_15d": 27.98722782180503,
-        "return_1m": 24.939912873666835,
-        "return_ytd": 17.429670678761777,
-        "return_1y": 60.564671814671826,
-        "return_3y": 197.23041186455816,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 7.084459894425121,
-        "return_2y": 157.83926218708828
-      }
-    },
-    {
-      "id": "A_330",
-      "type": "ASSET",
-      "name": "부킹홀딩스",
-      "exposure": {
-        "ticker": "BKNG",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.5999812505859237,
-        "close": 212.06,
-        "marketCap": 164320628680,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": -0.3805139286888748,
-        "return_15d": 19.49735151583456,
-        "return_1m": 21.28109808407206,
-        "return_ytd": -1.0036879697493117,
-        "return_1y": -3.3410820912530115,
-        "return_3y": 63.91744608487284,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -1.100643596679407,
-        "return_2y": 48.39748075577326
-      }
-    },
-    {
-      "id": "A_331",
-      "type": "ASSET",
-      "name": "에어비앤비",
-      "exposure": {
-        "ticker": "ABNB",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.5779722357262429,
-        "close": 184.06,
-        "marketCap": 109242118554,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": -0.4973510649799895,
-        "return_15d": 30.446491849751965,
-        "return_1m": 25.60393066739457,
-        "return_ytd": 35.617447686413215,
-        "return_1y": 47.67329910141207,
-        "return_3y": 38.1416991894326,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 3.3638456786657,
-        "return_2y": 58.344803854095
-      }
-    },
-    {
-      "id": "A_332",
-      "type": "ASSET",
-      "name": "Despegar",
-      "exposure": {
-        "ticker": "DESP",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.15408320493066618,
-        "close": 19.5,
-        "marketCap": 1630469100,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 0.20554984583760483,
-        "return_15d": 1.7214397496087441,
-        "return_1m": 2.3084994753410415,
-        "return_ytd": 1.298701298701288,
-        "return_1y": 60.62602965403623,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 0.20554984583760483,
-        "return_2y": null
-      }
-    },
-    {
-      "id": "A_158",
-      "type": "ASSET",
-      "name": "트립닷컴그룹",
-      "exposure": {
-        "ticker": "TCOM",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.08884940026656629,
-        "close": 44.98,
-        "marketCap": 29218262996,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": -2.6406926406926545,
-        "return_15d": 3.0705774518789974,
-        "return_1m": 6.059891535015338,
-        "return_ytd": -37.449589764984005,
-        "return_1y": -25.41867020394628,
-        "return_3y": 12.337662337662337,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -2.514087559601219,
-        "return_2y": 8.621106013040336
-      }
-    },
-    {
-      "id": "A_333",
-      "type": "ASSET",
-      "name": "AWAY",
-      "exposure": {
-        "ticker": "AWAY",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.19646365422396617,
-        "close": 20.4,
-        "marketCap": 25736987,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 0.9401286491835581,
-        "return_15d": 14.671163575042145,
-        "return_1m": 11.65845648604269,
-        "return_ytd": -1.5444015444015413,
-        "return_1y": -5.511811023622048,
-        "return_3y": 11.050626020685893,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 2.051025512756377,
-        "return_2y": 11.719605695509294
-      }
-    },
-    {
-      "id": "M_036",
-      "type": "MACRO",
-      "name": "글로벌여행수요"
-    },
-    {
-      "id": "M_037",
-      "type": "MACRO",
-      "name": "유가하락"
-    },
-    {
-      "id": "M_038",
-      "type": "MACRO",
-      "name": "반독점규제"
-    },
-    {
-      "id": "C_5379",
-      "type": "CHARACTER",
-      "name": "OTA여행예약"
-    },
-    {
-      "id": "C_5380",
-      "type": "CHARACTER",
-      "name": "OTA글로벌1위"
-    },
-    {
-      "id": "C_5381",
-      "type": "CHARACTER",
-      "name": "숙박공유OTA"
-    },
-    {
-      "id": "C_5382",
-      "type": "CHARACTER",
-      "name": "중남미OTA"
-    },
-    {
-      "id": "C_5383",
-      "type": "CHARACTER",
-      "name": "중국OTA1위·글로벌확장"
-    }
-  ],
-  "edges": [
-    {
-      "from": "A_329",
-      "to": "T_040",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001132"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_330",
-      "to": "T_040",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001133"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_331",
-      "to": "T_040",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001134"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_332",
-      "to": "T_040",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001135"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_158",
-      "to": "T_040",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001136"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "M_036",
-      "to": "T_040",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_001137"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "M_037",
-      "to": "T_040",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_001138"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "M_038",
-      "to": "T_040",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_001418"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_329",
-      "to": "A_333",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_001140"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_330",
-      "to": "A_333",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_001141"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_331",
-      "to": "A_333",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_001142"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_329",
-      "to": "C_5379",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014322"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_330",
-      "to": "C_5380",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014323"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_331",
-      "to": "C_5381",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014324"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_332",
-      "to": "C_5382",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014325"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_158",
-      "to": "C_5383",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014326"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_329",
-      "to": "A_330",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_017927"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "익스피디아와 부킹홀딩스는 글로벌 OTA 양대산맥으로 숙박·항공 예약에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_329",
-      "to": "A_331",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_017928"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "익스피디아(Vrbo)와 에어비앤비는 숙박·대안숙박 예약에서 경쟁한다."
-    },
-    {
-      "from": "A_329",
-      "to": "A_158",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_017929"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "익스피디아와 트립닷컴은 글로벌 온라인 여행 예약 시장에서 경쟁한다."
-    },
-    {
-      "from": "A_329",
-      "to": "A_332",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_017930"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "익스피디아와 데스페가르는 중남미 온라인 여행 예약에서 경쟁한다."
-    },
-    {
-      "from": "A_330",
-      "to": "A_331",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_017931"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "부킹홀딩스와 에어비앤비는 숙박 예약에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_330",
-      "to": "A_158",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_017932"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "부킹홀딩스와 트립닷컴은 글로벌 숙박·항공 OTA로 경쟁한다."
-    },
-    {
-      "from": "A_330",
-      "to": "A_332",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_017933"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "부킹홀딩스와 데스페가르는 중남미 등지에서 OTA로 경쟁한다."
-    },
-    {
-      "from": "A_331",
-      "to": "A_158",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_017934"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "에어비앤비와 트립닷컴은 숙박·여행 예약에서 경쟁한다."
-    },
-    {
-      "from": "A_333",
-      "to": "T_040",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020571"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_329",
-      "to": "T_040",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001132"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_330",
-      "to": "T_040",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001133"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_331",
-      "to": "T_040",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001134"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_332",
-      "to": "T_040",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001135"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_158",
-      "to": "T_040",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_001136"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "M_036",
-      "to": "T_040",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_001137"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "M_037",
-      "to": "T_040",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_001138"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "M_038",
-      "to": "T_040",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_001418"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_329",
-      "to": "A_333",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_001140"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_330",
-      "to": "A_333",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_001141"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_331",
-      "to": "A_333",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_001142"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_329",
-      "to": "C_5379",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014322"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_330",
-      "to": "C_5380",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014323"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_331",
-      "to": "C_5381",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014324"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_332",
-      "to": "C_5382",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014325"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_158",
-      "to": "C_5383",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014326"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_329",
-      "to": "A_330",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_017927"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "익스피디아와 부킹홀딩스는 글로벌 OTA 양대산맥으로 숙박·항공 예약에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_329",
-      "to": "A_331",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_017928"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "익스피디아(Vrbo)와 에어비앤비는 숙박·대안숙박 예약에서 경쟁한다."
-    },
-    {
-      "from": "A_329",
-      "to": "A_158",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_017929"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "익스피디아와 트립닷컴은 글로벌 온라인 여행 예약 시장에서 경쟁한다."
-    },
-    {
-      "from": "A_329",
-      "to": "A_332",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_017930"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "익스피디아와 데스페가르는 중남미 온라인 여행 예약에서 경쟁한다."
-    },
-    {
-      "from": "A_330",
-      "to": "A_331",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_017931"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "부킹홀딩스와 에어비앤비는 숙박 예약에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_330",
-      "to": "A_158",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_017932"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "부킹홀딩스와 트립닷컴은 글로벌 숙박·항공 OTA로 경쟁한다."
-    },
-    {
-      "from": "A_330",
-      "to": "A_332",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_017933"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "부킹홀딩스와 데스페가르는 중남미 등지에서 OTA로 경쟁한다."
-    },
-    {
-      "from": "A_331",
-      "to": "A_158",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_017934"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "에어비앤비와 트립닷컴은 숙박·여행 예약에서 경쟁한다."
-    },
-    {
-      "from": "A_333",
-      "to": "T_040",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020571"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ]
+  {
+   "id": "A_329",
+   "type": "ASSET",
+   "name": "익스피디아",
+   "exposure": {
+    "ticker": "EXPE",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 1.3341049617739298,
+    "close": 332.69,
+    "marketCap": 38092547551,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 3.6191484722957634,
+    "return_15d": 27.98722782180503,
+    "return_1m": 24.939912873666835,
+    "return_ytd": 17.429670678761777,
+    "return_1y": 60.564671814671826,
+    "return_3y": 197.23041186455816,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 7.084459894425121,
+    "return_2y": 157.83926218708828
+   }
+  },
+  {
+   "id": "A_330",
+   "type": "ASSET",
+   "name": "부킹홀딩스",
+   "exposure": {
+    "ticker": "BKNG",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.5999812505859237,
+    "close": 212.06,
+    "marketCap": 164320628680,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": -0.3805139286888748,
+    "return_15d": 19.49735151583456,
+    "return_1m": 21.28109808407206,
+    "return_ytd": -1.0036879697493117,
+    "return_1y": -3.3410820912530115,
+    "return_3y": 63.91744608487284,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -1.100643596679407,
+    "return_2y": 48.39748075577326
+   }
+  },
+  {
+   "id": "A_331",
+   "type": "ASSET",
+   "name": "에어비앤비",
+   "exposure": {
+    "ticker": "ABNB",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.5779722357262429,
+    "close": 184.06,
+    "marketCap": 109242118554,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": -0.4973510649799895,
+    "return_15d": 30.446491849751965,
+    "return_1m": 25.60393066739457,
+    "return_ytd": 35.617447686413215,
+    "return_1y": 47.67329910141207,
+    "return_3y": 38.1416991894326,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 3.3638456786657,
+    "return_2y": 58.344803854095
+   }
+  },
+  {
+   "id": "A_332",
+   "type": "ASSET",
+   "name": "Despegar",
+   "exposure": {
+    "ticker": "DESP",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.15408320493066618,
+    "close": 19.5,
+    "marketCap": 1630469100,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 0.20554984583760483,
+    "return_15d": 1.7214397496087441,
+    "return_1m": 2.3084994753410415,
+    "return_ytd": 1.298701298701288,
+    "return_1y": 60.62602965403623,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 0.20554984583760483,
+    "return_2y": null
+   }
+  },
+  {
+   "id": "A_158",
+   "type": "ASSET",
+   "name": "트립닷컴그룹",
+   "exposure": {
+    "ticker": "TCOM",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.08884940026656629,
+    "close": 44.98,
+    "marketCap": 29218262996,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": -2.6406926406926545,
+    "return_15d": 3.0705774518789974,
+    "return_1m": 6.059891535015338,
+    "return_ytd": -37.449589764984005,
+    "return_1y": -25.41867020394628,
+    "return_3y": 12.337662337662337,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -2.514087559601219,
+    "return_2y": 8.621106013040336
+   }
+  },
+  {
+   "id": "A_333",
+   "type": "ASSET",
+   "name": "AWAY",
+   "exposure": {
+    "ticker": "AWAY",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.19646365422396617,
+    "close": 20.4,
+    "marketCap": 25736987,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 0.9401286491835581,
+    "return_15d": 14.671163575042145,
+    "return_1m": 11.65845648604269,
+    "return_ytd": -1.5444015444015413,
+    "return_1y": -5.511811023622048,
+    "return_3y": 11.050626020685893,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 2.051025512756377,
+    "return_2y": 11.719605695509294
+   }
+  },
+  {
+   "id": "M_036",
+   "type": "MACRO",
+   "name": "글로벌여행수요"
+  },
+  {
+   "id": "M_037",
+   "type": "MACRO",
+   "name": "유가하락"
+  },
+  {
+   "id": "M_038",
+   "type": "MACRO",
+   "name": "반독점규제"
+  },
+  {
+   "id": "C_5379",
+   "type": "CHARACTER",
+   "name": "OTA여행예약"
+  },
+  {
+   "id": "C_5380",
+   "type": "CHARACTER",
+   "name": "OTA글로벌1위"
+  },
+  {
+   "id": "C_5381",
+   "type": "CHARACTER",
+   "name": "숙박공유OTA"
+  },
+  {
+   "id": "C_5382",
+   "type": "CHARACTER",
+   "name": "중남미OTA"
+  },
+  {
+   "id": "C_5383",
+   "type": "CHARACTER",
+   "name": "중국OTA1위·글로벌확장"
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_329",
+   "to": "T_040",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001132"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_330",
+   "to": "T_040",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001133"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_331",
+   "to": "T_040",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001134"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_332",
+   "to": "T_040",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001135"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_158",
+   "to": "T_040",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001136"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "M_036",
+   "to": "T_040",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_001137"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "M_037",
+   "to": "T_040",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_001138"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "M_038",
+   "to": "T_040",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_001418"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_329",
+   "to": "A_333",
+   "type": "IN_ETF",
+   "evidence": [
+    "EV_001140"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_330",
+   "to": "A_333",
+   "type": "IN_ETF",
+   "evidence": [
+    "EV_001141"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_331",
+   "to": "A_333",
+   "type": "IN_ETF",
+   "evidence": [
+    "EV_001142"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_329",
+   "to": "C_5379",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014322"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_330",
+   "to": "C_5380",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014323"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_331",
+   "to": "C_5381",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014324"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_332",
+   "to": "C_5382",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014325"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_158",
+   "to": "C_5383",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014326"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_329",
+   "to": "A_330",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_017927"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "익스피디아와 부킹홀딩스는 글로벌 OTA 양대산맥으로 숙박·항공 예약에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_329",
+   "to": "A_331",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_017928"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "익스피디아(Vrbo)와 에어비앤비는 숙박·대안숙박 예약에서 경쟁한다."
+  },
+  {
+   "from": "A_329",
+   "to": "A_158",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_017929"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "익스피디아와 트립닷컴은 글로벌 온라인 여행 예약 시장에서 경쟁한다."
+  },
+  {
+   "from": "A_329",
+   "to": "A_332",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_017930"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "익스피디아와 데스페가르는 중남미 온라인 여행 예약에서 경쟁한다."
+  },
+  {
+   "from": "A_330",
+   "to": "A_331",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_017931"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "부킹홀딩스와 에어비앤비는 숙박 예약에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_330",
+   "to": "A_158",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_017932"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "부킹홀딩스와 트립닷컴은 글로벌 숙박·항공 OTA로 경쟁한다."
+  },
+  {
+   "from": "A_330",
+   "to": "A_332",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_017933"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "부킹홀딩스와 데스페가르는 중남미 등지에서 OTA로 경쟁한다."
+  },
+  {
+   "from": "A_331",
+   "to": "A_158",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_017934"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "에어비앤비와 트립닷컴은 숙박·여행 예약에서 경쟁한다."
+  },
+  {
+   "from": "A_333",
+   "to": "T_040",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020571"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_329",
+   "to": "T_040",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001132"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_330",
+   "to": "T_040",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001133"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_331",
+   "to": "T_040",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001134"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_332",
+   "to": "T_040",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001135"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_158",
+   "to": "T_040",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_001136"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "M_036",
+   "to": "T_040",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_001137"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "M_037",
+   "to": "T_040",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_001138"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "M_038",
+   "to": "T_040",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_001418"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_329",
+   "to": "A_333",
+   "type": "IN_ETF",
+   "evidence": [
+    "EV_001140"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_330",
+   "to": "A_333",
+   "type": "IN_ETF",
+   "evidence": [
+    "EV_001141"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_331",
+   "to": "A_333",
+   "type": "IN_ETF",
+   "evidence": [
+    "EV_001142"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_329",
+   "to": "C_5379",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014322"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_330",
+   "to": "C_5380",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014323"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_331",
+   "to": "C_5381",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014324"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_332",
+   "to": "C_5382",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014325"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_158",
+   "to": "C_5383",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014326"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_329",
+   "to": "A_330",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_017927"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "익스피디아와 부킹홀딩스는 글로벌 OTA 양대산맥으로 숙박·항공 예약에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_329",
+   "to": "A_331",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_017928"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "익스피디아(Vrbo)와 에어비앤비는 숙박·대안숙박 예약에서 경쟁한다."
+  },
+  {
+   "from": "A_329",
+   "to": "A_158",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_017929"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "익스피디아와 트립닷컴은 글로벌 온라인 여행 예약 시장에서 경쟁한다."
+  },
+  {
+   "from": "A_329",
+   "to": "A_332",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_017930"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "익스피디아와 데스페가르는 중남미 온라인 여행 예약에서 경쟁한다."
+  },
+  {
+   "from": "A_330",
+   "to": "A_331",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_017931"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "부킹홀딩스와 에어비앤비는 숙박 예약에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_330",
+   "to": "A_158",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_017932"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "부킹홀딩스와 트립닷컴은 글로벌 숙박·항공 OTA로 경쟁한다."
+  },
+  {
+   "from": "A_330",
+   "to": "A_332",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_017933"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "부킹홀딩스와 데스페가르는 중남미 등지에서 OTA로 경쟁한다."
+  },
+  {
+   "from": "A_331",
+   "to": "A_158",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_017934"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "에어비앤비와 트립닷컴은 숙박·여행 예약에서 경쟁한다."
+  },
+  {
+   "from": "A_333",
+   "to": "T_040",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020571"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ]
 }

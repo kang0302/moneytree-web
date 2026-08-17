@@ -1,1239 +1,1239 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_700",
-  "themeName": "유로약세_ECB금리인하수혜",
-  "meta": {
-    "periodDefault": "7d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-31T00:00:00+09:00",
-    "description": "유로 약세(ECB 금리인하) 국면 수혜 — 유럽 수출 대기업. 매출 상당분이 달러·해외 통화, 비용은 유로라 환산·가격경쟁력 개선. 명품(LVMH·Hermès), 자동차(Mercedes·BMW·Stellantis), 항공우주(Airbus), 제약(Sanofi·Bayer), 반도체장비(ASML), SW(SAP). + 유로 약세 시 역내 관광 유입 수혜(Lufthansa·Accor).",
-    "notes": "유로 약세(ECB 금리인하) 국면 수혜 — 유럽 수출 대기업. 매출 상당분이 달러·해외 통화, 비용은 유로라 환산·가격경쟁력 개선. 명품(LVMH·Hermès), 자동차(Mercedes·BMW·Stellantis), 항공우주(Airbus), 제약(Sanofi·Bayer), 반도체장비(ASML), SW(SAP). + 유로 약세 시 역내 관광 유입 수혜(Lufthansa·Accor).",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-08-04",
-        "kind": "보강",
-        "title": "2궤도 관계 엣지 추가",
-        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
-      },
-      {
-        "date": "2026-07-31",
-        "kind": "신규",
-        "title": "테마 생성",
-        "detail": "유로 약세(ECB 금리인하) 국면 수혜 — 유럽 수출 대기업. 매출 상당분이 달러·해외 통화, 비용은 유로라 환산·가격경쟁력 개선. 명품(LVMH·Hermès), 자동차(Mercedes·BMW·Stellantis), 항공우주(Airbus), 제약(Sanofi·Bayer), 반도체장비(ASML), SW(SAP). + 유로 약세 시 역내 관광 유입 수혜(Lufthansa·Accor)."
-      },
-      {
-        "date": "2026-08-05",
-        "kind": "관계",
-        "title": "EXPOSED_TO ETF 연결",
-        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-      }
-    ]
-  },
-  "nodes": [
-    {
-      "id": "T_700",
-      "type": "THEME",
-      "name": "유로약세_ECB금리인하수혜"
-    },
-    {
-      "id": "M_1200",
-      "type": "MACRO",
-      "name": "유로약세"
-    },
-    {
-      "id": "M_359",
-      "type": "MACRO",
-      "name": "ECB금리정책"
-    },
-    {
-      "id": "M_216",
-      "type": "MACRO",
-      "name": "해외수출확대"
-    },
-    {
-      "id": "A_337",
-      "type": "ASSET",
-      "name": "LVMH",
-      "exposure": {
-        "ticker": "MC",
-        "exchange": "EURONEXT",
-        "country": "FR"
-      },
-      "metrics": {
-        "return_1d": -0.3478260869565264,
-        "close": 458.4,
-        "marketCap": 226036685657,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": -4.260651629072687,
-        "return_15d": -0.7147498375568606,
-        "return_1m": -5.083341960865518,
-        "return_ytd": -28.930232558139537,
-        "return_1y": -3.066187354620431,
-        "return_3y": -43.83729478069102,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -4.5000000000000036,
-        "return_2y": -28.841974542067696
-      }
-    },
-    {
-      "id": "C_5853",
-      "type": "CHARACTER",
-      "name": "명품_美아시아매출"
-    },
-    {
-      "id": "A_338",
-      "type": "ASSET",
-      "name": "에르메스",
-      "exposure": {
-        "ticker": "RMS",
-        "exchange": "EURONEXT",
-        "country": "FR"
-      },
-      "metrics": {
-        "return_1d": -0.22158911047800434,
-        "close": 1576,
-        "marketCap": 165073273800,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": -4.107088530574988,
-        "return_15d": -4.077906269020081,
-        "return_1m": -4.165399817573734,
-        "return_ytd": -25.730442978322333,
-        "return_1y": -24.19432419432419,
-        "return_3y": -18.274216967434143,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -3.638031183124424,
-        "return_2y": -24.121328839672607
-      }
-    },
-    {
-      "id": "C_5854",
-      "type": "CHARACTER",
-      "name": "럭셔리_해외매출비중"
-    },
-    {
-      "id": "A_1329",
-      "type": "ASSET",
-      "name": "메르세데스벤츠",
-      "exposure": {
-        "ticker": "MBG",
-        "exchange": "XETRA",
-        "country": "DE"
-      },
-      "metrics": {
-        "return_1d": 1.2984154929577496,
-        "return_3d": -1.6032492518170183,
-        "return_15d": 2.7914247431889194,
-        "return_1m": 2.039459099977825,
-        "return_ytd": -23.37273181288496,
-        "return_1y": -13.347138554216864,
-        "return_3y": -33.13480534572923,
-        "close": 46.025,
-        "marketCap": 44061136170,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -2.251008706731794,
-        "return_2y": -21.005663291573708
-      }
-    },
-    {
-      "id": "C_5855",
-      "type": "CHARACTER",
-      "name": "독일프리미엄차_수출"
-    },
-    {
-      "id": "A_2847",
-      "type": "ASSET",
-      "name": "BMW",
-      "exposure": {
-        "ticker": "BMW",
-        "exchange": "XETRA",
-        "country": "DE"
-      },
-      "metrics": {
-        "return_1d": 1.0891763104152519,
-        "close": 59.4,
-        "marketCap": 35573179693,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": -1.19760479041916,
-        "return_15d": 4.28370786516854,
-        "return_1m": 3.628750872295883,
-        "return_ytd": -36.225037577839814,
-        "return_1y": -33.138226024313376,
-        "return_3y": -40.65934065934066,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -0.635664101706257,
-        "return_2y": -25.78710644677662
-      },
-      "coreBiz": "독일 프리미엄 자동차 — 미·중 매출 비중 커 유로약세 시 환산·가격경쟁력 수혜."
-    },
-    {
-      "id": "C_5856",
-      "type": "CHARACTER",
-      "name": "독일프리미엄차_글로벌"
-    },
-    {
-      "id": "A_2848",
-      "type": "ASSET",
-      "name": "스텔란티스",
-      "exposure": {
-        "ticker": "STLAM",
-        "exchange": "MI",
-        "country": "IT"
-      },
-      "metrics": {
-        "return_1d": 1.9367588932806434,
-        "close": 5.02,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-07-30",
-        "valuationSource": "FMP",
-        "return_3d": 1.5354330708661434,
-        "return_15d": 6.79089026915114,
-        "return_1m": 0.7421875000000133,
-        "return_ytd": -46.934156378600825,
-        "return_1y": -33.530927835051536,
-        "return_3y": -71.16825041922861,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": null,
-        "return_2y": null
-      },
-      "coreBiz": "멀티브랜드 완성차(북미 매출 큼) — 유로약세 시 달러매출 환산 수혜."
-    },
-    {
-      "id": "C_5857",
-      "type": "CHARACTER",
-      "name": "멀티브랜드차_북미매출"
-    },
-    {
-      "id": "A_1041",
-      "type": "ASSET",
-      "name": "에어버스",
-      "exposure": {
-        "ticker": "AIR",
-        "exchange": "Euronext",
-        "country": "EU"
-      },
-      "metrics": {
-        "return_1d": 1.1742602160638826,
-        "close": 215.4,
-        "marketCap": 170484892161,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 1.3647058823529346,
-        "return_15d": 4.537733559815571,
-        "return_1m": 9.931611717872823,
-        "return_ytd": 8.568548387096776,
-        "return_1y": 17.205354227881166,
-        "return_3y": 64.88058787507657,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 0.8426966292134797,
-        "return_2y": 59.95841378286055
-      }
-    },
-    {
-      "id": "C_5858",
-      "type": "CHARACTER",
-      "name": "항공기_달러매출유로비용"
-    },
-    {
-      "id": "A_2849",
-      "type": "ASSET",
-      "name": "사노피",
-      "exposure": {
-        "ticker": "SNY",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.13704888076747634,
-        "close": 43.72,
-        "marketCap": 104980464000,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 0.36730945821854544,
-        "return_15d": 0.8535178777393293,
-        "return_1m": 1.2505789717461857,
-        "return_ytd": -9.781262897234832,
-        "return_1y": -10.848287112561172,
-        "return_3y": -17.942942942942953,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 0.5982512655315242,
-        "return_2y": -18.3261722398655
-      },
-      "coreBiz": "프랑스 제약(유로존) — 해외 매출 비중 큰 제약, 유로약세 환산 수혜."
-    },
-    {
-      "id": "C_5859",
-      "type": "CHARACTER",
-      "name": "유로존제약_해외매출"
-    },
-    {
-      "id": "A_2850",
-      "type": "ASSET",
-      "name": "바이엘",
-      "exposure": {
-        "ticker": "BAYN",
-        "exchange": "XETRA",
-        "country": "DE"
-      },
-      "metrics": {
-        "return_1d": -0.5617977528089901,
-        "close": 47.79,
-        "marketCap": 46950046879,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": -2.3697650663942915,
-        "return_15d": 3.7559704732957,
-        "return_1m": -2.7076547231270287,
-        "return_ytd": 29.127262901918407,
-        "return_1y": 79.4592564776568,
-        "return_3y": -9.334092202618105,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -4.055410560128491,
-        "return_2y": 85.01742160278746
-      },
-      "coreBiz": "독일 제약·농화학 — 해외 달러 매출, 유로약세 수혜."
-    },
-    {
-      "id": "C_5860",
-      "type": "CHARACTER",
-      "name": "제약농화학_해외매출"
-    },
-    {
-      "id": "A_802",
-      "type": "ASSET",
-      "name": "ASML",
-      "exposure": {
-        "ticker": "ASML",
-        "exchange": "NASDAQ",
-        "country": "NL"
-      },
-      "metrics": {
-        "return_1d": -0.20672114291899746,
-        "close": 1844.08,
-        "marketCap": 710741608843,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 2.4841889984327903,
-        "return_15d": 4.950799332988076,
-        "return_1m": 3.8543848978396467,
-        "return_ytd": 72.36647785691588,
-        "return_1y": 144.18108870380425,
-        "return_3y": 176.66041557272524,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 5.921343603352103,
-        "return_2y": 109.6546078810341
-      }
-    },
-    {
-      "id": "C_5861",
-      "type": "CHARACTER",
-      "name": "EUV_달러매출"
-    },
-    {
-      "id": "A_408",
-      "type": "ASSET",
-      "name": "SAP",
-      "exposure": {
-        "ticker": "SAP",
-        "exchange": "NYSE",
-        "country": "DE"
-      },
-      "metrics": {
-        "return_1d": -0.6259556574923608,
-        "close": 207.97,
-        "marketCap": 242333957057,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": -0.8155284242655547,
-        "return_15d": 29.981250000000003,
-        "return_1m": 34.338866998255924,
-        "return_ytd": -14.383928203861506,
-        "return_1y": -25.43472804847442,
-        "return_3y": 49.67254408060455,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 0.8779588668994975,
-        "return_2y": -2.154787108915557
-      }
-    },
-    {
-      "id": "C_5862",
-      "type": "CHARACTER",
-      "name": "유럽SW_글로벌달러매출"
-    },
-    {
-      "id": "A_2851",
-      "type": "ASSET",
-      "name": "루프트한자",
-      "exposure": {
-        "ticker": "LHA",
-        "exchange": "XETRA",
-        "country": "DE"
-      },
-      "metrics": {
-        "return_1d": -0.7326007326007189,
-        "close": 8.128,
-        "marketCap": 9770360042,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": -1.3349514563106735,
-        "return_15d": -7.191780821917792,
-        "return_1m": -10.952902519167573,
-        "return_ytd": -3.3293697978596826,
-        "return_1y": -1.5738498789346078,
-        "return_3y": -6.979405034324937,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -2.5179856115107757,
-        "return_2y": 46.4864864864865
-      },
-      "coreBiz": "유럽 최대 항공 — 유로약세 시 역내 인바운드 관광 수요·달러 운임 수혜."
-    },
-    {
-      "id": "C_5863",
-      "type": "CHARACTER",
-      "name": "유럽항공_인바운드관광"
-    },
-    {
-      "id": "A_2852",
-      "type": "ASSET",
-      "name": "아코르",
-      "exposure": {
-        "ticker": "AC",
-        "exchange": "EURONEXT",
-        "country": "FR"
-      },
-      "metrics": {
-        "return_1d": 0.21477663230238253,
-        "close": 46.66,
-        "marketCap": 11017732480,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 0.47372954349698126,
-        "return_15d": 0.7557762902180798,
-        "return_1m": -0.6811409110259681,
-        "return_ytd": -3.235172127747832,
-        "return_1y": 5.042773525438982,
-        "return_3y": 39.45008965929466,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -0.2991452991452981,
-        "return_2y": 38.21090047393365
-      },
-      "coreBiz": "유럽 최대 호텔 그룹 — 유로약세 시 역내 관광 유입 수혜."
-    },
-    {
-      "id": "C_5864",
-      "type": "CHARACTER",
-      "name": "유럽호텔_역내관광"
-    },
-    {
-      "id": "A_2979",
-      "type": "ASSET",
-      "name": "TIGER 유로스탁스50(합성 H)",
-      "exposure": {
-        "ticker": "195930",
-        "exchange": "KRX",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": 0.08273009307135926,
-        "return_3d": 0.5819995842860193,
-        "return_15d": 5.932574430823112,
-        "return_1m": 4.514038876889859,
-        "return_ytd": 15.434160305343504,
-        "return_1y": 26.42164589383198,
-        "return_3y": null,
-        "close": 24195,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": null,
-        "return_2y": 37.81324953042251
-      }
-    },
-    {
-      "id": "A_2980",
-      "type": "ASSET",
-      "name": "SPDR EURO STOXX 50 ETF",
-      "exposure": {
-        "ticker": "FEZ",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.08328706274289832,
-        "return_3d": 0.3758875121815386,
-        "return_15d": 6.5149948293691695,
-        "return_1m": 6.185567010309256,
-        "return_ytd": 11.973908992079508,
-        "return_1y": 19.075144508670515,
-        "return_3y": 59.301811754308446,
-        "close": 72.1,
-        "marketCap": 4564555756,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 0.33398274422486995,
-        "return_2y": 44.750050190724735
-      }
-    }
+ "schemaVersion": "v5",
+ "themeId": "T_700",
+ "themeName": "유로약세_ECB금리인하수혜",
+ "meta": {
+  "periodDefault": "7d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
   ],
-  "edges": [
-    {
-      "from": "M_1200",
-      "to": "T_700",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_015105"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_359",
-      "to": "T_700",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_015106"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_216",
-      "to": "T_700",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_015107"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_337",
-      "to": "T_700",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015108"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_337",
-      "to": "C_5853",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015109"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_338",
-      "to": "T_700",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015110"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_338",
-      "to": "C_5854",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015111"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_1329",
-      "to": "T_700",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015112"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_1329",
-      "to": "C_5855",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015113"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2847",
-      "to": "T_700",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015114"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2847",
-      "to": "C_5856",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015115"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2848",
-      "to": "T_700",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015116"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2848",
-      "to": "C_5857",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015117"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_1041",
-      "to": "T_700",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015118"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_1041",
-      "to": "C_5858",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015119"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2849",
-      "to": "T_700",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015120"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2849",
-      "to": "C_5859",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015121"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2850",
-      "to": "T_700",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015122"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2850",
-      "to": "C_5860",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015123"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_802",
-      "to": "T_700",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015124"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_802",
-      "to": "C_5861",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015125"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_408",
-      "to": "T_700",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015126"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_408",
-      "to": "C_5862",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015127"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2851",
-      "to": "T_700",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015128"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2851",
-      "to": "C_5863",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015129"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2852",
-      "to": "T_700",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015130"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2852",
-      "to": "C_5864",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015131"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_337",
-      "to": "A_338",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020511"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "LVMH와 에르메스는 프랑스 럭셔리 시장 경쟁"
-    },
-    {
-      "from": "A_1329",
-      "to": "A_2847",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020512"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "메르세데스벤츠와 BMW는 독일 프리미엄 자동차 시장 경쟁"
-    },
-    {
-      "from": "A_2848",
-      "to": "A_1329",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020513"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "스텔란티스와 메르세데스벤츠는 유럽 자동차 수출 시장 경쟁"
-    },
-    {
-      "from": "A_2849",
-      "to": "A_2850",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020514"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "사노피와 바이엘은 유럽 제약 시장 경쟁"
-    },
-    {
-      "from": "A_802",
-      "to": "A_408",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020515"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "ASML과 SAP는 유럽 대표 기술주 자금 유치 경쟁"
-    },
-    {
-      "from": "A_2851",
-      "to": "A_2852",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_020516"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "루프트한자와 아코르는 항공·호텔 여행 밸류체인 연계"
-    },
-    {
-      "from": "A_2979",
-      "to": "T_700",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020985"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_2980",
-      "to": "T_700",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020986"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "M_1200",
-      "to": "T_700",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_015105"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_359",
-      "to": "T_700",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_015106"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_216",
-      "to": "T_700",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_015107"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_337",
-      "to": "T_700",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015108"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_337",
-      "to": "C_5853",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015109"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_338",
-      "to": "T_700",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015110"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_338",
-      "to": "C_5854",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015111"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_1329",
-      "to": "T_700",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015112"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_1329",
-      "to": "C_5855",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015113"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2847",
-      "to": "T_700",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015114"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2847",
-      "to": "C_5856",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015115"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2848",
-      "to": "T_700",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015116"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2848",
-      "to": "C_5857",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015117"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_1041",
-      "to": "T_700",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015118"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_1041",
-      "to": "C_5858",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015119"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2849",
-      "to": "T_700",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015120"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2849",
-      "to": "C_5859",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015121"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2850",
-      "to": "T_700",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015122"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2850",
-      "to": "C_5860",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015123"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_802",
-      "to": "T_700",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015124"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_802",
-      "to": "C_5861",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015125"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_408",
-      "to": "T_700",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015126"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_408",
-      "to": "C_5862",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015127"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2851",
-      "to": "T_700",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015128"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2851",
-      "to": "C_5863",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015129"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2852",
-      "to": "T_700",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_015130"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2852",
-      "to": "C_5864",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015131"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_337",
-      "to": "A_338",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020511"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "LVMH와 에르메스는 프랑스 럭셔리 시장 경쟁"
-    },
-    {
-      "from": "A_1329",
-      "to": "A_2847",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020512"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "메르세데스벤츠와 BMW는 독일 프리미엄 자동차 시장 경쟁"
-    },
-    {
-      "from": "A_2848",
-      "to": "A_1329",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020513"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "스텔란티스와 메르세데스벤츠는 유럽 자동차 수출 시장 경쟁"
-    },
-    {
-      "from": "A_2849",
-      "to": "A_2850",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020514"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "사노피와 바이엘은 유럽 제약 시장 경쟁"
-    },
-    {
-      "from": "A_802",
-      "to": "A_408",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020515"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "ASML과 SAP는 유럽 대표 기술주 자금 유치 경쟁"
-    },
-    {
-      "from": "A_2851",
-      "to": "A_2852",
-      "type": "PARTNERS",
-      "evidence": [
-        "EV_020516"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "루프트한자와 아코르는 항공·호텔 여행 밸류체인 연계"
-    },
-    {
-      "from": "A_2979",
-      "to": "T_700",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020985"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_2980",
-      "to": "T_700",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020986"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
+  "dataAsOf": "2026-07-31T00:00:00+09:00",
+  "description": "• 유럽 수출 대기업\n• 동인 유로약세·ECB금리정책·해외수출확대\n• 대표주 LVMH(명품 美아시아매출)·에르메스(럭셔리 해외매출비중)·메르세데스벤츠(독일프리미엄차 수출)\n• ETF TIGER 유로스탁스50(합성 H)·SPDR EURO STOXX 50 ETF",
+  "notes": "유로 약세(ECB 금리인하) 국면 수혜 — 유럽 수출 대기업. 매출 상당분이 달러·해외 통화, 비용은 유로라 환산·가격경쟁력 개선. 명품(LVMH·Hermès), 자동차(Mercedes·BMW·Stellantis), 항공우주(Airbus), 제약(Sanofi·Bayer), 반도체장비(ASML), SW(SAP). + 유로 약세 시 역내 관광 유입 수혜(Lufthansa·Accor).",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-08-04",
+    "kind": "보강",
+    "title": "2궤도 관계 엣지 추가",
+    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
+   },
+   {
+    "date": "2026-07-31",
+    "kind": "신규",
+    "title": "테마 생성",
+    "detail": "유로 약세(ECB 금리인하) 국면 수혜 — 유럽 수출 대기업. 매출 상당분이 달러·해외 통화, 비용은 유로라 환산·가격경쟁력 개선. 명품(LVMH·Hermès), 자동차(Mercedes·BMW·Stellantis), 항공우주(Airbus), 제약(Sanofi·Bayer), 반도체장비(ASML), SW(SAP). + 유로 약세 시 역내 관광 유입 수혜(Lufthansa·Accor)."
+   },
+   {
+    "date": "2026-08-05",
+    "kind": "관계",
+    "title": "EXPOSED_TO ETF 연결",
+    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+   }
   ]
+ },
+ "nodes": [
+  {
+   "id": "T_700",
+   "type": "THEME",
+   "name": "유로약세_ECB금리인하수혜"
+  },
+  {
+   "id": "M_1200",
+   "type": "MACRO",
+   "name": "유로약세"
+  },
+  {
+   "id": "M_359",
+   "type": "MACRO",
+   "name": "ECB금리정책"
+  },
+  {
+   "id": "M_216",
+   "type": "MACRO",
+   "name": "해외수출확대"
+  },
+  {
+   "id": "A_337",
+   "type": "ASSET",
+   "name": "LVMH",
+   "exposure": {
+    "ticker": "MC",
+    "exchange": "EURONEXT",
+    "country": "FR"
+   },
+   "metrics": {
+    "return_1d": -0.3478260869565264,
+    "close": 458.4,
+    "marketCap": 226036685657,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": -4.260651629072687,
+    "return_15d": -0.7147498375568606,
+    "return_1m": -5.083341960865518,
+    "return_ytd": -28.930232558139537,
+    "return_1y": -3.066187354620431,
+    "return_3y": -43.83729478069102,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -4.5000000000000036,
+    "return_2y": -28.841974542067696
+   }
+  },
+  {
+   "id": "C_5853",
+   "type": "CHARACTER",
+   "name": "명품_美아시아매출"
+  },
+  {
+   "id": "A_338",
+   "type": "ASSET",
+   "name": "에르메스",
+   "exposure": {
+    "ticker": "RMS",
+    "exchange": "EURONEXT",
+    "country": "FR"
+   },
+   "metrics": {
+    "return_1d": -0.22158911047800434,
+    "close": 1576,
+    "marketCap": 165073273800,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": -4.107088530574988,
+    "return_15d": -4.077906269020081,
+    "return_1m": -4.165399817573734,
+    "return_ytd": -25.730442978322333,
+    "return_1y": -24.19432419432419,
+    "return_3y": -18.274216967434143,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -3.638031183124424,
+    "return_2y": -24.121328839672607
+   }
+  },
+  {
+   "id": "C_5854",
+   "type": "CHARACTER",
+   "name": "럭셔리_해외매출비중"
+  },
+  {
+   "id": "A_1329",
+   "type": "ASSET",
+   "name": "메르세데스벤츠",
+   "exposure": {
+    "ticker": "MBG",
+    "exchange": "XETRA",
+    "country": "DE"
+   },
+   "metrics": {
+    "return_1d": 1.2984154929577496,
+    "return_3d": -1.6032492518170183,
+    "return_15d": 2.7914247431889194,
+    "return_1m": 2.039459099977825,
+    "return_ytd": -23.37273181288496,
+    "return_1y": -13.347138554216864,
+    "return_3y": -33.13480534572923,
+    "close": 46.025,
+    "marketCap": 44061136170,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -2.251008706731794,
+    "return_2y": -21.005663291573708
+   }
+  },
+  {
+   "id": "C_5855",
+   "type": "CHARACTER",
+   "name": "독일프리미엄차_수출"
+  },
+  {
+   "id": "A_2847",
+   "type": "ASSET",
+   "name": "BMW",
+   "exposure": {
+    "ticker": "BMW",
+    "exchange": "XETRA",
+    "country": "DE"
+   },
+   "metrics": {
+    "return_1d": 1.0891763104152519,
+    "close": 59.4,
+    "marketCap": 35573179693,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": -1.19760479041916,
+    "return_15d": 4.28370786516854,
+    "return_1m": 3.628750872295883,
+    "return_ytd": -36.225037577839814,
+    "return_1y": -33.138226024313376,
+    "return_3y": -40.65934065934066,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -0.635664101706257,
+    "return_2y": -25.78710644677662
+   },
+   "coreBiz": "독일 프리미엄 자동차 — 미·중 매출 비중 커 유로약세 시 환산·가격경쟁력 수혜."
+  },
+  {
+   "id": "C_5856",
+   "type": "CHARACTER",
+   "name": "독일프리미엄차_글로벌"
+  },
+  {
+   "id": "A_2848",
+   "type": "ASSET",
+   "name": "스텔란티스",
+   "exposure": {
+    "ticker": "STLAM",
+    "exchange": "MI",
+    "country": "IT"
+   },
+   "metrics": {
+    "return_1d": 1.9367588932806434,
+    "close": 5.02,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-07-30",
+    "valuationSource": "FMP",
+    "return_3d": 1.5354330708661434,
+    "return_15d": 6.79089026915114,
+    "return_1m": 0.7421875000000133,
+    "return_ytd": -46.934156378600825,
+    "return_1y": -33.530927835051536,
+    "return_3y": -71.16825041922861,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": null,
+    "return_2y": null
+   },
+   "coreBiz": "멀티브랜드 완성차(북미 매출 큼) — 유로약세 시 달러매출 환산 수혜."
+  },
+  {
+   "id": "C_5857",
+   "type": "CHARACTER",
+   "name": "멀티브랜드차_북미매출"
+  },
+  {
+   "id": "A_1041",
+   "type": "ASSET",
+   "name": "에어버스",
+   "exposure": {
+    "ticker": "AIR",
+    "exchange": "Euronext",
+    "country": "EU"
+   },
+   "metrics": {
+    "return_1d": 1.1742602160638826,
+    "close": 215.4,
+    "marketCap": 170484892161,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 1.3647058823529346,
+    "return_15d": 4.537733559815571,
+    "return_1m": 9.931611717872823,
+    "return_ytd": 8.568548387096776,
+    "return_1y": 17.205354227881166,
+    "return_3y": 64.88058787507657,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 0.8426966292134797,
+    "return_2y": 59.95841378286055
+   }
+  },
+  {
+   "id": "C_5858",
+   "type": "CHARACTER",
+   "name": "항공기_달러매출유로비용"
+  },
+  {
+   "id": "A_2849",
+   "type": "ASSET",
+   "name": "사노피",
+   "exposure": {
+    "ticker": "SNY",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.13704888076747634,
+    "close": 43.72,
+    "marketCap": 104980464000,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 0.36730945821854544,
+    "return_15d": 0.8535178777393293,
+    "return_1m": 1.2505789717461857,
+    "return_ytd": -9.781262897234832,
+    "return_1y": -10.848287112561172,
+    "return_3y": -17.942942942942953,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 0.5982512655315242,
+    "return_2y": -18.3261722398655
+   },
+   "coreBiz": "프랑스 제약(유로존) — 해외 매출 비중 큰 제약, 유로약세 환산 수혜."
+  },
+  {
+   "id": "C_5859",
+   "type": "CHARACTER",
+   "name": "유로존제약_해외매출"
+  },
+  {
+   "id": "A_2850",
+   "type": "ASSET",
+   "name": "바이엘",
+   "exposure": {
+    "ticker": "BAYN",
+    "exchange": "XETRA",
+    "country": "DE"
+   },
+   "metrics": {
+    "return_1d": -0.5617977528089901,
+    "close": 47.79,
+    "marketCap": 46950046879,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": -2.3697650663942915,
+    "return_15d": 3.7559704732957,
+    "return_1m": -2.7076547231270287,
+    "return_ytd": 29.127262901918407,
+    "return_1y": 79.4592564776568,
+    "return_3y": -9.334092202618105,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -4.055410560128491,
+    "return_2y": 85.01742160278746
+   },
+   "coreBiz": "독일 제약·농화학 — 해외 달러 매출, 유로약세 수혜."
+  },
+  {
+   "id": "C_5860",
+   "type": "CHARACTER",
+   "name": "제약농화학_해외매출"
+  },
+  {
+   "id": "A_802",
+   "type": "ASSET",
+   "name": "ASML",
+   "exposure": {
+    "ticker": "ASML",
+    "exchange": "NASDAQ",
+    "country": "NL"
+   },
+   "metrics": {
+    "return_1d": -0.20672114291899746,
+    "close": 1844.08,
+    "marketCap": 710741608843,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 2.4841889984327903,
+    "return_15d": 4.950799332988076,
+    "return_1m": 3.8543848978396467,
+    "return_ytd": 72.36647785691588,
+    "return_1y": 144.18108870380425,
+    "return_3y": 176.66041557272524,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 5.921343603352103,
+    "return_2y": 109.6546078810341
+   }
+  },
+  {
+   "id": "C_5861",
+   "type": "CHARACTER",
+   "name": "EUV_달러매출"
+  },
+  {
+   "id": "A_408",
+   "type": "ASSET",
+   "name": "SAP",
+   "exposure": {
+    "ticker": "SAP",
+    "exchange": "NYSE",
+    "country": "DE"
+   },
+   "metrics": {
+    "return_1d": -0.6259556574923608,
+    "close": 207.97,
+    "marketCap": 242333957057,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": -0.8155284242655547,
+    "return_15d": 29.981250000000003,
+    "return_1m": 34.338866998255924,
+    "return_ytd": -14.383928203861506,
+    "return_1y": -25.43472804847442,
+    "return_3y": 49.67254408060455,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 0.8779588668994975,
+    "return_2y": -2.154787108915557
+   }
+  },
+  {
+   "id": "C_5862",
+   "type": "CHARACTER",
+   "name": "유럽SW_글로벌달러매출"
+  },
+  {
+   "id": "A_2851",
+   "type": "ASSET",
+   "name": "루프트한자",
+   "exposure": {
+    "ticker": "LHA",
+    "exchange": "XETRA",
+    "country": "DE"
+   },
+   "metrics": {
+    "return_1d": -0.7326007326007189,
+    "close": 8.128,
+    "marketCap": 9770360042,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": -1.3349514563106735,
+    "return_15d": -7.191780821917792,
+    "return_1m": -10.952902519167573,
+    "return_ytd": -3.3293697978596826,
+    "return_1y": -1.5738498789346078,
+    "return_3y": -6.979405034324937,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -2.5179856115107757,
+    "return_2y": 46.4864864864865
+   },
+   "coreBiz": "유럽 최대 항공 — 유로약세 시 역내 인바운드 관광 수요·달러 운임 수혜."
+  },
+  {
+   "id": "C_5863",
+   "type": "CHARACTER",
+   "name": "유럽항공_인바운드관광"
+  },
+  {
+   "id": "A_2852",
+   "type": "ASSET",
+   "name": "아코르",
+   "exposure": {
+    "ticker": "AC",
+    "exchange": "EURONEXT",
+    "country": "FR"
+   },
+   "metrics": {
+    "return_1d": 0.21477663230238253,
+    "close": 46.66,
+    "marketCap": 11017732480,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 0.47372954349698126,
+    "return_15d": 0.7557762902180798,
+    "return_1m": -0.6811409110259681,
+    "return_ytd": -3.235172127747832,
+    "return_1y": 5.042773525438982,
+    "return_3y": 39.45008965929466,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -0.2991452991452981,
+    "return_2y": 38.21090047393365
+   },
+   "coreBiz": "유럽 최대 호텔 그룹 — 유로약세 시 역내 관광 유입 수혜."
+  },
+  {
+   "id": "C_5864",
+   "type": "CHARACTER",
+   "name": "유럽호텔_역내관광"
+  },
+  {
+   "id": "A_2979",
+   "type": "ASSET",
+   "name": "TIGER 유로스탁스50(합성 H)",
+   "exposure": {
+    "ticker": "195930",
+    "exchange": "KRX",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": 0.08273009307135926,
+    "return_3d": 0.5819995842860193,
+    "return_15d": 5.932574430823112,
+    "return_1m": 4.514038876889859,
+    "return_ytd": 15.434160305343504,
+    "return_1y": 26.42164589383198,
+    "return_3y": null,
+    "close": 24195,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": null,
+    "return_2y": 37.81324953042251
+   }
+  },
+  {
+   "id": "A_2980",
+   "type": "ASSET",
+   "name": "SPDR EURO STOXX 50 ETF",
+   "exposure": {
+    "ticker": "FEZ",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.08328706274289832,
+    "return_3d": 0.3758875121815386,
+    "return_15d": 6.5149948293691695,
+    "return_1m": 6.185567010309256,
+    "return_ytd": 11.973908992079508,
+    "return_1y": 19.075144508670515,
+    "return_3y": 59.301811754308446,
+    "close": 72.1,
+    "marketCap": 4564555756,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 0.33398274422486995,
+    "return_2y": 44.750050190724735
+   }
+  }
+ ],
+ "edges": [
+  {
+   "from": "M_1200",
+   "to": "T_700",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_015105"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_359",
+   "to": "T_700",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_015106"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_216",
+   "to": "T_700",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_015107"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_337",
+   "to": "T_700",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015108"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_337",
+   "to": "C_5853",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015109"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_338",
+   "to": "T_700",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015110"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_338",
+   "to": "C_5854",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015111"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_1329",
+   "to": "T_700",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015112"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_1329",
+   "to": "C_5855",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015113"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2847",
+   "to": "T_700",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015114"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2847",
+   "to": "C_5856",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015115"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2848",
+   "to": "T_700",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015116"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2848",
+   "to": "C_5857",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015117"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_1041",
+   "to": "T_700",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015118"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_1041",
+   "to": "C_5858",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015119"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2849",
+   "to": "T_700",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015120"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2849",
+   "to": "C_5859",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015121"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2850",
+   "to": "T_700",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015122"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2850",
+   "to": "C_5860",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015123"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_802",
+   "to": "T_700",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015124"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_802",
+   "to": "C_5861",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015125"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_408",
+   "to": "T_700",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015126"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_408",
+   "to": "C_5862",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015127"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2851",
+   "to": "T_700",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015128"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2851",
+   "to": "C_5863",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015129"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2852",
+   "to": "T_700",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015130"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2852",
+   "to": "C_5864",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015131"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_337",
+   "to": "A_338",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020511"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "LVMH와 에르메스는 프랑스 럭셔리 시장 경쟁"
+  },
+  {
+   "from": "A_1329",
+   "to": "A_2847",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020512"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "메르세데스벤츠와 BMW는 독일 프리미엄 자동차 시장 경쟁"
+  },
+  {
+   "from": "A_2848",
+   "to": "A_1329",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020513"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "스텔란티스와 메르세데스벤츠는 유럽 자동차 수출 시장 경쟁"
+  },
+  {
+   "from": "A_2849",
+   "to": "A_2850",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020514"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "사노피와 바이엘은 유럽 제약 시장 경쟁"
+  },
+  {
+   "from": "A_802",
+   "to": "A_408",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020515"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "ASML과 SAP는 유럽 대표 기술주 자금 유치 경쟁"
+  },
+  {
+   "from": "A_2851",
+   "to": "A_2852",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_020516"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "루프트한자와 아코르는 항공·호텔 여행 밸류체인 연계"
+  },
+  {
+   "from": "A_2979",
+   "to": "T_700",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020985"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_2980",
+   "to": "T_700",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020986"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "M_1200",
+   "to": "T_700",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_015105"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_359",
+   "to": "T_700",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_015106"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_216",
+   "to": "T_700",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_015107"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_337",
+   "to": "T_700",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015108"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_337",
+   "to": "C_5853",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015109"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_338",
+   "to": "T_700",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015110"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_338",
+   "to": "C_5854",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015111"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_1329",
+   "to": "T_700",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015112"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_1329",
+   "to": "C_5855",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015113"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2847",
+   "to": "T_700",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015114"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2847",
+   "to": "C_5856",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015115"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2848",
+   "to": "T_700",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015116"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2848",
+   "to": "C_5857",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015117"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_1041",
+   "to": "T_700",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015118"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_1041",
+   "to": "C_5858",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015119"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2849",
+   "to": "T_700",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015120"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2849",
+   "to": "C_5859",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015121"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2850",
+   "to": "T_700",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015122"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2850",
+   "to": "C_5860",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015123"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_802",
+   "to": "T_700",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015124"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_802",
+   "to": "C_5861",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015125"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_408",
+   "to": "T_700",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015126"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_408",
+   "to": "C_5862",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015127"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2851",
+   "to": "T_700",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015128"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2851",
+   "to": "C_5863",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015129"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2852",
+   "to": "T_700",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_015130"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2852",
+   "to": "C_5864",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015131"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_337",
+   "to": "A_338",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020511"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "LVMH와 에르메스는 프랑스 럭셔리 시장 경쟁"
+  },
+  {
+   "from": "A_1329",
+   "to": "A_2847",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020512"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "메르세데스벤츠와 BMW는 독일 프리미엄 자동차 시장 경쟁"
+  },
+  {
+   "from": "A_2848",
+   "to": "A_1329",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020513"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "스텔란티스와 메르세데스벤츠는 유럽 자동차 수출 시장 경쟁"
+  },
+  {
+   "from": "A_2849",
+   "to": "A_2850",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020514"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "사노피와 바이엘은 유럽 제약 시장 경쟁"
+  },
+  {
+   "from": "A_802",
+   "to": "A_408",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020515"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "ASML과 SAP는 유럽 대표 기술주 자금 유치 경쟁"
+  },
+  {
+   "from": "A_2851",
+   "to": "A_2852",
+   "type": "PARTNERS",
+   "evidence": [
+    "EV_020516"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "루프트한자와 아코르는 항공·호텔 여행 밸류체인 연계"
+  },
+  {
+   "from": "A_2979",
+   "to": "T_700",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020985"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_2980",
+   "to": "T_700",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020986"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ]
 }

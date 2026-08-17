@@ -1,1755 +1,1755 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_027",
-  "themeName": "차이나 AI LLM",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-26T00:00:00+09:00",
-    "notes": "g27 누적 import 기반 T_027 freeze",
-    "sources": [],
-    "description": "중국 AI LLM 생태계의 풀스택 구조 — 빅3 클라우드(Baidu·Alibaba·Tencent) + AI 가속기 반도체 5사(Cambricon·Moore Threads·MetaX·Biren·Enflame) + AI 서버 ODM(Inspur) + 순수 LLM 플랫폼(Zhipu·DeepSeek). 정부 AI 진흥 + 미국 칩 수출 통제 + 내수 LLM 채택률 + 수출 시도가 핵심 동인.",
-    "provenanceSeed": "T_027 공개사실 시드(2026-06-29) — evidence_ssot 참조",
-    "changelog": [
-      {
-        "date": "2026-08-04",
-        "kind": "보강",
-        "title": "2궤도 관계 엣지 추가",
-        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 25건 백필(리서치 기반)."
-      },
-      {
-        "date": "2026-07-26",
-        "kind": "수정",
-        "title": "자산 CHR 백필",
-        "detail": "CHR 미정의 자산에 CHARACTER·HAS_TRAIT 추가."
-      },
-      {
-        "date": "2026-08-05",
-        "kind": "관계",
-        "title": "EXPOSED_TO ETF 연결",
-        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-      }
-    ]
-  },
-  "nodes": [
-    {
-      "id": "T_027",
-      "type": "THEME",
-      "name": "차이나 AI LLM"
-    },
-    {
-      "id": "A_049",
-      "type": "ASSET",
-      "name": "바이두",
-      "exposure": {
-        "ticker": "BIDU",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.9648452426442522,
-        "return_3d": -2.1427222956390324,
-        "return_15d": -1.5853426998291287,
-        "return_1m": -5.522646495944594,
-        "return_ytd": -20.656666156436554,
-        "return_1y": 16.837597205003952,
-        "return_3y": -24.652954429827744,
-        "close": 103.67,
-        "marketCap": 35260735424,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "pe_ttm": null,
-        "return_5d": -5.50542338893446,
-        "return_2y": 23.431360876294804
-      }
-    },
-    {
-      "id": "A_051",
-      "type": "ASSET",
-      "name": "알리바바",
-      "exposure": {
-        "ticker": "BABA",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 1.3506876227897813,
-        "return_3d": -3.159953070003907,
-        "return_15d": 10.406634563937933,
-        "return_1m": 10.229700854700873,
-        "return_ytd": -15.534179287760953,
-        "return_1y": 1.2512266928361049,
-        "return_3y": 32.47378557671732,
-        "close": 123.74,
-        "marketCap": 296588955758,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "pe_ttm": null,
-        "return_5d": -3.5822755237131076,
-        "return_2y": 55.794639486598726
-      }
-    },
-    {
-      "id": "A_052",
-      "type": "ASSET",
-      "name": "텐센트",
-      "exposure": {
-        "ticker": "TCEHY",
-        "exchange": "OTC",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 2.2254387552017363,
-        "return_3d": -5.0739247311827995,
-        "return_15d": 1.6552716804606016,
-        "return_1m": -3.1539252656839323,
-        "return_ytd": -26.192031352057477,
-        "return_1y": -24.455141061639264,
-        "return_3y": 33.7594696969697,
-        "close": 56.47,
-        "marketCap": 508875304487,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "pe_ttm": null,
-        "return_5d": -8.753229974160204,
-        "return_2y": 19.349387410223894
-      }
-    },
-    {
-      "id": "A_226",
-      "type": "ASSET",
-      "name": "캠브리콘",
-      "exposure": {
-        "ticker": "688256",
-        "exchange": "SSE",
-        "country": "CN"
-      },
-      "metrics": {
-        "return_1d": -1.1307100859339614,
-        "return_3d": 0.21638670872148325,
-        "return_15d": -10.775510204081629,
-        "return_1m": -22.537207654145995,
-        "return_ytd": 20.140255229343683,
-        "return_1y": 71.60980358292382,
-        "return_3y": 921.6862965040194,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "close": 1093,
-        "marketCap": 686664643338,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_5d": -8.9113531622678,
-        "return_2y": 573.8594327990137
-      }
-    },
-    {
-      "id": "A_227",
-      "type": "ASSET",
-      "name": "모어스레드",
-      "exposure": {
-        "ticker": "688795",
-        "exchange": "SSE",
-        "country": "CN"
-      },
-      "metrics": {
-        "return_1d": null,
-        "return_3d": null,
-        "return_15d": null,
-        "return_1m": null,
-        "return_ytd": null,
-        "return_1y": null,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "close": null,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": null,
-        "valuationSource": null,
-        "return_5d": null,
-        "return_2y": null
-      }
-    },
-    {
-      "id": "A_228",
-      "type": "ASSET",
-      "name": "메타X",
-      "exposure": {
-        "ticker": "688802",
-        "exchange": "SSE",
-        "country": "CN"
-      },
-      "metrics": {
-        "return_1d": 0.1338688085676054,
-        "return_3d": 6.419303437286583,
-        "return_15d": -8.959238568177119,
-        "return_1m": -23.280477548257405,
-        "return_ytd": 28.943285640406824,
-        "return_1y": null,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "close": 748,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": null,
-        "valuationSource": null,
-        "return_5d": 2.5950512975256412,
-        "return_2y": null
-      }
-    },
-    {
-      "id": "A_229",
-      "type": "ASSET",
-      "name": "비런테크",
-      "exposure": {
-        "ticker": "",
-        "exchange": "",
-        "country": ""
-      },
-      "metrics": {
-        "return_1d": -4.607329842931951,
-        "return_3d": -2.4625267665952966,
-        "return_15d": -0.6001091107474044,
-        "return_1m": -13.771888310459069,
-        "return_ytd": 5.7457922228670855,
-        "return_1y": null,
-        "return_3y": null,
-        "close": null,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": null,
-        "valuationSource": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -8.945527236381823,
-        "return_2y": null
-      },
-      "coreBiz": "중국 AI 칩"
-    },
-    {
-      "id": "A_230",
-      "type": "ASSET",
-      "name": "엔플레임",
-      "exposure": {
-        "ticker": "",
-        "exchange": "",
-        "country": ""
-      },
-      "metrics": {
-        "return_1d": null,
-        "return_3d": null,
-        "return_15d": null,
-        "return_1m": null,
-        "return_ytd": null,
-        "return_1y": null,
-        "return_3y": null,
-        "close": null,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": null,
-        "valuationSource": null,
-        "returnsAsOf": null,
-        "returnsSource": null,
-        "return_5d": null,
-        "return_2y": null
-      },
-      "coreBiz": "중국 AI 칩"
-    },
-    {
-      "id": "A_231",
-      "type": "ASSET",
-      "name": "인스퍼",
-      "exposure": {
-        "ticker": "000977",
-        "exchange": "SZSE",
-        "country": "CN"
-      },
-      "metrics": {
-        "return_1d": -0.8306065945129615,
-        "return_3d": 4.912794567966983,
-        "return_15d": -7.6309928496073205,
-        "return_1m": -7.2395526780459125,
-        "return_ytd": 18.318318318318315,
-        "return_1y": 34.63181274560054,
-        "return_3y": 71.9773024879965,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "close": 78.8,
-        "marketCap": 115715960414,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_5d": 1.038594691627126,
-        "return_2y": 140.17067967083204
-      }
-    },
-    {
-      "id": "BF_408",
-      "type": "BUSINESS_FIELD",
-      "name": "중국 AI LLM 플랫폼"
-    },
-    {
-      "id": "BF_409",
-      "type": "BUSINESS_FIELD",
-      "name": "중국 AI 가속기 반도체"
-    },
-    {
-      "id": "BF_410",
-      "type": "BUSINESS_FIELD",
-      "name": "중국 AI 클라우드 인프라"
-    },
-    {
-      "id": "A_1653",
-      "type": "ASSET",
-      "name": "즈푸AI",
-      "exposure": {
-        "ticker": "2513",
-        "exchange": "HKEX",
-        "country": "CN",
-        "business_desc": "Zhipu AI — 중국 LLM 스타트업 (GLM 시리즈), 칭화대 출신. 2026 HKEX 상장.",
-        "theme_role": "중국 AI LLM 플랫폼 핵심 (오픈소스 GLM 강세)",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -3.568716780561887,
-        "close": 1270,
-        "marketCap": 566220737000,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 6.5436241610738355,
-        "return_15d": 2.667744543249806,
-        "return_1m": -20.625000000000004,
-        "return_ytd": 865.7794676806084,
-        "return_1y": null,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 1.9261637239165408,
-        "return_2y": null
-      }
-    },
-    {
-      "id": "A_1654",
-      "type": "ASSET",
-      "name": "딥시크(비)",
-      "exposure": {
-        "ticker": "",
-        "exchange": "",
-        "country": "CN",
-        "business_desc": "DeepSeek — 중국 LLM 스타트업 (DeepSeek-V3·R1), High-Flyer 캐피탈 출자",
-        "theme_role": "중국 AI LLM 글로벌 도전자 (저비용 추론 모델)",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": null,
-        "close": null,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": null,
-        "valuationSource": null,
-        "return_3d": null,
-        "return_15d": null,
-        "return_1m": null,
-        "return_ytd": null,
-        "return_1y": null,
-        "return_3y": null,
-        "returnsAsOf": null,
-        "returnsSource": null,
-        "return_5d": null,
-        "return_2y": null
-      },
-      "coreBiz": "오픈소스 LLM"
-    },
-    {
-      "id": "BF_142",
-      "type": "BUSINESS_FIELD",
-      "name": "AI서버제조(ODM/랙통합)"
-    },
-    {
-      "id": "M_218",
-      "type": "MACRO",
-      "name": "반도체수출통제"
-    },
-    {
-      "id": "M_268",
-      "type": "MACRO",
-      "name": "중국기술자립화"
-    },
-    {
-      "id": "C_5265",
-      "type": "CHARACTER",
-      "name": "어니봇·쿤룬AI칩"
-    },
-    {
-      "id": "C_5266",
-      "type": "CHARACTER",
-      "name": "통이치엔원LLM"
-    },
-    {
-      "id": "C_5267",
-      "type": "CHARACTER",
-      "name": "훈위안LLM"
-    },
-    {
-      "id": "C_5268",
-      "type": "CHARACTER",
-      "name": "중국AI가속칩"
-    },
-    {
-      "id": "C_5269",
-      "type": "CHARACTER",
-      "name": "중국GPU"
-    },
-    {
-      "id": "C_5270",
-      "type": "CHARACTER",
-      "name": "중국GPU"
-    },
-    {
-      "id": "C_5271",
-      "type": "CHARACTER",
-      "name": "중국AI칩"
-    },
-    {
-      "id": "C_5272",
-      "type": "CHARACTER",
-      "name": "중국AI칩"
-    },
-    {
-      "id": "C_5273",
-      "type": "CHARACTER",
-      "name": "중국AI서버1위"
-    },
-    {
-      "id": "C_5274",
-      "type": "CHARACTER",
-      "name": "GLM_LLM"
-    },
-    {
-      "id": "C_5275",
-      "type": "CHARACTER",
-      "name": "오픈소스LLM"
-    },
-    {
-      "id": "A_872",
-      "type": "ASSET",
-      "name": "KWEB",
-      "exposure": {
-        "ticker": "KWEB",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.5959031657355673,
-        "close": 27.01,
-        "marketCap": 5347071519,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": -3.8447846208615077,
-        "return_15d": 2.7386839102320426,
-        "return_1m": 3.1703590527119907,
-        "return_ytd": -20.675477239353878,
-        "return_1y": -26.242490442381204,
-        "return_3y": -5.921281783350752,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -5.757152826238654,
-        "return_2y": 3.8846153846153975
-      }
-    }
+ "schemaVersion": "v5",
+ "themeId": "T_027",
+ "themeName": "차이나 AI LLM",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
   ],
-  "links": [
-    {
-      "from": "A_049",
-      "to": "T_027",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000871"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_051",
-      "to": "T_027",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000872"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_052",
-      "to": "T_027",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000873"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_226",
-      "to": "T_027",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000874"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_227",
-      "to": "T_027",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000875"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_228",
-      "to": "T_027",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000876"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_229",
-      "to": "T_027",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000877"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_230",
-      "to": "T_027",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000878"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_231",
-      "to": "T_027",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000879"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1653",
-      "to": "T_027",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000880"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_1654",
-      "to": "T_027",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000881"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_049",
-      "to": "BF_410",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000882"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_051",
-      "to": "BF_410",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000883"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_052",
-      "to": "BF_410",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000884"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_226",
-      "to": "BF_409",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000885"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_227",
-      "to": "BF_409",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000886"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_228",
-      "to": "BF_409",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000887"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_229",
-      "to": "BF_409",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000888"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_230",
-      "to": "BF_409",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000889"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_231",
-      "to": "BF_142",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000890"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1653",
-      "to": "BF_408",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000891"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1654",
-      "to": "BF_408",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000892"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "M_218",
-      "to": "T_027",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_000893"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "M_268",
-      "to": "T_027",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_000894"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_049",
-      "to": "C_5265",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014208"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_051",
-      "to": "C_5266",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014209"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_052",
-      "to": "C_5267",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014210"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_226",
-      "to": "C_5268",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014211"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_227",
-      "to": "C_5269",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014212"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_228",
-      "to": "C_5270",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014213"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_229",
-      "to": "C_5271",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014214"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_230",
-      "to": "C_5272",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014215"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_231",
-      "to": "C_5273",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014216"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1653",
-      "to": "C_5274",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014217"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1654",
-      "to": "C_5275",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014218"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_049",
-      "to": "A_051",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018857"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "바이두 어니(Ernie)와 알리바바 큐원(Qwen)은 중국 상용 LLM·클라우드 AI 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_049",
-      "to": "A_052",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018858"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "바이두 어니와 텐센트 훈위안(Hunyuan)은 중국 파운데이션 모델 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_049",
-      "to": "A_1653",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018859"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "바이두 어니와 즈푸AI GLM은 중국 대형 LLM 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_049",
-      "to": "A_1654",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018860"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "바이두 어니와 딥시크 오픈소스 모델은 중국 LLM 성능·점유율 경쟁 관계다."
-    },
-    {
-      "from": "A_051",
-      "to": "A_052",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018861"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "알리바바 큐원과 텐센트 훈위안은 중국 클라우드·LLM 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_051",
-      "to": "A_1653",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018862"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "알리바바 큐원과 즈푸AI GLM은 중국 상용 LLM 시장에서 경쟁한다(알리바바는 동시에 즈푸 투자자)."
-    },
-    {
-      "from": "A_051",
-      "to": "A_1654",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018863"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "알리바바 큐원과 딥시크는 중국 오픈소스·상용 LLM 시장에서 경쟁한다."
-    },
-    {
-      "from": "A_052",
-      "to": "A_1653",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018864"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "텐센트 훈위안과 즈푸AI GLM은 중국 LLM 시장에서 경쟁한다(텐센트는 동시에 즈푸 투자자)."
-    },
-    {
-      "from": "A_052",
-      "to": "A_1654",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018865"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "텐센트 훈위안과 딥시크는 중국 LLM 시장에서 경쟁한다."
-    },
-    {
-      "from": "A_1653",
-      "to": "A_1654",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018866"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "즈푸AI GLM과 딥시크는 중국 대표 스타트업 LLM으로 직접 경쟁한다."
-    },
-    {
-      "from": "A_226",
-      "to": "A_227",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018867"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "캠브리콘과 모어스레드는 중국 국산 AI 칩·GPU 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_226",
-      "to": "A_228",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018868"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "캠브리콘과 메타X는 중국 AI 가속기 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_226",
-      "to": "A_229",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018869"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "캠브리콘과 비런테크는 중국 AI 훈련·추론 칩 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_226",
-      "to": "A_230",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018870"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "캠브리콘과 엔플레임은 중국 클라우드 AI 칩 시장의 대표 경쟁사다."
-    },
-    {
-      "from": "A_227",
-      "to": "A_228",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018871"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "모어스레드와 메타X는 중국 국산 GPU 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_227",
-      "to": "A_229",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018872"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "모어스레드와 비런테크는 중국 AI GPU 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_227",
-      "to": "A_230",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018873"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "모어스레드와 엔플레임은 중국 국산 AI 칩 시장에서 경쟁한다."
-    },
-    {
-      "from": "A_228",
-      "to": "A_229",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018874"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "메타X와 비런테크는 중국 AI GPU 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_228",
-      "to": "A_230",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018875"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "메타X와 엔플레임은 중국 AI 가속기 시장에서 경쟁한다."
-    },
-    {
-      "from": "A_229",
-      "to": "A_230",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018876"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "비런테크와 엔플레임은 중국 AI 훈련 칩 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_052",
-      "to": "A_230",
-      "type": "INVESTS",
-      "evidence": [
-        "EV_018877"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "텐센트는 엔플레임 초기부터 5차례 총 51.4억 위안을 투자해 약 20% 지분을 보유한 최대 투자자다."
-    },
-    {
-      "from": "A_052",
-      "to": "A_227",
-      "type": "INVESTS",
-      "evidence": [
-        "EV_018878"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "텐센트는 2021년 11월 모어스레드 시리즈A 라운드에 참여한 주요 투자자다."
-    },
-    {
-      "from": "A_052",
-      "to": "A_1653",
-      "type": "INVESTS",
-      "evidence": [
-        "EV_018879"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "텐센트는 2023년 3.42억 달러 라운드 등 즈푸AI에 반복 지분투자한 주요 백커다."
-    },
-    {
-      "from": "A_051",
-      "to": "A_1653",
-      "type": "INVESTS",
-      "evidence": [
-        "EV_018880"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "알리바바는 2023년·2025년 라운드에 걸쳐 즈푸AI에 지분투자한 주요 백커다."
-    },
-    {
-      "from": "A_230",
-      "to": "A_052",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_018881"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "엔플레임은 AI 칩을 텐센트에 공급하며 텐센트 매출 비중이 작년 84%에 달하는 핵심 고객 관계다."
-    },
-    {
-      "from": "A_872",
-      "to": "T_027",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020564"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ],
-  "edges": [
-    {
-      "from": "A_049",
-      "to": "T_027",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000871"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_051",
-      "to": "T_027",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000872"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_052",
-      "to": "T_027",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000873"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_226",
-      "to": "T_027",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000874"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_227",
-      "to": "T_027",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000875"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_228",
-      "to": "T_027",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000876"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_229",
-      "to": "T_027",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000877"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_230",
-      "to": "T_027",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000878"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_231",
-      "to": "T_027",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000879"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1653",
-      "to": "T_027",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000880"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_1654",
-      "to": "T_027",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000881"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_049",
-      "to": "BF_410",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000882"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_051",
-      "to": "BF_410",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000883"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_052",
-      "to": "BF_410",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000884"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_226",
-      "to": "BF_409",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000885"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_227",
-      "to": "BF_409",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000886"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_228",
-      "to": "BF_409",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000887"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_229",
-      "to": "BF_409",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000888"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_230",
-      "to": "BF_409",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000889"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_231",
-      "to": "BF_142",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000890"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1653",
-      "to": "BF_408",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000891"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1654",
-      "to": "BF_408",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000892"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "M_218",
-      "to": "T_027",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_000893"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "M_268",
-      "to": "T_027",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_000894"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_049",
-      "to": "C_5265",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014208"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_051",
-      "to": "C_5266",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014209"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_052",
-      "to": "C_5267",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014210"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_226",
-      "to": "C_5268",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014211"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_227",
-      "to": "C_5269",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014212"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_228",
-      "to": "C_5270",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014213"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_229",
-      "to": "C_5271",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014214"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_230",
-      "to": "C_5272",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014215"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_231",
-      "to": "C_5273",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014216"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1653",
-      "to": "C_5274",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014217"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1654",
-      "to": "C_5275",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_014218"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_049",
-      "to": "A_051",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018857"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "바이두 어니(Ernie)와 알리바바 큐원(Qwen)은 중국 상용 LLM·클라우드 AI 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_049",
-      "to": "A_052",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018858"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "바이두 어니와 텐센트 훈위안(Hunyuan)은 중국 파운데이션 모델 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_049",
-      "to": "A_1653",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018859"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "바이두 어니와 즈푸AI GLM은 중국 대형 LLM 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_049",
-      "to": "A_1654",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018860"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "바이두 어니와 딥시크 오픈소스 모델은 중국 LLM 성능·점유율 경쟁 관계다."
-    },
-    {
-      "from": "A_051",
-      "to": "A_052",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018861"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "알리바바 큐원과 텐센트 훈위안은 중국 클라우드·LLM 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_051",
-      "to": "A_1653",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018862"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "알리바바 큐원과 즈푸AI GLM은 중국 상용 LLM 시장에서 경쟁한다(알리바바는 동시에 즈푸 투자자)."
-    },
-    {
-      "from": "A_051",
-      "to": "A_1654",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018863"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "알리바바 큐원과 딥시크는 중국 오픈소스·상용 LLM 시장에서 경쟁한다."
-    },
-    {
-      "from": "A_052",
-      "to": "A_1653",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018864"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "텐센트 훈위안과 즈푸AI GLM은 중국 LLM 시장에서 경쟁한다(텐센트는 동시에 즈푸 투자자)."
-    },
-    {
-      "from": "A_052",
-      "to": "A_1654",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018865"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "텐센트 훈위안과 딥시크는 중국 LLM 시장에서 경쟁한다."
-    },
-    {
-      "from": "A_1653",
-      "to": "A_1654",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018866"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "즈푸AI GLM과 딥시크는 중국 대표 스타트업 LLM으로 직접 경쟁한다."
-    },
-    {
-      "from": "A_226",
-      "to": "A_227",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018867"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "캠브리콘과 모어스레드는 중국 국산 AI 칩·GPU 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_226",
-      "to": "A_228",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018868"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "캠브리콘과 메타X는 중국 AI 가속기 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_226",
-      "to": "A_229",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018869"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "캠브리콘과 비런테크는 중국 AI 훈련·추론 칩 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_226",
-      "to": "A_230",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018870"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "캠브리콘과 엔플레임은 중국 클라우드 AI 칩 시장의 대표 경쟁사다."
-    },
-    {
-      "from": "A_227",
-      "to": "A_228",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018871"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "모어스레드와 메타X는 중국 국산 GPU 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_227",
-      "to": "A_229",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018872"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "모어스레드와 비런테크는 중국 AI GPU 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_227",
-      "to": "A_230",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018873"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "모어스레드와 엔플레임은 중국 국산 AI 칩 시장에서 경쟁한다."
-    },
-    {
-      "from": "A_228",
-      "to": "A_229",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018874"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "메타X와 비런테크는 중국 AI GPU 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_228",
-      "to": "A_230",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018875"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "메타X와 엔플레임은 중국 AI 가속기 시장에서 경쟁한다."
-    },
-    {
-      "from": "A_229",
-      "to": "A_230",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_018876"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "비런테크와 엔플레임은 중국 AI 훈련 칩 시장에서 직접 경쟁한다."
-    },
-    {
-      "from": "A_052",
-      "to": "A_230",
-      "type": "INVESTS",
-      "evidence": [
-        "EV_018877"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "텐센트는 엔플레임 초기부터 5차례 총 51.4억 위안을 투자해 약 20% 지분을 보유한 최대 투자자다."
-    },
-    {
-      "from": "A_052",
-      "to": "A_227",
-      "type": "INVESTS",
-      "evidence": [
-        "EV_018878"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "텐센트는 2021년 11월 모어스레드 시리즈A 라운드에 참여한 주요 투자자다."
-    },
-    {
-      "from": "A_052",
-      "to": "A_1653",
-      "type": "INVESTS",
-      "evidence": [
-        "EV_018879"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "텐센트는 2023년 3.42억 달러 라운드 등 즈푸AI에 반복 지분투자한 주요 백커다."
-    },
-    {
-      "from": "A_051",
-      "to": "A_1653",
-      "type": "INVESTS",
-      "evidence": [
-        "EV_018880"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "알리바바는 2023년·2025년 라운드에 걸쳐 즈푸AI에 지분투자한 주요 백커다."
-    },
-    {
-      "from": "A_230",
-      "to": "A_052",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_018881"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "엔플레임은 AI 칩을 텐센트에 공급하며 텐센트 매출 비중이 작년 84%에 달하는 핵심 고객 관계다."
-    },
-    {
-      "from": "A_872",
-      "to": "T_027",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020564"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
+  "dataAsOf": "2026-07-26T00:00:00+09:00",
+  "notes": "g27 누적 import 기반 T_027 freeze",
+  "sources": [],
+  "description": "• 정부 AI 진흥 + 미국 칩 수출 통제 + 내수 LLM 채택률 + 수출 시도가 핵심 동인\n• 동인 반도체수출통제·중국기술자립화\n• 대표주 바이두(어니봇)·알리바바(통이치엔원LLM)·텐센트(훈위안LLM)\n• 밸류체인 중국 AI LLM 플랫폼·중국 AI 가속기 반도체·중국 AI 클라우드 인프라·AI서버제조(ODM/랙통합)\n• ETF KWEB",
+  "provenanceSeed": "T_027 공개사실 시드(2026-06-29) — evidence_ssot 참조",
+  "changelog": [
+   {
+    "date": "2026-08-04",
+    "kind": "보강",
+    "title": "2궤도 관계 엣지 추가",
+    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 25건 백필(리서치 기반)."
+   },
+   {
+    "date": "2026-07-26",
+    "kind": "수정",
+    "title": "자산 CHR 백필",
+    "detail": "CHR 미정의 자산에 CHARACTER·HAS_TRAIT 추가."
+   },
+   {
+    "date": "2026-08-05",
+    "kind": "관계",
+    "title": "EXPOSED_TO ETF 연결",
+    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+   }
   ]
+ },
+ "nodes": [
+  {
+   "id": "T_027",
+   "type": "THEME",
+   "name": "차이나 AI LLM"
+  },
+  {
+   "id": "A_049",
+   "type": "ASSET",
+   "name": "바이두",
+   "exposure": {
+    "ticker": "BIDU",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.9648452426442522,
+    "return_3d": -2.1427222956390324,
+    "return_15d": -1.5853426998291287,
+    "return_1m": -5.522646495944594,
+    "return_ytd": -20.656666156436554,
+    "return_1y": 16.837597205003952,
+    "return_3y": -24.652954429827744,
+    "close": 103.67,
+    "marketCap": 35260735424,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "pe_ttm": null,
+    "return_5d": -5.50542338893446,
+    "return_2y": 23.431360876294804
+   }
+  },
+  {
+   "id": "A_051",
+   "type": "ASSET",
+   "name": "알리바바",
+   "exposure": {
+    "ticker": "BABA",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 1.3506876227897813,
+    "return_3d": -3.159953070003907,
+    "return_15d": 10.406634563937933,
+    "return_1m": 10.229700854700873,
+    "return_ytd": -15.534179287760953,
+    "return_1y": 1.2512266928361049,
+    "return_3y": 32.47378557671732,
+    "close": 123.74,
+    "marketCap": 296588955758,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "pe_ttm": null,
+    "return_5d": -3.5822755237131076,
+    "return_2y": 55.794639486598726
+   }
+  },
+  {
+   "id": "A_052",
+   "type": "ASSET",
+   "name": "텐센트",
+   "exposure": {
+    "ticker": "TCEHY",
+    "exchange": "OTC",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 2.2254387552017363,
+    "return_3d": -5.0739247311827995,
+    "return_15d": 1.6552716804606016,
+    "return_1m": -3.1539252656839323,
+    "return_ytd": -26.192031352057477,
+    "return_1y": -24.455141061639264,
+    "return_3y": 33.7594696969697,
+    "close": 56.47,
+    "marketCap": 508875304487,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "pe_ttm": null,
+    "return_5d": -8.753229974160204,
+    "return_2y": 19.349387410223894
+   }
+  },
+  {
+   "id": "A_226",
+   "type": "ASSET",
+   "name": "캠브리콘",
+   "exposure": {
+    "ticker": "688256",
+    "exchange": "SSE",
+    "country": "CN"
+   },
+   "metrics": {
+    "return_1d": -1.1307100859339614,
+    "return_3d": 0.21638670872148325,
+    "return_15d": -10.775510204081629,
+    "return_1m": -22.537207654145995,
+    "return_ytd": 20.140255229343683,
+    "return_1y": 71.60980358292382,
+    "return_3y": 921.6862965040194,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "close": 1093,
+    "marketCap": 686664643338,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_5d": -8.9113531622678,
+    "return_2y": 573.8594327990137
+   }
+  },
+  {
+   "id": "A_227",
+   "type": "ASSET",
+   "name": "모어스레드",
+   "exposure": {
+    "ticker": "688795",
+    "exchange": "SSE",
+    "country": "CN"
+   },
+   "metrics": {
+    "return_1d": null,
+    "return_3d": null,
+    "return_15d": null,
+    "return_1m": null,
+    "return_ytd": null,
+    "return_1y": null,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "close": null,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": null,
+    "valuationSource": null,
+    "return_5d": null,
+    "return_2y": null
+   }
+  },
+  {
+   "id": "A_228",
+   "type": "ASSET",
+   "name": "메타X",
+   "exposure": {
+    "ticker": "688802",
+    "exchange": "SSE",
+    "country": "CN"
+   },
+   "metrics": {
+    "return_1d": 0.1338688085676054,
+    "return_3d": 6.419303437286583,
+    "return_15d": -8.959238568177119,
+    "return_1m": -23.280477548257405,
+    "return_ytd": 28.943285640406824,
+    "return_1y": null,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "close": 748,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": null,
+    "valuationSource": null,
+    "return_5d": 2.5950512975256412,
+    "return_2y": null
+   }
+  },
+  {
+   "id": "A_229",
+   "type": "ASSET",
+   "name": "비런테크",
+   "exposure": {
+    "ticker": "",
+    "exchange": "",
+    "country": ""
+   },
+   "metrics": {
+    "return_1d": -4.607329842931951,
+    "return_3d": -2.4625267665952966,
+    "return_15d": -0.6001091107474044,
+    "return_1m": -13.771888310459069,
+    "return_ytd": 5.7457922228670855,
+    "return_1y": null,
+    "return_3y": null,
+    "close": null,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": null,
+    "valuationSource": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -8.945527236381823,
+    "return_2y": null
+   },
+   "coreBiz": "중국 AI 칩"
+  },
+  {
+   "id": "A_230",
+   "type": "ASSET",
+   "name": "엔플레임",
+   "exposure": {
+    "ticker": "",
+    "exchange": "",
+    "country": ""
+   },
+   "metrics": {
+    "return_1d": null,
+    "return_3d": null,
+    "return_15d": null,
+    "return_1m": null,
+    "return_ytd": null,
+    "return_1y": null,
+    "return_3y": null,
+    "close": null,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": null,
+    "valuationSource": null,
+    "returnsAsOf": null,
+    "returnsSource": null,
+    "return_5d": null,
+    "return_2y": null
+   },
+   "coreBiz": "중국 AI 칩"
+  },
+  {
+   "id": "A_231",
+   "type": "ASSET",
+   "name": "인스퍼",
+   "exposure": {
+    "ticker": "000977",
+    "exchange": "SZSE",
+    "country": "CN"
+   },
+   "metrics": {
+    "return_1d": -0.8306065945129615,
+    "return_3d": 4.912794567966983,
+    "return_15d": -7.6309928496073205,
+    "return_1m": -7.2395526780459125,
+    "return_ytd": 18.318318318318315,
+    "return_1y": 34.63181274560054,
+    "return_3y": 71.9773024879965,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "close": 78.8,
+    "marketCap": 115715960414,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_5d": 1.038594691627126,
+    "return_2y": 140.17067967083204
+   }
+  },
+  {
+   "id": "BF_408",
+   "type": "BUSINESS_FIELD",
+   "name": "중국 AI LLM 플랫폼"
+  },
+  {
+   "id": "BF_409",
+   "type": "BUSINESS_FIELD",
+   "name": "중국 AI 가속기 반도체"
+  },
+  {
+   "id": "BF_410",
+   "type": "BUSINESS_FIELD",
+   "name": "중국 AI 클라우드 인프라"
+  },
+  {
+   "id": "A_1653",
+   "type": "ASSET",
+   "name": "즈푸AI",
+   "exposure": {
+    "ticker": "2513",
+    "exchange": "HKEX",
+    "country": "CN",
+    "business_desc": "Zhipu AI — 중국 LLM 스타트업 (GLM 시리즈), 칭화대 출신. 2026 HKEX 상장.",
+    "theme_role": "중국 AI LLM 플랫폼 핵심 (오픈소스 GLM 강세)",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -3.568716780561887,
+    "close": 1270,
+    "marketCap": 566220737000,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 6.5436241610738355,
+    "return_15d": 2.667744543249806,
+    "return_1m": -20.625000000000004,
+    "return_ytd": 865.7794676806084,
+    "return_1y": null,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 1.9261637239165408,
+    "return_2y": null
+   }
+  },
+  {
+   "id": "A_1654",
+   "type": "ASSET",
+   "name": "딥시크(비)",
+   "exposure": {
+    "ticker": "",
+    "exchange": "",
+    "country": "CN",
+    "business_desc": "DeepSeek — 중국 LLM 스타트업 (DeepSeek-V3·R1), High-Flyer 캐피탈 출자",
+    "theme_role": "중국 AI LLM 글로벌 도전자 (저비용 추론 모델)",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": null,
+    "close": null,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": null,
+    "valuationSource": null,
+    "return_3d": null,
+    "return_15d": null,
+    "return_1m": null,
+    "return_ytd": null,
+    "return_1y": null,
+    "return_3y": null,
+    "returnsAsOf": null,
+    "returnsSource": null,
+    "return_5d": null,
+    "return_2y": null
+   },
+   "coreBiz": "오픈소스 LLM"
+  },
+  {
+   "id": "BF_142",
+   "type": "BUSINESS_FIELD",
+   "name": "AI서버제조(ODM/랙통합)"
+  },
+  {
+   "id": "M_218",
+   "type": "MACRO",
+   "name": "반도체수출통제"
+  },
+  {
+   "id": "M_268",
+   "type": "MACRO",
+   "name": "중국기술자립화"
+  },
+  {
+   "id": "C_5265",
+   "type": "CHARACTER",
+   "name": "어니봇·쿤룬AI칩"
+  },
+  {
+   "id": "C_5266",
+   "type": "CHARACTER",
+   "name": "통이치엔원LLM"
+  },
+  {
+   "id": "C_5267",
+   "type": "CHARACTER",
+   "name": "훈위안LLM"
+  },
+  {
+   "id": "C_5268",
+   "type": "CHARACTER",
+   "name": "중국AI가속칩"
+  },
+  {
+   "id": "C_5269",
+   "type": "CHARACTER",
+   "name": "중국GPU"
+  },
+  {
+   "id": "C_5270",
+   "type": "CHARACTER",
+   "name": "중국GPU"
+  },
+  {
+   "id": "C_5271",
+   "type": "CHARACTER",
+   "name": "중국AI칩"
+  },
+  {
+   "id": "C_5272",
+   "type": "CHARACTER",
+   "name": "중국AI칩"
+  },
+  {
+   "id": "C_5273",
+   "type": "CHARACTER",
+   "name": "중국AI서버1위"
+  },
+  {
+   "id": "C_5274",
+   "type": "CHARACTER",
+   "name": "GLM_LLM"
+  },
+  {
+   "id": "C_5275",
+   "type": "CHARACTER",
+   "name": "오픈소스LLM"
+  },
+  {
+   "id": "A_872",
+   "type": "ASSET",
+   "name": "KWEB",
+   "exposure": {
+    "ticker": "KWEB",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.5959031657355673,
+    "close": 27.01,
+    "marketCap": 5347071519,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": -3.8447846208615077,
+    "return_15d": 2.7386839102320426,
+    "return_1m": 3.1703590527119907,
+    "return_ytd": -20.675477239353878,
+    "return_1y": -26.242490442381204,
+    "return_3y": -5.921281783350752,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -5.757152826238654,
+    "return_2y": 3.8846153846153975
+   }
+  }
+ ],
+ "links": [
+  {
+   "from": "A_049",
+   "to": "T_027",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000871"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_051",
+   "to": "T_027",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000872"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_052",
+   "to": "T_027",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000873"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_226",
+   "to": "T_027",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000874"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_227",
+   "to": "T_027",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000875"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_228",
+   "to": "T_027",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000876"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_229",
+   "to": "T_027",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000877"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_230",
+   "to": "T_027",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000878"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_231",
+   "to": "T_027",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000879"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1653",
+   "to": "T_027",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000880"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_1654",
+   "to": "T_027",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000881"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_049",
+   "to": "BF_410",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000882"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_051",
+   "to": "BF_410",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000883"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_052",
+   "to": "BF_410",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000884"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_226",
+   "to": "BF_409",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000885"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_227",
+   "to": "BF_409",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000886"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_228",
+   "to": "BF_409",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000887"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_229",
+   "to": "BF_409",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000888"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_230",
+   "to": "BF_409",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000889"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_231",
+   "to": "BF_142",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000890"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1653",
+   "to": "BF_408",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000891"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1654",
+   "to": "BF_408",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000892"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "M_218",
+   "to": "T_027",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_000893"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "M_268",
+   "to": "T_027",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_000894"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_049",
+   "to": "C_5265",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014208"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_051",
+   "to": "C_5266",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014209"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_052",
+   "to": "C_5267",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014210"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_226",
+   "to": "C_5268",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014211"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_227",
+   "to": "C_5269",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014212"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_228",
+   "to": "C_5270",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014213"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_229",
+   "to": "C_5271",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014214"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_230",
+   "to": "C_5272",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014215"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_231",
+   "to": "C_5273",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014216"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1653",
+   "to": "C_5274",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014217"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1654",
+   "to": "C_5275",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014218"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_049",
+   "to": "A_051",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018857"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "바이두 어니(Ernie)와 알리바바 큐원(Qwen)은 중국 상용 LLM·클라우드 AI 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_049",
+   "to": "A_052",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018858"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "바이두 어니와 텐센트 훈위안(Hunyuan)은 중국 파운데이션 모델 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_049",
+   "to": "A_1653",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018859"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "바이두 어니와 즈푸AI GLM은 중국 대형 LLM 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_049",
+   "to": "A_1654",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018860"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "바이두 어니와 딥시크 오픈소스 모델은 중국 LLM 성능·점유율 경쟁 관계다."
+  },
+  {
+   "from": "A_051",
+   "to": "A_052",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018861"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "알리바바 큐원과 텐센트 훈위안은 중국 클라우드·LLM 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_051",
+   "to": "A_1653",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018862"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "알리바바 큐원과 즈푸AI GLM은 중국 상용 LLM 시장에서 경쟁한다(알리바바는 동시에 즈푸 투자자)."
+  },
+  {
+   "from": "A_051",
+   "to": "A_1654",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018863"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "알리바바 큐원과 딥시크는 중국 오픈소스·상용 LLM 시장에서 경쟁한다."
+  },
+  {
+   "from": "A_052",
+   "to": "A_1653",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018864"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "텐센트 훈위안과 즈푸AI GLM은 중국 LLM 시장에서 경쟁한다(텐센트는 동시에 즈푸 투자자)."
+  },
+  {
+   "from": "A_052",
+   "to": "A_1654",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018865"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "텐센트 훈위안과 딥시크는 중국 LLM 시장에서 경쟁한다."
+  },
+  {
+   "from": "A_1653",
+   "to": "A_1654",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018866"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "즈푸AI GLM과 딥시크는 중국 대표 스타트업 LLM으로 직접 경쟁한다."
+  },
+  {
+   "from": "A_226",
+   "to": "A_227",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018867"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "캠브리콘과 모어스레드는 중국 국산 AI 칩·GPU 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_226",
+   "to": "A_228",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018868"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "캠브리콘과 메타X는 중국 AI 가속기 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_226",
+   "to": "A_229",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018869"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "캠브리콘과 비런테크는 중국 AI 훈련·추론 칩 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_226",
+   "to": "A_230",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018870"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "캠브리콘과 엔플레임은 중국 클라우드 AI 칩 시장의 대표 경쟁사다."
+  },
+  {
+   "from": "A_227",
+   "to": "A_228",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018871"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "모어스레드와 메타X는 중국 국산 GPU 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_227",
+   "to": "A_229",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018872"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "모어스레드와 비런테크는 중국 AI GPU 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_227",
+   "to": "A_230",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018873"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "모어스레드와 엔플레임은 중국 국산 AI 칩 시장에서 경쟁한다."
+  },
+  {
+   "from": "A_228",
+   "to": "A_229",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018874"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "메타X와 비런테크는 중국 AI GPU 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_228",
+   "to": "A_230",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018875"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "메타X와 엔플레임은 중국 AI 가속기 시장에서 경쟁한다."
+  },
+  {
+   "from": "A_229",
+   "to": "A_230",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018876"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "비런테크와 엔플레임은 중국 AI 훈련 칩 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_052",
+   "to": "A_230",
+   "type": "INVESTS",
+   "evidence": [
+    "EV_018877"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "텐센트는 엔플레임 초기부터 5차례 총 51.4억 위안을 투자해 약 20% 지분을 보유한 최대 투자자다."
+  },
+  {
+   "from": "A_052",
+   "to": "A_227",
+   "type": "INVESTS",
+   "evidence": [
+    "EV_018878"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "텐센트는 2021년 11월 모어스레드 시리즈A 라운드에 참여한 주요 투자자다."
+  },
+  {
+   "from": "A_052",
+   "to": "A_1653",
+   "type": "INVESTS",
+   "evidence": [
+    "EV_018879"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "텐센트는 2023년 3.42억 달러 라운드 등 즈푸AI에 반복 지분투자한 주요 백커다."
+  },
+  {
+   "from": "A_051",
+   "to": "A_1653",
+   "type": "INVESTS",
+   "evidence": [
+    "EV_018880"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "알리바바는 2023년·2025년 라운드에 걸쳐 즈푸AI에 지분투자한 주요 백커다."
+  },
+  {
+   "from": "A_230",
+   "to": "A_052",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_018881"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "엔플레임은 AI 칩을 텐센트에 공급하며 텐센트 매출 비중이 작년 84%에 달하는 핵심 고객 관계다."
+  },
+  {
+   "from": "A_872",
+   "to": "T_027",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020564"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_049",
+   "to": "T_027",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000871"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_051",
+   "to": "T_027",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000872"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_052",
+   "to": "T_027",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000873"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_226",
+   "to": "T_027",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000874"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_227",
+   "to": "T_027",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000875"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_228",
+   "to": "T_027",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000876"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_229",
+   "to": "T_027",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000877"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_230",
+   "to": "T_027",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000878"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_231",
+   "to": "T_027",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000879"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1653",
+   "to": "T_027",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000880"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_1654",
+   "to": "T_027",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000881"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_049",
+   "to": "BF_410",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000882"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_051",
+   "to": "BF_410",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000883"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_052",
+   "to": "BF_410",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000884"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_226",
+   "to": "BF_409",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000885"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_227",
+   "to": "BF_409",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000886"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_228",
+   "to": "BF_409",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000887"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_229",
+   "to": "BF_409",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000888"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_230",
+   "to": "BF_409",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000889"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_231",
+   "to": "BF_142",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000890"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1653",
+   "to": "BF_408",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000891"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1654",
+   "to": "BF_408",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000892"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "M_218",
+   "to": "T_027",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_000893"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "M_268",
+   "to": "T_027",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_000894"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_049",
+   "to": "C_5265",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014208"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_051",
+   "to": "C_5266",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014209"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_052",
+   "to": "C_5267",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014210"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_226",
+   "to": "C_5268",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014211"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_227",
+   "to": "C_5269",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014212"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_228",
+   "to": "C_5270",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014213"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_229",
+   "to": "C_5271",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014214"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_230",
+   "to": "C_5272",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014215"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_231",
+   "to": "C_5273",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014216"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1653",
+   "to": "C_5274",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014217"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1654",
+   "to": "C_5275",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_014218"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_049",
+   "to": "A_051",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018857"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "바이두 어니(Ernie)와 알리바바 큐원(Qwen)은 중국 상용 LLM·클라우드 AI 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_049",
+   "to": "A_052",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018858"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "바이두 어니와 텐센트 훈위안(Hunyuan)은 중국 파운데이션 모델 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_049",
+   "to": "A_1653",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018859"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "바이두 어니와 즈푸AI GLM은 중국 대형 LLM 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_049",
+   "to": "A_1654",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018860"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "바이두 어니와 딥시크 오픈소스 모델은 중국 LLM 성능·점유율 경쟁 관계다."
+  },
+  {
+   "from": "A_051",
+   "to": "A_052",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018861"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "알리바바 큐원과 텐센트 훈위안은 중국 클라우드·LLM 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_051",
+   "to": "A_1653",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018862"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "알리바바 큐원과 즈푸AI GLM은 중국 상용 LLM 시장에서 경쟁한다(알리바바는 동시에 즈푸 투자자)."
+  },
+  {
+   "from": "A_051",
+   "to": "A_1654",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018863"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "알리바바 큐원과 딥시크는 중국 오픈소스·상용 LLM 시장에서 경쟁한다."
+  },
+  {
+   "from": "A_052",
+   "to": "A_1653",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018864"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "텐센트 훈위안과 즈푸AI GLM은 중국 LLM 시장에서 경쟁한다(텐센트는 동시에 즈푸 투자자)."
+  },
+  {
+   "from": "A_052",
+   "to": "A_1654",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018865"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "텐센트 훈위안과 딥시크는 중국 LLM 시장에서 경쟁한다."
+  },
+  {
+   "from": "A_1653",
+   "to": "A_1654",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018866"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "즈푸AI GLM과 딥시크는 중국 대표 스타트업 LLM으로 직접 경쟁한다."
+  },
+  {
+   "from": "A_226",
+   "to": "A_227",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018867"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "캠브리콘과 모어스레드는 중국 국산 AI 칩·GPU 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_226",
+   "to": "A_228",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018868"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "캠브리콘과 메타X는 중국 AI 가속기 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_226",
+   "to": "A_229",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018869"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "캠브리콘과 비런테크는 중국 AI 훈련·추론 칩 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_226",
+   "to": "A_230",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018870"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "캠브리콘과 엔플레임은 중국 클라우드 AI 칩 시장의 대표 경쟁사다."
+  },
+  {
+   "from": "A_227",
+   "to": "A_228",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018871"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "모어스레드와 메타X는 중국 국산 GPU 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_227",
+   "to": "A_229",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018872"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "모어스레드와 비런테크는 중국 AI GPU 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_227",
+   "to": "A_230",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018873"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "모어스레드와 엔플레임은 중국 국산 AI 칩 시장에서 경쟁한다."
+  },
+  {
+   "from": "A_228",
+   "to": "A_229",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018874"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "메타X와 비런테크는 중국 AI GPU 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_228",
+   "to": "A_230",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018875"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "메타X와 엔플레임은 중국 AI 가속기 시장에서 경쟁한다."
+  },
+  {
+   "from": "A_229",
+   "to": "A_230",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_018876"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "비런테크와 엔플레임은 중국 AI 훈련 칩 시장에서 직접 경쟁한다."
+  },
+  {
+   "from": "A_052",
+   "to": "A_230",
+   "type": "INVESTS",
+   "evidence": [
+    "EV_018877"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "텐센트는 엔플레임 초기부터 5차례 총 51.4억 위안을 투자해 약 20% 지분을 보유한 최대 투자자다."
+  },
+  {
+   "from": "A_052",
+   "to": "A_227",
+   "type": "INVESTS",
+   "evidence": [
+    "EV_018878"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "텐센트는 2021년 11월 모어스레드 시리즈A 라운드에 참여한 주요 투자자다."
+  },
+  {
+   "from": "A_052",
+   "to": "A_1653",
+   "type": "INVESTS",
+   "evidence": [
+    "EV_018879"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "텐센트는 2023년 3.42억 달러 라운드 등 즈푸AI에 반복 지분투자한 주요 백커다."
+  },
+  {
+   "from": "A_051",
+   "to": "A_1653",
+   "type": "INVESTS",
+   "evidence": [
+    "EV_018880"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "알리바바는 2023년·2025년 라운드에 걸쳐 즈푸AI에 지분투자한 주요 백커다."
+  },
+  {
+   "from": "A_230",
+   "to": "A_052",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_018881"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "엔플레임은 AI 칩을 텐센트에 공급하며 텐센트 매출 비중이 작년 84%에 달하는 핵심 고객 관계다."
+  },
+  {
+   "from": "A_872",
+   "to": "T_027",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020564"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ]
 }

@@ -1,792 +1,792 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_622",
-  "themeName": "미국2023상장주식",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-26T00:00:00+09:00",
-    "notes": "2023년 미국 증시 상장(IPO) 코호트 — 주목받은 신규 상장주 모음.",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-08-04",
-        "kind": "보강",
-        "title": "2궤도 관계 엣지 추가",
-        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 3건 백필(리서치 기반)."
-      },
-      {
-        "date": "2026-07-26",
-        "kind": "수정",
-        "title": "구체적 엣지 백필 + 이벤트",
-        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
-      },
-      {
-        "date": "2026-07-17",
-        "kind": "신규",
-        "title": "미국2023상장주식 코호트 테마 생성",
-        "detail": "2023년 미국 상장(나스닥·NYSE 무관) 주목 IPO 8종을 THEMED_AS로 묶고, 종목별 상장 특징 CHR과 그 해 IPO시장 환경 매크로를 연결했다."
-      },
-      {
-        "date": "2026-08-05",
-        "kind": "관계",
-        "title": "EXPOSED_TO ETF 연결",
-        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-      }
-    ],
-    "description": "미국2023상장주식 테마로, ARM홀딩스·인스타카트·클라비요·버켄스탁 등을 핵심 축으로 묶은 온톨로지 그래프다. 핵심 구성종목은 ARM홀딩스·인스타카트·클라비요·버켄스탁·카바·켄뷰 등 총 9개 자산으로 구성된다. Renaissance IPO ETF 등 ETF로도 익스포저를 확장한다. 미국2023IPO선별회복 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 구성종목은 반도체설계IP_대형반도체상장·식료품배달1위_상장·마케팅자동화SaaS_상장·글로벌샌들브랜드_상장 등의 특성으로 차별화된다. 경쟁·공급·협력 등 3건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다."
+ "schemaVersion": "v5",
+ "themeId": "T_622",
+ "themeName": "미국2023상장주식",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
+  ],
+  "dataAsOf": "2026-07-26T00:00:00+09:00",
+  "notes": "2023년 미국 증시 상장(IPO) 코호트 — 주목받은 신규 상장주 모음.",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-08-04",
+    "kind": "보강",
+    "title": "2궤도 관계 엣지 추가",
+    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 3건 백필(리서치 기반)."
+   },
+   {
+    "date": "2026-07-26",
+    "kind": "수정",
+    "title": "구체적 엣지 백필 + 이벤트",
+    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
+   },
+   {
+    "date": "2026-07-17",
+    "kind": "신규",
+    "title": "미국2023상장주식 코호트 테마 생성",
+    "detail": "2023년 미국 상장(나스닥·NYSE 무관) 주목 IPO 8종을 THEMED_AS로 묶고, 종목별 상장 특징 CHR과 그 해 IPO시장 환경 매크로를 연결했다."
+   },
+   {
+    "date": "2026-08-05",
+    "kind": "관계",
+    "title": "EXPOSED_TO ETF 연결",
+    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+   }
+  ],
+  "description": "• 미국2023IPO선별회복 수혜\n• 동인 미국2023IPO선별회복\n• 대표주 ARM홀딩스(반도체설계IP 대형)·인스타카트(식료품배달1위 상장)·클라비요(마케팅자동화SaaS)\n• ETF Renaissance IPO ETF"
+ },
+ "nodes": [
+  {
+   "id": "T_622",
+   "type": "THEME",
+   "name": "미국2023상장주식"
   },
-  "nodes": [
-    {
-      "id": "T_622",
-      "type": "THEME",
-      "name": "미국2023상장주식"
-    },
-    {
-      "id": "M_1132",
-      "type": "MACRO",
-      "name": "미국2023IPO선별회복"
-    },
-    {
-      "id": "A_058",
-      "type": "ASSET",
-      "name": "ARM홀딩스",
-      "exposure": {
-        "ticker": "ARM",
-        "exchange": "NASDAQ",
-        "country": "US",
-        "theme_role": "1궤도"
-      },
-      "metrics": {
-        "return_1d": 0.2835097792930341,
-        "close": 279.44,
-        "marketCap": 298441520121,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 3.908080169560857,
-        "return_15d": 7.472789508095845,
-        "return_1m": -0.6152861258313491,
-        "return_ytd": 155.63992315433174,
-        "return_1y": 98.81892564923514,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -1.107690129879324,
-        "return_2y": 121.9186785260483
-      },
-      "coreBiz": "암(Arm)은 2023년 상장한 세계 반도체 설계 IP 표준 기업이다"
-    },
-    {
-      "id": "C_3606",
-      "type": "CHARACTER",
-      "name": "반도체설계IP_대형반도체상장"
-    },
-    {
-      "id": "A_796",
-      "type": "ASSET",
-      "name": "인스타카트",
-      "exposure": {
-        "ticker": "CART",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -2.396166134185296,
-        "close": 48.88,
-        "marketCap": 11488257308,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": -1.0325976918404534,
-        "return_15d": 15.801942667614322,
-        "return_1m": 2.452316076294281,
-        "return_ytd": 8.670520231213885,
-        "return_1y": 11.3947128532361,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -2.571257723739284,
-        "return_2y": 53.517587939698494
-      },
-      "coreBiz": "인스타카트는 2023년 상장한 미국 식료품 배달 1위다"
-    },
-    {
-      "id": "C_3607",
-      "type": "CHARACTER",
-      "name": "식료품배달1위_상장"
-    },
-    {
-      "id": "A_2712",
-      "type": "ASSET",
-      "name": "클라비요",
-      "exposure": {
-        "ticker": "KVYO",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -3.7981269510926174,
-        "close": 18.49,
-        "marketCap": 5533683668,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 0.7080610021786393,
-        "return_15d": 12.74390243902439,
-        "return_1m": 5.596801827527109,
-        "return_ytd": -43.05512781028642,
-        "return_1y": -40.41250402835966,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 11.251504211792994,
-        "return_2y": -38.876033057851245
-      },
-      "coreBiz": "클라비요는 2023년 상장한 이커머스 마케팅 자동화 SaaS다"
-    },
-    {
-      "id": "C_3608",
-      "type": "CHARACTER",
-      "name": "마케팅자동화SaaS_상장"
-    },
-    {
-      "id": "A_2713",
-      "type": "ASSET",
-      "name": "버켄스탁",
-      "exposure": {
-        "ticker": "BIRK",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -4.024390243902431,
-        "close": 39.35,
-        "marketCap": 7236703304,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 5.01734721110223,
-        "return_15d": -3.150381491508736,
-        "return_1m": -11.293958521190262,
-        "return_ytd": -3.7897310513447358,
-        "return_1y": -18.715141499690134,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 2.3407022106632036,
-        "return_2y": -33.932169241101406
-      },
-      "coreBiz": "버켄스탁은 2023년 상장한 글로벌 프리미엄 샌들 브랜드다"
-    },
-    {
-      "id": "C_3609",
-      "type": "CHARACTER",
-      "name": "글로벌샌들브랜드_상장"
-    },
-    {
-      "id": "A_2181",
-      "type": "ASSET",
-      "name": "카바",
-      "exposure": {
-        "ticker": "CAVA",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 3.103352729287878,
-        "return_3d": 22.381187304719607,
-        "return_15d": 20.012901144976624,
-        "return_1m": 6.359868515077904,
-        "return_ytd": 26.801840177202262,
-        "return_1y": 7.964601769911495,
-        "return_3y": 55.52769070010448,
-        "close": 74.46,
-        "marketCap": 8672643169,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 19.224607497596914,
-        "return_2y": -22.28487886382623
-      },
-      "coreBiz": "카바는 2023년 상장한 지중해식 패스트캐주얼 외식 성장주다"
-    },
-    {
-      "id": "C_3610",
-      "type": "CHARACTER",
-      "name": "지중해식패스트캐주얼_상장"
-    },
-    {
-      "id": "A_2469",
-      "type": "ASSET",
-      "name": "켄뷰",
-      "exposure": {
-        "ticker": "KVUE",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.0,
-        "return_3d": 0.7874015748031482,
-        "return_15d": -0.4149377593361092,
-        "return_1m": 2.3454157782515805,
-        "return_ytd": 11.304347826086957,
-        "return_1y": -8.83190883190883,
-        "return_3y": -16.303400174367923,
-        "close": 19.2,
-        "marketCap": 36864166426,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -0.15600624024961762,
-        "return_2y": -9.348441926345608
-      },
-      "coreBiz": "켄뷰는 2023년 J&J에서 분사 상장한 소비자 헬스케어(타이레놀 등)다"
-    },
-    {
-      "id": "C_3611",
-      "type": "CHARACTER",
-      "name": "컨슈머헬스_J&J분사상장"
-    },
-    {
-      "id": "A_1561",
-      "type": "ASSET",
-      "name": "Nextracker",
-      "exposure": {
-        "ticker": "NXT",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -2.9459588713534157,
-        "close": 101.47,
-        "marketCap": 15388256292,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": -3.2513348588863455,
-        "return_15d": 1.4395681295611196,
-        "return_1m": -3.0479648385247415,
-        "return_ytd": 16.484904144185506,
-        "return_1y": 87.94221152065195,
-        "return_3y": 140.73546856465006,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -1.73348828200659,
-        "return_2y": 165.21170935703086
-      },
-      "coreBiz": "넥스트래커는 2023년 상장한 태양광 트래커 세계 1위다"
-    },
-    {
-      "id": "C_3612",
-      "type": "CHARACTER",
-      "name": "태양광트래커1위_상장"
-    },
-    {
-      "id": "A_2714",
-      "type": "ASSET",
-      "name": "오디티",
-      "exposure": {
-        "ticker": "ODD",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -1.650412603150797,
-        "close": 13.11,
-        "marketCap": 747231640,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 5.048076923076916,
-        "return_15d": -14.537157757496743,
-        "return_1m": -19.816513761467903,
-        "return_ytd": -67.37182677949228,
-        "return_1y": -77.53213367609256,
-        "return_3y": -71.71521035598705,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -7.152974504249288,
-        "return_2y": -66.69207317073172
-      },
-      "coreBiz": "오디티는 2023년 상장한 AI 기반 뷰티·이커머스(일리아 등)다"
-    },
-    {
-      "id": "C_3613",
-      "type": "CHARACTER",
-      "name": "AI뷰티·이커머스_상장"
-    },
-    {
-      "id": "A_2969",
-      "type": "ASSET",
-      "name": "Renaissance IPO ETF",
-      "exposure": {
-        "ticker": "IPO",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.2799160251924393,
-        "return_3d": 3.69292341277061,
-        "return_15d": 10.765643218033416,
-        "return_1m": 2.813852813852824,
-        "return_ytd": 24.86308871851042,
-        "return_1y": 14.159823753254553,
-        "return_3y": 74.79300827966881,
-        "close": 56.975,
-        "marketCap": 202419071,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 2.758247701460248,
-        "return_2y": 45.96670934699105
-      }
-    }
-  ],
-  "edges": [
-    {
-      "from": "A_058",
-      "to": "T_622",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013569"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_058",
-      "to": "C_3606",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007519"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_796",
-      "to": "T_622",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013570"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_796",
-      "to": "C_3607",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007521"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_2712",
-      "to": "T_622",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013571"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2712",
-      "to": "C_3608",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007523"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_2713",
-      "to": "T_622",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013572"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2713",
-      "to": "C_3609",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007525"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_2181",
-      "to": "T_622",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013573"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2181",
-      "to": "C_3610",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007527"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_2469",
-      "to": "T_622",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013574"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2469",
-      "to": "C_3611",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007529"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_1561",
-      "to": "T_622",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013575"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1561",
-      "to": "C_3612",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007531"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_2714",
-      "to": "T_622",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013576"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2714",
-      "to": "C_3613",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007533"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "M_1132",
-      "to": "T_622",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013577"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_2469",
-      "to": "A_2714",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020266"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "켄뷰와 오디티는 소비자 헬스·뷰티 제품 시장 경쟁"
-    },
-    {
-      "from": "A_2713",
-      "to": "A_2181",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020267"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "버켄스탁과 카바는 2023년 IPO 소비 브랜드 자금 유치 경쟁"
-    },
-    {
-      "from": "A_1561",
-      "to": "A_2712",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020268"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "Nextracker와 클라비요는 2023년 IPO 성장주 자금 경쟁"
-    },
-    {
-      "from": "A_2969",
-      "to": "T_622",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020932"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_058",
-      "to": "T_622",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013569"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_058",
-      "to": "C_3606",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007519"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_796",
-      "to": "T_622",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013570"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_796",
-      "to": "C_3607",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007521"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_2712",
-      "to": "T_622",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013571"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2712",
-      "to": "C_3608",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007523"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_2713",
-      "to": "T_622",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013572"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2713",
-      "to": "C_3609",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007525"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_2181",
-      "to": "T_622",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013573"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2181",
-      "to": "C_3610",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007527"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_2469",
-      "to": "T_622",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013574"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2469",
-      "to": "C_3611",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007529"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_1561",
-      "to": "T_622",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013575"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1561",
-      "to": "C_3612",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007531"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_2714",
-      "to": "T_622",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013576"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2714",
-      "to": "C_3613",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007533"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "M_1132",
-      "to": "T_622",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013577"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_2469",
-      "to": "A_2714",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020266"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "켄뷰와 오디티는 소비자 헬스·뷰티 제품 시장 경쟁"
-    },
-    {
-      "from": "A_2713",
-      "to": "A_2181",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020267"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "버켄스탁과 카바는 2023년 IPO 소비 브랜드 자금 유치 경쟁"
-    },
-    {
-      "from": "A_1561",
-      "to": "A_2712",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020268"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "Nextracker와 클라비요는 2023년 IPO 성장주 자금 경쟁"
-    },
-    {
-      "from": "A_2969",
-      "to": "T_622",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020932"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ]
+  {
+   "id": "M_1132",
+   "type": "MACRO",
+   "name": "미국2023IPO선별회복"
+  },
+  {
+   "id": "A_058",
+   "type": "ASSET",
+   "name": "ARM홀딩스",
+   "exposure": {
+    "ticker": "ARM",
+    "exchange": "NASDAQ",
+    "country": "US",
+    "theme_role": "1궤도"
+   },
+   "metrics": {
+    "return_1d": 0.2835097792930341,
+    "close": 279.44,
+    "marketCap": 298441520121,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 3.908080169560857,
+    "return_15d": 7.472789508095845,
+    "return_1m": -0.6152861258313491,
+    "return_ytd": 155.63992315433174,
+    "return_1y": 98.81892564923514,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -1.107690129879324,
+    "return_2y": 121.9186785260483
+   },
+   "coreBiz": "암(Arm)은 2023년 상장한 세계 반도체 설계 IP 표준 기업이다"
+  },
+  {
+   "id": "C_3606",
+   "type": "CHARACTER",
+   "name": "반도체설계IP_대형반도체상장"
+  },
+  {
+   "id": "A_796",
+   "type": "ASSET",
+   "name": "인스타카트",
+   "exposure": {
+    "ticker": "CART",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -2.396166134185296,
+    "close": 48.88,
+    "marketCap": 11488257308,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": -1.0325976918404534,
+    "return_15d": 15.801942667614322,
+    "return_1m": 2.452316076294281,
+    "return_ytd": 8.670520231213885,
+    "return_1y": 11.3947128532361,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -2.571257723739284,
+    "return_2y": 53.517587939698494
+   },
+   "coreBiz": "인스타카트는 2023년 상장한 미국 식료품 배달 1위다"
+  },
+  {
+   "id": "C_3607",
+   "type": "CHARACTER",
+   "name": "식료품배달1위_상장"
+  },
+  {
+   "id": "A_2712",
+   "type": "ASSET",
+   "name": "클라비요",
+   "exposure": {
+    "ticker": "KVYO",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -3.7981269510926174,
+    "close": 18.49,
+    "marketCap": 5533683668,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 0.7080610021786393,
+    "return_15d": 12.74390243902439,
+    "return_1m": 5.596801827527109,
+    "return_ytd": -43.05512781028642,
+    "return_1y": -40.41250402835966,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 11.251504211792994,
+    "return_2y": -38.876033057851245
+   },
+   "coreBiz": "클라비요는 2023년 상장한 이커머스 마케팅 자동화 SaaS다"
+  },
+  {
+   "id": "C_3608",
+   "type": "CHARACTER",
+   "name": "마케팅자동화SaaS_상장"
+  },
+  {
+   "id": "A_2713",
+   "type": "ASSET",
+   "name": "버켄스탁",
+   "exposure": {
+    "ticker": "BIRK",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -4.024390243902431,
+    "close": 39.35,
+    "marketCap": 7236703304,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 5.01734721110223,
+    "return_15d": -3.150381491508736,
+    "return_1m": -11.293958521190262,
+    "return_ytd": -3.7897310513447358,
+    "return_1y": -18.715141499690134,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 2.3407022106632036,
+    "return_2y": -33.932169241101406
+   },
+   "coreBiz": "버켄스탁은 2023년 상장한 글로벌 프리미엄 샌들 브랜드다"
+  },
+  {
+   "id": "C_3609",
+   "type": "CHARACTER",
+   "name": "글로벌샌들브랜드_상장"
+  },
+  {
+   "id": "A_2181",
+   "type": "ASSET",
+   "name": "카바",
+   "exposure": {
+    "ticker": "CAVA",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 3.103352729287878,
+    "return_3d": 22.381187304719607,
+    "return_15d": 20.012901144976624,
+    "return_1m": 6.359868515077904,
+    "return_ytd": 26.801840177202262,
+    "return_1y": 7.964601769911495,
+    "return_3y": 55.52769070010448,
+    "close": 74.46,
+    "marketCap": 8672643169,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 19.224607497596914,
+    "return_2y": -22.28487886382623
+   },
+   "coreBiz": "카바는 2023년 상장한 지중해식 패스트캐주얼 외식 성장주다"
+  },
+  {
+   "id": "C_3610",
+   "type": "CHARACTER",
+   "name": "지중해식패스트캐주얼_상장"
+  },
+  {
+   "id": "A_2469",
+   "type": "ASSET",
+   "name": "켄뷰",
+   "exposure": {
+    "ticker": "KVUE",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.0,
+    "return_3d": 0.7874015748031482,
+    "return_15d": -0.4149377593361092,
+    "return_1m": 2.3454157782515805,
+    "return_ytd": 11.304347826086957,
+    "return_1y": -8.83190883190883,
+    "return_3y": -16.303400174367923,
+    "close": 19.2,
+    "marketCap": 36864166426,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -0.15600624024961762,
+    "return_2y": -9.348441926345608
+   },
+   "coreBiz": "켄뷰는 2023년 J&J에서 분사 상장한 소비자 헬스케어(타이레놀 등)다"
+  },
+  {
+   "id": "C_3611",
+   "type": "CHARACTER",
+   "name": "컨슈머헬스_J&J분사상장"
+  },
+  {
+   "id": "A_1561",
+   "type": "ASSET",
+   "name": "Nextracker",
+   "exposure": {
+    "ticker": "NXT",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -2.9459588713534157,
+    "close": 101.47,
+    "marketCap": 15388256292,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": -3.2513348588863455,
+    "return_15d": 1.4395681295611196,
+    "return_1m": -3.0479648385247415,
+    "return_ytd": 16.484904144185506,
+    "return_1y": 87.94221152065195,
+    "return_3y": 140.73546856465006,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -1.73348828200659,
+    "return_2y": 165.21170935703086
+   },
+   "coreBiz": "넥스트래커는 2023년 상장한 태양광 트래커 세계 1위다"
+  },
+  {
+   "id": "C_3612",
+   "type": "CHARACTER",
+   "name": "태양광트래커1위_상장"
+  },
+  {
+   "id": "A_2714",
+   "type": "ASSET",
+   "name": "오디티",
+   "exposure": {
+    "ticker": "ODD",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -1.650412603150797,
+    "close": 13.11,
+    "marketCap": 747231640,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 5.048076923076916,
+    "return_15d": -14.537157757496743,
+    "return_1m": -19.816513761467903,
+    "return_ytd": -67.37182677949228,
+    "return_1y": -77.53213367609256,
+    "return_3y": -71.71521035598705,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -7.152974504249288,
+    "return_2y": -66.69207317073172
+   },
+   "coreBiz": "오디티는 2023년 상장한 AI 기반 뷰티·이커머스(일리아 등)다"
+  },
+  {
+   "id": "C_3613",
+   "type": "CHARACTER",
+   "name": "AI뷰티·이커머스_상장"
+  },
+  {
+   "id": "A_2969",
+   "type": "ASSET",
+   "name": "Renaissance IPO ETF",
+   "exposure": {
+    "ticker": "IPO",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.2799160251924393,
+    "return_3d": 3.69292341277061,
+    "return_15d": 10.765643218033416,
+    "return_1m": 2.813852813852824,
+    "return_ytd": 24.86308871851042,
+    "return_1y": 14.159823753254553,
+    "return_3y": 74.79300827966881,
+    "close": 56.975,
+    "marketCap": 202419071,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 2.758247701460248,
+    "return_2y": 45.96670934699105
+   }
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_058",
+   "to": "T_622",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013569"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_058",
+   "to": "C_3606",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007519"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_796",
+   "to": "T_622",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013570"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_796",
+   "to": "C_3607",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007521"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_2712",
+   "to": "T_622",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013571"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2712",
+   "to": "C_3608",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007523"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_2713",
+   "to": "T_622",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013572"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2713",
+   "to": "C_3609",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007525"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_2181",
+   "to": "T_622",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013573"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2181",
+   "to": "C_3610",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007527"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_2469",
+   "to": "T_622",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013574"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2469",
+   "to": "C_3611",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007529"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_1561",
+   "to": "T_622",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013575"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1561",
+   "to": "C_3612",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007531"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_2714",
+   "to": "T_622",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013576"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2714",
+   "to": "C_3613",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007533"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "M_1132",
+   "to": "T_622",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013577"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_2469",
+   "to": "A_2714",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020266"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "켄뷰와 오디티는 소비자 헬스·뷰티 제품 시장 경쟁"
+  },
+  {
+   "from": "A_2713",
+   "to": "A_2181",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020267"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "버켄스탁과 카바는 2023년 IPO 소비 브랜드 자금 유치 경쟁"
+  },
+  {
+   "from": "A_1561",
+   "to": "A_2712",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020268"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "Nextracker와 클라비요는 2023년 IPO 성장주 자금 경쟁"
+  },
+  {
+   "from": "A_2969",
+   "to": "T_622",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020932"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_058",
+   "to": "T_622",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013569"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_058",
+   "to": "C_3606",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007519"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_796",
+   "to": "T_622",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013570"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_796",
+   "to": "C_3607",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007521"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_2712",
+   "to": "T_622",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013571"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2712",
+   "to": "C_3608",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007523"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_2713",
+   "to": "T_622",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013572"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2713",
+   "to": "C_3609",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007525"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_2181",
+   "to": "T_622",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013573"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2181",
+   "to": "C_3610",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007527"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_2469",
+   "to": "T_622",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013574"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2469",
+   "to": "C_3611",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007529"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_1561",
+   "to": "T_622",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013575"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1561",
+   "to": "C_3612",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007531"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_2714",
+   "to": "T_622",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013576"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2714",
+   "to": "C_3613",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007533"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "M_1132",
+   "to": "T_622",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013577"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_2469",
+   "to": "A_2714",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020266"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "켄뷰와 오디티는 소비자 헬스·뷰티 제품 시장 경쟁"
+  },
+  {
+   "from": "A_2713",
+   "to": "A_2181",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020267"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "버켄스탁과 카바는 2023년 IPO 소비 브랜드 자금 유치 경쟁"
+  },
+  {
+   "from": "A_1561",
+   "to": "A_2712",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020268"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "Nextracker와 클라비요는 2023년 IPO 성장주 자금 경쟁"
+  },
+  {
+   "from": "A_2969",
+   "to": "T_622",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020932"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ]
 }

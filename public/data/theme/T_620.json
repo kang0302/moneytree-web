@@ -1,759 +1,759 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_620",
-  "themeName": "미국2021상장주식",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-26T00:00:00+09:00",
-    "notes": "2021년 미국 증시 상장(IPO) 코호트 — 주목받은 신규 상장주 모음.",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-08-04",
-        "kind": "보강",
-        "title": "2궤도 관계 엣지 추가",
-        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
-      },
-      {
-        "date": "2026-07-26",
-        "kind": "수정",
-        "title": "구체적 엣지 백필 + 이벤트",
-        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
-      },
-      {
-        "date": "2026-07-17",
-        "kind": "신규",
-        "title": "미국2021상장주식 코호트 테마 생성",
-        "detail": "2021년 미국 상장(나스닥·NYSE 무관) 주목 IPO 8종을 THEMED_AS로 묶고, 종목별 상장 특징 CHR과 그 해 IPO시장 환경 매크로를 연결했다."
-      }
-    ],
-    "description": "미국2021상장주식 테마로, 코인베이스·리비안·로블록스·로빈후드 등을 핵심 축으로 묶은 온톨로지 그래프다. 핵심 구성종목은 코인베이스·리비안·로블록스·로빈후드·루시드모터스·어펌홀딩스 등 총 8개 자산으로 구성된다. 미국2021IPO버블_제로금리 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 구성종목은 미국최대암호거래소_직상장·전기트럭스타트업_대형IPO·메타버스게임플랫폼_직상장·무료주식거래앱_밈주열풍상장 등의 특성으로 차별화된다. 경쟁·공급·협력 등 4건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다."
+ "schemaVersion": "v5",
+ "themeId": "T_620",
+ "themeName": "미국2021상장주식",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
+  ],
+  "dataAsOf": "2026-07-26T00:00:00+09:00",
+  "notes": "2021년 미국 증시 상장(IPO) 코호트 — 주목받은 신규 상장주 모음.",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-08-04",
+    "kind": "보강",
+    "title": "2궤도 관계 엣지 추가",
+    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
+   },
+   {
+    "date": "2026-07-26",
+    "kind": "수정",
+    "title": "구체적 엣지 백필 + 이벤트",
+    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
+   },
+   {
+    "date": "2026-07-17",
+    "kind": "신규",
+    "title": "미국2021상장주식 코호트 테마 생성",
+    "detail": "2021년 미국 상장(나스닥·NYSE 무관) 주목 IPO 8종을 THEMED_AS로 묶고, 종목별 상장 특징 CHR과 그 해 IPO시장 환경 매크로를 연결했다."
+   }
+  ],
+  "description": "• 미국2021IPO버블_제로금리 수혜\n• 동인 미국2021IPO버블_제로금리\n• 대표주 코인베이스(미국최대암호거래소)·리비안(전기트럭스타트업 대)·로블록스(메타버스게임플랫폼)"
+ },
+ "nodes": [
+  {
+   "id": "T_620",
+   "type": "THEME",
+   "name": "미국2021상장주식"
   },
-  "nodes": [
-    {
-      "id": "T_620",
-      "type": "THEME",
-      "name": "미국2021상장주식"
-    },
-    {
-      "id": "M_1130",
-      "type": "MACRO",
-      "name": "미국2021IPO버블_제로금리"
-    },
-    {
-      "id": "A_347",
-      "type": "ASSET",
-      "name": "코인베이스",
-      "exposure": {
-        "ticker": "COIN",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -3.5282651072124804,
-        "close": 148.47,
-        "marketCap": 39171452984,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": -0.07403419033518155,
-        "return_15d": -6.203803146124198,
-        "return_1m": -8.068111455108362,
-        "return_ytd": -34.34598036614486,
-        "return_1y": -54.30145587737387,
-        "return_3y": 83.72726147753991,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -3.3398437499999933,
-        "return_2y": -24.23453766074709
-      },
-      "coreBiz": "코인베이스는 2021년 직상장한 미국 최대 암호화폐 거래소다"
-    },
-    {
-      "id": "C_3592",
-      "type": "CHARACTER",
-      "name": "미국최대암호거래소_직상장"
-    },
-    {
-      "id": "A_001",
-      "type": "ASSET",
-      "name": "리비안",
-      "exposure": {
-        "ticker": "RIVN",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -2.9077117572692823,
-        "close": 15.36,
-        "marketCap": 18645164682,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": -6.112469437652813,
-        "return_15d": -3.0303030303030276,
-        "return_1m": -12.228571428571433,
-        "return_ytd": -22.070015220700157,
-        "return_1y": 27.363184079601986,
-        "return_3y": -28.7569573283859,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -4.0000000000000036,
-        "return_2y": 15.924528301886799
-      },
-      "coreBiz": "리비안은 2021년 대형 IPO로 상장한 전기 픽업·밴 스타트업이다"
-    },
-    {
-      "id": "C_3593",
-      "type": "CHARACTER",
-      "name": "전기트럭스타트업_대형IPO"
-    },
-    {
-      "id": "A_1103",
-      "type": "ASSET",
-      "name": "로블록스",
-      "exposure": {
-        "ticker": "RBLX",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.7378129117259435,
-        "close": 38.246,
-        "marketCap": 27322019945,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 5.549420209828826,
-        "return_15d": -19.60042060988434,
-        "return_1m": -29.81457683128328,
-        "return_ytd": -52.81994323090213,
-        "return_1y": -69.48435504469987,
-        "return_3y": 25.18009168303863,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 1.1643291876157758,
-        "return_2y": -2.2000511639805764
-      },
-      "coreBiz": "로블록스는 2021년 직상장한 메타버스 게임·UGC 플랫폼이다"
-    },
-    {
-      "id": "C_3594",
-      "type": "CHARACTER",
-      "name": "메타버스게임플랫폼_직상장"
-    },
-    {
-      "id": "A_346",
-      "type": "ASSET",
-      "name": "로빈후드",
-      "exposure": {
-        "ticker": "HOOD",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -3.834155177619003,
-        "close": 95.56,
-        "marketCap": 85916306021,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 1.2502648866285382,
-        "return_15d": 0.6848593404277903,
-        "return_1m": -15.769061260467165,
-        "return_ytd": -15.508399646330673,
-        "return_1y": -13.684400686478181,
-        "return_3y": 797.2769953051643,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 2.4332725908457364,
-        "return_2y": 412.3860589812333
-      },
-      "coreBiz": "로빈후드는 2021년 상장한 무료 주식거래 앱으로 밈주 열풍의 상징이다"
-    },
-    {
-      "id": "C_3595",
-      "type": "CHARACTER",
-      "name": "무료주식거래앱_밈주열풍상장"
-    },
-    {
-      "id": "A_1956",
-      "type": "ASSET",
-      "name": "루시드모터스",
-      "exposure": {
-        "ticker": "LCID",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -3.4161490683229934,
-        "return_3d": -7.164179104477619,
-        "return_15d": -1.2698412698412764,
-        "return_1m": 34.63203463203462,
-        "return_ytd": -41.154210028382224,
-        "return_1y": -72.35555555555555,
-        "return_3y": -90.81240768094536,
-        "close": 6.22,
-        "marketCap": 1977202311,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -11.647727272727282,
-        "return_2y": -80.12779552715655
-      },
-      "coreBiz": "루시드는 2021년 SPAC 합병으로 상장한 럭셔리 전기차 업체다"
-    },
-    {
-      "id": "C_3596",
-      "type": "CHARACTER",
-      "name": "럭셔리전기차_SPAC상장"
-    },
-    {
-      "id": "A_915",
-      "type": "ASSET",
-      "name": "어펌홀딩스",
-      "exposure": {
-        "ticker": "AFRM",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.03830439223697635,
-        "close": 78.35,
-        "marketCap": 26239301863,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 2.137922044062046,
-        "return_15d": 11.562010536807609,
-        "return_1m": -7.223208999407948,
-        "return_ytd": 5.266693537552047,
-        "return_1y": 1.7268242015060942,
-        "return_3y": 417.84534038334425,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 4.119601328903655,
-        "return_2y": 194.77050413844995
-      },
-      "coreBiz": "어펌은 2021년 상장한 BNPL(후불결제) 선도 핀테크다"
-    },
-    {
-      "id": "C_3597",
-      "type": "CHARACTER",
-      "name": "BNPL선구자_핀테크상장"
-    },
-    {
-      "id": "A_2379",
-      "type": "ASSET",
-      "name": "듀오링고",
-      "exposure": {
-        "ticker": "DUOL",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -7.8209576682858994,
-        "return_3d": -1.9270525694034202,
-        "return_15d": 8.663285340314154,
-        "return_1m": 3.490455784963009,
-        "return_ytd": -24.313390313390304,
-        "return_1y": -59.73384260943373,
-        "return_3y": -3.3612222626409394,
-        "close": 132.83,
-        "marketCap": 6188963465,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 1.474407944996181,
-        "return_2y": -32.59755416856953
-      },
-      "coreBiz": "듀오링고는 2021년 상장한 세계 1위 언어학습 앱이다"
-    },
-    {
-      "id": "C_3598",
-      "type": "CHARACTER",
-      "name": "언어학습앱1위_에듀테크상장"
-    },
-    {
-      "id": "A_662",
-      "type": "ASSET",
-      "name": "글로벌파운드리즈",
-      "exposure": {
-        "ticker": "GFS",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 3.58701840956539,
-        "close": 54.58,
-        "marketCap": 29948091465,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 7.398661944116491,
-        "return_15d": 1.9615169064076232,
-        "return_1m": -13.89809118157438,
-        "return_ytd": 56.300114547537206,
-        "return_1y": 64.89425981873111,
-        "return_3y": -6.203815088503184,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 1.2052660856666009,
-        "return_2y": 25.29843893480257
-      },
-      "coreBiz": "글로벌파운드리는 2021년 상장한 미국·글로벌 반도체 파운드리다"
-    },
-    {
-      "id": "C_3599",
-      "type": "CHARACTER",
-      "name": "반도체파운드리_상장"
-    }
-  ],
-  "edges": [
-    {
-      "from": "A_347",
-      "to": "T_620",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013553"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_347",
-      "to": "C_3592",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007489"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_001",
-      "to": "T_620",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013554"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_001",
-      "to": "C_3593",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007491"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1103",
-      "to": "T_620",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013555"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1103",
-      "to": "C_3594",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007493"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_346",
-      "to": "T_620",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013556"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_346",
-      "to": "C_3595",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007495"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1956",
-      "to": "T_620",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013557"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1956",
-      "to": "C_3596",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007497"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_915",
-      "to": "T_620",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013558"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_915",
-      "to": "C_3597",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007499"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_2379",
-      "to": "T_620",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013559"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2379",
-      "to": "C_3598",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007501"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_662",
-      "to": "T_620",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013560"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_662",
-      "to": "C_3599",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007503"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "M_1130",
-      "to": "T_620",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013561"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_347",
-      "to": "A_346",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020262"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "코인베이스와 로빈후드는 리테일 크립토·주식 거래 플랫폼 시장 경쟁"
-    },
-    {
-      "from": "A_001",
-      "to": "A_1956",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020263"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "리비안과 루시드모터스는 미국 신생 전기차 시장 직접 경쟁"
-    },
-    {
-      "from": "A_915",
-      "to": "A_346",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020264"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "어펌홀딩스와 로빈후드는 밀레니얼 대상 핀테크 서비스 경쟁"
-    },
-    {
-      "from": "A_2379",
-      "to": "A_1103",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020265"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "듀오링고와 로블록스는 모바일 사용자 체류시간 경쟁"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_347",
-      "to": "T_620",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013553"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_347",
-      "to": "C_3592",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007489"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_001",
-      "to": "T_620",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013554"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_001",
-      "to": "C_3593",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007491"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1103",
-      "to": "T_620",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013555"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1103",
-      "to": "C_3594",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007493"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_346",
-      "to": "T_620",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013556"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_346",
-      "to": "C_3595",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007495"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1956",
-      "to": "T_620",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013557"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1956",
-      "to": "C_3596",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007497"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_915",
-      "to": "T_620",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013558"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_915",
-      "to": "C_3597",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007499"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_2379",
-      "to": "T_620",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013559"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2379",
-      "to": "C_3598",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007501"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_662",
-      "to": "T_620",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013560"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_662",
-      "to": "C_3599",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007503"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "M_1130",
-      "to": "T_620",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013561"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_347",
-      "to": "A_346",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020262"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "코인베이스와 로빈후드는 리테일 크립토·주식 거래 플랫폼 시장 경쟁"
-    },
-    {
-      "from": "A_001",
-      "to": "A_1956",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020263"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "리비안과 루시드모터스는 미국 신생 전기차 시장 직접 경쟁"
-    },
-    {
-      "from": "A_915",
-      "to": "A_346",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020264"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "어펌홀딩스와 로빈후드는 밀레니얼 대상 핀테크 서비스 경쟁"
-    },
-    {
-      "from": "A_2379",
-      "to": "A_1103",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020265"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "듀오링고와 로블록스는 모바일 사용자 체류시간 경쟁"
-    }
-  ]
+  {
+   "id": "M_1130",
+   "type": "MACRO",
+   "name": "미국2021IPO버블_제로금리"
+  },
+  {
+   "id": "A_347",
+   "type": "ASSET",
+   "name": "코인베이스",
+   "exposure": {
+    "ticker": "COIN",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -3.5282651072124804,
+    "close": 148.47,
+    "marketCap": 39171452984,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": -0.07403419033518155,
+    "return_15d": -6.203803146124198,
+    "return_1m": -8.068111455108362,
+    "return_ytd": -34.34598036614486,
+    "return_1y": -54.30145587737387,
+    "return_3y": 83.72726147753991,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -3.3398437499999933,
+    "return_2y": -24.23453766074709
+   },
+   "coreBiz": "코인베이스는 2021년 직상장한 미국 최대 암호화폐 거래소다"
+  },
+  {
+   "id": "C_3592",
+   "type": "CHARACTER",
+   "name": "미국최대암호거래소_직상장"
+  },
+  {
+   "id": "A_001",
+   "type": "ASSET",
+   "name": "리비안",
+   "exposure": {
+    "ticker": "RIVN",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -2.9077117572692823,
+    "close": 15.36,
+    "marketCap": 18645164682,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": -6.112469437652813,
+    "return_15d": -3.0303030303030276,
+    "return_1m": -12.228571428571433,
+    "return_ytd": -22.070015220700157,
+    "return_1y": 27.363184079601986,
+    "return_3y": -28.7569573283859,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -4.0000000000000036,
+    "return_2y": 15.924528301886799
+   },
+   "coreBiz": "리비안은 2021년 대형 IPO로 상장한 전기 픽업·밴 스타트업이다"
+  },
+  {
+   "id": "C_3593",
+   "type": "CHARACTER",
+   "name": "전기트럭스타트업_대형IPO"
+  },
+  {
+   "id": "A_1103",
+   "type": "ASSET",
+   "name": "로블록스",
+   "exposure": {
+    "ticker": "RBLX",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.7378129117259435,
+    "close": 38.246,
+    "marketCap": 27322019945,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 5.549420209828826,
+    "return_15d": -19.60042060988434,
+    "return_1m": -29.81457683128328,
+    "return_ytd": -52.81994323090213,
+    "return_1y": -69.48435504469987,
+    "return_3y": 25.18009168303863,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 1.1643291876157758,
+    "return_2y": -2.2000511639805764
+   },
+   "coreBiz": "로블록스는 2021년 직상장한 메타버스 게임·UGC 플랫폼이다"
+  },
+  {
+   "id": "C_3594",
+   "type": "CHARACTER",
+   "name": "메타버스게임플랫폼_직상장"
+  },
+  {
+   "id": "A_346",
+   "type": "ASSET",
+   "name": "로빈후드",
+   "exposure": {
+    "ticker": "HOOD",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -3.834155177619003,
+    "close": 95.56,
+    "marketCap": 85916306021,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 1.2502648866285382,
+    "return_15d": 0.6848593404277903,
+    "return_1m": -15.769061260467165,
+    "return_ytd": -15.508399646330673,
+    "return_1y": -13.684400686478181,
+    "return_3y": 797.2769953051643,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 2.4332725908457364,
+    "return_2y": 412.3860589812333
+   },
+   "coreBiz": "로빈후드는 2021년 상장한 무료 주식거래 앱으로 밈주 열풍의 상징이다"
+  },
+  {
+   "id": "C_3595",
+   "type": "CHARACTER",
+   "name": "무료주식거래앱_밈주열풍상장"
+  },
+  {
+   "id": "A_1956",
+   "type": "ASSET",
+   "name": "루시드모터스",
+   "exposure": {
+    "ticker": "LCID",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -3.4161490683229934,
+    "return_3d": -7.164179104477619,
+    "return_15d": -1.2698412698412764,
+    "return_1m": 34.63203463203462,
+    "return_ytd": -41.154210028382224,
+    "return_1y": -72.35555555555555,
+    "return_3y": -90.81240768094536,
+    "close": 6.22,
+    "marketCap": 1977202311,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -11.647727272727282,
+    "return_2y": -80.12779552715655
+   },
+   "coreBiz": "루시드는 2021년 SPAC 합병으로 상장한 럭셔리 전기차 업체다"
+  },
+  {
+   "id": "C_3596",
+   "type": "CHARACTER",
+   "name": "럭셔리전기차_SPAC상장"
+  },
+  {
+   "id": "A_915",
+   "type": "ASSET",
+   "name": "어펌홀딩스",
+   "exposure": {
+    "ticker": "AFRM",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.03830439223697635,
+    "close": 78.35,
+    "marketCap": 26239301863,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 2.137922044062046,
+    "return_15d": 11.562010536807609,
+    "return_1m": -7.223208999407948,
+    "return_ytd": 5.266693537552047,
+    "return_1y": 1.7268242015060942,
+    "return_3y": 417.84534038334425,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 4.119601328903655,
+    "return_2y": 194.77050413844995
+   },
+   "coreBiz": "어펌은 2021년 상장한 BNPL(후불결제) 선도 핀테크다"
+  },
+  {
+   "id": "C_3597",
+   "type": "CHARACTER",
+   "name": "BNPL선구자_핀테크상장"
+  },
+  {
+   "id": "A_2379",
+   "type": "ASSET",
+   "name": "듀오링고",
+   "exposure": {
+    "ticker": "DUOL",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -7.8209576682858994,
+    "return_3d": -1.9270525694034202,
+    "return_15d": 8.663285340314154,
+    "return_1m": 3.490455784963009,
+    "return_ytd": -24.313390313390304,
+    "return_1y": -59.73384260943373,
+    "return_3y": -3.3612222626409394,
+    "close": 132.83,
+    "marketCap": 6188963465,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 1.474407944996181,
+    "return_2y": -32.59755416856953
+   },
+   "coreBiz": "듀오링고는 2021년 상장한 세계 1위 언어학습 앱이다"
+  },
+  {
+   "id": "C_3598",
+   "type": "CHARACTER",
+   "name": "언어학습앱1위_에듀테크상장"
+  },
+  {
+   "id": "A_662",
+   "type": "ASSET",
+   "name": "글로벌파운드리즈",
+   "exposure": {
+    "ticker": "GFS",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 3.58701840956539,
+    "close": 54.58,
+    "marketCap": 29948091465,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 7.398661944116491,
+    "return_15d": 1.9615169064076232,
+    "return_1m": -13.89809118157438,
+    "return_ytd": 56.300114547537206,
+    "return_1y": 64.89425981873111,
+    "return_3y": -6.203815088503184,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 1.2052660856666009,
+    "return_2y": 25.29843893480257
+   },
+   "coreBiz": "글로벌파운드리는 2021년 상장한 미국·글로벌 반도체 파운드리다"
+  },
+  {
+   "id": "C_3599",
+   "type": "CHARACTER",
+   "name": "반도체파운드리_상장"
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_347",
+   "to": "T_620",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013553"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_347",
+   "to": "C_3592",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007489"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_001",
+   "to": "T_620",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013554"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_001",
+   "to": "C_3593",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007491"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1103",
+   "to": "T_620",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013555"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1103",
+   "to": "C_3594",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007493"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_346",
+   "to": "T_620",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013556"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_346",
+   "to": "C_3595",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007495"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1956",
+   "to": "T_620",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013557"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1956",
+   "to": "C_3596",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007497"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_915",
+   "to": "T_620",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013558"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_915",
+   "to": "C_3597",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007499"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_2379",
+   "to": "T_620",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013559"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2379",
+   "to": "C_3598",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007501"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_662",
+   "to": "T_620",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013560"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_662",
+   "to": "C_3599",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007503"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "M_1130",
+   "to": "T_620",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013561"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_347",
+   "to": "A_346",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020262"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "코인베이스와 로빈후드는 리테일 크립토·주식 거래 플랫폼 시장 경쟁"
+  },
+  {
+   "from": "A_001",
+   "to": "A_1956",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020263"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "리비안과 루시드모터스는 미국 신생 전기차 시장 직접 경쟁"
+  },
+  {
+   "from": "A_915",
+   "to": "A_346",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020264"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "어펌홀딩스와 로빈후드는 밀레니얼 대상 핀테크 서비스 경쟁"
+  },
+  {
+   "from": "A_2379",
+   "to": "A_1103",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020265"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "듀오링고와 로블록스는 모바일 사용자 체류시간 경쟁"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_347",
+   "to": "T_620",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013553"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_347",
+   "to": "C_3592",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007489"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_001",
+   "to": "T_620",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013554"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_001",
+   "to": "C_3593",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007491"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1103",
+   "to": "T_620",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013555"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1103",
+   "to": "C_3594",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007493"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_346",
+   "to": "T_620",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013556"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_346",
+   "to": "C_3595",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007495"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1956",
+   "to": "T_620",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013557"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1956",
+   "to": "C_3596",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007497"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_915",
+   "to": "T_620",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013558"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_915",
+   "to": "C_3597",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007499"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_2379",
+   "to": "T_620",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013559"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2379",
+   "to": "C_3598",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007501"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_662",
+   "to": "T_620",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013560"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_662",
+   "to": "C_3599",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007503"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "M_1130",
+   "to": "T_620",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013561"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_347",
+   "to": "A_346",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020262"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "코인베이스와 로빈후드는 리테일 크립토·주식 거래 플랫폼 시장 경쟁"
+  },
+  {
+   "from": "A_001",
+   "to": "A_1956",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020263"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "리비안과 루시드모터스는 미국 신생 전기차 시장 직접 경쟁"
+  },
+  {
+   "from": "A_915",
+   "to": "A_346",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020264"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "어펌홀딩스와 로빈후드는 밀레니얼 대상 핀테크 서비스 경쟁"
+  },
+  {
+   "from": "A_2379",
+   "to": "A_1103",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020265"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "듀오링고와 로블록스는 모바일 사용자 체류시간 경쟁"
+  }
+ ]
 }

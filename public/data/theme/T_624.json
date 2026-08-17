@@ -1,769 +1,769 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_624",
-  "themeName": "미국2025상장주식",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-26T00:00:00+09:00",
-    "notes": "2025년 미국 증시 상장(IPO) 코호트 — 주목받은 신규 상장주 모음.",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-08-04",
-        "kind": "보강",
-        "title": "2궤도 관계 엣지 추가",
-        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 2건 백필(리서치 기반)."
-      },
-      {
-        "date": "2026-07-26",
-        "kind": "수정",
-        "title": "구체적 엣지 백필 + 이벤트",
-        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
-      },
-      {
-        "date": "2026-07-17",
-        "kind": "신규",
-        "title": "미국2025상장주식 코호트 테마 생성",
-        "detail": "2025년 미국 상장(나스닥·NYSE 무관) 주목 IPO 8종을 THEMED_AS로 묶고, 종목별 상장 특징 CHR과 그 해 IPO시장 환경 매크로를 연결했다."
-      },
-      {
-        "date": "2026-08-05",
-        "kind": "관계",
-        "title": "EXPOSED_TO ETF 연결",
-        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-      }
-    ],
-    "description": "미국2025상장주식 테마로, 코어위브·서클·차임·이토로 등을 핵심 축으로 묶은 온톨로지 그래프다. 핵심 구성종목은 코어위브·서클·차임·이토로·피그마·웨불 등 총 9개 자산으로 구성된다. Renaissance IPO ETF 등 ETF로도 익스포저를 확장한다. 미국2025IPO활황_AI인프라 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 구성종목은 AI GPU클라우드_상장·USDC스테이블코인_상장·네오뱅크핀테크_상장·소셜트레이딩_상장 등의 특성으로 차별화된다. 경쟁·공급·협력 등 2건의 종목 간 관계로 밸류체인 내 상호작용을 함께 표시한다."
+ "schemaVersion": "v5",
+ "themeId": "T_624",
+ "themeName": "미국2025상장주식",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
+  ],
+  "dataAsOf": "2026-07-26T00:00:00+09:00",
+  "notes": "2025년 미국 증시 상장(IPO) 코호트 — 주목받은 신규 상장주 모음.",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-08-04",
+    "kind": "보강",
+    "title": "2궤도 관계 엣지 추가",
+    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 2건 백필(리서치 기반)."
+   },
+   {
+    "date": "2026-07-26",
+    "kind": "수정",
+    "title": "구체적 엣지 백필 + 이벤트",
+    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
+   },
+   {
+    "date": "2026-07-17",
+    "kind": "신규",
+    "title": "미국2025상장주식 코호트 테마 생성",
+    "detail": "2025년 미국 상장(나스닥·NYSE 무관) 주목 IPO 8종을 THEMED_AS로 묶고, 종목별 상장 특징 CHR과 그 해 IPO시장 환경 매크로를 연결했다."
+   },
+   {
+    "date": "2026-08-05",
+    "kind": "관계",
+    "title": "EXPOSED_TO ETF 연결",
+    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+   }
+  ],
+  "description": "• 미국2025IPO활황_AI인프라 수혜\n• 동인 미국2025IPO활황_AI인프라\n• 대표주 코어위브(AI GPU클라우드)·서클(USDC스테이블코인)·차임(네오뱅크핀테크 상장)\n• ETF Renaissance IPO ETF"
+ },
+ "nodes": [
+  {
+   "id": "T_624",
+   "type": "THEME",
+   "name": "미국2025상장주식"
   },
-  "nodes": [
-    {
-      "id": "T_624",
-      "type": "THEME",
-      "name": "미국2025상장주식"
-    },
-    {
-      "id": "M_1134",
-      "type": "MACRO",
-      "name": "미국2025IPO활황_AI인프라"
-    },
-    {
-      "id": "A_240",
-      "type": "ASSET",
-      "name": "코어위브",
-      "exposure": {
-        "ticker": "CRWV",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.9690469470317042,
-        "return_3d": 16.54118689105404,
-        "return_15d": 46.43850862548693,
-        "return_1m": 31.673755316487373,
-        "return_ytd": 46.99064376483732,
-        "return_1y": 5.778313737312835,
-        "return_3y": null,
-        "close": 105.26,
-        "marketCap": 57426739041,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "pe_ttm": null,
-        "return_5d": 16.091320172052505,
-        "return_2y": null
-      },
-      "coreBiz": "코어위브는 2025년 상장한 AI GPU 클라우드(네오클라우드) 대표주다"
-    },
-    {
-      "id": "C_3622",
-      "type": "CHARACTER",
-      "name": "AI GPU클라우드_상장"
-    },
-    {
-      "id": "A_348",
-      "type": "ASSET",
-      "name": "서클",
-      "exposure": {
-        "ticker": "CRCL",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -5.014592730167156,
-        "close": 71.6,
-        "marketCap": 19138012974,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 0.6183249016301184,
-        "return_15d": 14.81719050673509,
-        "return_1m": 13.255298956026573,
-        "return_ytd": -9.70996216897857,
-        "return_1y": -48.57430151547799,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 7.394630268486568,
-        "return_2y": null
-      },
-      "coreBiz": "서클은 2025년 상장한 USDC 스테이블코인 발행사다"
-    },
-    {
-      "id": "C_3623",
-      "type": "CHARACTER",
-      "name": "USDC스테이블코인_상장"
-    },
-    {
-      "id": "A_2719",
-      "type": "ASSET",
-      "name": "차임",
-      "exposure": {
-        "ticker": "CHYM",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.49720323182099735,
-        "close": 32.02,
-        "marketCap": 12200232447,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 0.9139615505830534,
-        "return_15d": 54.76075398743354,
-        "return_1m": 49.20782851817336,
-        "return_ytd": 27.21493841875249,
-        "return_1y": 9.470085470085476,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 10.034364261168394,
-        "return_2y": null
-      },
-      "coreBiz": "차임은 2025년 상장한 미국 네오뱅크(디지털뱅킹) 핀테크다"
-    },
-    {
-      "id": "C_3624",
-      "type": "CHARACTER",
-      "name": "네오뱅크핀테크_상장"
-    },
-    {
-      "id": "A_2720",
-      "type": "ASSET",
-      "name": "이토로",
-      "exposure": {
-        "ticker": "ETOR",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -1.243953006219778,
-        "close": 28.58,
-        "marketCap": 2405172564,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": -2.5571087623593614,
-        "return_15d": -22.294725394236004,
-        "return_1m": -25.065547981122183,
-        "return_ytd": -18.64503273555367,
-        "return_1y": -39.90748528174938,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -18.89897843359819,
-        "return_2y": null
-      },
-      "coreBiz": "이토로는 2025년 상장한 소셜 트레이딩·투자 플랫폼이다"
-    },
-    {
-      "id": "C_3625",
-      "type": "CHARACTER",
-      "name": "소셜트레이딩_상장"
-    },
-    {
-      "id": "A_2721",
-      "type": "ASSET",
-      "name": "피그마",
-      "exposure": {
-        "ticker": "FIG",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -3.529411764705881,
-        "close": 25.42,
-        "marketCap": 12391256154,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 2.2114997989545637,
-        "return_15d": 20.359848484848484,
-        "return_1m": 6.538139145012578,
-        "return_ytd": -31.977522076531972,
-        "return_1y": -66.68850740400995,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 9.14555603263205,
-        "return_2y": null
-      },
-      "coreBiz": "피그마는 2025년 상장한 협업 디자인 SaaS다"
-    },
-    {
-      "id": "C_3626",
-      "type": "CHARACTER",
-      "name": "협업디자인SaaS_상장"
-    },
-    {
-      "id": "A_2722",
-      "type": "ASSET",
-      "name": "웨불",
-      "exposure": {
-        "ticker": "BULL",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 1.1320754716980908,
-        "close": 8.04,
-        "marketCap": 4275822075,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 6.2087186261558625,
-        "return_15d": 7.343124165554049,
-        "return_1m": 6.7729083665338585,
-        "return_ytd": 3.474903474903468,
-        "return_1y": -47.9611650485437,
-        "return_3y": -24.50704225352114,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 9.83606557377048,
-        "return_2y": -28.406055209260916
-      },
-      "coreBiz": "웨불은 2025년 상장한 온라인 증권거래 앱이다"
-    },
-    {
-      "id": "C_3627",
-      "type": "CHARACTER",
-      "name": "온라인증권앱_상장"
-    },
-    {
-      "id": "A_2491",
-      "type": "ASSET",
-      "name": "세일포인트",
-      "exposure": {
-        "ticker": "SAIL",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -2.301150575287636,
-        "return_3d": 2.4658971668415575,
-        "return_15d": 30.635451505016743,
-        "return_1m": 28.48684210526318,
-        "return_ytd": -3.460207612456745,
-        "return_1y": -1.5128593040847016,
-        "return_3y": null,
-        "close": 19.53,
-        "marketCap": 11077083931,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 4.662379421221874,
-        "return_2y": null
-      },
-      "coreBiz": "세일포인트는 2025년 상장한 아이덴티티 보안(IAM) SaaS다"
-    },
-    {
-      "id": "C_3628",
-      "type": "CHARACTER",
-      "name": "신원보안SaaS_상장"
-    },
-    {
-      "id": "A_2723",
-      "type": "ASSET",
-      "name": "오마다헬스",
-      "exposure": {
-        "ticker": "OMDA",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -1.3541239228559765,
-        "close": 24.04,
-        "marketCap": 1429142060,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 0.12494793835899909,
-        "return_15d": 17.096931320019483,
-        "return_1m": 2.5597269624573205,
-        "return_ytd": 52.344740177439796,
-        "return_1y": 17.785399314061735,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 1.5631601182931831,
-        "return_2y": null
-      },
-      "coreBiz": "오마다헬스는 2025년 상장한 디지털 만성질환 관리 헬스케어다"
-    },
-    {
-      "id": "C_3629",
-      "type": "CHARACTER",
-      "name": "디지털만성질환관리_상장"
-    },
-    {
-      "id": "A_2969",
-      "type": "ASSET",
-      "name": "Renaissance IPO ETF",
-      "exposure": {
-        "ticker": "IPO",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.2799160251924393,
-        "return_3d": 3.69292341277061,
-        "return_15d": 10.765643218033416,
-        "return_1m": 2.813852813852824,
-        "return_ytd": 24.86308871851042,
-        "return_1y": 14.159823753254553,
-        "return_3y": 74.79300827966881,
-        "close": 56.975,
-        "marketCap": 202419071,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 2.758247701460248,
-        "return_2y": 45.96670934699105
-      }
-    }
-  ],
-  "edges": [
-    {
-      "from": "A_240",
-      "to": "T_624",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013587"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_240",
-      "to": "C_3622",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007553"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_348",
-      "to": "T_624",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013588"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_348",
-      "to": "C_3623",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007555"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2719",
-      "to": "T_624",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013589"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2719",
-      "to": "C_3624",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007557"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_2720",
-      "to": "T_624",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013590"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2720",
-      "to": "C_3625",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007559"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_2721",
-      "to": "T_624",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013591"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2721",
-      "to": "C_3626",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007561"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_2722",
-      "to": "T_624",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013592"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2722",
-      "to": "C_3627",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007563"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_2491",
-      "to": "T_624",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013593"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2491",
-      "to": "C_3628",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007565"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_2723",
-      "to": "T_624",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013594"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2723",
-      "to": "C_3629",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007567"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_1134",
-      "to": "T_624",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013595"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_348",
-      "to": "A_2719",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020269"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "서클과 차임은 디지털 결제·소비자 핀테크 시장 경쟁"
-    },
-    {
-      "from": "A_2720",
-      "to": "A_2722",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020270"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "이토로와 웨불은 글로벌 리테일 투자 플랫폼 시장 직접 경쟁"
-    },
-    {
-      "from": "A_2969",
-      "to": "T_624",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020934"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_240",
-      "to": "T_624",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013587"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_240",
-      "to": "C_3622",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007553"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_348",
-      "to": "T_624",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013588"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_348",
-      "to": "C_3623",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007555"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2719",
-      "to": "T_624",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013589"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2719",
-      "to": "C_3624",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007557"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_2720",
-      "to": "T_624",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013590"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2720",
-      "to": "C_3625",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007559"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_2721",
-      "to": "T_624",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013591"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2721",
-      "to": "C_3626",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007561"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_2722",
-      "to": "T_624",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013592"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2722",
-      "to": "C_3627",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007563"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_2491",
-      "to": "T_624",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013593"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2491",
-      "to": "C_3628",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007565"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_2723",
-      "to": "T_624",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013594"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2723",
-      "to": "C_3629",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007567"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_1134",
-      "to": "T_624",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013595"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_348",
-      "to": "A_2719",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020269"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "서클과 차임은 디지털 결제·소비자 핀테크 시장 경쟁"
-    },
-    {
-      "from": "A_2720",
-      "to": "A_2722",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_020270"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "이토로와 웨불은 글로벌 리테일 투자 플랫폼 시장 직접 경쟁"
-    },
-    {
-      "from": "A_2969",
-      "to": "T_624",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020934"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ]
+  {
+   "id": "M_1134",
+   "type": "MACRO",
+   "name": "미국2025IPO활황_AI인프라"
+  },
+  {
+   "id": "A_240",
+   "type": "ASSET",
+   "name": "코어위브",
+   "exposure": {
+    "ticker": "CRWV",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.9690469470317042,
+    "return_3d": 16.54118689105404,
+    "return_15d": 46.43850862548693,
+    "return_1m": 31.673755316487373,
+    "return_ytd": 46.99064376483732,
+    "return_1y": 5.778313737312835,
+    "return_3y": null,
+    "close": 105.26,
+    "marketCap": 57426739041,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "pe_ttm": null,
+    "return_5d": 16.091320172052505,
+    "return_2y": null
+   },
+   "coreBiz": "코어위브는 2025년 상장한 AI GPU 클라우드(네오클라우드) 대표주다"
+  },
+  {
+   "id": "C_3622",
+   "type": "CHARACTER",
+   "name": "AI GPU클라우드_상장"
+  },
+  {
+   "id": "A_348",
+   "type": "ASSET",
+   "name": "서클",
+   "exposure": {
+    "ticker": "CRCL",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -5.014592730167156,
+    "close": 71.6,
+    "marketCap": 19138012974,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 0.6183249016301184,
+    "return_15d": 14.81719050673509,
+    "return_1m": 13.255298956026573,
+    "return_ytd": -9.70996216897857,
+    "return_1y": -48.57430151547799,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 7.394630268486568,
+    "return_2y": null
+   },
+   "coreBiz": "서클은 2025년 상장한 USDC 스테이블코인 발행사다"
+  },
+  {
+   "id": "C_3623",
+   "type": "CHARACTER",
+   "name": "USDC스테이블코인_상장"
+  },
+  {
+   "id": "A_2719",
+   "type": "ASSET",
+   "name": "차임",
+   "exposure": {
+    "ticker": "CHYM",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.49720323182099735,
+    "close": 32.02,
+    "marketCap": 12200232447,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 0.9139615505830534,
+    "return_15d": 54.76075398743354,
+    "return_1m": 49.20782851817336,
+    "return_ytd": 27.21493841875249,
+    "return_1y": 9.470085470085476,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 10.034364261168394,
+    "return_2y": null
+   },
+   "coreBiz": "차임은 2025년 상장한 미국 네오뱅크(디지털뱅킹) 핀테크다"
+  },
+  {
+   "id": "C_3624",
+   "type": "CHARACTER",
+   "name": "네오뱅크핀테크_상장"
+  },
+  {
+   "id": "A_2720",
+   "type": "ASSET",
+   "name": "이토로",
+   "exposure": {
+    "ticker": "ETOR",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -1.243953006219778,
+    "close": 28.58,
+    "marketCap": 2405172564,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": -2.5571087623593614,
+    "return_15d": -22.294725394236004,
+    "return_1m": -25.065547981122183,
+    "return_ytd": -18.64503273555367,
+    "return_1y": -39.90748528174938,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -18.89897843359819,
+    "return_2y": null
+   },
+   "coreBiz": "이토로는 2025년 상장한 소셜 트레이딩·투자 플랫폼이다"
+  },
+  {
+   "id": "C_3625",
+   "type": "CHARACTER",
+   "name": "소셜트레이딩_상장"
+  },
+  {
+   "id": "A_2721",
+   "type": "ASSET",
+   "name": "피그마",
+   "exposure": {
+    "ticker": "FIG",
+    "exchange": "NYSE",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -3.529411764705881,
+    "close": 25.42,
+    "marketCap": 12391256154,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 2.2114997989545637,
+    "return_15d": 20.359848484848484,
+    "return_1m": 6.538139145012578,
+    "return_ytd": -31.977522076531972,
+    "return_1y": -66.68850740400995,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 9.14555603263205,
+    "return_2y": null
+   },
+   "coreBiz": "피그마는 2025년 상장한 협업 디자인 SaaS다"
+  },
+  {
+   "id": "C_3626",
+   "type": "CHARACTER",
+   "name": "협업디자인SaaS_상장"
+  },
+  {
+   "id": "A_2722",
+   "type": "ASSET",
+   "name": "웨불",
+   "exposure": {
+    "ticker": "BULL",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 1.1320754716980908,
+    "close": 8.04,
+    "marketCap": 4275822075,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 6.2087186261558625,
+    "return_15d": 7.343124165554049,
+    "return_1m": 6.7729083665338585,
+    "return_ytd": 3.474903474903468,
+    "return_1y": -47.9611650485437,
+    "return_3y": -24.50704225352114,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 9.83606557377048,
+    "return_2y": -28.406055209260916
+   },
+   "coreBiz": "웨불은 2025년 상장한 온라인 증권거래 앱이다"
+  },
+  {
+   "id": "C_3627",
+   "type": "CHARACTER",
+   "name": "온라인증권앱_상장"
+  },
+  {
+   "id": "A_2491",
+   "type": "ASSET",
+   "name": "세일포인트",
+   "exposure": {
+    "ticker": "SAIL",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -2.301150575287636,
+    "return_3d": 2.4658971668415575,
+    "return_15d": 30.635451505016743,
+    "return_1m": 28.48684210526318,
+    "return_ytd": -3.460207612456745,
+    "return_1y": -1.5128593040847016,
+    "return_3y": null,
+    "close": 19.53,
+    "marketCap": 11077083931,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 4.662379421221874,
+    "return_2y": null
+   },
+   "coreBiz": "세일포인트는 2025년 상장한 아이덴티티 보안(IAM) SaaS다"
+  },
+  {
+   "id": "C_3628",
+   "type": "CHARACTER",
+   "name": "신원보안SaaS_상장"
+  },
+  {
+   "id": "A_2723",
+   "type": "ASSET",
+   "name": "오마다헬스",
+   "exposure": {
+    "ticker": "OMDA",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -1.3541239228559765,
+    "close": 24.04,
+    "marketCap": 1429142060,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 0.12494793835899909,
+    "return_15d": 17.096931320019483,
+    "return_1m": 2.5597269624573205,
+    "return_ytd": 52.344740177439796,
+    "return_1y": 17.785399314061735,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 1.5631601182931831,
+    "return_2y": null
+   },
+   "coreBiz": "오마다헬스는 2025년 상장한 디지털 만성질환 관리 헬스케어다"
+  },
+  {
+   "id": "C_3629",
+   "type": "CHARACTER",
+   "name": "디지털만성질환관리_상장"
+  },
+  {
+   "id": "A_2969",
+   "type": "ASSET",
+   "name": "Renaissance IPO ETF",
+   "exposure": {
+    "ticker": "IPO",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.2799160251924393,
+    "return_3d": 3.69292341277061,
+    "return_15d": 10.765643218033416,
+    "return_1m": 2.813852813852824,
+    "return_ytd": 24.86308871851042,
+    "return_1y": 14.159823753254553,
+    "return_3y": 74.79300827966881,
+    "close": 56.975,
+    "marketCap": 202419071,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 2.758247701460248,
+    "return_2y": 45.96670934699105
+   }
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_240",
+   "to": "T_624",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013587"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_240",
+   "to": "C_3622",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007553"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_348",
+   "to": "T_624",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013588"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_348",
+   "to": "C_3623",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007555"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2719",
+   "to": "T_624",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013589"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2719",
+   "to": "C_3624",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007557"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_2720",
+   "to": "T_624",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013590"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2720",
+   "to": "C_3625",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007559"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_2721",
+   "to": "T_624",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013591"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2721",
+   "to": "C_3626",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007561"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_2722",
+   "to": "T_624",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013592"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2722",
+   "to": "C_3627",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007563"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_2491",
+   "to": "T_624",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013593"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2491",
+   "to": "C_3628",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007565"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_2723",
+   "to": "T_624",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013594"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2723",
+   "to": "C_3629",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007567"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_1134",
+   "to": "T_624",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013595"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_348",
+   "to": "A_2719",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020269"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "서클과 차임은 디지털 결제·소비자 핀테크 시장 경쟁"
+  },
+  {
+   "from": "A_2720",
+   "to": "A_2722",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020270"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "이토로와 웨불은 글로벌 리테일 투자 플랫폼 시장 직접 경쟁"
+  },
+  {
+   "from": "A_2969",
+   "to": "T_624",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020934"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_240",
+   "to": "T_624",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013587"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_240",
+   "to": "C_3622",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007553"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_348",
+   "to": "T_624",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013588"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_348",
+   "to": "C_3623",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007555"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2719",
+   "to": "T_624",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013589"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2719",
+   "to": "C_3624",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007557"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_2720",
+   "to": "T_624",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013590"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2720",
+   "to": "C_3625",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007559"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_2721",
+   "to": "T_624",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013591"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2721",
+   "to": "C_3626",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007561"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_2722",
+   "to": "T_624",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013592"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2722",
+   "to": "C_3627",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007563"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_2491",
+   "to": "T_624",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013593"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2491",
+   "to": "C_3628",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007565"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_2723",
+   "to": "T_624",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013594"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2723",
+   "to": "C_3629",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007567"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_1134",
+   "to": "T_624",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013595"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_348",
+   "to": "A_2719",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020269"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "서클과 차임은 디지털 결제·소비자 핀테크 시장 경쟁"
+  },
+  {
+   "from": "A_2720",
+   "to": "A_2722",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_020270"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "이토로와 웨불은 글로벌 리테일 투자 플랫폼 시장 직접 경쟁"
+  },
+  {
+   "from": "A_2969",
+   "to": "T_624",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020934"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ]
 }

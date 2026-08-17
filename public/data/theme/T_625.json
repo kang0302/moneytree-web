@@ -1,376 +1,376 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_625",
-  "themeName": "미국2026상장주식",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-26T00:00:00+09:00",
-    "notes": "2026년 미국 증시 상장(IPO) 코호트 — 주목받은 신규 상장주 모음.",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-07-26",
-        "kind": "수정",
-        "title": "구체적 엣지 백필 + 이벤트",
-        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
-      },
-      {
-        "date": "2026-07-17",
-        "kind": "신규",
-        "title": "미국2026상장주식 코호트 테마 생성",
-        "detail": "2026년 미국 상장(나스닥·NYSE 무관) 주목 IPO 4종을 THEMED_AS로 묶고, 종목별 상장 특징 CHR과 그 해 IPO시장 환경 매크로를 연결했다."
-      }
-    ],
-    "description": "미국2026상장주식 테마로, 스페이스X·세레브라스·퀀티넘·SK하이닉스 등을 핵심 축으로 묶은 온톨로지 그래프다. 핵심 구성종목은 스페이스X·세레브라스·퀀티넘·SK하이닉스 등 총 4개 자산으로 구성된다. 미국2026IPO_현재진행 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 구성종목은 우주발사·스타링크_역대최대IPO·웨이퍼스케일AI칩_상장·양자컴퓨팅_하니웰계열상장·美상장_HBM메모리 등의 특성으로 차별화된다. 구성종목의 기간별 수익률과 이동평균 시그널을 함께 제공한다."
+ "schemaVersion": "v5",
+ "themeId": "T_625",
+ "themeName": "미국2026상장주식",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
+  ],
+  "dataAsOf": "2026-07-26T00:00:00+09:00",
+  "notes": "2026년 미국 증시 상장(IPO) 코호트 — 주목받은 신규 상장주 모음.",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-07-26",
+    "kind": "수정",
+    "title": "구체적 엣지 백필 + 이벤트",
+    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
+   },
+   {
+    "date": "2026-07-17",
+    "kind": "신규",
+    "title": "미국2026상장주식 코호트 테마 생성",
+    "detail": "2026년 미국 상장(나스닥·NYSE 무관) 주목 IPO 4종을 THEMED_AS로 묶고, 종목별 상장 특징 CHR과 그 해 IPO시장 환경 매크로를 연결했다."
+   }
+  ],
+  "description": "• 미국2026IPO_현재진행 수혜\n• 동인 미국2026IPO_현재진행\n• 대표주 스페이스X(우주발사)·세레브라스(웨이퍼스케일AI칩)·퀀티넘(양자컴퓨팅 하니웰계)"
+ },
+ "nodes": [
+  {
+   "id": "T_625",
+   "type": "THEME",
+   "name": "미국2026상장주식"
   },
-  "nodes": [
-    {
-      "id": "T_625",
-      "type": "THEME",
-      "name": "미국2026상장주식"
-    },
-    {
-      "id": "M_1135",
-      "type": "MACRO",
-      "name": "미국2026IPO_현재진행"
-    },
-    {
-      "name": "스페이스X",
-      "id": "A_137",
-      "metrics": {
-        "return_1d": -0.9130157831410468,
-        "return_30d": null,
-        "market_cap": null,
-        "asof": null,
-        "return_90d": null,
-        "currency": null,
-        "per": null,
-        "last_price": null,
-        "return_15d": 21.66507343356219,
-        "return_3d": 5.0341360942306235,
-        "return_1m": 2.8806584362139898,
-        "return_ytd": -13.016464740602663,
-        "return_1y": null,
-        "return_3y": null,
-        "close": 140,
-        "marketCap": 1830621161880,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 5.176170084892173,
-        "return_2y": null
-      },
-      "exposure": {
-        "country": "US",
-        "ticker": "SPCX",
-        "exchange": "NASDAQ"
-      },
-      "type": "ASSET",
-      "coreBiz": "스페이스X는 2026년 역대 최대 규모로 상장한 우주발사·위성인터넷 기업이다"
-    },
-    {
-      "id": "C_3630",
-      "type": "CHARACTER",
-      "name": "우주발사·스타링크_역대최대IPO"
-    },
-    {
-      "id": "A_2724",
-      "type": "ASSET",
-      "name": "세레브라스",
-      "exposure": {
-        "ticker": "CBRS",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -5.207566772001215,
-        "close": 218.98,
-        "marketCap": 49607186349,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": -6.721758391548816,
-        "return_15d": 9.973885094415413,
-        "return_1m": 7.443206908395061,
-        "return_ytd": -29.604269135564344,
-        "return_1y": null,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": -3.4181625722224718,
-        "return_2y": null
-      },
-      "coreBiz": "세레브라스는 2026년 상장한 웨이퍼스케일 AI 가속 반도체 기업이다"
-    },
-    {
-      "id": "C_3631",
-      "type": "CHARACTER",
-      "name": "웨이퍼스케일AI칩_상장"
-    },
-    {
-      "id": "A_2725",
-      "type": "ASSET",
-      "name": "퀀티넘",
-      "exposure": {
-        "ticker": "QNT",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -7.167883211678827,
-        "close": 63.585,
-        "marketCap": 1994209679,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 13.432037103103811,
-        "return_15d": 21.610250525913187,
-        "return_1m": -4.562509380159074,
-        "return_ytd": 5.316329910566409,
-        "return_1y": null,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 8.312042241526152,
-        "return_2y": null
-      },
-      "coreBiz": "퀀티넘은 2026년 상장한 하니웰 계열 양자컴퓨팅 대표주다"
-    },
-    {
-      "id": "C_3632",
-      "type": "CHARACTER",
-      "name": "양자컴퓨팅_하니웰계열상장"
-    },
-    {
-      "id": "A_2726",
-      "type": "ASSET",
-      "name": "SK하이닉스",
-      "exposure": {
-        "ticker": "SKHY",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.39838232631135284,
-        "close": 166.33,
-        "marketCap": 1180701640200,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 17.42322626191317,
-        "return_15d": 7.608203402988956,
-        "return_1m": -14.22751650165015,
-        "return_ytd": -0.9999404797333411,
-        "return_1y": null,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 20.607642665506496,
-        "return_2y": null
-      },
-      "coreBiz": "SK하이닉스는 2026년 미국 증시에 상장한 HBM 메모리 대표주다"
-    },
-    {
-      "id": "C_3633",
-      "type": "CHARACTER",
-      "name": "美상장_HBM메모리"
-    }
-  ],
-  "edges": [
-    {
-      "from": "A_137",
-      "to": "T_625",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013596"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_137",
-      "to": "C_3630",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007570"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2724",
-      "to": "T_625",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013597"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2724",
-      "to": "C_3631",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007572"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2725",
-      "to": "T_625",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013598"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2725",
-      "to": "C_3632",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007574"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_2726",
-      "to": "T_625",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013599"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2726",
-      "to": "C_3633",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007576"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "M_1135",
-      "to": "T_625",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013600"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_137",
-      "to": "T_625",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013596"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_137",
-      "to": "C_3630",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007570"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_2724",
-      "to": "T_625",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013597"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2724",
-      "to": "C_3631",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007572"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2725",
-      "to": "T_625",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013598"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2725",
-      "to": "C_3632",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007574"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_2726",
-      "to": "T_625",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_013599"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2726",
-      "to": "C_3633",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_007576"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "M_1135",
-      "to": "T_625",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_013600"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    }
-  ]
+  {
+   "id": "M_1135",
+   "type": "MACRO",
+   "name": "미국2026IPO_현재진행"
+  },
+  {
+   "name": "스페이스X",
+   "id": "A_137",
+   "metrics": {
+    "return_1d": -0.9130157831410468,
+    "return_30d": null,
+    "market_cap": null,
+    "asof": null,
+    "return_90d": null,
+    "currency": null,
+    "per": null,
+    "last_price": null,
+    "return_15d": 21.66507343356219,
+    "return_3d": 5.0341360942306235,
+    "return_1m": 2.8806584362139898,
+    "return_ytd": -13.016464740602663,
+    "return_1y": null,
+    "return_3y": null,
+    "close": 140,
+    "marketCap": 1830621161880,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 5.176170084892173,
+    "return_2y": null
+   },
+   "exposure": {
+    "country": "US",
+    "ticker": "SPCX",
+    "exchange": "NASDAQ"
+   },
+   "type": "ASSET",
+   "coreBiz": "스페이스X는 2026년 역대 최대 규모로 상장한 우주발사·위성인터넷 기업이다"
+  },
+  {
+   "id": "C_3630",
+   "type": "CHARACTER",
+   "name": "우주발사·스타링크_역대최대IPO"
+  },
+  {
+   "id": "A_2724",
+   "type": "ASSET",
+   "name": "세레브라스",
+   "exposure": {
+    "ticker": "CBRS",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -5.207566772001215,
+    "close": 218.98,
+    "marketCap": 49607186349,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": -6.721758391548816,
+    "return_15d": 9.973885094415413,
+    "return_1m": 7.443206908395061,
+    "return_ytd": -29.604269135564344,
+    "return_1y": null,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": -3.4181625722224718,
+    "return_2y": null
+   },
+   "coreBiz": "세레브라스는 2026년 상장한 웨이퍼스케일 AI 가속 반도체 기업이다"
+  },
+  {
+   "id": "C_3631",
+   "type": "CHARACTER",
+   "name": "웨이퍼스케일AI칩_상장"
+  },
+  {
+   "id": "A_2725",
+   "type": "ASSET",
+   "name": "퀀티넘",
+   "exposure": {
+    "ticker": "QNT",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -7.167883211678827,
+    "close": 63.585,
+    "marketCap": 1994209679,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 13.432037103103811,
+    "return_15d": 21.610250525913187,
+    "return_1m": -4.562509380159074,
+    "return_ytd": 5.316329910566409,
+    "return_1y": null,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 8.312042241526152,
+    "return_2y": null
+   },
+   "coreBiz": "퀀티넘은 2026년 상장한 하니웰 계열 양자컴퓨팅 대표주다"
+  },
+  {
+   "id": "C_3632",
+   "type": "CHARACTER",
+   "name": "양자컴퓨팅_하니웰계열상장"
+  },
+  {
+   "id": "A_2726",
+   "type": "ASSET",
+   "name": "SK하이닉스",
+   "exposure": {
+    "ticker": "SKHY",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.39838232631135284,
+    "close": 166.33,
+    "marketCap": 1180701640200,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 17.42322626191317,
+    "return_15d": 7.608203402988956,
+    "return_1m": -14.22751650165015,
+    "return_ytd": -0.9999404797333411,
+    "return_1y": null,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 20.607642665506496,
+    "return_2y": null
+   },
+   "coreBiz": "SK하이닉스는 2026년 미국 증시에 상장한 HBM 메모리 대표주다"
+  },
+  {
+   "id": "C_3633",
+   "type": "CHARACTER",
+   "name": "美상장_HBM메모리"
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_137",
+   "to": "T_625",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013596"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_137",
+   "to": "C_3630",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007570"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2724",
+   "to": "T_625",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013597"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2724",
+   "to": "C_3631",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007572"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2725",
+   "to": "T_625",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013598"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2725",
+   "to": "C_3632",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007574"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_2726",
+   "to": "T_625",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013599"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2726",
+   "to": "C_3633",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007576"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "M_1135",
+   "to": "T_625",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013600"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_137",
+   "to": "T_625",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013596"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_137",
+   "to": "C_3630",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007570"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_2724",
+   "to": "T_625",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013597"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2724",
+   "to": "C_3631",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007572"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2725",
+   "to": "T_625",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013598"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2725",
+   "to": "C_3632",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007574"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_2726",
+   "to": "T_625",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_013599"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2726",
+   "to": "C_3633",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_007576"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "M_1135",
+   "to": "T_625",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_013600"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  }
+ ]
 }

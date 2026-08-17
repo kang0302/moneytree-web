@@ -1,1008 +1,1008 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_073",
-  "themeName": "글로벌원자재:유가",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-03-26T00:00:00+09:00",
-    "notes": "g73 누적 import 기반 글로벌원자재:유가 테마",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-07-10",
-        "kind": "변경",
-        "title": "매크로 정리 + ETF별 CHR 정의",
-        "detail": "중복·모호한 매크로(유가상승·유가하락·글로벌여행수요·에너지수급) 4종을 제거하고, 10개 원유 ETF(USO·BNO·XLE·XOP·OIH·IXC·VDE·DBO·KODEX WTI·RISE 원유생산)에 추종 대상·구조(근월물/브렌트/E&P/유전서비스/롤최적화/환헤지/합성) 기반 CHR을 정의했다."
-      }
-    ],
-    "description": "WTI·Brent·OPEC+ 정책·셰일 디스립션 등 유가 사이클 직접 노출군. 중동 지정학·재고·OPEC 컨퍼런스 일정이 단기 모멘텀. 러-우전쟁·OPEC감산정책·해상운송리스크·중국전략비축확대 등 거시 변수가 테마 성과의 핵심 동인으로 작용한다. 구성종목은 WTI근월물원유선물·브렌트원유선물국제유가·미에너지메이저섹터·미원유가스E&P동일가중 등의 특성으로 차별화된다. 구성종목의 기간별 수익률과 이동평균 시그널을 함께 제공한다. 종목별 브리핑 카드와 연도별 이벤트 DB로 테마의 맥락과 변동요인을 확인할 수 있다."
+ "schemaVersion": "v5",
+ "themeId": "T_073",
+ "themeName": "글로벌원자재:유가",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
+  ],
+  "dataAsOf": "2026-03-26T00:00:00+09:00",
+  "notes": "g73 누적 import 기반 글로벌원자재:유가 테마",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-07-10",
+    "kind": "변경",
+    "title": "매크로 정리 + ETF별 CHR 정의",
+    "detail": "중복·모호한 매크로(유가상승·유가하락·글로벌여행수요·에너지수급) 4종을 제거하고, 10개 원유 ETF(USO·BNO·XLE·XOP·OIH·IXC·VDE·DBO·KODEX WTI·RISE 원유생산)에 추종 대상·구조(근월물/브렌트/E&P/유전서비스/롤최적화/환헤지/합성) 기반 CHR을 정의했다."
+   }
+  ],
+  "description": "• WTI·Brent·OPEC+ 정책·셰일 디스립션 등 유가 사이클 직접 노출군\n• 동인 러-우전쟁·OPEC감산정책·해상운송리스크\n• 대표주 USO(WTI근월물원유선물)·BNO(브렌트원유선물국제유)·XLE(미에너지메이저섹터)"
+ },
+ "nodes": [
+  {
+   "id": "T_073",
+   "type": "THEME",
+   "name": "글로벌원자재:유가"
   },
-  "nodes": [
-    {
-      "id": "T_073",
-      "type": "THEME",
-      "name": "글로벌원자재:유가"
-    },
-    {
-      "id": "A_070",
-      "type": "ASSET",
-      "name": "USO",
-      "exposure": {
-        "ticker": "USO",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "United States Oil Fund. WTI 원유선물 근월물을 추종하는 대표 원유 ETF로 콘탱고 국면 롤오버 비용에 노출된다."
-      },
-      "metrics": {
-        "return_1d": 1.2556986323282393,
-        "close": 126.6,
-        "marketCap": 15078059114,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": -0.791474022412042,
-        "return_15d": -7.381666544736265,
-        "return_1m": 5.350753099775307,
-        "return_ytd": 83.05378831694621,
-        "return_1y": 71.68429617575265,
-        "return_3y": 71.52147405500608,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 7.306323105611101,
-        "return_2y": 65.29573051312181
-      }
-    },
-    {
-      "id": "A_071",
-      "type": "ASSET",
-      "name": "BNO",
-      "exposure": {
-        "ticker": "BNO",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "United States Brent Oil Fund. 브렌트 원유선물을 추종해 중동·해상 리스크가 반영되는 국제 유가에 노출된다."
-      },
-      "metrics": {
-        "return_1d": 1.8094089264173663,
-        "close": 50.64,
-        "marketCap": 193650905,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": -0.6279434850863463,
-        "return_15d": -3.689615823507031,
-        "return_1m": 7.083950095157543,
-        "return_ytd": 78.81355932203388,
-        "return_1y": 69.81891348088531,
-        "return_3y": 72.53833049403747,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 7.905391007884077,
-        "return_2y": 64.57588560285994
-      }
-    },
-    {
-      "id": "A_503",
-      "type": "ASSET",
-      "name": "XLE",
-      "exposure": {
-        "ticker": "XLE",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "Energy Select Sector SPDR. 엑슨모빌·셰브론이 약 40%를 차지하는 미 통합 에너지 메이저 섹터 ETF."
-      },
-      "metrics": {
-        "return_1d": 1.3920733704552823,
-        "close": 61.91,
-        "marketCap": 40776850381,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 1.608403085507959,
-        "return_15d": 3.8409929553840927,
-        "return_1m": 8.709394205443367,
-        "return_ytd": 38.470140908074235,
-        "return_1y": 44.71715755025711,
-        "return_3y": 38.315460232350304,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 7.669565217391305,
-        "return_2y": 38.34636871508379
-      }
-    },
-    {
-      "id": "A_617",
-      "type": "ASSET",
-      "name": "XOP",
-      "exposure": {
-        "ticker": "XOP",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "SPDR S&P Oil & Gas E&P. 원유·가스 시추(E&P) 기업을 동일가중으로 담아 유가 베타가 큰 ETF."
-      },
-      "metrics": {
-        "return_1d": 0.7367304794329455,
-        "close": 180.49,
-        "marketCap": 2964170845,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 1.1885406738801452,
-        "return_15d": 3.700086182131579,
-        "return_1m": 8.82725354235756,
-        "return_ytd": 42.95105338191034,
-        "return_1y": 44.21893727526969,
-        "return_3y": 22.142518779183874,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 8.46754807692307,
-        "return_2y": 31.351430026926728
-      }
-    },
-    {
-      "id": "A_618",
-      "type": "ASSET",
-      "name": "OIH",
-      "exposure": {
-        "ticker": "OIH",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "VanEck Oil Services ETF. 슐럼버거·핼리버튼 등 유전서비스·시추장비 기업 중심 ETF."
-      },
-      "metrics": {
-        "return_1d": 2.6207467666902184,
-        "close": 421.33,
-        "marketCap": 1527028426,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 1.4519624367926642,
-        "return_15d": 7.575448092733472,
-        "return_1m": 9.319944993643126,
-        "return_ytd": 47.954489588088634,
-        "return_1y": 75.82523056378582,
-        "return_3y": 22.468970729296878,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 8.511898629854752,
-        "return_2y": 42.115559753094736
-      }
-    },
-    {
-      "id": "A_619",
-      "type": "ASSET",
-      "name": "IXC",
-      "exposure": {
-        "ticker": "IXC",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "iShares Global Energy ETF. 엑슨·셰브론·쉘·토탈에너지 등 글로벌 에너지 대형주 ETF."
-      },
-      "metrics": {
-        "return_1d": 1.1966422575459879,
-        "close": 56.66,
-        "marketCap": 2915238987,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 1.0342368045649142,
-        "return_15d": 2.090090090090091,
-        "return_1m": 7.412322274881511,
-        "return_ytd": 35.12997853565465,
-        "return_1y": 41.226321036889324,
-        "return_3y": 41.36726546906186,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 5.669526296158156,
-        "return_2y": 37.15807310578552
-      }
-    },
-    {
-      "id": "A_620",
-      "type": "ASSET",
-      "name": "VDE",
-      "exposure": {
-        "ticker": "VDE",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "Vanguard Energy ETF. 미 에너지 섹터를 광범위·저보수로 담는 뱅가드 ETF."
-      },
-      "metrics": {
-        "return_1d": 1.3813116656993696,
-        "close": 174.68,
-        "marketCap": 11519066303,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": 1.5817632007443683,
-        "return_15d": 3.834036735421753,
-        "return_1m": 8.557578770741415,
-        "return_ytd": 38.722998729351964,
-        "return_1y": 45.288197621225976,
-        "return_3y": 39.64345671116796,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 7.581449775204785,
-        "return_2y": 39.799919967987194
-      }
-    },
-    {
-      "id": "A_621",
-      "type": "ASSET",
-      "name": "DBO",
-      "exposure": {
-        "ticker": "DBO",
-        "exchange": "NYSEARCA",
-        "country": "US",
-        "business_desc": "Invesco DB Oil Fund. 콘탱고를 완화하는 옵티멈일드 룰로 WTI 선물을 굴리는 롤 최적화 원유 ETF."
-      },
-      "metrics": {
-        "return_1d": 1.0628019323671634,
-        "close": 20.92,
-        "marketCap": 338571477,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-16",
-        "valuationSource": "FMP",
-        "return_3d": -0.5703422053231821,
-        "return_15d": -7.92253521126759,
-        "return_1m": 4.704704704704721,
-        "return_ytd": 71.4754098360656,
-        "return_1y": 56.00298284862044,
-        "return_3y": 28.501228501228493,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "FMP",
-        "return_5d": 6.789178152118436,
-        "return_2y": 37.99472295514512
-      }
-    },
-    {
-      "id": "A_622",
-      "type": "ASSET",
-      "name": "KODEXWTI원유선물(H)",
-      "exposure": {
-        "ticker": "261220",
-        "exchange": "KRX",
-        "country": "KR",
-        "business_desc": "KODEX WTI원유선물(H). 국내 상장 환헤지형 WTI 원유선물 ETF로 원화 투자자의 유가 노출 수단."
-      },
-      "metrics": {
-        "return_1d": -0.952380952380949,
-        "close": 22880,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": -0.8450704225352101,
-        "return_15d": -9.85027580772262,
-        "return_1m": 4.546493031756915,
-        "return_ytd": 70.61894108873975,
-        "return_1y": 47.09096753455479,
-        "return_3y": 52.99231026412572,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 5.876908838500694,
-        "return_2y": 45.5933821189946
-      },
-      "coreBiz": "국내환헤지WTI원유ETF: KODEX WTI원유선물(H). 국내 상장 환헤지형 WTI 원유선물 ETF로 원화 투자자의 유가 노출 수단"
-    },
-    {
-      "id": "A_623",
-      "type": "ASSET",
-      "name": "RISE미국S&P원유생산기업(합성)",
-      "exposure": {
-        "ticker": "219390",
-        "exchange": "KRX",
-        "country": "KR",
-        "business_desc": "RISE 미국S&P원유생산기업(합성). 미 원유 생산기업 지수를 합성 복제하는 국내 상장 ETF."
-      },
-      "metrics": {
-        "return_1d": 0.5148005148005064,
-        "close": 7810,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-14",
-        "valuationSource": "EODHD",
-        "return_3d": 1.4944769330734298,
-        "return_15d": 0.32113037893384266,
-        "return_1m": 7.798481711525196,
-        "return_ytd": 38.59804791481811,
-        "return_1y": 36.92184269801597,
-        "return_3y": 14.873398777341084,
-        "returnsAsOf": "2026-08-14",
-        "returnsSource": "EODHD",
-        "return_5d": 7.8729281767955905,
-        "return_2y": 15.896012102808331
-      }
-    },
-    {
-      "id": "M_061",
-      "type": "MACRO",
-      "name": "러-우전쟁"
-    },
-    {
-      "id": "M_076",
-      "type": "MACRO",
-      "name": "OPEC감산정책"
-    },
-    {
-      "id": "M_077",
-      "type": "MACRO",
-      "name": "해상운송리스크"
-    },
-    {
-      "id": "M_078",
-      "type": "MACRO",
-      "name": "중국전략비축확대"
-    },
-    {
-      "id": "M_080",
-      "type": "MACRO",
-      "name": "셰일오일투자감소"
-    },
-    {
-      "id": "M_081",
-      "type": "MACRO",
-      "name": "재생에너지지연"
-    },
-    {
-      "id": "M_082",
-      "type": "MACRO",
-      "name": "항공수요증가"
-    },
-    {
-      "id": "M_083",
-      "type": "MACRO",
-      "name": "제재"
-    },
-    {
-      "id": "M_084",
-      "type": "MACRO",
-      "name": "중동전쟁"
-    },
-    {
-      "id": "C_1959",
-      "type": "CHARACTER",
-      "name": "WTI근월물원유선물"
-    },
-    {
-      "id": "C_1960",
-      "type": "CHARACTER",
-      "name": "브렌트원유선물국제유가"
-    },
-    {
-      "id": "C_1961",
-      "type": "CHARACTER",
-      "name": "미에너지메이저섹터"
-    },
-    {
-      "id": "C_1962",
-      "type": "CHARACTER",
-      "name": "미원유가스E&P동일가중"
-    },
-    {
-      "id": "C_1963",
-      "type": "CHARACTER",
-      "name": "유전서비스시추장비"
-    },
-    {
-      "id": "C_1964",
-      "type": "CHARACTER",
-      "name": "글로벌에너지대형주"
-    },
-    {
-      "id": "C_1965",
-      "type": "CHARACTER",
-      "name": "미에너지광범위저보수"
-    },
-    {
-      "id": "C_1966",
-      "type": "CHARACTER",
-      "name": "롤최적화WTI원유"
-    },
-    {
-      "id": "C_1967",
-      "type": "CHARACTER",
-      "name": "국내환헤지WTI원유ETF"
-    },
-    {
-      "id": "C_1968",
-      "type": "CHARACTER",
-      "name": "국내합성미원유생산기업"
-    }
-  ],
-  "edges": [
-    {
-      "from": "A_070",
-      "to": "T_073",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002522"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_071",
-      "to": "T_073",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002524"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_503",
-      "to": "T_073",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002526"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_617",
-      "to": "T_073",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002528"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_618",
-      "to": "T_073",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002530"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_619",
-      "to": "T_073",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002532"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_620",
-      "to": "T_073",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002534"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_621",
-      "to": "T_073",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002536"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_622",
-      "to": "T_073",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002538"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_623",
-      "to": "T_073",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002540"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "M_061",
-      "to": "T_073",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002296"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_076",
-      "to": "T_073",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002298"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_077",
-      "to": "T_073",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002299"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_078",
-      "to": "T_073",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002300"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_080",
-      "to": "T_073",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002301"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_081",
-      "to": "T_073",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002302"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_082",
-      "to": "T_073",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002303"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_083",
-      "to": "T_073",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002304"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_084",
-      "to": "T_073",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002305"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_070",
-      "to": "C_1959",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002523"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_071",
-      "to": "C_1960",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002525"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_503",
-      "to": "C_1961",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002527"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_617",
-      "to": "C_1962",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002529"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_618",
-      "to": "C_1963",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002531"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_619",
-      "to": "C_1964",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002533"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_620",
-      "to": "C_1965",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002535"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_621",
-      "to": "C_1966",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002537"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_622",
-      "to": "C_1967",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002539"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_623",
-      "to": "C_1968",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002541"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_070",
-      "to": "T_073",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002522"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_071",
-      "to": "T_073",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002524"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_503",
-      "to": "T_073",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002526"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_617",
-      "to": "T_073",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002528"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_618",
-      "to": "T_073",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002530"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_619",
-      "to": "T_073",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002532"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_620",
-      "to": "T_073",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002534"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_621",
-      "to": "T_073",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002536"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_622",
-      "to": "T_073",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002538"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_623",
-      "to": "T_073",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_002540"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "M_061",
-      "to": "T_073",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002296"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_076",
-      "to": "T_073",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002298"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_077",
-      "to": "T_073",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002299"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_078",
-      "to": "T_073",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002300"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_080",
-      "to": "T_073",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002301"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_081",
-      "to": "T_073",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002302"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_082",
-      "to": "T_073",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002303"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_083",
-      "to": "T_073",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002304"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "M_084",
-      "to": "T_073",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_002305"
-      ],
-      "confidence": 0.75,
-      "status": "verified"
-    },
-    {
-      "from": "A_070",
-      "to": "C_1959",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002523"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_071",
-      "to": "C_1960",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002525"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_503",
-      "to": "C_1961",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002527"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_617",
-      "to": "C_1962",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002529"
-      ],
-      "confidence": 0.83,
-      "status": "verified"
-    },
-    {
-      "from": "A_618",
-      "to": "C_1963",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002531"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_619",
-      "to": "C_1964",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002533"
-      ],
-      "confidence": 0.82,
-      "status": "verified"
-    },
-    {
-      "from": "A_620",
-      "to": "C_1965",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002535"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_621",
-      "to": "C_1966",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002537"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_622",
-      "to": "C_1967",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002539"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_623",
-      "to": "C_1968",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_002541"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    }
-  ]
+  {
+   "id": "A_070",
+   "type": "ASSET",
+   "name": "USO",
+   "exposure": {
+    "ticker": "USO",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "United States Oil Fund. WTI 원유선물 근월물을 추종하는 대표 원유 ETF로 콘탱고 국면 롤오버 비용에 노출된다."
+   },
+   "metrics": {
+    "return_1d": 1.2556986323282393,
+    "close": 126.6,
+    "marketCap": 15078059114,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": -0.791474022412042,
+    "return_15d": -7.381666544736265,
+    "return_1m": 5.350753099775307,
+    "return_ytd": 83.05378831694621,
+    "return_1y": 71.68429617575265,
+    "return_3y": 71.52147405500608,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 7.306323105611101,
+    "return_2y": 65.29573051312181
+   }
+  },
+  {
+   "id": "A_071",
+   "type": "ASSET",
+   "name": "BNO",
+   "exposure": {
+    "ticker": "BNO",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "United States Brent Oil Fund. 브렌트 원유선물을 추종해 중동·해상 리스크가 반영되는 국제 유가에 노출된다."
+   },
+   "metrics": {
+    "return_1d": 1.8094089264173663,
+    "close": 50.64,
+    "marketCap": 193650905,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": -0.6279434850863463,
+    "return_15d": -3.689615823507031,
+    "return_1m": 7.083950095157543,
+    "return_ytd": 78.81355932203388,
+    "return_1y": 69.81891348088531,
+    "return_3y": 72.53833049403747,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 7.905391007884077,
+    "return_2y": 64.57588560285994
+   }
+  },
+  {
+   "id": "A_503",
+   "type": "ASSET",
+   "name": "XLE",
+   "exposure": {
+    "ticker": "XLE",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "Energy Select Sector SPDR. 엑슨모빌·셰브론이 약 40%를 차지하는 미 통합 에너지 메이저 섹터 ETF."
+   },
+   "metrics": {
+    "return_1d": 1.3920733704552823,
+    "close": 61.91,
+    "marketCap": 40776850381,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 1.608403085507959,
+    "return_15d": 3.8409929553840927,
+    "return_1m": 8.709394205443367,
+    "return_ytd": 38.470140908074235,
+    "return_1y": 44.71715755025711,
+    "return_3y": 38.315460232350304,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 7.669565217391305,
+    "return_2y": 38.34636871508379
+   }
+  },
+  {
+   "id": "A_617",
+   "type": "ASSET",
+   "name": "XOP",
+   "exposure": {
+    "ticker": "XOP",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "SPDR S&P Oil & Gas E&P. 원유·가스 시추(E&P) 기업을 동일가중으로 담아 유가 베타가 큰 ETF."
+   },
+   "metrics": {
+    "return_1d": 0.7367304794329455,
+    "close": 180.49,
+    "marketCap": 2964170845,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 1.1885406738801452,
+    "return_15d": 3.700086182131579,
+    "return_1m": 8.82725354235756,
+    "return_ytd": 42.95105338191034,
+    "return_1y": 44.21893727526969,
+    "return_3y": 22.142518779183874,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 8.46754807692307,
+    "return_2y": 31.351430026926728
+   }
+  },
+  {
+   "id": "A_618",
+   "type": "ASSET",
+   "name": "OIH",
+   "exposure": {
+    "ticker": "OIH",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "VanEck Oil Services ETF. 슐럼버거·핼리버튼 등 유전서비스·시추장비 기업 중심 ETF."
+   },
+   "metrics": {
+    "return_1d": 2.6207467666902184,
+    "close": 421.33,
+    "marketCap": 1527028426,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 1.4519624367926642,
+    "return_15d": 7.575448092733472,
+    "return_1m": 9.319944993643126,
+    "return_ytd": 47.954489588088634,
+    "return_1y": 75.82523056378582,
+    "return_3y": 22.468970729296878,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 8.511898629854752,
+    "return_2y": 42.115559753094736
+   }
+  },
+  {
+   "id": "A_619",
+   "type": "ASSET",
+   "name": "IXC",
+   "exposure": {
+    "ticker": "IXC",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "iShares Global Energy ETF. 엑슨·셰브론·쉘·토탈에너지 등 글로벌 에너지 대형주 ETF."
+   },
+   "metrics": {
+    "return_1d": 1.1966422575459879,
+    "close": 56.66,
+    "marketCap": 2915238987,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 1.0342368045649142,
+    "return_15d": 2.090090090090091,
+    "return_1m": 7.412322274881511,
+    "return_ytd": 35.12997853565465,
+    "return_1y": 41.226321036889324,
+    "return_3y": 41.36726546906186,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 5.669526296158156,
+    "return_2y": 37.15807310578552
+   }
+  },
+  {
+   "id": "A_620",
+   "type": "ASSET",
+   "name": "VDE",
+   "exposure": {
+    "ticker": "VDE",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "Vanguard Energy ETF. 미 에너지 섹터를 광범위·저보수로 담는 뱅가드 ETF."
+   },
+   "metrics": {
+    "return_1d": 1.3813116656993696,
+    "close": 174.68,
+    "marketCap": 11519066303,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": 1.5817632007443683,
+    "return_15d": 3.834036735421753,
+    "return_1m": 8.557578770741415,
+    "return_ytd": 38.722998729351964,
+    "return_1y": 45.288197621225976,
+    "return_3y": 39.64345671116796,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 7.581449775204785,
+    "return_2y": 39.799919967987194
+   }
+  },
+  {
+   "id": "A_621",
+   "type": "ASSET",
+   "name": "DBO",
+   "exposure": {
+    "ticker": "DBO",
+    "exchange": "NYSEARCA",
+    "country": "US",
+    "business_desc": "Invesco DB Oil Fund. 콘탱고를 완화하는 옵티멈일드 룰로 WTI 선물을 굴리는 롤 최적화 원유 ETF."
+   },
+   "metrics": {
+    "return_1d": 1.0628019323671634,
+    "close": 20.92,
+    "marketCap": 338571477,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-16",
+    "valuationSource": "FMP",
+    "return_3d": -0.5703422053231821,
+    "return_15d": -7.92253521126759,
+    "return_1m": 4.704704704704721,
+    "return_ytd": 71.4754098360656,
+    "return_1y": 56.00298284862044,
+    "return_3y": 28.501228501228493,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "FMP",
+    "return_5d": 6.789178152118436,
+    "return_2y": 37.99472295514512
+   }
+  },
+  {
+   "id": "A_622",
+   "type": "ASSET",
+   "name": "KODEXWTI원유선물(H)",
+   "exposure": {
+    "ticker": "261220",
+    "exchange": "KRX",
+    "country": "KR",
+    "business_desc": "KODEX WTI원유선물(H). 국내 상장 환헤지형 WTI 원유선물 ETF로 원화 투자자의 유가 노출 수단."
+   },
+   "metrics": {
+    "return_1d": -0.952380952380949,
+    "close": 22880,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": -0.8450704225352101,
+    "return_15d": -9.85027580772262,
+    "return_1m": 4.546493031756915,
+    "return_ytd": 70.61894108873975,
+    "return_1y": 47.09096753455479,
+    "return_3y": 52.99231026412572,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 5.876908838500694,
+    "return_2y": 45.5933821189946
+   },
+   "coreBiz": "국내환헤지WTI원유ETF: KODEX WTI원유선물(H). 국내 상장 환헤지형 WTI 원유선물 ETF로 원화 투자자의 유가 노출 수단"
+  },
+  {
+   "id": "A_623",
+   "type": "ASSET",
+   "name": "RISE미국S&P원유생산기업(합성)",
+   "exposure": {
+    "ticker": "219390",
+    "exchange": "KRX",
+    "country": "KR",
+    "business_desc": "RISE 미국S&P원유생산기업(합성). 미 원유 생산기업 지수를 합성 복제하는 국내 상장 ETF."
+   },
+   "metrics": {
+    "return_1d": 0.5148005148005064,
+    "close": 7810,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-14",
+    "valuationSource": "EODHD",
+    "return_3d": 1.4944769330734298,
+    "return_15d": 0.32113037893384266,
+    "return_1m": 7.798481711525196,
+    "return_ytd": 38.59804791481811,
+    "return_1y": 36.92184269801597,
+    "return_3y": 14.873398777341084,
+    "returnsAsOf": "2026-08-14",
+    "returnsSource": "EODHD",
+    "return_5d": 7.8729281767955905,
+    "return_2y": 15.896012102808331
+   }
+  },
+  {
+   "id": "M_061",
+   "type": "MACRO",
+   "name": "러-우전쟁"
+  },
+  {
+   "id": "M_076",
+   "type": "MACRO",
+   "name": "OPEC감산정책"
+  },
+  {
+   "id": "M_077",
+   "type": "MACRO",
+   "name": "해상운송리스크"
+  },
+  {
+   "id": "M_078",
+   "type": "MACRO",
+   "name": "중국전략비축확대"
+  },
+  {
+   "id": "M_080",
+   "type": "MACRO",
+   "name": "셰일오일투자감소"
+  },
+  {
+   "id": "M_081",
+   "type": "MACRO",
+   "name": "재생에너지지연"
+  },
+  {
+   "id": "M_082",
+   "type": "MACRO",
+   "name": "항공수요증가"
+  },
+  {
+   "id": "M_083",
+   "type": "MACRO",
+   "name": "제재"
+  },
+  {
+   "id": "M_084",
+   "type": "MACRO",
+   "name": "중동전쟁"
+  },
+  {
+   "id": "C_1959",
+   "type": "CHARACTER",
+   "name": "WTI근월물원유선물"
+  },
+  {
+   "id": "C_1960",
+   "type": "CHARACTER",
+   "name": "브렌트원유선물국제유가"
+  },
+  {
+   "id": "C_1961",
+   "type": "CHARACTER",
+   "name": "미에너지메이저섹터"
+  },
+  {
+   "id": "C_1962",
+   "type": "CHARACTER",
+   "name": "미원유가스E&P동일가중"
+  },
+  {
+   "id": "C_1963",
+   "type": "CHARACTER",
+   "name": "유전서비스시추장비"
+  },
+  {
+   "id": "C_1964",
+   "type": "CHARACTER",
+   "name": "글로벌에너지대형주"
+  },
+  {
+   "id": "C_1965",
+   "type": "CHARACTER",
+   "name": "미에너지광범위저보수"
+  },
+  {
+   "id": "C_1966",
+   "type": "CHARACTER",
+   "name": "롤최적화WTI원유"
+  },
+  {
+   "id": "C_1967",
+   "type": "CHARACTER",
+   "name": "국내환헤지WTI원유ETF"
+  },
+  {
+   "id": "C_1968",
+   "type": "CHARACTER",
+   "name": "국내합성미원유생산기업"
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_070",
+   "to": "T_073",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002522"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_071",
+   "to": "T_073",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002524"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_503",
+   "to": "T_073",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002526"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_617",
+   "to": "T_073",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002528"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_618",
+   "to": "T_073",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002530"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_619",
+   "to": "T_073",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002532"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_620",
+   "to": "T_073",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002534"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_621",
+   "to": "T_073",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002536"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_622",
+   "to": "T_073",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002538"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_623",
+   "to": "T_073",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002540"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "M_061",
+   "to": "T_073",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002296"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_076",
+   "to": "T_073",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002298"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_077",
+   "to": "T_073",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002299"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_078",
+   "to": "T_073",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002300"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_080",
+   "to": "T_073",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002301"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_081",
+   "to": "T_073",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002302"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_082",
+   "to": "T_073",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002303"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_083",
+   "to": "T_073",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002304"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_084",
+   "to": "T_073",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002305"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_070",
+   "to": "C_1959",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002523"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_071",
+   "to": "C_1960",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002525"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_503",
+   "to": "C_1961",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002527"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_617",
+   "to": "C_1962",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002529"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_618",
+   "to": "C_1963",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002531"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_619",
+   "to": "C_1964",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002533"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_620",
+   "to": "C_1965",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002535"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_621",
+   "to": "C_1966",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002537"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_622",
+   "to": "C_1967",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002539"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_623",
+   "to": "C_1968",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002541"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_070",
+   "to": "T_073",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002522"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_071",
+   "to": "T_073",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002524"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_503",
+   "to": "T_073",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002526"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_617",
+   "to": "T_073",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002528"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_618",
+   "to": "T_073",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002530"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_619",
+   "to": "T_073",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002532"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_620",
+   "to": "T_073",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002534"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_621",
+   "to": "T_073",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002536"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_622",
+   "to": "T_073",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002538"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_623",
+   "to": "T_073",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_002540"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "M_061",
+   "to": "T_073",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002296"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_076",
+   "to": "T_073",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002298"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_077",
+   "to": "T_073",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002299"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_078",
+   "to": "T_073",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002300"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_080",
+   "to": "T_073",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002301"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_081",
+   "to": "T_073",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002302"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_082",
+   "to": "T_073",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002303"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_083",
+   "to": "T_073",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002304"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "M_084",
+   "to": "T_073",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_002305"
+   ],
+   "confidence": 0.75,
+   "status": "verified"
+  },
+  {
+   "from": "A_070",
+   "to": "C_1959",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002523"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_071",
+   "to": "C_1960",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002525"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_503",
+   "to": "C_1961",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002527"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_617",
+   "to": "C_1962",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002529"
+   ],
+   "confidence": 0.83,
+   "status": "verified"
+  },
+  {
+   "from": "A_618",
+   "to": "C_1963",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002531"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_619",
+   "to": "C_1964",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002533"
+   ],
+   "confidence": 0.82,
+   "status": "verified"
+  },
+  {
+   "from": "A_620",
+   "to": "C_1965",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002535"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_621",
+   "to": "C_1966",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002537"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_622",
+   "to": "C_1967",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002539"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_623",
+   "to": "C_1968",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_002541"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  }
+ ]
 }
