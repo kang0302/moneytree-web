@@ -1,722 +1,722 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_623",
- "themeName": "미국2024상장주식",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_623",
+  "themeName": "미국2024상장주식",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-26T00:00:00+09:00",
+    "notes": "2024년 미국 증시 상장(IPO) 코호트 — 주목받은 신규 상장주 모음.",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-07-26",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
+      },
+      {
+        "date": "2026-07-17",
+        "kind": "신규",
+        "title": "미국2024상장주식 코호트 테마 생성",
+        "detail": "2024년 미국 상장(나스닥·NYSE 무관) 주목 IPO 8종을 THEMED_AS로 묶고, 종목별 상장 특징 CHR과 그 해 IPO시장 환경 매크로를 연결했다."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ],
+    "description": "• 미국2024IPO재개 수혜\n• 동인: 미국2024IPO재개\n• 대표주: 레딧(소셜커뮤니티 상장)·아스테라랩스(AI커넥티비티반도체)·루브릭(사이버복원력SaaS)\n• ETF: Renaissance IPO ETF"
+  },
+  "nodes": [
+    {
+      "id": "T_623",
+      "type": "THEME",
+      "name": "미국2024상장주식"
+    },
+    {
+      "id": "M_1133",
+      "type": "MACRO",
+      "name": "미국2024IPO재개"
+    },
+    {
+      "id": "A_581",
+      "type": "ASSET",
+      "name": "레딧",
+      "exposure": {
+        "ticker": "RDDT",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -4.1327014218009435,
+        "close": 151.77,
+        "marketCap": 29217097608,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -14.812735133921052,
+        "return_15d": -14.764874431147812,
+        "return_1m": -16.265592228722813,
+        "return_ytd": -34.00182711967634,
+        "return_1y": -33.51301603996845,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -1.133919843597253,
+        "return_2y": 179.08388520971306
+      },
+      "coreBiz": "레딧은 2024년 상장한 미국 대형 소셜 커뮤니티 플랫폼이다"
+    },
+    {
+      "id": "C_3614",
+      "type": "CHARACTER",
+      "name": "소셜커뮤니티_상장"
+    },
+    {
+      "id": "A_995",
+      "type": "ASSET",
+      "name": "아스테라랩스",
+      "exposure": {
+        "ticker": "ALAB",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -4.752175059319807,
+        "close": 289.02,
+        "marketCap": 49540322530,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -10.133391374646317,
+        "return_15d": 15.728357491791446,
+        "return_1m": -4.808642381924777,
+        "return_ytd": 73.73166626592929,
+        "return_1y": 68.95826025955805,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -9.341279799247182,
+        "return_2y": 603.3828182039425
+      },
+      "coreBiz": "아스테라랩스는 2024년 상장한 AI 인프라 커넥티비티 반도체주다"
+    },
+    {
+      "id": "C_3615",
+      "type": "CHARACTER",
+      "name": "AI커넥티비티반도체_상장"
+    },
+    {
+      "id": "A_1660",
+      "type": "ASSET",
+      "name": "루브릭",
+      "exposure": {
+        "ticker": "RBRK",
+        "exchange": "NYSE",
+        "country": "US",
+        "business_desc": "랜섬웨어방어·클라우드 데이터 백업·복구",
+        "theme_role": "데이터 복구 SaaS 강자, ARKW IN_ETF",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -0.7657881650919851,
+        "close": 99.78,
+        "marketCap": 20537372660,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -2.3965567837229806,
+        "return_15d": 38.75677930746768,
+        "return_1m": 26.351779156641776,
+        "return_ytd": 30.465481171548102,
+        "return_1y": 18.82815291175419,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 3.153106585340626,
+        "return_2y": 178.24874511991075
+      },
+      "coreBiz": "루브릭은 2024년 상장한 데이터 보안·사이버 복원력 SaaS다"
+    },
+    {
+      "id": "C_3616",
+      "type": "CHARACTER",
+      "name": "사이버복원력SaaS_상장"
+    },
+    {
+      "id": "A_740",
+      "type": "ASSET",
+      "name": "템퍼스AI",
+      "exposure": {
+        "ticker": "TEM",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 24.08833063209077,
+        "close": 61.25,
+        "marketCap": 10731004288,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 17.562380038387705,
+        "return_15d": 47.41275571600483,
+        "return_1m": 16.733371450352585,
+        "return_ytd": 3.7256562235393753,
+        "return_1y": -16.187739463601535,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 12.158945248123064,
+        "return_2y": 6.318347509112998
+      },
+      "coreBiz": "템퍼스AI는 2024년 상장한 AI 정밀의료·유전체 진단주다"
+    },
+    {
+      "id": "C_3617",
+      "type": "CHARACTER",
+      "name": "AI헬스케어·진단_상장"
+    },
+    {
+      "id": "A_2715",
+      "type": "ASSET",
+      "name": "서비스타이탄",
+      "exposure": {
+        "ticker": "TTAN",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 4.291515750192065,
+        "close": 95.02,
+        "marketCap": 9064013577,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 5.110619469026534,
+        "return_15d": 12.823557349798143,
+        "return_1m": 25.026315789473674,
+        "return_ytd": -10.779342723004703,
+        "return_1y": -8.617041738795928,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 3.2826086956521783,
+        "return_2y": null
+      },
+      "coreBiz": "서비스타이탄은 2024년 상장한 현장서비스(트레이드) 관리 SaaS다"
+    },
+    {
+      "id": "C_3618",
+      "type": "CHARACTER",
+      "name": "현장서비스SaaS_상장"
+    },
+    {
+      "id": "A_2716",
+      "type": "ASSET",
+      "name": "바이킹홀딩스",
+      "exposure": {
+        "ticker": "VIK",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -7.650829178960228,
+        "close": 90.77,
+        "marketCap": 40322663607,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -7.368098785590361,
+        "return_15d": -11.581920903954801,
+        "return_1m": -6.4612530915086674,
+        "return_ytd": 27.1110488727069,
+        "return_1y": 53.2759202971969,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -12.880314809482673,
+        "return_2y": 155.69014084507043
+      },
+      "coreBiz": "바이킹홀딩스는 2024년 상장한 프리미엄 크루즈·여행사다"
+    },
+    {
+      "id": "C_3619",
+      "type": "CHARACTER",
+      "name": "프리미엄크루즈_상장"
+    },
+    {
+      "id": "A_2717",
+      "type": "ASSET",
+      "name": "라이니지",
+      "exposure": {
+        "ticker": "LINE",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.9668842156151936,
+        "close": 41.77,
+        "marketCap": 9509958226,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 0.047904191616776615,
+        "return_15d": -5.796120884077583,
+        "return_1m": -6.3242879569410215,
+        "return_ytd": 19.34285714285715,
+        "return_1y": 4.372813593203406,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 0.6506024096385676,
+        "return_2y": -52.36085766423357
+      },
+      "coreBiz": "라이니지는 2024년 상장한 세계 최대 콜드체인 물류 REIT다"
+    },
+    {
+      "id": "C_3620",
+      "type": "CHARACTER",
+      "name": "콜드체인물류REIT_상장"
+    },
+    {
+      "id": "A_2718",
+      "type": "ASSET",
+      "name": "아이보타",
+      "exposure": {
+        "ticker": "IBTA",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 2.765726681127978,
+        "close": 37.9,
+        "marketCap": 963072579,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -2.4201853759011405,
+        "return_15d": 42.8033157498116,
+        "return_1m": 20.1267828843106,
+        "return_ytd": 66.73999120105587,
+        "return_1y": 39.28702682837191,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 5.7182705718270554,
+        "return_2y": -19.97466216216216
+      },
+      "coreBiz": "아이보타는 2024년 상장한 디지털 캐시백·리테일 미디어 플랫폼이다"
+    },
+    {
+      "id": "C_3621",
+      "type": "CHARACTER",
+      "name": "리테일미디어·캐시백_상장"
+    },
+    {
+      "id": "A_2969",
+      "type": "ASSET",
+      "name": "Renaissance IPO ETF",
+      "exposure": {
+        "ticker": "IPO",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.4220183486238427,
+        "return_3d": -4.789473684210521,
+        "return_15d": 8.975903614457836,
+        "return_1m": 2.8230390299355923,
+        "return_ytd": 18.882803943044912,
+        "return_1y": 11.140692197419622,
+        "return_3y": 75.46071774975753,
+        "close": 54.27,
+        "marketCap": 192808828,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -3.6570211255103735,
+        "return_2y": 32.72193690388849
+      }
+    }
   ],
-  "dataAsOf": "2026-07-26T00:00:00+09:00",
-  "notes": "2024년 미국 증시 상장(IPO) 코호트 — 주목받은 신규 상장주 모음.",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-07-26",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
-   },
-   {
-    "date": "2026-07-17",
-    "kind": "신규",
-    "title": "미국2024상장주식 코호트 테마 생성",
-    "detail": "2024년 미국 상장(나스닥·NYSE 무관) 주목 IPO 8종을 THEMED_AS로 묶고, 종목별 상장 특징 CHR과 그 해 IPO시장 환경 매크로를 연결했다."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_581",
+      "to": "T_623",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013578"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_581",
+      "to": "C_3614",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007536"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_995",
+      "to": "T_623",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013579"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_995",
+      "to": "C_3615",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007538"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1660",
+      "to": "T_623",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013580"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1660",
+      "to": "C_3616",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007540"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_740",
+      "to": "T_623",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013581"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_740",
+      "to": "C_3617",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007542"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_2715",
+      "to": "T_623",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013582"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2715",
+      "to": "C_3618",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007544"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_2716",
+      "to": "T_623",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013583"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2716",
+      "to": "C_3619",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007546"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_2717",
+      "to": "T_623",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013584"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2717",
+      "to": "C_3620",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007548"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_2718",
+      "to": "T_623",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013585"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2718",
+      "to": "C_3621",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007550"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_1133",
+      "to": "T_623",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013586"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_2969",
+      "to": "T_623",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020933"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ],
-  "description": "• 미국2024IPO재개 수혜\n• 동인: 미국2024IPO재개\n• 대표주: 레딧(소셜커뮤니티 상장)·아스테라랩스(AI커넥티비티반도체)·루브릭(사이버복원력SaaS)\n• ETF: Renaissance IPO ETF"
- },
- "nodes": [
-  {
-   "id": "T_623",
-   "type": "THEME",
-   "name": "미국2024상장주식"
-  },
-  {
-   "id": "M_1133",
-   "type": "MACRO",
-   "name": "미국2024IPO재개"
-  },
-  {
-   "id": "A_581",
-   "type": "ASSET",
-   "name": "레딧",
-   "exposure": {
-    "ticker": "RDDT",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 12.62964836832785,
-    "close": 177.97,
-    "marketCap": 34260834561,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 14.021384211537224,
-    "return_15d": 5.5473241273039875,
-    "return_1m": -12.387464948098593,
-    "return_ytd": -22.525775438291205,
-    "return_1y": -26.853411097876535,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 10.136054421768726,
-    "return_2y": 224.0946314831665
-   },
-   "coreBiz": "레딧은 2024년 상장한 미국 대형 소셜 커뮤니티 플랫폼이다"
-  },
-  {
-   "id": "C_3614",
-   "type": "CHARACTER",
-   "name": "소셜커뮤니티_상장"
-  },
-  {
-   "id": "A_995",
-   "type": "ASSET",
-   "name": "아스테라랩스",
-   "exposure": {
-    "ticker": "ALAB",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.36247598983826235,
-    "close": 321.61,
-    "marketCap": 55126507262,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 3.083432161287214,
-    "return_15d": 10.299060292201112,
-    "return_1m": -11.103433025595654,
-    "return_ytd": 93.32171194998797,
-    "return_1y": 68.65593371440559,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -3.7585659993416565,
-    "return_2y": 727.6119402985076
-   },
-   "coreBiz": "아스테라랩스는 2024년 상장한 AI 인프라 커넥티비티 반도체주다"
-  },
-  {
-   "id": "C_3615",
-   "type": "CHARACTER",
-   "name": "AI커넥티비티반도체_상장"
-  },
-  {
-   "id": "A_1660",
-   "type": "ASSET",
-   "name": "루브릭",
-   "exposure": {
-    "ticker": "RBRK",
-    "exchange": "NYSE",
-    "country": "US",
-    "business_desc": "랜섬웨어방어·클라우드 데이터 백업·복구",
-    "theme_role": "데이터 복구 SaaS 강자, ARKW IN_ETF",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -2.7214768293843394,
-    "close": 102.23,
-    "marketCap": 21041647695,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 5.467863406582074,
-    "return_15d": 39.58219552157291,
-    "return_1m": 16.10448608745032,
-    "return_ytd": 33.668933054393314,
-    "return_1y": 21.053878034339846,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 13.500610636171873,
-    "return_2y": 222.39041311888994
-   },
-   "coreBiz": "루브릭은 2024년 상장한 데이터 보안·사이버 복원력 SaaS다"
-  },
-  {
-   "id": "C_3616",
-   "type": "CHARACTER",
-   "name": "사이버복원력SaaS_상장"
-  },
-  {
-   "id": "A_740",
-   "type": "ASSET",
-   "name": "템퍼스AI",
-   "exposure": {
-    "ticker": "TEM",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -4.033892061153066,
-    "close": 52.1,
-    "marketCap": 9127923647,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -6.446399712695272,
-    "return_15d": 22.042632935113616,
-    "return_1m": -11.198227373444691,
-    "return_ytd": -11.769686706181194,
-    "return_1y": -27.224472691716716,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.09606147934679843,
-    "return_2y": 21.445221445221453
-   },
-   "coreBiz": "템퍼스AI는 2024년 상장한 AI 정밀의료·유전체 진단주다"
-  },
-  {
-   "id": "C_3617",
-   "type": "CHARACTER",
-   "name": "AI헬스케어·진단_상장"
-  },
-  {
-   "id": "A_2715",
-   "type": "ASSET",
-   "name": "서비스타이탄",
-   "exposure": {
-    "ticker": "TTAN",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -3.521878335112061,
-    "close": 90.4,
-    "marketCap": 8623309065,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 2.274012897386579,
-    "return_15d": 28.263337116912602,
-    "return_1m": 12.873017854913215,
-    "return_ytd": -15.117370892018778,
-    "return_1y": -11.0411336351112,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 5.324478620528961,
-    "return_2y": null
-   },
-   "coreBiz": "서비스타이탄은 2024년 상장한 현장서비스(트레이드) 관리 SaaS다"
-  },
-  {
-   "id": "C_3618",
-   "type": "CHARACTER",
-   "name": "현장서비스SaaS_상장"
-  },
-  {
-   "id": "A_2716",
-   "type": "ASSET",
-   "name": "바이킹홀딩스",
-   "exposure": {
-    "ticker": "VIK",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -7.652436151163888,
-    "close": 97.99,
-    "marketCap": 43529996770,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -3.5056622353520472,
-    "return_15d": -2.700824148545322,
-    "return_1m": 0.3481822836661541,
-    "return_ytd": 37.221677636185404,
-    "return_1y": 63.26224591802732,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -7.37309764628038,
-    "return_2y": 186.4367144109909
-   },
-   "coreBiz": "바이킹홀딩스는 2024년 상장한 프리미엄 크루즈·여행사다"
-  },
-  {
-   "id": "C_3619",
-   "type": "CHARACTER",
-   "name": "프리미엄크루즈_상장"
-  },
-  {
-   "id": "A_2717",
-   "type": "ASSET",
-   "name": "라이니지",
-   "exposure": {
-    "ticker": "LINE",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -2.974668835696026,
-    "close": 41.75,
-    "marketCap": 9505404739,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -0.11961722488037507,
-    "return_15d": 0.7967165620473171,
-    "return_1m": -5.113636363636365,
-    "return_ytd": 19.285714285714285,
-    "return_1y": 3.7782749192145193,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -1.4400377714825274,
-    "return_2y": -50.36852116024727
-   },
-   "coreBiz": "라이니지는 2024년 상장한 세계 최대 콜드체인 물류 REIT다"
-  },
-  {
-   "id": "C_3620",
-   "type": "CHARACTER",
-   "name": "콜드체인물류REIT_상장"
-  },
-  {
-   "id": "A_2718",
-   "type": "ASSET",
-   "name": "아이보타",
-   "exposure": {
-    "ticker": "IBTA",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.728653745416464,
-    "close": 38.84,
-    "marketCap": 986958812,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 5.6583242655060095,
-    "return_15d": 47.96190476190478,
-    "return_1m": 27.55336617405584,
-    "return_ytd": 70.87549494060714,
-    "return_1y": 64.43691786621508,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.0931806350858997,
-    "return_2y": -8.954524144397546
-   },
-   "coreBiz": "아이보타는 2024년 상장한 디지털 캐시백·리테일 미디어 플랫폼이다"
-  },
-  {
-   "id": "C_3621",
-   "type": "CHARACTER",
-   "name": "리테일미디어·캐시백_상장"
-  },
-  {
-   "id": "A_2969",
-   "type": "ASSET",
-   "name": "Renaissance IPO ETF",
-   "exposure": {
-    "ticker": "IPO",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.2799160251924393,
-    "return_3d": 3.69292341277061,
-    "return_15d": 10.765643218033416,
-    "return_1m": 2.813852813852824,
-    "return_ytd": 24.86308871851042,
-    "return_1y": 14.159823753254553,
-    "return_3y": 74.79300827966881,
-    "close": 56.975,
-    "marketCap": 202419071,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 2.758247701460248,
-    "return_2y": 45.96670934699105
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_581",
-   "to": "T_623",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013578"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_581",
-   "to": "C_3614",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007536"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_995",
-   "to": "T_623",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013579"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_995",
-   "to": "C_3615",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007538"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1660",
-   "to": "T_623",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013580"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1660",
-   "to": "C_3616",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007540"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_740",
-   "to": "T_623",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013581"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_740",
-   "to": "C_3617",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007542"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_2715",
-   "to": "T_623",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013582"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2715",
-   "to": "C_3618",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007544"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_2716",
-   "to": "T_623",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013583"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2716",
-   "to": "C_3619",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007546"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_2717",
-   "to": "T_623",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013584"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2717",
-   "to": "C_3620",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007548"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_2718",
-   "to": "T_623",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013585"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2718",
-   "to": "C_3621",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007550"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_1133",
-   "to": "T_623",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013586"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_2969",
-   "to": "T_623",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020933"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_581",
-   "to": "T_623",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013578"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_581",
-   "to": "C_3614",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007536"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_995",
-   "to": "T_623",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013579"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_995",
-   "to": "C_3615",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007538"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1660",
-   "to": "T_623",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013580"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1660",
-   "to": "C_3616",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007540"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_740",
-   "to": "T_623",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013581"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_740",
-   "to": "C_3617",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007542"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_2715",
-   "to": "T_623",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013582"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2715",
-   "to": "C_3618",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007544"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_2716",
-   "to": "T_623",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013583"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2716",
-   "to": "C_3619",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007546"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_2717",
-   "to": "T_623",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013584"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2717",
-   "to": "C_3620",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007548"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_2718",
-   "to": "T_623",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013585"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2718",
-   "to": "C_3621",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007550"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_1133",
-   "to": "T_623",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013586"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_2969",
-   "to": "T_623",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020933"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
+  "links": [
+    {
+      "from": "A_581",
+      "to": "T_623",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013578"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_581",
+      "to": "C_3614",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007536"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_995",
+      "to": "T_623",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013579"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_995",
+      "to": "C_3615",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007538"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1660",
+      "to": "T_623",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013580"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1660",
+      "to": "C_3616",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007540"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_740",
+      "to": "T_623",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013581"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_740",
+      "to": "C_3617",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007542"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_2715",
+      "to": "T_623",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013582"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2715",
+      "to": "C_3618",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007544"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_2716",
+      "to": "T_623",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013583"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2716",
+      "to": "C_3619",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007546"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_2717",
+      "to": "T_623",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013584"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2717",
+      "to": "C_3620",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007548"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_2718",
+      "to": "T_623",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013585"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2718",
+      "to": "C_3621",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007550"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_1133",
+      "to": "T_623",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013586"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_2969",
+      "to": "T_623",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020933"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ]
 }

@@ -1,1730 +1,1730 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_080",
- "themeName": "글로벌CPU주식",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_080",
+  "themeName": "글로벌CPU주식",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-26T00:00:00+09:00",
+    "notes": "g80 누적 import 기반 글로벌 CPU 주식 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 22건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-26",
+        "kind": "수정",
+        "title": "자산 CHR 백필",
+        "detail": "CHR 미정의 자산에 CHARACTER·HAS_TRAIT 추가."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ],
+    "description": "• AI 서버 host CPU 사이클·ARM 서버 침투·x86 점유 다툼이 동인\n• 동인: 하이퍼스케일러CAPEX·AI추론확산·Agentic AI 확산\n• 대표주: AMD(x86CPU GPU)·엔비디아(AIPC칩전개2H2)·인텔(x86CPU)\n• 밸류체인: PC/서버용·IP라이선스+칩제조·모바일·엣지SoC\n• ETF: TIGER 미국필라델피아반도체나스닥·SMH"
+  },
+  "nodes": [
+    {
+      "id": "T_080",
+      "type": "THEME",
+      "name": "글로벌CPU주식"
+    },
+    {
+      "id": "A_056",
+      "type": "ASSET",
+      "name": "AMD",
+      "exposure": {
+        "ticker": "AMD",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -3.709820599104019,
+        "close": 466.42,
+        "marketCap": 760544452000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -9.325608973735877,
+        "return_15d": 8.580873451904282,
+        "return_1m": -5.918186219138288,
+        "return_ytd": 117.79043705640642,
+        "return_1y": 180.04803362353647,
+        "return_3y": 342.31389284020867,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -3.4187149276292628,
+        "return_2y": 200.37351880473983
+      }
+    },
+    {
+      "id": "A_055",
+      "type": "ASSET",
+      "name": "엔비디아",
+      "exposure": {
+        "ticker": "NVDA",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.9920815509238179,
+        "close": 217.56,
+        "marketCap": 5269520760000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -3.3753775093266936,
+        "return_15d": 14.49923688226935,
+        "return_1m": 7.2728169222424865,
+        "return_ytd": 16.65415549597855,
+        "return_1y": 23.86700068321568,
+        "return_3y": 402.4480369515012,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -2.9140077647373808,
+        "return_2y": 67.35384615384616
+      }
+    },
+    {
+      "id": "A_242",
+      "type": "ASSET",
+      "name": "인텔",
+      "exposure": {
+        "ticker": "INTC",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -4.023166821801638,
+        "close": 92.8,
+        "marketCap": 468083176522,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -9.46341463414634,
+        "return_15d": 13.336590131900339,
+        "return_1m": -2.3569023569023684,
+        "return_ytd": 151.49051490514904,
+        "return_1y": 266.65349664164364,
+        "return_3y": 183.3587786259542,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -8.073303615651318,
+        "return_2y": 331.2267657992565
+      }
+    },
+    {
+      "id": "A_058",
+      "type": "ASSET",
+      "name": "ARM",
+      "exposure": {
+        "ticker": "ARM",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.571135322911732,
+        "close": 249.34,
+        "marketCap": 266294763194,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -10.771543086172342,
+        "return_15d": 10.871981857797163,
+        "return_1m": -6.680639245480746,
+        "return_ytd": 128.10355868630498,
+        "return_1y": 86.06074173569138,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -8.287048957222199,
+        "return_2y": 88.4513642203915
+      }
+    },
+    {
+      "id": "A_059",
+      "type": "ASSET",
+      "name": "퀄컴",
+      "exposure": {
+        "ticker": "QCOM",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.0737249516199476,
+        "close": 161.91,
+        "marketCap": 170005500000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -2.340310030761805,
+        "return_15d": 4.001798561151082,
+        "return_1m": -5.745721271393645,
+        "return_ytd": -5.343466822566512,
+        "return_1y": 3.6224000000000034,
+        "return_3y": 47.05722070844687,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -0.7113509535782159,
+        "return_2y": -7.087111213129804
+      }
+    },
+    {
+      "id": "A_413",
+      "type": "ASSET",
+      "name": "브로드컴",
+      "exposure": {
+        "ticker": "AVGO",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -4.610526315789465,
+        "close": 362.48,
+        "marketCap": 1724527598400,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -7.763556324588405,
+        "return_15d": -2.11708792395765,
+        "return_1m": -2.2517056333090535,
+        "return_ytd": 4.732736203409416,
+        "return_1y": 22.912074870299403,
+        "return_3y": 338.94405425042385,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -12.875856267275566,
+        "return_2y": 116.1349949317274
+      }
+    },
+    {
+      "id": "A_060",
+      "type": "ASSET",
+      "name": "NXP",
+      "exposure": {
+        "ticker": "NXPI",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.1113055652782644,
+        "close": 226.02,
+        "marketCap": 56994146607,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -3.7024413105534504,
+        "return_15d": -6.207984065067629,
+        "return_1m": -15.199039507747713,
+        "return_ytd": 4.12789090574035,
+        "return_1y": -1.417542635320801,
+        "return_3y": 14.981940275728768,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -3.1661025662996334,
+        "return_2y": -12.476765799256507
+      }
+    },
+    {
+      "id": "A_189",
+      "type": "ASSET",
+      "name": "텍사스인스트루먼트",
+      "exposure": {
+        "ticker": "TXN",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.759476932118731,
+        "close": 267.45,
+        "marketCap": 244248093621,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -4.338650833392943,
+        "return_15d": -1.4190932546995993,
+        "return_1m": -5.834096190409122,
+        "return_ytd": 54.158741137817735,
+        "return_1y": 36.4958660814535,
+        "return_3y": 60.64027869541712,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -3.304530171011244,
+        "return_2y": 33.28515897538124
+      }
+    },
+    {
+      "id": "A_232",
+      "type": "ASSET",
+      "name": "TSMC",
+      "exposure": {
+        "ticker": "2330",
+        "exchange": "TWSE",
+        "country": "TW"
+      },
+      "metrics": {
+        "return_1d": -1.2605042016806678,
+        "close": 2350.0,
+        "marketCap": 60941140000000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -1.8789144050104345,
+        "return_15d": 6.818181818181812,
+        "return_1m": 2.6200873362445476,
+        "return_ytd": 51.61290322580645,
+        "return_1y": 98.31223628691983,
+        "return_3y": 335.9925788497217,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -2.6915113871635588,
+        "return_2y": 141.52106885919835
+      }
+    },
+    {
+      "id": "A_662",
+      "type": "ASSET",
+      "name": "글로벌파운드리즈",
+      "exposure": {
+        "ticker": "GFS",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -2.6452905811623295,
+        "close": 48.58,
+        "marketCap": 26655886467,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -10.993037742762912,
+        "return_15d": 3.2079881028255652,
+        "return_1m": -15.48364648573417,
+        "return_ytd": 39.117983963344784,
+        "return_1y": 46.23720650210716,
+        "return_3y": -9.886848451122244,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -8.649868371568258,
+        "return_2y": 4.9470728019010535
+      }
+    },
+    {
+      "id": "BF_148",
+      "type": "BUSINESS_FIELD",
+      "name": "PC/서버용"
+    },
+    {
+      "id": "BF_149",
+      "type": "BUSINESS_FIELD",
+      "name": "IP라이선스+칩제조"
+    },
+    {
+      "id": "BF_150",
+      "type": "BUSINESS_FIELD",
+      "name": "모바일·엣지SoC"
+    },
+    {
+      "id": "M_288",
+      "type": "MACRO",
+      "name": "하이퍼스케일러CAPEX"
+    },
+    {
+      "id": "M_019",
+      "type": "MACRO",
+      "name": "AI추론확산"
+    },
+    {
+      "id": "M_276",
+      "type": "MACRO",
+      "name": "Agentic AI 확산"
+    },
+    {
+      "id": "M_313",
+      "type": "MACRO",
+      "name": "GPU당CPU수요증가"
+    },
+    {
+      "id": "M_314",
+      "type": "MACRO",
+      "name": "다단계분산추론증가"
+    },
+    {
+      "id": "C_246",
+      "type": "CHARACTER",
+      "name": "AIPC칩전개2H26"
+    },
+    {
+      "id": "C_247",
+      "type": "CHARACTER",
+      "name": "인텔AMD위협"
+    },
+    {
+      "id": "C_5600",
+      "type": "CHARACTER",
+      "name": "x86CPU_GPU"
+    },
+    {
+      "id": "C_5601",
+      "type": "CHARACTER",
+      "name": "x86CPU"
+    },
+    {
+      "id": "C_5602",
+      "type": "CHARACTER",
+      "name": "CPU아키텍처IP·로열티"
+    },
+    {
+      "id": "C_5603",
+      "type": "CHARACTER",
+      "name": "ARM_CPU모바일"
+    },
+    {
+      "id": "C_5604",
+      "type": "CHARACTER",
+      "name": "커스텀칩"
+    },
+    {
+      "id": "C_5605",
+      "type": "CHARACTER",
+      "name": "임베디드CPU"
+    },
+    {
+      "id": "C_5606",
+      "type": "CHARACTER",
+      "name": "임베디드프로세서"
+    },
+    {
+      "id": "C_5607",
+      "type": "CHARACTER",
+      "name": "CPU파운드리"
+    },
+    {
+      "id": "C_5608",
+      "type": "CHARACTER",
+      "name": "CPU파운드리"
+    },
+    {
+      "id": "A_2875",
+      "type": "ASSET",
+      "name": "TIGER 미국필라델피아반도체나스닥",
+      "exposure": {
+        "ticker": "381180",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -5.566513258820949,
+        "return_3d": -6.498860800694373,
+        "return_15d": 0.963742148818425,
+        "return_1m": -4.3524972157897635,
+        "return_ytd": 59.24369614205149,
+        "return_1y": 109.94430405146565,
+        "return_3y": null,
+        "close": 43090,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": null,
+        "return_2y": 117.41872437502865
+      }
+    },
+    {
+      "id": "A_639",
+      "type": "ASSET",
+      "name": "SMH",
+      "exposure": {
+        "ticker": "SMH",
+        "exchange": "NASDAQ",
+        "country": "US",
+        "business_desc": "VanEck Semiconductor ETF. 엔비디아 최상위 비중에 TSMC·브로드컴·AMD 등 반도체 25종목, AI 가속기 사이클 순수 노출."
+      },
+      "metrics": {
+        "return_1d": -1.5532583323095372,
+        "close": 560.92,
+        "marketCap": 70698776368,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -4.576230818958205,
+        "return_15d": 11.245091428344756,
+        "return_1m": 0.7888164160063216,
+        "return_ytd": 55.75486629828117,
+        "return_1y": 92.84216316567537,
+        "return_3y": 283.8499965783891,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -4.088367559803718,
+        "return_2y": 123.17179915652102
+      }
+    }
   ],
-  "dataAsOf": "2026-07-26T00:00:00+09:00",
-  "notes": "g80 누적 import 기반 글로벌 CPU 주식 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 22건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-26",
-    "kind": "수정",
-    "title": "자산 CHR 백필",
-    "detail": "CHR 미정의 자산에 CHARACTER·HAS_TRAIT 추가."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_056",
+      "to": "T_080",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002390"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_055",
+      "to": "T_080",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002391"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_242",
+      "to": "T_080",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002392"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_058",
+      "to": "T_080",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002393"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_059",
+      "to": "T_080",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002394"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_413",
+      "to": "T_080",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002395"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_060",
+      "to": "T_080",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002396"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_189",
+      "to": "T_080",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002397"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_232",
+      "to": "T_080",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002398"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_662",
+      "to": "T_080",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002399"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_056",
+      "to": "BF_148",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002400"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_055",
+      "to": "BF_148",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002401"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_242",
+      "to": "BF_148",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002402"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_058",
+      "to": "BF_149",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002403"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_059",
+      "to": "BF_150",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002404"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_413",
+      "to": "BF_150",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002405"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_060",
+      "to": "BF_150",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002406"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_189",
+      "to": "BF_150",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002407"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_232",
+      "to": "BF_149",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002408"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_662",
+      "to": "BF_149",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002409"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_288",
+      "to": "T_080",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002410"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_019",
+      "to": "T_080",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002411"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_276",
+      "to": "T_080",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002412"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_313",
+      "to": "T_080",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002413"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_314",
+      "to": "T_080",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002414"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_055",
+      "to": "C_246",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002415"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_055",
+      "to": "C_247",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002416"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_056",
+      "to": "C_5600",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014543"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_242",
+      "to": "C_5601",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014544"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_058",
+      "to": "C_5602",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014545"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_059",
+      "to": "C_5603",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014546"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_413",
+      "to": "C_5604",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014547"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_060",
+      "to": "C_5605",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014548"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_189",
+      "to": "C_5606",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014549"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_232",
+      "to": "C_5607",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014550"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_662",
+      "to": "C_5608",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014551"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_056",
+      "to": "A_242",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018932"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "AMD와 인텔은 x86 CPU 시장에서 데스크톱·노트북·서버용 프로세서를 두고 직접 경쟁하는 양대 업체다."
+    },
+    {
+      "from": "A_056",
+      "to": "A_055",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018933"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "AMD와 엔비디아는 게이밍 GPU 및 데이터센터 AI 가속기 시장에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_055",
+      "to": "A_242",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018934"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "엔비디아와 인텔은 데이터센터 AI 가속기·GPU 시장에서 경쟁 관계에 있다."
+    },
+    {
+      "from": "A_242",
+      "to": "A_232",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018935"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "인텔 파운드리(IFS)는 외부 고객 위탁생산을 놓고 TSMC와 파운드리 시장에서 경쟁한다."
+    },
+    {
+      "from": "A_232",
+      "to": "A_662",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018936"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "TSMC와 글로벌파운드리즈는 반도체 위탁생산(파운드리) 수주를 놓고 경쟁하는 순수 파운드리 업체다."
+    },
+    {
+      "from": "A_060",
+      "to": "A_189",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018937"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "NXP와 텍사스인스트루먼트는 차량용·임베디드 및 아날로그 반도체 시장에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_059",
+      "to": "A_413",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018938"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "퀄컴과 브로드컴은 무선 연결(Wi-Fi/블루투스)·RF 프론트엔드 등 통신칩 시장에서 경쟁한다."
+    },
+    {
+      "from": "A_232",
+      "to": "A_056",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018939"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "TSMC는 AMD의 CPU·GPU를 첨단 공정으로 위탁생산하는 핵심 파운드리 공급사다."
+    },
+    {
+      "from": "A_232",
+      "to": "A_055",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018940"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "TSMC는 엔비디아 AI GPU를 위탁생산하며 2026년 최대 고객으로 부상했다."
+    },
+    {
+      "from": "A_232",
+      "to": "A_059",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018941"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "TSMC는 퀄컴 스냅드래곤 SoC를 첨단 공정으로 위탁생산하는 파운드리 공급사다."
+    },
+    {
+      "from": "A_232",
+      "to": "A_413",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018942"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "TSMC는 브로드컴의 AI·네트워킹 ASIC을 위탁생산하는 핵심 파운드리 공급사다."
+    },
+    {
+      "from": "A_232",
+      "to": "A_242",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018943"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "인텔은 자사 일부 제품(타일)을 TSMC 첨단 공정에 위탁생산하는 고객이기도 하다."
+    },
+    {
+      "from": "A_232",
+      "to": "A_060",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018944"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "팹라이트 전략의 NXP는 차량용 첨단 프로세서를 TSMC에 위탁생산한다."
+    },
+    {
+      "from": "A_662",
+      "to": "A_056",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018945"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "글로벌파운드리즈는 AMD와 20억 달러 규모 웨이퍼 공급계약을 맺은 성숙 공정 공급사다."
+    },
+    {
+      "from": "A_662",
+      "to": "A_059",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018946"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "글로벌파운드리즈는 퀄컴과 2028년까지 장기 웨이퍼 공급계약을 체결해 RF·전력관리 칩을 생산한다."
+    },
+    {
+      "from": "A_662",
+      "to": "A_060",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018947"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "NXP는 글로벌파운드리즈의 주요 고객으로 차량용·산업용 칩을 위탁생산한다."
+    },
+    {
+      "from": "A_058",
+      "to": "A_059",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_018948"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "퀄컴은 ARM의 아키텍처 라이선스를 보유해 커스텀 CPU 코어를 설계·제조한다."
+    },
+    {
+      "from": "A_058",
+      "to": "A_055",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_018949"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "엔비디아는 ARM 아키텍처 라이선시로 Grace CPU 등 Arm 기반 프로세서를 설계한다."
+    },
+    {
+      "from": "A_058",
+      "to": "A_056",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_018950"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "AMD는 ARM 64비트 아키텍처 라이선스를 보유한 라이선시다."
+    },
+    {
+      "from": "A_058",
+      "to": "A_413",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_018951"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "브로드컴은 ARMv7/v8 아키텍처 라이선스를 확장 계약해 Arm 기반 칩을 개발한다."
+    },
+    {
+      "from": "A_058",
+      "to": "A_060",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_018952"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "NXP는 ARM Cortex 코어를 라이선스해 차량용·MCU 제품에 광범위하게 적용한다."
+    },
+    {
+      "from": "A_058",
+      "to": "A_242",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_018953"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "ARM과 인텔은 2023년 인텔 18A 공정에서 Arm 기반 저전력 SoC 생산을 위한 파운드리 협력을 맺었다."
+    },
+    {
+      "from": "A_2875",
+      "to": "T_080",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020590"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_639",
+      "to": "T_080",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020591"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ],
-  "description": "• AI 서버 host CPU 사이클·ARM 서버 침투·x86 점유 다툼이 동인\n• 동인: 하이퍼스케일러CAPEX·AI추론확산·Agentic AI 확산\n• 대표주: AMD(x86CPU GPU)·엔비디아(AIPC칩전개2H2)·인텔(x86CPU)\n• 밸류체인: PC/서버용·IP라이선스+칩제조·모바일·엣지SoC\n• ETF: TIGER 미국필라델피아반도체나스닥·SMH"
- },
- "nodes": [
-  {
-   "id": "T_080",
-   "type": "THEME",
-   "name": "글로벌CPU주식"
-  },
-  {
-   "id": "A_056",
-   "type": "ASSET",
-   "name": "AMD",
-   "exposure": {
-    "ticker": "AMD",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 6.49675990145131,
-    "close": 514.39,
-    "marketCap": 838764334000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 8.447883285545622,
-    "return_15d": -1.4484145990995456,
-    "return_1m": -6.155474066371114,
-    "return_ytd": 140.18957788569293,
-    "return_1y": 184.27189831445153,
-    "return_3y": 359.3588140739418,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 6.419645812644803,
-    "return_2y": 265.46358792184725
-   }
-  },
-  {
-   "id": "A_055",
-   "type": "ASSET",
-   "name": "엔비디아",
-   "exposure": {
-    "ticker": "NVDA",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.062139369729252714,
-    "close": 225.16,
-    "marketCap": 5453600360000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 3.5218390804597766,
-    "return_15d": 8.857087603945079,
-    "return_1m": 6.30783758262512,
-    "return_ytd": 20.72922252010723,
-    "return_1y": 23.7006922316229,
-    "return_3y": 414.6514285714286,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.5358099660653703,
-    "return_2y": 90.68428184281842
-   }
-  },
-  {
-   "id": "A_242",
-   "type": "ASSET",
-   "name": "인텔",
-   "exposure": {
-    "ticker": "INTC",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -1.9701606732976273,
-    "close": 102.5,
-    "marketCap": 517009974068,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 4.902261795107976,
-    "return_15d": 11.026863084922024,
-    "return_1m": -4.881217520415748,
-    "return_ytd": 177.77777777777777,
-    "return_1y": 329.5892707460185,
-    "return_3y": 187.2757847533632,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.8362026561731462,
-    "return_2y": 414.5582329317269
-   }
-  },
-  {
-   "id": "A_058",
-   "type": "ASSET",
-   "name": "ARM",
-   "exposure": {
-    "ticker": "ARM",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.2835097792930341,
-    "close": 279.44,
-    "marketCap": 298441520121,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 3.908080169560857,
-    "return_15d": 7.472789508095845,
-    "return_1m": -0.6152861258313491,
-    "return_ytd": 155.63992315433174,
-    "return_1y": 98.81892564923514,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -1.107690129879324,
-    "return_2y": 121.9186785260483
-   }
-  },
-  {
-   "id": "A_059",
-   "type": "ASSET",
-   "name": "퀄컴",
-   "exposure": {
-    "ticker": "QCOM",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.6068329388919214,
-    "close": 165.79,
-    "marketCap": 174079500000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 1.9117285468404077,
-    "return_15d": -0.7067137809187329,
-    "return_1m": -6.911847276810779,
-    "return_ytd": -3.075124232680515,
-    "return_1y": 4.87064330444682,
-    "return_3y": 45.40431503245044,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -1.2331704992255554,
-    "return_2y": -0.8136404427161348
-   }
-  },
-  {
-   "id": "A_413",
-   "type": "ASSET",
-   "name": "브로드컴",
-   "exposure": {
-    "ticker": "AVGO",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -5.942750466708146,
-    "close": 392.99,
-    "marketCap": 1869681364200,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -5.549413574312623,
-    "return_15d": 2.898512777545026,
-    "return_1m": 0.9971473362288208,
-    "return_ytd": 13.548107483386307,
-    "return_1y": 26.269961121999795,
-    "return_3y": 360.1217656012177,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -8.128389751262388,
-    "return_2y": 149.21681780708988
-   }
-  },
-  {
-   "id": "A_060",
-   "type": "ASSET",
-   "name": "NXP",
-   "exposure": {
-    "ticker": "NXPI",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.2073649260488928,
-    "close": 234.71,
-    "marketCap": 59185453280,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -0.7064895507234104,
-    "return_15d": -12.824988857524888,
-    "return_1m": -17.317786310635153,
-    "return_ytd": 8.131392241776481,
-    "return_1y": 1.369093893063833,
-    "return_3y": 13.249698431845601,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -2.08585373993575,
-    "return_2y": -3.665243802331297
-   }
-  },
-  {
-   "id": "A_189",
-   "type": "ASSET",
-   "name": "텍사스인스트루먼트",
-   "exposure": {
-    "ticker": "TXN",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 2.249204549610506,
-    "close": 279.58,
-    "marketCap": 255325788052,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -0.590243208647423,
-    "return_15d": 0.0,
-    "return_1m": -8.499427262313864,
-    "return_ytd": 61.15049858781485,
-    "return_1y": 44.329151824892875,
-    "return_3y": 63.995776630689825,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -2.272091722595082,
-    "return_2y": 42.92725320791369
-   }
-  },
-  {
-   "id": "A_232",
-   "type": "ASSET",
-   "name": "TSMC",
-   "exposure": {
-    "ticker": "2330",
-    "exchange": "TWSE",
-    "country": "TW"
-   },
-   "metrics": {
-    "return_1d": -1.642710472279263,
-    "close": 2395.0,
-    "marketCap": 62108098000000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 0.0,
-    "return_15d": 1.914893617021285,
-    "return_1m": -1.0330578512396715,
-    "return_ytd": 54.516129032258064,
-    "return_1y": 103.82978723404257,
-    "return_3y": 342.6987060998152,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.0548523206751037,
-    "return_2y": 152.63713080168776
-   }
-  },
-  {
-   "id": "A_662",
-   "type": "ASSET",
-   "name": "글로벌파운드리즈",
-   "exposure": {
-    "ticker": "GFS",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 3.58701840956539,
-    "close": 54.58,
-    "marketCap": 29948091465,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 7.398661944116491,
-    "return_15d": 1.9615169064076232,
-    "return_1m": -13.89809118157438,
-    "return_ytd": 56.300114547537206,
-    "return_1y": 64.89425981873111,
-    "return_3y": -6.203815088503184,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.2052660856666009,
-    "return_2y": 25.29843893480257
-   }
-  },
-  {
-   "id": "BF_148",
-   "type": "BUSINESS_FIELD",
-   "name": "PC/서버용"
-  },
-  {
-   "id": "BF_149",
-   "type": "BUSINESS_FIELD",
-   "name": "IP라이선스+칩제조"
-  },
-  {
-   "id": "BF_150",
-   "type": "BUSINESS_FIELD",
-   "name": "모바일·엣지SoC"
-  },
-  {
-   "id": "M_288",
-   "type": "MACRO",
-   "name": "하이퍼스케일러CAPEX"
-  },
-  {
-   "id": "M_019",
-   "type": "MACRO",
-   "name": "AI추론확산"
-  },
-  {
-   "id": "M_276",
-   "type": "MACRO",
-   "name": "Agentic AI 확산"
-  },
-  {
-   "id": "M_313",
-   "type": "MACRO",
-   "name": "GPU당CPU수요증가"
-  },
-  {
-   "id": "M_314",
-   "type": "MACRO",
-   "name": "다단계분산추론증가"
-  },
-  {
-   "id": "C_246",
-   "type": "CHARACTER",
-   "name": "AIPC칩전개2H26"
-  },
-  {
-   "id": "C_247",
-   "type": "CHARACTER",
-   "name": "인텔AMD위협"
-  },
-  {
-   "id": "C_5600",
-   "type": "CHARACTER",
-   "name": "x86CPU_GPU"
-  },
-  {
-   "id": "C_5601",
-   "type": "CHARACTER",
-   "name": "x86CPU"
-  },
-  {
-   "id": "C_5602",
-   "type": "CHARACTER",
-   "name": "CPU아키텍처IP·로열티"
-  },
-  {
-   "id": "C_5603",
-   "type": "CHARACTER",
-   "name": "ARM_CPU모바일"
-  },
-  {
-   "id": "C_5604",
-   "type": "CHARACTER",
-   "name": "커스텀칩"
-  },
-  {
-   "id": "C_5605",
-   "type": "CHARACTER",
-   "name": "임베디드CPU"
-  },
-  {
-   "id": "C_5606",
-   "type": "CHARACTER",
-   "name": "임베디드프로세서"
-  },
-  {
-   "id": "C_5607",
-   "type": "CHARACTER",
-   "name": "CPU파운드리"
-  },
-  {
-   "id": "C_5608",
-   "type": "CHARACTER",
-   "name": "CPU파운드리"
-  },
-  {
-   "id": "A_2875",
-   "type": "ASSET",
-   "name": "TIGER 미국필라델피아반도체나스닥",
-   "exposure": {
-    "ticker": "381180",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -0.542475859824243,
-    "return_3d": 2.82669657879977,
-    "return_15d": -1.828845189520567,
-    "return_1m": -9.128502208788037,
-    "return_ytd": 69.3881367526324,
-    "return_1y": 124.46128166054903,
-    "return_3y": null,
-    "close": 45835,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": null,
-    "return_2y": 121.09923438691972
-   }
-  },
-  {
-   "id": "A_639",
-   "type": "ASSET",
-   "name": "SMH",
-   "exposure": {
-    "ticker": "SMH",
-    "exchange": "NASDAQ",
-    "country": "US",
-    "business_desc": "VanEck Semiconductor ETF. 엔비디아 최상위 비중에 TSMC·브로드컴·AMD 등 반도체 25종목, AI 가속기 사이클 순수 노출."
-   },
-   "metrics": {
-    "return_1d": -0.22066811515479845,
-    "close": 587.82,
-    "marketCap": 74089272489,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 2.598921334194415,
-    "return_15d": 4.745273436803932,
-    "return_1m": -2.0805916942912672,
-    "return_ytd": 63.224391192069554,
-    "return_1y": 94.69395866454691,
-    "return_3y": 290.16328156113104,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.8786682684057023,
-    "return_2y": 148.66534117348453
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_056",
-   "to": "T_080",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002390"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_055",
-   "to": "T_080",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002391"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_242",
-   "to": "T_080",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002392"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_058",
-   "to": "T_080",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002393"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_059",
-   "to": "T_080",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002394"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_413",
-   "to": "T_080",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002395"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_060",
-   "to": "T_080",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002396"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_189",
-   "to": "T_080",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002397"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_232",
-   "to": "T_080",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002398"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_662",
-   "to": "T_080",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002399"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_056",
-   "to": "BF_148",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002400"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_055",
-   "to": "BF_148",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002401"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_242",
-   "to": "BF_148",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002402"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_058",
-   "to": "BF_149",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002403"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_059",
-   "to": "BF_150",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002404"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_413",
-   "to": "BF_150",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002405"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_060",
-   "to": "BF_150",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002406"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_189",
-   "to": "BF_150",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002407"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_232",
-   "to": "BF_149",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002408"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_662",
-   "to": "BF_149",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002409"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_288",
-   "to": "T_080",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002410"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_019",
-   "to": "T_080",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002411"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_276",
-   "to": "T_080",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002412"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_313",
-   "to": "T_080",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002413"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_314",
-   "to": "T_080",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002414"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_055",
-   "to": "C_246",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002415"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_055",
-   "to": "C_247",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002416"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_056",
-   "to": "C_5600",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014543"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_242",
-   "to": "C_5601",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014544"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_058",
-   "to": "C_5602",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014545"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_059",
-   "to": "C_5603",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014546"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_413",
-   "to": "C_5604",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014547"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_060",
-   "to": "C_5605",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014548"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_189",
-   "to": "C_5606",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014549"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_232",
-   "to": "C_5607",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014550"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_662",
-   "to": "C_5608",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014551"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_056",
-   "to": "A_242",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018932"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "AMD와 인텔은 x86 CPU 시장에서 데스크톱·노트북·서버용 프로세서를 두고 직접 경쟁하는 양대 업체다."
-  },
-  {
-   "from": "A_056",
-   "to": "A_055",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018933"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "AMD와 엔비디아는 게이밍 GPU 및 데이터센터 AI 가속기 시장에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_055",
-   "to": "A_242",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018934"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "엔비디아와 인텔은 데이터센터 AI 가속기·GPU 시장에서 경쟁 관계에 있다."
-  },
-  {
-   "from": "A_242",
-   "to": "A_232",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018935"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "인텔 파운드리(IFS)는 외부 고객 위탁생산을 놓고 TSMC와 파운드리 시장에서 경쟁한다."
-  },
-  {
-   "from": "A_232",
-   "to": "A_662",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018936"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "TSMC와 글로벌파운드리즈는 반도체 위탁생산(파운드리) 수주를 놓고 경쟁하는 순수 파운드리 업체다."
-  },
-  {
-   "from": "A_060",
-   "to": "A_189",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018937"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "NXP와 텍사스인스트루먼트는 차량용·임베디드 및 아날로그 반도체 시장에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_059",
-   "to": "A_413",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018938"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "퀄컴과 브로드컴은 무선 연결(Wi-Fi/블루투스)·RF 프론트엔드 등 통신칩 시장에서 경쟁한다."
-  },
-  {
-   "from": "A_232",
-   "to": "A_056",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018939"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "TSMC는 AMD의 CPU·GPU를 첨단 공정으로 위탁생산하는 핵심 파운드리 공급사다."
-  },
-  {
-   "from": "A_232",
-   "to": "A_055",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018940"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "TSMC는 엔비디아 AI GPU를 위탁생산하며 2026년 최대 고객으로 부상했다."
-  },
-  {
-   "from": "A_232",
-   "to": "A_059",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018941"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "TSMC는 퀄컴 스냅드래곤 SoC를 첨단 공정으로 위탁생산하는 파운드리 공급사다."
-  },
-  {
-   "from": "A_232",
-   "to": "A_413",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018942"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "TSMC는 브로드컴의 AI·네트워킹 ASIC을 위탁생산하는 핵심 파운드리 공급사다."
-  },
-  {
-   "from": "A_232",
-   "to": "A_242",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018943"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "인텔은 자사 일부 제품(타일)을 TSMC 첨단 공정에 위탁생산하는 고객이기도 하다."
-  },
-  {
-   "from": "A_232",
-   "to": "A_060",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018944"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "팹라이트 전략의 NXP는 차량용 첨단 프로세서를 TSMC에 위탁생산한다."
-  },
-  {
-   "from": "A_662",
-   "to": "A_056",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018945"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "글로벌파운드리즈는 AMD와 20억 달러 규모 웨이퍼 공급계약을 맺은 성숙 공정 공급사다."
-  },
-  {
-   "from": "A_662",
-   "to": "A_059",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018946"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "글로벌파운드리즈는 퀄컴과 2028년까지 장기 웨이퍼 공급계약을 체결해 RF·전력관리 칩을 생산한다."
-  },
-  {
-   "from": "A_662",
-   "to": "A_060",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018947"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "NXP는 글로벌파운드리즈의 주요 고객으로 차량용·산업용 칩을 위탁생산한다."
-  },
-  {
-   "from": "A_058",
-   "to": "A_059",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_018948"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "퀄컴은 ARM의 아키텍처 라이선스를 보유해 커스텀 CPU 코어를 설계·제조한다."
-  },
-  {
-   "from": "A_058",
-   "to": "A_055",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_018949"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "엔비디아는 ARM 아키텍처 라이선시로 Grace CPU 등 Arm 기반 프로세서를 설계한다."
-  },
-  {
-   "from": "A_058",
-   "to": "A_056",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_018950"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "AMD는 ARM 64비트 아키텍처 라이선스를 보유한 라이선시다."
-  },
-  {
-   "from": "A_058",
-   "to": "A_413",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_018951"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "브로드컴은 ARMv7/v8 아키텍처 라이선스를 확장 계약해 Arm 기반 칩을 개발한다."
-  },
-  {
-   "from": "A_058",
-   "to": "A_060",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_018952"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "NXP는 ARM Cortex 코어를 라이선스해 차량용·MCU 제품에 광범위하게 적용한다."
-  },
-  {
-   "from": "A_058",
-   "to": "A_242",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_018953"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "ARM과 인텔은 2023년 인텔 18A 공정에서 Arm 기반 저전력 SoC 생산을 위한 파운드리 협력을 맺었다."
-  },
-  {
-   "from": "A_2875",
-   "to": "T_080",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020590"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_639",
-   "to": "T_080",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020591"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_056",
-   "to": "T_080",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002390"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_055",
-   "to": "T_080",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002391"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_242",
-   "to": "T_080",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002392"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_058",
-   "to": "T_080",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002393"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_059",
-   "to": "T_080",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002394"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_413",
-   "to": "T_080",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002395"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_060",
-   "to": "T_080",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002396"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_189",
-   "to": "T_080",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002397"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_232",
-   "to": "T_080",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002398"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_662",
-   "to": "T_080",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002399"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_056",
-   "to": "BF_148",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002400"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_055",
-   "to": "BF_148",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002401"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_242",
-   "to": "BF_148",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002402"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_058",
-   "to": "BF_149",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002403"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_059",
-   "to": "BF_150",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002404"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_413",
-   "to": "BF_150",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002405"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_060",
-   "to": "BF_150",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002406"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_189",
-   "to": "BF_150",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002407"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_232",
-   "to": "BF_149",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002408"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_662",
-   "to": "BF_149",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002409"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_288",
-   "to": "T_080",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002410"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_019",
-   "to": "T_080",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002411"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_276",
-   "to": "T_080",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002412"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_313",
-   "to": "T_080",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002413"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_314",
-   "to": "T_080",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002414"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_055",
-   "to": "C_246",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002415"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_055",
-   "to": "C_247",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002416"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_056",
-   "to": "C_5600",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014543"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_242",
-   "to": "C_5601",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014544"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_058",
-   "to": "C_5602",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014545"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_059",
-   "to": "C_5603",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014546"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_413",
-   "to": "C_5604",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014547"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_060",
-   "to": "C_5605",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014548"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_189",
-   "to": "C_5606",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014549"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_232",
-   "to": "C_5607",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014550"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_662",
-   "to": "C_5608",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014551"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_056",
-   "to": "A_242",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018932"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "AMD와 인텔은 x86 CPU 시장에서 데스크톱·노트북·서버용 프로세서를 두고 직접 경쟁하는 양대 업체다."
-  },
-  {
-   "from": "A_056",
-   "to": "A_055",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018933"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "AMD와 엔비디아는 게이밍 GPU 및 데이터센터 AI 가속기 시장에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_055",
-   "to": "A_242",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018934"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "엔비디아와 인텔은 데이터센터 AI 가속기·GPU 시장에서 경쟁 관계에 있다."
-  },
-  {
-   "from": "A_242",
-   "to": "A_232",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018935"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "인텔 파운드리(IFS)는 외부 고객 위탁생산을 놓고 TSMC와 파운드리 시장에서 경쟁한다."
-  },
-  {
-   "from": "A_232",
-   "to": "A_662",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018936"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "TSMC와 글로벌파운드리즈는 반도체 위탁생산(파운드리) 수주를 놓고 경쟁하는 순수 파운드리 업체다."
-  },
-  {
-   "from": "A_060",
-   "to": "A_189",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018937"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "NXP와 텍사스인스트루먼트는 차량용·임베디드 및 아날로그 반도체 시장에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_059",
-   "to": "A_413",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018938"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "퀄컴과 브로드컴은 무선 연결(Wi-Fi/블루투스)·RF 프론트엔드 등 통신칩 시장에서 경쟁한다."
-  },
-  {
-   "from": "A_232",
-   "to": "A_056",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018939"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "TSMC는 AMD의 CPU·GPU를 첨단 공정으로 위탁생산하는 핵심 파운드리 공급사다."
-  },
-  {
-   "from": "A_232",
-   "to": "A_055",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018940"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "TSMC는 엔비디아 AI GPU를 위탁생산하며 2026년 최대 고객으로 부상했다."
-  },
-  {
-   "from": "A_232",
-   "to": "A_059",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018941"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "TSMC는 퀄컴 스냅드래곤 SoC를 첨단 공정으로 위탁생산하는 파운드리 공급사다."
-  },
-  {
-   "from": "A_232",
-   "to": "A_413",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018942"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "TSMC는 브로드컴의 AI·네트워킹 ASIC을 위탁생산하는 핵심 파운드리 공급사다."
-  },
-  {
-   "from": "A_232",
-   "to": "A_242",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018943"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "인텔은 자사 일부 제품(타일)을 TSMC 첨단 공정에 위탁생산하는 고객이기도 하다."
-  },
-  {
-   "from": "A_232",
-   "to": "A_060",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018944"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "팹라이트 전략의 NXP는 차량용 첨단 프로세서를 TSMC에 위탁생산한다."
-  },
-  {
-   "from": "A_662",
-   "to": "A_056",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018945"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "글로벌파운드리즈는 AMD와 20억 달러 규모 웨이퍼 공급계약을 맺은 성숙 공정 공급사다."
-  },
-  {
-   "from": "A_662",
-   "to": "A_059",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018946"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "글로벌파운드리즈는 퀄컴과 2028년까지 장기 웨이퍼 공급계약을 체결해 RF·전력관리 칩을 생산한다."
-  },
-  {
-   "from": "A_662",
-   "to": "A_060",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018947"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "NXP는 글로벌파운드리즈의 주요 고객으로 차량용·산업용 칩을 위탁생산한다."
-  },
-  {
-   "from": "A_058",
-   "to": "A_059",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_018948"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "퀄컴은 ARM의 아키텍처 라이선스를 보유해 커스텀 CPU 코어를 설계·제조한다."
-  },
-  {
-   "from": "A_058",
-   "to": "A_055",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_018949"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "엔비디아는 ARM 아키텍처 라이선시로 Grace CPU 등 Arm 기반 프로세서를 설계한다."
-  },
-  {
-   "from": "A_058",
-   "to": "A_056",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_018950"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "AMD는 ARM 64비트 아키텍처 라이선스를 보유한 라이선시다."
-  },
-  {
-   "from": "A_058",
-   "to": "A_413",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_018951"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "브로드컴은 ARMv7/v8 아키텍처 라이선스를 확장 계약해 Arm 기반 칩을 개발한다."
-  },
-  {
-   "from": "A_058",
-   "to": "A_060",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_018952"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "NXP는 ARM Cortex 코어를 라이선스해 차량용·MCU 제품에 광범위하게 적용한다."
-  },
-  {
-   "from": "A_058",
-   "to": "A_242",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_018953"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "ARM과 인텔은 2023년 인텔 18A 공정에서 Arm 기반 저전력 SoC 생산을 위한 파운드리 협력을 맺었다."
-  },
-  {
-   "from": "A_2875",
-   "to": "T_080",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020590"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_639",
-   "to": "T_080",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020591"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
+  "links": [
+    {
+      "from": "A_056",
+      "to": "T_080",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002390"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_055",
+      "to": "T_080",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002391"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_242",
+      "to": "T_080",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002392"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_058",
+      "to": "T_080",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002393"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_059",
+      "to": "T_080",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002394"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_413",
+      "to": "T_080",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002395"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_060",
+      "to": "T_080",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002396"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_189",
+      "to": "T_080",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002397"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_232",
+      "to": "T_080",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002398"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_662",
+      "to": "T_080",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002399"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_056",
+      "to": "BF_148",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002400"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_055",
+      "to": "BF_148",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002401"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_242",
+      "to": "BF_148",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002402"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_058",
+      "to": "BF_149",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002403"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_059",
+      "to": "BF_150",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002404"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_413",
+      "to": "BF_150",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002405"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_060",
+      "to": "BF_150",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002406"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_189",
+      "to": "BF_150",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002407"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_232",
+      "to": "BF_149",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002408"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_662",
+      "to": "BF_149",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002409"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_288",
+      "to": "T_080",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002410"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_019",
+      "to": "T_080",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002411"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_276",
+      "to": "T_080",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002412"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_313",
+      "to": "T_080",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002413"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_314",
+      "to": "T_080",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002414"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_055",
+      "to": "C_246",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002415"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_055",
+      "to": "C_247",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002416"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_056",
+      "to": "C_5600",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014543"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_242",
+      "to": "C_5601",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014544"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_058",
+      "to": "C_5602",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014545"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_059",
+      "to": "C_5603",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014546"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_413",
+      "to": "C_5604",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014547"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_060",
+      "to": "C_5605",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014548"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_189",
+      "to": "C_5606",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014549"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_232",
+      "to": "C_5607",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014550"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_662",
+      "to": "C_5608",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014551"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_056",
+      "to": "A_242",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018932"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "AMD와 인텔은 x86 CPU 시장에서 데스크톱·노트북·서버용 프로세서를 두고 직접 경쟁하는 양대 업체다."
+    },
+    {
+      "from": "A_056",
+      "to": "A_055",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018933"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "AMD와 엔비디아는 게이밍 GPU 및 데이터센터 AI 가속기 시장에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_055",
+      "to": "A_242",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018934"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "엔비디아와 인텔은 데이터센터 AI 가속기·GPU 시장에서 경쟁 관계에 있다."
+    },
+    {
+      "from": "A_242",
+      "to": "A_232",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018935"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "인텔 파운드리(IFS)는 외부 고객 위탁생산을 놓고 TSMC와 파운드리 시장에서 경쟁한다."
+    },
+    {
+      "from": "A_232",
+      "to": "A_662",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018936"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "TSMC와 글로벌파운드리즈는 반도체 위탁생산(파운드리) 수주를 놓고 경쟁하는 순수 파운드리 업체다."
+    },
+    {
+      "from": "A_060",
+      "to": "A_189",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018937"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "NXP와 텍사스인스트루먼트는 차량용·임베디드 및 아날로그 반도체 시장에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_059",
+      "to": "A_413",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018938"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "퀄컴과 브로드컴은 무선 연결(Wi-Fi/블루투스)·RF 프론트엔드 등 통신칩 시장에서 경쟁한다."
+    },
+    {
+      "from": "A_232",
+      "to": "A_056",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018939"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "TSMC는 AMD의 CPU·GPU를 첨단 공정으로 위탁생산하는 핵심 파운드리 공급사다."
+    },
+    {
+      "from": "A_232",
+      "to": "A_055",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018940"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "TSMC는 엔비디아 AI GPU를 위탁생산하며 2026년 최대 고객으로 부상했다."
+    },
+    {
+      "from": "A_232",
+      "to": "A_059",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018941"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "TSMC는 퀄컴 스냅드래곤 SoC를 첨단 공정으로 위탁생산하는 파운드리 공급사다."
+    },
+    {
+      "from": "A_232",
+      "to": "A_413",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018942"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "TSMC는 브로드컴의 AI·네트워킹 ASIC을 위탁생산하는 핵심 파운드리 공급사다."
+    },
+    {
+      "from": "A_232",
+      "to": "A_242",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018943"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "인텔은 자사 일부 제품(타일)을 TSMC 첨단 공정에 위탁생산하는 고객이기도 하다."
+    },
+    {
+      "from": "A_232",
+      "to": "A_060",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018944"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "팹라이트 전략의 NXP는 차량용 첨단 프로세서를 TSMC에 위탁생산한다."
+    },
+    {
+      "from": "A_662",
+      "to": "A_056",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018945"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "글로벌파운드리즈는 AMD와 20억 달러 규모 웨이퍼 공급계약을 맺은 성숙 공정 공급사다."
+    },
+    {
+      "from": "A_662",
+      "to": "A_059",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018946"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "글로벌파운드리즈는 퀄컴과 2028년까지 장기 웨이퍼 공급계약을 체결해 RF·전력관리 칩을 생산한다."
+    },
+    {
+      "from": "A_662",
+      "to": "A_060",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018947"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "NXP는 글로벌파운드리즈의 주요 고객으로 차량용·산업용 칩을 위탁생산한다."
+    },
+    {
+      "from": "A_058",
+      "to": "A_059",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_018948"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "퀄컴은 ARM의 아키텍처 라이선스를 보유해 커스텀 CPU 코어를 설계·제조한다."
+    },
+    {
+      "from": "A_058",
+      "to": "A_055",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_018949"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "엔비디아는 ARM 아키텍처 라이선시로 Grace CPU 등 Arm 기반 프로세서를 설계한다."
+    },
+    {
+      "from": "A_058",
+      "to": "A_056",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_018950"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "AMD는 ARM 64비트 아키텍처 라이선스를 보유한 라이선시다."
+    },
+    {
+      "from": "A_058",
+      "to": "A_413",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_018951"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "브로드컴은 ARMv7/v8 아키텍처 라이선스를 확장 계약해 Arm 기반 칩을 개발한다."
+    },
+    {
+      "from": "A_058",
+      "to": "A_060",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_018952"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "NXP는 ARM Cortex 코어를 라이선스해 차량용·MCU 제품에 광범위하게 적용한다."
+    },
+    {
+      "from": "A_058",
+      "to": "A_242",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_018953"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "ARM과 인텔은 2023년 인텔 18A 공정에서 Arm 기반 저전력 SoC 생산을 위한 파운드리 협력을 맺었다."
+    },
+    {
+      "from": "A_2875",
+      "to": "T_080",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020590"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_639",
+      "to": "T_080",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020591"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ]
 }

@@ -1,900 +1,900 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_136",
- "themeName": "K_고배당주-KT&G",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_136",
+  "themeName": "K_고배당주-KT&G",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-04-11T00:00:00+09:00",
+    "notes": "g136 누적 import 기반 K_고배당주-KT&G 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-07-11",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
+      },
+      {
+        "date": "2026-07-11",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필 + 2026 이벤트",
+        "detail": "전 엣지 근거(호버 박스)를 종목·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ],
+    "description": "• 자사주매입·배당 인상·안정 캐시플로가 multiyear 동인\n• 동인: 지주사밸류업/상법개정·주주환원정책·금리인하\n• 대표주: KT&G(담배홍삼고배당)·삼성전자우(배당우선주)\n• 밸류체인: 연초형담배·전자식담배·니코틴파우치\n• ETF: PLUS고배당주"
+  },
+  "nodes": [
+    {
+      "id": "T_136",
+      "type": "THEME",
+      "name": "K_고배당주-KT&G"
+    },
+    {
+      "id": "A_214",
+      "type": "ASSET",
+      "name": "SK텔레콤",
+      "exposure": {
+        "ticker": "017670",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -1.8036072144288595,
+        "close": 98000,
+        "marketCap": 17140246229400,
+        "pe_ttm": 13.81,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": 7.574094401756315,
+        "return_15d": 19.22141119221412,
+        "return_1m": 15.702479338842966,
+        "return_ytd": 85.39758488430789,
+        "return_1y": 77.5573457684352,
+        "return_3y": 145.27530811032702,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 13.945578231292522,
+        "return_2y": 95.44348561953358
+      }
+    },
+    {
+      "id": "A_957",
+      "type": "ASSET",
+      "name": "KT&G",
+      "exposure": {
+        "ticker": "033780",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -0.6228765571913875,
+        "close": 175500,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": 0.9781357882623798,
+        "return_15d": -3.412217941662077,
+        "return_1m": -2.1739130434782594,
+        "return_ytd": 28.283837822621962,
+        "return_1y": 32.63625251191806,
+        "return_3y": 133.20197172267095,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": -6.779661016949157,
+        "return_2y": 109.76506681846278
+      }
+    },
+    {
+      "id": "A_958",
+      "type": "ASSET",
+      "name": "TIGER고배당",
+      "exposure": {
+        "ticker": "439740",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": "2026-05-22",
+        "returnsSource": "PYKRX",
+        "return_5d": null,
+        "return_2y": null
+      }
+    },
+    {
+      "id": "A_959",
+      "type": "ASSET",
+      "name": "필립모리스",
+      "exposure": {
+        "ticker": "PM",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.231212024304451,
+        "close": 189.93,
+        "marketCap": 296026797300,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -0.24160932822100412,
+        "return_15d": -4.2884499092924795,
+        "return_1m": -1.5804746605865838,
+        "return_ytd": 18.410224438902745,
+        "return_1y": 12.537773300942101,
+        "return_3y": 101.28232301822808,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 2.0087007895160935,
+        "return_2y": 60.34613761080625
+      }
+    },
+    {
+      "id": "A_960",
+      "type": "ASSET",
+      "name": "BAT",
+      "exposure": {
+        "ticker": "BTI",
+        "exchange": "NYSE",
+        "country": "GB"
+      },
+      "metrics": {
+        "return_1d": -0.709471443774401,
+        "close": 55.98,
+        "marketCap": 120744819867,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -1.8927444794952786,
+        "return_15d": -11.241477723164738,
+        "return_1m": -10.916613621896886,
+        "return_ytd": -1.13034263511127,
+        "return_1y": -2.5926570384548486,
+        "return_3y": 74.01305564190237,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 0.2507163323782091,
+        "return_2y": 54.94049266537502
+      }
+    },
+    {
+      "id": "A_961",
+      "type": "ASSET",
+      "name": "알트리아",
+      "exposure": {
+        "ticker": "MO",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.288541187298664,
+        "close": 66.03,
+        "marketCap": 110253193745,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 0.5022831050228271,
+        "return_15d": -11.86599038974907,
+        "return_1m": -11.02277321115752,
+        "return_ytd": 14.516129032258075,
+        "return_1y": -0.7962740384615419,
+        "return_3y": 53.88021440223725,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 2.562907735321529,
+        "return_2y": 28.663289166017147
+      }
+    },
+    {
+      "id": "A_962",
+      "type": "ASSET",
+      "name": "KXI",
+      "exposure": {
+        "ticker": "KXI",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.9911091677598183,
+        "close": 69.29,
+        "marketCap": 1014532193,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -0.1872659176029856,
+        "return_15d": -1.758117113285118,
+        "return_1m": 0.04331504475887371,
+        "return_ytd": 7.177107501933477,
+        "return_1y": 3.914217156568678,
+        "return_3y": 15.637516688918573,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 0.9322651128914838,
+        "return_2y": 8.758436666143465
+      }
+    },
+    {
+      "id": "BF_253",
+      "type": "BUSINESS_FIELD",
+      "name": "연초형담배"
+    },
+    {
+      "id": "BF_254",
+      "type": "BUSINESS_FIELD",
+      "name": "전자식담배"
+    },
+    {
+      "id": "BF_255",
+      "type": "BUSINESS_FIELD",
+      "name": "니코틴파우치"
+    },
+    {
+      "id": "A_1667",
+      "type": "ASSET",
+      "name": "삼성전자우",
+      "exposure": {
+        "ticker": "005935",
+        "exchange": "KOSPI",
+        "country": "KR",
+        "business_desc": "cross-add from T_261",
+        "theme_role": "T_136 cross-add",
+        "theme_status": "Peripheral"
+      },
+      "metrics": {
+        "return_1d": -7.753584705257566,
+        "close": 173700,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -7.507987220447287,
+        "return_15d": 9.797724399494312,
+        "return_1m": 2.659574468085113,
+        "return_ytd": 84.85590447127036,
+        "return_1y": 209.3372123258089,
+        "return_3y": 277.93111811211116,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 14.991181657848319,
+        "return_2y": 174.38213995502534
+      },
+      "coreBiz": "삼성전자우는 배당·우선주 디스카운트 축소 기대주다"
+    },
+    {
+      "id": "M_126",
+      "type": "MACRO",
+      "name": "지주사밸류업/상법개정"
+    },
+    {
+      "id": "M_173",
+      "type": "MACRO",
+      "name": "주주환원정책"
+    },
+    {
+      "id": "M_145",
+      "type": "MACRO",
+      "name": "금리인하"
+    },
+    {
+      "id": "C_2469",
+      "type": "CHARACTER",
+      "name": "통신고배당SKT"
+    },
+    {
+      "id": "C_2470",
+      "type": "CHARACTER",
+      "name": "담배홍삼고배당"
+    },
+    {
+      "id": "C_2471",
+      "type": "CHARACTER",
+      "name": "국내고배당ETF_TIGER"
+    },
+    {
+      "id": "C_2472",
+      "type": "CHARACTER",
+      "name": "글로벌담배"
+    },
+    {
+      "id": "C_2473",
+      "type": "CHARACTER",
+      "name": "글로벌담배"
+    },
+    {
+      "id": "C_2474",
+      "type": "CHARACTER",
+      "name": "글로벌담배고배당"
+    },
+    {
+      "id": "C_2475",
+      "type": "CHARACTER",
+      "name": "글로벌필수소비ETF"
+    },
+    {
+      "id": "C_2476",
+      "type": "CHARACTER",
+      "name": "배당우선주"
+    },
+    {
+      "id": "A_1541",
+      "type": "ASSET",
+      "name": "PLUS고배당주",
+      "exposure": {
+        "ticker": "161510",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -1.5985790408525768,
+        "close": 24930,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -0.24009603841537164,
+        "return_15d": 2.119113043737064,
+        "return_1m": 1.5805605171323345,
+        "return_ytd": 20.634685938821473,
+        "return_1y": 34.521141886031415,
+        "return_3y": 164.16438318979957,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 1.7707918822124968,
+        "return_2y": 82.072508357077
+      }
+    }
   ],
-  "dataAsOf": "2026-04-11T00:00:00+09:00",
-  "notes": "g136 누적 import 기반 K_고배당주-KT&G 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-07-11",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
-   },
-   {
-    "date": "2026-07-11",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필 + 2026 이벤트",
-    "detail": "전 엣지 근거(호버 박스)를 종목·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_957",
+      "to": "T_136",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004039"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_957",
+      "to": "BF_253",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004041"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_957",
+      "to": "BF_254",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004042"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_957",
+      "to": "BF_255",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004043"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_961",
+      "to": "BF_255",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004044"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_957",
+      "to": "A_959",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_004045"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_957",
+      "to": "A_960",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_004046"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_957",
+      "to": "A_961",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_004047"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_214",
+      "to": "A_958",
+      "type": "IN_ETF",
+      "evidence": [
+        "EV_004048"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_957",
+      "to": "A_958",
+      "type": "IN_ETF",
+      "evidence": [
+        "EV_004049"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_959",
+      "to": "A_962",
+      "type": "IN_ETF",
+      "evidence": [
+        "EV_004050"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_960",
+      "to": "A_962",
+      "type": "IN_ETF",
+      "evidence": [
+        "EV_004051"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_961",
+      "to": "A_962",
+      "type": "IN_ETF",
+      "evidence": [
+        "EV_004052"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1667",
+      "to": "T_136",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004040"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "M_126",
+      "to": "T_136",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_004053"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_173",
+      "to": "T_136",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_004054"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_145",
+      "to": "T_136",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_004055"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_214",
+      "to": "C_2469",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004186"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_957",
+      "to": "C_2470",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004187"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_958",
+      "to": "C_2471",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004188"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_959",
+      "to": "C_2472",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004189"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_960",
+      "to": "C_2473",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004190"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_961",
+      "to": "C_2474",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004191"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_962",
+      "to": "C_2475",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004192"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1667",
+      "to": "C_2476",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004193"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1541",
+      "to": "T_136",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020612"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ],
-  "description": "• 자사주매입·배당 인상·안정 캐시플로가 multiyear 동인\n• 동인: 지주사밸류업/상법개정·주주환원정책·금리인하\n• 대표주: KT&G(담배홍삼고배당)·삼성전자우(배당우선주)\n• 밸류체인: 연초형담배·전자식담배·니코틴파우치\n• ETF: PLUS고배당주"
- },
- "nodes": [
-  {
-   "id": "T_136",
-   "type": "THEME",
-   "name": "K_고배당주-KT&G"
-  },
-  {
-   "id": "A_214",
-   "type": "ASSET",
-   "name": "SK텔레콤",
-   "exposure": {
-    "ticker": "017670",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 10.318331503841938,
-    "close": 100500,
-    "marketCap": 17140246229400,
-    "pe_ttm": 13.81,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 16.860465116279077,
-    "return_15d": 0.49999999999998934,
-    "return_1m": 18.23529411764706,
-    "return_ytd": 90.1271151109484,
-    "return_1y": 85.36771448856743,
-    "return_3y": 145.27530811032702,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 13.945578231292522,
-    "return_2y": 104.2181222674015
-   }
-  },
-  {
-   "id": "A_957",
-   "type": "ASSET",
-   "name": "KT&G",
-   "exposure": {
-    "ticker": "033780",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.2658227848101333,
-    "close": 176000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -2.1678710394663736,
-    "return_15d": -3.6144578313253017,
-    "return_1m": 2.0289855072463725,
-    "return_ytd": 28.649318842059635,
-    "return_1y": 41.3597143544252,
-    "return_3y": 133.20197172267095,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": -6.779661016949157,
-    "return_2y": 116.34569991495822
-   }
-  },
-  {
-   "id": "A_958",
-   "type": "ASSET",
-   "name": "TIGER고배당",
-   "exposure": {
-    "ticker": "439740",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": "2026-05-22",
-    "returnsSource": "PYKRX",
-    "return_5d": null,
-    "return_2y": null
-   }
-  },
-  {
-   "id": "A_959",
-   "type": "ASSET",
-   "name": "필립모리스",
-   "exposure": {
-    "ticker": "PM",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.7834418506166951,
-    "close": 190.39,
-    "marketCap": 296743757900,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 2.239286864998391,
-    "return_15d": -1.3523316062176272,
-    "return_1m": 8.20687695368003,
-    "return_ytd": 18.697007481296744,
-    "return_1y": 15.199370726689644,
-    "return_3y": 98.63328116849243,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.4325578941815733,
-    "return_2y": 62.44880546075085
-   }
-  },
-  {
-   "id": "A_960",
-   "type": "ASSET",
-   "name": "BAT",
-   "exposure": {
-    "ticker": "BTI",
-    "exchange": "NYSE",
-    "country": "GB"
-   },
-   "metrics": {
-    "return_1d": -0.50566695727986,
-    "close": 57.06,
-    "marketCap": 123074301923,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 0.4400633691251432,
-    "return_15d": -6.397637795275591,
-    "return_1m": -1.9587628865979423,
-    "return_ytd": 0.777110561639005,
-    "return_1y": -0.6269592476489061,
-    "return_3y": 76.38330757341576,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -3.8260576436878413,
-    "return_2y": 57.711442786069654
-   }
-  },
-  {
-   "id": "A_961",
-   "type": "ASSET",
-   "name": "알트리아",
-   "exposure": {
-    "ticker": "MO",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.9526736324523721,
-    "close": 65.7,
-    "marketCap": 109702178238,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 1.0302937105951093,
-    "return_15d": -9.987669543773114,
-    "return_1m": -6.356898517673882,
-    "return_ytd": 13.943808532778368,
-    "return_1y": 0.22883295194509046,
-    "return_3y": 50.93039283252929,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -3.8771031455742344,
-    "return_2y": 28.345379957022864
-   }
-  },
-  {
-   "id": "A_962",
-   "type": "ASSET",
-   "name": "KXI",
-   "exposure": {
-    "ticker": "KXI",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.08635578583765513,
-    "close": 69.42,
-    "marketCap": 1016435630,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 0.7986060694061159,
-    "return_15d": 2.163355408388523,
-    "return_1m": 2.434705621956623,
-    "return_ytd": 7.378190255220418,
-    "return_1y": 5.405405405405417,
-    "return_3y": 13.85927505330491,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.17256255392580355,
-    "return_2y": 10.541401273885365
-   }
-  },
-  {
-   "id": "BF_253",
-   "type": "BUSINESS_FIELD",
-   "name": "연초형담배"
-  },
-  {
-   "id": "BF_254",
-   "type": "BUSINESS_FIELD",
-   "name": "전자식담배"
-  },
-  {
-   "id": "BF_255",
-   "type": "BUSINESS_FIELD",
-   "name": "니코틴파우치"
-  },
-  {
-   "id": "A_1667",
-   "type": "ASSET",
-   "name": "삼성전자우",
-   "exposure": {
-    "ticker": "005935",
-    "exchange": "KOSPI",
-    "country": "KR",
-    "business_desc": "cross-add from T_261",
-    "theme_role": "T_136 cross-add",
-    "theme_status": "Peripheral"
-   },
-   "metrics": {
-    "return_1d": 4.153354632587858,
-    "close": 195600,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 8.546059933407335,
-    "return_15d": 10.446075663466958,
-    "return_1m": 1.8750000000000044,
-    "return_ytd": 108.162434741396,
-    "return_1y": 255.81602226232434,
-    "return_3y": 277.93111811211116,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 14.991181657848319,
-    "return_2y": 200.80931963128018
-   },
-   "coreBiz": "삼성전자우는 배당·우선주 디스카운트 축소 기대주다"
-  },
-  {
-   "id": "M_126",
-   "type": "MACRO",
-   "name": "지주사밸류업/상법개정"
-  },
-  {
-   "id": "M_173",
-   "type": "MACRO",
-   "name": "주주환원정책"
-  },
-  {
-   "id": "M_145",
-   "type": "MACRO",
-   "name": "금리인하"
-  },
-  {
-   "id": "C_2469",
-   "type": "CHARACTER",
-   "name": "통신고배당SKT"
-  },
-  {
-   "id": "C_2470",
-   "type": "CHARACTER",
-   "name": "담배홍삼고배당"
-  },
-  {
-   "id": "C_2471",
-   "type": "CHARACTER",
-   "name": "국내고배당ETF_TIGER"
-  },
-  {
-   "id": "C_2472",
-   "type": "CHARACTER",
-   "name": "글로벌담배"
-  },
-  {
-   "id": "C_2473",
-   "type": "CHARACTER",
-   "name": "글로벌담배"
-  },
-  {
-   "id": "C_2474",
-   "type": "CHARACTER",
-   "name": "글로벌담배고배당"
-  },
-  {
-   "id": "C_2475",
-   "type": "CHARACTER",
-   "name": "글로벌필수소비ETF"
-  },
-  {
-   "id": "C_2476",
-   "type": "CHARACTER",
-   "name": "배당우선주"
-  },
-  {
-   "id": "A_1541",
-   "type": "ASSET",
-   "name": "PLUS고배당주",
-   "exposure": {
-    "ticker": "161510",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 2.340936374549818,
-    "close": 25575,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 2.218225419664277,
-    "return_15d": 1.7324513381067108,
-    "return_1m": 2.258933221454007,
-    "return_ytd": 23.75579995528918,
-    "return_1y": 41.51004626158454,
-    "return_3y": 164.16438318979957,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 1.7707918822124968,
-    "return_2y": 87.46621897216924
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_957",
-   "to": "T_136",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004039"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_957",
-   "to": "BF_253",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004041"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_957",
-   "to": "BF_254",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004042"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_957",
-   "to": "BF_255",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004043"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_961",
-   "to": "BF_255",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004044"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_957",
-   "to": "A_959",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_004045"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_957",
-   "to": "A_960",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_004046"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_957",
-   "to": "A_961",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_004047"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_214",
-   "to": "A_958",
-   "type": "IN_ETF",
-   "evidence": [
-    "EV_004048"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_957",
-   "to": "A_958",
-   "type": "IN_ETF",
-   "evidence": [
-    "EV_004049"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_959",
-   "to": "A_962",
-   "type": "IN_ETF",
-   "evidence": [
-    "EV_004050"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_960",
-   "to": "A_962",
-   "type": "IN_ETF",
-   "evidence": [
-    "EV_004051"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_961",
-   "to": "A_962",
-   "type": "IN_ETF",
-   "evidence": [
-    "EV_004052"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1667",
-   "to": "T_136",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004040"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "M_126",
-   "to": "T_136",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_004053"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_173",
-   "to": "T_136",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_004054"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_145",
-   "to": "T_136",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_004055"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_214",
-   "to": "C_2469",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004186"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_957",
-   "to": "C_2470",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004187"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_958",
-   "to": "C_2471",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004188"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_959",
-   "to": "C_2472",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004189"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_960",
-   "to": "C_2473",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004190"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_961",
-   "to": "C_2474",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004191"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_962",
-   "to": "C_2475",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004192"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1667",
-   "to": "C_2476",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004193"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1541",
-   "to": "T_136",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020612"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_957",
-   "to": "T_136",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004039"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_957",
-   "to": "BF_253",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004041"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_957",
-   "to": "BF_254",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004042"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_957",
-   "to": "BF_255",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004043"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_961",
-   "to": "BF_255",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004044"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_957",
-   "to": "A_959",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_004045"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_957",
-   "to": "A_960",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_004046"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_957",
-   "to": "A_961",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_004047"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_214",
-   "to": "A_958",
-   "type": "IN_ETF",
-   "evidence": [
-    "EV_004048"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_957",
-   "to": "A_958",
-   "type": "IN_ETF",
-   "evidence": [
-    "EV_004049"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_959",
-   "to": "A_962",
-   "type": "IN_ETF",
-   "evidence": [
-    "EV_004050"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_960",
-   "to": "A_962",
-   "type": "IN_ETF",
-   "evidence": [
-    "EV_004051"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_961",
-   "to": "A_962",
-   "type": "IN_ETF",
-   "evidence": [
-    "EV_004052"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1667",
-   "to": "T_136",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004040"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "M_126",
-   "to": "T_136",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_004053"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_173",
-   "to": "T_136",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_004054"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_145",
-   "to": "T_136",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_004055"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_214",
-   "to": "C_2469",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004186"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_957",
-   "to": "C_2470",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004187"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_958",
-   "to": "C_2471",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004188"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_959",
-   "to": "C_2472",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004189"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_960",
-   "to": "C_2473",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004190"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_961",
-   "to": "C_2474",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004191"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_962",
-   "to": "C_2475",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004192"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1667",
-   "to": "C_2476",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004193"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1541",
-   "to": "T_136",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020612"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
+  "links": [
+    {
+      "from": "A_957",
+      "to": "T_136",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004039"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_957",
+      "to": "BF_253",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004041"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_957",
+      "to": "BF_254",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004042"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_957",
+      "to": "BF_255",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004043"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_961",
+      "to": "BF_255",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004044"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_957",
+      "to": "A_959",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_004045"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_957",
+      "to": "A_960",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_004046"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_957",
+      "to": "A_961",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_004047"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_214",
+      "to": "A_958",
+      "type": "IN_ETF",
+      "evidence": [
+        "EV_004048"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_957",
+      "to": "A_958",
+      "type": "IN_ETF",
+      "evidence": [
+        "EV_004049"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_959",
+      "to": "A_962",
+      "type": "IN_ETF",
+      "evidence": [
+        "EV_004050"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_960",
+      "to": "A_962",
+      "type": "IN_ETF",
+      "evidence": [
+        "EV_004051"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_961",
+      "to": "A_962",
+      "type": "IN_ETF",
+      "evidence": [
+        "EV_004052"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1667",
+      "to": "T_136",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004040"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "M_126",
+      "to": "T_136",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_004053"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_173",
+      "to": "T_136",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_004054"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_145",
+      "to": "T_136",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_004055"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_214",
+      "to": "C_2469",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004186"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_957",
+      "to": "C_2470",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004187"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_958",
+      "to": "C_2471",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004188"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_959",
+      "to": "C_2472",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004189"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_960",
+      "to": "C_2473",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004190"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_961",
+      "to": "C_2474",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004191"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_962",
+      "to": "C_2475",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004192"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1667",
+      "to": "C_2476",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004193"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1541",
+      "to": "T_136",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020612"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ]
 }

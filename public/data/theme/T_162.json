@@ -1,927 +1,927 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_162",
- "themeName": "차이나신재생에너지",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_162",
+  "themeName": "차이나신재생에너지",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-04-20",
+    "notes": "g162 누적 import 기반 차이나신재생에너지 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 3건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-12",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
+      },
+      {
+        "date": "2026-07-12",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필 + 2026 이벤트",
+        "detail": "전 엣지 근거(호버 박스)를 종목·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
+      }
+    ],
+    "description": "• 중국 풍력·태양광·ESS capex 사이클과 EU·미국 antidumping 정책이 동인\n• 동인: 효율화중심정부정책·중국산덤핑수출·중국공급과잉\n• 대표주: Goldwind(중국풍력터빈1위골드)·창장전력(싼샤수력유틸)·NAURA(태양광반도체장비)"
+  },
+  "nodes": [
+    {
+      "id": "T_162",
+      "type": "THEME",
+      "name": "차이나신재생에너지"
+    },
+    {
+      "id": "A_1096",
+      "type": "ASSET",
+      "name": "Goldwind",
+      "exposure": {
+        "ticker": "2208",
+        "exchange": "HKEX",
+        "country": "CN"
+      },
+      "metrics": {
+        "return_1d": -8.32570905763953,
+        "close": 10.02,
+        "marketCap": 41822115276,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -5.293005671077511,
+        "return_15d": 3.0864197530864113,
+        "return_1m": 8.207343412527003,
+        "return_ytd": -25.279642058165553,
+        "return_1y": 19.713261648745515,
+        "return_3y": 113.1914893617021,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -6.003752345215762,
+        "return_2y": 142.61501210653753
+      }
+    },
+    {
+      "id": "A_1097",
+      "type": "ASSET",
+      "name": "창장전력",
+      "exposure": {
+        "ticker": "600900",
+        "exchange": "SSE",
+        "country": "CN"
+      },
+      "metrics": {
+        "return_1d": 1.0668563300142209,
+        "close": 28.42,
+        "marketCap": 695386747489,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 1.1387900355871894,
+        "return_15d": -1.7628759073625933,
+        "return_1m": 1.5362629510539572,
+        "return_ytd": 4.5237219566016895,
+        "return_1y": 2.8592110025334794,
+        "return_3y": 28.830462375339994,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 1.4275517487509104,
+        "return_2y": -4.406323578876547
+      }
+    },
+    {
+      "id": "A_1000",
+      "type": "ASSET",
+      "name": "NAURA",
+      "exposure": {
+        "ticker": "002371",
+        "exchange": "SZSE",
+        "country": "CN"
+      },
+      "metrics": {
+        "return_1d": -8.243243243243237,
+        "close": 712.95,
+        "marketCap": 517380115140,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -3.480627081471843,
+        "return_15d": 0.928665468084211,
+        "return_1m": 5.310192023633675,
+        "return_ytd": 55.29972989457177,
+        "return_1y": 109.71584892340277,
+        "return_3y": 274.5075379524085,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -6.1907894736842,
+        "return_2y": 204.3933054393306
+      }
+    },
+    {
+      "id": "A_1098",
+      "type": "ASSET",
+      "name": "선그로우",
+      "exposure": {
+        "ticker": "300274",
+        "exchange": "SZSE",
+        "country": "CN"
+      },
+      "metrics": {
+        "return_1d": -5.548966452050164,
+        "close": 111.49,
+        "marketCap": 231142341662,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -4.480808773132283,
+        "return_15d": 4.636320976067565,
+        "return_1m": 9.723452416100775,
+        "return_ytd": -34.81641721234799,
+        "return_1y": 15.569607131750796,
+        "return_3y": 45.70047046523784,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -5.139113417850771,
+        "return_2y": 65.09699392862431
+      }
+    },
+    {
+      "id": "A_1099",
+      "type": "ASSET",
+      "name": "롱지그린에너지테크놀로지",
+      "exposure": {
+        "ticker": "601012",
+        "exchange": "SSE",
+        "country": "CN"
+      },
+      "metrics": {
+        "return_1d": -3.0373831775700966,
+        "close": 12.45,
+        "marketCap": 94095541932,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -1.5810276679842028,
+        "return_15d": -2.810304449648726,
+        "return_1m": 5.957446808510625,
+        "return_ytd": -31.59340659340659,
+        "return_1y": -22.04132748904196,
+        "return_3y": -55.39233249731279,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -5.251141552511429,
+        "return_2y": -7.640949554896148
+      }
+    },
+    {
+      "id": "A_1100",
+      "type": "ASSET",
+      "name": "GlobalX차이나클린에너지",
+      "exposure": {
+        "ticker": "9809",
+        "exchange": "HKEX",
+        "country": "HK"
+      },
+      "metrics": {
+        "return_1d": -0.9643916913946615,
+        "close": 13.35,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": -0.29873039581778116,
+        "return_15d": 4.134165366614662,
+        "return_1m": 3.891050583657596,
+        "return_ytd": 3.810264385692075,
+        "return_1y": 32.30921704658076,
+        "return_3y": 12.46840775063185,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -0.3731343283582156,
+        "return_2y": 41.795007966011696
+      }
+    },
+    {
+      "id": "A_1101",
+      "type": "ASSET",
+      "name": "SOL차이나태양광CSI(합성)",
+      "exposure": {
+        "ticker": "460200",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": "2026-05-22",
+        "returnsSource": "PYKRX",
+        "return_5d": null,
+        "return_2y": null
+      }
+    },
+    {
+      "id": "A_1102",
+      "type": "ASSET",
+      "name": "TIGER차이나클린에너지SOLACTIVE",
+      "exposure": {
+        "ticker": "494950",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": "2026-05-22",
+        "returnsSource": "PYKRX",
+        "return_5d": null,
+        "return_2y": null
+      }
+    },
+    {
+      "id": "A_873",
+      "type": "ASSET",
+      "name": "KGRN",
+      "exposure": {
+        "ticker": "KGRN",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.9282700421941126,
+        "close": 23.9204,
+        "marketCap": 51298542,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -0.08354218880534114,
+        "return_15d": -0.7468879668049766,
+        "return_1m": 1.9607843137254832,
+        "return_ytd": -11.374583178955156,
+        "return_1y": -14.26523297491038,
+        "return_3y": -9.083998479665512,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -0.4577611319184327,
+        "return_2y": 21.298174442190685
+      }
+    },
+    {
+      "id": "M_159",
+      "type": "MACRO",
+      "name": "효율화중심정부정책"
+    },
+    {
+      "id": "M_1056",
+      "type": "MACRO",
+      "name": "중국산덤핑수출"
+    },
+    {
+      "id": "M_1057",
+      "type": "MACRO",
+      "name": "중국공급과잉"
+    },
+    {
+      "id": "C_767",
+      "type": "CHARACTER",
+      "name": "저마진/출혈사업구조"
+    },
+    {
+      "id": "C_768",
+      "type": "CHARACTER",
+      "name": "연준매파/고금리기조에 취약"
+    },
+    {
+      "id": "C_769",
+      "type": "CHARACTER",
+      "name": "강달러에 취약"
+    },
+    {
+      "id": "C_2747",
+      "type": "CHARACTER",
+      "name": "중국풍력터빈1위골드윈드"
+    },
+    {
+      "id": "C_2748",
+      "type": "CHARACTER",
+      "name": "싼샤수력유틸"
+    },
+    {
+      "id": "C_2749",
+      "type": "CHARACTER",
+      "name": "태양광반도체장비"
+    },
+    {
+      "id": "C_2750",
+      "type": "CHARACTER",
+      "name": "태양광인버터ESS1위"
+    },
+    {
+      "id": "C_2751",
+      "type": "CHARACTER",
+      "name": "태양광웨이퍼모듈1위롱지"
+    },
+    {
+      "id": "C_2752",
+      "type": "CHARACTER",
+      "name": "중국클린에너지ETF_GlobalX"
+    },
+    {
+      "id": "C_2753",
+      "type": "CHARACTER",
+      "name": "중국태양광ETF_SOL"
+    },
+    {
+      "id": "C_2754",
+      "type": "CHARACTER",
+      "name": "중국클린에너지ETF_TIGER"
+    },
+    {
+      "id": "C_2755",
+      "type": "CHARACTER",
+      "name": "중국클린에너지ETF"
+    }
   ],
-  "dataAsOf": "2026-04-20",
-  "notes": "g162 누적 import 기반 차이나신재생에너지 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 3건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-12",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
-   },
-   {
-    "date": "2026-07-12",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필 + 2026 이벤트",
-    "detail": "전 엣지 근거(호버 박스)를 종목·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
-   }
+  "edges": [
+    {
+      "from": "A_1096",
+      "to": "T_162",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004894"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1097",
+      "to": "T_162",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004895"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1000",
+      "to": "T_162",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004896"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1098",
+      "to": "T_162",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004897"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1099",
+      "to": "T_162",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004898"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "T_162",
+      "to": "A_1100",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_004899"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "T_162",
+      "to": "A_1101",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_004900"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "T_162",
+      "to": "A_1102",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_004901"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "T_162",
+      "to": "A_873",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_004902"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "M_159",
+      "to": "T_162",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_004903"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_1056",
+      "to": "T_162",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_004904"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_1057",
+      "to": "T_162",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_004905"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "T_162",
+      "to": "C_767",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004906"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "T_162",
+      "to": "C_768",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004907"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "T_162",
+      "to": "C_769",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004908"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1096",
+      "to": "C_2747",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005058"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1097",
+      "to": "C_2748",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005059"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1000",
+      "to": "C_2749",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005060"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1098",
+      "to": "C_2750",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005061"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1099",
+      "to": "C_2751",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005062"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1100",
+      "to": "C_2752",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005063"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1101",
+      "to": "C_2753",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005064"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1102",
+      "to": "C_2754",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005065"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_873",
+      "to": "C_2755",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005066"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1099",
+      "to": "A_1098",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019189"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "롱지그린에너지와 선그로우는 중국 태양광 모듈·인버터 시장 경쟁"
+    },
+    {
+      "from": "A_1096",
+      "to": "A_1098",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019190"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "Goldwind와 선그로우는 중국 풍력·태양광 설비 시장 경쟁"
+    },
+    {
+      "from": "A_1097",
+      "to": "A_1096",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019191"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "창장전력과 Goldwind는 중국 재생에너지 발전 시장 경쟁"
+    }
   ],
-  "description": "• 중국 풍력·태양광·ESS capex 사이클과 EU·미국 antidumping 정책이 동인\n• 동인: 효율화중심정부정책·중국산덤핑수출·중국공급과잉\n• 대표주: Goldwind(중국풍력터빈1위골드)·창장전력(싼샤수력유틸)·NAURA(태양광반도체장비)"
- },
- "nodes": [
-  {
-   "id": "T_162",
-   "type": "THEME",
-   "name": "차이나신재생에너지"
-  },
-  {
-   "id": "A_1096",
-   "type": "ASSET",
-   "name": "Goldwind",
-   "exposure": {
-    "ticker": "2208",
-    "exchange": "HKEX",
-    "country": "CN"
-   },
-   "metrics": {
-    "return_1d": -0.37664783427494575,
-    "close": 10.58,
-    "marketCap": 44159479004,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 3.219512195121954,
-    "return_15d": 7.7393075356415375,
-    "return_1m": 11.01783840503674,
-    "return_ytd": -21.103653989560033,
-    "return_1y": 27.16346153846154,
-    "return_3y": 120.41666666666666,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -8.398268398268405,
-    "return_2y": 167.84810126582278
-   }
-  },
-  {
-   "id": "A_1097",
-   "type": "ASSET",
-   "name": "창장전력",
-   "exposure": {
-    "ticker": "600900",
-    "exchange": "SSE",
-    "country": "CN"
-   },
-   "metrics": {
-    "return_1d": -0.4957507082152923,
-    "close": 28.1,
-    "marketCap": 687556917820,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -0.7417873542917564,
-    "return_15d": -2.768166089965385,
-    "return_1m": -1.5761821366024442,
-    "return_ytd": 3.3468186833394586,
-    "return_1y": 1.590744757772966,
-    "return_3y": 28.839981659789093,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.2612612612612706,
-    "return_2y": -4.906937394247035
-   }
-  },
-  {
-   "id": "A_1000",
-   "type": "ASSET",
-   "name": "NAURA",
-   "exposure": {
-    "ticker": "002371",
-    "exchange": "SZSE",
-    "country": "CN"
-   },
-   "metrics": {
-    "return_1d": 0.008123476848087563,
-    "close": 738.66,
-    "marketCap": 536037584472,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -0.9971853638922501,
-    "return_15d": -2.4227212681638077,
-    "return_1m": -4.59054507879102,
-    "return_ytd": 60.90006099154832,
-    "return_1y": 116.19738921735055,
-    "return_3y": 265.25738021065126,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -1.7726299551855784,
-    "return_2y": 216.1124662986263
-   }
-  },
-  {
-   "id": "A_1098",
-   "type": "ASSET",
-   "name": "선그로우",
-   "exposure": {
-    "ticker": "300274",
-    "exchange": "SZSE",
-    "country": "CN"
-   },
-   "metrics": {
-    "return_1d": -1.1936002708880067,
-    "close": 116.72,
-    "marketCap": 241985237409,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -2.7900391438327565,
-    "return_15d": 2.9095397637101117,
-    "return_1m": 7.7846523224674335,
-    "return_ytd": -31.758652946679135,
-    "return_1y": 32.711768050028425,
-    "return_3y": 46.55951783023606,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 2.2424667133847276,
-    "return_2y": 70.66822634888142
-   }
-  },
-  {
-   "id": "A_1099",
-   "type": "ASSET",
-   "name": "롱지그린에너지테크놀로지",
-   "exposure": {
-    "ticker": "601012",
-    "exchange": "SSE",
-    "country": "CN"
-   },
-   "metrics": {
-    "return_1d": -0.393700787401563,
-    "close": 12.65,
-    "marketCap": 95607116903,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -1.0946051602814588,
-    "return_15d": 1.85185185185186,
-    "return_1m": 7.843137254901955,
-    "return_ytd": -30.494505494505486,
-    "return_1y": -18.70179948586118,
-    "return_3y": -56.84066871374958,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -2.1655065738592327,
-    "return_2y": -8.465991316931987
-   }
-  },
-  {
-   "id": "A_1100",
-   "type": "ASSET",
-   "name": "GlobalX차이나클린에너지",
-   "exposure": {
-    "ticker": "9809",
-    "exchange": "HKEX",
-    "country": "HK"
-   },
-   "metrics": {
-    "return_1d": -0.9643916913946615,
-    "close": 13.35,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "return_3d": -0.29873039581778116,
-    "return_15d": 4.134165366614662,
-    "return_1m": 3.891050583657596,
-    "return_ytd": 3.810264385692075,
-    "return_1y": 32.30921704658076,
-    "return_3y": 12.46840775063185,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.3731343283582156,
-    "return_2y": 41.795007966011696
-   }
-  },
-  {
-   "id": "A_1101",
-   "type": "ASSET",
-   "name": "SOL차이나태양광CSI(합성)",
-   "exposure": {
-    "ticker": "460200",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": "2026-05-22",
-    "returnsSource": "PYKRX",
-    "return_5d": null,
-    "return_2y": null
-   }
-  },
-  {
-   "id": "A_1102",
-   "type": "ASSET",
-   "name": "TIGER차이나클린에너지SOLACTIVE",
-   "exposure": {
-    "ticker": "494950",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": "2026-05-22",
-    "returnsSource": "PYKRX",
-    "return_5d": null,
-    "return_2y": null
-   }
-  },
-  {
-   "id": "A_873",
-   "type": "ASSET",
-   "name": "KGRN",
-   "exposure": {
-    "ticker": "KGRN",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.37735849056603765,
-    "close": 23.94,
-    "marketCap": 51340575,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -0.5813953488371992,
-    "return_15d": 1.742456438589035,
-    "return_1m": 2.0460358056265893,
-    "return_ytd": -11.300481659874018,
-    "return_1y": -11.79071481208548,
-    "return_3y": -14.255014326647563,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.9105960264900625,
-    "return_2y": 24.557752341311144
-   }
-  },
-  {
-   "id": "M_159",
-   "type": "MACRO",
-   "name": "효율화중심정부정책"
-  },
-  {
-   "id": "M_1056",
-   "type": "MACRO",
-   "name": "중국산덤핑수출"
-  },
-  {
-   "id": "M_1057",
-   "type": "MACRO",
-   "name": "중국공급과잉"
-  },
-  {
-   "id": "C_767",
-   "type": "CHARACTER",
-   "name": "저마진/출혈사업구조"
-  },
-  {
-   "id": "C_768",
-   "type": "CHARACTER",
-   "name": "연준매파/고금리기조에 취약"
-  },
-  {
-   "id": "C_769",
-   "type": "CHARACTER",
-   "name": "강달러에 취약"
-  },
-  {
-   "id": "C_2747",
-   "type": "CHARACTER",
-   "name": "중국풍력터빈1위골드윈드"
-  },
-  {
-   "id": "C_2748",
-   "type": "CHARACTER",
-   "name": "싼샤수력유틸"
-  },
-  {
-   "id": "C_2749",
-   "type": "CHARACTER",
-   "name": "태양광반도체장비"
-  },
-  {
-   "id": "C_2750",
-   "type": "CHARACTER",
-   "name": "태양광인버터ESS1위"
-  },
-  {
-   "id": "C_2751",
-   "type": "CHARACTER",
-   "name": "태양광웨이퍼모듈1위롱지"
-  },
-  {
-   "id": "C_2752",
-   "type": "CHARACTER",
-   "name": "중국클린에너지ETF_GlobalX"
-  },
-  {
-   "id": "C_2753",
-   "type": "CHARACTER",
-   "name": "중국태양광ETF_SOL"
-  },
-  {
-   "id": "C_2754",
-   "type": "CHARACTER",
-   "name": "중국클린에너지ETF_TIGER"
-  },
-  {
-   "id": "C_2755",
-   "type": "CHARACTER",
-   "name": "중국클린에너지ETF"
-  }
- ],
- "edges": [
-  {
-   "from": "A_1096",
-   "to": "T_162",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004894"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1097",
-   "to": "T_162",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004895"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1000",
-   "to": "T_162",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004896"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1098",
-   "to": "T_162",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004897"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1099",
-   "to": "T_162",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004898"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "T_162",
-   "to": "A_1100",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_004899"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "T_162",
-   "to": "A_1101",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_004900"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "T_162",
-   "to": "A_1102",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_004901"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "T_162",
-   "to": "A_873",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_004902"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "M_159",
-   "to": "T_162",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_004903"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_1056",
-   "to": "T_162",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_004904"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_1057",
-   "to": "T_162",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_004905"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "T_162",
-   "to": "C_767",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004906"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "T_162",
-   "to": "C_768",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004907"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "T_162",
-   "to": "C_769",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004908"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1096",
-   "to": "C_2747",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005058"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1097",
-   "to": "C_2748",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005059"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1000",
-   "to": "C_2749",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005060"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1098",
-   "to": "C_2750",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005061"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1099",
-   "to": "C_2751",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005062"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1100",
-   "to": "C_2752",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005063"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1101",
-   "to": "C_2753",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005064"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1102",
-   "to": "C_2754",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005065"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_873",
-   "to": "C_2755",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005066"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1099",
-   "to": "A_1098",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019189"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "롱지그린에너지와 선그로우는 중국 태양광 모듈·인버터 시장 경쟁"
-  },
-  {
-   "from": "A_1096",
-   "to": "A_1098",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019190"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "Goldwind와 선그로우는 중국 풍력·태양광 설비 시장 경쟁"
-  },
-  {
-   "from": "A_1097",
-   "to": "A_1096",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019191"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "창장전력과 Goldwind는 중국 재생에너지 발전 시장 경쟁"
-  }
- ],
- "links": [
-  {
-   "from": "A_1096",
-   "to": "T_162",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004894"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1097",
-   "to": "T_162",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004895"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1000",
-   "to": "T_162",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004896"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1098",
-   "to": "T_162",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004897"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1099",
-   "to": "T_162",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004898"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "T_162",
-   "to": "A_1100",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_004899"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "T_162",
-   "to": "A_1101",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_004900"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "T_162",
-   "to": "A_1102",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_004901"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "T_162",
-   "to": "A_873",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_004902"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "M_159",
-   "to": "T_162",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_004903"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_1056",
-   "to": "T_162",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_004904"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_1057",
-   "to": "T_162",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_004905"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "T_162",
-   "to": "C_767",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004906"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "T_162",
-   "to": "C_768",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004907"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "T_162",
-   "to": "C_769",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004908"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1096",
-   "to": "C_2747",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005058"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1097",
-   "to": "C_2748",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005059"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1000",
-   "to": "C_2749",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005060"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1098",
-   "to": "C_2750",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005061"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1099",
-   "to": "C_2751",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005062"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1100",
-   "to": "C_2752",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005063"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1101",
-   "to": "C_2753",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005064"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1102",
-   "to": "C_2754",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005065"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_873",
-   "to": "C_2755",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005066"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1099",
-   "to": "A_1098",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019189"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "롱지그린에너지와 선그로우는 중국 태양광 모듈·인버터 시장 경쟁"
-  },
-  {
-   "from": "A_1096",
-   "to": "A_1098",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019190"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "Goldwind와 선그로우는 중국 풍력·태양광 설비 시장 경쟁"
-  },
-  {
-   "from": "A_1097",
-   "to": "A_1096",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019191"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "창장전력과 Goldwind는 중국 재생에너지 발전 시장 경쟁"
-  }
- ]
+  "links": [
+    {
+      "from": "A_1096",
+      "to": "T_162",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004894"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1097",
+      "to": "T_162",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004895"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1000",
+      "to": "T_162",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004896"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1098",
+      "to": "T_162",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004897"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1099",
+      "to": "T_162",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004898"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "T_162",
+      "to": "A_1100",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_004899"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "T_162",
+      "to": "A_1101",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_004900"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "T_162",
+      "to": "A_1102",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_004901"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "T_162",
+      "to": "A_873",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_004902"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "M_159",
+      "to": "T_162",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_004903"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_1056",
+      "to": "T_162",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_004904"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_1057",
+      "to": "T_162",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_004905"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "T_162",
+      "to": "C_767",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004906"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "T_162",
+      "to": "C_768",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004907"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "T_162",
+      "to": "C_769",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004908"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1096",
+      "to": "C_2747",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005058"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1097",
+      "to": "C_2748",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005059"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1000",
+      "to": "C_2749",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005060"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1098",
+      "to": "C_2750",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005061"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1099",
+      "to": "C_2751",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005062"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1100",
+      "to": "C_2752",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005063"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1101",
+      "to": "C_2753",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005064"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1102",
+      "to": "C_2754",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005065"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_873",
+      "to": "C_2755",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005066"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1099",
+      "to": "A_1098",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019189"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "롱지그린에너지와 선그로우는 중국 태양광 모듈·인버터 시장 경쟁"
+    },
+    {
+      "from": "A_1096",
+      "to": "A_1098",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019190"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "Goldwind와 선그로우는 중국 풍력·태양광 설비 시장 경쟁"
+    },
+    {
+      "from": "A_1097",
+      "to": "A_1096",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019191"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "창장전력과 Goldwind는 중국 재생에너지 발전 시장 경쟁"
+    }
+  ]
 }

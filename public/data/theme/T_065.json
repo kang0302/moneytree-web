@@ -1,1102 +1,1102 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_065",
- "themeName": "글로벌사모펀드(PE)주식",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_065",
+  "themeName": "글로벌사모펀드(PE)주식",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-26T00:00:00+09:00",
+    "notes": "g65 누적 import 기반 글로벌 사모펀드(PE) 주식 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 19건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-26",
+        "kind": "수정",
+        "title": "자산 CHR 백필",
+        "detail": "CHR 미정의 자산에 CHARACTER·HAS_TRAIT 추가."
+      }
+    ],
+    "description": "• AUM·perf fee·credit 자산 확대와 금리 인하 사이클이 valuation 동인\n• 동인: 사모신용리스크·금리인하·유동성확대\n• 대표주: KKR(글로벌PE)·블랙스톤(최대PE대체투자)·블랙록(자산운용1위)"
+  },
+  "nodes": [
+    {
+      "id": "T_065",
+      "type": "THEME",
+      "name": "글로벌사모펀드(PE)주식"
+    },
+    {
+      "id": "A_547",
+      "type": "ASSET",
+      "name": "KKR",
+      "exposure": {
+        "ticker": "KKR",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 3.0506577106073296,
+        "close": 110.46,
+        "marketCap": 99179045063,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -3.1137619507060843,
+        "return_15d": 11.261079774375492,
+        "return_1m": 9.431345353675447,
+        "return_ytd": -13.351113900219646,
+        "return_1y": -20.503778337531486,
+        "return_3y": 83.48837209302324,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -0.3967538322813491,
+        "return_2y": -8.087868197703452
+      }
+    },
+    {
+      "id": "A_548",
+      "type": "ASSET",
+      "name": "블랙스톤",
+      "exposure": {
+        "ticker": "BX",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 3.200796642719972,
+        "close": 145.11,
+        "marketCap": 175291838110,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 0.8059473355103153,
+        "return_15d": 12.125193199381767,
+        "return_1m": 14.32511228429596,
+        "return_ytd": -5.871285844037876,
+        "return_1y": -13.270368820610912,
+        "return_3y": 46.97123176661264,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -0.9015777610818843,
+        "return_2y": 7.753434831043449
+      }
+    },
+    {
+      "id": "A_549",
+      "type": "ASSET",
+      "name": "블랙록",
+      "exposure": {
+        "ticker": "BLK",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.3958937930437223,
+        "close": 1158.92,
+        "marketCap": 179626805400,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -1.2617893382634748,
+        "return_15d": 7.387948368683928,
+        "return_1m": 8.088043275508294,
+        "return_ytd": 8.275874955621587,
+        "return_1y": 2.6983437752000627,
+        "return_3y": 72.90861618798957,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -0.17141725026057486,
+        "return_2y": 33.17704921800486
+      }
+    },
+    {
+      "id": "A_550",
+      "type": "ASSET",
+      "name": "아폴로",
+      "exposure": {
+        "ticker": "APO",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.16436309301456342,
+        "close": 133.63,
+        "marketCap": 76967110431,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -5.065359477124176,
+        "return_15d": 11.57218001168907,
+        "return_1m": 10.923881464264952,
+        "return_ytd": -7.688588007736941,
+        "return_1y": -2.5167785234899487,
+        "return_3y": 64.65007392804338,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -3.5928143712575022,
+        "return_2y": 19.72941492697786
+      }
+    },
+    {
+      "id": "A_551",
+      "type": "ASSET",
+      "name": "칼라일",
+      "exposure": {
+        "ticker": "CG",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 2.129419061401694,
+        "close": 49.4,
+        "marketCap": 17782715600,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 0.24350649350648457,
+        "return_15d": 10.51454138702459,
+        "return_1m": 7.228131104840463,
+        "return_ytd": -16.427000507528334,
+        "return_1y": -21.06104186641099,
+        "return_3y": 66.77920324105332,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 2.3409985498239028,
+        "return_2y": 19.03614457831324
+      }
+    },
+    {
+      "id": "A_552",
+      "type": "ASSET",
+      "name": "TPG",
+      "exposure": {
+        "ticker": "TPG",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 2.229911572472121,
+        "close": 53.18,
+        "marketCap": 20385767904,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 0.2828587591929166,
+        "return_15d": 26.13851992409868,
+        "return_1m": 21.582075903063558,
+        "return_ytd": -16.69799498746868,
+        "return_1y": -12.31657048639736,
+        "return_3y": 101.13464447806355,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 4.520440251572322,
+        "return_2y": 8.685877784590224
+      }
+    },
+    {
+      "id": "A_553",
+      "type": "ASSET",
+      "name": "브룩필드",
+      "exposure": {
+        "ticker": "BAM",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 2.2925976296871875,
+        "close": 52.65,
+        "marketCap": 84070804697,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -3.056527343030757,
+        "return_15d": 11.193241816261867,
+        "return_1m": 8.93854748603351,
+        "return_ytd": 0.496277915632759,
+        "return_1y": -12.26462256290618,
+        "return_3y": 56.78975580702799,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -3.394495412844034,
+        "return_2y": 29.711751662971153
+      }
+    },
+    {
+      "id": "C_122",
+      "type": "CHARACTER",
+      "name": "고배당"
+    },
+    {
+      "id": "M_067",
+      "type": "MACRO",
+      "name": "사모신용리스크"
+    },
+    {
+      "id": "M_145",
+      "type": "MACRO",
+      "name": "금리인하"
+    },
+    {
+      "id": "M_069",
+      "type": "MACRO",
+      "name": "유동성확대"
+    },
+    {
+      "id": "M_235",
+      "type": "MACRO",
+      "name": "IPO시장호황"
+    },
+    {
+      "id": "C_5501",
+      "type": "CHARACTER",
+      "name": "글로벌PE"
+    },
+    {
+      "id": "C_5502",
+      "type": "CHARACTER",
+      "name": "최대PE대체투자"
+    },
+    {
+      "id": "C_5503",
+      "type": "CHARACTER",
+      "name": "자산운용1위"
+    },
+    {
+      "id": "C_5504",
+      "type": "CHARACTER",
+      "name": "PE크레딧"
+    },
+    {
+      "id": "C_5505",
+      "type": "CHARACTER",
+      "name": "글로벌PE"
+    },
+    {
+      "id": "C_5506",
+      "type": "CHARACTER",
+      "name": "PE대체투자"
+    },
+    {
+      "id": "C_5507",
+      "type": "CHARACTER",
+      "name": "인프라대체투자"
+    }
   ],
-  "dataAsOf": "2026-07-26T00:00:00+09:00",
-  "notes": "g65 누적 import 기반 글로벌 사모펀드(PE) 주식 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 19건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-26",
-    "kind": "수정",
-    "title": "자산 CHR 백필",
-    "detail": "CHR 미정의 자산에 CHARACTER·HAS_TRAIT 추가."
-   }
+  "edges": [
+    {
+      "from": "A_547",
+      "to": "T_065",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002112"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_548",
+      "to": "T_065",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002113"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_549",
+      "to": "T_065",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002114"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_550",
+      "to": "T_065",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002115"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_551",
+      "to": "T_065",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002116"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_552",
+      "to": "T_065",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002117"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_553",
+      "to": "T_065",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002118"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "T_065",
+      "to": "C_122",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002119"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "M_067",
+      "to": "T_065",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002120"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_145",
+      "to": "T_065",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002121"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_069",
+      "to": "T_065",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002122"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_235",
+      "to": "T_065",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002123"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_547",
+      "to": "C_5501",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014444"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_548",
+      "to": "C_5502",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014445"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_549",
+      "to": "C_5503",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014446"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_550",
+      "to": "C_5504",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014447"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_551",
+      "to": "C_5505",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014448"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_552",
+      "to": "C_5506",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014449"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_553",
+      "to": "C_5507",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014450"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_547",
+      "to": "A_548",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018672"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "KKR와 블랙스톤은 글로벌 양대 사모펀드 대장주로 바이아웃·부동산·인프라·사모대출 전 영역에서 LP 자금과 딜을 놓고 직접 경쟁한다."
+    },
+    {
+      "from": "A_547",
+      "to": "A_550",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018673"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "KKR(글로벌애틀랜틱)와 아폴로(애슨)는 모두 보험사를 기반으로 사모대출·크레딧 자산을 확장하며 직접 경쟁한다."
+    },
+    {
+      "from": "A_547",
+      "to": "A_551",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018674"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "KKR와 칼라일은 전통적 PE 바이아웃 딜소싱과 펀드레이징에서 경쟁하는 대형 사모펀드 운용사다."
+    },
+    {
+      "from": "A_547",
+      "to": "A_552",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018675"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "KKR와 TPG는 바이아웃·성장투자 등 사모주식 영역에서 경쟁하는 글로벌 PE 운용사다."
+    },
+    {
+      "from": "A_547",
+      "to": "A_553",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018676"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "KKR와 브룩필드는 인프라·재생에너지 등 실물자산 투자에서 대규모 자금을 놓고 경쟁한다."
+    },
+    {
+      "from": "A_548",
+      "to": "A_550",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018677"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "블랙스톤과 아폴로는 사모대출·크레딧 시장에서 규모를 다투는 최대 경쟁자다."
+    },
+    {
+      "from": "A_548",
+      "to": "A_551",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018678"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "블랙스톤과 칼라일은 PE 바이아웃과 대체투자 펀드레이징에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_548",
+      "to": "A_552",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018679"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "블랙스톤과 TPG는 사모주식·부동산 투자 영역에서 경쟁하는 대체투자 운용사다."
+    },
+    {
+      "from": "A_548",
+      "to": "A_553",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018680"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "블랙스톤과 브룩필드는 세계 최대급 부동산·인프라 자산운용사로 실물자산 시장에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_550",
+      "to": "A_551",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018681"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "아폴로와 칼라일은 PE 바이아웃과 크레딧 운용에서 경쟁하는 대형 대체투자사다."
+    },
+    {
+      "from": "A_550",
+      "to": "A_552",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018682"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "아폴로와 TPG는 사모주식·대체투자 딜과 자금 유치에서 경쟁한다."
+    },
+    {
+      "from": "A_550",
+      "to": "A_553",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018683"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "아폴로와 브룩필드는 인프라·사모대출 등 실물·크레딧 자산에서 경쟁한다."
+    },
+    {
+      "from": "A_551",
+      "to": "A_552",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018684"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "칼라일과 TPG는 PE 바이아웃·성장투자에서 경쟁하는 사모펀드 운용사다."
+    },
+    {
+      "from": "A_551",
+      "to": "A_553",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018685"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "칼라일과 브룩필드는 사모주식·인프라 등 대체투자 영역에서 경쟁한다."
+    },
+    {
+      "from": "A_552",
+      "to": "A_553",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018686"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "TPG와 브룩필드는 사모주식·실물자산 투자에서 경쟁하는 대체투자 운용사다."
+    },
+    {
+      "from": "A_549",
+      "to": "A_548",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018687"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "블랙록은 GIP·HPS·Preqin 인수로 사모시장에 본격 진출하며 최대 대체투자 운용사 블랙스톤과 직접 경쟁한다."
+    },
+    {
+      "from": "A_549",
+      "to": "A_547",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018688"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "블랙록은 인프라(GIP)·사모대출 확장으로 KKR과 사모시장에서 경쟁한다."
+    },
+    {
+      "from": "A_549",
+      "to": "A_550",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018689"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "블랙록은 HPS 인수 등 사모대출 확장으로 아폴로의 크레딧 사업과 경쟁한다."
+    },
+    {
+      "from": "A_549",
+      "to": "A_553",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018690"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "블랙록은 GIP 인수로 확보한 인프라 운용에서 브룩필드와 직접 경쟁한다."
+    }
   ],
-  "description": "• AUM·perf fee·credit 자산 확대와 금리 인하 사이클이 valuation 동인\n• 동인: 사모신용리스크·금리인하·유동성확대\n• 대표주: KKR(글로벌PE)·블랙스톤(최대PE대체투자)·블랙록(자산운용1위)"
- },
- "nodes": [
-  {
-   "id": "T_065",
-   "type": "THEME",
-   "name": "글로벌사모펀드(PE)주식"
-  },
-  {
-   "id": "A_547",
-   "type": "ASSET",
-   "name": "KKR",
-   "exposure": {
-    "ticker": "KKR",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -1.11882046834344,
-    "close": 114.01,
-    "marketCap": 102366494003,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 2.739479138505918,
-    "return_15d": 14.744363929146553,
-    "return_1m": 17.282172615986013,
-    "return_ytd": -10.566363351113894,
-    "return_1y": -21.94303710803779,
-    "return_3y": 84.54192295241178,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 10.893881918101345,
-    "return_2y": -3.6915019428957474
-   }
-  },
-  {
-   "id": "A_548",
-   "type": "ASSET",
-   "name": "블랙스톤",
-   "exposure": {
-    "ticker": "BX",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -3.6096972944012817,
-    "close": 143.94,
-    "marketCap": 173878486511,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -2.201535639056862,
-    "return_15d": 10.715384615384615,
-    "return_1m": 15.55073859987155,
-    "return_ytd": -6.623848449461511,
-    "return_1y": -17.603618044424085,
-    "return_3y": 46.80742554059567,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 4.958798220666538,
-    "return_2y": 5.7065217391304435
-   }
-  },
-  {
-   "id": "A_549",
-   "type": "ASSET",
-   "name": "블랙록",
-   "exposure": {
-    "ticker": "BLK",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.770180244158114,
-    "close": 1173.73,
-    "marketCap": 181922281350,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 2.1665331987047898,
-    "return_15d": 11.183419060880762,
-    "return_1m": 14.461109377437964,
-    "return_ytd": 9.659547433525795,
-    "return_1y": 1.1696662529306234,
-    "return_3y": 69.3865181187133,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 3.2858437684245567,
-    "return_2y": 36.87494169232206
-   }
-  },
-  {
-   "id": "A_550",
-   "type": "ASSET",
-   "name": "아폴로",
-   "exposure": {
-    "ticker": "APO",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -1.9640618470539217,
-    "close": 140.76,
-    "marketCap": 81073789301,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 0.34217279726260763,
-    "return_15d": 14.803034010276473,
-    "return_1m": 17.368464937880425,
-    "return_ytd": -2.763194252555956,
-    "return_1y": 0.05686664771109573,
-    "return_3y": 71.74231332357249,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 10.45197740112993,
-    "return_2y": 32.81751273825249
-   }
-  },
-  {
-   "id": "A_551",
-   "type": "ASSET",
-   "name": "칼라일",
-   "exposure": {
-    "ticker": "CG",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -4.143162808792056,
-    "close": 49.28,
-    "marketCap": 17739518720,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 1.9023986765922318,
-    "return_15d": 8.546255506607924,
-    "return_1m": 8.35532102022869,
-    "return_ytd": -16.630011842327864,
-    "return_1y": -24.079494684948386,
-    "return_3y": 57.0927637870577,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 3.1178070726093354,
-    "return_2y": 20.81392498161314
-   }
-  },
-  {
-   "id": "A_552",
-   "type": "ASSET",
-   "name": "TPG",
-   "exposure": {
-    "ticker": "TPG",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -3.948560043470384,
-    "close": 53.03,
-    "marketCap": 20328267618,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 4.802371541501982,
-    "return_15d": 23.8150828858277,
-    "return_1m": 22.896871378910788,
-    "return_ytd": -16.932957393483715,
-    "return_1y": -17.36013713573321,
-    "return_3y": 94.39149560117302,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 8.246580934884662,
-    "return_2y": 10.47916666666666
-   }
-  },
-  {
-   "id": "A_553",
-   "type": "ASSET",
-   "name": "브룩필드",
-   "exposure": {
-    "ticker": "BAM",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -2.7747941281775823,
-    "close": 54.31,
-    "marketCap": 86721470144,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -1.8966763005780263,
-    "return_15d": 17.17367853290184,
-    "return_1m": 14.288720538720545,
-    "return_ytd": 3.664821530826501,
-    "return_1y": -12.558364192561577,
-    "return_3y": 53.76557191392979,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 3.4673271099256997,
-    "return_2y": 33.08012741975006
-   }
-  },
-  {
-   "id": "C_122",
-   "type": "CHARACTER",
-   "name": "고배당"
-  },
-  {
-   "id": "M_067",
-   "type": "MACRO",
-   "name": "사모신용리스크"
-  },
-  {
-   "id": "M_145",
-   "type": "MACRO",
-   "name": "금리인하"
-  },
-  {
-   "id": "M_069",
-   "type": "MACRO",
-   "name": "유동성확대"
-  },
-  {
-   "id": "M_235",
-   "type": "MACRO",
-   "name": "IPO시장호황"
-  },
-  {
-   "id": "C_5501",
-   "type": "CHARACTER",
-   "name": "글로벌PE"
-  },
-  {
-   "id": "C_5502",
-   "type": "CHARACTER",
-   "name": "최대PE대체투자"
-  },
-  {
-   "id": "C_5503",
-   "type": "CHARACTER",
-   "name": "자산운용1위"
-  },
-  {
-   "id": "C_5504",
-   "type": "CHARACTER",
-   "name": "PE크레딧"
-  },
-  {
-   "id": "C_5505",
-   "type": "CHARACTER",
-   "name": "글로벌PE"
-  },
-  {
-   "id": "C_5506",
-   "type": "CHARACTER",
-   "name": "PE대체투자"
-  },
-  {
-   "id": "C_5507",
-   "type": "CHARACTER",
-   "name": "인프라대체투자"
-  }
- ],
- "edges": [
-  {
-   "from": "A_547",
-   "to": "T_065",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002112"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_548",
-   "to": "T_065",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002113"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_549",
-   "to": "T_065",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002114"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_550",
-   "to": "T_065",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002115"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_551",
-   "to": "T_065",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002116"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_552",
-   "to": "T_065",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002117"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_553",
-   "to": "T_065",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002118"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "T_065",
-   "to": "C_122",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002119"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "M_067",
-   "to": "T_065",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002120"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_145",
-   "to": "T_065",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002121"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_069",
-   "to": "T_065",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002122"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_235",
-   "to": "T_065",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002123"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_547",
-   "to": "C_5501",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014444"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_548",
-   "to": "C_5502",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014445"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_549",
-   "to": "C_5503",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014446"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_550",
-   "to": "C_5504",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014447"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_551",
-   "to": "C_5505",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014448"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_552",
-   "to": "C_5506",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014449"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_553",
-   "to": "C_5507",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014450"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_547",
-   "to": "A_548",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018672"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "KKR와 블랙스톤은 글로벌 양대 사모펀드 대장주로 바이아웃·부동산·인프라·사모대출 전 영역에서 LP 자금과 딜을 놓고 직접 경쟁한다."
-  },
-  {
-   "from": "A_547",
-   "to": "A_550",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018673"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "KKR(글로벌애틀랜틱)와 아폴로(애슨)는 모두 보험사를 기반으로 사모대출·크레딧 자산을 확장하며 직접 경쟁한다."
-  },
-  {
-   "from": "A_547",
-   "to": "A_551",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018674"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "KKR와 칼라일은 전통적 PE 바이아웃 딜소싱과 펀드레이징에서 경쟁하는 대형 사모펀드 운용사다."
-  },
-  {
-   "from": "A_547",
-   "to": "A_552",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018675"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "KKR와 TPG는 바이아웃·성장투자 등 사모주식 영역에서 경쟁하는 글로벌 PE 운용사다."
-  },
-  {
-   "from": "A_547",
-   "to": "A_553",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018676"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "KKR와 브룩필드는 인프라·재생에너지 등 실물자산 투자에서 대규모 자금을 놓고 경쟁한다."
-  },
-  {
-   "from": "A_548",
-   "to": "A_550",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018677"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "블랙스톤과 아폴로는 사모대출·크레딧 시장에서 규모를 다투는 최대 경쟁자다."
-  },
-  {
-   "from": "A_548",
-   "to": "A_551",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018678"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "블랙스톤과 칼라일은 PE 바이아웃과 대체투자 펀드레이징에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_548",
-   "to": "A_552",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018679"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "블랙스톤과 TPG는 사모주식·부동산 투자 영역에서 경쟁하는 대체투자 운용사다."
-  },
-  {
-   "from": "A_548",
-   "to": "A_553",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018680"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "블랙스톤과 브룩필드는 세계 최대급 부동산·인프라 자산운용사로 실물자산 시장에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_550",
-   "to": "A_551",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018681"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "아폴로와 칼라일은 PE 바이아웃과 크레딧 운용에서 경쟁하는 대형 대체투자사다."
-  },
-  {
-   "from": "A_550",
-   "to": "A_552",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018682"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "아폴로와 TPG는 사모주식·대체투자 딜과 자금 유치에서 경쟁한다."
-  },
-  {
-   "from": "A_550",
-   "to": "A_553",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018683"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "아폴로와 브룩필드는 인프라·사모대출 등 실물·크레딧 자산에서 경쟁한다."
-  },
-  {
-   "from": "A_551",
-   "to": "A_552",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018684"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "칼라일과 TPG는 PE 바이아웃·성장투자에서 경쟁하는 사모펀드 운용사다."
-  },
-  {
-   "from": "A_551",
-   "to": "A_553",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018685"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "칼라일과 브룩필드는 사모주식·인프라 등 대체투자 영역에서 경쟁한다."
-  },
-  {
-   "from": "A_552",
-   "to": "A_553",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018686"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "TPG와 브룩필드는 사모주식·실물자산 투자에서 경쟁하는 대체투자 운용사다."
-  },
-  {
-   "from": "A_549",
-   "to": "A_548",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018687"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "블랙록은 GIP·HPS·Preqin 인수로 사모시장에 본격 진출하며 최대 대체투자 운용사 블랙스톤과 직접 경쟁한다."
-  },
-  {
-   "from": "A_549",
-   "to": "A_547",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018688"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "블랙록은 인프라(GIP)·사모대출 확장으로 KKR과 사모시장에서 경쟁한다."
-  },
-  {
-   "from": "A_549",
-   "to": "A_550",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018689"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "블랙록은 HPS 인수 등 사모대출 확장으로 아폴로의 크레딧 사업과 경쟁한다."
-  },
-  {
-   "from": "A_549",
-   "to": "A_553",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018690"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "블랙록은 GIP 인수로 확보한 인프라 운용에서 브룩필드와 직접 경쟁한다."
-  }
- ],
- "links": [
-  {
-   "from": "A_547",
-   "to": "T_065",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002112"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_548",
-   "to": "T_065",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002113"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_549",
-   "to": "T_065",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002114"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_550",
-   "to": "T_065",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002115"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_551",
-   "to": "T_065",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002116"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_552",
-   "to": "T_065",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002117"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_553",
-   "to": "T_065",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002118"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "T_065",
-   "to": "C_122",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002119"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "M_067",
-   "to": "T_065",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002120"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_145",
-   "to": "T_065",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002121"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_069",
-   "to": "T_065",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002122"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_235",
-   "to": "T_065",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002123"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_547",
-   "to": "C_5501",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014444"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_548",
-   "to": "C_5502",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014445"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_549",
-   "to": "C_5503",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014446"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_550",
-   "to": "C_5504",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014447"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_551",
-   "to": "C_5505",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014448"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_552",
-   "to": "C_5506",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014449"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_553",
-   "to": "C_5507",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014450"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_547",
-   "to": "A_548",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018672"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "KKR와 블랙스톤은 글로벌 양대 사모펀드 대장주로 바이아웃·부동산·인프라·사모대출 전 영역에서 LP 자금과 딜을 놓고 직접 경쟁한다."
-  },
-  {
-   "from": "A_547",
-   "to": "A_550",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018673"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "KKR(글로벌애틀랜틱)와 아폴로(애슨)는 모두 보험사를 기반으로 사모대출·크레딧 자산을 확장하며 직접 경쟁한다."
-  },
-  {
-   "from": "A_547",
-   "to": "A_551",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018674"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "KKR와 칼라일은 전통적 PE 바이아웃 딜소싱과 펀드레이징에서 경쟁하는 대형 사모펀드 운용사다."
-  },
-  {
-   "from": "A_547",
-   "to": "A_552",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018675"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "KKR와 TPG는 바이아웃·성장투자 등 사모주식 영역에서 경쟁하는 글로벌 PE 운용사다."
-  },
-  {
-   "from": "A_547",
-   "to": "A_553",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018676"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "KKR와 브룩필드는 인프라·재생에너지 등 실물자산 투자에서 대규모 자금을 놓고 경쟁한다."
-  },
-  {
-   "from": "A_548",
-   "to": "A_550",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018677"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "블랙스톤과 아폴로는 사모대출·크레딧 시장에서 규모를 다투는 최대 경쟁자다."
-  },
-  {
-   "from": "A_548",
-   "to": "A_551",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018678"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "블랙스톤과 칼라일은 PE 바이아웃과 대체투자 펀드레이징에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_548",
-   "to": "A_552",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018679"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "블랙스톤과 TPG는 사모주식·부동산 투자 영역에서 경쟁하는 대체투자 운용사다."
-  },
-  {
-   "from": "A_548",
-   "to": "A_553",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018680"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "블랙스톤과 브룩필드는 세계 최대급 부동산·인프라 자산운용사로 실물자산 시장에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_550",
-   "to": "A_551",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018681"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "아폴로와 칼라일은 PE 바이아웃과 크레딧 운용에서 경쟁하는 대형 대체투자사다."
-  },
-  {
-   "from": "A_550",
-   "to": "A_552",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018682"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "아폴로와 TPG는 사모주식·대체투자 딜과 자금 유치에서 경쟁한다."
-  },
-  {
-   "from": "A_550",
-   "to": "A_553",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018683"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "아폴로와 브룩필드는 인프라·사모대출 등 실물·크레딧 자산에서 경쟁한다."
-  },
-  {
-   "from": "A_551",
-   "to": "A_552",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018684"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "칼라일과 TPG는 PE 바이아웃·성장투자에서 경쟁하는 사모펀드 운용사다."
-  },
-  {
-   "from": "A_551",
-   "to": "A_553",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018685"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "칼라일과 브룩필드는 사모주식·인프라 등 대체투자 영역에서 경쟁한다."
-  },
-  {
-   "from": "A_552",
-   "to": "A_553",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018686"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "TPG와 브룩필드는 사모주식·실물자산 투자에서 경쟁하는 대체투자 운용사다."
-  },
-  {
-   "from": "A_549",
-   "to": "A_548",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018687"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "블랙록은 GIP·HPS·Preqin 인수로 사모시장에 본격 진출하며 최대 대체투자 운용사 블랙스톤과 직접 경쟁한다."
-  },
-  {
-   "from": "A_549",
-   "to": "A_547",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018688"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "블랙록은 인프라(GIP)·사모대출 확장으로 KKR과 사모시장에서 경쟁한다."
-  },
-  {
-   "from": "A_549",
-   "to": "A_550",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018689"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "블랙록은 HPS 인수 등 사모대출 확장으로 아폴로의 크레딧 사업과 경쟁한다."
-  },
-  {
-   "from": "A_549",
-   "to": "A_553",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018690"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "블랙록은 GIP 인수로 확보한 인프라 운용에서 브룩필드와 직접 경쟁한다."
-  }
- ]
+  "links": [
+    {
+      "from": "A_547",
+      "to": "T_065",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002112"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_548",
+      "to": "T_065",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002113"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_549",
+      "to": "T_065",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002114"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_550",
+      "to": "T_065",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002115"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_551",
+      "to": "T_065",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002116"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_552",
+      "to": "T_065",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002117"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_553",
+      "to": "T_065",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002118"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "T_065",
+      "to": "C_122",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002119"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "M_067",
+      "to": "T_065",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002120"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_145",
+      "to": "T_065",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002121"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_069",
+      "to": "T_065",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002122"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_235",
+      "to": "T_065",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002123"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_547",
+      "to": "C_5501",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014444"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_548",
+      "to": "C_5502",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014445"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_549",
+      "to": "C_5503",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014446"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_550",
+      "to": "C_5504",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014447"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_551",
+      "to": "C_5505",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014448"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_552",
+      "to": "C_5506",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014449"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_553",
+      "to": "C_5507",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014450"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_547",
+      "to": "A_548",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018672"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "KKR와 블랙스톤은 글로벌 양대 사모펀드 대장주로 바이아웃·부동산·인프라·사모대출 전 영역에서 LP 자금과 딜을 놓고 직접 경쟁한다."
+    },
+    {
+      "from": "A_547",
+      "to": "A_550",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018673"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "KKR(글로벌애틀랜틱)와 아폴로(애슨)는 모두 보험사를 기반으로 사모대출·크레딧 자산을 확장하며 직접 경쟁한다."
+    },
+    {
+      "from": "A_547",
+      "to": "A_551",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018674"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "KKR와 칼라일은 전통적 PE 바이아웃 딜소싱과 펀드레이징에서 경쟁하는 대형 사모펀드 운용사다."
+    },
+    {
+      "from": "A_547",
+      "to": "A_552",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018675"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "KKR와 TPG는 바이아웃·성장투자 등 사모주식 영역에서 경쟁하는 글로벌 PE 운용사다."
+    },
+    {
+      "from": "A_547",
+      "to": "A_553",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018676"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "KKR와 브룩필드는 인프라·재생에너지 등 실물자산 투자에서 대규모 자금을 놓고 경쟁한다."
+    },
+    {
+      "from": "A_548",
+      "to": "A_550",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018677"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "블랙스톤과 아폴로는 사모대출·크레딧 시장에서 규모를 다투는 최대 경쟁자다."
+    },
+    {
+      "from": "A_548",
+      "to": "A_551",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018678"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "블랙스톤과 칼라일은 PE 바이아웃과 대체투자 펀드레이징에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_548",
+      "to": "A_552",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018679"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "블랙스톤과 TPG는 사모주식·부동산 투자 영역에서 경쟁하는 대체투자 운용사다."
+    },
+    {
+      "from": "A_548",
+      "to": "A_553",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018680"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "블랙스톤과 브룩필드는 세계 최대급 부동산·인프라 자산운용사로 실물자산 시장에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_550",
+      "to": "A_551",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018681"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "아폴로와 칼라일은 PE 바이아웃과 크레딧 운용에서 경쟁하는 대형 대체투자사다."
+    },
+    {
+      "from": "A_550",
+      "to": "A_552",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018682"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "아폴로와 TPG는 사모주식·대체투자 딜과 자금 유치에서 경쟁한다."
+    },
+    {
+      "from": "A_550",
+      "to": "A_553",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018683"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "아폴로와 브룩필드는 인프라·사모대출 등 실물·크레딧 자산에서 경쟁한다."
+    },
+    {
+      "from": "A_551",
+      "to": "A_552",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018684"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "칼라일과 TPG는 PE 바이아웃·성장투자에서 경쟁하는 사모펀드 운용사다."
+    },
+    {
+      "from": "A_551",
+      "to": "A_553",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018685"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "칼라일과 브룩필드는 사모주식·인프라 등 대체투자 영역에서 경쟁한다."
+    },
+    {
+      "from": "A_552",
+      "to": "A_553",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018686"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "TPG와 브룩필드는 사모주식·실물자산 투자에서 경쟁하는 대체투자 운용사다."
+    },
+    {
+      "from": "A_549",
+      "to": "A_548",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018687"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "블랙록은 GIP·HPS·Preqin 인수로 사모시장에 본격 진출하며 최대 대체투자 운용사 블랙스톤과 직접 경쟁한다."
+    },
+    {
+      "from": "A_549",
+      "to": "A_547",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018688"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "블랙록은 인프라(GIP)·사모대출 확장으로 KKR과 사모시장에서 경쟁한다."
+    },
+    {
+      "from": "A_549",
+      "to": "A_550",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018689"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "블랙록은 HPS 인수 등 사모대출 확장으로 아폴로의 크레딧 사업과 경쟁한다."
+    },
+    {
+      "from": "A_549",
+      "to": "A_553",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018690"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "블랙록은 GIP 인수로 확보한 인프라 운용에서 브룩필드와 직접 경쟁한다."
+    }
+  ]
 }

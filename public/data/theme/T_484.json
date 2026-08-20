@@ -1,817 +1,817 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_484",
- "themeName": "글로벌 리세일·리커머스",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_484",
+  "themeName": "글로벌 리세일·리커머스",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-25T00:00:00+09:00",
+    "description": "• 중고·리세일·리커머스가 신상품을 잠식\n• 동인: 가계소비심리·이커머스확대·GenZ_vintage트렌드\n• 대표주: 리얼리얼(명품 위탁 리세일)·쓰레드업(의류 리세일 플랫폼)·메루카리(일본 C2C 마켓)\n• ETF: IBUY",
+    "notes": "T_484 신규 — 자산별 CHARACTER(사업특성/포지션), MACRO 3(기존 재사용)",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-25",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 이벤트(회고+2026 에코) 추가."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_484",
+      "type": "THEME",
+      "name": "글로벌 리세일·리커머스"
+    },
+    {
+      "id": "A_341",
+      "type": "ASSET",
+      "name": "리얼리얼",
+      "exposure": {
+        "ticker": "REAL",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 6.606334841628936,
+        "return_3d": 3.3333333333333215,
+        "return_15d": 0.7698887938408783,
+        "return_1m": 5.084745762711851,
+        "return_ytd": -25.34854245880862,
+        "return_1y": 49.49238578680202,
+        "return_3y": 375.0,
+        "close": 11.78,
+        "marketCap": 1419345436,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 5.461056401074305,
+        "return_2y": 341.19850187265916
+      }
+    },
+    {
+      "id": "C_1029",
+      "type": "CHARACTER",
+      "name": "명품 위탁 리세일 1위"
+    },
+    {
+      "id": "A_2500",
+      "type": "ASSET",
+      "name": "쓰레드업",
+      "exposure": {
+        "ticker": "TDUP",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 4.982206405693956,
+        "return_3d": -3.9087947882736063,
+        "return_15d": -50.252951096121414,
+        "return_1m": -55.3030303030303,
+        "return_ytd": -53.834115805946794,
+        "return_1y": -72.14353163361662,
+        "return_3y": -22.16358839050131,
+        "close": 2.95,
+        "marketCap": 380670496,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -4.220779220779214,
+        "return_2y": 332.4245089416594
+      }
+    },
+    {
+      "id": "C_1030",
+      "type": "CHARACTER",
+      "name": "의류 리세일 플랫폼"
+    },
+    {
+      "id": "A_2501",
+      "type": "ASSET",
+      "name": "메루카리",
+      "exposure": {
+        "ticker": "4385",
+        "exchange": "TSE",
+        "country": "JP"
+      },
+      "metrics": {
+        "return_1d": 6.192711826514641,
+        "return_3d": -2.0820449391877993,
+        "return_15d": 4.579480405107872,
+        "return_1m": 2.902946273830165,
+        "return_ytd": 49.8422712933754,
+        "return_1y": 109.43562610229276,
+        "return_3y": 49.13657770800628,
+        "close": 4750.0,
+        "marketCap": 784796824000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 0.35918022395944327,
+        "return_2y": 136.25963690624224
+      }
+    },
+    {
+      "id": "C_1031",
+      "type": "CHARACTER",
+      "name": "일본 C2C 마켓 1위"
+    },
+    {
+      "id": "A_2502",
+      "type": "ASSET",
+      "name": "이베이",
+      "exposure": {
+        "ticker": "EBAY",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.36178742544246134,
+        "return_3d": -0.4847779716889655,
+        "return_15d": -10.980052038161315,
+        "return_1m": -8.406210958415139,
+        "return_ytd": 17.841561423650987,
+        "return_1y": 2.7530283311642867,
+        "return_3y": 138.75319841823682,
+        "close": 102.64,
+        "marketCap": 45572160000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 0.3225491154334792,
+        "return_2y": 81.08680310515173
+      }
+    },
+    {
+      "id": "C_1032",
+      "type": "CHARACTER",
+      "name": "글로벌 리커머스 마켓"
+    },
+    {
+      "id": "A_2503",
+      "type": "ASSET",
+      "name": "윈마크",
+      "exposure": {
+        "ticker": "WINA",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 3.2272157982116356,
+        "return_3d": 0.9686333722686014,
+        "return_15d": 6.034585926280522,
+        "return_1m": -8.680752383406343,
+        "return_ytd": -12.478391860522542,
+        "return_1y": -18.193569235740824,
+        "return_3y": -1.5473081837879876,
+        "close": 354.41,
+        "marketCap": 1273100615,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 2.5521571804739906,
+        "return_2y": -4.03974765115207
+      }
+    },
+    {
+      "id": "C_1033",
+      "type": "CHARACTER",
+      "name": "프랜차이즈 리세일"
+    },
+    {
+      "id": "A_1105",
+      "type": "ASSET",
+      "name": "카바나",
+      "exposure": {
+        "ticker": "CVNA",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 8.369230769230773,
+        "return_3d": -6.8130705119724855,
+        "return_15d": 6.212303980699652,
+        "return_1m": 4.6035046035046046,
+        "return_ytd": -16.540284360189585,
+        "return_1y": 2.3093681917211395,
+        "return_3y": 798.469387755102,
+        "close": 70.48,
+        "marketCap": 77304977810,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -2.81456953642385,
+        "return_2y": 126.13162118780097
+      }
+    },
+    {
+      "id": "C_1034",
+      "type": "CHARACTER",
+      "name": "온라인 중고차 1위"
+    },
+    {
+      "id": "A_2076",
+      "type": "ASSET",
+      "name": "코파트",
+      "exposure": {
+        "ticker": "CPRT",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 7.426213900349099,
+        "return_3d": 7.08636507434357,
+        "return_15d": 9.831278390655429,
+        "return_1m": 22.60050706265846,
+        "return_ytd": -13.53767560664112,
+        "return_1y": -29.19891236143066,
+        "return_3y": -22.040534315983418,
+        "close": 33.85,
+        "marketCap": 31338718666,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 16.76440151776475,
+        "return_2y": -34.38650901337469
+      }
+    },
+    {
+      "id": "C_1035",
+      "type": "CHARACTER",
+      "name": "차량 경매(리커머스)"
+    },
+    {
+      "id": "A_2504",
+      "type": "ASSET",
+      "name": "RB글로벌",
+      "exposure": {
+        "ticker": "RBA",
+        "exchange": "NYSE",
+        "country": "CA"
+      },
+      "metrics": {
+        "return_1d": 0.4897388059701413,
+        "return_3d": 2.278661286494188,
+        "return_15d": -25.190972222222218,
+        "return_1m": -22.81236005373937,
+        "return_ytd": -16.224360843783415,
+        "return_1y": -24.982590529247904,
+        "return_3y": 52.1539548022599,
+        "close": 86.18,
+        "marketCap": 16055334000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -0.3238491788109976,
+        "return_2y": 3.681424446583259
+      }
+    },
+    {
+      "id": "C_1036",
+      "type": "CHARACTER",
+      "name": "산업자산 경매·리세일"
+    },
+    {
+      "id": "M_148",
+      "type": "MACRO",
+      "name": "가계소비심리"
+    },
+    {
+      "id": "M_146",
+      "type": "MACRO",
+      "name": "이커머스확대"
+    },
+    {
+      "id": "M_364",
+      "type": "MACRO",
+      "name": "GenZ_vintage트렌드"
+    },
+    {
+      "id": "A_800",
+      "type": "ASSET",
+      "name": "IBUY",
+      "exposure": {
+        "ticker": "IBUY",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 3.1818813394469903,
+        "close": 74.26,
+        "marketCap": 111730334,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 0.9790590155017709,
+        "return_15d": 3.1102471535684684,
+        "return_1m": 4.341717015596469,
+        "return_ytd": -0.2418054809242287,
+        "return_1y": 1.3511669168827734,
+        "return_3y": 59.73327597332761,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 1.726027397260288,
+        "return_2y": 32.37076648841355
+      }
+    }
   ],
-  "dataAsOf": "2026-07-25T00:00:00+09:00",
-  "description": "• 중고·리세일·리커머스가 신상품을 잠식\n• 동인: 가계소비심리·이커머스확대·GenZ_vintage트렌드\n• 대표주: 리얼리얼(명품 위탁 리세일)·쓰레드업(의류 리세일 플랫폼)·메루카리(일본 C2C 마켓)\n• ETF: IBUY",
-  "notes": "T_484 신규 — 자산별 CHARACTER(사업특성/포지션), MACRO 3(기존 재사용)",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-25",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 이벤트(회고+2026 에코) 추가."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_341",
+      "to": "T_484",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012189"
+      ]
+    },
+    {
+      "from": "A_341",
+      "to": "C_1029",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017113"
+      ]
+    },
+    {
+      "from": "A_2500",
+      "to": "T_484",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012190"
+      ]
+    },
+    {
+      "from": "A_2500",
+      "to": "C_1030",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017114"
+      ]
+    },
+    {
+      "from": "A_2501",
+      "to": "T_484",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012191"
+      ]
+    },
+    {
+      "from": "A_2501",
+      "to": "C_1031",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017115"
+      ]
+    },
+    {
+      "from": "A_2502",
+      "to": "T_484",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012192"
+      ]
+    },
+    {
+      "from": "A_2502",
+      "to": "C_1032",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017116"
+      ]
+    },
+    {
+      "from": "A_2503",
+      "to": "T_484",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012193"
+      ]
+    },
+    {
+      "from": "A_2503",
+      "to": "C_1033",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017117"
+      ]
+    },
+    {
+      "from": "A_1105",
+      "to": "T_484",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012194"
+      ]
+    },
+    {
+      "from": "A_1105",
+      "to": "C_1034",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017118"
+      ]
+    },
+    {
+      "from": "A_2076",
+      "to": "T_484",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012195"
+      ]
+    },
+    {
+      "from": "A_2076",
+      "to": "C_1035",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017119"
+      ]
+    },
+    {
+      "from": "A_2504",
+      "to": "T_484",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012196"
+      ]
+    },
+    {
+      "from": "A_2504",
+      "to": "C_1036",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017120"
+      ]
+    },
+    {
+      "from": "M_148",
+      "to": "T_484",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012197"
+      ]
+    },
+    {
+      "from": "M_146",
+      "to": "T_484",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012198"
+      ]
+    },
+    {
+      "from": "M_364",
+      "to": "T_484",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012199"
+      ]
+    },
+    {
+      "from": "A_341",
+      "to": "A_2500",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019871"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "리얼리얼과 쓰레드업은 미국 온라인 중고 의류·명품 시장 경쟁"
+    },
+    {
+      "from": "A_2502",
+      "to": "A_341",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019872"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "이베이와 리얼리얼은 중고 명품 리세일 시장 경쟁"
+    },
+    {
+      "from": "A_2501",
+      "to": "A_2502",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019873"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "메루카리와 이베이는 글로벌 C2C 중고거래 플랫폼 경쟁"
+    },
+    {
+      "from": "A_1105",
+      "to": "A_2076",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019874"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "카바나와 코파트는 중고차 유통·경매 시장 경쟁"
+    },
+    {
+      "from": "A_2504",
+      "to": "A_2076",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019875"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "RB글로벌과 코파트는 중고 장비·차량 경매 시장 직접 경쟁"
+    },
+    {
+      "from": "A_2503",
+      "to": "A_2500",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019876"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "윈마크와 쓰레드업은 중고 의류 리세일 시장 경쟁"
+    },
+    {
+      "from": "A_800",
+      "to": "T_484",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020833"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_341",
+      "to": "T_484",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012189"
+      ]
+    },
+    {
+      "from": "A_341",
+      "to": "C_1029",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017113"
+      ]
+    },
+    {
+      "from": "A_2500",
+      "to": "T_484",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012190"
+      ]
+    },
+    {
+      "from": "A_2500",
+      "to": "C_1030",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017114"
+      ]
+    },
+    {
+      "from": "A_2501",
+      "to": "T_484",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012191"
+      ]
+    },
+    {
+      "from": "A_2501",
+      "to": "C_1031",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017115"
+      ]
+    },
+    {
+      "from": "A_2502",
+      "to": "T_484",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012192"
+      ]
+    },
+    {
+      "from": "A_2502",
+      "to": "C_1032",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017116"
+      ]
+    },
+    {
+      "from": "A_2503",
+      "to": "T_484",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012193"
+      ]
+    },
+    {
+      "from": "A_2503",
+      "to": "C_1033",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017117"
+      ]
+    },
+    {
+      "from": "A_1105",
+      "to": "T_484",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012194"
+      ]
+    },
+    {
+      "from": "A_1105",
+      "to": "C_1034",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017118"
+      ]
+    },
+    {
+      "from": "A_2076",
+      "to": "T_484",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012195"
+      ]
+    },
+    {
+      "from": "A_2076",
+      "to": "C_1035",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017119"
+      ]
+    },
+    {
+      "from": "A_2504",
+      "to": "T_484",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012196"
+      ]
+    },
+    {
+      "from": "A_2504",
+      "to": "C_1036",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017120"
+      ]
+    },
+    {
+      "from": "M_148",
+      "to": "T_484",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012197"
+      ]
+    },
+    {
+      "from": "M_146",
+      "to": "T_484",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012198"
+      ]
+    },
+    {
+      "from": "M_364",
+      "to": "T_484",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012199"
+      ]
+    },
+    {
+      "from": "A_341",
+      "to": "A_2500",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019871"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "리얼리얼과 쓰레드업은 미국 온라인 중고 의류·명품 시장 경쟁"
+    },
+    {
+      "from": "A_2502",
+      "to": "A_341",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019872"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "이베이와 리얼리얼은 중고 명품 리세일 시장 경쟁"
+    },
+    {
+      "from": "A_2501",
+      "to": "A_2502",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019873"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "메루카리와 이베이는 글로벌 C2C 중고거래 플랫폼 경쟁"
+    },
+    {
+      "from": "A_1105",
+      "to": "A_2076",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019874"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "카바나와 코파트는 중고차 유통·경매 시장 경쟁"
+    },
+    {
+      "from": "A_2504",
+      "to": "A_2076",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019875"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "RB글로벌과 코파트는 중고 장비·차량 경매 시장 직접 경쟁"
+    },
+    {
+      "from": "A_2503",
+      "to": "A_2500",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019876"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "윈마크와 쓰레드업은 중고 의류 리세일 시장 경쟁"
+    },
+    {
+      "from": "A_800",
+      "to": "T_484",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020833"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_484",
-   "type": "THEME",
-   "name": "글로벌 리세일·리커머스"
-  },
-  {
-   "id": "A_341",
-   "type": "ASSET",
-   "name": "리얼리얼",
-   "exposure": {
-    "ticker": "REAL",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 4.20475319926874,
-    "return_3d": -3.3898305084745783,
-    "return_15d": 2.425876010781658,
-    "return_1m": 4.779411764705888,
-    "return_ytd": -27.75665399239543,
-    "return_1y": 44.85387547649302,
-    "return_3y": 359.6774193548387,
-    "close": 11.4,
-    "marketCap": 1373560099,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -7.317073170731714,
-    "return_2y": 336.7816091954023
-   }
-  },
-  {
-   "id": "C_1029",
-   "type": "CHARACTER",
-   "name": "명품 위탁 리세일 1위"
-  },
-  {
-   "id": "A_2500",
-   "type": "ASSET",
-   "name": "쓰레드업",
-   "exposure": {
-    "ticker": "TDUP",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -3.154574132492116,
-    "return_3d": -2.2292993630573354,
-    "return_15d": -46.14035087719298,
-    "return_1m": -51.57728706624606,
-    "return_ytd": -51.956181533646316,
-    "return_1y": -70.78972407231208,
-    "return_3y": -22.67002518891689,
-    "close": 3.07,
-    "marketCap": 396155397,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -4.361370716510904,
-    "return_2y": 343.1293302540416
-   }
-  },
-  {
-   "id": "C_1030",
-   "type": "CHARACTER",
-   "name": "의류 리세일 플랫폼"
-  },
-  {
-   "id": "A_2501",
-   "type": "ASSET",
-   "name": "메루카리",
-   "exposure": {
-    "ticker": "4385",
-    "exchange": "TSE",
-    "country": "JP"
-   },
-   "metrics": {
-    "return_1d": 2.3417721518987245,
-    "return_3d": 0.18587360594795044,
-    "return_15d": 9.158415841584166,
-    "return_1m": 1.67679731712429,
-    "return_ytd": 53.028391167192424,
-    "return_1y": 124.16820702402957,
-    "return_3y": 47.0,
-    "close": 4851.0,
-    "marketCap": 801484082784,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -1.4224751066856278,
-    "return_2y": 140.02968827313208
-   }
-  },
-  {
-   "id": "C_1031",
-   "type": "CHARACTER",
-   "name": "일본 C2C 마켓 1위"
-  },
-  {
-   "id": "A_2502",
-   "type": "ASSET",
-   "name": "이베이",
-   "exposure": {
-    "ticker": "EBAY",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -1.376936316695354,
-    "return_3d": -2.707291764927844,
-    "return_15d": -5.713502148276806,
-    "return_1m": -8.352585747289854,
-    "return_ytd": 18.415614236509768,
-    "return_1y": 4.731925264013004,
-    "return_3y": 134.24937542584604,
-    "close": 103.14,
-    "marketCap": 45794160000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -7.8942668333631065,
-    "return_2y": 84.97130559540891
-   }
-  },
-  {
-   "id": "C_1032",
-   "type": "CHARACTER",
-   "name": "글로벌 리커머스 마켓"
-  },
-  {
-   "id": "A_2503",
-   "type": "ASSET",
-   "name": "윈마크",
-   "exposure": {
-    "ticker": "WINA",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.4033180778032053,
-    "return_3d": -5.119610758210569,
-    "return_15d": 5.560567785396375,
-    "return_1m": -6.809855041682167,
-    "return_ytd": -13.318022423075027,
-    "return_1y": -18.09166005507071,
-    "return_3y": -5.748885666720371,
-    "close": 351.01,
-    "marketCap": 1260887241,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -4.647940888840596,
-    "return_2y": -4.069417873735992
-   }
-  },
-  {
-   "id": "C_1033",
-   "type": "CHARACTER",
-   "name": "프랜차이즈 리세일"
-  },
-  {
-   "id": "A_1105",
-   "type": "ASSET",
-   "name": "카바나",
-   "exposure": {
-    "ticker": "CVNA",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 2.564450474898239,
-    "return_3d": 4.986111111111113,
-    "return_15d": 25.024809791597757,
-    "return_1m": 7.402671213412915,
-    "return_ytd": -10.43838862559242,
-    "return_1y": 10.318155283129027,
-    "return_3y": 819.5863746958637,
-    "close": 75.62,
-    "marketCap": 82942713139,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 6.690190543401564,
-    "return_2y": 166.16197183098595
-   }
-  },
-  {
-   "id": "C_1034",
-   "type": "CHARACTER",
-   "name": "온라인 중고차 1위"
-  },
-  {
-   "id": "A_2076",
-   "type": "ASSET",
-   "name": "코파트",
-   "exposure": {
-    "ticker": "CPRT",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 7.553589656345694,
-    "return_3d": 7.5170068027210935,
-    "return_15d": 13.135289906943438,
-    "return_1m": 14.861918604651159,
-    "return_ytd": -19.259259259259252,
-    "return_1y": -32.543747332479725,
-    "return_3y": -28.66170164748364,
-    "close": 31.61,
-    "marketCap": 29264900946,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 6.57451112609575,
-    "return_2y": -38.00745244165523
-   }
-  },
-  {
-   "id": "C_1035",
-   "type": "CHARACTER",
-   "name": "차량 경매(리커머스)"
-  },
-  {
-   "id": "A_2504",
-   "type": "ASSET",
-   "name": "RB글로벌",
-   "exposure": {
-    "ticker": "RBA",
-    "exchange": "NYSE",
-    "country": "CA"
-   },
-   "metrics": {
-    "return_1d": -2.48813794699686,
-    "return_3d": -5.991297556621655,
-    "return_15d": -24.49144188547361,
-    "return_1m": -22.81055331623304,
-    "return_ytd": -18.09079420627977,
-    "return_1y": -28.24661500468364,
-    "return_3y": 44.92604059167527,
-    "close": 84.26,
-    "marketCap": 15697638000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -11.04307432432432,
-    "return_2y": 5.2855179307759625
-   }
-  },
-  {
-   "id": "C_1036",
-   "type": "CHARACTER",
-   "name": "산업자산 경매·리세일"
-  },
-  {
-   "id": "M_148",
-   "type": "MACRO",
-   "name": "가계소비심리"
-  },
-  {
-   "id": "M_146",
-   "type": "MACRO",
-   "name": "이커머스확대"
-  },
-  {
-   "id": "M_364",
-   "type": "MACRO",
-   "name": "GenZ_vintage트렌드"
-  },
-  {
-   "id": "A_800",
-   "type": "ASSET",
-   "name": "IBUY",
-   "exposure": {
-    "ticker": "IBUY",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.08152173913041905,
-    "close": 73.5385,
-    "marketCap": 110644777,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -0.027188689505164287,
-    "return_15d": 7.766705744431435,
-    "return_1m": 3.8114059853190385,
-    "return_ytd": -1.2090274046211547,
-    "return_1y": 0.14980253302465663,
-    "return_3y": 49.86142810564069,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -1.394475730758904,
-    "return_2y": 38.78090205699189
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_341",
-   "to": "T_484",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012189"
-   ]
-  },
-  {
-   "from": "A_341",
-   "to": "C_1029",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017113"
-   ]
-  },
-  {
-   "from": "A_2500",
-   "to": "T_484",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012190"
-   ]
-  },
-  {
-   "from": "A_2500",
-   "to": "C_1030",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017114"
-   ]
-  },
-  {
-   "from": "A_2501",
-   "to": "T_484",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012191"
-   ]
-  },
-  {
-   "from": "A_2501",
-   "to": "C_1031",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017115"
-   ]
-  },
-  {
-   "from": "A_2502",
-   "to": "T_484",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012192"
-   ]
-  },
-  {
-   "from": "A_2502",
-   "to": "C_1032",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017116"
-   ]
-  },
-  {
-   "from": "A_2503",
-   "to": "T_484",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012193"
-   ]
-  },
-  {
-   "from": "A_2503",
-   "to": "C_1033",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017117"
-   ]
-  },
-  {
-   "from": "A_1105",
-   "to": "T_484",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012194"
-   ]
-  },
-  {
-   "from": "A_1105",
-   "to": "C_1034",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017118"
-   ]
-  },
-  {
-   "from": "A_2076",
-   "to": "T_484",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012195"
-   ]
-  },
-  {
-   "from": "A_2076",
-   "to": "C_1035",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017119"
-   ]
-  },
-  {
-   "from": "A_2504",
-   "to": "T_484",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012196"
-   ]
-  },
-  {
-   "from": "A_2504",
-   "to": "C_1036",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017120"
-   ]
-  },
-  {
-   "from": "M_148",
-   "to": "T_484",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012197"
-   ]
-  },
-  {
-   "from": "M_146",
-   "to": "T_484",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012198"
-   ]
-  },
-  {
-   "from": "M_364",
-   "to": "T_484",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012199"
-   ]
-  },
-  {
-   "from": "A_341",
-   "to": "A_2500",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019871"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "리얼리얼과 쓰레드업은 미국 온라인 중고 의류·명품 시장 경쟁"
-  },
-  {
-   "from": "A_2502",
-   "to": "A_341",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019872"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "이베이와 리얼리얼은 중고 명품 리세일 시장 경쟁"
-  },
-  {
-   "from": "A_2501",
-   "to": "A_2502",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019873"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "메루카리와 이베이는 글로벌 C2C 중고거래 플랫폼 경쟁"
-  },
-  {
-   "from": "A_1105",
-   "to": "A_2076",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019874"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "카바나와 코파트는 중고차 유통·경매 시장 경쟁"
-  },
-  {
-   "from": "A_2504",
-   "to": "A_2076",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019875"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "RB글로벌과 코파트는 중고 장비·차량 경매 시장 직접 경쟁"
-  },
-  {
-   "from": "A_2503",
-   "to": "A_2500",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019876"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "윈마크와 쓰레드업은 중고 의류 리세일 시장 경쟁"
-  },
-  {
-   "from": "A_800",
-   "to": "T_484",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020833"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_341",
-   "to": "T_484",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012189"
-   ]
-  },
-  {
-   "from": "A_341",
-   "to": "C_1029",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017113"
-   ]
-  },
-  {
-   "from": "A_2500",
-   "to": "T_484",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012190"
-   ]
-  },
-  {
-   "from": "A_2500",
-   "to": "C_1030",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017114"
-   ]
-  },
-  {
-   "from": "A_2501",
-   "to": "T_484",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012191"
-   ]
-  },
-  {
-   "from": "A_2501",
-   "to": "C_1031",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017115"
-   ]
-  },
-  {
-   "from": "A_2502",
-   "to": "T_484",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012192"
-   ]
-  },
-  {
-   "from": "A_2502",
-   "to": "C_1032",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017116"
-   ]
-  },
-  {
-   "from": "A_2503",
-   "to": "T_484",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012193"
-   ]
-  },
-  {
-   "from": "A_2503",
-   "to": "C_1033",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017117"
-   ]
-  },
-  {
-   "from": "A_1105",
-   "to": "T_484",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012194"
-   ]
-  },
-  {
-   "from": "A_1105",
-   "to": "C_1034",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017118"
-   ]
-  },
-  {
-   "from": "A_2076",
-   "to": "T_484",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012195"
-   ]
-  },
-  {
-   "from": "A_2076",
-   "to": "C_1035",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017119"
-   ]
-  },
-  {
-   "from": "A_2504",
-   "to": "T_484",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012196"
-   ]
-  },
-  {
-   "from": "A_2504",
-   "to": "C_1036",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017120"
-   ]
-  },
-  {
-   "from": "M_148",
-   "to": "T_484",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012197"
-   ]
-  },
-  {
-   "from": "M_146",
-   "to": "T_484",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012198"
-   ]
-  },
-  {
-   "from": "M_364",
-   "to": "T_484",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012199"
-   ]
-  },
-  {
-   "from": "A_341",
-   "to": "A_2500",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019871"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "리얼리얼과 쓰레드업은 미국 온라인 중고 의류·명품 시장 경쟁"
-  },
-  {
-   "from": "A_2502",
-   "to": "A_341",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019872"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "이베이와 리얼리얼은 중고 명품 리세일 시장 경쟁"
-  },
-  {
-   "from": "A_2501",
-   "to": "A_2502",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019873"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "메루카리와 이베이는 글로벌 C2C 중고거래 플랫폼 경쟁"
-  },
-  {
-   "from": "A_1105",
-   "to": "A_2076",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019874"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "카바나와 코파트는 중고차 유통·경매 시장 경쟁"
-  },
-  {
-   "from": "A_2504",
-   "to": "A_2076",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019875"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "RB글로벌과 코파트는 중고 장비·차량 경매 시장 직접 경쟁"
-  },
-  {
-   "from": "A_2503",
-   "to": "A_2500",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019876"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "윈마크와 쓰레드업은 중고 의류 리세일 시장 경쟁"
-  },
-  {
-   "from": "A_800",
-   "to": "T_484",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020833"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

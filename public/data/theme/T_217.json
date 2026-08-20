@@ -1,1574 +1,1574 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_217",
- "themeName": "K-팹리스반도체",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_217",
+  "themeName": "K-팹리스반도체",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-05-10T00:00:00+09:00",
+    "notes": "g217 누적 import 기반 K-팹리스반도체 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-13",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "자산 13개에 테마 관점 특성(CHARACTER)·HAS_TRAIT를 부여했다."
+      },
+      {
+        "date": "2026-07-13",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필 + 2026 이벤트",
+        "detail": "전 엣지 근거를 종목·관계 사실로 구체화하고 2026 이벤트를 추가했다."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ],
+    "description": "• AI·EV·디스플레이 사이클이 동인\n• 동인: AI반도체수요증가·엣지AI확산·정부육성정책\n• 대표주: 제주반도체(저전력메모리팹리스)·LX세미콘(DDI대표팹리스)·아나패스(디스플레이인터페이스)\n• 밸류체인: 메모리·디스플레이·차량전장·가전IoT\n• ETF: KODEX 반도체"
+  },
+  "nodes": [
+    {
+      "id": "T_217",
+      "type": "THEME",
+      "name": "K-팹리스반도체"
+    },
+    {
+      "id": "A_1385",
+      "type": "ASSET",
+      "name": "제주반도체",
+      "exposure": {
+        "ticker": "080220",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 3.940217391304346,
+        "close": 76500,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -6.134969325153373,
+        "return_15d": 38.83847549909256,
+        "return_1m": -2.298850574712641,
+        "return_ytd": 149.59216965742252,
+        "return_1y": 421.1171662125341,
+        "return_3y": 1831.2796208530806,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 8.090185676392569,
+        "return_2y": 371.34935304990756
+      }
+    },
+    {
+      "id": "A_1386",
+      "type": "ASSET",
+      "name": "LX세미콘",
+      "exposure": {
+        "ticker": "108320",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -4.5685279187817285,
+        "close": 37600,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -6.351183063511834,
+        "return_15d": 10.751104565537561,
+        "return_1m": 1.3477088948786964,
+        "return_ytd": -23.422332380645372,
+        "return_1y": -29.323730734090724,
+        "return_3y": -51.51766751278773,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 16.573033707865157,
+        "return_2y": -48.677473009643435
+      }
+    },
+    {
+      "id": "A_1387",
+      "type": "ASSET",
+      "name": "아나패스",
+      "exposure": {
+        "ticker": "123860",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -0.6701414743112477,
+        "close": 13340,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -2.5566106647187725,
+        "return_15d": 18.894830659536545,
+        "return_1m": 7.320997586484301,
+        "return_ytd": -22.396742292030247,
+        "return_1y": -26.400678534985744,
+        "return_3y": -43.073650699463286,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": -2.907801418439715,
+        "return_2y": -51.48775897058886
+      }
+    },
+    {
+      "id": "A_1388",
+      "type": "ASSET",
+      "name": "에이디테크놀로지",
+      "exposure": {
+        "ticker": "200710",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 5.587668593448947,
+        "close": 27400,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -9.71993410214168,
+        "return_15d": 24.82915717539864,
+        "return_1m": 0.7352941176470562,
+        "return_ytd": -17.84107946026986,
+        "return_1y": 16.348195329087044,
+        "return_3y": 30.537634408602155,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 1.675041876046901,
+        "return_2y": 23.98190045248869
+      }
+    },
+    {
+      "id": "A_1389",
+      "type": "ASSET",
+      "name": "동운아나텍",
+      "exposure": {
+        "ticker": "094170",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 3.9308176100628867,
+        "close": 33050,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": 0.15151515151514694,
+        "return_15d": 39.1578947368421,
+        "return_1m": 13.769363166953518,
+        "return_ytd": 15.559440559440564,
+        "return_1y": 87.14175872144298,
+        "return_3y": 28.832307804088497,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 5.263157894736836,
+        "return_2y": 73.70855481414968
+      }
+    },
+    {
+      "id": "A_1390",
+      "type": "ASSET",
+      "name": "텔레칩스",
+      "exposure": {
+        "ticker": "054450",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.904761904761898,
+        "close": 9630,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -5.309734513274334,
+        "return_15d": 30.664857530529165,
+        "return_1m": 5.592105263157898,
+        "return_ytd": -40.66543438077635,
+        "return_1y": -24.864132231637093,
+        "return_3y": -45.79053944170012,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 9.0032154340836,
+        "return_2y": -46.733070338515994
+      }
+    },
+    {
+      "id": "A_1391",
+      "type": "ASSET",
+      "name": "넥스트칩",
+      "exposure": {
+        "ticker": "396270",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -2.4742268041237137,
+        "close": 2365,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -9.904761904761905,
+        "return_15d": -33.286318758815234,
+        "return_1m": -37.68115942028986,
+        "return_ytd": -41.891891891891895,
+        "return_1y": -57.00000000000001,
+        "return_3y": -84.83974358974359,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": -12.89134438305709,
+        "return_2y": -82.8623188405797
+      }
+    },
+    {
+      "id": "A_1392",
+      "type": "ASSET",
+      "name": "어보브반도체",
+      "exposure": {
+        "ticker": "102120",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.4884979702300516,
+        "close": 7500,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -9.200968523002418,
+        "return_15d": 32.04225352112675,
+        "return_1m": 10.456553755522835,
+        "return_ytd": -41.0377358490566,
+        "return_1y": -30.81984999142304,
+        "return_3y": -8.12174518362453,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 17.999999999999993,
+        "return_2y": -47.331779864283554
+      }
+    },
+    {
+      "id": "BF_442",
+      "type": "BUSINESS_FIELD",
+      "name": "메모리"
+    },
+    {
+      "id": "BF_215",
+      "type": "BUSINESS_FIELD",
+      "name": "디스플레이"
+    },
+    {
+      "id": "BF_445",
+      "type": "BUSINESS_FIELD",
+      "name": "차량전장"
+    },
+    {
+      "id": "BF_446",
+      "type": "BUSINESS_FIELD",
+      "name": "가전IoT"
+    },
+    {
+      "id": "A_1732",
+      "type": "ASSET",
+      "name": "라온텍",
+      "exposure": {
+        "ticker": "418420",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 2.149178255372952,
+        "close": 4040,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -5.937136204889404,
+        "return_15d": -26.54545454545455,
+        "return_1m": -30.584192439862544,
+        "return_ytd": -13.118279569892477,
+        "return_1y": 4.935064935064926,
+        "return_3y": -55.01113585746103,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": -6.912442396313367,
+        "return_2y": -28.24156305506217
+      },
+      "coreBiz": "라온텍은 마이크로디스플레이(LCoS) 팹리스다"
+    },
+    {
+      "id": "A_1733",
+      "type": "ASSET",
+      "name": "자람테크놀로지",
+      "exposure": {
+        "ticker": "389020",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -3.177966101694918,
+        "close": 22850,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -7.676767676767682,
+        "return_15d": -31.994047619047617,
+        "return_1m": -35.63380281690141,
+        "return_ytd": -41.56010230179028,
+        "return_1y": -46.73659673659674,
+        "return_3y": -33.381924198250736,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": -9.325396825396826,
+        "return_2y": -69.65471447543162
+      },
+      "coreBiz": "자람테크놀로지는 네트워크(PON) SoC 팹리스다"
+    },
+    {
+      "id": "A_1734",
+      "type": "ASSET",
+      "name": "픽셀플러스",
+      "exposure": {
+        "ticker": "087600",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -0.7792207792207795,
+        "close": 3820,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -2.17669654289373,
+        "return_15d": 1.5957446808510634,
+        "return_1m": -6.942752740560287,
+        "return_ytd": -40.6832298136646,
+        "return_1y": -46.423562412342214,
+        "return_3y": -37.942437248242754,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": -2.130325814536338,
+        "return_2y": -56.59090909090909
+      },
+      "coreBiz": "픽셀플러스는 CMOS 이미지센서 팹리스다"
+    },
+    {
+      "id": "A_1735",
+      "type": "ASSET",
+      "name": "티엘아이",
+      "exposure": {
+        "ticker": "062860",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": null,
+        "returnsSource": null,
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "티엘아이는 디스플레이 전력관리 팹리스다"
+    },
+    {
+      "id": "A_1736",
+      "type": "ASSET",
+      "name": "아이앤씨",
+      "exposure": {
+        "ticker": "052860",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 10.000000000000009,
+        "close": 5280,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": 9.430051813471497,
+        "return_15d": 45.65517241379311,
+        "return_1m": 29.09535452322738,
+        "return_ytd": 98.87005649717516,
+        "return_1y": 158.82352941176472,
+        "return_3y": 101.04166666666666,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 6.043956043956045,
+        "return_2y": 147.30679156908667
+      },
+      "coreBiz": "아이앤씨는 방송통신 SoC 팹리스다"
+    },
+    {
+      "id": "BF_489",
+      "type": "BUSINESS_FIELD",
+      "name": "마이크로디스플레이"
+    },
+    {
+      "id": "BF_490",
+      "type": "BUSINESS_FIELD",
+      "name": "네트워크PON_SoC"
+    },
+    {
+      "id": "BF_491",
+      "type": "BUSINESS_FIELD",
+      "name": "CMOS이미지센서"
+    },
+    {
+      "id": "BF_492",
+      "type": "BUSINESS_FIELD",
+      "name": "디스플레이전력관리"
+    },
+    {
+      "id": "BF_493",
+      "type": "BUSINESS_FIELD",
+      "name": "방송통신SoC"
+    },
+    {
+      "id": "M_161",
+      "type": "MACRO",
+      "name": "AI반도체수요증가"
+    },
+    {
+      "id": "M_308",
+      "type": "MACRO",
+      "name": "엣지AI확산"
+    },
+    {
+      "id": "M_156",
+      "type": "MACRO",
+      "name": "정부육성정책"
+    },
+    {
+      "id": "C_3306",
+      "type": "CHARACTER",
+      "name": "저전력메모리팹리스"
+    },
+    {
+      "id": "C_3307",
+      "type": "CHARACTER",
+      "name": "DDI대표팹리스"
+    },
+    {
+      "id": "C_3308",
+      "type": "CHARACTER",
+      "name": "디스플레이인터페이스"
+    },
+    {
+      "id": "C_3309",
+      "type": "CHARACTER",
+      "name": "SoC디자인하우스"
+    },
+    {
+      "id": "C_3310",
+      "type": "CHARACTER",
+      "name": "아날로그팹리스"
+    },
+    {
+      "id": "C_3311",
+      "type": "CHARACTER",
+      "name": "차량AP팹리스"
+    },
+    {
+      "id": "C_3312",
+      "type": "CHARACTER",
+      "name": "차량ISP팹리스"
+    },
+    {
+      "id": "C_3313",
+      "type": "CHARACTER",
+      "name": "가전MCU팹리스"
+    },
+    {
+      "id": "C_3314",
+      "type": "CHARACTER",
+      "name": "마이크로디스플레이"
+    },
+    {
+      "id": "C_3315",
+      "type": "CHARACTER",
+      "name": "PON SoC"
+    },
+    {
+      "id": "C_3316",
+      "type": "CHARACTER",
+      "name": "CIS팹리스"
+    },
+    {
+      "id": "C_3317",
+      "type": "CHARACTER",
+      "name": "DP전력관리"
+    },
+    {
+      "id": "C_3318",
+      "type": "CHARACTER",
+      "name": "방송통신SoC"
+    },
+    {
+      "id": "A_2900",
+      "type": "ASSET",
+      "name": "KODEX 반도체",
+      "exposure": {
+        "ticker": "091160",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -5.809178262429726,
+        "return_3d": -4.414323285454181,
+        "return_15d": 10.15573999813486,
+        "return_1m": -5.128308100076307,
+        "return_ytd": 80.5562772592478,
+        "return_1y": 224.62452022621687,
+        "return_3y": null,
+        "close": 118120,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": null,
+        "return_2y": 187.0670414088885
+      }
+    }
   ],
-  "dataAsOf": "2026-05-10T00:00:00+09:00",
-  "notes": "g217 누적 import 기반 K-팹리스반도체 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-13",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "자산 13개에 테마 관점 특성(CHARACTER)·HAS_TRAIT를 부여했다."
-   },
-   {
-    "date": "2026-07-13",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필 + 2026 이벤트",
-    "detail": "전 엣지 근거를 종목·관계 사실로 구체화하고 2026 이벤트를 추가했다."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_1385",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006599"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1386",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006600"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1387",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006601"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1388",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006602"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1389",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006603"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1390",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006604"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1391",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006605"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1392",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006606"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1385",
+      "to": "BF_442",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006612"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1386",
+      "to": "BF_215",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006613"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1386",
+      "to": "BF_445",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006614"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1387",
+      "to": "BF_215",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006615"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1389",
+      "to": "BF_446",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006616"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1390",
+      "to": "BF_445",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006617"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1391",
+      "to": "BF_445",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006618"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1392",
+      "to": "BF_446",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006619"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1732",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006607"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1733",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006608"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1734",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006609"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1735",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006610"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1736",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006611"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1732",
+      "to": "BF_489",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006620"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1733",
+      "to": "BF_490",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006621"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1734",
+      "to": "BF_491",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006622"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1735",
+      "to": "BF_492",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006623"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1736",
+      "to": "BF_493",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006624"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "M_161",
+      "to": "T_217",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_006625"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_308",
+      "to": "T_217",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_006626"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "M_156",
+      "to": "T_217",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_006627"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1385",
+      "to": "C_3306",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006739"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1386",
+      "to": "C_3307",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006740"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1387",
+      "to": "C_3308",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006741"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1388",
+      "to": "C_3309",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006742"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1389",
+      "to": "C_3310",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006743"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1390",
+      "to": "C_3311",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006744"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1391",
+      "to": "C_3312",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006745"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1392",
+      "to": "C_3313",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006746"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1732",
+      "to": "C_3314",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006747"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1733",
+      "to": "C_3315",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006748"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1734",
+      "to": "C_3316",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006749"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1735",
+      "to": "C_3317",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006750"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_1736",
+      "to": "C_3318",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006751"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_1386",
+      "to": "A_1387",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019319"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "LX세미콘와 아나패스는 K-팹리스반도체 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1389",
+      "to": "A_1390",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019320"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "동운아나텍와 텔레칩스는 K-팹리스반도체 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1391",
+      "to": "A_1392",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019321"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "넥스트칩와 어보브반도체는 K-팹리스반도체 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1385",
+      "to": "A_1388",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019322"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "제주반도체와 에이디테크놀로지는 K-팹리스반도체 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1732",
+      "to": "A_1734",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019323"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "라온텍와 픽셀플러스는 K-팹리스반도체 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1735",
+      "to": "A_1387",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019324"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "티엘아이와 아나패스는 K-팹리스반도체 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_2900",
+      "to": "T_217",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020654"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ],
-  "description": "• AI·EV·디스플레이 사이클이 동인\n• 동인: AI반도체수요증가·엣지AI확산·정부육성정책\n• 대표주: 제주반도체(저전력메모리팹리스)·LX세미콘(DDI대표팹리스)·아나패스(디스플레이인터페이스)\n• 밸류체인: 메모리·디스플레이·차량전장·가전IoT\n• ETF: KODEX 반도체"
- },
- "nodes": [
-  {
-   "id": "T_217",
-   "type": "THEME",
-   "name": "K-팹리스반도체"
-  },
-  {
-   "id": "A_1385",
-   "type": "ASSET",
-   "name": "제주반도체",
-   "exposure": {
-    "ticker": "080220",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -7.701019252548136,
-    "close": 81500,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -9.845132743362829,
-    "return_15d": 15.931721194879088,
-    "return_1m": -8.529741863075191,
-    "return_ytd": 165.905383360522,
-    "return_1y": 470.7282913165266,
-    "return_3y": 1831.2796208530806,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 8.090185676392569,
-    "return_2y": 374.38882421420254
-   }
-  },
-  {
-   "id": "A_1386",
-   "type": "ASSET",
-   "name": "LX세미콘",
-   "exposure": {
-    "ticker": "108320",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 3.3623910336239016,
-    "close": 41500,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 4.797979797979801,
-    "return_15d": 6.958762886597936,
-    "return_1m": 1.7156862745097978,
-    "return_ytd": -15.479436005233593,
-    "return_1y": -20.977985740700323,
-    "return_3y": -51.51766751278773,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 16.573033707865157,
-    "return_2y": -42.394026284400944
-   }
-  },
-  {
-   "id": "A_1387",
-   "type": "ASSET",
-   "name": "아나패스",
-   "exposure": {
-    "ticker": "123860",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -0.868935553946415,
-    "close": 13690,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -1.2265512265512313,
-    "return_15d": 15.13877207737595,
-    "return_1m": 3.242835595776783,
-    "return_ytd": -20.360674810936597,
-    "return_1y": -24.2637447099346,
-    "return_3y": -43.073650699463286,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": -2.907801418439715,
-    "return_2y": -46.78149713864636
-   }
-  },
-  {
-   "id": "A_1388",
-   "type": "ASSET",
-   "name": "에이디테크놀로지",
-   "exposure": {
-    "ticker": "200710",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.6633499170812573,
-    "close": 30350,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 1.3355592654423987,
-    "return_15d": 16.955684007707127,
-    "return_1m": -3.803486529318545,
-    "return_ytd": -8.995502248875564,
-    "return_1y": 29.700854700854705,
-    "return_3y": 30.537634408602155,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 1.675041876046901,
-    "return_2y": 29.700854700854705
-   }
-  },
-  {
-   "id": "A_1389",
-   "type": "ASSET",
-   "name": "동운아나텍",
-   "exposure": {
-    "ticker": "094170",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -4.486251808972508,
-    "close": 33000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -3.083700440528636,
-    "return_15d": 12.627986348122878,
-    "return_1m": 2.8037383177569986,
-    "return_ytd": 15.384615384615374,
-    "return_1y": 91.17907067471387,
-    "return_3y": 28.832307804088497,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 5.263157894736836,
-    "return_2y": 77.66584996726263
-   }
-  },
-  {
-   "id": "A_1390",
-   "type": "ASSET",
-   "name": "텔레칩스",
-   "exposure": {
-    "ticker": "054450",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -0.2941176470588225,
-    "close": 10170,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 1.6999999999999904,
-    "return_15d": 11.75824175824176,
-    "return_1m": -2.6794258373205704,
-    "return_ytd": -37.338262476894634,
-    "return_1y": -20.40351987375013,
-    "return_3y": -45.79053944170012,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 9.0032154340836,
-    "return_2y": -47.968031660976926
-   }
-  },
-  {
-   "id": "A_1391",
-   "type": "ASSET",
-   "name": "넥스트칩",
-   "exposure": {
-    "ticker": "396270",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -2.4742268041237137,
-    "close": 2365,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -9.904761904761905,
-    "return_15d": -33.286318758815234,
-    "return_1m": -37.68115942028986,
-    "return_ytd": -41.891891891891895,
-    "return_1y": -57.00000000000001,
-    "return_3y": -84.83974358974359,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": -12.89134438305709,
-    "return_2y": -82.8623188405797
-   }
-  },
-  {
-   "id": "A_1392",
-   "type": "ASSET",
-   "name": "어보브반도체",
-   "exposure": {
-    "ticker": "102120",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.8547008547008517,
-    "close": 8260,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 8.684210526315784,
-    "return_15d": 20.760233918128645,
-    "return_1m": 8.25688073394495,
-    "return_ytd": -35.062893081761004,
-    "return_1y": -24.084650908092332,
-    "return_3y": -8.12174518362453,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 17.999999999999993,
-    "return_2y": -48.06913499474882
-   }
-  },
-  {
-   "id": "BF_442",
-   "type": "BUSINESS_FIELD",
-   "name": "메모리"
-  },
-  {
-   "id": "BF_215",
-   "type": "BUSINESS_FIELD",
-   "name": "디스플레이"
-  },
-  {
-   "id": "BF_445",
-   "type": "BUSINESS_FIELD",
-   "name": "차량전장"
-  },
-  {
-   "id": "BF_446",
-   "type": "BUSINESS_FIELD",
-   "name": "가전IoT"
-  },
-  {
-   "id": "A_1732",
-   "type": "ASSET",
-   "name": "라온텍",
-   "exposure": {
-    "ticker": "418420",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 2.149178255372952,
-    "close": 4040,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -5.937136204889404,
-    "return_15d": -26.54545454545455,
-    "return_1m": -30.584192439862544,
-    "return_ytd": -13.118279569892477,
-    "return_1y": 4.935064935064926,
-    "return_3y": -55.01113585746103,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": -6.912442396313367,
-    "return_2y": -28.24156305506217
-   },
-   "coreBiz": "라온텍은 마이크로디스플레이(LCoS) 팹리스다"
-  },
-  {
-   "id": "A_1733",
-   "type": "ASSET",
-   "name": "자람테크놀로지",
-   "exposure": {
-    "ticker": "389020",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -3.177966101694918,
-    "close": 22850,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -7.676767676767682,
-    "return_15d": -31.994047619047617,
-    "return_1m": -35.63380281690141,
-    "return_ytd": -41.56010230179028,
-    "return_1y": -46.73659673659674,
-    "return_3y": -33.381924198250736,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": -9.325396825396826,
-    "return_2y": -69.65471447543162
-   },
-   "coreBiz": "자람테크놀로지는 네트워크(PON) SoC 팹리스다"
-  },
-  {
-   "id": "A_1734",
-   "type": "ASSET",
-   "name": "픽셀플러스",
-   "exposure": {
-    "ticker": "087600",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.25673940949935137,
-    "close": 3905,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -1.5132408575031508,
-    "return_15d": -8.333333333333337,
-    "return_1m": -5.676328502415462,
-    "return_ytd": -39.36335403726709,
-    "return_1y": -44.99999999999999,
-    "return_3y": -37.942437248242754,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": -2.130325814536338,
-    "return_2y": -56.89845474613686
-   },
-   "coreBiz": "픽셀플러스는 CMOS 이미지센서 팹리스다"
-  },
-  {
-   "id": "A_1735",
-   "type": "ASSET",
-   "name": "티엘아이",
-   "exposure": {
-    "ticker": "062860",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": null,
-    "returnsSource": null,
-    "return_5d": null,
-    "return_2y": null
-   },
-   "coreBiz": "티엘아이는 디스플레이 전력관리 팹리스다"
-  },
-  {
-   "id": "A_1736",
-   "type": "ASSET",
-   "name": "아이앤씨",
-   "exposure": {
-    "ticker": "052860",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.0,
-    "close": 4825,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 2.332979851537642,
-    "return_15d": 17.25394896719319,
-    "return_1m": 4.777415852334421,
-    "return_ytd": 81.73258003766479,
-    "return_1y": 150.77962577962575,
-    "return_3y": 101.04166666666666,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 6.043956043956045,
-    "return_2y": 120.31963470319633
-   },
-   "coreBiz": "아이앤씨는 방송통신 SoC 팹리스다"
-  },
-  {
-   "id": "BF_489",
-   "type": "BUSINESS_FIELD",
-   "name": "마이크로디스플레이"
-  },
-  {
-   "id": "BF_490",
-   "type": "BUSINESS_FIELD",
-   "name": "네트워크PON_SoC"
-  },
-  {
-   "id": "BF_491",
-   "type": "BUSINESS_FIELD",
-   "name": "CMOS이미지센서"
-  },
-  {
-   "id": "BF_492",
-   "type": "BUSINESS_FIELD",
-   "name": "디스플레이전력관리"
-  },
-  {
-   "id": "BF_493",
-   "type": "BUSINESS_FIELD",
-   "name": "방송통신SoC"
-  },
-  {
-   "id": "M_161",
-   "type": "MACRO",
-   "name": "AI반도체수요증가"
-  },
-  {
-   "id": "M_308",
-   "type": "MACRO",
-   "name": "엣지AI확산"
-  },
-  {
-   "id": "M_156",
-   "type": "MACRO",
-   "name": "정부육성정책"
-  },
-  {
-   "id": "C_3306",
-   "type": "CHARACTER",
-   "name": "저전력메모리팹리스"
-  },
-  {
-   "id": "C_3307",
-   "type": "CHARACTER",
-   "name": "DDI대표팹리스"
-  },
-  {
-   "id": "C_3308",
-   "type": "CHARACTER",
-   "name": "디스플레이인터페이스"
-  },
-  {
-   "id": "C_3309",
-   "type": "CHARACTER",
-   "name": "SoC디자인하우스"
-  },
-  {
-   "id": "C_3310",
-   "type": "CHARACTER",
-   "name": "아날로그팹리스"
-  },
-  {
-   "id": "C_3311",
-   "type": "CHARACTER",
-   "name": "차량AP팹리스"
-  },
-  {
-   "id": "C_3312",
-   "type": "CHARACTER",
-   "name": "차량ISP팹리스"
-  },
-  {
-   "id": "C_3313",
-   "type": "CHARACTER",
-   "name": "가전MCU팹리스"
-  },
-  {
-   "id": "C_3314",
-   "type": "CHARACTER",
-   "name": "마이크로디스플레이"
-  },
-  {
-   "id": "C_3315",
-   "type": "CHARACTER",
-   "name": "PON SoC"
-  },
-  {
-   "id": "C_3316",
-   "type": "CHARACTER",
-   "name": "CIS팹리스"
-  },
-  {
-   "id": "C_3317",
-   "type": "CHARACTER",
-   "name": "DP전력관리"
-  },
-  {
-   "id": "C_3318",
-   "type": "CHARACTER",
-   "name": "방송통신SoC"
-  },
-  {
-   "id": "A_2900",
-   "type": "ASSET",
-   "name": "KODEX 반도체",
-   "exposure": {
-    "ticker": "091160",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 2.164677321464703,
-    "return_3d": 10.590399439383313,
-    "return_15d": 4.550536209680756,
-    "return_1m": -13.586584531143053,
-    "return_ytd": 92.98366071774495,
-    "return_1y": 253.17412312865687,
-    "return_3y": null,
-    "close": 126250,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": null,
-    "return_2y": 198.15174540416973
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_1385",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006599"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1386",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006600"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1387",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006601"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1388",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006602"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1389",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006603"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1390",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006604"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1391",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006605"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1392",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006606"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1385",
-   "to": "BF_442",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006612"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1386",
-   "to": "BF_215",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006613"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1386",
-   "to": "BF_445",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006614"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1387",
-   "to": "BF_215",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006615"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1389",
-   "to": "BF_446",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006616"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1390",
-   "to": "BF_445",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006617"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1391",
-   "to": "BF_445",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006618"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1392",
-   "to": "BF_446",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006619"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1732",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006607"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1733",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006608"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1734",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006609"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1735",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006610"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1736",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006611"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1732",
-   "to": "BF_489",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006620"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1733",
-   "to": "BF_490",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006621"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1734",
-   "to": "BF_491",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006622"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1735",
-   "to": "BF_492",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006623"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1736",
-   "to": "BF_493",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006624"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "M_161",
-   "to": "T_217",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_006625"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_308",
-   "to": "T_217",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_006626"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "M_156",
-   "to": "T_217",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_006627"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1385",
-   "to": "C_3306",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006739"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1386",
-   "to": "C_3307",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006740"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1387",
-   "to": "C_3308",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006741"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1388",
-   "to": "C_3309",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006742"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1389",
-   "to": "C_3310",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006743"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1390",
-   "to": "C_3311",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006744"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1391",
-   "to": "C_3312",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006745"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1392",
-   "to": "C_3313",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006746"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1732",
-   "to": "C_3314",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006747"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1733",
-   "to": "C_3315",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006748"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1734",
-   "to": "C_3316",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006749"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1735",
-   "to": "C_3317",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006750"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_1736",
-   "to": "C_3318",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006751"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_1386",
-   "to": "A_1387",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019319"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "LX세미콘와 아나패스는 K-팹리스반도체 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1389",
-   "to": "A_1390",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019320"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "동운아나텍와 텔레칩스는 K-팹리스반도체 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1391",
-   "to": "A_1392",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019321"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "넥스트칩와 어보브반도체는 K-팹리스반도체 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1385",
-   "to": "A_1388",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019322"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "제주반도체와 에이디테크놀로지는 K-팹리스반도체 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1732",
-   "to": "A_1734",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019323"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "라온텍와 픽셀플러스는 K-팹리스반도체 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1735",
-   "to": "A_1387",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019324"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "티엘아이와 아나패스는 K-팹리스반도체 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_2900",
-   "to": "T_217",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020654"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_1385",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006599"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1386",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006600"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1387",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006601"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1388",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006602"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1389",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006603"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1390",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006604"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1391",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006605"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1392",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006606"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1385",
-   "to": "BF_442",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006612"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1386",
-   "to": "BF_215",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006613"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1386",
-   "to": "BF_445",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006614"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1387",
-   "to": "BF_215",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006615"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1389",
-   "to": "BF_446",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006616"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1390",
-   "to": "BF_445",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006617"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1391",
-   "to": "BF_445",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006618"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1392",
-   "to": "BF_446",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006619"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1732",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006607"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1733",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006608"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1734",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006609"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1735",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006610"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1736",
-   "to": "T_217",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006611"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1732",
-   "to": "BF_489",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006620"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1733",
-   "to": "BF_490",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006621"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1734",
-   "to": "BF_491",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006622"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1735",
-   "to": "BF_492",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006623"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1736",
-   "to": "BF_493",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006624"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "M_161",
-   "to": "T_217",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_006625"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_308",
-   "to": "T_217",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_006626"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "M_156",
-   "to": "T_217",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_006627"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1385",
-   "to": "C_3306",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006739"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1386",
-   "to": "C_3307",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006740"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1387",
-   "to": "C_3308",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006741"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1388",
-   "to": "C_3309",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006742"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1389",
-   "to": "C_3310",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006743"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1390",
-   "to": "C_3311",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006744"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1391",
-   "to": "C_3312",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006745"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1392",
-   "to": "C_3313",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006746"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1732",
-   "to": "C_3314",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006747"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1733",
-   "to": "C_3315",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006748"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1734",
-   "to": "C_3316",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006749"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1735",
-   "to": "C_3317",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006750"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_1736",
-   "to": "C_3318",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006751"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_1386",
-   "to": "A_1387",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019319"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "LX세미콘와 아나패스는 K-팹리스반도체 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1389",
-   "to": "A_1390",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019320"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "동운아나텍와 텔레칩스는 K-팹리스반도체 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1391",
-   "to": "A_1392",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019321"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "넥스트칩와 어보브반도체는 K-팹리스반도체 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1385",
-   "to": "A_1388",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019322"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "제주반도체와 에이디테크놀로지는 K-팹리스반도체 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1732",
-   "to": "A_1734",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019323"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "라온텍와 픽셀플러스는 K-팹리스반도체 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_1735",
-   "to": "A_1387",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019324"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "티엘아이와 아나패스는 K-팹리스반도체 내 직접 경쟁 관계"
-  },
-  {
-   "from": "A_2900",
-   "to": "T_217",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020654"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
+  "links": [
+    {
+      "from": "A_1385",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006599"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1386",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006600"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1387",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006601"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1388",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006602"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1389",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006603"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1390",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006604"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1391",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006605"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1392",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006606"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1385",
+      "to": "BF_442",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006612"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1386",
+      "to": "BF_215",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006613"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1386",
+      "to": "BF_445",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006614"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1387",
+      "to": "BF_215",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006615"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1389",
+      "to": "BF_446",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006616"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1390",
+      "to": "BF_445",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006617"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1391",
+      "to": "BF_445",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006618"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1392",
+      "to": "BF_446",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006619"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1732",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006607"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1733",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006608"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1734",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006609"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1735",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006610"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1736",
+      "to": "T_217",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006611"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1732",
+      "to": "BF_489",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006620"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1733",
+      "to": "BF_490",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006621"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1734",
+      "to": "BF_491",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006622"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1735",
+      "to": "BF_492",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006623"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1736",
+      "to": "BF_493",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006624"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "M_161",
+      "to": "T_217",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_006625"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_308",
+      "to": "T_217",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_006626"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "M_156",
+      "to": "T_217",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_006627"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1385",
+      "to": "C_3306",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006739"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1386",
+      "to": "C_3307",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006740"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1387",
+      "to": "C_3308",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006741"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1388",
+      "to": "C_3309",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006742"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1389",
+      "to": "C_3310",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006743"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1390",
+      "to": "C_3311",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006744"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1391",
+      "to": "C_3312",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006745"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1392",
+      "to": "C_3313",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006746"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1732",
+      "to": "C_3314",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006747"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1733",
+      "to": "C_3315",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006748"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1734",
+      "to": "C_3316",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006749"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1735",
+      "to": "C_3317",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006750"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_1736",
+      "to": "C_3318",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006751"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_1386",
+      "to": "A_1387",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019319"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "LX세미콘와 아나패스는 K-팹리스반도체 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1389",
+      "to": "A_1390",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019320"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "동운아나텍와 텔레칩스는 K-팹리스반도체 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1391",
+      "to": "A_1392",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019321"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "넥스트칩와 어보브반도체는 K-팹리스반도체 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1385",
+      "to": "A_1388",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019322"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "제주반도체와 에이디테크놀로지는 K-팹리스반도체 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1732",
+      "to": "A_1734",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019323"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "라온텍와 픽셀플러스는 K-팹리스반도체 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_1735",
+      "to": "A_1387",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019324"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "티엘아이와 아나패스는 K-팹리스반도체 내 직접 경쟁 관계"
+    },
+    {
+      "from": "A_2900",
+      "to": "T_217",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020654"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ]
 }

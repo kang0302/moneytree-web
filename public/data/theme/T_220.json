@@ -1,634 +1,634 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_220",
- "themeName": "미국가치주ETF",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_220",
+  "themeName": "미국가치주ETF",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-05-11T00:00:00+09:00",
+    "notes": "g220 누적 import 기반 미국가치주ETF 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-07-15",
+        "kind": "변경",
+        "title": "자산별 CHR로 교체",
+        "detail": "공통 CHR(중소형/대형)을 삭제하고 ETF별 세부 특성 CHR을 부여했다."
+      },
+      {
+        "date": "2026-07-13",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필 + 2026 이벤트",
+        "detail": "전 엣지 근거를 종목·관계 사실로 구체화하고 2026 이벤트를 추가했다."
+      }
+    ],
+    "description": "• 미국 가치주 캡 사이즈 풀 커버\n• 동인: 가치주투자심리확산·금리인하·주주환원정책\n• 대표주: IWN(러셀2000가치)·VBR(미국중소형가치)·SLYV(S&P600소형가치)"
+  },
+  "nodes": [
+    {
+      "id": "T_220",
+      "type": "THEME",
+      "name": "미국가치주ETF"
+    },
+    {
+      "id": "A_1408",
+      "type": "ASSET",
+      "name": "IWN",
+      "exposure": {
+        "ticker": "IWN",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.5168188906215399,
+        "close": 225.61,
+        "marketCap": 14574495793,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -0.8002462296091029,
+        "return_15d": 1.8095667870036136,
+        "return_1m": 1.4707205181254013,
+        "return_ytd": 24.501959053032387,
+        "return_1y": 35.0392051236009,
+        "return_3y": 58.734960951241845,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -0.14163679015624098,
+        "return_2y": 38.08066589142545
+      }
+    },
+    {
+      "id": "A_1409",
+      "type": "ASSET",
+      "name": "VBR",
+      "exposure": {
+        "ticker": "VBR",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.1116051578479391,
+        "close": 250.14,
+        "marketCap": 69311333373,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -0.6039895096558889,
+        "return_15d": 2.0937920901187734,
+        "return_1m": 2.4660003277076736,
+        "return_ytd": 18.107559374852443,
+        "return_1y": 22.65973618398469,
+        "return_3y": 51.30655698040165,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 0.03999360102382443,
+        "return_2y": 29.284680587140798
+      }
+    },
+    {
+      "id": "A_1410",
+      "type": "ASSET",
+      "name": "SLYV",
+      "exposure": {
+        "ticker": "SLYV",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.41753653444676075,
+        "close": 110.63,
+        "marketCap": 4928791632,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -1.4168597397968274,
+        "return_15d": 2.0760287875991823,
+        "return_1m": 1.2538898041369206,
+        "return_ytd": 21.611520281411444,
+        "return_1y": 29.71039981240473,
+        "return_3y": 44.3878882798225,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -0.2974044700793099,
+        "return_2y": 30.706521739130423
+      }
+    },
+    {
+      "id": "A_1411",
+      "type": "ASSET",
+      "name": "IJJ",
+      "exposure": {
+        "ticker": "IJJ",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.11401743796108921,
+        "close": 148.93,
+        "marketCap": 8883475678,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -1.8065537021164202,
+        "return_15d": 0.6487801581401609,
+        "return_1m": 0.5129243436593267,
+        "return_ytd": 13.177293107378985,
+        "return_1y": 16.982169507501375,
+        "return_3y": 42.027465191684165,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -1.0694831938355187,
+        "return_2y": 23.932761920612467
+      }
+    },
+    {
+      "id": "A_1412",
+      "type": "ASSET",
+      "name": "VTV",
+      "exposure": {
+        "ticker": "VTV",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.27836691410392245,
+        "close": 226.95,
+        "marketCap": 262361589719,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -0.24614302668014565,
+        "return_15d": 3.252957233848952,
+        "return_1m": 4.143722466960353,
+        "return_ytd": 18.828210901094277,
+        "return_1y": 25.29674819190637,
+        "return_3y": 59.37499999999998,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 0.29166114278138533,
+        "return_2y": 34.45701759582913
+      }
+    },
+    {
+      "id": "A_1413",
+      "type": "ASSET",
+      "name": "IWD",
+      "exposure": {
+        "ticker": "IWD",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.7946091224243279,
+        "close": 258.77,
+        "marketCap": 81170821184,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 0.07734849363807417,
+        "return_15d": 3.707117665918558,
+        "return_1m": 4.330121356287542,
+        "return_ytd": 23.02462679471331,
+        "return_1y": 30.06785624528776,
+        "return_3y": 64.75869094613522,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 0.3879427396516366,
+        "return_2y": 40.84254068470037
+      }
+    },
+    {
+      "id": "A_1414",
+      "type": "ASSET",
+      "name": "SPYV",
+      "exposure": {
+        "ticker": "SPYV",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.7731145471757461,
+        "close": 63.87,
+        "marketCap": 37237651290,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 0.14111006585135755,
+        "return_15d": 2.7179157285300626,
+        "return_1m": 3.149224806201545,
+        "return_ytd": 12.427389544094346,
+        "return_1y": 18.059149722735658,
+        "return_3y": 49.96478046489785,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 0.8208366219415897,
+        "return_2y": 24.600078033554418
+      }
+    },
+    {
+      "id": "M_312",
+      "type": "MACRO",
+      "name": "가치주투자심리확산"
+    },
+    {
+      "id": "M_145",
+      "type": "MACRO",
+      "name": "금리인하"
+    },
+    {
+      "id": "M_173",
+      "type": "MACRO",
+      "name": "주주환원정책"
+    },
+    {
+      "id": "C_3343",
+      "type": "CHARACTER",
+      "name": "러셀2000가치"
+    },
+    {
+      "id": "C_3344",
+      "type": "CHARACTER",
+      "name": "미국중소형가치"
+    },
+    {
+      "id": "C_3345",
+      "type": "CHARACTER",
+      "name": "S&P600소형가치"
+    },
+    {
+      "id": "C_3346",
+      "type": "CHARACTER",
+      "name": "S&P400중형가치"
+    },
+    {
+      "id": "C_3347",
+      "type": "CHARACTER",
+      "name": "미국대형가치"
+    },
+    {
+      "id": "C_3348",
+      "type": "CHARACTER",
+      "name": "러셀1000대형가치"
+    },
+    {
+      "id": "C_3349",
+      "type": "CHARACTER",
+      "name": "S&P500대형가치"
+    }
   ],
-  "dataAsOf": "2026-05-11T00:00:00+09:00",
-  "notes": "g220 누적 import 기반 미국가치주ETF 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-07-15",
-    "kind": "변경",
-    "title": "자산별 CHR로 교체",
-    "detail": "공통 CHR(중소형/대형)을 삭제하고 ETF별 세부 특성 CHR을 부여했다."
-   },
-   {
-    "date": "2026-07-13",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필 + 2026 이벤트",
-    "detail": "전 엣지 근거를 종목·관계 사실로 구체화하고 2026 이벤트를 추가했다."
-   }
+  "edges": [
+    {
+      "from": "A_1408",
+      "to": "T_220",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006661"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1409",
+      "to": "T_220",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006662"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1410",
+      "to": "T_220",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006663"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1411",
+      "to": "T_220",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006664"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1412",
+      "to": "T_220",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006665"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1413",
+      "to": "T_220",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006666"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1414",
+      "to": "T_220",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006667"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "M_312",
+      "to": "T_220",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_006675"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_145",
+      "to": "T_220",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_006676"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "M_173",
+      "to": "T_220",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_006677"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1408",
+      "to": "C_3343",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006784"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1409",
+      "to": "C_3344",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006785"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1410",
+      "to": "C_3345",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006786"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1411",
+      "to": "C_3346",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006787"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1412",
+      "to": "C_3347",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006788"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1413",
+      "to": "C_3348",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006789"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1414",
+      "to": "C_3349",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006790"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    }
   ],
-  "description": "• 미국 가치주 캡 사이즈 풀 커버\n• 동인: 가치주투자심리확산·금리인하·주주환원정책\n• 대표주: IWN(러셀2000가치)·VBR(미국중소형가치)·SLYV(S&P600소형가치)"
- },
- "nodes": [
-  {
-   "id": "T_220",
-   "type": "THEME",
-   "name": "미국가치주ETF"
-  },
-  {
-   "id": "A_1408",
-   "type": "ASSET",
-   "name": "IWN",
-   "exposure": {
-    "ticker": "IWN",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.2910437888609563,
-    "close": 227.43,
-    "marketCap": 14692068517,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 1.093479130550734,
-    "return_15d": 2.714298618011024,
-    "return_1m": 3.5655737704918034,
-    "return_ytd": 25.506318635836877,
-    "return_1y": 35.568669527897015,
-    "return_3y": 55.17876637554586,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.8469315360056795,
-    "return_2y": 45.02614462441017
-   }
-  },
-  {
-   "id": "A_1409",
-   "type": "ASSET",
-   "name": "VBR",
-   "exposure": {
-    "ticker": "VBR",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.2629482071713207,
-    "close": 251.66,
-    "marketCap": 69732510421,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 0.8132035412410366,
-    "return_15d": 3.037995414346528,
-    "return_1m": 4.026124338624348,
-    "return_ytd": 18.825251428301627,
-    "return_1y": 23.15145583557623,
-    "return_3y": 47.82659774436089,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.704281712685062,
-    "return_2y": 33.96859196167155
-   }
-  },
-  {
-   "id": "A_1410",
-   "type": "ASSET",
-   "name": "SLYV",
-   "exposure": {
-    "ticker": "SLYV",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.3308001788109083,
-    "close": 112.22,
-    "marketCap": 4999629368,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 1.5198118328206833,
-    "return_15d": 3.5335363040870815,
-    "return_1m": 3.907407407407404,
-    "return_ytd": 23.359349236011862,
-    "return_1y": 31.435933473881473,
-    "return_3y": 42.14059531348955,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.0990990990990879,
-    "return_2y": 37.54136536340238
-   }
-  },
-  {
-   "id": "A_1411",
-   "type": "ASSET",
-   "name": "IJJ",
-   "exposure": {
-    "ticker": "IJJ",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.2578001057641277,
-    "close": 151.67,
-    "marketCap": 9046913021,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 0.8913723142419894,
-    "return_15d": 2.3414304993252255,
-    "return_1m": 3.3315165553890136,
-    "return_ytd": 15.259518200471156,
-    "return_1y": 19.218676308756464,
-    "return_3y": 39.556496135443474,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.8310065150910706,
-    "return_2y": 30.088343768762304
-   }
-  },
-  {
-   "id": "A_1412",
-   "type": "ASSET",
-   "name": "VTV",
-   "exposure": {
-    "ticker": "VTV",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.20259854657562748,
-    "close": 227.51,
-    "marketCap": 263008967953,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 0.9585089860217444,
-    "return_15d": 2.9363858474346083,
-    "return_1m": 4.075937785910333,
-    "return_ytd": 19.1214199696319,
-    "return_1y": 26.06527400676013,
-    "return_3y": 56.54716851303927,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.4265971200570604,
-    "return_2y": 37.66791722134819
-   }
-  },
-  {
-   "id": "A_1413",
-   "type": "ASSET",
-   "name": "IWD",
-   "exposure": {
-    "ticker": "IWD",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.05025125628140836,
-    "close": 258.57,
-    "marketCap": 81108085302,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 0.2520161290322509,
-    "return_15d": 4.16129552046407,
-    "return_1m": 4.951901611397491,
-    "return_ytd": 22.92954264524103,
-    "return_1y": 30.157052250075502,
-    "return_3y": 60.8622620380739,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.39214163690013404,
-    "return_2y": 43.993985632343936
-   }
-  },
-  {
-   "id": "A_1414",
-   "type": "ASSET",
-   "name": "SPYV",
-   "exposure": {
-    "ticker": "SPYV",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.10987286140322627,
-    "close": 63.78,
-    "marketCap": 37185179259,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 0.7582938388625671,
-    "return_15d": 2.9706167258637395,
-    "return_1m": 3.606237816764124,
-    "return_ytd": 12.268966731209296,
-    "return_1y": 17.762186115214185,
-    "return_3y": 45.483576642335755,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.0136205258156394,
-    "return_2y": 26.925373134328368
-   }
-  },
-  {
-   "id": "M_312",
-   "type": "MACRO",
-   "name": "가치주투자심리확산"
-  },
-  {
-   "id": "M_145",
-   "type": "MACRO",
-   "name": "금리인하"
-  },
-  {
-   "id": "M_173",
-   "type": "MACRO",
-   "name": "주주환원정책"
-  },
-  {
-   "id": "C_3343",
-   "type": "CHARACTER",
-   "name": "러셀2000가치"
-  },
-  {
-   "id": "C_3344",
-   "type": "CHARACTER",
-   "name": "미국중소형가치"
-  },
-  {
-   "id": "C_3345",
-   "type": "CHARACTER",
-   "name": "S&P600소형가치"
-  },
-  {
-   "id": "C_3346",
-   "type": "CHARACTER",
-   "name": "S&P400중형가치"
-  },
-  {
-   "id": "C_3347",
-   "type": "CHARACTER",
-   "name": "미국대형가치"
-  },
-  {
-   "id": "C_3348",
-   "type": "CHARACTER",
-   "name": "러셀1000대형가치"
-  },
-  {
-   "id": "C_3349",
-   "type": "CHARACTER",
-   "name": "S&P500대형가치"
-  }
- ],
- "edges": [
-  {
-   "from": "A_1408",
-   "to": "T_220",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006661"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1409",
-   "to": "T_220",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006662"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1410",
-   "to": "T_220",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006663"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1411",
-   "to": "T_220",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006664"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1412",
-   "to": "T_220",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006665"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1413",
-   "to": "T_220",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006666"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1414",
-   "to": "T_220",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006667"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "M_312",
-   "to": "T_220",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_006675"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_145",
-   "to": "T_220",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_006676"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "M_173",
-   "to": "T_220",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_006677"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1408",
-   "to": "C_3343",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006784"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1409",
-   "to": "C_3344",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006785"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1410",
-   "to": "C_3345",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006786"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1411",
-   "to": "C_3346",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006787"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1412",
-   "to": "C_3347",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006788"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1413",
-   "to": "C_3348",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006789"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1414",
-   "to": "C_3349",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006790"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_1408",
-   "to": "T_220",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006661"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1409",
-   "to": "T_220",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006662"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1410",
-   "to": "T_220",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006663"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1411",
-   "to": "T_220",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006664"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1412",
-   "to": "T_220",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006665"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1413",
-   "to": "T_220",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006666"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1414",
-   "to": "T_220",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_006667"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "M_312",
-   "to": "T_220",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_006675"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_145",
-   "to": "T_220",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_006676"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "M_173",
-   "to": "T_220",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_006677"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1408",
-   "to": "C_3343",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006784"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1409",
-   "to": "C_3344",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006785"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1410",
-   "to": "C_3345",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006786"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1411",
-   "to": "C_3346",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006787"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1412",
-   "to": "C_3347",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006788"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1413",
-   "to": "C_3348",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006789"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1414",
-   "to": "C_3349",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006790"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  }
- ]
+  "links": [
+    {
+      "from": "A_1408",
+      "to": "T_220",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006661"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1409",
+      "to": "T_220",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006662"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1410",
+      "to": "T_220",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006663"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1411",
+      "to": "T_220",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006664"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1412",
+      "to": "T_220",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006665"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1413",
+      "to": "T_220",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006666"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1414",
+      "to": "T_220",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_006667"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "M_312",
+      "to": "T_220",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_006675"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_145",
+      "to": "T_220",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_006676"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "M_173",
+      "to": "T_220",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_006677"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1408",
+      "to": "C_3343",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006784"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1409",
+      "to": "C_3344",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006785"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1410",
+      "to": "C_3345",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006786"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1411",
+      "to": "C_3346",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006787"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1412",
+      "to": "C_3347",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006788"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1413",
+      "to": "C_3348",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006789"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1414",
+      "to": "C_3349",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006790"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    }
+  ]
 }

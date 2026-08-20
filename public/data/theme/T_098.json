@@ -1,1005 +1,1005 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_098",
- "themeName": "빅머니-베일리기프트",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_098",
+  "themeName": "빅머니-베일리기프트",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-04-02T00:00:00+09:00",
+    "notes": "g98 누적 import 기반 빅머니-베일리기프트 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-07-10",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "베일리기프트 성장주에 사업 정체성(이커머스·핀테크·스트리밍·AI·우주) 기반 CHR 정의."
+      },
+      {
+        "date": "2026-07-10",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필 + 2026 이벤트",
+        "detail": "전 엣지의 근거를 종목별 사업·제품·관계 사실로 구체화하고, 이벤트 DB에 2026 핵심 변동요인 2건을 추가했다."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ],
+    "description": "• 펀드 리밸런싱·신규 편입·집중 매도 시그널이 트리거\n• 동인: 위험자산선호심리·AI확산·IT섹터밸류에이션\n• 대표주: PDD홀딩스(테무초저가이커머스)·아마존(이커머스AWS광고플)·쿠팡(한국이커머스1위물류)\n• ETF: IBUY"
+  },
+  "nodes": [
+    {
+      "id": "T_098",
+      "type": "THEME",
+      "name": "빅머니-베일리기프트"
+    },
+    {
+      "id": "A_748",
+      "type": "ASSET",
+      "name": "PDD홀딩스",
+      "exposure": {
+        "ticker": "PDD",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 3.3573965853099574,
+        "close": 90.2,
+        "marketCap": 128390359700,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 6.380469394975807,
+        "return_15d": 2.1286231884058093,
+        "return_1m": 7.20228191110055,
+        "return_ytd": -20.45153893641415,
+        "return_1y": -24.246241706559157,
+        "return_3y": 17.173291764094568,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 1.302785265049411,
+        "return_2y": -40.30838462047516
+      }
+    },
+    {
+      "id": "A_211",
+      "type": "ASSET",
+      "name": "아마존",
+      "exposure": {
+        "ticker": "AMZN",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 2.462902293312763,
+        "close": 265.84,
+        "marketCap": 2859667464000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 1.2145440700552124,
+        "return_15d": 17.290977277741003,
+        "return_1m": 7.527403632245266,
+        "return_ytd": 15.171995494324575,
+        "return_1y": 16.59137757115916,
+        "return_3y": 99.54961717459838,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -0.5387608500448948,
+        "return_2y": 49.16395466277632
+      }
+    },
+    {
+      "id": "A_019",
+      "type": "ASSET",
+      "name": "쿠팡",
+      "exposure": {
+        "ticker": "CPNG",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 6.931964056482665,
+        "close": 16.66,
+        "marketCap": 29946544705,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 3.3498759305210957,
+        "return_15d": 9.894459102902363,
+        "return_1m": 0.24067388688326918,
+        "return_ytd": -29.37685459940653,
+        "return_1y": -42.253032928942815,
+        "return_3y": -7.2899276572064515,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 2.083333333333326,
+        "return_2y": -29.37685459940653
+      }
+    },
+    {
+      "id": "A_366",
+      "type": "ASSET",
+      "name": "씨그룹",
+      "exposure": {
+        "ticker": "SE",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 2.442800619301555,
+        "close": 119.1,
+        "marketCap": 71501599963,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -2.329014269312779,
+        "return_15d": 9.901264187505765,
+        "return_1m": 14.46419990389236,
+        "return_ytd": -6.639492043583917,
+        "return_1y": -33.55648535564853,
+        "return_3y": 207.91106514994829,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -7.033018499726806,
+        "return_2y": 44.83765049252095
+      }
+    },
+    {
+      "id": "A_350",
+      "type": "ASSET",
+      "name": "소파이",
+      "exposure": {
+        "ticker": "SOFI",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 4.303510758776907,
+        "close": 18.42,
+        "marketCap": 23628070800,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 0.7107709130672601,
+        "return_15d": 20.786885245901644,
+        "return_1m": 6.597222222222232,
+        "return_ytd": -29.640947288006103,
+        "return_1y": -19.03296703296703,
+        "return_3y": 124.08759124087592,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 2.6755852842809347,
+        "return_2y": 146.91689008042897
+      }
+    },
+    {
+      "id": "A_367",
+      "type": "ASSET",
+      "name": "메르카도리브레",
+      "exposure": {
+        "ticker": "MELI",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 7.279359690637044,
+        "close": 1908.65,
+        "marketCap": 96763176424,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 3.473419423391788,
+        "return_15d": 2.433304173755313,
+        "return_1m": 5.222971371236729,
+        "return_ytd": -5.243116578793194,
+        "return_1y": -18.536112747232103,
+        "return_3y": 59.10852874732202,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 4.395363973986632,
+        "return_2y": -5.885108481262325
+      }
+    },
+    {
+      "id": "A_749",
+      "type": "ASSET",
+      "name": "스포티파이",
+      "exposure": {
+        "ticker": "SPOT",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 3.3102192608662095,
+        "close": 533.37,
+        "marketCap": 109652447421,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 4.007254007253991,
+        "return_15d": 1.7862254537127198,
+        "return_1m": 11.551010164386998,
+        "return_ytd": -8.152089683318698,
+        "return_1y": -25.853895878223398,
+        "return_3y": 304.4665200576326,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 8.939950980392153,
+        "return_2y": 54.73904087731005
+      }
+    },
+    {
+      "id": "A_278",
+      "type": "ASSET",
+      "name": "클라우드플레어",
+      "exposure": {
+        "ticker": "NET",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -3.1457393151048674,
+        "close": 292.02,
+        "marketCap": 103649441843,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -7.568560390145029,
+        "return_15d": 7.951771580738209,
+        "return_1m": 5.121371461499669,
+        "return_ytd": 48.04970834390056,
+        "return_1y": 48.531881329194434,
+        "return_3y": 394.8796202102408,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -6.283512602343877,
+        "return_2y": 247.18686808611872
+      }
+    },
+    {
+      "id": "A_055",
+      "type": "ASSET",
+      "name": "엔비디아",
+      "exposure": {
+        "ticker": "NVDA",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.9920815509238179,
+        "close": 217.56,
+        "marketCap": 5269520760000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -3.3753775093266936,
+        "return_15d": 14.49923688226935,
+        "return_1m": 7.2728169222424865,
+        "return_ytd": 16.65415549597855,
+        "return_1y": 23.86700068321568,
+        "return_3y": 402.4480369515012,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -2.9140077647373808,
+        "return_2y": 67.35384615384616
+      }
+    },
+    {
+      "id": "A_118",
+      "type": "ASSET",
+      "name": "로켓랩",
+      "exposure": {
+        "ticker": "RKLB",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -4.19403739262253,
+        "close": 75.84,
+        "marketCap": 43901309304,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -5.495327102803738,
+        "return_15d": 29.419795221843014,
+        "return_1m": 12.156166814551895,
+        "return_ytd": 8.715596330275233,
+        "return_1y": 85.33724340175952,
+        "return_3y": 1194.1979522184301,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -6.566465442897618,
+        "return_2y": 954.798331015299
+      }
+    },
+    {
+      "id": "A_365",
+      "type": "ASSET",
+      "name": "Nu홀딩스",
+      "exposure": {
+        "ticker": "NU",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.8118466898954688,
+        "close": 14.61,
+        "marketCap": 70757983200,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -4.0709126723571964,
+        "return_15d": 4.059829059829068,
+        "return_1m": 7.505518763796903,
+        "return_ytd": -12.724014336917556,
+        "return_1y": 11.356707317073166,
+        "return_3y": 102.63522884882109,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 7.743362831858391,
+        "return_2y": 1.107266435986154
+      }
+    },
+    {
+      "id": "C_092",
+      "type": "CHARACTER",
+      "name": "구조적성장테마주"
+    },
+    {
+      "id": "M_302",
+      "type": "MACRO",
+      "name": "위험자산선호심리"
+    },
+    {
+      "id": "M_055",
+      "type": "MACRO",
+      "name": "AI확산"
+    },
+    {
+      "id": "M_065",
+      "type": "MACRO",
+      "name": "IT섹터밸류에이션"
+    },
+    {
+      "id": "C_2071",
+      "type": "CHARACTER",
+      "name": "테무초저가이커머스"
+    },
+    {
+      "id": "C_2072",
+      "type": "CHARACTER",
+      "name": "이커머스AWS광고플랫폼"
+    },
+    {
+      "id": "C_2073",
+      "type": "CHARACTER",
+      "name": "한국이커머스1위물류"
+    },
+    {
+      "id": "C_2074",
+      "type": "CHARACTER",
+      "name": "동남아쇼피핀테크게임"
+    },
+    {
+      "id": "C_2075",
+      "type": "CHARACTER",
+      "name": "미국디지털뱅킹핀테크"
+    },
+    {
+      "id": "C_2076",
+      "type": "CHARACTER",
+      "name": "중남미이커머스핀테크1위"
+    },
+    {
+      "id": "C_2077",
+      "type": "CHARACTER",
+      "name": "글로벌음악스트리밍1위"
+    },
+    {
+      "id": "C_2078",
+      "type": "CHARACTER",
+      "name": "엣지네트워크보안AI"
+    },
+    {
+      "id": "C_2079",
+      "type": "CHARACTER",
+      "name": "AI가속기1위성장핵심"
+    },
+    {
+      "id": "C_2080",
+      "type": "CHARACTER",
+      "name": "소형발사체위성우주"
+    },
+    {
+      "id": "C_2081",
+      "type": "CHARACTER",
+      "name": "중남미디지털뱅크1위"
+    },
+    {
+      "id": "A_800",
+      "type": "ASSET",
+      "name": "IBUY",
+      "exposure": {
+        "ticker": "IBUY",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 3.1818813394469903,
+        "close": 74.26,
+        "marketCap": 111730334,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 0.9790590155017709,
+        "return_15d": 3.1102471535684684,
+        "return_1m": 4.341717015596469,
+        "return_ytd": -0.2418054809242287,
+        "return_1y": 1.3511669168827734,
+        "return_3y": 59.73327597332761,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 1.726027397260288,
+        "return_2y": 32.37076648841355
+      }
+    }
   ],
-  "dataAsOf": "2026-04-02T00:00:00+09:00",
-  "notes": "g98 누적 import 기반 빅머니-베일리기프트 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-07-10",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "베일리기프트 성장주에 사업 정체성(이커머스·핀테크·스트리밍·AI·우주) 기반 CHR 정의."
-   },
-   {
-    "date": "2026-07-10",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필 + 2026 이벤트",
-    "detail": "전 엣지의 근거를 종목별 사업·제품·관계 사실로 구체화하고, 이벤트 DB에 2026 핵심 변동요인 2건을 추가했다."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_748",
+      "to": "T_098",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002893"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_211",
+      "to": "T_098",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002894"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_019",
+      "to": "T_098",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002895"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_366",
+      "to": "T_098",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002896"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_350",
+      "to": "T_098",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002897"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_367",
+      "to": "T_098",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002898"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_749",
+      "to": "T_098",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002899"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_278",
+      "to": "T_098",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002900"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_055",
+      "to": "T_098",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002901"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_118",
+      "to": "T_098",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002902"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_365",
+      "to": "T_098",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002903"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "T_098",
+      "to": "C_092",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002904"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_302",
+      "to": "T_098",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002905"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_055",
+      "to": "T_098",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002906"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_065",
+      "to": "T_098",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002907"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_748",
+      "to": "C_2071",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003011"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_211",
+      "to": "C_2072",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003012"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_019",
+      "to": "C_2073",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003013"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_366",
+      "to": "C_2074",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003014"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_350",
+      "to": "C_2075",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003015"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_367",
+      "to": "C_2076",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003016"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_749",
+      "to": "C_2077",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003017"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_278",
+      "to": "C_2078",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003018"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_055",
+      "to": "C_2079",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003019"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_118",
+      "to": "C_2080",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003020"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_365",
+      "to": "C_2081",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003021"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_800",
+      "to": "T_098",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020598"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ],
-  "description": "• 펀드 리밸런싱·신규 편입·집중 매도 시그널이 트리거\n• 동인: 위험자산선호심리·AI확산·IT섹터밸류에이션\n• 대표주: PDD홀딩스(테무초저가이커머스)·아마존(이커머스AWS광고플)·쿠팡(한국이커머스1위물류)\n• ETF: IBUY"
- },
- "nodes": [
-  {
-   "id": "T_098",
-   "type": "THEME",
-   "name": "빅머니-베일리기프트"
-  },
-  {
-   "id": "A_748",
-   "type": "ASSET",
-   "name": "PDD홀딩스",
-   "exposure": {
-    "ticker": "PDD",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.7366044909112635,
-    "close": 84.79,
-    "marketCap": 120689784911,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -6.309392265193359,
-    "return_15d": 2.576820711347705,
-    "return_1m": 1.0487427005124728,
-    "return_ytd": -25.22268277625892,
-    "return_1y": -26.102492591947,
-    "return_3y": 4.100675260896258,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -7.595902353966865,
-    "return_2y": -40.28032117199605
-   }
-  },
-  {
-   "id": "A_211",
-   "type": "ASSET",
-   "name": "아마존",
-   "exposure": {
-    "ticker": "AMZN",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.9353901859465275,
-    "close": 262.65,
-    "marketCap": 2825352315000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -3.5332574282880946,
-    "return_15d": 13.157554607729072,
-    "return_1m": 6.125500020202823,
-    "return_ytd": 13.789966207434357,
-    "return_1y": 13.711143821975913,
-    "return_3y": 86.8464110407626,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -4.309967939376291,
-    "return_2y": 54.40917107583773
-   }
-  },
-  {
-   "id": "A_019",
-   "type": "ASSET",
-   "name": "쿠팡",
-   "exposure": {
-    "ticker": "CPNG",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -1.0435850214855602,
-    "close": 16.12,
-    "marketCap": 28975888394,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -2.3030303030302957,
-    "return_15d": 4.0000000000000036,
-    "return_1m": -9.131905298759847,
-    "return_ytd": -31.66596015260703,
-    "return_1y": -43.09918813978114,
-    "return_3y": -15.997915581031785,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.6777572396795994,
-    "return_2y": -27.223476297968386
-   }
-  },
-  {
-   "id": "A_366",
-   "type": "ASSET",
-   "name": "씨그룹",
-   "exposure": {
-    "ticker": "SE",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -1.1190398962049874,
-    "close": 121.94,
-    "marketCap": 73206591935,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -7.277013154893163,
-    "return_15d": 21.940000000000005,
-    "return_1m": 11.574709488516778,
-    "return_ytd": -4.413263306420001,
-    "return_1y": -29.923567611056832,
-    "return_3y": 114.30579964850614,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 7.502424402715313,
-    "return_2y": 58.77604166666668
-   }
-  },
-  {
-   "id": "A_350",
-   "type": "ASSET",
-   "name": "소파이",
-   "exposure": {
-    "ticker": "SOFI",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.7596310363537695,
-    "close": 18.29,
-    "marketCap": 23461314600,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 1.724137931034475,
-    "return_15d": 11.11786148238152,
-    "return_1m": -1.401617250673859,
-    "return_ytd": -30.137509549274256,
-    "return_1y": -21.468441391155004,
-    "return_3y": 110.71428571428572,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.4896626768226331,
-    "return_2y": 176.7019667170953
-   }
-  },
-  {
-   "id": "A_367",
-   "type": "ASSET",
-   "name": "메르카도리브레",
-   "exposure": {
-    "ticker": "MELI",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.8932038834951417,
-    "close": 1844.58,
-    "marketCap": 93515007974,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -4.91855670103093,
-    "return_15d": 2.3947508659738714,
-    "return_1m": -1.5636006574593964,
-    "return_ytd": -8.423937326859498,
-    "return_1y": -20.48538667126477,
-    "return_3y": 42.27161941196434,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.3121399030038061,
-    "return_2y": -2.8437192202552475
-   }
-  },
-  {
-   "id": "A_749",
-   "type": "ASSET",
-   "name": "스포티파이",
-   "exposure": {
-    "ticker": "SPOT",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 2.9263005780346907,
-    "close": 512.82,
-    "marketCap": 105427692008,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 2.3592814371257598,
-    "return_15d": 6.248705092611773,
-    "return_1m": 6.602087057747474,
-    "return_ytd": -11.690861187167433,
-    "return_1y": -26.58267716535432,
-    "return_3y": 267.9294016358158,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 5.055926578440628,
-    "return_2y": 53.37819650067295
-   }
-  },
-  {
-   "id": "A_278",
-   "type": "ASSET",
-   "name": "클라우드플레어",
-   "exposure": {
-    "ticker": "NET",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -4.549164223317115,
-    "close": 315.67,
-    "marketCap": 112043761751,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 2.8699872951754024,
-    "return_15d": 20.45775319473584,
-    "return_1m": 12.07808340727594,
-    "return_ytd": 60.172457519655076,
-    "return_1y": 61.62350291739174,
-    "return_3y": 381.0786106032906,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 5.1653511839344635,
-    "return_2y": 287.65038055487355
-   }
-  },
-  {
-   "id": "A_055",
-   "type": "ASSET",
-   "name": "엔비디아",
-   "exposure": {
-    "ticker": "NVDA",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.062139369729252714,
-    "close": 225.16,
-    "marketCap": 5453600360000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 3.5218390804597766,
-    "return_15d": 8.857087603945079,
-    "return_1m": 6.30783758262512,
-    "return_ytd": 20.72922252010723,
-    "return_1y": 23.7006922316229,
-    "return_3y": 414.6514285714286,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.5358099660653703,
-    "return_2y": 90.68428184281842
-   }
-  },
-  {
-   "id": "A_118",
-   "type": "ASSET",
-   "name": "로켓랩",
-   "exposure": {
-    "ticker": "RKLB",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.18726591760300781,
-    "close": 80.25,
-    "marketCap": 46454114869,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 0.29996250468691255,
-    "return_15d": 25.5672038804569,
-    "return_1m": 1.8271792919680285,
-    "return_ytd": 15.037270642201817,
-    "return_1y": 87.4562018220042,
-    "return_3y": 1171.7908082408876,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -3.1148134733792077,
-    "return_2y": 1449.2277992277993
-   }
-  },
-  {
-   "id": "A_365",
-   "type": "ASSET",
-   "name": "Nu홀딩스",
-   "exposure": {
-    "ticker": "NU",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 9.332376166547029,
-    "close": 15.23,
-    "marketCap": 73760717600,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 11.575091575091578,
-    "return_15d": 8.090844570617461,
-    "return_1m": 8.86347390993567,
-    "return_ytd": -9.020310633213846,
-    "return_1y": 26.810990840965875,
-    "return_3y": 91.81360201511335,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 10.043352601156075,
-    "return_2y": 13.826606875934221
-   }
-  },
-  {
-   "id": "C_092",
-   "type": "CHARACTER",
-   "name": "구조적성장테마주"
-  },
-  {
-   "id": "M_302",
-   "type": "MACRO",
-   "name": "위험자산선호심리"
-  },
-  {
-   "id": "M_055",
-   "type": "MACRO",
-   "name": "AI확산"
-  },
-  {
-   "id": "M_065",
-   "type": "MACRO",
-   "name": "IT섹터밸류에이션"
-  },
-  {
-   "id": "C_2071",
-   "type": "CHARACTER",
-   "name": "테무초저가이커머스"
-  },
-  {
-   "id": "C_2072",
-   "type": "CHARACTER",
-   "name": "이커머스AWS광고플랫폼"
-  },
-  {
-   "id": "C_2073",
-   "type": "CHARACTER",
-   "name": "한국이커머스1위물류"
-  },
-  {
-   "id": "C_2074",
-   "type": "CHARACTER",
-   "name": "동남아쇼피핀테크게임"
-  },
-  {
-   "id": "C_2075",
-   "type": "CHARACTER",
-   "name": "미국디지털뱅킹핀테크"
-  },
-  {
-   "id": "C_2076",
-   "type": "CHARACTER",
-   "name": "중남미이커머스핀테크1위"
-  },
-  {
-   "id": "C_2077",
-   "type": "CHARACTER",
-   "name": "글로벌음악스트리밍1위"
-  },
-  {
-   "id": "C_2078",
-   "type": "CHARACTER",
-   "name": "엣지네트워크보안AI"
-  },
-  {
-   "id": "C_2079",
-   "type": "CHARACTER",
-   "name": "AI가속기1위성장핵심"
-  },
-  {
-   "id": "C_2080",
-   "type": "CHARACTER",
-   "name": "소형발사체위성우주"
-  },
-  {
-   "id": "C_2081",
-   "type": "CHARACTER",
-   "name": "중남미디지털뱅크1위"
-  },
-  {
-   "id": "A_800",
-   "type": "ASSET",
-   "name": "IBUY",
-   "exposure": {
-    "ticker": "IBUY",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.08152173913041905,
-    "close": 73.5385,
-    "marketCap": 110644777,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -0.027188689505164287,
-    "return_15d": 7.766705744431435,
-    "return_1m": 3.8114059853190385,
-    "return_ytd": -1.2090274046211547,
-    "return_1y": 0.14980253302465663,
-    "return_3y": 49.86142810564069,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -1.394475730758904,
-    "return_2y": 38.78090205699189
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_748",
-   "to": "T_098",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002893"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_211",
-   "to": "T_098",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002894"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_019",
-   "to": "T_098",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002895"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_366",
-   "to": "T_098",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002896"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_350",
-   "to": "T_098",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002897"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_367",
-   "to": "T_098",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002898"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_749",
-   "to": "T_098",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002899"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_278",
-   "to": "T_098",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002900"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_055",
-   "to": "T_098",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002901"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_118",
-   "to": "T_098",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002902"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_365",
-   "to": "T_098",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002903"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "T_098",
-   "to": "C_092",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002904"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_302",
-   "to": "T_098",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002905"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_055",
-   "to": "T_098",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002906"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_065",
-   "to": "T_098",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002907"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_748",
-   "to": "C_2071",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003011"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_211",
-   "to": "C_2072",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003012"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_019",
-   "to": "C_2073",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003013"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_366",
-   "to": "C_2074",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003014"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_350",
-   "to": "C_2075",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003015"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_367",
-   "to": "C_2076",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003016"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_749",
-   "to": "C_2077",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003017"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_278",
-   "to": "C_2078",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003018"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_055",
-   "to": "C_2079",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003019"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_118",
-   "to": "C_2080",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003020"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_365",
-   "to": "C_2081",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003021"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_800",
-   "to": "T_098",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020598"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_748",
-   "to": "T_098",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002893"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_211",
-   "to": "T_098",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002894"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_019",
-   "to": "T_098",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002895"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_366",
-   "to": "T_098",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002896"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_350",
-   "to": "T_098",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002897"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_367",
-   "to": "T_098",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002898"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_749",
-   "to": "T_098",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002899"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_278",
-   "to": "T_098",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002900"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_055",
-   "to": "T_098",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002901"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_118",
-   "to": "T_098",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002902"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_365",
-   "to": "T_098",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002903"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "T_098",
-   "to": "C_092",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002904"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_302",
-   "to": "T_098",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002905"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_055",
-   "to": "T_098",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002906"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_065",
-   "to": "T_098",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002907"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_748",
-   "to": "C_2071",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003011"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_211",
-   "to": "C_2072",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003012"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_019",
-   "to": "C_2073",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003013"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_366",
-   "to": "C_2074",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003014"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_350",
-   "to": "C_2075",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003015"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_367",
-   "to": "C_2076",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003016"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_749",
-   "to": "C_2077",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003017"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_278",
-   "to": "C_2078",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003018"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_055",
-   "to": "C_2079",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003019"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_118",
-   "to": "C_2080",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003020"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_365",
-   "to": "C_2081",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003021"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_800",
-   "to": "T_098",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020598"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
+  "links": [
+    {
+      "from": "A_748",
+      "to": "T_098",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002893"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_211",
+      "to": "T_098",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002894"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_019",
+      "to": "T_098",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002895"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_366",
+      "to": "T_098",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002896"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_350",
+      "to": "T_098",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002897"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_367",
+      "to": "T_098",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002898"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_749",
+      "to": "T_098",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002899"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_278",
+      "to": "T_098",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002900"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_055",
+      "to": "T_098",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002901"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_118",
+      "to": "T_098",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002902"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_365",
+      "to": "T_098",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002903"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "T_098",
+      "to": "C_092",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002904"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_302",
+      "to": "T_098",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002905"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_055",
+      "to": "T_098",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002906"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_065",
+      "to": "T_098",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002907"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_748",
+      "to": "C_2071",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003011"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_211",
+      "to": "C_2072",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003012"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_019",
+      "to": "C_2073",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003013"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_366",
+      "to": "C_2074",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003014"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_350",
+      "to": "C_2075",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003015"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_367",
+      "to": "C_2076",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003016"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_749",
+      "to": "C_2077",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003017"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_278",
+      "to": "C_2078",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003018"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_055",
+      "to": "C_2079",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003019"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_118",
+      "to": "C_2080",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003020"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_365",
+      "to": "C_2081",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003021"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_800",
+      "to": "T_098",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020598"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ]
 }

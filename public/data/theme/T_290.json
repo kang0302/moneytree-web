@@ -1,1136 +1,1136 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_290",
- "themeName": "K-결제인프라",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_290",
+  "themeName": "K-결제인프라",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-06-04T00:00:00+09:00",
+    "description": "• 이커머스 확산(M_324)·가상자산 결제 확산(M_325)이 상방 드라이버\n• 동인: 이커머스확대·가상자산결제확산\n• 대표주: 카카오페이(간편결제1위)·헥토파이낸셜(전자결제)·NHN KCP(PG)\n• 밸류체인: VAN오프라인카드·카드플랫폼·ATMVAN·결제금융데이터",
+    "notes": "T_290 K-결제인프라 — G290 그래프 모델 기반, BF 6 layer (VAN/카드/ATM/데이터/소액/PG)",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-07-10",
+        "kind": "변경",
+        "title": "매크로는 테마에만 연결",
+        "detail": "개별 자산·BF에 직접 걸려 있던 매크로 IMPACTS 엣지를 테마 레벨로 정리(repoint 1, 중복제거 0)했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_290",
+      "type": "THEME",
+      "name": "K-결제인프라"
+    },
+    {
+      "id": "A_515",
+      "type": "ASSET",
+      "name": "카카오페이",
+      "exposure": {
+        "ticker": "377300",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -3.7339556592765444,
+        "return_15d": -1.6686531585220488,
+        "return_3d": -7.718120805369133,
+        "return_1m": 3.9042821158690177,
+        "return_ytd": -18.799212598425196,
+        "return_1y": -33.252427184466015,
+        "return_3y": -4.444444444444439,
+        "close": 41250,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 7.499999999999996,
+        "return_2y": 45.502645502645514
+      }
+    },
+    {
+      "id": "A_517",
+      "type": "ASSET",
+      "name": "헥토파이낸셜",
+      "exposure": {
+        "ticker": "234340",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 15.633423180592999,
+        "return_15d": 41.11842105263157,
+        "return_3d": 2.3866348448687402,
+        "return_1m": 30.87248322147651,
+        "return_ytd": 30.078835657974533,
+        "return_1y": 30.233828920106554,
+        "return_3y": 94.59892223964542,
+        "close": 21450,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 20.402298850574716,
+        "return_2y": 75.91134501223924
+      }
+    },
+    {
+      "id": "A_518",
+      "type": "ASSET",
+      "name": "NHN KCP",
+      "exposure": {
+        "ticker": "060250",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 9.171597633136086,
+        "return_15d": 31.316725978647696,
+        "return_3d": -2.8308097432521384,
+        "return_1m": 27.241379310344826,
+        "return_ytd": -3.90625,
+        "return_1y": -0.39701708500897714,
+        "return_3y": 64.6910016794037,
+        "close": 14760,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 16.57712970069072,
+        "return_2y": 66.38023377572625
+      }
+    },
+    {
+      "id": "A_1818",
+      "type": "ASSET",
+      "name": "KG이니시스",
+      "exposure": {
+        "ticker": "035600",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.29970029970030065,
+        "return_15d": 10.694597574421172,
+        "return_3d": -1.1811023622047223,
+        "return_1m": 8.073196986006458,
+        "return_ytd": -1.2782694198623434,
+        "return_1y": 1.912104545253479,
+        "return_3y": 4.5916754373718005,
+        "close": 10040,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 0.8937437934458892,
+        "return_2y": 3.8224639176091424
+      }
+    },
+    {
+      "id": "A_520",
+      "type": "ASSET",
+      "name": "다날",
+      "exposure": {
+        "ticker": "064260",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 9.580193756727674,
+        "return_15d": 15.41950113378685,
+        "return_3d": 0.5928853754940677,
+        "return_1m": 29.024081115335875,
+        "return_ytd": -30.65395095367848,
+        "return_1y": -37.160493827160494,
+        "return_3y": 31.770833333333325,
+        "close": 5090,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 11.45374449339207,
+        "return_2y": 30.848329048843183
+      }
+    },
+    {
+      "id": "A_1811",
+      "type": "ASSET",
+      "name": "쿠콘(비)",
+      "exposure": {
+        "ticker": "",
+        "exchange": "",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": null,
+        "return_15d": null,
+        "return_3d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "returnsAsOf": null,
+        "returnsSource": null,
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "쿠콘은 마이데이터·결제 API 기업이다(비상장)"
+    },
+    {
+      "id": "A_1812",
+      "type": "ASSET",
+      "name": "갤럭시아머니트리",
+      "exposure": {
+        "ticker": "094480",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 10.060362173038229,
+        "return_15d": 25.891829689298042,
+        "return_3d": 3.402646502835549,
+        "return_1m": 18.91304347826086,
+        "return_ytd": -40.67245119305857,
+        "return_1y": -45.99412722170362,
+        "return_3y": 6.815115312065911,
+        "close": 5470,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 3.522504892367917,
+        "return_2y": -40.8417291843594
+      }
+    },
+    {
+      "id": "A_1813",
+      "type": "ASSET",
+      "name": "KIS정보통신(비)",
+      "exposure": {
+        "ticker": "",
+        "exchange": "",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": null,
+        "return_15d": null,
+        "return_3d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "returnsAsOf": null,
+        "returnsSource": null,
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "KIS정보통신은 카드 VAN(밴) 기업이다(비상장)"
+    },
+    {
+      "id": "A_1814",
+      "type": "ASSET",
+      "name": "나이스정보통신",
+      "exposure": {
+        "ticker": "030190",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -2.28013029315961,
+        "return_15d": 6.382978723404253,
+        "return_3d": -1.1206328279498967,
+        "return_1m": 6.534090909090917,
+        "return_ytd": -5.282803039005057,
+        "return_1y": -0.9140408893007046,
+        "return_3y": 69.0191984189431,
+        "close": 15000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 5.099337748344368,
+        "return_2y": 51.026892251172626
+      }
+    },
+    {
+      "id": "A_1815",
+      "type": "ASSET",
+      "name": "한국전자금융",
+      "exposure": {
+        "ticker": "063570",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -1.0526315789473717,
+        "return_15d": 10.588235294117654,
+        "return_3d": -1.7910447761193993,
+        "return_1m": 5.958132045088571,
+        "return_ytd": -16.39425126871724,
+        "return_1y": -24.045670207269666,
+        "return_3y": -41.43254969443788,
+        "close": 3290,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 3.3950617283950546,
+        "return_2y": -28.858290601816915
+      }
+    },
+    {
+      "id": "A_1816",
+      "type": "ASSET",
+      "name": "코나아이",
+      "exposure": {
+        "ticker": "052400",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 3.979460847240057,
+        "return_15d": 14.245416078984485,
+        "return_3d": 1.3767209011264159,
+        "return_1m": 0.746268656716409,
+        "return_ytd": -10.535089233671592,
+        "return_1y": -19.907603671316,
+        "return_3y": 170.58737454617687,
+        "close": 40500,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": -3.5024154589372025,
+        "return_2y": 178.05773118375438
+      }
+    },
+    {
+      "id": "A_1817",
+      "type": "ASSET",
+      "name": "한국정보통신",
+      "exposure": {
+        "ticker": "025770",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 2.1248339973439556,
+        "return_15d": 3.918918918918912,
+        "return_3d": -4.472049689440993,
+        "return_1m": -1.029601029601035,
+        "return_ytd": 0.0,
+        "return_1y": -9.497566620235808,
+        "return_3y": -6.321691543979114,
+        "close": 7690,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 0.0,
+        "return_2y": -3.949941857240158
+      }
+    },
+    {
+      "id": "BF_523",
+      "type": "BUSINESS_FIELD",
+      "name": "VAN오프라인카드"
+    },
+    {
+      "id": "BF_524",
+      "type": "BUSINESS_FIELD",
+      "name": "카드플랫폼"
+    },
+    {
+      "id": "BF_525",
+      "type": "BUSINESS_FIELD",
+      "name": "ATMVAN"
+    },
+    {
+      "id": "BF_526",
+      "type": "BUSINESS_FIELD",
+      "name": "결제금융데이터"
+    },
+    {
+      "id": "BF_527",
+      "type": "BUSINESS_FIELD",
+      "name": "휴대폰소액결제"
+    },
+    {
+      "id": "BF_528",
+      "type": "BUSINESS_FIELD",
+      "name": "PG온라인전자지급"
+    },
+    {
+      "id": "M_146",
+      "type": "MACRO",
+      "name": "이커머스확대"
+    },
+    {
+      "id": "M_325",
+      "type": "MACRO",
+      "name": "가상자산결제확산"
+    },
+    {
+      "id": "C_4278",
+      "type": "CHARACTER",
+      "name": "간편결제1위"
+    },
+    {
+      "id": "C_4279",
+      "type": "CHARACTER",
+      "name": "전자결제·PG"
+    },
+    {
+      "id": "C_4280",
+      "type": "CHARACTER",
+      "name": "PG(NHN KCP)"
+    },
+    {
+      "id": "C_4281",
+      "type": "CHARACTER",
+      "name": "PG1위(이니시스)"
+    },
+    {
+      "id": "C_4282",
+      "type": "CHARACTER",
+      "name": "휴대폰·간편결제"
+    },
+    {
+      "id": "C_4283",
+      "type": "CHARACTER",
+      "name": "마이데이터·API"
+    },
+    {
+      "id": "C_4284",
+      "type": "CHARACTER",
+      "name": "간편결제·상품권"
+    },
+    {
+      "id": "C_4285",
+      "type": "CHARACTER",
+      "name": "VAN(밴)"
+    },
+    {
+      "id": "C_4286",
+      "type": "CHARACTER",
+      "name": "VAN·PG(나이스)"
+    },
+    {
+      "id": "C_4287",
+      "type": "CHARACTER",
+      "name": "현금자동화·결제"
+    },
+    {
+      "id": "C_4288",
+      "type": "CHARACTER",
+      "name": "결제카드·IC"
+    },
+    {
+      "id": "C_4289",
+      "type": "CHARACTER",
+      "name": "VAN·결제"
+    }
   ],
-  "dataAsOf": "2026-06-04T00:00:00+09:00",
-  "description": "• 이커머스 확산(M_324)·가상자산 결제 확산(M_325)이 상방 드라이버\n• 동인: 이커머스확대·가상자산결제확산\n• 대표주: 카카오페이(간편결제1위)·헥토파이낸셜(전자결제)·NHN KCP(PG)\n• 밸류체인: VAN오프라인카드·카드플랫폼·ATMVAN·결제금융데이터",
-  "notes": "T_290 K-결제인프라 — G290 그래프 모델 기반, BF 6 layer (VAN/카드/ATM/데이터/소액/PG)",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-07-10",
-    "kind": "변경",
-    "title": "매크로는 테마에만 연결",
-    "detail": "개별 자산·BF에 직접 걸려 있던 매크로 IMPACTS 엣지를 테마 레벨로 정리(repoint 1, 중복제거 0)했다."
-   }
+  "edges": [
+    {
+      "from": "A_515",
+      "to": "T_290",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009209"
+      ]
+    },
+    {
+      "from": "A_517",
+      "to": "T_290",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009211"
+      ]
+    },
+    {
+      "from": "A_518",
+      "to": "T_290",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009213"
+      ]
+    },
+    {
+      "from": "A_1818",
+      "to": "T_290",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009215"
+      ]
+    },
+    {
+      "from": "A_520",
+      "to": "T_290",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009217"
+      ]
+    },
+    {
+      "from": "A_1811",
+      "to": "T_290",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009219"
+      ]
+    },
+    {
+      "from": "A_1812",
+      "to": "T_290",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009221"
+      ]
+    },
+    {
+      "from": "A_1813",
+      "to": "T_290",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009223"
+      ]
+    },
+    {
+      "from": "A_1814",
+      "to": "T_290",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009225"
+      ]
+    },
+    {
+      "from": "A_1815",
+      "to": "T_290",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009227"
+      ]
+    },
+    {
+      "from": "A_1816",
+      "to": "T_290",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009229"
+      ]
+    },
+    {
+      "from": "A_1817",
+      "to": "T_290",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009231"
+      ]
+    },
+    {
+      "from": "A_1813",
+      "to": "BF_523",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015864"
+      ]
+    },
+    {
+      "from": "A_1814",
+      "to": "BF_523",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015865"
+      ]
+    },
+    {
+      "from": "A_1817",
+      "to": "BF_523",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015866"
+      ]
+    },
+    {
+      "from": "A_1816",
+      "to": "BF_524",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015867"
+      ]
+    },
+    {
+      "from": "A_1815",
+      "to": "BF_525",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015868"
+      ]
+    },
+    {
+      "from": "A_1811",
+      "to": "BF_526",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015869"
+      ]
+    },
+    {
+      "from": "A_1812",
+      "to": "BF_527",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015870"
+      ]
+    },
+    {
+      "from": "A_520",
+      "to": "BF_527",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015871"
+      ]
+    },
+    {
+      "from": "A_1818",
+      "to": "BF_528",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015872"
+      ]
+    },
+    {
+      "from": "A_518",
+      "to": "BF_528",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015873"
+      ]
+    },
+    {
+      "from": "A_517",
+      "to": "BF_528",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015874"
+      ]
+    },
+    {
+      "from": "A_1814",
+      "to": "A_1817",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_015875"
+      ]
+    },
+    {
+      "from": "M_146",
+      "to": "T_290",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_009233"
+      ]
+    },
+    {
+      "from": "M_325",
+      "to": "T_290",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_009234"
+      ]
+    },
+    {
+      "from": "A_515",
+      "to": "C_4278",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_009210"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_517",
+      "to": "C_4279",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_009212"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_518",
+      "to": "C_4280",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_009214"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1818",
+      "to": "C_4281",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_009216"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_520",
+      "to": "C_4282",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_009218"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1811",
+      "to": "C_4283",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_009220"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1812",
+      "to": "C_4284",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_009222"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1813",
+      "to": "C_4285",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_009224"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1814",
+      "to": "C_4286",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_009226"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1815",
+      "to": "C_4287",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_009228"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1816",
+      "to": "C_4288",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_009230"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1817",
+      "to": "C_4289",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_009232"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_515",
+      "to": "T_290",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009209"
+      ]
+    },
+    {
+      "from": "A_517",
+      "to": "T_290",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009211"
+      ]
+    },
+    {
+      "from": "A_518",
+      "to": "T_290",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009213"
+      ]
+    },
+    {
+      "from": "A_1818",
+      "to": "T_290",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009215"
+      ]
+    },
+    {
+      "from": "A_520",
+      "to": "T_290",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009217"
+      ]
+    },
+    {
+      "from": "A_1811",
+      "to": "T_290",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009219"
+      ]
+    },
+    {
+      "from": "A_1812",
+      "to": "T_290",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009221"
+      ]
+    },
+    {
+      "from": "A_1813",
+      "to": "T_290",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009223"
+      ]
+    },
+    {
+      "from": "A_1814",
+      "to": "T_290",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009225"
+      ]
+    },
+    {
+      "from": "A_1815",
+      "to": "T_290",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009227"
+      ]
+    },
+    {
+      "from": "A_1816",
+      "to": "T_290",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009229"
+      ]
+    },
+    {
+      "from": "A_1817",
+      "to": "T_290",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009231"
+      ]
+    },
+    {
+      "from": "A_1813",
+      "to": "BF_523",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015864"
+      ]
+    },
+    {
+      "from": "A_1814",
+      "to": "BF_523",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015865"
+      ]
+    },
+    {
+      "from": "A_1817",
+      "to": "BF_523",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015866"
+      ]
+    },
+    {
+      "from": "A_1816",
+      "to": "BF_524",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015867"
+      ]
+    },
+    {
+      "from": "A_1815",
+      "to": "BF_525",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015868"
+      ]
+    },
+    {
+      "from": "A_1811",
+      "to": "BF_526",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015869"
+      ]
+    },
+    {
+      "from": "A_1812",
+      "to": "BF_527",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015870"
+      ]
+    },
+    {
+      "from": "A_520",
+      "to": "BF_527",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015871"
+      ]
+    },
+    {
+      "from": "A_1818",
+      "to": "BF_528",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015872"
+      ]
+    },
+    {
+      "from": "A_518",
+      "to": "BF_528",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015873"
+      ]
+    },
+    {
+      "from": "A_517",
+      "to": "BF_528",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015874"
+      ]
+    },
+    {
+      "from": "A_1814",
+      "to": "A_1817",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_015875"
+      ]
+    },
+    {
+      "from": "M_146",
+      "to": "T_290",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_009233"
+      ]
+    },
+    {
+      "from": "M_325",
+      "to": "T_290",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_009234"
+      ]
+    },
+    {
+      "from": "A_515",
+      "to": "C_4278",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_009210"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_517",
+      "to": "C_4279",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_009212"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_518",
+      "to": "C_4280",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_009214"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1818",
+      "to": "C_4281",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_009216"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_520",
+      "to": "C_4282",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_009218"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1811",
+      "to": "C_4283",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_009220"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1812",
+      "to": "C_4284",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_009222"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1813",
+      "to": "C_4285",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_009224"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1814",
+      "to": "C_4286",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_009226"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1815",
+      "to": "C_4287",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_009228"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1816",
+      "to": "C_4288",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_009230"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1817",
+      "to": "C_4289",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_009232"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_290",
-   "type": "THEME",
-   "name": "K-결제인프라"
-  },
-  {
-   "id": "A_515",
-   "type": "ASSET",
-   "name": "카카오페이",
-   "exposure": {
-    "ticker": "377300",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.0067114093959662,
-    "return_15d": 7.756563245823389,
-    "return_3d": 0.556792873051215,
-    "return_1m": 11.34401972872996,
-    "return_ytd": -11.12204724409449,
-    "return_1y": -25.740131578947366,
-    "return_3y": -4.444444444444439,
-    "close": 45150,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 7.499999999999996,
-    "return_2y": 60.676156583629904
-   }
-  },
-  {
-   "id": "A_517",
-   "type": "ASSET",
-   "name": "헥토파이낸셜",
-   "exposure": {
-    "ticker": "234340",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 2.6960784313725394,
-    "return_15d": 26.280892103676923,
-    "return_3d": 2.6960784313725394,
-    "return_1m": 19.78273299028015,
-    "return_ytd": 27.046694966646445,
-    "return_1y": 25.248104837745423,
-    "return_3y": 94.59892223964542,
-    "close": 20950,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 20.402298850574716,
-    "return_2y": 67.40544139600955
-   }
-  },
-  {
-   "id": "A_518",
-   "type": "ASSET",
-   "name": "NHN KCP",
-   "exposure": {
-    "ticker": "060250",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 4.326923076923084,
-    "return_15d": 21.81234963913392,
-    "return_3d": 3.1228784792939557,
-    "return_1m": 18.486739469578772,
-    "return_ytd": -1.106770833333337,
-    "return_1y": 4.586714032307149,
-    "return_3y": 64.6910016794037,
-    "close": 15190,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 16.57712970069072,
-    "return_2y": 66.66858498294543
-   }
-  },
-  {
-   "id": "A_1818",
-   "type": "ASSET",
-   "name": "KG이니시스",
-   "exposure": {
-    "ticker": "035600",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.6000000000000014,
-    "return_15d": 7.3995771670190225,
-    "return_3d": -1.9305019305019266,
-    "return_1m": 6.72268907563025,
-    "return_ytd": -0.0983284169124854,
-    "return_1y": 4.229433439986585,
-    "return_3y": 4.5916754373718005,
-    "close": 10160,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 0.8937437934458892,
-    "return_2y": 3.3410202710429493
-   }
-  },
-  {
-   "id": "A_520",
-   "type": "ASSET",
-   "name": "다날",
-   "exposure": {
-    "ticker": "064260",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.7968127490039834,
-    "return_15d": 16.055045871559635,
-    "return_3d": 2.8455284552845628,
-    "return_1m": 19.905213270142184,
-    "return_ytd": -31.062670299727525,
-    "return_1y": -34.114583333333336,
-    "return_3y": 31.770833333333325,
-    "close": 5060,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 11.45374449339207,
-    "return_2y": 28.42639593908629
-   }
-  },
-  {
-   "id": "A_1811",
-   "type": "ASSET",
-   "name": "쿠콘(비)",
-   "exposure": {
-    "ticker": "",
-    "exchange": "",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": null,
-    "return_15d": null,
-    "return_3d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "returnsAsOf": null,
-    "returnsSource": null,
-    "return_5d": null,
-    "return_2y": null
-   },
-   "coreBiz": "쿠콘은 마이데이터·결제 API 기업이다(비상장)"
-  },
-  {
-   "id": "A_1812",
-   "type": "ASSET",
-   "name": "갤럭시아머니트리",
-   "exposure": {
-    "ticker": "094480",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.1472275334607929,
-    "return_15d": 5.800000000000005,
-    "return_3d": -0.7504690431519689,
-    "return_1m": 4.960317460317465,
-    "return_ytd": -42.624728850325376,
-    "return_1y": -44.7309450164217,
-    "return_3y": 6.815115312065911,
-    "close": 5290,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 3.522504892367917,
-    "return_2y": -35.936752305302036
-   }
-  },
-  {
-   "id": "A_1813",
-   "type": "ASSET",
-   "name": "KIS정보통신(비)",
-   "exposure": {
-    "ticker": "",
-    "exchange": "",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": null,
-    "return_15d": null,
-    "return_3d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "returnsAsOf": null,
-    "returnsSource": null,
-    "return_5d": null,
-    "return_2y": null
-   },
-   "coreBiz": "KIS정보통신은 카드 VAN(밴) 기업이다(비상장)"
-  },
-  {
-   "id": "A_1814",
-   "type": "ASSET",
-   "name": "나이스정보통신",
-   "exposure": {
-    "ticker": "030190",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 4.614370468028994,
-    "return_15d": 8.25375170532061,
-    "return_3d": 1.6005121638924535,
-    "return_1m": 14.502164502164504,
-    "return_ytd": 0.21079438473265988,
-    "return_1y": 2.9208976699733435,
-    "return_3y": 69.0191984189431,
-    "close": 15870,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 5.099337748344368,
-    "return_2y": 60.23825034854848
-   }
-  },
-  {
-   "id": "A_1815",
-   "type": "ASSET",
-   "name": "한국전자금융",
-   "exposure": {
-    "ticker": "063570",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.7518796992481258,
-    "return_15d": 8.943089430894302,
-    "return_3d": 1.2084592145015005,
-    "return_1m": 6.687898089171984,
-    "return_ytd": -14.869526367842777,
-    "return_1y": -22.139095182841107,
-    "return_3y": -41.43254969443788,
-    "close": 3350,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 3.3950617283950546,
-    "return_2y": -27.704602126486044
-   }
-  },
-  {
-   "id": "A_1816",
-   "type": "ASSET",
-   "name": "코나아이",
-   "exposure": {
-    "ticker": "052400",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -3.033980582524276,
-    "return_15d": -0.24968789013732895,
-    "return_3d": -7.736720554272514,
-    "return_1m": -6.876456876456871,
-    "return_ytd": -11.750044811979754,
-    "return_1y": -18.98929889397215,
-    "return_3y": 170.58737454617687,
-    "close": 39950,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": -3.5024154589372025,
-    "return_2y": 173.92818398401903
-   }
-  },
-  {
-   "id": "A_1817",
-   "type": "ASSET",
-   "name": "한국정보통신",
-   "exposure": {
-    "ticker": "025770",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 2.4173027989821794,
-    "return_15d": 3.7371134020618646,
-    "return_3d": -1.58924205378973,
-    "return_1m": -2.895054282267795,
-    "return_ytd": 4.681404421326407,
-    "return_1y": -0.5294539144866439,
-    "return_3y": -6.321691543979114,
-    "close": 8050,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 0.0,
-    "return_2y": -1.1173408824163178
-   }
-  },
-  {
-   "id": "BF_523",
-   "type": "BUSINESS_FIELD",
-   "name": "VAN오프라인카드"
-  },
-  {
-   "id": "BF_524",
-   "type": "BUSINESS_FIELD",
-   "name": "카드플랫폼"
-  },
-  {
-   "id": "BF_525",
-   "type": "BUSINESS_FIELD",
-   "name": "ATMVAN"
-  },
-  {
-   "id": "BF_526",
-   "type": "BUSINESS_FIELD",
-   "name": "결제금융데이터"
-  },
-  {
-   "id": "BF_527",
-   "type": "BUSINESS_FIELD",
-   "name": "휴대폰소액결제"
-  },
-  {
-   "id": "BF_528",
-   "type": "BUSINESS_FIELD",
-   "name": "PG온라인전자지급"
-  },
-  {
-   "id": "M_146",
-   "type": "MACRO",
-   "name": "이커머스확대"
-  },
-  {
-   "id": "M_325",
-   "type": "MACRO",
-   "name": "가상자산결제확산"
-  },
-  {
-   "id": "C_4278",
-   "type": "CHARACTER",
-   "name": "간편결제1위"
-  },
-  {
-   "id": "C_4279",
-   "type": "CHARACTER",
-   "name": "전자결제·PG"
-  },
-  {
-   "id": "C_4280",
-   "type": "CHARACTER",
-   "name": "PG(NHN KCP)"
-  },
-  {
-   "id": "C_4281",
-   "type": "CHARACTER",
-   "name": "PG1위(이니시스)"
-  },
-  {
-   "id": "C_4282",
-   "type": "CHARACTER",
-   "name": "휴대폰·간편결제"
-  },
-  {
-   "id": "C_4283",
-   "type": "CHARACTER",
-   "name": "마이데이터·API"
-  },
-  {
-   "id": "C_4284",
-   "type": "CHARACTER",
-   "name": "간편결제·상품권"
-  },
-  {
-   "id": "C_4285",
-   "type": "CHARACTER",
-   "name": "VAN(밴)"
-  },
-  {
-   "id": "C_4286",
-   "type": "CHARACTER",
-   "name": "VAN·PG(나이스)"
-  },
-  {
-   "id": "C_4287",
-   "type": "CHARACTER",
-   "name": "현금자동화·결제"
-  },
-  {
-   "id": "C_4288",
-   "type": "CHARACTER",
-   "name": "결제카드·IC"
-  },
-  {
-   "id": "C_4289",
-   "type": "CHARACTER",
-   "name": "VAN·결제"
-  }
- ],
- "edges": [
-  {
-   "from": "A_515",
-   "to": "T_290",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009209"
-   ]
-  },
-  {
-   "from": "A_517",
-   "to": "T_290",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009211"
-   ]
-  },
-  {
-   "from": "A_518",
-   "to": "T_290",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009213"
-   ]
-  },
-  {
-   "from": "A_1818",
-   "to": "T_290",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009215"
-   ]
-  },
-  {
-   "from": "A_520",
-   "to": "T_290",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009217"
-   ]
-  },
-  {
-   "from": "A_1811",
-   "to": "T_290",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009219"
-   ]
-  },
-  {
-   "from": "A_1812",
-   "to": "T_290",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009221"
-   ]
-  },
-  {
-   "from": "A_1813",
-   "to": "T_290",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009223"
-   ]
-  },
-  {
-   "from": "A_1814",
-   "to": "T_290",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009225"
-   ]
-  },
-  {
-   "from": "A_1815",
-   "to": "T_290",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009227"
-   ]
-  },
-  {
-   "from": "A_1816",
-   "to": "T_290",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009229"
-   ]
-  },
-  {
-   "from": "A_1817",
-   "to": "T_290",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009231"
-   ]
-  },
-  {
-   "from": "A_1813",
-   "to": "BF_523",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015864"
-   ]
-  },
-  {
-   "from": "A_1814",
-   "to": "BF_523",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015865"
-   ]
-  },
-  {
-   "from": "A_1817",
-   "to": "BF_523",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015866"
-   ]
-  },
-  {
-   "from": "A_1816",
-   "to": "BF_524",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015867"
-   ]
-  },
-  {
-   "from": "A_1815",
-   "to": "BF_525",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015868"
-   ]
-  },
-  {
-   "from": "A_1811",
-   "to": "BF_526",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015869"
-   ]
-  },
-  {
-   "from": "A_1812",
-   "to": "BF_527",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015870"
-   ]
-  },
-  {
-   "from": "A_520",
-   "to": "BF_527",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015871"
-   ]
-  },
-  {
-   "from": "A_1818",
-   "to": "BF_528",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015872"
-   ]
-  },
-  {
-   "from": "A_518",
-   "to": "BF_528",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015873"
-   ]
-  },
-  {
-   "from": "A_517",
-   "to": "BF_528",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015874"
-   ]
-  },
-  {
-   "from": "A_1814",
-   "to": "A_1817",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_015875"
-   ]
-  },
-  {
-   "from": "M_146",
-   "to": "T_290",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_009233"
-   ]
-  },
-  {
-   "from": "M_325",
-   "to": "T_290",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_009234"
-   ]
-  },
-  {
-   "from": "A_515",
-   "to": "C_4278",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_009210"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_517",
-   "to": "C_4279",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_009212"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_518",
-   "to": "C_4280",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_009214"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1818",
-   "to": "C_4281",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_009216"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_520",
-   "to": "C_4282",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_009218"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1811",
-   "to": "C_4283",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_009220"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1812",
-   "to": "C_4284",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_009222"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1813",
-   "to": "C_4285",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_009224"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1814",
-   "to": "C_4286",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_009226"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1815",
-   "to": "C_4287",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_009228"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1816",
-   "to": "C_4288",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_009230"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1817",
-   "to": "C_4289",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_009232"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_515",
-   "to": "T_290",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009209"
-   ]
-  },
-  {
-   "from": "A_517",
-   "to": "T_290",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009211"
-   ]
-  },
-  {
-   "from": "A_518",
-   "to": "T_290",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009213"
-   ]
-  },
-  {
-   "from": "A_1818",
-   "to": "T_290",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009215"
-   ]
-  },
-  {
-   "from": "A_520",
-   "to": "T_290",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009217"
-   ]
-  },
-  {
-   "from": "A_1811",
-   "to": "T_290",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009219"
-   ]
-  },
-  {
-   "from": "A_1812",
-   "to": "T_290",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009221"
-   ]
-  },
-  {
-   "from": "A_1813",
-   "to": "T_290",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009223"
-   ]
-  },
-  {
-   "from": "A_1814",
-   "to": "T_290",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009225"
-   ]
-  },
-  {
-   "from": "A_1815",
-   "to": "T_290",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009227"
-   ]
-  },
-  {
-   "from": "A_1816",
-   "to": "T_290",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009229"
-   ]
-  },
-  {
-   "from": "A_1817",
-   "to": "T_290",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009231"
-   ]
-  },
-  {
-   "from": "A_1813",
-   "to": "BF_523",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015864"
-   ]
-  },
-  {
-   "from": "A_1814",
-   "to": "BF_523",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015865"
-   ]
-  },
-  {
-   "from": "A_1817",
-   "to": "BF_523",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015866"
-   ]
-  },
-  {
-   "from": "A_1816",
-   "to": "BF_524",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015867"
-   ]
-  },
-  {
-   "from": "A_1815",
-   "to": "BF_525",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015868"
-   ]
-  },
-  {
-   "from": "A_1811",
-   "to": "BF_526",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015869"
-   ]
-  },
-  {
-   "from": "A_1812",
-   "to": "BF_527",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015870"
-   ]
-  },
-  {
-   "from": "A_520",
-   "to": "BF_527",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015871"
-   ]
-  },
-  {
-   "from": "A_1818",
-   "to": "BF_528",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015872"
-   ]
-  },
-  {
-   "from": "A_518",
-   "to": "BF_528",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015873"
-   ]
-  },
-  {
-   "from": "A_517",
-   "to": "BF_528",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015874"
-   ]
-  },
-  {
-   "from": "A_1814",
-   "to": "A_1817",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_015875"
-   ]
-  },
-  {
-   "from": "M_146",
-   "to": "T_290",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_009233"
-   ]
-  },
-  {
-   "from": "M_325",
-   "to": "T_290",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_009234"
-   ]
-  },
-  {
-   "from": "A_515",
-   "to": "C_4278",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_009210"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_517",
-   "to": "C_4279",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_009212"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_518",
-   "to": "C_4280",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_009214"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1818",
-   "to": "C_4281",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_009216"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_520",
-   "to": "C_4282",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_009218"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1811",
-   "to": "C_4283",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_009220"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1812",
-   "to": "C_4284",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_009222"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1813",
-   "to": "C_4285",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_009224"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1814",
-   "to": "C_4286",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_009226"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1815",
-   "to": "C_4287",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_009228"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1816",
-   "to": "C_4288",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_009230"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1817",
-   "to": "C_4289",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_009232"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  }
- ]
 }

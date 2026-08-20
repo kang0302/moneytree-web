@@ -1,730 +1,730 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_542",
- "themeName": "(Y22) 곡물·식량안보",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_542",
+  "themeName": "(Y22) 곡물·식량안보",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-25T00:00:00+09:00",
+    "description": "• 곡물가인상·비료가상승 수혜\n• 동인: 곡물가인상·비료가상승·식량안보\n• 대표주: Nutrien(비료 1위)·Mosaic(인산)·아처대니얼스미들랜드(곡물 메이저)\n• ETF: VanEck Agribusiness ETF",
+    "notes": "T_542 신규 회고((Y22)). 자산별 CHARACTER, MACRO 3(재사용)",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-25",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 이벤트 추가."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_542",
+      "type": "THEME",
+      "name": "(Y22) 곡물·식량안보"
+    },
+    {
+      "id": "A_1447",
+      "type": "ASSET",
+      "name": "Nutrien",
+      "exposure": {
+        "ticker": "NTR",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.5850144092218965,
+        "return_3d": 3.3118405627198255,
+        "return_15d": -0.12749681257968604,
+        "return_1m": 4.785969084423303,
+        "return_ytd": 14.2255346727155,
+        "return_1y": 24.14157422081353,
+        "return_3y": 14.690092728160087,
+        "close": 70.5,
+        "marketCap": 33841660134,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 4.9419470080380945,
+        "return_2y": 48.922686945500615
+      }
+    },
+    {
+      "id": "C_1455",
+      "type": "CHARACTER",
+      "name": "비료 1위"
+    },
+    {
+      "id": "A_1443",
+      "type": "ASSET",
+      "name": "Mosaic",
+      "exposure": {
+        "ticker": "MOS",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 5.1561021759697345,
+        "return_3d": 2.8690421101342123,
+        "return_15d": -1.7241379310344862,
+        "return_1m": 0.451875282422054,
+        "return_ytd": -7.721046077210458,
+        "return_1y": -31.0483870967742,
+        "return_3y": -43.735763097949885,
+        "close": 22.23,
+        "marketCap": 7065730896,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -1.6371681415929262,
+        "return_2y": -20.46511627906976
+      }
+    },
+    {
+      "id": "C_1456",
+      "type": "CHARACTER",
+      "name": "인산·칼륨 비료"
+    },
+    {
+      "id": "A_1642",
+      "type": "ASSET",
+      "name": "아처대니얼스미들랜드",
+      "exposure": {
+        "ticker": "ADM",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -2.049727107337773,
+        "return_3d": 0.3853325046612843,
+        "return_15d": 0.47275441652152583,
+        "return_1m": -5.983701979045398,
+        "return_ytd": 40.47660462689164,
+        "return_1y": 34.68979319546366,
+        "return_3y": -2.4990945309670276,
+        "close": 80.76,
+        "marketCap": 38922847320,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 1.2918600275931391,
+        "return_2y": 35.32171581769439
+      }
+    },
+    {
+      "id": "C_1457",
+      "type": "CHARACTER",
+      "name": "곡물 메이저"
+    },
+    {
+      "id": "A_1641",
+      "type": "ASSET",
+      "name": "코르테바",
+      "exposure": {
+        "ticker": "CTVA",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.8471313053523222,
+        "return_3d": 2.464788732394352,
+        "return_15d": -13.191912495856828,
+        "return_1m": -10.000000000000009,
+        "return_ytd": 17.216171863344766,
+        "return_1y": 8.522099447513787,
+        "return_3y": 54.78723404255319,
+        "close": 78.57,
+        "marketCap": 52549187400,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 4.024890771878709,
+        "return_2y": 44.66948996501563
+      }
+    },
+    {
+      "id": "C_1458",
+      "type": "CHARACTER",
+      "name": "종자·작물보호"
+    },
+    {
+      "id": "A_378",
+      "type": "ASSET",
+      "name": "디어앤컴퍼니",
+      "exposure": {
+        "ticker": "DE",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.374167685826888,
+        "return_3d": -4.634967561796833,
+        "return_15d": -4.962762910221796,
+        "return_1m": -2.7811265153037334,
+        "return_ytd": 24.71379169620036,
+        "return_1y": 18.631497221314163,
+        "return_3y": 46.24704045136265,
+        "close": 580.63,
+        "marketCap": 156733767078,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -6.315245978346806,
+        "return_2y": 55.702448311925124
+      }
+    },
+    {
+      "id": "C_1459",
+      "type": "CHARACTER",
+      "name": "농기계 1위"
+    },
+    {
+      "id": "A_2547",
+      "type": "ASSET",
+      "name": "벙기",
+      "exposure": {
+        "ticker": "BG",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.31479538300105414,
+        "return_3d": 0.27267129914680943,
+        "return_15d": 5.771015030617921,
+        "return_1m": -4.322282836760394,
+        "return_ytd": 27.974854063762923,
+        "return_1y": 42.73193940152746,
+        "return_3y": 1.3063183151159619,
+        "close": 114.0,
+        "marketCap": 21901580022,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 2.0134228187919545,
+        "return_2y": 18.441558441558435
+      }
+    },
+    {
+      "id": "C_1460",
+      "type": "CHARACTER",
+      "name": "곡물·식용유"
+    },
+    {
+      "id": "A_726",
+      "type": "ASSET",
+      "name": "팜스코",
+      "exposure": {
+        "ticker": "036580",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -1.5686274509803977,
+        "return_3d": -6.168224299065416,
+        "return_15d": 3.5051546391752675,
+        "return_1m": -9.22242314647378,
+        "return_ytd": 6.133331033073097,
+        "return_1y": -12.045215066970039,
+        "return_3y": -22.305502561629954,
+        "close": 2510,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 6.589147286821695,
+        "return_2y": -5.16403014484097
+      }
+    },
+    {
+      "id": "C_1461",
+      "type": "CHARACTER",
+      "name": "국내 사료·축산"
+    },
+    {
+      "id": "M_046",
+      "type": "MACRO",
+      "name": "곡물가인상"
+    },
+    {
+      "id": "M_264",
+      "type": "MACRO",
+      "name": "비료가상승"
+    },
+    {
+      "id": "M_344",
+      "type": "MACRO",
+      "name": "식량안보"
+    },
+    {
+      "id": "A_382",
+      "type": "ASSET",
+      "name": "VanEck Agribusiness ETF",
+      "exposure": {
+        "ticker": "MOO",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.9588199139520581,
+        "close": 82.13,
+        "marketCap": 579833776,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 0.9340051616074652,
+        "return_15d": -1.510972538673705,
+        "return_1m": -0.4846722403974435,
+        "return_ytd": 12.83143288913311,
+        "return_1y": 11.076548552880716,
+        "return_3y": -0.07300158170093773,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 1.1453201970443194,
+        "return_2y": 13.345293955285676
+      }
+    }
   ],
-  "dataAsOf": "2026-07-25T00:00:00+09:00",
-  "description": "• 곡물가인상·비료가상승 수혜\n• 동인: 곡물가인상·비료가상승·식량안보\n• 대표주: Nutrien(비료 1위)·Mosaic(인산)·아처대니얼스미들랜드(곡물 메이저)\n• ETF: VanEck Agribusiness ETF",
-  "notes": "T_542 신규 회고((Y22)). 자산별 CHARACTER, MACRO 3(재사용)",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-25",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 이벤트 추가."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_1447",
+      "to": "T_542",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012789"
+      ]
+    },
+    {
+      "from": "A_1447",
+      "to": "C_1455",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017539"
+      ]
+    },
+    {
+      "from": "A_1443",
+      "to": "T_542",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012790"
+      ]
+    },
+    {
+      "from": "A_1443",
+      "to": "C_1456",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017540"
+      ]
+    },
+    {
+      "from": "A_1642",
+      "to": "T_542",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012791"
+      ]
+    },
+    {
+      "from": "A_1642",
+      "to": "C_1457",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017541"
+      ]
+    },
+    {
+      "from": "A_1641",
+      "to": "T_542",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012792"
+      ]
+    },
+    {
+      "from": "A_1641",
+      "to": "C_1458",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017542"
+      ]
+    },
+    {
+      "from": "A_378",
+      "to": "T_542",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012793"
+      ]
+    },
+    {
+      "from": "A_378",
+      "to": "C_1459",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017543"
+      ]
+    },
+    {
+      "from": "A_2547",
+      "to": "T_542",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012794"
+      ]
+    },
+    {
+      "from": "A_2547",
+      "to": "C_1460",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017544"
+      ]
+    },
+    {
+      "from": "A_726",
+      "to": "T_542",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012795"
+      ]
+    },
+    {
+      "from": "A_726",
+      "to": "C_1461",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017545"
+      ]
+    },
+    {
+      "from": "M_046",
+      "to": "T_542",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012796"
+      ]
+    },
+    {
+      "from": "M_264",
+      "to": "T_542",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012797"
+      ]
+    },
+    {
+      "from": "M_344",
+      "to": "T_542",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012798"
+      ]
+    },
+    {
+      "from": "A_1447",
+      "to": "A_1443",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020115"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "Nutrien과 Mosaic은 글로벌 비료 시장 경쟁"
+    },
+    {
+      "from": "A_1642",
+      "to": "A_2547",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020116"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "아처대니얼스미들랜드와 벙기는 글로벌 곡물 트레이딩 시장 직접 경쟁"
+    },
+    {
+      "from": "A_1641",
+      "to": "A_1447",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020117"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "코르테바와 Nutrien은 종자·작물보호 시장 경쟁"
+    },
+    {
+      "from": "A_378",
+      "to": "A_1641",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_020118"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "디어앤컴퍼니는 코르테바 등과 정밀농업 솔루션 연계"
+    },
+    {
+      "from": "A_1642",
+      "to": "A_726",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_020119"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "아처대니얼스미들랜드는 팜스코 등 사료업체에 곡물 원료를 공급"
+    },
+    {
+      "from": "A_382",
+      "to": "T_542",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020889"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_1447",
+      "to": "T_542",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012789"
+      ]
+    },
+    {
+      "from": "A_1447",
+      "to": "C_1455",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017539"
+      ]
+    },
+    {
+      "from": "A_1443",
+      "to": "T_542",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012790"
+      ]
+    },
+    {
+      "from": "A_1443",
+      "to": "C_1456",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017540"
+      ]
+    },
+    {
+      "from": "A_1642",
+      "to": "T_542",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012791"
+      ]
+    },
+    {
+      "from": "A_1642",
+      "to": "C_1457",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017541"
+      ]
+    },
+    {
+      "from": "A_1641",
+      "to": "T_542",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012792"
+      ]
+    },
+    {
+      "from": "A_1641",
+      "to": "C_1458",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017542"
+      ]
+    },
+    {
+      "from": "A_378",
+      "to": "T_542",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012793"
+      ]
+    },
+    {
+      "from": "A_378",
+      "to": "C_1459",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017543"
+      ]
+    },
+    {
+      "from": "A_2547",
+      "to": "T_542",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012794"
+      ]
+    },
+    {
+      "from": "A_2547",
+      "to": "C_1460",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017544"
+      ]
+    },
+    {
+      "from": "A_726",
+      "to": "T_542",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012795"
+      ]
+    },
+    {
+      "from": "A_726",
+      "to": "C_1461",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017545"
+      ]
+    },
+    {
+      "from": "M_046",
+      "to": "T_542",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012796"
+      ]
+    },
+    {
+      "from": "M_264",
+      "to": "T_542",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012797"
+      ]
+    },
+    {
+      "from": "M_344",
+      "to": "T_542",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012798"
+      ]
+    },
+    {
+      "from": "A_1447",
+      "to": "A_1443",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020115"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "Nutrien과 Mosaic은 글로벌 비료 시장 경쟁"
+    },
+    {
+      "from": "A_1642",
+      "to": "A_2547",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020116"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "아처대니얼스미들랜드와 벙기는 글로벌 곡물 트레이딩 시장 직접 경쟁"
+    },
+    {
+      "from": "A_1641",
+      "to": "A_1447",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020117"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "코르테바와 Nutrien은 종자·작물보호 시장 경쟁"
+    },
+    {
+      "from": "A_378",
+      "to": "A_1641",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_020118"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "디어앤컴퍼니는 코르테바 등과 정밀농업 솔루션 연계"
+    },
+    {
+      "from": "A_1642",
+      "to": "A_726",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_020119"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "아처대니얼스미들랜드는 팜스코 등 사료업체에 곡물 원료를 공급"
+    },
+    {
+      "from": "A_382",
+      "to": "T_542",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020889"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_542",
-   "type": "THEME",
-   "name": "(Y22) 곡물·식량안보"
-  },
-  {
-   "id": "A_1447",
-   "type": "ASSET",
-   "name": "Nutrien",
-   "exposure": {
-    "ticker": "NTR",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.1412479620572125,
-    "return_3d": 1.4268727705112783,
-    "return_15d": 0.20558002936856834,
-    "return_1m": -0.5827505827505908,
-    "return_ytd": 10.563836681788707,
-    "return_1y": 19.908627657705136,
-    "return_3y": 6.908976970076752,
-    "close": 68.24,
-    "marketCap": 32756806916,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 5.929835454827681,
-    "return_2y": 48.703421224667665
-   }
-  },
-  {
-   "id": "C_1455",
-   "type": "CHARACTER",
-   "name": "비료 1위"
-  },
-  {
-   "id": "A_1443",
-   "type": "ASSET",
-   "name": "Mosaic",
-   "exposure": {
-    "ticker": "MOS",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.7805325987144229,
-    "return_3d": -6.450216450216462,
-    "return_15d": -3.0941704035874484,
-    "return_1m": -5.797733217088064,
-    "return_ytd": -10.294728102947282,
-    "return_1y": -32.6791277258567,
-    "return_3y": -46.78650578675203,
-    "close": 21.61,
-    "marketCap": 6868665977,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -6.287944492627928,
-    "return_2y": -21.81620839363242
-   }
-  },
-  {
-   "id": "C_1456",
-   "type": "CHARACTER",
-   "name": "인산·칼륨 비료"
-  },
-  {
-   "id": "A_1642",
-   "type": "ASSET",
-   "name": "아처대니얼스미들랜드",
-   "exposure": {
-    "ticker": "ADM",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.37429819089207506,
-    "return_3d": -0.012428535918462824,
-    "return_15d": -6.366387337057722,
-    "return_1m": -2.2241127856101106,
-    "return_ytd": 39.937380413985046,
-    "return_1y": 35.620364126770056,
-    "return_3y": -5.286084294796323,
-    "close": 80.45,
-    "marketCap": 38773440650,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 5.0398224311267725,
-    "return_2y": 37.80404248030147
-   }
-  },
-  {
-   "id": "C_1457",
-   "type": "CHARACTER",
-   "name": "곡물 메이저"
-  },
-  {
-   "id": "A_1641",
-   "type": "ASSET",
-   "name": "코르테바",
-   "exposure": {
-    "ticker": "CTVA",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.1742974007124873,
-    "return_3d": 0.6035161374967402,
-    "return_15d": -14.084033613445367,
-    "return_1m": -9.69261571075255,
-    "return_ytd": 14.396538863195584,
-    "return_1y": 6.692639487964391,
-    "return_3y": 47.46153846153847,
-    "close": 76.68,
-    "marketCap": 51285117600,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.1952362358453641,
-    "return_2y": 47.48990190421236
-   }
-  },
-  {
-   "id": "C_1458",
-   "type": "CHARACTER",
-   "name": "종자·작물보호"
-  },
-  {
-   "id": "A_378",
-   "type": "ASSET",
-   "name": "디어앤컴퍼니",
-   "exposure": {
-    "ticker": "DE",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.5764394656912364,
-    "return_3d": -1.4726110526741665,
-    "return_15d": -3.0740575649515933,
-    "return_1m": 4.183778234086244,
-    "return_ytd": 30.77517881306786,
-    "return_1y": 27.151031659844627,
-    "return_3y": 39.121195503153295,
-    "close": 608.85,
-    "marketCap": 164351401211,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -1.9296747902002198,
-    "return_2y": 73.32327488043728
-   }
-  },
-  {
-   "id": "C_1459",
-   "type": "CHARACTER",
-   "name": "농기계 1위"
-  },
-  {
-   "id": "A_2547",
-   "type": "ASSET",
-   "name": "벙기",
-   "exposure": {
-    "ticker": "BG",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.8515923001862769,
-    "return_3d": 1.8727598566308234,
-    "return_15d": -6.451082037357036,
-    "return_1m": -2.5207922489925427,
-    "return_ytd": 27.626852267624603,
-    "return_1y": 38.47746650426309,
-    "return_3y": 0.7175761871013542,
-    "close": 113.69,
-    "marketCap": 21842023094,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 4.89942793873408,
-    "return_2y": 18.72389306599831
-   }
-  },
-  {
-   "id": "C_1460",
-   "type": "CHARACTER",
-   "name": "곡물·식용유"
-  },
-  {
-   "id": "A_726",
-   "type": "ASSET",
-   "name": "팜스코",
-   "exposure": {
-    "ticker": "036580",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 2.8037383177569986,
-    "return_3d": 0.36496350364962904,
-    "return_15d": 4.562737642585546,
-    "return_1m": -2.3090586145648295,
-    "return_ytd": 16.28153798444263,
-    "return_1y": -1.0677523647415366,
-    "return_3y": -22.305502561629954,
-    "close": 2750,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 6.589147286821695,
-    "return_2y": 1.1356392210040145
-   }
-  },
-  {
-   "id": "C_1461",
-   "type": "CHARACTER",
-   "name": "국내 사료·축산"
-  },
-  {
-   "id": "M_046",
-   "type": "MACRO",
-   "name": "곡물가인상"
-  },
-  {
-   "id": "M_264",
-   "type": "MACRO",
-   "name": "비료가상승"
-  },
-  {
-   "id": "M_344",
-   "type": "MACRO",
-   "name": "식량안보"
-  },
-  {
-   "id": "A_382",
-   "type": "ASSET",
-   "name": "VanEck Agribusiness ETF",
-   "exposure": {
-    "ticker": "MOO",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.5064229249011953,
-    "close": 81.37,
-    "marketCap": 574468213,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -0.30629747610879665,
-    "return_15d": -2.140709561034282,
-    "return_1m": -0.1717580664949092,
-    "return_ytd": 11.787333424920998,
-    "return_1y": 10.918756815703379,
-    "return_3y": -4.338114272278393,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.33292231812578343,
-    "return_2y": 15.664534470504643
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_1447",
-   "to": "T_542",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012789"
-   ]
-  },
-  {
-   "from": "A_1447",
-   "to": "C_1455",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017539"
-   ]
-  },
-  {
-   "from": "A_1443",
-   "to": "T_542",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012790"
-   ]
-  },
-  {
-   "from": "A_1443",
-   "to": "C_1456",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017540"
-   ]
-  },
-  {
-   "from": "A_1642",
-   "to": "T_542",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012791"
-   ]
-  },
-  {
-   "from": "A_1642",
-   "to": "C_1457",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017541"
-   ]
-  },
-  {
-   "from": "A_1641",
-   "to": "T_542",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012792"
-   ]
-  },
-  {
-   "from": "A_1641",
-   "to": "C_1458",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017542"
-   ]
-  },
-  {
-   "from": "A_378",
-   "to": "T_542",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012793"
-   ]
-  },
-  {
-   "from": "A_378",
-   "to": "C_1459",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017543"
-   ]
-  },
-  {
-   "from": "A_2547",
-   "to": "T_542",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012794"
-   ]
-  },
-  {
-   "from": "A_2547",
-   "to": "C_1460",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017544"
-   ]
-  },
-  {
-   "from": "A_726",
-   "to": "T_542",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012795"
-   ]
-  },
-  {
-   "from": "A_726",
-   "to": "C_1461",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017545"
-   ]
-  },
-  {
-   "from": "M_046",
-   "to": "T_542",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012796"
-   ]
-  },
-  {
-   "from": "M_264",
-   "to": "T_542",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012797"
-   ]
-  },
-  {
-   "from": "M_344",
-   "to": "T_542",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012798"
-   ]
-  },
-  {
-   "from": "A_1447",
-   "to": "A_1443",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020115"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "Nutrien과 Mosaic은 글로벌 비료 시장 경쟁"
-  },
-  {
-   "from": "A_1642",
-   "to": "A_2547",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020116"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "아처대니얼스미들랜드와 벙기는 글로벌 곡물 트레이딩 시장 직접 경쟁"
-  },
-  {
-   "from": "A_1641",
-   "to": "A_1447",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020117"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "코르테바와 Nutrien은 종자·작물보호 시장 경쟁"
-  },
-  {
-   "from": "A_378",
-   "to": "A_1641",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_020118"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "디어앤컴퍼니는 코르테바 등과 정밀농업 솔루션 연계"
-  },
-  {
-   "from": "A_1642",
-   "to": "A_726",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_020119"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "아처대니얼스미들랜드는 팜스코 등 사료업체에 곡물 원료를 공급"
-  },
-  {
-   "from": "A_382",
-   "to": "T_542",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020889"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_1447",
-   "to": "T_542",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012789"
-   ]
-  },
-  {
-   "from": "A_1447",
-   "to": "C_1455",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017539"
-   ]
-  },
-  {
-   "from": "A_1443",
-   "to": "T_542",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012790"
-   ]
-  },
-  {
-   "from": "A_1443",
-   "to": "C_1456",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017540"
-   ]
-  },
-  {
-   "from": "A_1642",
-   "to": "T_542",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012791"
-   ]
-  },
-  {
-   "from": "A_1642",
-   "to": "C_1457",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017541"
-   ]
-  },
-  {
-   "from": "A_1641",
-   "to": "T_542",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012792"
-   ]
-  },
-  {
-   "from": "A_1641",
-   "to": "C_1458",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017542"
-   ]
-  },
-  {
-   "from": "A_378",
-   "to": "T_542",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012793"
-   ]
-  },
-  {
-   "from": "A_378",
-   "to": "C_1459",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017543"
-   ]
-  },
-  {
-   "from": "A_2547",
-   "to": "T_542",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012794"
-   ]
-  },
-  {
-   "from": "A_2547",
-   "to": "C_1460",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017544"
-   ]
-  },
-  {
-   "from": "A_726",
-   "to": "T_542",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012795"
-   ]
-  },
-  {
-   "from": "A_726",
-   "to": "C_1461",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017545"
-   ]
-  },
-  {
-   "from": "M_046",
-   "to": "T_542",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012796"
-   ]
-  },
-  {
-   "from": "M_264",
-   "to": "T_542",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012797"
-   ]
-  },
-  {
-   "from": "M_344",
-   "to": "T_542",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012798"
-   ]
-  },
-  {
-   "from": "A_1447",
-   "to": "A_1443",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020115"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "Nutrien과 Mosaic은 글로벌 비료 시장 경쟁"
-  },
-  {
-   "from": "A_1642",
-   "to": "A_2547",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020116"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "아처대니얼스미들랜드와 벙기는 글로벌 곡물 트레이딩 시장 직접 경쟁"
-  },
-  {
-   "from": "A_1641",
-   "to": "A_1447",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020117"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "코르테바와 Nutrien은 종자·작물보호 시장 경쟁"
-  },
-  {
-   "from": "A_378",
-   "to": "A_1641",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_020118"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "디어앤컴퍼니는 코르테바 등과 정밀농업 솔루션 연계"
-  },
-  {
-   "from": "A_1642",
-   "to": "A_726",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_020119"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "아처대니얼스미들랜드는 팜스코 등 사료업체에 곡물 원료를 공급"
-  },
-  {
-   "from": "A_382",
-   "to": "T_542",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020889"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

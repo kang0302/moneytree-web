@@ -1,920 +1,920 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_266",
- "themeName": "K-시멘트레미콘",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_266",
+  "themeName": "K-시멘트레미콘",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-05-28T00:00:00+09:00",
+    "description": "• 유연탄가격·건설경기·탄소배출·노조파업·에너지가 5가지 핵심 동인\n• 동인: 유연탄가격·중국건설경기·노조파업\n• 대표주: 쌍용C&E(시멘트1위)·한일시멘트(시멘트1위)·아세아시멘트(중부권시멘트)\n• 밸류체인: 건설/기자재",
+    "notes": "7 ASSET + 1 BF + 7 MACRO (M_273·M_274 신규). K-시멘트·레미콘 통합 테마.",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_266",
+      "type": "THEME",
+      "name": "K-시멘트레미콘"
+    },
+    {
+      "id": "A_1689",
+      "type": "ASSET",
+      "name": "쌍용C&E",
+      "exposure": {
+        "ticker": "003410",
+        "exchange": "KOSPI",
+        "country": "KR",
+        "business_desc": "국내 시멘트 1위 (영월·동해 공장)",
+        "theme_role": "K-시멘트 빅3 대표주",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": 0.0,
+        "close": 7000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": 0.0,
+        "return_15d": 0.0,
+        "return_1m": 0.0,
+        "return_ytd": 22.807017543859654,
+        "return_1y": 45.37902388369679,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 0.0,
+        "return_2y": null
+      }
+    },
+    {
+      "id": "A_1690",
+      "type": "ASSET",
+      "name": "한일시멘트",
+      "exposure": {
+        "ticker": "300950",
+        "exchange": "KOSPI",
+        "country": "KR",
+        "business_desc": "국내 시멘트 빅3 (단양 공장)",
+        "theme_role": "K-시멘트 빅3",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -1.6245487364620947,
+        "close": 5450,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -4.469763365468882,
+        "return_15d": -2.2421524663677084,
+        "return_1m": 2.539981185324547,
+        "return_ytd": -12.820554820866558,
+        "return_1y": -21.198348427271576,
+        "return_3y": -14.152003360216215,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": -2.62934690415606,
+        "return_2y": -23.12326287667362
+      }
+    },
+    {
+      "id": "A_1691",
+      "type": "ASSET",
+      "name": "아세아시멘트",
+      "exposure": {
+        "ticker": "183190",
+        "exchange": "KOSPI",
+        "country": "KR",
+        "business_desc": "국내 시멘트 빅3 (제천·인천 공장)",
+        "theme_role": "K-시멘트 빅3",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -2.2517911975434957,
+        "close": 9550,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -0.2089864158829724,
+        "return_15d": 7.545045045045051,
+        "return_1m": 5.408388520971297,
+        "return_ytd": -20.41666666666667,
+        "return_1y": -33.89431608862622,
+        "return_3y": 5.445270047350115,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 5.96379126730564,
+        "return_2y": -10.398815995881083
+      }
+    },
+    {
+      "id": "A_1692",
+      "type": "ASSET",
+      "name": "성신양회",
+      "exposure": {
+        "ticker": "004980",
+        "exchange": "KOSPI",
+        "country": "KR",
+        "business_desc": "국내 중형 시멘트 (단양·울산·삼척)",
+        "theme_role": "중견 시멘트",
+        "theme_status": "Support"
+      },
+      "metrics": {
+        "return_1d": -2.916160388821387,
+        "close": 7990,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -2.3227383863080653,
+        "return_15d": 6.391478029294273,
+        "return_1m": 1.7834394904458595,
+        "return_ytd": -14.727854855923162,
+        "return_1y": -21.661356535481236,
+        "return_3y": 0.3328472951649619,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 4.516938519447922,
+        "return_2y": -3.026773494670887
+      }
+    },
+    {
+      "id": "A_1693",
+      "type": "ASSET",
+      "name": "고려시멘트",
+      "exposure": {
+        "ticker": "200780",
+        "exchange": "KOSPI",
+        "country": "KR",
+        "business_desc": "국내 중형 시멘트 (장성 공장)",
+        "theme_role": "중견 시멘트",
+        "theme_status": "Support"
+      },
+      "metrics": {
+        "return_1d": -0.658978583196046,
+        "close": 3015,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -9.18674698795181,
+        "return_15d": 1.858108108108114,
+        "return_1m": -4.285714285714281,
+        "return_ytd": -45.08196721311475,
+        "return_1y": -23.46811533190025,
+        "return_3y": -38.8420305860584,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 6.581059390048161,
+        "return_2y": -34.26772865308515
+      }
+    },
+    {
+      "id": "A_1694",
+      "type": "ASSET",
+      "name": "유진기업",
+      "exposure": {
+        "ticker": "023410",
+        "exchange": "KOSPI",
+        "country": "KR",
+        "business_desc": "레미콘 1위 + 유진그룹 지주",
+        "theme_role": "레미콘 대표주, 건설경기 노출",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": 0.302571860816947,
+        "close": 3315,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -5.150214592274683,
+        "return_15d": 9.58677685950413,
+        "return_1m": 1.6871165644171793,
+        "return_ytd": -4.551557591891376,
+        "return_1y": -2.2597141313347557,
+        "return_3y": 15.18409466834083,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 3.8632986627043175,
+        "return_2y": 0.503344396583838
+      }
+    },
+    {
+      "id": "A_1483",
+      "type": "ASSET",
+      "name": "유니온",
+      "exposure": {
+        "ticker": "000910",
+        "exchange": "KOSPI",
+        "country": "KR",
+        "business_desc": "특수시멘트·내화물·세라믹",
+        "theme_role": "특수시멘트 전문",
+        "theme_status": "Peripheral"
+      },
+      "metrics": {
+        "return_1d": -0.34482758620689724,
+        "close": 3245,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -1.5332197614991494,
+        "return_15d": 7.635009310986973,
+        "return_1m": 2.4822695035461084,
+        "return_ytd": -31.678486997635936,
+        "return_1y": -39.228805125808464,
+        "return_3y": -44.23119621523306,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 1.730103806228378,
+        "return_2y": -41.417295228006935
+      }
+    },
+    {
+      "id": "BF_180",
+      "type": "BUSINESS_FIELD",
+      "name": "건설/기자재"
+    },
+    {
+      "id": "M_273",
+      "type": "MACRO",
+      "name": "유연탄가격"
+    },
+    {
+      "id": "M_124",
+      "type": "MACRO",
+      "name": "중국건설경기"
+    },
+    {
+      "id": "M_181",
+      "type": "MACRO",
+      "name": "노조파업"
+    },
+    {
+      "id": "M_075",
+      "type": "MACRO",
+      "name": "기후변화"
+    },
+    {
+      "id": "M_177",
+      "type": "MACRO",
+      "name": "탄소중립"
+    },
+    {
+      "id": "M_096",
+      "type": "MACRO",
+      "name": "유럽전력난"
+    },
+    {
+      "id": "M_274",
+      "type": "MACRO",
+      "name": "화물노조파업"
+    },
+    {
+      "id": "C_4077",
+      "type": "CHARACTER",
+      "name": "시멘트1위·순환자원"
+    },
+    {
+      "id": "C_4078",
+      "type": "CHARACTER",
+      "name": "시멘트1위·레미콘"
+    },
+    {
+      "id": "C_4079",
+      "type": "CHARACTER",
+      "name": "중부권시멘트·레미콘"
+    },
+    {
+      "id": "C_4080",
+      "type": "CHARACTER",
+      "name": "수도권시멘트·슬래그"
+    },
+    {
+      "id": "C_4081",
+      "type": "CHARACTER",
+      "name": "시멘트(호남)"
+    },
+    {
+      "id": "C_4082",
+      "type": "CHARACTER",
+      "name": "레미콘1위·건자재유통"
+    },
+    {
+      "id": "C_4083",
+      "type": "CHARACTER",
+      "name": "시멘트·백시멘트·CCU소재"
+    }
   ],
-  "dataAsOf": "2026-05-28T00:00:00+09:00",
-  "description": "• 유연탄가격·건설경기·탄소배출·노조파업·에너지가 5가지 핵심 동인\n• 동인: 유연탄가격·중국건설경기·노조파업\n• 대표주: 쌍용C&E(시멘트1위)·한일시멘트(시멘트1위)·아세아시멘트(중부권시멘트)\n• 밸류체인: 건설/기자재",
-  "notes": "7 ASSET + 1 BF + 7 MACRO (M_273·M_274 신규). K-시멘트·레미콘 통합 테마.",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
-   }
+  "edges": [
+    {
+      "from": "A_1689",
+      "to": "T_266",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008702"
+      ]
+    },
+    {
+      "from": "A_1690",
+      "to": "T_266",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008704"
+      ]
+    },
+    {
+      "from": "A_1691",
+      "to": "T_266",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008706"
+      ]
+    },
+    {
+      "from": "A_1692",
+      "to": "T_266",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008708"
+      ]
+    },
+    {
+      "from": "A_1693",
+      "to": "T_266",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008710"
+      ]
+    },
+    {
+      "from": "A_1694",
+      "to": "T_266",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008712"
+      ]
+    },
+    {
+      "from": "A_1483",
+      "to": "T_266",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008714"
+      ]
+    },
+    {
+      "from": "A_1689",
+      "to": "BF_180",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015656"
+      ]
+    },
+    {
+      "from": "A_1690",
+      "to": "BF_180",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015657"
+      ]
+    },
+    {
+      "from": "A_1691",
+      "to": "BF_180",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015658"
+      ]
+    },
+    {
+      "from": "A_1692",
+      "to": "BF_180",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015659"
+      ]
+    },
+    {
+      "from": "A_1693",
+      "to": "BF_180",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015660"
+      ]
+    },
+    {
+      "from": "A_1694",
+      "to": "BF_180",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015661"
+      ]
+    },
+    {
+      "from": "A_1483",
+      "to": "BF_180",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015662"
+      ]
+    },
+    {
+      "from": "M_273",
+      "to": "T_266",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008716"
+      ]
+    },
+    {
+      "from": "M_124",
+      "to": "T_266",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008717"
+      ]
+    },
+    {
+      "from": "M_181",
+      "to": "T_266",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008718"
+      ]
+    },
+    {
+      "from": "M_075",
+      "to": "T_266",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008719"
+      ]
+    },
+    {
+      "from": "M_177",
+      "to": "T_266",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008720"
+      ]
+    },
+    {
+      "from": "M_096",
+      "to": "T_266",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008721"
+      ]
+    },
+    {
+      "from": "M_274",
+      "to": "T_266",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008722"
+      ]
+    },
+    {
+      "from": "A_1689",
+      "to": "C_4077",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008703"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1690",
+      "to": "C_4078",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008705"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1691",
+      "to": "C_4079",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008707"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1692",
+      "to": "C_4080",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008709"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1693",
+      "to": "C_4081",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008711"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1694",
+      "to": "C_4082",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008713"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1483",
+      "to": "C_4083",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008715"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1689",
+      "to": "A_1690",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019429"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "쌍용C&E와 한일시멘트는 국내 시멘트 시장 경쟁"
+    },
+    {
+      "from": "A_1689",
+      "to": "A_1691",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019430"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "쌍용C&E와 아세아시멘트는 국내 시멘트 시장 경쟁"
+    },
+    {
+      "from": "A_1690",
+      "to": "A_1692",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019431"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "한일시멘트와 성신양회는 국내 시멘트 시장 경쟁"
+    },
+    {
+      "from": "A_1694",
+      "to": "A_1689",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019432"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "유진기업과 쌍용C&E는 레미콘·시멘트 시장 경쟁"
+    },
+    {
+      "from": "A_1693",
+      "to": "A_1692",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019433"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "고려시멘트와 성신양회는 국내 시멘트 시장 경쟁"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_1689",
+      "to": "T_266",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008702"
+      ]
+    },
+    {
+      "from": "A_1690",
+      "to": "T_266",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008704"
+      ]
+    },
+    {
+      "from": "A_1691",
+      "to": "T_266",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008706"
+      ]
+    },
+    {
+      "from": "A_1692",
+      "to": "T_266",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008708"
+      ]
+    },
+    {
+      "from": "A_1693",
+      "to": "T_266",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008710"
+      ]
+    },
+    {
+      "from": "A_1694",
+      "to": "T_266",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008712"
+      ]
+    },
+    {
+      "from": "A_1483",
+      "to": "T_266",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008714"
+      ]
+    },
+    {
+      "from": "A_1689",
+      "to": "BF_180",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015656"
+      ]
+    },
+    {
+      "from": "A_1690",
+      "to": "BF_180",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015657"
+      ]
+    },
+    {
+      "from": "A_1691",
+      "to": "BF_180",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015658"
+      ]
+    },
+    {
+      "from": "A_1692",
+      "to": "BF_180",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015659"
+      ]
+    },
+    {
+      "from": "A_1693",
+      "to": "BF_180",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015660"
+      ]
+    },
+    {
+      "from": "A_1694",
+      "to": "BF_180",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015661"
+      ]
+    },
+    {
+      "from": "A_1483",
+      "to": "BF_180",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_015662"
+      ]
+    },
+    {
+      "from": "M_273",
+      "to": "T_266",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008716"
+      ]
+    },
+    {
+      "from": "M_124",
+      "to": "T_266",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008717"
+      ]
+    },
+    {
+      "from": "M_181",
+      "to": "T_266",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008718"
+      ]
+    },
+    {
+      "from": "M_075",
+      "to": "T_266",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008719"
+      ]
+    },
+    {
+      "from": "M_177",
+      "to": "T_266",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008720"
+      ]
+    },
+    {
+      "from": "M_096",
+      "to": "T_266",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008721"
+      ]
+    },
+    {
+      "from": "M_274",
+      "to": "T_266",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_008722"
+      ]
+    },
+    {
+      "from": "A_1689",
+      "to": "C_4077",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008703"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1690",
+      "to": "C_4078",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008705"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1691",
+      "to": "C_4079",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008707"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1692",
+      "to": "C_4080",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008709"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1693",
+      "to": "C_4081",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008711"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1694",
+      "to": "C_4082",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008713"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1483",
+      "to": "C_4083",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_008715"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1689",
+      "to": "A_1690",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019429"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "쌍용C&E와 한일시멘트는 국내 시멘트 시장 경쟁"
+    },
+    {
+      "from": "A_1689",
+      "to": "A_1691",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019430"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "쌍용C&E와 아세아시멘트는 국내 시멘트 시장 경쟁"
+    },
+    {
+      "from": "A_1690",
+      "to": "A_1692",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019431"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "한일시멘트와 성신양회는 국내 시멘트 시장 경쟁"
+    },
+    {
+      "from": "A_1694",
+      "to": "A_1689",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019432"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "유진기업과 쌍용C&E는 레미콘·시멘트 시장 경쟁"
+    },
+    {
+      "from": "A_1693",
+      "to": "A_1692",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019433"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "고려시멘트와 성신양회는 국내 시멘트 시장 경쟁"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_266",
-   "type": "THEME",
-   "name": "K-시멘트레미콘"
-  },
-  {
-   "id": "A_1689",
-   "type": "ASSET",
-   "name": "쌍용C&E",
-   "exposure": {
-    "ticker": "003410",
-    "exchange": "KOSPI",
-    "country": "KR",
-    "business_desc": "국내 시멘트 1위 (영월·동해 공장)",
-    "theme_role": "K-시멘트 빅3 대표주",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": 0.0,
-    "close": 7000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 0.0,
-    "return_15d": 0.0,
-    "return_1m": 0.0,
-    "return_ytd": 22.807017543859654,
-    "return_1y": 45.37902388369679,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 0.0,
-    "return_2y": null
-   }
-  },
-  {
-   "id": "A_1690",
-   "type": "ASSET",
-   "name": "한일시멘트",
-   "exposure": {
-    "ticker": "300950",
-    "exchange": "KOSPI",
-    "country": "KR",
-    "business_desc": "국내 시멘트 빅3 (단양 공장)",
-    "theme_role": "K-시멘트 빅3",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": 0.6134969325153339,
-    "close": 5740,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -4.809286898839138,
-    "return_15d": 3.6101083032491044,
-    "return_1m": 3.6101083032491044,
-    "return_ytd": -8.181648563628263,
-    "return_1y": -14.977973444303183,
-    "return_3y": -14.152003360216215,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": -2.62934690415606,
-    "return_2y": -18.690457404423743
-   }
-  },
-  {
-   "id": "A_1691",
-   "type": "ASSET",
-   "name": "아세아시멘트",
-   "exposure": {
-    "ticker": "183190",
-    "exchange": "KOSPI",
-    "country": "KR",
-    "business_desc": "국내 시멘트 빅3 (제천·인천 공장)",
-    "theme_role": "K-시멘트 빅3",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": 3.9707419017763756,
-    "close": 9950,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 4.73684210526315,
-    "return_15d": 9.340659340659329,
-    "return_1m": 7.917570498915394,
-    "return_ytd": -17.08333333333333,
-    "return_1y": -27.948171983209335,
-    "return_3y": 5.445270047350115,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 5.96379126730564,
-    "return_2y": -8.853033412728294
-   }
-  },
-  {
-   "id": "A_1692",
-   "type": "ASSET",
-   "name": "성신양회",
-   "exposure": {
-    "ticker": "004980",
-    "exchange": "KOSPI",
-    "country": "KR",
-    "business_desc": "국내 중형 시멘트 (단양·울산·삼척)",
-    "theme_role": "중견 시멘트",
-    "theme_status": "Support"
-   },
-   "metrics": {
-    "return_1d": 1.833740831295838,
-    "close": 8330,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 2.083333333333326,
-    "return_15d": 5.844980940279543,
-    "return_1m": -5.125284738041003,
-    "return_ytd": -11.099252934898619,
-    "return_1y": -15.530804424993338,
-    "return_3y": 0.3328472951649619,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 4.516938519447922,
-    "return_2y": -0.4590605861484409
-   }
-  },
-  {
-   "id": "A_1693",
-   "type": "ASSET",
-   "name": "고려시멘트",
-   "exposure": {
-    "ticker": "200780",
-    "exchange": "KOSPI",
-    "country": "KR",
-    "business_desc": "국내 중형 시멘트 (장성 공장)",
-    "theme_role": "중견 시멘트",
-    "theme_status": "Support"
-   },
-   "metrics": {
-    "return_1d": 2.4691358024691468,
-    "close": 3320,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -0.8955223880596996,
-    "return_15d": 3.9123630672926346,
-    "return_1m": 4.402515723270439,
-    "return_ytd": -39.5264116575592,
-    "return_1y": -14.664214479467642,
-    "return_3y": -38.8420305860584,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 6.581059390048161,
-    "return_2y": -28.237903109799667
-   }
-  },
-  {
-   "id": "A_1694",
-   "type": "ASSET",
-   "name": "유진기업",
-   "exposure": {
-    "ticker": "023410",
-    "exchange": "KOSPI",
-    "country": "KR",
-    "business_desc": "레미콘 1위 + 유진그룹 지주",
-    "theme_role": "레미콘 대표주, 건설경기 노출",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": 0.575539568345329,
-    "close": 3495,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -0.7102272727272707,
-    "return_15d": 7.044410413476254,
-    "return_1m": 1.1577424023154759,
-    "return_ytd": 0.6311632628475561,
-    "return_1y": 6.6631509027227365,
-    "return_3y": 15.18409466834083,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 3.8632986627043175,
-    "return_2y": 5.0908250838539
-   }
-  },
-  {
-   "id": "A_1483",
-   "type": "ASSET",
-   "name": "유니온",
-   "exposure": {
-    "ticker": "000910",
-    "exchange": "KOSPI",
-    "country": "KR",
-    "business_desc": "특수시멘트·내화물·세라믹",
-    "theme_role": "특수시멘트 전문",
-    "theme_status": "Peripheral"
-   },
-   "metrics": {
-    "return_1d": 0.17035775127767216,
-    "close": 3245,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -1.0101010101010055,
-    "return_15d": 5.187835420393561,
-    "return_1m": 1.379310344827589,
-    "return_ytd": -30.49645390070922,
-    "return_1y": -35.47801060974136,
-    "return_3y": -44.23119621523306,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 1.730103806228378,
-    "return_2y": -40.17409582302863
-   }
-  },
-  {
-   "id": "BF_180",
-   "type": "BUSINESS_FIELD",
-   "name": "건설/기자재"
-  },
-  {
-   "id": "M_273",
-   "type": "MACRO",
-   "name": "유연탄가격"
-  },
-  {
-   "id": "M_124",
-   "type": "MACRO",
-   "name": "중국건설경기"
-  },
-  {
-   "id": "M_181",
-   "type": "MACRO",
-   "name": "노조파업"
-  },
-  {
-   "id": "M_075",
-   "type": "MACRO",
-   "name": "기후변화"
-  },
-  {
-   "id": "M_177",
-   "type": "MACRO",
-   "name": "탄소중립"
-  },
-  {
-   "id": "M_096",
-   "type": "MACRO",
-   "name": "유럽전력난"
-  },
-  {
-   "id": "M_274",
-   "type": "MACRO",
-   "name": "화물노조파업"
-  },
-  {
-   "id": "C_4077",
-   "type": "CHARACTER",
-   "name": "시멘트1위·순환자원"
-  },
-  {
-   "id": "C_4078",
-   "type": "CHARACTER",
-   "name": "시멘트1위·레미콘"
-  },
-  {
-   "id": "C_4079",
-   "type": "CHARACTER",
-   "name": "중부권시멘트·레미콘"
-  },
-  {
-   "id": "C_4080",
-   "type": "CHARACTER",
-   "name": "수도권시멘트·슬래그"
-  },
-  {
-   "id": "C_4081",
-   "type": "CHARACTER",
-   "name": "시멘트(호남)"
-  },
-  {
-   "id": "C_4082",
-   "type": "CHARACTER",
-   "name": "레미콘1위·건자재유통"
-  },
-  {
-   "id": "C_4083",
-   "type": "CHARACTER",
-   "name": "시멘트·백시멘트·CCU소재"
-  }
- ],
- "edges": [
-  {
-   "from": "A_1689",
-   "to": "T_266",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008702"
-   ]
-  },
-  {
-   "from": "A_1690",
-   "to": "T_266",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008704"
-   ]
-  },
-  {
-   "from": "A_1691",
-   "to": "T_266",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008706"
-   ]
-  },
-  {
-   "from": "A_1692",
-   "to": "T_266",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008708"
-   ]
-  },
-  {
-   "from": "A_1693",
-   "to": "T_266",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008710"
-   ]
-  },
-  {
-   "from": "A_1694",
-   "to": "T_266",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008712"
-   ]
-  },
-  {
-   "from": "A_1483",
-   "to": "T_266",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008714"
-   ]
-  },
-  {
-   "from": "A_1689",
-   "to": "BF_180",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015656"
-   ]
-  },
-  {
-   "from": "A_1690",
-   "to": "BF_180",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015657"
-   ]
-  },
-  {
-   "from": "A_1691",
-   "to": "BF_180",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015658"
-   ]
-  },
-  {
-   "from": "A_1692",
-   "to": "BF_180",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015659"
-   ]
-  },
-  {
-   "from": "A_1693",
-   "to": "BF_180",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015660"
-   ]
-  },
-  {
-   "from": "A_1694",
-   "to": "BF_180",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015661"
-   ]
-  },
-  {
-   "from": "A_1483",
-   "to": "BF_180",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015662"
-   ]
-  },
-  {
-   "from": "M_273",
-   "to": "T_266",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008716"
-   ]
-  },
-  {
-   "from": "M_124",
-   "to": "T_266",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008717"
-   ]
-  },
-  {
-   "from": "M_181",
-   "to": "T_266",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008718"
-   ]
-  },
-  {
-   "from": "M_075",
-   "to": "T_266",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008719"
-   ]
-  },
-  {
-   "from": "M_177",
-   "to": "T_266",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008720"
-   ]
-  },
-  {
-   "from": "M_096",
-   "to": "T_266",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008721"
-   ]
-  },
-  {
-   "from": "M_274",
-   "to": "T_266",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008722"
-   ]
-  },
-  {
-   "from": "A_1689",
-   "to": "C_4077",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008703"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1690",
-   "to": "C_4078",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008705"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1691",
-   "to": "C_4079",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008707"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1692",
-   "to": "C_4080",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008709"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1693",
-   "to": "C_4081",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008711"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1694",
-   "to": "C_4082",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008713"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1483",
-   "to": "C_4083",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008715"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1689",
-   "to": "A_1690",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019429"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "쌍용C&E와 한일시멘트는 국내 시멘트 시장 경쟁"
-  },
-  {
-   "from": "A_1689",
-   "to": "A_1691",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019430"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "쌍용C&E와 아세아시멘트는 국내 시멘트 시장 경쟁"
-  },
-  {
-   "from": "A_1690",
-   "to": "A_1692",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019431"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "한일시멘트와 성신양회는 국내 시멘트 시장 경쟁"
-  },
-  {
-   "from": "A_1694",
-   "to": "A_1689",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019432"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "유진기업과 쌍용C&E는 레미콘·시멘트 시장 경쟁"
-  },
-  {
-   "from": "A_1693",
-   "to": "A_1692",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019433"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "고려시멘트와 성신양회는 국내 시멘트 시장 경쟁"
-  }
- ],
- "links": [
-  {
-   "from": "A_1689",
-   "to": "T_266",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008702"
-   ]
-  },
-  {
-   "from": "A_1690",
-   "to": "T_266",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008704"
-   ]
-  },
-  {
-   "from": "A_1691",
-   "to": "T_266",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008706"
-   ]
-  },
-  {
-   "from": "A_1692",
-   "to": "T_266",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008708"
-   ]
-  },
-  {
-   "from": "A_1693",
-   "to": "T_266",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008710"
-   ]
-  },
-  {
-   "from": "A_1694",
-   "to": "T_266",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008712"
-   ]
-  },
-  {
-   "from": "A_1483",
-   "to": "T_266",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008714"
-   ]
-  },
-  {
-   "from": "A_1689",
-   "to": "BF_180",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015656"
-   ]
-  },
-  {
-   "from": "A_1690",
-   "to": "BF_180",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015657"
-   ]
-  },
-  {
-   "from": "A_1691",
-   "to": "BF_180",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015658"
-   ]
-  },
-  {
-   "from": "A_1692",
-   "to": "BF_180",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015659"
-   ]
-  },
-  {
-   "from": "A_1693",
-   "to": "BF_180",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015660"
-   ]
-  },
-  {
-   "from": "A_1694",
-   "to": "BF_180",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015661"
-   ]
-  },
-  {
-   "from": "A_1483",
-   "to": "BF_180",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_015662"
-   ]
-  },
-  {
-   "from": "M_273",
-   "to": "T_266",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008716"
-   ]
-  },
-  {
-   "from": "M_124",
-   "to": "T_266",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008717"
-   ]
-  },
-  {
-   "from": "M_181",
-   "to": "T_266",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008718"
-   ]
-  },
-  {
-   "from": "M_075",
-   "to": "T_266",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008719"
-   ]
-  },
-  {
-   "from": "M_177",
-   "to": "T_266",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008720"
-   ]
-  },
-  {
-   "from": "M_096",
-   "to": "T_266",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008721"
-   ]
-  },
-  {
-   "from": "M_274",
-   "to": "T_266",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_008722"
-   ]
-  },
-  {
-   "from": "A_1689",
-   "to": "C_4077",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008703"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1690",
-   "to": "C_4078",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008705"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1691",
-   "to": "C_4079",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008707"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1692",
-   "to": "C_4080",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008709"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1693",
-   "to": "C_4081",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008711"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1694",
-   "to": "C_4082",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008713"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1483",
-   "to": "C_4083",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_008715"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1689",
-   "to": "A_1690",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019429"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "쌍용C&E와 한일시멘트는 국내 시멘트 시장 경쟁"
-  },
-  {
-   "from": "A_1689",
-   "to": "A_1691",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019430"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "쌍용C&E와 아세아시멘트는 국내 시멘트 시장 경쟁"
-  },
-  {
-   "from": "A_1690",
-   "to": "A_1692",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019431"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "한일시멘트와 성신양회는 국내 시멘트 시장 경쟁"
-  },
-  {
-   "from": "A_1694",
-   "to": "A_1689",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019432"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "유진기업과 쌍용C&E는 레미콘·시멘트 시장 경쟁"
-  },
-  {
-   "from": "A_1693",
-   "to": "A_1692",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019433"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "고려시멘트와 성신양회는 국내 시멘트 시장 경쟁"
-  }
- ]
 }

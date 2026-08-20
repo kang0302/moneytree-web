@@ -1,795 +1,795 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_497",
- "themeName": "(Y16) 유가 바닥·OPEC 감산 컴백",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_497",
+  "themeName": "(Y16) 유가 바닥·OPEC 감산 컴백",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-25T00:00:00+09:00",
+    "description": "• 2016.2 WTI $26 바닥 → 2016.11 OPEC 8년만 감산 합의로 이어진 유가 회복 사이클\n• 동인: 유가상승·OPEC감산정책·미국에너지개발확대\n• 대표주: 엑슨모빌(석유 메이저 1위)·셰브론(석유 메이저)·슐럼버거(유전서비스 1위)\n• ETF: XLE",
+    "notes": "T_497 신규 — 2016 회고 테마(Y16). 자산별 CHARACTER, MACRO 3(기존 재사용)",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-25",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 이벤트(회고+2026 에코) 추가."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_497",
+      "type": "THEME",
+      "name": "(Y16) 유가 바닥·OPEC 감산 컴백"
+    },
+    {
+      "id": "A_327",
+      "type": "ASSET",
+      "name": "엑슨모빌",
+      "exposure": {
+        "ticker": "XOM",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.4771683981638075,
+        "return_3d": 2.9169269206745785,
+        "return_15d": 5.116427432216919,
+        "return_1m": 11.814603691639514,
+        "return_ytd": 36.920392222037556,
+        "return_1y": 53.3885682368274,
+        "return_3y": 49.736459469283886,
+        "close": 164.79,
+        "marketCap": 682965563400,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 3.142410015649455,
+        "return_2y": 39.011220787986176
+      }
+    },
+    {
+      "id": "C_1128",
+      "type": "CHARACTER",
+      "name": "석유 메이저 1위"
+    },
+    {
+      "id": "A_2518",
+      "type": "ASSET",
+      "name": "셰브론",
+      "exposure": {
+        "ticker": "CVX",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.009721007096330503,
+        "return_3d": 2.8799999999999937,
+        "return_15d": 7.2448660481601035,
+        "return_1m": 9.808944391076956,
+        "return_ytd": 35.00426481202021,
+        "return_1y": 35.36842105263158,
+        "return_3y": 27.880671224362953,
+        "close": 205.77,
+        "marketCap": 409811532000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 4.6592065106815905,
+        "return_2y": 40.134849826329756
+      }
+    },
+    {
+      "id": "C_1129",
+      "type": "CHARACTER",
+      "name": "석유 메이저"
+    },
+    {
+      "id": "A_2442",
+      "type": "ASSET",
+      "name": "슐럼버거",
+      "exposure": {
+        "ticker": "SLB",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.6389776357827337,
+        "return_3d": -0.4091500836898021,
+        "return_15d": 9.375,
+        "return_1m": 13.960417110023403,
+        "return_ytd": 39.52579468473161,
+        "return_1y": 60.617876424715035,
+        "return_3y": -7.72014475271412,
+        "close": 53.55,
+        "marketCap": 79475872001,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 1.7867325603497353,
+        "return_2y": 18.055555555555557
+      }
+    },
+    {
+      "id": "C_1130",
+      "type": "CHARACTER",
+      "name": "유전서비스 1위"
+    },
+    {
+      "id": "A_2519",
+      "type": "ASSET",
+      "name": "할리버튼",
+      "exposure": {
+        "ticker": "HAL",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.038661281015596,
+        "return_3d": 1.743172574084828,
+        "return_15d": 12.279576787431878,
+        "return_1m": -0.5678591709255998,
+        "return_ytd": 23.92073602264686,
+        "return_1y": 65.89294173377549,
+        "return_3y": -11.116751269035518,
+        "close": 35.02,
+        "marketCap": 29255628680,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 5.196755782517282,
+        "return_2y": 9.95290423861852
+      }
+    },
+    {
+      "id": "C_1131",
+      "type": "CHARACTER",
+      "name": "북미 유전서비스"
+    },
+    {
+      "id": "A_2520",
+      "type": "ASSET",
+      "name": "옥시덴탈",
+      "exposure": {
+        "ticker": "OXY",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.4849498327759383,
+        "return_3d": 2.9643591501028244,
+        "return_15d": 7.246118150990544,
+        "return_1m": 9.533357637623041,
+        "return_ytd": 46.13326848249029,
+        "return_1y": 36.69244767970883,
+        "return_3y": -6.211955673482117,
+        "close": 60.09,
+        "marketCap": 59767599183,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 2.6302305721605634,
+        "return_2y": 4.704652378463159
+      }
+    },
+    {
+      "id": "C_1132",
+      "type": "CHARACTER",
+      "name": "퍼미안 셰일 대형"
+    },
+    {
+      "id": "A_2521",
+      "type": "ASSET",
+      "name": "코노코필립스",
+      "exposure": {
+        "ticker": "COP",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.6629663891458693,
+        "return_3d": 2.9973181889888068,
+        "return_15d": 10.604777231915975,
+        "return_1m": 13.834887978380284,
+        "return_ytd": 39.49364384146994,
+        "return_1y": 39.27047781569966,
+        "return_3y": 11.330889248870335,
+        "close": 130.58,
+        "marketCap": 159084831434,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 2.5765907305577596,
+        "return_2y": 16.86056917844998
+      }
+    },
+    {
+      "id": "C_1133",
+      "type": "CHARACTER",
+      "name": "독립 E&P 1위"
+    },
+    {
+      "id": "A_483",
+      "type": "ASSET",
+      "name": "Devon",
+      "exposure": {
+        "ticker": "DVN",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.7526656909889073,
+        "return_3d": 5.103598691384947,
+        "return_15d": 8.389563652721543,
+        "return_1m": 9.947524526579965,
+        "return_ytd": 31.558831558831546,
+        "return_1y": 43.508040500297795,
+        "return_3y": -3.600720144028813,
+        "close": 48.19,
+        "marketCap": 53009000000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 7.423094070441372,
+        "return_2y": 6.638636866563408
+      }
+    },
+    {
+      "id": "C_1134",
+      "type": "CHARACTER",
+      "name": "셰일 E&P"
+    },
+    {
+      "id": "A_2475",
+      "type": "ASSET",
+      "name": "발레로",
+      "exposure": {
+        "ticker": "VLO",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.0827024710755695,
+        "return_3d": 1.3434015277899558,
+        "return_15d": 14.914376742333735,
+        "return_1m": 11.823025997093506,
+        "return_ytd": 112.7034830149272,
+        "return_1y": 151.04038280287102,
+        "return_3y": 159.21545141488244,
+        "close": 346.26,
+        "marketCap": 99697762992,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 4.860543290633235,
+        "return_2y": 133.6121980839293
+      }
+    },
+    {
+      "id": "C_1135",
+      "type": "CHARACTER",
+      "name": "정유 — 정제마진"
+    },
+    {
+      "id": "M_059",
+      "type": "MACRO",
+      "name": "유가상승"
+    },
+    {
+      "id": "M_076",
+      "type": "MACRO",
+      "name": "OPEC감산정책"
+    },
+    {
+      "id": "M_073",
+      "type": "MACRO",
+      "name": "미국에너지개발확대"
+    },
+    {
+      "id": "A_503",
+      "type": "ASSET",
+      "name": "XLE",
+      "exposure": {
+        "ticker": "XLE",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.1570351758793942,
+        "close": 63.58,
+        "marketCap": 41876791265,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 2.6974640607333233,
+        "return_15d": 8.405797101449286,
+        "return_1m": 10.228848821081836,
+        "return_ytd": 42.20532319391634,
+        "return_1y": 49.459332393041834,
+        "return_3y": 43.16595361405089,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 4.178272980501396,
+        "return_2y": 39.61352657004831
+      }
+    }
   ],
-  "dataAsOf": "2026-07-25T00:00:00+09:00",
-  "description": "• 2016.2 WTI $26 바닥 → 2016.11 OPEC 8년만 감산 합의로 이어진 유가 회복 사이클\n• 동인: 유가상승·OPEC감산정책·미국에너지개발확대\n• 대표주: 엑슨모빌(석유 메이저 1위)·셰브론(석유 메이저)·슐럼버거(유전서비스 1위)\n• ETF: XLE",
-  "notes": "T_497 신규 — 2016 회고 테마(Y16). 자산별 CHARACTER, MACRO 3(기존 재사용)",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-25",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 이벤트(회고+2026 에코) 추가."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_327",
+      "to": "T_497",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012327"
+      ]
+    },
+    {
+      "from": "A_327",
+      "to": "C_1128",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017212"
+      ]
+    },
+    {
+      "from": "A_2518",
+      "to": "T_497",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012328"
+      ]
+    },
+    {
+      "from": "A_2518",
+      "to": "C_1129",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017213"
+      ]
+    },
+    {
+      "from": "A_2442",
+      "to": "T_497",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012329"
+      ]
+    },
+    {
+      "from": "A_2442",
+      "to": "C_1130",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017214"
+      ]
+    },
+    {
+      "from": "A_2519",
+      "to": "T_497",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012330"
+      ]
+    },
+    {
+      "from": "A_2519",
+      "to": "C_1131",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017215"
+      ]
+    },
+    {
+      "from": "A_2520",
+      "to": "T_497",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012331"
+      ]
+    },
+    {
+      "from": "A_2520",
+      "to": "C_1132",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017216"
+      ]
+    },
+    {
+      "from": "A_2521",
+      "to": "T_497",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012332"
+      ]
+    },
+    {
+      "from": "A_2521",
+      "to": "C_1133",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017217"
+      ]
+    },
+    {
+      "from": "A_483",
+      "to": "T_497",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012333"
+      ]
+    },
+    {
+      "from": "A_483",
+      "to": "C_1134",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017218"
+      ]
+    },
+    {
+      "from": "A_2475",
+      "to": "T_497",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012334"
+      ]
+    },
+    {
+      "from": "A_2475",
+      "to": "C_1135",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017219"
+      ]
+    },
+    {
+      "from": "M_059",
+      "to": "T_497",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012335"
+      ]
+    },
+    {
+      "from": "M_076",
+      "to": "T_497",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012336"
+      ]
+    },
+    {
+      "from": "M_073",
+      "to": "T_497",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012337"
+      ]
+    },
+    {
+      "from": "A_327",
+      "to": "A_2518",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019928"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "엑슨모빌과 셰브론은 미국 에너지 메이저 양대 경쟁"
+    },
+    {
+      "from": "A_2442",
+      "to": "A_2519",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019929"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "슐럼버거와 할리버튼은 글로벌 오일필드 서비스 양대 경쟁"
+    },
+    {
+      "from": "A_2520",
+      "to": "A_2521",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019930"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "옥시덴탈과 코노코필립스는 미국 E&P 시장 경쟁"
+    },
+    {
+      "from": "A_483",
+      "to": "A_2520",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019931"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "Devon과 옥시덴탈은 퍼미안 분지 E&P 시장 경쟁"
+    },
+    {
+      "from": "A_2475",
+      "to": "A_327",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019932"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "발레로와 엑슨모빌은 미국 정제 마진 시장 경쟁"
+    },
+    {
+      "from": "A_503",
+      "to": "T_497",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020846"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_327",
+      "to": "T_497",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012327"
+      ]
+    },
+    {
+      "from": "A_327",
+      "to": "C_1128",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017212"
+      ]
+    },
+    {
+      "from": "A_2518",
+      "to": "T_497",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012328"
+      ]
+    },
+    {
+      "from": "A_2518",
+      "to": "C_1129",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017213"
+      ]
+    },
+    {
+      "from": "A_2442",
+      "to": "T_497",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012329"
+      ]
+    },
+    {
+      "from": "A_2442",
+      "to": "C_1130",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017214"
+      ]
+    },
+    {
+      "from": "A_2519",
+      "to": "T_497",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012330"
+      ]
+    },
+    {
+      "from": "A_2519",
+      "to": "C_1131",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017215"
+      ]
+    },
+    {
+      "from": "A_2520",
+      "to": "T_497",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012331"
+      ]
+    },
+    {
+      "from": "A_2520",
+      "to": "C_1132",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017216"
+      ]
+    },
+    {
+      "from": "A_2521",
+      "to": "T_497",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012332"
+      ]
+    },
+    {
+      "from": "A_2521",
+      "to": "C_1133",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017217"
+      ]
+    },
+    {
+      "from": "A_483",
+      "to": "T_497",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012333"
+      ]
+    },
+    {
+      "from": "A_483",
+      "to": "C_1134",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017218"
+      ]
+    },
+    {
+      "from": "A_2475",
+      "to": "T_497",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012334"
+      ]
+    },
+    {
+      "from": "A_2475",
+      "to": "C_1135",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017219"
+      ]
+    },
+    {
+      "from": "M_059",
+      "to": "T_497",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012335"
+      ]
+    },
+    {
+      "from": "M_076",
+      "to": "T_497",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012336"
+      ]
+    },
+    {
+      "from": "M_073",
+      "to": "T_497",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012337"
+      ]
+    },
+    {
+      "from": "A_327",
+      "to": "A_2518",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019928"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "엑슨모빌과 셰브론은 미국 에너지 메이저 양대 경쟁"
+    },
+    {
+      "from": "A_2442",
+      "to": "A_2519",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019929"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "슐럼버거와 할리버튼은 글로벌 오일필드 서비스 양대 경쟁"
+    },
+    {
+      "from": "A_2520",
+      "to": "A_2521",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019930"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "옥시덴탈과 코노코필립스는 미국 E&P 시장 경쟁"
+    },
+    {
+      "from": "A_483",
+      "to": "A_2520",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019931"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "Devon과 옥시덴탈은 퍼미안 분지 E&P 시장 경쟁"
+    },
+    {
+      "from": "A_2475",
+      "to": "A_327",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019932"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "발레로와 엑슨모빌은 미국 정제 마진 시장 경쟁"
+    },
+    {
+      "from": "A_503",
+      "to": "T_497",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020846"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_497",
-   "type": "THEME",
-   "name": "(Y16) 유가 바닥·OPEC 감산 컴백"
-  },
-  {
-   "id": "A_327",
-   "type": "ASSET",
-   "name": "엑슨모빌",
-   "exposure": {
-    "ticker": "XOM",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.939411134228596,
-    "return_3d": 0.1877346683354153,
-    "return_15d": 2.013508347139026,
-    "return_1m": 10.345302915431787,
-    "return_ytd": 33.039720791091895,
-    "return_1y": 49.096666045818594,
-    "return_3y": 43.04860614724804,
-    "close": 160.09,
-    "marketCap": 663486601400,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 4.613173026659689,
-    "return_2y": 34.59436738125261
-   }
-  },
-  {
-   "id": "C_1128",
-   "type": "CHARACTER",
-   "name": "석유 메이저 1위"
-  },
-  {
-   "id": "A_2518",
-   "type": "ASSET",
-   "name": "셰브론",
-   "exposure": {
-    "ticker": "CVX",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.163378856853825,
-    "return_3d": 1.6983626563612297,
-    "return_15d": 2.674675291339401,
-    "return_1m": 10.035211267605648,
-    "return_ytd": 31.224985237189173,
-    "return_1y": 28.899200824954896,
-    "return_3y": 21.928915442297136,
-    "close": 200.01,
-    "marketCap": 398339916000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 7.204116638078895,
-    "return_2y": 38.24566254233774
-   }
-  },
-  {
-   "id": "C_1129",
-   "type": "CHARACTER",
-   "name": "석유 메이저"
-  },
-  {
-   "id": "A_2442",
-   "type": "ASSET",
-   "name": "슐럼버거",
-   "exposure": {
-    "ticker": "SLB",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 3.2846715328467058,
-    "return_3d": 0.16766020864382725,
-    "return_15d": 2.57535291873332,
-    "return_1m": 13.104753891459842,
-    "return_ytd": 40.09900990099009,
-    "return_1y": 61.860325105358235,
-    "return_3y": -9.660618279569889,
-    "close": 53.77,
-    "marketCap": 79802383520,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 6.412032455966754,
-    "return_2y": 22.818638647784372
-   }
-  },
-  {
-   "id": "C_1130",
-   "type": "CHARACTER",
-   "name": "유전서비스 1위"
-  },
-  {
-   "id": "A_2519",
-   "type": "ASSET",
-   "name": "할리버튼",
-   "exposure": {
-    "ticker": "HAL",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 4.81120584652861,
-    "return_3d": 1.834319526627226,
-    "return_15d": 3.177458033573144,
-    "return_1m": -2.8232636928289145,
-    "return_ytd": 21.797593772116073,
-    "return_1y": 61.21779859484777,
-    "return_3y": -14.611758868767055,
-    "close": 34.42,
-    "marketCap": 28754390039,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 7.933521480087813,
-    "return_2y": 11.49983803045027
-   }
-  },
-  {
-   "id": "C_1131",
-   "type": "CHARACTER",
-   "name": "북미 유전서비스"
-  },
-  {
-   "id": "A_2520",
-   "type": "ASSET",
-   "name": "옥시덴탈",
-   "exposure": {
-    "ticker": "OXY",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.1438474870017368,
-    "return_3d": -1.185235353877423,
-    "return_15d": 1.8499127399651094,
-    "return_1m": 6.945207989737945,
-    "return_ytd": 41.92607003891051,
-    "return_1y": 30.355148536966702,
-    "return_3y": -10.367071110428505,
-    "close": 58.36,
-    "marketCap": 58046881150,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 4.3820425684135245,
-    "return_2y": 2.4938531787846996
-   }
-  },
-  {
-   "id": "C_1132",
-   "type": "CHARACTER",
-   "name": "퍼미안 셰일 대형"
-  },
-  {
-   "id": "A_2521",
-   "type": "ASSET",
-   "name": "코노코필립스",
-   "exposure": {
-    "ticker": "COP",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.8149694828140106,
-    "return_3d": 0.6829733163913554,
-    "return_15d": 5.421586562448022,
-    "return_1m": 13.327969965138099,
-    "return_ytd": 35.43424847772674,
-    "return_1y": 32.54573967590171,
-    "return_3y": 7.7236808564873805,
-    "close": 126.78,
-    "marketCap": 154455314207,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 7.796956041152958,
-    "return_2y": 15.960852465014174
-   }
-  },
-  {
-   "id": "C_1133",
-   "type": "CHARACTER",
-   "name": "독립 E&P 1위"
-  },
-  {
-   "id": "A_483",
-   "type": "ASSET",
-   "name": "Devon",
-   "exposure": {
-    "ticker": "DVN",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 3.2890290605992467,
-    "return_3d": 0.9911894273127775,
-    "return_15d": 1.7984014209591503,
-    "return_1m": 5.645161290322598,
-    "return_ytd": 25.17062517062516,
-    "return_1y": 35.45051698670605,
-    "return_3y": -8.828793000596535,
-    "close": 45.85,
-    "marketCap": 32106966254,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 6.67752442996743,
-    "return_2y": 3.0568667116205983
-   }
-  },
-  {
-   "id": "C_1134",
-   "type": "CHARACTER",
-   "name": "셰일 E&P"
-  },
-  {
-   "id": "A_2475",
-   "type": "ASSET",
-   "name": "발레로",
-   "exposure": {
-    "ticker": "VLO",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.36451650530735513,
-    "return_3d": 5.479748085947156,
-    "return_15d": 12.948760330578523,
-    "return_1m": 13.349699764456101,
-    "return_ytd": 109.88389950242646,
-    "return_1y": 151.5608894124577,
-    "return_3y": 150.3076923076923,
-    "close": 341.67,
-    "marketCap": 98376175942,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 14.535215044752103,
-    "return_2y": 131.13922337978624
-   }
-  },
-  {
-   "id": "C_1135",
-   "type": "CHARACTER",
-   "name": "정유 — 정제마진"
-  },
-  {
-   "id": "M_059",
-   "type": "MACRO",
-   "name": "유가상승"
-  },
-  {
-   "id": "M_076",
-   "type": "MACRO",
-   "name": "OPEC감산정책"
-  },
-  {
-   "id": "M_073",
-   "type": "MACRO",
-   "name": "미국에너지개발확대"
-  },
-  {
-   "id": "A_503",
-   "type": "ASSET",
-   "name": "XLE",
-   "exposure": {
-    "ticker": "XLE",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.3920733704552823,
-    "close": 61.91,
-    "marketCap": 40776850381,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 1.608403085507959,
-    "return_15d": 3.8409929553840927,
-    "return_1m": 8.709394205443367,
-    "return_ytd": 38.470140908074235,
-    "return_1y": 44.71715755025711,
-    "return_3y": 38.315460232350304,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 7.669565217391305,
-    "return_2y": 38.34636871508379
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_327",
-   "to": "T_497",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012327"
-   ]
-  },
-  {
-   "from": "A_327",
-   "to": "C_1128",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017212"
-   ]
-  },
-  {
-   "from": "A_2518",
-   "to": "T_497",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012328"
-   ]
-  },
-  {
-   "from": "A_2518",
-   "to": "C_1129",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017213"
-   ]
-  },
-  {
-   "from": "A_2442",
-   "to": "T_497",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012329"
-   ]
-  },
-  {
-   "from": "A_2442",
-   "to": "C_1130",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017214"
-   ]
-  },
-  {
-   "from": "A_2519",
-   "to": "T_497",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012330"
-   ]
-  },
-  {
-   "from": "A_2519",
-   "to": "C_1131",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017215"
-   ]
-  },
-  {
-   "from": "A_2520",
-   "to": "T_497",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012331"
-   ]
-  },
-  {
-   "from": "A_2520",
-   "to": "C_1132",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017216"
-   ]
-  },
-  {
-   "from": "A_2521",
-   "to": "T_497",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012332"
-   ]
-  },
-  {
-   "from": "A_2521",
-   "to": "C_1133",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017217"
-   ]
-  },
-  {
-   "from": "A_483",
-   "to": "T_497",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012333"
-   ]
-  },
-  {
-   "from": "A_483",
-   "to": "C_1134",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017218"
-   ]
-  },
-  {
-   "from": "A_2475",
-   "to": "T_497",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012334"
-   ]
-  },
-  {
-   "from": "A_2475",
-   "to": "C_1135",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017219"
-   ]
-  },
-  {
-   "from": "M_059",
-   "to": "T_497",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012335"
-   ]
-  },
-  {
-   "from": "M_076",
-   "to": "T_497",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012336"
-   ]
-  },
-  {
-   "from": "M_073",
-   "to": "T_497",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012337"
-   ]
-  },
-  {
-   "from": "A_327",
-   "to": "A_2518",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019928"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "엑슨모빌과 셰브론은 미국 에너지 메이저 양대 경쟁"
-  },
-  {
-   "from": "A_2442",
-   "to": "A_2519",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019929"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "슐럼버거와 할리버튼은 글로벌 오일필드 서비스 양대 경쟁"
-  },
-  {
-   "from": "A_2520",
-   "to": "A_2521",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019930"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "옥시덴탈과 코노코필립스는 미국 E&P 시장 경쟁"
-  },
-  {
-   "from": "A_483",
-   "to": "A_2520",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019931"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "Devon과 옥시덴탈은 퍼미안 분지 E&P 시장 경쟁"
-  },
-  {
-   "from": "A_2475",
-   "to": "A_327",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019932"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "발레로와 엑슨모빌은 미국 정제 마진 시장 경쟁"
-  },
-  {
-   "from": "A_503",
-   "to": "T_497",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020846"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_327",
-   "to": "T_497",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012327"
-   ]
-  },
-  {
-   "from": "A_327",
-   "to": "C_1128",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017212"
-   ]
-  },
-  {
-   "from": "A_2518",
-   "to": "T_497",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012328"
-   ]
-  },
-  {
-   "from": "A_2518",
-   "to": "C_1129",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017213"
-   ]
-  },
-  {
-   "from": "A_2442",
-   "to": "T_497",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012329"
-   ]
-  },
-  {
-   "from": "A_2442",
-   "to": "C_1130",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017214"
-   ]
-  },
-  {
-   "from": "A_2519",
-   "to": "T_497",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012330"
-   ]
-  },
-  {
-   "from": "A_2519",
-   "to": "C_1131",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017215"
-   ]
-  },
-  {
-   "from": "A_2520",
-   "to": "T_497",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012331"
-   ]
-  },
-  {
-   "from": "A_2520",
-   "to": "C_1132",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017216"
-   ]
-  },
-  {
-   "from": "A_2521",
-   "to": "T_497",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012332"
-   ]
-  },
-  {
-   "from": "A_2521",
-   "to": "C_1133",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017217"
-   ]
-  },
-  {
-   "from": "A_483",
-   "to": "T_497",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012333"
-   ]
-  },
-  {
-   "from": "A_483",
-   "to": "C_1134",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017218"
-   ]
-  },
-  {
-   "from": "A_2475",
-   "to": "T_497",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012334"
-   ]
-  },
-  {
-   "from": "A_2475",
-   "to": "C_1135",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017219"
-   ]
-  },
-  {
-   "from": "M_059",
-   "to": "T_497",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012335"
-   ]
-  },
-  {
-   "from": "M_076",
-   "to": "T_497",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012336"
-   ]
-  },
-  {
-   "from": "M_073",
-   "to": "T_497",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012337"
-   ]
-  },
-  {
-   "from": "A_327",
-   "to": "A_2518",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019928"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "엑슨모빌과 셰브론은 미국 에너지 메이저 양대 경쟁"
-  },
-  {
-   "from": "A_2442",
-   "to": "A_2519",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019929"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "슐럼버거와 할리버튼은 글로벌 오일필드 서비스 양대 경쟁"
-  },
-  {
-   "from": "A_2520",
-   "to": "A_2521",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019930"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "옥시덴탈과 코노코필립스는 미국 E&P 시장 경쟁"
-  },
-  {
-   "from": "A_483",
-   "to": "A_2520",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019931"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "Devon과 옥시덴탈은 퍼미안 분지 E&P 시장 경쟁"
-  },
-  {
-   "from": "A_2475",
-   "to": "A_327",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019932"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "발레로와 엑슨모빌은 미국 정제 마진 시장 경쟁"
-  },
-  {
-   "from": "A_503",
-   "to": "T_497",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020846"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

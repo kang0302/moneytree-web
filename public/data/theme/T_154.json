@@ -1,868 +1,868 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_154",
- "themeName": "글로벌제조/디지털트윈SW",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_154",
+  "themeName": "글로벌제조/디지털트윈SW",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-04-19T00:00:00+09:00",
+    "notes": "g154 누적 import 기반 글로벌제조/디지털트윈SW 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 9건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-08-01",
+        "kind": "수정",
+        "title": "상폐 종목 제거",
+        "detail": "피인수/상폐로 거래/링크가 없는 종목 제거."
+      },
+      {
+        "date": "2026-07-19",
+        "kind": "보강",
+        "title": "바로미터 표본 보강(자산 5종 이상 확보)",
+        "detail": "2종 추가 편입(1궤도) 및 자산별 CHR 정의. 표본 부족(ASSET<5) 해소."
+      },
+      {
+        "date": "2026-07-12",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
+      },
+      {
+        "date": "2026-07-12",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필 + 2026 이벤트",
+        "detail": "전 엣지 근거(호버 박스)를 종목·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ],
+    "description": "• 리쇼어링·반도체 fab·EV·로봇 양산 라인 트윈 채택률이 동인\n• 동인: AI생산성개선·자동화확산·미국제조업리쇼어링\n• 대표주: PTC(30년교체주기)·지멘스(디지털인더스트리)·다쏘시스템즈(3D익스피리언스다쏘)\n• 밸류체인: 건설디지털트윈\n• ETF: IGV"
+  },
+  "nodes": [
+    {
+      "id": "T_154",
+      "type": "THEME",
+      "name": "글로벌제조/디지털트윈SW"
+    },
+    {
+      "id": "A_259",
+      "type": "ASSET",
+      "name": "PTC",
+      "exposure": {
+        "ticker": "PTC",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 4.068814855270353,
+        "close": 152.44,
+        "marketCap": 17607734640,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 1.7963272120200324,
+        "return_15d": 15.083798882681565,
+        "return_1m": 22.56975154780092,
+        "return_ytd": -12.496412375868216,
+        "return_1y": -27.364559012722168,
+        "return_3y": 8.940184377903226,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 3.0069599297249727,
+        "return_2y": -13.55336282182148
+      }
+    },
+    {
+      "id": "A_256",
+      "type": "ASSET",
+      "name": "지멘스",
+      "exposure": {
+        "ticker": "SIEGY",
+        "exchange": "OTC",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.7629291476455524,
+        "close": 161.13,
+        "marketCap": 247861179880,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -1.8995433789954386,
+        "return_15d": 4.2575218375930035,
+        "return_1m": 6.314330958036418,
+        "return_ytd": 15.133976420150063,
+        "return_1y": 16.84554024655547,
+        "return_3y": 120.6353553334246,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -0.9588788493453793,
+        "return_2y": 77.1827578623268
+      }
+    },
+    {
+      "id": "A_255",
+      "type": "ASSET",
+      "name": "다쏘시스템즈",
+      "exposure": {
+        "ticker": "DASTY",
+        "exchange": "OTC",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 2.211690363349117,
+        "close": 25.88,
+        "marketCap": 34006264539,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 3.3133732534930127,
+        "return_15d": 8.148767237776845,
+        "return_1m": 26.120857699805057,
+        "return_ytd": -7.306590257879664,
+        "return_1y": -17.263427109974426,
+        "return_3y": -33.81074168797954,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 4.989858012170378,
+        "return_2y": -31.85887309110058
+      }
+    },
+    {
+      "id": "A_043",
+      "type": "ASSET",
+      "name": "오토데스크",
+      "exposure": {
+        "ticker": "ADSK",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.8234126180153076,
+        "close": 251.29,
+        "marketCap": 53058690124,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -0.14702376221886748,
+        "return_15d": 2.4627930682976418,
+        "return_1m": 15.085871307533782,
+        "return_ytd": -15.107597716293364,
+        "return_1y": -13.120591896003319,
+        "return_3y": 25.84635416666665,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 0.7133982605907585,
+        "return_2y": 0.07168173310501125
+      }
+    },
+    {
+      "id": "A_257",
+      "type": "ASSET",
+      "name": "벤틀리시스템즈",
+      "exposure": {
+        "ticker": "BSY",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 3.6951501154734334,
+        "last_price": null,
+        "market_cap": null,
+        "per": null,
+        "return_15d": -2.813852813852813,
+        "return_30d": null,
+        "return_90d": null,
+        "currency": null,
+        "asof": null,
+        "return_3d": -0.8830022075055233,
+        "return_1m": 11.069882498453932,
+        "return_ytd": -5.894681687188896,
+        "return_1y": -32.75926619243729,
+        "return_3y": -21.75996514920495,
+        "close": 35.92,
+        "marketCap": 10498753168,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "pe_ttm": null,
+        "return_5d": 0.5317660229499088,
+        "return_2y": -28.560063643595857
+      }
+    },
+    {
+      "id": "C_3737",
+      "type": "CHARACTER",
+      "name": "인프라디지털트윈SW"
+    },
+    {
+      "id": "BF_270",
+      "type": "BUSINESS_FIELD",
+      "name": "건설디지털트윈"
+    },
+    {
+      "id": "C_187",
+      "type": "CHARACTER",
+      "name": "30년교체주기"
+    },
+    {
+      "id": "C_188",
+      "type": "CHARACTER",
+      "name": "높은전환비용"
+    },
+    {
+      "id": "C_189",
+      "type": "CHARACTER",
+      "name": "안정적"
+    },
+    {
+      "id": "M_204",
+      "type": "MACRO",
+      "name": "AI생산성개선"
+    },
+    {
+      "id": "M_028",
+      "type": "MACRO",
+      "name": "자동화확산"
+    },
+    {
+      "id": "M_197",
+      "type": "MACRO",
+      "name": "미국제조업리쇼어링"
+    },
+    {
+      "id": "C_2685",
+      "type": "CHARACTER",
+      "name": "CAD_PLM_IoT"
+    },
+    {
+      "id": "C_2686",
+      "type": "CHARACTER",
+      "name": "디지털인더스트리"
+    },
+    {
+      "id": "C_2687",
+      "type": "CHARACTER",
+      "name": "3D익스피리언스다쏘"
+    },
+    {
+      "id": "C_2688",
+      "type": "CHARACTER",
+      "name": "설계건설BIM"
+    },
+    {
+      "id": "A_2612",
+      "type": "ASSET",
+      "name": "IGV",
+      "exposure": {
+        "ticker": "IGV",
+        "exchange": "NYSEARCA",
+        "country": "US",
+        "business_desc": "iShares Expanded Tech-Software(IGV)는 마이크로소프트·세일즈포스·서비스나우·SAP 등 SW·SaaS주를 담는 소프트웨어 섹터 대표 ETF다.",
+        "theme_role": "SW섹터ETF",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": 0.8336602589250841,
+        "return_3d": -1.2202152190622595,
+        "return_15d": 11.302370899642744,
+        "return_1m": 10.786637931034493,
+        "return_ytd": -2.724950326426334,
+        "return_1y": -3.5372490148245395,
+        "return_3y": 53.127792672028605,
+        "close": 102.81,
+        "marketCap": 14449585048,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -0.26193247962746913,
+        "return_2y": 18.85549132947977
+      }
+    }
   ],
-  "dataAsOf": "2026-04-19T00:00:00+09:00",
-  "notes": "g154 누적 import 기반 글로벌제조/디지털트윈SW 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 9건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-08-01",
-    "kind": "수정",
-    "title": "상폐 종목 제거",
-    "detail": "피인수/상폐로 거래/링크가 없는 종목 제거."
-   },
-   {
-    "date": "2026-07-19",
-    "kind": "보강",
-    "title": "바로미터 표본 보강(자산 5종 이상 확보)",
-    "detail": "2종 추가 편입(1궤도) 및 자산별 CHR 정의. 표본 부족(ASSET<5) 해소."
-   },
-   {
-    "date": "2026-07-12",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
-   },
-   {
-    "date": "2026-07-12",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필 + 2026 이벤트",
-    "detail": "전 엣지 근거(호버 박스)를 종목·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_259",
+      "to": "T_154",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004666"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_256",
+      "to": "T_154",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004667"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_255",
+      "to": "T_154",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004668"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_043",
+      "to": "T_154",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004669"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_043",
+      "to": "BF_270",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004670"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_259",
+      "to": "C_187",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004671"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_259",
+      "to": "C_188",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004672"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_259",
+      "to": "C_189",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004673"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_204",
+      "to": "T_154",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_004674"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "M_028",
+      "to": "T_154",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_004675"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "M_197",
+      "to": "T_154",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_004676"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_259",
+      "to": "C_2685",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004811"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_256",
+      "to": "C_2686",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004812"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_255",
+      "to": "C_2687",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004813"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_043",
+      "to": "C_2688",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004814"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_257",
+      "to": "T_154",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_007832"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_257",
+      "to": "C_3737",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007833"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_259",
+      "to": "A_256",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018063"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "PTC(Windchill)와 지멘스(Teamcenter)는 글로벌 PLM 시장을 다투는 직접 경쟁사다."
+    },
+    {
+      "from": "A_259",
+      "to": "A_255",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018064"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "PTC와 다쏘시스템즈(ENOVIA/3DEXPERIENCE)는 PLM·CAD 시장에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_256",
+      "to": "A_255",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018065"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "지멘스 디지털인더스트리(NX·Teamcenter)와 다쏘시스템즈(CATIA·3DEXPERIENCE)는 PLM/CAD 대표 양대 경쟁사다."
+    },
+    {
+      "from": "A_043",
+      "to": "A_255",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018066"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "오토데스크와 다쏘시스템즈는 3D 설계·CAD 시장에서 경쟁한다."
+    },
+    {
+      "from": "A_043",
+      "to": "A_259",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018067"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "오토데스크(Fusion/Inventor)와 PTC(Creo)는 제조 설계·CAD 시장에서 경쟁한다."
+    },
+    {
+      "from": "A_043",
+      "to": "A_256",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018068"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "오토데스크와 지멘스는 제조·설계 소프트웨어 및 디지털트윈 영역에서 경쟁한다."
+    },
+    {
+      "from": "A_043",
+      "to": "A_257",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018069"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "오토데스크와 벤틀리시스템즈는 인프라·건설(AEC) 엔지니어링 소프트웨어 시장의 오랜 직접 경쟁사다."
+    },
+    {
+      "from": "A_256",
+      "to": "A_257",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_018070"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "지멘스는 2016년 이후 벤틀리시스템즈 보통주를 지속 매입해 지분율이 9%를 넘겼다."
+    },
+    {
+      "from": "A_256",
+      "to": "A_257",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_018071"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "지멘스와 벤틀리는 2016년부터 디지털트윈 공동개발과 최대 1억 유로 규모 공동투자 프로그램을 운영하는 전략적 제휴 관계다."
+    },
+    {
+      "from": "A_2612",
+      "to": "T_154",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020622"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ],
-  "description": "• 리쇼어링·반도체 fab·EV·로봇 양산 라인 트윈 채택률이 동인\n• 동인: AI생산성개선·자동화확산·미국제조업리쇼어링\n• 대표주: PTC(30년교체주기)·지멘스(디지털인더스트리)·다쏘시스템즈(3D익스피리언스다쏘)\n• 밸류체인: 건설디지털트윈\n• ETF: IGV"
- },
- "nodes": [
-  {
-   "id": "T_154",
-   "type": "THEME",
-   "name": "글로벌제조/디지털트윈SW"
-  },
-  {
-   "id": "A_259",
-   "type": "ASSET",
-   "name": "PTC",
-   "exposure": {
-    "ticker": "PTC",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -2.6902332835141873,
-    "close": 149.75,
-    "marketCap": 17297023500,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -0.45865461313480127,
-    "return_15d": 26.34998312521093,
-    "return_1m": 22.234919598400115,
-    "return_ytd": -14.04052580219276,
-    "return_1y": -28.008268833229167,
-    "return_3y": 2.7162356814596444,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.3810845575790376,
-    "return_2y": -13.148126667439964
-   }
-  },
-  {
-   "id": "A_256",
-   "type": "ASSET",
-   "name": "지멘스",
-   "exposure": {
-    "ticker": "SIEGY",
-    "exchange": "OTC",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.1463325406987348,
-    "close": 164.25,
-    "marketCap": 252660577145,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 1.658723772977666,
-    "return_15d": 6.71821194204405,
-    "return_1m": 6.207565470417076,
-    "return_ytd": 17.36334405144695,
-    "return_1y": 20.94992636229749,
-    "return_3y": 117.6938369781312,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.5204895234563365,
-    "return_2y": 87.2221588966146
-   }
-  },
-  {
-   "id": "A_255",
-   "type": "ASSET",
-   "name": "다쏘시스템즈",
-   "exposure": {
-    "ticker": "DASTY",
-    "exchange": "OTC",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 2.2031823745410017,
-    "close": 25.05,
-    "marketCap": 32915646318,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -1.3391098857818085,
-    "return_15d": 11.086474501108645,
-    "return_1m": 19.456366237482126,
-    "return_ytd": -10.279369627507162,
-    "return_1y": -19.453376205787787,
-    "return_3y": -38.13287231415165,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -2.869329197363313,
-    "return_2y": -32.76972624798711
-   }
-  },
-  {
-   "id": "A_043",
-   "type": "ASSET",
-   "name": "오토데스크",
-   "exposure": {
-    "ticker": "ADSK",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -2.442239106838262,
-    "close": 251.66,
-    "marketCap": 53136813867,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 0.027823045431052407,
-    "return_15d": 19.980929678188318,
-    "return_1m": 22.21250971250972,
-    "return_ytd": -14.982601939123674,
-    "return_1y": -11.309251101321582,
-    "return_3y": 18.999432570455845,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.0358117873775496,
-    "return_2y": 2.2094062220778143
-   }
-  },
-  {
-   "id": "A_257",
-   "type": "ASSET",
-   "name": "벤틀리시스템즈",
-   "exposure": {
-    "ticker": "BSY",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.8752735229759279,
-    "last_price": null,
-    "market_cap": null,
-    "per": null,
-    "return_15d": 15.414012738853522,
-    "return_30d": null,
-    "return_90d": null,
-    "currency": null,
-    "asof": null,
-    "return_3d": -0.027586206896546006,
-    "return_1m": 16.34028892455861,
-    "return_ytd": -5.056326958344249,
-    "return_1y": -29.930394431554518,
-    "return_3y": -23.20406865861411,
-    "close": 36.24,
-    "marketCap": 10592283263,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "pe_ttm": null,
-    "return_5d": 2.9253053109911997,
-    "return_2y": -26.99435938759065
-   }
-  },
-  {
-   "id": "C_3737",
-   "type": "CHARACTER",
-   "name": "인프라디지털트윈SW"
-  },
-  {
-   "id": "BF_270",
-   "type": "BUSINESS_FIELD",
-   "name": "건설디지털트윈"
-  },
-  {
-   "id": "C_187",
-   "type": "CHARACTER",
-   "name": "30년교체주기"
-  },
-  {
-   "id": "C_188",
-   "type": "CHARACTER",
-   "name": "높은전환비용"
-  },
-  {
-   "id": "C_189",
-   "type": "CHARACTER",
-   "name": "안정적"
-  },
-  {
-   "id": "M_204",
-   "type": "MACRO",
-   "name": "AI생산성개선"
-  },
-  {
-   "id": "M_028",
-   "type": "MACRO",
-   "name": "자동화확산"
-  },
-  {
-   "id": "M_197",
-   "type": "MACRO",
-   "name": "미국제조업리쇼어링"
-  },
-  {
-   "id": "C_2685",
-   "type": "CHARACTER",
-   "name": "CAD_PLM_IoT"
-  },
-  {
-   "id": "C_2686",
-   "type": "CHARACTER",
-   "name": "디지털인더스트리"
-  },
-  {
-   "id": "C_2687",
-   "type": "CHARACTER",
-   "name": "3D익스피리언스다쏘"
-  },
-  {
-   "id": "C_2688",
-   "type": "CHARACTER",
-   "name": "설계건설BIM"
-  },
-  {
-   "id": "A_2612",
-   "type": "ASSET",
-   "name": "IGV",
-   "exposure": {
-    "ticker": "IGV",
-    "exchange": "NYSEARCA",
-    "country": "US",
-    "business_desc": "iShares Expanded Tech-Software(IGV)는 마이크로소프트·세일즈포스·서비스나우·SAP 등 SW·SaaS주를 담는 소프트웨어 섹터 대표 ETF다.",
-    "theme_role": "SW섹터ETF",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -2.0700037636432134,
-    "return_3d": 0.15396458814471714,
-    "return_15d": 18.299613548533756,
-    "return_1m": 11.160952686104885,
-    "return_ytd": -1.5233229255369518,
-    "return_1y": -3.9320657190326846,
-    "return_3y": 50.6658946149392,
-    "close": 104.08,
-    "marketCap": 14628079096,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.3535884701528778,
-    "return_2y": 24.082021936099185
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_259",
-   "to": "T_154",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004666"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_256",
-   "to": "T_154",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004667"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_255",
-   "to": "T_154",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004668"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_043",
-   "to": "T_154",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004669"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_043",
-   "to": "BF_270",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004670"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_259",
-   "to": "C_187",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004671"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_259",
-   "to": "C_188",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004672"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_259",
-   "to": "C_189",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004673"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_204",
-   "to": "T_154",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_004674"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "M_028",
-   "to": "T_154",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_004675"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "M_197",
-   "to": "T_154",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_004676"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_259",
-   "to": "C_2685",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004811"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_256",
-   "to": "C_2686",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004812"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_255",
-   "to": "C_2687",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004813"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_043",
-   "to": "C_2688",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004814"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_257",
-   "to": "T_154",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_007832"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_257",
-   "to": "C_3737",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007833"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_259",
-   "to": "A_256",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018063"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "PTC(Windchill)와 지멘스(Teamcenter)는 글로벌 PLM 시장을 다투는 직접 경쟁사다."
-  },
-  {
-   "from": "A_259",
-   "to": "A_255",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018064"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "PTC와 다쏘시스템즈(ENOVIA/3DEXPERIENCE)는 PLM·CAD 시장에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_256",
-   "to": "A_255",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018065"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "지멘스 디지털인더스트리(NX·Teamcenter)와 다쏘시스템즈(CATIA·3DEXPERIENCE)는 PLM/CAD 대표 양대 경쟁사다."
-  },
-  {
-   "from": "A_043",
-   "to": "A_255",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018066"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "오토데스크와 다쏘시스템즈는 3D 설계·CAD 시장에서 경쟁한다."
-  },
-  {
-   "from": "A_043",
-   "to": "A_259",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018067"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "오토데스크(Fusion/Inventor)와 PTC(Creo)는 제조 설계·CAD 시장에서 경쟁한다."
-  },
-  {
-   "from": "A_043",
-   "to": "A_256",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018068"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "오토데스크와 지멘스는 제조·설계 소프트웨어 및 디지털트윈 영역에서 경쟁한다."
-  },
-  {
-   "from": "A_043",
-   "to": "A_257",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018069"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "오토데스크와 벤틀리시스템즈는 인프라·건설(AEC) 엔지니어링 소프트웨어 시장의 오랜 직접 경쟁사다."
-  },
-  {
-   "from": "A_256",
-   "to": "A_257",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_018070"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "지멘스는 2016년 이후 벤틀리시스템즈 보통주를 지속 매입해 지분율이 9%를 넘겼다."
-  },
-  {
-   "from": "A_256",
-   "to": "A_257",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_018071"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "지멘스와 벤틀리는 2016년부터 디지털트윈 공동개발과 최대 1억 유로 규모 공동투자 프로그램을 운영하는 전략적 제휴 관계다."
-  },
-  {
-   "from": "A_2612",
-   "to": "T_154",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020622"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_259",
-   "to": "T_154",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004666"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_256",
-   "to": "T_154",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004667"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_255",
-   "to": "T_154",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004668"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_043",
-   "to": "T_154",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004669"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_043",
-   "to": "BF_270",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004670"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_259",
-   "to": "C_187",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004671"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_259",
-   "to": "C_188",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004672"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_259",
-   "to": "C_189",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004673"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_204",
-   "to": "T_154",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_004674"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "M_028",
-   "to": "T_154",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_004675"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "M_197",
-   "to": "T_154",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_004676"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_259",
-   "to": "C_2685",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004811"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_256",
-   "to": "C_2686",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004812"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_255",
-   "to": "C_2687",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004813"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_043",
-   "to": "C_2688",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004814"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_257",
-   "to": "T_154",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_007832"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_257",
-   "to": "C_3737",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007833"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_259",
-   "to": "A_256",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018063"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "PTC(Windchill)와 지멘스(Teamcenter)는 글로벌 PLM 시장을 다투는 직접 경쟁사다."
-  },
-  {
-   "from": "A_259",
-   "to": "A_255",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018064"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "PTC와 다쏘시스템즈(ENOVIA/3DEXPERIENCE)는 PLM·CAD 시장에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_256",
-   "to": "A_255",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018065"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "지멘스 디지털인더스트리(NX·Teamcenter)와 다쏘시스템즈(CATIA·3DEXPERIENCE)는 PLM/CAD 대표 양대 경쟁사다."
-  },
-  {
-   "from": "A_043",
-   "to": "A_255",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018066"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "오토데스크와 다쏘시스템즈는 3D 설계·CAD 시장에서 경쟁한다."
-  },
-  {
-   "from": "A_043",
-   "to": "A_259",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018067"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "오토데스크(Fusion/Inventor)와 PTC(Creo)는 제조 설계·CAD 시장에서 경쟁한다."
-  },
-  {
-   "from": "A_043",
-   "to": "A_256",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018068"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "오토데스크와 지멘스는 제조·설계 소프트웨어 및 디지털트윈 영역에서 경쟁한다."
-  },
-  {
-   "from": "A_043",
-   "to": "A_257",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018069"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "오토데스크와 벤틀리시스템즈는 인프라·건설(AEC) 엔지니어링 소프트웨어 시장의 오랜 직접 경쟁사다."
-  },
-  {
-   "from": "A_256",
-   "to": "A_257",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_018070"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "지멘스는 2016년 이후 벤틀리시스템즈 보통주를 지속 매입해 지분율이 9%를 넘겼다."
-  },
-  {
-   "from": "A_256",
-   "to": "A_257",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_018071"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "지멘스와 벤틀리는 2016년부터 디지털트윈 공동개발과 최대 1억 유로 규모 공동투자 프로그램을 운영하는 전략적 제휴 관계다."
-  },
-  {
-   "from": "A_2612",
-   "to": "T_154",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020622"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
+  "links": [
+    {
+      "from": "A_259",
+      "to": "T_154",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004666"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_256",
+      "to": "T_154",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004667"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_255",
+      "to": "T_154",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004668"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_043",
+      "to": "T_154",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004669"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_043",
+      "to": "BF_270",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004670"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_259",
+      "to": "C_187",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004671"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_259",
+      "to": "C_188",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004672"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_259",
+      "to": "C_189",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004673"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_204",
+      "to": "T_154",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_004674"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "M_028",
+      "to": "T_154",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_004675"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "M_197",
+      "to": "T_154",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_004676"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_259",
+      "to": "C_2685",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004811"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_256",
+      "to": "C_2686",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004812"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_255",
+      "to": "C_2687",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004813"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_043",
+      "to": "C_2688",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004814"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_257",
+      "to": "T_154",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_007832"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_257",
+      "to": "C_3737",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007833"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_259",
+      "to": "A_256",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018063"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "PTC(Windchill)와 지멘스(Teamcenter)는 글로벌 PLM 시장을 다투는 직접 경쟁사다."
+    },
+    {
+      "from": "A_259",
+      "to": "A_255",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018064"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "PTC와 다쏘시스템즈(ENOVIA/3DEXPERIENCE)는 PLM·CAD 시장에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_256",
+      "to": "A_255",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018065"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "지멘스 디지털인더스트리(NX·Teamcenter)와 다쏘시스템즈(CATIA·3DEXPERIENCE)는 PLM/CAD 대표 양대 경쟁사다."
+    },
+    {
+      "from": "A_043",
+      "to": "A_255",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018066"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "오토데스크와 다쏘시스템즈는 3D 설계·CAD 시장에서 경쟁한다."
+    },
+    {
+      "from": "A_043",
+      "to": "A_259",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018067"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "오토데스크(Fusion/Inventor)와 PTC(Creo)는 제조 설계·CAD 시장에서 경쟁한다."
+    },
+    {
+      "from": "A_043",
+      "to": "A_256",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018068"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "오토데스크와 지멘스는 제조·설계 소프트웨어 및 디지털트윈 영역에서 경쟁한다."
+    },
+    {
+      "from": "A_043",
+      "to": "A_257",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018069"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "오토데스크와 벤틀리시스템즈는 인프라·건설(AEC) 엔지니어링 소프트웨어 시장의 오랜 직접 경쟁사다."
+    },
+    {
+      "from": "A_256",
+      "to": "A_257",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_018070"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "지멘스는 2016년 이후 벤틀리시스템즈 보통주를 지속 매입해 지분율이 9%를 넘겼다."
+    },
+    {
+      "from": "A_256",
+      "to": "A_257",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_018071"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "지멘스와 벤틀리는 2016년부터 디지털트윈 공동개발과 최대 1억 유로 규모 공동투자 프로그램을 운영하는 전략적 제휴 관계다."
+    },
+    {
+      "from": "A_2612",
+      "to": "T_154",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020622"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ]
 }

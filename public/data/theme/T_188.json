@@ -1,862 +1,862 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_188",
- "themeName": "미해군조선수요",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_188",
+  "themeName": "미해군조선수요",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-04-27T00:00:00+09:00",
+    "notes": "g188 누적 import 기반 미 해군 조선수요 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-12",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "자산 6개에 테마 관점 특성(CHARACTER)·HAS_TRAIT를 부여했다."
+      },
+      {
+        "date": "2026-07-12",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필 + 2026 이벤트",
+        "detail": "전 엣지 근거를 종목·관계 사실로 구체화했다. 2026 이벤트 2건을 추가했다."
+      }
+    ],
+    "description": "• Huntington Ingalls·General Dynamics·HD현대중공업·한화오션 등 미 해군\n• 동인: 군비증강·미중패권경쟁\n• 대표주: 제너럴다이내믹스(잠수함건조)·헌팅턴잉걸스(항모)·RTX(함정유도무기)\n• 밸류체인: 군함/잠수함건조·유도무기·레이더·전자전·기자재·엔진"
+  },
+  "nodes": [
+    {
+      "id": "T_188",
+      "type": "THEME",
+      "name": "미해군조선수요"
+    },
+    {
+      "id": "A_418",
+      "type": "ASSET",
+      "name": "제너럴다이내믹스",
+      "exposure": {
+        "ticker": "GD",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.289722476364751,
+        "close": 392.34,
+        "marketCap": 106150333380,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -0.8691697407650745,
+        "return_15d": 2.9871902561948716,
+        "return_1m": 6.4463617125183115,
+        "return_ytd": 16.538941365175532,
+        "return_1y": 24.00126422250317,
+        "return_3y": 74.82399073166384,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -0.47436645442784364,
+        "return_2y": 32.72665764546683
+      }
+    },
+    {
+      "id": "A_1437",
+      "type": "ASSET",
+      "name": "헌팅턴잉걸스",
+      "exposure": {
+        "ticker": "HII",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.841881552847835,
+        "close": 311.76,
+        "marketCap": 12284777472,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -4.867108113881169,
+        "return_15d": 11.184022824536388,
+        "return_1m": 15.839928659012381,
+        "return_ytd": -8.324756667744882,
+        "return_1y": 17.467972871137903,
+        "return_3y": 42.07072548304775,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -4.602203182374542,
+        "return_2y": 15.083056478405332
+      }
+    },
+    {
+      "id": "A_419",
+      "type": "ASSET",
+      "name": "RTX",
+      "exposure": {
+        "ticker": "RTX",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -2.2794802430262995,
+        "close": 220.35,
+        "marketCap": 296978497555,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -1.175045970309907,
+        "return_15d": 2.369337979094066,
+        "return_1m": 13.870084233372948,
+        "return_ytd": 20.147219193020717,
+        "return_1y": 43.40101522842639,
+        "return_3y": 156.81818181818184,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -1.0818818459328416,
+        "return_2y": 86.18504435994932
+      }
+    },
+    {
+      "id": "A_272",
+      "type": "ASSET",
+      "name": "L3해리스테크놀로지스",
+      "exposure": {
+        "ticker": "LHX",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.8692852543464302,
+        "close": 277.11,
+        "marketCap": 51602038650,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -5.040778562127334,
+        "return_15d": -6.863173461499672,
+        "return_1m": -1.7375270380482921,
+        "return_ytd": -5.60683993596075,
+        "return_1y": 1.7926018440289404,
+        "return_3y": 52.69451179193301,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -4.68803742175139,
+        "return_2y": 20.231690385282896
+      }
+    },
+    {
+      "id": "A_313",
+      "type": "ASSET",
+      "name": "커티스라이트",
+      "exposure": {
+        "ticker": "CW",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -3.20985524745927,
+        "close": 673.34,
+        "marketCap": 24873987608,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -3.7136606083138957,
+        "return_15d": -0.893422233997132,
+        "return_1m": -4.873982820976497,
+        "return_ytd": 22.14341429789397,
+        "return_1y": 40.352266805627934,
+        "return_3y": 233.98144933287037,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -6.959970153790884,
+        "return_2y": 122.59909418493176
+      }
+    },
+    {
+      "id": "A_307",
+      "type": "ASSET",
+      "name": "GE에어로스페이스",
+      "exposure": {
+        "ticker": "GE",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -5.028126582953418,
+        "close": 356.23,
+        "marketCap": 369610894006,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -3.298224659319171,
+        "return_15d": 1.5971251746855764,
+        "return_1m": 2.121377175128303,
+        "return_ytd": 15.647826510404839,
+        "return_1y": 33.95630429060279,
+        "return_3y": 299.540152534769,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -2.4908986395861143,
+        "return_2y": 108.40695021353773
+      }
+    },
+    {
+      "id": "A_432",
+      "type": "ASSET",
+      "name": "ITA ETF",
+      "exposure": {
+        "ticker": "ITA",
+        "exchange": "BATS",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -2.383407360406087,
+        "close": 246.15,
+        "marketCap": 14446298335,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -2.792038543558961,
+        "return_15d": 4.186066198256166,
+        "return_1m": 6.683136133142642,
+        "return_ytd": 14.653686711071789,
+        "return_1y": 27.38045953218795,
+        "return_3y": 114.71563154221913,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -2.1739130434782594,
+        "return_2y": 70.35781022908158
+      }
+    },
+    {
+      "id": "M_131",
+      "type": "MACRO",
+      "name": "군비증강"
+    },
+    {
+      "id": "M_033",
+      "type": "MACRO",
+      "name": "미중패권경쟁"
+    },
+    {
+      "id": "BF_314",
+      "type": "BUSINESS_FIELD",
+      "name": "군함/잠수함건조"
+    },
+    {
+      "id": "BF_129",
+      "type": "BUSINESS_FIELD",
+      "name": "유도무기·레이더·전자전"
+    },
+    {
+      "id": "BF_147",
+      "type": "BUSINESS_FIELD",
+      "name": "기자재"
+    },
+    {
+      "id": "BF_208",
+      "type": "BUSINESS_FIELD",
+      "name": "엔진"
+    },
+    {
+      "id": "C_3038",
+      "type": "CHARACTER",
+      "name": "잠수함건조"
+    },
+    {
+      "id": "C_3039",
+      "type": "CHARACTER",
+      "name": "항모·함정건조"
+    },
+    {
+      "id": "C_3040",
+      "type": "CHARACTER",
+      "name": "함정유도무기"
+    },
+    {
+      "id": "C_3041",
+      "type": "CHARACTER",
+      "name": "함정전자전"
+    },
+    {
+      "id": "C_3042",
+      "type": "CHARACTER",
+      "name": "함정기자재"
+    },
+    {
+      "id": "C_3043",
+      "type": "CHARACTER",
+      "name": "함정엔진"
+    }
   ],
-  "dataAsOf": "2026-04-27T00:00:00+09:00",
-  "notes": "g188 누적 import 기반 미 해군 조선수요 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-12",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "자산 6개에 테마 관점 특성(CHARACTER)·HAS_TRAIT를 부여했다."
-   },
-   {
-    "date": "2026-07-12",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필 + 2026 이벤트",
-    "detail": "전 엣지 근거를 종목·관계 사실로 구체화했다. 2026 이벤트 2건을 추가했다."
-   }
+  "edges": [
+    {
+      "from": "A_418",
+      "to": "T_188",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005774"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1437",
+      "to": "T_188",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005775"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_419",
+      "to": "T_188",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005776"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_272",
+      "to": "T_188",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005777"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_313",
+      "to": "T_188",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005778"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_307",
+      "to": "T_188",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005779"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "T_188",
+      "to": "A_432",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_005780"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_131",
+      "to": "T_188",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005781"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_033",
+      "to": "T_188",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005782"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_418",
+      "to": "BF_314",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005783"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1437",
+      "to": "BF_314",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005784"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_419",
+      "to": "BF_129",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005785"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_272",
+      "to": "BF_129",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005786"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_313",
+      "to": "BF_147",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005787"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_307",
+      "to": "BF_208",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005788"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_418",
+      "to": "C_3038",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005881"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1437",
+      "to": "C_3039",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005882"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_419",
+      "to": "C_3040",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005883"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_272",
+      "to": "C_3041",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005884"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_313",
+      "to": "C_3042",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005885"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_307",
+      "to": "C_3043",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005886"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_418",
+      "to": "A_1437",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_018310"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "General Dynamics(Electric Boat)와 Huntington Ingalls(Newport News)는 Virginia급·Columbia급 잠수함을 교대 건조하는 팀잉 협약으로 공동 건조한다."
+    },
+    {
+      "from": "A_418",
+      "to": "A_1437",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018311"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "General Dynamics(Bath Iron Works)와 Huntington Ingalls(Ingalls)는 Arleigh Burke급 DDG-51 구축함 등 수상함 건조에서 직접 경쟁하는 미 해군 양대 조선사다."
+    },
+    {
+      "from": "A_313",
+      "to": "A_418",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018312"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "Curtiss-Wright는 추진용 밸브·펌프·제어시스템을 General Dynamics Electric Boat의 Virginia·Columbia급 잠수함용으로 공급한다."
+    },
+    {
+      "from": "A_313",
+      "to": "A_1437",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018313"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "Curtiss-Wright는 핵추진 관련 장비를 Huntington Ingalls Newport News의 Ford급 항모·잠수함 프로그램용으로 공급한다."
+    },
+    {
+      "from": "A_307",
+      "to": "A_1437",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018314"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "GE Aerospace는 LM2500 함정용 가스터빈을 Huntington Ingalls(Ingalls)가 건조하는 DDG-51 구축함 추진용으로 공급한다."
+    },
+    {
+      "from": "A_307",
+      "to": "A_418",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018315"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "GE Aerospace는 LM2500 함정용 가스터빈을 General Dynamics(Bath Iron Works)가 건조하는 DDG-51 구축함 추진용으로 공급한다."
+    }
   ],
-  "description": "• Huntington Ingalls·General Dynamics·HD현대중공업·한화오션 등 미 해군\n• 동인: 군비증강·미중패권경쟁\n• 대표주: 제너럴다이내믹스(잠수함건조)·헌팅턴잉걸스(항모)·RTX(함정유도무기)\n• 밸류체인: 군함/잠수함건조·유도무기·레이더·전자전·기자재·엔진"
- },
- "nodes": [
-  {
-   "id": "T_188",
-   "type": "THEME",
-   "name": "미해군조선수요"
-  },
-  {
-   "id": "A_418",
-   "type": "ASSET",
-   "name": "제너럴다이내믹스",
-   "exposure": {
-    "ticker": "GD",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.7176302931596101,
-    "close": 395.78,
-    "marketCap": 107081049460,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 0.9926254816402524,
-    "return_15d": 2.334841628959272,
-    "return_1m": 7.1123139377537115,
-    "return_ytd": 17.56074377710448,
-    "return_1y": 25.310283687943258,
-    "return_3y": 74.83765516632062,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.9514092590230838,
-    "return_2y": 34.74279099853605
-   }
-  },
-  {
-   "id": "A_1437",
-   "type": "ASSET",
-   "name": "헌팅턴잉걸스",
-   "exposure": {
-    "ticker": "HII",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.59860019646365,
-    "close": 327.71,
-    "marketCap": 12913280811,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -0.04270245539119699,
-    "return_15d": 13.950415522097437,
-    "return_1m": 17.0392857142857,
-    "return_ytd": -3.634545828799962,
-    "return_1y": 22.526732969415985,
-    "return_3y": 43.928147920418105,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.9954388560157623,
-    "return_2y": 22.908149870607208
-   }
-  },
-  {
-   "id": "A_419",
-   "type": "ASSET",
-   "name": "RTX",
-   "exposure": {
-    "ticker": "RTX",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.1293541364296056,
-    "close": 222.97,
-    "marketCap": 300509623780,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -0.3975699097650387,
-    "return_15d": 4.784059401287655,
-    "return_1m": 15.295516831273591,
-    "return_ytd": 21.57579062159214,
-    "return_1y": 43.77740521021407,
-    "return_3y": 157.9477093937992,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.026902210464962995,
-    "return_2y": 89.51976200594984
-   }
-  },
-  {
-   "id": "A_272",
-   "type": "ASSET",
-   "name": "L3해리스테크놀로지스",
-   "exposure": {
-    "ticker": "LHX",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.164806212299796,
-    "close": 291.82,
-    "marketCap": 54341261300,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 2.0278302216628186,
-    "return_15d": -2.794710369408082,
-    "return_1m": 0.6241164097789742,
-    "return_ytd": -0.5961099567394434,
-    "return_1y": 7.662792842648947,
-    "return_3y": 56.505416711359004,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.7964907384797835,
-    "return_2y": 29.089622224188272
-   }
-  },
-  {
-   "id": "A_313",
-   "type": "ASSET",
-   "name": "커티스라이트",
-   "exposure": {
-    "ticker": "CW",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.5214203794840397,
-    "close": 699.31,
-    "marketCap": 25833350572,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -0.9419797155646337,
-    "return_15d": -6.782281821938452,
-    "return_1m": -7.027666617918826,
-    "return_ytd": 26.85435449054001,
-    "return_1y": 42.092857868536,
-    "return_3y": 238.9607871649459,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.1265039333641758,
-    "return_2y": 133.65631995723209
-   }
-  },
-  {
-   "id": "A_307",
-   "type": "ASSET",
-   "name": "GE에어로스페이스",
-   "exposure": {
-    "ticker": "GE",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 2.1461845607808394,
-    "close": 368.38,
-    "marketCap": 382217278539,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 0.08694234635657772,
-    "return_15d": 4.141576908941835,
-    "return_1m": 4.141576908941835,
-    "return_ytd": 19.592247508359595,
-    "return_1y": 36.588802373007056,
-    "return_3y": 299.7612588171459,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.45936013834846356,
-    "return_2y": 119.3390890145877
-   }
-  },
-  {
-   "id": "A_432",
-   "type": "ASSET",
-   "name": "ITA ETF",
-   "exposure": {
-    "ticker": "ITA",
-    "exchange": "BATS",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.4137530537867038,
-    "close": 253.215,
-    "marketCap": 14860936148,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 0.5240174672489051,
-    "return_15d": 5.446822686766062,
-    "return_1m": 7.629532027032759,
-    "return_ytd": 17.946807024081224,
-    "return_1y": 29.200469411704667,
-    "return_3y": 116.63102061767474,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.9850448654037836,
-    "return_2y": 79.10595558070447
-   }
-  },
-  {
-   "id": "M_131",
-   "type": "MACRO",
-   "name": "군비증강"
-  },
-  {
-   "id": "M_033",
-   "type": "MACRO",
-   "name": "미중패권경쟁"
-  },
-  {
-   "id": "BF_314",
-   "type": "BUSINESS_FIELD",
-   "name": "군함/잠수함건조"
-  },
-  {
-   "id": "BF_129",
-   "type": "BUSINESS_FIELD",
-   "name": "유도무기·레이더·전자전"
-  },
-  {
-   "id": "BF_147",
-   "type": "BUSINESS_FIELD",
-   "name": "기자재"
-  },
-  {
-   "id": "BF_208",
-   "type": "BUSINESS_FIELD",
-   "name": "엔진"
-  },
-  {
-   "id": "C_3038",
-   "type": "CHARACTER",
-   "name": "잠수함건조"
-  },
-  {
-   "id": "C_3039",
-   "type": "CHARACTER",
-   "name": "항모·함정건조"
-  },
-  {
-   "id": "C_3040",
-   "type": "CHARACTER",
-   "name": "함정유도무기"
-  },
-  {
-   "id": "C_3041",
-   "type": "CHARACTER",
-   "name": "함정전자전"
-  },
-  {
-   "id": "C_3042",
-   "type": "CHARACTER",
-   "name": "함정기자재"
-  },
-  {
-   "id": "C_3043",
-   "type": "CHARACTER",
-   "name": "함정엔진"
-  }
- ],
- "edges": [
-  {
-   "from": "A_418",
-   "to": "T_188",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005774"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1437",
-   "to": "T_188",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005775"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_419",
-   "to": "T_188",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005776"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_272",
-   "to": "T_188",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005777"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_313",
-   "to": "T_188",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005778"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_307",
-   "to": "T_188",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005779"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "T_188",
-   "to": "A_432",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_005780"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_131",
-   "to": "T_188",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005781"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_033",
-   "to": "T_188",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005782"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_418",
-   "to": "BF_314",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005783"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1437",
-   "to": "BF_314",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005784"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_419",
-   "to": "BF_129",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005785"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_272",
-   "to": "BF_129",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005786"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_313",
-   "to": "BF_147",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005787"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_307",
-   "to": "BF_208",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005788"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_418",
-   "to": "C_3038",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005881"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1437",
-   "to": "C_3039",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005882"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_419",
-   "to": "C_3040",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005883"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_272",
-   "to": "C_3041",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005884"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_313",
-   "to": "C_3042",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005885"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_307",
-   "to": "C_3043",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005886"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_418",
-   "to": "A_1437",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_018310"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "General Dynamics(Electric Boat)와 Huntington Ingalls(Newport News)는 Virginia급·Columbia급 잠수함을 교대 건조하는 팀잉 협약으로 공동 건조한다."
-  },
-  {
-   "from": "A_418",
-   "to": "A_1437",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018311"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "General Dynamics(Bath Iron Works)와 Huntington Ingalls(Ingalls)는 Arleigh Burke급 DDG-51 구축함 등 수상함 건조에서 직접 경쟁하는 미 해군 양대 조선사다."
-  },
-  {
-   "from": "A_313",
-   "to": "A_418",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018312"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "Curtiss-Wright는 추진용 밸브·펌프·제어시스템을 General Dynamics Electric Boat의 Virginia·Columbia급 잠수함용으로 공급한다."
-  },
-  {
-   "from": "A_313",
-   "to": "A_1437",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018313"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "Curtiss-Wright는 핵추진 관련 장비를 Huntington Ingalls Newport News의 Ford급 항모·잠수함 프로그램용으로 공급한다."
-  },
-  {
-   "from": "A_307",
-   "to": "A_1437",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018314"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "GE Aerospace는 LM2500 함정용 가스터빈을 Huntington Ingalls(Ingalls)가 건조하는 DDG-51 구축함 추진용으로 공급한다."
-  },
-  {
-   "from": "A_307",
-   "to": "A_418",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018315"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "GE Aerospace는 LM2500 함정용 가스터빈을 General Dynamics(Bath Iron Works)가 건조하는 DDG-51 구축함 추진용으로 공급한다."
-  }
- ],
- "links": [
-  {
-   "from": "A_418",
-   "to": "T_188",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005774"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1437",
-   "to": "T_188",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005775"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_419",
-   "to": "T_188",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005776"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_272",
-   "to": "T_188",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005777"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_313",
-   "to": "T_188",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005778"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_307",
-   "to": "T_188",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005779"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "T_188",
-   "to": "A_432",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_005780"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_131",
-   "to": "T_188",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005781"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_033",
-   "to": "T_188",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005782"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_418",
-   "to": "BF_314",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005783"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1437",
-   "to": "BF_314",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005784"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_419",
-   "to": "BF_129",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005785"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_272",
-   "to": "BF_129",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005786"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_313",
-   "to": "BF_147",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005787"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_307",
-   "to": "BF_208",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005788"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_418",
-   "to": "C_3038",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005881"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1437",
-   "to": "C_3039",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005882"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_419",
-   "to": "C_3040",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005883"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_272",
-   "to": "C_3041",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005884"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_313",
-   "to": "C_3042",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005885"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_307",
-   "to": "C_3043",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005886"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_418",
-   "to": "A_1437",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_018310"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "General Dynamics(Electric Boat)와 Huntington Ingalls(Newport News)는 Virginia급·Columbia급 잠수함을 교대 건조하는 팀잉 협약으로 공동 건조한다."
-  },
-  {
-   "from": "A_418",
-   "to": "A_1437",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018311"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "General Dynamics(Bath Iron Works)와 Huntington Ingalls(Ingalls)는 Arleigh Burke급 DDG-51 구축함 등 수상함 건조에서 직접 경쟁하는 미 해군 양대 조선사다."
-  },
-  {
-   "from": "A_313",
-   "to": "A_418",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018312"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "Curtiss-Wright는 추진용 밸브·펌프·제어시스템을 General Dynamics Electric Boat의 Virginia·Columbia급 잠수함용으로 공급한다."
-  },
-  {
-   "from": "A_313",
-   "to": "A_1437",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018313"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "Curtiss-Wright는 핵추진 관련 장비를 Huntington Ingalls Newport News의 Ford급 항모·잠수함 프로그램용으로 공급한다."
-  },
-  {
-   "from": "A_307",
-   "to": "A_1437",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018314"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "GE Aerospace는 LM2500 함정용 가스터빈을 Huntington Ingalls(Ingalls)가 건조하는 DDG-51 구축함 추진용으로 공급한다."
-  },
-  {
-   "from": "A_307",
-   "to": "A_418",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018315"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "GE Aerospace는 LM2500 함정용 가스터빈을 General Dynamics(Bath Iron Works)가 건조하는 DDG-51 구축함 추진용으로 공급한다."
-  }
- ]
+  "links": [
+    {
+      "from": "A_418",
+      "to": "T_188",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005774"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1437",
+      "to": "T_188",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005775"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_419",
+      "to": "T_188",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005776"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_272",
+      "to": "T_188",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005777"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_313",
+      "to": "T_188",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005778"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_307",
+      "to": "T_188",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005779"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "T_188",
+      "to": "A_432",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_005780"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_131",
+      "to": "T_188",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005781"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_033",
+      "to": "T_188",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005782"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_418",
+      "to": "BF_314",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005783"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1437",
+      "to": "BF_314",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005784"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_419",
+      "to": "BF_129",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005785"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_272",
+      "to": "BF_129",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005786"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_313",
+      "to": "BF_147",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005787"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_307",
+      "to": "BF_208",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005788"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_418",
+      "to": "C_3038",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005881"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1437",
+      "to": "C_3039",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005882"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_419",
+      "to": "C_3040",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005883"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_272",
+      "to": "C_3041",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005884"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_313",
+      "to": "C_3042",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005885"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_307",
+      "to": "C_3043",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005886"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_418",
+      "to": "A_1437",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_018310"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "General Dynamics(Electric Boat)와 Huntington Ingalls(Newport News)는 Virginia급·Columbia급 잠수함을 교대 건조하는 팀잉 협약으로 공동 건조한다."
+    },
+    {
+      "from": "A_418",
+      "to": "A_1437",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018311"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "General Dynamics(Bath Iron Works)와 Huntington Ingalls(Ingalls)는 Arleigh Burke급 DDG-51 구축함 등 수상함 건조에서 직접 경쟁하는 미 해군 양대 조선사다."
+    },
+    {
+      "from": "A_313",
+      "to": "A_418",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018312"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "Curtiss-Wright는 추진용 밸브·펌프·제어시스템을 General Dynamics Electric Boat의 Virginia·Columbia급 잠수함용으로 공급한다."
+    },
+    {
+      "from": "A_313",
+      "to": "A_1437",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018313"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "Curtiss-Wright는 핵추진 관련 장비를 Huntington Ingalls Newport News의 Ford급 항모·잠수함 프로그램용으로 공급한다."
+    },
+    {
+      "from": "A_307",
+      "to": "A_1437",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018314"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "GE Aerospace는 LM2500 함정용 가스터빈을 Huntington Ingalls(Ingalls)가 건조하는 DDG-51 구축함 추진용으로 공급한다."
+    },
+    {
+      "from": "A_307",
+      "to": "A_418",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018315"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "GE Aerospace는 LM2500 함정용 가스터빈을 General Dynamics(Bath Iron Works)가 건조하는 DDG-51 구축함 추진용으로 공급한다."
+    }
+  ]
 }

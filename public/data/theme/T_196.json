@@ -1,1156 +1,1156 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_196",
- "themeName": "포스코그룹",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_196",
+  "themeName": "포스코그룹",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-04-30T00:00:00+09:00",
+    "notes": "g196 누적 import 기반 포스코그룹 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-12",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "자산 9개에 테마 관점 특성(CHARACTER)·HAS_TRAIT를 부여했다."
+      },
+      {
+        "date": "2026-07-12",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필 + 2026 이벤트",
+        "detail": "전 엣지 근거를 종목·관계 사실로 구체화했다. 2026 이벤트 2건을 추가했다."
+      }
+    ],
+    "description": "• 철강·이차전지 소재(양극재·음극재)·LNG·DX 사이클의 동시 노출\n• 동인: 미국관세철강·리튬배터리소재·중국건설경기\n• 대표주: 포스코홀딩스(철강)·포스코(비)(종합철강)·포스코퓨처엠(양극재음극재)\n• 밸류체인: 종합철강·2차전지소재·LNG채굴/수출·희토류"
+  },
+  "nodes": [
+    {
+      "id": "T_196",
+      "type": "THEME",
+      "name": "포스코그룹"
+    },
+    {
+      "id": "A_603",
+      "type": "ASSET",
+      "name": "포스코홀딩스",
+      "exposure": {
+        "ticker": "005490",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -1.3867488443759624,
+        "close": 320000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -1.6897081413210446,
+        "return_15d": 7.0234113712374535,
+        "return_1m": 5.785123966942152,
+        "return_ytd": 8.720586339309012,
+        "return_1y": 10.344158558158645,
+        "return_3y": -37.52252985039636,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 0.9063444108761365,
+        "return_2y": -8.923141507078459
+      },
+      "coreBiz": "포스코홀딩스는 철강·이차전지소재 지주 대장주다"
+    },
+    {
+      "id": "A_1268",
+      "type": "ASSET",
+      "name": "포스코(비)",
+      "exposure": {
+        "ticker": "",
+        "exchange": "",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": null,
+        "returnsSource": null,
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "포스코는 종합 철강 사업회사(비상장)다"
+    },
+    {
+      "id": "A_752",
+      "type": "ASSET",
+      "name": "포스코퓨처엠",
+      "exposure": {
+        "ticker": "003670",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -0.06234413965087171,
+        "close": 160300,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -3.3755274261603407,
+        "return_15d": 20.617005267118138,
+        "return_1m": 17.178362573099413,
+        "return_ytd": -9.275310302761241,
+        "return_1y": 8.148231866138955,
+        "return_3y": -60.6365033905659,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 9.435173299101418,
+        "return_2y": -35.91055766665411
+      },
+      "coreBiz": "포스코퓨처엠은 양·음극재 이차전지소재 대표주다"
+    },
+    {
+      "id": "A_805",
+      "type": "ASSET",
+      "name": "포스코모빌리티솔루션(비)",
+      "exposure": {
+        "ticker": "",
+        "exchange": "",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": null,
+        "returnsSource": null,
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "포스코모빌리티솔루션은 구동모터코어 부품(비상장)이다"
+    },
+    {
+      "id": "A_806",
+      "type": "ASSET",
+      "name": "포스코인터내셔널",
+      "exposure": {
+        "ticker": "047050",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -1.3618677042801508,
+        "close": 50700,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -4.013631200302914,
+        "return_15d": 3.4138855227419773,
+        "return_1m": 3.005134992892078,
+        "return_ytd": 9.307941154658451,
+        "return_1y": 11.680184429581718,
+        "return_3y": -34.59944850009461,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": -5.5285355055375245,
+        "return_2y": -1.896748580191987
+      },
+      "coreBiz": "포스코인터내셔널은 가스전·트레이딩 종합상사주다"
+    },
+    {
+      "id": "A_393",
+      "type": "ASSET",
+      "name": "포스코이앤씨(비)",
+      "exposure": {
+        "ticker": "",
+        "exchange": "",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": null,
+        "returnsSource": null,
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "포스코이앤씨는 건설 계열사(비상장)다"
+    },
+    {
+      "id": "A_1134",
+      "type": "ASSET",
+      "name": "포스코DX",
+      "exposure": {
+        "ticker": "022100",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -2.0689655172413834,
+        "close": 19880,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -8.807339449541285,
+        "return_15d": 10.704039169976376,
+        "return_1m": 13.928431580521107,
+        "return_ytd": -30.928180783159497,
+        "return_1y": -14.762436049102734,
+        "return_3y": -26.090082087583088,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 4.819277108433728,
+        "return_2y": -41.91751584884883
+      },
+      "coreBiz": "포스코DX는 산업 IT·스마트팩토리·물류자동화주다"
+    },
+    {
+      "id": "A_1269",
+      "type": "ASSET",
+      "name": "포스코HY클린메탈(비)",
+      "exposure": {
+        "ticker": "",
+        "exchange": "",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": null,
+        "returnsSource": null,
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "포스코HY클린메탈은 폐배터리 리사이클(비상장)이다"
+    },
+    {
+      "id": "A_1270",
+      "type": "ASSET",
+      "name": "포스코에너지(비)",
+      "exposure": {
+        "ticker": "",
+        "exchange": "",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": null,
+        "returnsSource": null,
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "포스코에너지는 LNG·발전 계열사(비상장)다"
+    },
+    {
+      "id": "A_1271",
+      "type": "ASSET",
+      "name": "ACE 포스코그룹 ETF",
+      "exposure": {
+        "ticker": "469170",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -0.7213706041478862,
+        "close": 5505,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -3.505696757230503,
+        "return_15d": 9.95470731009529,
+        "return_1m": 10.064446982335774,
+        "return_ytd": -1.698198003864504,
+        "return_1y": 8.760613050285727,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 2.2007042253521236,
+        "return_2y": -14.503526950825673
+      },
+      "coreBiz": "ACE 포스코그룹 ETF"
+    },
+    {
+      "id": "BF_134",
+      "type": "BUSINESS_FIELD",
+      "name": "종합철강"
+    },
+    {
+      "id": "BF_167",
+      "type": "BUSINESS_FIELD",
+      "name": "2차전지소재"
+    },
+    {
+      "id": "BF_115",
+      "type": "BUSINESS_FIELD",
+      "name": "LNG채굴/수출"
+    },
+    {
+      "id": "BF_292",
+      "type": "BUSINESS_FIELD",
+      "name": "희토류"
+    },
+    {
+      "id": "M_362",
+      "type": "MACRO",
+      "name": "미국관세철강"
+    },
+    {
+      "id": "M_323",
+      "type": "MACRO",
+      "name": "리튬배터리소재"
+    },
+    {
+      "id": "M_124",
+      "type": "MACRO",
+      "name": "중국건설경기"
+    },
+    {
+      "id": "C_3089",
+      "type": "CHARACTER",
+      "name": "철강·소재지주"
+    },
+    {
+      "id": "C_3090",
+      "type": "CHARACTER",
+      "name": "종합철강"
+    },
+    {
+      "id": "C_3091",
+      "type": "CHARACTER",
+      "name": "양극재음극재"
+    },
+    {
+      "id": "C_3092",
+      "type": "CHARACTER",
+      "name": "구동모터코어"
+    },
+    {
+      "id": "C_3093",
+      "type": "CHARACTER",
+      "name": "가스전·상사"
+    },
+    {
+      "id": "C_3094",
+      "type": "CHARACTER",
+      "name": "건설계열"
+    },
+    {
+      "id": "C_3095",
+      "type": "CHARACTER",
+      "name": "산업IT·스마트팩토리"
+    },
+    {
+      "id": "C_3096",
+      "type": "CHARACTER",
+      "name": "폐배터리리사이클"
+    },
+    {
+      "id": "C_3097",
+      "type": "CHARACTER",
+      "name": "LNG·발전"
+    }
   ],
-  "dataAsOf": "2026-04-30T00:00:00+09:00",
-  "notes": "g196 누적 import 기반 포스코그룹 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-12",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "자산 9개에 테마 관점 특성(CHARACTER)·HAS_TRAIT를 부여했다."
-   },
-   {
-    "date": "2026-07-12",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필 + 2026 이벤트",
-    "detail": "전 엣지 근거를 종목·관계 사실로 구체화했다. 2026 이벤트 2건을 추가했다."
-   }
+  "edges": [
+    {
+      "from": "A_603",
+      "to": "T_196",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005984"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1268",
+      "to": "T_196",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005985"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_752",
+      "to": "T_196",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005986"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_805",
+      "to": "T_196",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005987"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_806",
+      "to": "T_196",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005988"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_393",
+      "to": "T_196",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005989"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_1134",
+      "to": "T_196",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005990"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1269",
+      "to": "T_196",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005991"
+      ],
+      "confidence": 0.64,
+      "status": "verified"
+    },
+    {
+      "from": "A_1270",
+      "to": "T_196",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005992"
+      ],
+      "confidence": 0.64,
+      "status": "verified"
+    },
+    {
+      "from": "A_1271",
+      "to": "T_196",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005993"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_603",
+      "to": "BF_134",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005994"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1268",
+      "to": "BF_134",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005995"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_752",
+      "to": "BF_167",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005996"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_805",
+      "to": "BF_167",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005997"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_806",
+      "to": "BF_115",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005998"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_806",
+      "to": "BF_292",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005999"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1270",
+      "to": "BF_115",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006000"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "T_196",
+      "to": "A_1271",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_006001"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "M_362",
+      "to": "T_196",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_006002"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "M_323",
+      "to": "T_196",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_006003"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_124",
+      "to": "T_196",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_006004"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_603",
+      "to": "C_3089",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006110"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1268",
+      "to": "C_3090",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006111"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_752",
+      "to": "C_3091",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006112"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_805",
+      "to": "C_3092",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006113"
+      ],
+      "confidence": 0.62,
+      "status": "verified"
+    },
+    {
+      "from": "A_806",
+      "to": "C_3093",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006114"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_393",
+      "to": "C_3094",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006115"
+      ],
+      "confidence": 0.62,
+      "status": "verified"
+    },
+    {
+      "from": "A_1134",
+      "to": "C_3095",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006116"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1269",
+      "to": "C_3096",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006117"
+      ],
+      "confidence": 0.62,
+      "status": "verified"
+    },
+    {
+      "from": "A_1270",
+      "to": "C_3097",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006118"
+      ],
+      "confidence": 0.62,
+      "status": "verified"
+    },
+    {
+      "from": "A_603",
+      "to": "A_1268",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019281"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "포스코홀딩스가 포스코(비) 지분을 보유·투자하는 관계 (포스코그룹)"
+    },
+    {
+      "from": "A_603",
+      "to": "A_752",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019282"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "포스코홀딩스가 포스코퓨처엠 지분을 보유·투자하는 관계 (포스코그룹)"
+    },
+    {
+      "from": "A_603",
+      "to": "A_806",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019283"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "포스코홀딩스가 포스코인터내셔널 지분을 보유·투자하는 관계 (포스코그룹)"
+    },
+    {
+      "from": "A_603",
+      "to": "A_1134",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019284"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "포스코홀딩스가 포스코DX 지분을 보유·투자하는 관계 (포스코그룹)"
+    },
+    {
+      "from": "A_806",
+      "to": "A_1268",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_019285"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "포스코인터내셔널와 포스코(비)는 포스코그룹 내 제휴·협력 관계"
+    },
+    {
+      "from": "A_752",
+      "to": "A_1269",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_019286"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "포스코퓨처엠와 포스코HY클린메탈(비)는 포스코그룹 내 제휴·협력 관계"
+    }
   ],
-  "description": "• 철강·이차전지 소재(양극재·음극재)·LNG·DX 사이클의 동시 노출\n• 동인: 미국관세철강·리튬배터리소재·중국건설경기\n• 대표주: 포스코홀딩스(철강)·포스코(비)(종합철강)·포스코퓨처엠(양극재음극재)\n• 밸류체인: 종합철강·2차전지소재·LNG채굴/수출·희토류"
- },
- "nodes": [
-  {
-   "id": "T_196",
-   "type": "THEME",
-   "name": "포스코그룹"
-  },
-  {
-   "id": "A_603",
-   "type": "ASSET",
-   "name": "포스코홀딩스",
-   "exposure": {
-    "ticker": "005490",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 2.611367127496167,
-    "close": 334000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 2.297090352220521,
-    "return_15d": 6.709265175718859,
-    "return_1m": 6.200317965023849,
-    "return_ytd": 13.477111991653778,
-    "return_1y": 18.14516771462298,
-    "return_3y": -37.52252985039636,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 0.9063444108761365,
-    "return_2y": -3.638098413921931
-   },
-   "coreBiz": "포스코홀딩스는 철강·이차전지소재 지주 대장주다"
-  },
-  {
-   "id": "A_1268",
-   "type": "ASSET",
-   "name": "포스코(비)",
-   "exposure": {
-    "ticker": "",
-    "exchange": "",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": null,
-    "returnsSource": null,
-    "return_5d": null,
-    "return_2y": null
-   },
-   "coreBiz": "포스코는 종합 철강 사업회사(비상장)다"
-  },
-  {
-   "id": "A_752",
-   "type": "ASSET",
-   "name": "포스코퓨처엠",
-   "exposure": {
-    "ticker": "003670",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 2.772754671488853,
-    "close": 170500,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 8.667941363926058,
-    "return_15d": 20.409604519774007,
-    "return_1m": 11.292428198433413,
-    "return_ytd": -3.5024354748645847,
-    "return_1y": 24.510715972049457,
-    "return_3y": -60.6365033905659,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 9.435173299101418,
-    "return_2y": -30.888991261006172
-   },
-   "coreBiz": "포스코퓨처엠은 양·음극재 이차전지소재 대표주다"
-  },
-  {
-   "id": "A_805",
-   "type": "ASSET",
-   "name": "포스코모빌리티솔루션(비)",
-   "exposure": {
-    "ticker": "",
-    "exchange": "",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": null,
-    "returnsSource": null,
-    "return_5d": null,
-    "return_2y": null
-   },
-   "coreBiz": "포스코모빌리티솔루션은 구동모터코어 부품(비상장)이다"
-  },
-  {
-   "id": "A_806",
-   "type": "ASSET",
-   "name": "포스코인터내셔널",
-   "exposure": {
-    "ticker": "047050",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.9087466868610283,
-    "close": 53300,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": -2.3289670631140624,
-    "return_15d": -2.675933427270838,
-    "return_1m": 6.602041642301537,
-    "return_ytd": 14.913476598487097,
-    "return_1y": 18.39192157854166,
-    "return_3y": -34.59944850009461,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": -5.5285355055375245,
-    "return_2y": 11.00702623033758
-   },
-   "coreBiz": "포스코인터내셔널은 가스전·트레이딩 종합상사주다"
-  },
-  {
-   "id": "A_393",
-   "type": "ASSET",
-   "name": "포스코이앤씨(비)",
-   "exposure": {
-    "ticker": "",
-    "exchange": "",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": null,
-    "returnsSource": null,
-    "return_5d": null,
-    "return_2y": null
-   },
-   "coreBiz": "포스코이앤씨는 건설 계열사(비상장)다"
-  },
-  {
-   "id": "A_1134",
-   "type": "ASSET",
-   "name": "포스코DX",
-   "exposure": {
-    "ticker": "022100",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -0.2293577981651418,
-    "close": 21750,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 2.594339622641506,
-    "return_15d": 13.614505012891343,
-    "return_1m": 13.437351612209202,
-    "return_ytd": -24.430982496665955,
-    "return_1y": -3.244966746451683,
-    "return_3y": -26.090082087583088,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 4.819277108433728,
-    "return_2y": -35.23917310779836
-   },
-   "coreBiz": "포스코DX는 산업 IT·스마트팩토리·물류자동화주다"
-  },
-  {
-   "id": "A_1269",
-   "type": "ASSET",
-   "name": "포스코HY클린메탈(비)",
-   "exposure": {
-    "ticker": "",
-    "exchange": "",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": null,
-    "returnsSource": null,
-    "return_5d": null,
-    "return_2y": null
-   },
-   "coreBiz": "포스코HY클린메탈은 폐배터리 리사이클(비상장)이다"
-  },
-  {
-   "id": "A_1270",
-   "type": "ASSET",
-   "name": "포스코에너지(비)",
-   "exposure": {
-    "ticker": "",
-    "exchange": "",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": null,
-    "returnsSource": null,
-    "return_5d": null,
-    "return_2y": null
-   },
-   "coreBiz": "포스코에너지는 LNG·발전 계열사(비상장)다"
-  },
-  {
-   "id": "A_1271",
-   "type": "ASSET",
-   "name": "ACE 포스코그룹 ETF",
-   "exposure": {
-    "ticker": "469170",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.752848378615246,
-    "close": 5805,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 2.3809523809523725,
-    "return_15d": 8.686575625823112,
-    "return_1m": 8.38269880537621,
-    "return_ytd": 3.658848426442596,
-    "return_1y": 18.87499895562015,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 2.2007042253521236,
-    "return_2y": -7.388716454992572
-   },
-   "coreBiz": "ACE 포스코그룹 ETF"
-  },
-  {
-   "id": "BF_134",
-   "type": "BUSINESS_FIELD",
-   "name": "종합철강"
-  },
-  {
-   "id": "BF_167",
-   "type": "BUSINESS_FIELD",
-   "name": "2차전지소재"
-  },
-  {
-   "id": "BF_115",
-   "type": "BUSINESS_FIELD",
-   "name": "LNG채굴/수출"
-  },
-  {
-   "id": "BF_292",
-   "type": "BUSINESS_FIELD",
-   "name": "희토류"
-  },
-  {
-   "id": "M_362",
-   "type": "MACRO",
-   "name": "미국관세철강"
-  },
-  {
-   "id": "M_323",
-   "type": "MACRO",
-   "name": "리튬배터리소재"
-  },
-  {
-   "id": "M_124",
-   "type": "MACRO",
-   "name": "중국건설경기"
-  },
-  {
-   "id": "C_3089",
-   "type": "CHARACTER",
-   "name": "철강·소재지주"
-  },
-  {
-   "id": "C_3090",
-   "type": "CHARACTER",
-   "name": "종합철강"
-  },
-  {
-   "id": "C_3091",
-   "type": "CHARACTER",
-   "name": "양극재음극재"
-  },
-  {
-   "id": "C_3092",
-   "type": "CHARACTER",
-   "name": "구동모터코어"
-  },
-  {
-   "id": "C_3093",
-   "type": "CHARACTER",
-   "name": "가스전·상사"
-  },
-  {
-   "id": "C_3094",
-   "type": "CHARACTER",
-   "name": "건설계열"
-  },
-  {
-   "id": "C_3095",
-   "type": "CHARACTER",
-   "name": "산업IT·스마트팩토리"
-  },
-  {
-   "id": "C_3096",
-   "type": "CHARACTER",
-   "name": "폐배터리리사이클"
-  },
-  {
-   "id": "C_3097",
-   "type": "CHARACTER",
-   "name": "LNG·발전"
-  }
- ],
- "edges": [
-  {
-   "from": "A_603",
-   "to": "T_196",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005984"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1268",
-   "to": "T_196",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005985"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_752",
-   "to": "T_196",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005986"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_805",
-   "to": "T_196",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005987"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_806",
-   "to": "T_196",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005988"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_393",
-   "to": "T_196",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005989"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_1134",
-   "to": "T_196",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005990"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1269",
-   "to": "T_196",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005991"
-   ],
-   "confidence": 0.64,
-   "status": "verified"
-  },
-  {
-   "from": "A_1270",
-   "to": "T_196",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005992"
-   ],
-   "confidence": 0.64,
-   "status": "verified"
-  },
-  {
-   "from": "A_1271",
-   "to": "T_196",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005993"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_603",
-   "to": "BF_134",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005994"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1268",
-   "to": "BF_134",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005995"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_752",
-   "to": "BF_167",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005996"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_805",
-   "to": "BF_167",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005997"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_806",
-   "to": "BF_115",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005998"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_806",
-   "to": "BF_292",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005999"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1270",
-   "to": "BF_115",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006000"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "T_196",
-   "to": "A_1271",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_006001"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "M_362",
-   "to": "T_196",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_006002"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "M_323",
-   "to": "T_196",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_006003"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_124",
-   "to": "T_196",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_006004"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_603",
-   "to": "C_3089",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006110"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1268",
-   "to": "C_3090",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006111"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_752",
-   "to": "C_3091",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006112"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_805",
-   "to": "C_3092",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006113"
-   ],
-   "confidence": 0.62,
-   "status": "verified"
-  },
-  {
-   "from": "A_806",
-   "to": "C_3093",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006114"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_393",
-   "to": "C_3094",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006115"
-   ],
-   "confidence": 0.62,
-   "status": "verified"
-  },
-  {
-   "from": "A_1134",
-   "to": "C_3095",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006116"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1269",
-   "to": "C_3096",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006117"
-   ],
-   "confidence": 0.62,
-   "status": "verified"
-  },
-  {
-   "from": "A_1270",
-   "to": "C_3097",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006118"
-   ],
-   "confidence": 0.62,
-   "status": "verified"
-  },
-  {
-   "from": "A_603",
-   "to": "A_1268",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019281"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "포스코홀딩스가 포스코(비) 지분을 보유·투자하는 관계 (포스코그룹)"
-  },
-  {
-   "from": "A_603",
-   "to": "A_752",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019282"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "포스코홀딩스가 포스코퓨처엠 지분을 보유·투자하는 관계 (포스코그룹)"
-  },
-  {
-   "from": "A_603",
-   "to": "A_806",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019283"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "포스코홀딩스가 포스코인터내셔널 지분을 보유·투자하는 관계 (포스코그룹)"
-  },
-  {
-   "from": "A_603",
-   "to": "A_1134",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019284"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "포스코홀딩스가 포스코DX 지분을 보유·투자하는 관계 (포스코그룹)"
-  },
-  {
-   "from": "A_806",
-   "to": "A_1268",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_019285"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "포스코인터내셔널와 포스코(비)는 포스코그룹 내 제휴·협력 관계"
-  },
-  {
-   "from": "A_752",
-   "to": "A_1269",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_019286"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "포스코퓨처엠와 포스코HY클린메탈(비)는 포스코그룹 내 제휴·협력 관계"
-  }
- ],
- "links": [
-  {
-   "from": "A_603",
-   "to": "T_196",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005984"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1268",
-   "to": "T_196",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005985"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_752",
-   "to": "T_196",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005986"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_805",
-   "to": "T_196",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005987"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_806",
-   "to": "T_196",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005988"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_393",
-   "to": "T_196",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005989"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_1134",
-   "to": "T_196",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005990"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1269",
-   "to": "T_196",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005991"
-   ],
-   "confidence": 0.64,
-   "status": "verified"
-  },
-  {
-   "from": "A_1270",
-   "to": "T_196",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005992"
-   ],
-   "confidence": 0.64,
-   "status": "verified"
-  },
-  {
-   "from": "A_1271",
-   "to": "T_196",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005993"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_603",
-   "to": "BF_134",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005994"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1268",
-   "to": "BF_134",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005995"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_752",
-   "to": "BF_167",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005996"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_805",
-   "to": "BF_167",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005997"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_806",
-   "to": "BF_115",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005998"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_806",
-   "to": "BF_292",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_005999"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1270",
-   "to": "BF_115",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_006000"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "T_196",
-   "to": "A_1271",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_006001"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "M_362",
-   "to": "T_196",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_006002"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "M_323",
-   "to": "T_196",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_006003"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_124",
-   "to": "T_196",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_006004"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_603",
-   "to": "C_3089",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006110"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1268",
-   "to": "C_3090",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006111"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_752",
-   "to": "C_3091",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006112"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_805",
-   "to": "C_3092",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006113"
-   ],
-   "confidence": 0.62,
-   "status": "verified"
-  },
-  {
-   "from": "A_806",
-   "to": "C_3093",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006114"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_393",
-   "to": "C_3094",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006115"
-   ],
-   "confidence": 0.62,
-   "status": "verified"
-  },
-  {
-   "from": "A_1134",
-   "to": "C_3095",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006116"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1269",
-   "to": "C_3096",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006117"
-   ],
-   "confidence": 0.62,
-   "status": "verified"
-  },
-  {
-   "from": "A_1270",
-   "to": "C_3097",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_006118"
-   ],
-   "confidence": 0.62,
-   "status": "verified"
-  },
-  {
-   "from": "A_603",
-   "to": "A_1268",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019281"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "포스코홀딩스가 포스코(비) 지분을 보유·투자하는 관계 (포스코그룹)"
-  },
-  {
-   "from": "A_603",
-   "to": "A_752",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019282"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "포스코홀딩스가 포스코퓨처엠 지분을 보유·투자하는 관계 (포스코그룹)"
-  },
-  {
-   "from": "A_603",
-   "to": "A_806",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019283"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "포스코홀딩스가 포스코인터내셔널 지분을 보유·투자하는 관계 (포스코그룹)"
-  },
-  {
-   "from": "A_603",
-   "to": "A_1134",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019284"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "포스코홀딩스가 포스코DX 지분을 보유·투자하는 관계 (포스코그룹)"
-  },
-  {
-   "from": "A_806",
-   "to": "A_1268",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_019285"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "포스코인터내셔널와 포스코(비)는 포스코그룹 내 제휴·협력 관계"
-  },
-  {
-   "from": "A_752",
-   "to": "A_1269",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_019286"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "포스코퓨처엠와 포스코HY클린메탈(비)는 포스코그룹 내 제휴·협력 관계"
-  }
- ]
+  "links": [
+    {
+      "from": "A_603",
+      "to": "T_196",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005984"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1268",
+      "to": "T_196",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005985"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_752",
+      "to": "T_196",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005986"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_805",
+      "to": "T_196",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005987"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_806",
+      "to": "T_196",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005988"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_393",
+      "to": "T_196",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005989"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_1134",
+      "to": "T_196",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005990"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1269",
+      "to": "T_196",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005991"
+      ],
+      "confidence": 0.64,
+      "status": "verified"
+    },
+    {
+      "from": "A_1270",
+      "to": "T_196",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005992"
+      ],
+      "confidence": 0.64,
+      "status": "verified"
+    },
+    {
+      "from": "A_1271",
+      "to": "T_196",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005993"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_603",
+      "to": "BF_134",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005994"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1268",
+      "to": "BF_134",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005995"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_752",
+      "to": "BF_167",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005996"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_805",
+      "to": "BF_167",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005997"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_806",
+      "to": "BF_115",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005998"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_806",
+      "to": "BF_292",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_005999"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1270",
+      "to": "BF_115",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_006000"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "T_196",
+      "to": "A_1271",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_006001"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "M_362",
+      "to": "T_196",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_006002"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "M_323",
+      "to": "T_196",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_006003"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_124",
+      "to": "T_196",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_006004"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_603",
+      "to": "C_3089",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006110"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1268",
+      "to": "C_3090",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006111"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_752",
+      "to": "C_3091",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006112"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_805",
+      "to": "C_3092",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006113"
+      ],
+      "confidence": 0.62,
+      "status": "verified"
+    },
+    {
+      "from": "A_806",
+      "to": "C_3093",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006114"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_393",
+      "to": "C_3094",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006115"
+      ],
+      "confidence": 0.62,
+      "status": "verified"
+    },
+    {
+      "from": "A_1134",
+      "to": "C_3095",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006116"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1269",
+      "to": "C_3096",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006117"
+      ],
+      "confidence": 0.62,
+      "status": "verified"
+    },
+    {
+      "from": "A_1270",
+      "to": "C_3097",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_006118"
+      ],
+      "confidence": 0.62,
+      "status": "verified"
+    },
+    {
+      "from": "A_603",
+      "to": "A_1268",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019281"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "포스코홀딩스가 포스코(비) 지분을 보유·투자하는 관계 (포스코그룹)"
+    },
+    {
+      "from": "A_603",
+      "to": "A_752",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019282"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "포스코홀딩스가 포스코퓨처엠 지분을 보유·투자하는 관계 (포스코그룹)"
+    },
+    {
+      "from": "A_603",
+      "to": "A_806",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019283"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "포스코홀딩스가 포스코인터내셔널 지분을 보유·투자하는 관계 (포스코그룹)"
+    },
+    {
+      "from": "A_603",
+      "to": "A_1134",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019284"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "포스코홀딩스가 포스코DX 지분을 보유·투자하는 관계 (포스코그룹)"
+    },
+    {
+      "from": "A_806",
+      "to": "A_1268",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_019285"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "포스코인터내셔널와 포스코(비)는 포스코그룹 내 제휴·협력 관계"
+    },
+    {
+      "from": "A_752",
+      "to": "A_1269",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_019286"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "포스코퓨처엠와 포스코HY클린메탈(비)는 포스코그룹 내 제휴·협력 관계"
+    }
+  ]
 }

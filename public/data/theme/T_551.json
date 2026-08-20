@@ -1,728 +1,728 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_551",
- "themeName": "(Y23) 미국 지역은행 위기(SVB)",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_551",
+  "themeName": "(Y23) 미국 지역은행 위기(SVB)",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-25T00:00:00+09:00",
+    "description": "• 금리인상·대출건전성 수혜\n• 동인: 금리인상·대출건전성·금융시장변동성고조\n• 대표주: JP모건(대형 은행 — 위기)·뱅크오브아메리카(대형 은행)·KRE(지역은행)(지역은행 ETF)\n• ETF: KRE(지역은행)·Invesco KBW Bank ETF",
+    "notes": "T_551 신규 회고((Y23)). 자산별 CHARACTER, MACRO 3(재사용)",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-25",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 이벤트 추가."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_551",
+      "type": "THEME",
+      "name": "(Y23) 미국 지역은행 위기(SVB)"
+    },
+    {
+      "id": "A_293",
+      "type": "ASSET",
+      "name": "JP모건",
+      "exposure": {
+        "ticker": "JPM",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.6490020646937387,
+        "return_3d": -1.5378679307683774,
+        "return_15d": 3.6407414928490756,
+        "return_1m": 4.73761360304894,
+        "return_ytd": 10.874557755570713,
+        "return_1y": 22.913369572696606,
+        "return_3y": 139.82009800631002,
+        "close": 357.26,
+        "marketCap": 957281742600,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -2.1687934717125823,
+        "return_2y": 65.82037595729868
+      }
+    },
+    {
+      "id": "C_1517",
+      "type": "CHARACTER",
+      "name": "대형 은행 — 위기 수혜"
+    },
+    {
+      "id": "A_113",
+      "type": "ASSET",
+      "name": "뱅크오브아메리카",
+      "exposure": {
+        "ticker": "BAC",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.6503191654989924,
+        "return_3d": -2.0468289657311067,
+        "return_15d": 3.4386769281152807,
+        "return_1m": 3.1010282356781493,
+        "return_ytd": 14.854545454545454,
+        "return_1y": 31.38519134775375,
+        "return_3y": 117.00446581930608,
+        "close": 63.17,
+        "marketCap": 448291590300,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -2.5304736923314364,
+        "return_2y": 59.23871943534156
+      }
+    },
+    {
+      "id": "C_1518",
+      "type": "CHARACTER",
+      "name": "대형 은행"
+    },
+    {
+      "id": "A_2572",
+      "type": "ASSET",
+      "name": "KRE(지역은행)",
+      "exposure": {
+        "ticker": "KRE",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -2.407286922576446,
+        "return_3d": -3.7597844219171117,
+        "return_15d": -1.5489629824100848,
+        "return_1m": -2.2036771417394685,
+        "return_ytd": 15.722882271254424,
+        "return_1y": 21.319961177612413,
+        "return_3y": 67.59776536312849,
+        "close": 75.0,
+        "marketCap": 3797621100,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -3.0757301628327682,
+        "return_2y": 35.13513513513513
+      }
+    },
+    {
+      "id": "C_1519",
+      "type": "CHARACTER",
+      "name": "지역은행 ETF"
+    },
+    {
+      "id": "A_402",
+      "type": "ASSET",
+      "name": "찰스슈왑",
+      "exposure": {
+        "ticker": "SCHW",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.7163323782235054,
+        "return_3d": -0.1890359168241984,
+        "return_15d": 6.135732746242928,
+        "return_1m": 9.17684127609295,
+        "return_ytd": 10.979881893704334,
+        "return_1y": 15.78947368421051,
+        "return_3y": 86.29032258064515,
+        "close": 110.88,
+        "marketCap": 192835843200,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 1.4084507042253502,
+        "return_2y": 69.07593778591034
+      }
+    },
+    {
+      "id": "C_1520",
+      "type": "CHARACTER",
+      "name": "증권·은행 — 위기 노출"
+    },
+    {
+      "id": "A_2573",
+      "type": "ASSET",
+      "name": "웨스턴얼라이언스",
+      "exposure": {
+        "ticker": "WAL",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.43343653250773606,
+        "return_3d": -2.3323615160349753,
+        "return_15d": -0.371747211895912,
+        "return_1m": -2.3086269744835852,
+        "return_ytd": -4.365409777566298,
+        "return_1y": -2.010968921389389,
+        "return_3y": 66.45962732919257,
+        "close": 80.4,
+        "marketCap": 8778502944,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -2.6870007262164153,
+        "return_2y": 1.5407931295781774
+      }
+    },
+    {
+      "id": "C_1521",
+      "type": "CHARACTER",
+      "name": "지역은행 — 위기 직격"
+    },
+    {
+      "id": "A_2574",
+      "type": "ASSET",
+      "name": "퍼스트시티즌스",
+      "exposure": {
+        "ticker": "FCNCA",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.6737102918461644,
+        "return_3d": -5.263755111660052,
+        "return_15d": -0.05387013154442011,
+        "return_1m": 2.2896806510439793,
+        "return_ytd": 1.1434269259801066,
+        "return_1y": 14.163099157471759,
+        "return_3y": 55.65403203831978,
+        "close": 2170.72,
+        "marketCap": 24725382112,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -4.428721750883858,
+        "return_2y": 7.275512725475641
+      }
+    },
+    {
+      "id": "C_1522",
+      "type": "CHARACTER",
+      "name": "SVB 인수 은행"
+    },
+    {
+      "id": "A_1720",
+      "type": "ASSET",
+      "name": "트루이스트파이낸셜",
+      "exposure": {
+        "ticker": "TFC",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -2.7475672581568356,
+        "return_3d": -4.011299435028248,
+        "return_15d": -2.56165169183713,
+        "return_1m": -2.9142857142857137,
+        "return_ytd": 3.5765088396667366,
+        "return_1y": 15.368945224083298,
+        "return_3y": 77.10215427380125,
+        "close": 50.97,
+        "marketCap": 63502503600,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -3.2276438200113944,
+        "return_2y": 18.672875436554115
+      }
+    },
+    {
+      "id": "C_1523",
+      "type": "CHARACTER",
+      "name": "미국대형지역은행"
+    },
+    {
+      "id": "M_072",
+      "type": "MACRO",
+      "name": "금리인상"
+    },
+    {
+      "id": "M_149",
+      "type": "MACRO",
+      "name": "대출건전성"
+    },
+    {
+      "id": "M_262",
+      "type": "MACRO",
+      "name": "금융시장변동성고조"
+    },
+    {
+      "id": "A_2963",
+      "type": "ASSET",
+      "name": "Invesco KBW Bank ETF",
+      "exposure": {
+        "ticker": "KBWB",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -2.4067145312973937,
+        "return_3d": -3.1898886548299643,
+        "return_15d": 2.2026898231494174,
+        "return_1m": -0.42302930251754134,
+        "return_ytd": 14.497567920275234,
+        "return_1y": 30.80780699376526,
+        "return_3y": 129.56707897240727,
+        "close": 96.51,
+        "marketCap": 5440796803,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -2.8292388240032107,
+        "return_2y": 68.13588850174217
+      }
+    }
   ],
-  "dataAsOf": "2026-07-25T00:00:00+09:00",
-  "description": "• 금리인상·대출건전성 수혜\n• 동인: 금리인상·대출건전성·금융시장변동성고조\n• 대표주: JP모건(대형 은행 — 위기)·뱅크오브아메리카(대형 은행)·KRE(지역은행)(지역은행 ETF)\n• ETF: KRE(지역은행)·Invesco KBW Bank ETF",
-  "notes": "T_551 신규 회고((Y23)). 자산별 CHARACTER, MACRO 3(재사용)",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-25",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 이벤트 추가."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_293",
+      "to": "T_551",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012878"
+      ]
+    },
+    {
+      "from": "A_293",
+      "to": "C_1517",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017601"
+      ]
+    },
+    {
+      "from": "A_113",
+      "to": "T_551",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012879"
+      ]
+    },
+    {
+      "from": "A_113",
+      "to": "C_1518",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017602"
+      ]
+    },
+    {
+      "from": "A_2572",
+      "to": "T_551",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012880"
+      ]
+    },
+    {
+      "from": "A_2572",
+      "to": "C_1519",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017603"
+      ]
+    },
+    {
+      "from": "A_402",
+      "to": "T_551",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012881"
+      ]
+    },
+    {
+      "from": "A_402",
+      "to": "C_1520",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017604"
+      ]
+    },
+    {
+      "from": "A_2573",
+      "to": "T_551",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012882"
+      ]
+    },
+    {
+      "from": "A_2573",
+      "to": "C_1521",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017605"
+      ]
+    },
+    {
+      "from": "A_2574",
+      "to": "T_551",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012883"
+      ]
+    },
+    {
+      "from": "A_2574",
+      "to": "C_1522",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017606"
+      ]
+    },
+    {
+      "from": "A_1720",
+      "to": "T_551",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012884"
+      ]
+    },
+    {
+      "from": "A_1720",
+      "to": "C_1523",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017607"
+      ]
+    },
+    {
+      "from": "M_072",
+      "to": "T_551",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012885"
+      ]
+    },
+    {
+      "from": "M_149",
+      "to": "T_551",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012886"
+      ]
+    },
+    {
+      "from": "M_262",
+      "to": "T_551",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012887"
+      ]
+    },
+    {
+      "from": "A_293",
+      "to": "A_113",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020146"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "JP모건과 뱅크오브아메리카는 대형은행 예금 유치 경쟁"
+    },
+    {
+      "from": "A_2573",
+      "to": "A_2574",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020147"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "웨스턴얼라이언스와 퍼스트시티즌스는 지역은행 자산 인수 경쟁"
+    },
+    {
+      "from": "A_402",
+      "to": "A_293",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020148"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "찰스슈왑과 JP모건은 리테일 예금·자산관리 시장 경쟁"
+    },
+    {
+      "from": "A_1720",
+      "to": "A_2573",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020149"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "트루이스트파이낸셜과 웨스턴얼라이언스는 미국 지역은행 시장 경쟁"
+    },
+    {
+      "from": "A_2572",
+      "to": "T_551",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020897"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_2963",
+      "to": "T_551",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020898"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_293",
+      "to": "T_551",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012878"
+      ]
+    },
+    {
+      "from": "A_293",
+      "to": "C_1517",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017601"
+      ]
+    },
+    {
+      "from": "A_113",
+      "to": "T_551",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012879"
+      ]
+    },
+    {
+      "from": "A_113",
+      "to": "C_1518",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017602"
+      ]
+    },
+    {
+      "from": "A_2572",
+      "to": "T_551",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012880"
+      ]
+    },
+    {
+      "from": "A_2572",
+      "to": "C_1519",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017603"
+      ]
+    },
+    {
+      "from": "A_402",
+      "to": "T_551",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012881"
+      ]
+    },
+    {
+      "from": "A_402",
+      "to": "C_1520",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017604"
+      ]
+    },
+    {
+      "from": "A_2573",
+      "to": "T_551",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012882"
+      ]
+    },
+    {
+      "from": "A_2573",
+      "to": "C_1521",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017605"
+      ]
+    },
+    {
+      "from": "A_2574",
+      "to": "T_551",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012883"
+      ]
+    },
+    {
+      "from": "A_2574",
+      "to": "C_1522",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017606"
+      ]
+    },
+    {
+      "from": "A_1720",
+      "to": "T_551",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012884"
+      ]
+    },
+    {
+      "from": "A_1720",
+      "to": "C_1523",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017607"
+      ]
+    },
+    {
+      "from": "M_072",
+      "to": "T_551",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012885"
+      ]
+    },
+    {
+      "from": "M_149",
+      "to": "T_551",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012886"
+      ]
+    },
+    {
+      "from": "M_262",
+      "to": "T_551",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012887"
+      ]
+    },
+    {
+      "from": "A_293",
+      "to": "A_113",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020146"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "JP모건과 뱅크오브아메리카는 대형은행 예금 유치 경쟁"
+    },
+    {
+      "from": "A_2573",
+      "to": "A_2574",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020147"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "웨스턴얼라이언스와 퍼스트시티즌스는 지역은행 자산 인수 경쟁"
+    },
+    {
+      "from": "A_402",
+      "to": "A_293",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020148"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "찰스슈왑과 JP모건은 리테일 예금·자산관리 시장 경쟁"
+    },
+    {
+      "from": "A_1720",
+      "to": "A_2573",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020149"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "트루이스트파이낸셜과 웨스턴얼라이언스는 미국 지역은행 시장 경쟁"
+    },
+    {
+      "from": "A_2572",
+      "to": "T_551",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020897"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_2963",
+      "to": "T_551",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020898"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_551",
-   "type": "THEME",
-   "name": "(Y23) 미국 지역은행 위기(SVB)"
-  },
-  {
-   "id": "A_293",
-   "type": "ASSET",
-   "name": "JP모건",
-   "exposure": {
-    "ticker": "JPM",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.07435763267330531,
-    "return_3d": 0.22097005855705731,
-    "return_15d": 2.7264233741966626,
-    "return_1m": 5.818192423226098,
-    "return_ytd": 12.606293836509197,
-    "return_1y": 23.34783791134074,
-    "return_3y": 134.43819861730307,
-    "close": 362.84,
-    "marketCap": 972233408400,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.488028641754302,
-    "return_2y": 72.58371385083713
-   }
-  },
-  {
-   "id": "C_1517",
-   "type": "CHARACTER",
-   "name": "대형 은행 — 위기 수혜"
-  },
-  {
-   "id": "A_113",
-   "type": "ASSET",
-   "name": "뱅크오브아메리카",
-   "exposure": {
-    "ticker": "BAC",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.624122327976262,
-    "return_3d": 0.765624999999992,
-    "return_15d": 3.9323126510878215,
-    "return_1m": 6.384031672715262,
-    "return_ytd": 17.254545454545458,
-    "return_1y": 35.17082372668203,
-    "return_3y": 108.50307145166505,
-    "close": 64.49,
-    "marketCap": 457659089100,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 2.0895994934304163,
-    "return_2y": 66.1685132697758
-   }
-  },
-  {
-   "id": "C_1518",
-   "type": "CHARACTER",
-   "name": "대형 은행"
-  },
-  {
-   "id": "A_2572",
-   "type": "ASSET",
-   "name": "KRE(지역은행)",
-   "exposure": {
-    "ticker": "KRE",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.23151125401930095,
-    "return_3d": 1.458143470902229,
-    "return_15d": 2.9050574409084984,
-    "return_1m": 3.9066666666666805,
-    "return_ytd": 20.24378953865145,
-    "return_1y": 24.488817891373806,
-    "return_3y": 66.30388390951774,
-    "close": 77.93,
-    "marketCap": 3945981498,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 2.2569216638236522,
-    "return_2y": 47.65062523683214
-   }
-  },
-  {
-   "id": "C_1519",
-   "type": "CHARACTER",
-   "name": "지역은행 ETF"
-  },
-  {
-   "id": "A_402",
-   "type": "ASSET",
-   "name": "찰스슈왑",
-   "exposure": {
-    "ticker": "SCHW",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.935853170997647,
-    "return_3d": 3.1476323119777216,
-    "return_15d": 8.943807002059433,
-    "return_1m": 9.881305637982196,
-    "return_ytd": 11.190071063957575,
-    "return_1y": 13.612190632031096,
-    "return_3y": 79.8154742635157,
-    "close": 111.09,
-    "marketCap": 193201062600,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 3.2434944237918373,
-    "return_2y": 69.96634026927786
-   }
-  },
-  {
-   "id": "C_1520",
-   "type": "CHARACTER",
-   "name": "증권·은행 — 위기 노출"
-  },
-  {
-   "id": "A_2573",
-   "type": "ASSET",
-   "name": "웨스턴얼라이언스",
-   "exposure": {
-    "ticker": "WAL",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.7095669195008592,
-    "return_3d": 1.0061349693251342,
-    "return_15d": -0.9505474672121372,
-    "return_1m": 2.464525765496628,
-    "return_ytd": -2.0815986677768517,
-    "return_1y": -1.9299499642601914,
-    "return_3y": 61.41176470588234,
-    "close": 82.32,
-    "marketCap": 8988138835,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.2172630025820697,
-    "return_2y": 10.318949343339568
-   }
-  },
-  {
-   "id": "C_1521",
-   "type": "CHARACTER",
-   "name": "지역은행 — 위기 직격"
-  },
-  {
-   "id": "A_2574",
-   "type": "ASSET",
-   "name": "퍼스트시티즌스",
-   "exposure": {
-    "ticker": "FCNCA",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.0246506972827252,
-    "return_3d": 1.6954192612055108,
-    "return_15d": 6.04817994584963,
-    "return_1m": 11.108255546126799,
-    "return_ytd": 6.763179230073901,
-    "return_1y": 19.0152916000083,
-    "return_3y": 56.868423394743495,
-    "close": 2291.33,
-    "marketCap": 26099178980,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 3.283314326411224,
-    "return_2y": 14.588844824740832
-   }
-  },
-  {
-   "id": "C_1522",
-   "type": "CHARACTER",
-   "name": "SVB 인수 은행"
-  },
-  {
-   "id": "A_1720",
-   "type": "ASSET",
-   "name": "트루이스트파이낸셜",
-   "exposure": {
-    "ticker": "TFC",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.2075863370447184,
-    "return_3d": 1.510227489963678,
-    "return_15d": 2.588871715610508,
-    "return_1m": 2.213666987487972,
-    "return_ytd": 7.904897378581599,
-    "return_1y": 18.13125695216906,
-    "return_3y": 73.69970559371934,
-    "close": 53.1,
-    "marketCap": 66156228000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.4326647564469885,
-    "return_2y": 26.730310262529834
-   }
-  },
-  {
-   "id": "C_1523",
-   "type": "CHARACTER",
-   "name": "미국대형지역은행"
-  },
-  {
-   "id": "M_072",
-   "type": "MACRO",
-   "name": "금리인상"
-  },
-  {
-   "id": "M_149",
-   "type": "MACRO",
-   "name": "대출건전성"
-  },
-  {
-   "id": "M_262",
-   "type": "MACRO",
-   "name": "금융시장변동성고조"
-  },
-  {
-   "id": "A_2963",
-   "type": "ASSET",
-   "name": "Invesco KBW Bank ETF",
-   "exposure": {
-    "ticker": "KBWB",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.4838221953432198,
-    "return_3d": 1.4553226134744524,
-    "return_15d": 3.1773959842682498,
-    "return_1m": 2.815594059405946,
-    "return_ytd": 18.270257444536696,
-    "return_1y": 32.84914712153517,
-    "return_3y": 127.60273972602741,
-    "close": 99.69,
-    "marketCap": 5620070804,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 2.1309292080729403,
-    "return_2y": 79.55691642651294
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_293",
-   "to": "T_551",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012878"
-   ]
-  },
-  {
-   "from": "A_293",
-   "to": "C_1517",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017601"
-   ]
-  },
-  {
-   "from": "A_113",
-   "to": "T_551",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012879"
-   ]
-  },
-  {
-   "from": "A_113",
-   "to": "C_1518",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017602"
-   ]
-  },
-  {
-   "from": "A_2572",
-   "to": "T_551",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012880"
-   ]
-  },
-  {
-   "from": "A_2572",
-   "to": "C_1519",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017603"
-   ]
-  },
-  {
-   "from": "A_402",
-   "to": "T_551",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012881"
-   ]
-  },
-  {
-   "from": "A_402",
-   "to": "C_1520",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017604"
-   ]
-  },
-  {
-   "from": "A_2573",
-   "to": "T_551",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012882"
-   ]
-  },
-  {
-   "from": "A_2573",
-   "to": "C_1521",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017605"
-   ]
-  },
-  {
-   "from": "A_2574",
-   "to": "T_551",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012883"
-   ]
-  },
-  {
-   "from": "A_2574",
-   "to": "C_1522",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017606"
-   ]
-  },
-  {
-   "from": "A_1720",
-   "to": "T_551",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012884"
-   ]
-  },
-  {
-   "from": "A_1720",
-   "to": "C_1523",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017607"
-   ]
-  },
-  {
-   "from": "M_072",
-   "to": "T_551",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012885"
-   ]
-  },
-  {
-   "from": "M_149",
-   "to": "T_551",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012886"
-   ]
-  },
-  {
-   "from": "M_262",
-   "to": "T_551",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012887"
-   ]
-  },
-  {
-   "from": "A_293",
-   "to": "A_113",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020146"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "JP모건과 뱅크오브아메리카는 대형은행 예금 유치 경쟁"
-  },
-  {
-   "from": "A_2573",
-   "to": "A_2574",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020147"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "웨스턴얼라이언스와 퍼스트시티즌스는 지역은행 자산 인수 경쟁"
-  },
-  {
-   "from": "A_402",
-   "to": "A_293",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020148"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "찰스슈왑과 JP모건은 리테일 예금·자산관리 시장 경쟁"
-  },
-  {
-   "from": "A_1720",
-   "to": "A_2573",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020149"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "트루이스트파이낸셜과 웨스턴얼라이언스는 미국 지역은행 시장 경쟁"
-  },
-  {
-   "from": "A_2572",
-   "to": "T_551",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020897"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_2963",
-   "to": "T_551",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020898"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_293",
-   "to": "T_551",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012878"
-   ]
-  },
-  {
-   "from": "A_293",
-   "to": "C_1517",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017601"
-   ]
-  },
-  {
-   "from": "A_113",
-   "to": "T_551",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012879"
-   ]
-  },
-  {
-   "from": "A_113",
-   "to": "C_1518",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017602"
-   ]
-  },
-  {
-   "from": "A_2572",
-   "to": "T_551",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012880"
-   ]
-  },
-  {
-   "from": "A_2572",
-   "to": "C_1519",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017603"
-   ]
-  },
-  {
-   "from": "A_402",
-   "to": "T_551",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012881"
-   ]
-  },
-  {
-   "from": "A_402",
-   "to": "C_1520",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017604"
-   ]
-  },
-  {
-   "from": "A_2573",
-   "to": "T_551",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012882"
-   ]
-  },
-  {
-   "from": "A_2573",
-   "to": "C_1521",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017605"
-   ]
-  },
-  {
-   "from": "A_2574",
-   "to": "T_551",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012883"
-   ]
-  },
-  {
-   "from": "A_2574",
-   "to": "C_1522",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017606"
-   ]
-  },
-  {
-   "from": "A_1720",
-   "to": "T_551",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012884"
-   ]
-  },
-  {
-   "from": "A_1720",
-   "to": "C_1523",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017607"
-   ]
-  },
-  {
-   "from": "M_072",
-   "to": "T_551",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012885"
-   ]
-  },
-  {
-   "from": "M_149",
-   "to": "T_551",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012886"
-   ]
-  },
-  {
-   "from": "M_262",
-   "to": "T_551",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012887"
-   ]
-  },
-  {
-   "from": "A_293",
-   "to": "A_113",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020146"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "JP모건과 뱅크오브아메리카는 대형은행 예금 유치 경쟁"
-  },
-  {
-   "from": "A_2573",
-   "to": "A_2574",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020147"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "웨스턴얼라이언스와 퍼스트시티즌스는 지역은행 자산 인수 경쟁"
-  },
-  {
-   "from": "A_402",
-   "to": "A_293",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020148"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "찰스슈왑과 JP모건은 리테일 예금·자산관리 시장 경쟁"
-  },
-  {
-   "from": "A_1720",
-   "to": "A_2573",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020149"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "트루이스트파이낸셜과 웨스턴얼라이언스는 미국 지역은행 시장 경쟁"
-  },
-  {
-   "from": "A_2572",
-   "to": "T_551",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020897"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_2963",
-   "to": "T_551",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020898"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

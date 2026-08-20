@@ -1,609 +1,609 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_316",
- "themeName": "빅머니_레이달리오_올웨더분산",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_316",
+  "themeName": "빅머니_레이달리오_올웨더분산",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-24T00:00:00+09:00",
+    "description": "• 인플레/디플레/성장/침체 4박자 매크로 분산 (리스크 패리티)\n• 동인: 지정학리스크·약달러·유동성확대\n• 대표주: TLT(장기국채)·GLD(금)·IAU(금(저비용))",
+    "notes": "T_316 빅머니 시리즈 — 달리오 All Weather 리스크 패리티",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-07-24",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결(ETF 제외), 2026 이벤트 2건 추가."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_316",
+      "type": "THEME",
+      "name": "빅머니_레이달리오_올웨더분산"
+    },
+    {
+      "id": "A_1487",
+      "type": "ASSET",
+      "name": "TLT",
+      "exposure": {
+        "ticker": "TLT",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.6654420769042444,
+        "return_3d": 1.1945392491467421,
+        "return_15d": 0.2051901025950542,
+        "return_1m": -1.7747278750591566,
+        "return_ytd": -4.749885268471776,
+        "return_1y": -4.1892671667628445,
+        "return_3y": -11.464220966193883,
+        "close": 83.02,
+        "marketCap": 41968470146,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 1.1082693947144007,
+        "return_2y": -15.190519971396466
+      }
+    },
+    {
+      "id": "A_063",
+      "type": "ASSET",
+      "name": "GLD",
+      "exposure": {
+        "ticker": "GLD",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 3.8364069752854,
+        "return_3d": 3.078609146159206,
+        "return_15d": 11.523121698825056,
+        "return_1m": 12.331369941098224,
+        "return_ytd": 4.423304988519083,
+        "return_1y": 35.56523733088741,
+        "return_3y": 136.03490560657042,
+        "close": 413.84,
+        "marketCap": 146000881029,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 2.202904277388118,
+        "return_2y": 78.67967704330555
+      }
+    },
+    {
+      "id": "A_881",
+      "type": "ASSET",
+      "name": "IAU",
+      "exposure": {
+        "ticker": "IAU",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 3.8306204870884875,
+        "return_3d": 3.1113271754982907,
+        "return_15d": 11.572856391372955,
+        "return_1m": 12.370860927152316,
+        "return_ytd": 4.521374892201546,
+        "return_1y": 35.765722515602505,
+        "return_3y": 137.11570709893795,
+        "close": 84.84,
+        "marketCap": 66939492509,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 2.2415039768618916,
+        "return_2y": 79.17634635691657
+      }
+    },
+    {
+      "id": "A_1926",
+      "type": "ASSET",
+      "name": "VNQ",
+      "exposure": {
+        "ticker": "VNQ",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.0141364474492987,
+        "return_3d": -0.2226044723262155,
+        "return_15d": -2.036558712497516,
+        "return_1m": -1.4097180563887202,
+        "return_ytd": 11.436320488190766,
+        "return_1y": 9.033613445378164,
+        "return_3y": 22.588264545002488,
+        "close": 98.61,
+        "marketCap": 71160394118,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 1.335936697153417,
+        "return_2y": 7.080030405038551
+      }
+    },
+    {
+      "id": "A_1927",
+      "type": "ASSET",
+      "name": "EEM",
+      "exposure": {
+        "ticker": "EEM",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.1784511784511675,
+        "return_3d": -0.7506380423359826,
+        "return_15d": 8.252824627476674,
+        "return_1m": 4.45568020224365,
+        "return_ytd": 20.8371412904405,
+        "return_1y": 32.69771176234444,
+        "return_3y": 72.16145833333334,
+        "close": 66.11,
+        "marketCap": 30934342063,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -0.5266325609389,
+        "return_2y": 50.83276294775268
+      }
+    },
+    {
+      "id": "A_1928",
+      "type": "ASSET",
+      "name": "VTI",
+      "exposure": {
+        "ticker": "VTI",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.2506331785563587,
+        "return_3d": -1.0056011462810988,
+        "return_15d": 5.429776372010431,
+        "return_1m": 3.5366883736138055,
+        "return_ytd": 13.338503295851112,
+        "return_1y": 20.758254679505516,
+        "return_3y": 75.1025298373347,
+        "close": 379.99,
+        "marketCap": 2296012084399,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -0.48188984626665876,
+        "return_2y": 37.8023572076156
+      }
+    },
+    {
+      "id": "A_1929",
+      "type": "ASSET",
+      "name": "LQD",
+      "exposure": {
+        "ticker": "LQD",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.6897203325774592,
+        "return_3d": 0.424048247267228,
+        "return_15d": 0.3295048013556734,
+        "return_1m": -0.9204165117144059,
+        "return_ytd": -3.28523459479082,
+        "return_1y": -2.8620909670950656,
+        "return_3y": 2.372718539865515,
+        "close": 106.57,
+        "marketCap": 33268622749,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 0.424048247267228,
+        "return_2y": -4.378645132346348
+      }
+    },
+    {
+      "id": "C_293",
+      "type": "CHARACTER",
+      "name": "리스크패리티분산"
+    },
+    {
+      "id": "M_113",
+      "type": "MACRO",
+      "name": "지정학리스크"
+    },
+    {
+      "id": "M_153",
+      "type": "MACRO",
+      "name": "약달러"
+    },
+    {
+      "id": "M_069",
+      "type": "MACRO",
+      "name": "유동성확대"
+    },
+    {
+      "id": "C_5927",
+      "type": "CHARACTER",
+      "name": "장기국채·디플레/성장둔화 헤지"
+    },
+    {
+      "id": "C_5928",
+      "type": "CHARACTER",
+      "name": "금·인플레/통화가치 헤지"
+    },
+    {
+      "id": "C_5929",
+      "type": "CHARACTER",
+      "name": "금(저비용)·인플레 헤지"
+    },
+    {
+      "id": "C_5930",
+      "type": "CHARACTER",
+      "name": "미국 리츠·인플레 인컴"
+    },
+    {
+      "id": "C_5931",
+      "type": "CHARACTER",
+      "name": "신흥국 주식·성장 국면"
+    },
+    {
+      "id": "C_5932",
+      "type": "CHARACTER",
+      "name": "미국 전체주식·성장 코어"
+    },
+    {
+      "id": "C_5933",
+      "type": "CHARACTER",
+      "name": "투자등급 회사채·인컴 완충"
+    }
   ],
-  "dataAsOf": "2026-07-24T00:00:00+09:00",
-  "description": "• 인플레/디플레/성장/침체 4박자 매크로 분산 (리스크 패리티)\n• 동인: 지정학리스크·약달러·유동성확대\n• 대표주: TLT(장기국채)·GLD(금)·IAU(금(저비용))",
-  "notes": "T_316 빅머니 시리즈 — 달리오 All Weather 리스크 패리티",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-07-24",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결(ETF 제외), 2026 이벤트 2건 추가."
-   }
+  "edges": [
+    {
+      "from": "A_1487",
+      "to": "T_316",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009949"
+      ]
+    },
+    {
+      "from": "A_063",
+      "to": "T_316",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009950"
+      ]
+    },
+    {
+      "from": "A_881",
+      "to": "T_316",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009951"
+      ]
+    },
+    {
+      "from": "A_1926",
+      "to": "T_316",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009952"
+      ]
+    },
+    {
+      "from": "A_1927",
+      "to": "T_316",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009953"
+      ]
+    },
+    {
+      "from": "A_1928",
+      "to": "T_316",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009954"
+      ]
+    },
+    {
+      "from": "A_1929",
+      "to": "T_316",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009955"
+      ]
+    },
+    {
+      "from": "T_316",
+      "to": "C_293",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016135"
+      ]
+    },
+    {
+      "from": "M_113",
+      "to": "T_316",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_009956"
+      ]
+    },
+    {
+      "from": "M_153",
+      "to": "T_316",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_009957"
+      ]
+    },
+    {
+      "from": "M_069",
+      "to": "T_316",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_009958"
+      ]
+    },
+    {
+      "from": "A_1487",
+      "to": "C_5927",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "장기국채·디플레/성장둔화 헤지"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_063",
+      "to": "C_5928",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "금·인플레/통화가치 헤지"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_881",
+      "to": "C_5929",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "금(저비용)·인플레 헤지"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_1926",
+      "to": "C_5930",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "미국 리츠·인플레 인컴"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_1927",
+      "to": "C_5931",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "신흥국 주식·성장 국면"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_1928",
+      "to": "C_5932",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "미국 전체주식·성장 코어"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_1929",
+      "to": "C_5933",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "투자등급 회사채·인컴 완충"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_1487",
+      "to": "T_316",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009949"
+      ]
+    },
+    {
+      "from": "A_063",
+      "to": "T_316",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009950"
+      ]
+    },
+    {
+      "from": "A_881",
+      "to": "T_316",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009951"
+      ]
+    },
+    {
+      "from": "A_1926",
+      "to": "T_316",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009952"
+      ]
+    },
+    {
+      "from": "A_1927",
+      "to": "T_316",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009953"
+      ]
+    },
+    {
+      "from": "A_1928",
+      "to": "T_316",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009954"
+      ]
+    },
+    {
+      "from": "A_1929",
+      "to": "T_316",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_009955"
+      ]
+    },
+    {
+      "from": "T_316",
+      "to": "C_293",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016135"
+      ]
+    },
+    {
+      "from": "M_113",
+      "to": "T_316",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_009956"
+      ]
+    },
+    {
+      "from": "M_153",
+      "to": "T_316",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_009957"
+      ]
+    },
+    {
+      "from": "M_069",
+      "to": "T_316",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_009958"
+      ]
+    },
+    {
+      "from": "A_1487",
+      "to": "C_5927",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "장기국채·디플레/성장둔화 헤지"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_063",
+      "to": "C_5928",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "금·인플레/통화가치 헤지"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_881",
+      "to": "C_5929",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "금(저비용)·인플레 헤지"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_1926",
+      "to": "C_5930",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "미국 리츠·인플레 인컴"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_1927",
+      "to": "C_5931",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "신흥국 주식·성장 국면"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_1928",
+      "to": "C_5932",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "미국 전체주식·성장 코어"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_1929",
+      "to": "C_5933",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "투자등급 회사채·인컴 완충"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_316",
-   "type": "THEME",
-   "name": "빅머니_레이달리오_올웨더분산"
-  },
-  {
-   "id": "A_1487",
-   "type": "ASSET",
-   "name": "TLT",
-   "exposure": {
-    "ticker": "TLT",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.6659401864632541,
-    "return_3d": -0.18250395425233323,
-    "return_15d": -1.453453453453446,
-    "return_1m": -2.426260704091332,
-    "return_ytd": -5.874254245066535,
-    "return_1y": -5.722822339692013,
-    "return_3y": -13.787305590584264,
-    "close": 82.04,
-    "marketCap": 41473058188,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.8699855002416657,
-    "return_2y": -16.19164368168352
-   }
-  },
-  {
-   "id": "A_063",
-   "type": "ASSET",
-   "name": "GLD",
-   "exposure": {
-    "ticker": "GLD",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.6316422699017554,
-    "return_3d": 0.1296887470071839,
-    "return_15d": 7.9537510083355745,
-    "return_1m": 7.881230686551133,
-    "return_ytd": 1.3045343291867573,
-    "return_1y": 30.668836452400328,
-    "return_3y": 126.74799502993336,
-    "close": 401.48,
-    "marketCap": 141640328909,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.755389364318515,
-    "return_2y": 77.48894783377544
-   }
-  },
-  {
-   "id": "A_881",
-   "type": "ASSET",
-   "name": "IAU",
-   "exposure": {
-    "ticker": "IAU",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.6113964294448548,
-    "return_3d": 0.12168410805548646,
-    "return_15d": 7.9365079365079305,
-    "return_1m": 7.87990035400552,
-    "return_ytd": 1.3675003079955728,
-    "return_1y": 30.810810810810807,
-    "return_3y": 127.67017155506366,
-    "close": 82.28,
-    "marketCap": 64919630406,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.7345739471106727,
-    "return_2y": 77.97966688297645
-   }
-  },
-  {
-   "id": "A_1926",
-   "type": "ASSET",
-   "name": "VNQ",
-   "exposure": {
-    "ticker": "VNQ",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.2536011361330859,
-    "return_3d": 2.5420211662170678,
-    "return_15d": -1.9640908640015886,
-    "return_1m": 1.2913805472993811,
-    "return_ytd": 11.68493615097752,
-    "return_1y": 10.84567070435174,
-    "return_3y": 19.388741241845864,
-    "close": 98.83,
-    "marketCap": 71319153744,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.4063801686477575,
-    "return_2y": 8.069983597594298
-   }
-  },
-  {
-   "id": "A_1927",
-   "type": "ASSET",
-   "name": "EEM",
-   "exposure": {
-    "ticker": "EEM",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.10497900419916828,
-    "return_3d": 1.8034540730551551,
-    "return_15d": 5.179219958945214,
-    "return_1m": 1.4313994213491776,
-    "return_ytd": 21.75105099616157,
-    "return_1y": 33.54049719326382,
-    "return_3y": 69.18973837947678,
-    "close": 66.61,
-    "marketCap": 31168303204,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.4777574649603942,
-    "return_2y": 56.95098963242224
-   }
-  },
-  {
-   "id": "A_1928",
-   "type": "ASSET",
-   "name": "VTI",
-   "exposure": {
-    "ticker": "VTI",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.11709601873536313,
-    "return_3d": 0.84066727965324,
-    "return_15d": 5.2220394736842035,
-    "return_1m": 3.419010669253142,
-    "return_ytd": 14.489814179616435,
-    "return_1y": 21.015794949399424,
-    "return_3y": 72.20726783310903,
-    "close": 383.85,
-    "marketCap": 2319335347237,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.542197076850548,
-    "return_2y": 43.29177243541886
-   }
-  },
-  {
-   "id": "A_1929",
-   "type": "ASSET",
-   "name": "LQD",
-   "exposure": {
-    "ticker": "LQD",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.40356640075080996,
-    "return_3d": 0.1226530804792958,
-    "return_15d": -0.10354890332298083,
-    "return_1m": -1.0166962037123306,
-    "return_ytd": -3.6936201107178435,
-    "return_1y": -3.421914816163074,
-    "return_3y": 1.0570421864584345,
-    "close": 106.12,
-    "marketCap": 33128143438,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.40356640075080996,
-    "return_2y": -4.568345323741008
-   }
-  },
-  {
-   "id": "C_293",
-   "type": "CHARACTER",
-   "name": "리스크패리티분산"
-  },
-  {
-   "id": "M_113",
-   "type": "MACRO",
-   "name": "지정학리스크"
-  },
-  {
-   "id": "M_153",
-   "type": "MACRO",
-   "name": "약달러"
-  },
-  {
-   "id": "M_069",
-   "type": "MACRO",
-   "name": "유동성확대"
-  },
-  {
-   "id": "C_5927",
-   "type": "CHARACTER",
-   "name": "장기국채·디플레/성장둔화 헤지"
-  },
-  {
-   "id": "C_5928",
-   "type": "CHARACTER",
-   "name": "금·인플레/통화가치 헤지"
-  },
-  {
-   "id": "C_5929",
-   "type": "CHARACTER",
-   "name": "금(저비용)·인플레 헤지"
-  },
-  {
-   "id": "C_5930",
-   "type": "CHARACTER",
-   "name": "미국 리츠·인플레 인컴"
-  },
-  {
-   "id": "C_5931",
-   "type": "CHARACTER",
-   "name": "신흥국 주식·성장 국면"
-  },
-  {
-   "id": "C_5932",
-   "type": "CHARACTER",
-   "name": "미국 전체주식·성장 코어"
-  },
-  {
-   "id": "C_5933",
-   "type": "CHARACTER",
-   "name": "투자등급 회사채·인컴 완충"
-  }
- ],
- "edges": [
-  {
-   "from": "A_1487",
-   "to": "T_316",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009949"
-   ]
-  },
-  {
-   "from": "A_063",
-   "to": "T_316",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009950"
-   ]
-  },
-  {
-   "from": "A_881",
-   "to": "T_316",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009951"
-   ]
-  },
-  {
-   "from": "A_1926",
-   "to": "T_316",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009952"
-   ]
-  },
-  {
-   "from": "A_1927",
-   "to": "T_316",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009953"
-   ]
-  },
-  {
-   "from": "A_1928",
-   "to": "T_316",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009954"
-   ]
-  },
-  {
-   "from": "A_1929",
-   "to": "T_316",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009955"
-   ]
-  },
-  {
-   "from": "T_316",
-   "to": "C_293",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016135"
-   ]
-  },
-  {
-   "from": "M_113",
-   "to": "T_316",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_009956"
-   ]
-  },
-  {
-   "from": "M_153",
-   "to": "T_316",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_009957"
-   ]
-  },
-  {
-   "from": "M_069",
-   "to": "T_316",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_009958"
-   ]
-  },
-  {
-   "from": "A_1487",
-   "to": "C_5927",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "장기국채·디플레/성장둔화 헤지"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_063",
-   "to": "C_5928",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "금·인플레/통화가치 헤지"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_881",
-   "to": "C_5929",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "금(저비용)·인플레 헤지"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_1926",
-   "to": "C_5930",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "미국 리츠·인플레 인컴"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_1927",
-   "to": "C_5931",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "신흥국 주식·성장 국면"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_1928",
-   "to": "C_5932",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "미국 전체주식·성장 코어"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_1929",
-   "to": "C_5933",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "투자등급 회사채·인컴 완충"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_1487",
-   "to": "T_316",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009949"
-   ]
-  },
-  {
-   "from": "A_063",
-   "to": "T_316",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009950"
-   ]
-  },
-  {
-   "from": "A_881",
-   "to": "T_316",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009951"
-   ]
-  },
-  {
-   "from": "A_1926",
-   "to": "T_316",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009952"
-   ]
-  },
-  {
-   "from": "A_1927",
-   "to": "T_316",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009953"
-   ]
-  },
-  {
-   "from": "A_1928",
-   "to": "T_316",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009954"
-   ]
-  },
-  {
-   "from": "A_1929",
-   "to": "T_316",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_009955"
-   ]
-  },
-  {
-   "from": "T_316",
-   "to": "C_293",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016135"
-   ]
-  },
-  {
-   "from": "M_113",
-   "to": "T_316",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_009956"
-   ]
-  },
-  {
-   "from": "M_153",
-   "to": "T_316",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_009957"
-   ]
-  },
-  {
-   "from": "M_069",
-   "to": "T_316",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_009958"
-   ]
-  },
-  {
-   "from": "A_1487",
-   "to": "C_5927",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "장기국채·디플레/성장둔화 헤지"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_063",
-   "to": "C_5928",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "금·인플레/통화가치 헤지"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_881",
-   "to": "C_5929",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "금(저비용)·인플레 헤지"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_1926",
-   "to": "C_5930",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "미국 리츠·인플레 인컴"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_1927",
-   "to": "C_5931",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "신흥국 주식·성장 국면"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_1928",
-   "to": "C_5932",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "미국 전체주식·성장 코어"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_1929",
-   "to": "C_5933",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "투자등급 회사채·인컴 완충"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  }
- ]
 }

@@ -1,581 +1,581 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_146",
- "themeName": "글로벌바이오테크_빅바이오",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_146",
+  "themeName": "글로벌바이오테크_빅바이오",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-04-14T00:00:00+09:00",
+    "notes": "g146 누적 import 기반 글로벌 바이오테크",
+    "sources": [],
+    "provenanceSeed": "T_146 공개사실 시드(2026-06-29) — evidence_ssot 참조",
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-19",
+        "kind": "분리",
+        "title": "글로벌바이오테크_빅바이오 분리 생성",
+        "detail": "T_146 분할. 매크로 공동 사용, XBI EXPOSED_TO 연결."
+      },
+      {
+        "date": "2026-07-11",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
+      }
+    ],
+    "description": "• 블록버스터를 보유한 대형 상용화 바이오\n• 동인: 빅파마특허만료\n• 대표주: 리제네론(황반변성면역대형)·암젠(바이오시밀러비만)·애브비(휴미라후속면역)\n• ETF: XBI"
+  },
+  "nodes": [
+    {
+      "id": "T_146",
+      "type": "THEME",
+      "name": "글로벌바이오테크_빅바이오"
+    },
+    {
+      "id": "A_1001",
+      "type": "ASSET",
+      "name": "리제네론",
+      "exposure": {
+        "ticker": "REGN",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 3.7766587677725116,
+        "close": 840.84,
+        "marketCap": 86625018480,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 4.649773485338771,
+        "return_15d": 20.91110408098704,
+        "return_1m": 24.25778421433744,
+        "return_ytd": 8.935442496793499,
+        "return_1y": 47.05656021546749,
+        "return_3y": 3.5007385524372214,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 5.369741475457079,
+        "return_2y": -29.7473430920393
+      }
+    },
+    {
+      "id": "C_2555",
+      "type": "CHARACTER",
+      "name": "황반변성면역대형"
+    },
+    {
+      "id": "A_1004",
+      "type": "ASSET",
+      "name": "암젠",
+      "exposure": {
+        "ticker": "AMGN",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 4.016177577125668,
+        "close": 442.36,
+        "marketCap": 238745230880,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 6.538859854049761,
+        "return_15d": 14.116190279640906,
+        "return_1m": 20.767697725845636,
+        "return_ytd": 35.15016345360669,
+        "return_1y": 49.67349010319744,
+        "return_3y": 68.95577114047819,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 6.29054735931569,
+        "return_2y": 34.87819007836082
+      }
+    },
+    {
+      "id": "C_2558",
+      "type": "CHARACTER",
+      "name": "바이오시밀러비만"
+    },
+    {
+      "id": "A_1006",
+      "type": "ASSET",
+      "name": "애브비",
+      "exposure": {
+        "ticker": "ABBV",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 2.722848756372631,
+        "close": 265.97,
+        "marketCap": 469913886601,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 6.6182955183195835,
+        "return_15d": 1.0140524116976968,
+        "return_1m": 4.510982749813364,
+        "return_ytd": 16.40334369118999,
+        "return_1y": 28.992676657451888,
+        "return_3y": 77.14799520447586,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 6.918314841614426,
+        "return_2y": 35.09930410931072
+      }
+    },
+    {
+      "id": "C_2560",
+      "type": "CHARACTER",
+      "name": "휴미라후속면역"
+    },
+    {
+      "id": "A_1003",
+      "type": "ASSET",
+      "name": "버텍스",
+      "exposure": {
+        "ticker": "VRTX",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 4.519207103504397,
+        "close": 552.06,
+        "marketCap": 140115588300,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 9.15669797330696,
+        "return_15d": 14.220098069641862,
+        "return_1m": 13.674456913415,
+        "return_ytd": 21.770778189518246,
+        "return_1y": 41.2785341386017,
+        "return_3y": 60.100922220288844,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 5.00827420919483,
+        "return_2y": 13.11545948161048
+      }
+    },
+    {
+      "id": "C_2557",
+      "type": "CHARACTER",
+      "name": "낭성섬유증"
+    },
+    {
+      "id": "A_1002",
+      "type": "ASSET",
+      "name": "바이오젠",
+      "exposure": {
+        "ticker": "BIIB",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 4.239002587626439,
+        "close": 221.56,
+        "marketCap": 32736375797,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 5.5902397178668295,
+        "return_15d": 5.893036371457261,
+        "return_1m": 7.558619350453899,
+        "return_ytd": 25.893516677083927,
+        "return_1y": 59.55638772864755,
+        "return_3y": -15.159869806624538,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 6.075549384784784,
+        "return_2y": 7.522080947296894
+      }
+    },
+    {
+      "id": "C_2556",
+      "type": "CHARACTER",
+      "name": "신경질환"
+    },
+    {
+      "id": "M_102",
+      "type": "MACRO",
+      "name": "빅파마특허만료"
+    },
+    {
+      "id": "A_1016",
+      "type": "ASSET",
+      "name": "XBI",
+      "exposure": {
+        "ticker": "XBI",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 5.8959465367559805,
+        "close": 169.55,
+        "marketCap": 8864993131,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 7.712343561400181,
+        "return_15d": 14.630518558582928,
+        "return_1m": 9.911837158044868,
+        "return_ytd": 39.0551956040351,
+        "return_1y": 90.93468468468471,
+        "return_3y": 118.68953953308399,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 6.374302026475953,
+        "return_2y": 68.12097174020826
+      }
+    }
   ],
-  "dataAsOf": "2026-04-14T00:00:00+09:00",
-  "notes": "g146 누적 import 기반 글로벌 바이오테크",
-  "sources": [],
-  "provenanceSeed": "T_146 공개사실 시드(2026-06-29) — evidence_ssot 참조",
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-19",
-    "kind": "분리",
-    "title": "글로벌바이오테크_빅바이오 분리 생성",
-    "detail": "T_146 분할. 매크로 공동 사용, XBI EXPOSED_TO 연결."
-   },
-   {
-    "date": "2026-07-11",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
-   }
+  "edges": [
+    {
+      "from": "A_1001",
+      "to": "T_146",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008022"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1001",
+      "to": "C_2555",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004438"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1004",
+      "to": "T_146",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008023"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1004",
+      "to": "C_2558",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004441"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1006",
+      "to": "T_146",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008024"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1006",
+      "to": "C_2560",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004443"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1003",
+      "to": "T_146",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008025"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1003",
+      "to": "C_2557",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004440"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1002",
+      "to": "T_146",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008026"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1002",
+      "to": "C_2556",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004439"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "M_102",
+      "to": "T_146",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_000341"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_1016",
+      "to": "T_146",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_008027"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1001",
+      "to": "A_1004",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_017990"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "PCSK9 억제제 프랄런트(리제네론)와 레파타(암젠)로 콜레스테롤 시장에서 직접 경쟁, 반독점·특허 소송까지 벌인 라이벌."
+    },
+    {
+      "from": "A_1004",
+      "to": "A_1006",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_017991"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "암젠 암제비타는 애브비 초대형 신약 휴미라의 첫 바이오시밀러로 출시돼 정면 대체·가격 경쟁."
+    },
+    {
+      "from": "A_1001",
+      "to": "A_1006",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_017992"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "아토피성 피부염에서 리제네론 듀피젠트와 애브비 린보크가 head-to-head로 맞붙는 면역질환 경쟁 파이프라인."
+    },
+    {
+      "from": "A_1002",
+      "to": "A_1006",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_017993"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "바이오젠과 애브비가 다발성경화증 치료제 진브리타(다클리주맙)를 공동 개발·판매(2018년 자진 철수)."
+    }
   ],
-  "description": "• 블록버스터를 보유한 대형 상용화 바이오\n• 동인: 빅파마특허만료\n• 대표주: 리제네론(황반변성면역대형)·암젠(바이오시밀러비만)·애브비(휴미라후속면역)\n• ETF: XBI"
- },
- "nodes": [
-  {
-   "id": "T_146",
-   "type": "THEME",
-   "name": "글로벌바이오테크_빅바이오"
-  },
-  {
-   "id": "A_1001",
-   "type": "ASSET",
-   "name": "리제네론",
-   "exposure": {
-    "ticker": "REGN",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.3089445016563941,
-    "close": 803.48,
-    "marketCap": 82776116560,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 0.8130489335006263,
-    "return_15d": 22.479840246337712,
-    "return_1m": 22.459306224471142,
-    "return_ytd": 4.0952491999948215,
-    "return_1y": 41.96512182624521,
-    "return_3y": -0.6061505727504413,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 2.4376561782854855,
-    "return_2y": -30.546479262832136
-   }
-  },
-  {
-   "id": "C_2555",
-   "type": "CHARACTER",
-   "name": "황반변성면역대형"
-  },
-  {
-   "id": "A_1004",
-   "type": "ASSET",
-   "name": "암젠",
-   "exposure": {
-    "ticker": "AMGN",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.6294275320696929,
-    "close": 415.21,
-    "marketCap": 224092158680,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 0.2196475983586632,
-    "return_15d": 10.416445059036272,
-    "return_1m": 16.878254750175927,
-    "return_ytd": 26.855274815923735,
-    "return_1y": 43.03282923972578,
-    "return_3y": 59.102578840479715,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.0366224601533025,
-    "return_2y": 28.655532488457823
-   }
-  },
-  {
-   "id": "C_2558",
-   "type": "CHARACTER",
-   "name": "바이오시밀러비만"
-  },
-  {
-   "id": "A_1006",
-   "type": "ASSET",
-   "name": "애브비",
-   "exposure": {
-    "ticker": "ABBV",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.5422215134359254,
-    "close": 249.45,
-    "marketCap": 440726469198,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -0.251909312647447,
-    "return_15d": -3.817088217149911,
-    "return_1m": 1.9119209085709743,
-    "return_ytd": 9.177644535865891,
-    "return_1y": 21.878053547000185,
-    "return_3y": 63.82741183424181,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.390017883271022,
-    "return_2y": 29.253886010362695
-   }
-  },
-  {
-   "id": "C_2560",
-   "type": "CHARACTER",
-   "name": "휴미라후속면역"
-  },
-  {
-   "id": "A_1003",
-   "type": "ASSET",
-   "name": "버텍스",
-   "exposure": {
-    "ticker": "VRTX",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -2.069940360932554,
-    "close": 505.75,
-    "marketCap": 128361878750,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -4.512413858208242,
-    "return_15d": 5.947293447293434,
-    "return_1m": 6.180848606999634,
-    "return_ytd": 11.555937886006706,
-    "return_1y": 29.57981040225468,
-    "return_3y": 44.76056902424364,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.9513375128510146,
-    "return_2y": 7.277702358730709
-   }
-  },
-  {
-   "id": "C_2557",
-   "type": "CHARACTER",
-   "name": "낭성섬유증"
-  },
-  {
-   "id": "A_1002",
-   "type": "ASSET",
-   "name": "바이오젠",
-   "exposure": {
-    "ticker": "BIIB",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.3892713031094175,
-    "close": 209.83,
-    "marketCap": 31003221400,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 2.9133356221492157,
-    "return_15d": 3.778624066472136,
-    "return_1m": 9.31492576191717,
-    "return_ytd": 19.228365248025447,
-    "return_1y": 55.49874018082113,
-    "return_3y": -23.06592359023245,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.9089160334712076,
-    "return_2y": 4.606411087292495
-   }
-  },
-  {
-   "id": "C_2556",
-   "type": "CHARACTER",
-   "name": "신경질환"
-  },
-  {
-   "id": "M_102",
-   "type": "MACRO",
-   "name": "빅파마특허만료"
-  },
-  {
-   "id": "A_1016",
-   "type": "ASSET",
-   "name": "XBI",
-   "exposure": {
-    "ticker": "XBI",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.3506311360448766,
-    "close": 157.41,
-    "marketCap": 8230248120,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -0.41753653444676075,
-    "return_15d": 4.6052631578947345,
-    "return_1m": 1.2608555805725397,
-    "return_ytd": 29.098663167391116,
-    "return_1y": 75.7396449704142,
-    "return_3y": 96.68874172185429,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.025417805172511798,
-    "return_2y": 63.81517327505464
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_1001",
-   "to": "T_146",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008022"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1001",
-   "to": "C_2555",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004438"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1004",
-   "to": "T_146",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008023"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1004",
-   "to": "C_2558",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004441"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1006",
-   "to": "T_146",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008024"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1006",
-   "to": "C_2560",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004443"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1003",
-   "to": "T_146",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008025"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1003",
-   "to": "C_2557",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004440"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1002",
-   "to": "T_146",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008026"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1002",
-   "to": "C_2556",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004439"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "M_102",
-   "to": "T_146",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_000341"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_1016",
-   "to": "T_146",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_008027"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1001",
-   "to": "A_1004",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_017990"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "PCSK9 억제제 프랄런트(리제네론)와 레파타(암젠)로 콜레스테롤 시장에서 직접 경쟁, 반독점·특허 소송까지 벌인 라이벌."
-  },
-  {
-   "from": "A_1004",
-   "to": "A_1006",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_017991"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "암젠 암제비타는 애브비 초대형 신약 휴미라의 첫 바이오시밀러로 출시돼 정면 대체·가격 경쟁."
-  },
-  {
-   "from": "A_1001",
-   "to": "A_1006",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_017992"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "아토피성 피부염에서 리제네론 듀피젠트와 애브비 린보크가 head-to-head로 맞붙는 면역질환 경쟁 파이프라인."
-  },
-  {
-   "from": "A_1002",
-   "to": "A_1006",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_017993"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "바이오젠과 애브비가 다발성경화증 치료제 진브리타(다클리주맙)를 공동 개발·판매(2018년 자진 철수)."
-  }
- ],
- "links": [
-  {
-   "from": "A_1001",
-   "to": "T_146",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008022"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1001",
-   "to": "C_2555",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004438"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1004",
-   "to": "T_146",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008023"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1004",
-   "to": "C_2558",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004441"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1006",
-   "to": "T_146",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008024"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1006",
-   "to": "C_2560",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004443"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1003",
-   "to": "T_146",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008025"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1003",
-   "to": "C_2557",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004440"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1002",
-   "to": "T_146",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008026"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1002",
-   "to": "C_2556",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004439"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "M_102",
-   "to": "T_146",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_000341"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_1016",
-   "to": "T_146",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_008027"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1001",
-   "to": "A_1004",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_017990"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "PCSK9 억제제 프랄런트(리제네론)와 레파타(암젠)로 콜레스테롤 시장에서 직접 경쟁, 반독점·특허 소송까지 벌인 라이벌."
-  },
-  {
-   "from": "A_1004",
-   "to": "A_1006",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_017991"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "암젠 암제비타는 애브비 초대형 신약 휴미라의 첫 바이오시밀러로 출시돼 정면 대체·가격 경쟁."
-  },
-  {
-   "from": "A_1001",
-   "to": "A_1006",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_017992"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "아토피성 피부염에서 리제네론 듀피젠트와 애브비 린보크가 head-to-head로 맞붙는 면역질환 경쟁 파이프라인."
-  },
-  {
-   "from": "A_1002",
-   "to": "A_1006",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_017993"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "바이오젠과 애브비가 다발성경화증 치료제 진브리타(다클리주맙)를 공동 개발·판매(2018년 자진 철수)."
-  }
- ]
+  "links": [
+    {
+      "from": "A_1001",
+      "to": "T_146",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008022"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1001",
+      "to": "C_2555",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004438"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1004",
+      "to": "T_146",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008023"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1004",
+      "to": "C_2558",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004441"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1006",
+      "to": "T_146",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008024"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1006",
+      "to": "C_2560",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004443"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1003",
+      "to": "T_146",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008025"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1003",
+      "to": "C_2557",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004440"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1002",
+      "to": "T_146",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008026"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1002",
+      "to": "C_2556",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004439"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "M_102",
+      "to": "T_146",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_000341"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_1016",
+      "to": "T_146",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_008027"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1001",
+      "to": "A_1004",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_017990"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "PCSK9 억제제 프랄런트(리제네론)와 레파타(암젠)로 콜레스테롤 시장에서 직접 경쟁, 반독점·특허 소송까지 벌인 라이벌."
+    },
+    {
+      "from": "A_1004",
+      "to": "A_1006",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_017991"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "암젠 암제비타는 애브비 초대형 신약 휴미라의 첫 바이오시밀러로 출시돼 정면 대체·가격 경쟁."
+    },
+    {
+      "from": "A_1001",
+      "to": "A_1006",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_017992"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "아토피성 피부염에서 리제네론 듀피젠트와 애브비 린보크가 head-to-head로 맞붙는 면역질환 경쟁 파이프라인."
+    },
+    {
+      "from": "A_1002",
+      "to": "A_1006",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_017993"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "바이오젠과 애브비가 다발성경화증 치료제 진브리타(다클리주맙)를 공동 개발·판매(2018년 자진 철수)."
+    }
+  ]
 }

@@ -1,695 +1,695 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_526",
- "themeName": "(Y20) 동학개미·증시 폭등(코스피3000)",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_526",
+  "themeName": "(Y20) 동학개미·증시 폭등(코스피3000)",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-29T00:00:00+09:00",
+    "description": "• 증시활성화정책·거래대금증가 수혜\n• 동인: 증시활성화정책·거래대금증가·유동성확대\n• 대표주: 삼성전자(동학개미 최선호)·SK하이닉스(반도체 대형)·카카오(성장주 — 개미 선)\n• ETF: KODEX200",
+    "notes": "T_526 신규 회고((Y20)). 자산별 CHARACTER, MACRO 3(재사용)",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 3건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-29",
+        "kind": "수정",
+        "title": "메모리 과점서사 타격 이벤트 추가",
+        "detail": "CXMT 홍콩 IPO·DUV 자체생산 돌파구→중국 AI 반도체 자급 가속 우려·시장 폭락 반영."
+      },
+      {
+        "date": "2026-07-25",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 이벤트(회고+2026 에코) 추가."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_526",
+      "type": "THEME",
+      "name": "(Y20) 동학개미·증시 폭등(코스피3000)"
+    },
+    {
+      "id": "A_088",
+      "type": "ASSET",
+      "name": "삼성전자",
+      "exposure": {
+        "ticker": "005930",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -7.8212290502793325,
+        "return_3d": -7.649253731343286,
+        "return_15d": 12.5,
+        "return_1m": 1.434426229508201,
+        "return_ytd": 93.21541608051062,
+        "return_1y": 258.51481522276794,
+        "return_3y": 331.2849163731555,
+        "close": 247500,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 18.83116883116882,
+        "return_2y": 204.26454643525628
+      }
+    },
+    {
+      "id": "C_1343",
+      "type": "CHARACTER",
+      "name": "동학개미 최선호"
+    },
+    {
+      "id": "A_217",
+      "type": "ASSET",
+      "name": "SK하이닉스",
+      "exposure": {
+        "ticker": "000660",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -9.747292418772568,
+        "return_3d": -5.838041431261775,
+        "return_15d": -3.2258064516129004,
+        "return_1m": -14.965986394557829,
+        "return_ytd": 122.01169175820877,
+        "return_1y": 471.63873217634296,
+        "return_3y": 1363.0882989664492,
+        "close": 1500000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 15.682137834036558,
+        "return_2y": 626.1419086787719
+      }
+    },
+    {
+      "id": "C_1344",
+      "type": "CHARACTER",
+      "name": "반도체 대형"
+    },
+    {
+      "id": "A_514",
+      "type": "ASSET",
+      "name": "카카오",
+      "exposure": {
+        "ticker": "035720",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -2.2222222222222254,
+        "return_3d": -6.733167082294267,
+        "return_15d": 4.908835904628339,
+        "return_1m": 6.704707560627665,
+        "return_ytd": -39.69016836687634,
+        "return_1y": -31.531251494778967,
+        "return_3y": -20.439173534387045,
+        "close": 37400,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 0.25062656641603454,
+        "return_2y": -9.289093239271972
+      }
+    },
+    {
+      "id": "C_1345",
+      "type": "CHARACTER",
+      "name": "성장주 — 개미 선호"
+    },
+    {
+      "id": "A_513",
+      "type": "ASSET",
+      "name": "NAVER",
+      "exposure": {
+        "ticker": "035420",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -4.147465437788023,
+        "return_3d": -8.167770419426045,
+        "return_15d": -0.952380952380949,
+        "return_1m": 11.888111888111897,
+        "return_ytd": -14.904888119534531,
+        "return_1y": -9.40304900658605,
+        "return_3y": 5.147967131669673,
+        "close": 208000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 8.571428571428562,
+        "return_2y": 22.65732600936532
+      }
+    },
+    {
+      "id": "C_1346",
+      "type": "CHARACTER",
+      "name": "성장주 — 개미 선호"
+    },
+    {
+      "id": "A_717",
+      "type": "ASSET",
+      "name": "셀트리온",
+      "exposure": {
+        "ticker": "068270",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -0.716112531969304,
+        "return_3d": -3.9108910891089144,
+        "return_15d": 9.41375422773394,
+        "return_1m": 12.456546929316348,
+        "return_ytd": 0.6444378466424094,
+        "return_1y": 15.105583288591639,
+        "return_3y": 31.793001427062496,
+        "close": 194100,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 0.8529854490717526,
+        "return_2y": 19.406621142911828
+      }
+    },
+    {
+      "id": "C_1347",
+      "type": "CHARACTER",
+      "name": "바이오 대장"
+    },
+    {
+      "id": "A_986",
+      "type": "ASSET",
+      "name": "키움증권",
+      "exposure": {
+        "ticker": "039490",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -6.349206349206349,
+        "return_3d": -10.606060606060607,
+        "return_15d": -2.389705882352944,
+        "return_1m": -13.517915309446249,
+        "return_ytd": -11.940298507462687,
+        "return_1y": 34.37396676605155,
+        "return_3y": 251.49860335860765,
+        "close": 265500,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 8.288288288288292,
+        "return_2y": 113.39019589169345
+      }
+    },
+    {
+      "id": "C_1348",
+      "type": "CHARACTER",
+      "name": "거래대금 수혜 증권"
+    },
+    {
+      "id": "A_982",
+      "type": "ASSET",
+      "name": "삼성증권",
+      "exposure": {
+        "ticker": "016360",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -4.2792792792792795,
+        "return_3d": -8.108108108108103,
+        "return_15d": -8.602150537634412,
+        "return_1m": -16.42084562438545,
+        "return_ytd": 11.989459815546777,
+        "return_1y": 27.645618185048313,
+        "return_3y": 209.28352409752645,
+        "close": 85000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 2.19780219780219,
+        "return_2y": 113.29789623833251
+      }
+    },
+    {
+      "id": "C_1349",
+      "type": "CHARACTER",
+      "name": "거래대금 수혜 증권"
+    },
+    {
+      "id": "M_136",
+      "type": "MACRO",
+      "name": "증시활성화정책"
+    },
+    {
+      "id": "M_137",
+      "type": "MACRO",
+      "name": "거래대금증가"
+    },
+    {
+      "id": "M_069",
+      "type": "MACRO",
+      "name": "유동성확대"
+    },
+    {
+      "id": "A_2614",
+      "type": "ASSET",
+      "name": "KODEX200",
+      "exposure": {
+        "ticker": "069500",
+        "exchange": "KRX",
+        "country": "KR",
+        "business_desc": "KODEX 200은 코스피200 대형주를 추종하는 국내 최대 ETF다.",
+        "theme_role": "지역지수ETF",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -6.2551819438047,
+        "return_3d": -5.13657126876107,
+        "return_15d": 6.5777384223675295,
+        "return_1m": -2.043086177197373,
+        "return_ytd": 63.628396926163376,
+        "return_1y": 137.88983357808408,
+        "return_3y": 245.28666231411802,
+        "close": 101760,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 12.203078805178924,
+        "return_2y": 173.4622736797697
+      }
+    }
   ],
-  "dataAsOf": "2026-07-29T00:00:00+09:00",
-  "description": "• 증시활성화정책·거래대금증가 수혜\n• 동인: 증시활성화정책·거래대금증가·유동성확대\n• 대표주: 삼성전자(동학개미 최선호)·SK하이닉스(반도체 대형)·카카오(성장주 — 개미 선)\n• ETF: KODEX200",
-  "notes": "T_526 신규 회고((Y20)). 자산별 CHARACTER, MACRO 3(재사용)",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 3건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-29",
-    "kind": "수정",
-    "title": "메모리 과점서사 타격 이벤트 추가",
-    "detail": "CXMT 홍콩 IPO·DUV 자체생산 돌파구→중국 AI 반도체 자급 가속 우려·시장 폭락 반영."
-   },
-   {
-    "date": "2026-07-25",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 이벤트(회고+2026 에코) 추가."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_088",
+      "to": "T_526",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012629"
+      ]
+    },
+    {
+      "from": "A_088",
+      "to": "C_1343",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017427"
+      ]
+    },
+    {
+      "from": "A_217",
+      "to": "T_526",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012630"
+      ]
+    },
+    {
+      "from": "A_217",
+      "to": "C_1344",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017428"
+      ]
+    },
+    {
+      "from": "A_514",
+      "to": "T_526",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012631"
+      ]
+    },
+    {
+      "from": "A_514",
+      "to": "C_1345",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017429"
+      ]
+    },
+    {
+      "from": "A_513",
+      "to": "T_526",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012632"
+      ]
+    },
+    {
+      "from": "A_513",
+      "to": "C_1346",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017430"
+      ]
+    },
+    {
+      "from": "A_717",
+      "to": "T_526",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012633"
+      ]
+    },
+    {
+      "from": "A_717",
+      "to": "C_1347",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017431"
+      ]
+    },
+    {
+      "from": "A_986",
+      "to": "T_526",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012634"
+      ]
+    },
+    {
+      "from": "A_986",
+      "to": "C_1348",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017432"
+      ]
+    },
+    {
+      "from": "A_982",
+      "to": "T_526",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012635"
+      ]
+    },
+    {
+      "from": "A_982",
+      "to": "C_1349",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017433"
+      ]
+    },
+    {
+      "from": "M_136",
+      "to": "T_526",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012636"
+      ]
+    },
+    {
+      "from": "M_137",
+      "to": "T_526",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012637"
+      ]
+    },
+    {
+      "from": "M_069",
+      "to": "T_526",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012638"
+      ]
+    },
+    {
+      "from": "A_088",
+      "to": "A_217",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020051"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "삼성전자와 SK하이닉스는 반도체 시장 경쟁"
+    },
+    {
+      "from": "A_513",
+      "to": "A_514",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020052"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "NAVER와 카카오는 국내 플랫폼 시장 경쟁"
+    },
+    {
+      "from": "A_986",
+      "to": "A_982",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020053"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "키움증권과 삼성증권은 리테일 브로커리지 시장 직접 경쟁"
+    },
+    {
+      "from": "A_2614",
+      "to": "T_526",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020873"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_088",
+      "to": "T_526",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012629"
+      ]
+    },
+    {
+      "from": "A_088",
+      "to": "C_1343",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017427"
+      ]
+    },
+    {
+      "from": "A_217",
+      "to": "T_526",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012630"
+      ]
+    },
+    {
+      "from": "A_217",
+      "to": "C_1344",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017428"
+      ]
+    },
+    {
+      "from": "A_514",
+      "to": "T_526",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012631"
+      ]
+    },
+    {
+      "from": "A_514",
+      "to": "C_1345",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017429"
+      ]
+    },
+    {
+      "from": "A_513",
+      "to": "T_526",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012632"
+      ]
+    },
+    {
+      "from": "A_513",
+      "to": "C_1346",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017430"
+      ]
+    },
+    {
+      "from": "A_717",
+      "to": "T_526",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012633"
+      ]
+    },
+    {
+      "from": "A_717",
+      "to": "C_1347",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017431"
+      ]
+    },
+    {
+      "from": "A_986",
+      "to": "T_526",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012634"
+      ]
+    },
+    {
+      "from": "A_986",
+      "to": "C_1348",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017432"
+      ]
+    },
+    {
+      "from": "A_982",
+      "to": "T_526",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012635"
+      ]
+    },
+    {
+      "from": "A_982",
+      "to": "C_1349",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017433"
+      ]
+    },
+    {
+      "from": "M_136",
+      "to": "T_526",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012636"
+      ]
+    },
+    {
+      "from": "M_137",
+      "to": "T_526",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012637"
+      ]
+    },
+    {
+      "from": "M_069",
+      "to": "T_526",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012638"
+      ]
+    },
+    {
+      "from": "A_088",
+      "to": "A_217",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020051"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "삼성전자와 SK하이닉스는 반도체 시장 경쟁"
+    },
+    {
+      "from": "A_513",
+      "to": "A_514",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020052"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "NAVER와 카카오는 국내 플랫폼 시장 경쟁"
+    },
+    {
+      "from": "A_986",
+      "to": "A_982",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020053"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "키움증권과 삼성증권은 리테일 브로커리지 시장 직접 경쟁"
+    },
+    {
+      "from": "A_2614",
+      "to": "T_526",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020873"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_526",
-   "type": "THEME",
-   "name": "(Y20) 동학개미·증시 폭등(코스피3000)"
-  },
-  {
-   "id": "A_088",
-   "type": "ASSET",
-   "name": "삼성전자",
-   "exposure": {
-    "ticker": "005930",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 2.425373134328357,
-    "return_3d": 14.613778705636737,
-    "return_15d": 10.020040080160332,
-    "return_1m": -1.7889087656529523,
-    "return_ytd": 114.29346147111178,
-    "return_1y": 303.3965744682708,
-    "return_3y": 331.2849163731555,
-    "close": 274500,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 18.83116883116882,
-    "return_2y": 228.50489498681625
-   }
-  },
-  {
-   "id": "C_1343",
-   "type": "CHARACTER",
-   "name": "동학개미 최선호"
-  },
-  {
-   "id": "A_217",
-   "type": "ASSET",
-   "name": "SK하이닉스",
-   "exposure": {
-    "ticker": "000660",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 3.264281230382915,
-    "return_3d": 15.438596491228074,
-    "return_15d": -6.480955088118245,
-    "return_1m": -20.98943323727186,
-    "return_ytd": 143.4728219615023,
-    "return_1y": 540.2612294462479,
-    "return_3y": 1363.0882989664492,
-    "close": 1645000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 15.682137834036558,
-    "return_2y": 656.609132786635
-   }
-  },
-  {
-   "id": "C_1344",
-   "type": "CHARACTER",
-   "name": "반도체 대형"
-  },
-  {
-   "id": "A_514",
-   "type": "ASSET",
-   "name": "카카오",
-   "exposure": {
-    "ticker": "035720",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -0.24937655860348684,
-    "return_3d": -1.7199017199017175,
-    "return_15d": 10.497237569060779,
-    "return_1m": 14.613180515759305,
-    "return_ytd": -35.49750627473406,
-    "return_1y": -27.82693948040239,
-    "return_3y": -20.439173534387045,
-    "close": 40000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 0.25062656641603454,
-    "return_2y": -2.6297700583276185
-   }
-  },
-  {
-   "id": "C_1345",
-   "type": "CHARACTER",
-   "name": "성장주 — 개미 선호"
-  },
-  {
-   "id": "A_513",
-   "type": "ASSET",
-   "name": "NAVER",
-   "exposure": {
-    "ticker": "035420",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.6622516556291425,
-    "return_3d": 6.542056074766345,
-    "return_15d": 9.879518072289152,
-    "return_1m": 20.253164556962023,
-    "return_ytd": -6.722665823335927,
-    "return_1y": 2.397784609199083,
-    "return_3y": 5.147967131669673,
-    "close": 228000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 8.571428571428562,
-    "return_2y": 33.520840866609916
-   }
-  },
-  {
-   "id": "C_1346",
-   "type": "CHARACTER",
-   "name": "성장주 — 개미 선호"
-  },
-  {
-   "id": "A_717",
-   "type": "ASSET",
-   "name": "셀트리온",
-   "exposure": {
-    "ticker": "068270",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -0.4950495049504955,
-    "return_3d": -4.513064133016631,
-    "return_15d": 13.17567567567568,
-    "return_1m": 14.399544678429145,
-    "return_ytd": -0.7407395643346915,
-    "return_1y": 17.805483927916498,
-    "return_3y": 31.793001427062496,
-    "close": 201000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 0.8529854490717526,
-    "return_2y": 5.190881375110057
-   }
-  },
-  {
-   "id": "C_1347",
-   "type": "CHARACTER",
-   "name": "바이오 대장"
-  },
-  {
-   "id": "A_986",
-   "type": "ASSET",
-   "name": "키움증권",
-   "exposure": {
-    "ticker": "039490",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.1784511784511675,
-    "return_3d": 0.16666666666667052,
-    "return_15d": 0.670016750418756,
-    "return_1m": -9.214501510574014,
-    "return_ytd": -0.3316749585406287,
-    "return_1y": 55.880768452909614,
-    "return_3y": 251.49860335860765,
-    "close": 300500,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 8.288288288288292,
-    "return_2y": 135.52127975400774
-   }
-  },
-  {
-   "id": "C_1348",
-   "type": "CHARACTER",
-   "name": "거래대금 수혜 증권"
-  },
-  {
-   "id": "A_982",
-   "type": "ASSET",
-   "name": "삼성증권",
-   "exposure": {
-    "ticker": "016360",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.540540540540535,
-    "return_3d": 0.3236245954692629,
-    "return_15d": -7.2781655034895305,
-    "return_1m": -16.291629162916287,
-    "return_ytd": 22.529644268774707,
-    "return_1y": 46.339590129715646,
-    "return_3y": 209.28352409752645,
-    "close": 93000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 2.19780219780219,
-    "return_2y": 132.6019360539611
-   }
-  },
-  {
-   "id": "C_1349",
-   "type": "CHARACTER",
-   "name": "거래대금 수혜 증권"
-  },
-  {
-   "id": "M_136",
-   "type": "MACRO",
-   "name": "증시활성화정책"
-  },
-  {
-   "id": "M_137",
-   "type": "MACRO",
-   "name": "거래대금증가"
-  },
-  {
-   "id": "M_069",
-   "type": "MACRO",
-   "name": "유동성확대"
-  },
-  {
-   "id": "A_2614",
-   "type": "ASSET",
-   "name": "KODEX200",
-   "exposure": {
-    "ticker": "069500",
-    "exchange": "KRX",
-    "country": "KR",
-    "business_desc": "KODEX 200은 코스피200 대형주를 추종하는 국내 최대 ETF다.",
-    "theme_role": "지역지수ETF",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": 2.600913582548703,
-    "return_3d": 10.874930740945942,
-    "return_15d": 3.685643946601913,
-    "return_1m": -5.525133707236973,
-    "return_ytd": 76.97465964714564,
-    "return_1y": 163.79573623591156,
-    "return_3y": 245.28666231411802,
-    "close": 110060,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 12.203078805178924,
-    "return_2y": 190.13341966933444
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_088",
-   "to": "T_526",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012629"
-   ]
-  },
-  {
-   "from": "A_088",
-   "to": "C_1343",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017427"
-   ]
-  },
-  {
-   "from": "A_217",
-   "to": "T_526",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012630"
-   ]
-  },
-  {
-   "from": "A_217",
-   "to": "C_1344",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017428"
-   ]
-  },
-  {
-   "from": "A_514",
-   "to": "T_526",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012631"
-   ]
-  },
-  {
-   "from": "A_514",
-   "to": "C_1345",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017429"
-   ]
-  },
-  {
-   "from": "A_513",
-   "to": "T_526",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012632"
-   ]
-  },
-  {
-   "from": "A_513",
-   "to": "C_1346",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017430"
-   ]
-  },
-  {
-   "from": "A_717",
-   "to": "T_526",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012633"
-   ]
-  },
-  {
-   "from": "A_717",
-   "to": "C_1347",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017431"
-   ]
-  },
-  {
-   "from": "A_986",
-   "to": "T_526",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012634"
-   ]
-  },
-  {
-   "from": "A_986",
-   "to": "C_1348",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017432"
-   ]
-  },
-  {
-   "from": "A_982",
-   "to": "T_526",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012635"
-   ]
-  },
-  {
-   "from": "A_982",
-   "to": "C_1349",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017433"
-   ]
-  },
-  {
-   "from": "M_136",
-   "to": "T_526",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012636"
-   ]
-  },
-  {
-   "from": "M_137",
-   "to": "T_526",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012637"
-   ]
-  },
-  {
-   "from": "M_069",
-   "to": "T_526",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012638"
-   ]
-  },
-  {
-   "from": "A_088",
-   "to": "A_217",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020051"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "삼성전자와 SK하이닉스는 반도체 시장 경쟁"
-  },
-  {
-   "from": "A_513",
-   "to": "A_514",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020052"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "NAVER와 카카오는 국내 플랫폼 시장 경쟁"
-  },
-  {
-   "from": "A_986",
-   "to": "A_982",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020053"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "키움증권과 삼성증권은 리테일 브로커리지 시장 직접 경쟁"
-  },
-  {
-   "from": "A_2614",
-   "to": "T_526",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020873"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_088",
-   "to": "T_526",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012629"
-   ]
-  },
-  {
-   "from": "A_088",
-   "to": "C_1343",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017427"
-   ]
-  },
-  {
-   "from": "A_217",
-   "to": "T_526",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012630"
-   ]
-  },
-  {
-   "from": "A_217",
-   "to": "C_1344",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017428"
-   ]
-  },
-  {
-   "from": "A_514",
-   "to": "T_526",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012631"
-   ]
-  },
-  {
-   "from": "A_514",
-   "to": "C_1345",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017429"
-   ]
-  },
-  {
-   "from": "A_513",
-   "to": "T_526",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012632"
-   ]
-  },
-  {
-   "from": "A_513",
-   "to": "C_1346",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017430"
-   ]
-  },
-  {
-   "from": "A_717",
-   "to": "T_526",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012633"
-   ]
-  },
-  {
-   "from": "A_717",
-   "to": "C_1347",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017431"
-   ]
-  },
-  {
-   "from": "A_986",
-   "to": "T_526",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012634"
-   ]
-  },
-  {
-   "from": "A_986",
-   "to": "C_1348",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017432"
-   ]
-  },
-  {
-   "from": "A_982",
-   "to": "T_526",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012635"
-   ]
-  },
-  {
-   "from": "A_982",
-   "to": "C_1349",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017433"
-   ]
-  },
-  {
-   "from": "M_136",
-   "to": "T_526",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012636"
-   ]
-  },
-  {
-   "from": "M_137",
-   "to": "T_526",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012637"
-   ]
-  },
-  {
-   "from": "M_069",
-   "to": "T_526",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012638"
-   ]
-  },
-  {
-   "from": "A_088",
-   "to": "A_217",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020051"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "삼성전자와 SK하이닉스는 반도체 시장 경쟁"
-  },
-  {
-   "from": "A_513",
-   "to": "A_514",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020052"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "NAVER와 카카오는 국내 플랫폼 시장 경쟁"
-  },
-  {
-   "from": "A_986",
-   "to": "A_982",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020053"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "키움증권과 삼성증권은 리테일 브로커리지 시장 직접 경쟁"
-  },
-  {
-   "from": "A_2614",
-   "to": "T_526",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020873"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

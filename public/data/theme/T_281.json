@@ -1,652 +1,652 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_281",
- "themeName": "미국전통해자MOAT기업_결제·데이터·수직SW",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_281",
+  "themeName": "미국전통해자MOAT기업_결제·데이터·수직SW",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-05-31T00:00:00+09:00",
+    "description": "• 네트워크 효과·규제 진입장벽·전환비용 기반의 무형 해자군\n• 동인: 방어적투자심리확산\n• 대표주: 비자(네트워크효과해자)·마스터카드(네트워크효과해자)·S&P글로벌(무형자산해자)\n• ETF: MOAT",
+    "notes": "16 ASSET + 5 BF + 4 MACRO. A_1602 SPGI·A_1604 MCO 기존 ID 재사용 (사용자 신규 표기였으나 등록 확인).",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 3건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-19",
+        "kind": "분리",
+        "title": "미국전통해자MOAT기업_결제·데이터·수직SW 분리 생성",
+        "detail": "T_281 분할. 매크로 공동 사용, MOAT EXPOSED_TO 연결."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_281",
+      "type": "THEME",
+      "name": "미국전통해자MOAT기업_결제·데이터·수직SW"
+    },
+    {
+      "id": "A_1761",
+      "type": "ASSET",
+      "name": "비자",
+      "exposure": {
+        "ticker": "V",
+        "exchange": "NYSE",
+        "country": "US",
+        "business_desc": "Visa — 가맹점·카드사 양면 결제망",
+        "theme_role": "네트워크효과 — 글로벌 결제 인프라 1위",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": 0.35415236787921245,
+        "close": 365.54,
+        "marketCap": 682480437509,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 0.381710833447757,
+        "return_15d": -0.8651316681582699,
+        "return_1m": 1.946675591253899,
+        "return_ytd": 4.228564911180199,
+        "return_1y": 6.7425901591473325,
+        "return_3y": 53.47860771717683,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 1.7027433086639565,
+        "return_2y": 37.17866926858557
+      }
+    },
+    {
+      "id": "C_236",
+      "type": "CHARACTER",
+      "name": "네트워크효과해자"
+    },
+    {
+      "id": "A_1762",
+      "type": "ASSET",
+      "name": "마스터카드",
+      "exposure": {
+        "ticker": "MA",
+        "exchange": "NYSE",
+        "country": "US",
+        "business_desc": "Mastercard — 글로벌 결제 양면 네트워크",
+        "theme_role": "네트워크효과 — Visa와 결제 과점",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -0.10273197402098644,
+        "close": 573.72,
+        "marketCap": 503173093920,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 0.778162272304117,
+        "return_15d": 1.846197543137107,
+        "return_1m": 5.54083885209713,
+        "return_ytd": 0.497477578475336,
+        "return_1y": -2.0136291438233256,
+        "return_3y": 46.29369916107811,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 2.499419362907118,
+        "return_2y": 22.8575099575999
+      }
+    },
+    {
+      "id": "A_1602",
+      "type": "ASSET",
+      "name": "S&P글로벌",
+      "exposure": {
+        "ticker": "SPGI",
+        "exchange": "NYSE",
+        "country": "US",
+        "business_desc": "S&P Global — 신용평가 과점·인덱스",
+        "theme_role": "무형자산(규제·평판) — 신용평가 3대 과점",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": 2.062003636015697,
+        "close": 426.66,
+        "marketCap": 125779368000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 1.8767908309455628,
+        "return_15d": 1.6728624535315983,
+        "return_1m": -5.363321799307952,
+        "return_ytd": -18.356646702003488,
+        "return_1y": -23.045289757047772,
+        "return_3y": 11.691099476439803,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 4.038039502560342,
+        "return_2y": -13.934723847177954
+      }
+    },
+    {
+      "id": "C_234",
+      "type": "CHARACTER",
+      "name": "무형자산해자"
+    },
+    {
+      "id": "A_1604",
+      "type": "ASSET",
+      "name": "무디스",
+      "exposure": {
+        "ticker": "MCO",
+        "exchange": "NYSE",
+        "country": "US",
+        "business_desc": "Moody's — 신용평가 3대 과점",
+        "theme_role": "무형자산(규제·평판) — 신용평가 과점",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": 2.3137569731777052,
+        "close": 497.03,
+        "marketCap": 86085596000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 2.488865061035961,
+        "return_15d": 2.8536544987997514,
+        "return_1m": -2.7071996241631813,
+        "return_ytd": -2.705295096407956,
+        "return_1y": -2.9238281250000053,
+        "return_3y": 51.987646015534224,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 4.015988615436128,
+        "return_2y": 5.733066712049006
+      }
+    },
+    {
+      "id": "A_1766",
+      "type": "ASSET",
+      "name": "코스타그룹",
+      "exposure": {
+        "ticker": "CSGP",
+        "exchange": "NASDAQ",
+        "country": "US",
+        "business_desc": "CoStar Group — 상업용 부동산 독점 DB·플랫폼",
+        "theme_role": "네트워크효과+무형자산 — CRE 데이터 표준",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": 7.488846398980242,
+        "close": 33.73,
+        "marketCap": 13667328540,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 4.169240271772678,
+        "return_15d": 13.074086490110615,
+        "return_1m": 13.263935527199443,
+        "return_ytd": -49.836406900654374,
+        "return_1y": -62.07982012366499,
+        "return_3y": -56.91659215736365,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 10.590163934426222,
+        "return_2y": -54.972633827259386
+      }
+    },
+    {
+      "id": "A_1765",
+      "type": "ASSET",
+      "name": "타일러테크놀로지스",
+      "exposure": {
+        "ticker": "TYL",
+        "exchange": "NYSE",
+        "country": "US",
+        "business_desc": "Tyler Technologies — 공공 소프트웨어 1위·SaaS 전환",
+        "theme_role": "전환비용 — 정부용 SaaS 교체 비용 高",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": 4.415881520724851,
+        "close": 346.88,
+        "marketCap": 14205533824,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 5.550146056475169,
+        "return_15d": 4.011994002998498,
+        "return_1m": 8.566242058151552,
+        "return_ytd": -23.586298050446086,
+        "return_1y": -39.171605934135314,
+        "return_3y": -6.795281726092917,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 9.205389749401839,
+        "return_2y": -40.14976362193313
+      }
+    },
+    {
+      "id": "C_235",
+      "type": "CHARACTER",
+      "name": "전환비용해자"
+    },
+    {
+      "id": "M_311",
+      "type": "MACRO",
+      "name": "방어적투자심리확산"
+    },
+    {
+      "id": "A_1767",
+      "type": "ASSET",
+      "name": "MOAT",
+      "exposure": {
+        "ticker": "MOAT",
+        "exchange": "NYSEARCA",
+        "country": "US",
+        "business_desc": "VanEck Morningstar Wide Moat ETF — 모닝스타 와이드모트 인덱스 추종",
+        "theme_role": "테마 EXPOSED_TO — 모닝스타 MOAT 프레임워크 직접 노출",
+        "theme_status": "Support"
+      },
+      "metrics": {
+        "return_1d": 1.8751674256630047,
+        "close": 114.09,
+        "marketCap": 12274368657,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 0.39598732840548934,
+        "return_15d": 5.726994717820411,
+        "return_1m": 7.368718238283445,
+        "return_ytd": 10.16801853997682,
+        "return_1y": 16.71611253196932,
+        "return_3y": 46.947449768160745,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 1.0629816635663092,
+        "return_2y": 23.008086253369274
+      },
+      "coreBiz": "MOAT"
+    }
   ],
-  "dataAsOf": "2026-05-31T00:00:00+09:00",
-  "description": "• 네트워크 효과·규제 진입장벽·전환비용 기반의 무형 해자군\n• 동인: 방어적투자심리확산\n• 대표주: 비자(네트워크효과해자)·마스터카드(네트워크효과해자)·S&P글로벌(무형자산해자)\n• ETF: MOAT",
-  "notes": "16 ASSET + 5 BF + 4 MACRO. A_1602 SPGI·A_1604 MCO 기존 ID 재사용 (사용자 신규 표기였으나 등록 확인).",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 3건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-19",
-    "kind": "분리",
-    "title": "미국전통해자MOAT기업_결제·데이터·수직SW 분리 생성",
-    "detail": "T_281 분할. 매크로 공동 사용, MOAT EXPOSED_TO 연결."
-   }
+  "edges": [
+    {
+      "from": "A_1761",
+      "to": "T_281",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008994"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1761",
+      "to": "C_236",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015787"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1762",
+      "to": "T_281",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008995"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1762",
+      "to": "C_236",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015788"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1602",
+      "to": "T_281",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008996"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1602",
+      "to": "C_234",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015789"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1604",
+      "to": "T_281",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008997"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1604",
+      "to": "C_234",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015790"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1766",
+      "to": "T_281",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008998"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1766",
+      "to": "C_236",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015791"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1766",
+      "to": "C_234",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015792"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1765",
+      "to": "T_281",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008999"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1765",
+      "to": "C_235",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015793"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_311",
+      "to": "T_281",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_009000"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_1767",
+      "to": "T_281",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_008008"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1761",
+      "to": "A_1762",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019470"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "비자와 마스터카드는 글로벌 결제 네트워크 시장 양대 경쟁"
+    },
+    {
+      "from": "A_1602",
+      "to": "A_1604",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019471"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "S&P글로벌과 무디스는 신용평가·금융 데이터 시장 양대 경쟁"
+    },
+    {
+      "from": "A_1765",
+      "to": "A_1766",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019472"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "타일러테크놀로지스와 코스타그룹은 수직형 SaaS·데이터 구독 시장 경쟁"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_1761",
+      "to": "T_281",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008994"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1761",
+      "to": "C_236",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015787"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1762",
+      "to": "T_281",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008995"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1762",
+      "to": "C_236",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015788"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1602",
+      "to": "T_281",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008996"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1602",
+      "to": "C_234",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015789"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1604",
+      "to": "T_281",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008997"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1604",
+      "to": "C_234",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015790"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1766",
+      "to": "T_281",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008998"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1766",
+      "to": "C_236",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015791"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1766",
+      "to": "C_234",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015792"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1765",
+      "to": "T_281",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008999"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1765",
+      "to": "C_235",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015793"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_311",
+      "to": "T_281",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_009000"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_1767",
+      "to": "T_281",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_008008"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1761",
+      "to": "A_1762",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019470"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "비자와 마스터카드는 글로벌 결제 네트워크 시장 양대 경쟁"
+    },
+    {
+      "from": "A_1602",
+      "to": "A_1604",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019471"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "S&P글로벌과 무디스는 신용평가·금융 데이터 시장 양대 경쟁"
+    },
+    {
+      "from": "A_1765",
+      "to": "A_1766",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019472"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "타일러테크놀로지스와 코스타그룹은 수직형 SaaS·데이터 구독 시장 경쟁"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_281",
-   "type": "THEME",
-   "name": "미국전통해자MOAT기업_결제·데이터·수직SW"
-  },
-  {
-   "id": "A_1761",
-   "type": "ASSET",
-   "name": "비자",
-   "exposure": {
-    "ticker": "V",
-    "exchange": "NYSE",
-    "country": "US",
-    "business_desc": "Visa — 가맹점·카드사 양면 결제망",
-    "theme_role": "네트워크효과 — 글로벌 결제 인프라 1위",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -0.3557258174852973,
-    "close": 364.15,
-    "marketCap": 679885241886,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 0.36657295628685915,
-    "return_15d": 2.364086130319887,
-    "return_1m": 2.283579574181216,
-    "return_ytd": 3.8322260557155374,
-    "return_1y": 5.401024631682527,
-    "return_3y": 49.91766158913131,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.45517241379309237,
-    "return_2y": 39.44627402925634
-   }
-  },
-  {
-   "id": "C_236",
-   "type": "CHARACTER",
-   "name": "네트워크효과해자"
-  },
-  {
-   "id": "A_1762",
-   "type": "ASSET",
-   "name": "마스터카드",
-   "exposure": {
-    "ticker": "MA",
-    "exchange": "NYSE",
-    "country": "US",
-    "business_desc": "Mastercard — 글로벌 결제 양면 네트워크",
-    "theme_role": "네트워크효과 — Visa와 결제 과점",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": 0.3967974040631983,
-    "close": 569.29,
-    "marketCap": 499287824440,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 1.3981903676260954,
-    "return_15d": 5.490494014750036,
-    "return_1m": 5.812051596594925,
-    "return_ytd": -0.2785173766816196,
-    "return_1y": -2.478758393860492,
-    "return_3y": 42.82954488433941,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.1262101429966975,
-    "return_2y": 23.715664116828904
-   }
-  },
-  {
-   "id": "A_1602",
-   "type": "ASSET",
-   "name": "S&P글로벌",
-   "exposure": {
-    "ticker": "SPGI",
-    "exchange": "NYSE",
-    "country": "US",
-    "business_desc": "S&P Global — 신용평가 과점·인덱스",
-    "theme_role": "무형자산(규제·평판) — 신용평가 3대 과점",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -0.9156079210731805,
-    "close": 418.8,
-    "marketCap": 123462240000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 2.4737576157968233,
-    "return_15d": -1.7823639774859235,
-    "return_1m": -4.573108209720411,
-    "return_ytd": -19.860693851776734,
-    "return_1y": -25.76442435522467,
-    "return_3y": 7.746533226993235,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 2.5992797471765527,
-    "return_2y": -14.9903582665178
-   }
-  },
-  {
-   "id": "C_234",
-   "type": "CHARACTER",
-   "name": "무형자산해자"
-  },
-  {
-   "id": "A_1604",
-   "type": "ASSET",
-   "name": "무디스",
-   "exposure": {
-    "ticker": "MCO",
-    "exchange": "NYSE",
-    "country": "US",
-    "business_desc": "Moody's — 신용평가 3대 과점",
-    "theme_role": "무형자산(규제·평판) — 신용평가 과점",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -0.7084066991523752,
-    "close": 484.96,
-    "marketCap": 83995072000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 1.7797179314976486,
-    "return_15d": 2.854718981972426,
-    "return_1m": -1.974814545307546,
-    "return_ytd": -5.0680238817656935,
-    "return_1y": -6.974602931021268,
-    "return_3y": 43.14894621878507,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.5091575091574994,
-    "return_2y": 4.035181808430766
-   }
-  },
-  {
-   "id": "A_1766",
-   "type": "ASSET",
-   "name": "코스타그룹",
-   "exposure": {
-    "ticker": "CSGP",
-    "exchange": "NASDAQ",
-    "country": "US",
-    "business_desc": "CoStar Group — 상업용 부동산 독점 DB·플랫폼",
-    "theme_role": "네트워크효과+무형자산 — CRE 데이터 표준",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -2.0272314674735115,
-    "close": 32.38,
-    "marketCap": 13120311240,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 4.048843187660678,
-    "return_15d": 17.06435285610992,
-    "return_1m": 16.97976878612717,
-    "return_ytd": -51.84414039262344,
-    "return_1y": -63.191997271797206,
-    "return_3y": -60.17709998770139,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 7.076719576719581,
-    "return_2y": -55.96954038618439
-   }
-  },
-  {
-   "id": "A_1765",
-   "type": "ASSET",
-   "name": "타일러테크놀로지스",
-   "exposure": {
-    "ticker": "TYL",
-    "exchange": "NYSE",
-    "country": "US",
-    "business_desc": "Tyler Technologies — 공공 소프트웨어 1위·SaaS 전환",
-    "theme_role": "전환비용 — 정부용 SaaS 교체 비용 高",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -0.0942392460860364,
-    "close": 328.64,
-    "marketCap": 13458563872,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 1.7681850555848033,
-    "return_15d": 10.597341410062256,
-    "return_1m": 9.077632845431305,
-    "return_ytd": -27.604361713845137,
-    "return_1y": -42.66973693391948,
-    "return_3y": -15.253100905129068,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 5.181629060649695,
-    "return_2y": -43.4529749819333
-   }
-  },
-  {
-   "id": "C_235",
-   "type": "CHARACTER",
-   "name": "전환비용해자"
-  },
-  {
-   "id": "M_311",
-   "type": "MACRO",
-   "name": "방어적투자심리확산"
-  },
-  {
-   "id": "A_1767",
-   "type": "ASSET",
-   "name": "MOAT",
-   "exposure": {
-    "ticker": "MOAT",
-    "exchange": "NYSEARCA",
-    "country": "US",
-    "business_desc": "VanEck Morningstar Wide Moat ETF — 모닝스타 와이드모트 인덱스 추종",
-    "theme_role": "테마 EXPOSED_TO — 모닝스타 MOAT 프레임워크 직접 노출",
-    "theme_status": "Support"
-   },
-   "metrics": {
-    "return_1d": -0.586125448342234,
-    "close": 113.64,
-    "marketCap": 12225955423,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 0.521892967713411,
-    "return_15d": 8.61129695116123,
-    "return_1m": 7.40005670541537,
-    "return_ytd": 9.73348783314021,
-    "return_1y": 15.900050994390625,
-    "return_3y": 41.73110501371913,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.2202725572281192,
-    "return_2y": 25.140403039312844
-   },
-   "coreBiz": "MOAT"
-  }
- ],
- "edges": [
-  {
-   "from": "A_1761",
-   "to": "T_281",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008994"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1761",
-   "to": "C_236",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015787"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1762",
-   "to": "T_281",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008995"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1762",
-   "to": "C_236",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015788"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1602",
-   "to": "T_281",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008996"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1602",
-   "to": "C_234",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015789"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1604",
-   "to": "T_281",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008997"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1604",
-   "to": "C_234",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015790"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1766",
-   "to": "T_281",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008998"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1766",
-   "to": "C_236",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015791"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1766",
-   "to": "C_234",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015792"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1765",
-   "to": "T_281",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008999"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1765",
-   "to": "C_235",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015793"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_311",
-   "to": "T_281",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_009000"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_1767",
-   "to": "T_281",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_008008"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1761",
-   "to": "A_1762",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019470"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "비자와 마스터카드는 글로벌 결제 네트워크 시장 양대 경쟁"
-  },
-  {
-   "from": "A_1602",
-   "to": "A_1604",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019471"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "S&P글로벌과 무디스는 신용평가·금융 데이터 시장 양대 경쟁"
-  },
-  {
-   "from": "A_1765",
-   "to": "A_1766",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019472"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "타일러테크놀로지스와 코스타그룹은 수직형 SaaS·데이터 구독 시장 경쟁"
-  }
- ],
- "links": [
-  {
-   "from": "A_1761",
-   "to": "T_281",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008994"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1761",
-   "to": "C_236",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015787"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1762",
-   "to": "T_281",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008995"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1762",
-   "to": "C_236",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015788"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1602",
-   "to": "T_281",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008996"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1602",
-   "to": "C_234",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015789"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1604",
-   "to": "T_281",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008997"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1604",
-   "to": "C_234",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015790"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1766",
-   "to": "T_281",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008998"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1766",
-   "to": "C_236",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015791"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1766",
-   "to": "C_234",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015792"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1765",
-   "to": "T_281",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008999"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1765",
-   "to": "C_235",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015793"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_311",
-   "to": "T_281",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_009000"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_1767",
-   "to": "T_281",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_008008"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1761",
-   "to": "A_1762",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019470"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "비자와 마스터카드는 글로벌 결제 네트워크 시장 양대 경쟁"
-  },
-  {
-   "from": "A_1602",
-   "to": "A_1604",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019471"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "S&P글로벌과 무디스는 신용평가·금융 데이터 시장 양대 경쟁"
-  },
-  {
-   "from": "A_1765",
-   "to": "A_1766",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019472"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "타일러테크놀로지스와 코스타그룹은 수직형 SaaS·데이터 구독 시장 경쟁"
-  }
- ]
 }

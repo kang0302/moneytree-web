@@ -1,524 +1,524 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_621",
- "themeName": "미국2022상장주식",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_621",
+  "themeName": "미국2022상장주식",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-26T00:00:00+09:00",
+    "notes": "2022년 미국 증시 상장(IPO) 코호트 — 주목받은 신규 상장주 모음.",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-07-26",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
+      },
+      {
+        "date": "2026-07-17",
+        "kind": "신규",
+        "title": "미국2022상장주식 코호트 테마 생성",
+        "detail": "2022년 미국 상장(나스닥·NYSE 무관) 주목 IPO 6종을 THEMED_AS로 묶고, 종목별 상장 특징 CHR과 그 해 IPO시장 환경 매크로를 연결했다."
+      }
+    ],
+    "description": "• 미국2022IPO빙하기_긴축 수혜\n• 동인: 미국2022IPO빙하기_긴축\n• 대표주: 모빌아이(자율주행칩 인텔자회)·TPG(대체투자운용사 PE)·코어브릿지(생명보험)"
+  },
+  "nodes": [
+    {
+      "id": "T_621",
+      "type": "THEME",
+      "name": "미국2022상장주식"
+    },
+    {
+      "id": "M_1131",
+      "type": "MACRO",
+      "name": "미국2022IPO빙하기_긴축"
+    },
+    {
+      "name": "모빌아이",
+      "id": "A_139",
+      "metrics": {
+        "return_1d": 2.5930101465614586,
+        "return_30d": null,
+        "market_cap": null,
+        "asof": null,
+        "return_90d": null,
+        "currency": null,
+        "per": null,
+        "last_price": null,
+        "return_15d": 13.607990012484382,
+        "return_3d": 2.0179372197309364,
+        "return_1m": -1.3015184381778844,
+        "return_ytd": -12.835249042145591,
+        "return_1y": -34.48524118070555,
+        "return_3y": -74.0296803652968,
+        "close": 9.1,
+        "marketCap": 7421359218,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "pe_ttm": null,
+        "return_5d": 3.409090909090895,
+        "return_2y": -38.84408602150538
+      },
+      "exposure": {
+        "country": "US",
+        "ticker": "MBLY",
+        "exchange": "NASDAQ"
+      },
+      "type": "ASSET",
+      "coreBiz": "모빌아이는 2022년 인텔 자회사로 재상장한 자율주행 칩·ADAS 대표주다"
+    },
+    {
+      "id": "C_3600",
+      "type": "CHARACTER",
+      "name": "자율주행칩_인텔자회사상장"
+    },
+    {
+      "id": "A_552",
+      "type": "ASSET",
+      "name": "TPG",
+      "exposure": {
+        "ticker": "TPG",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 2.229911572472121,
+        "close": 53.18,
+        "marketCap": 20385767904,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 0.2828587591929166,
+        "return_15d": 26.13851992409868,
+        "return_1m": 21.582075903063558,
+        "return_ytd": -16.69799498746868,
+        "return_1y": -12.31657048639736,
+        "return_3y": 101.13464447806355,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 4.520440251572322,
+        "return_2y": 8.685877784590224
+      },
+      "coreBiz": "TPG는 2022년 상장한 대형 대체투자(PE) 운용사다"
+    },
+    {
+      "id": "C_3601",
+      "type": "CHARACTER",
+      "name": "대체투자운용사_PE상장"
+    },
+    {
+      "id": "A_2708",
+      "type": "ASSET",
+      "name": "코어브릿지",
+      "exposure": {
+        "ticker": "CRBG",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.6606280193236622,
+        "close": 32.57,
+        "marketCap": 14518683953,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -5.512039454598194,
+        "return_15d": 2.582677165354341,
+        "return_1m": 2.164366373902138,
+        "return_ytd": 7.954922108054352,
+        "return_1y": -4.570758863170232,
+        "return_3y": 81.75223214285711,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -3.5820011841326216,
+        "return_2y": 14.804370814240396
+      },
+      "coreBiz": "코어브릿지는 2022년 AIG에서 분사 상장한 생명보험·연금 대형사다"
+    },
+    {
+      "id": "C_3602",
+      "type": "CHARACTER",
+      "name": "생명보험·연금_AIG분사상장"
+    },
+    {
+      "id": "A_2709",
+      "type": "ASSET",
+      "name": "바슈롬",
+      "exposure": {
+        "ticker": "BLCO",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 2.406103286384975,
+        "close": 17.45,
+        "marketCap": 6232533525,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 2.346041055718473,
+        "return_15d": 7.716049382716039,
+        "return_1m": 7.318573185731836,
+        "return_ytd": 2.1662763466042234,
+        "return_1y": 19.438740588637927,
+        "return_3y": -9.256370254810198,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 4.116945107398551,
+        "return_2y": 8.722741433021808
+      },
+      "coreBiz": "바슈롬은 2022년 상장한 안과·콘택트렌즈 전문 헬스케어사다"
+    },
+    {
+      "id": "C_3603",
+      "type": "CHARACTER",
+      "name": "안과·콘택트렌즈_분사상장"
+    },
+    {
+      "id": "A_2710",
+      "type": "ASSET",
+      "name": "AMTD디지털",
+      "exposure": {
+        "ticker": "HKD",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 3.0120481927710774,
+        "close": 1.71,
+        "marketCap": 816844625,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -3.3898305084745783,
+        "return_15d": 7.547169811320753,
+        "return_1m": 6.211180124223592,
+        "return_ytd": 34.645669291338585,
+        "return_1y": 6.211180124223592,
+        "return_3y": -67.36641221374046,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 3.6363636363636376,
+        "return_2y": -42.03389830508475
+      },
+      "coreBiz": "AMTD디지털은 2022년 상장 직후 밈 열풍으로 폭등한 홍콩계 핀테크다"
+    },
+    {
+      "id": "C_3604",
+      "type": "CHARACTER",
+      "name": "밈주급등상장"
+    },
+    {
+      "id": "A_2711",
+      "type": "ASSET",
+      "name": "아밀릭스",
+      "exposure": {
+        "ticker": "AMLX",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 9.940187980632299,
+        "close": 38.6,
+        "marketCap": 4291791952,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 78.455848358761,
+        "return_15d": 95.64115560060822,
+        "return_1m": 117.46478873239438,
+        "return_ytd": 219.53642384105962,
+        "return_1y": 393.60613810741694,
+        "return_3y": 90.90009891196837,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 65.31049250535332,
+        "return_2y": 1654.5454545454543
+      },
+      "coreBiz": "아밀릭스는 2022년 상장한 ALS(루게릭병) 치료제 바이오텍이다"
+    },
+    {
+      "id": "C_3605",
+      "type": "CHARACTER",
+      "name": "ALS치료제_바이오상장"
+    }
   ],
-  "dataAsOf": "2026-07-26T00:00:00+09:00",
-  "notes": "2022년 미국 증시 상장(IPO) 코호트 — 주목받은 신규 상장주 모음.",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-07-26",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
-   },
-   {
-    "date": "2026-07-17",
-    "kind": "신규",
-    "title": "미국2022상장주식 코호트 테마 생성",
-    "detail": "2022년 미국 상장(나스닥·NYSE 무관) 주목 IPO 6종을 THEMED_AS로 묶고, 종목별 상장 특징 CHR과 그 해 IPO시장 환경 매크로를 연결했다."
-   }
+  "edges": [
+    {
+      "from": "A_139",
+      "to": "T_621",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013562"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_139",
+      "to": "C_3600",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007506"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_552",
+      "to": "T_621",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013563"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_552",
+      "to": "C_3601",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007508"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_2708",
+      "to": "T_621",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013564"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2708",
+      "to": "C_3602",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007510"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_2709",
+      "to": "T_621",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013565"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2709",
+      "to": "C_3603",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007512"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_2710",
+      "to": "T_621",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013566"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2710",
+      "to": "C_3604",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007514"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_2711",
+      "to": "T_621",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013567"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2711",
+      "to": "C_3605",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007516"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_1131",
+      "to": "T_621",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013568"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    }
   ],
-  "description": "• 미국2022IPO빙하기_긴축 수혜\n• 동인: 미국2022IPO빙하기_긴축\n• 대표주: 모빌아이(자율주행칩 인텔자회)·TPG(대체투자운용사 PE)·코어브릿지(생명보험)"
- },
- "nodes": [
-  {
-   "id": "T_621",
-   "type": "THEME",
-   "name": "미국2022상장주식"
-  },
-  {
-   "id": "M_1131",
-   "type": "MACRO",
-   "name": "미국2022IPO빙하기_긴축"
-  },
-  {
-   "name": "모빌아이",
-   "id": "A_139",
-   "metrics": {
-    "return_1d": 0.22471910112358273,
-    "return_30d": null,
-    "market_cap": null,
-    "asof": null,
-    "return_90d": null,
-    "currency": null,
-    "per": null,
-    "last_price": null,
-    "return_15d": 10.807453416149059,
-    "return_3d": 0.5636978579481422,
-    "return_1m": -11.595639246778989,
-    "return_ytd": -14.559386973180077,
-    "return_1y": -36.10315186246419,
-    "return_3y": -76.86121919584954,
-    "close": 8.92,
-    "marketCap": 7274563102,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "pe_ttm": null,
-    "return_5d": 2.1764032073310347,
-    "return_2y": -35.91954022988506
-   },
-   "exposure": {
-    "country": "US",
-    "ticker": "MBLY",
-    "exchange": "NASDAQ"
-   },
-   "type": "ASSET",
-   "coreBiz": "모빌아이는 2022년 인텔 자회사로 재상장한 자율주행 칩·ADAS 대표주다"
-  },
-  {
-   "id": "C_3600",
-   "type": "CHARACTER",
-   "name": "자율주행칩_인텔자회사상장"
-  },
-  {
-   "id": "A_552",
-   "type": "ASSET",
-   "name": "TPG",
-   "exposure": {
-    "ticker": "TPG",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -3.948560043470384,
-    "close": 53.03,
-    "marketCap": 20328267618,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 4.802371541501982,
-    "return_15d": 23.8150828858277,
-    "return_1m": 22.896871378910788,
-    "return_ytd": -16.932957393483715,
-    "return_1y": -17.36013713573321,
-    "return_3y": 94.39149560117302,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 8.246580934884662,
-    "return_2y": 10.47916666666666
-   },
-   "coreBiz": "TPG는 2022년 상장한 대형 대체투자(PE) 운용사다"
-  },
-  {
-   "id": "C_3601",
-   "type": "CHARACTER",
-   "name": "대체투자운용사_PE상장"
-  },
-  {
-   "id": "A_2708",
-   "type": "ASSET",
-   "name": "코어브릿지",
-   "exposure": {
-    "ticker": "CRBG",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.4956268221574467,
-    "close": 34.47,
-    "marketCap": 15365644331,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 3.2345013477088846,
-    "return_15d": 10.16299137104506,
-    "return_1m": 12.35332464146024,
-    "return_ytd": 14.252568776930708,
-    "return_1y": 0.6717289719626152,
-    "return_3y": 87.64289602612953,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 2.345605700712583,
-    "return_2y": 27.619400222139934
-   },
-   "coreBiz": "코어브릿지는 2022년 AIG에서 분사 상장한 생명보험·연금 대형사다"
-  },
-  {
-   "id": "C_3602",
-   "type": "CHARACTER",
-   "name": "생명보험·연금_AIG분사상장"
-  },
-  {
-   "id": "A_2709",
-   "type": "ASSET",
-   "name": "바슈롬",
-   "exposure": {
-    "ticker": "BLCO",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.41224970553592755,
-    "close": 17.05,
-    "marketCap": 6089667427,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 1.0669828097213951,
-    "return_15d": 5.442176870748283,
-    "return_1m": 6.8295739348370965,
-    "return_ytd": -0.17564402810302804,
-    "return_1y": 21.09375,
-    "return_3y": -9.597030752916213,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.6090584028605415,
-    "return_2y": 10.642439974042839
-   },
-   "coreBiz": "바슈롬은 2022년 상장한 안과·콘택트렌즈 전문 헬스케어사다"
-  },
-  {
-   "id": "C_3603",
-   "type": "CHARACTER",
-   "name": "안과·콘택트렌즈_분사상장"
-  },
-  {
-   "id": "A_2710",
-   "type": "ASSET",
-   "name": "AMTD디지털",
-   "exposure": {
-    "ticker": "HKD",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 4.7337278106508895,
-    "close": 1.77,
-    "marketCap": 845505840,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 9.259259259259256,
-    "return_15d": 9.937888198757761,
-    "return_1m": 9.259259259259256,
-    "return_ytd": 39.370078740157474,
-    "return_1y": 7.92682926829269,
-    "return_3y": -71.67999999999999,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 4.117647058823537,
-    "return_2y": -37.455830388692576
-   },
-   "coreBiz": "AMTD디지털은 2022년 상장 직후 밈 열풍으로 폭등한 홍콩계 핀테크다"
-  },
-  {
-   "id": "C_3604",
-   "type": "CHARACTER",
-   "name": "밈주급등상장"
-  },
-  {
-   "id": "A_2711",
-   "type": "ASSET",
-   "name": "아밀릭스",
-   "exposure": {
-    "ticker": "AMLX",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -3.7811387900355986,
-    "close": 21.63,
-    "marketCap": 2404960102,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -8.463817181548883,
-    "return_15d": 17.490494296577943,
-    "return_1m": 18.846153846153847,
-    "return_ytd": 79.05629139072848,
-    "return_1y": 157.19381688466112,
-    "return_3y": 3.0981887511916106,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -5.214723926380371,
-    "return_2y": 915.4929577464789
-   },
-   "coreBiz": "아밀릭스는 2022년 상장한 ALS(루게릭병) 치료제 바이오텍이다"
-  },
-  {
-   "id": "C_3605",
-   "type": "CHARACTER",
-   "name": "ALS치료제_바이오상장"
-  }
- ],
- "edges": [
-  {
-   "from": "A_139",
-   "to": "T_621",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013562"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_139",
-   "to": "C_3600",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007506"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_552",
-   "to": "T_621",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013563"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_552",
-   "to": "C_3601",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007508"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_2708",
-   "to": "T_621",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013564"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2708",
-   "to": "C_3602",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007510"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_2709",
-   "to": "T_621",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013565"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2709",
-   "to": "C_3603",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007512"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_2710",
-   "to": "T_621",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013566"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2710",
-   "to": "C_3604",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007514"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_2711",
-   "to": "T_621",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013567"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2711",
-   "to": "C_3605",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007516"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_1131",
-   "to": "T_621",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013568"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_139",
-   "to": "T_621",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013562"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_139",
-   "to": "C_3600",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007506"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_552",
-   "to": "T_621",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013563"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_552",
-   "to": "C_3601",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007508"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_2708",
-   "to": "T_621",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013564"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2708",
-   "to": "C_3602",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007510"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_2709",
-   "to": "T_621",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013565"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2709",
-   "to": "C_3603",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007512"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_2710",
-   "to": "T_621",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013566"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2710",
-   "to": "C_3604",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007514"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_2711",
-   "to": "T_621",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013567"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_2711",
-   "to": "C_3605",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007516"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_1131",
-   "to": "T_621",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013568"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  }
- ]
+  "links": [
+    {
+      "from": "A_139",
+      "to": "T_621",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013562"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_139",
+      "to": "C_3600",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007506"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_552",
+      "to": "T_621",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013563"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_552",
+      "to": "C_3601",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007508"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_2708",
+      "to": "T_621",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013564"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2708",
+      "to": "C_3602",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007510"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_2709",
+      "to": "T_621",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013565"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2709",
+      "to": "C_3603",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007512"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_2710",
+      "to": "T_621",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013566"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2710",
+      "to": "C_3604",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007514"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_2711",
+      "to": "T_621",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013567"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_2711",
+      "to": "C_3605",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007516"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_1131",
+      "to": "T_621",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013568"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    }
+  ]
 }

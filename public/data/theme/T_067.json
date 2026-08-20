@@ -1,638 +1,638 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_067",
- "themeName": "일본은행주",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_067",
+  "themeName": "일본은행주",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-26T00:00:00+09:00",
+    "notes": "g67 누적 import 기반 일본 은행주 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-26",
+        "kind": "수정",
+        "title": "자산 CHR 백필",
+        "detail": "CHR 미정의 자산에 CHARACTER·HAS_TRAIT 추가."
+      }
+    ],
+    "description": "• BOJ 정책금리 정상화와 수익곡선 가팔라짐이 NIM 직접 동인\n• 동인: 금리인상\n• 대표주: 미쓰비시UFJ(일본1위메가뱅크)·스미토모미쓰이(메가뱅크)·미즈호금융그룹(메가뱅크)"
+  },
+  "nodes": [
+    {
+      "id": "T_067",
+      "type": "THEME",
+      "name": "일본은행주"
+    },
+    {
+      "id": "A_564",
+      "type": "ASSET",
+      "name": "미쓰비시UFJ",
+      "exposure": {
+        "ticker": "MUFG",
+        "exchange": "NYSE",
+        "country": "JP"
+      },
+      "metrics": {
+        "return_1d": -5.1056338028169,
+        "close": 21.56,
+        "marketCap": 243129373687,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -6.5047701647875105,
+        "return_15d": -1.7319963536919003,
+        "return_1m": 1.1257035647279423,
+        "return_ytd": 35.93947036569987,
+        "return_1y": 41.74884944115711,
+        "return_3y": 189.3959731543624,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -5.272407732864693,
+        "return_2y": 103.01318267419961
+      }
+    },
+    {
+      "id": "A_565",
+      "type": "ASSET",
+      "name": "스미토모미쓰이",
+      "exposure": {
+        "ticker": "SMFG",
+        "exchange": "NYSE",
+        "country": "JP"
+      },
+      "metrics": {
+        "return_1d": -4.804339403332037,
+        "close": 24.57,
+        "marketCap": 95190666480,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -6.648936170212771,
+        "return_15d": -1.5625,
+        "return_1m": -1.5230460921843658,
+        "return_ytd": 27.10812209001554,
+        "return_1y": 47.83393501805053,
+        "return_3y": 185.36585365853662,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -5.681381957773512,
+        "return_2y": 77.14491708723865
+      }
+    },
+    {
+      "id": "A_566",
+      "type": "ASSET",
+      "name": "미즈호금융그룹",
+      "exposure": {
+        "ticker": "MFG",
+        "exchange": "NYSE",
+        "country": "JP"
+      },
+      "metrics": {
+        "return_1d": -4.788732394366191,
+        "close": 10.14,
+        "marketCap": 123527436452,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -6.715731370745159,
+        "return_15d": 3.3639143730886945,
+        "return_1m": 2.735562310030404,
+        "return_ytd": 38.524590163934434,
+        "return_1y": 56.72333848531685,
+        "return_3y": 226.04501607717046,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -6.197964847363546,
+        "return_2y": 135.26682134570768
+      }
+    },
+    {
+      "id": "A_567",
+      "type": "ASSET",
+      "name": "리소나홀딩스",
+      "exposure": {
+        "ticker": "8308",
+        "exchange": "TSE",
+        "country": "JP"
+      },
+      "metrics": {
+        "return_1d": -5.74,
+        "close": 2356.5,
+        "marketCap": 5287459982070,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -3.9731051344743307,
+        "return_15d": 4.039735099337749,
+        "return_1m": 5.933917734322325,
+        "return_ytd": 57.83657066309444,
+        "return_1y": 57.783729494476056,
+        "return_3y": 230.55126946275774,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 0.5332764505119547,
+        "return_2y": 126.36887608069162
+      }
+    },
+    {
+      "id": "A_568",
+      "type": "ASSET",
+      "name": "iShares MSCI Japan Value ETF",
+      "exposure": {
+        "ticker": "EWJV",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.8721548606679397,
+        "close": 46.6,
+        "marketCap": 750293459,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -2.9571012078300707,
+        "return_15d": 1.8356643356643332,
+        "return_1m": 3.832442067736186,
+        "return_ytd": 17.32124874118832,
+        "return_1y": 21.070407898155352,
+        "return_3y": 72.8486646884273,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -2.9166666666666674,
+        "return_2y": 42.81336193686791
+      }
+    },
+    {
+      "id": "A_569",
+      "type": "ASSET",
+      "name": "RISE 일본섹터TOP4Plus",
+      "exposure": {
+        "ticker": "488480",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -4.925209777453487,
+        "close": 14050,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -5.1673944687045115,
+        "return_15d": 2.3679304764232745,
+        "return_1m": 1.9314810951640338,
+        "return_ytd": 11.907753657109744,
+        "return_1y": 25.44986485208076,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 2.563150074294196,
+        "return_2y": null
+      }
+    },
+    {
+      "id": "C_074",
+      "type": "CHARACTER",
+      "name": "금융주비중높음"
+    },
+    {
+      "id": "M_072",
+      "type": "MACRO",
+      "name": "금리인상"
+    },
+    {
+      "id": "C_5520",
+      "type": "CHARACTER",
+      "name": "일본1위메가뱅크"
+    },
+    {
+      "id": "C_5521",
+      "type": "CHARACTER",
+      "name": "메가뱅크"
+    },
+    {
+      "id": "C_5522",
+      "type": "CHARACTER",
+      "name": "메가뱅크"
+    },
+    {
+      "id": "C_5523",
+      "type": "CHARACTER",
+      "name": "리테일은행"
+    }
   ],
-  "dataAsOf": "2026-07-26T00:00:00+09:00",
-  "notes": "g67 누적 import 기반 일본 은행주 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-26",
-    "kind": "수정",
-    "title": "자산 CHR 백필",
-    "detail": "CHR 미정의 자산에 CHARACTER·HAS_TRAIT 추가."
-   }
+  "edges": [
+    {
+      "from": "A_564",
+      "to": "T_067",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002152"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_565",
+      "to": "T_067",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002153"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_566",
+      "to": "T_067",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002154"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_567",
+      "to": "T_067",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002155"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_568",
+      "to": "T_067",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002156"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_569",
+      "to": "T_067",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002157"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_568",
+      "to": "C_074",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002158"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_569",
+      "to": "C_074",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002159"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_072",
+      "to": "T_067",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002160"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_564",
+      "to": "C_5520",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014463"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_565",
+      "to": "C_5521",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014464"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_566",
+      "to": "C_5522",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014465"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_567",
+      "to": "C_5523",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014466"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_564",
+      "to": "A_565",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_017947"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "일본 3대 메가뱅크로 상업·법인·리테일 금융에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_564",
+      "to": "A_566",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_017948"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "MUFG와 미즈호는 일본 메가뱅크로 전 금융 부문에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_564",
+      "to": "A_567",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_017949"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "MUFG와 리소나는 일본 은행 시장에서 리테일·법인 대출을 두고 경쟁한다."
+    },
+    {
+      "from": "A_565",
+      "to": "A_566",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_017950"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "SMFG와 미즈호는 일본 3대 메가뱅크로 직접 경쟁한다."
+    },
+    {
+      "from": "A_565",
+      "to": "A_567",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_017951"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "SMFG와 리소나는 일본 은행 시장에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_566",
+      "to": "A_567",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_017952"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "미즈호와 리소나는 일본 국내 상업은행 사업에서 경쟁한다."
+    }
   ],
-  "description": "• BOJ 정책금리 정상화와 수익곡선 가팔라짐이 NIM 직접 동인\n• 동인: 금리인상\n• 대표주: 미쓰비시UFJ(일본1위메가뱅크)·스미토모미쓰이(메가뱅크)·미즈호금융그룹(메가뱅크)"
- },
- "nodes": [
-  {
-   "id": "T_067",
-   "type": "THEME",
-   "name": "일본은행주"
-  },
-  {
-   "id": "A_564",
-   "type": "ASSET",
-   "name": "미쓰비시UFJ",
-   "exposure": {
-    "ticker": "MUFG",
-    "exchange": "NYSE",
-    "country": "JP"
-   },
-   "metrics": {
-    "return_1d": -0.17316017316018062,
-    "close": 23.06,
-    "marketCap": 260044682617,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 4.249547920433994,
-    "return_15d": 0.7426823940585248,
-    "return_1m": 2.488888888888874,
-    "return_ytd": 45.39722572509457,
-    "return_1y": 50.32594524119946,
-    "return_3y": 202.62467191601047,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 2.5344597598932816,
-    "return_2y": 132.69424823410696
-   }
-  },
-  {
-   "id": "A_565",
-   "type": "ASSET",
-   "name": "스미토모미쓰이",
-   "exposure": {
-    "ticker": "SMFG",
-    "exchange": "NYSE",
-    "country": "JP"
-   },
-   "metrics": {
-    "return_1d": 0.07604562737641984,
-    "close": 26.32,
-    "marketCap": 101970628480,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 4.652087475149114,
-    "return_15d": 0.5347593582887722,
-    "return_1m": 0.22848438690021844,
-    "return_ytd": 36.16140713916194,
-    "return_1y": 57.134328358208954,
-    "return_3y": 199.43117178612061,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 2.2533022533022695,
-    "return_2y": 106.26959247648901
-   }
-  },
-  {
-   "id": "A_566",
-   "type": "ASSET",
-   "name": "미즈호금융그룹",
-   "exposure": {
-    "ticker": "MFG",
-    "exchange": "NYSE",
-    "country": "JP"
-   },
-   "metrics": {
-    "return_1d": -1.0919017288444133,
-    "close": 10.87,
-    "marketCap": 132420437301,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 4.118773946360155,
-    "return_15d": 2.2577610536218096,
-    "return_1m": 2.838221381267725,
-    "return_ytd": 48.497267759562824,
-    "return_1y": 67.23076923076923,
-    "return_3y": 237.57763975155277,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.4939309056956063,
-    "return_2y": 170.39800995024876
-   }
-  },
-  {
-   "id": "A_567",
-   "type": "ASSET",
-   "name": "리소나홀딩스",
-   "exposure": {
-    "ticker": "8308",
-    "exchange": "TSE",
-    "country": "JP"
-   },
-   "metrics": {
-    "return_1d": 0.3065603923972926,
-    "close": 2454.0,
-    "marketCap": 5506228218120,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 7.963044434667843,
-    "return_15d": 4.42553191489361,
-    "return_1m": 3.544303797468351,
-    "return_ytd": 64.36704621567316,
-    "return_1y": 67.5085324232082,
-    "return_3y": 241.63998329388838,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 4.782237403928269,
-    "return_2y": 154.80220122521024
-   }
-  },
-  {
-   "id": "A_568",
-   "type": "ASSET",
-   "name": "iShares MSCI Japan Value ETF",
-   "exposure": {
-    "ticker": "EWJV",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.33208800332087396,
-    "close": 48.0193,
-    "marketCap": 773145208,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 1.179941002949847,
-    "return_15d": 3.9618965143970675,
-    "return_1m": 3.9844088349935136,
-    "return_ytd": 20.896273917421972,
-    "return_1y": 26.869220607661838,
-    "return_3y": 73.92249185077873,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.249272953884494,
-    "return_2y": 53.076187440229525
-   }
-  },
-  {
-   "id": "A_569",
-   "type": "ASSET",
-   "name": "RISE 일본섹터TOP4Plus",
-   "exposure": {
-    "ticker": "488480",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.47307132459970536,
-    "close": 14050,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 2.410979228486654,
-    "return_15d": 6.223778529462032,
-    "return_1m": 1.2445384970311668,
-    "return_ytd": 18.563817285986197,
-    "return_1y": 34.36224805667223,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 2.563150074294196,
-    "return_2y": null
-   }
-  },
-  {
-   "id": "C_074",
-   "type": "CHARACTER",
-   "name": "금융주비중높음"
-  },
-  {
-   "id": "M_072",
-   "type": "MACRO",
-   "name": "금리인상"
-  },
-  {
-   "id": "C_5520",
-   "type": "CHARACTER",
-   "name": "일본1위메가뱅크"
-  },
-  {
-   "id": "C_5521",
-   "type": "CHARACTER",
-   "name": "메가뱅크"
-  },
-  {
-   "id": "C_5522",
-   "type": "CHARACTER",
-   "name": "메가뱅크"
-  },
-  {
-   "id": "C_5523",
-   "type": "CHARACTER",
-   "name": "리테일은행"
-  }
- ],
- "edges": [
-  {
-   "from": "A_564",
-   "to": "T_067",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002152"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_565",
-   "to": "T_067",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002153"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_566",
-   "to": "T_067",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002154"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_567",
-   "to": "T_067",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002155"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_568",
-   "to": "T_067",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002156"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_569",
-   "to": "T_067",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002157"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_568",
-   "to": "C_074",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002158"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_569",
-   "to": "C_074",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002159"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_072",
-   "to": "T_067",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002160"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_564",
-   "to": "C_5520",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014463"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_565",
-   "to": "C_5521",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014464"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_566",
-   "to": "C_5522",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014465"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_567",
-   "to": "C_5523",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014466"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_564",
-   "to": "A_565",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_017947"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "일본 3대 메가뱅크로 상업·법인·리테일 금융에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_564",
-   "to": "A_566",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_017948"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "MUFG와 미즈호는 일본 메가뱅크로 전 금융 부문에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_564",
-   "to": "A_567",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_017949"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "MUFG와 리소나는 일본 은행 시장에서 리테일·법인 대출을 두고 경쟁한다."
-  },
-  {
-   "from": "A_565",
-   "to": "A_566",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_017950"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "SMFG와 미즈호는 일본 3대 메가뱅크로 직접 경쟁한다."
-  },
-  {
-   "from": "A_565",
-   "to": "A_567",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_017951"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "SMFG와 리소나는 일본 은행 시장에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_566",
-   "to": "A_567",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_017952"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "미즈호와 리소나는 일본 국내 상업은행 사업에서 경쟁한다."
-  }
- ],
- "links": [
-  {
-   "from": "A_564",
-   "to": "T_067",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002152"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_565",
-   "to": "T_067",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002153"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_566",
-   "to": "T_067",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002154"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_567",
-   "to": "T_067",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002155"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_568",
-   "to": "T_067",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002156"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_569",
-   "to": "T_067",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002157"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_568",
-   "to": "C_074",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002158"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_569",
-   "to": "C_074",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002159"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_072",
-   "to": "T_067",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002160"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_564",
-   "to": "C_5520",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014463"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_565",
-   "to": "C_5521",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014464"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_566",
-   "to": "C_5522",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014465"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_567",
-   "to": "C_5523",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014466"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_564",
-   "to": "A_565",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_017947"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "일본 3대 메가뱅크로 상업·법인·리테일 금융에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_564",
-   "to": "A_566",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_017948"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "MUFG와 미즈호는 일본 메가뱅크로 전 금융 부문에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_564",
-   "to": "A_567",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_017949"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "MUFG와 리소나는 일본 은행 시장에서 리테일·법인 대출을 두고 경쟁한다."
-  },
-  {
-   "from": "A_565",
-   "to": "A_566",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_017950"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "SMFG와 미즈호는 일본 3대 메가뱅크로 직접 경쟁한다."
-  },
-  {
-   "from": "A_565",
-   "to": "A_567",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_017951"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "SMFG와 리소나는 일본 은행 시장에서 직접 경쟁한다."
-  },
-  {
-   "from": "A_566",
-   "to": "A_567",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_017952"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "미즈호와 리소나는 일본 국내 상업은행 사업에서 경쟁한다."
-  }
- ]
+  "links": [
+    {
+      "from": "A_564",
+      "to": "T_067",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002152"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_565",
+      "to": "T_067",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002153"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_566",
+      "to": "T_067",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002154"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_567",
+      "to": "T_067",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002155"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_568",
+      "to": "T_067",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002156"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_569",
+      "to": "T_067",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002157"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_568",
+      "to": "C_074",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002158"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_569",
+      "to": "C_074",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002159"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_072",
+      "to": "T_067",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002160"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_564",
+      "to": "C_5520",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014463"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_565",
+      "to": "C_5521",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014464"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_566",
+      "to": "C_5522",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014465"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_567",
+      "to": "C_5523",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014466"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_564",
+      "to": "A_565",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_017947"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "일본 3대 메가뱅크로 상업·법인·리테일 금융에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_564",
+      "to": "A_566",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_017948"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "MUFG와 미즈호는 일본 메가뱅크로 전 금융 부문에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_564",
+      "to": "A_567",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_017949"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "MUFG와 리소나는 일본 은행 시장에서 리테일·법인 대출을 두고 경쟁한다."
+    },
+    {
+      "from": "A_565",
+      "to": "A_566",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_017950"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "SMFG와 미즈호는 일본 3대 메가뱅크로 직접 경쟁한다."
+    },
+    {
+      "from": "A_565",
+      "to": "A_567",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_017951"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "SMFG와 리소나는 일본 은행 시장에서 직접 경쟁한다."
+    },
+    {
+      "from": "A_566",
+      "to": "A_567",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_017952"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "미즈호와 리소나는 일본 국내 상업은행 사업에서 경쟁한다."
+    }
+  ]
 }

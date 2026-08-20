@@ -1,807 +1,807 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_574",
- "themeName": "인구절벽강제자동화_한일",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_574",
+  "themeName": "인구절벽강제자동화_한일",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-25T00:00:00+09:00",
+    "description": "• 한·일 생산가능인구 급감으로 자동화가 선택 아닌 필수가 되는 영역\n• 동인: 인구고령화·인건비상승·자동화확산\n• 대표주: 파눅(공장자동화로봇)·야스카와전기(모션로봇자동화 야스)·두산로보틱스(협동로봇K)\n• ETF: KOEX로봇액티브·BOTZ",
+    "notes": "T_574 신규(2026-07-01)",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-25",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_574",
+      "type": "THEME",
+      "name": "인구절벽강제자동화_한일"
+    },
+    {
+      "id": "A_1112",
+      "type": "ASSET",
+      "name": "파눅",
+      "exposure": {
+        "ticker": "6954",
+        "exchange": "TSE",
+        "country": "JP",
+        "business_desc": "산업 로봇·CNC(인력 대체)",
+        "theme_role": "산업로봇",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -3.5322195704057258,
+        "return_3d": -5.7808857808857805,
+        "return_15d": -4.864271143888277,
+        "return_1m": -8.648485761639291,
+        "return_ytd": -0.34516765285995676,
+        "return_1y": 34.763280729050905,
+        "return_3y": 49.666748950876325,
+        "close": 6063.0,
+        "marketCap": 5657736644787,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -9.776785714285719,
+        "return_2y": 48.71228844738778
+      }
+    },
+    {
+      "id": "C_1683",
+      "type": "CHARACTER",
+      "name": "공장자동화로봇"
+    },
+    {
+      "id": "A_2607",
+      "type": "ASSET",
+      "name": "야스카와전기",
+      "exposure": {
+        "ticker": "6506",
+        "exchange": "TSE",
+        "country": "JP",
+        "business_desc": "서보·로봇 모션 제어",
+        "theme_role": "모션제어",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -4.679945851866174,
+        "return_3d": -9.243233290370101,
+        "return_15d": 3.6375105130361574,
+        "return_1m": -3.655199374511342,
+        "return_ytd": 3.6375105130361574,
+        "return_1y": 61.18378024852844,
+        "return_3y": -10.28394612304332,
+        "close": 4929.0,
+        "marketCap": 1278424669911,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -9.62596259625963,
+        "return_2y": 6.136950904392768
+      }
+    },
+    {
+      "id": "C_1684",
+      "type": "CHARACTER",
+      "name": "모션로봇자동화_야스카와"
+    },
+    {
+      "id": "A_1250",
+      "type": "ASSET",
+      "name": "두산로보틱스",
+      "exposure": {
+        "ticker": "454910",
+        "exchange": "KOSPI",
+        "country": "KR",
+        "business_desc": "협동로봇(외식·제조)",
+        "theme_role": "협동로봇",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -3.897849462365588,
+        "return_3d": -8.333333333333337,
+        "return_15d": 18.37748344370862,
+        "return_1m": 15.695792880258907,
+        "return_ytd": -10.95890410958904,
+        "return_1y": 16.830065359477132,
+        "return_3y": null,
+        "close": 71500,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 12.022630834512027,
+        "return_2y": -14.779499404052443
+      }
+    },
+    {
+      "id": "C_1685",
+      "type": "CHARACTER",
+      "name": "협동로봇K"
+    },
+    {
+      "id": "A_091",
+      "type": "ASSET",
+      "name": "레인보우로보틱스",
+      "exposure": {
+        "ticker": "277810",
+        "exchange": "KOSDAQ",
+        "country": "KR",
+        "business_desc": "협동·휴머노이드 로봇",
+        "theme_role": "휴머노이드",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -2.538071065989844,
+        "return_3d": -7.514450867052025,
+        "return_15d": -27.27272727272727,
+        "return_1m": -28.143712574850298,
+        "return_ytd": -2.7355623100303927,
+        "return_1y": 52.38095238095237,
+        "return_3y": 420.60737527114964,
+        "close": 480000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": -6.976744186046513,
+        "return_2y": 195.2029520295203
+      }
+    },
+    {
+      "id": "C_1686",
+      "type": "CHARACTER",
+      "name": "휴머노이드협동K"
+    },
+    {
+      "id": "A_1251",
+      "type": "ASSET",
+      "name": "뉴로메카",
+      "exposure": {
+        "ticker": "348340",
+        "exchange": "KOSDAQ",
+        "country": "KR",
+        "business_desc": "저가 협동로봇(중소·외식)",
+        "theme_role": "협동로봇",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -1.9512195121951237,
+        "return_3d": -14.830508474576277,
+        "return_15d": 26.15056770673878,
+        "return_1m": 3.0768739171832094,
+        "return_ytd": -1.2696535894016647,
+        "return_1y": 56.955935675240845,
+        "return_3y": 7.417036690669354,
+        "close": 20100,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 21.46165723108595,
+        "return_2y": 12.036765806700146
+      }
+    },
+    {
+      "id": "C_1687",
+      "type": "CHARACTER",
+      "name": "저가협동로봇"
+    },
+    {
+      "id": "A_978",
+      "type": "ASSET",
+      "name": "큐렉소",
+      "exposure": {
+        "ticker": "060280",
+        "exchange": "KOSDAQ",
+        "country": "KR",
+        "business_desc": "수술·재활 로봇(간병 수요)",
+        "theme_role": "의료로봇",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": 0.33407572383072903,
+        "return_3d": -6.825232678386762,
+        "return_15d": 21.265141318977122,
+        "return_1m": 15.364916773367487,
+        "return_ytd": -33.75,
+        "return_1y": 2.9714285714285804,
+        "return_3y": -50.333846944016436,
+        "close": 9010,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 10.1366742596811,
+        "return_2y": -7.589743589743591
+      }
+    },
+    {
+      "id": "C_1688",
+      "type": "CHARACTER",
+      "name": "의료간병로봇"
+    },
+    {
+      "id": "A_1113",
+      "type": "ASSET",
+      "name": "키엔스",
+      "exposure": {
+        "ticker": "6861",
+        "exchange": "TSE",
+        "country": "JP",
+        "business_desc": "FA 센서·머신비전(자동화 핵심)",
+        "theme_role": "센서비전",
+        "theme_status": "Core"
+      },
+      "metrics": {
+        "return_1d": -5.325092119339114,
+        "return_3d": -9.137577002053387,
+        "return_15d": 12.262156448202965,
+        "return_1m": 12.373024830699775,
+        "return_ytd": 40.5257586450247,
+        "return_1y": 40.302976924431924,
+        "return_3y": 33.01603206412827,
+        "close": 79650.0,
+        "marketCap": 19317127082400,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -8.65825688073395,
+        "return_2y": 20.153869361894692
+      }
+    },
+    {
+      "id": "C_1689",
+      "type": "CHARACTER",
+      "name": "센서머신비전"
+    },
+    {
+      "id": "M_058",
+      "type": "MACRO",
+      "name": "인구고령화"
+    },
+    {
+      "id": "M_199",
+      "type": "MACRO",
+      "name": "인건비상승"
+    },
+    {
+      "id": "M_028",
+      "type": "MACRO",
+      "name": "자동화확산"
+    },
+    {
+      "id": "A_1252",
+      "type": "ASSET",
+      "name": "KOEX로봇액티브",
+      "exposure": {
+        "ticker": "445290",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -3.4774580704723834,
+        "close": 31365,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -3.3733826247689502,
+        "return_15d": 18.41335099678403,
+        "return_1m": 15.535857147244837,
+        "return_ytd": 17.065279698084225,
+        "return_1y": 92.59820859902091,
+        "return_3y": 146.25687375832496,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 12.641008626410088,
+        "return_2y": 125.08744986511653
+      },
+      "coreBiz": "KOEX로봇액티브"
+    },
+    {
+      "name": "BOTZ",
+      "id": "A_145",
+      "metrics": {
+        "return_1d": -0.46511627906975495,
+        "return_30d": null,
+        "market_cap": null,
+        "asof": null,
+        "return_90d": null,
+        "currency": null,
+        "per": null,
+        "last_price": null,
+        "return_15d": 8.016627078384797,
+        "return_3d": -3.6036036036036,
+        "return_1m": 5.755813953488387,
+        "return_ytd": 0.4140215291195348,
+        "return_1y": 8.661887694145776,
+        "return_3y": 43.115656963021245,
+        "close": 36.38,
+        "marketCap": 3380359969,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "pe_ttm": null,
+        "return_5d": -3.782068235916425,
+        "return_2y": 17.090440939813334
+      },
+      "exposure": {
+        "country": "US",
+        "ticker": "BOTZ",
+        "exchange": "NASDAQ"
+      },
+      "type": "ASSET"
+    }
   ],
-  "dataAsOf": "2026-07-25T00:00:00+09:00",
-  "description": "• 한·일 생산가능인구 급감으로 자동화가 선택 아닌 필수가 되는 영역\n• 동인: 인구고령화·인건비상승·자동화확산\n• 대표주: 파눅(공장자동화로봇)·야스카와전기(모션로봇자동화 야스)·두산로보틱스(협동로봇K)\n• ETF: KOEX로봇액티브·BOTZ",
-  "notes": "T_574 신규(2026-07-01)",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-25",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_1112",
+      "to": "T_574",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013119"
+      ]
+    },
+    {
+      "from": "A_1112",
+      "to": "C_1683",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017819"
+      ]
+    },
+    {
+      "from": "A_2607",
+      "to": "T_574",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013120"
+      ]
+    },
+    {
+      "from": "A_2607",
+      "to": "C_1684",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017820"
+      ]
+    },
+    {
+      "from": "A_1250",
+      "to": "T_574",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013121"
+      ]
+    },
+    {
+      "from": "A_1250",
+      "to": "C_1685",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017821"
+      ]
+    },
+    {
+      "from": "A_091",
+      "to": "T_574",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013122"
+      ]
+    },
+    {
+      "from": "A_091",
+      "to": "C_1686",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017822"
+      ]
+    },
+    {
+      "from": "A_1251",
+      "to": "T_574",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013123"
+      ]
+    },
+    {
+      "from": "A_1251",
+      "to": "C_1687",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017823"
+      ]
+    },
+    {
+      "from": "A_978",
+      "to": "T_574",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013124"
+      ]
+    },
+    {
+      "from": "A_978",
+      "to": "C_1688",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017824"
+      ]
+    },
+    {
+      "from": "A_1113",
+      "to": "T_574",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013125"
+      ]
+    },
+    {
+      "from": "A_1113",
+      "to": "C_1689",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017825"
+      ]
+    },
+    {
+      "from": "M_058",
+      "to": "T_574",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013126"
+      ]
+    },
+    {
+      "from": "M_199",
+      "to": "T_574",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013127"
+      ]
+    },
+    {
+      "from": "M_028",
+      "to": "T_574",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013128"
+      ]
+    },
+    {
+      "from": "A_1112",
+      "to": "A_2607",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020215"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "파눅과 야스카와전기는 일본 산업용 로봇·서보 시장 직접 경쟁"
+    },
+    {
+      "from": "A_1113",
+      "to": "A_1112",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020216"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "키엔스와 파눅은 일본 공장 자동화 시장 경쟁"
+    },
+    {
+      "from": "A_1250",
+      "to": "A_091",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020217"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "두산로보틱스와 레인보우로보틱스는 국내 협동로봇 시장 직접 경쟁"
+    },
+    {
+      "from": "A_1251",
+      "to": "A_1250",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020218"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "뉴로메카와 두산로보틱스는 협동로봇 시장 경쟁"
+    },
+    {
+      "from": "A_978",
+      "to": "A_091",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020219"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "큐렉소와 레인보우로보틱스는 국내 의료·서비스 로봇 시장 경쟁"
+    },
+    {
+      "from": "A_1252",
+      "to": "T_574",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020916"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_145",
+      "to": "T_574",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020917"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_1112",
+      "to": "T_574",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013119"
+      ]
+    },
+    {
+      "from": "A_1112",
+      "to": "C_1683",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017819"
+      ]
+    },
+    {
+      "from": "A_2607",
+      "to": "T_574",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013120"
+      ]
+    },
+    {
+      "from": "A_2607",
+      "to": "C_1684",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017820"
+      ]
+    },
+    {
+      "from": "A_1250",
+      "to": "T_574",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013121"
+      ]
+    },
+    {
+      "from": "A_1250",
+      "to": "C_1685",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017821"
+      ]
+    },
+    {
+      "from": "A_091",
+      "to": "T_574",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013122"
+      ]
+    },
+    {
+      "from": "A_091",
+      "to": "C_1686",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017822"
+      ]
+    },
+    {
+      "from": "A_1251",
+      "to": "T_574",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013123"
+      ]
+    },
+    {
+      "from": "A_1251",
+      "to": "C_1687",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017823"
+      ]
+    },
+    {
+      "from": "A_978",
+      "to": "T_574",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013124"
+      ]
+    },
+    {
+      "from": "A_978",
+      "to": "C_1688",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017824"
+      ]
+    },
+    {
+      "from": "A_1113",
+      "to": "T_574",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013125"
+      ]
+    },
+    {
+      "from": "A_1113",
+      "to": "C_1689",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017825"
+      ]
+    },
+    {
+      "from": "M_058",
+      "to": "T_574",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013126"
+      ]
+    },
+    {
+      "from": "M_199",
+      "to": "T_574",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013127"
+      ]
+    },
+    {
+      "from": "M_028",
+      "to": "T_574",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013128"
+      ]
+    },
+    {
+      "from": "A_1112",
+      "to": "A_2607",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020215"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "파눅과 야스카와전기는 일본 산업용 로봇·서보 시장 직접 경쟁"
+    },
+    {
+      "from": "A_1113",
+      "to": "A_1112",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020216"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "키엔스와 파눅은 일본 공장 자동화 시장 경쟁"
+    },
+    {
+      "from": "A_1250",
+      "to": "A_091",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020217"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "두산로보틱스와 레인보우로보틱스는 국내 협동로봇 시장 직접 경쟁"
+    },
+    {
+      "from": "A_1251",
+      "to": "A_1250",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020218"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "뉴로메카와 두산로보틱스는 협동로봇 시장 경쟁"
+    },
+    {
+      "from": "A_978",
+      "to": "A_091",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020219"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "큐렉소와 레인보우로보틱스는 국내 의료·서비스 로봇 시장 경쟁"
+    },
+    {
+      "from": "A_1252",
+      "to": "T_574",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020916"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_145",
+      "to": "T_574",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020917"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_574",
-   "type": "THEME",
-   "name": "인구절벽강제자동화_한일"
-  },
-  {
-   "id": "A_1112",
-   "type": "ASSET",
-   "name": "파눅",
-   "exposure": {
-    "ticker": "6954",
-    "exchange": "TSE",
-    "country": "JP",
-    "business_desc": "산업 로봇·CNC(인력 대체)",
-    "theme_role": "산업로봇",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -1.0760953112989968,
-    "return_3d": -1.1065006915629283,
-    "return_15d": -7.249927933121936,
-    "return_1m": -5.907296388360872,
-    "return_ytd": 5.769230769230771,
-    "return_1y": 42.68292682926828,
-    "return_3y": 56.874695270599716,
-    "close": 6435.0,
-    "marketCap": 6004871401815,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.07776049766718973,
-    "return_2y": 59.677419354838705
-   }
-  },
-  {
-   "id": "C_1683",
-   "type": "CHARACTER",
-   "name": "공장자동화로봇"
-  },
-  {
-   "id": "A_2607",
-   "type": "ASSET",
-   "name": "야스카와전기",
-   "exposure": {
-    "ticker": "6506",
-    "exchange": "TSE",
-    "country": "JP",
-    "business_desc": "서보·로봇 모션 제어",
-    "theme_role": "모션제어",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -0.8941605839416056,
-    "return_3d": 1.2301957129543295,
-    "return_15d": 1.7994376757263453,
-    "return_1m": -0.09197939661516052,
-    "return_ytd": 14.19259882253996,
-    "return_1y": 79.063633366304,
-    "return_3y": -5.118798043326345,
-    "close": 5431.0,
-    "marketCap": 1408627385329,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 3.3491912464319595,
-    "return_2y": 19.23161361141603
-   }
-  },
-  {
-   "id": "C_1684",
-   "type": "CHARACTER",
-   "name": "모션로봇자동화_야스카와"
-  },
-  {
-   "id": "A_1250",
-   "type": "ASSET",
-   "name": "두산로보틱스",
-   "exposure": {
-    "ticker": "454910",
-    "exchange": "KOSPI",
-    "country": "KR",
-    "business_desc": "협동로봇(외식·제조)",
-    "theme_role": "협동로봇",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": 1.538461538461533,
-    "return_3d": 6.882591093117418,
-    "return_15d": 22.41112828438949,
-    "return_1m": 12.181303116147312,
-    "return_ytd": -1.3698630136986356,
-    "return_1y": 35.384615384615394,
-    "return_3y": null,
-    "close": 79200,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 12.022630834512027,
-    "return_2y": -6.933019976498233
-   }
-  },
-  {
-   "id": "C_1685",
-   "type": "CHARACTER",
-   "name": "협동로봇K"
-  },
-  {
-   "id": "A_091",
-   "type": "ASSET",
-   "name": "레인보우로보틱스",
-   "exposure": {
-    "ticker": "277810",
-    "exchange": "KOSDAQ",
-    "country": "KR",
-    "business_desc": "협동·휴머노이드 로봇",
-    "theme_role": "휴머노이드",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": -2.538071065989844,
-    "return_3d": -7.514450867052025,
-    "return_15d": -27.27272727272727,
-    "return_1m": -28.143712574850298,
-    "return_ytd": -2.7355623100303927,
-    "return_1y": 52.38095238095237,
-    "return_3y": 420.60737527114964,
-    "close": 480000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": -6.976744186046513,
-    "return_2y": 195.2029520295203
-   }
-  },
-  {
-   "id": "C_1686",
-   "type": "CHARACTER",
-   "name": "휴머노이드협동K"
-  },
-  {
-   "id": "A_1251",
-   "type": "ASSET",
-   "name": "뉴로메카",
-   "exposure": {
-    "ticker": "348340",
-    "exchange": "KOSDAQ",
-    "country": "KR",
-    "business_desc": "저가 협동로봇(중소·외식)",
-    "theme_role": "협동로봇",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": 10.280373831775691,
-    "return_3d": 14.009661835748787,
-    "return_15d": 32.08948915128875,
-    "return_1m": 11.671871096364228,
-    "return_ytd": 15.92219777562789,
-    "return_1y": 72.24169737361481,
-    "return_3y": 7.417036690669354,
-    "close": 23600,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 21.46165723108595,
-    "return_2y": 23.916832335857976
-   }
-  },
-  {
-   "id": "C_1687",
-   "type": "CHARACTER",
-   "name": "저가협동로봇"
-  },
-  {
-   "id": "A_978",
-   "type": "ASSET",
-   "name": "큐렉소",
-   "exposure": {
-    "ticker": "060280",
-    "exchange": "KOSDAQ",
-    "country": "KR",
-    "business_desc": "수술·재활 로봇(간병 수요)",
-    "theme_role": "의료로봇",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": 1.4690451206715638,
-    "return_3d": 4.540540540540539,
-    "return_15d": 19.382716049382708,
-    "return_1m": 15.11904761904761,
-    "return_ytd": -28.89705882352941,
-    "return_1y": 17.070217917675535,
-    "return_3y": -50.333846944016436,
-    "close": 9670,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 10.1366742596811,
-    "return_2y": -9.37207122774133
-   }
-  },
-  {
-   "id": "C_1688",
-   "type": "CHARACTER",
-   "name": "의료간병로봇"
-  },
-  {
-   "id": "A_1113",
-   "type": "ASSET",
-   "name": "키엔스",
-   "exposure": {
-    "ticker": "6861",
-    "exchange": "TSE",
-    "country": "JP",
-    "business_desc": "FA 센서·머신비전(자동화 핵심)",
-    "theme_role": "센서비전",
-    "theme_status": "Core"
-   },
-   "metrics": {
-    "return_1d": 1.1889645619300504,
-    "return_3d": 3.1294117647058917,
-    "return_15d": 21.31192914475506,
-    "return_1m": 16.275368085953048,
-    "return_ytd": 54.6577275935074,
-    "return_1y": 58.11688311688312,
-    "return_3y": 47.4268415741675,
-    "close": 87660.0,
-    "marketCap": 21259753421760,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 2.490354261662575,
-    "return_2y": 30.835820895522392
-   }
-  },
-  {
-   "id": "C_1689",
-   "type": "CHARACTER",
-   "name": "센서머신비전"
-  },
-  {
-   "id": "M_058",
-   "type": "MACRO",
-   "name": "인구고령화"
-  },
-  {
-   "id": "M_199",
-   "type": "MACRO",
-   "name": "인건비상승"
-  },
-  {
-   "id": "M_028",
-   "type": "MACRO",
-   "name": "자동화확산"
-  },
-  {
-   "id": "A_1252",
-   "type": "ASSET",
-   "name": "KOEX로봇액티브",
-   "exposure": {
-    "ticker": "445290",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 4.590264941466415,
-    "close": 33950,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "return_3d": 9.51612903225807,
-    "return_15d": 19.115332425946985,
-    "return_1m": 12.28342800518558,
-    "return_ytd": 26.713414498643683,
-    "return_1y": 112.17681159311601,
-    "return_3y": 146.25687375832496,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": 12.641008626410088,
-    "return_2y": 139.73340966953515
-   },
-   "coreBiz": "KOEX로봇액티브"
-  },
-  {
-   "name": "BOTZ",
-   "id": "A_145",
-   "metrics": {
-    "return_1d": -0.21152829190903555,
-    "return_30d": null,
-    "market_cap": null,
-    "asof": null,
-    "return_90d": null,
-    "currency": null,
-    "per": null,
-    "last_price": null,
-    "return_15d": 11.557788944723635,
-    "return_3d": 0.6937033084311706,
-    "return_1m": 5.183946488294322,
-    "return_ytd": 4.167816726469797,
-    "return_1y": 11.294603361840183,
-    "return_3y": 41.933057540428734,
-    "close": 37.74,
-    "marketCap": 3506728566,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "pe_ttm": null,
-    "return_5d": 0.3456527519276831,
-    "return_2y": 26.136363636363647
-   },
-   "exposure": {
-    "country": "US",
-    "ticker": "BOTZ",
-    "exchange": "NASDAQ"
-   },
-   "type": "ASSET"
-  }
- ],
- "edges": [
-  {
-   "from": "A_1112",
-   "to": "T_574",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013119"
-   ]
-  },
-  {
-   "from": "A_1112",
-   "to": "C_1683",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017819"
-   ]
-  },
-  {
-   "from": "A_2607",
-   "to": "T_574",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013120"
-   ]
-  },
-  {
-   "from": "A_2607",
-   "to": "C_1684",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017820"
-   ]
-  },
-  {
-   "from": "A_1250",
-   "to": "T_574",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013121"
-   ]
-  },
-  {
-   "from": "A_1250",
-   "to": "C_1685",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017821"
-   ]
-  },
-  {
-   "from": "A_091",
-   "to": "T_574",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013122"
-   ]
-  },
-  {
-   "from": "A_091",
-   "to": "C_1686",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017822"
-   ]
-  },
-  {
-   "from": "A_1251",
-   "to": "T_574",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013123"
-   ]
-  },
-  {
-   "from": "A_1251",
-   "to": "C_1687",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017823"
-   ]
-  },
-  {
-   "from": "A_978",
-   "to": "T_574",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013124"
-   ]
-  },
-  {
-   "from": "A_978",
-   "to": "C_1688",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017824"
-   ]
-  },
-  {
-   "from": "A_1113",
-   "to": "T_574",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013125"
-   ]
-  },
-  {
-   "from": "A_1113",
-   "to": "C_1689",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017825"
-   ]
-  },
-  {
-   "from": "M_058",
-   "to": "T_574",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013126"
-   ]
-  },
-  {
-   "from": "M_199",
-   "to": "T_574",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013127"
-   ]
-  },
-  {
-   "from": "M_028",
-   "to": "T_574",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013128"
-   ]
-  },
-  {
-   "from": "A_1112",
-   "to": "A_2607",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020215"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "파눅과 야스카와전기는 일본 산업용 로봇·서보 시장 직접 경쟁"
-  },
-  {
-   "from": "A_1113",
-   "to": "A_1112",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020216"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "키엔스와 파눅은 일본 공장 자동화 시장 경쟁"
-  },
-  {
-   "from": "A_1250",
-   "to": "A_091",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020217"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "두산로보틱스와 레인보우로보틱스는 국내 협동로봇 시장 직접 경쟁"
-  },
-  {
-   "from": "A_1251",
-   "to": "A_1250",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020218"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "뉴로메카와 두산로보틱스는 협동로봇 시장 경쟁"
-  },
-  {
-   "from": "A_978",
-   "to": "A_091",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020219"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "큐렉소와 레인보우로보틱스는 국내 의료·서비스 로봇 시장 경쟁"
-  },
-  {
-   "from": "A_1252",
-   "to": "T_574",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020916"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_145",
-   "to": "T_574",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020917"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_1112",
-   "to": "T_574",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013119"
-   ]
-  },
-  {
-   "from": "A_1112",
-   "to": "C_1683",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017819"
-   ]
-  },
-  {
-   "from": "A_2607",
-   "to": "T_574",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013120"
-   ]
-  },
-  {
-   "from": "A_2607",
-   "to": "C_1684",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017820"
-   ]
-  },
-  {
-   "from": "A_1250",
-   "to": "T_574",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013121"
-   ]
-  },
-  {
-   "from": "A_1250",
-   "to": "C_1685",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017821"
-   ]
-  },
-  {
-   "from": "A_091",
-   "to": "T_574",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013122"
-   ]
-  },
-  {
-   "from": "A_091",
-   "to": "C_1686",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017822"
-   ]
-  },
-  {
-   "from": "A_1251",
-   "to": "T_574",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013123"
-   ]
-  },
-  {
-   "from": "A_1251",
-   "to": "C_1687",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017823"
-   ]
-  },
-  {
-   "from": "A_978",
-   "to": "T_574",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013124"
-   ]
-  },
-  {
-   "from": "A_978",
-   "to": "C_1688",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017824"
-   ]
-  },
-  {
-   "from": "A_1113",
-   "to": "T_574",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013125"
-   ]
-  },
-  {
-   "from": "A_1113",
-   "to": "C_1689",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017825"
-   ]
-  },
-  {
-   "from": "M_058",
-   "to": "T_574",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013126"
-   ]
-  },
-  {
-   "from": "M_199",
-   "to": "T_574",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013127"
-   ]
-  },
-  {
-   "from": "M_028",
-   "to": "T_574",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013128"
-   ]
-  },
-  {
-   "from": "A_1112",
-   "to": "A_2607",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020215"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "파눅과 야스카와전기는 일본 산업용 로봇·서보 시장 직접 경쟁"
-  },
-  {
-   "from": "A_1113",
-   "to": "A_1112",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020216"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "키엔스와 파눅은 일본 공장 자동화 시장 경쟁"
-  },
-  {
-   "from": "A_1250",
-   "to": "A_091",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020217"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "두산로보틱스와 레인보우로보틱스는 국내 협동로봇 시장 직접 경쟁"
-  },
-  {
-   "from": "A_1251",
-   "to": "A_1250",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020218"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "뉴로메카와 두산로보틱스는 협동로봇 시장 경쟁"
-  },
-  {
-   "from": "A_978",
-   "to": "A_091",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020219"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "큐렉소와 레인보우로보틱스는 국내 의료·서비스 로봇 시장 경쟁"
-  },
-  {
-   "from": "A_1252",
-   "to": "T_574",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020916"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_145",
-   "to": "T_574",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020917"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

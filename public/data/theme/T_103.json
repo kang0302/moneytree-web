@@ -1,788 +1,788 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_103",
- "themeName": "글로벌리튬관련주_업스트림(광산·리튬화학)",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_103",
+  "themeName": "글로벌리튬관련주_업스트림(광산·리튬화학)",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-04-05T00:00:00+09:00",
+    "notes": "g103 누적 import 기반 글로벌 리튬 관련주 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-08-01",
+        "kind": "수정",
+        "title": "상폐 종목 제거",
+        "detail": "피인수/상폐로 거래/링크가 없는 종목 제거."
+      },
+      {
+        "date": "2026-07-19",
+        "kind": "분리",
+        "title": "글로벌리튬관련주_업스트림(광산·리튬화학) 분리 생성",
+        "detail": "T_103 분할. 매크로 공동 사용, LIT EXPOSED_TO 연결."
+      },
+      {
+        "date": "2026-07-11",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "리튬 밸류체인 종목에 자원(염호/광산)·화합물·양극재·수요처 포지션 CHR 정의."
+      },
+      {
+        "date": "2026-07-11",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필 + 2026 이벤트",
+        "detail": "전 엣지 근거를 종목별 사업·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
+      }
+    ],
+    "description": "• 리튬 채굴·정제 업스트림\n• 동인: ESS확산·EV보급확대·중국정책CAPA확대\n• 대표주: Albemarle(세계최대리튬생산)·SQM(칠레염호저원가리튬)·Piedmont Lithium(미국서방리튬개발)\n• ETF: LIT"
+  },
+  "nodes": [
+    {
+      "id": "T_103",
+      "type": "THEME",
+      "name": "글로벌리튬관련주_업스트림(광산·리튬화학)"
+    },
+    {
+      "id": "A_771",
+      "type": "ASSET",
+      "name": "Albemarle",
+      "exposure": {
+        "ticker": "ALB",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.1830306683746405,
+        "close": 134.28,
+        "marketCap": 15836264936,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -1.3734851266984927,
+        "return_15d": 17.913593256059013,
+        "return_1m": 11.177347242921009,
+        "return_ytd": -5.062217194570129,
+        "return_1y": 66.70391061452514,
+        "return_3y": -26.778995583183374,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 4.628330995792429,
+        "return_2y": 62.21309495047114
+      }
+    },
+    {
+      "id": "C_2116",
+      "type": "CHARACTER",
+      "name": "세계최대리튬생산"
+    },
+    {
+      "id": "A_772",
+      "type": "ASSET",
+      "name": "SQM",
+      "exposure": {
+        "ticker": "SQM",
+        "exchange": "NYSE",
+        "country": "CL"
+      },
+      "metrics": {
+        "return_1d": 1.2219685779508493,
+        "close": 75.38,
+        "marketCap": 21531288039,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 1.4262648008611434,
+        "return_15d": 11.591413767579573,
+        "return_1m": 7.978799598911324,
+        "return_ytd": 9.56395348837209,
+        "return_1y": 67.32519422863486,
+        "return_3y": 18.802206461780923,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 5.7964912280701775,
+        "return_2y": 100.85265121236344
+      }
+    },
+    {
+      "id": "C_2117",
+      "type": "CHARACTER",
+      "name": "칠레염호저원가리튬"
+    },
+    {
+      "id": "A_773",
+      "type": "ASSET",
+      "name": "Piedmont Lithium",
+      "exposure": {
+        "ticker": "PLL",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -8.919597989949747,
+        "close": 7.25,
+        "marketCap": 159109225,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -18.355855855855864,
+        "return_15d": -19.444444444444443,
+        "return_1m": -0.13774104683195176,
+        "return_ytd": -17.048054919908473,
+        "return_1y": -12.965186074429768,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -21.281216069489695,
+        "return_2y": -83.65276211950395
+      }
+    },
+    {
+      "id": "C_2118",
+      "type": "CHARACTER",
+      "name": "미국서방리튬개발"
+    },
+    {
+      "id": "A_775",
+      "type": "ASSET",
+      "name": "Lithium Americas",
+      "exposure": {
+        "ticker": "LAC",
+        "exchange": "NYSE",
+        "country": "CA"
+      },
+      "metrics": {
+        "return_1d": 1.3513513513513598,
+        "close": 3.0,
+        "marketCap": 669835890,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -11.24260355029586,
+        "return_15d": 10.701107011070121,
+        "return_1m": 1.6949152542372836,
+        "return_ytd": -31.19266055045872,
+        "return_1y": 6.761565836298922,
+        "return_3y": -70.703125,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -7.975460122699385,
+        "return_2y": 14.068441064638781
+      }
+    },
+    {
+      "id": "C_2120",
+      "type": "CHARACTER",
+      "name": "미국태커패스리튬광산"
+    },
+    {
+      "id": "A_776",
+      "type": "ASSET",
+      "name": "Sigma Lithium",
+      "exposure": {
+        "ticker": "SGML",
+        "exchange": "NASDAQ",
+        "country": "CA"
+      },
+      "metrics": {
+        "return_1d": -0.8159564823209453,
+        "close": 10.94,
+        "marketCap": 1218748820,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -8.757297748123438,
+        "return_15d": 16.75560298826042,
+        "return_1m": 6.627680311890827,
+        "return_ytd": -17.058377558756632,
+        "return_1y": 70.6708268330733,
+        "return_3y": -67.41137920762586,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -7.44500846023689,
+        "return_2y": 6.627680311890827
+      }
+    },
+    {
+      "id": "C_2121",
+      "type": "CHARACTER",
+      "name": "브라질친환경리튬"
+    },
+    {
+      "id": "A_777",
+      "type": "ASSET",
+      "name": "Ganfeng Lithium",
+      "exposure": {
+        "ticker": "1772",
+        "exchange": "HKEX",
+        "country": "CN"
+      },
+      "metrics": {
+        "return_1d": -4.256410256410248,
+        "close": 37.34,
+        "marketCap": 99159707449,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -5.659423951490639,
+        "return_15d": -3.163900414937759,
+        "return_1m": -1.2691697514542466,
+        "return_ytd": -28.12319538017324,
+        "return_1y": 11.930455635491622,
+        "return_3y": -9.037758830694266,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -8.255528255528255,
+        "return_2y": 110.48478015783543
+      }
+    },
+    {
+      "id": "C_2122",
+      "type": "CHARACTER",
+      "name": "중국리튬화합물대형"
+    },
+    {
+      "id": "A_778",
+      "type": "ASSET",
+      "name": "Tianqi Lithium",
+      "exposure": {
+        "ticker": "9696",
+        "exchange": "HKEX",
+        "country": "CN"
+      },
+      "metrics": {
+        "return_1d": -2.8490028490028463,
+        "close": 34.1,
+        "marketCap": 55802480183,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -4.428251121076232,
+        "return_15d": 0.6493506493506551,
+        "return_1m": 5.052372150338891,
+        "return_ytd": -33.20274240940254,
+        "return_1y": -22.288058340929805,
+        "return_3y": -23.71364653243848,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -7.033805888767719,
+        "return_2y": 68.81188118811883
+      }
+    },
+    {
+      "id": "C_2123",
+      "type": "CHARACTER",
+      "name": "중국리튬메이저SQM지분"
+    },
+    {
+      "id": "M_110",
+      "type": "MACRO",
+      "name": "ESS확산"
+    },
+    {
+      "id": "M_020",
+      "type": "MACRO",
+      "name": "EV보급확대"
+    },
+    {
+      "id": "M_239",
+      "type": "MACRO",
+      "name": "중국정책CAPA확대"
+    },
+    {
+      "id": "A_066",
+      "type": "ASSET",
+      "name": "LIT",
+      "exposure": {
+        "ticker": "LIT",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.7430424209672992,
+        "close": 74.57,
+        "marketCap": 1446127807,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": -0.8773095839425871,
+        "return_15d": 11.732094695834583,
+        "return_1m": 9.052354489616853,
+        "return_ytd": 14.970706136293543,
+        "return_1y": 64.28728794888741,
+        "return_3y": 30.89345269440056,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -0.8509506714532655,
+        "return_2y": 102.96679368535652
+      }
+    }
   ],
-  "dataAsOf": "2026-04-05T00:00:00+09:00",
-  "notes": "g103 누적 import 기반 글로벌 리튬 관련주 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-08-01",
-    "kind": "수정",
-    "title": "상폐 종목 제거",
-    "detail": "피인수/상폐로 거래/링크가 없는 종목 제거."
-   },
-   {
-    "date": "2026-07-19",
-    "kind": "분리",
-    "title": "글로벌리튬관련주_업스트림(광산·리튬화학) 분리 생성",
-    "detail": "T_103 분할. 매크로 공동 사용, LIT EXPOSED_TO 연결."
-   },
-   {
-    "date": "2026-07-11",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "리튬 밸류체인 종목에 자원(염호/광산)·화합물·양극재·수요처 포지션 CHR 정의."
-   },
-   {
-    "date": "2026-07-11",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필 + 2026 이벤트",
-    "detail": "전 엣지 근거를 종목별 사업·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
-   }
+  "edges": [
+    {
+      "from": "A_771",
+      "to": "T_103",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003070"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_771",
+      "to": "C_2116",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003233"
+      ],
+      "confidence": 0.83,
+      "status": "verified"
+    },
+    {
+      "from": "A_772",
+      "to": "T_103",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003071"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_772",
+      "to": "C_2117",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003234"
+      ],
+      "confidence": 0.83,
+      "status": "verified"
+    },
+    {
+      "from": "A_773",
+      "to": "T_103",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003072"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_773",
+      "to": "C_2118",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003235"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_775",
+      "to": "T_103",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003074"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_775",
+      "to": "C_2120",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003237"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_776",
+      "to": "T_103",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003075"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_776",
+      "to": "C_2121",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003238"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_777",
+      "to": "T_103",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008099"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_777",
+      "to": "C_2122",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003239"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_778",
+      "to": "T_103",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003077"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_778",
+      "to": "C_2123",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003240"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_110",
+      "to": "T_103",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003082"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_020",
+      "to": "T_103",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003083"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_239",
+      "to": "T_103",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003084"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_066",
+      "to": "T_103",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_008100"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_771",
+      "to": "A_772",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019066"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "Albemarle과 SQM은 글로벌 리튬 채굴·화학 시장 양대 경쟁"
+    },
+    {
+      "from": "A_777",
+      "to": "A_778",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019067"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "Ganfeng과 Tianqi는 중국 리튬 화학 시장 직접 경쟁"
+    },
+    {
+      "from": "A_771",
+      "to": "A_777",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019068"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "Albemarle과 Ganfeng은 글로벌 리튬 공급 시장 경쟁"
+    },
+    {
+      "from": "A_772",
+      "to": "A_776",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019069"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "SQM과 Sigma Lithium은 남미 리튬 자원 개발 경쟁"
+    }
   ],
-  "description": "• 리튬 채굴·정제 업스트림\n• 동인: ESS확산·EV보급확대·중국정책CAPA확대\n• 대표주: Albemarle(세계최대리튬생산)·SQM(칠레염호저원가리튬)·Piedmont Lithium(미국서방리튬개발)\n• ETF: LIT"
- },
- "nodes": [
-  {
-   "id": "T_103",
-   "type": "THEME",
-   "name": "글로벌리튬관련주_업스트림(광산·리튬화학)"
-  },
-  {
-   "id": "A_771",
-   "type": "ASSET",
-   "name": "Albemarle",
-   "exposure": {
-    "ticker": "ALB",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 4.3454935622317725,
-    "close": 136.15,
-    "marketCap": 16056802734,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 5.248917748917736,
-    "return_15d": 18.545929473225954,
-    "return_1m": 5.7475728155339745,
-    "return_ytd": -3.7401018099547434,
-    "return_1y": 67.19882107331449,
-    "return_3y": -26.61959685243074,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 3.8441003737319734,
-    "return_2y": 86.89087165408375
-   }
-  },
-  {
-   "id": "C_2116",
-   "type": "CHARACTER",
-   "name": "세계최대리튬생산"
-  },
-  {
-   "id": "A_772",
-   "type": "ASSET",
-   "name": "SQM",
-   "exposure": {
-    "ticker": "SQM",
-    "exchange": "NYSE",
-    "country": "CL"
-   },
-   "metrics": {
-    "return_1d": 2.9933481152993213,
-    "close": 74.32,
-    "marketCap": 21228513227,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 2.907781777900853,
-    "return_15d": 8.133275134584594,
-    "return_1m": 1.8779986291980633,
-    "return_ytd": 8.02325581395349,
-    "return_1y": 63.19718928414579,
-    "return_3y": 12.21500830439377,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 3.293954134815835,
-    "return_2y": 108.41278743690408
-   }
-  },
-  {
-   "id": "C_2117",
-   "type": "CHARACTER",
-   "name": "칠레염호저원가리튬"
-  },
-  {
-   "id": "A_773",
-   "type": "ASSET",
-   "name": "Piedmont Lithium",
-   "exposure": {
-    "ticker": "PLL",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -8.919597989949747,
-    "close": 7.25,
-    "marketCap": 159109225,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -18.355855855855864,
-    "return_15d": -19.444444444444443,
-    "return_1m": -0.13774104683195176,
-    "return_ytd": -17.048054919908473,
-    "return_1y": -12.965186074429768,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -21.281216069489695,
-    "return_2y": -83.65276211950395
-   }
-  },
-  {
-   "id": "C_2118",
-   "type": "CHARACTER",
-   "name": "미국서방리튬개발"
-  },
-  {
-   "id": "A_775",
-   "type": "ASSET",
-   "name": "Lithium Americas",
-   "exposure": {
-    "ticker": "LAC",
-    "exchange": "NYSE",
-    "country": "CA"
-   },
-   "metrics": {
-    "return_1d": -1.4577259475218707,
-    "close": 3.38,
-    "marketCap": 754681769,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 4.0000000000000036,
-    "return_15d": 20.284697508896787,
-    "return_1m": 7.301587301587298,
-    "return_ytd": -22.477064220183497,
-    "return_1y": 18.181818181818187,
-    "return_3y": -70.08849557522124,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 4.643962848297201,
-    "return_2y": 52.941176470588225
-   }
-  },
-  {
-   "id": "C_2120",
-   "type": "CHARACTER",
-   "name": "미국태커패스리튬광산"
-  },
-  {
-   "id": "A_776",
-   "type": "ASSET",
-   "name": "Sigma Lithium",
-   "exposure": {
-    "ticker": "SGML",
-    "exchange": "NASDAQ",
-    "country": "CA"
-   },
-   "metrics": {
-    "return_1d": 5.825242718446599,
-    "close": 11.99,
-    "marketCap": 1335721970,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 1.266891891891886,
-    "return_15d": 24.506749740394596,
-    "return_1m": 0.0,
-    "return_ytd": -9.0978013646702,
-    "return_1y": 112.21238938053095,
-    "return_3y": -64.92100643651257,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 5.360281195079075,
-    "return_2y": 35.32731376975171
-   }
-  },
-  {
-   "id": "C_2121",
-   "type": "CHARACTER",
-   "name": "브라질친환경리튬"
-  },
-  {
-   "id": "A_777",
-   "type": "ASSET",
-   "name": "Ganfeng Lithium",
-   "exposure": {
-    "ticker": "1772",
-    "exchange": "HKEX",
-    "country": "CN"
-   },
-   "metrics": {
-    "return_1d": 0.4568527918781706,
-    "close": 39.58,
-    "marketCap": 105108227660,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -0.4026170105687066,
-    "return_15d": 3.1266284523189025,
-    "return_1m": -5.129434324065196,
-    "return_ytd": -23.81135707410973,
-    "return_1y": 21.262254901960787,
-    "return_3y": -11.946607341490555,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -1.835317460317465,
-    "return_2y": 136.43966547192355
-   }
-  },
-  {
-   "id": "C_2122",
-   "type": "CHARACTER",
-   "name": "중국리튬화합물대형"
-  },
-  {
-   "id": "A_778",
-   "type": "ASSET",
-   "name": "Tianqi Lithium",
-   "exposure": {
-    "ticker": "9696",
-    "exchange": "HKEX",
-    "country": "CN"
-   },
-   "metrics": {
-    "return_1d": 1.1337868480725488,
-    "close": 35.68,
-    "marketCap": 58388049646,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -0.6681514476614803,
-    "return_15d": 8.318154219793561,
-    "return_1m": 4.449648711943799,
-    "return_ytd": -30.107737512242892,
-    "return_1y": -18.90909090909091,
-    "return_3y": -24.16578108395324,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.27948574622694844,
-    "return_2y": 76.19753086419753
-   }
-  },
-  {
-   "id": "C_2123",
-   "type": "CHARACTER",
-   "name": "중국리튬메이저SQM지분"
-  },
-  {
-   "id": "M_110",
-   "type": "MACRO",
-   "name": "ESS확산"
-  },
-  {
-   "id": "M_020",
-   "type": "MACRO",
-   "name": "EV보급확대"
-  },
-  {
-   "id": "M_239",
-   "type": "MACRO",
-   "name": "중국정책CAPA확대"
-  },
-  {
-   "id": "A_066",
-   "type": "ASSET",
-   "name": "LIT",
-   "exposure": {
-    "ticker": "LIT",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.7634610233056671,
-    "close": 75.23,
-    "marketCap": 1458927115,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 1.5112670354877844,
-    "return_15d": 10.942338888069614,
-    "return_1m": 5.09918971779828,
-    "return_ytd": 15.988282454517421,
-    "return_1y": 65.92412880458755,
-    "return_3y": 26.055630026809663,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 1.6484258883934677,
-    "return_2y": 111.4390106801574
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_771",
-   "to": "T_103",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003070"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_771",
-   "to": "C_2116",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003233"
-   ],
-   "confidence": 0.83,
-   "status": "verified"
-  },
-  {
-   "from": "A_772",
-   "to": "T_103",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003071"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_772",
-   "to": "C_2117",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003234"
-   ],
-   "confidence": 0.83,
-   "status": "verified"
-  },
-  {
-   "from": "A_773",
-   "to": "T_103",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003072"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_773",
-   "to": "C_2118",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003235"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_775",
-   "to": "T_103",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003074"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_775",
-   "to": "C_2120",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003237"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_776",
-   "to": "T_103",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003075"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_776",
-   "to": "C_2121",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003238"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_777",
-   "to": "T_103",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008099"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_777",
-   "to": "C_2122",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003239"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_778",
-   "to": "T_103",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003077"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_778",
-   "to": "C_2123",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003240"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_110",
-   "to": "T_103",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003082"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_020",
-   "to": "T_103",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003083"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_239",
-   "to": "T_103",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003084"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_066",
-   "to": "T_103",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_008100"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_771",
-   "to": "A_772",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019066"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "Albemarle과 SQM은 글로벌 리튬 채굴·화학 시장 양대 경쟁"
-  },
-  {
-   "from": "A_777",
-   "to": "A_778",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019067"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "Ganfeng과 Tianqi는 중국 리튬 화학 시장 직접 경쟁"
-  },
-  {
-   "from": "A_771",
-   "to": "A_777",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019068"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "Albemarle과 Ganfeng은 글로벌 리튬 공급 시장 경쟁"
-  },
-  {
-   "from": "A_772",
-   "to": "A_776",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019069"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "SQM과 Sigma Lithium은 남미 리튬 자원 개발 경쟁"
-  }
- ],
- "links": [
-  {
-   "from": "A_771",
-   "to": "T_103",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003070"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_771",
-   "to": "C_2116",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003233"
-   ],
-   "confidence": 0.83,
-   "status": "verified"
-  },
-  {
-   "from": "A_772",
-   "to": "T_103",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003071"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_772",
-   "to": "C_2117",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003234"
-   ],
-   "confidence": 0.83,
-   "status": "verified"
-  },
-  {
-   "from": "A_773",
-   "to": "T_103",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003072"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_773",
-   "to": "C_2118",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003235"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_775",
-   "to": "T_103",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003074"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_775",
-   "to": "C_2120",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003237"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_776",
-   "to": "T_103",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003075"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_776",
-   "to": "C_2121",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003238"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_777",
-   "to": "T_103",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_008099"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_777",
-   "to": "C_2122",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003239"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_778",
-   "to": "T_103",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003077"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_778",
-   "to": "C_2123",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003240"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_110",
-   "to": "T_103",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003082"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_020",
-   "to": "T_103",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003083"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_239",
-   "to": "T_103",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003084"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_066",
-   "to": "T_103",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_008100"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_771",
-   "to": "A_772",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019066"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "Albemarle과 SQM은 글로벌 리튬 채굴·화학 시장 양대 경쟁"
-  },
-  {
-   "from": "A_777",
-   "to": "A_778",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019067"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "Ganfeng과 Tianqi는 중국 리튬 화학 시장 직접 경쟁"
-  },
-  {
-   "from": "A_771",
-   "to": "A_777",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019068"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "Albemarle과 Ganfeng은 글로벌 리튬 공급 시장 경쟁"
-  },
-  {
-   "from": "A_772",
-   "to": "A_776",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019069"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "SQM과 Sigma Lithium은 남미 리튬 자원 개발 경쟁"
-  }
- ]
+  "links": [
+    {
+      "from": "A_771",
+      "to": "T_103",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003070"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_771",
+      "to": "C_2116",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003233"
+      ],
+      "confidence": 0.83,
+      "status": "verified"
+    },
+    {
+      "from": "A_772",
+      "to": "T_103",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003071"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_772",
+      "to": "C_2117",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003234"
+      ],
+      "confidence": 0.83,
+      "status": "verified"
+    },
+    {
+      "from": "A_773",
+      "to": "T_103",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003072"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_773",
+      "to": "C_2118",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003235"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_775",
+      "to": "T_103",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003074"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_775",
+      "to": "C_2120",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003237"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_776",
+      "to": "T_103",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003075"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_776",
+      "to": "C_2121",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003238"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_777",
+      "to": "T_103",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_008099"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_777",
+      "to": "C_2122",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003239"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_778",
+      "to": "T_103",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003077"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_778",
+      "to": "C_2123",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003240"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_110",
+      "to": "T_103",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003082"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_020",
+      "to": "T_103",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003083"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_239",
+      "to": "T_103",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003084"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_066",
+      "to": "T_103",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_008100"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_771",
+      "to": "A_772",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019066"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "Albemarle과 SQM은 글로벌 리튬 채굴·화학 시장 양대 경쟁"
+    },
+    {
+      "from": "A_777",
+      "to": "A_778",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019067"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "Ganfeng과 Tianqi는 중국 리튬 화학 시장 직접 경쟁"
+    },
+    {
+      "from": "A_771",
+      "to": "A_777",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019068"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "Albemarle과 Ganfeng은 글로벌 리튬 공급 시장 경쟁"
+    },
+    {
+      "from": "A_772",
+      "to": "A_776",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019069"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "SQM과 Sigma Lithium은 남미 리튬 자원 개발 경쟁"
+    }
+  ]
 }

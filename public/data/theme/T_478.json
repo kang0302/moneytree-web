@@ -1,773 +1,773 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_478",
- "themeName": "글로벌 스핀오프 신주 바스켓",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_478",
+  "themeName": "글로벌 스핀오프 신주 바스켓",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-25T00:00:00+09:00",
+    "description": "• 분사(스핀오프) 직후 저평가·재평가의 이벤트 드리븐 바스켓\n• 동인: 합병기대·주주환원정책·가치주투자심리확산\n• 대표주: 켄뷰(J&J 컨슈머헬스)·할레온(GSK 컨슈머헬스)·솔벤텀(3M 헬스케어 분사)\n• ETF: Invesco S&P Spin-Off ETF",
+    "notes": "T_478 신규 — 자산별 CHARACTER(사업특성/포지션), MACRO 3(기존 재사용)",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-25",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 2026 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화(회사·사업 특정), 2026 이벤트 2건 추가."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_478",
+      "type": "THEME",
+      "name": "글로벌 스핀오프 신주 바스켓"
+    },
+    {
+      "id": "A_2469",
+      "type": "ASSET",
+      "name": "켄뷰",
+      "exposure": {
+        "ticker": "KVUE",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.755319148936163,
+        "return_3d": -0.3645833333333348,
+        "return_15d": -3.335017685699848,
+        "return_1m": 0.7903055848261342,
+        "return_ytd": 10.89855072463768,
+        "return_1y": -10.981852024197302,
+        "return_3y": -16.353301268036734,
+        "close": 19.13,
+        "marketCap": 36729765819,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 0.7903055848261342,
+        "return_2y": -11.598890942698715
+      }
+    },
+    {
+      "id": "C_982",
+      "type": "CHARACTER",
+      "name": "J&J 컨슈머헬스 분사"
+    },
+    {
+      "id": "A_2474",
+      "type": "ASSET",
+      "name": "할레온",
+      "exposure": {
+        "ticker": "HLN",
+        "exchange": "NYSE",
+        "country": "GB"
+      },
+      "metrics": {
+        "return_1d": 1.5432098765431945,
+        "return_3d": 1.7525773195876226,
+        "return_15d": -3.988326848249024,
+        "return_1m": -2.2772277227722793,
+        "return_ytd": -2.3738872403560873,
+        "return_1y": 1.3347022587268942,
+        "return_3y": 19.78155339805825,
+        "close": 9.87,
+        "marketCap": 43465501065,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 0.7142857142856895,
+        "return_2y": 1.0235414534288667
+      }
+    },
+    {
+      "id": "C_983",
+      "type": "CHARACTER",
+      "name": "GSK 컨슈머헬스 분사"
+    },
+    {
+      "id": "A_2470",
+      "type": "ASSET",
+      "name": "솔벤텀",
+      "exposure": {
+        "ticker": "SOLV",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.41166380789021684,
+        "return_3d": -0.8804605485946526,
+        "return_15d": -0.8356860530773558,
+        "return_1m": 7.994096667076622,
+        "return_ytd": 10.81524482584555,
+        "return_1y": 21.502698215026996,
+        "return_3y": null,
+        "close": 87.81,
+        "marketCap": 15206471461,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 2.954625395708743,
+        "return_2y": 47.703952901597965
+      }
+    },
+    {
+      "id": "C_984",
+      "type": "CHARACTER",
+      "name": "3M 헬스케어 분사"
+    },
+    {
+      "id": "A_2471",
+      "type": "ASSET",
+      "name": "산도즈",
+      "exposure": {
+        "ticker": "SDZ",
+        "exchange": "SWX",
+        "country": "CH"
+      },
+      "metrics": {
+        "return_1d": -0.9766684753119925,
+        "return_3d": 1.3044684984734989,
+        "return_15d": 14.743791260609873,
+        "return_1m": 11.997545259281983,
+        "return_ytd": 27.744315377965666,
+        "return_1y": 55.94625194932814,
+        "return_3y": null,
+        "close": 73,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 0.3022808463863713,
+        "return_2y": 100.51419530631978
+      }
+    },
+    {
+      "id": "C_985",
+      "type": "CHARACTER",
+      "name": "Novartis 제네릭/시밀러 분사"
+    },
+    {
+      "id": "A_2363",
+      "type": "ASSET",
+      "name": "베랄토",
+      "exposure": {
+        "ticker": "VLTO",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 4.194857916102834,
+        "return_3d": 2.4774774774774633,
+        "return_15d": 1.2850349084286172,
+        "return_1m": 6.705042106385228,
+        "return_ytd": 0.32070555221486163,
+        "return_1y": -7.40055504162812,
+        "return_3y": null,
+        "close": 100.1,
+        "marketCap": 24403714335,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 3.54815351194786,
+        "return_2y": -8.651213725132322
+      }
+    },
+    {
+      "id": "C_986",
+      "type": "CHARACTER",
+      "name": "Danaher 수처리/품질 분사"
+    },
+    {
+      "id": "A_307",
+      "type": "ASSET",
+      "name": "GE에어로스페이스",
+      "exposure": {
+        "ticker": "GE",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -5.028126582953418,
+        "return_3d": -3.298224659319171,
+        "return_15d": 1.5971251746855764,
+        "return_1m": 2.121377175128303,
+        "return_ytd": 15.647826510404839,
+        "return_1y": 33.95630429060279,
+        "return_3y": 299.540152534769,
+        "close": 356.23,
+        "marketCap": 369610894006,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -2.4908986395861143,
+        "return_2y": 108.40695021353773
+      }
+    },
+    {
+      "id": "C_987",
+      "type": "CHARACTER",
+      "name": "GE 항공엔진 분사"
+    },
+    {
+      "id": "A_2473",
+      "type": "ASSET",
+      "name": "피니아",
+      "exposure": {
+        "ticker": "PHIN",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.5291723202170973,
+        "return_3d": -1.5841052490267016,
+        "return_15d": -10.739072202605616,
+        "return_1m": -8.52258547541802,
+        "return_ytd": 16.94050087733292,
+        "return_1y": 31.876236733225394,
+        "return_3y": 176.43288084464555,
+        "close": 73.31,
+        "marketCap": 2685938378,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -0.9592002161577851,
+        "return_2y": 57.72375215146302
+      }
+    },
+    {
+      "id": "C_988",
+      "type": "CHARACTER",
+      "name": "BorgWarner 연료/애프터마켓 분사"
+    },
+    {
+      "id": "A_2472",
+      "type": "ASSET",
+      "name": "킨드릴",
+      "exposure": {
+        "ticker": "KD",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.40551500405514584,
+        "return_3d": -5.998481397114652,
+        "return_15d": -11.634546752319764,
+        "return_1m": 1.8930041152263488,
+        "return_ytd": -53.388554216867455,
+        "return_1y": -58.788282290279625,
+        "return_3y": -21.64556962025316,
+        "close": 12.38,
+        "marketCap": 2730003035,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -5.351681957186538,
+        "return_2y": -47.408666100254884
+      }
+    },
+    {
+      "id": "C_989",
+      "type": "CHARACTER",
+      "name": "IBM IT인프라서비스 분사"
+    },
+    {
+      "id": "M_005",
+      "type": "MACRO",
+      "name": "합병기대"
+    },
+    {
+      "id": "M_173",
+      "type": "MACRO",
+      "name": "주주환원정책"
+    },
+    {
+      "id": "M_312",
+      "type": "MACRO",
+      "name": "가치주투자심리확산"
+    },
+    {
+      "id": "A_2947",
+      "type": "ASSET",
+      "name": "Invesco S&P Spin-Off ETF",
+      "exposure": {
+        "ticker": "CSD",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.08124676859442292,
+        "return_3d": -3.1153763517868582,
+        "return_15d": 2.6793168880455465,
+        "return_1m": -0.784745141180776,
+        "return_ytd": 35.64624486112504,
+        "return_1y": 55.94236311239194,
+        "return_3y": 138.42086711314766,
+        "close": 135.279,
+        "marketCap": 110626296,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -0.7629107981220629,
+        "return_2y": 83.35592301436702
+      }
+    }
   ],
-  "dataAsOf": "2026-07-25T00:00:00+09:00",
-  "description": "• 분사(스핀오프) 직후 저평가·재평가의 이벤트 드리븐 바스켓\n• 동인: 합병기대·주주환원정책·가치주투자심리확산\n• 대표주: 켄뷰(J&J 컨슈머헬스)·할레온(GSK 컨슈머헬스)·솔벤텀(3M 헬스케어 분사)\n• ETF: Invesco S&P Spin-Off ETF",
-  "notes": "T_478 신규 — 자산별 CHARACTER(사업특성/포지션), MACRO 3(기존 재사용)",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-25",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 2026 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화(회사·사업 특정), 2026 이벤트 2건 추가."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_2469",
+      "to": "T_478",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012124"
+      ]
+    },
+    {
+      "from": "A_2469",
+      "to": "C_982",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017066"
+      ]
+    },
+    {
+      "from": "A_2474",
+      "to": "T_478",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012125"
+      ]
+    },
+    {
+      "from": "A_2474",
+      "to": "C_983",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017067"
+      ]
+    },
+    {
+      "from": "A_2470",
+      "to": "T_478",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012126"
+      ]
+    },
+    {
+      "from": "A_2470",
+      "to": "C_984",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017068"
+      ]
+    },
+    {
+      "from": "A_2471",
+      "to": "T_478",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012127"
+      ]
+    },
+    {
+      "from": "A_2471",
+      "to": "C_985",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017069"
+      ]
+    },
+    {
+      "from": "A_2363",
+      "to": "T_478",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012128"
+      ]
+    },
+    {
+      "from": "A_2363",
+      "to": "C_986",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017070"
+      ]
+    },
+    {
+      "from": "A_307",
+      "to": "T_478",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012129"
+      ]
+    },
+    {
+      "from": "A_307",
+      "to": "C_987",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017071"
+      ]
+    },
+    {
+      "from": "A_2473",
+      "to": "T_478",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012130"
+      ]
+    },
+    {
+      "from": "A_2473",
+      "to": "C_988",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017072"
+      ]
+    },
+    {
+      "from": "A_2472",
+      "to": "T_478",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012131"
+      ]
+    },
+    {
+      "from": "A_2472",
+      "to": "C_989",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017073"
+      ]
+    },
+    {
+      "from": "M_005",
+      "to": "T_478",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012132"
+      ]
+    },
+    {
+      "from": "M_173",
+      "to": "T_478",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012133"
+      ]
+    },
+    {
+      "from": "M_312",
+      "to": "T_478",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012134"
+      ]
+    },
+    {
+      "from": "A_2469",
+      "to": "A_2474",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019841"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "켄뷰와 할레온은 글로벌 소비자 헬스케어 시장 직접 경쟁"
+    },
+    {
+      "from": "A_2470",
+      "to": "A_2469",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019842"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "솔벤텀과 켄뷰는 헬스케어 스핀오프 소비재·의료 시장 일부 경쟁"
+    },
+    {
+      "from": "A_2471",
+      "to": "A_2474",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019843"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "산도즈와 할레온은 제네릭·컨슈머헬스 시장 경쟁"
+    },
+    {
+      "from": "A_2363",
+      "to": "A_2470",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019844"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "베랄토와 솔벤텀은 산업·의료 스핀오프 기업 경쟁"
+    },
+    {
+      "from": "A_2947",
+      "to": "T_478",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020826"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_2469",
+      "to": "T_478",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012124"
+      ]
+    },
+    {
+      "from": "A_2469",
+      "to": "C_982",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017066"
+      ]
+    },
+    {
+      "from": "A_2474",
+      "to": "T_478",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012125"
+      ]
+    },
+    {
+      "from": "A_2474",
+      "to": "C_983",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017067"
+      ]
+    },
+    {
+      "from": "A_2470",
+      "to": "T_478",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012126"
+      ]
+    },
+    {
+      "from": "A_2470",
+      "to": "C_984",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017068"
+      ]
+    },
+    {
+      "from": "A_2471",
+      "to": "T_478",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012127"
+      ]
+    },
+    {
+      "from": "A_2471",
+      "to": "C_985",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017069"
+      ]
+    },
+    {
+      "from": "A_2363",
+      "to": "T_478",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012128"
+      ]
+    },
+    {
+      "from": "A_2363",
+      "to": "C_986",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017070"
+      ]
+    },
+    {
+      "from": "A_307",
+      "to": "T_478",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012129"
+      ]
+    },
+    {
+      "from": "A_307",
+      "to": "C_987",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017071"
+      ]
+    },
+    {
+      "from": "A_2473",
+      "to": "T_478",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012130"
+      ]
+    },
+    {
+      "from": "A_2473",
+      "to": "C_988",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017072"
+      ]
+    },
+    {
+      "from": "A_2472",
+      "to": "T_478",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_012131"
+      ]
+    },
+    {
+      "from": "A_2472",
+      "to": "C_989",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_017073"
+      ]
+    },
+    {
+      "from": "M_005",
+      "to": "T_478",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012132"
+      ]
+    },
+    {
+      "from": "M_173",
+      "to": "T_478",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012133"
+      ]
+    },
+    {
+      "from": "M_312",
+      "to": "T_478",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_012134"
+      ]
+    },
+    {
+      "from": "A_2469",
+      "to": "A_2474",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019841"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "켄뷰와 할레온은 글로벌 소비자 헬스케어 시장 직접 경쟁"
+    },
+    {
+      "from": "A_2470",
+      "to": "A_2469",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019842"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "솔벤텀과 켄뷰는 헬스케어 스핀오프 소비재·의료 시장 일부 경쟁"
+    },
+    {
+      "from": "A_2471",
+      "to": "A_2474",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019843"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "산도즈와 할레온은 제네릭·컨슈머헬스 시장 경쟁"
+    },
+    {
+      "from": "A_2363",
+      "to": "A_2470",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019844"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "베랄토와 솔벤텀은 산업·의료 스핀오프 기업 경쟁"
+    },
+    {
+      "from": "A_2947",
+      "to": "T_478",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020826"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_478",
-   "type": "THEME",
-   "name": "글로벌 스핀오프 신주 바스켓"
-  },
-  {
-   "id": "A_2469",
-   "type": "ASSET",
-   "name": "켄뷰",
-   "exposure": {
-    "ticker": "KVUE",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.0,
-    "return_3d": 0.7874015748031482,
-    "return_15d": -0.4149377593361092,
-    "return_1m": 2.3454157782515805,
-    "return_ytd": 11.304347826086957,
-    "return_1y": -8.83190883190883,
-    "return_3y": -16.303400174367923,
-    "close": 19.2,
-    "marketCap": 36864166426,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.15600624024961762,
-    "return_2y": -9.348441926345608
-   }
-  },
-  {
-   "id": "C_982",
-   "type": "CHARACTER",
-   "name": "J&J 컨슈머헬스 분사"
-  },
-  {
-   "id": "A_2474",
-   "type": "ASSET",
-   "name": "할레온",
-   "exposure": {
-    "ticker": "HLN",
-    "exchange": "NYSE",
-    "country": "GB"
-   },
-   "metrics": {
-    "return_1d": -1.0204081632653184,
-    "return_3d": -2.316213494461228,
-    "return_15d": -0.8179959100204526,
-    "return_1m": 0.0,
-    "return_ytd": -4.055390702274975,
-    "return_1y": 0.0,
-    "return_3y": 11.751152073732719,
-    "close": 9.7,
-    "marketCap": 42716855150,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -3.2901296111665035,
-    "return_2y": -0.7164790174002067
-   }
-  },
-  {
-   "id": "C_983",
-   "type": "CHARACTER",
-   "name": "GSK 컨슈머헬스 분사"
-  },
-  {
-   "id": "A_2470",
-   "type": "ASSET",
-   "name": "솔벤텀",
-   "exposure": {
-    "ticker": "SOLV",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 2.463566967383768,
-    "return_3d": 5.338882282996438,
-    "return_15d": 13.562363799512877,
-    "return_1m": 16.137912952281063,
-    "return_ytd": 11.799596163553772,
-    "return_1y": 21.02459016393443,
-    "return_3y": null,
-    "close": 88.59,
-    "marketCap": 15341547736,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 6.760665220535067,
-    "return_2y": 53.322949117341636
-   }
-  },
-  {
-   "id": "C_984",
-   "type": "CHARACTER",
-   "name": "3M 헬스케어 분사"
-  },
-  {
-   "id": "A_2471",
-   "type": "ASSET",
-   "name": "산도즈",
-   "exposure": {
-    "ticker": "SDZ",
-    "exchange": "SWX",
-    "country": "CH"
-   },
-   "metrics": {
-    "return_1d": -0.9766684753119925,
-    "return_3d": 1.3044684984734989,
-    "return_15d": 14.743791260609873,
-    "return_1m": 11.997545259281983,
-    "return_ytd": 27.744315377965666,
-    "return_1y": 55.94625194932814,
-    "return_3y": null,
-    "close": 73,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.3022808463863713,
-    "return_2y": 100.51419530631978
-   }
-  },
-  {
-   "id": "C_985",
-   "type": "CHARACTER",
-   "name": "Novartis 제네릭/시밀러 분사"
-  },
-  {
-   "id": "A_2363",
-   "type": "ASSET",
-   "name": "베랄토",
-   "exposure": {
-    "ticker": "VLTO",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.14353085913472174,
-    "return_3d": -0.2960089823415224,
-    "return_15d": 6.150836774614232,
-    "return_1m": 6.289445048966269,
-    "return_ytd": -2.1046301864100947,
-    "return_1y": -9.278350515463918,
-    "return_3y": null,
-    "close": 97.68,
-    "marketCap": 23813734428,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.6711409395973145,
-    "return_2y": -9.98064694498203
-   }
-  },
-  {
-   "id": "C_986",
-   "type": "CHARACTER",
-   "name": "Danaher 수처리/품질 분사"
-  },
-  {
-   "id": "A_307",
-   "type": "ASSET",
-   "name": "GE에어로스페이스",
-   "exposure": {
-    "ticker": "GE",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 2.1461845607808394,
-    "return_3d": 0.08694234635657772,
-    "return_15d": 4.141576908941835,
-    "return_1m": 4.141576908941835,
-    "return_ytd": 19.592247508359595,
-    "return_1y": 36.588802373007056,
-    "return_3y": 299.7612588171459,
-    "close": 368.38,
-    "marketCap": 382217278539,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.45936013834846356,
-    "return_2y": 119.3390890145877
-   }
-  },
-  {
-   "id": "C_987",
-   "type": "CHARACTER",
-   "name": "GE 항공엔진 분사"
-  },
-  {
-   "id": "A_2473",
-   "type": "ASSET",
-   "name": "피니아",
-   "exposure": {
-    "ticker": "PHIN",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.0444926749864303,
-    "return_3d": -0.5739455419113804,
-    "return_15d": -4.975124378109463,
-    "return_1m": -4.805111821086272,
-    "return_ytd": 18.822778752592107,
-    "return_1y": 33.27965646806226,
-    "return_3y": 162.01195919803024,
-    "close": 74.49,
-    "marketCap": 2729171324,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.560672807368845,
-    "return_2y": 68.11103588354771
-   }
-  },
-  {
-   "id": "C_988",
-   "type": "CHARACTER",
-   "name": "BorgWarner 연료/애프터마켓 분사"
-  },
-  {
-   "id": "A_2472",
-   "type": "ASSET",
-   "name": "킨드릴",
-   "exposure": {
-    "ticker": "KD",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -5.523672883787656,
-    "return_3d": -1.4221556886227504,
-    "return_15d": 9.294605809128619,
-    "return_1m": 13.436692506459957,
-    "return_ytd": -50.41415662650602,
-    "return_1y": -56.23130608175473,
-    "return_3y": -20.374848851269643,
-    "close": 13.17,
-    "marketCap": 2904211629,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -6.062767475035658,
-    "return_2y": -43.134715025906736
-   }
-  },
-  {
-   "id": "C_989",
-   "type": "CHARACTER",
-   "name": "IBM IT인프라서비스 분사"
-  },
-  {
-   "id": "M_005",
-   "type": "MACRO",
-   "name": "합병기대"
-  },
-  {
-   "id": "M_173",
-   "type": "MACRO",
-   "name": "주주환원정책"
-  },
-  {
-   "id": "M_312",
-   "type": "MACRO",
-   "name": "가치주투자심리확산"
-  },
-  {
-   "id": "A_2947",
-   "type": "ASSET",
-   "name": "Invesco S&P Spin-Off ETF",
-   "exposure": {
-    "ticker": "CSD",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.005497685185186,
-    "return_3d": 3.8759113227198494,
-    "return_15d": 3.2155529272619665,
-    "return_1m": 1.5343222803955614,
-    "return_ytd": 40.00802165847788,
-    "return_1y": 59.46779351301963,
-    "return_3y": 137.87052810902892,
-    "close": 139.625,
-    "marketCap": 114180299,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 4.108261258574397,
-    "return_2y": 94.36247216035633
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_2469",
-   "to": "T_478",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012124"
-   ]
-  },
-  {
-   "from": "A_2469",
-   "to": "C_982",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017066"
-   ]
-  },
-  {
-   "from": "A_2474",
-   "to": "T_478",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012125"
-   ]
-  },
-  {
-   "from": "A_2474",
-   "to": "C_983",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017067"
-   ]
-  },
-  {
-   "from": "A_2470",
-   "to": "T_478",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012126"
-   ]
-  },
-  {
-   "from": "A_2470",
-   "to": "C_984",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017068"
-   ]
-  },
-  {
-   "from": "A_2471",
-   "to": "T_478",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012127"
-   ]
-  },
-  {
-   "from": "A_2471",
-   "to": "C_985",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017069"
-   ]
-  },
-  {
-   "from": "A_2363",
-   "to": "T_478",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012128"
-   ]
-  },
-  {
-   "from": "A_2363",
-   "to": "C_986",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017070"
-   ]
-  },
-  {
-   "from": "A_307",
-   "to": "T_478",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012129"
-   ]
-  },
-  {
-   "from": "A_307",
-   "to": "C_987",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017071"
-   ]
-  },
-  {
-   "from": "A_2473",
-   "to": "T_478",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012130"
-   ]
-  },
-  {
-   "from": "A_2473",
-   "to": "C_988",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017072"
-   ]
-  },
-  {
-   "from": "A_2472",
-   "to": "T_478",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012131"
-   ]
-  },
-  {
-   "from": "A_2472",
-   "to": "C_989",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017073"
-   ]
-  },
-  {
-   "from": "M_005",
-   "to": "T_478",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012132"
-   ]
-  },
-  {
-   "from": "M_173",
-   "to": "T_478",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012133"
-   ]
-  },
-  {
-   "from": "M_312",
-   "to": "T_478",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012134"
-   ]
-  },
-  {
-   "from": "A_2469",
-   "to": "A_2474",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019841"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "켄뷰와 할레온은 글로벌 소비자 헬스케어 시장 직접 경쟁"
-  },
-  {
-   "from": "A_2470",
-   "to": "A_2469",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019842"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "솔벤텀과 켄뷰는 헬스케어 스핀오프 소비재·의료 시장 일부 경쟁"
-  },
-  {
-   "from": "A_2471",
-   "to": "A_2474",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019843"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "산도즈와 할레온은 제네릭·컨슈머헬스 시장 경쟁"
-  },
-  {
-   "from": "A_2363",
-   "to": "A_2470",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019844"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "베랄토와 솔벤텀은 산업·의료 스핀오프 기업 경쟁"
-  },
-  {
-   "from": "A_2947",
-   "to": "T_478",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020826"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_2469",
-   "to": "T_478",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012124"
-   ]
-  },
-  {
-   "from": "A_2469",
-   "to": "C_982",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017066"
-   ]
-  },
-  {
-   "from": "A_2474",
-   "to": "T_478",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012125"
-   ]
-  },
-  {
-   "from": "A_2474",
-   "to": "C_983",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017067"
-   ]
-  },
-  {
-   "from": "A_2470",
-   "to": "T_478",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012126"
-   ]
-  },
-  {
-   "from": "A_2470",
-   "to": "C_984",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017068"
-   ]
-  },
-  {
-   "from": "A_2471",
-   "to": "T_478",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012127"
-   ]
-  },
-  {
-   "from": "A_2471",
-   "to": "C_985",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017069"
-   ]
-  },
-  {
-   "from": "A_2363",
-   "to": "T_478",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012128"
-   ]
-  },
-  {
-   "from": "A_2363",
-   "to": "C_986",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017070"
-   ]
-  },
-  {
-   "from": "A_307",
-   "to": "T_478",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012129"
-   ]
-  },
-  {
-   "from": "A_307",
-   "to": "C_987",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017071"
-   ]
-  },
-  {
-   "from": "A_2473",
-   "to": "T_478",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012130"
-   ]
-  },
-  {
-   "from": "A_2473",
-   "to": "C_988",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017072"
-   ]
-  },
-  {
-   "from": "A_2472",
-   "to": "T_478",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_012131"
-   ]
-  },
-  {
-   "from": "A_2472",
-   "to": "C_989",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_017073"
-   ]
-  },
-  {
-   "from": "M_005",
-   "to": "T_478",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012132"
-   ]
-  },
-  {
-   "from": "M_173",
-   "to": "T_478",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012133"
-   ]
-  },
-  {
-   "from": "M_312",
-   "to": "T_478",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_012134"
-   ]
-  },
-  {
-   "from": "A_2469",
-   "to": "A_2474",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019841"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "켄뷰와 할레온은 글로벌 소비자 헬스케어 시장 직접 경쟁"
-  },
-  {
-   "from": "A_2470",
-   "to": "A_2469",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019842"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "솔벤텀과 켄뷰는 헬스케어 스핀오프 소비재·의료 시장 일부 경쟁"
-  },
-  {
-   "from": "A_2471",
-   "to": "A_2474",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019843"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "산도즈와 할레온은 제네릭·컨슈머헬스 시장 경쟁"
-  },
-  {
-   "from": "A_2363",
-   "to": "A_2470",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019844"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "베랄토와 솔벤텀은 산업·의료 스핀오프 기업 경쟁"
-  },
-  {
-   "from": "A_2947",
-   "to": "T_478",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020826"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

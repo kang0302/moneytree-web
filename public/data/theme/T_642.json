@@ -1,521 +1,521 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_642",
- "themeName": "글로벌바이오테크_희귀질환·CNS·유전자",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_642",
+  "themeName": "글로벌바이오테크_희귀질환·CNS·유전자",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-26T00:00:00+09:00",
+    "notes": "g146 누적 import 기반 글로벌 바이오테크",
+    "sources": [],
+    "provenanceSeed": "T_146 공개사실 시드(2026-06-29) — evidence_ssot 참조",
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 1건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-26",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
+      },
+      {
+        "date": "2026-07-19",
+        "kind": "분리",
+        "title": "글로벌바이오테크_희귀질환·CNS·유전자 분리 생성",
+        "detail": "T_146 분할. 매크로 공동 사용, XBI EXPOSED_TO 연결."
+      },
+      {
+        "date": "2026-07-11",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
+      }
+    ],
+    "description": "• 희귀질환·중추신경·유전자 치료 특화 바이오\n• 동인: 빅파마특허만료\n• 대표주: 바이오마린(희귀질환효소치료)·유나이티드테라퓨틱스(폐동맥고혈압유나이티)·뉴로크라인(신경정신)\n• ETF: XBI"
+  },
+  "nodes": [
+    {
+      "id": "T_642",
+      "type": "THEME",
+      "name": "글로벌바이오테크_희귀질환·CNS·유전자"
+    },
+    {
+      "id": "A_1007",
+      "type": "ASSET",
+      "name": "바이오마린",
+      "exposure": {
+        "ticker": "BMRN",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 3.4930586654724705,
+        "close": 69.33,
+        "marketCap": 13400379720,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 2.924584323040369,
+        "return_15d": 12.970506762261703,
+        "return_1m": 16.34502433294176,
+        "return_ytd": 16.658253407370015,
+        "return_1y": 20.973652067701963,
+        "return_3y": -22.144862436833236,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -1.2955580865603555,
+        "return_2y": -25.258732212160417
+      }
+    },
+    {
+      "id": "C_2561",
+      "type": "CHARACTER",
+      "name": "희귀질환효소치료(BMN)"
+    },
+    {
+      "id": "A_1015",
+      "type": "ASSET",
+      "name": "유나이티드테라퓨틱스",
+      "exposure": {
+        "ticker": "UTHR",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 2.097362378682921,
+        "close": 529.14,
+        "marketCap": 22460246838,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 5.885177996117896,
+        "return_15d": 0.8461978273298865,
+        "return_1m": -1.2190341068194943,
+        "return_ytd": 8.597229348383784,
+        "return_1y": 68.9355724410957,
+        "return_3y": 130.26109660574411,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 3.4042054248416997,
+        "return_2y": 51.79872626082967
+      }
+    },
+    {
+      "id": "C_2569",
+      "type": "CHARACTER",
+      "name": "폐동맥고혈압유나이티드"
+    },
+    {
+      "id": "A_1010",
+      "type": "ASSET",
+      "name": "뉴로크라인",
+      "exposure": {
+        "ticker": "NBIX",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.8493807949166765,
+        "close": 155.54,
+        "marketCap": 15639544356,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 1.8465165007857554,
+        "return_15d": -13.966480446927376,
+        "return_1m": -8.977059925093634,
+        "return_ytd": 9.66650215046181,
+        "return_1y": 17.114675099766586,
+        "return_3y": 45.418848167539274,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -0.6070675442520379,
+        "return_2y": 4.924446842957364
+      }
+    },
+    {
+      "id": "C_2564",
+      "type": "CHARACTER",
+      "name": "신경정신"
+    },
+    {
+      "id": "A_1014",
+      "type": "ASSET",
+      "name": "브리지바이오",
+      "exposure": {
+        "ticker": "BBIO",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.1689563750301168,
+        "close": 83.95,
+        "marketCap": 16442551266,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 5.121462559479095,
+        "return_15d": 0.4907828585108964,
+        "return_1m": 3.1580240845416663,
+        "return_ytd": 9.752908876977395,
+        "return_1y": 71.64179104477613,
+        "return_3y": 192.30501392757665,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 0.13120229007632656,
+        "return_2y": 233.53198251887167
+      }
+    },
+    {
+      "id": "C_2568",
+      "type": "CHARACTER",
+      "name": "심장희귀질환(TTR)"
+    },
+    {
+      "id": "A_1013",
+      "type": "ASSET",
+      "name": "다인테라퓨틱스",
+      "exposure": {
+        "ticker": "DYNE",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.0,
+        "close": 11,
+        "marketCap": 232936,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 0.0,
+        "return_15d": 0.0,
+        "return_1m": 0.0,
+        "return_ytd": 0.0,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 0.0,
+        "return_2y": null
+      }
+    },
+    {
+      "id": "C_2567",
+      "type": "CHARACTER",
+      "name": "근육질환유전자다인"
+    },
+    {
+      "id": "M_102",
+      "type": "MACRO",
+      "name": "빅파마특허만료"
+    },
+    {
+      "id": "A_1016",
+      "type": "ASSET",
+      "name": "XBI",
+      "exposure": {
+        "ticker": "XBI",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 5.8959465367559805,
+        "close": 169.55,
+        "marketCap": 8864993131,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "return_3d": 7.712343561400181,
+        "return_15d": 14.630518558582928,
+        "return_1m": 9.911837158044868,
+        "return_ytd": 39.0551956040351,
+        "return_1y": 90.93468468468471,
+        "return_3y": 118.68953953308399,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 6.374302026475953,
+        "return_2y": 68.12097174020826
+      }
+    }
   ],
-  "dataAsOf": "2026-07-26T00:00:00+09:00",
-  "notes": "g146 누적 import 기반 글로벌 바이오테크",
-  "sources": [],
-  "provenanceSeed": "T_146 공개사실 시드(2026-06-29) — evidence_ssot 참조",
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 1건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-26",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
-   },
-   {
-    "date": "2026-07-19",
-    "kind": "분리",
-    "title": "글로벌바이오테크_희귀질환·CNS·유전자 분리 생성",
-    "detail": "T_146 분할. 매크로 공동 사용, XBI EXPOSED_TO 연결."
-   },
-   {
-    "date": "2026-07-11",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
-   }
+  "edges": [
+    {
+      "from": "A_1007",
+      "to": "T_642",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013752"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1007",
+      "to": "C_2561",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004444"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1015",
+      "to": "T_642",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013753"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1015",
+      "to": "C_2569",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004452"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1010",
+      "to": "T_642",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013754"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1010",
+      "to": "C_2564",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004447"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1014",
+      "to": "T_642",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013755"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1014",
+      "to": "C_2568",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004451"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1013",
+      "to": "T_642",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013756"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1013",
+      "to": "C_2567",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004450"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_102",
+      "to": "T_642",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013757"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_1016",
+      "to": "T_642",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_008033"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1007",
+      "to": "A_1014",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018770"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "연골무형성증(왜소증) 치료제 시장에서 바이오마린의 승인약 Voxzogo와 브리지바이오의 경구 FGFR3 억제제 인피그라티닙이 임상3상 우월성 데이터로 정면 경쟁."
+    }
   ],
-  "description": "• 희귀질환·중추신경·유전자 치료 특화 바이오\n• 동인: 빅파마특허만료\n• 대표주: 바이오마린(희귀질환효소치료)·유나이티드테라퓨틱스(폐동맥고혈압유나이티)·뉴로크라인(신경정신)\n• ETF: XBI"
- },
- "nodes": [
-  {
-   "id": "T_642",
-   "type": "THEME",
-   "name": "글로벌바이오테크_희귀질환·CNS·유전자"
-  },
-  {
-   "id": "A_1007",
-   "type": "ASSET",
-   "name": "바이오마린",
-   "exposure": {
-    "ticker": "BMRN",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -1.7072814825623839,
-    "close": 67.36,
-    "marketCap": 13019610240,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -3.1488138030194124,
-    "return_15d": 13.534468228552177,
-    "return_1m": 14.870395634379264,
-    "return_ytd": 13.343429244489325,
-    "return_1y": 16.137931034482754,
-    "return_3y": -25.395946394949608,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 5.56339131797523,
-    "return_2y": -24.829818100658407
-   }
-  },
-  {
-   "id": "C_2561",
-   "type": "CHARACTER",
-   "name": "희귀질환효소치료(BMN)"
-  },
-  {
-   "id": "A_1015",
-   "type": "ASSET",
-   "name": "유나이티드테라퓨틱스",
-   "exposure": {
-    "ticker": "UTHR",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.3072196620583667,
-    "close": 499.73,
-    "marketCap": 21211889391,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -3.0591658583899117,
-    "return_15d": -5.43834087081575,
-    "return_1m": -5.113355865264113,
-    "return_ytd": 2.5613134940995375,
-    "return_1y": 60.139075818752815,
-    "return_3y": 114.23733173283033,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -7.258184247643085,
-    "return_2y": 54.29956464013339
-   }
-  },
-  {
-   "id": "C_2569",
-   "type": "CHARACTER",
-   "name": "폐동맥고혈압유나이티드"
-  },
-  {
-   "id": "A_1010",
-   "type": "ASSET",
-   "name": "뉴로크라인",
-   "exposure": {
-    "ticker": "NBIX",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.2597798700437757,
-    "close": 152.72,
-    "marketCap": 15355993404,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -5.693466716067674,
-    "return_15d": -13.113728167491612,
-    "return_1m": -11.229946524064172,
-    "return_ytd": 7.678206303320856,
-    "return_1y": 16.304927271342628,
-    "return_3y": 44.676013641530886,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -6.541827305550452,
-    "return_2y": 4.11070965982685
-   }
-  },
-  {
-   "id": "C_2564",
-   "type": "CHARACTER",
-   "name": "신경정신"
-  },
-  {
-   "id": "A_1014",
-   "type": "ASSET",
-   "name": "브리지바이오",
-   "exposure": {
-    "ticker": "BBIO",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -1.662356852604352,
-    "close": 79.86,
-    "marketCap": 15641478786,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -4.587813620071691,
-    "return_15d": -4.951202094739349,
-    "return_1m": -5.030324652158402,
-    "return_ytd": 4.405804680350389,
-    "return_1y": 56.03751465416178,
-    "return_3y": 153.12202852614897,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -5.46875,
-    "return_2y": 229.31958762886597
-   }
-  },
-  {
-   "id": "C_2568",
-   "type": "CHARACTER",
-   "name": "심장희귀질환(TTR)"
-  },
-  {
-   "id": "A_1013",
-   "type": "ASSET",
-   "name": "다인테라퓨틱스",
-   "exposure": {
-    "ticker": "DYNE",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.0,
-    "close": 11,
-    "marketCap": 232936,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": 0.0,
-    "return_15d": 0.0,
-    "return_1m": 0.0,
-    "return_ytd": 0.0,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.0,
-    "return_2y": null
-   }
-  },
-  {
-   "id": "C_2567",
-   "type": "CHARACTER",
-   "name": "근육질환유전자다인"
-  },
-  {
-   "id": "M_102",
-   "type": "MACRO",
-   "name": "빅파마특허만료"
-  },
-  {
-   "id": "A_1016",
-   "type": "ASSET",
-   "name": "XBI",
-   "exposure": {
-    "ticker": "XBI",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.3506311360448766,
-    "close": 157.41,
-    "marketCap": 8230248120,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "return_3d": -0.41753653444676075,
-    "return_15d": 4.6052631578947345,
-    "return_1m": 1.2608555805725397,
-    "return_ytd": 29.098663167391116,
-    "return_1y": 75.7396449704142,
-    "return_3y": 96.68874172185429,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 0.025417805172511798,
-    "return_2y": 63.81517327505464
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_1007",
-   "to": "T_642",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013752"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1007",
-   "to": "C_2561",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004444"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1015",
-   "to": "T_642",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013753"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1015",
-   "to": "C_2569",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004452"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1010",
-   "to": "T_642",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013754"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1010",
-   "to": "C_2564",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004447"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1014",
-   "to": "T_642",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013755"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1014",
-   "to": "C_2568",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004451"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1013",
-   "to": "T_642",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013756"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1013",
-   "to": "C_2567",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004450"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_102",
-   "to": "T_642",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013757"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_1016",
-   "to": "T_642",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_008033"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1007",
-   "to": "A_1014",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018770"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "연골무형성증(왜소증) 치료제 시장에서 바이오마린의 승인약 Voxzogo와 브리지바이오의 경구 FGFR3 억제제 인피그라티닙이 임상3상 우월성 데이터로 정면 경쟁."
-  }
- ],
- "links": [
-  {
-   "from": "A_1007",
-   "to": "T_642",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013752"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1007",
-   "to": "C_2561",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004444"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1015",
-   "to": "T_642",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013753"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1015",
-   "to": "C_2569",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004452"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1010",
-   "to": "T_642",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013754"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1010",
-   "to": "C_2564",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004447"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1014",
-   "to": "T_642",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013755"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1014",
-   "to": "C_2568",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004451"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1013",
-   "to": "T_642",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013756"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1013",
-   "to": "C_2567",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004450"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_102",
-   "to": "T_642",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013757"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_1016",
-   "to": "T_642",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_008033"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1007",
-   "to": "A_1014",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018770"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "연골무형성증(왜소증) 치료제 시장에서 바이오마린의 승인약 Voxzogo와 브리지바이오의 경구 FGFR3 억제제 인피그라티닙이 임상3상 우월성 데이터로 정면 경쟁."
-  }
- ]
+  "links": [
+    {
+      "from": "A_1007",
+      "to": "T_642",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013752"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1007",
+      "to": "C_2561",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004444"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1015",
+      "to": "T_642",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013753"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1015",
+      "to": "C_2569",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004452"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1010",
+      "to": "T_642",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013754"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1010",
+      "to": "C_2564",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004447"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1014",
+      "to": "T_642",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013755"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1014",
+      "to": "C_2568",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004451"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1013",
+      "to": "T_642",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013756"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1013",
+      "to": "C_2567",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004450"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_102",
+      "to": "T_642",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013757"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_1016",
+      "to": "T_642",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_008033"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1007",
+      "to": "A_1014",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018770"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "연골무형성증(왜소증) 치료제 시장에서 바이오마린의 승인약 Voxzogo와 브리지바이오의 경구 FGFR3 억제제 인피그라티닙이 임상3상 우월성 데이터로 정면 경쟁."
+    }
+  ]
 }

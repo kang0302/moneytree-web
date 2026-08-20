@@ -1,876 +1,876 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_460",
- "themeName": "글로벌 CRO/CDMO",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_460",
+  "themeName": "글로벌 CRO/CDMO",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-26T00:00:00+09:00",
+    "description": "• 글로벌 빅파마 R&D·아웃소싱 + GLP-1/바이오의약품 생산 capa 수요\n• 동인: 글로벌빅파마투자·바이오혁신·GLP-1비만약사이클\n• 대표주: 아이큐비아(글로벌 CRO)·아이콘(글로벌 CRO 2위)·써모피셔(생명과학 툴)",
+    "notes": "T_460 신규 — 자산별 CHARACTER(사업특성/포지션), MACRO 3 (기존 재사용)",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-26",
+        "kind": "수정",
+        "title": "삼성바이오 펩타이드CDMO/KH바텍 폴더블·로봇 보강",
+        "detail": "신규 매크로·CHR·2궤도 관계·2026 이벤트 추가."
+      },
+      {
+        "date": "2026-07-25",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결, 2026 이벤트 2건 추가."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_460",
+      "type": "THEME",
+      "name": "글로벌 CRO/CDMO"
+    },
+    {
+      "id": "A_2393",
+      "type": "ASSET",
+      "name": "아이큐비아",
+      "exposure": {
+        "ticker": "IQV",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 3.8536849560471653,
+        "return_3d": 5.332544578720522,
+        "return_15d": 0.6947810631765972,
+        "return_1m": 20.85717056142733,
+        "return_ytd": 10.589592298478333,
+        "return_1y": 29.597088640499102,
+        "return_3y": 16.496868866249194,
+        "close": 249.28,
+        "marketCap": 41031488000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 3.131852219601994,
+        "return_2y": 2.537945785858242
+      }
+    },
+    {
+      "id": "C_833",
+      "type": "CHARACTER",
+      "name": "글로벌 CRO·헬스 데이터 1위"
+    },
+    {
+      "id": "A_2394",
+      "type": "ASSET",
+      "name": "아이콘",
+      "exposure": {
+        "ticker": "ICLR",
+        "exchange": "NASDAQ",
+        "country": "IE"
+      },
+      "metrics": {
+        "return_1d": 3.256510026938031,
+        "return_3d": 5.724793135151707,
+        "return_15d": -3.1933999326523743,
+        "return_1m": 1.4647058823529457,
+        "return_ytd": -5.339699264625175,
+        "return_1y": -3.9801825873970076,
+        "return_3y": -31.097707118319086,
+        "close": 172.49,
+        "marketCap": 13207093577,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 3.1823891846623376,
+        "return_2y": -46.91145240220369
+      }
+    },
+    {
+      "id": "C_834",
+      "type": "CHARACTER",
+      "name": "글로벌 CRO 2위"
+    },
+    {
+      "id": "A_2395",
+      "type": "ASSET",
+      "name": "써모피셔",
+      "exposure": {
+        "ticker": "TMO",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 4.159310063832677,
+        "return_3d": 4.29210083462237,
+        "return_15d": 6.432363043402822,
+        "return_1m": 15.223106971153832,
+        "return_ytd": 5.883165070325291,
+        "return_1y": 23.129101527223096,
+        "return_3y": 15.24474999060821,
+        "close": 613.54,
+        "marketCap": 228004348340,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 1.7462396975174599,
+        "return_2y": 0.9776168531928864
+      }
+    },
+    {
+      "id": "C_835",
+      "type": "CHARACTER",
+      "name": "생명과학 툴·CDMO 1위"
+    },
+    {
+      "id": "A_2396",
+      "type": "ASSET",
+      "name": "찰스리버",
+      "exposure": {
+        "ticker": "CRL",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 3.871915183208574,
+        "return_3d": 3.5529369755400886,
+        "return_15d": 23.50936967632027,
+        "return_1m": 29.262313349676838,
+        "return_ytd": 45.37798275516343,
+        "return_1y": 82.98838970217064,
+        "return_3y": 45.801910507792854,
+        "close": 290.0,
+        "marketCap": 13968633000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 1.9798150297148043,
+        "return_2y": 42.14292716400352
+      }
+    },
+    {
+      "id": "C_836",
+      "type": "CHARACTER",
+      "name": "전임상 CRO 1위"
+    },
+    {
+      "id": "A_2397",
+      "type": "ASSET",
+      "name": "론자",
+      "exposure": {
+        "ticker": "LONN",
+        "exchange": "SWX",
+        "country": "CH"
+      },
+      "metrics": {
+        "return_1d": -1.7807262569832338,
+        "return_3d": -2.2245394508168204,
+        "return_15d": 2.6642335766423386,
+        "return_1m": -3.3997252747252626,
+        "return_ytd": 5.708404137546452,
+        "return_1y": 3.063774969974853,
+        "return_3y": 16.726374994579672,
+        "close": 562.6,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -1.6777350576721473,
+        "return_2y": 4.011024503045091
+      }
+    },
+    {
+      "id": "C_837",
+      "type": "CHARACTER",
+      "name": "글로벌 바이오 CDMO 1위"
+    },
+    {
+      "id": "A_1088",
+      "type": "ASSET",
+      "name": "우시앱텍",
+      "exposure": {
+        "ticker": "603259",
+        "exchange": "SSE",
+        "country": "CN"
+      },
+      "metrics": {
+        "return_1d": -1.9021414044742224,
+        "return_3d": 2.989198693795525,
+        "return_15d": 29.644268774703562,
+        "return_1m": 39.1127322079905,
+        "return_ytd": 80.93556928508386,
+        "return_1y": 81.69731885663639,
+        "return_3y": 110.87823068021088,
+        "close": 164.0,
+        "marketCap": 405617960344,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 3.118712273641866,
+        "return_2y": 312.3711340206185
+      }
+    },
+    {
+      "id": "C_838",
+      "type": "CHARACTER",
+      "name": "중국 CRDMO 통합"
+    },
+    {
+      "id": "A_2398",
+      "type": "ASSET",
+      "name": "우시바이오로직스",
+      "exposure": {
+        "ticker": "2269",
+        "exchange": "HKEX",
+        "country": "CN"
+      },
+      "metrics": {
+        "return_1d": -1.3997529847673884,
+        "return_3d": 6.114311032343811,
+        "return_15d": 21.635347892331126,
+        "return_1m": 29.529475392103844,
+        "return_ytd": 52.35368956743001,
+        "return_1y": 60.84620550705171,
+        "return_3y": 19.600499375780277,
+        "close": 47.9,
+        "marketCap": 198476524000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 4.814004376367609,
+        "return_2y": 301.8456375838926
+      }
+    },
+    {
+      "id": "C_839",
+      "type": "CHARACTER",
+      "name": "글로벌 항체 CDMO"
+    },
+    {
+      "id": "A_719",
+      "type": "ASSET",
+      "name": "삼성바이오로직스",
+      "exposure": {
+        "ticker": "207940",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.8491182233834049,
+        "return_3d": -1.2787723785166238,
+        "return_15d": -0.32278889606197625,
+        "return_1m": 14.79553903345725,
+        "return_ytd": -8.25906120023767,
+        "return_1y": -4.452504029749682,
+        "return_3y": 26.801733448503384,
+        "close": 1544000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": -0.5141388174807249,
+        "return_2y": 20.263973189857797
+      }
+    },
+    {
+      "id": "C_840",
+      "type": "CHARACTER",
+      "name": "글로벌 바이오 CDMO 1티어"
+    },
+    {
+      "id": "A_2399",
+      "type": "ASSET",
+      "name": "메드페이스",
+      "exposure": {
+        "ticker": "MEDP",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 3.0442148060308316,
+        "return_3d": 5.146067415730338,
+        "return_15d": 3.9902210520917025,
+        "return_1m": 13.118107600468631,
+        "return_ytd": 8.300543042820262,
+        "return_1y": 31.620288224347593,
+        "return_3y": 143.619833386735,
+        "close": 608.27,
+        "marketCap": 16977849759,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 1.8911856343595934,
+        "return_2y": 55.16696002652994
+      }
+    },
+    {
+      "id": "C_841",
+      "type": "CHARACTER",
+      "name": "중소형 임상 CRO"
+    },
+    {
+      "id": "M_157",
+      "type": "MACRO",
+      "name": "글로벌빅파마투자"
+    },
+    {
+      "id": "M_345",
+      "type": "MACRO",
+      "name": "바이오혁신"
+    },
+    {
+      "id": "M_350",
+      "type": "MACRO",
+      "name": "GLP-1비만약사이클"
+    },
+    {
+      "id": "M_248",
+      "type": "MACRO",
+      "name": "비만약확산"
+    },
+    {
+      "id": "C_5144",
+      "type": "CHARACTER",
+      "name": "펩타이드CDMO수직계열화"
+    }
   ],
-  "dataAsOf": "2026-07-26T00:00:00+09:00",
-  "description": "• 글로벌 빅파마 R&D·아웃소싱 + GLP-1/바이오의약품 생산 capa 수요\n• 동인: 글로벌빅파마투자·바이오혁신·GLP-1비만약사이클\n• 대표주: 아이큐비아(글로벌 CRO)·아이콘(글로벌 CRO 2위)·써모피셔(생명과학 툴)",
-  "notes": "T_460 신규 — 자산별 CHARACTER(사업특성/포지션), MACRO 3 (기존 재사용)",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-26",
-    "kind": "수정",
-    "title": "삼성바이오 펩타이드CDMO/KH바텍 폴더블·로봇 보강",
-    "detail": "신규 매크로·CHR·2궤도 관계·2026 이벤트 추가."
-   },
-   {
-    "date": "2026-07-25",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 자산 CHR + 2026 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산별 특징 CHR 연결, 2026 이벤트 2건 추가."
-   }
+  "edges": [
+    {
+      "from": "A_2393",
+      "to": "T_460",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011927"
+      ]
+    },
+    {
+      "from": "A_2393",
+      "to": "C_833",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016924"
+      ]
+    },
+    {
+      "from": "A_2394",
+      "to": "T_460",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011928"
+      ]
+    },
+    {
+      "from": "A_2394",
+      "to": "C_834",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016925"
+      ]
+    },
+    {
+      "from": "A_2395",
+      "to": "T_460",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011929"
+      ]
+    },
+    {
+      "from": "A_2395",
+      "to": "C_835",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016926"
+      ]
+    },
+    {
+      "from": "A_2396",
+      "to": "T_460",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011930"
+      ]
+    },
+    {
+      "from": "A_2396",
+      "to": "C_836",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016927"
+      ]
+    },
+    {
+      "from": "A_2397",
+      "to": "T_460",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011931"
+      ]
+    },
+    {
+      "from": "A_2397",
+      "to": "C_837",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016928"
+      ]
+    },
+    {
+      "from": "A_1088",
+      "to": "T_460",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011932"
+      ]
+    },
+    {
+      "from": "A_1088",
+      "to": "C_838",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016929"
+      ]
+    },
+    {
+      "from": "A_2398",
+      "to": "T_460",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011933"
+      ]
+    },
+    {
+      "from": "A_2398",
+      "to": "C_839",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016930"
+      ]
+    },
+    {
+      "from": "A_719",
+      "to": "T_460",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011934"
+      ]
+    },
+    {
+      "from": "A_719",
+      "to": "C_840",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016931"
+      ]
+    },
+    {
+      "from": "A_2399",
+      "to": "T_460",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011935"
+      ]
+    },
+    {
+      "from": "A_2399",
+      "to": "C_841",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016932"
+      ]
+    },
+    {
+      "from": "M_157",
+      "to": "T_460",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011936"
+      ]
+    },
+    {
+      "from": "M_345",
+      "to": "T_460",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011937"
+      ]
+    },
+    {
+      "from": "M_350",
+      "to": "T_460",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011938"
+      ]
+    },
+    {
+      "from": "M_248",
+      "to": "T_460",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_014080"
+      ]
+    },
+    {
+      "from": "A_719",
+      "to": "C_5144",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014081"
+      ]
+    },
+    {
+      "from": "A_2393",
+      "to": "A_2394",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019747"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "아이큐비아와 아이콘은 글로벌 CRO 시장 양대 경쟁"
+    },
+    {
+      "from": "A_2395",
+      "to": "A_2396",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019748"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "써모피셔와 찰스리버는 전임상·연구 서비스 시장 경쟁"
+    },
+    {
+      "from": "A_2397",
+      "to": "A_719",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019749"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "론자와 삼성바이오로직스는 글로벌 바이오 CDMO 시장 양대 경쟁"
+    },
+    {
+      "from": "A_1088",
+      "to": "A_2398",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_019750"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "우시앱텍과 우시바이오로직스는 우시 계열 CRO·CDMO 사업 연계"
+    },
+    {
+      "from": "A_2398",
+      "to": "A_719",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019751"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "우시바이오로직스와 삼성바이오로직스는 항체 CDMO 시장 경쟁"
+    },
+    {
+      "from": "A_2393",
+      "to": "A_2399",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019752"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "아이큐비아와 메드페이스는 임상시험 CRO 시장 경쟁"
+    }
+  ],
+  "links": [
+    {
+      "from": "A_2393",
+      "to": "T_460",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011927"
+      ]
+    },
+    {
+      "from": "A_2393",
+      "to": "C_833",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016924"
+      ]
+    },
+    {
+      "from": "A_2394",
+      "to": "T_460",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011928"
+      ]
+    },
+    {
+      "from": "A_2394",
+      "to": "C_834",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016925"
+      ]
+    },
+    {
+      "from": "A_2395",
+      "to": "T_460",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011929"
+      ]
+    },
+    {
+      "from": "A_2395",
+      "to": "C_835",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016926"
+      ]
+    },
+    {
+      "from": "A_2396",
+      "to": "T_460",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011930"
+      ]
+    },
+    {
+      "from": "A_2396",
+      "to": "C_836",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016927"
+      ]
+    },
+    {
+      "from": "A_2397",
+      "to": "T_460",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011931"
+      ]
+    },
+    {
+      "from": "A_2397",
+      "to": "C_837",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016928"
+      ]
+    },
+    {
+      "from": "A_1088",
+      "to": "T_460",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011932"
+      ]
+    },
+    {
+      "from": "A_1088",
+      "to": "C_838",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016929"
+      ]
+    },
+    {
+      "from": "A_2398",
+      "to": "T_460",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011933"
+      ]
+    },
+    {
+      "from": "A_2398",
+      "to": "C_839",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016930"
+      ]
+    },
+    {
+      "from": "A_719",
+      "to": "T_460",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011934"
+      ]
+    },
+    {
+      "from": "A_719",
+      "to": "C_840",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016931"
+      ]
+    },
+    {
+      "from": "A_2399",
+      "to": "T_460",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011935"
+      ]
+    },
+    {
+      "from": "A_2399",
+      "to": "C_841",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016932"
+      ]
+    },
+    {
+      "from": "M_157",
+      "to": "T_460",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011936"
+      ]
+    },
+    {
+      "from": "M_345",
+      "to": "T_460",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011937"
+      ]
+    },
+    {
+      "from": "M_350",
+      "to": "T_460",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011938"
+      ]
+    },
+    {
+      "from": "M_248",
+      "to": "T_460",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_014080"
+      ]
+    },
+    {
+      "from": "A_719",
+      "to": "C_5144",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014081"
+      ]
+    },
+    {
+      "from": "A_2393",
+      "to": "A_2394",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019747"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "아이큐비아와 아이콘은 글로벌 CRO 시장 양대 경쟁"
+    },
+    {
+      "from": "A_2395",
+      "to": "A_2396",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019748"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "써모피셔와 찰스리버는 전임상·연구 서비스 시장 경쟁"
+    },
+    {
+      "from": "A_2397",
+      "to": "A_719",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019749"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "론자와 삼성바이오로직스는 글로벌 바이오 CDMO 시장 양대 경쟁"
+    },
+    {
+      "from": "A_1088",
+      "to": "A_2398",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_019750"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "우시앱텍과 우시바이오로직스는 우시 계열 CRO·CDMO 사업 연계"
+    },
+    {
+      "from": "A_2398",
+      "to": "A_719",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019751"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "우시바이오로직스와 삼성바이오로직스는 항체 CDMO 시장 경쟁"
+    },
+    {
+      "from": "A_2393",
+      "to": "A_2399",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019752"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "아이큐비아와 메드페이스는 임상시험 CRO 시장 경쟁"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_460",
-   "type": "THEME",
-   "name": "글로벌 CRO/CDMO"
-  },
-  {
-   "id": "A_2393",
-   "type": "ASSET",
-   "name": "아이큐비아",
-   "exposure": {
-    "ticker": "IQV",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -2.0122557138125274,
-    "return_3d": -2.944553805774286,
-    "return_15d": 13.751502042778174,
-    "return_1m": 13.871914545542019,
-    "return_ytd": 4.990905461159656,
-    "return_1y": 24.95248152059133,
-    "return_3y": 7.514083227330537,
-    "close": 236.66,
-    "marketCap": 38954236000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.8546292417260126,
-    "return_2y": 0.1905084458744266
-   }
-  },
-  {
-   "id": "C_833",
-   "type": "CHARACTER",
-   "name": "글로벌 CRO·헬스 데이터 1위"
-  },
-  {
-   "id": "A_2394",
-   "type": "ASSET",
-   "name": "아이콘",
-   "exposure": {
-    "ticker": "ICLR",
-    "exchange": "NASDAQ",
-    "country": "IE"
-   },
-   "metrics": {
-    "return_1d": -2.585383329352753,
-    "return_3d": -1.467568546925957,
-    "return_15d": -1.574565637065628,
-    "return_1m": -2.869560040483421,
-    "return_ytd": -10.465371528921086,
-    "return_1y": -6.962819343065696,
-    "return_3y": -37.05875544924964,
-    "close": 163.15,
-    "marketCap": 12491954995,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.8266974651996772,
-    "return_2y": -48.601222355239116
-   }
-  },
-  {
-   "id": "C_834",
-   "type": "CHARACTER",
-   "name": "글로벌 CRO 2위"
-  },
-  {
-   "id": "A_2395",
-   "type": "ASSET",
-   "name": "써모피셔",
-   "exposure": {
-    "ticker": "TMO",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -1.275403178438983,
-    "return_3d": -2.7619834710743807,
-    "return_15d": 3.524794988209612,
-    "return_1m": 10.152227236130074,
-    "return_ytd": 1.5255846060919787,
-    "return_1y": 21.286904172851706,
-    "return_3y": 8.874042269682047,
-    "close": 588.29,
-    "marketCap": 218620918090,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -0.9612794612794628,
-    "return_2y": -2.2936389304102356
-   }
-  },
-  {
-   "id": "C_835",
-   "type": "CHARACTER",
-   "name": "생명과학 툴·CDMO 1위"
-  },
-  {
-   "id": "A_2396",
-   "type": "ASSET",
-   "name": "찰스리버",
-   "exposure": {
-    "ticker": "CRL",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.43374693355138216,
-    "return_3d": -0.6914893617021245,
-    "return_15d": 23.598728925765734,
-    "return_1m": 21.123653821201515,
-    "return_ytd": 40.39001403649489,
-    "return_1y": 79.74967907573811,
-    "return_3y": 29.11479944674966,
-    "close": 280.05,
-    "marketCap": 13489364385,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 4.695502635612536,
-    "return_2y": 41.04759506421556
-   }
-  },
-  {
-   "id": "C_836",
-   "type": "CHARACTER",
-   "name": "전임상 CRO 1위"
-  },
-  {
-   "id": "A_2397",
-   "type": "ASSET",
-   "name": "론자",
-   "exposure": {
-    "ticker": "LONN",
-    "exchange": "SWX",
-    "country": "CH"
-   },
-   "metrics": {
-    "return_1d": -1.7807262569832338,
-    "return_3d": -2.2245394508168204,
-    "return_15d": 2.6642335766423386,
-    "return_1m": -3.3997252747252626,
-    "return_ytd": 5.708404137546452,
-    "return_1y": 3.063774969974853,
-    "return_3y": 16.726374994579672,
-    "close": 562.6,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -1.6777350576721473,
-    "return_2y": 4.011024503045091
-   }
-  },
-  {
-   "id": "C_837",
-   "type": "CHARACTER",
-   "name": "글로벌 바이오 CDMO 1위"
-  },
-  {
-   "id": "A_1088",
-   "type": "ASSET",
-   "name": "우시앱텍",
-   "exposure": {
-    "ticker": "603259",
-    "exchange": "SSE",
-    "country": "CN"
-   },
-   "metrics": {
-    "return_1d": -1.9035298466087647,
-    "return_3d": -0.6054553398664231,
-    "return_15d": 27.392000000000017,
-    "return_1m": 24.88432279821191,
-    "return_ytd": 75.68402471315095,
-    "return_1y": 61.37008512363194,
-    "return_3y": 102.87934768760354,
-    "close": 159.24,
-    "marketCap": 393845146373,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 2.8549283038367346,
-    "return_2y": 299.398043641836
-   }
-  },
-  {
-   "id": "C_838",
-   "type": "CHARACTER",
-   "name": "중국 CRDMO 통합"
-  },
-  {
-   "id": "A_2398",
-   "type": "ASSET",
-   "name": "우시바이오로직스",
-   "exposure": {
-    "ticker": "2269",
-    "exchange": "HKEX",
-    "country": "CN"
-   },
-   "metrics": {
-    "return_1d": -1.2685914260717412,
-    "return_3d": -1.8268812527185707,
-    "return_15d": 15.447570332480808,
-    "return_1m": 18.16753926701571,
-    "return_ytd": 43.575063613231556,
-    "return_1y": 46.463335496430894,
-    "return_3y": 6.08695652173914,
-    "close": 45.14,
-    "marketCap": 187040298400,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -1.5699956389010006,
-    "return_2y": 302.3172905525847
-   }
-  },
-  {
-   "id": "C_839",
-   "type": "CHARACTER",
-   "name": "글로벌 항체 CDMO"
-  },
-  {
-   "id": "A_719",
-   "type": "ASSET",
-   "name": "삼성바이오로직스",
-   "exposure": {
-    "ticker": "207940",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -1.0230179028132946,
-    "return_3d": -3.7911746426351756,
-    "return_15d": 1.976284584980248,
-    "return_1m": 11.93058568329719,
-    "return_ytd": -8.021390374331549,
-    "return_1y": -2.630004158510235,
-    "return_3y": 26.801733448503384,
-    "close": 1548000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-14",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "EODHD",
-    "return_5d": -0.5141388174807249,
-    "return_2y": 18.30854321619826
-   }
-  },
-  {
-   "id": "C_840",
-   "type": "CHARACTER",
-   "name": "글로벌 바이오 CDMO 1티어"
-  },
-  {
-   "id": "A_2399",
-   "type": "ASSET",
-   "name": "메드페이스",
-   "exposure": {
-    "ticker": "MEDP",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.5928344359481086,
-    "return_3d": -4.459124690338568,
-    "return_15d": -3.8045827929096387,
-    "return_1m": 7.894884085271481,
-    "return_ytd": 3.000089023413155,
-    "return_1y": 26.1282867483539,
-    "return_3y": 117.79233491453955,
-    "close": 578.5,
-    "marketCap": 16146918450,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -2.060372119796161,
-    "return_2y": 50.181723779854615
-   }
-  },
-  {
-   "id": "C_841",
-   "type": "CHARACTER",
-   "name": "중소형 임상 CRO"
-  },
-  {
-   "id": "M_157",
-   "type": "MACRO",
-   "name": "글로벌빅파마투자"
-  },
-  {
-   "id": "M_345",
-   "type": "MACRO",
-   "name": "바이오혁신"
-  },
-  {
-   "id": "M_350",
-   "type": "MACRO",
-   "name": "GLP-1비만약사이클"
-  },
-  {
-   "id": "M_248",
-   "type": "MACRO",
-   "name": "비만약확산"
-  },
-  {
-   "id": "C_5144",
-   "type": "CHARACTER",
-   "name": "펩타이드CDMO수직계열화"
-  }
- ],
- "edges": [
-  {
-   "from": "A_2393",
-   "to": "T_460",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011927"
-   ]
-  },
-  {
-   "from": "A_2393",
-   "to": "C_833",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016924"
-   ]
-  },
-  {
-   "from": "A_2394",
-   "to": "T_460",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011928"
-   ]
-  },
-  {
-   "from": "A_2394",
-   "to": "C_834",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016925"
-   ]
-  },
-  {
-   "from": "A_2395",
-   "to": "T_460",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011929"
-   ]
-  },
-  {
-   "from": "A_2395",
-   "to": "C_835",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016926"
-   ]
-  },
-  {
-   "from": "A_2396",
-   "to": "T_460",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011930"
-   ]
-  },
-  {
-   "from": "A_2396",
-   "to": "C_836",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016927"
-   ]
-  },
-  {
-   "from": "A_2397",
-   "to": "T_460",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011931"
-   ]
-  },
-  {
-   "from": "A_2397",
-   "to": "C_837",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016928"
-   ]
-  },
-  {
-   "from": "A_1088",
-   "to": "T_460",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011932"
-   ]
-  },
-  {
-   "from": "A_1088",
-   "to": "C_838",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016929"
-   ]
-  },
-  {
-   "from": "A_2398",
-   "to": "T_460",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011933"
-   ]
-  },
-  {
-   "from": "A_2398",
-   "to": "C_839",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016930"
-   ]
-  },
-  {
-   "from": "A_719",
-   "to": "T_460",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011934"
-   ]
-  },
-  {
-   "from": "A_719",
-   "to": "C_840",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016931"
-   ]
-  },
-  {
-   "from": "A_2399",
-   "to": "T_460",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011935"
-   ]
-  },
-  {
-   "from": "A_2399",
-   "to": "C_841",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016932"
-   ]
-  },
-  {
-   "from": "M_157",
-   "to": "T_460",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011936"
-   ]
-  },
-  {
-   "from": "M_345",
-   "to": "T_460",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011937"
-   ]
-  },
-  {
-   "from": "M_350",
-   "to": "T_460",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011938"
-   ]
-  },
-  {
-   "from": "M_248",
-   "to": "T_460",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_014080"
-   ]
-  },
-  {
-   "from": "A_719",
-   "to": "C_5144",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014081"
-   ]
-  },
-  {
-   "from": "A_2393",
-   "to": "A_2394",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019747"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "아이큐비아와 아이콘은 글로벌 CRO 시장 양대 경쟁"
-  },
-  {
-   "from": "A_2395",
-   "to": "A_2396",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019748"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "써모피셔와 찰스리버는 전임상·연구 서비스 시장 경쟁"
-  },
-  {
-   "from": "A_2397",
-   "to": "A_719",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019749"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "론자와 삼성바이오로직스는 글로벌 바이오 CDMO 시장 양대 경쟁"
-  },
-  {
-   "from": "A_1088",
-   "to": "A_2398",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_019750"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "우시앱텍과 우시바이오로직스는 우시 계열 CRO·CDMO 사업 연계"
-  },
-  {
-   "from": "A_2398",
-   "to": "A_719",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019751"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "우시바이오로직스와 삼성바이오로직스는 항체 CDMO 시장 경쟁"
-  },
-  {
-   "from": "A_2393",
-   "to": "A_2399",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019752"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "아이큐비아와 메드페이스는 임상시험 CRO 시장 경쟁"
-  }
- ],
- "links": [
-  {
-   "from": "A_2393",
-   "to": "T_460",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011927"
-   ]
-  },
-  {
-   "from": "A_2393",
-   "to": "C_833",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016924"
-   ]
-  },
-  {
-   "from": "A_2394",
-   "to": "T_460",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011928"
-   ]
-  },
-  {
-   "from": "A_2394",
-   "to": "C_834",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016925"
-   ]
-  },
-  {
-   "from": "A_2395",
-   "to": "T_460",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011929"
-   ]
-  },
-  {
-   "from": "A_2395",
-   "to": "C_835",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016926"
-   ]
-  },
-  {
-   "from": "A_2396",
-   "to": "T_460",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011930"
-   ]
-  },
-  {
-   "from": "A_2396",
-   "to": "C_836",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016927"
-   ]
-  },
-  {
-   "from": "A_2397",
-   "to": "T_460",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011931"
-   ]
-  },
-  {
-   "from": "A_2397",
-   "to": "C_837",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016928"
-   ]
-  },
-  {
-   "from": "A_1088",
-   "to": "T_460",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011932"
-   ]
-  },
-  {
-   "from": "A_1088",
-   "to": "C_838",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016929"
-   ]
-  },
-  {
-   "from": "A_2398",
-   "to": "T_460",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011933"
-   ]
-  },
-  {
-   "from": "A_2398",
-   "to": "C_839",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016930"
-   ]
-  },
-  {
-   "from": "A_719",
-   "to": "T_460",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011934"
-   ]
-  },
-  {
-   "from": "A_719",
-   "to": "C_840",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016931"
-   ]
-  },
-  {
-   "from": "A_2399",
-   "to": "T_460",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011935"
-   ]
-  },
-  {
-   "from": "A_2399",
-   "to": "C_841",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016932"
-   ]
-  },
-  {
-   "from": "M_157",
-   "to": "T_460",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011936"
-   ]
-  },
-  {
-   "from": "M_345",
-   "to": "T_460",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011937"
-   ]
-  },
-  {
-   "from": "M_350",
-   "to": "T_460",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011938"
-   ]
-  },
-  {
-   "from": "M_248",
-   "to": "T_460",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_014080"
-   ]
-  },
-  {
-   "from": "A_719",
-   "to": "C_5144",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014081"
-   ]
-  },
-  {
-   "from": "A_2393",
-   "to": "A_2394",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019747"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "아이큐비아와 아이콘은 글로벌 CRO 시장 양대 경쟁"
-  },
-  {
-   "from": "A_2395",
-   "to": "A_2396",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019748"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "써모피셔와 찰스리버는 전임상·연구 서비스 시장 경쟁"
-  },
-  {
-   "from": "A_2397",
-   "to": "A_719",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019749"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "론자와 삼성바이오로직스는 글로벌 바이오 CDMO 시장 양대 경쟁"
-  },
-  {
-   "from": "A_1088",
-   "to": "A_2398",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_019750"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "우시앱텍과 우시바이오로직스는 우시 계열 CRO·CDMO 사업 연계"
-  },
-  {
-   "from": "A_2398",
-   "to": "A_719",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019751"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "우시바이오로직스와 삼성바이오로직스는 항체 CDMO 시장 경쟁"
-  },
-  {
-   "from": "A_2393",
-   "to": "A_2399",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019752"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "아이큐비아와 메드페이스는 임상시험 CRO 시장 경쟁"
-  }
- ]
 }

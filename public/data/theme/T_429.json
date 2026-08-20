@@ -1,656 +1,656 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_429",
- "themeName": "미국LNG_인프라_수출",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_429",
+  "themeName": "미국LNG_인프라_수출",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-25T00:00:00+09:00",
+    "description": "• 미국 LNG 수출 확대 + 에너지 개발 + 유가 사이클\n• 동인: 미국LNG수출확대·미국에너지개발확대·유가상승\n• 대표주: 셰니어에너지(미국LNG수출1위)·넥스트디케이드(RioGrandeL)·텔루리안(비)(Tellurian)",
+    "notes": "T_429 신규 — Russell 2000",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 7건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-25",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 2026 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화(회사·사업 특정), 2026 이벤트 2건 추가."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_429",
+      "type": "THEME",
+      "name": "미국LNG_인프라_수출"
+    },
+    {
+      "id": "A_489",
+      "type": "ASSET",
+      "name": "셰니어에너지",
+      "exposure": {
+        "ticker": "LNG",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.18993352326686086,
+        "return_3d": 0.9792372257399595,
+        "return_15d": 6.067050771431881,
+        "return_1m": 4.455445544554459,
+        "return_ytd": 41.108081691445044,
+        "return_1y": 19.053819444444443,
+        "return_3y": 67.35814521049421,
+        "close": 274.3,
+        "marketCap": 57480113600,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 2.3087538696803467,
+        "return_2y": 47.401794830458385
+      }
+    },
+    {
+      "id": "C_651",
+      "type": "CHARACTER",
+      "name": "미국LNG수출1위_SabinePass"
+    },
+    {
+      "id": "A_2261",
+      "type": "ASSET",
+      "name": "넥스트디케이드",
+      "exposure": {
+        "ticker": "NEXT",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -2.8901734104046284,
+        "return_3d": -6.536856745479847,
+        "return_15d": 5.993690851735023,
+        "return_1m": -12.5,
+        "return_ytd": 27.514231499051235,
+        "return_1y": -29.1886195995785,
+        "return_3y": 11.813643926788675,
+        "close": 6.72,
+        "marketCap": 1788763200,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -0.591715976331364,
+        "return_2y": 42.67515923566878
+      }
+    },
+    {
+      "id": "C_652",
+      "type": "CHARACTER",
+      "name": "RioGrandeLNG_2027출시"
+    },
+    {
+      "id": "A_2262",
+      "type": "ASSET",
+      "name": "텔루리안(비)",
+      "exposure": {
+        "ticker": "",
+        "exchange": "",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "returnsAsOf": null,
+        "returnsSource": null,
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "Tellurian_Woodside인수"
+    },
+    {
+      "id": "C_653",
+      "type": "CHARACTER",
+      "name": "Tellurian_Woodside인수"
+    },
+    {
+      "id": "A_2263",
+      "type": "ASSET",
+      "name": "벤처글로벌",
+      "exposure": {
+        "ticker": "VG",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -2.887323943661968,
+        "return_3d": -1.4295925661186648,
+        "return_15d": 5.6704980842911645,
+        "return_1m": -0.07246376811594901,
+        "return_ytd": 102.19941348973607,
+        "return_1y": 12.571428571428566,
+        "return_3y": null,
+        "close": 13.79,
+        "marketCap": 33673103709,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 0.5102040816326481,
+        "return_2y": null
+      }
+    },
+    {
+      "id": "C_654",
+      "type": "CHARACTER",
+      "name": "VentureGlobal_CalcasieuPass"
+    },
+    {
+      "id": "A_2264",
+      "type": "ASSET",
+      "name": "뉴포트리스에너지",
+      "exposure": {
+        "ticker": "NFE",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.054063243794645,
+        "return_3d": -8.29990743597654,
+        "return_15d": -8.638180141407915,
+        "return_1m": -16.680684048219796,
+        "return_ytd": -73.9298245614035,
+        "return_1y": -87.02183406113537,
+        "return_3y": -98.96912937911897,
+        "close": 0.2922,
+        "marketCap": 83462445,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": -9.66565349544073,
+        "return_2y": -97.72956455309397
+      }
+    },
+    {
+      "id": "C_655",
+      "type": "CHARACTER",
+      "name": "신흥국LNG_FSRU"
+    },
+    {
+      "id": "A_2265",
+      "type": "ASSET",
+      "name": "엑셀러레이트에너지",
+      "exposure": {
+        "ticker": "EE",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 2.3892617449664533,
+        "return_3d": 4.122304122304121,
+        "return_15d": 2.36178207192701,
+        "return_1m": -2.0795892169448105,
+        "return_ytd": 35.971479500891256,
+        "return_1y": 61.884550084889646,
+        "return_3y": 93.30968068930562,
+        "close": 38.14,
+        "marketCap": 4408946318,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-19",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-19",
+        "returnsSource": "FMP",
+        "return_5d": 6.6853146853146805,
+        "return_2y": 95.28929851510495
+      }
+    },
+    {
+      "id": "C_656",
+      "type": "CHARACTER",
+      "name": "FSRU운영_LNG수입터미널"
+    },
+    {
+      "id": "M_409",
+      "type": "MACRO",
+      "name": "미국LNG수출확대"
+    },
+    {
+      "id": "M_073",
+      "type": "MACRO",
+      "name": "미국에너지개발확대"
+    },
+    {
+      "id": "M_059",
+      "type": "MACRO",
+      "name": "유가상승"
+    }
   ],
-  "dataAsOf": "2026-07-25T00:00:00+09:00",
-  "description": "• 미국 LNG 수출 확대 + 에너지 개발 + 유가 사이클\n• 동인: 미국LNG수출확대·미국에너지개발확대·유가상승\n• 대표주: 셰니어에너지(미국LNG수출1위)·넥스트디케이드(RioGrandeL)·텔루리안(비)(Tellurian)",
-  "notes": "T_429 신규 — Russell 2000",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 7건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-25",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 2026 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화(회사·사업 특정), 2026 이벤트 2건 추가."
-   }
+  "edges": [
+    {
+      "from": "A_489",
+      "to": "T_429",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011614"
+      ]
+    },
+    {
+      "from": "A_489",
+      "to": "C_651",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016625"
+      ]
+    },
+    {
+      "from": "A_2261",
+      "to": "T_429",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011615"
+      ]
+    },
+    {
+      "from": "A_2261",
+      "to": "C_652",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016626"
+      ]
+    },
+    {
+      "from": "A_2262",
+      "to": "T_429",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011616"
+      ]
+    },
+    {
+      "from": "A_2262",
+      "to": "C_653",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016627"
+      ]
+    },
+    {
+      "from": "A_2263",
+      "to": "T_429",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011617"
+      ]
+    },
+    {
+      "from": "A_2263",
+      "to": "C_654",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016628"
+      ]
+    },
+    {
+      "from": "A_2264",
+      "to": "T_429",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011618"
+      ]
+    },
+    {
+      "from": "A_2264",
+      "to": "C_655",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016629"
+      ]
+    },
+    {
+      "from": "A_2265",
+      "to": "T_429",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011619"
+      ]
+    },
+    {
+      "from": "A_2265",
+      "to": "C_656",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016630"
+      ]
+    },
+    {
+      "from": "M_409",
+      "to": "T_429",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011620"
+      ]
+    },
+    {
+      "from": "M_073",
+      "to": "T_429",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011621"
+      ]
+    },
+    {
+      "from": "M_059",
+      "to": "T_429",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011622"
+      ]
+    },
+    {
+      "from": "A_489",
+      "to": "A_2263",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018218"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "셰니어에너지와 벤처글로벌은 현재 상업 규모로 생산 중인 미국 걸프코스트 LNG 수출 양대 선두주자로 직접 경쟁."
+    },
+    {
+      "from": "A_489",
+      "to": "A_2261",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018219"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "셰니어에너지와 넥스트디케이드(리오그란데 LNG)는 걸프코스트 LNG 수출 터미널 사업에서 경쟁."
+    },
+    {
+      "from": "A_2263",
+      "to": "A_2261",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018220"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "벤처글로벌과 넥스트디케이드는 걸프코스트 신규 LNG 수출 프로젝트를 놓고 장기계약·물량 유치 경쟁."
+    },
+    {
+      "from": "A_489",
+      "to": "A_2262",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018221"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "텔루리안(드리프트우드 LNG)은 셰니어에너지와 같은 미국 걸프코스트 LNG 수출 터미널 개발 경쟁자."
+    },
+    {
+      "from": "A_2263",
+      "to": "A_2262",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018222"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "텔루리안 드리프트우드 프로젝트는 벤처글로벌과 같은 걸프코스트 LNG 수출 개발 사업을 두고 경쟁."
+    },
+    {
+      "from": "A_2261",
+      "to": "A_2262",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018223"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "넥스트디케이드와 텔루리안 모두 개발 단계 걸프코스트 LNG 수출 프로젝트로 상호 경쟁."
+    },
+    {
+      "from": "A_2263",
+      "to": "A_2265",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018224"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "벤처글로벌이 2023년 엑셀러레이트에너지와 20년 SPA를 맺어 Plaquemines LNG에서 연 0.7MTPA를 FOB 공급(공급자 벤처글로벌→고객 엑셀러레이트)."
+    }
+  ],
+  "links": [
+    {
+      "from": "A_489",
+      "to": "T_429",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011614"
+      ]
+    },
+    {
+      "from": "A_489",
+      "to": "C_651",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016625"
+      ]
+    },
+    {
+      "from": "A_2261",
+      "to": "T_429",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011615"
+      ]
+    },
+    {
+      "from": "A_2261",
+      "to": "C_652",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016626"
+      ]
+    },
+    {
+      "from": "A_2262",
+      "to": "T_429",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011616"
+      ]
+    },
+    {
+      "from": "A_2262",
+      "to": "C_653",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016627"
+      ]
+    },
+    {
+      "from": "A_2263",
+      "to": "T_429",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011617"
+      ]
+    },
+    {
+      "from": "A_2263",
+      "to": "C_654",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016628"
+      ]
+    },
+    {
+      "from": "A_2264",
+      "to": "T_429",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011618"
+      ]
+    },
+    {
+      "from": "A_2264",
+      "to": "C_655",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016629"
+      ]
+    },
+    {
+      "from": "A_2265",
+      "to": "T_429",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_011619"
+      ]
+    },
+    {
+      "from": "A_2265",
+      "to": "C_656",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_016630"
+      ]
+    },
+    {
+      "from": "M_409",
+      "to": "T_429",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011620"
+      ]
+    },
+    {
+      "from": "M_073",
+      "to": "T_429",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011621"
+      ]
+    },
+    {
+      "from": "M_059",
+      "to": "T_429",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_011622"
+      ]
+    },
+    {
+      "from": "A_489",
+      "to": "A_2263",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018218"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "셰니어에너지와 벤처글로벌은 현재 상업 규모로 생산 중인 미국 걸프코스트 LNG 수출 양대 선두주자로 직접 경쟁."
+    },
+    {
+      "from": "A_489",
+      "to": "A_2261",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018219"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "셰니어에너지와 넥스트디케이드(리오그란데 LNG)는 걸프코스트 LNG 수출 터미널 사업에서 경쟁."
+    },
+    {
+      "from": "A_2263",
+      "to": "A_2261",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018220"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "벤처글로벌과 넥스트디케이드는 걸프코스트 신규 LNG 수출 프로젝트를 놓고 장기계약·물량 유치 경쟁."
+    },
+    {
+      "from": "A_489",
+      "to": "A_2262",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018221"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "텔루리안(드리프트우드 LNG)은 셰니어에너지와 같은 미국 걸프코스트 LNG 수출 터미널 개발 경쟁자."
+    },
+    {
+      "from": "A_2263",
+      "to": "A_2262",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018222"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "텔루리안 드리프트우드 프로젝트는 벤처글로벌과 같은 걸프코스트 LNG 수출 개발 사업을 두고 경쟁."
+    },
+    {
+      "from": "A_2261",
+      "to": "A_2262",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018223"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "넥스트디케이드와 텔루리안 모두 개발 단계 걸프코스트 LNG 수출 프로젝트로 상호 경쟁."
+    },
+    {
+      "from": "A_2263",
+      "to": "A_2265",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018224"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "벤처글로벌이 2023년 엑셀러레이트에너지와 20년 SPA를 맺어 Plaquemines LNG에서 연 0.7MTPA를 FOB 공급(공급자 벤처글로벌→고객 엑셀러레이트)."
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_429",
-   "type": "THEME",
-   "name": "미국LNG_인프라_수출"
-  },
-  {
-   "id": "A_489",
-   "type": "ASSET",
-   "name": "셰니어에너지",
-   "exposure": {
-    "ticker": "LNG",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.9363554488141643,
-    "return_3d": 2.33959989451078,
-    "return_15d": 0.7118493252261437,
-    "return_1m": 2.4940572765347335,
-    "return_ytd": 39.739698544163794,
-    "return_1y": 16.769118342432176,
-    "return_3y": 65.04040342669664,
-    "close": 271.64,
-    "marketCap": 56922705280,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 6.051378152572817,
-    "return_2y": 47.53421681512056
-   }
-  },
-  {
-   "id": "C_651",
-   "type": "CHARACTER",
-   "name": "미국LNG수출1위_SabinePass"
-  },
-  {
-   "id": "A_2261",
-   "type": "ASSET",
-   "name": "넥스트디케이드",
-   "exposure": {
-    "ticker": "NEXT",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 6.047197640117985,
-    "return_3d": 6.5185185185185235,
-    "return_15d": 2.567760342368053,
-    "return_1m": -12.102689486552565,
-    "return_ytd": 36.432637571157514,
-    "return_1y": -27.883650952858574,
-    "return_3y": 30.018083182640144,
-    "close": 7.19,
-    "marketCap": 1913870150,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 7.313432835820888,
-    "return_2y": 48.55371900826449
-   }
-  },
-  {
-   "id": "C_652",
-   "type": "CHARACTER",
-   "name": "RioGrandeLNG_2027출시"
-  },
-  {
-   "id": "A_2262",
-   "type": "ASSET",
-   "name": "텔루리안(비)",
-   "exposure": {
-    "ticker": "",
-    "exchange": "",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "returnsAsOf": null,
-    "returnsSource": null,
-    "return_5d": null,
-    "return_2y": null
-   },
-   "coreBiz": "Tellurian_Woodside인수"
-  },
-  {
-   "id": "C_653",
-   "type": "CHARACTER",
-   "name": "Tellurian_Woodside인수"
-  },
-  {
-   "id": "A_2263",
-   "type": "ASSET",
-   "name": "벤처글로벌",
-   "exposure": {
-    "ticker": "VG",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 3.323485967503692,
-    "return_3d": 5.824508320726163,
-    "return_15d": -2.236198462613559,
-    "return_1m": 5.7445200302343125,
-    "return_ytd": 105.13196480938416,
-    "return_1y": 2.0423048869438354,
-    "return_3y": null,
-    "close": 13.99,
-    "marketCap": 34161473596,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 5.505279034690802,
-    "return_2y": null
-   }
-  },
-  {
-   "id": "C_654",
-   "type": "CHARACTER",
-   "name": "VentureGlobal_CalcasieuPass"
-  },
-  {
-   "id": "A_2264",
-   "type": "ASSET",
-   "name": "뉴포트리스에너지",
-   "exposure": {
-    "ticker": "NFE",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.4606879606879666,
-    "return_3d": -1.579107197084717,
-    "return_15d": -8.160952111079622,
-    "return_1m": -7.399999999999995,
-    "return_ytd": -71.5701754385965,
-    "return_1y": -86.43933054393305,
-    "return_3y": -98.86040787623067,
-    "close": 0.3241,
-    "marketCap": 92574190,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": -8.446327683615817,
-    "return_2y": -97.67836676217765
-   }
-  },
-  {
-   "id": "C_655",
-   "type": "CHARACTER",
-   "name": "신흥국LNG_FSRU"
-  },
-  {
-   "id": "A_2265",
-   "type": "ASSET",
-   "name": "엑셀러레이트에너지",
-   "exposure": {
-    "ticker": "EE",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 2.8932584269663053,
-    "return_3d": 3.5916289592760275,
-    "return_15d": -5.177323323841576,
-    "return_1m": -5.422153369481009,
-    "return_ytd": 30.58823529411765,
-    "return_1y": 50.122950819672155,
-    "return_3y": 88.52290272774061,
-    "close": 36.63,
-    "marketCap": 4234391810,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-16",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-14",
-    "returnsSource": "FMP",
-    "return_5d": 5.047318611987395,
-    "return_2y": 88.81443298969074
-   }
-  },
-  {
-   "id": "C_656",
-   "type": "CHARACTER",
-   "name": "FSRU운영_LNG수입터미널"
-  },
-  {
-   "id": "M_409",
-   "type": "MACRO",
-   "name": "미국LNG수출확대"
-  },
-  {
-   "id": "M_073",
-   "type": "MACRO",
-   "name": "미국에너지개발확대"
-  },
-  {
-   "id": "M_059",
-   "type": "MACRO",
-   "name": "유가상승"
-  }
- ],
- "edges": [
-  {
-   "from": "A_489",
-   "to": "T_429",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011614"
-   ]
-  },
-  {
-   "from": "A_489",
-   "to": "C_651",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016625"
-   ]
-  },
-  {
-   "from": "A_2261",
-   "to": "T_429",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011615"
-   ]
-  },
-  {
-   "from": "A_2261",
-   "to": "C_652",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016626"
-   ]
-  },
-  {
-   "from": "A_2262",
-   "to": "T_429",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011616"
-   ]
-  },
-  {
-   "from": "A_2262",
-   "to": "C_653",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016627"
-   ]
-  },
-  {
-   "from": "A_2263",
-   "to": "T_429",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011617"
-   ]
-  },
-  {
-   "from": "A_2263",
-   "to": "C_654",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016628"
-   ]
-  },
-  {
-   "from": "A_2264",
-   "to": "T_429",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011618"
-   ]
-  },
-  {
-   "from": "A_2264",
-   "to": "C_655",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016629"
-   ]
-  },
-  {
-   "from": "A_2265",
-   "to": "T_429",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011619"
-   ]
-  },
-  {
-   "from": "A_2265",
-   "to": "C_656",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016630"
-   ]
-  },
-  {
-   "from": "M_409",
-   "to": "T_429",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011620"
-   ]
-  },
-  {
-   "from": "M_073",
-   "to": "T_429",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011621"
-   ]
-  },
-  {
-   "from": "M_059",
-   "to": "T_429",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011622"
-   ]
-  },
-  {
-   "from": "A_489",
-   "to": "A_2263",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018218"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "셰니어에너지와 벤처글로벌은 현재 상업 규모로 생산 중인 미국 걸프코스트 LNG 수출 양대 선두주자로 직접 경쟁."
-  },
-  {
-   "from": "A_489",
-   "to": "A_2261",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018219"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "셰니어에너지와 넥스트디케이드(리오그란데 LNG)는 걸프코스트 LNG 수출 터미널 사업에서 경쟁."
-  },
-  {
-   "from": "A_2263",
-   "to": "A_2261",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018220"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "벤처글로벌과 넥스트디케이드는 걸프코스트 신규 LNG 수출 프로젝트를 놓고 장기계약·물량 유치 경쟁."
-  },
-  {
-   "from": "A_489",
-   "to": "A_2262",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018221"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "텔루리안(드리프트우드 LNG)은 셰니어에너지와 같은 미국 걸프코스트 LNG 수출 터미널 개발 경쟁자."
-  },
-  {
-   "from": "A_2263",
-   "to": "A_2262",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018222"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "텔루리안 드리프트우드 프로젝트는 벤처글로벌과 같은 걸프코스트 LNG 수출 개발 사업을 두고 경쟁."
-  },
-  {
-   "from": "A_2261",
-   "to": "A_2262",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018223"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "넥스트디케이드와 텔루리안 모두 개발 단계 걸프코스트 LNG 수출 프로젝트로 상호 경쟁."
-  },
-  {
-   "from": "A_2263",
-   "to": "A_2265",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018224"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "벤처글로벌이 2023년 엑셀러레이트에너지와 20년 SPA를 맺어 Plaquemines LNG에서 연 0.7MTPA를 FOB 공급(공급자 벤처글로벌→고객 엑셀러레이트)."
-  }
- ],
- "links": [
-  {
-   "from": "A_489",
-   "to": "T_429",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011614"
-   ]
-  },
-  {
-   "from": "A_489",
-   "to": "C_651",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016625"
-   ]
-  },
-  {
-   "from": "A_2261",
-   "to": "T_429",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011615"
-   ]
-  },
-  {
-   "from": "A_2261",
-   "to": "C_652",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016626"
-   ]
-  },
-  {
-   "from": "A_2262",
-   "to": "T_429",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011616"
-   ]
-  },
-  {
-   "from": "A_2262",
-   "to": "C_653",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016627"
-   ]
-  },
-  {
-   "from": "A_2263",
-   "to": "T_429",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011617"
-   ]
-  },
-  {
-   "from": "A_2263",
-   "to": "C_654",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016628"
-   ]
-  },
-  {
-   "from": "A_2264",
-   "to": "T_429",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011618"
-   ]
-  },
-  {
-   "from": "A_2264",
-   "to": "C_655",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016629"
-   ]
-  },
-  {
-   "from": "A_2265",
-   "to": "T_429",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_011619"
-   ]
-  },
-  {
-   "from": "A_2265",
-   "to": "C_656",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_016630"
-   ]
-  },
-  {
-   "from": "M_409",
-   "to": "T_429",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011620"
-   ]
-  },
-  {
-   "from": "M_073",
-   "to": "T_429",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011621"
-   ]
-  },
-  {
-   "from": "M_059",
-   "to": "T_429",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_011622"
-   ]
-  },
-  {
-   "from": "A_489",
-   "to": "A_2263",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018218"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "셰니어에너지와 벤처글로벌은 현재 상업 규모로 생산 중인 미국 걸프코스트 LNG 수출 양대 선두주자로 직접 경쟁."
-  },
-  {
-   "from": "A_489",
-   "to": "A_2261",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018219"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "셰니어에너지와 넥스트디케이드(리오그란데 LNG)는 걸프코스트 LNG 수출 터미널 사업에서 경쟁."
-  },
-  {
-   "from": "A_2263",
-   "to": "A_2261",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018220"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "벤처글로벌과 넥스트디케이드는 걸프코스트 신규 LNG 수출 프로젝트를 놓고 장기계약·물량 유치 경쟁."
-  },
-  {
-   "from": "A_489",
-   "to": "A_2262",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018221"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "텔루리안(드리프트우드 LNG)은 셰니어에너지와 같은 미국 걸프코스트 LNG 수출 터미널 개발 경쟁자."
-  },
-  {
-   "from": "A_2263",
-   "to": "A_2262",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018222"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "텔루리안 드리프트우드 프로젝트는 벤처글로벌과 같은 걸프코스트 LNG 수출 개발 사업을 두고 경쟁."
-  },
-  {
-   "from": "A_2261",
-   "to": "A_2262",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018223"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "넥스트디케이드와 텔루리안 모두 개발 단계 걸프코스트 LNG 수출 프로젝트로 상호 경쟁."
-  },
-  {
-   "from": "A_2263",
-   "to": "A_2265",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018224"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "벤처글로벌이 2023년 엑셀러레이트에너지와 20년 SPA를 맺어 Plaquemines LNG에서 연 0.7MTPA를 FOB 공급(공급자 벤처글로벌→고객 엑셀러레이트)."
-  }
- ]
 }
