@@ -196,6 +196,13 @@ const GRAPH_CONFIG = {
 const LINK_STRENGTH          = 0.3;
 const TOWARD_PARENT_STRENGTH = 0.18; // L3/L4 → parent 각도 방향성 force (약하게: 형제 노드들이 collide로 펼쳐지게 둠)
 
+// 🛰 허브형 테마 전용 반경 (2026-08-21 사용자 요청): 테마명↔1궤도(허브)·1궤도↔2궤도(자산) 간격을
+//   기존의 70%로 압축하되, 2궤도에 매달린 CHR/BF 노드는 자산 링 "바깥쪽"으로 밀어 시각 균형 확보.
+const HUB_L1_RADIUS      = 140;  // 200 × 0.7  (테마↔상단 매크로/특성)
+const HUB_L2_RADIUS      = 210;  // 300 × 0.7  (테마↔허브 코어 자산)
+const HUB_L3_ASSET_BASE  = 300;  // 400 → 압축 (허브↔2궤도 자산; 라벨 겹침 시 동적 확장은 유지)
+const HUB_CHR_OUTWARD    = 130;  // CHR/BF를 부모(자산·허브) 반경 + 이만큼 바깥으로 배치
+
 // Angular sectors (canvas coords: -π/2 = 12시, +π/2 = 6시)
 // Layer1 (Theme 직접 연결 Macro/Character/BF/EXPOSED_TO Asset): 12시 중심, 10~2시 부채꼴
 const LAYER1_CENTER_ANGLE = -Math.PI / 2;        // -90°  (12시)
@@ -1500,6 +1507,9 @@ export default function ForceGraphWrapper({
       return Math.atan2((nb.y as number) - cy, (nb.x as number) - cx);
     };
 
+    // 🛰 허브형 판정 (force effect와 동일 기준) — 반경 압축·CHR 외곽화에 사용.
+    const isHubTheme = layerInfo.layer2.size <= 2 && layerInfo.layer3.size >= 4;
+
     // 3궤도 Asset: 같은 부모(L2 asset)에 매달린 자식들을 한 그룹으로 묶어
     // ±LAYER3_ASSET_JITTER 폭 안에서 균등 stack (이전 random jitter는 우연한 중첩 발생).
     //   - 자산은 큰 노드라 라벨까지 고려해 stack step을 동적 계산
@@ -1525,8 +1535,9 @@ export default function ForceGraphWrapper({
       const count = group.length;
 
       // 1) 자연 step (기본 jitter, 기본 radius) 계산.
+      //    허브형은 허브↔자산 간격을 압축 (라벨 겹침 시 아래 동적 확장이 다시 벌림).
       let jitter = LAYER3_ASSET_JITTER;
-      let radius: number = GRAPH_CONFIG.orbitRadius.l3;
+      let radius: number = isHubTheme ? HUB_L3_ASSET_BASE : GRAPH_CONFIG.orbitRadius.l3;
       let step   = count > 1 ? (2 * jitter) / count : 0;
       let arc    = step * radius;
 
@@ -1570,16 +1581,25 @@ export default function ForceGraphWrapper({
       if (!l3GroupByNb.has(nbId)) l3GroupByNb.set(nbId, []);
       l3GroupByNb.get(nbId)!.push(node);
     }
+    // 허브형: 자산 링의 최외곽 반경을 구해, 허브에 매달린 CHR/BF를 그 "바깥쪽"에 배치.
+    let l3AssetOuter: number = isHubTheme ? HUB_L3_ASSET_BASE : GRAPH_CONFIG.orbitRadius.l3;
+    for (const n of l3Assets) {
+      const r = (n as any).__layoutRadius;
+      if (typeof r === "number" && r > l3AssetOuter) l3AssetOuter = r;
+    }
+    const hubChrRadius = l3AssetOuter + HUB_CHR_OUTWARD;
     for (const [nbId, group] of l3GroupByNb) {
       const baseAngle =
         nbId !== "__orphan__" ? (angleOf(nbId) ?? Math.random() * Math.PI * 2) : Math.random() * Math.PI * 2;
       const count = group.length;
+      const r3 = isHubTheme ? hubChrRadius : GRAPH_CONFIG.orbitRadius.l3;
       group.forEach((node, i) => {
+        if (isHubTheme) (node as any).__layoutRadius = r3; // forceRadial도 바깥 반경 사용
         if (typeof node.x === "number" && typeof node.y === "number") return;
         const offset = (i - (count - 1) / 2) * L3_L4_STACK_STEP;
         const a = baseAngle + offset;
-        node.x = cx + Math.cos(a) * GRAPH_CONFIG.orbitRadius.l3;
-        node.y = cy + Math.sin(a) * GRAPH_CONFIG.orbitRadius.l3;
+        node.x = cx + Math.cos(a) * r3;
+        node.y = cy + Math.sin(a) * r3;
         node.vx = 0; node.vy = 0; node.fx = null; node.fy = null;
       });
     }
@@ -1596,12 +1616,20 @@ export default function ForceGraphWrapper({
       const baseAngle =
         nbId !== "__orphan__" ? (angleOf(nbId) ?? Math.random() * Math.PI * 2) : Math.random() * Math.PI * 2;
       const count = group.length;
+      // 허브형: 부모(L3 자산) 반경 + 여유 만큼 바깥에 배치 → CHR/BF가 자산보다 항상 바깥.
+      let r4: number = GRAPH_CONFIG.orbitRadius.l4;
+      if (isHubTheme) {
+        const parent = ns.find((m) => m.id === nbId);
+        const pr = (parent as any)?.__layoutRadius ?? HUB_L3_ASSET_BASE;
+        r4 = pr + HUB_CHR_OUTWARD;
+      }
       group.forEach((node, i) => {
+        if (isHubTheme) (node as any).__layoutRadius = r4;
         if (typeof node.x === "number" && typeof node.y === "number") return;
         const offset = count > 1 ? (i - (count - 1) / 2) * L3_L4_STACK_STEP : 0;
         const a = baseAngle + offset;
-        node.x = cx + Math.cos(a) * GRAPH_CONFIG.orbitRadius.l4;
-        node.y = cy + Math.sin(a) * GRAPH_CONFIG.orbitRadius.l4;
+        node.x = cx + Math.cos(a) * r4;
+        node.y = cy + Math.sin(a) * r4;
         node.vx = 0; node.vy = 0; node.fx = null; node.fy = null;
       });
     }
@@ -1614,7 +1642,7 @@ export default function ForceGraphWrapper({
       for (const [, group] of l3AssetGroupByNb) {
         if (group.length > maxL3GroupSize) maxL3GroupSize = group.length;
       }
-      let maxL3Radius = GRAPH_CONFIG.orbitRadius.l3; // default 400
+      let maxL3Radius: number = GRAPH_CONFIG.orbitRadius.l3; // default 400
       for (const n of l3Assets) {
         const r = (n as any).__layoutRadius;
         if (typeof r === "number" && r > maxL3Radius) maxL3Radius = r;
@@ -1632,9 +1660,11 @@ export default function ForceGraphWrapper({
       const factor = Math.max(sizeFactor, radiusFactor);
 
       if (factor > 0) {
-        // L1 radius 를 l1(200) → l2(300) 사이 full range scale (최대 newL1 = 300)
-        const baseL1 = GRAPH_CONFIG.orbitRadius.l1;
-        const newL1 = baseL1 + (GRAPH_CONFIG.orbitRadius.l2 - baseL1) * factor;
+        // L1 radius 를 baseL1 → capL1 사이 scale. 허브형은 압축 범위(140→210)를 유지해
+        // 상단 균형을 맞추되 70% 압축을 무효화하지 않도록 한다.
+        const baseL1 = isHubTheme ? HUB_L1_RADIUS : GRAPH_CONFIG.orbitRadius.l1;
+        const capL1  = isHubTheme ? HUB_L2_RADIUS : GRAPH_CONFIG.orbitRadius.l2;
+        const newL1 = baseL1 + (capL1 - baseL1) * factor;
         for (const n of ns) {
           if (n.id === theme.id) continue;
           if (!layerInfo.layer1.has(n.id)) continue;
@@ -1692,15 +1722,18 @@ export default function ForceGraphWrapper({
     const cx = size.w * 0.5;
     const cy = size.h * GRAPH_CONFIG.center.yRatio;
 
+    // 🛰 허브형 판정 — 반경 압축(L1/L2)에 사용 (placement effect와 동일 기준).
+    const isHubTheme = layerInfo.layer2.size <= 2 && layerInfo.layer3.size >= 4;
+
     const radiusFor = (n: any): number => {
       const id = n?.id as string | undefined;
       if (!id || id === themeNodeId) return 0;
-      // 노드에 동적 layout radius가 박혀 있으면 그걸 우선 (L3 자산 동적 확장용).
+      // 노드에 동적 layout radius가 박혀 있으면 그걸 우선 (L3 자산 동적 확장 / 허브 CHR 외곽화용).
       const dyn = (n as any)?.__layoutRadius;
       if (typeof dyn === "number" && dyn > 0) return dyn;
-      if (layerInfo.layer1.has(id)) return GRAPH_CONFIG.orbitRadius.l1;
-      if (layerInfo.layer2.has(id)) return GRAPH_CONFIG.orbitRadius.l2;
-      if (layerInfo.layer3.has(id)) return GRAPH_CONFIG.orbitRadius.l3;
+      if (layerInfo.layer1.has(id)) return isHubTheme ? HUB_L1_RADIUS : GRAPH_CONFIG.orbitRadius.l1;
+      if (layerInfo.layer2.has(id)) return isHubTheme ? HUB_L2_RADIUS : GRAPH_CONFIG.orbitRadius.l2;
+      if (layerInfo.layer3.has(id)) return isHubTheme ? HUB_L3_ASSET_BASE : GRAPH_CONFIG.orbitRadius.l3;
       if (layerInfo.layer4.has(id)) return GRAPH_CONFIG.orbitRadius.l4;
       return GRAPH_CONFIG.orbitRadius.l3;
     };
@@ -1755,13 +1788,11 @@ export default function ForceGraphWrapper({
       if (typeof endpoint === "object") return normType(endpoint.type);
       return nodeTypeById.get(endpoint);
     };
-    // 🛰 허브형 테마 보정: 1궤도(THEMED_AS) Asset이 소수(≤2)인데 2궤도(L3)가 많은 경우
-    //   (예: 코어 1개 + 공급망/전략자산 다수인 "생태계" 테마). 코어가 theme에서 멀고
-    //   2궤도가 코어에 뭉쳐 보이는 문제 → 1궤도 링크는 짧게, 2궤도 링크는 길게 반전.
-    const isHubTheme = layerInfo.layer2.size <= 2 && layerInfo.layer3.size >= 4;
-    const themeL2Dist = isHubTheme ? 103 : GRAPH_CONFIG.force.linkDistance.themeL2; // 155 × 2/3
-    const l2l3Dist = isHubTheme ? 380 : GRAPH_CONFIG.force.linkDistance.l2l3; // 반경 확대 → 자산·CHR 접선 여유
-    const l3l4Dist = isHubTheme ? 195 : GRAPH_CONFIG.force.linkDistance.l3l4; // CHR을 자산에서 더 멀리 → 라벨 여유
+    // 🛰 허브형 테마 보정 (isHubTheme는 effect 상단에서 선언). 반경(radial)을 70%로 압축했으므로
+    //   링크 거리도 그에 맞춰 축소 — theme↔허브·허브↔자산 간격을 좁히고 CHR/BF는 __layoutRadius로 외곽 배치.
+    const themeL2Dist = isHubTheme ? 150 : GRAPH_CONFIG.force.linkDistance.themeL2; // 압축된 허브 반경(210)에 맞춤
+    const l2l3Dist = isHubTheme ? 120 : GRAPH_CONFIG.force.linkDistance.l2l3;       // 허브↔자산 간격 압축(300-210≈90)
+    const l3l4Dist = isHubTheme ? HUB_CHR_OUTWARD : GRAPH_CONFIG.force.linkDistance.l3l4; // CHR을 부모 자산 바깥으로
     fg.d3Force("link")?.distance((l: any) => {
       const sid = typeof l.source === "object" ? l.source?.id : l.source;
       const tid = typeof l.target === "object" ? l.target?.id : l.target;
