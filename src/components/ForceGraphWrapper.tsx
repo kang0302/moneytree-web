@@ -608,6 +608,7 @@ export default function ForceGraphWrapper({
 }: Props) {
   const fgRef = useRef<any>(null);
   const wrapRef = useRef<HTMLDivElement | null>(null);
+  const didFitRef = useRef(false); // 허브형 초기 로드 시 zoomToFit 1회만 수행
 
   const [size, setSize] = useState({ w: 800, h: 560 });
 
@@ -1432,6 +1433,8 @@ export default function ForceGraphWrapper({
     const ns = graphData.nodes;
     if (!ns.length) return;
 
+    didFitRef.current = false; // 새 그래프 → 초기 zoomToFit 재수행 허용
+
     const cx = size.w * 0.5;
     const cy = size.h * GRAPH_CONFIG.center.yRatio;
 
@@ -1527,8 +1530,10 @@ export default function ForceGraphWrapper({
     const L3_ASSET_MIN_ARC_PX = isHubTheme ? 190 : 135;
     // 부모 ±JITTER 한계와 radius 확장 한계.
     //   ±90° = 부모 각도 기준 반원(180° span). 자식 다수일 때 거의 bottom 반원 전체 사용.
-    const L3_ASSET_MAX_JITTER = Math.PI / 2;        // ±90° (총 180°)
-    const L3_ASSET_MAX_RADIUS = 720;                // 화면 밖으로 너무 벗어나지 않도록 cap
+    //   허브형: 자산이 아래로만 뻗어 화면을 벗어나므로, 좌우로 더 넓게 부채꼴(±135°)을 열어
+    //   가로 공간을 활용 → 반경이 덜 커지고 zoomToFit로 전체 수용. (사용자 요청 2026-08-21)
+    const L3_ASSET_MAX_JITTER = isHubTheme ? (Math.PI * 3) / 4 : Math.PI / 2; // 허브 ±135° / 기본 ±90°
+    const L3_ASSET_MAX_RADIUS = isHubTheme ? 900 : 720;                       // 화면 밖 cap (zoomToFit가 축소 수용)
 
     for (const [nbId, group] of l3AssetGroupByNb) {
       const baseAngle =
@@ -1682,16 +1687,19 @@ export default function ForceGraphWrapper({
 
     if (fgRef.current) {
       fgRef.current.d3ReheatSimulation();
-      setTimeout(() => {
-        try {
-          // 카메라 중심을 theme(cy)보다 살짝 아래로 — theme이 화면 상단 ~38% 지점에
-          // 자리잡도록. L1(상단, r=200) · L4(하단, r=500) 반경 비대칭 때문에 정중앙
-          // 정렬 시 윗공간이 비어 보였음. zoom 보정 포함.
-          const camOffsetY = (size.h * 0.12) / GRAPH_CONFIG.zoom.initial;
-          fgRef.current.centerAt(cx, cy + camOffsetY, 0);
-          fgRef.current.zoom(GRAPH_CONFIG.zoom.initial, 0);
-        } catch {}
-      }, 120);
+      // 허브형은 onEngineStop의 zoomToFit이 프레이밍을 담당 → 여기서 고정 카메라를 잡지 않는다.
+      if (!isHubTheme) {
+        setTimeout(() => {
+          try {
+            // 카메라 중심을 theme(cy)보다 살짝 아래로 — theme이 화면 상단 ~38% 지점에
+            // 자리잡도록. L1(상단, r=200) · L4(하단, r=500) 반경 비대칭 때문에 정중앙
+            // 정렬 시 윗공간이 비어 보였음. zoom 보정 포함.
+            const camOffsetY = (size.h * 0.12) / GRAPH_CONFIG.zoom.initial;
+            fgRef.current.centerAt(cx, cy + camOffsetY, 0);
+            fgRef.current.zoom(GRAPH_CONFIG.zoom.initial, 0);
+          } catch {}
+        }, 120);
+      }
     }
   }, [graphData.nodes, size.w, size.h, themeNodeId, lockTheme, layerInfo, layer2OrderById]);
 
@@ -2659,6 +2667,17 @@ export default function ForceGraphWrapper({
         }}
         cooldownTicks={120}
         warmupTicks={120}
+        onEngineStop={() => {
+          // 허브형 테마는 2궤도가 좌우로 넓게 퍼져 기본 프레이밍으로는 화면을 벗어남 →
+          // 최초 정착 시 1회 zoomToFit으로 전체를 뷰포트에 담는다. (사용자 요청 2026-08-21)
+          if (didFitRef.current) return;
+          const hub = layerInfo.layer2.size <= 2 && layerInfo.layer3.size >= 4;
+          if (!hub) return;
+          didFitRef.current = true;
+          try {
+            fgRef.current?.zoomToFit(500, 70);
+          } catch {}
+        }}
         d3AlphaDecay={GRAPH_CONFIG.force.alphaDecay}
         d3VelocityDecay={GRAPH_CONFIG.force.velocityDecay}
         linkCurvature={0}
