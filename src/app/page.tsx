@@ -380,7 +380,7 @@ export default function HomePage() {
       </div>
 
       {/* Foreground */}
-      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col px-4 py-6">
+      <div className="relative z-10 mx-auto flex w-full flex-col px-4 py-6 sm:px-6" style={{ maxWidth: 1600 }}>
         {/* Header */}
         <header className="mb-6 flex h-12 items-center justify-between rounded-xl border border-white/10 bg-white/[0.03] px-3 backdrop-blur">
           <div className="text-[15px] font-extrabold tracking-tight">MONEYTREE</div>
