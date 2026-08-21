@@ -795,8 +795,8 @@ export default function GraphClient({
           )}
         </div>
 
-        {/* ✅ SearchBar (ASSET/THEME/BF/MACRO) — 고정폭(레이아웃 흔들림 방지, 인라인으로 확실 적용) */}
-        <div className="shrink-0" style={{ width: 340 }}>
+        {/* ✅ SearchBar (ASSET/THEME/BF/MACRO) — 고정폭(기간 토글 이동으로 여유 확보 → input 가시성 위해 확대) */}
+        <div className="shrink-0" style={{ width: 480 }}>
           <SearchBar
             indexUrl={SEARCH_INDEX_URL}
             onGoTheme={(tid) => router.push(`/graph/${tid}`)}
@@ -805,30 +805,9 @@ export default function GraphClient({
           />
         </div>
 
-        {/* Controls in order: Period -> Move -> Full map */}
+        {/* Controls: Move -> Full map (기간 토글은 그래프 박스 상단으로 이동) */}
         <div className="flex shrink-0 items-center gap-2">
-          {/* 1) Period toggle */}
-          <div className="flex items-center gap-1 rounded-lg border border-white/10 bg-black/30 p-1">
-            {periods.map((p) => {
-              const active = p.key === period;
-              return (
-                <button
-                  key={p.key}
-                  type="button"
-                  onClick={() => setPeriod(p.key)}
-                  className={[
-                    "rounded-md px-2 py-1 text-[11px] transition",
-                    active ? "bg-white/15 text-white" : "text-white/70 hover:bg-white/10 hover:text-white",
-                  ].join(" ")}
-                  title={`수익률 기간: ${p.label}`}
-                >
-                  {p.label}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* 2) Move to theme dropdown (index.json 기반) */}
+          {/* Move to theme dropdown (index.json 기반) */}
           <select
             className="h-9 rounded-lg border border-white/10 bg-black/30 px-2 text-[12px] text-white/85 outline-none focus:border-white/20"
             style={{ width: 260 }}
@@ -905,6 +884,28 @@ export default function GraphClient({
         <div className="graph-split h-full min-h-0 gap-2">
           {/* Graph */}
           <div data-graph-area className="relative min-h-0 rounded-xl border border-white/10 bg-black/25 p-1">
+            {/* ✅ 기간 토글 — 그래프 박스 최상단 오버레이 (헤더에서 이동, 검색창 공간 확보) */}
+            <div className="pointer-events-none absolute left-0 right-0 top-2 z-20 flex justify-center">
+              <div className="pointer-events-auto flex items-center gap-1 rounded-lg border border-white/10 bg-black/70 p-1 shadow-lg backdrop-blur">
+                {periods.map((p) => {
+                  const active = p.key === period;
+                  return (
+                    <button
+                      key={p.key}
+                      type="button"
+                      onClick={() => setPeriod(p.key)}
+                      className={[
+                        "rounded-md px-2.5 py-1 text-[11px] transition",
+                        active ? "bg-white/15 text-white" : "text-white/70 hover:bg-white/10 hover:text-white",
+                      ].join(" ")}
+                      title={`수익률 기간: ${p.label}`}
+                    >
+                      {p.label}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
             <ForceGraphWrapper
               themeId={themeId}
               themeName={themeName}
