@@ -44,7 +44,7 @@ export default function InsightsArchivePage() {
 
   return (
     <main className="min-h-screen w-full bg-black text-white">
-      <div className="mx-auto w-full max-w-4xl px-4 py-8 sm:py-10">
+      <div className="mx-auto w-full max-w-6xl px-4 py-8 sm:py-10">
         {/* 헤더 */}
         <header className="mb-6 flex items-end justify-between gap-3">
           <div>

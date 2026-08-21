@@ -118,7 +118,7 @@ function Editor() {
   }
 
   return (
-    <div className="mx-auto w-full max-w-5xl px-4 py-8 sm:py-10">
+    <div className="mx-auto w-full max-w-6xl px-4 py-8 sm:py-10">
       <header className="mb-6 flex items-center justify-between gap-3">
         <div>
           <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-sky-300/80">

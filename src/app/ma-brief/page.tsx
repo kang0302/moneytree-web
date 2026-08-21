@@ -147,7 +147,7 @@ export default function MaBriefPage() {
 
   return (
     <main className="min-h-screen w-full bg-black text-white">
-      <div className="mx-auto w-full max-w-[1600px] px-3 py-5">
+      <div className="mx-auto w-full px-3 py-5" style={{ maxWidth: 1760 }}>
         <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-3">
             <a href="/" className="rounded-lg border border-white/15 bg-white/[0.04] px-3 py-1 text-xs text-white/70 hover:bg-white/10">← 홈으로</a>
