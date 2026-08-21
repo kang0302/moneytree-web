@@ -57,7 +57,7 @@ export async function GET(req: Request) {
       headers: {
         // 일부 사이트에서 UA 없으면 막는 경우가 있어 최소 UA 제공
         "User-Agent":
-          "Mozilla/5.0 (compatible; MoneyTreeBot/1.0; +https://example.com)",
+          "Mozilla/5.0 (compatible; KnowvestBot/1.0; +https://example.com)",
         Accept: "text/html,application/xhtml+xml",
       },
       cache: "no-store",

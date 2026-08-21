@@ -350,7 +350,7 @@ export default function ComparePage() {
             <p className="text-white/50 text-sm mt-1">바로미터·기간별 수익률·자산 구성으로 테마를 나란히 비교 (최대 {MAX}개)</p>
           </div>
           <Link href="/" className="text-xs px-3 py-1.5 rounded-lg border border-indigo-400/40 bg-indigo-400/10 text-indigo-200 hover:bg-indigo-400/20">
-            ← MONEYTREE 홈
+            ← Knowvest 홈
           </Link>
         </div>
 

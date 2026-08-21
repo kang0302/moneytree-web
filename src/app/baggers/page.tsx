@@ -5,7 +5,7 @@ import BaggersClient, { type BaggersData } from "./BaggersClient";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "x2~x10 배거 포트폴리오 · MONEYTREE",
+  title: "x2~x10 배거 포트폴리오 · Knowvest",
   description: "2023.7~2026.6 3년간 2~10배 이상 상승한 개별종목 포트폴리오",
 };
 

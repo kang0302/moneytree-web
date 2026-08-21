@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MONEYTREE",
-  description: "MONEYTREE — 글로벌 투자 테마를 온톨로지로 구조화한 테마 리서치 서비스",
+  title: "Knowvest",
+  description: "Knowvest — 글로벌 투자 테마를 온톨로지로 구조화한 테마 리서치 서비스",
 };
 
 export default function RootLayout({

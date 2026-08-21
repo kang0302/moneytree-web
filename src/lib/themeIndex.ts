@@ -17,7 +17,7 @@ const GITHUB_RAW_THEME_INDEX =
   "https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/index.json";
 
 /**
- * MoneyTree FIXED RULE (LOCK)
+ * Knowvest FIXED RULE (LOCK)
  * - index.json은 import_MT/data/theme/index.json 에서만 읽는다 (원격 RAW)
  * - 이 함수는 앞으로 수정하지 않는다
  */
