@@ -52,6 +52,12 @@ export default function ShockPage() {
     return [...adj.entries()].filter(([id]) => nodeById.get(id)?.type === "macro").sort((a, b) => b[1].length - a[1].length).slice(0, 10).map(([id]) => id);
   }, [g, adj, nodeById]);
 
+  // 전체 매크로 목록(드롭다운용) — 가나다순 정렬
+  const macroOptions = useMemo(() => {
+    if (!g) return [];
+    return g.nodes.filter((n) => n.type === "macro").sort((a, b) => a.name.localeCompare(b.name, "ko"));
+  }, [g]);
+
   const matches = useMemo(() => {
     if (!g || !q.trim()) return [];
     const s = q.trim().toLowerCase();
@@ -106,10 +112,12 @@ export default function ShockPage() {
 
         {state === "ok" && g && (
           <>
-            <div className="relative mb-2 max-w-lg">
-              <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="충격 진원 검색 (매크로·테마·종목… 예: 금리, 전쟁, 엔비디아)"
-                className="w-full rounded-lg border border-white/15 bg-white/[0.04] px-3 py-2 text-[13px] text-white placeholder:text-white/35 focus:border-white/30 focus:outline-none" />
-              {matches.length > 0 && (
+            {/* 진원 선택: 검색 + 매크로 드롭다운 */}
+            <div className="mb-2 flex flex-wrap items-center gap-2">
+              <div className="relative w-full max-w-lg">
+                <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="충격 진원 검색 (매크로·테마·종목… 예: 금리, 전쟁, 엔비디아)"
+                  className="w-full rounded-lg border border-white/15 bg-white/[0.04] px-3 py-2 text-[13px] text-white placeholder:text-white/35 focus:border-white/30 focus:outline-none" />
+                {matches.length > 0 && (
                 <div className="absolute z-20 mt-1 max-h-72 w-full overflow-y-auto rounded-lg border border-white/15 bg-neutral-900 shadow-xl">
                   {matches.map((n) => (
                     <button key={n.id} onClick={() => { setOrigin(n.id); setQ(""); }} className="flex w-full items-center justify-between gap-2 px-3 py-1.5 text-left hover:bg-white/10">
@@ -118,7 +126,20 @@ export default function ShockPage() {
                     </button>
                   ))}
                 </div>
-              )}
+                )}
+              </div>
+              <select
+                value=""
+                onChange={(e) => { if (e.target.value) setOrigin(e.target.value); }}
+                className="h-[38px] rounded-lg border border-white/15 bg-neutral-900 px-3 text-[13px] text-white/85 focus:border-white/30 focus:outline-none"
+                style={{ maxWidth: 340 }}
+                title="매크로를 선택해 충격 진원으로 지정"
+              >
+                <option value="">📋 매크로 목록에서 선택… ({macroOptions.length})</option>
+                {macroOptions.map((m) => (
+                  <option key={m.id} value={m.id}>{m.name}</option>
+                ))}
+              </select>
             </div>
             {!origin && (
               <div className="mb-4">
