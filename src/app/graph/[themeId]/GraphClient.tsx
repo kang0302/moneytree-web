@@ -764,7 +764,7 @@ export default function GraphClient({
   return (
     <div className="flex flex-col">
       {/* ✅ Compact Top Header (single-line) */}
-      <header className="mb-2 flex h-12 items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-2 py-1">
+      <header className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-2 rounded-xl border border-white/10 bg-white/[0.03] px-2 py-1.5" style={{ minHeight: 48 }}>
         {/* Left: ThemeId badge + Theme name + (선택) 투자 인사이트 NEW 배지 */}
         <div className="flex min-w-0 items-center gap-2">
           <div className="shrink-0 rounded-lg border border-white/15 bg-black/30 px-2 py-1 text-[11px] font-semibold text-white/85">
@@ -795,8 +795,8 @@ export default function GraphClient({
           )}
         </div>
 
-        {/* ✅ SearchBar (ASSET/THEME/BF/MACRO) — 고정폭(레이아웃 흔들림 방지) */}
-        <div className="w-[340px] shrink-0">
+        {/* ✅ SearchBar (ASSET/THEME/BF/MACRO) — 고정폭(레이아웃 흔들림 방지, 인라인으로 확실 적용) */}
+        <div className="shrink-0" style={{ width: 340 }}>
           <SearchBar
             indexUrl={SEARCH_INDEX_URL}
             onGoTheme={(tid) => router.push(`/graph/${tid}`)}
@@ -830,7 +830,8 @@ export default function GraphClient({
 
           {/* 2) Move to theme dropdown (index.json 기반) */}
           <select
-            className="h-9 w-[260px] rounded-lg border border-white/10 bg-black/30 px-2 text-[12px] text-white/85 outline-none focus:border-white/20"
+            className="h-9 rounded-lg border border-white/10 bg-black/30 px-2 text-[12px] text-white/85 outline-none focus:border-white/20"
+            style={{ width: 260 }}
             value={moveThemeId}
             onChange={(e) => {
               const v = e.target.value;
