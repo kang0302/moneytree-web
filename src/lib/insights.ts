@@ -165,6 +165,9 @@ export function renderMarkdown(md: string): string {
 
   const inline = (raw: string): string => {
     let s = escapeHtml(raw);
+    // 테마 그래프 토큰 [[T_028]] 또는 [[T_028|라벨]] — 인라인 링크로 (블록은 아래 별도 카드)
+    s = s.replace(/\[\[(T_\d{1,4})(?:\|([^\]]+))?\]\]/g, (_m, id: string, label?: string) =>
+      `<a href="/graph/${id}" class="font-semibold text-indigo-300 underline underline-offset-2 hover:text-indigo-200">📊 ${label ? label : id}</a>`);
     // 링크 [text](url) — url은 http(s)/상대경로만 허용
     s = s.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/[^\s)]*)\)/g,
       '<a href="$2" target="_blank" rel="noreferrer" class="text-sky-300 underline underline-offset-2 hover:text-sky-200">$1</a>');
@@ -187,7 +190,24 @@ export function renderMarkdown(md: string): string {
     const t = line.trim();
     if (!t) { flushPara(); closeList(); continue; }
     let m: RegExpMatchArray | null;
-    if ((m = t.match(/^#{1,3}\s+(.*)$/))) {
+    // 한 줄 전체가 테마 토큰이면 → 그래프 링크 카드(블록)
+    if ((m = t.match(/^\[\[(T_\d{1,4})(?:\|([^\]]+))?\]\]$/))) {
+      flushPara(); closeList();
+      const id = m[1];
+      const label = m[2] ? escapeHtml(m[2]) : "테마 그래프";
+      out.push(
+        `<a href="/graph/${id}" class="my-4 flex items-center justify-between gap-3 rounded-xl border border-indigo-400/30 bg-indigo-500/10 px-4 py-3 no-underline transition hover:border-indigo-300/60 hover:bg-indigo-500/20">` +
+          `<span class="flex items-center gap-2.5">` +
+            `<span style="font-size:18px">📊</span>` +
+            `<span class="flex flex-col">` +
+              `<span class="text-[14px] font-semibold text-white">${label}</span>` +
+              `<span class="text-[11px] text-white/50">${id} · 관련 테마 그래프 열기</span>` +
+            `</span>` +
+          `</span>` +
+          `<span class="text-indigo-200/70">→</span>` +
+        `</a>`,
+      );
+    } else if ((m = t.match(/^#{1,3}\s+(.*)$/))) {
       flushPara(); closeList();
       const level = t.match(/^#+/)![0].length;
       const cls = level === 1 ? "mt-6 mb-2 text-2xl font-extrabold text-white"
