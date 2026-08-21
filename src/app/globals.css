@@ -24,3 +24,15 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* 그래프 페이지: 그래프|우측패널 분할 — Tailwind arbitrary 미생성 이슈 회피용 실제 CSS.
+   모바일 1열(세로 스택), lg 이상에서 5:3 (우측 패널 살짝 축소). */
+.graph-split {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 1024px) {
+  .graph-split {
+    grid-template-columns: 5fr 3fr;
+  }
+}
