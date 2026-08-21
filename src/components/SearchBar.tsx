@@ -250,6 +250,7 @@ const wrapStyle: React.CSSProperties = { position: "relative", width: "100%" };
 const topRowStyle: React.CSSProperties = { display: "flex", gap: 10, alignItems: "center", width: "100%" };
 const inputStyle: React.CSSProperties = {
   flex: 1,
+  minWidth: 0, // ✅ 긴 placeholder로 인해 input이 안 줄어들어 탭이 컨테이너 밖으로 넘쳐 겹치던 문제 방지
   height: 36,
   borderRadius: 10,
   border: "1px solid rgba(255,255,255,0.15)",
