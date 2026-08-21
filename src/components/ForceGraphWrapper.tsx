@@ -198,8 +198,8 @@ const TOWARD_PARENT_STRENGTH = 0.18; // L3/L4 → parent 각도 방향성 force 
 
 // 🛰 허브형 테마 전용 반경 (2026-08-21 사용자 요청): 테마명↔1궤도(허브)·1궤도↔2궤도(자산) 간격을
 //   기존의 70%로 압축하되, 2궤도에 매달린 CHR/BF 노드는 자산 링 "바깥쪽"으로 밀어 시각 균형 확보.
-const HUB_L1_RADIUS      = 140;  // 200 × 0.7  (테마↔상단 매크로/특성)
-const HUB_L2_RADIUS      = 210;  // 300 × 0.7  (테마↔허브 코어 자산)
+const HUB_L1_RADIUS      = 126;  // 140 × 0.9  (테마↔상단 매크로/특성 — 추가 90% 압축)
+const HUB_L2_RADIUS      = 126;  // 210 × 0.6  (테마↔허브 코어 자산 — 추가 60% 압축)
 const HUB_L3_ASSET_BASE  = 300;  // 400 → 압축 (허브↔2궤도 자산; 라벨 겹침 시 동적 확장은 유지)
 const HUB_CHR_OUTWARD    = 130;  // CHR/BF를 부모(자산·허브) 반경 + 이만큼 바깥으로 배치
 
@@ -1523,7 +1523,8 @@ export default function ForceGraphWrapper({
       l3AssetGroupByNb.get(nbId)!.push(node);
     }
     // 라벨 포함 인접 자산 간 최소 호(arc) 간격 (px). 19px 노드 + 라벨 80~120px 고려.
-    const L3_ASSET_MIN_ARC_PX = 135;
+    //   허브형은 2궤도 자산을 더 여유있게 펼치기 위해 최소 간격을 확대 (사용자 요청 2026-08-21).
+    const L3_ASSET_MIN_ARC_PX = isHubTheme ? 190 : 135;
     // 부모 ±JITTER 한계와 radius 확장 한계.
     //   ±90° = 부모 각도 기준 반원(180° span). 자식 다수일 때 거의 bottom 반원 전체 사용.
     const L3_ASSET_MAX_JITTER = Math.PI / 2;        // ±90° (총 180°)
@@ -1790,7 +1791,7 @@ export default function ForceGraphWrapper({
     };
     // 🛰 허브형 테마 보정 (isHubTheme는 effect 상단에서 선언). 반경(radial)을 70%로 압축했으므로
     //   링크 거리도 그에 맞춰 축소 — theme↔허브·허브↔자산 간격을 좁히고 CHR/BF는 __layoutRadius로 외곽 배치.
-    const themeL2Dist = isHubTheme ? 150 : GRAPH_CONFIG.force.linkDistance.themeL2; // 압축된 허브 반경(210)에 맞춤
+    const themeL2Dist = isHubTheme ? HUB_L2_RADIUS : GRAPH_CONFIG.force.linkDistance.themeL2; // 압축된 허브 반경에 맞춤
     const l2l3Dist = isHubTheme ? 120 : GRAPH_CONFIG.force.linkDistance.l2l3;       // 허브↔자산 간격 압축(300-210≈90)
     const l3l4Dist = isHubTheme ? HUB_CHR_OUTWARD : GRAPH_CONFIG.force.linkDistance.l3l4; // CHR을 부모 자산 바깥으로
     fg.d3Force("link")?.distance((l: any) => {
