@@ -1,745 +1,763 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_092",
- "themeName": "K-RNA치료제",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_092",
+  "themeName": "K-RNA치료제",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-04-01T00:00:00+09:00",
+    "notes": "g92 누적 import 기반 K-RNA치료제 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-07-10",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "K-RNA 치료제 종목에 플랫폼(asiRNA·RNA교정·올리고CDMO)·빅파마 파트너 기반 CHR 정의."
+      },
+      {
+        "date": "2026-07-10",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필 + 2026 이벤트",
+        "detail": "전 엣지의 근거를 종목별 사업·제품·관계 사실로 구체화하고, 이벤트 DB에 2026 핵심 변동요인 2건을 추가했다."
+      }
+    ],
+    "description": "• siRNA·mRNA 임상 readout·글로벌 라이선스 아웃이 valuation 트리거\n• 동인: 신약임상성공·기술수출(LO)·바이오혁신\n• 대표주: 올릭스(asiRNA플랫폼R)·알지노믹스(RNA교정치료제)·에스티팜(올리고CDMO강자)\n• 밸류체인: CDMO"
+  },
+  "nodes": [
+    {
+      "id": "T_092",
+      "type": "THEME",
+      "name": "K-RNA치료제"
+    },
+    {
+      "id": "A_712",
+      "type": "ASSET",
+      "name": "올릭스",
+      "exposure": {
+        "ticker": "226950",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 4.789272030651337,
+        "close": 109400,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -2.3214285714285743,
+        "return_15d": 16.25929861849096,
+        "return_1m": 0.1831501831501825,
+        "return_ytd": -21.74535050071531,
+        "return_1y": 112.4271844660194,
+        "return_3y": 615.197956577267,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": -7.590759075907593,
+        "return_2y": 580.7716241443684
+      }
+    },
+    {
+      "id": "A_713",
+      "type": "ASSET",
+      "name": "알지노믹스",
+      "exposure": {
+        "ticker": "476830",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 16.61392405063291,
+        "close": 36850,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": 4.539007092198588,
+        "return_15d": 74.23167848699764,
+        "return_1m": 42.553191489361694,
+        "return_ytd": -50.86666666666666,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 8.796296296296301,
+        "return_2y": null
+      },
+      "coreBiz": "알지노믹스는 RNA 교정·트랜스스플라이싱 기반 치료제를 개발한다"
+    },
+    {
+      "id": "A_714",
+      "type": "ASSET",
+      "name": "에스티팜",
+      "exposure": {
+        "ticker": "237690",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 11.681772406847934,
+        "close": 110900,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": 4.229323308270683,
+        "return_15d": 22.406181015452532,
+        "return_1m": -2.7192982456140324,
+        "return_ytd": -3.2615814044048896,
+        "return_1y": 22.386338083487757,
+        "return_3y": 31.031370763565057,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 6.2937062937062915,
+        "return_2y": 25.580516461661993
+      }
+    },
+    {
+      "id": "A_715",
+      "type": "ASSET",
+      "name": "부광약품",
+      "exposure": {
+        "ticker": "003000",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.0,
+        "close": 4200,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": -4.761904761904767,
+        "return_15d": 8.94941634241244,
+        "return_1m": 12.00000000000001,
+        "return_ytd": 9.660574412532629,
+        "return_1y": 31.63273864169305,
+        "return_3y": -30.83204568400034,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 2.0809248554913395,
+        "return_2y": -9.019343549002468
+      }
+    },
+    {
+      "id": "A_244",
+      "type": "ASSET",
+      "name": "일라이릴리",
+      "exposure": {
+        "ticker": "LLY",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -2.8070668728618853,
+        "close": 1245.69,
+        "marketCap": 1173117346290,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "FMP",
+        "return_3d": 5.175969437776806,
+        "return_15d": 7.743058261253544,
+        "return_1m": 8.501177086058064,
+        "return_ytd": 15.792608032158405,
+        "return_1y": 76.40054434112042,
+        "return_3y": 127.7327379536263,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "FMP",
+        "return_5d": 2.928039702233254,
+        "return_2y": 30.99361032453658
+      }
+    },
+    {
+      "id": "BF_064",
+      "type": "BUSINESS_FIELD",
+      "name": "CDMO"
+    },
+    {
+      "id": "A_2163",
+      "type": "ASSET",
+      "name": "바이오니아",
+      "exposure": {
+        "ticker": "064550",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 3.3732317736670403,
+        "return_3d": 31.578947368421062,
+        "return_15d": 62.39316239316239,
+        "return_1m": 57.024793388429764,
+        "return_ytd": -25.137903861308118,
+        "return_1y": -36.66666666666667,
+        "return_3y": -83.72040586245772,
+        "close": 9500,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 4.486251808972508,
+        "return_2y": -72.26277372262774
+      },
+      "coreBiz": "바이오니아는 siRNA 기반 신약·분자진단을 아우르는 RNA 기술사다"
+    },
+    {
+      "id": "M_191",
+      "type": "MACRO",
+      "name": "신약임상성공"
+    },
+    {
+      "id": "M_192",
+      "type": "MACRO",
+      "name": "기술수출(LO)"
+    },
+    {
+      "id": "M_345",
+      "type": "MACRO",
+      "name": "바이오혁신"
+    },
+    {
+      "id": "C_2017",
+      "type": "CHARACTER",
+      "name": "asiRNA플랫폼RNAi"
+    },
+    {
+      "id": "C_2018",
+      "type": "CHARACTER",
+      "name": "RNA교정치료제"
+    },
+    {
+      "id": "C_2019",
+      "type": "CHARACTER",
+      "name": "올리고CDMO강자"
+    },
+    {
+      "id": "C_2020",
+      "type": "CHARACTER",
+      "name": "RNA신약투자포트폴리오"
+    },
+    {
+      "id": "C_2021",
+      "type": "CHARACTER",
+      "name": "글로벌빅파마파트너"
+    },
+    {
+      "id": "C_2022",
+      "type": "CHARACTER",
+      "name": "siRNA신약분자진단"
+    },
+    {
+      "id": "A_1266",
+      "type": "ASSET",
+      "name": "나이벡",
+      "exposure": {
+        "ticker": "138610",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 19.824341279799242,
+        "close": 19100,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "EODHD",
+        "return_3d": 12.352941176470589,
+        "return_15d": 55.284552845528445,
+        "return_1m": 39.01018922852983,
+        "return_ytd": -49.26958831341302,
+        "return_1y": -18.895966029723986,
+        "return_3y": -10.526315789473683,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD",
+        "return_5d": 9.961190168175937,
+        "return_2y": -4.975124378109452
+      },
+      "coreBiz": "나이벡은 치과·바이오 소재(펩타이드)주다"
+    },
+    {
+      "id": "C_6011",
+      "type": "CHARACTER",
+      "name": "펩타이드 mRNA 전달(림프절·APC 표적)"
+    },
+    {
+      "id": "A_3019",
+      "type": "ASSET",
+      "name": "삼양바이오팜",
+      "exposure": {
+        "ticker": "",
+        "exchange": "",
+        "country": "KR"
+      },
+      "coreBiz": "SENS 유전자전달체·mRNA 암백신 SYP-2135",
+      "metrics": {
+        "return_1d": null,
+        "return_3d": null,
+        "return_5d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_2y": null,
+        "return_3y": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "returnsAsOf": null,
+        "returnsSource": null
+      }
+    },
+    {
+      "id": "C_6012",
+      "type": "CHARACTER",
+      "name": "SENS 전달체·SYP-2135 mRNA 암백신(전임상)"
+    },
+    {
+      "id": "M_1213",
+      "type": "MACRO",
+      "name": "모더나-머스크 암백신 개발"
+    }
   ],
-  "dataAsOf": "2026-04-01T00:00:00+09:00",
-  "notes": "g92 누적 import 기반 K-RNA치료제 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-07-10",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "K-RNA 치료제 종목에 플랫폼(asiRNA·RNA교정·올리고CDMO)·빅파마 파트너 기반 CHR 정의."
-   },
-   {
-    "date": "2026-07-10",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필 + 2026 이벤트",
-    "detail": "전 엣지의 근거를 종목별 사업·제품·관계 사실로 구체화하고, 이벤트 DB에 2026 핵심 변동요인 2건을 추가했다."
-   }
+  "edges": [
+    {
+      "from": "A_712",
+      "to": "T_092",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002798"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_713",
+      "to": "T_092",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002799"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_714",
+      "to": "T_092",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002800"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_715",
+      "to": "T_092",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002801"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_714",
+      "to": "BF_064",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002802"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_712",
+      "to": "A_244",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_002803"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_2163",
+      "to": "T_092",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002804"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_191",
+      "to": "T_092",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002805"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_192",
+      "to": "T_092",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002806"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_345",
+      "to": "T_092",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002807"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_712",
+      "to": "C_2017",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002957"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_713",
+      "to": "C_2018",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002958"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_714",
+      "to": "C_2019",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002959"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_715",
+      "to": "C_2020",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002960"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_244",
+      "to": "C_2021",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002961"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_2163",
+      "to": "C_2022",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002962"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_1266",
+      "to": "T_092",
+      "type": "THEMED_AS",
+      "evidence": [
+        "펩타이드 기반 mRNA 전달 플랫폼, 항암백신 확장(2026-08-18 연구공개)"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1266",
+      "to": "C_6011",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "림프절·항원제시세포 표적 mRNA 전달, 동물실험 발현 최대 7일"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_3019",
+      "to": "T_092",
+      "type": "THEMED_AS",
+      "evidence": [
+        "자체 유전자전달체 SENS 적용 mRNA 암백신 SYP-2135 전임상 개발"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_3019",
+      "to": "C_6012",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "SENS 플랫폼·SYP-2135"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_1213",
+      "to": "T_092",
+      "type": "IMPACTS",
+      "evidence": [
+        "모더나·머크 mRNA 개인맞춤 암백신 임상 진전이 국내 mRNA 밸류체인 재평가 촉발"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "effect": "positive"
+    }
   ],
-  "description": "• siRNA·mRNA 임상 readout·글로벌 라이선스 아웃이 valuation 트리거\n• 동인: 신약임상성공·기술수출(LO)·바이오혁신\n• 대표주: 올릭스(asiRNA플랫폼R)·알지노믹스(RNA교정치료제)·에스티팜(올리고CDMO강자)\n• 밸류체인: CDMO"
- },
- "nodes": [
-  {
-   "id": "T_092",
-   "type": "THEME",
-   "name": "K-RNA치료제"
-  },
-  {
-   "id": "A_712",
-   "type": "ASSET",
-   "name": "올릭스",
-   "exposure": {
-    "ticker": "226950",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 4.789272030651337,
-    "close": 109400,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "EODHD",
-    "return_3d": -2.3214285714285743,
-    "return_15d": 16.25929861849096,
-    "return_1m": 0.1831501831501825,
-    "return_ytd": -21.74535050071531,
-    "return_1y": 112.4271844660194,
-    "return_3y": 615.197956577267,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "EODHD",
-    "return_5d": -7.590759075907593,
-    "return_2y": 580.7716241443684
-   }
-  },
-  {
-   "id": "A_713",
-   "type": "ASSET",
-   "name": "알지노믹스",
-   "exposure": {
-    "ticker": "476830",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 16.61392405063291,
-    "close": 36850,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "EODHD",
-    "return_3d": 4.539007092198588,
-    "return_15d": 74.23167848699764,
-    "return_1m": 42.553191489361694,
-    "return_ytd": -50.86666666666666,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "EODHD",
-    "return_5d": 8.796296296296301,
-    "return_2y": null
-   },
-   "coreBiz": "알지노믹스는 RNA 교정·트랜스스플라이싱 기반 치료제를 개발한다"
-  },
-  {
-   "id": "A_714",
-   "type": "ASSET",
-   "name": "에스티팜",
-   "exposure": {
-    "ticker": "237690",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 11.681772406847934,
-    "close": 110900,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "EODHD",
-    "return_3d": 4.229323308270683,
-    "return_15d": 22.406181015452532,
-    "return_1m": -2.7192982456140324,
-    "return_ytd": -3.2615814044048896,
-    "return_1y": 22.386338083487757,
-    "return_3y": 31.031370763565057,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "EODHD",
-    "return_5d": 6.2937062937062915,
-    "return_2y": 25.580516461661993
-   }
-  },
-  {
-   "id": "A_715",
-   "type": "ASSET",
-   "name": "부광약품",
-   "exposure": {
-    "ticker": "003000",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.0,
-    "close": 4200,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "EODHD",
-    "return_3d": -4.761904761904767,
-    "return_15d": 8.94941634241244,
-    "return_1m": 12.00000000000001,
-    "return_ytd": 9.660574412532629,
-    "return_1y": 31.63273864169305,
-    "return_3y": -30.83204568400034,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "EODHD",
-    "return_5d": 2.0809248554913395,
-    "return_2y": -9.019343549002468
-   }
-  },
-  {
-   "id": "A_244",
-   "type": "ASSET",
-   "name": "일라이릴리",
-   "exposure": {
-    "ticker": "LLY",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 4.455304186076869,
-    "close": 1280.74,
-    "marketCap": 1206125368340,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-19",
-    "valuationSource": "FMP",
-    "return_3d": 8.488679501084583,
-    "return_15d": 5.811474190509247,
-    "return_1m": 8.585288904343113,
-    "return_ytd": 19.13685934417686,
-    "return_1y": 82.07078966453831,
-    "return_3y": 134.30997566019437,
-    "returnsAsOf": "2026-08-19",
-    "returnsSource": "FMP",
-    "return_5d": 4.921821221359024,
-    "return_2y": 38.89413219643962
-   }
-  },
-  {
-   "id": "BF_064",
-   "type": "BUSINESS_FIELD",
-   "name": "CDMO"
-  },
-  {
-   "id": "A_2163",
-   "type": "ASSET",
-   "name": "바이오니아",
-   "exposure": {
-    "ticker": "064550",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 3.3732317736670403,
-    "return_3d": 31.578947368421062,
-    "return_15d": 62.39316239316239,
-    "return_1m": 57.024793388429764,
-    "return_ytd": -25.137903861308118,
-    "return_1y": -36.66666666666667,
-    "return_3y": -83.72040586245772,
-    "close": 9500,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "EODHD",
-    "return_5d": 4.486251808972508,
-    "return_2y": -72.26277372262774
-   },
-   "coreBiz": "바이오니아는 siRNA 기반 신약·분자진단을 아우르는 RNA 기술사다"
-  },
-  {
-   "id": "M_191",
-   "type": "MACRO",
-   "name": "신약임상성공"
-  },
-  {
-   "id": "M_192",
-   "type": "MACRO",
-   "name": "기술수출(LO)"
-  },
-  {
-   "id": "M_345",
-   "type": "MACRO",
-   "name": "바이오혁신"
-  },
-  {
-   "id": "C_2017",
-   "type": "CHARACTER",
-   "name": "asiRNA플랫폼RNAi"
-  },
-  {
-   "id": "C_2018",
-   "type": "CHARACTER",
-   "name": "RNA교정치료제"
-  },
-  {
-   "id": "C_2019",
-   "type": "CHARACTER",
-   "name": "올리고CDMO강자"
-  },
-  {
-   "id": "C_2020",
-   "type": "CHARACTER",
-   "name": "RNA신약투자포트폴리오"
-  },
-  {
-   "id": "C_2021",
-   "type": "CHARACTER",
-   "name": "글로벌빅파마파트너"
-  },
-  {
-   "id": "C_2022",
-   "type": "CHARACTER",
-   "name": "siRNA신약분자진단"
-  },
-  {
-   "id": "A_1266",
-   "type": "ASSET",
-   "name": "나이벡",
-   "exposure": {
-    "ticker": "138610",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 19.824341279799242,
-    "close": 19100,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "EODHD",
-    "return_3d": 12.352941176470589,
-    "return_15d": 55.284552845528445,
-    "return_1m": 39.01018922852983,
-    "return_ytd": -49.26958831341302,
-    "return_1y": -18.895966029723986,
-    "return_3y": -10.526315789473683,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "EODHD",
-    "return_5d": 9.961190168175937,
-    "return_2y": -4.975124378109452
-   },
-   "coreBiz": "나이벡은 치과·바이오 소재(펩타이드)주다"
-  },
-  {
-   "id": "C_6011",
-   "type": "CHARACTER",
-   "name": "펩타이드 mRNA 전달(림프절·APC 표적)"
-  },
-  {
-   "id": "A_3019",
-   "type": "ASSET",
-   "name": "삼양바이오팜",
-   "exposure": {
-    "ticker": "",
-    "exchange": "",
-    "country": "KR"
-   },
-   "coreBiz": "SENS 유전자전달체·mRNA 암백신 SYP-2135"
-  },
-  {
-   "id": "C_6012",
-   "type": "CHARACTER",
-   "name": "SENS 전달체·SYP-2135 mRNA 암백신(전임상)"
-  },
-  {
-   "id": "M_1213",
-   "type": "MACRO",
-   "name": "모더나-머스크 암백신 개발"
-  }
- ],
- "edges": [
-  {
-   "from": "A_712",
-   "to": "T_092",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002798"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_713",
-   "to": "T_092",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002799"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_714",
-   "to": "T_092",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002800"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_715",
-   "to": "T_092",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002801"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_714",
-   "to": "BF_064",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002802"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_712",
-   "to": "A_244",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_002803"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_2163",
-   "to": "T_092",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002804"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_191",
-   "to": "T_092",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002805"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_192",
-   "to": "T_092",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002806"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_345",
-   "to": "T_092",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002807"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_712",
-   "to": "C_2017",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002957"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_713",
-   "to": "C_2018",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002958"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_714",
-   "to": "C_2019",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002959"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_715",
-   "to": "C_2020",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002960"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_244",
-   "to": "C_2021",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002961"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_2163",
-   "to": "C_2022",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002962"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_1266",
-   "to": "T_092",
-   "type": "THEMED_AS",
-   "evidence": [
-    "펩타이드 기반 mRNA 전달 플랫폼, 항암백신 확장(2026-08-18 연구공개)"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1266",
-   "to": "C_6011",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "림프절·항원제시세포 표적 mRNA 전달, 동물실험 발현 최대 7일"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_3019",
-   "to": "T_092",
-   "type": "THEMED_AS",
-   "evidence": [
-    "자체 유전자전달체 SENS 적용 mRNA 암백신 SYP-2135 전임상 개발"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_3019",
-   "to": "C_6012",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "SENS 플랫폼·SYP-2135"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_1213",
-   "to": "T_092",
-   "type": "IMPACTS",
-   "evidence": [
-    "모더나·머크 mRNA 개인맞춤 암백신 임상 진전이 국내 mRNA 밸류체인 재평가 촉발"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "effect": "positive"
-  }
- ],
- "links": [
-  {
-   "from": "A_712",
-   "to": "T_092",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002798"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_713",
-   "to": "T_092",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002799"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_714",
-   "to": "T_092",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002800"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_715",
-   "to": "T_092",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002801"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_714",
-   "to": "BF_064",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002802"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_712",
-   "to": "A_244",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_002803"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_2163",
-   "to": "T_092",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002804"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_191",
-   "to": "T_092",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002805"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_192",
-   "to": "T_092",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002806"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_345",
-   "to": "T_092",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002807"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_712",
-   "to": "C_2017",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002957"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_713",
-   "to": "C_2018",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002958"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_714",
-   "to": "C_2019",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002959"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_715",
-   "to": "C_2020",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002960"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_244",
-   "to": "C_2021",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002961"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_2163",
-   "to": "C_2022",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002962"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_1266",
-   "to": "T_092",
-   "type": "THEMED_AS",
-   "evidence": [
-    "펩타이드 기반 mRNA 전달 플랫폼, 항암백신 확장(2026-08-18 연구공개)"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1266",
-   "to": "C_6011",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "림프절·항원제시세포 표적 mRNA 전달, 동물실험 발현 최대 7일"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_3019",
-   "to": "T_092",
-   "type": "THEMED_AS",
-   "evidence": [
-    "자체 유전자전달체 SENS 적용 mRNA 암백신 SYP-2135 전임상 개발"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_3019",
-   "to": "C_6012",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "SENS 플랫폼·SYP-2135"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_1213",
-   "to": "T_092",
-   "type": "IMPACTS",
-   "evidence": [
-    "모더나·머크 mRNA 개인맞춤 암백신 임상 진전이 국내 mRNA 밸류체인 재평가 촉발"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "effect": "positive"
-  }
- ]
+  "links": [
+    {
+      "from": "A_712",
+      "to": "T_092",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002798"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_713",
+      "to": "T_092",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002799"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_714",
+      "to": "T_092",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002800"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_715",
+      "to": "T_092",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002801"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_714",
+      "to": "BF_064",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002802"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_712",
+      "to": "A_244",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_002803"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_2163",
+      "to": "T_092",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002804"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_191",
+      "to": "T_092",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002805"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_192",
+      "to": "T_092",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002806"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_345",
+      "to": "T_092",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002807"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_712",
+      "to": "C_2017",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002957"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_713",
+      "to": "C_2018",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002958"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_714",
+      "to": "C_2019",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002959"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_715",
+      "to": "C_2020",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002960"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_244",
+      "to": "C_2021",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002961"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_2163",
+      "to": "C_2022",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002962"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_1266",
+      "to": "T_092",
+      "type": "THEMED_AS",
+      "evidence": [
+        "펩타이드 기반 mRNA 전달 플랫폼, 항암백신 확장(2026-08-18 연구공개)"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1266",
+      "to": "C_6011",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "림프절·항원제시세포 표적 mRNA 전달, 동물실험 발현 최대 7일"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_3019",
+      "to": "T_092",
+      "type": "THEMED_AS",
+      "evidence": [
+        "자체 유전자전달체 SENS 적용 mRNA 암백신 SYP-2135 전임상 개발"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_3019",
+      "to": "C_6012",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "SENS 플랫폼·SYP-2135"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_1213",
+      "to": "T_092",
+      "type": "IMPACTS",
+      "evidence": [
+        "모더나·머크 mRNA 개인맞춤 암백신 임상 진전이 국내 mRNA 밸류체인 재평가 촉발"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "effect": "positive"
+    }
+  ]
 }
