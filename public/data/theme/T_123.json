@@ -1,1487 +1,684 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_123",
-  "themeName": "중국ETF(미국상장)",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-04-08T00:00:00+09:00",
-    "notes": "g123 누적 import 기반 중국ETF(미국상장) 테마",
-    "sources": [],
-    "changelog": [
-      {
-        "date": "2026-07-11",
-        "kind": "보강",
-        "title": "자산별 테마관점 CHR 정의",
-        "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
-      },
-      {
-        "date": "2026-07-11",
-        "kind": "보강",
-        "title": "엣지 근거 구체 백필 + 2026 이벤트",
-        "detail": "전 엣지 근거(호버 박스)를 종목별 사업·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
-      }
-    ],
-    "description": "• PBOC 부양·내수 회복·미·중 협상·홍콩 자금 흐름이 NAV 동인\n• 동인: 중국내수소비·ADR중국기업규제·미중갈등\n• 대표주: KWEB(중국인터넷ETF)·MCHI(중국대형주ETF)·KGRN(중국클린에너지ETF)"
+ "schemaVersion": "v5",
+ "themeId": "T_123",
+ "themeName": "중국ETF(미국상장)",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
+  ],
+  "dataAsOf": "2026-04-08T00:00:00+09:00",
+  "notes": "g123 누적 import 기반 중국ETF(미국상장) 테마",
+  "sources": [],
+  "changelog": [
+   {
+    "date": "2026-07-11",
+    "kind": "보강",
+    "title": "자산별 테마관점 CHR 정의",
+    "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
+   },
+   {
+    "date": "2026-07-11",
+    "kind": "보강",
+    "title": "엣지 근거 구체 백필 + 2026 이벤트",
+    "detail": "전 엣지 근거(호버 박스)를 종목별 사업·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
+   }
+  ],
+  "description": "• PBOC 부양·내수 회복·미·중 협상·홍콩 자금 흐름이 NAV 동인\n• 동인: 중국내수소비·ADR중국기업규제·미중갈등\n• 대표주: KWEB(중국인터넷ETF)·MCHI(중국대형주ETF)·KGRN(중국클린에너지ETF)"
+ },
+ "nodes": [
+  {
+   "id": "T_123",
+   "type": "THEME",
+   "name": "중국ETF(미국상장)"
   },
-  "nodes": [
-    {
-      "id": "T_123",
-      "type": "THEME",
-      "name": "중국ETF(미국상장)"
-    },
-    {
-      "id": "A_872",
-      "type": "ASSET",
-      "name": "KWEB",
-      "exposure": {
-        "ticker": "KWEB",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -1.947097722263036,
-        "close": 26.69,
-        "marketCap": 5283722282,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -0.9647495361781,
-        "return_15d": -4.882394868139695,
-        "return_1m": -2.733236151603502,
-        "return_ytd": -21.61527165932451,
-        "return_1y": -28.15612382234185,
-        "return_3y": -0.6329113924050556,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -0.5959031657355673,
-        "return_2y": 2.0259938837920544
-      }
-    },
-    {
-      "id": "A_124",
-      "type": "ASSET",
-      "name": "MCHI",
-      "exposure": {
-        "ticker": "MCHI",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.2166456038996234,
-        "close": 55.51,
-        "marketCap": 5831911297,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": 0.8172902288412498,
-        "return_15d": 0.018018018018017834,
-        "return_1m": 2.644230769230771,
-        "return_ytd": -7.591143665723321,
-        "return_1y": -7.3598130841121545,
-        "return_3y": 28.13942751615881,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": 2.0029400955531074,
-        "return_2y": 32.450489143402535
-      }
-    },
-    {
-      "id": "A_873",
-      "type": "ASSET",
-      "name": "KGRN",
-      "exposure": {
-        "ticker": "KGRN",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.3762541806020203,
-        "close": 23.83,
-        "marketCap": 51104674,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -0.9970918155380204,
-        "return_15d": -3.3657745336577505,
-        "return_1m": 0.3368421052631465,
-        "return_ytd": -11.708040014820309,
-        "return_1y": -15.074839629365645,
-        "return_3y": -9.426073736221973,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -0.08385744234802317,
-        "return_2y": 22.83505154639176
-      }
-    },
-    {
-      "id": "A_874",
-      "type": "ASSET",
-      "name": "CHIQ",
-      "exposure": {
-        "ticker": "CHIQ",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.498614958448762,
-        "close": 18.14,
-        "marketCap": 149142218,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": 2.485875706214702,
-        "return_15d": -1.6268980477223471,
-        "return_1m": 1.397428731134709,
-        "return_ytd": -14.71556182416549,
-        "return_1y": -18.69116987897803,
-        "return_3y": -0.4390779363336872,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": 3.302961275626437,
-        "return_2y": 12.531017369727039
-      }
-    },
-    {
-      "id": "A_875",
-      "type": "ASSET",
-      "name": "KURE",
-      "exposure": {
-        "ticker": "KURE",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 2.058047493403703,
-        "close": 19.34,
-        "marketCap": 111175004,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": 3.978494623655915,
-        "return_15d": 11.986103068905617,
-        "return_1m": 10.577472841623802,
-        "return_ytd": 13.497652582159624,
-        "return_1y": -2.075949367088603,
-        "return_3y": 13.298183948447573,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": 3.644158628081451,
-        "return_2y": 41.37426900584795
-      }
-    },
-    {
-      "id": "A_876",
-      "type": "ASSET",
-      "name": "KSTR",
-      "exposure": {
-        "ticker": "KSTR",
-        "exchange": "NYSEARCA",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -1.320676846884028,
-        "close": 23.91,
-        "marketCap": 55772131,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -7.361487795428124,
-        "return_15d": 0.2515723270440251,
-        "return_1m": -2.527517325723605,
-        "return_ytd": 28.479312197743155,
-        "return_1y": 49.530956848030016,
-        "return_3y": 85.34883720930233,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -3.6275695284159526,
-        "return_2y": 142.00404858299592
-      }
-    },
-    {
-      "id": "A_877",
-      "type": "ASSET",
-      "name": "CQQQ",
-      "exposure": {
-        "ticker": "CQQQ",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -1.1714805089880764,
-        "close": 48.93,
-        "marketCap": 2972692241,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -5.52230160262599,
-        "return_15d": -1.450151057401805,
-        "return_1m": -2.974419988102317,
-        "return_ytd": -5.9038461538461595,
-        "return_1y": -1.3905683192261153,
-        "return_3y": 29.273447820343446,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -4.152791380999011,
-        "return_2y": 51.81507911883341
-      }
-    },
-    {
-      "id": "A_051",
-      "type": "ASSET",
-      "name": "알리바바",
-      "exposure": {
-        "ticker": "BABA",
-        "exchange": "NYSE",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 1.2645461598137953,
-        "close": 130.53,
-        "marketCap": 312863717432,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": 4.6668270387298705,
-        "return_15d": 12.216299862448432,
-        "return_1m": 8.467674921057,
-        "return_ytd": -10.94965206713059,
-        "return_1y": 9.239266884258113,
-        "return_3y": 48.278995796887415,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": 6.8516699410609005,
-        "return_2y": 61.068608094767995
-      }
-    },
-    {
-      "id": "A_052",
-      "type": "ASSET",
-      "name": "텐센트",
-      "exposure": {
-        "ticker": "TCEHY",
-        "exchange": "OTC",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -1.4206514206514198,
-        "close": 56.9,
-        "marketCap": 512750218263,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": 0.22899418707063024,
-        "return_15d": -6.028075970272495,
-        "return_1m": -7.147519582245431,
-        "return_ytd": -25.669497060744607,
-        "return_1y": -24.854727945060752,
-        "return_3y": 38.47651496714528,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": 2.9491586755925336,
-        "return_2y": 21.012335176520615
-      }
-    },
-    {
-      "id": "A_878",
-      "type": "ASSET",
-      "name": "징둥닷컴",
-      "exposure": {
-        "ticker": "JD",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.20442930153321548,
-        "close": 29.41,
-        "marketCap": 41287224147,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": 3.1929824561403475,
-        "return_15d": -8.975549365521518,
-        "return_1m": -3.8888888888888973,
-        "return_ytd": 2.473867595818824,
-        "return_1y": -5.646454924607003,
-        "return_3y": -11.174871639987916,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": 0.3754266211604129,
-        "return_2y": 4.32777580702377
-      }
-    },
-    {
-      "id": "A_748",
-      "type": "ASSET",
-      "name": "PDD",
-      "exposure": {
-        "ticker": "PDD",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.7538802660753907,
-        "close": 89.52,
-        "marketCap": 127422450114,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": 2.9675638371290614,
-        "return_15d": 2.3787740164684434,
-        "return_1m": 4.032539221382914,
-        "return_ytd": -21.05123908633919,
-        "return_1y": -24.13559322033899,
-        "return_3y": 16.28994544037412,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": 6.356183913508362,
-        "return_2y": -37.9281653030093
-      }
-    },
-    {
-      "id": "A_879",
-      "type": "ASSET",
-      "name": "ICBC",
-      "exposure": {
-        "ticker": "1398",
-        "exchange": "HKEX",
-        "country": "CN"
-      },
-      "metrics": {
-        "return_1d": 1.2178619756427755,
-        "close": 7.475,
-        "marketCap": 3497222556236,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": 3.6011080332410073,
-        "return_15d": -2.094240837696326,
-        "return_1m": 5.203938115330531,
-        "return_ytd": 18.918918918918926,
-        "return_1y": 26.138279932546382,
-        "return_3y": 119.35483870967741,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": 3.7447988904299567,
-        "return_2y": 59.14893617021277
-      }
-    },
-    {
-      "id": "A_003",
-      "type": "ASSET",
-      "name": "BYD",
-      "exposure": {
-        "ticker": "1211",
-        "exchange": "HKEX",
-        "country": "CN"
-      },
-      "metrics": {
-        "return_1d": 2.684563758389258,
-        "close": 91.8,
-        "marketCap": 833991010828,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": 1.9433647973348123,
-        "return_15d": -3.164556962025311,
-        "return_1m": 1.830282861896837,
-        "return_ytd": -3.723125327739907,
-        "return_1y": -19.047619047619058,
-        "return_3y": 22.28586652457707,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": 3.8461538461538325,
-        "return_2y": 22.514346723608682
-      }
-    },
-    {
-      "id": "A_779",
-      "type": "ASSET",
-      "name": "CATL",
-      "exposure": {
-        "ticker": "300750",
-        "exchange": "SZSE",
-        "country": "CN"
-      },
-      "metrics": {
-        "return_1d": -1.0282776349614386,
-        "close": 385.0,
-        "marketCap": 1697216528315,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -3.74518725936297,
-        "return_15d": -4.200258783716526,
-        "return_1m": 2.2766517015115673,
-        "return_ytd": 4.830365408702275,
-        "return_1y": 37.89398280802292,
-        "return_3y": 63.22550557510493,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -2.8513752207923293,
-        "return_2y": 120.16355006576313
-      }
-    },
-    {
-      "id": "A_154",
-      "type": "ASSET",
-      "name": "메이퇀",
-      "exposure": {
-        "ticker": "MPNGY",
-        "exchange": "OTC",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -2.4542614904060733,
-        "close": 21.86,
-        "marketCap": 67458222808,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -1.531531531531527,
-        "return_15d": -8.151260504201685,
-        "return_1m": -0.31919744642042724,
-        "return_ytd": -17.165593027661995,
-        "return_1y": -29.002923026956807,
-        "return_3y": -33.108935128518965,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -3.487858719646797,
-        "return_2y": -19.7503671071953
-      }
-    },
-    {
-      "id": "A_153",
-      "type": "ASSET",
-      "name": "샤오미",
-      "exposure": {
-        "ticker": "XIACY",
-        "exchange": "OTC",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -0.1697792869269965,
-        "close": 17.64,
-        "marketCap": 91230166955,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": 7.692307692307709,
-        "return_15d": -10.638297872340418,
-        "return_1m": 0.05672149744753163,
-        "return_ytd": -29.972211194918618,
-        "return_1y": -47.48437034831795,
-        "return_3y": 137.8961564396494,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": 7.364576993304928,
-        "return_2y": 56.244464127546514
-      }
-    },
-    {
-      "id": "A_156",
-      "type": "ASSET",
-      "name": "메이디그룹",
-      "exposure": {
-        "ticker": "MGCLY",
-        "exchange": "OTC",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": 0.040933278755628244,
-        "close": 12.22,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": null,
-        "valuationSource": null,
-        "return_3d": -0.5776584492718229,
-        "return_15d": 1.4107883817427336,
-        "return_1m": 7.475813544415133,
-        "return_ytd": 18.3707076088536,
-        "return_1y": 24.87864697767104,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": 0.16393442622952836,
-        "return_2y": null
-      }
-    },
-    {
-      "id": "A_880",
-      "type": "ASSET",
-      "name": "하이얼",
-      "exposure": {
-        "ticker": "6690",
-        "exchange": "HKEX",
-        "country": "CN"
-      },
-      "metrics": {
-        "return_1d": 0.09416195856875031,
-        "close": 21.26,
-        "marketCap": 196104882682,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": 1.9175455417066223,
-        "return_15d": -6.426056338028152,
-        "return_1m": -1.024208566107998,
-        "return_ytd": -12.43822075782537,
-        "return_1y": -15.298804780876496,
-        "return_3y": -6.343612334801751,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": 0.7582938388625671,
-        "return_2y": -6.549450549450542
-      }
-    },
-    {
-      "id": "C_102",
-      "type": "CHARACTER",
-      "name": "반도체·통신·하드웨어중심"
-    },
-    {
-      "id": "C_103",
-      "type": "CHARACTER",
-      "name": "반도체및신소재중심"
-    },
-    {
-      "id": "M_039",
-      "type": "MACRO",
-      "name": "중국내수소비"
-    },
-    {
-      "id": "M_222",
-      "type": "MACRO",
-      "name": "ADR중국기업규제"
-    },
-    {
-      "id": "M_138",
-      "type": "MACRO",
-      "name": "미중갈등"
-    },
-    {
-      "id": "C_2309",
-      "type": "CHARACTER",
-      "name": "중국인터넷ETF"
-    },
-    {
-      "id": "C_2310",
-      "type": "CHARACTER",
-      "name": "중국대형주ETF"
-    },
-    {
-      "id": "C_2311",
-      "type": "CHARACTER",
-      "name": "중국클린에너지ETF"
-    },
-    {
-      "id": "C_2312",
-      "type": "CHARACTER",
-      "name": "중국소비재ETF"
-    },
-    {
-      "id": "C_2313",
-      "type": "CHARACTER",
-      "name": "중국헬스케어ETF"
-    },
-    {
-      "id": "C_2314",
-      "type": "CHARACTER",
-      "name": "중국STAR반도체ETF"
-    },
-    {
-      "id": "C_2315",
-      "type": "CHARACTER",
-      "name": "중국기술ETF"
-    },
-    {
-      "id": "C_2316",
-      "type": "CHARACTER",
-      "name": "중국이커머스클라우드"
-    },
-    {
-      "id": "C_2317",
-      "type": "CHARACTER",
-      "name": "위챗게임플랫폼"
-    },
-    {
-      "id": "C_2318",
-      "type": "CHARACTER",
-      "name": "중국이커머스징둥"
-    },
-    {
-      "id": "C_2319",
-      "type": "CHARACTER",
-      "name": "초저가이커머스"
-    },
-    {
-      "id": "C_2320",
-      "type": "CHARACTER",
-      "name": "중국최대은행"
-    },
-    {
-      "id": "C_2321",
-      "type": "CHARACTER",
-      "name": "전기차배터리"
-    },
-    {
-      "id": "C_2322",
-      "type": "CHARACTER",
-      "name": "세계1위배터리"
-    },
-    {
-      "id": "C_2323",
-      "type": "CHARACTER",
-      "name": "배달로컬소비"
-    },
-    {
-      "id": "C_2324",
-      "type": "CHARACTER",
-      "name": "스마트폰가전"
-    },
-    {
-      "id": "C_2325",
-      "type": "CHARACTER",
-      "name": "가전메이디"
-    },
-    {
-      "id": "C_2326",
-      "type": "CHARACTER",
-      "name": "가전하이얼"
-    }
-  ],
-  "edges": [
-    {
-      "from": "A_872",
-      "to": "T_123",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_003635"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_124",
-      "to": "T_123",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_003636"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_873",
-      "to": "T_123",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_003637"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_874",
-      "to": "T_123",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_003638"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_875",
-      "to": "T_123",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_003639"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_876",
-      "to": "T_123",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_003640"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_877",
-      "to": "T_123",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_003641"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_051",
-      "to": "A_872",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_003642"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_052",
-      "to": "A_872",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_003643"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_878",
-      "to": "A_872",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_003644"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_003",
-      "to": "A_873",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_003645"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_779",
-      "to": "A_873",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_003646"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_154",
-      "to": "A_874",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_003647"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_153",
-      "to": "A_874",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_003648"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_156",
-      "to": "A_874",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_003649"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_880",
-      "to": "A_874",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_003650"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_748",
-      "to": "A_124",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_003651"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_879",
-      "to": "A_124",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_003652"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_877",
-      "to": "C_102",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003653"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_876",
-      "to": "C_103",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003654"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "M_039",
-      "to": "T_123",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_003655"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_222",
-      "to": "T_123",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_003656"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_138",
-      "to": "T_123",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_003657"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_872",
-      "to": "C_2309",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003846"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_124",
-      "to": "C_2310",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003847"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_873",
-      "to": "C_2311",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003848"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_874",
-      "to": "C_2312",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003849"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_875",
-      "to": "C_2313",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003850"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_876",
-      "to": "C_2314",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003851"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_877",
-      "to": "C_2315",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003852"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_051",
-      "to": "C_2316",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003853"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_052",
-      "to": "C_2317",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003854"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_878",
-      "to": "C_2318",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003855"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_748",
-      "to": "C_2319",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003856"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_879",
-      "to": "C_2320",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003857"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_003",
-      "to": "C_2321",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003858"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_779",
-      "to": "C_2322",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003859"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_154",
-      "to": "C_2323",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003860"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_153",
-      "to": "C_2324",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003861"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_156",
-      "to": "C_2325",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003862"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_880",
-      "to": "C_2326",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003863"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_872",
-      "to": "T_123",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_003635"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_124",
-      "to": "T_123",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_003636"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_873",
-      "to": "T_123",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_003637"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_874",
-      "to": "T_123",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_003638"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_875",
-      "to": "T_123",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_003639"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_876",
-      "to": "T_123",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_003640"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_877",
-      "to": "T_123",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_003641"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_051",
-      "to": "A_872",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_003642"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_052",
-      "to": "A_872",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_003643"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_878",
-      "to": "A_872",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_003644"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_003",
-      "to": "A_873",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_003645"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_779",
-      "to": "A_873",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_003646"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_154",
-      "to": "A_874",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_003647"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_153",
-      "to": "A_874",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_003648"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_156",
-      "to": "A_874",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_003649"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_880",
-      "to": "A_874",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_003650"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_748",
-      "to": "A_124",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_003651"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_879",
-      "to": "A_124",
-      "type": "IN_ETF",
-      "evidence": [
-        "EV_003652"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_877",
-      "to": "C_102",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003653"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_876",
-      "to": "C_103",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003654"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "M_039",
-      "to": "T_123",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_003655"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_222",
-      "to": "T_123",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_003656"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "M_138",
-      "to": "T_123",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_003657"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_872",
-      "to": "C_2309",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003846"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_124",
-      "to": "C_2310",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003847"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_873",
-      "to": "C_2311",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003848"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_874",
-      "to": "C_2312",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003849"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_875",
-      "to": "C_2313",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003850"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_876",
-      "to": "C_2314",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003851"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_877",
-      "to": "C_2315",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003852"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_051",
-      "to": "C_2316",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003853"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_052",
-      "to": "C_2317",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003854"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_878",
-      "to": "C_2318",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003855"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_748",
-      "to": "C_2319",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003856"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_879",
-      "to": "C_2320",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003857"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_003",
-      "to": "C_2321",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003858"
-      ],
-      "confidence": 0.76,
-      "status": "verified"
-    },
-    {
-      "from": "A_779",
-      "to": "C_2322",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003859"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_154",
-      "to": "C_2323",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003860"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_153",
-      "to": "C_2324",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003861"
-      ],
-      "confidence": 0.74,
-      "status": "verified"
-    },
-    {
-      "from": "A_156",
-      "to": "C_2325",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003862"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_880",
-      "to": "C_2326",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_003863"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    }
-  ]
+  {
+   "id": "A_872",
+   "type": "ASSET",
+   "name": "KWEB",
+   "exposure": {
+    "ticker": "KWEB",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -1.947097722263036,
+    "close": 26.69,
+    "marketCap": 5283722282,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-20",
+    "valuationSource": "FMP",
+    "return_3d": -0.9647495361781,
+    "return_15d": -4.882394868139695,
+    "return_1m": -2.733236151603502,
+    "return_ytd": -21.61527165932451,
+    "return_1y": -28.15612382234185,
+    "return_3y": -0.6329113924050556,
+    "returnsAsOf": "2026-08-20",
+    "returnsSource": "FMP",
+    "return_5d": -0.5959031657355673,
+    "return_2y": 2.0259938837920544
+   }
+  },
+  {
+   "id": "A_124",
+   "type": "ASSET",
+   "name": "MCHI",
+   "exposure": {
+    "ticker": "MCHI",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.2166456038996234,
+    "close": 55.51,
+    "marketCap": 5831911297,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-20",
+    "valuationSource": "FMP",
+    "return_3d": 0.8172902288412498,
+    "return_15d": 0.018018018018017834,
+    "return_1m": 2.644230769230771,
+    "return_ytd": -7.591143665723321,
+    "return_1y": -7.3598130841121545,
+    "return_3y": 28.13942751615881,
+    "returnsAsOf": "2026-08-20",
+    "returnsSource": "FMP",
+    "return_5d": 2.0029400955531074,
+    "return_2y": 32.450489143402535
+   }
+  },
+  {
+   "id": "A_873",
+   "type": "ASSET",
+   "name": "KGRN",
+   "exposure": {
+    "ticker": "KGRN",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -0.3762541806020203,
+    "close": 23.83,
+    "marketCap": 51104674,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-20",
+    "valuationSource": "FMP",
+    "return_3d": -0.9970918155380204,
+    "return_15d": -3.3657745336577505,
+    "return_1m": 0.3368421052631465,
+    "return_ytd": -11.708040014820309,
+    "return_1y": -15.074839629365645,
+    "return_3y": -9.426073736221973,
+    "returnsAsOf": "2026-08-20",
+    "returnsSource": "FMP",
+    "return_5d": -0.08385744234802317,
+    "return_2y": 22.83505154639176
+   }
+  },
+  {
+   "id": "A_874",
+   "type": "ASSET",
+   "name": "CHIQ",
+   "exposure": {
+    "ticker": "CHIQ",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 0.498614958448762,
+    "close": 18.14,
+    "marketCap": 149142218,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-20",
+    "valuationSource": "FMP",
+    "return_3d": 2.485875706214702,
+    "return_15d": -1.6268980477223471,
+    "return_1m": 1.397428731134709,
+    "return_ytd": -14.71556182416549,
+    "return_1y": -18.69116987897803,
+    "return_3y": -0.4390779363336872,
+    "returnsAsOf": "2026-08-20",
+    "returnsSource": "FMP",
+    "return_5d": 3.302961275626437,
+    "return_2y": 12.531017369727039
+   }
+  },
+  {
+   "id": "A_875",
+   "type": "ASSET",
+   "name": "KURE",
+   "exposure": {
+    "ticker": "KURE",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 2.058047493403703,
+    "close": 19.34,
+    "marketCap": 111175004,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-20",
+    "valuationSource": "FMP",
+    "return_3d": 3.978494623655915,
+    "return_15d": 11.986103068905617,
+    "return_1m": 10.577472841623802,
+    "return_ytd": 13.497652582159624,
+    "return_1y": -2.075949367088603,
+    "return_3y": 13.298183948447573,
+    "returnsAsOf": "2026-08-20",
+    "returnsSource": "FMP",
+    "return_5d": 3.644158628081451,
+    "return_2y": 41.37426900584795
+   }
+  },
+  {
+   "id": "A_876",
+   "type": "ASSET",
+   "name": "KSTR",
+   "exposure": {
+    "ticker": "KSTR",
+    "exchange": "NYSEARCA",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -1.320676846884028,
+    "close": 23.91,
+    "marketCap": 55772131,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-20",
+    "valuationSource": "FMP",
+    "return_3d": -7.361487795428124,
+    "return_15d": 0.2515723270440251,
+    "return_1m": -2.527517325723605,
+    "return_ytd": 28.479312197743155,
+    "return_1y": 49.530956848030016,
+    "return_3y": 85.34883720930233,
+    "returnsAsOf": "2026-08-20",
+    "returnsSource": "FMP",
+    "return_5d": -3.6275695284159526,
+    "return_2y": 142.00404858299592
+   }
+  },
+  {
+   "id": "A_877",
+   "type": "ASSET",
+   "name": "CQQQ",
+   "exposure": {
+    "ticker": "CQQQ",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": -1.1714805089880764,
+    "close": 48.93,
+    "marketCap": 2972692241,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-20",
+    "valuationSource": "FMP",
+    "return_3d": -5.52230160262599,
+    "return_15d": -1.450151057401805,
+    "return_1m": -2.974419988102317,
+    "return_ytd": -5.9038461538461595,
+    "return_1y": -1.3905683192261153,
+    "return_3y": 29.273447820343446,
+    "returnsAsOf": "2026-08-20",
+    "returnsSource": "FMP",
+    "return_5d": -4.152791380999011,
+    "return_2y": 51.81507911883341
+   }
+  },
+  {
+   "id": "C_102",
+   "type": "CHARACTER",
+   "name": "반도체·통신·하드웨어중심"
+  },
+  {
+   "id": "C_103",
+   "type": "CHARACTER",
+   "name": "반도체및신소재중심"
+  },
+  {
+   "id": "M_039",
+   "type": "MACRO",
+   "name": "중국내수소비"
+  },
+  {
+   "id": "M_222",
+   "type": "MACRO",
+   "name": "ADR중국기업규제"
+  },
+  {
+   "id": "M_138",
+   "type": "MACRO",
+   "name": "미중갈등"
+  },
+  {
+   "id": "C_2309",
+   "type": "CHARACTER",
+   "name": "중국인터넷ETF"
+  },
+  {
+   "id": "C_2310",
+   "type": "CHARACTER",
+   "name": "중국대형주ETF"
+  },
+  {
+   "id": "C_2311",
+   "type": "CHARACTER",
+   "name": "중국클린에너지ETF"
+  },
+  {
+   "id": "C_2312",
+   "type": "CHARACTER",
+   "name": "중국소비재ETF"
+  },
+  {
+   "id": "C_2313",
+   "type": "CHARACTER",
+   "name": "중국헬스케어ETF"
+  },
+  {
+   "id": "C_2314",
+   "type": "CHARACTER",
+   "name": "중국STAR반도체ETF"
+  },
+  {
+   "id": "C_2315",
+   "type": "CHARACTER",
+   "name": "중국기술ETF"
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_872",
+   "to": "T_123",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_003635"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_124",
+   "to": "T_123",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_003636"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_873",
+   "to": "T_123",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_003637"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_874",
+   "to": "T_123",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_003638"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_875",
+   "to": "T_123",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_003639"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_876",
+   "to": "T_123",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_003640"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_877",
+   "to": "T_123",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_003641"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_877",
+   "to": "C_102",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_003653"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_876",
+   "to": "C_103",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_003654"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "M_039",
+   "to": "T_123",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_003655"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_222",
+   "to": "T_123",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_003656"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_138",
+   "to": "T_123",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_003657"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_872",
+   "to": "C_2309",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_003846"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_124",
+   "to": "C_2310",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_003847"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_873",
+   "to": "C_2311",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_003848"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_874",
+   "to": "C_2312",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_003849"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_875",
+   "to": "C_2313",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_003850"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_876",
+   "to": "C_2314",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_003851"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_877",
+   "to": "C_2315",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_003852"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_872",
+   "to": "T_123",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_003635"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_124",
+   "to": "T_123",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_003636"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_873",
+   "to": "T_123",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_003637"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_874",
+   "to": "T_123",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_003638"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_875",
+   "to": "T_123",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_003639"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_876",
+   "to": "T_123",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_003640"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_877",
+   "to": "T_123",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_003641"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_877",
+   "to": "C_102",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_003653"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "A_876",
+   "to": "C_103",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_003654"
+   ],
+   "confidence": 0.74,
+   "status": "verified"
+  },
+  {
+   "from": "M_039",
+   "to": "T_123",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_003655"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_222",
+   "to": "T_123",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_003656"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "M_138",
+   "to": "T_123",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_003657"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_872",
+   "to": "C_2309",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_003846"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_124",
+   "to": "C_2310",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_003847"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_873",
+   "to": "C_2311",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_003848"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_874",
+   "to": "C_2312",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_003849"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_875",
+   "to": "C_2313",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_003850"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_876",
+   "to": "C_2314",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_003851"
+   ],
+   "confidence": 0.76,
+   "status": "verified"
+  },
+  {
+   "from": "A_877",
+   "to": "C_2315",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_003852"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  }
+ ]
 }
