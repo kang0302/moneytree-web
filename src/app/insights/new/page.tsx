@@ -63,16 +63,21 @@ function Editor() {
     });
   };
 
-  // 테마 그래프 삽입 — 테마 ID 입력받아 [[T_xxx]] 토큰을 본문에 삽입
-  const insertTheme = () => {
-    const raw = window.prompt("삽입할 테마 ID를 입력하세요 (예: T_028)", "T_");
+  // 테마 그래프 삽입 — 테마 ID 입력받아 토큰을 본문에 삽입.
+  //   embed=true → [[T_xxx|embed]] (글 안에 그래프를 라이브로 불러옴)
+  //   embed=false → [[T_xxx]] (링크 카드)
+  const insertTheme = (embed: boolean) => {
+    const raw = window.prompt(
+      embed ? "글 안에 불러올 테마 그래프의 ID (예: T_028)" : "링크할 테마 그래프의 ID (예: T_028)",
+      "T_",
+    );
     if (!raw) return;
     const id = raw.trim().toUpperCase().replace(/\s+/g, "");
     if (!/^T_\d{1,4}$/.test(id)) {
       window.alert("테마 ID 형식이 올바르지 않습니다. 예: T_028");
       return;
     }
-    insertAtCursor(`\n[[${id}]]\n`);
+    insertAtCursor(embed ? `\n[[${id}|embed]]\n` : `\n[[${id}]]\n`);
   };
   const editable = !editId || isLocal(editId); // 시드 글은 로컬 편집본으로 새로 저장
 
@@ -203,7 +208,8 @@ function Editor() {
         <button onClick={() => insertAtCursor("> ")} className="rounded-md px-2.5 py-1.5 text-[13px] text-white/70 hover:bg-white/10" title="인용">❝ 인용</button>
         <button onClick={() => insertAtCursor("[링크](https://)")} className="rounded-md px-2.5 py-1.5 text-[13px] text-white/70 hover:bg-white/10" title="링크">🔗 링크</button>
         <span className="mx-1 h-4 w-px bg-white/15" />
-        <button onClick={insertTheme} className="rounded-md border border-indigo-400/40 bg-indigo-500/15 px-2.5 py-1.5 text-[13px] font-semibold text-indigo-100 hover:bg-indigo-500/25" title="테마 그래프 삽입 ([[T_028]])">📊 테마 그래프</button>
+        <button onClick={() => insertTheme(false)} className="rounded-md border border-indigo-400/40 bg-indigo-500/15 px-2.5 py-1.5 text-[13px] font-semibold text-indigo-100 hover:bg-indigo-500/25" title="테마 그래프 링크 카드 삽입 ([[T_028]])">📊 그래프 링크</button>
+        <button onClick={() => insertTheme(true)} className="rounded-md border border-indigo-400/40 bg-indigo-500/15 px-2.5 py-1.5 text-[13px] font-semibold text-indigo-100 hover:bg-indigo-500/25" title="테마 그래프를 글 안에 불러오기 ([[T_028|embed]])">🖼 그래프 임베드</button>
         <div className="ml-auto flex items-center gap-2">
           <button
             onClick={() => setShowPreview((v) => !v)}
@@ -220,7 +226,7 @@ function Editor() {
           ref={taRef}
           value={body}
           onChange={(e) => setBody(e.target.value)}
-          placeholder={"여기에 본문을 작성하세요 (마크다운 지원)\n\n# 큰제목\n## 소제목\n- 목록 항목\n> 인용구\n**굵게**  *기울임*  `코드`\n[링크 텍스트](https://...)\n\n관련 테마 그래프는 [[T_028]] 처럼 삽입하면 카드로 표시됩니다."}
+          placeholder={"여기에 본문을 작성하세요 (마크다운 지원)\n\n# 큰제목\n## 소제목\n- 목록 항목\n> 인용구\n**굵게**  *기울임*  `코드`\n[링크 텍스트](https://...)\n\n관련 테마 그래프: [[T_028]] = 링크 카드 / [[T_028|embed]] = 글 안에 그래프 불러오기"}
           className="w-full resize-y rounded-2xl border border-white/12 bg-white/[0.04] px-5 py-4 font-mono leading-relaxed text-white placeholder:text-white/25 outline-none focus:border-sky-400/50"
           style={{ minHeight: "60vh", fontSize: 15 }}
         />
@@ -255,7 +261,7 @@ function Editor() {
       {/* 하단 게시 바 */}
       <div className="mt-4 flex items-center justify-between">
         <span className="text-[12.5px] text-white/40">
-          {body.length}자 · 마크다운 &amp; 테마 그래프([[T_028]]) 지원
+          {body.length}자 · 마크다운 &amp; 테마 그래프 링크([[T_028]])·임베드([[T_028|embed]]) 지원
         </span>
         <button
           onClick={onPublish}

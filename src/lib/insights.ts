@@ -190,23 +190,36 @@ export function renderMarkdown(md: string): string {
     const t = line.trim();
     if (!t) { flushPara(); closeList(); continue; }
     let m: RegExpMatchArray | null;
-    // 한 줄 전체가 테마 토큰이면 → 그래프 링크 카드(블록)
+    // 한 줄 전체가 테마 토큰이면 → 그래프 링크 카드 또는 라이브 임베드(블록)
     if ((m = t.match(/^\[\[(T_\d{1,4})(?:\|([^\]]+))?\]\]$/))) {
       flushPara(); closeList();
       const id = m[1];
-      const label = m[2] ? escapeHtml(m[2]) : "테마 그래프";
-      out.push(
-        `<a href="/graph/${id}" class="my-4 flex items-center justify-between gap-3 rounded-xl border border-indigo-400/30 bg-indigo-500/10 px-4 py-3 no-underline transition hover:border-indigo-300/60 hover:bg-indigo-500/20">` +
-          `<span class="flex items-center gap-2.5">` +
-            `<span style="font-size:18px">📊</span>` +
-            `<span class="flex flex-col">` +
-              `<span class="text-[14px] font-semibold text-white">${label}</span>` +
-              `<span class="text-[11px] text-white/50">${id} · 관련 테마 그래프 열기</span>` +
+      const opt = (m[2] ?? "").trim();
+      if (/^embed$/i.test(opt)) {
+        // 라이브 임베드 — 해당 테마 그래프를 글 안에서 그대로 불러온다.
+        out.push(
+          `<span class="my-5 block overflow-hidden rounded-2xl border border-white/12 bg-black/40">` +
+            `<iframe src="/graph/${id}" loading="lazy" title="테마 그래프 ${id}" style="width:100%;height:560px;border:0;display:block"></iframe>` +
+            `<a href="/graph/${id}" target="_blank" rel="noreferrer" class="flex items-center justify-between px-4 py-2.5 text-[12px] text-white/55 no-underline transition hover:text-white/90">` +
+              `<span>📊 ${id} · 관련 테마 그래프</span><span class="text-indigo-200/70">새 탭에서 열기 →</span>` +
+            `</a>` +
+          `</span>`,
+        );
+      } else {
+        const label = opt ? escapeHtml(opt) : "테마 그래프";
+        out.push(
+          `<a href="/graph/${id}" class="my-4 flex items-center justify-between gap-3 rounded-xl border border-indigo-400/30 bg-indigo-500/10 px-4 py-3 no-underline transition hover:border-indigo-300/60 hover:bg-indigo-500/20">` +
+            `<span class="flex items-center gap-2.5">` +
+              `<span style="font-size:18px">📊</span>` +
+              `<span class="flex flex-col">` +
+                `<span class="text-[14px] font-semibold text-white">${label}</span>` +
+                `<span class="text-[11px] text-white/50">${id} · 관련 테마 그래프 열기</span>` +
+              `</span>` +
             `</span>` +
-          `</span>` +
-          `<span class="text-indigo-200/70">→</span>` +
-        `</a>`,
-      );
+            `<span class="text-indigo-200/70">→</span>` +
+          `</a>`,
+        );
+      }
     } else if ((m = t.match(/^#{1,3}\s+(.*)$/))) {
       flushPara(); closeList();
       const level = t.match(/^#+/)![0].length;
