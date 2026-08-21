@@ -884,9 +884,9 @@ export default function GraphClient({
         <div className="graph-split h-full min-h-0 gap-2">
           {/* Graph */}
           <div data-graph-area className="relative min-h-0 rounded-xl border border-white/10 bg-black/25 p-1">
-            {/* ✅ 기간 토글 — 그래프 박스 최상단 오버레이 (헤더에서 이동, 검색창 공간 확보) */}
-            <div className="pointer-events-none absolute left-0 right-0 top-2 z-20 flex justify-center">
-              <div className="pointer-events-auto flex items-center gap-1 rounded-lg border border-white/10 bg-black/70 p-1 shadow-lg backdrop-blur">
+            {/* ✅ 기간 토글 — 그래프 박스 우상단 오버레이 (헤더에서 이동, 검색창 공간 확보) */}
+            <div className="absolute right-3 top-2 z-20">
+              <div className="flex items-center gap-1 rounded-lg border border-white/10 bg-black/70 p-1 shadow-lg backdrop-blur">
                 {periods.map((p) => {
                   const active = p.key === period;
                   return (
