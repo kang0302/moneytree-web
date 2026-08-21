@@ -847,8 +847,9 @@ export default function ThemeBriefing({ themeId, nodes, freshInsightIds }: Props
         return;
       }
       const r = el.getBoundingClientRect();
-      // 그래프 영역의 bottom 안쪽 16px, center-x. viewport 밖이면 viewport 안쪽 16px 로 클램프.
-      const left = r.left + r.width / 2;
+      // 그래프 영역의 bottom 안쪽 16px. x는 그래프 테마 중심(오른쪽으로 이동된 위치)과 수직 정렬.
+      //   ForceGraphWrapper의 GRAPH_CENTER_SHIFT_X(0.08) 만큼 중앙에서 오른쪽으로.
+      const left = r.left + r.width * (0.5 + 0.08);
       const top = Math.min(window.innerHeight - 60, Math.max(60, r.bottom - 50));
       setCuePos({ left, top });
     };

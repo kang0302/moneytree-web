@@ -192,6 +192,10 @@ const GRAPH_CONFIG = {
   },
 } as const;
 
+// 그래프 중심을 뷰포트 중앙보다 오른쪽으로 이동시키는 비율(그래프 폭 대비).
+// 좌측 상단 테마 정보 카드와의 노드 겹침 방지. ThemeBriefing 하단 큐 버튼도 동일 값으로 정렬.
+export const GRAPH_CENTER_SHIFT_X = 0.08;
+
 // 비스펙 튜닝값 (구조적 파라미터, GRAPH_CONFIG와 분리)
 const LINK_STRENGTH          = 0.3;
 const TOWARD_PARENT_STRENGTH = 0.18; // L3/L4 → parent 각도 방향성 force (약하게: 형제 노드들이 collide로 펼쳐지게 둠)
@@ -1695,7 +1699,10 @@ export default function ForceGraphWrapper({
             // 자리잡도록. L1(상단, r=200) · L4(하단, r=500) 반경 비대칭 때문에 정중앙
             // 정렬 시 윗공간이 비어 보였음. zoom 보정 포함.
             const camOffsetY = (size.h * 0.12) / GRAPH_CONFIG.zoom.initial;
-            fgRef.current.centerAt(cx, cy + camOffsetY, 0);
+            // 그래프 중심을 살짝 오른쪽으로 — 좌측 상단 테마 정보 카드와의 겹침 방지.
+            // (ThemeBriefing 하단 큐 버튼 정렬값 GRAPH_CENTER_SHIFT_X 와 동일 비율)
+            const camOffsetX = (size.w * GRAPH_CENTER_SHIFT_X) / GRAPH_CONFIG.zoom.initial;
+            fgRef.current.centerAt(cx - camOffsetX, cy + camOffsetY, 0);
             fgRef.current.zoom(GRAPH_CONFIG.zoom.initial, 0);
           } catch {}
         }, 120);

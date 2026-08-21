@@ -900,8 +900,8 @@ export default function GraphClient({
 
       {/* ✅ Graph area: viewport 높이 - 헤더(48) - 여백 — 브리핑이 아래로 자연 흐름 */}
       <div className="h-[calc(100vh-72px)] min-h-[520px]">
-        {/* ✅ Right panel ratio ~ 60/40 유지 */}
-        <div className="grid h-full min-h-0 grid-cols-1 gap-2 lg:grid-cols-[3fr_2fr]">
+        {/* ✅ 그래프:패널 = 5:3 (우측 패널 폭 축소, 그래프 여유 확대) */}
+        <div className="grid h-full min-h-0 grid-cols-1 gap-2 lg:grid-cols-[5fr_3fr]">
           {/* Graph */}
           <div data-graph-area className="relative min-h-0 rounded-xl border border-white/10 bg-black/25 p-1">
             <ForceGraphWrapper
