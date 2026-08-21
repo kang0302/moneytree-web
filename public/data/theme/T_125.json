@@ -1,568 +1,574 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_125",
- "themeName": "글로벌AIETF_BIG7",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_125",
+  "themeName": "글로벌AIETF_BIG7",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-28T00:00:00+09:00",
+    "notes": "g125 누적 import 기반 글로벌 AI ETF BIG4 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-07-28",
+        "kind": "수정",
+        "title": "팔란티어 유럽 이탈 이벤트 추가",
+        "detail": "유럽 주권 SW 전환(프랑스·네덜란드·폴란드)으로 팔란티어 약세 이벤트를 2026 DB에 반영."
+      },
+      {
+        "date": "2026-07-11",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
+      },
+      {
+        "date": "2026-07-11",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필 + 2026 이벤트",
+        "detail": "전 엣지 근거(호버 박스)를 종목별 사업·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
+      }
+    ],
+    "description": "• NVDA·MSFT 비중과 AI capex 사이클이 NAV 모멘텀 직접 동인\n• 동인: AI확산·AI가속기GPU_CapEx·하이퍼스케일러CAPEX\n• 대표주: BAI(AI인프라SW ET)·ALAI(AI애플리케이션액티)·AIQ(글로벌AI빅데이터E)"
+  },
+  "nodes": [
+    {
+      "id": "T_125",
+      "type": "THEME",
+      "name": "글로벌AIETF_BIG7"
+    },
+    {
+      "id": "A_896",
+      "type": "ASSET",
+      "name": "BAI",
+      "exposure": {
+        "ticker": "BAI",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.6330544879041389,
+        "close": 44.51,
+        "marketCap": 13694424059,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "FMP",
+        "return_3d": -6.746281164885815,
+        "return_15d": 8.349561830574492,
+        "return_1m": 4.238875878220139,
+        "return_ytd": 33.66366366366367,
+        "return_1y": 47.3353194306521,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "FMP",
+        "return_5d": -4.423448572042088,
+        "return_2y": null
+      }
+    },
+    {
+      "id": "A_897",
+      "type": "ASSET",
+      "name": "ALAI",
+      "exposure": {
+        "ticker": "ALAI",
+        "exchange": "CBOE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.2702702702702675,
+        "close": 44.28,
+        "marketCap": 135836162,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "FMP",
+        "return_3d": -4.238754325259519,
+        "return_15d": 4.409337420419734,
+        "return_1m": 2.8810408921933206,
+        "return_ytd": 22.625311548047634,
+        "return_1y": 35.57868952847522,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "FMP",
+        "return_5d": -3.906249999999989,
+        "return_2y": 101.91518467852259
+      }
+    },
+    {
+      "id": "A_898",
+      "type": "ASSET",
+      "name": "AIQ",
+      "exposure": {
+        "ticker": "AIQ",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.06350214319732483,
+        "close": 63.03,
+        "marketCap": 10955738707,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "FMP",
+        "return_3d": -1.5156249999999982,
+        "return_15d": 7.394786164593636,
+        "return_1m": 6.577612445045666,
+        "return_ytd": 23.928430987023198,
+        "return_1y": 42.795650203896685,
+        "return_3y": 134.5738742091552,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "FMP",
+        "return_5d": -2.460538532961931,
+        "return_2y": 77.90008467400509
+      }
+    },
+    {
+      "id": "A_899",
+      "type": "ASSET",
+      "name": "ARTY",
+      "exposure": {
+        "ticker": "ARTY",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.47567273715685143,
+        "close": 73.93,
+        "marketCap": 3872052773,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "FMP",
+        "return_3d": -4.8152439809450165,
+        "return_15d": 11.592452830188682,
+        "return_1m": 12.595187328662828,
+        "return_ytd": 53.445413034454134,
+        "return_1y": 78.83405902273827,
+        "return_3y": 142.7117531188444,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "FMP",
+        "return_5d": -4.680247550283645,
+        "return_2y": 117.88977306218689
+      }
+    },
+    {
+      "id": "M_055",
+      "type": "MACRO",
+      "name": "AI확산"
+    },
+    {
+      "id": "M_368",
+      "type": "MACRO",
+      "name": "AI가속기GPU_CapEx"
+    },
+    {
+      "id": "M_288",
+      "type": "MACRO",
+      "name": "하이퍼스케일러CAPEX"
+    },
+    {
+      "id": "C_2342",
+      "type": "CHARACTER",
+      "name": "AI인프라SW_ETF"
+    },
+    {
+      "id": "C_2343",
+      "type": "CHARACTER",
+      "name": "AI애플리케이션액티브ETF"
+    },
+    {
+      "id": "C_2344",
+      "type": "CHARACTER",
+      "name": "글로벌AI빅데이터ETF"
+    },
+    {
+      "id": "C_2345",
+      "type": "CHARACTER",
+      "name": "AI반도체인프라ETF"
+    },
+    {
+      "name": "BOTZ",
+      "id": "A_145",
+      "metrics": {
+        "return_1d": -1.566794942275973,
+        "return_30d": null,
+        "market_cap": null,
+        "asof": null,
+        "return_90d": null,
+        "currency": null,
+        "per": null,
+        "last_price": null,
+        "return_15d": 2.6074498567335347,
+        "return_3d": -5.3146483342147,
+        "return_1m": 4.5547445255474495,
+        "return_ytd": -1.1592602815346242,
+        "return_1y": 7.926461723930078,
+        "return_3y": 40.873328088119585,
+        "close": 35.81,
+        "marketCap": 3327396660,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "FMP",
+        "pe_ttm": null,
+        "return_5d": -5.3146483342147,
+        "return_2y": 15.889967637540469
+      },
+      "exposure": {
+        "country": "US",
+        "ticker": "BOTZ",
+        "exchange": "NASDAQ"
+      },
+      "type": "ASSET"
+    },
+    {
+      "id": "A_3021",
+      "type": "ASSET",
+      "name": "iShares 로보틱스·AI 멀티섹터 ETF",
+      "exposure": {
+        "ticker": "IRBO",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "coreBiz": "iShares 로보틱스·AI 멀티섹터 ETF",
+      "metrics": {
+        "return_1d": 0.35121212121214107,
+        "return_3d": 4.433617155471459,
+        "return_5d": 3.2935121646912036,
+        "return_15d": -3.508449883449871,
+        "return_1m": 7.1711974110032495,
+        "return_ytd": -3.6743253895535344,
+        "return_1y": 6.705010472047701,
+        "return_2y": 19.344747928687013,
+        "return_3y": -22.928026997148997,
+        "close": 33.1159,
+        "marketCap": null,
+        "returnsAsOf": "2024-09-12",
+        "returnsSource": "EODHD_ADJ",
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null
+      }
+    },
+    {
+      "id": "A_3022",
+      "type": "ASSET",
+      "name": "Roundhill 생성형AI·테크 ETF",
+      "exposure": {
+        "ticker": "CHAT",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "coreBiz": "Roundhill 생성형AI·테크 ETF",
+      "metrics": {
+        "return_1d": 0.03418024381907081,
+        "return_3d": -6.991525423728817,
+        "return_5d": -6.206601858775773,
+        "return_15d": 9.50361686206036,
+        "return_1m": 6.955780241198672,
+        "return_ytd": 48.91451831750337,
+        "return_1y": 73.29688440624108,
+        "return_2y": 151.7779307180546,
+        "return_3y": 232.67404763528617,
+        "close": 87.8,
+        "marketCap": null,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD_ADJ",
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null
+      }
+    }
   ],
-  "dataAsOf": "2026-07-28T00:00:00+09:00",
-  "notes": "g125 누적 import 기반 글로벌 AI ETF BIG4 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-07-28",
-    "kind": "수정",
-    "title": "팔란티어 유럽 이탈 이벤트 추가",
-    "detail": "유럽 주권 SW 전환(프랑스·네덜란드·폴란드)으로 팔란티어 약세 이벤트를 2026 DB에 반영."
-   },
-   {
-    "date": "2026-07-11",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
-   },
-   {
-    "date": "2026-07-11",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필 + 2026 이벤트",
-    "detail": "전 엣지 근거(호버 박스)를 종목별 사업·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
-   }
+  "edges": [
+    {
+      "from": "A_896",
+      "to": "T_125",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_003687"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_897",
+      "to": "T_125",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_003688"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_898",
+      "to": "T_125",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_003689"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_899",
+      "to": "T_125",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_003690"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "M_055",
+      "to": "T_125",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003710"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_368",
+      "to": "T_125",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003711"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_288",
+      "to": "T_125",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003712"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_896",
+      "to": "C_2342",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003879"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_897",
+      "to": "C_2343",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003880"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_898",
+      "to": "C_2344",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003881"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_899",
+      "to": "C_2345",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003882"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_3021",
+      "to": "T_125",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "글로벌 AI ETF"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_3022",
+      "to": "T_125",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "글로벌 AI ETF"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_145",
+      "to": "T_125",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "글로벌 AI ETF"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    }
   ],
-  "description": "• NVDA·MSFT 비중과 AI capex 사이클이 NAV 모멘텀 직접 동인\n• 동인: AI확산·AI가속기GPU_CapEx·하이퍼스케일러CAPEX\n• 대표주: BAI(AI인프라SW ET)·ALAI(AI애플리케이션액티)·AIQ(글로벌AI빅데이터E)"
- },
- "nodes": [
-  {
-   "id": "T_125",
-   "type": "THEME",
-   "name": "글로벌AIETF_BIG7"
-  },
-  {
-   "id": "A_896",
-   "type": "ASSET",
-   "name": "BAI",
-   "exposure": {
-    "ticker": "BAI",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.6330544879041389,
-    "close": 44.51,
-    "marketCap": 13694424059,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "FMP",
-    "return_3d": -6.746281164885815,
-    "return_15d": 8.349561830574492,
-    "return_1m": 4.238875878220139,
-    "return_ytd": 33.66366366366367,
-    "return_1y": 47.3353194306521,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "FMP",
-    "return_5d": -4.423448572042088,
-    "return_2y": null
-   }
-  },
-  {
-   "id": "A_897",
-   "type": "ASSET",
-   "name": "ALAI",
-   "exposure": {
-    "ticker": "ALAI",
-    "exchange": "CBOE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.2702702702702675,
-    "close": 44.28,
-    "marketCap": 135836162,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "FMP",
-    "return_3d": -4.238754325259519,
-    "return_15d": 4.409337420419734,
-    "return_1m": 2.8810408921933206,
-    "return_ytd": 22.625311548047634,
-    "return_1y": 35.57868952847522,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "FMP",
-    "return_5d": -3.906249999999989,
-    "return_2y": 101.91518467852259
-   }
-  },
-  {
-   "id": "A_898",
-   "type": "ASSET",
-   "name": "AIQ",
-   "exposure": {
-    "ticker": "AIQ",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.06350214319732483,
-    "close": 63.03,
-    "marketCap": 10955738707,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "FMP",
-    "return_3d": -1.5156249999999982,
-    "return_15d": 7.394786164593636,
-    "return_1m": 6.577612445045666,
-    "return_ytd": 23.928430987023198,
-    "return_1y": 42.795650203896685,
-    "return_3y": 134.5738742091552,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "FMP",
-    "return_5d": -2.460538532961931,
-    "return_2y": 77.90008467400509
-   }
-  },
-  {
-   "id": "A_899",
-   "type": "ASSET",
-   "name": "ARTY",
-   "exposure": {
-    "ticker": "ARTY",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.47567273715685143,
-    "close": 73.93,
-    "marketCap": 3872052773,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "FMP",
-    "return_3d": -4.8152439809450165,
-    "return_15d": 11.592452830188682,
-    "return_1m": 12.595187328662828,
-    "return_ytd": 53.445413034454134,
-    "return_1y": 78.83405902273827,
-    "return_3y": 142.7117531188444,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "FMP",
-    "return_5d": -4.680247550283645,
-    "return_2y": 117.88977306218689
-   }
-  },
-  {
-   "id": "M_055",
-   "type": "MACRO",
-   "name": "AI확산"
-  },
-  {
-   "id": "M_368",
-   "type": "MACRO",
-   "name": "AI가속기GPU_CapEx"
-  },
-  {
-   "id": "M_288",
-   "type": "MACRO",
-   "name": "하이퍼스케일러CAPEX"
-  },
-  {
-   "id": "C_2342",
-   "type": "CHARACTER",
-   "name": "AI인프라SW_ETF"
-  },
-  {
-   "id": "C_2343",
-   "type": "CHARACTER",
-   "name": "AI애플리케이션액티브ETF"
-  },
-  {
-   "id": "C_2344",
-   "type": "CHARACTER",
-   "name": "글로벌AI빅데이터ETF"
-  },
-  {
-   "id": "C_2345",
-   "type": "CHARACTER",
-   "name": "AI반도체인프라ETF"
-  },
-  {
-   "name": "BOTZ",
-   "id": "A_145",
-   "metrics": {
-    "return_1d": -1.566794942275973,
-    "return_30d": null,
-    "market_cap": null,
-    "asof": null,
-    "return_90d": null,
-    "currency": null,
-    "per": null,
-    "last_price": null,
-    "return_15d": 2.6074498567335347,
-    "return_3d": -5.3146483342147,
-    "return_1m": 4.5547445255474495,
-    "return_ytd": -1.1592602815346242,
-    "return_1y": 7.926461723930078,
-    "return_3y": 40.873328088119585,
-    "close": 35.81,
-    "marketCap": 3327396660,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "FMP",
-    "pe_ttm": null,
-    "return_5d": -5.3146483342147,
-    "return_2y": 15.889967637540469
-   },
-   "exposure": {
-    "country": "US",
-    "ticker": "BOTZ",
-    "exchange": "NASDAQ"
-   },
-   "type": "ASSET"
-  },
-  {
-   "id": "A_3021",
-   "type": "ASSET",
-   "name": "iShares 로보틱스·AI 멀티섹터 ETF",
-   "exposure": {
-    "ticker": "IRBO",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "coreBiz": "iShares 로보틱스·AI 멀티섹터 ETF",
-   "metrics": {
-    "return_1d": 0.35121212121214107,
-    "return_3d": 4.433617155471459,
-    "return_5d": 3.2935121646912036,
-    "return_15d": -3.508449883449871,
-    "return_1m": 7.1711974110032495,
-    "return_ytd": -3.6743253895535344,
-    "return_1y": 6.705010472047701,
-    "return_2y": 19.344747928687013,
-    "return_3y": -22.928026997148997,
-    "close": 33.1159,
-    "marketCap": null,
-    "returnsAsOf": "2024-09-12",
-    "returnsSource": "EODHD_ADJ"
-   }
-  },
-  {
-   "id": "A_3022",
-   "type": "ASSET",
-   "name": "Roundhill 생성형AI·테크 ETF",
-   "exposure": {
-    "ticker": "CHAT",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "coreBiz": "Roundhill 생성형AI·테크 ETF",
-   "metrics": {
-    "return_1d": 0.03418024381907081,
-    "return_3d": -6.991525423728817,
-    "return_5d": -6.206601858775773,
-    "return_15d": 9.50361686206036,
-    "return_1m": 6.955780241198672,
-    "return_ytd": 48.91451831750337,
-    "return_1y": 73.29688440624108,
-    "return_2y": 151.7779307180546,
-    "return_3y": 232.67404763528617,
-    "close": 87.8,
-    "marketCap": null,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "EODHD_ADJ"
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_896",
-   "to": "T_125",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_003687"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_897",
-   "to": "T_125",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_003688"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_898",
-   "to": "T_125",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_003689"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_899",
-   "to": "T_125",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_003690"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "M_055",
-   "to": "T_125",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003710"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_368",
-   "to": "T_125",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003711"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_288",
-   "to": "T_125",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003712"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_896",
-   "to": "C_2342",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003879"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_897",
-   "to": "C_2343",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003880"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_898",
-   "to": "C_2344",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003881"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_899",
-   "to": "C_2345",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003882"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_3021",
-   "to": "T_125",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "글로벌 AI ETF"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_3022",
-   "to": "T_125",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "글로벌 AI ETF"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_145",
-   "to": "T_125",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "글로벌 AI ETF"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_896",
-   "to": "T_125",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_003687"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_897",
-   "to": "T_125",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_003688"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_898",
-   "to": "T_125",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_003689"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_899",
-   "to": "T_125",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_003690"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "M_055",
-   "to": "T_125",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003710"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_368",
-   "to": "T_125",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003711"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_288",
-   "to": "T_125",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003712"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_896",
-   "to": "C_2342",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003879"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_897",
-   "to": "C_2343",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003880"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_898",
-   "to": "C_2344",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003881"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_899",
-   "to": "C_2345",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003882"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_3021",
-   "to": "T_125",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "글로벌 AI ETF"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_3022",
-   "to": "T_125",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "글로벌 AI ETF"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_145",
-   "to": "T_125",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "글로벌 AI ETF"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  }
- ]
+  "links": [
+    {
+      "from": "A_896",
+      "to": "T_125",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_003687"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_897",
+      "to": "T_125",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_003688"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_898",
+      "to": "T_125",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_003689"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_899",
+      "to": "T_125",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_003690"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "M_055",
+      "to": "T_125",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003710"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_368",
+      "to": "T_125",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003711"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_288",
+      "to": "T_125",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003712"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_896",
+      "to": "C_2342",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003879"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_897",
+      "to": "C_2343",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003880"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_898",
+      "to": "C_2344",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003881"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_899",
+      "to": "C_2345",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003882"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_3021",
+      "to": "T_125",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "글로벌 AI ETF"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_3022",
+      "to": "T_125",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "글로벌 AI ETF"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_145",
+      "to": "T_125",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "글로벌 AI ETF"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    }
+  ]
 }

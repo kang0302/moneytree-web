@@ -1,7 +1,7 @@
 "use client";
 
 // 바로미터 국면전환 — 최신 스냅샷의 다중 호라이즌 점수로 "최근 온도 vs 기준 기간 온도"의 밴드 이동을 포착.
-// 최종 밴드 = 최근(3D) 바로미터. 전환 = 선택 기준(1주=7D / 2주=15D / 1개월=1M) 호라이즌 대비 밴드 변화.
+// 최종 밴드 = 최근(3D) 바로미터. 전환 = 선택 기준(5D / 15D / 1개월=1M) 호라이즌 대비 밴드 변화.
 // 데이터: import_MT/data/barometer/{최신일}.json (매일 갱신, rows[].scores = 호라이즌별 바로미터 점수).
 
 import React, { useEffect, useMemo, useState } from "react";
@@ -16,8 +16,8 @@ type Snap = { date: string; generated?: string; themeCount?: number; rows: SnapR
 
 // 기준(baseline) 기간 = 호라이즌. 최종은 항상 3D(최근).
 const PERIODS = [
-  { key: "1w", label: "1주", horizon: "5D" },
-  { key: "2w", label: "2주", horizon: "15D" },
+  { key: "1w", label: "5D", horizon: "5D" },
+  { key: "2w", label: "15D", horizon: "15D" },
   { key: "1m", label: "1개월", horizon: "1M" },
 ] as const;
 type PeriodKey = (typeof PERIODS)[number]["key"];

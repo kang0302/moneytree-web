@@ -1,852 +1,852 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_189",
- "themeName": "효성그룹주",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_189",
+  "themeName": "효성그룹주",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-04-28T00:00:00+09:00",
+    "notes": "g189 누적 import 기반 효성그룹주 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-12",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "자산 5개에 테마 관점 특성(CHARACTER)·HAS_TRAIT를 부여했다."
+      },
+      {
+        "date": "2026-07-12",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필 + 2026 이벤트",
+        "detail": "전 엣지 근거를 종목·관계 사실로 구체화했다. 2026 이벤트 2건을 추가했다."
+      }
+    ],
+    "description": "• 변압기·아라미드·탄소섬유·스판덱스 사이클의 동시 다발 노출\n• 동인: AI확산·저유가·주주환원정책\n• 대표주: HS효성(2개지주사체제)·(주)효성(2개지주사체제)·효성중공업(변압기전력기기)"
+  },
+  "nodes": [
+    {
+      "id": "T_189",
+      "type": "THEME",
+      "name": "효성그룹주"
+    },
+    {
+      "id": "A_1235",
+      "type": "ASSET",
+      "name": "HS효성",
+      "exposure": {
+        "ticker": "487570",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -0.21390374331551332,
+        "close": 46650,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -2.609603340292277,
+        "return_15d": 19.15708812260537,
+        "return_1m": 7.986111111111116,
+        "return_ytd": -15.94594594594595,
+        "return_1y": -22.48908834948923,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 4.357298474945526,
+        "return_2y": 4.41105492740379
+      },
+      "coreBiz": "HS효성은 효성 2개 지주사 체제의 신설 지주다"
+    },
+    {
+      "id": "A_1236",
+      "type": "ASSET",
+      "name": "(주)효성",
+      "exposure": {
+        "ticker": "004800",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -1.1070110701106972,
+        "close": 160800,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -5.2445492044784885,
+        "return_15d": 31.372549019607842,
+        "return_1m": 10.212474297464013,
+        "return_ytd": 42.93333333333334,
+        "return_1y": 94.62270513188034,
+        "return_3y": 314.63132955156823,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 7.337128399747006,
+        "return_2y": 301.5551110691199
+      },
+      "coreBiz": "(주)효성은 효성 2개 지주사 체제의 기존 지주다"
+    },
+    {
+      "id": "A_753",
+      "type": "ASSET",
+      "name": "효성중공업",
+      "exposure": {
+        "ticker": "298040",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -1.7537826685006919,
+        "close": 1000000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -3.2836831415030465,
+        "return_15d": 42.42273180458624,
+        "return_1m": 10.822342901474013,
+        "return_ytd": 54.850948509485086,
+        "return_1y": 124.51078131041906,
+        "return_3y": 1522.538107591039,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 4.307909604519766,
+        "return_2y": 792.9521351110803
+      },
+      "coreBiz": "효성중공업은 변압기 등 전력기기로 AI·전력 수요 수혜주다"
+    },
+    {
+      "id": "A_1237",
+      "type": "ASSET",
+      "name": "효성첨단소재",
+      "exposure": {
+        "ticker": "298050",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 1.0935601458080146,
+        "close": 166400,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -6.359032076533488,
+        "return_15d": 17.018284106891702,
+        "return_1m": 15.235457063711921,
+        "return_ytd": -7.0910106085985465,
+        "return_1y": -11.61982827657213,
+        "return_3y": -56.802792826385705,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": -3.0021834061135344,
+        "return_2y": -47.50090945524889
+      },
+      "coreBiz": "효성첨단소재는 탄소섬유·아라미드·타이어코드 소재주다"
+    },
+    {
+      "id": "A_1238",
+      "type": "ASSET",
+      "name": "효성티앤씨",
+      "exposure": {
+        "ticker": "298020",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -0.46583850931677384,
+        "close": 320500,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -3.0257186081694365,
+        "return_15d": 11.867364746945896,
+        "return_1m": 1.7460317460317398,
+        "return_ytd": 49.766355140186924,
+        "return_1y": 44.04012297533586,
+        "return_3y": 13.89453031529162,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": -2.507374631268433,
+        "return_2y": 5.387486746557624
+      },
+      "coreBiz": "효성티앤씨는 스판덱스 글로벌 1위 섬유주다"
+    },
+    {
+      "id": "A_1239",
+      "type": "ASSET",
+      "name": "효성화학",
+      "exposure": {
+        "ticker": "298000",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 2.7137042062415295,
+        "close": 38900,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -0.7863695937090465,
+        "return_15d": 27.441077441077443,
+        "return_1m": 27.655986509274875,
+        "return_ytd": 94.60154241645245,
+        "return_1y": 94.60154241645245,
+        "return_3y": -23.852295409181636,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 7.313642756680738,
+        "return_2y": 32.111692844677144
+      },
+      "coreBiz": "효성화학은 PP·TPA 등 화학 업황 노출주다"
+    },
+    {
+      "id": "A_1240",
+      "type": "ASSET",
+      "name": "효성ITX",
+      "exposure": {
+        "ticker": "094280",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.16694490818029983,
+        "close": 12000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -1.0717230008243983,
+        "return_15d": 1.180438448566612,
+        "return_1m": 1.0101010101010166,
+        "return_ytd": -3.83785832037401,
+        "return_1y": -5.165686688387206,
+        "return_3y": 16.697754480258165,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 0.41390728476822236,
+        "return_2y": 0.3581691060406289
+      },
+      "coreBiz": "효성ITX는 IT·BPO·컨택센터 사업주다"
+    },
+    {
+      "id": "M_055",
+      "type": "MACRO",
+      "name": "AI확산"
+    },
+    {
+      "id": "M_143",
+      "type": "MACRO",
+      "name": "저유가"
+    },
+    {
+      "id": "M_173",
+      "type": "MACRO",
+      "name": "주주환원정책"
+    },
+    {
+      "id": "M_020",
+      "type": "MACRO",
+      "name": "EV보급확대"
+    },
+    {
+      "id": "M_175",
+      "type": "MACRO",
+      "name": "나프타가격하락"
+    },
+    {
+      "id": "M_176",
+      "type": "MACRO",
+      "name": "중국화학CAPA감축"
+    },
+    {
+      "id": "M_177",
+      "type": "MACRO",
+      "name": "탄소중립"
+    },
+    {
+      "id": "C_135",
+      "type": "CHARACTER",
+      "name": "2개지주사체제"
+    },
+    {
+      "id": "C_3044",
+      "type": "CHARACTER",
+      "name": "변압기전력기기"
+    },
+    {
+      "id": "C_3045",
+      "type": "CHARACTER",
+      "name": "탄소섬유·아라미드"
+    },
+    {
+      "id": "C_3046",
+      "type": "CHARACTER",
+      "name": "스판덱스1위"
+    },
+    {
+      "id": "C_3047",
+      "type": "CHARACTER",
+      "name": "화학업황"
+    },
+    {
+      "id": "C_3048",
+      "type": "CHARACTER",
+      "name": "IT·BPO"
+    }
   ],
-  "dataAsOf": "2026-04-28T00:00:00+09:00",
-  "notes": "g189 누적 import 기반 효성그룹주 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-12",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "자산 5개에 테마 관점 특성(CHARACTER)·HAS_TRAIT를 부여했다."
-   },
-   {
-    "date": "2026-07-12",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필 + 2026 이벤트",
-    "detail": "전 엣지 근거를 종목·관계 사실로 구체화했다. 2026 이벤트 2건을 추가했다."
-   }
+  "edges": [
+    {
+      "from": "A_1235",
+      "to": "T_189",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005789"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1236",
+      "to": "T_189",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005790"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_753",
+      "to": "T_189",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005791"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1237",
+      "to": "T_189",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005792"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1238",
+      "to": "T_189",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005793"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1239",
+      "to": "T_189",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005794"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1240",
+      "to": "T_189",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005795"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "M_055",
+      "to": "T_189",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005796"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_143",
+      "to": "T_189",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005797"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "M_173",
+      "to": "T_189",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005798"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "M_175",
+      "to": "T_189",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005799"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "M_176",
+      "to": "T_189",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005800"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "M_020",
+      "to": "T_189",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005801"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "M_177",
+      "to": "T_189",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005802"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1235",
+      "to": "C_135",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005810"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1236",
+      "to": "C_135",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005811"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_753",
+      "to": "C_3044",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005887"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1237",
+      "to": "C_3045",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005888"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1238",
+      "to": "C_3046",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005889"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1239",
+      "to": "C_3047",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005890"
+      ],
+      "confidence": 0.64,
+      "status": "verified"
+    },
+    {
+      "from": "A_1240",
+      "to": "C_3048",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005891"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_1236",
+      "to": "A_753",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019272"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "(주)효성가 효성중공업 지분을 보유·투자하는 관계 (효성그룹주)"
+    },
+    {
+      "from": "A_1236",
+      "to": "A_1237",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019273"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "(주)효성가 효성첨단소재 지분을 보유·투자하는 관계 (효성그룹주)"
+    },
+    {
+      "from": "A_1236",
+      "to": "A_1238",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019274"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "(주)효성가 효성티앤씨 지분을 보유·투자하는 관계 (효성그룹주)"
+    },
+    {
+      "from": "A_1235",
+      "to": "A_1240",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019275"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "HS효성가 효성ITX 지분을 보유·투자하는 관계 (효성그룹주)"
+    },
+    {
+      "from": "A_753",
+      "to": "A_1237",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_019276"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "효성중공업와 효성첨단소재는 효성그룹주 내 제휴·협력 관계"
+    }
   ],
-  "description": "• 변압기·아라미드·탄소섬유·스판덱스 사이클의 동시 다발 노출\n• 동인: AI확산·저유가·주주환원정책\n• 대표주: HS효성(2개지주사체제)·(주)효성(2개지주사체제)·효성중공업(변압기전력기기)"
- },
- "nodes": [
-  {
-   "id": "T_189",
-   "type": "THEME",
-   "name": "효성그룹주"
-  },
-  {
-   "id": "A_1235",
-   "type": "ASSET",
-   "name": "HS효성",
-   "exposure": {
-    "ticker": "487570",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.10706638115631772,
-    "close": 46750,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "EODHD",
-    "return_3d": -1.1627906976744207,
-    "return_15d": 10.650887573964507,
-    "return_1m": 8.217592592592581,
-    "return_ytd": -15.76576576576577,
-    "return_1y": -20.103589498771278,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "EODHD",
-    "return_5d": 4.357298474945526,
-    "return_2y": 4.41105492740379
-   },
-   "coreBiz": "HS효성은 효성 2개 지주사 체제의 신설 지주다"
-  },
-  {
-   "id": "A_1236",
-   "type": "ASSET",
-   "name": "(주)효성",
-   "exposure": {
-    "ticker": "004800",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -2.8093245666467426,
-    "close": 162600,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "EODHD",
-    "return_3d": -1.3947847180109108,
-    "return_15d": 16.726489590811198,
-    "return_1m": 17.23143475126172,
-    "return_ytd": 44.53333333333334,
-    "return_1y": 100.99353477595146,
-    "return_3y": 314.63132955156823,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "EODHD",
-    "return_5d": 7.337128399747006,
-    "return_2y": 305.34149145656056
-   },
-   "coreBiz": "(주)효성은 효성 2개 지주사 체제의 기존 지주다"
-  },
-  {
-   "id": "A_753",
-   "type": "ASSET",
-   "name": "효성중공업",
-   "exposure": {
-    "ticker": "298040",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -2.5469168900804307,
-    "close": 1000000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "EODHD",
-    "return_3d": -3.612860457408018,
-    "return_15d": 25.129087779690185,
-    "return_1m": 14.533280819220163,
-    "return_ytd": 57.615176151761524,
-    "return_1y": 127.80549289459829,
-    "return_3y": 1522.538107591039,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "EODHD",
-    "return_5d": 4.307909604519766,
-    "return_2y": 758.7645503810357
-   },
-   "coreBiz": "효성중공업은 변압기 등 전력기기로 AI·전력 수요 수혜주다"
-  },
-  {
-   "id": "A_1237",
-   "type": "ASSET",
-   "name": "효성첨단소재",
-   "exposure": {
-    "ticker": "298050",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -3.233392122281009,
-    "close": 164600,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "EODHD",
-    "return_3d": -4.634994206257237,
-    "return_15d": 7.934426229508196,
-    "return_1m": 15.024458420684827,
-    "return_ytd": -8.096035734226692,
-    "return_1y": -11.743252998633835,
-    "return_3y": -56.802792826385705,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "EODHD",
-    "return_5d": -3.0021834061135344,
-    "return_2y": -49.58283718424177
-   },
-   "coreBiz": "효성첨단소재는 탄소섬유·아라미드·타이어코드 소재주다"
-  },
-  {
-   "id": "A_1238",
-   "type": "ASSET",
-   "name": "효성티앤씨",
-   "exposure": {
-    "ticker": "298020",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -0.15503875968991832,
-    "close": 322000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "EODHD",
-    "return_3d": -0.3095975232198178,
-    "return_15d": 3.0399999999999983,
-    "return_1m": 8.053691275167797,
-    "return_ytd": 50.46728971962617,
-    "return_1y": 47.247548875573656,
-    "return_3y": 13.89453031529162,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "EODHD",
-    "return_5d": -2.507374631268433,
-    "return_2y": 3.538226109701048
-   },
-   "coreBiz": "효성티앤씨는 스판덱스 글로벌 1위 섬유주다"
-  },
-  {
-   "id": "A_1239",
-   "type": "ASSET",
-   "name": "효성화학",
-   "exposure": {
-    "ticker": "298000",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -1.0738255033557076,
-    "close": 38900,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "EODHD",
-    "return_3d": 4.539007092198588,
-    "return_15d": 22.83333333333333,
-    "return_1m": 25.12733446519524,
-    "return_ytd": 89.46015424164524,
-    "return_1y": 89.46015424164524,
-    "return_3y": -23.852295409181636,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "EODHD",
-    "return_5d": 7.313642756680738,
-    "return_2y": 26.632302405498276
-   },
-   "coreBiz": "효성화학은 PP·TPA 등 화학 업황 노출주다"
-  },
-  {
-   "id": "A_1240",
-   "type": "ASSET",
-   "name": "효성ITX",
-   "exposure": {
-    "ticker": "094280",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -1.1551155115511524,
-    "close": 11980,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "EODHD",
-    "return_3d": -0.24979184013321776,
-    "return_15d": 1.0970464135021007,
-    "return_1m": 1.1824324324324342,
-    "return_ytd": -3.9981285565067193,
-    "return_1y": -4.749078182966382,
-    "return_3y": 16.697754480258165,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "EODHD",
-    "return_5d": 0.41390728476822236,
-    "return_2y": -0.2590533808217943
-   },
-   "coreBiz": "효성ITX는 IT·BPO·컨택센터 사업주다"
-  },
-  {
-   "id": "M_055",
-   "type": "MACRO",
-   "name": "AI확산"
-  },
-  {
-   "id": "M_143",
-   "type": "MACRO",
-   "name": "저유가"
-  },
-  {
-   "id": "M_173",
-   "type": "MACRO",
-   "name": "주주환원정책"
-  },
-  {
-   "id": "M_020",
-   "type": "MACRO",
-   "name": "EV보급확대"
-  },
-  {
-   "id": "M_175",
-   "type": "MACRO",
-   "name": "나프타가격하락"
-  },
-  {
-   "id": "M_176",
-   "type": "MACRO",
-   "name": "중국화학CAPA감축"
-  },
-  {
-   "id": "M_177",
-   "type": "MACRO",
-   "name": "탄소중립"
-  },
-  {
-   "id": "C_135",
-   "type": "CHARACTER",
-   "name": "2개지주사체제"
-  },
-  {
-   "id": "C_3044",
-   "type": "CHARACTER",
-   "name": "변압기전력기기"
-  },
-  {
-   "id": "C_3045",
-   "type": "CHARACTER",
-   "name": "탄소섬유·아라미드"
-  },
-  {
-   "id": "C_3046",
-   "type": "CHARACTER",
-   "name": "스판덱스1위"
-  },
-  {
-   "id": "C_3047",
-   "type": "CHARACTER",
-   "name": "화학업황"
-  },
-  {
-   "id": "C_3048",
-   "type": "CHARACTER",
-   "name": "IT·BPO"
-  }
- ],
- "edges": [
-  {
-   "from": "A_1235",
-   "to": "T_189",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005789"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1236",
-   "to": "T_189",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005790"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_753",
-   "to": "T_189",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005791"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1237",
-   "to": "T_189",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005792"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1238",
-   "to": "T_189",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005793"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1239",
-   "to": "T_189",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005794"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1240",
-   "to": "T_189",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005795"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "M_055",
-   "to": "T_189",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005796"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_143",
-   "to": "T_189",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005797"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "M_173",
-   "to": "T_189",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005798"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "M_175",
-   "to": "T_189",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005799"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "M_176",
-   "to": "T_189",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005800"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "M_020",
-   "to": "T_189",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005801"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "M_177",
-   "to": "T_189",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005802"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1235",
-   "to": "C_135",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005810"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1236",
-   "to": "C_135",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005811"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_753",
-   "to": "C_3044",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005887"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1237",
-   "to": "C_3045",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005888"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1238",
-   "to": "C_3046",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005889"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1239",
-   "to": "C_3047",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005890"
-   ],
-   "confidence": 0.64,
-   "status": "verified"
-  },
-  {
-   "from": "A_1240",
-   "to": "C_3048",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005891"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_1236",
-   "to": "A_753",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019272"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "(주)효성가 효성중공업 지분을 보유·투자하는 관계 (효성그룹주)"
-  },
-  {
-   "from": "A_1236",
-   "to": "A_1237",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019273"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "(주)효성가 효성첨단소재 지분을 보유·투자하는 관계 (효성그룹주)"
-  },
-  {
-   "from": "A_1236",
-   "to": "A_1238",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019274"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "(주)효성가 효성티앤씨 지분을 보유·투자하는 관계 (효성그룹주)"
-  },
-  {
-   "from": "A_1235",
-   "to": "A_1240",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019275"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "HS효성가 효성ITX 지분을 보유·투자하는 관계 (효성그룹주)"
-  },
-  {
-   "from": "A_753",
-   "to": "A_1237",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_019276"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "효성중공업와 효성첨단소재는 효성그룹주 내 제휴·협력 관계"
-  }
- ],
- "links": [
-  {
-   "from": "A_1235",
-   "to": "T_189",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005789"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1236",
-   "to": "T_189",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005790"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_753",
-   "to": "T_189",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005791"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1237",
-   "to": "T_189",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005792"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1238",
-   "to": "T_189",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005793"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1239",
-   "to": "T_189",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005794"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "A_1240",
-   "to": "T_189",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_005795"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "M_055",
-   "to": "T_189",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005796"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_143",
-   "to": "T_189",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005797"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "M_173",
-   "to": "T_189",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005798"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "M_175",
-   "to": "T_189",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005799"
-   ],
-   "confidence": 0.68,
-   "status": "verified"
-  },
-  {
-   "from": "M_176",
-   "to": "T_189",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005800"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "M_020",
-   "to": "T_189",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005801"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "M_177",
-   "to": "T_189",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005802"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_1235",
-   "to": "C_135",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005810"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1236",
-   "to": "C_135",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005811"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_753",
-   "to": "C_3044",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005887"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1237",
-   "to": "C_3045",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005888"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1238",
-   "to": "C_3046",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005889"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1239",
-   "to": "C_3047",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005890"
-   ],
-   "confidence": 0.64,
-   "status": "verified"
-  },
-  {
-   "from": "A_1240",
-   "to": "C_3048",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005891"
-   ],
-   "confidence": 0.66,
-   "status": "verified"
-  },
-  {
-   "from": "A_1236",
-   "to": "A_753",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019272"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "(주)효성가 효성중공업 지분을 보유·투자하는 관계 (효성그룹주)"
-  },
-  {
-   "from": "A_1236",
-   "to": "A_1237",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019273"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "(주)효성가 효성첨단소재 지분을 보유·투자하는 관계 (효성그룹주)"
-  },
-  {
-   "from": "A_1236",
-   "to": "A_1238",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019274"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "(주)효성가 효성티앤씨 지분을 보유·투자하는 관계 (효성그룹주)"
-  },
-  {
-   "from": "A_1235",
-   "to": "A_1240",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019275"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "HS효성가 효성ITX 지분을 보유·투자하는 관계 (효성그룹주)"
-  },
-  {
-   "from": "A_753",
-   "to": "A_1237",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_019276"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "효성중공업와 효성첨단소재는 효성그룹주 내 제휴·협력 관계"
-  }
- ]
+  "links": [
+    {
+      "from": "A_1235",
+      "to": "T_189",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005789"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1236",
+      "to": "T_189",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005790"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_753",
+      "to": "T_189",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005791"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1237",
+      "to": "T_189",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005792"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1238",
+      "to": "T_189",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005793"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1239",
+      "to": "T_189",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005794"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "A_1240",
+      "to": "T_189",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_005795"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "M_055",
+      "to": "T_189",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005796"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_143",
+      "to": "T_189",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005797"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "M_173",
+      "to": "T_189",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005798"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "M_175",
+      "to": "T_189",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005799"
+      ],
+      "confidence": 0.68,
+      "status": "verified"
+    },
+    {
+      "from": "M_176",
+      "to": "T_189",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005800"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "M_020",
+      "to": "T_189",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005801"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "M_177",
+      "to": "T_189",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005802"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_1235",
+      "to": "C_135",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005810"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1236",
+      "to": "C_135",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005811"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_753",
+      "to": "C_3044",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005887"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1237",
+      "to": "C_3045",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005888"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1238",
+      "to": "C_3046",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005889"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1239",
+      "to": "C_3047",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005890"
+      ],
+      "confidence": 0.64,
+      "status": "verified"
+    },
+    {
+      "from": "A_1240",
+      "to": "C_3048",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005891"
+      ],
+      "confidence": 0.66,
+      "status": "verified"
+    },
+    {
+      "from": "A_1236",
+      "to": "A_753",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019272"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "(주)효성가 효성중공업 지분을 보유·투자하는 관계 (효성그룹주)"
+    },
+    {
+      "from": "A_1236",
+      "to": "A_1237",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019273"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "(주)효성가 효성첨단소재 지분을 보유·투자하는 관계 (효성그룹주)"
+    },
+    {
+      "from": "A_1236",
+      "to": "A_1238",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019274"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "(주)효성가 효성티앤씨 지분을 보유·투자하는 관계 (효성그룹주)"
+    },
+    {
+      "from": "A_1235",
+      "to": "A_1240",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019275"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "HS효성가 효성ITX 지분을 보유·투자하는 관계 (효성그룹주)"
+    },
+    {
+      "from": "A_753",
+      "to": "A_1237",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_019276"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "효성중공업와 효성첨단소재는 효성그룹주 내 제휴·협력 관계"
+    }
+  ]
 }

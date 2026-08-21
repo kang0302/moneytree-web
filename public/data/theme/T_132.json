@@ -1,670 +1,679 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_132",
- "themeName": "글로벌양자컴퓨팅ETF",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_132",
+  "themeName": "글로벌양자컴퓨팅ETF",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-04-10T00:00:00+09:00",
+    "notes": "g132 누적 import 기반 글로벌양자컴퓨팅ETF 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-07-11",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
+      },
+      {
+        "date": "2026-07-11",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필 + 2026 이벤트",
+        "detail": "전 엣지 근거(호버 박스)를 종목·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
+      }
+    ],
+    "description": "• QTUM·QTM·DEFN 등 글로벌 양자 컴퓨팅 ETF 묶음\n• 동인: 양자컴퓨팅·양자컴퓨팅위협(Q-Day)·NIST PQC표준화\n• 대표주: SKYY(클라우드 기반 장치)·BUG(양자 보안 수혜)·ARKQ(미래형 인프라)\n• 밸류체인: GPS기반솔루션"
+  },
+  "nodes": [
+    {
+      "id": "T_132",
+      "type": "THEME",
+      "name": "글로벌양자컴퓨팅ETF"
+    },
+    {
+      "id": "C_184",
+      "type": "CHARACTER",
+      "name": "클라우드 기반 장치 서비스"
+    },
+    {
+      "id": "C_111",
+      "type": "CHARACTER",
+      "name": "양자 보안 수혜"
+    },
+    {
+      "id": "C_112",
+      "type": "CHARACTER",
+      "name": "양자기술"
+    },
+    {
+      "id": "C_113",
+      "type": "CHARACTER",
+      "name": "미래형 인프라"
+    },
+    {
+      "id": "BF_250",
+      "type": "BUSINESS_FIELD",
+      "name": "GPS기반솔루션"
+    },
+    {
+      "id": "A_938",
+      "type": "ASSET",
+      "name": "SKYY",
+      "exposure": {
+        "ticker": "SKYY",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.092014642923611,
+        "close": 159.41,
+        "marketCap": 2542808370,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "FMP",
+        "return_3d": -1.7443293885601618,
+        "return_15d": 13.839891451831754,
+        "return_1m": 16.64715351968389,
+        "return_ytd": 22.547662976629756,
+        "return_1y": 33.778113460892925,
+        "return_3y": 110.8319005422563,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "FMP",
+        "return_5d": -5.624296962879638,
+        "return_2y": 63.5477582846004
+      }
+    },
+    {
+      "id": "A_939",
+      "type": "ASSET",
+      "name": "BUG",
+      "exposure": {
+        "ticker": "BUG",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -2.383848212113837,
+        "close": 40.13,
+        "marketCap": 911917852,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "FMP",
+        "return_3d": -4.201480066841723,
+        "return_15d": 6.984804052252747,
+        "return_1m": -0.6683168316831578,
+        "return_ytd": 31.746552856204868,
+        "return_1y": 20.041878552198632,
+        "return_3y": 74.55415397999133,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "FMP",
+        "return_5d": -9.739091318038684,
+        "return_2y": 29.996760609005513
+      }
+    },
+    {
+      "id": "A_144",
+      "type": "ASSET",
+      "name": "ARKQ",
+      "exposure": {
+        "ticker": "ARKQ",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.849059598444569,
+        "close": 123.68,
+        "marketCap": 1836254079,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "FMP",
+        "return_3d": -5.204261516057329,
+        "return_15d": 8.5102649587647,
+        "return_1m": 6.044756923604577,
+        "return_ytd": 7.866736438165023,
+        "return_1y": 29.806884970612945,
+        "return_3y": 137.9834519915336,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "FMP",
+        "return_5d": -4.934665641813984,
+        "return_2y": 122.24618149146451
+      }
+    },
+    {
+      "id": "A_940",
+      "type": "ASSET",
+      "name": "QTUM",
+      "exposure": {
+        "ticker": "QTUM",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.665778961384822,
+        "close": 149.195,
+        "marketCap": 3928634220,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-20",
+        "valuationSource": "FMP",
+        "return_3d": -5.70092276576919,
+        "return_15d": 6.335970351364817,
+        "return_1m": 5.6806913160504235,
+        "return_ytd": 36.056903155206996,
+        "return_1y": 62.209175907806035,
+        "return_3y": 210.44527673741152,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "FMP",
+        "return_5d": -5.712841253791723,
+        "return_2y": 143.0363251343867
+      }
+    },
+    {
+      "id": "M_245",
+      "type": "MACRO",
+      "name": "양자컴퓨팅"
+    },
+    {
+      "id": "M_1061",
+      "type": "MACRO",
+      "name": "양자컴퓨팅위협(Q-Day)"
+    },
+    {
+      "id": "M_1062",
+      "type": "MACRO",
+      "name": "NIST PQC표준화"
+    },
+    {
+      "id": "C_2425",
+      "type": "CHARACTER",
+      "name": "클라우드컴퓨팅ETF"
+    },
+    {
+      "id": "C_2426",
+      "type": "CHARACTER",
+      "name": "사이버보안ETF"
+    },
+    {
+      "id": "C_2427",
+      "type": "CHARACTER",
+      "name": "자율기술로보틱스액티브ETF"
+    },
+    {
+      "id": "C_2428",
+      "type": "CHARACTER",
+      "name": "양자컴퓨팅ETF"
+    },
+    {
+      "id": "A_3023",
+      "type": "ASSET",
+      "name": "KoAct 글로벌양자컴퓨팅액티브",
+      "exposure": {
+        "ticker": "0020H0",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "coreBiz": "KoAct 글로벌양자컴퓨팅액티브",
+      "metrics": {
+        "return_1d": 0.4050405040504135,
+        "return_3d": -6.808688387635753,
+        "return_5d": -3.3780857514075335,
+        "return_15d": 10.064134188455842,
+        "return_1m": 0.5181347150259086,
+        "return_ytd": 17.05141657922351,
+        "return_1y": 67.93375987956342,
+        "return_2y": null,
+        "return_3y": null,
+        "close": 22310,
+        "marketCap": null,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD_ADJ",
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null
+      }
+    },
+    {
+      "id": "A_3024",
+      "type": "ASSET",
+      "name": "SOL 미국양자컴퓨팅TOP10",
+      "exposure": {
+        "ticker": "0023A0",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "coreBiz": "SOL 미국양자컴퓨팅TOP10",
+      "metrics": {
+        "return_1d": 0.1784298176050747,
+        "return_3d": -6.9429097605893215,
+        "return_5d": -3.6238794583253853,
+        "return_15d": 9.372294372294366,
+        "return_1m": 2.724130920918877,
+        "return_ytd": -3.18162093242097,
+        "return_1y": 56.196299794046524,
+        "return_2y": null,
+        "return_3y": null,
+        "close": 25265,
+        "marketCap": null,
+        "returnsAsOf": "2026-08-20",
+        "returnsSource": "EODHD_ADJ",
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null
+      }
+    },
+    {
+      "id": "A_3025",
+      "type": "ASSET",
+      "name": "KIWOOM 미국양자컴퓨팅",
+      "exposure": {
+        "ticker": "498270",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "coreBiz": "KIWOOM 미국양자컴퓨팅",
+      "metrics": {
+        "return_1d": 0.2653399668325118,
+        "return_3d": -5.353788353162181,
+        "return_5d": -3.7873965626989192,
+        "return_15d": 10.400993353297782,
+        "return_1m": 2.4751515215285513,
+        "return_ytd": 14.716334283140053,
+        "return_1y": 34.14860182454878,
+        "return_2y": null,
+        "return_3y": null,
+        "close": 15115,
+        "marketCap": null,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD"
+      }
+    }
   ],
-  "dataAsOf": "2026-04-10T00:00:00+09:00",
-  "notes": "g132 누적 import 기반 글로벌양자컴퓨팅ETF 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-07-11",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
-   },
-   {
-    "date": "2026-07-11",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필 + 2026 이벤트",
-    "detail": "전 엣지 근거(호버 박스)를 종목·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
-   }
+  "edges": [
+    {
+      "from": "A_938",
+      "to": "T_132",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003972"
+      ],
+      "confidence": 0.76,
+      "status": "verified",
+      "weight": 0.5,
+      "tier": "secondary"
+    },
+    {
+      "from": "A_939",
+      "to": "T_132",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003973"
+      ],
+      "confidence": 0.76,
+      "status": "verified",
+      "weight": 0.5,
+      "tier": "secondary"
+    },
+    {
+      "from": "A_144",
+      "to": "T_132",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003974"
+      ],
+      "confidence": 0.76,
+      "status": "verified",
+      "weight": 0.5,
+      "tier": "secondary"
+    },
+    {
+      "from": "A_940",
+      "to": "T_132",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003975"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_938",
+      "to": "C_184",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003989"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_939",
+      "to": "C_111",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003990"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_940",
+      "to": "C_112",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003991"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_144",
+      "to": "C_113",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003992"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_245",
+      "to": "T_132",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003994"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_1061",
+      "to": "T_132",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003995"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_1062",
+      "to": "T_132",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003996"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_938",
+      "to": "C_2425",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004142"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_939",
+      "to": "C_2426",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004143"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_144",
+      "to": "C_2427",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004144"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_940",
+      "to": "C_2428",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004145"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_3023",
+      "to": "T_132",
+      "type": "THEMED_AS",
+      "evidence": [
+        "국내 상장 양자컴퓨팅 ETF"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_3024",
+      "to": "T_132",
+      "type": "THEMED_AS",
+      "evidence": [
+        "국내 상장 양자컴퓨팅 ETF"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_3025",
+      "to": "T_132",
+      "type": "THEMED_AS",
+      "evidence": [
+        "국내 상장 양자컴퓨팅 ETF"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    }
   ],
-  "description": "• QTUM·QTM·DEFN 등 글로벌 양자 컴퓨팅 ETF 묶음\n• 동인: 양자컴퓨팅·양자컴퓨팅위협(Q-Day)·NIST PQC표준화\n• 대표주: SKYY(클라우드 기반 장치)·BUG(양자 보안 수혜)·ARKQ(미래형 인프라)\n• 밸류체인: GPS기반솔루션"
- },
- "nodes": [
-  {
-   "id": "T_132",
-   "type": "THEME",
-   "name": "글로벌양자컴퓨팅ETF"
-  },
-  {
-   "id": "C_184",
-   "type": "CHARACTER",
-   "name": "클라우드 기반 장치 서비스"
-  },
-  {
-   "id": "C_111",
-   "type": "CHARACTER",
-   "name": "양자 보안 수혜"
-  },
-  {
-   "id": "C_112",
-   "type": "CHARACTER",
-   "name": "양자기술"
-  },
-  {
-   "id": "C_113",
-   "type": "CHARACTER",
-   "name": "미래형 인프라"
-  },
-  {
-   "id": "BF_250",
-   "type": "BUSINESS_FIELD",
-   "name": "GPS기반솔루션"
-  },
-  {
-   "id": "A_938",
-   "type": "ASSET",
-   "name": "SKYY",
-   "exposure": {
-    "ticker": "SKYY",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -1.092014642923611,
-    "close": 159.41,
-    "marketCap": 2542808370,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "FMP",
-    "return_3d": -1.7443293885601618,
-    "return_15d": 13.839891451831754,
-    "return_1m": 16.64715351968389,
-    "return_ytd": 22.547662976629756,
-    "return_1y": 33.778113460892925,
-    "return_3y": 110.8319005422563,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "FMP",
-    "return_5d": -5.624296962879638,
-    "return_2y": 63.5477582846004
-   }
-  },
-  {
-   "id": "A_939",
-   "type": "ASSET",
-   "name": "BUG",
-   "exposure": {
-    "ticker": "BUG",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -2.383848212113837,
-    "close": 40.13,
-    "marketCap": 911917852,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "FMP",
-    "return_3d": -4.201480066841723,
-    "return_15d": 6.984804052252747,
-    "return_1m": -0.6683168316831578,
-    "return_ytd": 31.746552856204868,
-    "return_1y": 20.041878552198632,
-    "return_3y": 74.55415397999133,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "FMP",
-    "return_5d": -9.739091318038684,
-    "return_2y": 29.996760609005513
-   }
-  },
-  {
-   "id": "A_144",
-   "type": "ASSET",
-   "name": "ARKQ",
-   "exposure": {
-    "ticker": "ARKQ",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -1.849059598444569,
-    "close": 123.68,
-    "marketCap": 1836254079,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "FMP",
-    "return_3d": -5.204261516057329,
-    "return_15d": 8.5102649587647,
-    "return_1m": 6.044756923604577,
-    "return_ytd": 7.866736438165023,
-    "return_1y": 29.806884970612945,
-    "return_3y": 137.9834519915336,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "FMP",
-    "return_5d": -4.934665641813984,
-    "return_2y": 122.24618149146451
-   }
-  },
-  {
-   "id": "A_940",
-   "type": "ASSET",
-   "name": "QTUM",
-   "exposure": {
-    "ticker": "QTUM",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.665778961384822,
-    "close": 149.195,
-    "marketCap": 3928634220,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "FMP",
-    "return_3d": -5.70092276576919,
-    "return_15d": 6.335970351364817,
-    "return_1m": 5.6806913160504235,
-    "return_ytd": 36.056903155206996,
-    "return_1y": 62.209175907806035,
-    "return_3y": 210.44527673741152,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "FMP",
-    "return_5d": -5.712841253791723,
-    "return_2y": 143.0363251343867
-   }
-  },
-  {
-   "id": "M_245",
-   "type": "MACRO",
-   "name": "양자컴퓨팅"
-  },
-  {
-   "id": "M_1061",
-   "type": "MACRO",
-   "name": "양자컴퓨팅위협(Q-Day)"
-  },
-  {
-   "id": "M_1062",
-   "type": "MACRO",
-   "name": "NIST PQC표준화"
-  },
-  {
-   "id": "C_2425",
-   "type": "CHARACTER",
-   "name": "클라우드컴퓨팅ETF"
-  },
-  {
-   "id": "C_2426",
-   "type": "CHARACTER",
-   "name": "사이버보안ETF"
-  },
-  {
-   "id": "C_2427",
-   "type": "CHARACTER",
-   "name": "자율기술로보틱스액티브ETF"
-  },
-  {
-   "id": "C_2428",
-   "type": "CHARACTER",
-   "name": "양자컴퓨팅ETF"
-  },
-  {
-   "id": "A_3023",
-   "type": "ASSET",
-   "name": "KoAct 글로벌양자컴퓨팅액티브",
-   "exposure": {
-    "ticker": "0020H0",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "coreBiz": "KoAct 글로벌양자컴퓨팅액티브",
-   "metrics": {
-    "return_1d": 0.4050405040504135,
-    "return_3d": -6.808688387635753,
-    "return_5d": -3.3780857514075335,
-    "return_15d": 10.064134188455842,
-    "return_1m": 0.5181347150259086,
-    "return_ytd": 17.05141657922351,
-    "return_1y": 67.93375987956342,
-    "return_2y": null,
-    "return_3y": null,
-    "close": 22310,
-    "marketCap": null,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "EODHD_ADJ"
-   }
-  },
-  {
-   "id": "A_3024",
-   "type": "ASSET",
-   "name": "SOL 미국양자컴퓨팅TOP10",
-   "exposure": {
-    "ticker": "0023A0",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "coreBiz": "SOL 미국양자컴퓨팅TOP10",
-   "metrics": {
-    "return_1d": 0.1784298176050747,
-    "return_3d": -6.9429097605893215,
-    "return_5d": -3.6238794583253853,
-    "return_15d": 9.372294372294366,
-    "return_1m": 2.724130920918877,
-    "return_ytd": -3.18162093242097,
-    "return_1y": 56.196299794046524,
-    "return_2y": null,
-    "return_3y": null,
-    "close": 25265,
-    "marketCap": null,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "EODHD_ADJ"
-   }
-  },
-  {
-   "id": "A_3025",
-   "type": "ASSET",
-   "name": "KIWOOM 미국양자컴퓨팅",
-   "exposure": {
-    "ticker": "498270",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "coreBiz": "KIWOOM 미국양자컴퓨팅",
-   "metrics": {
-    "return_1d": 0.2653399668325118,
-    "return_3d": -5.353788353162181,
-    "return_5d": -3.7873965626989192,
-    "return_15d": 10.400993353297782,
-    "return_1m": 4.132527066258707,
-    "return_ytd": 15.634765050851573,
-    "return_1y": 42.33223213165724,
-    "return_2y": null,
-    "return_3y": null,
-    "close": 15115,
-    "marketCap": null,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "EODHD_ADJ"
-   }
-  }
- ],
- "edges": [
-  {
-   "from": "A_938",
-   "to": "T_132",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003972"
-   ],
-   "confidence": 0.76,
-   "status": "verified",
-   "weight": 0.5,
-   "tier": "secondary"
-  },
-  {
-   "from": "A_939",
-   "to": "T_132",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003973"
-   ],
-   "confidence": 0.76,
-   "status": "verified",
-   "weight": 0.5,
-   "tier": "secondary"
-  },
-  {
-   "from": "A_144",
-   "to": "T_132",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003974"
-   ],
-   "confidence": 0.76,
-   "status": "verified",
-   "weight": 0.5,
-   "tier": "secondary"
-  },
-  {
-   "from": "A_940",
-   "to": "T_132",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003975"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_938",
-   "to": "C_184",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003989"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_939",
-   "to": "C_111",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003990"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_940",
-   "to": "C_112",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003991"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_144",
-   "to": "C_113",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003992"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_245",
-   "to": "T_132",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003994"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_1061",
-   "to": "T_132",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003995"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_1062",
-   "to": "T_132",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003996"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_938",
-   "to": "C_2425",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004142"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_939",
-   "to": "C_2426",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004143"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_144",
-   "to": "C_2427",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004144"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_940",
-   "to": "C_2428",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004145"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_3023",
-   "to": "T_132",
-   "type": "THEMED_AS",
-   "evidence": [
-    "국내 상장 양자컴퓨팅 ETF"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_3024",
-   "to": "T_132",
-   "type": "THEMED_AS",
-   "evidence": [
-    "국내 상장 양자컴퓨팅 ETF"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_3025",
-   "to": "T_132",
-   "type": "THEMED_AS",
-   "evidence": [
-    "국내 상장 양자컴퓨팅 ETF"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_938",
-   "to": "T_132",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003972"
-   ],
-   "confidence": 0.76,
-   "status": "verified",
-   "weight": 0.5,
-   "tier": "secondary"
-  },
-  {
-   "from": "A_939",
-   "to": "T_132",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003973"
-   ],
-   "confidence": 0.76,
-   "status": "verified",
-   "weight": 0.5,
-   "tier": "secondary"
-  },
-  {
-   "from": "A_144",
-   "to": "T_132",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003974"
-   ],
-   "confidence": 0.76,
-   "status": "verified",
-   "weight": 0.5,
-   "tier": "secondary"
-  },
-  {
-   "from": "A_940",
-   "to": "T_132",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003975"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_938",
-   "to": "C_184",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003989"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_939",
-   "to": "C_111",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003990"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_940",
-   "to": "C_112",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003991"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_144",
-   "to": "C_113",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003992"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_245",
-   "to": "T_132",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003994"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_1061",
-   "to": "T_132",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003995"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_1062",
-   "to": "T_132",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003996"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_938",
-   "to": "C_2425",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004142"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_939",
-   "to": "C_2426",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004143"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_144",
-   "to": "C_2427",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004144"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_940",
-   "to": "C_2428",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_004145"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_3023",
-   "to": "T_132",
-   "type": "THEMED_AS",
-   "evidence": [
-    "국내 상장 양자컴퓨팅 ETF"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_3024",
-   "to": "T_132",
-   "type": "THEMED_AS",
-   "evidence": [
-    "국내 상장 양자컴퓨팅 ETF"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_3025",
-   "to": "T_132",
-   "type": "THEMED_AS",
-   "evidence": [
-    "국내 상장 양자컴퓨팅 ETF"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  }
- ]
+  "links": [
+    {
+      "from": "A_938",
+      "to": "T_132",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003972"
+      ],
+      "confidence": 0.76,
+      "status": "verified",
+      "weight": 0.5,
+      "tier": "secondary"
+    },
+    {
+      "from": "A_939",
+      "to": "T_132",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003973"
+      ],
+      "confidence": 0.76,
+      "status": "verified",
+      "weight": 0.5,
+      "tier": "secondary"
+    },
+    {
+      "from": "A_144",
+      "to": "T_132",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003974"
+      ],
+      "confidence": 0.76,
+      "status": "verified",
+      "weight": 0.5,
+      "tier": "secondary"
+    },
+    {
+      "from": "A_940",
+      "to": "T_132",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003975"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_938",
+      "to": "C_184",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003989"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_939",
+      "to": "C_111",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003990"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_940",
+      "to": "C_112",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003991"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_144",
+      "to": "C_113",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003992"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_245",
+      "to": "T_132",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003994"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_1061",
+      "to": "T_132",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003995"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_1062",
+      "to": "T_132",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003996"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_938",
+      "to": "C_2425",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004142"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_939",
+      "to": "C_2426",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004143"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_144",
+      "to": "C_2427",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004144"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_940",
+      "to": "C_2428",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_004145"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_3023",
+      "to": "T_132",
+      "type": "THEMED_AS",
+      "evidence": [
+        "국내 상장 양자컴퓨팅 ETF"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_3024",
+      "to": "T_132",
+      "type": "THEMED_AS",
+      "evidence": [
+        "국내 상장 양자컴퓨팅 ETF"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_3025",
+      "to": "T_132",
+      "type": "THEMED_AS",
+      "evidence": [
+        "국내 상장 양자컴퓨팅 ETF"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    }
+  ]
 }
