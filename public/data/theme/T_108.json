@@ -1,829 +1,829 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_108",
- "themeName": "미국식료품커머스",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_108",
+  "themeName": "미국식료품커머스",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-04-06T00:00:00+09:00",
+    "notes": "미국 식료품 커머스 핵심 기업과 관련 ETF(XRT, IBUY) 노출 구조",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-11",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "식료품 커머스 종목에 옴니채널·배송플랫폼·ETF 유형 CHR 정의."
+      },
+      {
+        "date": "2026-07-11",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필 + 2026 이벤트",
+        "detail": "전 엣지 근거를 종목별 사업·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ],
+    "description": "• e-grocery 침투율·자체 브랜드 마진·AI 가격 최적화가 동인\n• 동인: 이커머스확대·미국소비강세·인건비상승\n• 대표주: 아마존(홀푸드프레시그로서리)·월마트(미국최대식료품옴니채)·도어대쉬(배달1위그로서리확장)\n• ETF: IBUY"
+  },
+  "nodes": [
+    {
+      "id": "T_108",
+      "type": "THEME",
+      "name": "미국식료품커머스"
+    },
+    {
+      "id": "A_211",
+      "type": "ASSET",
+      "name": "아마존",
+      "exposure": {
+        "ticker": "AMZN",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.5689900426742556,
+        "close": 258.63,
+        "marketCap": 2782108773000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "FMP",
+        "return_3d": -0.3160531894391916,
+        "return_15d": -4.768392370572205,
+        "return_1m": 4.475863461926877,
+        "return_ytd": 12.04834936314012,
+        "return_1y": 16.526244649695876,
+        "return_3y": 92.03296703296702,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "FMP",
+        "return_5d": -1.5305539691604753,
+        "return_2y": 43.595580478596396
+      }
+    },
+    {
+      "id": "A_296",
+      "type": "ASSET",
+      "name": "월마트",
+      "exposure": {
+        "ticker": "WMT",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -0.13482280431432736,
+        "close": 103.7,
+        "marketCap": 825252896000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "FMP",
+        "return_3d": -9.982638888888884,
+        "return_15d": -6.744604316546765,
+        "return_1m": -6.060331551770992,
+        "return_ytd": -6.920384166591864,
+        "return_1y": 5.859534503879149,
+        "return_3y": 97.52380952380952,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "FMP",
+        "return_5d": -10.037303721696878,
+        "return_2y": 37.82562466772994
+      }
+    },
+    {
+      "id": "A_795",
+      "type": "ASSET",
+      "name": "도어대쉬",
+      "exposure": {
+        "ticker": "DASH",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.5081849253462778,
+        "close": 223.49,
+        "marketCap": 97378774945,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "FMP",
+        "return_3d": 3.3002079963022846,
+        "return_15d": 13.932504078303442,
+        "return_1m": 18.852371835779635,
+        "return_ytd": -1.320204874602604,
+        "return_1y": -8.846561709764256,
+        "return_3y": 191.7624020887729,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "FMP",
+        "return_5d": 2.9812920468159643,
+        "return_2y": 72.64580919273853
+      }
+    },
+    {
+      "id": "A_796",
+      "type": "ASSET",
+      "name": "인스타카트",
+      "exposure": {
+        "ticker": "CART",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -2.4280399451732992,
+        "close": 49.83,
+        "marketCap": 11711535632,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "FMP",
+        "return_3d": 1.8393623543838,
+        "return_15d": 11.72645739910314,
+        "return_1m": 9.636963696369616,
+        "return_ytd": 10.78257003112495,
+        "return_1y": 11.927223719676538,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "FMP",
+        "return_5d": 1.943535188216039,
+        "return_2y": 48.39189994044073
+      }
+    },
+    {
+      "id": "A_797",
+      "type": "ASSET",
+      "name": "크로거",
+      "exposure": {
+        "ticker": "KR",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 2.8053977272727293,
+        "close": 57.9,
+        "marketCap": 35472261300,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "FMP",
+        "return_3d": 2.7689030883919052,
+        "return_15d": 0.2771042604780005,
+        "return_1m": 0.20768431983384517,
+        "return_ytd": -7.330345710627395,
+        "return_1y": -18.930271632595918,
+        "return_3y": 22.177674614897658,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "FMP",
+        "return_5d": 2.134415240783216,
+        "return_2y": 9.84632896983495
+      }
+    },
+    {
+      "id": "A_798",
+      "type": "ASSET",
+      "name": "코스트코",
+      "exposure": {
+        "ticker": "COST",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.5243543186468367,
+        "close": 947.74,
+        "marketCap": 420302787460,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "FMP",
+        "return_3d": -1.4157174806261996,
+        "return_15d": -0.43597474498103805,
+        "return_1m": 1.9930694561029583,
+        "return_ytd": 9.903286406753708,
+        "return_1y": -2.26260209553667,
+        "return_3y": 74.47027852948213,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "FMP",
+        "return_5d": -1.3900738736864038,
+        "return_2y": 7.524222277688275
+      }
+    },
+    {
+      "id": "A_799",
+      "type": "ASSET",
+      "name": "XRT",
+      "exposure": {
+        "ticker": "XRT",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.1299435028248483,
+        "close": 87.71,
+        "marketCap": 372636110,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "FMP",
+        "return_3d": 0.6656719843911363,
+        "return_15d": -2.305635999108946,
+        "return_1m": -0.8478408320144681,
+        "return_ytd": 2.837378356196485,
+        "return_1y": 5.4333453540089005,
+        "return_3y": 36.30147630147631,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "FMP",
+        "return_5d": -1.3940415964024844,
+        "return_2y": 13.188798554652204
+      }
+    },
+    {
+      "id": "A_800",
+      "type": "ASSET",
+      "name": "IBUY",
+      "exposure": {
+        "ticker": "IBUY",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.08132285172133269,
+        "close": 73.91,
+        "marketCap": 111203730,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "FMP",
+        "return_3d": 2.5983048492427496,
+        "return_15d": 3.316076675528201,
+        "return_1m": 4.1173152848279715,
+        "return_ytd": -0.8060182697474438,
+        "return_1y": 1.764057331863289,
+        "return_3y": 58.82985588298559,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "FMP",
+        "return_5d": 0.40794125645906565,
+        "return_2y": 31.90425151839944
+      }
+    },
+    {
+      "id": "M_146",
+      "type": "MACRO",
+      "name": "이커머스확대"
+    },
+    {
+      "id": "M_346",
+      "type": "MACRO",
+      "name": "미국소비강세"
+    },
+    {
+      "id": "M_199",
+      "type": "MACRO",
+      "name": "인건비상승"
+    },
+    {
+      "id": "C_2161",
+      "type": "CHARACTER",
+      "name": "홀푸드프레시그로서리"
+    },
+    {
+      "id": "C_2162",
+      "type": "CHARACTER",
+      "name": "미국최대식료품옴니채널"
+    },
+    {
+      "id": "C_2163",
+      "type": "CHARACTER",
+      "name": "배달1위그로서리확장"
+    },
+    {
+      "id": "C_2164",
+      "type": "CHARACTER",
+      "name": "온라인식료품배송플랫폼"
+    },
+    {
+      "id": "C_2165",
+      "type": "CHARACTER",
+      "name": "미국최대식료품체인"
+    },
+    {
+      "id": "C_2166",
+      "type": "CHARACTER",
+      "name": "창고형회원제소매"
+    },
+    {
+      "id": "C_2167",
+      "type": "CHARACTER",
+      "name": "미국소매ETF"
+    },
+    {
+      "id": "C_2168",
+      "type": "CHARACTER",
+      "name": "온라인리테일ETF"
+    }
   ],
-  "dataAsOf": "2026-04-06T00:00:00+09:00",
-  "notes": "미국 식료품 커머스 핵심 기업과 관련 ETF(XRT, IBUY) 노출 구조",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-11",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "식료품 커머스 종목에 옴니채널·배송플랫폼·ETF 유형 CHR 정의."
-   },
-   {
-    "date": "2026-07-11",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필 + 2026 이벤트",
-    "detail": "전 엣지 근거를 종목별 사업·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_211",
+      "to": "T_108",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003163"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_296",
+      "to": "T_108",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003164"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_795",
+      "to": "T_108",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003165"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_796",
+      "to": "T_108",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003166"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_797",
+      "to": "T_108",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003167"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "M_146",
+      "to": "T_108",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003174"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_346",
+      "to": "T_108",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003175"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_199",
+      "to": "T_108",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003176"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_211",
+      "to": "C_2161",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003278"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_296",
+      "to": "C_2162",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003279"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_795",
+      "to": "C_2163",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003280"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_796",
+      "to": "C_2164",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003281"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_797",
+      "to": "C_2165",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003282"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_798",
+      "to": "C_2166",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003283"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_799",
+      "to": "C_2167",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003284"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_800",
+      "to": "C_2168",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003285"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_211",
+      "to": "A_796",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019084"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "아마존(Fresh/Whole Foods)과 인스타카트는 식료품 온라인 배달 시장 경쟁"
+    },
+    {
+      "from": "A_296",
+      "to": "A_797",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019085"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "월마트와 크로거는 미국 식료품 소매 시장 양대 경쟁"
+    },
+    {
+      "from": "A_296",
+      "to": "A_798",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019086"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "월마트와 코스트코는 미국 대형 할인마트 시장 경쟁"
+    },
+    {
+      "from": "A_795",
+      "to": "A_796",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019087"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "도어대쉬와 인스타카트는 식료품·음식 배달 앱 시장 경쟁"
+    },
+    {
+      "from": "A_797",
+      "to": "A_798",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019088"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "크로거와 코스트코는 미국 식료품 도매·소매 시장 경쟁"
+    },
+    {
+      "from": "A_800",
+      "to": "T_108",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020600"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_798",
+      "to": "T_108",
+      "type": "THEMED_AS",
+      "evidence": [
+        "코스트코 — 창고형 회원제 식료품 최대 소매"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_799",
+      "to": "T_108",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "SPDR S&P Retail ETF — 미국 소매 노출"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    }
   ],
-  "description": "• e-grocery 침투율·자체 브랜드 마진·AI 가격 최적화가 동인\n• 동인: 이커머스확대·미국소비강세·인건비상승\n• 대표주: 아마존(홀푸드프레시그로서리)·월마트(미국최대식료품옴니채)·도어대쉬(배달1위그로서리확장)\n• ETF: IBUY"
- },
- "nodes": [
-  {
-   "id": "T_108",
-   "type": "THEME",
-   "name": "미국식료품커머스"
-  },
-  {
-   "id": "A_211",
-   "type": "ASSET",
-   "name": "아마존",
-   "exposure": {
-    "ticker": "AMZN",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -2.1554318386999505,
-    "close": 260.11,
-    "marketCap": 2798029281000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "FMP",
-    "return_3d": -0.45922467567256486,
-    "return_15d": 10.450106157112526,
-    "return_1m": 4.048161926477056,
-    "return_ytd": 12.689541634173818,
-    "return_1y": 16.219114427416127,
-    "return_3y": 95.24846119201322,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "FMP",
-    "return_5d": -1.8934107796175437,
-    "return_2y": 45.410330948121654
-   }
-  },
-  {
-   "id": "A_296",
-   "type": "ASSET",
-   "name": "월마트",
-   "exposure": {
-    "ticker": "WMT",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -9.151356080489936,
-    "close": 103.84,
-    "marketCap": 826367027200,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "FMP",
-    "return_3d": -9.175194612087811,
-    "return_15d": -6.53465346534653,
-    "return_1m": -7.4509803921568585,
-    "return_ytd": -6.794722197289282,
-    "return_1y": 1.238178804718748,
-    "return_3y": 97.26443768996961,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "FMP",
-    "return_5d": -10.266159695817489,
-    "return_2y": 39.30775422591897
-   }
-  },
-  {
-   "id": "A_795",
-   "type": "ASSET",
-   "name": "도어대쉬",
-   "exposure": {
-    "ticker": "DASH",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.9717555172100711,
-    "close": 222.36,
-    "marketCap": 96886412800,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "FMP",
-    "return_3d": 4.531778864234681,
-    "return_15d": 12.570242494810913,
-    "return_1m": 17.638345148661514,
-    "return_ytd": -1.8191451783821866,
-    "return_1y": -8.801574932327117,
-    "return_3y": 185.73631457208947,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "FMP",
-    "return_5d": 2.820678812540467,
-    "return_2y": 74.34530343421673
-   }
-  },
-  {
-   "id": "A_796",
-   "type": "ASSET",
-   "name": "인스타카트",
-   "exposure": {
-    "ticker": "CART",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.7894217485691746,
-    "close": 51.07,
-    "marketCap": 12002972601,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "FMP",
-    "return_3d": 4.523127302496932,
-    "return_15d": 14.122905027932964,
-    "return_1m": 9.240641711229959,
-    "return_ytd": 13.539350822587814,
-    "return_1y": 12.217095143924418,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "FMP",
-    "return_5d": 1.9768370607028851,
-    "return_2y": 54.47670901391408
-   }
-  },
-  {
-   "id": "A_797",
-   "type": "ASSET",
-   "name": "크로거",
-   "exposure": {
-    "ticker": "KR",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.0888572951839306,
-    "close": 56.32,
-    "marketCap": 34504279040,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "FMP",
-    "return_3d": 0.44587123238808424,
-    "return_15d": -2.6615969581749055,
-    "return_1m": -3.4955448937628475,
-    "return_ytd": -9.859154929577462,
-    "return_1y": -21.59264931087289,
-    "return_3y": 18.393945764137065,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "FMP",
-    "return_5d": -1.5900751354184783,
-    "return_2y": 8.224442736356652
-   }
-  },
-  {
-   "id": "A_798",
-   "type": "ASSET",
-   "name": "코스트코",
-   "exposure": {
-    "ticker": "COST",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -2.4535261601479674,
-    "close": 933.51,
-    "marketCap": 413992081290,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "FMP",
-    "return_3d": -2.0964866282118466,
-    "return_15d": -2.16523261054109,
-    "return_1m": -0.24471040820688295,
-    "return_ytd": 8.253125217431645,
-    "return_1y": -6.139336597725653,
-    "return_3y": 71.30509780893308,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "FMP",
-    "return_5d": -2.9464053646618527,
-    "return_2y": 6.540744122346487
-   }
-  },
-  {
-   "id": "A_799",
-   "type": "ASSET",
-   "name": "XRT",
-   "exposure": {
-    "ticker": "XRT",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -2.36406619385342,
-    "close": 86.73,
-    "marketCap": 368472578,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "FMP",
-    "return_3d": -0.9252912954078152,
-    "return_15d": -4.250386398763517,
-    "return_1m": -2.4848212277940096,
-    "return_ytd": 1.6883573689764342,
-    "return_1y": 3.5211267605633756,
-    "return_3y": 33.78065710319298,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "FMP",
-    "return_5d": -2.867062381005714,
-    "return_2y": 13.342916884474665
-   }
-  },
-  {
-   "id": "A_800",
-   "type": "ASSET",
-   "name": "IBUY",
-   "exposure": {
-    "ticker": "IBUY",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -0.6463775922434745,
-    "close": 73.775,
-    "marketCap": 111000611,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-20",
-    "valuationSource": "FMP",
-    "return_3d": 2.3017193566278404,
-    "return_15d": 2.8436018957346043,
-    "return_1m": 3.2321253672869865,
-    "return_ytd": -0.8866200967221904,
-    "return_1y": 1.193251954464425,
-    "return_3y": 58.70079587007959,
-    "returnsAsOf": "2026-08-20",
-    "returnsSource": "FMP",
-    "return_5d": 0.24456521739131265,
-    "return_2y": 33.249051833122635
-   }
-  },
-  {
-   "id": "M_146",
-   "type": "MACRO",
-   "name": "이커머스확대"
-  },
-  {
-   "id": "M_346",
-   "type": "MACRO",
-   "name": "미국소비강세"
-  },
-  {
-   "id": "M_199",
-   "type": "MACRO",
-   "name": "인건비상승"
-  },
-  {
-   "id": "C_2161",
-   "type": "CHARACTER",
-   "name": "홀푸드프레시그로서리"
-  },
-  {
-   "id": "C_2162",
-   "type": "CHARACTER",
-   "name": "미국최대식료품옴니채널"
-  },
-  {
-   "id": "C_2163",
-   "type": "CHARACTER",
-   "name": "배달1위그로서리확장"
-  },
-  {
-   "id": "C_2164",
-   "type": "CHARACTER",
-   "name": "온라인식료품배송플랫폼"
-  },
-  {
-   "id": "C_2165",
-   "type": "CHARACTER",
-   "name": "미국최대식료품체인"
-  },
-  {
-   "id": "C_2166",
-   "type": "CHARACTER",
-   "name": "창고형회원제소매"
-  },
-  {
-   "id": "C_2167",
-   "type": "CHARACTER",
-   "name": "미국소매ETF"
-  },
-  {
-   "id": "C_2168",
-   "type": "CHARACTER",
-   "name": "온라인리테일ETF"
-  }
- ],
- "edges": [
-  {
-   "from": "A_211",
-   "to": "T_108",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003163"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_296",
-   "to": "T_108",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003164"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_795",
-   "to": "T_108",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003165"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_796",
-   "to": "T_108",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003166"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_797",
-   "to": "T_108",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003167"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "M_146",
-   "to": "T_108",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003174"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_346",
-   "to": "T_108",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003175"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_199",
-   "to": "T_108",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003176"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_211",
-   "to": "C_2161",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003278"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_296",
-   "to": "C_2162",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003279"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_795",
-   "to": "C_2163",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003280"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_796",
-   "to": "C_2164",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003281"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_797",
-   "to": "C_2165",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003282"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_798",
-   "to": "C_2166",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003283"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_799",
-   "to": "C_2167",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003284"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_800",
-   "to": "C_2168",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003285"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_211",
-   "to": "A_796",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019084"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "아마존(Fresh/Whole Foods)과 인스타카트는 식료품 온라인 배달 시장 경쟁"
-  },
-  {
-   "from": "A_296",
-   "to": "A_797",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019085"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "월마트와 크로거는 미국 식료품 소매 시장 양대 경쟁"
-  },
-  {
-   "from": "A_296",
-   "to": "A_798",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019086"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "월마트와 코스트코는 미국 대형 할인마트 시장 경쟁"
-  },
-  {
-   "from": "A_795",
-   "to": "A_796",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019087"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "도어대쉬와 인스타카트는 식료품·음식 배달 앱 시장 경쟁"
-  },
-  {
-   "from": "A_797",
-   "to": "A_798",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019088"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "크로거와 코스트코는 미국 식료품 도매·소매 시장 경쟁"
-  },
-  {
-   "from": "A_800",
-   "to": "T_108",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020600"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_798",
-   "to": "T_108",
-   "type": "THEMED_AS",
-   "evidence": [
-    "코스트코 — 창고형 회원제 식료품 최대 소매"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_799",
-   "to": "T_108",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "SPDR S&P Retail ETF — 미국 소매 노출"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_211",
-   "to": "T_108",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003163"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_296",
-   "to": "T_108",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003164"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_795",
-   "to": "T_108",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003165"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_796",
-   "to": "T_108",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003166"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_797",
-   "to": "T_108",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_003167"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "M_146",
-   "to": "T_108",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003174"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_346",
-   "to": "T_108",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003175"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_199",
-   "to": "T_108",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_003176"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_211",
-   "to": "C_2161",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003278"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_296",
-   "to": "C_2162",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003279"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_795",
-   "to": "C_2163",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003280"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_796",
-   "to": "C_2164",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003281"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_797",
-   "to": "C_2165",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003282"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_798",
-   "to": "C_2166",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003283"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_799",
-   "to": "C_2167",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003284"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_800",
-   "to": "C_2168",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003285"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_211",
-   "to": "A_796",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019084"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "아마존(Fresh/Whole Foods)과 인스타카트는 식료품 온라인 배달 시장 경쟁"
-  },
-  {
-   "from": "A_296",
-   "to": "A_797",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019085"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "월마트와 크로거는 미국 식료품 소매 시장 양대 경쟁"
-  },
-  {
-   "from": "A_296",
-   "to": "A_798",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019086"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "월마트와 코스트코는 미국 대형 할인마트 시장 경쟁"
-  },
-  {
-   "from": "A_795",
-   "to": "A_796",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019087"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "도어대쉬와 인스타카트는 식료품·음식 배달 앱 시장 경쟁"
-  },
-  {
-   "from": "A_797",
-   "to": "A_798",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019088"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "크로거와 코스트코는 미국 식료품 도매·소매 시장 경쟁"
-  },
-  {
-   "from": "A_800",
-   "to": "T_108",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020600"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_798",
-   "to": "T_108",
-   "type": "THEMED_AS",
-   "evidence": [
-    "코스트코 — 창고형 회원제 식료품 최대 소매"
-   ],
-   "confidence": 0.85,
-   "status": "verified"
-  },
-  {
-   "from": "A_799",
-   "to": "T_108",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "SPDR S&P Retail ETF — 미국 소매 노출"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  }
- ]
+  "links": [
+    {
+      "from": "A_211",
+      "to": "T_108",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003163"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_296",
+      "to": "T_108",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003164"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_795",
+      "to": "T_108",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003165"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_796",
+      "to": "T_108",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003166"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_797",
+      "to": "T_108",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_003167"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "M_146",
+      "to": "T_108",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003174"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_346",
+      "to": "T_108",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003175"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_199",
+      "to": "T_108",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_003176"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_211",
+      "to": "C_2161",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003278"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_296",
+      "to": "C_2162",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003279"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_795",
+      "to": "C_2163",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003280"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_796",
+      "to": "C_2164",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003281"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_797",
+      "to": "C_2165",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003282"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_798",
+      "to": "C_2166",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003283"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_799",
+      "to": "C_2167",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003284"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_800",
+      "to": "C_2168",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003285"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_211",
+      "to": "A_796",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019084"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "아마존(Fresh/Whole Foods)과 인스타카트는 식료품 온라인 배달 시장 경쟁"
+    },
+    {
+      "from": "A_296",
+      "to": "A_797",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019085"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "월마트와 크로거는 미국 식료품 소매 시장 양대 경쟁"
+    },
+    {
+      "from": "A_296",
+      "to": "A_798",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019086"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "월마트와 코스트코는 미국 대형 할인마트 시장 경쟁"
+    },
+    {
+      "from": "A_795",
+      "to": "A_796",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019087"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "도어대쉬와 인스타카트는 식료품·음식 배달 앱 시장 경쟁"
+    },
+    {
+      "from": "A_797",
+      "to": "A_798",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019088"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "크로거와 코스트코는 미국 식료품 도매·소매 시장 경쟁"
+    },
+    {
+      "from": "A_800",
+      "to": "T_108",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020600"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_798",
+      "to": "T_108",
+      "type": "THEMED_AS",
+      "evidence": [
+        "코스트코 — 창고형 회원제 식료품 최대 소매"
+      ],
+      "confidence": 0.85,
+      "status": "verified"
+    },
+    {
+      "from": "A_799",
+      "to": "T_108",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "SPDR S&P Retail ETF — 미국 소매 노출"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    }
+  ]
 }

@@ -1,917 +1,896 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_252",
-  "themeName": "AlwaysOn에너지(지열,SMR등)",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-29T00:00:00+09:00",
-    "notes": "풍력·태양광 간헐 전원과 달리 24시간 안정 베이스로드. AI 하이퍼스케일러 PPA 기대만으로 수십억$ 시총. SMR (3.5세대 NuScale·4세대 Oklo·X-Energy) + 지열 (Fervo·Ormat) + 가스+원자력+태양광+배터리 통합 REIT (Fermi).",
-    "sources": [],
-    "description": "• 풍력·태양광 같은 간헐적 전원과 달리 24시간 안정적으로 공급되는 베이스로드 전원\n• 동인: AI데이터센터전력수요증가·AI데이터센터확대·전력수요확대\n• 대표주: 퍼보에너지(차세대지열 EGS)·오맷테크놀로지스(지열발전)·엑스에너지(고온가스로SMR)\n• 밸류체인: 원전/SMR·3.5세대SMR·4세대SMR·지열발전\n• ETF: Range Nuclear Renaissance Index ETF",
-    "changelog": [
-      {
-        "date": "2026-07-29",
-        "kind": "수정",
-        "title": "AI 전력 고평가 폭락 이벤트 추가",
-        "detail": "AI 전력수요 랠리 장기화·고평가 부담에 따른 되돌림 폭락 반영."
-      },
-      {
-        "date": "2026-08-05",
-        "kind": "관계",
-        "title": "EXPOSED_TO ETF 연결",
-        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-      }
-    ]
-  },
-  "nodes": [
-    {
-      "id": "T_252",
-      "type": "THEME",
-      "name": "AlwaysOn에너지(지열,SMR등)"
-    },
-    {
-      "id": "A_1627",
-      "type": "ASSET",
-      "name": "퍼보에너지",
-      "exposure": {
-        "ticker": "FRVO",
-        "exchange": "NASDAQ",
-        "country": "US",
-        "business_desc": "Fervo Energy — EGS(수압파쇄형 차세대 지열) 개발사, 유타 Cape Station 주력",
-        "theme_role": "AI 하이퍼스케일러 PPA 기대, 2026.5 IPO 후 시총 ~$12B",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -4.65507571508692,
-        "close": 17.0,
-        "marketCap": 4876612554,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -6.077348066298349,
-        "return_15d": -23.76681614349776,
-        "return_1m": -33.3071792859945,
-        "return_ytd": -26.814814814814813,
-        "return_1y": null,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -16.33858267716536,
-        "return_2y": null
-      }
-    },
-    {
-      "id": "A_1628",
-      "type": "ASSET",
-      "name": "오맷테크놀로지스",
-      "exposure": {
-        "ticker": "ORA",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "Ormat Technologies — 업계 최고참 지열 사업자, Google 150MW PPA 체결",
-        "theme_role": "베이스로드 지열 안정 매출, 노후 PPA 단가 갱신",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -1.8310369833212436,
-        "close": 108.3,
-        "marketCap": 6655420007,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -4.9249407426915965,
-        "return_15d": 11.984282907662092,
-        "return_1m": 4.577056778679012,
-        "return_ytd": -1.9643342083823678,
-        "return_1y": 17.360208062418714,
-        "return_3y": 43.04583278298772,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -4.598308668076112,
-        "return_2y": 48.80461665292661
-      }
-    },
-    {
-      "id": "A_164",
-      "type": "ASSET",
-      "name": "엑스에너지",
-      "exposure": {
-        "ticker": "XE",
-        "exchange": "NASDAQ",
-        "country": "US",
-        "business_desc": "X-Energy — 4세대 HTGR Xe-100 SMR 개발사, Amazon·Ken Griffin 후원, 2026 IPO 10억$ 조달",
-        "theme_role": "AI 데이터센터 SMR 공급 핵심, 시총 ~$11.5B",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -7.858942065491192,
-        "close": 18.29,
-        "marketCap": 401443881,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -10.562347188264065,
-        "return_15d": 7.272727272727253,
-        "return_1m": 16.794380587484035,
-        "return_ytd": -28.15068493150684,
-        "return_1y": null,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -19.533655961284644,
-        "return_2y": null
-      }
-    },
-    {
-      "id": "A_168",
-      "type": "ASSET",
-      "name": "NuScale Power",
-      "exposure": {
-        "ticker": "SMR",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "NuScale Power — 경수형 SMR (NRC 첫 인증), 데이터센터 SMR 상업화 2030 목표",
-        "theme_role": "3.5세대 SMR 대표주, 데이터센터 PPA 모멘텀",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -2.3681377825618855,
-        "close": 9.07,
-        "marketCap": 2704473898,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -1.3057671381936808,
-        "return_15d": 5.465116279069782,
-        "return_1m": 13.94472361809045,
-        "return_ytd": -35.99153140437544,
-        "return_1y": -73.15773897602841,
-        "return_3y": 35.982008995502255,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -7.918781725888325,
-        "return_2y": 1.681614349775784
-      }
-    },
-    {
-      "id": "A_170",
-      "type": "ASSET",
-      "name": "오클로",
-      "exposure": {
-        "ticker": "OKLO",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "Oklo — Aurora 4세대 fast reactor SMR, Sam Altman 후원",
-        "theme_role": "4세대 SMR 대표주, OpenAI·데이터센터 베팅",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -2.9809035863996303,
-        "close": 41.66,
-        "marketCap": 7248464518,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -5.059252506836842,
-        "return_15d": 1.3871988318325368,
-        "return_1m": 0.3613587087448744,
-        "return_ytd": -41.9453734671126,
-        "return_1y": -37.41925792398978,
-        "return_3y": 329.622458857696,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -10.312163616792258,
-        "return_2y": 502.0231213872832
-      }
-    },
-    {
-      "id": "A_1629",
-      "type": "ASSET",
-      "name": "퍼미아메리카",
-      "exposure": {
-        "ticker": "FRMI",
-        "exchange": "NASDAQ",
-        "country": "US",
-        "business_desc": "Fermi America — AI용 에너지·데이터센터 인프라 REIT (텍사스 Project Matador: 가스+원자력+태양광+배터리)",
-        "theme_role": "AI 인프라 통합형 — 가스 백업·SMR·재생·배터리 결합",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": 3.645833333333326,
-        "close": 5.97,
-        "marketCap": 3806317974,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -2.7687296416938123,
-        "return_15d": -11.292719167904908,
-        "return_1m": -2.450980392156865,
-        "return_ytd": -25.375000000000004,
-        "return_1y": null,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -9.545454545454547,
-        "return_2y": null
-      }
-    },
-    {
-      "id": "BF_091",
-      "type": "BUSINESS_FIELD",
-      "name": "원전/SMR"
-    },
-    {
-      "id": "BF_039",
-      "type": "BUSINESS_FIELD",
-      "name": "3.5세대SMR"
-    },
-    {
-      "id": "BF_040",
-      "type": "BUSINESS_FIELD",
-      "name": "4세대SMR"
-    },
-    {
-      "id": "M_035",
-      "type": "MACRO",
-      "name": "AI데이터센터전력수요증가"
-    },
-    {
-      "id": "M_212",
-      "type": "MACRO",
-      "name": "AI데이터센터확대"
-    },
-    {
-      "id": "M_091",
-      "type": "MACRO",
-      "name": "전력수요확대"
-    },
-    {
-      "id": "M_027",
-      "type": "MACRO",
-      "name": "원전확대"
-    },
-    {
-      "id": "M_087",
-      "type": "MACRO",
-      "name": "트럼프원전진흥정책"
-    },
-    {
-      "id": "A_050",
-      "type": "ASSET",
-      "name": "알파벳",
-      "exposure": {
-        "ticker": "GOOGL",
-        "exchange": "NASDAQ",
-        "country": "US",
-        "business_desc": "Alphabet Inc. (Google·YouTube·GCP·Waymo)",
-        "theme_role": "Ormat 지열 150MW PPA 고객 — 데이터센터 무탄소 전력 수요",
-        "theme_status": "Peripheral"
-      },
-      "metrics": {
-        "return_1d": -1.1748665583662166,
-        "close": 340.67,
-        "marketCap": 4122826251802,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -0.9680232558139434,
-        "return_15d": 2.100941077743812,
-        "return_1m": -3.2160004545583654,
-        "return_ytd": 8.840255591054325,
-        "return_1y": 70.91611479028698,
-        "return_3y": 167.2760081594226,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -1.642799399468764,
-        "return_2y": 103.77437492523028
-      },
-      "coreBiz": "알파벳은 AI 데이터센터 무탄소 전력(지열·SMR PPA) 최대 수요·투자자다"
-    },
-    {
-      "id": "BF_458",
-      "type": "BUSINESS_FIELD",
-      "name": "지열발전"
-    },
-    {
-      "id": "BF_459",
-      "type": "BUSINESS_FIELD",
-      "name": "AIDC에너지통합인프라REITs"
-    },
-    {
-      "id": "C_201",
-      "type": "CHARACTER",
-      "name": "SMR대비 조기 상업화가능"
-    },
-    {
-      "id": "C_202",
-      "type": "CHARACTER",
-      "name": "미국서부지역에집중"
-    },
-    {
-      "id": "C_3948",
-      "type": "CHARACTER",
-      "name": "차세대지열_EGS"
-    },
-    {
-      "id": "C_3949",
-      "type": "CHARACTER",
-      "name": "지열발전·저장"
-    },
-    {
-      "id": "C_3950",
-      "type": "CHARACTER",
-      "name": "고온가스로SMR"
-    },
-    {
-      "id": "C_3951",
-      "type": "CHARACTER",
-      "name": "경수형SMR선도"
-    },
-    {
-      "id": "C_3952",
-      "type": "CHARACTER",
-      "name": "고속로마이크로원자로"
-    },
-    {
-      "id": "C_3953",
-      "type": "CHARACTER",
-      "name": "퍼미안지열·염수자원"
-    },
-    {
-      "id": "C_3954",
-      "type": "CHARACTER",
-      "name": "AI전력수요·무탄소PPA"
-    },
-    {
-      "id": "A_2867",
-      "type": "ASSET",
-      "name": "Range Nuclear Renaissance Index ETF",
-      "exposure": {
-        "ticker": "NUKZ",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -1.8115942028985366,
-        "return_3d": -4.11322423706324,
-        "return_15d": 1.927597555242122,
-        "return_1m": 4.347826086956541,
-        "return_ytd": 2.425196850393707,
-        "return_1y": 14.708994708994716,
-        "return_3y": null,
-        "close": 65.04,
-        "marketCap": 499537053,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -4.479365545601411,
-        "return_2y": 99.69296898986799
-      }
-    }
+ "schemaVersion": "v5",
+ "themeId": "T_252",
+ "themeName": "AlwaysOn에너지(지열,SMR등)",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
   ],
-  "edges": [
-    {
-      "from": "A_1627",
-      "to": "T_252",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008424"
-      ]
-    },
-    {
-      "from": "A_1628",
-      "to": "T_252",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008426"
-      ]
-    },
-    {
-      "from": "A_164",
-      "to": "T_252",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008428"
-      ]
-    },
-    {
-      "from": "A_168",
-      "to": "T_252",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008430"
-      ]
-    },
-    {
-      "from": "A_170",
-      "to": "T_252",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008432"
-      ]
-    },
-    {
-      "from": "A_1629",
-      "to": "T_252",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008434"
-      ]
-    },
-    {
-      "from": "A_164",
-      "to": "BF_040",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015540"
-      ]
-    },
-    {
-      "from": "A_164",
-      "to": "BF_091",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015541"
-      ]
-    },
-    {
-      "from": "A_168",
-      "to": "BF_039",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015542"
-      ]
-    },
-    {
-      "from": "A_168",
-      "to": "BF_091",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015543"
-      ]
-    },
-    {
-      "from": "A_170",
-      "to": "BF_040",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015544"
-      ]
-    },
-    {
-      "from": "A_170",
-      "to": "BF_091",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015545"
-      ]
-    },
-    {
-      "from": "M_035",
-      "to": "T_252",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_008437"
-      ]
-    },
-    {
-      "from": "M_212",
-      "to": "T_252",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_008438"
-      ]
-    },
-    {
-      "from": "M_091",
-      "to": "T_252",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_008439"
-      ]
-    },
-    {
-      "from": "M_027",
-      "to": "T_252",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_008440"
-      ]
-    },
-    {
-      "from": "M_087",
-      "to": "T_252",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_008441"
-      ]
-    },
-    {
-      "from": "A_1627",
-      "to": "BF_458",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015546"
-      ]
-    },
-    {
-      "from": "A_1628",
-      "to": "BF_458",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015547"
-      ]
-    },
-    {
-      "from": "A_1629",
-      "to": "BF_459",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015548"
-      ]
-    },
-    {
-      "from": "A_1628",
-      "to": "A_050",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_015549"
-      ]
-    },
-    {
-      "from": "BF_458",
-      "to": "C_201",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015550"
-      ]
-    },
-    {
-      "from": "BF_458",
-      "to": "C_202",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015551"
-      ]
-    },
-    {
-      "from": "A_1627",
-      "to": "C_3948",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008425"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1628",
-      "to": "C_3949",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008427"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_164",
-      "to": "C_3950",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008429"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_168",
-      "to": "C_3951",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008431"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_170",
-      "to": "C_3952",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008433"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1629",
-      "to": "C_3953",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008435"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_050",
-      "to": "C_3954",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008436"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2867",
-      "to": "T_252",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020673"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_1627",
-      "to": "T_252",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008424"
-      ]
-    },
-    {
-      "from": "A_1628",
-      "to": "T_252",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008426"
-      ]
-    },
-    {
-      "from": "A_164",
-      "to": "T_252",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008428"
-      ]
-    },
-    {
-      "from": "A_168",
-      "to": "T_252",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008430"
-      ]
-    },
-    {
-      "from": "A_170",
-      "to": "T_252",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008432"
-      ]
-    },
-    {
-      "from": "A_1629",
-      "to": "T_252",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008434"
-      ]
-    },
-    {
-      "from": "A_164",
-      "to": "BF_040",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015540"
-      ]
-    },
-    {
-      "from": "A_164",
-      "to": "BF_091",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015541"
-      ]
-    },
-    {
-      "from": "A_168",
-      "to": "BF_039",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015542"
-      ]
-    },
-    {
-      "from": "A_168",
-      "to": "BF_091",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015543"
-      ]
-    },
-    {
-      "from": "A_170",
-      "to": "BF_040",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015544"
-      ]
-    },
-    {
-      "from": "A_170",
-      "to": "BF_091",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015545"
-      ]
-    },
-    {
-      "from": "M_035",
-      "to": "T_252",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_008437"
-      ]
-    },
-    {
-      "from": "M_212",
-      "to": "T_252",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_008438"
-      ]
-    },
-    {
-      "from": "M_091",
-      "to": "T_252",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_008439"
-      ]
-    },
-    {
-      "from": "M_027",
-      "to": "T_252",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_008440"
-      ]
-    },
-    {
-      "from": "M_087",
-      "to": "T_252",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_008441"
-      ]
-    },
-    {
-      "from": "A_1627",
-      "to": "BF_458",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015546"
-      ]
-    },
-    {
-      "from": "A_1628",
-      "to": "BF_458",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015547"
-      ]
-    },
-    {
-      "from": "A_1629",
-      "to": "BF_459",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_015548"
-      ]
-    },
-    {
-      "from": "A_1628",
-      "to": "A_050",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_015549"
-      ]
-    },
-    {
-      "from": "BF_458",
-      "to": "C_201",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015550"
-      ]
-    },
-    {
-      "from": "BF_458",
-      "to": "C_202",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_015551"
-      ]
-    },
-    {
-      "from": "A_1627",
-      "to": "C_3948",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008425"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1628",
-      "to": "C_3949",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008427"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_164",
-      "to": "C_3950",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008429"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_168",
-      "to": "C_3951",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008431"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_170",
-      "to": "C_3952",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008433"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1629",
-      "to": "C_3953",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008435"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_050",
-      "to": "C_3954",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008436"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_2867",
-      "to": "T_252",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020673"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
+  "dataAsOf": "2026-07-29T00:00:00+09:00",
+  "notes": "풍력·태양광 간헐 전원과 달리 24시간 안정 베이스로드. AI 하이퍼스케일러 PPA 기대만으로 수십억$ 시총. SMR (3.5세대 NuScale·4세대 Oklo·X-Energy) + 지열 (Fervo·Ormat) + 가스+원자력+태양광+배터리 통합 REIT (Fermi).",
+  "sources": [],
+  "description": "• 풍력·태양광 같은 간헐적 전원과 달리 24시간 안정적으로 공급되는 베이스로드 전원\n• 동인: AI데이터센터전력수요증가·AI데이터센터확대·전력수요확대\n• 대표주: 퍼보에너지(차세대지열 EGS)·오맷테크놀로지스(지열발전)·엑스에너지(고온가스로SMR)\n• 밸류체인: 원전/SMR·3.5세대SMR·4세대SMR·지열발전\n• ETF: Range Nuclear Renaissance Index ETF",
+  "changelog": [
+   {
+    "date": "2026-07-29",
+    "kind": "수정",
+    "title": "AI 전력 고평가 폭락 이벤트 추가",
+    "detail": "AI 전력수요 랠리 장기화·고평가 부담에 따른 되돌림 폭락 반영."
+   },
+   {
+    "date": "2026-08-05",
+    "kind": "관계",
+    "title": "EXPOSED_TO ETF 연결",
+    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+   }
   ]
+ },
+ "nodes": [
+  {
+   "id": "T_252",
+   "type": "THEME",
+   "name": "AlwaysOn에너지(지열,SMR등)"
+  },
+  {
+   "id": "A_1627",
+   "type": "ASSET",
+   "name": "퍼보에너지",
+   "exposure": {
+    "ticker": "FRVO",
+    "exchange": "NASDAQ",
+    "country": "US",
+    "business_desc": "Fervo Energy — EGS(수압파쇄형 차세대 지열) 개발사, 유타 Cape Station 주력",
+    "theme_role": "AI 하이퍼스케일러 PPA 기대, 2026.5 IPO 후 시총 ~$12B",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -0.47058823529411153,
+    "close": 16.92,
+    "marketCap": 4853663789,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-21",
+    "valuationSource": "FMP",
+    "return_3d": -5.843071786310505,
+    "return_15d": -24.933451641526162,
+    "return_1m": -37.31011485735457,
+    "return_ytd": -26.814814814814813,
+    "return_1y": null,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-21",
+    "returnsSource": "FMP",
+    "return_5d": -14.372469635627528,
+    "return_2y": null
+   }
+  },
+  {
+   "id": "A_1628",
+   "type": "ASSET",
+   "name": "오맷테크놀로지스",
+   "exposure": {
+    "ticker": "ORA",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "Ormat Technologies — 업계 최고참 지열 사업자, Google 150MW PPA 체결",
+    "theme_role": "베이스로드 지열 안정 매출, 노후 PPA 단가 갱신",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": 0.0738688827331524,
+    "close": 108.38,
+    "marketCap": 6660336291,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-21",
+    "valuationSource": "FMP",
+    "return_3d": -1.1852662290299132,
+    "return_15d": 11.067841770854692,
+    "return_1m": 3.1208372978116072,
+    "return_ytd": -1.8919163573820952,
+    "return_1y": 17.04103671706263,
+    "return_3y": 43.68288479384859,
+    "returnsAsOf": "2026-08-21",
+    "returnsSource": "FMP",
+    "return_5d": -5.559428372255148,
+    "return_2y": 48.20183235334336
+   }
+  },
+  {
+   "id": "A_164",
+   "type": "ASSET",
+   "name": "엑스에너지",
+   "exposure": {
+    "ticker": "XE",
+    "exchange": "NASDAQ",
+    "country": "US",
+    "business_desc": "X-Energy — 4세대 HTGR Xe-100 SMR 개발사, Amazon·Ken Griffin 후원, 2026 IPO 10억$ 조달",
+    "theme_role": "AI 데이터센터 SMR 공급 핵심, 시총 ~$11.5B",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": 2.07763805358121,
+    "close": 18.67,
+    "marketCap": 409784432,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-21",
+    "valuationSource": "FMP",
+    "return_3d": -1.0074231177094273,
+    "return_15d": 14.469650521152676,
+    "return_1m": 11.197141155449696,
+    "return_ytd": -28.15068493150684,
+    "return_1y": null,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-21",
+    "returnsSource": "FMP",
+    "return_5d": -11.010486177311718,
+    "return_2y": null
+   }
+  },
+  {
+   "id": "A_168",
+   "type": "ASSET",
+   "name": "NuScale Power",
+   "exposure": {
+    "ticker": "SMR",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "NuScale Power — 경수형 SMR (NRC 첫 인증), 데이터센터 SMR 상업화 2030 목표",
+    "theme_role": "3.5세대 SMR 대표주, 데이터센터 PPA 모멘텀",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": 3.638368246968038,
+    "close": 9.4,
+    "marketCap": 2802872617,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-21",
+    "valuationSource": "FMP",
+    "return_3d": 8.796296296296301,
+    "return_15d": 11.638954869358663,
+    "return_1m": 7.921928817451196,
+    "return_ytd": -33.662667607621735,
+    "return_1y": -71.93191997611228,
+    "return_3y": 43.950995405819306,
+    "returnsAsOf": "2026-08-21",
+    "returnsSource": "FMP",
+    "return_5d": 0.10649627263046302,
+    "return_2y": 6.93970420932879
+   }
+  },
+  {
+   "id": "A_170",
+   "type": "ASSET",
+   "name": "오클로",
+   "exposure": {
+    "ticker": "OKLO",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "Oklo — Aurora 4세대 fast reactor SMR, Sam Altman 후원",
+    "theme_role": "4세대 SMR 대표주, OpenAI·데이터센터 베팅",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": 1.032165146423436,
+    "close": 42.09,
+    "marketCap": 7323280643,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-21",
+    "valuationSource": "FMP",
+    "return_3d": 1.7649903288201152,
+    "return_15d": 8.395570435230514,
+    "return_1m": -4.622705642420122,
+    "return_ytd": -41.34615384615385,
+    "return_1y": -37.35674951629706,
+    "return_3y": 329.622458857696,
+    "returnsAsOf": "2026-08-21",
+    "returnsSource": "FMP",
+    "return_5d": -5.159981973862093,
+    "return_2y": 493.65303244005645
+   }
+  },
+  {
+   "id": "A_1629",
+   "type": "ASSET",
+   "name": "퍼미아메리카",
+   "exposure": {
+    "ticker": "FRMI",
+    "exchange": "NASDAQ",
+    "country": "US",
+    "business_desc": "Fermi America — AI용 에너지·데이터센터 인프라 REIT (텍사스 Project Matador: 가스+원자력+태양광+배터리)",
+    "theme_role": "AI 인프라 통합형 — 가스 백업·SMR·재생·배터리 결합",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -0.8375209380234505,
+    "close": 5.92,
+    "marketCap": 3774439264,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-21",
+    "valuationSource": "FMP",
+    "return_3d": 3.1358885017421567,
+    "return_15d": 4.042179261862899,
+    "return_1m": -10.977443609022563,
+    "return_ytd": -26.0,
+    "return_1y": null,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-21",
+    "returnsSource": "FMP",
+    "return_5d": -7.500000000000007,
+    "return_2y": null
+   }
+  },
+  {
+   "id": "BF_091",
+   "type": "BUSINESS_FIELD",
+   "name": "원전/SMR"
+  },
+  {
+   "id": "BF_039",
+   "type": "BUSINESS_FIELD",
+   "name": "3.5세대SMR"
+  },
+  {
+   "id": "BF_040",
+   "type": "BUSINESS_FIELD",
+   "name": "4세대SMR"
+  },
+  {
+   "id": "M_035",
+   "type": "MACRO",
+   "name": "AI데이터센터전력수요증가"
+  },
+  {
+   "id": "M_212",
+   "type": "MACRO",
+   "name": "AI데이터센터확대"
+  },
+  {
+   "id": "M_027",
+   "type": "MACRO",
+   "name": "원전확대"
+  },
+  {
+   "id": "M_087",
+   "type": "MACRO",
+   "name": "트럼프원전진흥정책"
+  },
+  {
+   "id": "A_050",
+   "type": "ASSET",
+   "name": "알파벳",
+   "exposure": {
+    "ticker": "GOOGL",
+    "exchange": "NASDAQ",
+    "country": "US",
+    "business_desc": "Alphabet Inc. (Google·YouTube·GCP·Waymo)",
+    "theme_role": "Ormat 지열 150MW PPA 고객 — 데이터센터 무탄소 전력 수요",
+    "theme_status": "Peripheral"
+   },
+   "metrics": {
+    "return_1d": 1.2181876889658438,
+    "close": 344.82,
+    "marketCap": 4173050013639,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-21",
+    "valuationSource": "FMP",
+    "return_3d": 0.1801278326554412,
+    "return_15d": -3.1758065874820995,
+    "return_1m": -0.6711796053579078,
+    "return_ytd": 10.166134185303521,
+    "return_1y": 72.62578222778473,
+    "return_3y": 168.61416218742696,
+    "returnsAsOf": "2026-08-21",
+    "returnsSource": "FMP",
+    "return_5d": -0.31222896790980004,
+    "return_2y": 107.91076273741331
+   },
+   "coreBiz": "알파벳은 AI 데이터센터 무탄소 전력(지열·SMR PPA) 최대 수요·투자자다"
+  },
+  {
+   "id": "BF_458",
+   "type": "BUSINESS_FIELD",
+   "name": "지열발전"
+  },
+  {
+   "id": "BF_459",
+   "type": "BUSINESS_FIELD",
+   "name": "AIDC에너지통합인프라REITs"
+  },
+  {
+   "id": "C_201",
+   "type": "CHARACTER",
+   "name": "SMR대비 조기 상업화가능"
+  },
+  {
+   "id": "C_202",
+   "type": "CHARACTER",
+   "name": "미국서부지역에집중"
+  },
+  {
+   "id": "C_3948",
+   "type": "CHARACTER",
+   "name": "차세대지열_EGS"
+  },
+  {
+   "id": "C_3949",
+   "type": "CHARACTER",
+   "name": "지열발전·저장"
+  },
+  {
+   "id": "C_3950",
+   "type": "CHARACTER",
+   "name": "고온가스로SMR"
+  },
+  {
+   "id": "C_3951",
+   "type": "CHARACTER",
+   "name": "경수형SMR선도"
+  },
+  {
+   "id": "C_3952",
+   "type": "CHARACTER",
+   "name": "고속로마이크로원자로"
+  },
+  {
+   "id": "C_3953",
+   "type": "CHARACTER",
+   "name": "퍼미안지열·염수자원"
+  },
+  {
+   "id": "C_3954",
+   "type": "CHARACTER",
+   "name": "AI전력수요·무탄소PPA"
+  },
+  {
+   "id": "A_2867",
+   "type": "ASSET",
+   "name": "Range Nuclear Renaissance Index ETF",
+   "exposure": {
+    "ticker": "NUKZ",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 1.1070110701107083,
+    "return_3d": -0.4390613171839419,
+    "return_15d": 3.266331658291466,
+    "return_1m": 2.3661270236612797,
+    "return_ytd": 3.5590551181102548,
+    "return_1y": 15.287517531556816,
+    "return_3y": null,
+    "close": 65.93,
+    "marketCap": 506372662,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-21",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-21",
+    "returnsSource": "FMP",
+    "return_5d": -3.3367631927090913,
+    "return_2y": 99.75698663426489
+   }
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_1627",
+   "to": "T_252",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008424"
+   ]
+  },
+  {
+   "from": "A_1628",
+   "to": "T_252",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008426"
+   ]
+  },
+  {
+   "from": "A_164",
+   "to": "T_252",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008428"
+   ]
+  },
+  {
+   "from": "A_168",
+   "to": "T_252",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008430"
+   ]
+  },
+  {
+   "from": "A_170",
+   "to": "T_252",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008432"
+   ]
+  },
+  {
+   "from": "A_1629",
+   "to": "T_252",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008434"
+   ]
+  },
+  {
+   "from": "A_164",
+   "to": "BF_040",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015540"
+   ]
+  },
+  {
+   "from": "A_164",
+   "to": "BF_091",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015541"
+   ]
+  },
+  {
+   "from": "A_168",
+   "to": "BF_039",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015542"
+   ]
+  },
+  {
+   "from": "A_168",
+   "to": "BF_091",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015543"
+   ]
+  },
+  {
+   "from": "A_170",
+   "to": "BF_040",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015544"
+   ]
+  },
+  {
+   "from": "A_170",
+   "to": "BF_091",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015545"
+   ]
+  },
+  {
+   "from": "M_035",
+   "to": "T_252",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_008437"
+   ]
+  },
+  {
+   "from": "M_212",
+   "to": "T_252",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_008438"
+   ]
+  },
+  {
+   "from": "M_027",
+   "to": "T_252",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_008440"
+   ]
+  },
+  {
+   "from": "M_087",
+   "to": "T_252",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_008441"
+   ]
+  },
+  {
+   "from": "A_1627",
+   "to": "BF_458",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015546"
+   ]
+  },
+  {
+   "from": "A_1628",
+   "to": "BF_458",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015547"
+   ]
+  },
+  {
+   "from": "A_1629",
+   "to": "BF_459",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015548"
+   ]
+  },
+  {
+   "from": "A_1628",
+   "to": "A_050",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_015549"
+   ]
+  },
+  {
+   "from": "BF_458",
+   "to": "C_201",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015550"
+   ]
+  },
+  {
+   "from": "BF_458",
+   "to": "C_202",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015551"
+   ]
+  },
+  {
+   "from": "A_1627",
+   "to": "C_3948",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008425"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1628",
+   "to": "C_3949",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008427"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_164",
+   "to": "C_3950",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008429"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_168",
+   "to": "C_3951",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008431"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_170",
+   "to": "C_3952",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008433"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1629",
+   "to": "C_3953",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008435"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_050",
+   "to": "C_3954",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008436"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2867",
+   "to": "T_252",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020673"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_1627",
+   "to": "T_252",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008424"
+   ]
+  },
+  {
+   "from": "A_1628",
+   "to": "T_252",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008426"
+   ]
+  },
+  {
+   "from": "A_164",
+   "to": "T_252",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008428"
+   ]
+  },
+  {
+   "from": "A_168",
+   "to": "T_252",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008430"
+   ]
+  },
+  {
+   "from": "A_170",
+   "to": "T_252",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008432"
+   ]
+  },
+  {
+   "from": "A_1629",
+   "to": "T_252",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008434"
+   ]
+  },
+  {
+   "from": "A_164",
+   "to": "BF_040",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015540"
+   ]
+  },
+  {
+   "from": "A_164",
+   "to": "BF_091",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015541"
+   ]
+  },
+  {
+   "from": "A_168",
+   "to": "BF_039",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015542"
+   ]
+  },
+  {
+   "from": "A_168",
+   "to": "BF_091",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015543"
+   ]
+  },
+  {
+   "from": "A_170",
+   "to": "BF_040",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015544"
+   ]
+  },
+  {
+   "from": "A_170",
+   "to": "BF_091",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015545"
+   ]
+  },
+  {
+   "from": "M_035",
+   "to": "T_252",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_008437"
+   ]
+  },
+  {
+   "from": "M_212",
+   "to": "T_252",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_008438"
+   ]
+  },
+  {
+   "from": "M_027",
+   "to": "T_252",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_008440"
+   ]
+  },
+  {
+   "from": "M_087",
+   "to": "T_252",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_008441"
+   ]
+  },
+  {
+   "from": "A_1627",
+   "to": "BF_458",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015546"
+   ]
+  },
+  {
+   "from": "A_1628",
+   "to": "BF_458",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015547"
+   ]
+  },
+  {
+   "from": "A_1629",
+   "to": "BF_459",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_015548"
+   ]
+  },
+  {
+   "from": "A_1628",
+   "to": "A_050",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_015549"
+   ]
+  },
+  {
+   "from": "BF_458",
+   "to": "C_201",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015550"
+   ]
+  },
+  {
+   "from": "BF_458",
+   "to": "C_202",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_015551"
+   ]
+  },
+  {
+   "from": "A_1627",
+   "to": "C_3948",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008425"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1628",
+   "to": "C_3949",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008427"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_164",
+   "to": "C_3950",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008429"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_168",
+   "to": "C_3951",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008431"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_170",
+   "to": "C_3952",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008433"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1629",
+   "to": "C_3953",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008435"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_050",
+   "to": "C_3954",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008436"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_2867",
+   "to": "T_252",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020673"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ]
 }

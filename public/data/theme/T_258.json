@@ -1,1763 +1,1738 @@
 {
-  "schemaVersion": "v5",
-  "themeId": "T_258",
-  "themeName": "미국AI데이터센터전력수혜주",
-  "meta": {
-    "periodDefault": "3d",
-    "periodOptions": [
-      "1d",
-      "3d",
-      "7d",
-      "15d",
-      "1m",
-      "ytd",
-      "1y",
-      "2y",
-      "3y"
-    ],
-    "dataAsOf": "2026-07-29T00:00:00+09:00",
-    "description": "• Bloom Energy·SMR(NuScale/Oklo)·Vistra·Constellation\n• 동인: AI데이터센터전력수요증가·전력수요확대·트럼프원전진흥정책\n• 대표주: 블룸에너지(실적불확실성)·NuScale Power(실적불확실성)·오클로(실적불확실성)\n• 밸류체인: 원전/SMR·가스터빈/백업발전·퓨얼셀·터빈/발전기기\n• ETF: KODEX 미국AI전력핵심인프라·Range Nuclear Renaissance Index ETF",
-    "notes": "미국 AI 데이터센터 전력 수혜 13 자산 + 5 BF + 5 MACRO + 1 CHAR HAS_TRAIT.",
-    "sources": [],
-    "provenanceSeed": "T_258 공개사실 시드(2026-06-29) — evidence_ssot 참조",
-    "changelog": [
-      {
-        "date": "2026-08-04",
-        "kind": "보강",
-        "title": "2궤도 관계 엣지 추가",
-        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 7건 백필(리서치 기반)."
-      },
-      {
-        "date": "2026-07-29",
-        "kind": "수정",
-        "title": "AI 전력 고평가 폭락 이벤트 추가",
-        "detail": "AI 전력수요 랠리 장기화·고평가 부담에 따른 되돌림 폭락 반영."
-      },
-      {
-        "date": "2026-08-05",
-        "kind": "관계",
-        "title": "EXPOSED_TO ETF 연결",
-        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-      }
-    ]
-  },
-  "nodes": [
-    {
-      "id": "T_258",
-      "type": "THEME",
-      "name": "미국AI데이터센터전력수혜주"
-    },
-    {
-      "id": "A_755",
-      "type": "ASSET",
-      "name": "블룸에너지",
-      "exposure": {
-        "ticker": "BE",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "Bloom Energy — 고체산화물 연료전지(SOFC), 데이터센터 분산발전 핵심",
-        "theme_role": "SOFC 분산발전 1위, 데이터센터 직접 공급",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -2.0084208488602817,
-        "close": 202.48,
-        "marketCap": 59635826960,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -12.784286698828396,
-        "return_15d": -2.2402471996910034,
-        "return_1m": 2.7504313407084036,
-        "return_ytd": 133.03026815513866,
-        "return_1y": 354.9090092114132,
-        "return_3y": 1297.3775017253279,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -14.283295233257132,
-        "return_2y": 1659.1659426585575
-      }
-    },
-    {
-      "id": "A_168",
-      "type": "ASSET",
-      "name": "NuScale Power",
-      "exposure": {
-        "ticker": "SMR",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "경수형 SMR (NRC 첫 인증)",
-        "theme_role": "SMR 상업화 선도, 데이터센터 잠재 공급",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -2.3681377825618855,
-        "close": 9.07,
-        "marketCap": 2704473898,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -1.3057671381936808,
-        "return_15d": 5.465116279069782,
-        "return_1m": 13.94472361809045,
-        "return_ytd": -35.99153140437544,
-        "return_1y": -73.15773897602841,
-        "return_3y": 35.982008995502255,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -7.918781725888325,
-        "return_2y": 1.681614349775784
-      }
-    },
-    {
-      "id": "A_170",
-      "type": "ASSET",
-      "name": "오클로",
-      "exposure": {
-        "ticker": "OKLO",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "Aurora 4세대 fast reactor SMR (Sam Altman 후원)",
-        "theme_role": "4세대 SMR, OpenAI·하이퍼스케일러 베팅",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -2.9809035863996303,
-        "close": 41.66,
-        "marketCap": 7248464518,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -5.059252506836842,
-        "return_15d": 1.3871988318325368,
-        "return_1m": 0.3613587087448744,
-        "return_ytd": -41.9453734671126,
-        "return_1y": -37.41925792398978,
-        "return_3y": 329.622458857696,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -10.312163616792258,
-        "return_2y": 502.0231213872832
-      }
-    },
-    {
-      "id": "A_165",
-      "type": "ASSET",
-      "name": "Cameco",
-      "exposure": {
-        "ticker": "CCJ",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "글로벌 우라늄 1위 (Cigar Lake·MacArthur River)",
-        "theme_role": "원자력 연료 (우라늄) 공급망 핵심",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -2.439273321085933,
-        "close": 95.59,
-        "marketCap": 41632599470,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -3.033069588151749,
-        "return_15d": 8.341833843363933,
-        "return_1m": 12.657631113730128,
-        "return_ytd": 4.481364083506412,
-        "return_1y": 35.64637434369236,
-        "return_3y": 175.71387366599365,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -2.2097186700767213,
-        "return_2y": 131.005316578057
-      }
-    },
-    {
-      "id": "A_167",
-      "type": "ASSET",
-      "name": "GE버노바",
-      "exposure": {
-        "ticker": "GEV",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "GE 분사 — 가스터빈·풍력·전력망 장비 1위",
-        "theme_role": "가스·전력망·풍력 데이터센터 인프라 통합 수혜",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -2.172239888198002,
-        "close": 966.01,
-        "marketCap": 257280920936,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -10.471733086190916,
-        "return_15d": -1.6263060347461278,
-        "return_1m": -10.486665801812489,
-        "return_ytd": 47.80513181449575,
-        "return_1y": 59.77935460394646,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -7.948199958072088,
-        "return_2y": 425.00543478260863
-      }
-    },
-    {
-      "id": "A_396",
-      "type": "ASSET",
-      "name": "커민스",
-      "exposure": {
-        "ticker": "CMI",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "발전기·디젤엔진 1위 (Onan·Cummins Power Generation)",
-        "theme_role": "데이터센터 백업 발전기 1위",
-        "theme_status": "Support"
-      },
-      "metrics": {
-        "return_1d": -2.486973387905389,
-        "close": 593.24,
-        "marketCap": 81860594360,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -7.4739534593549095,
-        "return_15d": -6.278239438844835,
-        "return_1m": -7.223621037486505,
-        "return_ytd": 16.21902243118818,
-        "return_1y": 49.6757915983348,
-        "return_3y": 153.9337385497817,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -6.074951314893684,
-        "return_2y": 97.54253937597817
-      }
-    },
-    {
-      "id": "A_310",
-      "type": "ASSET",
-      "name": "캐터필라",
-      "exposure": {
-        "ticker": "CAT",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "건설장비+발전기 글로벌 1위",
-        "theme_role": "데이터센터 백업 발전기·건설장비",
-        "theme_status": "Support"
-      },
-      "metrics": {
-        "return_1d": -0.09312013722967416,
-        "close": 815.39,
-        "marketCap": 375598803430,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -7.5154539783360725,
-        "return_15d": 0.7724250438737368,
-        "return_1m": -5.658914728682163,
-        "return_ytd": 42.334211950355225,
-        "return_1y": 93.8681376162058,
-        "return_3y": 197.80496712929144,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -4.588111397144868,
-        "return_2y": 137.51529274686862
-      }
-    },
-    {
-      "id": "A_664",
-      "type": "ASSET",
-      "name": "피바디에너지",
-      "exposure": {
-        "ticker": "BTU",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "미국 석탄 1위 (PRB·Illinois Basin)",
-        "theme_role": "석탄 베이스로드 발전 잔여 수요 (트럼프 정책)",
-        "theme_status": "Peripheral"
-      },
-      "metrics": {
-        "return_1d": 0.03724394785846741,
-        "close": 26.86,
-        "marketCap": 3271548000,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": 3.6665380162099526,
-        "return_15d": 25.51401869158878,
-        "return_1m": 17.088055797733205,
-        "return_ytd": -9.56228956228956,
-        "return_1y": 67.875,
-        "return_3y": 22.92906178489702,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": 11.498547114985481,
-        "return_2y": 19.060283687943258
-      }
-    },
-    {
-      "id": "A_1628",
-      "type": "ASSET",
-      "name": "오맷테크놀로지스",
-      "exposure": {
-        "ticker": "ORA",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "업계 최고참 지열 사업자, Google 150MW PPA",
-        "theme_role": "지열 베이스로드, 데이터센터 PPA",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -1.8310369833212436,
-        "close": 108.3,
-        "marketCap": 6655420007,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -4.9249407426915965,
-        "return_15d": 11.984282907662092,
-        "return_1m": 4.577056778679012,
-        "return_ytd": -1.9643342083823678,
-        "return_1y": 17.360208062418714,
-        "return_3y": 43.04583278298772,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -4.598308668076112,
-        "return_2y": 48.80461665292661
-      }
-    },
-    {
-      "id": "A_1061",
-      "type": "ASSET",
-      "name": "비스트라에너지",
-      "exposure": {
-        "ticker": "VST",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "미국 IPP — 가스+원자력 발전 (Comanche Peak 원전 포함)",
-        "theme_role": "데이터센터 PPA 직접 체결, AI 전력수혜 대장주",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -2.634898388227047,
-        "close": 138.94,
-        "marketCap": 46848132104,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -4.907261652179873,
-        "return_15d": -6.513255281927066,
-        "return_1m": -12.057725172479273,
-        "return_ytd": -13.878385917064406,
-        "return_1y": -27.97677673526515,
-        "return_3y": 365.30475552578696,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -5.095628415300557,
-        "return_2y": 74.4600703164239
-      }
-    },
-    {
-      "id": "A_1062",
-      "type": "ASSET",
-      "name": "NextEra Energy",
-      "exposure": {
-        "ticker": "NEE",
-        "exchange": "NYSE",
-        "country": "US",
-        "business_desc": "미국 IPP 1위 — 재생에너지·가스·원자력 통합",
-        "theme_role": "재생+원자력 데이터센터 PPA 확대",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -1.0243277848911547,
-        "close": 85.03,
-        "marketCap": 177370725836,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -1.3801902110879172,
-        "return_15d": -3.2980780166041224,
-        "return_1m": -3.3749999999999947,
-        "return_ytd": 5.916791230692575,
-        "return_1y": 11.617222368075609,
-        "return_3y": 25.35751142562288,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -1.1394023950703436,
-        "return_2y": 7.660167130919215
-      }
-    },
-    {
-      "id": "A_1655",
-      "type": "ASSET",
-      "name": "컨스텔레이션에너지",
-      "exposure": {
-        "ticker": "CEG",
-        "exchange": "NASDAQ",
-        "country": "US",
-        "business_desc": "미국 최대 원자력 발전사 (21 원자로)",
-        "theme_role": "MS·Meta·Amazon 데이터센터 원전 PPA 직접 체결",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": -0.4559215085530921,
-        "close": 272.92,
-        "marketCap": 98006123298,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -1.8979151689431983,
-        "return_15d": 3.551373501290045,
-        "return_1m": 7.660749506903364,
-        "return_ytd": -22.74464290769099,
-        "return_1y": -13.140893033321655,
-        "return_3y": 160.49441634055555,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -2.0528280218202632,
-        "return_2y": 43.0998322147651
-      }
-    },
-    {
-      "id": "A_1629",
-      "type": "ASSET",
-      "name": "퍼미아메리카",
-      "exposure": {
-        "ticker": "FRMI",
-        "exchange": "NASDAQ",
-        "country": "US",
-        "business_desc": "AI용 에너지·데이터센터 인프라 REIT (Project Matador)",
-        "theme_role": "가스+SMR+태양광+배터리 통합 데이터센터 REIT",
-        "theme_status": "Core"
-      },
-      "metrics": {
-        "return_1d": 3.645833333333326,
-        "close": 5.97,
-        "marketCap": 3806317974,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "return_3d": -2.7687296416938123,
-        "return_15d": -11.292719167904908,
-        "return_1m": -2.450980392156865,
-        "return_ytd": -25.375000000000004,
-        "return_1y": null,
-        "return_3y": null,
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -9.545454545454547,
-        "return_2y": null
-      }
-    },
-    {
-      "id": "BF_091",
-      "type": "BUSINESS_FIELD",
-      "name": "원전/SMR"
-    },
-    {
-      "id": "BF_196",
-      "type": "BUSINESS_FIELD",
-      "name": "가스터빈/백업발전"
-    },
-    {
-      "id": "BF_199",
-      "type": "BUSINESS_FIELD",
-      "name": "퓨얼셀"
-    },
-    {
-      "id": "BF_146",
-      "type": "BUSINESS_FIELD",
-      "name": "터빈/발전기기"
-    },
-    {
-      "id": "BF_122",
-      "type": "BUSINESS_FIELD",
-      "name": "발전소/개발/EPC"
-    },
-    {
-      "id": "M_035",
-      "type": "MACRO",
-      "name": "AI데이터센터전력수요증가"
-    },
-    {
-      "id": "M_091",
-      "type": "MACRO",
-      "name": "전력수요확대"
-    },
-    {
-      "id": "M_087",
-      "type": "MACRO",
-      "name": "트럼프원전진흥정책"
-    },
-    {
-      "id": "M_027",
-      "type": "MACRO",
-      "name": "원전확대"
-    },
-    {
-      "id": "C_206",
-      "type": "CHARACTER",
-      "name": "실적불확실성"
-    },
-    {
-      "id": "C_4004",
-      "type": "CHARACTER",
-      "name": "우라늄1위"
-    },
-    {
-      "id": "C_4005",
-      "type": "CHARACTER",
-      "name": "가스터빈·그리드"
-    },
-    {
-      "id": "C_4006",
-      "type": "CHARACTER",
-      "name": "백업발전기·엔진"
-    },
-    {
-      "id": "C_4007",
-      "type": "CHARACTER",
-      "name": "발전기·건설장비"
-    },
-    {
-      "id": "C_4008",
-      "type": "CHARACTER",
-      "name": "석탄발전연료"
-    },
-    {
-      "id": "C_4009",
-      "type": "CHARACTER",
-      "name": "지열발전(상시전원)"
-    },
-    {
-      "id": "C_4010",
-      "type": "CHARACTER",
-      "name": "발전·원전IPP"
-    },
-    {
-      "id": "C_4011",
-      "type": "CHARACTER",
-      "name": "재생에너지·유틸1위"
-    },
-    {
-      "id": "C_4012",
-      "type": "CHARACTER",
-      "name": "원전IPP최대·무탄소PPA"
-    },
-    {
-      "id": "A_2864",
-      "type": "ASSET",
-      "name": "KODEX 미국AI전력핵심인프라",
-      "exposure": {
-        "ticker": "487230",
-        "exchange": "KRX",
-        "country": "KR"
-      },
-      "metrics": {
-        "return_1d": -2.951388888888884,
-        "return_3d": -10.539551897576594,
-        "return_15d": 6.766712141882669,
-        "return_1m": -15.348737587265004,
-        "return_ytd": 17.6208169740552,
-        "return_1y": 12.70194789288659,
-        "return_3y": null,
-        "close": 19565,
-        "marketCap": null,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-21",
-        "valuationSource": "EODHD",
-        "returnsAsOf": "2026-08-21",
-        "returnsSource": "EODHD",
-        "return_5d": null,
-        "return_2y": 99.88649226136866
-      }
-    },
-    {
-      "id": "A_2867",
-      "type": "ASSET",
-      "name": "Range Nuclear Renaissance Index ETF",
-      "exposure": {
-        "ticker": "NUKZ",
-        "exchange": "NASDAQ",
-        "country": "US"
-      },
-      "metrics": {
-        "return_1d": -1.8115942028985366,
-        "return_3d": -4.11322423706324,
-        "return_15d": 1.927597555242122,
-        "return_1m": 4.347826086956541,
-        "return_ytd": 2.425196850393707,
-        "return_1y": 14.708994708994716,
-        "return_3y": null,
-        "close": 65.04,
-        "marketCap": 499537053,
-        "pe_ttm": null,
-        "valuationAsOf": "2026-08-20",
-        "valuationSource": "FMP",
-        "returnsAsOf": "2026-08-20",
-        "returnsSource": "FMP",
-        "return_5d": -4.479365545601411,
-        "return_2y": 99.69296898986799
-      }
-    }
+ "schemaVersion": "v5",
+ "themeId": "T_258",
+ "themeName": "미국AI데이터센터전력수혜주",
+ "meta": {
+  "periodDefault": "3d",
+  "periodOptions": [
+   "1d",
+   "3d",
+   "7d",
+   "15d",
+   "1m",
+   "ytd",
+   "1y",
+   "2y",
+   "3y"
   ],
-  "edges": [
-    {
-      "from": "A_755",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000183"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_168",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000184"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_170",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000185"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_165",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008541"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_167",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008543"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_396",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008545"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_310",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008547"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_664",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008549"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1628",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008551"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_1061",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008553"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_1062",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008555"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_1655",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008557"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_1629",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000195"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_755",
-      "to": "BF_199",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000196"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_755",
-      "to": "BF_196",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000197"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_168",
-      "to": "BF_091",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000198"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_170",
-      "to": "BF_091",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000199"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_165",
-      "to": "BF_091",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000200"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_167",
-      "to": "BF_146",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000201"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_396",
-      "to": "BF_196",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000202"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_396",
-      "to": "BF_146",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000203"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_310",
-      "to": "BF_196",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000204"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_310",
-      "to": "BF_146",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000205"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_664",
-      "to": "BF_122",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000206"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1628",
-      "to": "BF_122",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000207"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1061",
-      "to": "BF_122",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000208"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1061",
-      "to": "BF_196",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000209"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1062",
-      "to": "BF_122",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000210"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1655",
-      "to": "BF_091",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000211"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1655",
-      "to": "BF_122",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000212"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1629",
-      "to": "BF_122",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000213"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "M_035",
-      "to": "T_258",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_008559"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "M_091",
-      "to": "T_258",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_008560"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "M_087",
-      "to": "T_258",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_008562"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "M_027",
-      "to": "T_258",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_008563"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1629",
-      "to": "C_206",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000219"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_755",
-      "to": "C_206",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000220"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_168",
-      "to": "C_206",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000221"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_170",
-      "to": "C_206",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000222"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_165",
-      "to": "C_4004",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008542"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_167",
-      "to": "C_4005",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008544"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_396",
-      "to": "C_4006",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008546"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_310",
-      "to": "C_4007",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008548"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_664",
-      "to": "C_4008",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008550"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1628",
-      "to": "C_4009",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008552"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1061",
-      "to": "C_4010",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008554"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1062",
-      "to": "C_4011",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008556"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1655",
-      "to": "C_4012",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008558"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_167",
-      "to": "A_755",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019406"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "GE버노바와 블룸에너지는 데이터센터 전력 솔루션 시장 경쟁"
-    },
-    {
-      "from": "A_168",
-      "to": "A_170",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019407"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "NuScale과 오클로는 소형 원전 전력 솔루션 경쟁"
-    },
-    {
-      "from": "A_310",
-      "to": "A_396",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019408"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "캐터필라와 커민스는 데이터센터 비상발전기·엔진 시장 경쟁"
-    },
-    {
-      "from": "A_1061",
-      "to": "A_1655",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019409"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "비스트라에너지와 컨스텔레이션에너지는 미국 원전·전력 도매 시장 경쟁"
-    },
-    {
-      "from": "A_1062",
-      "to": "A_1655",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019410"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "NextEra Energy와 컨스텔레이션에너지는 미국 재생에너지·원전 발전 경쟁"
-    },
-    {
-      "from": "A_165",
-      "to": "A_170",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_019411"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "Cameco는 오클로 등 차세대 원전에 우라늄 원료 공급"
-    },
-    {
-      "from": "A_664",
-      "to": "A_1628",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019412"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "피바디에너지와 오맷테크놀로지스는 데이터센터 기저발전 연료·전력 공급 경쟁"
-    },
-    {
-      "from": "A_2864",
-      "to": "T_258",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020676"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_2867",
-      "to": "T_258",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020677"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
-  ],
-  "links": [
-    {
-      "from": "A_755",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000183"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_168",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000184"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_170",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000185"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_165",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008541"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_167",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008543"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_396",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008545"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_310",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008547"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_664",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008549"
-      ],
-      "confidence": 0.72,
-      "status": "verified"
-    },
-    {
-      "from": "A_1628",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008551"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_1061",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008553"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_1062",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008555"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_1655",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_008557"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_1629",
-      "to": "T_258",
-      "type": "THEMED_AS",
-      "evidence": [
-        "EV_000195"
-      ],
-      "confidence": 0.85,
-      "status": "verified"
-    },
-    {
-      "from": "A_755",
-      "to": "BF_199",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000196"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_755",
-      "to": "BF_196",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000197"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_168",
-      "to": "BF_091",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000198"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_170",
-      "to": "BF_091",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000199"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_165",
-      "to": "BF_091",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000200"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_167",
-      "to": "BF_146",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000201"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_396",
-      "to": "BF_196",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000202"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_396",
-      "to": "BF_146",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000203"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_310",
-      "to": "BF_196",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000204"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_310",
-      "to": "BF_146",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000205"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_664",
-      "to": "BF_122",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000206"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1628",
-      "to": "BF_122",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000207"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1061",
-      "to": "BF_122",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000208"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1061",
-      "to": "BF_196",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000209"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1062",
-      "to": "BF_122",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000210"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1655",
-      "to": "BF_091",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000211"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1655",
-      "to": "BF_122",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000212"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "A_1629",
-      "to": "BF_122",
-      "type": "OPERATES",
-      "evidence": [
-        "EV_000213"
-      ],
-      "confidence": 0.78,
-      "status": "verified"
-    },
-    {
-      "from": "M_035",
-      "to": "T_258",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_008559"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "M_091",
-      "to": "T_258",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_008560"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "M_087",
-      "to": "T_258",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_008562"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "M_027",
-      "to": "T_258",
-      "type": "IMPACTS",
-      "evidence": [
-        "EV_008563"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1629",
-      "to": "C_206",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000219"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_755",
-      "to": "C_206",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000220"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_168",
-      "to": "C_206",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000221"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_170",
-      "to": "C_206",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_000222"
-      ],
-      "confidence": 0.6,
-      "status": "proposed"
-    },
-    {
-      "from": "A_165",
-      "to": "C_4004",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008542"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_167",
-      "to": "C_4005",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008544"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_396",
-      "to": "C_4006",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008546"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_310",
-      "to": "C_4007",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008548"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_664",
-      "to": "C_4008",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008550"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1628",
-      "to": "C_4009",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008552"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1061",
-      "to": "C_4010",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008554"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1062",
-      "to": "C_4011",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008556"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_1655",
-      "to": "C_4012",
-      "type": "HAS_TRAIT",
-      "evidence": [
-        "EV_008558"
-      ],
-      "confidence": 0.8,
-      "status": "verified"
-    },
-    {
-      "from": "A_167",
-      "to": "A_755",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019406"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "GE버노바와 블룸에너지는 데이터센터 전력 솔루션 시장 경쟁"
-    },
-    {
-      "from": "A_168",
-      "to": "A_170",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019407"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "NuScale과 오클로는 소형 원전 전력 솔루션 경쟁"
-    },
-    {
-      "from": "A_310",
-      "to": "A_396",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019408"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "캐터필라와 커민스는 데이터센터 비상발전기·엔진 시장 경쟁"
-    },
-    {
-      "from": "A_1061",
-      "to": "A_1655",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019409"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "비스트라에너지와 컨스텔레이션에너지는 미국 원전·전력 도매 시장 경쟁"
-    },
-    {
-      "from": "A_1062",
-      "to": "A_1655",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019410"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "NextEra Energy와 컨스텔레이션에너지는 미국 재생에너지·원전 발전 경쟁"
-    },
-    {
-      "from": "A_165",
-      "to": "A_170",
-      "type": "SUPPLIES",
-      "evidence": [
-        "EV_019411"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "Cameco는 오클로 등 차세대 원전에 우라늄 원료 공급"
-    },
-    {
-      "from": "A_664",
-      "to": "A_1628",
-      "type": "COMPETES",
-      "evidence": [
-        "EV_019412"
-      ],
-      "confidence": 0.8,
-      "status": "verified",
-      "rationale": "피바디에너지와 오맷테크놀로지스는 데이터센터 기저발전 연료·전력 공급 경쟁"
-    },
-    {
-      "from": "A_2864",
-      "to": "T_258",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020676"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    },
-    {
-      "from": "A_2867",
-      "to": "T_258",
-      "type": "EXPOSED_TO",
-      "evidence": [
-        "EV_020677"
-      ],
-      "confidence": 0.7,
-      "status": "verified"
-    }
+  "dataAsOf": "2026-07-29T00:00:00+09:00",
+  "description": "• Bloom Energy·SMR(NuScale/Oklo)·Vistra·Constellation\n• 동인: AI데이터센터전력수요증가·전력수요확대·트럼프원전진흥정책\n• 대표주: 블룸에너지(실적불확실성)·NuScale Power(실적불확실성)·오클로(실적불확실성)\n• 밸류체인: 원전/SMR·가스터빈/백업발전·퓨얼셀·터빈/발전기기\n• ETF: KODEX 미국AI전력핵심인프라·Range Nuclear Renaissance Index ETF",
+  "notes": "미국 AI 데이터센터 전력 수혜 13 자산 + 5 BF + 5 MACRO + 1 CHAR HAS_TRAIT.",
+  "sources": [],
+  "provenanceSeed": "T_258 공개사실 시드(2026-06-29) — evidence_ssot 참조",
+  "changelog": [
+   {
+    "date": "2026-08-04",
+    "kind": "보강",
+    "title": "2궤도 관계 엣지 추가",
+    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 7건 백필(리서치 기반)."
+   },
+   {
+    "date": "2026-07-29",
+    "kind": "수정",
+    "title": "AI 전력 고평가 폭락 이벤트 추가",
+    "detail": "AI 전력수요 랠리 장기화·고평가 부담에 따른 되돌림 폭락 반영."
+   },
+   {
+    "date": "2026-08-05",
+    "kind": "관계",
+    "title": "EXPOSED_TO ETF 연결",
+    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+   }
   ]
+ },
+ "nodes": [
+  {
+   "id": "T_258",
+   "type": "THEME",
+   "name": "미국AI데이터센터전력수혜주"
+  },
+  {
+   "id": "A_755",
+   "type": "ASSET",
+   "name": "블룸에너지",
+   "exposure": {
+    "ticker": "BE",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "Bloom Energy — 고체산화물 연료전지(SOFC), 데이터센터 분산발전 핵심",
+    "theme_role": "SOFC 분산발전 1위, 데이터센터 직접 공급",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -0.5086922165152163,
+    "close": 201.45,
+    "marketCap": 59332464150,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-21",
+    "valuationSource": "FMP",
+    "return_3d": -3.617051815702599,
+    "return_15d": -2.118458772654397,
+    "return_1m": -10.965261203924692,
+    "return_ytd": 131.84486131890893,
+    "return_1y": 349.36426500111526,
+    "return_3y": 1297.018030513176,
+    "returnsAsOf": "2026-08-21",
+    "returnsSource": "FMP",
+    "return_5d": -12.390188744889974,
+    "return_2y": 1639.6373056994819
+   }
+  },
+  {
+   "id": "A_168",
+   "type": "ASSET",
+   "name": "NuScale Power",
+   "exposure": {
+    "ticker": "SMR",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "경수형 SMR (NRC 첫 인증)",
+    "theme_role": "SMR 상업화 선도, 데이터센터 잠재 공급",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": 3.638368246968038,
+    "close": 9.4,
+    "marketCap": 2802872617,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-21",
+    "valuationSource": "FMP",
+    "return_3d": 8.796296296296301,
+    "return_15d": 11.638954869358663,
+    "return_1m": 7.921928817451196,
+    "return_ytd": -33.662667607621735,
+    "return_1y": -71.93191997611228,
+    "return_3y": 43.950995405819306,
+    "returnsAsOf": "2026-08-21",
+    "returnsSource": "FMP",
+    "return_5d": 0.10649627263046302,
+    "return_2y": 6.93970420932879
+   }
+  },
+  {
+   "id": "A_170",
+   "type": "ASSET",
+   "name": "오클로",
+   "exposure": {
+    "ticker": "OKLO",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "Aurora 4세대 fast reactor SMR (Sam Altman 후원)",
+    "theme_role": "4세대 SMR, OpenAI·하이퍼스케일러 베팅",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": 1.032165146423436,
+    "close": 42.09,
+    "marketCap": 7323280643,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-21",
+    "valuationSource": "FMP",
+    "return_3d": 1.7649903288201152,
+    "return_15d": 8.395570435230514,
+    "return_1m": -4.622705642420122,
+    "return_ytd": -41.34615384615385,
+    "return_1y": -37.35674951629706,
+    "return_3y": 329.622458857696,
+    "returnsAsOf": "2026-08-21",
+    "returnsSource": "FMP",
+    "return_5d": -5.159981973862093,
+    "return_2y": 493.65303244005645
+   }
+  },
+  {
+   "id": "A_165",
+   "type": "ASSET",
+   "name": "Cameco",
+   "exposure": {
+    "ticker": "CCJ",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "글로벌 우라늄 1위 (Cigar Lake·MacArthur River)",
+    "theme_role": "원자력 연료 (우라늄) 공급망 핵심",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": 7.239250967674438,
+    "close": 102.51,
+    "marketCap": 44646487830,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-21",
+    "valuationSource": "FMP",
+    "return_3d": 6.747891283973773,
+    "return_15d": 18.673304005556844,
+    "return_1m": 15.595399188092006,
+    "return_ytd": 12.045032243961096,
+    "return_1y": 43.511129777404456,
+    "return_3y": 184.35506241331487,
+    "returnsAsOf": "2026-08-21",
+    "returnsSource": "FMP",
+    "return_5d": 4.8802946593001995,
+    "return_2y": 147.54890123158663
+   }
+  },
+  {
+   "id": "A_167",
+   "type": "ASSET",
+   "name": "GE버노바",
+   "exposure": {
+    "ticker": "GEV",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "GE 분사 — 가스터빈·풍력·전력망 장비 1위",
+    "theme_role": "가스·전력망·풍력 데이터센터 인프라 통합 수혜",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -0.9482303495823019,
+    "close": 956.85,
+    "marketCap": 254841305160,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-21",
+    "valuationSource": "FMP",
+    "return_3d": -4.746498362418238,
+    "return_15d": -3.376788617475679,
+    "return_1m": -11.305049081858709,
+    "return_ytd": 46.40359869639059,
+    "return_1y": 57.89603960396039,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-21",
+    "returnsSource": "FMP",
+    "return_5d": -10.00705384434517,
+    "return_2y": 419.2933897753175
+   }
+  },
+  {
+   "id": "A_396",
+   "type": "ASSET",
+   "name": "커민스",
+   "exposure": {
+    "ticker": "CMI",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "발전기·디젤엔진 1위 (Onan·Cummins Power Generation)",
+    "theme_role": "데이터센터 백업 발전기 1위",
+    "theme_status": "Support"
+   },
+   "metrics": {
+    "return_1d": -0.9372260805070587,
+    "close": 587.68,
+    "marketCap": 81093375520,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-21",
+    "valuationSource": "FMP",
+    "return_3d": -5.336576408240845,
+    "return_15d": -7.33522548092086,
+    "return_1m": -11.018245135892213,
+    "return_ytd": 15.129787442452724,
+    "return_1y": 49.081684424150176,
+    "return_3y": 151.5753424657534,
+    "returnsAsOf": "2026-08-21",
+    "returnsSource": "FMP",
+    "return_5d": -6.9036530114374495,
+    "return_2y": 93.53224000526903
+   }
+  },
+  {
+   "id": "A_310",
+   "type": "ASSET",
+   "name": "캐터필라",
+   "exposure": {
+    "ticker": "CAT",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "건설장비+발전기 글로벌 1위",
+    "theme_role": "데이터센터 백업 발전기·건설장비",
+    "theme_status": "Support"
+   },
+   "metrics": {
+    "return_1d": 1.5342351512773078,
+    "close": 827.9,
+    "marketCap": 381361372300,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-21",
+    "valuationSource": "FMP",
+    "return_3d": -1.5424500814632536,
+    "return_15d": 1.6065094930106438,
+    "return_1m": -6.974392395249285,
+    "return_ytd": 44.51795346239111,
+    "return_1y": 98.11433630859796,
+    "return_3y": 203.53803849679193,
+    "returnsAsOf": "2026-08-21",
+    "returnsSource": "FMP",
+    "return_5d": -3.3470702919784823,
+    "return_2y": 141.3913753389509
+   }
+  },
+  {
+   "id": "A_664",
+   "type": "ASSET",
+   "name": "피바디에너지",
+   "exposure": {
+    "ticker": "BTU",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "미국 석탄 1위 (PRB·Illinois Basin)",
+    "theme_role": "석탄 베이스로드 발전 잔여 수요 (트럼프 정책)",
+    "theme_status": "Peripheral"
+   },
+   "metrics": {
+    "return_1d": 2.792256142963523,
+    "close": 27.61,
+    "marketCap": 3362898000,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-21",
+    "valuationSource": "FMP",
+    "return_3d": 9.650516282764098,
+    "return_15d": 29.502814258911812,
+    "return_1m": 19.679237104464665,
+    "return_ytd": -7.037037037037042,
+    "return_1y": 72.34706616729089,
+    "return_3y": 24.369369369369377,
+    "returnsAsOf": "2026-08-21",
+    "returnsSource": "FMP",
+    "return_5d": 8.359497645211933,
+    "return_2y": 18.90611541774332
+   }
+  },
+  {
+   "id": "A_1628",
+   "type": "ASSET",
+   "name": "오맷테크놀로지스",
+   "exposure": {
+    "ticker": "ORA",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "업계 최고참 지열 사업자, Google 150MW PPA",
+    "theme_role": "지열 베이스로드, 데이터센터 PPA",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": 0.0738688827331524,
+    "close": 108.38,
+    "marketCap": 6660336291,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-21",
+    "valuationSource": "FMP",
+    "return_3d": -1.1852662290299132,
+    "return_15d": 11.067841770854692,
+    "return_1m": 3.1208372978116072,
+    "return_ytd": -1.8919163573820952,
+    "return_1y": 17.04103671706263,
+    "return_3y": 43.68288479384859,
+    "returnsAsOf": "2026-08-21",
+    "returnsSource": "FMP",
+    "return_5d": -5.559428372255148,
+    "return_2y": 48.20183235334336
+   }
+  },
+  {
+   "id": "A_1061",
+   "type": "ASSET",
+   "name": "비스트라에너지",
+   "exposure": {
+    "ticker": "VST",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "미국 IPP — 가스+원자력 발전 (Comanche Peak 원전 포함)",
+    "theme_role": "데이터센터 PPA 직접 체결, AI 전력수혜 대장주",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -1.964876925291481,
+    "close": 136.21,
+    "marketCap": 45927623966,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-21",
+    "valuationSource": "FMP",
+    "return_3d": -3.0671790492456608,
+    "return_15d": -8.084216208920969,
+    "return_1m": -16.090679480071458,
+    "return_ytd": -15.570569639868593,
+    "return_1y": -28.41601849905402,
+    "return_3y": 354.03333333333336,
+    "returnsAsOf": "2026-08-21",
+    "returnsSource": "FMP",
+    "return_5d": -8.046985755755076,
+    "return_2y": 65.54448225571221
+   }
+  },
+  {
+   "id": "A_1062",
+   "type": "ASSET",
+   "name": "NextEra Energy",
+   "exposure": {
+    "ticker": "NEE",
+    "exchange": "NYSE",
+    "country": "US",
+    "business_desc": "미국 IPP 1위 — 재생에너지·가스·원자력 통합",
+    "theme_role": "재생+원자력 데이터센터 PPA 확대",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -1.622956603551684,
+    "close": 83.65,
+    "marketCap": 174492075928,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-21",
+    "valuationSource": "FMP",
+    "return_3d": -2.9807469264671704,
+    "return_15d": -3.7620800736309246,
+    "return_1m": -4.86750824519504,
+    "return_ytd": 4.197807673143994,
+    "return_1y": 9.950052576235557,
+    "return_3y": 24.701848539057856,
+    "returnsAsOf": "2026-08-21",
+    "returnsSource": "FMP",
+    "return_5d": -2.9469776076110787,
+    "return_2y": 5.035158211953794
+   }
+  },
+  {
+   "id": "A_1655",
+   "type": "ASSET",
+   "name": "컨스텔레이션에너지",
+   "exposure": {
+    "ticker": "CEG",
+    "exchange": "NASDAQ",
+    "country": "US",
+    "business_desc": "미국 최대 원자력 발전사 (21 원자로)",
+    "theme_role": "MS·Meta·Amazon 데이터센터 원전 PPA 직접 체결",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -0.01465630954126107,
+    "close": 272.88,
+    "marketCap": 97991759218,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-21",
+    "valuationSource": "FMP",
+    "return_3d": 2.2673612412397404,
+    "return_15d": 3.855375832540431,
+    "return_1m": 4.065288688887181,
+    "return_ytd": -22.755965691963652,
+    "return_1y": -12.683988224753618,
+    "return_3y": 157.167090754877,
+    "returnsAsOf": "2026-08-21",
+    "returnsSource": "FMP",
+    "return_5d": -3.4053097345132732,
+    "return_2y": 38.70082342177492
+   }
+  },
+  {
+   "id": "A_1629",
+   "type": "ASSET",
+   "name": "퍼미아메리카",
+   "exposure": {
+    "ticker": "FRMI",
+    "exchange": "NASDAQ",
+    "country": "US",
+    "business_desc": "AI용 에너지·데이터센터 인프라 REIT (Project Matador)",
+    "theme_role": "가스+SMR+태양광+배터리 통합 데이터센터 REIT",
+    "theme_status": "Core"
+   },
+   "metrics": {
+    "return_1d": -0.8375209380234505,
+    "close": 5.92,
+    "marketCap": 3774439264,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-21",
+    "valuationSource": "FMP",
+    "return_3d": 3.1358885017421567,
+    "return_15d": 4.042179261862899,
+    "return_1m": -10.977443609022563,
+    "return_ytd": -26.0,
+    "return_1y": null,
+    "return_3y": null,
+    "returnsAsOf": "2026-08-21",
+    "returnsSource": "FMP",
+    "return_5d": -7.500000000000007,
+    "return_2y": null
+   }
+  },
+  {
+   "id": "BF_091",
+   "type": "BUSINESS_FIELD",
+   "name": "원전/SMR"
+  },
+  {
+   "id": "BF_196",
+   "type": "BUSINESS_FIELD",
+   "name": "가스터빈/백업발전"
+  },
+  {
+   "id": "BF_199",
+   "type": "BUSINESS_FIELD",
+   "name": "퓨얼셀"
+  },
+  {
+   "id": "BF_146",
+   "type": "BUSINESS_FIELD",
+   "name": "터빈/발전기기"
+  },
+  {
+   "id": "BF_122",
+   "type": "BUSINESS_FIELD",
+   "name": "발전소/개발/EPC"
+  },
+  {
+   "id": "M_035",
+   "type": "MACRO",
+   "name": "AI데이터센터전력수요증가"
+  },
+  {
+   "id": "M_087",
+   "type": "MACRO",
+   "name": "트럼프원전진흥정책"
+  },
+  {
+   "id": "M_027",
+   "type": "MACRO",
+   "name": "원전확대"
+  },
+  {
+   "id": "C_206",
+   "type": "CHARACTER",
+   "name": "실적불확실성"
+  },
+  {
+   "id": "C_4004",
+   "type": "CHARACTER",
+   "name": "우라늄1위"
+  },
+  {
+   "id": "C_4005",
+   "type": "CHARACTER",
+   "name": "가스터빈·그리드"
+  },
+  {
+   "id": "C_4006",
+   "type": "CHARACTER",
+   "name": "백업발전기·엔진"
+  },
+  {
+   "id": "C_4007",
+   "type": "CHARACTER",
+   "name": "발전기·건설장비"
+  },
+  {
+   "id": "C_4008",
+   "type": "CHARACTER",
+   "name": "석탄발전연료"
+  },
+  {
+   "id": "C_4009",
+   "type": "CHARACTER",
+   "name": "지열발전(상시전원)"
+  },
+  {
+   "id": "C_4010",
+   "type": "CHARACTER",
+   "name": "발전·원전IPP"
+  },
+  {
+   "id": "C_4011",
+   "type": "CHARACTER",
+   "name": "재생에너지·유틸1위"
+  },
+  {
+   "id": "C_4012",
+   "type": "CHARACTER",
+   "name": "원전IPP최대·무탄소PPA"
+  },
+  {
+   "id": "A_2864",
+   "type": "ASSET",
+   "name": "KODEX 미국AI전력핵심인프라",
+   "exposure": {
+    "ticker": "487230",
+    "exchange": "KRX",
+    "country": "KR"
+   },
+   "metrics": {
+    "return_1d": -2.951388888888884,
+    "return_3d": -10.539551897576594,
+    "return_15d": 6.766712141882669,
+    "return_1m": -15.348737587265004,
+    "return_ytd": 17.6208169740552,
+    "return_1y": 12.70194789288659,
+    "return_3y": null,
+    "close": 19565,
+    "marketCap": null,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-21",
+    "valuationSource": "EODHD",
+    "returnsAsOf": "2026-08-21",
+    "returnsSource": "EODHD",
+    "return_5d": null,
+    "return_2y": 99.88649226136866
+   }
+  },
+  {
+   "id": "A_2867",
+   "type": "ASSET",
+   "name": "Range Nuclear Renaissance Index ETF",
+   "exposure": {
+    "ticker": "NUKZ",
+    "exchange": "NASDAQ",
+    "country": "US"
+   },
+   "metrics": {
+    "return_1d": 1.1070110701107083,
+    "return_3d": -0.4390613171839419,
+    "return_15d": 3.266331658291466,
+    "return_1m": 2.3661270236612797,
+    "return_ytd": 3.5590551181102548,
+    "return_1y": 15.287517531556816,
+    "return_3y": null,
+    "close": 65.93,
+    "marketCap": 506372662,
+    "pe_ttm": null,
+    "valuationAsOf": "2026-08-21",
+    "valuationSource": "FMP",
+    "returnsAsOf": "2026-08-21",
+    "returnsSource": "FMP",
+    "return_5d": -3.3367631927090913,
+    "return_2y": 99.75698663426489
+   }
+  }
+ ],
+ "edges": [
+  {
+   "from": "A_755",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000183"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_168",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000184"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_170",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000185"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_165",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008541"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_167",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008543"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_396",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008545"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_310",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008547"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_664",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008549"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1628",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008551"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_1061",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008553"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_1062",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008555"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_1655",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008557"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_1629",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000195"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_755",
+   "to": "BF_199",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000196"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_755",
+   "to": "BF_196",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000197"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_168",
+   "to": "BF_091",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000198"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_170",
+   "to": "BF_091",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000199"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_165",
+   "to": "BF_091",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000200"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_167",
+   "to": "BF_146",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000201"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_396",
+   "to": "BF_196",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000202"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_396",
+   "to": "BF_146",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000203"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_310",
+   "to": "BF_196",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000204"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_310",
+   "to": "BF_146",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000205"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_664",
+   "to": "BF_122",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000206"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1628",
+   "to": "BF_122",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000207"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1061",
+   "to": "BF_122",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000208"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1061",
+   "to": "BF_196",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000209"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1062",
+   "to": "BF_122",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000210"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1655",
+   "to": "BF_091",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000211"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1655",
+   "to": "BF_122",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000212"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1629",
+   "to": "BF_122",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000213"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "M_035",
+   "to": "T_258",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_008559"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "M_087",
+   "to": "T_258",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_008562"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "M_027",
+   "to": "T_258",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_008563"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1629",
+   "to": "C_206",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000219"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_755",
+   "to": "C_206",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000220"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_168",
+   "to": "C_206",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000221"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_170",
+   "to": "C_206",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000222"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_165",
+   "to": "C_4004",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008542"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_167",
+   "to": "C_4005",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008544"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_396",
+   "to": "C_4006",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008546"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_310",
+   "to": "C_4007",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008548"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_664",
+   "to": "C_4008",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008550"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1628",
+   "to": "C_4009",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008552"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1061",
+   "to": "C_4010",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008554"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1062",
+   "to": "C_4011",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008556"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1655",
+   "to": "C_4012",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008558"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_167",
+   "to": "A_755",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019406"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "GE버노바와 블룸에너지는 데이터센터 전력 솔루션 시장 경쟁"
+  },
+  {
+   "from": "A_168",
+   "to": "A_170",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019407"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "NuScale과 오클로는 소형 원전 전력 솔루션 경쟁"
+  },
+  {
+   "from": "A_310",
+   "to": "A_396",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019408"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "캐터필라와 커민스는 데이터센터 비상발전기·엔진 시장 경쟁"
+  },
+  {
+   "from": "A_1061",
+   "to": "A_1655",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019409"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "비스트라에너지와 컨스텔레이션에너지는 미국 원전·전력 도매 시장 경쟁"
+  },
+  {
+   "from": "A_1062",
+   "to": "A_1655",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019410"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "NextEra Energy와 컨스텔레이션에너지는 미국 재생에너지·원전 발전 경쟁"
+  },
+  {
+   "from": "A_165",
+   "to": "A_170",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_019411"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "Cameco는 오클로 등 차세대 원전에 우라늄 원료 공급"
+  },
+  {
+   "from": "A_664",
+   "to": "A_1628",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019412"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "피바디에너지와 오맷테크놀로지스는 데이터센터 기저발전 연료·전력 공급 경쟁"
+  },
+  {
+   "from": "A_2864",
+   "to": "T_258",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020676"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_2867",
+   "to": "T_258",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020677"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ],
+ "links": [
+  {
+   "from": "A_755",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000183"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_168",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000184"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_170",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000185"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_165",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008541"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_167",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008543"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_396",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008545"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_310",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008547"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_664",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008549"
+   ],
+   "confidence": 0.72,
+   "status": "verified"
+  },
+  {
+   "from": "A_1628",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008551"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_1061",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008553"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_1062",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008555"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_1655",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_008557"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_1629",
+   "to": "T_258",
+   "type": "THEMED_AS",
+   "evidence": [
+    "EV_000195"
+   ],
+   "confidence": 0.85,
+   "status": "verified"
+  },
+  {
+   "from": "A_755",
+   "to": "BF_199",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000196"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_755",
+   "to": "BF_196",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000197"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_168",
+   "to": "BF_091",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000198"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_170",
+   "to": "BF_091",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000199"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_165",
+   "to": "BF_091",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000200"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_167",
+   "to": "BF_146",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000201"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_396",
+   "to": "BF_196",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000202"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_396",
+   "to": "BF_146",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000203"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_310",
+   "to": "BF_196",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000204"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_310",
+   "to": "BF_146",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000205"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_664",
+   "to": "BF_122",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000206"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1628",
+   "to": "BF_122",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000207"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1061",
+   "to": "BF_122",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000208"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1061",
+   "to": "BF_196",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000209"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1062",
+   "to": "BF_122",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000210"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1655",
+   "to": "BF_091",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000211"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1655",
+   "to": "BF_122",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000212"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "A_1629",
+   "to": "BF_122",
+   "type": "OPERATES",
+   "evidence": [
+    "EV_000213"
+   ],
+   "confidence": 0.78,
+   "status": "verified"
+  },
+  {
+   "from": "M_035",
+   "to": "T_258",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_008559"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "M_087",
+   "to": "T_258",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_008562"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "M_027",
+   "to": "T_258",
+   "type": "IMPACTS",
+   "evidence": [
+    "EV_008563"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1629",
+   "to": "C_206",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000219"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_755",
+   "to": "C_206",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000220"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_168",
+   "to": "C_206",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000221"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_170",
+   "to": "C_206",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_000222"
+   ],
+   "confidence": 0.6,
+   "status": "proposed"
+  },
+  {
+   "from": "A_165",
+   "to": "C_4004",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008542"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_167",
+   "to": "C_4005",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008544"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_396",
+   "to": "C_4006",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008546"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_310",
+   "to": "C_4007",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008548"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_664",
+   "to": "C_4008",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008550"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1628",
+   "to": "C_4009",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008552"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1061",
+   "to": "C_4010",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008554"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1062",
+   "to": "C_4011",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008556"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_1655",
+   "to": "C_4012",
+   "type": "HAS_TRAIT",
+   "evidence": [
+    "EV_008558"
+   ],
+   "confidence": 0.8,
+   "status": "verified"
+  },
+  {
+   "from": "A_167",
+   "to": "A_755",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019406"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "GE버노바와 블룸에너지는 데이터센터 전력 솔루션 시장 경쟁"
+  },
+  {
+   "from": "A_168",
+   "to": "A_170",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019407"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "NuScale과 오클로는 소형 원전 전력 솔루션 경쟁"
+  },
+  {
+   "from": "A_310",
+   "to": "A_396",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019408"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "캐터필라와 커민스는 데이터센터 비상발전기·엔진 시장 경쟁"
+  },
+  {
+   "from": "A_1061",
+   "to": "A_1655",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019409"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "비스트라에너지와 컨스텔레이션에너지는 미국 원전·전력 도매 시장 경쟁"
+  },
+  {
+   "from": "A_1062",
+   "to": "A_1655",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019410"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "NextEra Energy와 컨스텔레이션에너지는 미국 재생에너지·원전 발전 경쟁"
+  },
+  {
+   "from": "A_165",
+   "to": "A_170",
+   "type": "SUPPLIES",
+   "evidence": [
+    "EV_019411"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "Cameco는 오클로 등 차세대 원전에 우라늄 원료 공급"
+  },
+  {
+   "from": "A_664",
+   "to": "A_1628",
+   "type": "COMPETES",
+   "evidence": [
+    "EV_019412"
+   ],
+   "confidence": 0.8,
+   "status": "verified",
+   "rationale": "피바디에너지와 오맷테크놀로지스는 데이터센터 기저발전 연료·전력 공급 경쟁"
+  },
+  {
+   "from": "A_2864",
+   "to": "T_258",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020676"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  },
+  {
+   "from": "A_2867",
+   "to": "T_258",
+   "type": "EXPOSED_TO",
+   "evidence": [
+    "EV_020677"
+   ],
+   "confidence": 0.7,
+   "status": "verified"
+  }
+ ]
 }
