@@ -545,6 +545,9 @@ export default function HomePage() {
             국내외 뉴스/리포트/공시자료를 <b className="text-white/85">온톨로지(Ontology) 기반으로 구조화</b>하여 투자 테마를 구성합니다.
             <b className="text-amber-200/90"> 시세는 실시간이 아닌 전일 종가 기준</b>입니다.
           </p>
+          <p className="mt-2 text-[12px] font-semibold tracking-wide text-white/60 sm:text-[12.5px]">
+            Publisher &amp; Chief Analyst : Justine Jungwoo Kang
+          </p>
         </section>
 
         {/* Daily Brief — 뉴스→테마 해석 5줄. 각 줄 클릭 시 해당 테마 그래프로 유도. */}
