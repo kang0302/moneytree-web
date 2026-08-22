@@ -387,6 +387,9 @@ export default function HomePage() {
           {/* 인사이트 아카이브 버튼 — 홈에서 임시 숨김 (정식 발행 전). /insights 페이지 자체는 유지. */}
           {/* (숨김 처리: 2026-08-22 사용자 요청) */}
 
+          <div className="mb-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-amber-300/85 sm:text-[13px]">
+            파일럿 서비스중입니다.
+          </div>
           <div className="text-[28px] font-extrabold leading-tight tracking-tight text-white sm:text-[40px]">
             오늘, 어떤 테마를 들여다볼까요?
           </div>
