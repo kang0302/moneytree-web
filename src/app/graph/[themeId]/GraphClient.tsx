@@ -16,6 +16,7 @@
 
 import React, { useMemo, useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { toPng } from "html-to-image";
 
 import ForceGraphWrapper from "@/components/ForceGraphWrapper";
 import GraphRightPanel, { CompareThemeOptionT } from "@/components/GraphRightPanel";
@@ -885,7 +886,7 @@ export default function GraphClient({
           {/* Graph */}
           <div data-graph-area className="relative min-h-0 rounded-xl border border-white/10 bg-black/25 p-1">
             {/* ✅ 기간 토글 — 그래프 박스 우상단 오버레이 (헤더에서 이동, 검색창 공간 확보) */}
-            <div className="absolute right-3 top-2 z-20">
+            <div data-screenshot-exclude className="absolute right-3 top-2 z-20">
               <div className="flex items-center gap-1 rounded-lg border border-white/10 bg-black/70 p-1 shadow-lg backdrop-blur">
                 {periods.map((p) => {
                   const active = p.key === period;
@@ -906,29 +907,46 @@ export default function GraphClient({
                 })}
               </div>
             </div>
-            {/* ✅ 스크린샷 — 그래프 캔버스를 검은 배경에 합성해 PNG로 저장 */}
+            {/* ✅ 스크린샷 — 그래프 영역 전체(캔버스+테마설명 카드)를 PNG로 저장. 토글·버튼은 제외 */}
             <button
               type="button"
-              title="현재 그래프를 이미지로 저장"
-              onClick={() => {
+              data-screenshot-exclude
+              title="테마 설명 카드까지 포함해 현재 그래프를 이미지로 저장"
+              onClick={async () => {
+                const area = document.querySelector("[data-graph-area]") as HTMLElement | null;
+                if (!area) return;
                 try {
-                  const area = document.querySelector("[data-graph-area]");
-                  const canvas = area?.querySelector("canvas") as HTMLCanvasElement | null;
-                  if (!canvas) return;
-                  const out = document.createElement("canvas");
-                  out.width = canvas.width;
-                  out.height = canvas.height;
-                  const ctx = out.getContext("2d");
-                  if (!ctx) return;
-                  ctx.fillStyle = "#000";
-                  ctx.fillRect(0, 0, out.width, out.height);
-                  ctx.drawImage(canvas, 0, 0);
+                  const dataUrl = await toPng(area, {
+                    backgroundColor: "#000",
+                    pixelRatio: 2,
+                    cacheBust: true,
+                    // 기간 토글·스크린샷 버튼 등 오버레이 컨트롤은 캡처에서 제외
+                    filter: (node: HTMLElement) =>
+                      !(node?.getAttribute && node.getAttribute("data-screenshot-exclude") !== null),
+                  });
                   const safe = (themeName || themeId).replace(/[\\/:*?"<>|]/g, "_").slice(0, 60);
                   const a = document.createElement("a");
-                  a.href = out.toDataURL("image/png");
+                  a.href = dataUrl;
                   a.download = `knowvest_${themeId}_${safe}.png`;
                   a.click();
-                } catch {}
+                } catch {
+                  // 폴백: 캔버스만 검은 배경에 합성
+                  try {
+                    const canvas = area.querySelector("canvas") as HTMLCanvasElement | null;
+                    if (!canvas) return;
+                    const out = document.createElement("canvas");
+                    out.width = canvas.width; out.height = canvas.height;
+                    const ctx = out.getContext("2d");
+                    if (!ctx) return;
+                    ctx.fillStyle = "#000"; ctx.fillRect(0, 0, out.width, out.height);
+                    ctx.drawImage(canvas, 0, 0);
+                    const safe = (themeName || themeId).replace(/[\\/:*?"<>|]/g, "_").slice(0, 60);
+                    const a = document.createElement("a");
+                    a.href = out.toDataURL("image/png");
+                    a.download = `knowvest_${themeId}_${safe}.png`;
+                    a.click();
+                  } catch {}
+                }
               }}
               className="absolute right-3 top-12 z-20 flex items-center gap-1.5 rounded-lg border border-white/15 bg-black/70 px-3 py-1.5 text-[11.5px] font-semibold text-white/85 shadow-lg backdrop-blur transition hover:border-white/40 hover:bg-black/90"
             >
