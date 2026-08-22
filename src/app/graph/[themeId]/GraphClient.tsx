@@ -906,6 +906,34 @@ export default function GraphClient({
                 })}
               </div>
             </div>
+            {/* ✅ 스크린샷 — 그래프 캔버스를 검은 배경에 합성해 PNG로 저장 */}
+            <button
+              type="button"
+              title="현재 그래프를 이미지로 저장"
+              onClick={() => {
+                try {
+                  const area = document.querySelector("[data-graph-area]");
+                  const canvas = area?.querySelector("canvas") as HTMLCanvasElement | null;
+                  if (!canvas) return;
+                  const out = document.createElement("canvas");
+                  out.width = canvas.width;
+                  out.height = canvas.height;
+                  const ctx = out.getContext("2d");
+                  if (!ctx) return;
+                  ctx.fillStyle = "#000";
+                  ctx.fillRect(0, 0, out.width, out.height);
+                  ctx.drawImage(canvas, 0, 0);
+                  const safe = (themeName || themeId).replace(/[\\/:*?"<>|]/g, "_").slice(0, 60);
+                  const a = document.createElement("a");
+                  a.href = out.toDataURL("image/png");
+                  a.download = `knowvest_${themeId}_${safe}.png`;
+                  a.click();
+                } catch {}
+              }}
+              className="absolute right-3 top-12 z-20 flex items-center gap-1.5 rounded-lg border border-white/15 bg-black/70 px-3 py-1.5 text-[11.5px] font-semibold text-white/85 shadow-lg backdrop-blur transition hover:border-white/40 hover:bg-black/90"
+            >
+              📸 스크린샷
+            </button>
             <ForceGraphWrapper
               themeId={themeId}
               themeName={themeName}
