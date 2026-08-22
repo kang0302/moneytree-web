@@ -173,7 +173,6 @@ export default function BaggersClient({ data }: { data: BaggersData }) {
                         onMouseMove={(e) => setTip({ x: e.clientX, y: e.clientY, item: it })}
                         onMouseLeave={() => setTip(null)}
                         onDoubleClick={() => router.push(`/asset/${it.id}`)}
-                        title={it.desc || undefined}
                       >
                         <td className="px-3 py-2 text-right text-white/35 tabular-nums">{i + 1}</td>
                         <td className="px-3 py-2 font-medium text-white/90">

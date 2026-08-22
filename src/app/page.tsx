@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import AmbientNetwork from "@/components/AmbientNetwork";
 import SearchBar from "@/components/SearchBar";
 import NewsletterSignup from "@/components/NewsletterSignup";
+import VisitorNote from "@/components/VisitorNote";
 import { PeriodKey, normalizeToPct } from "@/lib/themeReturn";
 import { resolvePlaceholderThemeNames } from "@/lib/themeIndex";
 import { fetchLatestBarometer, scoreForPeriod, type BarometerSnapshot } from "@/lib/barometerSnapshot";
@@ -499,6 +500,9 @@ export default function HomePage() {
 
         {/* 뉴스레터 구독 — 상단 노출 */}
         <NewsletterSignup source="home" />
+
+        {/* 방문자 소통 공간 — 발행자에게 한마디 */}
+        <VisitorNote />
 
         {/* Today's Pulse */}
         <section className="mb-4 rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-4 backdrop-blur">
