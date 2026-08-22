@@ -2263,12 +2263,12 @@ export default function ForceGraphWrapper({
               {themeDescription}
             </div>
           ) : null}
-          {/* 상호작용 안내 — 테마설명 박스 밑, 손가락 아이콘으로 강조 */}
+          <ThemeCardImage themeId={themeId} />
+          {/* 상호작용 안내 — 이미지 밑, 손가락 아이콘으로 강조 */}
           <div className="mt-2 flex items-start gap-1.5 border-t border-white/10 pt-2 text-[12px] leading-relaxed text-sky-200/85">
             <span className="shrink-0 text-[15px] leading-none">👆</span>
-            <span>동그라미 노드나 연결 엣지선에 마우스를 올리면 상세 정보를 볼 수 있어요</span>
+            <span>동그라미 노드에 마우스를 올리거나, 연결 엣지선을 클릭하면 상세 정보를 볼 수 있어요</span>
           </div>
-          <ThemeCardImage themeId={themeId} />
         </div>
       </div>
 
