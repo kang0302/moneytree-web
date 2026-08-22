@@ -1488,6 +1488,15 @@ export default function ForceGraphWrapper({
       });
     };
 
+    // 🛰 허브형 판정 + 코어(L2) 수 — 반경 압축·부채꼴 폭·L2 분산에 사용.
+    const isHubTheme = layerInfo.layer2.size <= 2 && layerInfo.layer3.size >= 4;
+    const coreCount = layerInfo.layer2.size;
+    // 다중 코어 허브(예: 모더나·바이오엔텍 2개)는 6시 부근에 몰리면 자식 부채꼴이 겹침 →
+    // 코어가 적을수록 넓게(최대 90°) 벌려 각 허브의 자식 영역을 분리한다.
+    const l2Step = (isHubTheme && coreCount >= 2 && coreCount <= 4)
+      ? Math.PI * 0.5
+      : LAYER2_STACK_STEP;
+
     // 1궤도: 12시 중심, 11~1시 부채꼴 안에서 좌우로 펼침
     placeOnSector(
       layerInfo.layer1,
@@ -1504,7 +1513,7 @@ export default function ForceGraphWrapper({
       GRAPH_CONFIG.orbitRadius.l2,
       LAYER2_CENTER_ANGLE,
       LAYER2_HALF_SPAN,
-      LAYER2_STACK_STEP,
+      l2Step,
       layer2OrderById,
     );
 
@@ -1514,9 +1523,7 @@ export default function ForceGraphWrapper({
       return Math.atan2((nb.y as number) - cy, (nb.x as number) - cx);
     };
 
-    // 🛰 허브형 판정 (force effect와 동일 기준) — 반경 압축·CHR 외곽화에 사용.
-    const isHubTheme = layerInfo.layer2.size <= 2 && layerInfo.layer3.size >= 4;
-
+    // (isHubTheme·coreCount는 effect 상단에서 선언)
     // 3궤도 Asset: 같은 부모(L2 asset)에 매달린 자식들을 한 그룹으로 묶어
     // ±LAYER3_ASSET_JITTER 폭 안에서 균등 stack (이전 random jitter는 우연한 중첩 발생).
     //   - 자산은 큰 노드라 라벨까지 고려해 stack step을 동적 계산
@@ -1533,10 +1540,12 @@ export default function ForceGraphWrapper({
     //   허브형은 2궤도 자산을 더 여유있게 펼치기 위해 최소 간격을 확대 (사용자 요청 2026-08-21).
     const L3_ASSET_MIN_ARC_PX = isHubTheme ? 190 : 135;
     // 부모 ±JITTER 한계와 radius 확장 한계.
-    //   ±90° = 부모 각도 기준 반원(180° span). 자식 다수일 때 거의 bottom 반원 전체 사용.
-    //   허브형: 자산이 아래로만 뻗어 화면을 벗어나므로, 좌우로 더 넓게 부채꼴(±135°)을 열어
-    //   가로 공간을 활용 → 반경이 덜 커지고 zoomToFit로 전체 수용. (사용자 요청 2026-08-21)
-    const L3_ASSET_MAX_JITTER = isHubTheme ? (Math.PI * 3) / 4 : Math.PI / 2; // 허브 ±135° / 기본 ±90°
+    //   단일 코어 허브(예: 엔비디아)는 넓은 부채꼴(±135°)로 가로 공간을 활용.
+    //   다중 코어 허브(예: 모더나·바이오엔텍 2개)는 각 허브 자식 부채꼴이 서로 겹치지 않도록
+    //   좁은 콘(±55°)으로 제한 → 허브별 자식 영역 분리(뭉침 방지). (2026-08-22)
+    const L3_ASSET_MAX_JITTER = (isHubTheme && coreCount >= 2)
+      ? Math.PI / 3.3                       // 다중 코어: ±≈55°
+      : (isHubTheme ? (Math.PI * 3) / 4 : Math.PI / 2); // 단일허브 ±135° / 기본 ±90°
     const L3_ASSET_MAX_RADIUS = isHubTheme ? 900 : 720;                       // 화면 밖 cap (zoomToFit가 축소 수용)
 
     for (const [nbId, group] of l3AssetGroupByNb) {
@@ -2290,7 +2299,7 @@ export default function ForceGraphWrapper({
         const W = isAssetHover ? 290 : 240;
         const typeLabel =
           isAssetHover ? "ASSET"
-          : isFieldHover ? "BUSINESS FIELD"
+          : isFieldHover ? "Biz"
           : isMacroHover ? "MACRO"
           : isCharacterHover ? "CHARACTER"
           : (hoverNode.type ?? "NODE");

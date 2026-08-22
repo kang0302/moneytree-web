@@ -8,9 +8,9 @@ type Tab = "ASSET" | "THEME" | "BUSINESS_FIELD" | "MACRO" | "CHARACTER";
 const TYPE_LABEL: Record<Tab, string> = {
   ASSET: "ASSET",
   THEME: "THEME",
-  BUSINESS_FIELD: "BF",
+  BUSINESS_FIELD: "Biz",
   MACRO: "MACRO",
-  CHARACTER: "CHAR",
+  CHARACTER: "CHARACTER",
 };
 
 const TYPE_COLOR: Record<Tab, string> = {
@@ -221,7 +221,7 @@ export default function SearchBar({
             onClick={() => setTab("BUSINESS_FIELD")}
             style={tab === "BUSINESS_FIELD" ? tabOnStyle : tabOffStyle}
           >
-            BF
+            Biz
           </button>
           <button type="button" onClick={() => setTab("MACRO")} style={tab === "MACRO" ? tabOnStyle : tabOffStyle}>
             MACRO
@@ -231,7 +231,7 @@ export default function SearchBar({
             onClick={() => setTab("CHARACTER")}
             style={tab === "CHARACTER" ? tabOnStyle : tabOffStyle}
           >
-            CHAR
+            CHARACTER
           </button>
         </div>
       </div>
