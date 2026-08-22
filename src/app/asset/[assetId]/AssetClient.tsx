@@ -17,7 +17,7 @@ type AssetEntry = {
   themes: ThemeRel[]; relatedAssets?: Related[]; macros?: MacroDrv[]; characters?: MacroDrv[]; businessFields?: MacroDrv[]; info?: BriefingInfo; metrics?: Metrics;
 };
 type Trend = { id: string; now: number; delta: number; turnUp: boolean; turnDown: boolean };
-const TREND_URL = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/barometer_trend/trend.json";
+const TREND_URL = "/api/raw/data/barometer_trend/trend.json";
 type Perf = { assetId: string; ticker: string; start: string; end: string; dates: string[]; stock: number[]; spy: (number | null)[]; qqq: (number | null)[]; returns: Record<string, { stock: number | null; spy: number | null; qqq: number | null }> };
 
 const IDX_LOCAL = "/data/asset/index.json";

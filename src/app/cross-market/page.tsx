@@ -6,7 +6,7 @@
 
 import React, { useEffect, useMemo, useState } from "react";
 
-const RAW = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/cross_market/cm.json";
+const RAW = "/api/raw/data/cross_market/cm.json";
 
 type Market = { co: string; label: string; n: number; r7: number | null; r30: number | null };
 type LeadH = { hitRate: number; corr: number; n: number; lastUsRet: number | null; lastUsDate: string };

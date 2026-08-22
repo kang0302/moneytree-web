@@ -7,7 +7,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 
 const BASE_DIR =
-  "https://raw.githubusercontent.com/kang0302/import_MT/main/data/ma_brief";
+  "/api/raw/data/ma_brief";
 const INDEX_URL = `${BASE_DIR}/index.json`;
 
 type Row = {

@@ -3,7 +3,7 @@
 // 홈 "시장의 온도" · 테마 페이지 바로미터 · 트렌드가 모두 이 점수를 공유해 화면 간 일관성 보장.
 // rows[].scores = 호라이즌별(1D~3Y) 바로미터 점수, headlineScore = 대표 점수, movers = 상위 종목.
 
-const BASE = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/barometer";
+const BASE = "/api/raw/data/barometer";
 
 export type SnapMover = { n?: string; t?: string; r?: number };
 export type SnapRow = {

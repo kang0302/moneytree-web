@@ -5,7 +5,7 @@
 
 import React, { useEffect, useMemo, useState } from "react";
 
-const RAW = "https://raw.githubusercontent.com/kang0302/import_MT/main/data";
+const RAW = "/api/raw/data";
 const BACKTEST_URL = `${RAW}/track_record/backtest.json`;
 const BARO_INDEX_URL = `${RAW}/barometer/index.json`;
 

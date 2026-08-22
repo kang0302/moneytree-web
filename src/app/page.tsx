@@ -99,7 +99,7 @@ type FavItem = { themeId: string; themeName: string; at: number };
 const LS_RECENT = "mt_recent_themes_v1";
 const LS_FAV = "mt_favorite_themes_v1";
 
-const INDEX_URL_REMOTE = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/index.json";
+const INDEX_URL_REMOTE = "/api/raw/data/theme/index.json";
 const INDEX_URL_LOCAL = "/data/theme/index.json";
 
 function safeJsonParse<T>(s: string | null, fallback: T): T {
@@ -279,7 +279,7 @@ export default function HomePage() {
 
       const enriched = await mapLimit(list, 6, async (row) => {
         const localUrl = `/data/theme/${row.themeId}.json`;
-        const remoteUrl = `https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/${row.themeId}.json`;
+        const remoteUrl = `/api/raw/data/theme/${row.themeId}.json`;
         const tj = (await fetchJson<ThemeJson>(localUrl)) ?? (await fetchJson<ThemeJson>(remoteUrl));
         if (!tj?.nodes) {
           return { ...row, graph: null, score: null, note: null, topMover: null } as ThemeRow;

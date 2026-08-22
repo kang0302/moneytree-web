@@ -8,12 +8,29 @@ import path from "path";
 import fs from "fs";
 import { notFound } from "next/navigation";
 import GraphClient from "./GraphClient";
-import { getThemeJsonUrl } from "@/lib/getThemeJsonUrl";
-
 const GITHUB_OWNER = "kang0302";
 const GITHUB_REPO  = "import_MT";
-/** 설정된 브랜치에 파일이 없을 때 사용하는 fallback 브랜치 */
 const FALLBACK_BRANCH = "main";
+
+// 서버(SSR) 전용 import_MT 원격 fetch — GITHUB_TOKEN 있으면 인증 API(private 대응), 없으면 raw.
+function importMtRemote(pathRel: string): { url: string; headers: Record<string, string> } {
+  const token = process.env.GITHUB_TOKEN;
+  if (token) {
+    return {
+      url: `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${pathRel}?ref=${FALLBACK_BRANCH}`,
+      headers: {
+        Authorization: `Bearer ${token}`,
+        Accept: "application/vnd.github.raw",
+        "X-GitHub-Api-Version": "2022-11-28",
+        "User-Agent": "knowvest",
+      },
+    };
+  }
+  return {
+    url: `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/${FALLBACK_BRANCH}/${pathRel}`,
+    headers: { Accept: "application/json" },
+  };
+}
 
 type NodeT = {
   id: string;
@@ -70,13 +87,13 @@ function getCuratedDescription(themeId: string): string {
   }
 }
 
-async function tryFetchThemeJson(url: string, themeId: string): Promise<ThemeJsonT | null> {
+async function tryFetchThemeJson(url: string, themeId: string, headers?: Record<string, string>): Promise<ThemeJsonT | null> {
   try {
     // GitHub raw는 Fastly CDN(~5분) 캐시 → 테마 데이터 편집 직후 stale 방지 위해 캐시버스팅.
     const bustedUrl = /^https?:/i.test(url)
       ? url + (url.includes("?") ? "&" : "?") + `_cb=${Date.now()}`
       : url;
-    const res = await fetch(bustedUrl, { cache: "no-store", headers: { Accept: "application/json" } });
+    const res = await fetch(bustedUrl, { cache: "no-store", headers: headers ?? { Accept: "application/json" } });
     if (!res.ok) return null;
     const text = await res.text();
     const parsed = JSON.parse(text) as ThemeJsonT;
@@ -99,25 +116,16 @@ function tryReadLocalThemeJson(themeId: string): ThemeJsonT | null {
 }
 
 async function fetchThemeJson(themeId: string): Promise<ThemeJsonT | null> {
-  // 1) 설정된 브랜치 시도
-  const primaryUrl = getThemeJsonUrl(themeId);
-  console.log("[theme-json] primary url =", primaryUrl);
-  const primary = await tryFetchThemeJson(primaryUrl, themeId);
+  // 1) 원격(import_MT) — GITHUB_TOKEN 있으면 인증 API(private), 없으면 raw. 편집 직후 최신 반영.
+  const { url, headers } = importMtRemote(`data/theme/${themeId}.json`);
+  const primary = await tryFetchThemeJson(url, themeId, headers);
   if (primary) return primary;
 
-  // 2) 로컬 파일 fallback (GitHub 파일에 git conflict 마커가 있을 때 유효)
+  // 2) 로컬 파일 fallback (원격 실패·private 미인증·git conflict 시 안전망 — 배포 시 항상 동기)
   const local = tryReadLocalThemeJson(themeId);
   if (local) {
     console.log("[theme-json] ok (local file):", themeId);
     return local;
-  }
-
-  // 3) fallback: main 브랜치
-  const fallbackUrl = `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/${FALLBACK_BRANCH}/data/theme/${themeId}.json`;
-  if (fallbackUrl !== primaryUrl) {
-    console.log("[theme-json] fallback url =", fallbackUrl);
-    const fallback = await tryFetchThemeJson(fallbackUrl, themeId);
-    if (fallback) return fallback;
   }
 
   console.error("[theme-json] all sources failed for", themeId);
@@ -181,13 +189,15 @@ export default async function GraphPage({
   return (
     <main className="min-h-screen w-full bg-black text-white">
       <div className="flex w-full flex-col px-2 py-2">
+        {/* nodes/edges: page 로컬 NodeT/EdgeT ↔ GraphClient NodeT/EdgeT 구조 동일하나 선언이 분리돼
+            TS가 별개 타입으로 인식 → 경계에서 캐스팅(런타임 동작 불변). */}
         <GraphClient
           themeId={themeId}
           themeName={themeName}
           themeDescription={themeDescription}
           changelog={changelog}
-          nodes={nodes}
-          edges={edges}
+          nodes={nodes as never}
+          edges={edges as never}
         />
       </div>
     </main>

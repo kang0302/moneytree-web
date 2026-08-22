@@ -45,7 +45,7 @@ async function fetchJson<T>(url: string): Promise<T | null> {
 }
 async function fetchGraph(id: string): Promise<Graph | null> {
   const local = `/data/theme/${id}.json`;
-  const remote = `https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/${id}.json`;
+  const remote = `/api/raw/data/theme/${id}.json`;
   const tj: any = (await fetchJson(local)) ?? (await fetchJson(remote));
   if (!tj?.nodes) return null;
   return { nodes: tj.nodes, edges: tj.edges ?? tj.links ?? [] };

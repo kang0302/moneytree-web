@@ -21,7 +21,7 @@ export type BriefData = {
 type Mover = { n: string; t: string; r: number | null };
 type BarRow = { themeId: string; scores?: Record<string, number | null>; headlineScore?: number | null; movers?: Mover[] };
 
-const BAR_BASE = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/barometer";
+const BAR_BASE = "/api/raw/data/barometer";
 const SPARK_H = ["1D", "3D", "5D", "15D", "1M"];
 const bandUpper = (k: number) => (k === 0 ? 1000 : TEMP_BANDS[k - 1].min);
 

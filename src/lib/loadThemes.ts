@@ -57,7 +57,7 @@ export function buildMiniGraph(tj: any): MiniGraph | null {
 
 type ThemeIndexItem = { themeId: string; themeName: string };
 
-const INDEX_URL_REMOTE = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/index.json";
+const INDEX_URL_REMOTE = "/api/raw/data/theme/index.json";
 const INDEX_URL_LOCAL = "/data/theme/index.json";
 
 function toThemeIndexList(idx: any): ThemeIndexItem[] {
@@ -136,7 +136,7 @@ export async function loadScoredThemes(period: PeriodKey = "5D"): Promise<Scored
   list = await resolvePlaceholderThemeNames(list);
   return mapLimit(list, 6, async (row) => {
     const localUrl = `/data/theme/${row.themeId}.json`;
-    const remoteUrl = `https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/${row.themeId}.json`;
+    const remoteUrl = `/api/raw/data/theme/${row.themeId}.json`;
     const tj = (await fetchJson<any>(localUrl)) ?? (await fetchJson<any>(remoteUrl));
     if (!tj?.nodes)
       return { ...row, score: null, note: null, topMover: null, nodeCount: 0, edgeCount: 0, assetCount: 0, graph: null };

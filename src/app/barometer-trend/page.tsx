@@ -7,7 +7,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { TEMP_BANDS, bandOf } from "@/lib/marketTemp";
 
-const BASE = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/barometer";
+const BASE = "/api/raw/data/barometer";
 
 type Scores = Record<string, number | null>;
 type Mover = { n: string; t: string; r: number | null };

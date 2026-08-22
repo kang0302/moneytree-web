@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const BASE = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/ma_brief";
+const BASE = "/api/raw/data/ma_brief";
 
 type Row = {
   id?: string | null;

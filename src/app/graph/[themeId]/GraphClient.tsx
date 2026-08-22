@@ -82,7 +82,7 @@ type RecentItem = { themeId: string; themeName: string; at: number };
 const LS_RECENT = "mt_recent_themes_v1";
 
 // ✅ Search index URL (GitHub raw)
-const RAW_BASE = "https://raw.githubusercontent.com/kang0302/import_MT/main";
+const RAW_BASE = "/api/raw";
 const SEARCH_INDEX_URL = `${RAW_BASE}/data/search/search_index.json`;
 
 // ✅ Resolver master SSOT URLs

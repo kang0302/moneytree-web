@@ -20,7 +20,10 @@ import { staleLevel, staleLabel } from "@/components/GraphRightPanel";
 import { getBriefingUrl } from "@/lib/getBriefingUrl";
 // import { getLogoUrl, getInitials } from "@/lib/logoMap"; // CompanyLogo 미구현 (logoMap 파일 부재)
 
-const ForceGraph2D = dynamic(() => import("react-force-graph-2d"), { ssr: false });
+// react-force-graph-2d 타입 오버로드가 다수 prop과 충돌 → 느슨한 컴포넌트 타입으로 캐스팅(런타임 불변).
+const ForceGraph2D = dynamic(() => import("react-force-graph-2d"), { ssr: false }) as unknown as (
+  props: Record<string, unknown> & { ref?: unknown },
+) => React.ReactElement;
 
 export type PeriodKey = "1D" | "3D" | "5D" | "15D" | "1M" | "YTD" | "1Y" | "2Y" | "3Y";
 
@@ -563,7 +566,7 @@ function pickRelType(e: EdgeT): string {
 
 // 테마 카드 하단 이미지 — import_MT/data/theme_images/{themeId}.{ext} 를 순차 시도, 전부 실패 시 미표시.
 const THEME_IMG_BASE =
-  "https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme_images";
+  "/api/raw/data/theme_images";
 const THEME_IMG_EXTS = ["jpg", "png", "webp", "jpeg"];
 function ThemeCardImage({ themeId }: { themeId: string }) {
   const [extIdx, setExtIdx] = useState(0);
@@ -671,7 +674,7 @@ export default function ForceGraphWrapper({
     (async () => {
       try {
         const url =
-          "https://raw.githubusercontent.com/kang0302/import_MT/main/data/ssot/evidence_ssot.jsonl";
+          "/api/raw/data/ssot/evidence_ssot.jsonl";
         const r = await fetch(url, { cache: "no-store" });
         if (!r.ok) return;
         const text = await r.text();

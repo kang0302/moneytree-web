@@ -5,7 +5,7 @@
 
 import React, { useEffect, useMemo, useState } from "react";
 
-const RAW = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/shock/graph.json";
+const RAW = "/api/raw/data/shock/graph.json";
 const DECAY = 0.8;   // 홉당 감쇠
 const MIN = 0.05;    // 최소 전파 강도
 

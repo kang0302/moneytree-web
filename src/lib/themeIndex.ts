@@ -14,7 +14,7 @@ export type ThemeIndexItem = {
 };
 
 const GITHUB_RAW_THEME_INDEX =
-  "https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/index.json";
+  "/api/raw/data/theme/index.json";
 
 /**
  * Knowvest FIXED RULE (LOCK)

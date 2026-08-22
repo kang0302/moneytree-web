@@ -1,10 +1,29 @@
 import type { MetadataRoute } from "next";
 
 const BASE = "https://getknowvest.com";
-const INDEX_REMOTE = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/index.json";
 
 // 24h 마다 재생성 (테마 추가 반영)
 export const revalidate = 86400;
+
+// import_MT 인덱스 원격 URL/헤더 — GITHUB_TOKEN 있으면 인증 API(private), 없으면 raw.
+function indexRemote(): { url: string; headers: Record<string, string> } {
+  const token = process.env.GITHUB_TOKEN;
+  if (token) {
+    return {
+      url: "https://api.github.com/repos/kang0302/import_MT/contents/data/theme/index.json?ref=main",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        Accept: "application/vnd.github.raw",
+        "X-GitHub-Api-Version": "2022-11-28",
+        "User-Agent": "knowvest",
+      },
+    };
+  }
+  return {
+    url: "https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/index.json",
+    headers: {},
+  };
+}
 
 const STATIC_PATHS = [
   "", "/themes", "/insights", "/baggers", "/ma-brief",
@@ -14,7 +33,8 @@ const STATIC_PATHS = [
 
 async function themeIds(): Promise<string[]> {
   try {
-    const r = await fetch(INDEX_REMOTE, { next: { revalidate: 86400 } });
+    const { url, headers } = indexRemote();
+    const r = await fetch(url, { headers, next: { revalidate: 86400 } });
     if (!r.ok) return [];
     const j = await r.json();
     const list = Array.isArray(j) ? j : j?.themes ?? [];

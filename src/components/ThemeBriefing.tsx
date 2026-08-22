@@ -649,7 +649,7 @@ type MaItem = {
   hg: number | null; align: string; above: number; bucket: string; bucketLabel: string;
   seq7: string; signal: string; interp: string;
 };
-const MA_ASSETS_URL = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/ma_brief/assets.json";
+const MA_ASSETS_URL = "/api/raw/data/ma_brief/assets.json";
 const MA_ASSETS_LOCAL = "/data/ma_brief/assets.json";
 const MA_BENCH = ["SPY", "DIA", "QQQ", "SOXX", "069500", "229200"];
 const MA_BUCKET_ORDER = ["b1", "b2", "b3", "b4", "b5", "b6", "na"];

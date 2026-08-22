@@ -51,7 +51,7 @@ const LS_FAV = "mt_favorite_themes_v1";
 type RecentItem = { themeId: string; themeName: string; at: number };
 type FavItem = { themeId: string; themeName: string; at: number };
 
-const INDEX_URL_REMOTE = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/index.json";
+const INDEX_URL_REMOTE = "/api/raw/data/theme/index.json";
 const INDEX_URL_LOCAL  = "/data/theme/index.json";
 
 /**
@@ -307,7 +307,7 @@ export default function ThemesPage() {
       // 2) 각 테마 JSON(nodes/edges)만 캐시 — barometer/EW는 기간 토글마다 클라이언트에서 재계산
       const enriched = await mapLimit(base, 6, async (row) => {
         const localUrl = `/data/theme/${row.themeId}.json`;
-        const remoteUrl = `https://raw.githubusercontent.com/kang0302/import_MT/main/data/theme/${row.themeId}.json`;
+        const remoteUrl = `/api/raw/data/theme/${row.themeId}.json`;
         const tj = (await fetchJson<ThemeJson>(localUrl)) ?? (await fetchJson<ThemeJson>(remoteUrl));
         if (!tj?.nodes) return { ...row, graph: null, loadFailed: true };
         const edges = (tj as any).edges ?? (tj as any).links ?? [];

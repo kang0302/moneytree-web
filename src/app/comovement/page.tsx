@@ -6,7 +6,7 @@
 
 import React, { useEffect, useMemo, useState } from "react";
 
-const RAW = "https://raw.githubusercontent.com/kang0302/import_MT/main/data/comovement";
+const RAW = "/api/raw/data/comovement";
 
 type Node = { id: string; name: string; assetCount: number; cluster: number; deg: number };
 type Graph = { nodes: Node[]; edges: { a: string; b: string; r: number }[] };

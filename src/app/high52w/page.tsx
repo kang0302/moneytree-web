@@ -6,7 +6,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 
 const BASE_DIR =
-  "https://raw.githubusercontent.com/kang0302/import_MT/main/data/ma_brief";
+  "/api/raw/data/ma_brief";
 const ASSETS_URL = `${BASE_DIR}/assets.json`;
 const HG_THRESHOLD = -10; // 52주 최고가 대비 -10% 이내
 
