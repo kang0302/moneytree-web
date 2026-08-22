@@ -396,28 +396,8 @@ export default function HomePage() {
 
         {/* Hero Search */}
         <section className="mb-3 pt-10 pb-5 text-center sm:pt-14 sm:pb-6">
-          {/* 인사이트 아카이브 — 발행자 인사이트 게시판 (와이드 버튼) */}
-          <div className="mb-6 flex justify-center">
-            <Link
-              href="/insights"
-              className="group flex w-full max-w-2xl items-center justify-between gap-4 rounded-2xl border border-sky-400/30 bg-gradient-to-r from-sky-500/15 via-indigo-500/10 to-sky-500/15 px-6 py-4 text-left transition hover:border-sky-300/60 hover:from-sky-500/25 hover:to-sky-500/25"
-            >
-              <span className="flex items-center gap-3">
-                <span className="text-[22px]">📰</span>
-                <span>
-                  <span className="block text-[16px] font-extrabold tracking-tight text-white">
-                    인사이트 아카이브
-                  </span>
-                  <span className="block text-[12px] text-white/55">
-                    발행자가 기록하는 시장·테마·종목 관점 — 읽고, 쓰고, 검색하세요
-                  </span>
-                </span>
-              </span>
-              <span className="shrink-0 text-[18px] text-sky-200/70 transition group-hover:translate-x-0.5">
-                →
-              </span>
-            </Link>
-          </div>
+          {/* 인사이트 아카이브 버튼 — 홈에서 임시 숨김 (정식 발행 전). /insights 페이지 자체는 유지. */}
+          {/* (숨김 처리: 2026-08-22 사용자 요청) */}
 
           <div className="text-[28px] font-extrabold leading-tight tracking-tight text-white sm:text-[40px]">
             오늘, 어떤 시장을 들여다볼까요?
@@ -546,7 +526,7 @@ export default function HomePage() {
             <b className="text-amber-200/90"> 시세는 실시간이 아닌 전일 종가 기준</b>입니다.
           </p>
           <p className="mt-2 text-[12px] font-semibold tracking-wide text-white/60 sm:text-[12.5px]">
-            Publisher &amp; Chief Analyst : Justine Jungwoo Kang
+            Publisher &amp; Chief Analyst : Justine K
           </p>
         </section>
 
