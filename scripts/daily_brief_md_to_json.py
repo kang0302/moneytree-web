@@ -92,9 +92,9 @@ def convert(date):
             macro_rows.append({"axis": c[0], "dir": d, "text": strip_links(c[2])})
     summary = macro_rows[-1]["text"][:90] if macro_rows else ""
 
-    # ---- 보강(3) → themeId별 meaning ----
+    # ---- 보강(2) → themeId별 meaning ----
     meaning_by = {}
-    for ln in section(md, 3):
+    for ln in section(md, 2):
         c = cells(ln)
         if not c or is_sep(ln):
             continue
