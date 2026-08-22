@@ -272,44 +272,31 @@ export default function HomePage() {
       list = await resolvePlaceholderThemeNames(list);
       if (!alive) return;
 
-      const assetIds = new Set<string>();
-      const macroIds = new Set<string>();
-      let totalEdges = 0;
-      const collectedUpdates: UpdateItem[] = [];
-
-      const enriched = await mapLimit(list, 6, async (row) => {
-        const localUrl = `/data/theme/${row.themeId}.json`;
-        const remoteUrl = `/api/raw/data/theme/${row.themeId}.json`;
-        const tj = (await fetchJson<ThemeJson>(localUrl)) ?? (await fetchJson<ThemeJson>(remoteUrl));
-        if (!tj?.nodes) {
-          return { ...row, graph: null, score: null, note: null, topMover: null } as ThemeRow;
-        }
-        const cl = tj.meta?.changelog;
-        if (Array.isArray(cl)) {
-          for (const e of cl) {
-            if (e && (e.title || e.detail)) {
-              collectedUpdates.push({ ...e, themeId: row.themeId, themeName: tj.themeName || row.themeName });
-            }
-          }
-        }
-        for (const n of tj.nodes) {
-          const id = (n as any)?.id;
-          const tp = (n as any)?.type;
-          if (!id) continue;
-          if (tp === "ASSET") assetIds.add(id);
-          else if (tp === "MACRO") macroIds.add(id);
-        }
-        totalEdges += Array.isArray(tj.edges) ? tj.edges.length : 0;
-        const graph = { nodes: tj.nodes, edges: ((tj as any).edges ?? (tj as any).links) ?? [] };
-        return { ...row, graph, score: null, note: null, topMover: null } as ThemeRow;
-      });
-
-      if (!alive) return;
-      setThemes(enriched);
-      setCounts({ themes: list.length, assets: assetIds.size, macros: macroIds.size, edges: totalEdges });
-      collectedUpdates.sort((a, b) => (parseDay(b.date) ?? 0) - (parseDay(a.date) ?? 0));
-      setUpdates(collectedUpdates);
+      // ✅ 테마 목록은 index만으로 즉시 구성 (점수·상위종목은 바로미터 스냅샷 snap에서 병합).
+      //    과거 735개 테마 개별 fetch 제거 → 홈 초기 표시가 즉시 이뤄짐.
+      setThemes(
+        list.map((row) => ({ ...row, graph: null, score: null, note: null, topMover: null } as ThemeRow)),
+      );
       setLoading(false);
+
+      // ✅ 숫자(집계)·큐레이션 업데이트는 사전 생성된 단일 파일 1개로 (build_home_summary.mjs).
+      type HomeSummary = {
+        counts?: { themes?: number; assets?: number; macros?: number; edges?: number };
+        updates?: UpdateItem[];
+      };
+      const summary = await fetchJson<HomeSummary>("/data/home_summary.json");
+      if (!alive) return;
+      if (summary?.counts) {
+        setCounts({
+          themes: list.length || summary.counts.themes || 0,
+          assets: summary.counts.assets ?? 0,
+          macros: summary.counts.macros ?? 0,
+          edges: summary.counts.edges ?? 0,
+        });
+      } else {
+        setCounts((c) => ({ ...c, themes: list.length }));
+      }
+      if (Array.isArray(summary?.updates)) setUpdates(summary!.updates);
     }
 
     run();
