@@ -299,11 +299,6 @@ export default function GraphClient({
 
   // ✅ Header controls
   const [moveThemeId, setMoveThemeId] = useState<string>("");
-  // 그래프 상호작용 안내 힌트 (한 번 닫으면 재표시 안 함)
-  const [showHoverHint, setShowHoverHint] = useState(true);
-  useEffect(() => {
-    try { if (localStorage.getItem("mt_graph_hover_hint_dismissed")) setShowHoverHint(false); } catch {}
-  }, []);
 
   /* =========================
      ✅ 1) Resolver SSOT CSV load
@@ -889,23 +884,6 @@ export default function GraphClient({
         <div className="graph-split h-full min-h-0 gap-2">
           {/* Graph */}
           <div data-graph-area className="relative min-h-0 rounded-xl border border-white/10 bg-black/25 p-1">
-            {/* ✅ 상호작용 안내 힌트 — 노드/엣지 호버 시 상세정보 (좌상단, 닫기 가능) */}
-            {showHoverHint && (
-              <div className="absolute left-1/2 top-2 z-20 -translate-x-1/2">
-                <div className="flex items-center gap-2 rounded-full border border-sky-400/30 bg-black/75 px-3.5 py-1.5 text-[11.5px] text-white/85 shadow-lg backdrop-blur">
-                  <span className="text-[14px] leading-none">🖱️</span>
-                  <span>동그라미 <b className="text-white">노드</b>나 연결 <b className="text-white">엣지선</b>에 마우스를 올리면 상세 정보를 볼 수 있어요</span>
-                  <button
-                    type="button"
-                    onClick={() => { setShowHoverHint(false); try { localStorage.setItem("mt_graph_hover_hint_dismissed", "1"); } catch {} }}
-                    className="ml-1 rounded px-1 text-[12px] text-white/45 hover:text-white/90"
-                    title="안내 닫기"
-                  >
-                    ✕
-                  </button>
-                </div>
-              </div>
-            )}
             {/* ✅ 기간 토글 — 그래프 박스 우상단 오버레이 (헤더에서 이동, 검색창 공간 확보) */}
             <div className="absolute right-3 top-2 z-20">
               <div className="flex items-center gap-1 rounded-lg border border-white/10 bg-black/70 p-1 shadow-lg backdrop-blur">
