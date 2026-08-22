@@ -400,7 +400,7 @@ export default function HomePage() {
           {/* (숨김 처리: 2026-08-22 사용자 요청) */}
 
           <div className="text-[28px] font-extrabold leading-tight tracking-tight text-white sm:text-[40px]">
-            오늘, 어떤 시장을 들여다볼까요?
+            오늘, 어떤 테마를 들여다볼까요?
           </div>
 
           {/* 퀵 액션 버튼들 */}
@@ -421,48 +421,7 @@ export default function HomePage() {
             >
               💰 x2~x10 배거 포트폴리오
             </Link>
-            <Link
-              href="/ma-brief"
-              className="inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-sky-500/15 px-5 py-2 text-sm font-semibold text-sky-100 transition hover:border-sky-300/60 hover:bg-sky-500/25"
-              title="관심종목 이동평균선(5·20·60·120) 데일리 트래킹"
-            >
-              📊 이동평균선 트래킹
-            </Link>
-            <Link
-              href="/high52w"
-              className="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/15 px-5 py-2 text-sm font-semibold text-emerald-100 transition hover:border-emerald-300/60 hover:bg-emerald-500/25"
-              title="전체 자산 중 52주 최고가 대비 -10% 이내(신고가 근접) 종목만 이평선 브리핑"
-            >
-              🚀 52주 신고가
-            </Link>
-            <Link
-              href="/low52w"
-              className="inline-flex items-center gap-2 rounded-full border border-rose-400/40 bg-rose-500/15 px-5 py-2 text-sm font-semibold text-rose-100 transition hover:border-rose-300/60 hover:bg-rose-500/25"
-              title="전체 자산 중 52주 최고가 대비 -50% 넘게 이탈한 대낙폭 종목만 이평선 브리핑"
-            >
-              📉 52주최고가 대비&lt;-50%
-            </Link>
-            <Link
-              href="/compare"
-              className="inline-flex items-center gap-2 rounded-full border border-fuchsia-400/40 bg-fuchsia-500/15 px-5 py-2 text-sm font-semibold text-fuchsia-100 transition hover:border-fuchsia-300/60 hover:bg-fuchsia-500/25"
-              title="여러 테마를 바로미터·기간수익률·자산구성으로 나란히 비교"
-            >
-              🆚 테마 비교
-            </Link>
-            <Link
-              href="/track-record"
-              className="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/15 px-5 py-2 text-sm font-semibold text-emerald-100 transition hover:border-emerald-300/60 hover:bg-emerald-500/25"
-              title="바로미터 점수의 예측력 검증 — 점수구간별 이후 수익률·승률·스프레드"
-            >
-              📈 바로미터 트랙레코드
-            </Link>
-            <Link
-              href="/comovement"
-              className="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-500/15 px-5 py-2 text-sm font-semibold text-cyan-100 transition hover:border-cyan-300/60 hover:bg-cyan-500/25"
-              title="테마 일별수익률(시장요인 제거)의 상관으로 함께 움직이는 테마군·숨은 중복을 탐지"
-            >
-              🔗 테마 코무브먼트
-            </Link>
+            {/* 임시 숨김(2026-08-22): 이동평균선·52주신고가·52주-50%·테마비교·트랙레코드·코무브먼트 */}
             <Link
               href="/barometer-trend"
               className="inline-flex items-center gap-2 rounded-full border border-orange-400/40 bg-orange-500/15 px-5 py-2 text-sm font-semibold text-orange-100 transition hover:border-orange-300/60 hover:bg-orange-500/25"
@@ -470,20 +429,7 @@ export default function HomePage() {
             >
               🌡️ 바로미터 국면전환
             </Link>
-            <Link
-              href="/cross-market"
-              className="inline-flex items-center gap-2 rounded-full border border-teal-400/40 bg-teal-500/15 px-5 py-2 text-sm font-semibold text-teal-100 transition hover:border-teal-300/60 hover:bg-teal-500/25"
-              title="여러 나라 증시에 걸친 테마의 시장별 구성·수익률과 US→KR 오버나잇 리드"
-            >
-              🌐 크로스마켓 교차투자
-            </Link>
-            <Link
-              href="/shock"
-              className="inline-flex items-center gap-2 rounded-full border border-purple-400/40 bg-purple-500/15 px-5 py-2 text-sm font-semibold text-purple-100 transition hover:border-purple-300/60 hover:bg-purple-500/25"
-              title="매크로·테마·종목 충격이 온톨로지 엣지를 따라 어디까지 번지는지 시뮬레이션"
-            >
-              💥 충격 전파 what-if
-            </Link>
+            {/* 임시 숨김(2026-08-22): 크로스마켓 교차투자·충격 전파 what-if */}
             <Link
               href="/etf-52w"
               className="inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-sky-500/15 px-5 py-2 text-sm font-semibold text-sky-100 transition hover:border-sky-300/60 hover:bg-sky-500/25"

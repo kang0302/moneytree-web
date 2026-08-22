@@ -66,55 +66,11 @@ export default function NewsletterSignup({ source = "home" }: { source?: string 
           </p>
         </div>
 
-        {status === "done" ? (
-          <div className="flex shrink-0 items-center gap-2 rounded-xl border border-emerald-400/40 bg-emerald-500/15 px-4 py-3 text-[13px] font-medium text-emerald-100 sm:max-w-[320px]">
-            <span>✅</span>
-            <span>{msg}</span>
-          </div>
-        ) : (
-          <form onSubmit={submit} className="flex shrink-0 flex-col gap-2 sm:w-[380px]">
-            <div className="flex gap-2">
-              <input
-                type="email"
-                inputMode="email"
-                autoComplete="email"
-                required
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                  if (status === "error") setStatus("idle");
-                }}
-                placeholder="이메일 주소"
-                aria-label="이메일 주소"
-                className="min-w-0 flex-1 rounded-xl border border-white/15 bg-black/40 px-4 py-2.5 text-[14px] text-white placeholder:text-white/35 outline-none transition focus:border-indigo-400/60 focus:ring-2 focus:ring-indigo-400/25"
-              />
-              <button
-                type="submit"
-                disabled={status === "loading"}
-                className="shrink-0 rounded-xl border border-indigo-400/50 bg-indigo-500/25 px-4 py-2.5 text-[14px] font-semibold text-indigo-50 transition hover:border-indigo-300/70 hover:bg-indigo-500/40 disabled:opacity-60"
-              >
-                {status === "loading" ? "신청 중…" : "구독 신청"}
-              </button>
-            </div>
-            {/* 허니팟: 사람에겐 보이지 않음 */}
-            <input
-              type="text"
-              tabIndex={-1}
-              autoComplete="off"
-              value={company}
-              onChange={(e) => setCompany(e.target.value)}
-              className="hidden"
-              aria-hidden="true"
-            />
-            {status === "error" ? (
-              <div className="text-[12px] text-rose-300/90">{msg}</div>
-            ) : (
-              <div className="text-[11px] text-white/40">
-                구독 신청 시 개인정보는 뉴스레터 발송 목적으로만 사용됩니다.
-              </div>
-            )}
-          </form>
-        )}
+        {/* 준비중 — 정식 발행 전 구독 폼 대신 안내 (2026-08-22 사용자 요청) */}
+        <div className="flex shrink-0 items-center gap-2 rounded-xl border border-white/15 bg-white/[0.05] px-4 py-3 text-[13px] font-semibold text-white/70 sm:max-w-[320px]">
+          <span>🛠️</span>
+          <span>준비중 · Coming Soon</span>
+        </div>
       </div>
     </section>
   );
