@@ -240,7 +240,6 @@ export default function AssetClient({ assetId }: { assetId: string }) {
                       ); })}
                     </div>
                     <div className="mt-2.5 flex flex-wrap gap-x-4 gap-y-1 text-[11.5px] text-white/60">
-                      <span>PER <b className="text-white/85">{m.pe_ttm != null ? m.pe_ttm.toFixed(1) : "—"}</b></span>
                       <span>시총 <b className="text-white/85">{fmtCap(m.marketCap)}</b></span>
                       <span>종가 <b className="text-white/85">{m.close != null ? m.close.toLocaleString() : "—"}</b></span>
                       {m.returnsAsOf && <span className="text-white/35">기준 {m.returnsAsOf}</span>}

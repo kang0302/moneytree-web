@@ -583,10 +583,6 @@ export default function GraphRightPanel({
           <div>아직 {period} 수익률이 없습니다.</div>
         )}
       </div>
-
-      <div className="mt-3 text-[11px] text-white/45">
-        * PER 표시는 <b>Trailing PER</b>만 사용합니다.
-      </div>
     </aside>
   );
 }
