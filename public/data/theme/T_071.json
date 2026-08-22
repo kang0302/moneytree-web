@@ -1,1340 +1,1340 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_071",
- "themeName": "K철강주",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_071",
+  "themeName": "K철강주",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-26T00:00:00+09:00",
+    "notes": "g71 누적 import 기반 K철강주 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-26",
+        "kind": "수정",
+        "title": "자산 CHR 백필",
+        "detail": "CHR 미정의 자산에 CHARACTER·HAS_TRAIT 추가."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ],
+    "description": "• 중국 감산·미국 IRA 인프라·EV·조선 수주 사이클이 multiyear 동인\n• 동인: 미국에너지개발확대·DC건설확대·미-이란전쟁재건수요(원유파이프라인)\n• 대표주: 한국철강(전기로철근)·KISCO홀딩스(철강지주)·대한제강(철근)\n• 밸류체인: 에너지강관·DC봉형강·종합철강\n• ETF: KODEX 철강"
+  },
+  "nodes": [
+    {
+      "id": "T_071",
+      "type": "THEME",
+      "name": "K철강주"
+    },
+    {
+      "id": "A_597",
+      "type": "ASSET",
+      "name": "한국철강",
+      "exposure": {
+        "ticker": "104700",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -0.41109969167523186,
+        "close": 9690,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -1.8237082066869248,
+        "return_15d": 1.148225469728592,
+        "return_1m": 4.643628509719222,
+        "return_ytd": -1.122448979591839,
+        "return_1y": 10.941924993526975,
+        "return_3y": 107.57031298028727,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 4.088050314465419,
+        "return_2y": 24.38015298373739
+      }
+    },
+    {
+      "id": "A_598",
+      "type": "ASSET",
+      "name": "KISCO홀딩스",
+      "exposure": {
+        "ticker": "001940",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -1.2727272727272698,
+        "close": 27150,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -1.9855595667869985,
+        "return_15d": 2.259887005649719,
+        "return_1m": 8.16733067729083,
+        "return_ytd": 10.141987829614596,
+        "return_1y": 18.168542194389147,
+        "return_3y": 96.12616105632902,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 5.482041587901709,
+        "return_2y": 71.9851724583059
+      }
+    },
+    {
+      "id": "A_599",
+      "type": "ASSET",
+      "name": "대한제강",
+      "exposure": {
+        "ticker": "084010",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -3.457106274007682,
+        "close": 7540,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -8.606060606060606,
+        "return_15d": -0.9198423127463884,
+        "return_1m": 1.072386058981234,
+        "return_ytd": -61.530601842458665,
+        "return_1y": -51.264433920176344,
+        "return_3y": -26.232712980477658,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 3.5799522673030992,
+        "return_2y": -35.562576480983076
+      }
+    },
+    {
+      "id": "A_600",
+      "type": "ASSET",
+      "name": "동국홀딩스",
+      "exposure": {
+        "ticker": "001230",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -2.1604938271604923,
+        "close": 1902,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -3.2061068702290085,
+        "return_15d": 13.960455362492507,
+        "return_1m": 16.97416974169741,
+        "return_ytd": 31.17241379310345,
+        "return_1y": 9.436133486766396,
+        "return_3y": -4.977304381948954,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 3.7214247740563478,
+        "return_2y": 22.41728176738116
+      }
+    },
+    {
+      "id": "A_601",
+      "type": "ASSET",
+      "name": "동국제강",
+      "exposure": {
+        "ticker": "460860",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -3.991596638655459,
+        "close": 9140,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -5.3830227743271175,
+        "return_15d": 5.542725173210172,
+        "return_1m": 7.025761124121788,
+        "return_ytd": 17.707429144313092,
+        "return_1y": -8.161094523615919,
+        "return_3y": 1.7126344504860391,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 0.612244897959191,
+        "return_2y": 11.782633117461572
+      }
+    },
+    {
+      "id": "A_602",
+      "type": "ASSET",
+      "name": "현대제철",
+      "exposure": {
+        "ticker": "004020",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -3.7433155080213942,
+        "close": 27000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -5.759162303664922,
+        "return_15d": 7.355864811133195,
+        "return_1m": 4.651162790697683,
+        "return_ytd": -10.485933376649525,
+        "return_1y": -19.318691169878978,
+        "return_3y": -7.0070018813571995,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 5.653710247349819,
+        "return_2y": 1.4905064934471746
+      }
+    },
+    {
+      "id": "A_603",
+      "type": "ASSET",
+      "name": "포스코홀딩스",
+      "exposure": {
+        "ticker": "005490",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -2.9733959311424085,
+        "close": 310000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -3.8704061440454796,
+        "return_15d": 3.807165430637638,
+        "return_1m": 2.950670666415345,
+        "return_ytd": 5.9823673388468945,
+        "return_1y": 7.7458301420090026,
+        "return_3y": -37.52252985039636,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 0.9063444108761365,
+        "return_2y": -7.340547080575599
+      }
+    },
+    {
+      "id": "A_604",
+      "type": "ASSET",
+      "name": "세아제강",
+      "exposure": {
+        "ticker": "306200",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -1.0007147962830643,
+        "close": 138500,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": 2.592592592592591,
+        "return_15d": 11.783696529459231,
+        "return_1m": 9.92063492063493,
+        "return_ytd": 23.140441522409194,
+        "return_1y": -0.2093723370470313,
+        "return_3y": 1.6862050635068515,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 0.60606060606061,
+        "return_2y": 13.238409044405541
+      }
+    },
+    {
+      "id": "A_605",
+      "type": "ASSET",
+      "name": "하이스틸",
+      "exposure": {
+        "ticker": "071090",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -1.3245033112582738,
+        "close": 2980,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -1.4876033057851235,
+        "return_15d": 13.740458015267176,
+        "return_1m": 4.561403508771922,
+        "return_ytd": -14.244604316546761,
+        "return_1y": -37.26315789473684,
+        "return_3y": -12.291810528781099,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 4.311774461028195,
+        "return_2y": -21.396164491556103
+      }
+    },
+    {
+      "id": "A_606",
+      "type": "ASSET",
+      "name": "휴스틸",
+      "exposure": {
+        "ticker": "005010",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -2.4357239512855178,
+        "close": 3605,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -5.13157894736842,
+        "return_15d": 6.656804733727806,
+        "return_1m": 2.1246458923512845,
+        "return_ytd": -9.987515605493137,
+        "return_1y": -18.161180476730987,
+        "return_3y": -14.374014094228272,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 11.157024793388427,
+        "return_2y": -22.76697416408532
+      }
+    },
+    {
+      "id": "A_607",
+      "type": "ASSET",
+      "name": "넥스틸",
+      "exposure": {
+        "ticker": "092790",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.7692307692307665,
+        "close": 11790,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": 0.34042553191488967,
+        "return_15d": 15.701668302257122,
+        "return_1m": 8.563535911602216,
+        "return_ytd": 28.85245901639344,
+        "return_1y": -9.876639694785883,
+        "return_3y": null,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 5.040650406504055,
+        "return_2y": 37.44385508866521
+      }
+    },
+    {
+      "id": "BF_132",
+      "type": "BUSINESS_FIELD",
+      "name": "에너지강관"
+    },
+    {
+      "id": "BF_133",
+      "type": "BUSINESS_FIELD",
+      "name": "DC봉형강"
+    },
+    {
+      "id": "BF_134",
+      "type": "BUSINESS_FIELD",
+      "name": "종합철강"
+    },
+    {
+      "id": "M_073",
+      "type": "MACRO",
+      "name": "미국에너지개발확대"
+    },
+    {
+      "id": "M_074",
+      "type": "MACRO",
+      "name": "DC건설확대"
+    },
+    {
+      "id": "C_270",
+      "type": "CHARACTER",
+      "name": "미국현지생산관세방어"
+    },
+    {
+      "id": "C_5560",
+      "type": "CHARACTER",
+      "name": "전기로철근"
+    },
+    {
+      "id": "C_5561",
+      "type": "CHARACTER",
+      "name": "철강지주"
+    },
+    {
+      "id": "C_5562",
+      "type": "CHARACTER",
+      "name": "철근"
+    },
+    {
+      "id": "C_5563",
+      "type": "CHARACTER",
+      "name": "철강지주"
+    },
+    {
+      "id": "C_5564",
+      "type": "CHARACTER",
+      "name": "봉형강컬러강판"
+    },
+    {
+      "id": "C_5565",
+      "type": "CHARACTER",
+      "name": "고로전기로"
+    },
+    {
+      "id": "C_5566",
+      "type": "CHARACTER",
+      "name": "철강2차전지지주"
+    },
+    {
+      "id": "C_5567",
+      "type": "CHARACTER",
+      "name": "강관"
+    },
+    {
+      "id": "C_5568",
+      "type": "CHARACTER",
+      "name": "강관"
+    },
+    {
+      "id": "A_2881",
+      "type": "ASSET",
+      "name": "KODEX 철강",
+      "exposure": {
+        "ticker": "117680",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -2.8997514498757204,
+        "return_3d": -3.220478943022298,
+        "return_15d": 16.385302879841102,
+        "return_1m": 12.582482398204364,
+        "return_ytd": -4.255669647160976,
+        "return_1y": 1.967106438094346,
+        "return_3y": null,
+        "close": 11720,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": null,
+        "return_2y": 53.172418388997066
+      }
+    },
+    {
+      "id": "M_084",
+      "type": "MACRO",
+      "name": "중동전쟁"
+    }
   ],
-  "dataAsOf": "2026-07-26T00:00:00+09:00",
-  "notes": "g71 누적 import 기반 K철강주 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 5건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-26",
-    "kind": "수정",
-    "title": "자산 CHR 백필",
-    "detail": "CHR 미정의 자산에 CHARACTER·HAS_TRAIT 추가."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_597",
+      "to": "T_071",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002232"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_598",
+      "to": "T_071",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002233"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_599",
+      "to": "T_071",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002234"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_600",
+      "to": "T_071",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002235"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_601",
+      "to": "T_071",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002236"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_602",
+      "to": "T_071",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002237"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_603",
+      "to": "T_071",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002238"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_604",
+      "to": "T_071",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002239"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_605",
+      "to": "T_071",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002240"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_606",
+      "to": "T_071",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002241"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_607",
+      "to": "T_071",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002242"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_073",
+      "to": "T_071",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002243"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_074",
+      "to": "T_071",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002244"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_597",
+      "to": "BF_133",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002245"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_598",
+      "to": "BF_133",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002246"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_599",
+      "to": "BF_133",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002247"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_600",
+      "to": "BF_133",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002248"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_601",
+      "to": "BF_133",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002249"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_602",
+      "to": "BF_134",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002250"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_603",
+      "to": "BF_134",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002251"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_604",
+      "to": "BF_134",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002252"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_605",
+      "to": "BF_132",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002253"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_606",
+      "to": "BF_132",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002254"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_607",
+      "to": "BF_132",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002255"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_604",
+      "to": "BF_132",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002256"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_604",
+      "to": "C_270",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002257"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_607",
+      "to": "C_270",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002258"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_084",
+      "to": "T_071",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002259"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_597",
+      "to": "C_5560",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014503"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_598",
+      "to": "C_5561",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014504"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_599",
+      "to": "C_5562",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014505"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_600",
+      "to": "C_5563",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014506"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_601",
+      "to": "C_5564",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014507"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_602",
+      "to": "C_5565",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014508"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_603",
+      "to": "C_5566",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014509"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_605",
+      "to": "C_5567",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014510"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_606",
+      "to": "C_5568",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014511"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_603",
+      "to": "A_602",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019030"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "포스코홀딩스와 현대제철은 국내 철강 시장 양대 경쟁"
+    },
+    {
+      "from": "A_600",
+      "to": "A_601",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_019031"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "동국홀딩스는 동국제강의 지주회사로 지배구조 연결"
+    },
+    {
+      "from": "A_604",
+      "to": "A_605",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019032"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "세아제강과 하이스틸은 강관 시장 직접 경쟁"
+    },
+    {
+      "from": "A_604",
+      "to": "A_606",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019033"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "세아제강과 휴스틸은 강관·특수강 시장 경쟁"
+    },
+    {
+      "from": "A_605",
+      "to": "A_607",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019034"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "하이스틸과 넥스틸은 에너지용 강관 시장 경쟁"
+    },
+    {
+      "from": "A_2881",
+      "to": "T_071",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020588"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ],
-  "description": "• 중국 감산·미국 IRA 인프라·EV·조선 수주 사이클이 multiyear 동인\n• 동인: 미국에너지개발확대·DC건설확대·미-이란전쟁재건수요(원유파이프라인)\n• 대표주: 한국철강(전기로철근)·KISCO홀딩스(철강지주)·대한제강(철근)\n• 밸류체인: 에너지강관·DC봉형강·종합철강\n• ETF: KODEX 철강"
- },
- "nodes": [
-  {
-   "id": "T_071",
-   "type": "THEME",
-   "name": "K철강주"
-  },
-  {
-   "id": "A_597",
-   "type": "ASSET",
-   "name": "한국철강",
-   "exposure": {
-    "ticker": "104700",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -0.20512820512820218,
-    "close": 9730,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "return_3d": -2.0140986908358527,
-    "return_15d": 2.421052631578946,
-    "return_1m": 5.417118093174422,
-    "return_ytd": -0.7142857142857117,
-    "return_1y": 12.394531651409025,
-    "return_3y": 107.57031298028727,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": 4.088050314465419,
-    "return_2y": 25.718878117291965
-   }
-  },
-  {
-   "id": "A_598",
-   "type": "ASSET",
-   "name": "KISCO홀딩스",
-   "exposure": {
-    "ticker": "001940",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -0.9009009009009028,
-    "close": 27500,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "return_3d": -1.4336917562724039,
-    "return_15d": 6.382978723404253,
-    "return_1m": 9.343936381709739,
-    "return_ytd": 11.561866125760645,
-    "return_1y": 17.533121838107913,
-    "return_3y": 96.12616105632902,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": 5.482041587901709,
-    "return_2y": 74.38556688153525
-   }
-  },
-  {
-   "id": "A_599",
-   "type": "ASSET",
-   "name": "대한제강",
-   "exposure": {
-    "ticker": "084010",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -3.2218091697645557,
-    "close": 7810,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "return_3d": -10.02304147465438,
-    "return_15d": 5.683355886332886,
-    "return_1m": 7.427785419532329,
-    "return_ytd": -60.15305044954935,
-    "return_1y": -49.90193576546799,
-    "return_3y": -26.232712980477658,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": 3.5799522673030992,
-    "return_2y": -34.39375537418887
-   }
-  },
-  {
-   "id": "A_600",
-   "type": "ASSET",
-   "name": "동국홀딩스",
-   "exposure": {
-    "ticker": "001230",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -0.6642820643842584,
-    "close": 1944,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "return_3d": -0.35879036391593955,
-    "return_15d": 18.248175182481763,
-    "return_1m": 19.85203452527744,
-    "return_ytd": 34.06896551724139,
-    "return_1y": 13.551401869158886,
-    "return_3y": -4.977304381948954,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": 3.7214247740563478,
-    "return_2y": 25.120502500414823
-   }
-  },
-  {
-   "id": "A_601",
-   "type": "ASSET",
-   "name": "동국제강",
-   "exposure": {
-    "ticker": "460860",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -1.3471502590673534,
-    "close": 9520,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "return_3d": -3.4482758620689613,
-    "return_15d": 13.603818615751795,
-    "return_1m": 13.468414779499405,
-    "return_ytd": 22.601173463223255,
-    "return_1y": -4.890502393542406,
-    "return_3y": 1.7126344504860391,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": 0.612244897959191,
-    "return_2y": 14.40297802488233
-   }
-  },
-  {
-   "id": "A_602",
-   "type": "ASSET",
-   "name": "현대제철",
-   "exposure": {
-    "ticker": "004020",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.0,
-    "close": 28050,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "return_3d": -6.187290969899662,
-    "return_15d": 14.489795918367342,
-    "return_1m": 10.869565217391308,
-    "return_ytd": -7.004830785741456,
-    "return_1y": -15.30797101449275,
-    "return_3y": -7.0070018813571995,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": 5.653710247349819,
-    "return_2y": 4.124082824594066
-   }
-  },
-  {
-   "id": "A_603",
-   "type": "ASSET",
-   "name": "포스코홀딩스",
-   "exposure": {
-    "ticker": "005490",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.4687460539435806,
-    "close": 321500,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "return_3d": -4.341317365269459,
-    "return_15d": 10.745233968804158,
-    "return_1m": 5.44554455445545,
-    "return_ytd": 8.550710423153852,
-    "return_1y": 9.987203534501688,
-    "return_3y": -37.52252985039636,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": 0.9063444108761365,
-    "return_2y": -6.930245551729996
-   }
-  },
-  {
-   "id": "A_604",
-   "type": "ASSET",
-   "name": "세아제강",
-   "exposure": {
-    "ticker": "306200",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 3.1710914454277317,
-    "close": 139900,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "return_3d": 5.346385542168686,
-    "return_15d": 15.524360033030549,
-    "return_1m": 11.741214057507987,
-    "return_ytd": 24.38518244754546,
-    "return_1y": -0.7123049698868122,
-    "return_3y": 1.6862050635068515,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": 0.60606060606061,
-    "return_2y": 12.678391650416177
-   }
-  },
-  {
-   "id": "A_605",
-   "type": "ASSET",
-   "name": "하이스틸",
-   "exposure": {
-    "ticker": "071090",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 2.0270270270270174,
-    "close": 3020,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "return_3d": -3.974562798092207,
-    "return_15d": 15.708812260536398,
-    "return_1m": 5.779334500875666,
-    "return_ytd": -13.093525179856114,
-    "return_1y": -37.603305785123965,
-    "return_3y": -12.291810528781099,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": 4.311774461028195,
-    "return_2y": -19.920161992496677
-   }
-  },
-  {
-   "id": "A_606",
-   "type": "ASSET",
-   "name": "휴스틸",
-   "exposure": {
-    "ticker": "005010",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 2.2130013831258566,
-    "close": 3695,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "return_3d": -8.426270136307313,
-    "return_15d": 9.319526627218933,
-    "return_1m": 3.5014005602240994,
-    "return_ytd": -7.740324594257175,
-    "return_1y": -17.152466367713004,
-    "return_3y": -14.374014094228272,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": 11.157024793388427,
-    "return_2y": -20.258587481120482
-   }
-  },
-  {
-   "id": "A_607",
-   "type": "ASSET",
-   "name": "넥스틸",
-   "exposure": {
-    "ticker": "092790",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 3.1746031746031855,
-    "close": 11700,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "return_3d": -9.442724458204331,
-    "return_15d": 12.5,
-    "return_1m": 7.14285714285714,
-    "return_ytd": 27.868852459016402,
-    "return_1y": -13.014071133806492,
-    "return_3y": null,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": 5.040650406504055,
-    "return_2y": 36.256194066832315
-   }
-  },
-  {
-   "id": "BF_132",
-   "type": "BUSINESS_FIELD",
-   "name": "에너지강관"
-  },
-  {
-   "id": "BF_133",
-   "type": "BUSINESS_FIELD",
-   "name": "DC봉형강"
-  },
-  {
-   "id": "BF_134",
-   "type": "BUSINESS_FIELD",
-   "name": "종합철강"
-  },
-  {
-   "id": "M_073",
-   "type": "MACRO",
-   "name": "미국에너지개발확대"
-  },
-  {
-   "id": "M_074",
-   "type": "MACRO",
-   "name": "DC건설확대"
-  },
-  {
-   "id": "C_270",
-   "type": "CHARACTER",
-   "name": "미국현지생산관세방어"
-  },
-  {
-   "id": "C_5560",
-   "type": "CHARACTER",
-   "name": "전기로철근"
-  },
-  {
-   "id": "C_5561",
-   "type": "CHARACTER",
-   "name": "철강지주"
-  },
-  {
-   "id": "C_5562",
-   "type": "CHARACTER",
-   "name": "철근"
-  },
-  {
-   "id": "C_5563",
-   "type": "CHARACTER",
-   "name": "철강지주"
-  },
-  {
-   "id": "C_5564",
-   "type": "CHARACTER",
-   "name": "봉형강컬러강판"
-  },
-  {
-   "id": "C_5565",
-   "type": "CHARACTER",
-   "name": "고로전기로"
-  },
-  {
-   "id": "C_5566",
-   "type": "CHARACTER",
-   "name": "철강2차전지지주"
-  },
-  {
-   "id": "C_5567",
-   "type": "CHARACTER",
-   "name": "강관"
-  },
-  {
-   "id": "C_5568",
-   "type": "CHARACTER",
-   "name": "강관"
-  },
-  {
-   "id": "A_2881",
-   "type": "ASSET",
-   "name": "KODEX 철강",
-   "exposure": {
-    "ticker": "117680",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.8565400843881807,
-    "return_3d": -2.3857662757784115,
-    "return_15d": 23.985618900873142,
-    "return_1m": 18.892811432307212,
-    "return_ytd": -1.3964106349174998,
-    "return_1y": 4.922483060886651,
-    "return_3y": null,
-    "close": 12070,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": null,
-    "return_2y": 55.91129337188669
-   }
-  },
-  {
-   "id": "M_084",
-   "type": "MACRO",
-   "name": "중동전쟁"
-  }
- ],
- "edges": [
-  {
-   "from": "A_597",
-   "to": "T_071",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002232"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_598",
-   "to": "T_071",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002233"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_599",
-   "to": "T_071",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002234"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_600",
-   "to": "T_071",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002235"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_601",
-   "to": "T_071",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002236"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_602",
-   "to": "T_071",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002237"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_603",
-   "to": "T_071",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002238"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_604",
-   "to": "T_071",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002239"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_605",
-   "to": "T_071",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002240"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_606",
-   "to": "T_071",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002241"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_607",
-   "to": "T_071",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002242"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_073",
-   "to": "T_071",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002243"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_074",
-   "to": "T_071",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002244"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_597",
-   "to": "BF_133",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002245"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_598",
-   "to": "BF_133",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002246"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_599",
-   "to": "BF_133",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002247"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_600",
-   "to": "BF_133",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002248"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_601",
-   "to": "BF_133",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002249"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_602",
-   "to": "BF_134",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002250"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_603",
-   "to": "BF_134",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002251"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_604",
-   "to": "BF_134",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002252"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_605",
-   "to": "BF_132",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002253"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_606",
-   "to": "BF_132",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002254"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_607",
-   "to": "BF_132",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002255"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_604",
-   "to": "BF_132",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002256"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_604",
-   "to": "C_270",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002257"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_607",
-   "to": "C_270",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002258"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_084",
-   "to": "T_071",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002259"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_597",
-   "to": "C_5560",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014503"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_598",
-   "to": "C_5561",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014504"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_599",
-   "to": "C_5562",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014505"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_600",
-   "to": "C_5563",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014506"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_601",
-   "to": "C_5564",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014507"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_602",
-   "to": "C_5565",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014508"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_603",
-   "to": "C_5566",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014509"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_605",
-   "to": "C_5567",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014510"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_606",
-   "to": "C_5568",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014511"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_603",
-   "to": "A_602",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019030"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "포스코홀딩스와 현대제철은 국내 철강 시장 양대 경쟁"
-  },
-  {
-   "from": "A_600",
-   "to": "A_601",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_019031"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "동국홀딩스는 동국제강의 지주회사로 지배구조 연결"
-  },
-  {
-   "from": "A_604",
-   "to": "A_605",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019032"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "세아제강과 하이스틸은 강관 시장 직접 경쟁"
-  },
-  {
-   "from": "A_604",
-   "to": "A_606",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019033"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "세아제강과 휴스틸은 강관·특수강 시장 경쟁"
-  },
-  {
-   "from": "A_605",
-   "to": "A_607",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019034"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "하이스틸과 넥스틸은 에너지용 강관 시장 경쟁"
-  },
-  {
-   "from": "A_2881",
-   "to": "T_071",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020588"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_597",
-   "to": "T_071",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002232"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_598",
-   "to": "T_071",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002233"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_599",
-   "to": "T_071",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002234"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_600",
-   "to": "T_071",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002235"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_601",
-   "to": "T_071",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002236"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_602",
-   "to": "T_071",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002237"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_603",
-   "to": "T_071",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002238"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_604",
-   "to": "T_071",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002239"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_605",
-   "to": "T_071",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002240"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_606",
-   "to": "T_071",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002241"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_607",
-   "to": "T_071",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_002242"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_073",
-   "to": "T_071",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002243"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_074",
-   "to": "T_071",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002244"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_597",
-   "to": "BF_133",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002245"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_598",
-   "to": "BF_133",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002246"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_599",
-   "to": "BF_133",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002247"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_600",
-   "to": "BF_133",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002248"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_601",
-   "to": "BF_133",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002249"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_602",
-   "to": "BF_134",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002250"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_603",
-   "to": "BF_134",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002251"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_604",
-   "to": "BF_134",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002252"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_605",
-   "to": "BF_132",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002253"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_606",
-   "to": "BF_132",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002254"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_607",
-   "to": "BF_132",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002255"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_604",
-   "to": "BF_132",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_002256"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_604",
-   "to": "C_270",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002257"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_607",
-   "to": "C_270",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_002258"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_084",
-   "to": "T_071",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_002259"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_597",
-   "to": "C_5560",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014503"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_598",
-   "to": "C_5561",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014504"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_599",
-   "to": "C_5562",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014505"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_600",
-   "to": "C_5563",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014506"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_601",
-   "to": "C_5564",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014507"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_602",
-   "to": "C_5565",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014508"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_603",
-   "to": "C_5566",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014509"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_605",
-   "to": "C_5567",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014510"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_606",
-   "to": "C_5568",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_014511"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_603",
-   "to": "A_602",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019030"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "포스코홀딩스와 현대제철은 국내 철강 시장 양대 경쟁"
-  },
-  {
-   "from": "A_600",
-   "to": "A_601",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_019031"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "동국홀딩스는 동국제강의 지주회사로 지배구조 연결"
-  },
-  {
-   "from": "A_604",
-   "to": "A_605",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019032"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "세아제강과 하이스틸은 강관 시장 직접 경쟁"
-  },
-  {
-   "from": "A_604",
-   "to": "A_606",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019033"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "세아제강과 휴스틸은 강관·특수강 시장 경쟁"
-  },
-  {
-   "from": "A_605",
-   "to": "A_607",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_019034"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "하이스틸과 넥스틸은 에너지용 강관 시장 경쟁"
-  },
-  {
-   "from": "A_2881",
-   "to": "T_071",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020588"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
+  "links": [
+    {
+      "from": "A_597",
+      "to": "T_071",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002232"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_598",
+      "to": "T_071",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002233"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_599",
+      "to": "T_071",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002234"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_600",
+      "to": "T_071",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002235"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_601",
+      "to": "T_071",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002236"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_602",
+      "to": "T_071",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002237"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_603",
+      "to": "T_071",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002238"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_604",
+      "to": "T_071",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002239"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_605",
+      "to": "T_071",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002240"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_606",
+      "to": "T_071",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002241"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_607",
+      "to": "T_071",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_002242"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_073",
+      "to": "T_071",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002243"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_074",
+      "to": "T_071",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002244"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_597",
+      "to": "BF_133",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002245"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_598",
+      "to": "BF_133",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002246"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_599",
+      "to": "BF_133",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002247"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_600",
+      "to": "BF_133",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002248"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_601",
+      "to": "BF_133",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002249"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_602",
+      "to": "BF_134",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002250"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_603",
+      "to": "BF_134",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002251"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_604",
+      "to": "BF_134",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002252"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_605",
+      "to": "BF_132",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002253"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_606",
+      "to": "BF_132",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002254"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_607",
+      "to": "BF_132",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002255"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_604",
+      "to": "BF_132",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_002256"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_604",
+      "to": "C_270",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002257"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_607",
+      "to": "C_270",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_002258"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_084",
+      "to": "T_071",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_002259"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_597",
+      "to": "C_5560",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014503"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_598",
+      "to": "C_5561",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014504"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_599",
+      "to": "C_5562",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014505"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_600",
+      "to": "C_5563",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014506"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_601",
+      "to": "C_5564",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014507"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_602",
+      "to": "C_5565",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014508"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_603",
+      "to": "C_5566",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014509"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_605",
+      "to": "C_5567",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014510"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_606",
+      "to": "C_5568",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_014511"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_603",
+      "to": "A_602",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019030"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "포스코홀딩스와 현대제철은 국내 철강 시장 양대 경쟁"
+    },
+    {
+      "from": "A_600",
+      "to": "A_601",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_019031"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "동국홀딩스는 동국제강의 지주회사로 지배구조 연결"
+    },
+    {
+      "from": "A_604",
+      "to": "A_605",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019032"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "세아제강과 하이스틸은 강관 시장 직접 경쟁"
+    },
+    {
+      "from": "A_604",
+      "to": "A_606",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019033"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "세아제강과 휴스틸은 강관·특수강 시장 경쟁"
+    },
+    {
+      "from": "A_605",
+      "to": "A_607",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_019034"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "하이스틸과 넥스틸은 에너지용 강관 시장 경쟁"
+    },
+    {
+      "from": "A_2881",
+      "to": "T_071",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020588"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ]
 }

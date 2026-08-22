@@ -1,1147 +1,1147 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_698",
- "themeName": "한미배당성장주",
- "meta": {
-  "periodDefault": "7d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_698",
+  "themeName": "한미배당성장주",
+  "meta": {
+    "periodDefault": "7d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-31T00:00:00+09:00",
+    "description": "• 미국 배당귀족/배당킹 + 한국 배당성장·주주환원주\n• 동인: 주주환원정책·미국금리인하사이클\n• 대표주: P&G(배당킹 생활소비재)·코카콜라(배당킹 음료)·존슨앤존슨(배당킹 헬스케어)\n• ETF: PLUS고배당주·ProShares S&P 500 Dividend Aristocrats ETF",
+    "notes": "배당을 장기간 늘려온(배당성장) 우량주 — 미국 배당귀족/배당킹 + 한국 배당성장·주주환원주. 고배당(수익률)이 아니라 배당의 지속 성장·복리에 초점. 금리 변동기 방어+복리 수익.",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-31",
+        "kind": "신규",
+        "title": "테마 생성",
+        "detail": "배당을 장기간 늘려온(배당성장) 우량주 — 미국 배당귀족/배당킹 + 한국 배당성장·주주환원주. 고배당(수익률)이 아니라 배당의 지속 성장·복리에 초점. 금리 변동기 방어+복리 수익."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "id": "T_698",
+      "type": "THEME",
+      "name": "한미배당성장주"
+    },
+    {
+      "id": "M_173",
+      "type": "MACRO",
+      "name": "주주환원정책"
+    },
+    {
+      "id": "A_2839",
+      "type": "ASSET",
+      "name": "P&G",
+      "exposure": {
+        "ticker": "PG",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.1960551164579947,
+        "close": 144.68,
+        "marketCap": 343934589005,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "FMP",
+        "return_3d": 0.8574416172882682,
+        "return_15d": 0.1314969894110396,
+        "return_1m": -2.309250506414573,
+        "return_ytd": 0.9559695764426834,
+        "return_1y": -8.851508851508838,
+        "return_3y": -4.671542465572909,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "FMP",
+        "return_5d": 0.08993427879626648,
+        "return_2y": -14.974141984015043
+      },
+      "coreBiz": "생활소비재 글로벌 1위·60년+ 연속 배당 증가(배당킹)의 대표 배당성장주."
+    },
+    {
+      "id": "C_5830",
+      "type": "CHARACTER",
+      "name": "배당킹_생활소비재"
+    },
+    {
+      "id": "A_1763",
+      "type": "ASSET",
+      "name": "코카콜라",
+      "exposure": {
+        "ticker": "KO",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.6629834254143541,
+        "return_3d": 2.5669894167980267,
+        "return_15d": 4.007306770179242,
+        "return_1m": 11.13822130047577,
+        "return_ytd": 30.310399084537252,
+        "return_1y": 28.927257288423426,
+        "return_3y": 50.75293728280654,
+        "close": 91.1,
+        "marketCap": 391962207887,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "FMP",
+        "return_5d": 3.8650096910272547,
+        "return_2y": 30.947247376742858
+      }
+    },
+    {
+      "id": "C_5831",
+      "type": "CHARACTER",
+      "name": "배당킹_음료"
+    },
+    {
+      "id": "A_1703",
+      "type": "ASSET",
+      "name": "존슨앤존슨",
+      "exposure": {
+        "ticker": "JNJ",
+        "exchange": "NYSE",
+        "country": "US",
+        "business_desc": "Johnson & Johnson — 헬스케어 빅 1티어",
+        "theme_role": "IHI IN_ETF",
+        "theme_status": "Support"
+      },
+      "metrics": {
+        "return_1d": 1.0734188577626425,
+        "close": 270.24,
+        "marketCap": 651250947940,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "FMP",
+        "return_3d": -0.3209029545203079,
+        "return_15d": 5.418373317729652,
+        "return_1m": 7.832887753880535,
+        "return_ytd": 30.582266247885983,
+        "return_1y": 51.031129491980096,
+        "return_3y": 61.48192411114432,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "FMP",
+        "return_5d": 3.798732475513722,
+        "return_2y": 67.40382828470544
+      },
+      "coreBiz": "존슨앤존슨은 제약·의료기기 종합 헬스케어 대장이다"
+    },
+    {
+      "id": "C_5832",
+      "type": "CHARACTER",
+      "name": "배당킹_헬스케어"
+    },
+    {
+      "id": "A_1970",
+      "type": "ASSET",
+      "name": "펩시코",
+      "exposure": {
+        "ticker": "PEP",
+        "exchange": "NASDAQ",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.9853603603603434,
+        "return_3d": 2.3906372653964114,
+        "return_15d": 2.8088277443393483,
+        "return_1m": 6.281481481481466,
+        "return_ytd": -0.027870680044606022,
+        "return_1y": -3.6917707074775152,
+        "return_3y": -18.96074555210394,
+        "close": 143.48,
+        "marketCap": 195993680000,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "FMP",
+        "return_5d": 1.910647063001636,
+        "return_2y": -18.109696935106456
+      }
+    },
+    {
+      "id": "C_5833",
+      "type": "CHARACTER",
+      "name": "배당귀족_음료스낵"
+    },
+    {
+      "id": "A_1998",
+      "type": "ASSET",
+      "name": "맥도날드",
+      "exposure": {
+        "ticker": "MCD",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.6762531118790216,
+        "return_3d": 1.4832016180381213,
+        "return_15d": 0.11454330475908492,
+        "return_1m": 2.667576067598798,
+        "return_ytd": -11.347053626934533,
+        "return_1y": -13.495306813102626,
+        "return_3y": -3.2459648621625647,
+        "close": 270.95,
+        "marketCap": 192511600700,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "FMP",
+        "return_5d": -0.6890737822087045,
+        "return_2y": -6.475440958199574
+      }
+    },
+    {
+      "id": "C_5834",
+      "type": "CHARACTER",
+      "name": "배당성장_외식"
+    },
+    {
+      "id": "A_1006",
+      "type": "ASSET",
+      "name": "애브비",
+      "exposure": {
+        "ticker": "ABBV",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 1.195432150632092,
+        "close": 265.01,
+        "marketCap": 468217765493,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "FMP",
+        "return_3d": 2.3327668778000854,
+        "return_15d": 5.586992906670907,
+        "return_1m": 3.459586099180001,
+        "return_ytd": 15.961311217121077,
+        "return_1y": 26.472553699284006,
+        "return_3y": 76.45178476291954,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "FMP",
+        "return_5d": 6.2134209893369485,
+        "return_2y": 34.819111586017385
+      }
+    },
+    {
+      "id": "C_5835",
+      "type": "CHARACTER",
+      "name": "배당성장_제약"
+    },
+    {
+      "name": "The Home Depot",
+      "id": "A_297",
+      "metrics": {
+        "return_1d": 0.33483811175221145,
+        "return_30d": null,
+        "market_cap": null,
+        "asof": null,
+        "return_90d": null,
+        "currency": null,
+        "per": null,
+        "last_price": null,
+        "return_15d": 1.099530063863119,
+        "return_3d": -0.5570535423271794,
+        "return_1m": 1.2092882991556086,
+        "return_ytd": -2.467306015693116,
+        "return_1y": -15.61227055569524,
+        "return_3y": 3.5641547861507084,
+        "close": 335.61,
+        "marketCap": 334642436370,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "FMP",
+        "pe_ttm": null,
+        "return_5d": -0.9590981526294007,
+        "return_2y": -9.40722345192463
+      },
+      "exposure": {
+        "country": "US",
+        "ticker": "HD",
+        "exchange": "NYSE"
+      },
+      "type": "ASSET"
+    },
+    {
+      "id": "C_5836",
+      "type": "CHARACTER",
+      "name": "배당성장_주택소매"
+    },
+    {
+      "id": "A_1220",
+      "type": "ASSET",
+      "name": "삼성화재",
+      "exposure": {
+        "ticker": "000810",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 6.270096463022501,
+        "close": 661000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": 5.591054313099031,
+        "return_15d": 6.957928802588986,
+        "return_1m": 4.920634920634925,
+        "return_ytd": 38.51012556983071,
+        "return_1y": 55.393978343978276,
+        "return_3y": 182.26498167378776,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": -4.651162790697672,
+        "return_2y": 97.9631464642732
+      }
+    },
+    {
+      "id": "C_5837",
+      "type": "CHARACTER",
+      "name": "배당성장_손해보험"
+    },
+    {
+      "id": "A_957",
+      "type": "ASSET",
+      "name": "KT&G",
+      "exposure": {
+        "ticker": "033780",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.23269342641070168,
+        "close": 172300,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -1.310211135639816,
+        "return_15d": -6.196896054637147,
+        "return_1m": -1.310211135639816,
+        "return_ytd": 27.396572039361764,
+        "return_1y": 30.482533078391818,
+        "return_3y": 133.20197172267095,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": -6.779661016949157,
+        "return_2y": 101.62320676884514
+      }
+    },
+    {
+      "id": "C_5838",
+      "type": "CHARACTER",
+      "name": "고배당성장_인삼담배"
+    },
+    {
+      "id": "A_2575",
+      "type": "ASSET",
+      "name": "메리츠금융지주",
+      "exposure": {
+        "ticker": "138040",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.17361111111111605,
+        "return_3d": -1.5358361774744034,
+        "return_15d": -7.010475423045925,
+        "return_1m": 0.8741258741258751,
+        "return_ytd": 3.405017921146958,
+        "return_1y": 1.2280701754386003,
+        "return_3y": 144.81364701277255,
+        "close": 115400,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": -7.600950118764849,
+        "return_2y": 42.99356629567595
+      }
+    },
+    {
+      "id": "C_5839",
+      "type": "CHARACTER",
+      "name": "주주환원_금융지주"
+    },
+    {
+      "id": "A_1538",
+      "type": "ASSET",
+      "name": "신한지주",
+      "exposure": {
+        "ticker": "055550",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 2.9673590504450953,
+        "close": 104100,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -2.2535211267605604,
+        "return_15d": 3.2738095238095344,
+        "return_1m": 0.3532147813988473,
+        "return_ytd": 39.14735465460313,
+        "return_1y": 55.23441777940317,
+        "return_3y": 251.64723713090456,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": -2.3636363636363678,
+        "return_2y": 102.99790464626813
+      }
+    },
+    {
+      "id": "C_5840",
+      "type": "CHARACTER",
+      "name": "배당성장_은행지주"
+    },
+    {
+      "id": "A_1541",
+      "type": "ASSET",
+      "name": "PLUS고배당주",
+      "exposure": {
+        "ticker": "161510",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": 0.14190147982970913,
+        "close": 24700,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -2.5064140517071287,
+        "return_15d": 3.4554973821989465,
+        "return_1m": -0.08619850856280697,
+        "return_ytd": 19.521730553104312,
+        "return_1y": 31.91729076407579,
+        "return_3y": 164.16438318979957,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 1.7707918822124968,
+        "return_2y": 80.0349347951004
+      }
+    },
+    {
+      "id": "A_2978",
+      "type": "ASSET",
+      "name": "ProShares S&P 500 Dividend Aristocrats ETF",
+      "exposure": {
+        "ticker": "NOBL",
+        "exchange": "NYSEARCA",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": 0.5476638712989867,
+        "return_3d": 1.049191606467148,
+        "return_15d": 2.925718290119139,
+        "return_1m": 4.314630681818188,
+        "return_ytd": 12.893927747886247,
+        "return_1y": 12.375669472073447,
+        "return_3y": 26.480086114101177,
+        "close": 58.75,
+        "marketCap": 11876456849,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "FMP",
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "FMP",
+        "return_5d": 0.3930280246069673,
+        "return_2y": 14.344102763721288
+      }
+    },
+    {
+      "id": "M_145",
+      "type": "MACRO",
+      "name": "금리인하"
+    }
   ],
-  "dataAsOf": "2026-07-31T00:00:00+09:00",
-  "description": "• 미국 배당귀족/배당킹 + 한국 배당성장·주주환원주\n• 동인: 주주환원정책·미국금리인하사이클\n• 대표주: P&G(배당킹 생활소비재)·코카콜라(배당킹 음료)·존슨앤존슨(배당킹 헬스케어)\n• ETF: PLUS고배당주·ProShares S&P 500 Dividend Aristocrats ETF",
-  "notes": "배당을 장기간 늘려온(배당성장) 우량주 — 미국 배당귀족/배당킹 + 한국 배당성장·주주환원주. 고배당(수익률)이 아니라 배당의 지속 성장·복리에 초점. 금리 변동기 방어+복리 수익.",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-31",
-    "kind": "신규",
-    "title": "테마 생성",
-    "detail": "배당을 장기간 늘려온(배당성장) 우량주 — 미국 배당귀족/배당킹 + 한국 배당성장·주주환원주. 고배당(수익률)이 아니라 배당의 지속 성장·복리에 초점. 금리 변동기 방어+복리 수익."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "M_173",
+      "to": "T_698",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_015054"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_145",
+      "to": "T_698",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_015055"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_2839",
+      "to": "T_698",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015056"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2839",
+      "to": "C_5830",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015057"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1763",
+      "to": "T_698",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015058"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1763",
+      "to": "C_5831",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015059"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1703",
+      "to": "T_698",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015060"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1703",
+      "to": "C_5832",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015061"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1970",
+      "to": "T_698",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015062"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1970",
+      "to": "C_5833",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015063"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1998",
+      "to": "T_698",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015064"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1998",
+      "to": "C_5834",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015065"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1006",
+      "to": "T_698",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015066"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1006",
+      "to": "C_5835",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015067"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_297",
+      "to": "T_698",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015068"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_297",
+      "to": "C_5836",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015069"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1220",
+      "to": "T_698",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015070"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1220",
+      "to": "C_5837",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015071"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_957",
+      "to": "T_698",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015072"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_957",
+      "to": "C_5838",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015073"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2575",
+      "to": "T_698",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015074"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2575",
+      "to": "C_5839",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015075"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1538",
+      "to": "T_698",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015076"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1538",
+      "to": "C_5840",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015077"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1763",
+      "to": "A_1970",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020500"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "코카콜라와 펩시코는 글로벌 음료 시장 양대 경쟁"
+    },
+    {
+      "from": "A_2839",
+      "to": "A_1703",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020501"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "P&G와 존슨앤존슨은 미국 생활·헬스 소비재 시장 경쟁"
+    },
+    {
+      "from": "A_1006",
+      "to": "A_1703",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020502"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "애브비와 존슨앤존슨은 면역·제약 시장 경쟁"
+    },
+    {
+      "from": "A_1220",
+      "to": "A_1538",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020503"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "삼성화재와 신한지주는 국내 배당성장 금융주 경쟁"
+    },
+    {
+      "from": "A_2575",
+      "to": "A_1538",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020504"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "메리츠금융지주와 신한지주는 주주환원 정책 경쟁"
+    },
+    {
+      "from": "A_1763",
+      "to": "A_1998",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_020505"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "코카콜라는 맥도날드에 음료를 공급"
+    },
+    {
+      "from": "A_1541",
+      "to": "T_698",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020981"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_2978",
+      "to": "T_698",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020982"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ],
+  "links": [
+    {
+      "from": "M_173",
+      "to": "T_698",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_015054"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "M_145",
+      "to": "T_698",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_015055"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_2839",
+      "to": "T_698",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015056"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2839",
+      "to": "C_5830",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015057"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1763",
+      "to": "T_698",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015058"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1763",
+      "to": "C_5831",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015059"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1703",
+      "to": "T_698",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015060"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1703",
+      "to": "C_5832",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015061"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1970",
+      "to": "T_698",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015062"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1970",
+      "to": "C_5833",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015063"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1998",
+      "to": "T_698",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015064"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1998",
+      "to": "C_5834",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015065"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1006",
+      "to": "T_698",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015066"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1006",
+      "to": "C_5835",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015067"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_297",
+      "to": "T_698",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015068"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_297",
+      "to": "C_5836",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015069"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1220",
+      "to": "T_698",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015070"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1220",
+      "to": "C_5837",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015071"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_957",
+      "to": "T_698",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015072"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_957",
+      "to": "C_5838",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015073"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2575",
+      "to": "T_698",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015074"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_2575",
+      "to": "C_5839",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015075"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1538",
+      "to": "T_698",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_015076"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1538",
+      "to": "C_5840",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_015077"
+      ],
+      "confidence": 0.82,
+      "status": "verified"
+    },
+    {
+      "from": "A_1763",
+      "to": "A_1970",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020500"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "코카콜라와 펩시코는 글로벌 음료 시장 양대 경쟁"
+    },
+    {
+      "from": "A_2839",
+      "to": "A_1703",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020501"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "P&G와 존슨앤존슨은 미국 생활·헬스 소비재 시장 경쟁"
+    },
+    {
+      "from": "A_1006",
+      "to": "A_1703",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020502"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "애브비와 존슨앤존슨은 면역·제약 시장 경쟁"
+    },
+    {
+      "from": "A_1220",
+      "to": "A_1538",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020503"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "삼성화재와 신한지주는 국내 배당성장 금융주 경쟁"
+    },
+    {
+      "from": "A_2575",
+      "to": "A_1538",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_020504"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "메리츠금융지주와 신한지주는 주주환원 정책 경쟁"
+    },
+    {
+      "from": "A_1763",
+      "to": "A_1998",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_020505"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "코카콜라는 맥도날드에 음료를 공급"
+    },
+    {
+      "from": "A_1541",
+      "to": "T_698",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020981"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_2978",
+      "to": "T_698",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020982"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ]
- },
- "nodes": [
-  {
-   "id": "T_698",
-   "type": "THEME",
-   "name": "한미배당성장주"
-  },
-  {
-   "id": "M_173",
-   "type": "MACRO",
-   "name": "주주환원정책"
-  },
-  {
-   "id": "A_2839",
-   "type": "ASSET",
-   "name": "P&G",
-   "exposure": {
-    "ticker": "PG",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.1960551164579947,
-    "close": 144.68,
-    "marketCap": 343934589005,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "FMP",
-    "return_3d": 0.8574416172882682,
-    "return_15d": 0.1314969894110396,
-    "return_1m": -2.309250506414573,
-    "return_ytd": 0.9559695764426834,
-    "return_1y": -8.851508851508838,
-    "return_3y": -4.671542465572909,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "FMP",
-    "return_5d": 0.08993427879626648,
-    "return_2y": -14.974141984015043
-   },
-   "coreBiz": "생활소비재 글로벌 1위·60년+ 연속 배당 증가(배당킹)의 대표 배당성장주."
-  },
-  {
-   "id": "C_5830",
-   "type": "CHARACTER",
-   "name": "배당킹_생활소비재"
-  },
-  {
-   "id": "A_1763",
-   "type": "ASSET",
-   "name": "코카콜라",
-   "exposure": {
-    "ticker": "KO",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.6629834254143541,
-    "return_3d": 2.5669894167980267,
-    "return_15d": 4.007306770179242,
-    "return_1m": 11.13822130047577,
-    "return_ytd": 30.310399084537252,
-    "return_1y": 28.927257288423426,
-    "return_3y": 50.75293728280654,
-    "close": 91.1,
-    "marketCap": 391962207887,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "FMP",
-    "return_5d": 3.8650096910272547,
-    "return_2y": 30.947247376742858
-   }
-  },
-  {
-   "id": "C_5831",
-   "type": "CHARACTER",
-   "name": "배당킹_음료"
-  },
-  {
-   "id": "A_1703",
-   "type": "ASSET",
-   "name": "존슨앤존슨",
-   "exposure": {
-    "ticker": "JNJ",
-    "exchange": "NYSE",
-    "country": "US",
-    "business_desc": "Johnson & Johnson — 헬스케어 빅 1티어",
-    "theme_role": "IHI IN_ETF",
-    "theme_status": "Support"
-   },
-   "metrics": {
-    "return_1d": 1.0734188577626425,
-    "close": 270.24,
-    "marketCap": 651250947940,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "FMP",
-    "return_3d": -0.3209029545203079,
-    "return_15d": 5.418373317729652,
-    "return_1m": 7.832887753880535,
-    "return_ytd": 30.582266247885983,
-    "return_1y": 51.031129491980096,
-    "return_3y": 61.48192411114432,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "FMP",
-    "return_5d": 3.798732475513722,
-    "return_2y": 67.40382828470544
-   },
-   "coreBiz": "존슨앤존슨은 제약·의료기기 종합 헬스케어 대장이다"
-  },
-  {
-   "id": "C_5832",
-   "type": "CHARACTER",
-   "name": "배당킹_헬스케어"
-  },
-  {
-   "id": "A_1970",
-   "type": "ASSET",
-   "name": "펩시코",
-   "exposure": {
-    "ticker": "PEP",
-    "exchange": "NASDAQ",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.9853603603603434,
-    "return_3d": 2.3906372653964114,
-    "return_15d": 2.8088277443393483,
-    "return_1m": 6.281481481481466,
-    "return_ytd": -0.027870680044606022,
-    "return_1y": -3.6917707074775152,
-    "return_3y": -18.96074555210394,
-    "close": 143.48,
-    "marketCap": 195993680000,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "FMP",
-    "return_5d": 1.910647063001636,
-    "return_2y": -18.109696935106456
-   }
-  },
-  {
-   "id": "C_5833",
-   "type": "CHARACTER",
-   "name": "배당귀족_음료스낵"
-  },
-  {
-   "id": "A_1998",
-   "type": "ASSET",
-   "name": "맥도날드",
-   "exposure": {
-    "ticker": "MCD",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.6762531118790216,
-    "return_3d": 1.4832016180381213,
-    "return_15d": 0.11454330475908492,
-    "return_1m": 2.667576067598798,
-    "return_ytd": -11.347053626934533,
-    "return_1y": -13.495306813102626,
-    "return_3y": -3.2459648621625647,
-    "close": 270.95,
-    "marketCap": 192511600700,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "FMP",
-    "return_5d": -0.6890737822087045,
-    "return_2y": -6.475440958199574
-   }
-  },
-  {
-   "id": "C_5834",
-   "type": "CHARACTER",
-   "name": "배당성장_외식"
-  },
-  {
-   "id": "A_1006",
-   "type": "ASSET",
-   "name": "애브비",
-   "exposure": {
-    "ticker": "ABBV",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 1.195432150632092,
-    "close": 265.01,
-    "marketCap": 468217765493,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "FMP",
-    "return_3d": 2.3327668778000854,
-    "return_15d": 5.586992906670907,
-    "return_1m": 3.459586099180001,
-    "return_ytd": 15.961311217121077,
-    "return_1y": 26.472553699284006,
-    "return_3y": 76.45178476291954,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "FMP",
-    "return_5d": 6.2134209893369485,
-    "return_2y": 34.819111586017385
-   }
-  },
-  {
-   "id": "C_5835",
-   "type": "CHARACTER",
-   "name": "배당성장_제약"
-  },
-  {
-   "name": "The Home Depot",
-   "id": "A_297",
-   "metrics": {
-    "return_1d": 0.33483811175221145,
-    "return_30d": null,
-    "market_cap": null,
-    "asof": null,
-    "return_90d": null,
-    "currency": null,
-    "per": null,
-    "last_price": null,
-    "return_15d": 1.099530063863119,
-    "return_3d": -0.5570535423271794,
-    "return_1m": 1.2092882991556086,
-    "return_ytd": -2.467306015693116,
-    "return_1y": -15.61227055569524,
-    "return_3y": 3.5641547861507084,
-    "close": 335.61,
-    "marketCap": 334642436370,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "FMP",
-    "pe_ttm": null,
-    "return_5d": -0.9590981526294007,
-    "return_2y": -9.40722345192463
-   },
-   "exposure": {
-    "country": "US",
-    "ticker": "HD",
-    "exchange": "NYSE"
-   },
-   "type": "ASSET"
-  },
-  {
-   "id": "C_5836",
-   "type": "CHARACTER",
-   "name": "배당성장_주택소매"
-  },
-  {
-   "id": "A_1220",
-   "type": "ASSET",
-   "name": "삼성화재",
-   "exposure": {
-    "ticker": "000810",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 1.4681892332789603,
-    "close": 622000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "return_3d": 1.1382113821138296,
-    "return_15d": 5.962521294718903,
-    "return_1m": 0.6472491909385036,
-    "return_ytd": 30.337818614878522,
-    "return_1y": 48.06376196040174,
-    "return_3y": 182.26498167378776,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": -4.651162790697672,
-    "return_2y": 85.77474572127228
-   }
-  },
-  {
-   "id": "C_5837",
-   "type": "CHARACTER",
-   "name": "배당성장_손해보험"
-  },
-  {
-   "id": "A_957",
-   "type": "ASSET",
-   "name": "KT&G",
-   "exposure": {
-    "ticker": "033780",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -0.9221902017291117,
-    "close": 171900,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "return_3d": -1.203661255527777,
-    "return_15d": -4.774613245152315,
-    "return_1m": -2.423369155109001,
-    "return_ytd": 27.100816793768367,
-    "return_1y": 28.326523112933756,
-    "return_3y": 133.20197172267095,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": -6.779661016949157,
-    "return_2y": 102.23777521825879
-   }
-  },
-  {
-   "id": "C_5838",
-   "type": "CHARACTER",
-   "name": "고배당성장_인삼담배"
-  },
-  {
-   "id": "A_2575",
-   "type": "ASSET",
-   "name": "메리츠금융지주",
-   "exposure": {
-    "ticker": "138040",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 0.0,
-    "return_3d": -1.285347043701801,
-    "return_15d": -2.0408163265306145,
-    "return_1m": 1.9469026548672552,
-    "return_ytd": 3.2258064516129004,
-    "return_1y": 0.5235602094240788,
-    "return_3y": 144.81364701277255,
-    "close": 115200,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": -7.600950118764849,
-    "return_2y": 42.222865561209154
-   }
-  },
-  {
-   "id": "C_5839",
-   "type": "CHARACTER",
-   "name": "주주환원_금융지주"
-  },
-  {
-   "id": "A_1538",
-   "type": "ASSET",
-   "name": "신한지주",
-   "exposure": {
-    "ticker": "055550",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -3.7142857142857144,
-    "close": 101100,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "return_3d": -5.865921787709494,
-    "return_15d": 2.8484231943031624,
-    "return_1m": -2.724980983455405,
-    "return_ytd": 35.13734443400938,
-    "return_1y": 51.85804354550279,
-    "return_3y": 251.64723713090456,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": -2.3636363636363678,
-    "return_2y": 97.50627174719139
-   }
-  },
-  {
-   "id": "C_5840",
-   "type": "CHARACTER",
-   "name": "배당성장_은행지주"
-  },
-  {
-   "id": "A_1541",
-   "type": "ASSET",
-   "name": "PLUS고배당주",
-   "exposure": {
-    "ticker": "161510",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -1.0629763337344555,
-    "close": 24665,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "return_3d": -3.558162267839682,
-    "return_15d": 5.284500789687119,
-    "return_1m": 0.5007831991604039,
-    "return_ytd": 19.352367777016923,
-    "return_1y": 31.932714454701717,
-    "return_3y": 164.16438318979957,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": 1.7707918822124968,
-    "return_2y": 80.07747251918475
-   }
-  },
-  {
-   "id": "A_2978",
-   "type": "ASSET",
-   "name": "ProShares S&P 500 Dividend Aristocrats ETF",
-   "exposure": {
-    "ticker": "NOBL",
-    "exchange": "NYSEARCA",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": 0.5476638712989867,
-    "return_3d": 1.049191606467148,
-    "return_15d": 2.925718290119139,
-    "return_1m": 4.314630681818188,
-    "return_ytd": 12.893927747886247,
-    "return_1y": 12.375669472073447,
-    "return_3y": 26.480086114101177,
-    "close": 58.75,
-    "marketCap": 11876456849,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "FMP",
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "FMP",
-    "return_5d": 0.3930280246069673,
-    "return_2y": 14.344102763721288
-   }
-  },
-  {
-   "id": "M_145",
-   "type": "MACRO",
-   "name": "금리인하"
-  }
- ],
- "edges": [
-  {
-   "from": "M_173",
-   "to": "T_698",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_015054"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_145",
-   "to": "T_698",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_015055"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_2839",
-   "to": "T_698",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015056"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2839",
-   "to": "C_5830",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015057"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1763",
-   "to": "T_698",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015058"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1763",
-   "to": "C_5831",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015059"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1703",
-   "to": "T_698",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015060"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1703",
-   "to": "C_5832",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015061"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1970",
-   "to": "T_698",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015062"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1970",
-   "to": "C_5833",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015063"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1998",
-   "to": "T_698",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015064"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1998",
-   "to": "C_5834",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015065"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1006",
-   "to": "T_698",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015066"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1006",
-   "to": "C_5835",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015067"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_297",
-   "to": "T_698",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015068"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_297",
-   "to": "C_5836",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015069"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1220",
-   "to": "T_698",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015070"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1220",
-   "to": "C_5837",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015071"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_957",
-   "to": "T_698",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015072"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_957",
-   "to": "C_5838",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015073"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2575",
-   "to": "T_698",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015074"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2575",
-   "to": "C_5839",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015075"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1538",
-   "to": "T_698",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015076"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1538",
-   "to": "C_5840",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015077"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1763",
-   "to": "A_1970",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020500"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "코카콜라와 펩시코는 글로벌 음료 시장 양대 경쟁"
-  },
-  {
-   "from": "A_2839",
-   "to": "A_1703",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020501"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "P&G와 존슨앤존슨은 미국 생활·헬스 소비재 시장 경쟁"
-  },
-  {
-   "from": "A_1006",
-   "to": "A_1703",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020502"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "애브비와 존슨앤존슨은 면역·제약 시장 경쟁"
-  },
-  {
-   "from": "A_1220",
-   "to": "A_1538",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020503"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "삼성화재와 신한지주는 국내 배당성장 금융주 경쟁"
-  },
-  {
-   "from": "A_2575",
-   "to": "A_1538",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020504"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "메리츠금융지주와 신한지주는 주주환원 정책 경쟁"
-  },
-  {
-   "from": "A_1763",
-   "to": "A_1998",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_020505"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "코카콜라는 맥도날드에 음료를 공급"
-  },
-  {
-   "from": "A_1541",
-   "to": "T_698",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020981"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_2978",
-   "to": "T_698",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020982"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "M_173",
-   "to": "T_698",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_015054"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "M_145",
-   "to": "T_698",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_015055"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_2839",
-   "to": "T_698",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015056"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2839",
-   "to": "C_5830",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015057"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1763",
-   "to": "T_698",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015058"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1763",
-   "to": "C_5831",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015059"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1703",
-   "to": "T_698",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015060"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1703",
-   "to": "C_5832",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015061"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1970",
-   "to": "T_698",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015062"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1970",
-   "to": "C_5833",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015063"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1998",
-   "to": "T_698",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015064"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1998",
-   "to": "C_5834",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015065"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1006",
-   "to": "T_698",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015066"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1006",
-   "to": "C_5835",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015067"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_297",
-   "to": "T_698",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015068"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_297",
-   "to": "C_5836",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015069"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1220",
-   "to": "T_698",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015070"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1220",
-   "to": "C_5837",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015071"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_957",
-   "to": "T_698",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015072"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_957",
-   "to": "C_5838",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015073"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2575",
-   "to": "T_698",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015074"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_2575",
-   "to": "C_5839",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015075"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1538",
-   "to": "T_698",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_015076"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1538",
-   "to": "C_5840",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_015077"
-   ],
-   "confidence": 0.82,
-   "status": "verified"
-  },
-  {
-   "from": "A_1763",
-   "to": "A_1970",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020500"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "코카콜라와 펩시코는 글로벌 음료 시장 양대 경쟁"
-  },
-  {
-   "from": "A_2839",
-   "to": "A_1703",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020501"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "P&G와 존슨앤존슨은 미국 생활·헬스 소비재 시장 경쟁"
-  },
-  {
-   "from": "A_1006",
-   "to": "A_1703",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020502"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "애브비와 존슨앤존슨은 면역·제약 시장 경쟁"
-  },
-  {
-   "from": "A_1220",
-   "to": "A_1538",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020503"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "삼성화재와 신한지주는 국내 배당성장 금융주 경쟁"
-  },
-  {
-   "from": "A_2575",
-   "to": "A_1538",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_020504"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "메리츠금융지주와 신한지주는 주주환원 정책 경쟁"
-  },
-  {
-   "from": "A_1763",
-   "to": "A_1998",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_020505"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "코카콜라는 맥도날드에 음료를 공급"
-  },
-  {
-   "from": "A_1541",
-   "to": "T_698",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020981"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_2978",
-   "to": "T_698",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020982"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
 }

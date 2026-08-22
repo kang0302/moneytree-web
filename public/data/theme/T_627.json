@@ -1,889 +1,889 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_627",
- "themeName": "K-반도체유리기판:소재",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_627",
+  "themeName": "K-반도체유리기판:소재",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-07-26T00:00:00+09:00",
+    "notes": "K-반도체유리기판:소재 — K-반도체 유리기판 분리 테마.",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-26",
+        "kind": "수정",
+        "title": "구체적 엣지 백필 + 이벤트",
+        "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
+      },
+      {
+        "date": "2026-07-19",
+        "kind": "보강",
+        "title": "바로미터 표본 보강(자산 5종 이상 확보)",
+        "detail": "2종 추가 편입(1궤도) 및 자산별 CHR 정의. 표본 부족(ASSET<5) 해소."
+      },
+      {
+        "date": "2026-07-18",
+        "kind": "보강",
+        "title": "공통 매크로 6종 연결",
+        "detail": "AI가속기대형화·하이퍼스케일러CapEx·미세공정한계·데이터센터전력열제약·애플-브로드컴커스텀칩·애플-인텔공급망을 IMPACTS로 연결(구체 근거)."
+      },
+      {
+        "date": "2026-07-18",
+        "kind": "신규",
+        "title": "K-반도체유리기판 3분할(제조/소재/장비)",
+        "detail": "기존 K반도체유리기판(20자산)을 제조·소재·장비로 분리. 본 테마는 소재 축. 2궤도(코닝·인텔·브로드컴)는 OPERATES·HAS_TRAIT로 유지, 자산별 CHR·BF·evidence 보존."
+      },
+      {
+        "date": "2026-08-05",
+        "kind": "관계",
+        "title": "EXPOSED_TO ETF 연결",
+        "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
+      }
+    ],
+    "description": "• AI가속기대형화·하이퍼스케일러CAPEX 수혜\n• 동인: AI가속기대형화·하이퍼스케일러CAPEX·미세공정한계\n• 대표주: SKC(유리기판소재앱솔릭스)·와이엠티(유리기판도금소재)·와이씨켐(유리기판소재)\n• 밸류체인: 유리기판소재\n• ETF: KODEX 반도체·SOL AI반도체소부장"
+  },
+  "nodes": [
+    {
+      "id": "T_627",
+      "type": "THEME",
+      "name": "K-반도체유리기판:소재"
+    },
+    {
+      "id": "A_901",
+      "type": "ASSET",
+      "name": "SKC",
+      "exposure": {
+        "ticker": "011790",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -3.360370799536505,
+        "close": 83400,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -3.24825986078886,
+        "return_15d": 29.90654205607477,
+        "return_1m": 4.6424090338770485,
+        "return_ytd": -13.368816607356571,
+        "return_1y": -10.501385212127555,
+        "return_3y": -1.6606814780296242,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 10.591133004926112,
+        "return_2y": -38.79964408955034
+      }
+    },
+    {
+      "id": "A_902",
+      "type": "ASSET",
+      "name": "와이엠티",
+      "exposure": {
+        "ticker": "251370",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -6.045340050377835,
+        "close": 7460,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -5.926860025220682,
+        "return_15d": 14.067278287461772,
+        "return_1m": -12.33842538190364,
+        "return_ytd": -40.98101265822785,
+        "return_1y": -21.47368421052631,
+        "return_3y": -30.829420970266042,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 10.9159347553325,
+        "return_2y": -18.73638344226579
+      }
+    },
+    {
+      "id": "A_1332",
+      "type": "ASSET",
+      "name": "와이씨켐",
+      "exposure": {
+        "ticker": "112290",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -3.007518796992481,
+        "close": 10320,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -9.473684210526311,
+        "return_15d": -24.726477024070025,
+        "return_1m": -29.604365620736694,
+        "return_ytd": -2.4113475177305,
+        "return_1y": -22.985074626865675,
+        "return_3y": -18.289786223277915,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": -5.321100917431187,
+        "return_2y": -14.178794178794174
+      }
+    },
+    {
+      "id": "A_900",
+      "type": "ASSET",
+      "name": "코닝",
+      "exposure": {
+        "ticker": "GLW",
+        "exchange": "NYSE",
+        "country": "US"
+      },
+      "metrics": {
+        "return_1d": -1.0630571145592516,
+        "close": 149.79,
+        "marketCap": 129027308520,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "FMP",
+        "return_3d": -6.291432145090681,
+        "return_15d": 8.383363471971062,
+        "return_1m": -7.739671202512155,
+        "return_ytd": 71.12836911831886,
+        "return_1y": 130.9138542148251,
+        "return_3y": 368.25,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "FMP",
+        "return_5d": -9.7295017772155,
+        "return_2y": 256.0836501901141
+      }
+    },
+    {
+      "id": "A_625",
+      "type": "ASSET",
+      "name": "동진쎄미켐",
+      "exposure": {
+        "ticker": "005290",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -4.861111111111116,
+        "close": 41100,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -4.861111111111116,
+        "return_15d": 23.98190045248869,
+        "return_1m": -2.8368794326241176,
+        "return_ytd": 3.656998738965944,
+        "return_1y": 37.54078929391598,
+        "return_3y": 24.709196164904924,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 10.419313850063538,
+        "return_2y": 17.75028775548879
+      }
+    },
+    {
+      "id": "C_3730",
+      "type": "CHARACTER",
+      "name": "반도체소재_포토레지스트"
+    },
+    {
+      "id": "A_1024",
+      "type": "ASSET",
+      "name": "솔브레인",
+      "exposure": {
+        "ticker": "357780",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -1.9548872180451093,
+        "close": 326000,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -0.15313935681470214,
+        "return_15d": 45.21158129175946,
+        "return_1m": 17.90235081374323,
+        "return_ytd": 17.54342115814076,
+        "return_1y": 40.4480278647233,
+        "return_3y": 30.705342331999972,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 9.152542372881346,
+        "return_2y": 26.993577957746172
+      }
+    },
+    {
+      "id": "C_3731",
+      "type": "CHARACTER",
+      "name": "반도체소재_식각액·CMP"
+    },
+    {
+      "id": "BF_243",
+      "type": "BUSINESS_FIELD",
+      "name": "유리기판소재"
+    },
+    {
+      "id": "C_2362",
+      "type": "CHARACTER",
+      "name": "유리기판소재앱솔릭스"
+    },
+    {
+      "id": "C_2363",
+      "type": "CHARACTER",
+      "name": "유리기판도금소재"
+    },
+    {
+      "id": "C_2371",
+      "type": "CHARACTER",
+      "name": "유리기판소재"
+    },
+    {
+      "id": "C_2376",
+      "type": "CHARACTER",
+      "name": "유리원소재"
+    },
+    {
+      "id": "M_288",
+      "type": "MACRO",
+      "name": "하이퍼스케일러CAPEX"
+    },
+    {
+      "id": "M_229",
+      "type": "MACRO",
+      "name": "미세공정한계"
+    },
+    {
+      "id": "M_1138",
+      "type": "MACRO",
+      "name": "애플-브로드컴커스텀칩"
+    },
+    {
+      "id": "M_198",
+      "type": "MACRO",
+      "name": "애플-인텔 공급망 협력"
+    },
+    {
+      "id": "A_2900",
+      "type": "ASSET",
+      "name": "KODEX 반도체",
+      "exposure": {
+        "ticker": "091160",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -0.00393483906507841,
+        "return_3d": 1.323711175790443,
+        "return_15d": 35.644515612490004,
+        "return_1m": 0.106357835027171,
+        "return_ytd": 94.22945623049715,
+        "return_1y": 246.35470565247118,
+        "return_3y": null,
+        "close": 127065,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": null,
+        "return_2y": 219.71456958126961
+      }
+    },
+    {
+      "id": "A_2876",
+      "type": "ASSET",
+      "name": "SOL AI반도체소부장",
+      "exposure": {
+        "ticker": "455850",
+        "exchange": "KRX",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -5.699481865284972,
+        "return_3d": -5.542869005605144,
+        "return_15d": 41.17282035370773,
+        "return_1m": -0.9793253536452662,
+        "return_ytd": 26.682838821535547,
+        "return_1y": 84.72866854225944,
+        "return_3y": null,
+        "close": 22750,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": null,
+        "return_2y": 61.56170615723593
+      }
+    },
+    {
+      "id": "M_368",
+      "type": "MACRO",
+      "name": "AI가속기GPU_CapEx"
+    },
+    {
+      "id": "M_035",
+      "type": "MACRO",
+      "name": "AI데이터센터전력수요증가"
+    }
   ],
-  "dataAsOf": "2026-07-26T00:00:00+09:00",
-  "notes": "K-반도체유리기판:소재 — K-반도체 유리기판 분리 테마.",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 4건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-26",
-    "kind": "수정",
-    "title": "구체적 엣지 백필 + 이벤트",
-    "detail": "THEMED_AS/IMPACTS 근거 구체화, 자산 CHR(필요시), 2026 이벤트 추가."
-   },
-   {
-    "date": "2026-07-19",
-    "kind": "보강",
-    "title": "바로미터 표본 보강(자산 5종 이상 확보)",
-    "detail": "2종 추가 편입(1궤도) 및 자산별 CHR 정의. 표본 부족(ASSET<5) 해소."
-   },
-   {
-    "date": "2026-07-18",
-    "kind": "보강",
-    "title": "공통 매크로 6종 연결",
-    "detail": "AI가속기대형화·하이퍼스케일러CapEx·미세공정한계·데이터센터전력열제약·애플-브로드컴커스텀칩·애플-인텔공급망을 IMPACTS로 연결(구체 근거)."
-   },
-   {
-    "date": "2026-07-18",
-    "kind": "신규",
-    "title": "K-반도체유리기판 3분할(제조/소재/장비)",
-    "detail": "기존 K반도체유리기판(20자산)을 제조·소재·장비로 분리. 본 테마는 소재 축. 2궤도(코닝·인텔·브로드컴)는 OPERATES·HAS_TRAIT로 유지, 자산별 CHR·BF·evidence 보존."
-   },
-   {
-    "date": "2026-08-05",
-    "kind": "관계",
-    "title": "EXPOSED_TO ETF 연결",
-    "detail": "테마 구성종목과 겹침이 높은 상장 ETF를 EXPOSED_TO로 연결하고 브리핑카드·근거를 부착했다."
-   }
+  "edges": [
+    {
+      "from": "A_901",
+      "to": "T_627",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013610"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_902",
+      "to": "T_627",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013611"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_900",
+      "to": "BF_243",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_003732"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_901",
+      "to": "BF_243",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_003733"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_902",
+      "to": "BF_243",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_003734"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1332",
+      "to": "T_627",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013612"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_901",
+      "to": "C_2362",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003899"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_902",
+      "to": "C_2363",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003900"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1332",
+      "to": "C_2371",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003908"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_900",
+      "to": "C_2376",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003913"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_368",
+      "to": "T_627",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013613"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_288",
+      "to": "T_627",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013614"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_229",
+      "to": "T_627",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013615"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_035",
+      "to": "T_627",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013616"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_1138",
+      "to": "T_627",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013617"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_198",
+      "to": "T_627",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013618"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_625",
+      "to": "T_627",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013619"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_625",
+      "to": "C_3730",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007819"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1024",
+      "to": "T_627",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013620"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1024",
+      "to": "C_3731",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007821"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1332",
+      "to": "A_901",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018747"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "와이씨켐은 SKC 자회사 앱솔릭스에 유리기판 회로빌드업용 포토레지스트·현상액·박리액 등 핵심 소재를 양산 공급한다."
+    },
+    {
+      "from": "A_902",
+      "to": "A_900",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_018748"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "와이엠티는 삼성전기·코닝 등과 컨소시엄을 구성해 유리기판 TGV 도금 소재를 공동개발한다."
+    },
+    {
+      "from": "A_625",
+      "to": "A_1024",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018749"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "동진쎄미켐이 SK하이닉스 HBM용 CMP 슬러리를 신규 공급하며 솔브레인의 국내 독점을 깨 두 소재사가 직접 경쟁한다."
+    },
+    {
+      "from": "A_625",
+      "to": "A_1332",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018750"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "동진쎄미켐과 와이씨켐은 모두 유리기판용 포토레지스트 소재를 개발·공급하며 경쟁한다."
+    },
+    {
+      "from": "A_2900",
+      "to": "T_627",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020935"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_2876",
+      "to": "T_627",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020936"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
   ],
-  "description": "• AI가속기대형화·하이퍼스케일러CAPEX 수혜\n• 동인: AI가속기대형화·하이퍼스케일러CAPEX·미세공정한계\n• 대표주: SKC(유리기판소재앱솔릭스)·와이엠티(유리기판도금소재)·와이씨켐(유리기판소재)\n• 밸류체인: 유리기판소재\n• ETF: KODEX 반도체·SOL AI반도체소부장"
- },
- "nodes": [
-  {
-   "id": "T_627",
-   "type": "THEME",
-   "name": "K-반도체유리기판:소재"
-  },
-  {
-   "id": "A_901",
-   "type": "ASSET",
-   "name": "SKC",
-   "exposure": {
-    "ticker": "011790",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": 3.477218225419665,
-    "close": 86300,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "return_3d": -3.897550111358572,
-    "return_15d": 32.565284178187405,
-    "return_1m": 8.827238335435062,
-    "return_ytd": -10.35646130953084,
-    "return_1y": -6.545703525893087,
-    "return_3y": -1.6606814780296242,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": 10.591133004926112,
-    "return_2y": -36.758325429546886
-   }
-  },
-  {
-   "id": "A_902",
-   "type": "ASSET",
-   "name": "와이엠티",
-   "exposure": {
-    "ticker": "251370",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -6.045340050377835,
-    "close": 7460,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "return_3d": -5.926860025220682,
-    "return_15d": 14.067278287461772,
-    "return_1m": -12.33842538190364,
-    "return_ytd": -40.98101265822785,
-    "return_1y": -21.47368421052631,
-    "return_3y": -30.829420970266042,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": 10.9159347553325,
-    "return_2y": -18.73638344226579
-   }
-  },
-  {
-   "id": "A_1332",
-   "type": "ASSET",
-   "name": "와이씨켐",
-   "exposure": {
-    "ticker": "112290",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -3.007518796992481,
-    "close": 10320,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "return_3d": -9.473684210526311,
-    "return_15d": -24.726477024070025,
-    "return_1m": -29.604365620736694,
-    "return_ytd": -2.4113475177305,
-    "return_1y": -22.985074626865675,
-    "return_3y": -18.289786223277915,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": -5.321100917431187,
-    "return_2y": -14.178794178794174
-   }
-  },
-  {
-   "id": "A_900",
-   "type": "ASSET",
-   "name": "코닝",
-   "exposure": {
-    "ticker": "GLW",
-    "exchange": "NYSE",
-    "country": "US"
-   },
-   "metrics": {
-    "return_1d": -1.0630571145592516,
-    "close": 149.79,
-    "marketCap": 129027308520,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "FMP",
-    "return_3d": -6.291432145090681,
-    "return_15d": 8.383363471971062,
-    "return_1m": -7.739671202512155,
-    "return_ytd": 71.12836911831886,
-    "return_1y": 130.9138542148251,
-    "return_3y": 368.25,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "FMP",
-    "return_5d": -9.7295017772155,
-    "return_2y": 256.0836501901141
-   }
-  },
-  {
-   "id": "A_625",
-   "type": "ASSET",
-   "name": "동진쎄미켐",
-   "exposure": {
-    "ticker": "005290",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -4.861111111111116,
-    "close": 41100,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "return_3d": -4.861111111111116,
-    "return_15d": 23.98190045248869,
-    "return_1m": -2.8368794326241176,
-    "return_ytd": 3.656998738965944,
-    "return_1y": 37.54078929391598,
-    "return_3y": 24.709196164904924,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": 10.419313850063538,
-    "return_2y": 17.75028775548879
-   }
-  },
-  {
-   "id": "C_3730",
-   "type": "CHARACTER",
-   "name": "반도체소재_포토레지스트"
-  },
-  {
-   "id": "A_1024",
-   "type": "ASSET",
-   "name": "솔브레인",
-   "exposure": {
-    "ticker": "357780",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -1.9548872180451093,
-    "close": 326000,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "return_3d": -0.15313935681470214,
-    "return_15d": 45.21158129175946,
-    "return_1m": 17.90235081374323,
-    "return_ytd": 17.54342115814076,
-    "return_1y": 40.4480278647233,
-    "return_3y": 30.705342331999972,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": 9.152542372881346,
-    "return_2y": 26.993577957746172
-   }
-  },
-  {
-   "id": "C_3731",
-   "type": "CHARACTER",
-   "name": "반도체소재_식각액·CMP"
-  },
-  {
-   "id": "BF_243",
-   "type": "BUSINESS_FIELD",
-   "name": "유리기판소재"
-  },
-  {
-   "id": "C_2362",
-   "type": "CHARACTER",
-   "name": "유리기판소재앱솔릭스"
-  },
-  {
-   "id": "C_2363",
-   "type": "CHARACTER",
-   "name": "유리기판도금소재"
-  },
-  {
-   "id": "C_2371",
-   "type": "CHARACTER",
-   "name": "유리기판소재"
-  },
-  {
-   "id": "C_2376",
-   "type": "CHARACTER",
-   "name": "유리원소재"
-  },
-  {
-   "id": "M_288",
-   "type": "MACRO",
-   "name": "하이퍼스케일러CAPEX"
-  },
-  {
-   "id": "M_229",
-   "type": "MACRO",
-   "name": "미세공정한계"
-  },
-  {
-   "id": "M_1138",
-   "type": "MACRO",
-   "name": "애플-브로드컴커스텀칩"
-  },
-  {
-   "id": "M_198",
-   "type": "MACRO",
-   "name": "애플-인텔 공급망 협력"
-  },
-  {
-   "id": "A_2900",
-   "type": "ASSET",
-   "name": "KODEX 반도체",
-   "exposure": {
-    "ticker": "091160",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -0.00393483906507841,
-    "return_3d": 1.323711175790443,
-    "return_15d": 35.644515612490004,
-    "return_1m": 0.106357835027171,
-    "return_ytd": 94.22945623049715,
-    "return_1y": 246.35470565247118,
-    "return_3y": null,
-    "close": 127065,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": null,
-    "return_2y": 219.71456958126961
-   }
-  },
-  {
-   "id": "A_2876",
-   "type": "ASSET",
-   "name": "SOL AI반도체소부장",
-   "exposure": {
-    "ticker": "455850",
-    "exchange": "KRX",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -5.699481865284972,
-    "return_3d": -5.542869005605144,
-    "return_15d": 41.17282035370773,
-    "return_1m": -0.9793253536452662,
-    "return_ytd": 26.682838821535547,
-    "return_1y": 84.72866854225944,
-    "return_3y": null,
-    "close": 22750,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": null,
-    "return_2y": 61.56170615723593
-   }
-  },
-  {
-   "id": "M_368",
-   "type": "MACRO",
-   "name": "AI가속기GPU_CapEx"
-  },
-  {
-   "id": "M_035",
-   "type": "MACRO",
-   "name": "AI데이터센터전력수요증가"
-  }
- ],
- "edges": [
-  {
-   "from": "A_901",
-   "to": "T_627",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013610"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_902",
-   "to": "T_627",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013611"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_900",
-   "to": "BF_243",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_003732"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_901",
-   "to": "BF_243",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_003733"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_902",
-   "to": "BF_243",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_003734"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1332",
-   "to": "T_627",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013612"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_901",
-   "to": "C_2362",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003899"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_902",
-   "to": "C_2363",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003900"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1332",
-   "to": "C_2371",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003908"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_900",
-   "to": "C_2376",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003913"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_368",
-   "to": "T_627",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013613"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_288",
-   "to": "T_627",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013614"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_229",
-   "to": "T_627",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013615"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_035",
-   "to": "T_627",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013616"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_1138",
-   "to": "T_627",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013617"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_198",
-   "to": "T_627",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013618"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_625",
-   "to": "T_627",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013619"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_625",
-   "to": "C_3730",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007819"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1024",
-   "to": "T_627",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013620"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1024",
-   "to": "C_3731",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007821"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1332",
-   "to": "A_901",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018747"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "와이씨켐은 SKC 자회사 앱솔릭스에 유리기판 회로빌드업용 포토레지스트·현상액·박리액 등 핵심 소재를 양산 공급한다."
-  },
-  {
-   "from": "A_902",
-   "to": "A_900",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_018748"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "와이엠티는 삼성전기·코닝 등과 컨소시엄을 구성해 유리기판 TGV 도금 소재를 공동개발한다."
-  },
-  {
-   "from": "A_625",
-   "to": "A_1024",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018749"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "동진쎄미켐이 SK하이닉스 HBM용 CMP 슬러리를 신규 공급하며 솔브레인의 국내 독점을 깨 두 소재사가 직접 경쟁한다."
-  },
-  {
-   "from": "A_625",
-   "to": "A_1332",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018750"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "동진쎄미켐과 와이씨켐은 모두 유리기판용 포토레지스트 소재를 개발·공급하며 경쟁한다."
-  },
-  {
-   "from": "A_2900",
-   "to": "T_627",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020935"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_2876",
-   "to": "T_627",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020936"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ],
- "links": [
-  {
-   "from": "A_901",
-   "to": "T_627",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013610"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_902",
-   "to": "T_627",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013611"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_900",
-   "to": "BF_243",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_003732"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_901",
-   "to": "BF_243",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_003733"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_902",
-   "to": "BF_243",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_003734"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1332",
-   "to": "T_627",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013612"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_901",
-   "to": "C_2362",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003899"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_902",
-   "to": "C_2363",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003900"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1332",
-   "to": "C_2371",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003908"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_900",
-   "to": "C_2376",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_003913"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_368",
-   "to": "T_627",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013613"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_288",
-   "to": "T_627",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013614"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_229",
-   "to": "T_627",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013615"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_035",
-   "to": "T_627",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013616"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_1138",
-   "to": "T_627",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013617"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "M_198",
-   "to": "T_627",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_013618"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_625",
-   "to": "T_627",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013619"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_625",
-   "to": "C_3730",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007819"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1024",
-   "to": "T_627",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_013620"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1024",
-   "to": "C_3731",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_007821"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_1332",
-   "to": "A_901",
-   "type": "SUPPLIES",
-   "evidence": [
-    "EV_018747"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "와이씨켐은 SKC 자회사 앱솔릭스에 유리기판 회로빌드업용 포토레지스트·현상액·박리액 등 핵심 소재를 양산 공급한다."
-  },
-  {
-   "from": "A_902",
-   "to": "A_900",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_018748"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "와이엠티는 삼성전기·코닝 등과 컨소시엄을 구성해 유리기판 TGV 도금 소재를 공동개발한다."
-  },
-  {
-   "from": "A_625",
-   "to": "A_1024",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018749"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "동진쎄미켐이 SK하이닉스 HBM용 CMP 슬러리를 신규 공급하며 솔브레인의 국내 독점을 깨 두 소재사가 직접 경쟁한다."
-  },
-  {
-   "from": "A_625",
-   "to": "A_1332",
-   "type": "COMPETES",
-   "evidence": [
-    "EV_018750"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "동진쎄미켐과 와이씨켐은 모두 유리기판용 포토레지스트 소재를 개발·공급하며 경쟁한다."
-  },
-  {
-   "from": "A_2900",
-   "to": "T_627",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020935"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_2876",
-   "to": "T_627",
-   "type": "EXPOSED_TO",
-   "evidence": [
-    "EV_020936"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  }
- ]
+  "links": [
+    {
+      "from": "A_901",
+      "to": "T_627",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013610"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_902",
+      "to": "T_627",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013611"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_900",
+      "to": "BF_243",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_003732"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_901",
+      "to": "BF_243",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_003733"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_902",
+      "to": "BF_243",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_003734"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1332",
+      "to": "T_627",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013612"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_901",
+      "to": "C_2362",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003899"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_902",
+      "to": "C_2363",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003900"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1332",
+      "to": "C_2371",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003908"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_900",
+      "to": "C_2376",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_003913"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_368",
+      "to": "T_627",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013613"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_288",
+      "to": "T_627",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013614"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_229",
+      "to": "T_627",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013615"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_035",
+      "to": "T_627",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013616"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_1138",
+      "to": "T_627",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013617"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "M_198",
+      "to": "T_627",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_013618"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_625",
+      "to": "T_627",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013619"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_625",
+      "to": "C_3730",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007819"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1024",
+      "to": "T_627",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_013620"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1024",
+      "to": "C_3731",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_007821"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_1332",
+      "to": "A_901",
+      "type": "SUPPLIES",
+      "evidence": [
+        "EV_018747"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "와이씨켐은 SKC 자회사 앱솔릭스에 유리기판 회로빌드업용 포토레지스트·현상액·박리액 등 핵심 소재를 양산 공급한다."
+    },
+    {
+      "from": "A_902",
+      "to": "A_900",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_018748"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "와이엠티는 삼성전기·코닝 등과 컨소시엄을 구성해 유리기판 TGV 도금 소재를 공동개발한다."
+    },
+    {
+      "from": "A_625",
+      "to": "A_1024",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018749"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "동진쎄미켐이 SK하이닉스 HBM용 CMP 슬러리를 신규 공급하며 솔브레인의 국내 독점을 깨 두 소재사가 직접 경쟁한다."
+    },
+    {
+      "from": "A_625",
+      "to": "A_1332",
+      "type": "COMPETES",
+      "evidence": [
+        "EV_018750"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "동진쎄미켐과 와이씨켐은 모두 유리기판용 포토레지스트 소재를 개발·공급하며 경쟁한다."
+    },
+    {
+      "from": "A_2900",
+      "to": "T_627",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020935"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_2876",
+      "to": "T_627",
+      "type": "EXPOSED_TO",
+      "evidence": [
+        "EV_020936"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    }
+  ]
 }

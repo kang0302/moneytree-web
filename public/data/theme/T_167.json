@@ -1,1080 +1,1080 @@
 {
- "schemaVersion": "v5",
- "themeId": "T_167",
- "themeName": "LS그룹관련주",
- "meta": {
-  "periodDefault": "3d",
-  "periodOptions": [
-   "1d",
-   "3d",
-   "7d",
-   "15d",
-   "1m",
-   "ytd",
-   "1y",
-   "2y",
-   "3y"
+  "schemaVersion": "v5",
+  "themeId": "T_167",
+  "themeName": "LS그룹관련주",
+  "meta": {
+    "periodDefault": "3d",
+    "periodOptions": [
+      "1d",
+      "3d",
+      "7d",
+      "15d",
+      "1m",
+      "ytd",
+      "1y",
+      "2y",
+      "3y"
+    ],
+    "dataAsOf": "2026-04-21T00:00:00+09:00",
+    "notes": "g167 누적 import 기반 LS그룹관련주 테마",
+    "sources": [],
+    "changelog": [
+      {
+        "date": "2026-08-04",
+        "kind": "보강",
+        "title": "2궤도 관계 엣지 추가",
+        "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
+      },
+      {
+        "date": "2026-07-12",
+        "kind": "보강",
+        "title": "매크로 2종 추가(해상풍력확산·AI전력개발수요확산)",
+        "detail": "해상풍력 확산·AI 전력개발 수요 매크로를 테마에 IMPACTS로 연결."
+      },
+      {
+        "date": "2026-07-12",
+        "kind": "보강",
+        "title": "자산별 테마관점 CHR 정의",
+        "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
+      },
+      {
+        "date": "2026-07-12",
+        "kind": "보강",
+        "title": "엣지 근거 구체 백필 + 2026 이벤트",
+        "detail": "전 엣지 근거(호버 박스)를 종목·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
+      },
+      {
+        "date": "2026-07-10",
+        "kind": "변경",
+        "title": "매크로는 테마에만 연결",
+        "detail": "개별 자산·BF에 직접 걸려 있던 매크로 IMPACTS 엣지를 테마 레벨로 정리(repoint 2, 중복제거 1)했다."
+      }
+    ],
+    "description": "• 미국 전력망 교체·HVDC·해저케이블·구리·니켈 사이클의 동시다발 노출\n• 동인: 상법개정·구리가격상승·해상풍력확산\n• 대표주: LS(그룹지주전선동제련)·LS일렉트릭(배전전력기기)·LS마린솔루션(해저케이블해상풍력L)\n• 밸류체인: LPG유통·물류자동화/로봇·희토류·해상풍력"
+  },
+  "nodes": [
+    {
+      "id": "T_167",
+      "type": "THEME",
+      "name": "LS그룹관련주"
+    },
+    {
+      "id": "A_673",
+      "type": "ASSET",
+      "name": "LS",
+      "exposure": {
+        "ticker": "006260",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -6.379585326953752,
+        "close": 293500,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -14.556040756914124,
+        "return_15d": 31.319910514541395,
+        "return_1m": 3.1634446397188043,
+        "return_ytd": 42.09287937806201,
+        "return_1y": 73.96573897753996,
+        "return_3y": 180.61754200438207,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 2.0504731861198833,
+        "return_2y": 130.20315604997427
+      }
+    },
+    {
+      "id": "A_545",
+      "type": "ASSET",
+      "name": "LS일렉트릭",
+      "exposure": {
+        "ticker": "010120",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -6.1244979919678695,
+        "close": 241500,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -10.526315789473683,
+        "return_15d": 24.41783100465735,
+        "return_1m": -1.8887722980062915,
+        "return_ytd": 90.607103725752,
+        "return_1y": 209.30477314726184,
+        "return_3y": 971.7667470171667,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 2.736318407960203,
+        "return_2y": 348.8897502984511
+      }
+    },
+    {
+      "id": "A_674",
+      "type": "ASSET",
+      "name": "LS마린솔루션",
+      "exposure": {
+        "ticker": "060370",
+        "exchange": "KOSDAQ",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -4.327666151468312,
+        "close": 30950,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -0.9600000000000053,
+        "return_15d": 31.144067796610166,
+        "return_1m": 7.279029462738307,
+        "return_ytd": 4.915254237288136,
+        "return_1y": 12.13871234801427,
+        "return_3y": 185.80016897913006,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 5.691056910569103,
+        "return_2y": 75.82488999866553
+      }
+    },
+    {
+      "id": "A_379",
+      "type": "ASSET",
+      "name": "LS엠트론",
+      "exposure": {
+        "ticker": "",
+        "exchange": "",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": null,
+        "returnsSource": null,
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "LS엠트론은 트랙터·물류 자동화 계열사다"
+    },
+    {
+      "id": "A_809",
+      "type": "ASSET",
+      "name": "LS에코에너지",
+      "exposure": {
+        "ticker": "229640",
+        "exchange": "KOSPI",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": -7.080610021786493,
+        "close": 42650,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": "2026-08-21",
+        "valuationSource": "EODHD",
+        "return_3d": -10.115911485774499,
+        "return_15d": 25.256975036710717,
+        "return_1m": -1.387283236994219,
+        "return_ytd": 19.959819282740177,
+        "return_1y": -0.9569621913293247,
+        "return_3y": 273.3719331370489,
+        "returnsAsOf": "2026-08-21",
+        "returnsSource": "EODHD",
+        "return_5d": 6.270627062706269,
+        "return_2y": 37.46389219989395
+      }
+    },
+    {
+      "id": "A_1048",
+      "type": "ASSET",
+      "name": "LS전선(비)",
+      "exposure": {
+        "ticker": "",
+        "exchange": "",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": null,
+        "returnsSource": null,
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "LS전선은 초고압·해저케이블 핵심 계열사(비상장)다"
+    },
+    {
+      "id": "A_1129",
+      "type": "ASSET",
+      "name": "LS이링크(비)",
+      "exposure": {
+        "ticker": "",
+        "exchange": "",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": null,
+        "returnsSource": null,
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "LS이링크는 전기차 충전 계열사(비상장)다"
+    },
+    {
+      "id": "A_1130",
+      "type": "ASSET",
+      "name": "LS M&M(비)",
+      "exposure": {
+        "ticker": "",
+        "exchange": "",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": null,
+        "returnsSource": null,
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "LS엠앤엠은 동 제련 계열사(비상장)다"
+    },
+    {
+      "id": "A_1131",
+      "type": "ASSET",
+      "name": "LS니꼬동제련(비)",
+      "exposure": {
+        "ticker": "",
+        "exchange": "",
+        "country": "KR"
+      },
+      "metrics": {
+        "return_1d": null,
+        "close": null,
+        "marketCap": null,
+        "pe_ttm": null,
+        "valuationAsOf": null,
+        "valuationSource": null,
+        "return_3d": null,
+        "return_15d": null,
+        "return_1m": null,
+        "return_ytd": null,
+        "return_1y": null,
+        "return_3y": null,
+        "returnsAsOf": null,
+        "returnsSource": null,
+        "return_5d": null,
+        "return_2y": null
+      },
+      "coreBiz": "LS니꼬동제련은 동 제련 계열사(비상장)다"
+    },
+    {
+      "id": "BF_290",
+      "type": "BUSINESS_FIELD",
+      "name": "LPG유통"
+    },
+    {
+      "id": "BF_291",
+      "type": "BUSINESS_FIELD",
+      "name": "물류자동화/로봇"
+    },
+    {
+      "id": "BF_292",
+      "type": "BUSINESS_FIELD",
+      "name": "희토류"
+    },
+    {
+      "id": "BF_293",
+      "type": "BUSINESS_FIELD",
+      "name": "해상풍력"
+    },
+    {
+      "id": "M_006",
+      "type": "MACRO",
+      "name": "상법개정"
+    },
+    {
+      "id": "M_163",
+      "type": "MACRO",
+      "name": "구리가격상승"
+    },
+    {
+      "id": "C_2799",
+      "type": "CHARACTER",
+      "name": "그룹지주전선동제련"
+    },
+    {
+      "id": "C_2800",
+      "type": "CHARACTER",
+      "name": "배전전력기기"
+    },
+    {
+      "id": "C_2801",
+      "type": "CHARACTER",
+      "name": "해저케이블해상풍력LS마린"
+    },
+    {
+      "id": "C_2802",
+      "type": "CHARACTER",
+      "name": "트랙터물류자동화"
+    },
+    {
+      "id": "C_2803",
+      "type": "CHARACTER",
+      "name": "베트남전선희토류"
+    },
+    {
+      "id": "C_2804",
+      "type": "CHARACTER",
+      "name": "초고압해저케이블"
+    },
+    {
+      "id": "C_2805",
+      "type": "CHARACTER",
+      "name": "전기차충전"
+    },
+    {
+      "id": "C_2806",
+      "type": "CHARACTER",
+      "name": "동제련LS엠앤엠"
+    },
+    {
+      "id": "C_2807",
+      "type": "CHARACTER",
+      "name": "동제련LS니꼬"
+    },
+    {
+      "id": "M_1115",
+      "type": "MACRO",
+      "name": "해상풍력확산"
+    },
+    {
+      "id": "M_035",
+      "type": "MACRO",
+      "name": "AI데이터센터전력수요증가"
+    }
   ],
-  "dataAsOf": "2026-04-21T00:00:00+09:00",
-  "notes": "g167 누적 import 기반 LS그룹관련주 테마",
-  "sources": [],
-  "changelog": [
-   {
-    "date": "2026-08-04",
-    "kind": "보강",
-    "title": "2궤도 관계 엣지 추가",
-    "detail": "테마 내 자산 간 공급/경쟁/파트너/투자 관계 6건 백필(리서치 기반)."
-   },
-   {
-    "date": "2026-07-12",
-    "kind": "보강",
-    "title": "매크로 2종 추가(해상풍력확산·AI전력개발수요확산)",
-    "detail": "해상풍력 확산·AI 전력개발 수요 매크로를 테마에 IMPACTS로 연결."
-   },
-   {
-    "date": "2026-07-12",
-    "kind": "보강",
-    "title": "자산별 테마관점 CHR 정의",
-    "detail": "전 자산에 테마 내 역할·포지션 기반 CHR을 정의했다."
-   },
-   {
-    "date": "2026-07-12",
-    "kind": "보강",
-    "title": "엣지 근거 구체 백필 + 2026 이벤트",
-    "detail": "전 엣지 근거(호버 박스)를 종목·관계 사실로 구체화하고 2026 이벤트 2건을 추가했다."
-   },
-   {
-    "date": "2026-07-10",
-    "kind": "변경",
-    "title": "매크로는 테마에만 연결",
-    "detail": "개별 자산·BF에 직접 걸려 있던 매크로 IMPACTS 엣지를 테마 레벨로 정리(repoint 2, 중복제거 1)했다."
-   }
+  "edges": [
+    {
+      "from": "A_673",
+      "to": "T_167",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004970"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_545",
+      "to": "T_167",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004971"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_674",
+      "to": "T_167",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004972"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_379",
+      "to": "T_167",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004973"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_809",
+      "to": "T_167",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004974"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1048",
+      "to": "T_167",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004975"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1129",
+      "to": "T_167",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004976"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1130",
+      "to": "T_167",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004977"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1131",
+      "to": "T_167",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004978"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_673",
+      "to": "BF_290",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004979"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_379",
+      "to": "BF_291",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004980"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_809",
+      "to": "BF_292",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004981"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_674",
+      "to": "BF_293",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004982"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1048",
+      "to": "BF_293",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004983"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "M_006",
+      "to": "T_167",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_004984"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "M_163",
+      "to": "T_167",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_004985"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_673",
+      "to": "C_2799",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005110"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_545",
+      "to": "C_2800",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005111"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_674",
+      "to": "C_2801",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005112"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_379",
+      "to": "C_2802",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005113"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_809",
+      "to": "C_2803",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005114"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1048",
+      "to": "C_2804",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005115"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1129",
+      "to": "C_2805",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005116"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1130",
+      "to": "C_2806",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005117"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1131",
+      "to": "C_2807",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005118"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "M_1115",
+      "to": "T_167",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005159"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_035",
+      "to": "T_167",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005160"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_673",
+      "to": "A_545",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019192"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "LS(주)는 LS일렉트릭의 지주회사로 지분 보유"
+    },
+    {
+      "from": "A_673",
+      "to": "A_674",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019193"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "LS(주)는 LS마린솔루션 지분 보유 지주사"
+    },
+    {
+      "from": "A_673",
+      "to": "A_809",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019194"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "LS(주)는 LS에코에너지 지분 보유"
+    },
+    {
+      "from": "A_673",
+      "to": "A_1048",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019195"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "LS(주)는 LS전선의 지주회사"
+    },
+    {
+      "from": "A_545",
+      "to": "A_809",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_019196"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "LS일렉트릭과 LS에코에너지는 전력·에너지 사업 협력"
+    },
+    {
+      "from": "A_1048",
+      "to": "A_1130",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_019197"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "LS전선과 LS M&M은 동 제련·케이블 소재 수직계열화"
+    }
   ],
-  "description": "• 미국 전력망 교체·HVDC·해저케이블·구리·니켈 사이클의 동시다발 노출\n• 동인: 상법개정·구리가격상승·해상풍력확산\n• 대표주: LS(그룹지주전선동제련)·LS일렉트릭(배전전력기기)·LS마린솔루션(해저케이블해상풍력L)\n• 밸류체인: LPG유통·물류자동화/로봇·희토류·해상풍력"
- },
- "nodes": [
-  {
-   "id": "T_167",
-   "type": "THEME",
-   "name": "LS그룹관련주"
-  },
-  {
-   "id": "A_673",
-   "type": "ASSET",
-   "name": "LS",
-   "exposure": {
-    "ticker": "006260",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -5.855855855855852,
-    "close": 313500,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "return_3d": -3.091190108191655,
-    "return_15d": 28.747433264887068,
-    "return_1m": 13.99999999999999,
-    "return_ytd": 51.7755287394291,
-    "return_1y": 85.92948147047959,
-    "return_3y": 180.61754200438207,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": 2.0504731861198833,
-    "return_2y": 154.0667745298851
-   }
-  },
-  {
-   "id": "A_545",
-   "type": "ASSET",
-   "name": "LS일렉트릭",
-   "exposure": {
-    "ticker": "010120",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -1.3861386138613874,
-    "close": 241500,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "return_3d": -3.5351089588377738,
-    "return_15d": 21.611721611721602,
-    "return_1m": 5.3410893707033225,
-    "return_ytd": 103.04243348753901,
-    "return_1y": 241.87486693031386,
-    "return_3y": 971.7667470171667,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": 2.736318407960203,
-    "return_2y": 368.2823171406449
-   }
-  },
-  {
-   "id": "A_674",
-   "type": "ASSET",
-   "name": "LS마린솔루션",
-   "exposure": {
-    "ticker": "060370",
-    "exchange": "KOSDAQ",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -4.327666151468312,
-    "close": 30950,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "return_3d": -0.9600000000000053,
-    "return_15d": 31.144067796610166,
-    "return_1m": 7.279029462738307,
-    "return_ytd": 4.915254237288136,
-    "return_1y": 12.13871234801427,
-    "return_3y": 185.80016897913006,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": 5.691056910569103,
-    "return_2y": 75.82488999866553
-   }
-  },
-  {
-   "id": "A_379",
-   "type": "ASSET",
-   "name": "LS엠트론",
-   "exposure": {
-    "ticker": "",
-    "exchange": "",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": null,
-    "returnsSource": null,
-    "return_5d": null,
-    "return_2y": null
-   },
-   "coreBiz": "LS엠트론은 트랙터·물류 자동화 계열사다"
-  },
-  {
-   "id": "A_809",
-   "type": "ASSET",
-   "name": "LS에코에너지",
-   "exposure": {
-    "ticker": "229640",
-    "exchange": "KOSPI",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": -1.5021459227467782,
-    "close": 45900,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": "2026-08-21",
-    "valuationSource": "EODHD",
-    "return_3d": -4.968944099378881,
-    "return_15d": 29.478138222849083,
-    "return_1m": 7.62016412661195,
-    "return_ytd": 29.100954398072076,
-    "return_1y": 13.121546893926062,
-    "return_3y": 273.3719331370489,
-    "returnsAsOf": "2026-08-21",
-    "returnsSource": "EODHD",
-    "return_5d": 6.270627062706269,
-    "return_2y": 51.80654903176081
-   }
-  },
-  {
-   "id": "A_1048",
-   "type": "ASSET",
-   "name": "LS전선(비)",
-   "exposure": {
-    "ticker": "",
-    "exchange": "",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": null,
-    "returnsSource": null,
-    "return_5d": null,
-    "return_2y": null
-   },
-   "coreBiz": "LS전선은 초고압·해저케이블 핵심 계열사(비상장)다"
-  },
-  {
-   "id": "A_1129",
-   "type": "ASSET",
-   "name": "LS이링크(비)",
-   "exposure": {
-    "ticker": "",
-    "exchange": "",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": null,
-    "returnsSource": null,
-    "return_5d": null,
-    "return_2y": null
-   },
-   "coreBiz": "LS이링크는 전기차 충전 계열사(비상장)다"
-  },
-  {
-   "id": "A_1130",
-   "type": "ASSET",
-   "name": "LS M&M(비)",
-   "exposure": {
-    "ticker": "",
-    "exchange": "",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": null,
-    "returnsSource": null,
-    "return_5d": null,
-    "return_2y": null
-   },
-   "coreBiz": "LS엠앤엠은 동 제련 계열사(비상장)다"
-  },
-  {
-   "id": "A_1131",
-   "type": "ASSET",
-   "name": "LS니꼬동제련(비)",
-   "exposure": {
-    "ticker": "",
-    "exchange": "",
-    "country": "KR"
-   },
-   "metrics": {
-    "return_1d": null,
-    "close": null,
-    "marketCap": null,
-    "pe_ttm": null,
-    "valuationAsOf": null,
-    "valuationSource": null,
-    "return_3d": null,
-    "return_15d": null,
-    "return_1m": null,
-    "return_ytd": null,
-    "return_1y": null,
-    "return_3y": null,
-    "returnsAsOf": null,
-    "returnsSource": null,
-    "return_5d": null,
-    "return_2y": null
-   },
-   "coreBiz": "LS니꼬동제련은 동 제련 계열사(비상장)다"
-  },
-  {
-   "id": "BF_290",
-   "type": "BUSINESS_FIELD",
-   "name": "LPG유통"
-  },
-  {
-   "id": "BF_291",
-   "type": "BUSINESS_FIELD",
-   "name": "물류자동화/로봇"
-  },
-  {
-   "id": "BF_292",
-   "type": "BUSINESS_FIELD",
-   "name": "희토류"
-  },
-  {
-   "id": "BF_293",
-   "type": "BUSINESS_FIELD",
-   "name": "해상풍력"
-  },
-  {
-   "id": "M_006",
-   "type": "MACRO",
-   "name": "상법개정"
-  },
-  {
-   "id": "M_163",
-   "type": "MACRO",
-   "name": "구리가격상승"
-  },
-  {
-   "id": "C_2799",
-   "type": "CHARACTER",
-   "name": "그룹지주전선동제련"
-  },
-  {
-   "id": "C_2800",
-   "type": "CHARACTER",
-   "name": "배전전력기기"
-  },
-  {
-   "id": "C_2801",
-   "type": "CHARACTER",
-   "name": "해저케이블해상풍력LS마린"
-  },
-  {
-   "id": "C_2802",
-   "type": "CHARACTER",
-   "name": "트랙터물류자동화"
-  },
-  {
-   "id": "C_2803",
-   "type": "CHARACTER",
-   "name": "베트남전선희토류"
-  },
-  {
-   "id": "C_2804",
-   "type": "CHARACTER",
-   "name": "초고압해저케이블"
-  },
-  {
-   "id": "C_2805",
-   "type": "CHARACTER",
-   "name": "전기차충전"
-  },
-  {
-   "id": "C_2806",
-   "type": "CHARACTER",
-   "name": "동제련LS엠앤엠"
-  },
-  {
-   "id": "C_2807",
-   "type": "CHARACTER",
-   "name": "동제련LS니꼬"
-  },
-  {
-   "id": "M_1115",
-   "type": "MACRO",
-   "name": "해상풍력확산"
-  },
-  {
-   "id": "M_035",
-   "type": "MACRO",
-   "name": "AI데이터센터전력수요증가"
-  }
- ],
- "edges": [
-  {
-   "from": "A_673",
-   "to": "T_167",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004970"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_545",
-   "to": "T_167",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004971"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_674",
-   "to": "T_167",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004972"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_379",
-   "to": "T_167",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004973"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_809",
-   "to": "T_167",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004974"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1048",
-   "to": "T_167",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004975"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1129",
-   "to": "T_167",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004976"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1130",
-   "to": "T_167",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004977"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1131",
-   "to": "T_167",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004978"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_673",
-   "to": "BF_290",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004979"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_379",
-   "to": "BF_291",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004980"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_809",
-   "to": "BF_292",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004981"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_674",
-   "to": "BF_293",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004982"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1048",
-   "to": "BF_293",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004983"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "M_006",
-   "to": "T_167",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_004984"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "M_163",
-   "to": "T_167",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_004985"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_673",
-   "to": "C_2799",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005110"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_545",
-   "to": "C_2800",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005111"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_674",
-   "to": "C_2801",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005112"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_379",
-   "to": "C_2802",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005113"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_809",
-   "to": "C_2803",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005114"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1048",
-   "to": "C_2804",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005115"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1129",
-   "to": "C_2805",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005116"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1130",
-   "to": "C_2806",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005117"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1131",
-   "to": "C_2807",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005118"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "M_1115",
-   "to": "T_167",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005159"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_035",
-   "to": "T_167",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005160"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_673",
-   "to": "A_545",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019192"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "LS(주)는 LS일렉트릭의 지주회사로 지분 보유"
-  },
-  {
-   "from": "A_673",
-   "to": "A_674",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019193"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "LS(주)는 LS마린솔루션 지분 보유 지주사"
-  },
-  {
-   "from": "A_673",
-   "to": "A_809",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019194"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "LS(주)는 LS에코에너지 지분 보유"
-  },
-  {
-   "from": "A_673",
-   "to": "A_1048",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019195"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "LS(주)는 LS전선의 지주회사"
-  },
-  {
-   "from": "A_545",
-   "to": "A_809",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_019196"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "LS일렉트릭과 LS에코에너지는 전력·에너지 사업 협력"
-  },
-  {
-   "from": "A_1048",
-   "to": "A_1130",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_019197"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "LS전선과 LS M&M은 동 제련·케이블 소재 수직계열화"
-  }
- ],
- "links": [
-  {
-   "from": "A_673",
-   "to": "T_167",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004970"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_545",
-   "to": "T_167",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004971"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_674",
-   "to": "T_167",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004972"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_379",
-   "to": "T_167",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004973"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_809",
-   "to": "T_167",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004974"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1048",
-   "to": "T_167",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004975"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1129",
-   "to": "T_167",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004976"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1130",
-   "to": "T_167",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004977"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1131",
-   "to": "T_167",
-   "type": "THEMED_AS",
-   "evidence": [
-    "EV_004978"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_673",
-   "to": "BF_290",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004979"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_379",
-   "to": "BF_291",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004980"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "A_809",
-   "to": "BF_292",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004981"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_674",
-   "to": "BF_293",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004982"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1048",
-   "to": "BF_293",
-   "type": "OPERATES",
-   "evidence": [
-    "EV_004983"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "M_006",
-   "to": "T_167",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_004984"
-   ],
-   "confidence": 0.7,
-   "status": "verified"
-  },
-  {
-   "from": "M_163",
-   "to": "T_167",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_004985"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "A_673",
-   "to": "C_2799",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005110"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_545",
-   "to": "C_2800",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005111"
-   ],
-   "confidence": 0.8,
-   "status": "verified"
-  },
-  {
-   "from": "A_674",
-   "to": "C_2801",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005112"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_379",
-   "to": "C_2802",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005113"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_809",
-   "to": "C_2803",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005114"
-   ],
-   "confidence": 0.76,
-   "status": "verified"
-  },
-  {
-   "from": "A_1048",
-   "to": "C_2804",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005115"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_1129",
-   "to": "C_2805",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005116"
-   ],
-   "confidence": 0.72,
-   "status": "verified"
-  },
-  {
-   "from": "A_1130",
-   "to": "C_2806",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005117"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "A_1131",
-   "to": "C_2807",
-   "type": "HAS_TRAIT",
-   "evidence": [
-    "EV_005118"
-   ],
-   "confidence": 0.74,
-   "status": "verified"
-  },
-  {
-   "from": "M_1115",
-   "to": "T_167",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005159"
-   ],
-   "confidence": 0.75,
-   "status": "verified"
-  },
-  {
-   "from": "M_035",
-   "to": "T_167",
-   "type": "IMPACTS",
-   "evidence": [
-    "EV_005160"
-   ],
-   "confidence": 0.78,
-   "status": "verified"
-  },
-  {
-   "from": "A_673",
-   "to": "A_545",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019192"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "LS(주)는 LS일렉트릭의 지주회사로 지분 보유"
-  },
-  {
-   "from": "A_673",
-   "to": "A_674",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019193"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "LS(주)는 LS마린솔루션 지분 보유 지주사"
-  },
-  {
-   "from": "A_673",
-   "to": "A_809",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019194"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "LS(주)는 LS에코에너지 지분 보유"
-  },
-  {
-   "from": "A_673",
-   "to": "A_1048",
-   "type": "INVESTS",
-   "evidence": [
-    "EV_019195"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "LS(주)는 LS전선의 지주회사"
-  },
-  {
-   "from": "A_545",
-   "to": "A_809",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_019196"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "LS일렉트릭과 LS에코에너지는 전력·에너지 사업 협력"
-  },
-  {
-   "from": "A_1048",
-   "to": "A_1130",
-   "type": "PARTNERS",
-   "evidence": [
-    "EV_019197"
-   ],
-   "confidence": 0.8,
-   "status": "verified",
-   "rationale": "LS전선과 LS M&M은 동 제련·케이블 소재 수직계열화"
-  }
- ]
+  "links": [
+    {
+      "from": "A_673",
+      "to": "T_167",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004970"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_545",
+      "to": "T_167",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004971"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_674",
+      "to": "T_167",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004972"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_379",
+      "to": "T_167",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004973"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_809",
+      "to": "T_167",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004974"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1048",
+      "to": "T_167",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004975"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1129",
+      "to": "T_167",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004976"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1130",
+      "to": "T_167",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004977"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1131",
+      "to": "T_167",
+      "type": "THEMED_AS",
+      "evidence": [
+        "EV_004978"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_673",
+      "to": "BF_290",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004979"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_379",
+      "to": "BF_291",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004980"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "A_809",
+      "to": "BF_292",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004981"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_674",
+      "to": "BF_293",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004982"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1048",
+      "to": "BF_293",
+      "type": "OPERATES",
+      "evidence": [
+        "EV_004983"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "M_006",
+      "to": "T_167",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_004984"
+      ],
+      "confidence": 0.7,
+      "status": "verified"
+    },
+    {
+      "from": "M_163",
+      "to": "T_167",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_004985"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "A_673",
+      "to": "C_2799",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005110"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_545",
+      "to": "C_2800",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005111"
+      ],
+      "confidence": 0.8,
+      "status": "verified"
+    },
+    {
+      "from": "A_674",
+      "to": "C_2801",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005112"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_379",
+      "to": "C_2802",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005113"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_809",
+      "to": "C_2803",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005114"
+      ],
+      "confidence": 0.76,
+      "status": "verified"
+    },
+    {
+      "from": "A_1048",
+      "to": "C_2804",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005115"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_1129",
+      "to": "C_2805",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005116"
+      ],
+      "confidence": 0.72,
+      "status": "verified"
+    },
+    {
+      "from": "A_1130",
+      "to": "C_2806",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005117"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "A_1131",
+      "to": "C_2807",
+      "type": "HAS_TRAIT",
+      "evidence": [
+        "EV_005118"
+      ],
+      "confidence": 0.74,
+      "status": "verified"
+    },
+    {
+      "from": "M_1115",
+      "to": "T_167",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005159"
+      ],
+      "confidence": 0.75,
+      "status": "verified"
+    },
+    {
+      "from": "M_035",
+      "to": "T_167",
+      "type": "IMPACTS",
+      "evidence": [
+        "EV_005160"
+      ],
+      "confidence": 0.78,
+      "status": "verified"
+    },
+    {
+      "from": "A_673",
+      "to": "A_545",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019192"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "LS(주)는 LS일렉트릭의 지주회사로 지분 보유"
+    },
+    {
+      "from": "A_673",
+      "to": "A_674",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019193"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "LS(주)는 LS마린솔루션 지분 보유 지주사"
+    },
+    {
+      "from": "A_673",
+      "to": "A_809",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019194"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "LS(주)는 LS에코에너지 지분 보유"
+    },
+    {
+      "from": "A_673",
+      "to": "A_1048",
+      "type": "INVESTS",
+      "evidence": [
+        "EV_019195"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "LS(주)는 LS전선의 지주회사"
+    },
+    {
+      "from": "A_545",
+      "to": "A_809",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_019196"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "LS일렉트릭과 LS에코에너지는 전력·에너지 사업 협력"
+    },
+    {
+      "from": "A_1048",
+      "to": "A_1130",
+      "type": "PARTNERS",
+      "evidence": [
+        "EV_019197"
+      ],
+      "confidence": 0.8,
+      "status": "verified",
+      "rationale": "LS전선과 LS M&M은 동 제련·케이블 소재 수직계열화"
+    }
+  ]
 }
